@@ -1111,6 +1111,10 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                         request.getTimeExpectedFinishLessThanOrEqualTo())
                 .appendEnumQueryParam("runCycle", request.getRunCycle())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam(
+                        "scheduledActivityAssociationId",
+                        request.getScheduledActivityAssociationId())
+                .appendEnumQueryParam("scheduledActivityPhase", request.getScheduledActivityPhase())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())

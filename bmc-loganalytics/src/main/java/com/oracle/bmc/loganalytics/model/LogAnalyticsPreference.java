@@ -32,12 +32,12 @@ public final class LogAnalyticsPreference
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The preference name. Currently, only "DEFAULT_HOMEPAGE" is supported. */
+        /** The preference name. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The preference name. Currently, only "DEFAULT_HOMEPAGE" is supported.
+         * The preference name.
          *
          * @param name the value to set
          * @return this builder
@@ -95,12 +95,12 @@ public final class LogAnalyticsPreference
         return new Builder().copy(this);
     }
 
-    /** The preference name. Currently, only "DEFAULT_HOMEPAGE" is supported. */
+    /** The preference name. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The preference name. Currently, only "DEFAULT_HOMEPAGE" is supported.
+     * The preference name.
      *
      * @return the value
      */

@@ -5,11 +5,10 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Information to filter the actual target resources in an operation. e.g: While quering a
- * DATABASE_INSIGHTS_DATA_OBJECT using /opsiDataObjects/{opsiDataObjectidentifier}/actions/queryData
- * API, if resourceFilters is set with valid value for definedTagEquals field, only data of the
- * database insights resources for which the specified freeform tags exist will be considered for
- * the actual query scope. <br>
+ * Information to filter the actual target resources in an operation. e.g: While querying a
+ * DATABASE_INSIGHTS_DATA_OBJECT using /opsiDataObjects/actions/queryData API, if resourceFilters is
+ * set with valid value for definedTagEquals field, only data of the database insights resources for
+ * which the specified freeform tags exist will be considered for the actual query scope. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

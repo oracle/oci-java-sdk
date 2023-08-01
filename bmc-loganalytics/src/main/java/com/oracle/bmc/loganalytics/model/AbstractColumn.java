@@ -45,6 +45,9 @@ package com.oracle.bmc.loganalytics.model;
             value = TimeStatsDataColumn.class,
             name = "TIME_STATS_DATA_COLUMN"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = TableColumn.class,
+            name = "TABLE_COLUMN"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ChartColumn.class,
             name = "CHART_COLUMN"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -345,6 +348,7 @@ public class AbstractColumn extends com.oracle.bmc.http.client.internal.Explicit
         TimeStatsDataColumn("TIME_STATS_DATA_COLUMN"),
         TimeClusterColumn("TIME_CLUSTER_COLUMN"),
         TimeClusterDataColumn("TIME_CLUSTER_DATA_COLUMN"),
+        TableColumn("TABLE_COLUMN"),
         TimeColumn("TIME_COLUMN"),
         TrendColumn("TREND_COLUMN"),
         ClassifyColumn("CLASSIFY_COLUMN"),

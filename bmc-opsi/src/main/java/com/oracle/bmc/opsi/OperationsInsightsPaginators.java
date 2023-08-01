@@ -2381,6 +2381,120 @@ public class OperationsInsightsPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listNewsReports operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListNewsReportsResponse> listNewsReportsResponseIterator(
+            final ListNewsReportsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListNewsReportsRequest.Builder, ListNewsReportsRequest, ListNewsReportsResponse>(
+                new java.util.function.Supplier<ListNewsReportsRequest.Builder>() {
+                    @Override
+                    public ListNewsReportsRequest.Builder get() {
+                        return ListNewsReportsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListNewsReportsResponse, String>() {
+                    @Override
+                    public String apply(ListNewsReportsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListNewsReportsRequest.Builder>,
+                        ListNewsReportsRequest>() {
+                    @Override
+                    public ListNewsReportsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListNewsReportsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListNewsReportsRequest, ListNewsReportsResponse>() {
+                    @Override
+                    public ListNewsReportsResponse apply(ListNewsReportsRequest request) {
+                        return client.listNewsReports(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.opsi.model.NewsReportSummary} objects contained in responses from the
+     * listNewsReports operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.opsi.model.NewsReportSummary} objects contained in responses received from
+     *     the service.
+     */
+    public Iterable<com.oracle.bmc.opsi.model.NewsReportSummary> listNewsReportsRecordIterator(
+            final ListNewsReportsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListNewsReportsRequest.Builder,
+                ListNewsReportsRequest,
+                ListNewsReportsResponse,
+                com.oracle.bmc.opsi.model.NewsReportSummary>(
+                new java.util.function.Supplier<ListNewsReportsRequest.Builder>() {
+                    @Override
+                    public ListNewsReportsRequest.Builder get() {
+                        return ListNewsReportsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListNewsReportsResponse, String>() {
+                    @Override
+                    public String apply(ListNewsReportsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListNewsReportsRequest.Builder>,
+                        ListNewsReportsRequest>() {
+                    @Override
+                    public ListNewsReportsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListNewsReportsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListNewsReportsRequest, ListNewsReportsResponse>() {
+                    @Override
+                    public ListNewsReportsResponse apply(ListNewsReportsRequest request) {
+                        return client.listNewsReports(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListNewsReportsResponse,
+                        java.util.List<com.oracle.bmc.opsi.model.NewsReportSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.opsi.model.NewsReportSummary> apply(
+                            ListNewsReportsResponse response) {
+                        return response.getNewsReportCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listOperationsInsightsPrivateEndpoints operation. This iterable will fetch more data from the
      * server as needed.
      *

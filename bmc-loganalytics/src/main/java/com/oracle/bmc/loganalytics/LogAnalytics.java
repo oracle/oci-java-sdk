@@ -1347,7 +1347,7 @@ public interface LogAnalytics extends AutoCloseable {
     GetParserSummaryResponse getParserSummary(GetParserSummaryRequest request);
 
     /**
-     * Lists the preferences of the tenant. Currently, only \"DEFAULT_HOMEPAGE\" is supported.
+     * Lists the tenant preferences such as DEFAULT_HOMEPAGE and collection properties.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1395,6 +1395,53 @@ public interface LogAnalytics extends AutoCloseable {
      *     API.
      */
     GetQueryWorkRequestResponse getQueryWorkRequest(GetQueryWorkRequestRequest request);
+
+    /**
+     * This API gets the number of recalls made and the maximum recalls that can be made
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetRecallCountExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRecallCount API.
+     */
+    GetRecallCountResponse getRecallCount(GetRecallCountRequest request);
+
+    /**
+     * This API gets the datasize of recalls for a given timeframe
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetRecalledDataSizeExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRecalledDataSize
+     *     API.
+     */
+    GetRecalledDataSizeResponse getRecalledDataSize(GetRecalledDataSizeRequest request);
+
+    /**
+     * Returns the count of detection rules in a compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetRulesSummaryExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRulesSummary
+     *     API.
+     */
+    GetRulesSummaryResponse getRulesSummary(GetRulesSummaryRequest request);
 
     /**
      * Get the scheduled task for the specified task identifier.
@@ -1669,6 +1716,22 @@ public interface LogAnalytics extends AutoCloseable {
      *     ListConfigWorkRequests API.
      */
     ListConfigWorkRequestsResponse listConfigWorkRequests(ListConfigWorkRequestsRequest request);
+
+    /**
+     * Returns a list of effective properties for the specified resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListEffectivePropertiesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListEffectiveProperties API.
+     */
+    ListEffectivePropertiesResponse listEffectiveProperties(ListEffectivePropertiesRequest request);
 
     /**
      * This API returns the list of customer owned encryption key info.
@@ -1973,6 +2036,22 @@ public interface LogAnalytics extends AutoCloseable {
     ListNamespacesResponse listNamespaces(ListNamespacesRequest request);
 
     /**
+     * This API gets the list of overlapping recalls made in the given timeframe
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListOverlappingRecallsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListOverlappingRecalls API.
+     */
+    ListOverlappingRecallsResponse listOverlappingRecalls(ListOverlappingRecallsRequest request);
+
+    /**
      * Lists the parser functions defined for the specified parser.
      *
      * @param request The request object containing the details to send
@@ -2020,6 +2099,22 @@ public interface LogAnalytics extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListParsers API.
      */
     ListParsersResponse listParsers(ListParsersRequest request);
+
+    /**
+     * Returns a list of properties along with their metadata.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListPropertiesMetadataExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListPropertiesMetadata API.
+     */
+    ListPropertiesMetadataResponse listPropertiesMetadata(ListPropertiesMetadataRequest request);
 
     /**
      * List active asynchronous queries.
@@ -2617,7 +2712,7 @@ public interface LogAnalytics extends AutoCloseable {
             RemoveEntityAssociationsRequest request);
 
     /**
-     * Removes the tenant preferences. Currently, only \"DEFAULT_HOMEPAGE\" is supported.
+     * Removes the tenant preferences such as DEFAULT_HOMEPAGE and collection properties.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2948,7 +3043,7 @@ public interface LogAnalytics extends AutoCloseable {
     UpdateLookupDataResponse updateLookupData(UpdateLookupDataRequest request);
 
     /**
-     * Updates the tenant preferences. Currently, only \"DEFAULT_HOMEPAGE\" is supported.
+     * Updates the tenant preferences such as DEFAULT_HOMEPAGE and collection properties.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3205,6 +3300,22 @@ public interface LogAnalytics extends AutoCloseable {
             ValidateAssociationParametersRequest request);
 
     /**
+     * Validates the REST endpoint configuration.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ValidateEndpointExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateEndpoint
+     *     API.
+     */
+    ValidateEndpointResponse validateEndpoint(ValidateEndpointRequest request);
+
+    /**
      * Validates a log file to check whether it is eligible to be uploaded or not.
      *
      * @param request The request object containing the details to send
@@ -3218,6 +3329,26 @@ public interface LogAnalytics extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateFile API.
      */
     ValidateFileResponse validateFile(ValidateFileRequest request);
+
+    /**
+     * Validates specified condition for a source label. If both conditionString and conditionBlocks
+     * are specified, they would be validated to ensure they represent identical conditions. If one
+     * of them is input, the response would include the validated representation of the other
+     * structure too. Additionally, if field values are passed, the condition specification would be
+     * evaluated against them.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ValidateLabelConditionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ValidateLabelCondition API.
+     */
+    ValidateLabelConditionResponse validateLabelCondition(ValidateLabelConditionRequest request);
 
     /**
      * Checks if the specified input is a valid log source definition.

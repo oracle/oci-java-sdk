@@ -47,12 +47,12 @@ public final class QueryDataObjectResultSetColumnMetadata
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Type of the column in a data object query result set. */
+        /** Type name of the column in a data object query result set. */
         @com.fasterxml.jackson.annotation.JsonProperty("dataTypeName")
         private DataTypeName dataTypeName;
 
         /**
-         * Type of the column in a data object query result set.
+         * Type name of the column in a data object query result set.
          *
          * @param dataTypeName the value to set
          * @return this builder
@@ -109,7 +109,7 @@ public final class QueryDataObjectResultSetColumnMetadata
         return name;
     }
 
-    /** Type of the column in a data object query result set. */
+    /** Type name of the column in a data object query result set. */
     public enum DataTypeName implements com.oracle.bmc.http.internal.BmcEnum {
         Number("NUMBER"),
         Timestamp("TIMESTAMP"),
@@ -156,12 +156,12 @@ public final class QueryDataObjectResultSetColumnMetadata
             return UnknownEnumValue;
         }
     };
-    /** Type of the column in a data object query result set. */
+    /** Type name of the column in a data object query result set. */
     @com.fasterxml.jackson.annotation.JsonProperty("dataTypeName")
     private final DataTypeName dataTypeName;
 
     /**
-     * Type of the column in a data object query result set.
+     * Type name of the column in a data object query result set.
      *
      * @return the value
      */

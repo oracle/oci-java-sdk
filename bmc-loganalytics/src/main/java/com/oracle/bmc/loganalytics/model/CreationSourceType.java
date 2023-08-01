@@ -5,12 +5,13 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Entities are auto-created when enterprise manager bridge is configured in logging analytics.
- * Similarly entities can be auto-created when logs are forwarded from service connector.
+ * Entities are auto-created when enterprise manager bridge is configured in logging analytics, or
+ * when logs are forwarded from service connector or through bulk discovery from object store.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public enum CreationSourceType implements com.oracle.bmc.http.internal.BmcEnum {
     EmBridge("EM_BRIDGE"),
+    BulkDiscovery("BULK_DISCOVERY"),
     ServiceConnectorHub("SERVICE_CONNECTOR_HUB"),
     Discovery("DISCOVERY"),
     None("NONE"),

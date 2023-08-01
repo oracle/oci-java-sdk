@@ -57,6 +57,26 @@ public class ListScheduledActivitiesRequest
     public com.oracle.bmc.fusionapps.model.ScheduledActivity.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
+    /**
+     * A filter that returns all resources that match the specified scheduledActivityAssociationId.
+     */
+    private String scheduledActivityAssociationId;
+
+    /**
+     * A filter that returns all resources that match the specified scheduledActivityAssociationId.
+     */
+    public String getScheduledActivityAssociationId() {
+        return scheduledActivityAssociationId;
+    }
+    /** A filter that returns all resources that match the specified scheduledActivityPhase. */
+    private com.oracle.bmc.fusionapps.model.ScheduledActivity.ScheduledActivityPhase
+            scheduledActivityPhase;
+
+    /** A filter that returns all resources that match the specified scheduledActivityPhase. */
+    public com.oracle.bmc.fusionapps.model.ScheduledActivity.ScheduledActivityPhase
+            getScheduledActivityPhase() {
+        return scheduledActivityPhase;
+    }
     /** The maximum number of items to return. */
     private Integer limit;
 
@@ -274,6 +294,41 @@ public class ListScheduledActivitiesRequest
             return this;
         }
 
+        /**
+         * A filter that returns all resources that match the specified
+         * scheduledActivityAssociationId.
+         */
+        private String scheduledActivityAssociationId = null;
+
+        /**
+         * A filter that returns all resources that match the specified
+         * scheduledActivityAssociationId.
+         *
+         * @param scheduledActivityAssociationId the value to set
+         * @return this builder instance
+         */
+        public Builder scheduledActivityAssociationId(String scheduledActivityAssociationId) {
+            this.scheduledActivityAssociationId = scheduledActivityAssociationId;
+            return this;
+        }
+
+        /** A filter that returns all resources that match the specified scheduledActivityPhase. */
+        private com.oracle.bmc.fusionapps.model.ScheduledActivity.ScheduledActivityPhase
+                scheduledActivityPhase = null;
+
+        /**
+         * A filter that returns all resources that match the specified scheduledActivityPhase.
+         *
+         * @param scheduledActivityPhase the value to set
+         * @return this builder instance
+         */
+        public Builder scheduledActivityPhase(
+                com.oracle.bmc.fusionapps.model.ScheduledActivity.ScheduledActivityPhase
+                        scheduledActivityPhase) {
+            this.scheduledActivityPhase = scheduledActivityPhase;
+            return this;
+        }
+
         /** The maximum number of items to return. */
         private Integer limit = null;
 
@@ -390,6 +445,8 @@ public class ListScheduledActivitiesRequest
             timeExpectedFinishLessThanOrEqualTo(o.getTimeExpectedFinishLessThanOrEqualTo());
             runCycle(o.getRunCycle());
             lifecycleState(o.getLifecycleState());
+            scheduledActivityAssociationId(o.getScheduledActivityAssociationId());
+            scheduledActivityPhase(o.getScheduledActivityPhase());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
@@ -435,6 +492,8 @@ public class ListScheduledActivitiesRequest
             request.timeExpectedFinishLessThanOrEqualTo = timeExpectedFinishLessThanOrEqualTo;
             request.runCycle = runCycle;
             request.lifecycleState = lifecycleState;
+            request.scheduledActivityAssociationId = scheduledActivityAssociationId;
+            request.scheduledActivityPhase = scheduledActivityPhase;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
@@ -443,7 +502,8 @@ public class ListScheduledActivitiesRequest
             return request;
             // new ListScheduledActivitiesRequest(fusionEnvironmentId, displayName,
             // timeScheduledStartGreaterThanOrEqualTo, timeExpectedFinishLessThanOrEqualTo,
-            // runCycle, lifecycleState, limit, page, sortOrder, sortBy, opcRequestId);
+            // runCycle, lifecycleState, scheduledActivityAssociationId, scheduledActivityPhase,
+            // limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -460,6 +520,8 @@ public class ListScheduledActivitiesRequest
                 .timeExpectedFinishLessThanOrEqualTo(timeExpectedFinishLessThanOrEqualTo)
                 .runCycle(runCycle)
                 .lifecycleState(lifecycleState)
+                .scheduledActivityAssociationId(scheduledActivityAssociationId)
+                .scheduledActivityPhase(scheduledActivityPhase)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
@@ -489,6 +551,9 @@ public class ListScheduledActivitiesRequest
                 .append(String.valueOf(this.timeExpectedFinishLessThanOrEqualTo));
         sb.append(",runCycle=").append(String.valueOf(this.runCycle));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",scheduledActivityAssociationId=")
+                .append(String.valueOf(this.scheduledActivityAssociationId));
+        sb.append(",scheduledActivityPhase=").append(String.valueOf(this.scheduledActivityPhase));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -519,6 +584,10 @@ public class ListScheduledActivitiesRequest
                         other.timeExpectedFinishLessThanOrEqualTo)
                 && java.util.Objects.equals(this.runCycle, other.runCycle)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(
+                        this.scheduledActivityAssociationId, other.scheduledActivityAssociationId)
+                && java.util.Objects.equals(
+                        this.scheduledActivityPhase, other.scheduledActivityPhase)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -550,6 +619,16 @@ public class ListScheduledActivitiesRequest
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scheduledActivityAssociationId == null
+                                ? 43
+                                : this.scheduledActivityAssociationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scheduledActivityPhase == null
+                                ? 43
+                                : this.scheduledActivityPhase.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());

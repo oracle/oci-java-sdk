@@ -27,7 +27,12 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
         "timeStarted",
         "status",
         "recallCount",
-        "storageUsageInBytes"
+        "storageUsageInBytes",
+        "notRecalledDataInBytes",
+        "purpose",
+        "queryString",
+        "logSets",
+        "createdBy"
     })
     public RecalledData(
             java.util.Date timeDataEnded,
@@ -35,7 +40,12 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
             java.util.Date timeStarted,
             Status status,
             Integer recallCount,
-            Long storageUsageInBytes) {
+            Long storageUsageInBytes,
+            Long notRecalledDataInBytes,
+            String purpose,
+            String queryString,
+            String logSets,
+            String createdBy) {
         super();
         this.timeDataEnded = timeDataEnded;
         this.timeDataStarted = timeDataStarted;
@@ -43,6 +53,11 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
         this.status = status;
         this.recallCount = recallCount;
         this.storageUsageInBytes = storageUsageInBytes;
+        this.notRecalledDataInBytes = notRecalledDataInBytes;
+        this.purpose = purpose;
+        this.queryString = queryString;
+        this.logSets = logSets;
+        this.createdBy = createdBy;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -143,6 +158,83 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("storageUsageInBytes");
             return this;
         }
+        /**
+         * This is the size of the archival data not recalled yet within the specified time range
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("notRecalledDataInBytes")
+        private Long notRecalledDataInBytes;
+
+        /**
+         * This is the size of the archival data not recalled yet within the specified time range
+         *
+         * @param notRecalledDataInBytes the value to set
+         * @return this builder
+         */
+        public Builder notRecalledDataInBytes(Long notRecalledDataInBytes) {
+            this.notRecalledDataInBytes = notRecalledDataInBytes;
+            this.__explicitlySet__.add("notRecalledDataInBytes");
+            return this;
+        }
+        /** This is the purpose of the recall */
+        @com.fasterxml.jackson.annotation.JsonProperty("purpose")
+        private String purpose;
+
+        /**
+         * This is the purpose of the recall
+         *
+         * @param purpose the value to set
+         * @return this builder
+         */
+        public Builder purpose(String purpose) {
+            this.purpose = purpose;
+            this.__explicitlySet__.add("purpose");
+            return this;
+        }
+        /** This is the query associated with the recall */
+        @com.fasterxml.jackson.annotation.JsonProperty("queryString")
+        private String queryString;
+
+        /**
+         * This is the query associated with the recall
+         *
+         * @param queryString the value to set
+         * @return this builder
+         */
+        public Builder queryString(String queryString) {
+            this.queryString = queryString;
+            this.__explicitlySet__.add("queryString");
+            return this;
+        }
+        /** This is the list of logsets associated with the recall */
+        @com.fasterxml.jackson.annotation.JsonProperty("logSets")
+        private String logSets;
+
+        /**
+         * This is the list of logsets associated with the recall
+         *
+         * @param logSets the value to set
+         * @return this builder
+         */
+        public Builder logSets(String logSets) {
+            this.logSets = logSets;
+            this.__explicitlySet__.add("logSets");
+            return this;
+        }
+        /** This is the user who initiated the recall request */
+        @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
+        private String createdBy;
+
+        /**
+         * This is the user who initiated the recall request
+         *
+         * @param createdBy the value to set
+         * @return this builder
+         */
+        public Builder createdBy(String createdBy) {
+            this.createdBy = createdBy;
+            this.__explicitlySet__.add("createdBy");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -155,7 +247,12 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
                             this.timeStarted,
                             this.status,
                             this.recallCount,
-                            this.storageUsageInBytes);
+                            this.storageUsageInBytes,
+                            this.notRecalledDataInBytes,
+                            this.purpose,
+                            this.queryString,
+                            this.logSets,
+                            this.createdBy);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -181,6 +278,21 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("storageUsageInBytes")) {
                 this.storageUsageInBytes(model.getStorageUsageInBytes());
+            }
+            if (model.wasPropertyExplicitlySet("notRecalledDataInBytes")) {
+                this.notRecalledDataInBytes(model.getNotRecalledDataInBytes());
+            }
+            if (model.wasPropertyExplicitlySet("purpose")) {
+                this.purpose(model.getPurpose());
+            }
+            if (model.wasPropertyExplicitlySet("queryString")) {
+                this.queryString(model.getQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("logSets")) {
+                this.logSets(model.getLogSets());
+            }
+            if (model.wasPropertyExplicitlySet("createdBy")) {
+                this.createdBy(model.getCreatedBy());
             }
             return this;
         }
@@ -238,6 +350,7 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
     public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Recalled("RECALLED"),
         Pending("PENDING"),
+        Failed("FAILED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -324,6 +437,71 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
         return storageUsageInBytes;
     }
 
+    /** This is the size of the archival data not recalled yet within the specified time range */
+    @com.fasterxml.jackson.annotation.JsonProperty("notRecalledDataInBytes")
+    private final Long notRecalledDataInBytes;
+
+    /**
+     * This is the size of the archival data not recalled yet within the specified time range
+     *
+     * @return the value
+     */
+    public Long getNotRecalledDataInBytes() {
+        return notRecalledDataInBytes;
+    }
+
+    /** This is the purpose of the recall */
+    @com.fasterxml.jackson.annotation.JsonProperty("purpose")
+    private final String purpose;
+
+    /**
+     * This is the purpose of the recall
+     *
+     * @return the value
+     */
+    public String getPurpose() {
+        return purpose;
+    }
+
+    /** This is the query associated with the recall */
+    @com.fasterxml.jackson.annotation.JsonProperty("queryString")
+    private final String queryString;
+
+    /**
+     * This is the query associated with the recall
+     *
+     * @return the value
+     */
+    public String getQueryString() {
+        return queryString;
+    }
+
+    /** This is the list of logsets associated with the recall */
+    @com.fasterxml.jackson.annotation.JsonProperty("logSets")
+    private final String logSets;
+
+    /**
+     * This is the list of logsets associated with the recall
+     *
+     * @return the value
+     */
+    public String getLogSets() {
+        return logSets;
+    }
+
+    /** This is the user who initiated the recall request */
+    @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
+    private final String createdBy;
+
+    /**
+     * This is the user who initiated the recall request
+     *
+     * @return the value
+     */
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -345,6 +523,11 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", recallCount=").append(String.valueOf(this.recallCount));
         sb.append(", storageUsageInBytes=").append(String.valueOf(this.storageUsageInBytes));
+        sb.append(", notRecalledDataInBytes=").append(String.valueOf(this.notRecalledDataInBytes));
+        sb.append(", purpose=").append(String.valueOf(this.purpose));
+        sb.append(", queryString=").append(String.valueOf(this.queryString));
+        sb.append(", logSets=").append(String.valueOf(this.logSets));
+        sb.append(", createdBy=").append(String.valueOf(this.createdBy));
         sb.append(")");
         return sb.toString();
     }
@@ -365,6 +548,12 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.recallCount, other.recallCount)
                 && java.util.Objects.equals(this.storageUsageInBytes, other.storageUsageInBytes)
+                && java.util.Objects.equals(
+                        this.notRecalledDataInBytes, other.notRecalledDataInBytes)
+                && java.util.Objects.equals(this.purpose, other.purpose)
+                && java.util.Objects.equals(this.queryString, other.queryString)
+                && java.util.Objects.equals(this.logSets, other.logSets)
+                && java.util.Objects.equals(this.createdBy, other.createdBy)
                 && super.equals(other);
     }
 
@@ -386,6 +575,15 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
                         + (this.storageUsageInBytes == null
                                 ? 43
                                 : this.storageUsageInBytes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.notRecalledDataInBytes == null
+                                ? 43
+                                : this.notRecalledDataInBytes.hashCode());
+        result = (result * PRIME) + (this.purpose == null ? 43 : this.purpose.hashCode());
+        result = (result * PRIME) + (this.queryString == null ? 43 : this.queryString.hashCode());
+        result = (result * PRIME) + (this.logSets == null ? 43 : this.logSets.hashCode());
+        result = (result * PRIME) + (this.createdBy == null ? 43 : this.createdBy.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

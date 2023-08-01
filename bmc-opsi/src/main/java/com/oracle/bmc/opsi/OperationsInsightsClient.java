@@ -375,6 +375,42 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
     }
 
     @Override
+    public ChangeNewsReportCompartmentResponse changeNewsReportCompartment(
+            ChangeNewsReportCompartmentRequest request) {
+
+        Validate.notBlank(request.getNewsReportId(), "newsReportId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeNewsReportCompartmentDetails(),
+                "changeNewsReportCompartmentDetails is required");
+
+        return clientCall(request, ChangeNewsReportCompartmentResponse::builder)
+                .logger(LOG, "changeNewsReportCompartment")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "ChangeNewsReportCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/NewsReports/ChangeNewsReportCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeNewsReportCompartmentRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("newsReports")
+                .appendPathParam(request.getNewsReportId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeNewsReportCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeNewsReportCompartmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public ChangeOperationsInsightsPrivateEndpointCompartmentResponse
             changeOperationsInsightsPrivateEndpointCompartment(
                     ChangeOperationsInsightsPrivateEndpointCompartmentRequest request) {
@@ -672,6 +708,40 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "content-location", CreateHostInsightResponse.Builder::contentLocation)
                 .handleResponseHeaderString("etag", CreateHostInsightResponse.Builder::etag)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public CreateNewsReportResponse createNewsReport(CreateNewsReportRequest request) {
+        Objects.requireNonNull(
+                request.getCreateNewsReportDetails(), "createNewsReportDetails is required");
+
+        return clientCall(request, CreateNewsReportResponse::builder)
+                .logger(LOG, "createNewsReport")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "CreateNewsReport",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/NewsReports/CreateNewsReport")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateNewsReportRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("newsReports")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.opsi.model.NewsReport.class,
+                        CreateNewsReportResponse.Builder::newsReport)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateNewsReportResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateNewsReportResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("location", CreateNewsReportResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location", CreateNewsReportResponse.Builder::contentLocation)
+                .handleResponseHeaderString("etag", CreateNewsReportResponse.Builder::etag)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -992,6 +1062,33 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-work-request-id", DeleteHostInsightResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteHostInsightResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public DeleteNewsReportResponse deleteNewsReport(DeleteNewsReportRequest request) {
+
+        Validate.notBlank(request.getNewsReportId(), "newsReportId must not be blank");
+
+        return clientCall(request, DeleteNewsReportResponse::builder)
+                .logger(LOG, "deleteNewsReport")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "DeleteNewsReport",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/NewsReports/DeleteNewsReport")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteNewsReportRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("newsReports")
+                .appendPathParam(request.getNewsReportId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteNewsReportResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteNewsReportResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -1717,6 +1814,34 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString("etag", GetHostInsightResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetHostInsightResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetNewsReportResponse getNewsReport(GetNewsReportRequest request) {
+
+        Validate.notBlank(request.getNewsReportId(), "newsReportId must not be blank");
+
+        return clientCall(request, GetNewsReportResponse::builder)
+                .logger(LOG, "getNewsReport")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "GetNewsReport",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/NewsReports/GetNewsReport")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetNewsReportRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("newsReports")
+                .appendPathParam(request.getNewsReportId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.opsi.model.NewsReport.class,
+                        GetNewsReportResponse.Builder::newsReport)
+                .handleResponseHeaderString("etag", GetNewsReportResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetNewsReportResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -3349,6 +3474,49 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListImportableEnterpriseManagerEntitiesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListNewsReportsResponse listNewsReports(ListNewsReportsRequest request) {
+
+        return clientCall(request, ListNewsReportsResponse::builder)
+                .logger(LOG, "listNewsReports")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "ListNewsReports",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/NewsReport/ListNewsReports")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListNewsReportsRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("newsReports")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("newsReportId", request.getNewsReportId())
+                .appendListQueryParam(
+                        "status",
+                        request.getStatus(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "lifecycleState",
+                        request.getLifecycleState(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.opsi.model.NewsReportCollection.class,
+                        ListNewsReportsResponse.Builder::newsReportCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListNewsReportsResponse.Builder::opcRequestId)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListNewsReportsResponse.Builder::opcTotalItems)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListNewsReportsResponse.Builder::opcNextPage)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -7421,6 +7589,36 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-work-request-id", UpdateHostInsightResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateHostInsightResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public UpdateNewsReportResponse updateNewsReport(UpdateNewsReportRequest request) {
+
+        Validate.notBlank(request.getNewsReportId(), "newsReportId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateNewsReportDetails(), "updateNewsReportDetails is required");
+
+        return clientCall(request, UpdateNewsReportResponse::builder)
+                .logger(LOG, "updateNewsReport")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "UpdateNewsReport",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/NewsReports/UpdateNewsReport")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateNewsReportRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("newsReports")
+                .appendPathParam(request.getNewsReportId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateNewsReportResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateNewsReportResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }

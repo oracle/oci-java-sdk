@@ -31,7 +31,8 @@ public final class ClusterMetadata
         "deletedByWorkRequestId",
         "timeUpdated",
         "updatedByUserId",
-        "updatedByWorkRequestId"
+        "updatedByWorkRequestId",
+        "timeCredentialExpiration"
     })
     public ClusterMetadata(
             java.util.Date timeCreated,
@@ -42,7 +43,8 @@ public final class ClusterMetadata
             String deletedByWorkRequestId,
             java.util.Date timeUpdated,
             String updatedByUserId,
-            String updatedByWorkRequestId) {
+            String updatedByWorkRequestId,
+            java.util.Date timeCredentialExpiration) {
         super();
         this.timeCreated = timeCreated;
         this.createdByUserId = createdByUserId;
@@ -53,6 +55,7 @@ public final class ClusterMetadata
         this.timeUpdated = timeUpdated;
         this.updatedByUserId = updatedByUserId;
         this.updatedByWorkRequestId = updatedByWorkRequestId;
+        this.timeCredentialExpiration = timeCredentialExpiration;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -192,6 +195,21 @@ public final class ClusterMetadata
             this.__explicitlySet__.add("updatedByWorkRequestId");
             return this;
         }
+        /** The time until which the cluster credential is valid. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCredentialExpiration")
+        private java.util.Date timeCredentialExpiration;
+
+        /**
+         * The time until which the cluster credential is valid.
+         *
+         * @param timeCredentialExpiration the value to set
+         * @return this builder
+         */
+        public Builder timeCredentialExpiration(java.util.Date timeCredentialExpiration) {
+            this.timeCredentialExpiration = timeCredentialExpiration;
+            this.__explicitlySet__.add("timeCredentialExpiration");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -207,7 +225,8 @@ public final class ClusterMetadata
                             this.deletedByWorkRequestId,
                             this.timeUpdated,
                             this.updatedByUserId,
-                            this.updatedByWorkRequestId);
+                            this.updatedByWorkRequestId,
+                            this.timeCredentialExpiration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -242,6 +261,9 @@ public final class ClusterMetadata
             }
             if (model.wasPropertyExplicitlySet("updatedByWorkRequestId")) {
                 this.updatedByWorkRequestId(model.getUpdatedByWorkRequestId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCredentialExpiration")) {
+                this.timeCredentialExpiration(model.getTimeCredentialExpiration());
             }
             return this;
         }
@@ -373,6 +395,19 @@ public final class ClusterMetadata
         return updatedByWorkRequestId;
     }
 
+    /** The time until which the cluster credential is valid. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCredentialExpiration")
+    private final java.util.Date timeCredentialExpiration;
+
+    /**
+     * The time until which the cluster credential is valid.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeCredentialExpiration() {
+        return timeCredentialExpiration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -397,6 +432,8 @@ public final class ClusterMetadata
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", updatedByUserId=").append(String.valueOf(this.updatedByUserId));
         sb.append(", updatedByWorkRequestId=").append(String.valueOf(this.updatedByWorkRequestId));
+        sb.append(", timeCredentialExpiration=")
+                .append(String.valueOf(this.timeCredentialExpiration));
         sb.append(")");
         return sb.toString();
     }
@@ -423,6 +460,8 @@ public final class ClusterMetadata
                 && java.util.Objects.equals(this.updatedByUserId, other.updatedByUserId)
                 && java.util.Objects.equals(
                         this.updatedByWorkRequestId, other.updatedByWorkRequestId)
+                && java.util.Objects.equals(
+                        this.timeCredentialExpiration, other.timeCredentialExpiration)
                 && super.equals(other);
     }
 
@@ -457,6 +496,11 @@ public final class ClusterMetadata
                         + (this.updatedByWorkRequestId == null
                                 ? 43
                                 : this.updatedByWorkRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCredentialExpiration == null
+                                ? 43
+                                : this.timeCredentialExpiration.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

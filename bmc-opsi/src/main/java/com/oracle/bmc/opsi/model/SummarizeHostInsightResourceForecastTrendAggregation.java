@@ -30,6 +30,7 @@ public final class SummarizeHostInsightResourceForecastTrendAggregation
         "lowUtilizationThreshold",
         "resourceMetric",
         "usageUnit",
+        "selectedForecastAlgorithm",
         "pattern",
         "historicalData",
         "projectedData"
@@ -41,6 +42,7 @@ public final class SummarizeHostInsightResourceForecastTrendAggregation
             Integer lowUtilizationThreshold,
             ResourceMetric resourceMetric,
             UsageUnit usageUnit,
+            String selectedForecastAlgorithm,
             Pattern pattern,
             java.util.List<HistoricalDataItem> historicalData,
             java.util.List<ProjectedDataItem> projectedData) {
@@ -51,6 +53,7 @@ public final class SummarizeHostInsightResourceForecastTrendAggregation
         this.lowUtilizationThreshold = lowUtilizationThreshold;
         this.resourceMetric = resourceMetric;
         this.usageUnit = usageUnit;
+        this.selectedForecastAlgorithm = selectedForecastAlgorithm;
         this.pattern = pattern;
         this.historicalData = historicalData;
         this.projectedData = projectedData;
@@ -148,6 +151,21 @@ public final class SummarizeHostInsightResourceForecastTrendAggregation
             this.__explicitlySet__.add("usageUnit");
             return this;
         }
+        /** Auto-ML algorithm leveraged for the forecast. Only applicable for Auto-ML forecast. */
+        @com.fasterxml.jackson.annotation.JsonProperty("selectedForecastAlgorithm")
+        private String selectedForecastAlgorithm;
+
+        /**
+         * Auto-ML algorithm leveraged for the forecast. Only applicable for Auto-ML forecast.
+         *
+         * @param selectedForecastAlgorithm the value to set
+         * @return this builder
+         */
+        public Builder selectedForecastAlgorithm(String selectedForecastAlgorithm) {
+            this.selectedForecastAlgorithm = selectedForecastAlgorithm;
+            this.__explicitlySet__.add("selectedForecastAlgorithm");
+            return this;
+        }
         /** Time series patterns used in the forecasting. */
         @com.fasterxml.jackson.annotation.JsonProperty("pattern")
         private Pattern pattern;
@@ -206,6 +224,7 @@ public final class SummarizeHostInsightResourceForecastTrendAggregation
                             this.lowUtilizationThreshold,
                             this.resourceMetric,
                             this.usageUnit,
+                            this.selectedForecastAlgorithm,
                             this.pattern,
                             this.historicalData,
                             this.projectedData);
@@ -234,6 +253,9 @@ public final class SummarizeHostInsightResourceForecastTrendAggregation
             }
             if (model.wasPropertyExplicitlySet("usageUnit")) {
                 this.usageUnit(model.getUsageUnit());
+            }
+            if (model.wasPropertyExplicitlySet("selectedForecastAlgorithm")) {
+                this.selectedForecastAlgorithm(model.getSelectedForecastAlgorithm());
             }
             if (model.wasPropertyExplicitlySet("pattern")) {
                 this.pattern(model.getPattern());
@@ -433,6 +455,19 @@ public final class SummarizeHostInsightResourceForecastTrendAggregation
         return usageUnit;
     }
 
+    /** Auto-ML algorithm leveraged for the forecast. Only applicable for Auto-ML forecast. */
+    @com.fasterxml.jackson.annotation.JsonProperty("selectedForecastAlgorithm")
+    private final String selectedForecastAlgorithm;
+
+    /**
+     * Auto-ML algorithm leveraged for the forecast. Only applicable for Auto-ML forecast.
+     *
+     * @return the value
+     */
+    public String getSelectedForecastAlgorithm() {
+        return selectedForecastAlgorithm;
+    }
+
     /** Time series patterns used in the forecasting. */
     public enum Pattern implements com.oracle.bmc.http.internal.BmcEnum {
         Linear("LINEAR"),
@@ -547,6 +582,8 @@ public final class SummarizeHostInsightResourceForecastTrendAggregation
                 .append(String.valueOf(this.lowUtilizationThreshold));
         sb.append(", resourceMetric=").append(String.valueOf(this.resourceMetric));
         sb.append(", usageUnit=").append(String.valueOf(this.usageUnit));
+        sb.append(", selectedForecastAlgorithm=")
+                .append(String.valueOf(this.selectedForecastAlgorithm));
         sb.append(", pattern=").append(String.valueOf(this.pattern));
         sb.append(", historicalData=").append(String.valueOf(this.historicalData));
         sb.append(", projectedData=").append(String.valueOf(this.projectedData));
@@ -573,6 +610,8 @@ public final class SummarizeHostInsightResourceForecastTrendAggregation
                         this.lowUtilizationThreshold, other.lowUtilizationThreshold)
                 && java.util.Objects.equals(this.resourceMetric, other.resourceMetric)
                 && java.util.Objects.equals(this.usageUnit, other.usageUnit)
+                && java.util.Objects.equals(
+                        this.selectedForecastAlgorithm, other.selectedForecastAlgorithm)
                 && java.util.Objects.equals(this.pattern, other.pattern)
                 && java.util.Objects.equals(this.historicalData, other.historicalData)
                 && java.util.Objects.equals(this.projectedData, other.projectedData)
@@ -603,6 +642,11 @@ public final class SummarizeHostInsightResourceForecastTrendAggregation
                 (result * PRIME)
                         + (this.resourceMetric == null ? 43 : this.resourceMetric.hashCode());
         result = (result * PRIME) + (this.usageUnit == null ? 43 : this.usageUnit.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.selectedForecastAlgorithm == null
+                                ? 43
+                                : this.selectedForecastAlgorithm.hashCode());
         result = (result * PRIME) + (this.pattern == null ? 43 : this.pattern.hashCode());
         result =
                 (result * PRIME)

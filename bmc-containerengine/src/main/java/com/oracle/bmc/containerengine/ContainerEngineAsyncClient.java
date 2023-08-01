@@ -159,6 +159,42 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<CompleteCredentialRotationResponse>
+            completeCredentialRotation(
+                    CompleteCredentialRotationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CompleteCredentialRotationRequest,
+                                    CompleteCredentialRotationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getClusterId(), "clusterId must not be blank");
+
+        return clientCall(request, CompleteCredentialRotationResponse::builder)
+                .logger(LOG, "completeCredentialRotation")
+                .serviceDetails(
+                        "ContainerEngine",
+                        "CompleteCredentialRotation",
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/CompleteCredentialRotation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CompleteCredentialRotationRequest::builder)
+                .basePath("/20180222")
+                .appendPathParam("clusters")
+                .appendPathParam(request.getClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("completeCredentialRotation")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CompleteCredentialRotationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CompleteCredentialRotationResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateClusterResponse> createCluster(
             CreateClusterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateClusterRequest, CreateClusterResponse>
@@ -683,6 +719,41 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
                         GetClusterOptionsResponse.Builder::clusterOptions)
                 .handleResponseHeaderString(
                         "opc-request-id", GetClusterOptionsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCredentialRotationStatusResponse>
+            getCredentialRotationStatus(
+                    GetCredentialRotationStatusRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetCredentialRotationStatusRequest,
+                                    GetCredentialRotationStatusResponse>
+                            handler) {
+
+        Validate.notBlank(request.getClusterId(), "clusterId must not be blank");
+
+        return clientCall(request, GetCredentialRotationStatusResponse::builder)
+                .logger(LOG, "getCredentialRotationStatus")
+                .serviceDetails(
+                        "ContainerEngine",
+                        "GetCredentialRotationStatus",
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/CredentialRotationStatus/GetCredentialRotationStatus")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCredentialRotationStatusRequest::builder)
+                .basePath("/20180222")
+                .appendPathParam("clusters")
+                .appendPathParam(request.getClusterId())
+                .appendPathParam("credentialRotationStatus")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.containerengine.model.CredentialRotationStatus.class,
+                        GetCredentialRotationStatusResponse.Builder::credentialRotationStatus)
+                .handleResponseHeaderString(
+                        "etag", GetCredentialRotationStatusResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCredentialRotationStatusResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1322,6 +1393,44 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
                         "opc-next-page", ListWorkloadMappingsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkloadMappingsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartCredentialRotationResponse> startCredentialRotation(
+            StartCredentialRotationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StartCredentialRotationRequest, StartCredentialRotationResponse>
+                    handler) {
+
+        Validate.notBlank(request.getClusterId(), "clusterId must not be blank");
+        Objects.requireNonNull(
+                request.getStartCredentialRotationDetails(),
+                "startCredentialRotationDetails is required");
+
+        return clientCall(request, StartCredentialRotationResponse::builder)
+                .logger(LOG, "startCredentialRotation")
+                .serviceDetails(
+                        "ContainerEngine",
+                        "StartCredentialRotation",
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/StartCredentialRotation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StartCredentialRotationRequest::builder)
+                .basePath("/20180222")
+                .appendPathParam("clusters")
+                .appendPathParam(request.getClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("startCredentialRotation")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        StartCredentialRotationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", StartCredentialRotationResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

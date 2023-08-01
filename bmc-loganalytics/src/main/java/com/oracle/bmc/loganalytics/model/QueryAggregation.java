@@ -27,6 +27,7 @@ public final class QueryAggregation
         "totalMatchedCount",
         "arePartialResults",
         "partialResultReason",
+        "isContentHidden",
         "columns",
         "fields",
         "items",
@@ -38,6 +39,7 @@ public final class QueryAggregation
             Long totalMatchedCount,
             Boolean arePartialResults,
             String partialResultReason,
+            Boolean isContentHidden,
             java.util.List<AbstractColumn> columns,
             java.util.List<AbstractColumn> fields,
             java.util.List<java.util.Map<String, Object>> items,
@@ -48,6 +50,7 @@ public final class QueryAggregation
         this.totalMatchedCount = totalMatchedCount;
         this.arePartialResults = arePartialResults;
         this.partialResultReason = partialResultReason;
+        this.isContentHidden = isContentHidden;
         this.columns = columns;
         this.fields = fields;
         this.items = items;
@@ -115,6 +118,21 @@ public final class QueryAggregation
         public Builder partialResultReason(String partialResultReason) {
             this.partialResultReason = partialResultReason;
             this.__explicitlySet__.add("partialResultReason");
+            return this;
+        }
+        /** True if the data returned by query is hidden. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isContentHidden")
+        private Boolean isContentHidden;
+
+        /**
+         * True if the data returned by query is hidden.
+         *
+         * @param isContentHidden the value to set
+         * @return this builder
+         */
+        public Builder isContentHidden(Boolean isContentHidden) {
+            this.isContentHidden = isContentHidden;
+            this.__explicitlySet__.add("isContentHidden");
             return this;
         }
         /** Query result columns */
@@ -203,6 +221,7 @@ public final class QueryAggregation
                             this.totalMatchedCount,
                             this.arePartialResults,
                             this.partialResultReason,
+                            this.isContentHidden,
                             this.columns,
                             this.fields,
                             this.items,
@@ -227,6 +246,9 @@ public final class QueryAggregation
             }
             if (model.wasPropertyExplicitlySet("partialResultReason")) {
                 this.partialResultReason(model.getPartialResultReason());
+            }
+            if (model.wasPropertyExplicitlySet("isContentHidden")) {
+                this.isContentHidden(model.getIsContentHidden());
             }
             if (model.wasPropertyExplicitlySet("columns")) {
                 this.columns(model.getColumns());
@@ -306,6 +328,19 @@ public final class QueryAggregation
      */
     public String getPartialResultReason() {
         return partialResultReason;
+    }
+
+    /** True if the data returned by query is hidden. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isContentHidden")
+    private final Boolean isContentHidden;
+
+    /**
+     * True if the data returned by query is hidden.
+     *
+     * @return the value
+     */
+    public Boolean getIsContentHidden() {
+        return isContentHidden;
     }
 
     /** Query result columns */
@@ -392,6 +427,7 @@ public final class QueryAggregation
         sb.append(", totalMatchedCount=").append(String.valueOf(this.totalMatchedCount));
         sb.append(", arePartialResults=").append(String.valueOf(this.arePartialResults));
         sb.append(", partialResultReason=").append(String.valueOf(this.partialResultReason));
+        sb.append(", isContentHidden=").append(String.valueOf(this.isContentHidden));
         sb.append(", columns=").append(String.valueOf(this.columns));
         sb.append(", fields=").append(String.valueOf(this.fields));
         sb.append(", items=").append(String.valueOf(this.items));
@@ -415,6 +451,7 @@ public final class QueryAggregation
                 && java.util.Objects.equals(this.totalMatchedCount, other.totalMatchedCount)
                 && java.util.Objects.equals(this.arePartialResults, other.arePartialResults)
                 && java.util.Objects.equals(this.partialResultReason, other.partialResultReason)
+                && java.util.Objects.equals(this.isContentHidden, other.isContentHidden)
                 && java.util.Objects.equals(this.columns, other.columns)
                 && java.util.Objects.equals(this.fields, other.fields)
                 && java.util.Objects.equals(this.items, other.items)
@@ -440,6 +477,9 @@ public final class QueryAggregation
                         + (this.partialResultReason == null
                                 ? 43
                                 : this.partialResultReason.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isContentHidden == null ? 43 : this.isContentHidden.hashCode());
         result = (result * PRIME) + (this.columns == null ? 43 : this.columns.hashCode());
         result = (result * PRIME) + (this.fields == null ? 43 : this.fields.hashCode());
         result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());

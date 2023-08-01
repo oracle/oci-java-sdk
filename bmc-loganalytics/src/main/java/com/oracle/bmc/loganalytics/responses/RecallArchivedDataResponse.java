@@ -52,23 +52,53 @@ public class RecallArchivedDataResponse extends com.oracle.bmc.responses.BmcResp
         return location;
     }
 
+    /** For optimistic concurrency control. See {@code if-match}. */
+    private String etag;
+
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
+    public String getEtag() {
+        return etag;
+    }
+
+    /** The returned RecalledDataInfo instance. */
+    private com.oracle.bmc.loganalytics.model.RecalledDataInfo recalledDataInfo;
+
+    /**
+     * The returned RecalledDataInfo instance.
+     *
+     * @return the value
+     */
+    public com.oracle.bmc.loganalytics.model.RecalledDataInfo getRecalledDataInfo() {
+        return recalledDataInfo;
+    }
+
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
         "headers",
         "opcRequestId",
         "opcWorkRequestId",
-        "location"
+        "location",
+        "etag",
+        "recalledDataInfo"
     })
     private RecallArchivedDataResponse(
             int __httpStatusCode__,
             java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcWorkRequestId,
-            String location) {
+            String location,
+            String etag,
+            com.oracle.bmc.loganalytics.model.RecalledDataInfo recalledDataInfo) {
         super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcWorkRequestId = opcWorkRequestId;
         this.location = location;
+        this.etag = etag;
+        this.recalledDataInfo = recalledDataInfo;
     }
 
     public static class Builder
@@ -139,6 +169,35 @@ public class RecallArchivedDataResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
+        /** For optimistic concurrency control. See {@code if-match}. */
+        private String etag;
+
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        /** The returned RecalledDataInfo instance. */
+        private com.oracle.bmc.loganalytics.model.RecalledDataInfo recalledDataInfo;
+
+        /**
+         * The returned RecalledDataInfo instance.
+         *
+         * @param recalledDataInfo the value to set
+         * @return this builder
+         */
+        public Builder recalledDataInfo(
+                com.oracle.bmc.loganalytics.model.RecalledDataInfo recalledDataInfo) {
+            this.recalledDataInfo = recalledDataInfo;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          *
@@ -151,6 +210,8 @@ public class RecallArchivedDataResponse extends com.oracle.bmc.responses.BmcResp
             opcRequestId(o.getOpcRequestId());
             opcWorkRequestId(o.getOpcWorkRequestId());
             location(o.getLocation());
+            etag(o.getEtag());
+            recalledDataInfo(o.getRecalledDataInfo());
 
             return this;
         }
@@ -163,7 +224,13 @@ public class RecallArchivedDataResponse extends com.oracle.bmc.responses.BmcResp
         @Override
         public RecallArchivedDataResponse build() {
             return new RecallArchivedDataResponse(
-                    __httpStatusCode__, headers, opcRequestId, opcWorkRequestId, location);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcWorkRequestId,
+                    location,
+                    etag,
+                    recalledDataInfo);
         }
     }
 
@@ -184,6 +251,8 @@ public class RecallArchivedDataResponse extends com.oracle.bmc.responses.BmcResp
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
         sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(",location=").append(String.valueOf(location));
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",recalledDataInfo=").append(String.valueOf(recalledDataInfo));
         sb.append(")");
         return sb.toString();
     }
@@ -201,7 +270,9 @@ public class RecallArchivedDataResponse extends com.oracle.bmc.responses.BmcResp
         return super.equals(o)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
-                && java.util.Objects.equals(this.location, other.location);
+                && java.util.Objects.equals(this.location, other.location)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.recalledDataInfo, other.recalledDataInfo);
     }
 
     @Override
@@ -213,6 +284,10 @@ public class RecallArchivedDataResponse extends com.oracle.bmc.responses.BmcResp
                 (result * PRIME)
                         + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         result = (result * PRIME) + (this.location == null ? 43 : this.location.hashCode());
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recalledDataInfo == null ? 43 : this.recalledDataInfo.hashCode());
         return result;
     }
 }
