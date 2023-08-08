@@ -27,12 +27,32 @@ package com.oracle.bmc.ailanguage.model;
 public final class ClassificationMultiClassModeDetails extends ClassificationType {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Optional if nothing specified latest base model will be used for training. Supported
+         * versions can be found at /modelTypes/{modelType}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("version")
+        private String version;
+
+        /**
+         * Optional if nothing specified latest base model will be used for training. Supported
+         * versions can be found at /modelTypes/{modelType}
+         *
+         * @param version the value to set
+         * @return this builder
+         */
+        public Builder version(String version) {
+            this.version = version;
+            this.__explicitlySet__.add("version");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ClassificationMultiClassModeDetails build() {
-            ClassificationMultiClassModeDetails model = new ClassificationMultiClassModeDetails();
+            ClassificationMultiClassModeDetails model =
+                    new ClassificationMultiClassModeDetails(this.version);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -41,6 +61,9 @@ public final class ClassificationMultiClassModeDetails extends ClassificationTyp
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ClassificationMultiClassModeDetails model) {
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
             return this;
         }
     }
@@ -55,8 +78,26 @@ public final class ClassificationMultiClassModeDetails extends ClassificationTyp
     }
 
     @Deprecated
-    public ClassificationMultiClassModeDetails() {
+    public ClassificationMultiClassModeDetails(String version) {
         super();
+        this.version = version;
+    }
+
+    /**
+     * Optional if nothing specified latest base model will be used for training. Supported versions
+     * can be found at /modelTypes/{modelType}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("version")
+    private final String version;
+
+    /**
+     * Optional if nothing specified latest base model will be used for training. Supported versions
+     * can be found at /modelTypes/{modelType}
+     *
+     * @return the value
+     */
+    public String getVersion() {
+        return version;
     }
 
     @Override
@@ -74,6 +115,7 @@ public final class ClassificationMultiClassModeDetails extends ClassificationTyp
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ClassificationMultiClassModeDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", version=").append(String.valueOf(this.version));
         sb.append(")");
         return sb.toString();
     }
@@ -88,13 +130,14 @@ public final class ClassificationMultiClassModeDetails extends ClassificationTyp
         }
 
         ClassificationMultiClassModeDetails other = (ClassificationMultiClassModeDetails) o;
-        return super.equals(other);
+        return java.util.Objects.equals(this.version, other.version) && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
         return result;
     }
 }

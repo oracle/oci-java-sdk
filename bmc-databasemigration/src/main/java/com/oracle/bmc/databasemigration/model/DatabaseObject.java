@@ -22,12 +22,22 @@ package com.oracle.bmc.databasemigration.model;
 public final class DatabaseObject
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"owner", "objectName", "type"})
-    public DatabaseObject(String owner, String objectName, String type) {
+    @java.beans.ConstructorProperties({
+        "owner",
+        "objectName",
+        "type",
+        "isOmitExcludedTableFromReplication"
+    })
+    public DatabaseObject(
+            String owner,
+            String objectName,
+            String type,
+            Boolean isOmitExcludedTableFromReplication) {
         super();
         this.owner = owner;
         this.objectName = objectName;
         this.type = type;
+        this.isOmitExcludedTableFromReplication = isOmitExcludedTableFromReplication;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -81,12 +91,37 @@ public final class DatabaseObject
             this.__explicitlySet__.add("type");
             return this;
         }
+        /**
+         * Whether an excluded table should be omitted from replication. Only valid for database
+         * objects that have are of type TABLE and that are included in the exludeObjects.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isOmitExcludedTableFromReplication")
+        private Boolean isOmitExcludedTableFromReplication;
+
+        /**
+         * Whether an excluded table should be omitted from replication. Only valid for database
+         * objects that have are of type TABLE and that are included in the exludeObjects.
+         *
+         * @param isOmitExcludedTableFromReplication the value to set
+         * @return this builder
+         */
+        public Builder isOmitExcludedTableFromReplication(
+                Boolean isOmitExcludedTableFromReplication) {
+            this.isOmitExcludedTableFromReplication = isOmitExcludedTableFromReplication;
+            this.__explicitlySet__.add("isOmitExcludedTableFromReplication");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseObject build() {
-            DatabaseObject model = new DatabaseObject(this.owner, this.objectName, this.type);
+            DatabaseObject model =
+                    new DatabaseObject(
+                            this.owner,
+                            this.objectName,
+                            this.type,
+                            this.isOmitExcludedTableFromReplication);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -103,6 +138,10 @@ public final class DatabaseObject
             }
             if (model.wasPropertyExplicitlySet("type")) {
                 this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("isOmitExcludedTableFromReplication")) {
+                this.isOmitExcludedTableFromReplication(
+                        model.getIsOmitExcludedTableFromReplication());
             }
             return this;
         }
@@ -160,6 +199,23 @@ public final class DatabaseObject
         return type;
     }
 
+    /**
+     * Whether an excluded table should be omitted from replication. Only valid for database objects
+     * that have are of type TABLE and that are included in the exludeObjects.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isOmitExcludedTableFromReplication")
+    private final Boolean isOmitExcludedTableFromReplication;
+
+    /**
+     * Whether an excluded table should be omitted from replication. Only valid for database objects
+     * that have are of type TABLE and that are included in the exludeObjects.
+     *
+     * @return the value
+     */
+    public Boolean getIsOmitExcludedTableFromReplication() {
+        return isOmitExcludedTableFromReplication;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -178,6 +234,8 @@ public final class DatabaseObject
         sb.append("owner=").append(String.valueOf(this.owner));
         sb.append(", objectName=").append(String.valueOf(this.objectName));
         sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", isOmitExcludedTableFromReplication=")
+                .append(String.valueOf(this.isOmitExcludedTableFromReplication));
         sb.append(")");
         return sb.toString();
     }
@@ -195,6 +253,9 @@ public final class DatabaseObject
         return java.util.Objects.equals(this.owner, other.owner)
                 && java.util.Objects.equals(this.objectName, other.objectName)
                 && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(
+                        this.isOmitExcludedTableFromReplication,
+                        other.isOmitExcludedTableFromReplication)
                 && super.equals(other);
     }
 
@@ -205,6 +266,11 @@ public final class DatabaseObject
         result = (result * PRIME) + (this.owner == null ? 43 : this.owner.hashCode());
         result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOmitExcludedTableFromReplication == null
+                                ? 43
+                                : this.isOmitExcludedTableFromReplication.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

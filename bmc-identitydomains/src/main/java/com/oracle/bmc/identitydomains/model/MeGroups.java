@@ -83,7 +83,7 @@ public final class MeGroups extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * Ocid of the User's group.
+         * The OCID of the User's group.
          *
          * <p>*Added In:** 2102181953
          *
@@ -95,7 +95,7 @@ public final class MeGroups extends com.oracle.bmc.http.client.internal.Explicit
         private String ocid;
 
         /**
-         * Ocid of the User's group.
+         * The OCID of the User's group.
          *
          * <p>*Added In:** 2102181953
          *
@@ -235,7 +235,7 @@ public final class MeGroups extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * Membership Ocid
+         * The membership OCID.
          *
          * <p>*Added In:** 2103141444
          *
@@ -246,7 +246,7 @@ public final class MeGroups extends com.oracle.bmc.http.client.internal.Explicit
         private String membershipOcid;
 
         /**
-         * Membership Ocid
+         * The membership OCID.
          *
          * <p>*Added In:** 2103141444
          *
@@ -374,7 +374,7 @@ public final class MeGroups extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * Ocid of the User's group.
+     * The OCID of the User's group.
      *
      * <p>*Added In:** 2102181953
      *
@@ -385,7 +385,7 @@ public final class MeGroups extends com.oracle.bmc.http.client.internal.Explicit
     private final String ocid;
 
     /**
-     * Ocid of the User's group.
+     * The OCID of the User's group.
      *
      * <p>*Added In:** 2102181953
      *
@@ -561,7 +561,7 @@ public final class MeGroups extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * Membership Ocid
+     * The membership OCID.
      *
      * <p>*Added In:** 2103141444
      *
@@ -572,7 +572,7 @@ public final class MeGroups extends com.oracle.bmc.http.client.internal.Explicit
     private final String membershipOcid;
 
     /**
-     * Membership Ocid
+     * The membership OCID.
      *
      * <p>*Added In:** 2103141444
      *

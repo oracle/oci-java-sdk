@@ -214,17 +214,19 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * Identifying the model by model id is difficult. This param provides ease of use for end
-         * customer. <<service>>::<<service-name>>-<<model-type-version>>::<<custom model on which
-         * this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+         * For pre trained models this will identify model type version used for model creation For
+         * custom identifying the model by model id is difficult. This param provides ease of use
+         * for end customer. <<service>>::<<service-name>>-<<model-type-version>>::<<custom model on
+         * which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
          */
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
-         * Identifying the model by model id is difficult. This param provides ease of use for end
-         * customer. <<service>>::<<service-name>>-<<model-type-version>>::<<custom model on which
-         * this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+         * For pre trained models this will identify model type version used for model creation For
+         * custom identifying the model by model id is difficult. This param provides ease of use
+         * for end customer. <<service>>::<<service-name>>-<<model-type-version>>::<<custom model on
+         * which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
          *
          * @param version the value to set
          * @return this builder
@@ -500,17 +502,19 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * Identifying the model by model id is difficult. This param provides ease of use for end
-     * customer. <<service>>::<<service-name>>-<<model-type-version>>::<<custom model on which this
-     * training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+     * For pre trained models this will identify model type version used for model creation For
+     * custom identifying the model by model id is difficult. This param provides ease of use for
+     * end customer. <<service>>::<<service-name>>-<<model-type-version>>::<<custom model on which
+     * this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
      */
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
-     * Identifying the model by model id is difficult. This param provides ease of use for end
-     * customer. <<service>>::<<service-name>>-<<model-type-version>>::<<custom model on which this
-     * training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+     * For pre trained models this will identify model type version used for model creation For
+     * custom identifying the model by model id is difficult. This param provides ease of use for
+     * end customer. <<service>>::<<service-name>>-<<model-type-version>>::<<custom model on which
+     * this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
      *
      * @return the value
      */

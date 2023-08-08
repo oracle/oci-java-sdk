@@ -110,6 +110,7 @@ public class OperatorActionsClient extends com.oracle.bmc.http.internal.BaseSync
                         GetOperatorActionResponse.Builder::operatorAction)
                 .handleResponseHeaderString(
                         "opc-request-id", GetOperatorActionResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -144,6 +145,7 @@ public class OperatorActionsClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-request-id", ListOperatorActionsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListOperatorActionsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 

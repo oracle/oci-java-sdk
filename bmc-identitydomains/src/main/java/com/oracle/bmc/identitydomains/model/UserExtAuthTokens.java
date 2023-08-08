@@ -5,7 +5,7 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * A list of auth tokens corresponding to user.
+ * A list of Auth tokens corresponding to user.
  *
  * <p>*Added In:** 2012271618
  *
@@ -40,7 +40,7 @@ public final class UserExtAuthTokens
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The identifier of the User's auth token.
+         * The user's Auth token identifier.
          *
          * <p>*Added In:** 2012271618
          *
@@ -52,7 +52,7 @@ public final class UserExtAuthTokens
         private String value;
 
         /**
-         * The identifier of the User's auth token.
+         * The user's Auth token identifier.
          *
          * <p>*Added In:** 2012271618
          *
@@ -69,7 +69,7 @@ public final class UserExtAuthTokens
             return this;
         }
         /**
-         * Ocid of the User's auth token.
+         * The user's Auth token OCID.
          *
          * <p>*Added In:** 2012271618
          *
@@ -81,7 +81,7 @@ public final class UserExtAuthTokens
         private String ocid;
 
         /**
-         * Ocid of the User's auth token.
+         * The user's Auth token OCID.
          *
          * <p>*Added In:** 2012271618
          *
@@ -98,7 +98,7 @@ public final class UserExtAuthTokens
             return this;
         }
         /**
-         * The URI of the corresponding AuthToken resource to which the user belongs
+         * The URI of the corresponding AuthToken resource to which the user belongs.
          *
          * <p>*Added In:** 2012271618
          *
@@ -109,7 +109,7 @@ public final class UserExtAuthTokens
         private String ref;
 
         /**
-         * The URI of the corresponding AuthToken resource to which the user belongs
+         * The URI of the corresponding AuthToken resource to which the user belongs.
          *
          * <p>*Added In:** 2012271618
          *
@@ -161,7 +161,7 @@ public final class UserExtAuthTokens
     }
 
     /**
-     * The identifier of the User's auth token.
+     * The user's Auth token identifier.
      *
      * <p>*Added In:** 2012271618
      *
@@ -172,7 +172,7 @@ public final class UserExtAuthTokens
     private final String value;
 
     /**
-     * The identifier of the User's auth token.
+     * The user's Auth token identifier.
      *
      * <p>*Added In:** 2012271618
      *
@@ -186,7 +186,7 @@ public final class UserExtAuthTokens
     }
 
     /**
-     * Ocid of the User's auth token.
+     * The user's Auth token OCID.
      *
      * <p>*Added In:** 2012271618
      *
@@ -197,7 +197,7 @@ public final class UserExtAuthTokens
     private final String ocid;
 
     /**
-     * Ocid of the User's auth token.
+     * The user's Auth token OCID.
      *
      * <p>*Added In:** 2012271618
      *
@@ -211,7 +211,7 @@ public final class UserExtAuthTokens
     }
 
     /**
-     * The URI of the corresponding AuthToken resource to which the user belongs
+     * The URI of the corresponding AuthToken resource to which the user belongs.
      *
      * <p>*Added In:** 2012271618
      *
@@ -222,7 +222,7 @@ public final class UserExtAuthTokens
     private final String ref;
 
     /**
-     * The URI of the corresponding AuthToken resource to which the user belongs
+     * The URI of the corresponding AuthToken resource to which the user belongs.
      *
      * <p>*Added In:** 2012271618
      *

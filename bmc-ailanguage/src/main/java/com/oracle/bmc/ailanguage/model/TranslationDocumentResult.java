@@ -74,21 +74,23 @@ public final class TranslationDocumentResult
             return this;
         }
         /**
-         * Language code supported Automatically detect language - auto Arabic - ar Brazilian
-         * Portuguese - pt-BR Czech - cs Danish - da Dutch - nl English - en Finnish - fi French -
-         * fr Canadian French - fr-CA German - de Italian - it Japanese - ja Korean - ko Norwegian -
-         * no Polish - pl Romanian - ro Simplified Chinese - zh-CN Spanish - es Swedish - sv
-         * Traditional Chinese - zh-TW Turkish - tr Greek - el Hebrew - he
+         * Language code supported - auto : Automatically detect language - ar : Arabic - pt-BR :
+         * Brazilian Portuguese - cs : Czech - da : Danish - nl : Dutch - en : English - fi :
+         * Finnish - fr : French - fr-CA : Canadian French - de : German - it : Italian - ja :
+         * Japanese - ko : Korean - no : Norwegian - pl : Polish - ro : Romanian - zh-CN :
+         * Simplified Chinese - es : Spanish - sv : Swedish - zh-TW : Traditional Chinese - tr :
+         * Turkish - el : Greek - he : Hebrew
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceLanguageCode")
         private String sourceLanguageCode;
 
         /**
-         * Language code supported Automatically detect language - auto Arabic - ar Brazilian
-         * Portuguese - pt-BR Czech - cs Danish - da Dutch - nl English - en Finnish - fi French -
-         * fr Canadian French - fr-CA German - de Italian - it Japanese - ja Korean - ko Norwegian -
-         * no Polish - pl Romanian - ro Simplified Chinese - zh-CN Spanish - es Swedish - sv
-         * Traditional Chinese - zh-TW Turkish - tr Greek - el Hebrew - he
+         * Language code supported - auto : Automatically detect language - ar : Arabic - pt-BR :
+         * Brazilian Portuguese - cs : Czech - da : Danish - nl : Dutch - en : English - fi :
+         * Finnish - fr : French - fr-CA : Canadian French - de : German - it : Italian - ja :
+         * Japanese - ko : Korean - no : Norwegian - pl : Polish - ro : Romanian - zh-CN :
+         * Simplified Chinese - es : Spanish - sv : Swedish - zh-TW : Traditional Chinese - tr :
+         * Turkish - el : Greek - he : Hebrew
          *
          * @param sourceLanguageCode the value to set
          * @return this builder
@@ -99,21 +101,23 @@ public final class TranslationDocumentResult
             return this;
         }
         /**
-         * Language code supported Automatically detect language - auto Arabic - ar Brazilian
-         * Portuguese - pt-BR Czech - cs Danish - da Dutch - nl English - en Finnish - fi French -
-         * fr Canadian French - fr-CA German - de Italian - it Japanese - ja Korean - ko Norwegian -
-         * no Polish - pl Romanian - ro Simplified Chinese - zh-CN Spanish - es Swedish - sv
-         * Traditional Chinese - zh-TW Turkish - tr Greek - el Hebrew - he
+         * Language code supported - auto : Automatically detect language - ar : Arabic - pt-BR :
+         * Brazilian Portuguese - cs : Czech - da : Danish - nl : Dutch - en : English - fi :
+         * Finnish - fr : French - fr-CA : Canadian French - de : German - it : Italian - ja :
+         * Japanese - ko : Korean - no : Norwegian - pl : Polish - ro : Romanian - zh-CN :
+         * Simplified Chinese - es : Spanish - sv : Swedish - zh-TW : Traditional Chinese - tr :
+         * Turkish - el : Greek - he : Hebrew
          */
         @com.fasterxml.jackson.annotation.JsonProperty("targetLanguageCode")
         private String targetLanguageCode;
 
         /**
-         * Language code supported Automatically detect language - auto Arabic - ar Brazilian
-         * Portuguese - pt-BR Czech - cs Danish - da Dutch - nl English - en Finnish - fi French -
-         * fr Canadian French - fr-CA German - de Italian - it Japanese - ja Korean - ko Norwegian -
-         * no Polish - pl Romanian - ro Simplified Chinese - zh-CN Spanish - es Swedish - sv
-         * Traditional Chinese - zh-TW Turkish - tr Greek - el Hebrew - he
+         * Language code supported - auto : Automatically detect language - ar : Arabic - pt-BR :
+         * Brazilian Portuguese - cs : Czech - da : Danish - nl : Dutch - en : English - fi :
+         * Finnish - fr : French - fr-CA : Canadian French - de : German - it : Italian - ja :
+         * Japanese - ko : Korean - no : Norwegian - pl : Polish - ro : Romanian - zh-CN :
+         * Simplified Chinese - es : Spanish - sv : Swedish - zh-TW : Traditional Chinese - tr :
+         * Turkish - el : Greek - he : Hebrew
          *
          * @param targetLanguageCode the value to set
          * @return this builder
@@ -194,21 +198,23 @@ public final class TranslationDocumentResult
     }
 
     /**
-     * Language code supported Automatically detect language - auto Arabic - ar Brazilian Portuguese
-     * - pt-BR Czech - cs Danish - da Dutch - nl English - en Finnish - fi French - fr Canadian
-     * French - fr-CA German - de Italian - it Japanese - ja Korean - ko Norwegian - no Polish - pl
-     * Romanian - ro Simplified Chinese - zh-CN Spanish - es Swedish - sv Traditional Chinese -
-     * zh-TW Turkish - tr Greek - el Hebrew - he
+     * Language code supported - auto : Automatically detect language - ar : Arabic - pt-BR :
+     * Brazilian Portuguese - cs : Czech - da : Danish - nl : Dutch - en : English - fi : Finnish -
+     * fr : French - fr-CA : Canadian French - de : German - it : Italian - ja : Japanese - ko :
+     * Korean - no : Norwegian - pl : Polish - ro : Romanian - zh-CN : Simplified Chinese - es :
+     * Spanish - sv : Swedish - zh-TW : Traditional Chinese - tr : Turkish - el : Greek - he :
+     * Hebrew
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceLanguageCode")
     private final String sourceLanguageCode;
 
     /**
-     * Language code supported Automatically detect language - auto Arabic - ar Brazilian Portuguese
-     * - pt-BR Czech - cs Danish - da Dutch - nl English - en Finnish - fi French - fr Canadian
-     * French - fr-CA German - de Italian - it Japanese - ja Korean - ko Norwegian - no Polish - pl
-     * Romanian - ro Simplified Chinese - zh-CN Spanish - es Swedish - sv Traditional Chinese -
-     * zh-TW Turkish - tr Greek - el Hebrew - he
+     * Language code supported - auto : Automatically detect language - ar : Arabic - pt-BR :
+     * Brazilian Portuguese - cs : Czech - da : Danish - nl : Dutch - en : English - fi : Finnish -
+     * fr : French - fr-CA : Canadian French - de : German - it : Italian - ja : Japanese - ko :
+     * Korean - no : Norwegian - pl : Polish - ro : Romanian - zh-CN : Simplified Chinese - es :
+     * Spanish - sv : Swedish - zh-TW : Traditional Chinese - tr : Turkish - el : Greek - he :
+     * Hebrew
      *
      * @return the value
      */
@@ -217,21 +223,23 @@ public final class TranslationDocumentResult
     }
 
     /**
-     * Language code supported Automatically detect language - auto Arabic - ar Brazilian Portuguese
-     * - pt-BR Czech - cs Danish - da Dutch - nl English - en Finnish - fi French - fr Canadian
-     * French - fr-CA German - de Italian - it Japanese - ja Korean - ko Norwegian - no Polish - pl
-     * Romanian - ro Simplified Chinese - zh-CN Spanish - es Swedish - sv Traditional Chinese -
-     * zh-TW Turkish - tr Greek - el Hebrew - he
+     * Language code supported - auto : Automatically detect language - ar : Arabic - pt-BR :
+     * Brazilian Portuguese - cs : Czech - da : Danish - nl : Dutch - en : English - fi : Finnish -
+     * fr : French - fr-CA : Canadian French - de : German - it : Italian - ja : Japanese - ko :
+     * Korean - no : Norwegian - pl : Polish - ro : Romanian - zh-CN : Simplified Chinese - es :
+     * Spanish - sv : Swedish - zh-TW : Traditional Chinese - tr : Turkish - el : Greek - he :
+     * Hebrew
      */
     @com.fasterxml.jackson.annotation.JsonProperty("targetLanguageCode")
     private final String targetLanguageCode;
 
     /**
-     * Language code supported Automatically detect language - auto Arabic - ar Brazilian Portuguese
-     * - pt-BR Czech - cs Danish - da Dutch - nl English - en Finnish - fi French - fr Canadian
-     * French - fr-CA German - de Italian - it Japanese - ja Korean - ko Norwegian - no Polish - pl
-     * Romanian - ro Simplified Chinese - zh-CN Spanish - es Swedish - sv Traditional Chinese -
-     * zh-TW Turkish - tr Greek - el Hebrew - he
+     * Language code supported - auto : Automatically detect language - ar : Arabic - pt-BR :
+     * Brazilian Portuguese - cs : Czech - da : Danish - nl : Dutch - en : English - fi : Finnish -
+     * fr : French - fr-CA : Canadian French - de : German - it : Italian - ja : Japanese - ko :
+     * Korean - no : Norwegian - pl : Polish - ro : Romanian - zh-CN : Simplified Chinese - es :
+     * Spanish - sv : Swedish - zh-TW : Traditional Chinese - tr : Turkish - el : Greek - he :
+     * Hebrew
      *
      * @return the value
      */

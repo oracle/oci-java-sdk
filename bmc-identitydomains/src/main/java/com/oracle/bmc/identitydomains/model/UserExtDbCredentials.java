@@ -5,7 +5,7 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * A list of db credentials corresponding to user.
+ * A list of database credentials corresponding to user.
  *
  * <p>*Added In:** 2102181953
  *
@@ -40,7 +40,7 @@ public final class UserExtDbCredentials
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The identifier of the User's db credential.
+         * The user's database credential identifier.
          *
          * <p>*Added In:** 2102181953
          *
@@ -52,7 +52,7 @@ public final class UserExtDbCredentials
         private String value;
 
         /**
-         * The identifier of the User's db credential.
+         * The user's database credential identifier.
          *
          * <p>*Added In:** 2102181953
          *
@@ -69,7 +69,7 @@ public final class UserExtDbCredentials
             return this;
         }
         /**
-         * The URI of the corresponding UserDbCredential resource to which the user belongs
+         * The URI of the corresponding UserDbCredential resource to which the user belongs.
          *
          * <p>*Added In:** 2102181953
          *
@@ -80,7 +80,7 @@ public final class UserExtDbCredentials
         private String ref;
 
         /**
-         * The URI of the corresponding UserDbCredential resource to which the user belongs
+         * The URI of the corresponding UserDbCredential resource to which the user belongs.
          *
          * <p>*Added In:** 2102181953
          *
@@ -96,7 +96,7 @@ public final class UserExtDbCredentials
             return this;
         }
         /**
-         * Ocid of the User's db credential.
+         * The user's database credential OCID.
          *
          * <p>*Added In:** 2102181953
          *
@@ -108,7 +108,7 @@ public final class UserExtDbCredentials
         private String ocid;
 
         /**
-         * Ocid of the User's db credential.
+         * The user's database credential OCID.
          *
          * <p>*Added In:** 2102181953
          *
@@ -161,7 +161,7 @@ public final class UserExtDbCredentials
     }
 
     /**
-     * The identifier of the User's db credential.
+     * The user's database credential identifier.
      *
      * <p>*Added In:** 2102181953
      *
@@ -172,7 +172,7 @@ public final class UserExtDbCredentials
     private final String value;
 
     /**
-     * The identifier of the User's db credential.
+     * The user's database credential identifier.
      *
      * <p>*Added In:** 2102181953
      *
@@ -186,7 +186,7 @@ public final class UserExtDbCredentials
     }
 
     /**
-     * The URI of the corresponding UserDbCredential resource to which the user belongs
+     * The URI of the corresponding UserDbCredential resource to which the user belongs.
      *
      * <p>*Added In:** 2102181953
      *
@@ -197,7 +197,7 @@ public final class UserExtDbCredentials
     private final String ref;
 
     /**
-     * The URI of the corresponding UserDbCredential resource to which the user belongs
+     * The URI of the corresponding UserDbCredential resource to which the user belongs.
      *
      * <p>*Added In:** 2102181953
      *
@@ -211,7 +211,7 @@ public final class UserExtDbCredentials
     }
 
     /**
-     * Ocid of the User's db credential.
+     * The user's database credential OCID.
      *
      * <p>*Added In:** 2102181953
      *
@@ -222,7 +222,7 @@ public final class UserExtDbCredentials
     private final String ocid;
 
     /**
-     * Ocid of the User's db credential.
+     * The user's database credential OCID.
      *
      * <p>*Added In:** 2102181953
      *

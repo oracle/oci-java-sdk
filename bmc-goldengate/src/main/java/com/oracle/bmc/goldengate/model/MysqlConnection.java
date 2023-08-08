@@ -545,6 +545,8 @@ public final class MysqlConnection extends Connection {
         Mariadb("MARIADB"),
         MysqlServer("MYSQL_SERVER"),
         OciMysql("OCI_MYSQL"),
+        Singlestoredb("SINGLESTOREDB"),
+        SinglestoredbCloud("SINGLESTOREDB_CLOUD"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

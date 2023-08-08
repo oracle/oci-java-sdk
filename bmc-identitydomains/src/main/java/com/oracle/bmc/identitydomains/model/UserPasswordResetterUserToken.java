@@ -5,7 +5,7 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * User token returned if userFlowControlledByExternalClient is true
+ * The user token returned if userFlowControlledByExternalClient is set to true.
  *
  * <p>*SCIM++ Properties:** - type: complex - multiValued: false - required: false - caseExact:
  * false - mutability: readOnly - returned: default - uniqueness: none <br>
@@ -36,7 +36,7 @@ public final class UserPasswordResetterUserToken
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * User Token identifier
+         * The user token identifier.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
          * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
@@ -46,7 +46,7 @@ public final class UserPasswordResetterUserToken
         private String value;
 
         /**
-         * User Token identifier
+         * The user token identifier.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
          * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
@@ -61,7 +61,7 @@ public final class UserPasswordResetterUserToken
             return this;
         }
         /**
-         * User Token URI
+         * The user token URI.
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
          * readOnly - required: false - returned: default - type: reference - uniqueness: none
@@ -70,7 +70,7 @@ public final class UserPasswordResetterUserToken
         private String ref;
 
         /**
-         * User Token URI
+         * The user token URI.
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
          * readOnly - required: false - returned: default - type: reference - uniqueness: none
@@ -118,7 +118,7 @@ public final class UserPasswordResetterUserToken
     }
 
     /**
-     * User Token identifier
+     * The user token identifier.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
      * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
@@ -127,7 +127,7 @@ public final class UserPasswordResetterUserToken
     private final String value;
 
     /**
-     * User Token identifier
+     * The user token identifier.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
      * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
@@ -139,7 +139,7 @@ public final class UserPasswordResetterUserToken
     }
 
     /**
-     * User Token URI
+     * The user token URI.
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
      * - required: false - returned: default - type: reference - uniqueness: none
@@ -148,7 +148,7 @@ public final class UserPasswordResetterUserToken
     private final String ref;
 
     /**
-     * User Token URI
+     * The user token URI.
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
      * - required: false - returned: default - type: reference - uniqueness: none

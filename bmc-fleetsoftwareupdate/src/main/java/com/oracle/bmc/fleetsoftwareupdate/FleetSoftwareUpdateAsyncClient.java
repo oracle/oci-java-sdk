@@ -133,7 +133,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, AbortFsuDiscoveryResponse::builder)
                 .logger(LOG, "abortFsuDiscovery")
-                .serviceDetails("FleetSoftwareUpdate", "AbortFsuDiscovery", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "AbortFsuDiscovery",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuDiscovery/AbortFsuDiscovery")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AbortFsuDiscoveryRequest::builder)
                 .basePath("/20220528")
@@ -164,7 +167,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, AddFsuCollectionTargetsResponse::builder)
                 .logger(LOG, "addFsuCollectionTargets")
-                .serviceDetails("FleetSoftwareUpdate", "AddFsuCollectionTargets", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "AddFsuCollectionTargets",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCollection/AddFsuCollectionTargets")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddFsuCollectionTargetsRequest::builder)
                 .basePath("/20220528")
@@ -195,7 +201,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, CancelFsuActionResponse::builder)
                 .logger(LOG, "cancelFsuAction")
-                .serviceDetails("FleetSoftwareUpdate", "CancelFsuAction", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "CancelFsuAction",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuAction/CancelFsuAction")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CancelFsuActionRequest::builder)
                 .basePath("/20220528")
@@ -228,7 +237,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ChangeFsuActionCompartmentResponse::builder)
                 .logger(LOG, "changeFsuActionCompartment")
-                .serviceDetails("FleetSoftwareUpdate", "ChangeFsuActionCompartment", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "ChangeFsuActionCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuAction/ChangeFsuActionCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeFsuActionCompartmentRequest::builder)
                 .basePath("/20220528")
@@ -265,7 +277,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ChangeFsuCollectionCompartmentResponse::builder)
                 .logger(LOG, "changeFsuCollectionCompartment")
-                .serviceDetails("FleetSoftwareUpdate", "ChangeFsuCollectionCompartment", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "ChangeFsuCollectionCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCollection/ChangeFsuCollectionCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeFsuCollectionCompartmentRequest::builder)
                 .basePath("/20220528")
@@ -301,7 +316,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ChangeFsuCycleCompartmentResponse::builder)
                 .logger(LOG, "changeFsuCycleCompartment")
-                .serviceDetails("FleetSoftwareUpdate", "ChangeFsuCycleCompartment", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "ChangeFsuCycleCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCycle/ChangeFsuCycleCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeFsuCycleCompartmentRequest::builder)
                 .basePath("/20220528")
@@ -338,7 +356,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ChangeFsuDiscoveryCompartmentResponse::builder)
                 .logger(LOG, "changeFsuDiscoveryCompartment")
-                .serviceDetails("FleetSoftwareUpdate", "ChangeFsuDiscoveryCompartment", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "ChangeFsuDiscoveryCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuDiscovery/ChangeFsuDiscoveryCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeFsuDiscoveryCompartmentRequest::builder)
                 .basePath("/20220528")
@@ -369,7 +390,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, CloneFsuCycleResponse::builder)
                 .logger(LOG, "cloneFsuCycle")
-                .serviceDetails("FleetSoftwareUpdate", "CloneFsuCycle", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "CloneFsuCycle",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCycle/CloneFsuCycle")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CloneFsuCycleRequest::builder)
                 .basePath("/20220528")
@@ -535,7 +559,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, DeleteFsuActionResponse::builder)
                 .logger(LOG, "deleteFsuAction")
-                .serviceDetails("FleetSoftwareUpdate", "DeleteFsuAction", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "DeleteFsuAction",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuAction/DeleteFsuAction")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteFsuActionRequest::builder)
                 .basePath("/20220528")
@@ -562,7 +589,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, DeleteFsuCollectionResponse::builder)
                 .logger(LOG, "deleteFsuCollection")
-                .serviceDetails("FleetSoftwareUpdate", "DeleteFsuCollection", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "DeleteFsuCollection",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCollection/DeleteFsuCollection")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteFsuCollectionRequest::builder)
                 .basePath("/20220528")
@@ -590,7 +620,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, DeleteFsuCycleResponse::builder)
                 .logger(LOG, "deleteFsuCycle")
-                .serviceDetails("FleetSoftwareUpdate", "DeleteFsuCycle", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "DeleteFsuCycle",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCycle/DeleteFsuCycle")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteFsuCycleRequest::builder)
                 .basePath("/20220528")
@@ -617,7 +650,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, DeleteFsuDiscoveryResponse::builder)
                 .logger(LOG, "deleteFsuDiscovery")
-                .serviceDetails("FleetSoftwareUpdate", "DeleteFsuDiscovery", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "DeleteFsuDiscovery",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuDiscovery/DeleteFsuDiscovery")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteFsuDiscoveryRequest::builder)
                 .basePath("/20220528")
@@ -643,7 +679,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, DeleteFsuJobResponse::builder)
                 .logger(LOG, "deleteFsuJob")
-                .serviceDetails("FleetSoftwareUpdate", "DeleteFsuJob", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "DeleteFsuJob",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuJob/DeleteFsuJob")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteFsuJobRequest::builder)
                 .basePath("/20220528")
@@ -667,7 +706,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, GetFsuActionResponse::builder)
                 .logger(LOG, "getFsuAction")
-                .serviceDetails("FleetSoftwareUpdate", "GetFsuAction", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "GetFsuAction",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuAction/GetFsuAction")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetFsuActionRequest::builder)
                 .basePath("/20220528")
@@ -695,7 +737,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, GetFsuActionOutputContentResponse::builder)
                 .logger(LOG, "getFsuActionOutputContent")
-                .serviceDetails("FleetSoftwareUpdate", "GetFsuActionOutputContent", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "GetFsuActionOutputContent",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuAction/GetFsuActionOutputContent")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetFsuActionOutputContentRequest::builder)
                 .basePath("/20220528")
@@ -724,7 +769,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, GetFsuCollectionResponse::builder)
                 .logger(LOG, "getFsuCollection")
-                .serviceDetails("FleetSoftwareUpdate", "GetFsuCollection", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "GetFsuCollection",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCollection/GetFsuCollection")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetFsuCollectionRequest::builder)
                 .basePath("/20220528")
@@ -751,7 +799,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, GetFsuCycleResponse::builder)
                 .logger(LOG, "getFsuCycle")
-                .serviceDetails("FleetSoftwareUpdate", "GetFsuCycle", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "GetFsuCycle",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCycle/GetFsuCycle")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetFsuCycleRequest::builder)
                 .basePath("/20220528")
@@ -779,7 +830,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, GetFsuDiscoveryResponse::builder)
                 .logger(LOG, "getFsuDiscovery")
-                .serviceDetails("FleetSoftwareUpdate", "GetFsuDiscovery", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "GetFsuDiscovery",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuDiscovery/GetFsuDiscovery")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetFsuDiscoveryRequest::builder)
                 .basePath("/20220528")
@@ -806,7 +860,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, GetFsuJobResponse::builder)
                 .logger(LOG, "getFsuJob")
-                .serviceDetails("FleetSoftwareUpdate", "GetFsuJob", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "GetFsuJob",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuJob/GetFsuJob")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetFsuJobRequest::builder)
                 .basePath("/20220528")
@@ -834,7 +891,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, GetFsuJobOutputContentResponse::builder)
                 .logger(LOG, "getFsuJobOutputContent")
-                .serviceDetails("FleetSoftwareUpdate", "GetFsuJobOutputContent", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "GetFsuJobOutputContent",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuJob/GetFsuJobOutputContent")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetFsuJobOutputContentRequest::builder)
                 .basePath("/20220528")
@@ -863,7 +923,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("FleetSoftwareUpdate", "GetWorkRequest", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20220528")
@@ -892,7 +955,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ListFsuActionsResponse::builder)
                 .logger(LOG, "listFsuActions")
-                .serviceDetails("FleetSoftwareUpdate", "ListFsuActions", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "ListFsuActions",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuActionSummaryCollection/ListFsuActions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFsuActionsRequest::builder)
                 .basePath("/20220528")
@@ -929,7 +995,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ListFsuCollectionTargetsResponse::builder)
                 .logger(LOG, "listFsuCollectionTargets")
-                .serviceDetails("FleetSoftwareUpdate", "ListFsuCollectionTargets", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "ListFsuCollectionTargets",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/TargetSummaryCollection/ListFsuCollectionTargets")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFsuCollectionTargetsRequest::builder)
                 .basePath("/20220528")
@@ -965,7 +1034,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ListFsuCollectionsResponse::builder)
                 .logger(LOG, "listFsuCollections")
-                .serviceDetails("FleetSoftwareUpdate", "ListFsuCollections", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "ListFsuCollections",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCollectionSummaryCollection/ListFsuCollections")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFsuCollectionsRequest::builder)
                 .basePath("/20220528")
@@ -1000,7 +1072,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ListFsuCyclesResponse::builder)
                 .logger(LOG, "listFsuCycles")
-                .serviceDetails("FleetSoftwareUpdate", "ListFsuCycles", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "ListFsuCycles",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCycleSummary/ListFsuCycles")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFsuCyclesRequest::builder)
                 .basePath("/20220528")
@@ -1037,7 +1112,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ListFsuDiscoveriesResponse::builder)
                 .logger(LOG, "listFsuDiscoveries")
-                .serviceDetails("FleetSoftwareUpdate", "ListFsuDiscoveries", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "ListFsuDiscoveries",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuDiscoverySummary/ListFsuDiscoveries")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFsuDiscoveriesRequest::builder)
                 .basePath("/20220528")
@@ -1073,7 +1151,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ListFsuDiscoveryTargetsResponse::builder)
                 .logger(LOG, "listFsuDiscoveryTargets")
-                .serviceDetails("FleetSoftwareUpdate", "ListFsuDiscoveryTargets", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "ListFsuDiscoveryTargets",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/TargetSummaryCollection/ListFsuDiscoveryTargets")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFsuDiscoveryTargetsRequest::builder)
                 .basePath("/20220528")
@@ -1110,7 +1191,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ListFsuJobOutputsResponse::builder)
                 .logger(LOG, "listFsuJobOutputs")
-                .serviceDetails("FleetSoftwareUpdate", "ListFsuJobOutputs", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "ListFsuJobOutputs",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuJobOutputSummary/ListFsuJobOutputs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFsuJobOutputsRequest::builder)
                 .basePath("/20220528")
@@ -1141,7 +1225,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ListFsuJobsResponse::builder)
                 .logger(LOG, "listFsuJobs")
-                .serviceDetails("FleetSoftwareUpdate", "ListFsuJobs", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "ListFsuJobs",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuJobSummary/ListFsuJobs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFsuJobsRequest::builder)
                 .basePath("/20220528")
@@ -1176,7 +1263,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("FleetSoftwareUpdate", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20220528")
@@ -1210,7 +1300,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("FleetSoftwareUpdate", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20220528")
@@ -1244,7 +1337,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("FleetSoftwareUpdate", "ListWorkRequests", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20220528")
@@ -1285,7 +1381,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, RemoveFsuCollectionTargetsResponse::builder)
                 .logger(LOG, "removeFsuCollectionTargets")
-                .serviceDetails("FleetSoftwareUpdate", "RemoveFsuCollectionTargets", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "RemoveFsuCollectionTargets",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCollection/RemoveFsuCollectionTargets")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(RemoveFsuCollectionTargetsRequest::builder)
                 .basePath("/20220528")
@@ -1316,7 +1415,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ResumeFsuActionResponse::builder)
                 .logger(LOG, "resumeFsuAction")
-                .serviceDetails("FleetSoftwareUpdate", "ResumeFsuAction", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "ResumeFsuAction",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuAction/ResumeFsuAction")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ResumeFsuActionRequest::builder)
                 .basePath("/20220528")
@@ -1343,7 +1445,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, RetryFsuJobResponse::builder)
                 .logger(LOG, "retryFsuJob")
-                .serviceDetails("FleetSoftwareUpdate", "RetryFsuJob", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "RetryFsuJob",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuJob/RetryFsuJob")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RetryFsuJobRequest::builder)
                 .basePath("/20220528")
@@ -1373,7 +1478,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, UpdateFsuActionResponse::builder)
                 .logger(LOG, "updateFsuAction")
-                .serviceDetails("FleetSoftwareUpdate", "UpdateFsuAction", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "UpdateFsuAction",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuAction/UpdateFsuAction")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateFsuActionRequest::builder)
                 .basePath("/20220528")
@@ -1403,7 +1511,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, UpdateFsuCollectionResponse::builder)
                 .logger(LOG, "updateFsuCollection")
-                .serviceDetails("FleetSoftwareUpdate", "UpdateFsuCollection", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "UpdateFsuCollection",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCollection/UpdateFsuCollection")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateFsuCollectionRequest::builder)
                 .basePath("/20220528")
@@ -1434,7 +1545,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, UpdateFsuCycleResponse::builder)
                 .logger(LOG, "updateFsuCycle")
-                .serviceDetails("FleetSoftwareUpdate", "UpdateFsuCycle", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "UpdateFsuCycle",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCycle/UpdateFsuCycle")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateFsuCycleRequest::builder)
                 .basePath("/20220528")
@@ -1464,7 +1578,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, UpdateFsuDiscoveryResponse::builder)
                 .logger(LOG, "updateFsuDiscovery")
-                .serviceDetails("FleetSoftwareUpdate", "UpdateFsuDiscovery", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "UpdateFsuDiscovery",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuDiscovery/UpdateFsuDiscovery")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateFsuDiscoveryRequest::builder)
                 .basePath("/20220528")
@@ -1490,7 +1607,10 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, UpdateFsuJobResponse::builder)
                 .logger(LOG, "updateFsuJob")
-                .serviceDetails("FleetSoftwareUpdate", "UpdateFsuJob", "")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "UpdateFsuJob",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuJob/UpdateFsuJob")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateFsuJobRequest::builder)
                 .basePath("/20220528")

@@ -42,8 +42,8 @@ public final class MyTrustedUserAgentUser
          * The SCIM ID of the user for whom the trust-token was issued.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: true - returned: default - type: string - uniqueness:
-         * none
+         * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: true -
+         * returned: default - type: string - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
@@ -52,8 +52,8 @@ public final class MyTrustedUserAgentUser
          * The SCIM ID of the user for whom the trust-token was issued.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: true - returned: default - type: string - uniqueness:
-         * none
+         * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: true -
+         * returned: default - type: string - uniqueness: none
          *
          * @param value the value to set
          * @return this builder
@@ -67,7 +67,8 @@ public final class MyTrustedUserAgentUser
          * Full URI to the user for whom the trust-token was issued.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-         * required: true - returned: default - type: reference - uniqueness: none
+         * idcsRequiresWriteForAccessFlows: true - required: true - returned: default - type:
+         * reference - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("$ref")
         private String ref;
@@ -76,7 +77,8 @@ public final class MyTrustedUserAgentUser
          * Full URI to the user for whom the trust-token was issued.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-         * required: true - returned: default - type: reference - uniqueness: none
+         * idcsRequiresWriteForAccessFlows: true - required: true - returned: default - type:
+         * reference - uniqueness: none
          *
          * @param ref the value to set
          * @return this builder
@@ -115,8 +117,8 @@ public final class MyTrustedUserAgentUser
          * <p>*Added In:** 2105091740
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: always - type: string - uniqueness:
-         * none
+         * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: false -
+         * returned: always - type: string - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("ocid")
         private String ocid;
@@ -127,8 +129,8 @@ public final class MyTrustedUserAgentUser
          * <p>*Added In:** 2105091740
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: always - type: string - uniqueness:
-         * none
+         * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: false -
+         * returned: always - type: string - uniqueness: none
          *
          * @param ocid the value to set
          * @return this builder
@@ -182,7 +184,8 @@ public final class MyTrustedUserAgentUser
      * The SCIM ID of the user for whom the trust-token was issued.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
+     * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: true - returned:
+     * default - type: string - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
@@ -191,7 +194,8 @@ public final class MyTrustedUserAgentUser
      * The SCIM ID of the user for whom the trust-token was issued.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
+     * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: true - returned:
+     * default - type: string - uniqueness: none
      *
      * @return the value
      */
@@ -203,7 +207,8 @@ public final class MyTrustedUserAgentUser
      * Full URI to the user for whom the trust-token was issued.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-     * required: true - returned: default - type: reference - uniqueness: none
+     * idcsRequiresWriteForAccessFlows: true - required: true - returned: default - type: reference
+     * - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("$ref")
     private final String ref;
@@ -212,7 +217,8 @@ public final class MyTrustedUserAgentUser
      * Full URI to the user for whom the trust-token was issued.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-     * required: true - returned: default - type: reference - uniqueness: none
+     * idcsRequiresWriteForAccessFlows: true - required: true - returned: default - type: reference
+     * - uniqueness: none
      *
      * @return the value
      */
@@ -247,7 +253,8 @@ public final class MyTrustedUserAgentUser
      * <p>*Added In:** 2105091740
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: always - type: string - uniqueness: none
+     * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: false - returned:
+     * always - type: string - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("ocid")
     private final String ocid;
@@ -258,7 +265,8 @@ public final class MyTrustedUserAgentUser
      * <p>*Added In:** 2105091740
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: always - type: string - uniqueness: none
+     * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: false - returned:
+     * always - type: string - uniqueness: none
      *
      * @return the value
      */

@@ -47,7 +47,8 @@ public final class DhcpOptions extends com.oracle.bmc.http.client.internal.Expli
         "lifecycleState",
         "options",
         "timeCreated",
-        "vcnId"
+        "vcnId",
+        "domainNameType"
     })
     public DhcpOptions(
             String compartmentId,
@@ -58,7 +59,8 @@ public final class DhcpOptions extends com.oracle.bmc.http.client.internal.Expli
             LifecycleState lifecycleState,
             java.util.List<DhcpOption> options,
             java.util.Date timeCreated,
-            String vcnId) {
+            String vcnId,
+            DomainNameType domainNameType) {
         super();
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
@@ -69,6 +71,7 @@ public final class DhcpOptions extends com.oracle.bmc.http.client.internal.Expli
         this.options = options;
         this.timeCreated = timeCreated;
         this.vcnId = vcnId;
+        this.domainNameType = domainNameType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -243,6 +246,21 @@ public final class DhcpOptions extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("vcnId");
             return this;
         }
+        /** The search domain name type of DHCP options */
+        @com.fasterxml.jackson.annotation.JsonProperty("domainNameType")
+        private DomainNameType domainNameType;
+
+        /**
+         * The search domain name type of DHCP options
+         *
+         * @param domainNameType the value to set
+         * @return this builder
+         */
+        public Builder domainNameType(DomainNameType domainNameType) {
+            this.domainNameType = domainNameType;
+            this.__explicitlySet__.add("domainNameType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -258,7 +276,8 @@ public final class DhcpOptions extends com.oracle.bmc.http.client.internal.Expli
                             this.lifecycleState,
                             this.options,
                             this.timeCreated,
-                            this.vcnId);
+                            this.vcnId,
+                            this.domainNameType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -293,6 +312,9 @@ public final class DhcpOptions extends com.oracle.bmc.http.client.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("vcnId")) {
                 this.vcnId(model.getVcnId());
+            }
+            if (model.wasPropertyExplicitlySet("domainNameType")) {
+                this.domainNameType(model.getDomainNameType());
             }
             return this;
         }
@@ -493,6 +515,53 @@ public final class DhcpOptions extends com.oracle.bmc.http.client.internal.Expli
         return vcnId;
     }
 
+    /** The search domain name type of DHCP options */
+    public enum DomainNameType implements com.oracle.bmc.http.internal.BmcEnum {
+        SubnetDomain("SUBNET_DOMAIN"),
+        VcnDomain("VCN_DOMAIN"),
+        CustomDomain("CUSTOM_DOMAIN"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, DomainNameType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DomainNameType v : DomainNameType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        DomainNameType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DomainNameType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid DomainNameType: " + key);
+        }
+    };
+    /** The search domain name type of DHCP options */
+    @com.fasterxml.jackson.annotation.JsonProperty("domainNameType")
+    private final DomainNameType domainNameType;
+
+    /**
+     * The search domain name type of DHCP options
+     *
+     * @return the value
+     */
+    public DomainNameType getDomainNameType() {
+        return domainNameType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -517,6 +586,7 @@ public final class DhcpOptions extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", options=").append(String.valueOf(this.options));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
+        sb.append(", domainNameType=").append(String.valueOf(this.domainNameType));
         sb.append(")");
         return sb.toString();
     }
@@ -540,6 +610,7 @@ public final class DhcpOptions extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.options, other.options)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
+                && java.util.Objects.equals(this.domainNameType, other.domainNameType)
                 && super.equals(other);
     }
 
@@ -560,6 +631,9 @@ public final class DhcpOptions extends com.oracle.bmc.http.client.internal.Expli
         result = (result * PRIME) + (this.options == null ? 43 : this.options.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.domainNameType == null ? 43 : this.domainNameType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -5,7 +5,7 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * A list of smtp credentials corresponding to user.
+ * A list of SMTP credentials corresponding to user.
  *
  * <p>*Added In:** 2012271618
  *
@@ -40,7 +40,7 @@ public final class UserExtSmtpCredentials
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The identifier of the User's smtp credential.
+         * The user's SMTP credential identifier.
          *
          * <p>*Added In:** 2012271618
          *
@@ -52,7 +52,7 @@ public final class UserExtSmtpCredentials
         private String value;
 
         /**
-         * The identifier of the User's smtp credential.
+         * The user's SMTP credential identifier.
          *
          * <p>*Added In:** 2012271618
          *
@@ -69,7 +69,7 @@ public final class UserExtSmtpCredentials
             return this;
         }
         /**
-         * Ocid of the User's auth token.
+         * The user's Auth token OCID.
          *
          * <p>*Added In:** 2012271618
          *
@@ -81,7 +81,7 @@ public final class UserExtSmtpCredentials
         private String ocid;
 
         /**
-         * Ocid of the User's auth token.
+         * The user's Auth token OCID.
          *
          * <p>*Added In:** 2012271618
          *
@@ -98,7 +98,7 @@ public final class UserExtSmtpCredentials
             return this;
         }
         /**
-         * The URI of the corresponding SmtpCredential resource to which the user belongs
+         * The URI of the corresponding SmtpCredential resource to which the user belongs.
          *
          * <p>*Added In:** 2012271618
          *
@@ -109,7 +109,7 @@ public final class UserExtSmtpCredentials
         private String ref;
 
         /**
-         * The URI of the corresponding SmtpCredential resource to which the user belongs
+         * The URI of the corresponding SmtpCredential resource to which the user belongs.
          *
          * <p>*Added In:** 2012271618
          *
@@ -162,7 +162,7 @@ public final class UserExtSmtpCredentials
     }
 
     /**
-     * The identifier of the User's smtp credential.
+     * The user's SMTP credential identifier.
      *
      * <p>*Added In:** 2012271618
      *
@@ -173,7 +173,7 @@ public final class UserExtSmtpCredentials
     private final String value;
 
     /**
-     * The identifier of the User's smtp credential.
+     * The user's SMTP credential identifier.
      *
      * <p>*Added In:** 2012271618
      *
@@ -187,7 +187,7 @@ public final class UserExtSmtpCredentials
     }
 
     /**
-     * Ocid of the User's auth token.
+     * The user's Auth token OCID.
      *
      * <p>*Added In:** 2012271618
      *
@@ -198,7 +198,7 @@ public final class UserExtSmtpCredentials
     private final String ocid;
 
     /**
-     * Ocid of the User's auth token.
+     * The user's Auth token OCID.
      *
      * <p>*Added In:** 2012271618
      *
@@ -212,7 +212,7 @@ public final class UserExtSmtpCredentials
     }
 
     /**
-     * The URI of the corresponding SmtpCredential resource to which the user belongs
+     * The URI of the corresponding SmtpCredential resource to which the user belongs.
      *
      * <p>*Added In:** 2012271618
      *
@@ -223,7 +223,7 @@ public final class UserExtSmtpCredentials
     private final String ref;
 
     /**
-     * The URI of the corresponding SmtpCredential resource to which the user belongs
+     * The URI of the corresponding SmtpCredential resource to which the user belongs.
      *
      * <p>*Added In:** 2012271618
      *

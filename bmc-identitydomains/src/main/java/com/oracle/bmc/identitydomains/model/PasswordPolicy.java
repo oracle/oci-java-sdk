@@ -54,6 +54,7 @@ public final class PasswordPolicy
         "firstNameDisallowed",
         "lastNameDisallowed",
         "userNameDisallowed",
+        "disallowedUserAttributeValues",
         "minPasswordAge",
         "passwordExpiresAfter",
         "passwordExpireWarning",
@@ -69,8 +70,9 @@ public final class PasswordPolicy
         "numPasswordsInHistory",
         "passwordStrength",
         "forcePasswordReset",
-        "groups",
+        "distinctCharacters",
         "priority",
+        "groups",
         "configuredPasswordPolicyRules"
     })
     public PasswordPolicy(
@@ -105,6 +107,7 @@ public final class PasswordPolicy
             Boolean firstNameDisallowed,
             Boolean lastNameDisallowed,
             Boolean userNameDisallowed,
+            java.util.List<String> disallowedUserAttributeValues,
             Integer minPasswordAge,
             Integer passwordExpiresAfter,
             Integer passwordExpireWarning,
@@ -120,8 +123,9 @@ public final class PasswordPolicy
             Integer numPasswordsInHistory,
             PasswordStrength passwordStrength,
             Boolean forcePasswordReset,
-            java.util.List<PasswordPolicyGroups> groups,
+            Integer distinctCharacters,
             Integer priority,
+            java.util.List<PasswordPolicyGroups> groups,
             java.util.List<PasswordPolicyConfiguredPasswordPolicyRules>
                     configuredPasswordPolicyRules) {
         super();
@@ -156,6 +160,7 @@ public final class PasswordPolicy
         this.firstNameDisallowed = firstNameDisallowed;
         this.lastNameDisallowed = lastNameDisallowed;
         this.userNameDisallowed = userNameDisallowed;
+        this.disallowedUserAttributeValues = disallowedUserAttributeValues;
         this.minPasswordAge = minPasswordAge;
         this.passwordExpiresAfter = passwordExpiresAfter;
         this.passwordExpireWarning = passwordExpireWarning;
@@ -171,8 +176,9 @@ public final class PasswordPolicy
         this.numPasswordsInHistory = numPasswordsInHistory;
         this.passwordStrength = passwordStrength;
         this.forcePasswordReset = forcePasswordReset;
-        this.groups = groups;
+        this.distinctCharacters = distinctCharacters;
         this.priority = priority;
+        this.groups = groups;
         this.configuredPasswordPolicyRules = configuredPasswordPolicyRules;
     }
 
@@ -951,6 +957,34 @@ public final class PasswordPolicy
             return this;
         }
         /**
+         * List of User attributes whose values are not allowed in the password.
+         *
+         * <p>*Added In:** 2303212224
+         *
+         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability:
+         * readWrite - required: false - returned: default - type: string - uniqueness: none
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("disallowedUserAttributeValues")
+        private java.util.List<String> disallowedUserAttributeValues;
+
+        /**
+         * List of User attributes whose values are not allowed in the password.
+         *
+         * <p>*Added In:** 2303212224
+         *
+         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability:
+         * readWrite - required: false - returned: default - type: string - uniqueness: none
+         *
+         * @param disallowedUserAttributeValues the value to set
+         * @return this builder
+         */
+        public Builder disallowedUserAttributeValues(
+                java.util.List<String> disallowedUserAttributeValues) {
+            this.disallowedUserAttributeValues = disallowedUserAttributeValues;
+            this.__explicitlySet__.add("disallowedUserAttributeValues");
+            return this;
+        }
+        /**
          * Minimum time after which the user can resubmit the reset password request
          *
          * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
@@ -1314,32 +1348,30 @@ public final class PasswordPolicy
             return this;
         }
         /**
-         * A list of groups that the password policy belongs to.
+         * The number of distinct characters between old password and new password
          *
-         * <p>*Added In:** 20.1.3
+         * <p>*Added In:** 2303212224
          *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [value] - idcsSearchable:
-         * true - multiValued: true - mutability: readWrite - required: false - returned: default -
-         * type: complex - uniqueness: none
+         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
+         * - required: false - returned: default - type: integer - uniqueness: none
          */
-        @com.fasterxml.jackson.annotation.JsonProperty("groups")
-        private java.util.List<PasswordPolicyGroups> groups;
+        @com.fasterxml.jackson.annotation.JsonProperty("distinctCharacters")
+        private Integer distinctCharacters;
 
         /**
-         * A list of groups that the password policy belongs to.
+         * The number of distinct characters between old password and new password
          *
-         * <p>*Added In:** 20.1.3
+         * <p>*Added In:** 2303212224
          *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [value] - idcsSearchable:
-         * true - multiValued: true - mutability: readWrite - required: false - returned: default -
-         * type: complex - uniqueness: none
+         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
+         * - required: false - returned: default - type: integer - uniqueness: none
          *
-         * @param groups the value to set
+         * @param distinctCharacters the value to set
          * @return this builder
          */
-        public Builder groups(java.util.List<PasswordPolicyGroups> groups) {
-            this.groups = groups;
-            this.__explicitlySet__.add("groups");
+        public Builder distinctCharacters(Integer distinctCharacters) {
+            this.distinctCharacters = distinctCharacters;
+            this.__explicitlySet__.add("distinctCharacters");
             return this;
         }
         /**
@@ -1369,6 +1401,35 @@ public final class PasswordPolicy
         public Builder priority(Integer priority) {
             this.priority = priority;
             this.__explicitlySet__.add("priority");
+            return this;
+        }
+        /**
+         * A list of groups that the password policy belongs to.
+         *
+         * <p>*Added In:** 20.1.3
+         *
+         * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [value] - idcsSearchable:
+         * true - multiValued: true - mutability: readWrite - required: false - returned: default -
+         * type: complex - uniqueness: none
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("groups")
+        private java.util.List<PasswordPolicyGroups> groups;
+
+        /**
+         * A list of groups that the password policy belongs to.
+         *
+         * <p>*Added In:** 20.1.3
+         *
+         * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [value] - idcsSearchable:
+         * true - multiValued: true - mutability: readWrite - required: false - returned: default -
+         * type: complex - uniqueness: none
+         *
+         * @param groups the value to set
+         * @return this builder
+         */
+        public Builder groups(java.util.List<PasswordPolicyGroups> groups) {
+            this.groups = groups;
+            this.__explicitlySet__.add("groups");
             return this;
         }
         /**
@@ -1439,6 +1500,7 @@ public final class PasswordPolicy
                             this.firstNameDisallowed,
                             this.lastNameDisallowed,
                             this.userNameDisallowed,
+                            this.disallowedUserAttributeValues,
                             this.minPasswordAge,
                             this.passwordExpiresAfter,
                             this.passwordExpireWarning,
@@ -1454,8 +1516,9 @@ public final class PasswordPolicy
                             this.numPasswordsInHistory,
                             this.passwordStrength,
                             this.forcePasswordReset,
-                            this.groups,
+                            this.distinctCharacters,
                             this.priority,
+                            this.groups,
                             this.configuredPasswordPolicyRules);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -1558,6 +1621,9 @@ public final class PasswordPolicy
             if (model.wasPropertyExplicitlySet("userNameDisallowed")) {
                 this.userNameDisallowed(model.getUserNameDisallowed());
             }
+            if (model.wasPropertyExplicitlySet("disallowedUserAttributeValues")) {
+                this.disallowedUserAttributeValues(model.getDisallowedUserAttributeValues());
+            }
             if (model.wasPropertyExplicitlySet("minPasswordAge")) {
                 this.minPasswordAge(model.getMinPasswordAge());
             }
@@ -1603,11 +1669,14 @@ public final class PasswordPolicy
             if (model.wasPropertyExplicitlySet("forcePasswordReset")) {
                 this.forcePasswordReset(model.getForcePasswordReset());
             }
-            if (model.wasPropertyExplicitlySet("groups")) {
-                this.groups(model.getGroups());
+            if (model.wasPropertyExplicitlySet("distinctCharacters")) {
+                this.distinctCharacters(model.getDistinctCharacters());
             }
             if (model.wasPropertyExplicitlySet("priority")) {
                 this.priority(model.getPriority());
+            }
+            if (model.wasPropertyExplicitlySet("groups")) {
+                this.groups(model.getGroups());
             }
             if (model.wasPropertyExplicitlySet("configuredPasswordPolicyRules")) {
                 this.configuredPasswordPolicyRules(model.getConfiguredPasswordPolicyRules());
@@ -2319,6 +2388,31 @@ public final class PasswordPolicy
     }
 
     /**
+     * List of User attributes whose values are not allowed in the password.
+     *
+     * <p>*Added In:** 2303212224
+     *
+     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability: readWrite
+     * - required: false - returned: default - type: string - uniqueness: none
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("disallowedUserAttributeValues")
+    private final java.util.List<String> disallowedUserAttributeValues;
+
+    /**
+     * List of User attributes whose values are not allowed in the password.
+     *
+     * <p>*Added In:** 2303212224
+     *
+     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability: readWrite
+     * - required: false - returned: default - type: string - uniqueness: none
+     *
+     * @return the value
+     */
+    public java.util.List<String> getDisallowedUserAttributeValues() {
+        return disallowedUserAttributeValues;
+    }
+
+    /**
      * Minimum time after which the user can resubmit the reset password request
      *
      * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
@@ -2702,30 +2796,28 @@ public final class PasswordPolicy
     }
 
     /**
-     * A list of groups that the password policy belongs to.
+     * The number of distinct characters between old password and new password
      *
-     * <p>*Added In:** 20.1.3
+     * <p>*Added In:** 2303212224
      *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [value] - idcsSearchable:
-     * true - multiValued: true - mutability: readWrite - required: false - returned: default -
-     * type: complex - uniqueness: none
+     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
+     * required: false - returned: default - type: integer - uniqueness: none
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("groups")
-    private final java.util.List<PasswordPolicyGroups> groups;
+    @com.fasterxml.jackson.annotation.JsonProperty("distinctCharacters")
+    private final Integer distinctCharacters;
 
     /**
-     * A list of groups that the password policy belongs to.
+     * The number of distinct characters between old password and new password
      *
-     * <p>*Added In:** 20.1.3
+     * <p>*Added In:** 2303212224
      *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [value] - idcsSearchable:
-     * true - multiValued: true - mutability: readWrite - required: false - returned: default -
-     * type: complex - uniqueness: none
+     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
+     * required: false - returned: default - type: integer - uniqueness: none
      *
      * @return the value
      */
-    public java.util.List<PasswordPolicyGroups> getGroups() {
-        return groups;
+    public Integer getDistinctCharacters() {
+        return distinctCharacters;
     }
 
     /**
@@ -2751,6 +2843,33 @@ public final class PasswordPolicy
      */
     public Integer getPriority() {
         return priority;
+    }
+
+    /**
+     * A list of groups that the password policy belongs to.
+     *
+     * <p>*Added In:** 20.1.3
+     *
+     * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [value] - idcsSearchable:
+     * true - multiValued: true - mutability: readWrite - required: false - returned: default -
+     * type: complex - uniqueness: none
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("groups")
+    private final java.util.List<PasswordPolicyGroups> groups;
+
+    /**
+     * A list of groups that the password policy belongs to.
+     *
+     * <p>*Added In:** 20.1.3
+     *
+     * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [value] - idcsSearchable:
+     * true - multiValued: true - mutability: readWrite - required: false - returned: default -
+     * type: complex - uniqueness: none
+     *
+     * @return the value
+     */
+    public java.util.List<PasswordPolicyGroups> getGroups() {
+        return groups;
     }
 
     /**
@@ -2826,6 +2945,8 @@ public final class PasswordPolicy
         sb.append(", firstNameDisallowed=").append(String.valueOf(this.firstNameDisallowed));
         sb.append(", lastNameDisallowed=").append(String.valueOf(this.lastNameDisallowed));
         sb.append(", userNameDisallowed=").append(String.valueOf(this.userNameDisallowed));
+        sb.append(", disallowedUserAttributeValues=")
+                .append(String.valueOf(this.disallowedUserAttributeValues));
         sb.append(", minPasswordAge=").append(String.valueOf(this.minPasswordAge));
         sb.append(", passwordExpiresAfter=").append(String.valueOf(this.passwordExpiresAfter));
         sb.append(", passwordExpireWarning=").append(String.valueOf(this.passwordExpireWarning));
@@ -2842,8 +2963,9 @@ public final class PasswordPolicy
         sb.append(", numPasswordsInHistory=").append(String.valueOf(this.numPasswordsInHistory));
         sb.append(", passwordStrength=").append(String.valueOf(this.passwordStrength));
         sb.append(", forcePasswordReset=").append(String.valueOf(this.forcePasswordReset));
-        sb.append(", groups=").append(String.valueOf(this.groups));
+        sb.append(", distinctCharacters=").append(String.valueOf(this.distinctCharacters));
         sb.append(", priority=").append(String.valueOf(this.priority));
+        sb.append(", groups=").append(String.valueOf(this.groups));
         sb.append(", configuredPasswordPolicyRules=")
                 .append(String.valueOf(this.configuredPasswordPolicyRules));
         sb.append(")");
@@ -2893,6 +3015,8 @@ public final class PasswordPolicy
                 && java.util.Objects.equals(this.firstNameDisallowed, other.firstNameDisallowed)
                 && java.util.Objects.equals(this.lastNameDisallowed, other.lastNameDisallowed)
                 && java.util.Objects.equals(this.userNameDisallowed, other.userNameDisallowed)
+                && java.util.Objects.equals(
+                        this.disallowedUserAttributeValues, other.disallowedUserAttributeValues)
                 && java.util.Objects.equals(this.minPasswordAge, other.minPasswordAge)
                 && java.util.Objects.equals(this.passwordExpiresAfter, other.passwordExpiresAfter)
                 && java.util.Objects.equals(this.passwordExpireWarning, other.passwordExpireWarning)
@@ -2909,8 +3033,9 @@ public final class PasswordPolicy
                 && java.util.Objects.equals(this.numPasswordsInHistory, other.numPasswordsInHistory)
                 && java.util.Objects.equals(this.passwordStrength, other.passwordStrength)
                 && java.util.Objects.equals(this.forcePasswordReset, other.forcePasswordReset)
-                && java.util.Objects.equals(this.groups, other.groups)
+                && java.util.Objects.equals(this.distinctCharacters, other.distinctCharacters)
                 && java.util.Objects.equals(this.priority, other.priority)
+                && java.util.Objects.equals(this.groups, other.groups)
                 && java.util.Objects.equals(
                         this.configuredPasswordPolicyRules, other.configuredPasswordPolicyRules)
                 && super.equals(other);
@@ -2997,6 +3122,11 @@ public final class PasswordPolicy
                                 : this.userNameDisallowed.hashCode());
         result =
                 (result * PRIME)
+                        + (this.disallowedUserAttributeValues == null
+                                ? 43
+                                : this.disallowedUserAttributeValues.hashCode());
+        result =
+                (result * PRIME)
                         + (this.minPasswordAge == null ? 43 : this.minPasswordAge.hashCode());
         result =
                 (result * PRIME)
@@ -3056,8 +3186,13 @@ public final class PasswordPolicy
                         + (this.forcePasswordReset == null
                                 ? 43
                                 : this.forcePasswordReset.hashCode());
-        result = (result * PRIME) + (this.groups == null ? 43 : this.groups.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.distinctCharacters == null
+                                ? 43
+                                : this.distinctCharacters.hashCode());
         result = (result * PRIME) + (this.priority == null ? 43 : this.priority.hashCode());
+        result = (result * PRIME) + (this.groups == null ? 43 : this.groups.hashCode());
         result =
                 (result * PRIME)
                         + (this.configuredPasswordPolicyRules == null

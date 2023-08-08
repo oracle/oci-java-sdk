@@ -41,7 +41,7 @@ public final class MyCustomerSecretKeyUser
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * User's id
+         * The user's ID.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: immutable - required: false - returned: always - type: string - uniqueness:
@@ -51,7 +51,7 @@ public final class MyCustomerSecretKeyUser
         private String value;
 
         /**
-         * User's id
+         * The user's ID.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: immutable - required: false - returned: always - type: string - uniqueness:
@@ -66,7 +66,7 @@ public final class MyCustomerSecretKeyUser
             return this;
         }
         /**
-         * User's ocid
+         * The user's OCID.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: immutable - required: false - returned: always - type: string - uniqueness:
@@ -76,7 +76,7 @@ public final class MyCustomerSecretKeyUser
         private String ocid;
 
         /**
-         * User's ocid
+         * The user's OCID.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: immutable - required: false - returned: always - type: string - uniqueness:
@@ -91,7 +91,7 @@ public final class MyCustomerSecretKeyUser
             return this;
         }
         /**
-         * The URI that corresponds to the user linked to this credential
+         * The URI that corresponds to the user linked to this credential.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
          * mutability: readOnly - required: false - returned: default - type: reference -
@@ -101,7 +101,7 @@ public final class MyCustomerSecretKeyUser
         private String ref;
 
         /**
-         * The URI that corresponds to the user linked to this credential
+         * The URI that corresponds to the user linked to this credential.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
          * mutability: readOnly - required: false - returned: default - type: reference -
@@ -116,7 +116,7 @@ public final class MyCustomerSecretKeyUser
             return this;
         }
         /**
-         * User display name
+         * The user's display name.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
@@ -126,7 +126,7 @@ public final class MyCustomerSecretKeyUser
         private String display;
 
         /**
-         * User display name
+         * The user's display name.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
@@ -141,7 +141,7 @@ public final class MyCustomerSecretKeyUser
             return this;
         }
         /**
-         * User name
+         * The user's name.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
          * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
@@ -151,7 +151,7 @@ public final class MyCustomerSecretKeyUser
         private String name;
 
         /**
-         * User name
+         * The user's name.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
          * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
@@ -210,7 +210,7 @@ public final class MyCustomerSecretKeyUser
     }
 
     /**
-     * User's id
+     * The user's ID.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: immutable - required: false - returned: always - type: string - uniqueness: none
@@ -219,7 +219,7 @@ public final class MyCustomerSecretKeyUser
     private final String value;
 
     /**
-     * User's id
+     * The user's ID.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: immutable - required: false - returned: always - type: string - uniqueness: none
@@ -231,7 +231,7 @@ public final class MyCustomerSecretKeyUser
     }
 
     /**
-     * User's ocid
+     * The user's OCID.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: immutable - required: false - returned: always - type: string - uniqueness: none
@@ -240,7 +240,7 @@ public final class MyCustomerSecretKeyUser
     private final String ocid;
 
     /**
-     * User's ocid
+     * The user's OCID.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: immutable - required: false - returned: always - type: string - uniqueness: none
@@ -252,7 +252,7 @@ public final class MyCustomerSecretKeyUser
     }
 
     /**
-     * The URI that corresponds to the user linked to this credential
+     * The URI that corresponds to the user linked to this credential.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
      * mutability: readOnly - required: false - returned: default - type: reference - uniqueness:
@@ -262,7 +262,7 @@ public final class MyCustomerSecretKeyUser
     private final String ref;
 
     /**
-     * The URI that corresponds to the user linked to this credential
+     * The URI that corresponds to the user linked to this credential.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
      * mutability: readOnly - required: false - returned: default - type: reference - uniqueness:
@@ -275,7 +275,7 @@ public final class MyCustomerSecretKeyUser
     }
 
     /**
-     * User display name
+     * The user's display name.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
@@ -284,7 +284,7 @@ public final class MyCustomerSecretKeyUser
     private final String display;
 
     /**
-     * User display name
+     * The user's display name.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
@@ -296,7 +296,7 @@ public final class MyCustomerSecretKeyUser
     }
 
     /**
-     * User name
+     * The user's name.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
      * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
@@ -305,7 +305,7 @@ public final class MyCustomerSecretKeyUser
     private final String name;
 
     /**
-     * User name
+     * The user's name.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
      * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none

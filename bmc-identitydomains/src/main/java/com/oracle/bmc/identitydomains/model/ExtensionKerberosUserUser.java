@@ -32,7 +32,7 @@ public final class ExtensionKerberosUserUser
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A list of kerberos realm users for an OCI IAM User
+         * A list of kerberos realm users for an Oracle Identity Cloud Service User
          *
          * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
          * readWrite - required: false - returned: request - type: complex - uniqueness: none
@@ -41,7 +41,7 @@ public final class ExtensionKerberosUserUser
         private java.util.List<UserExtRealmUsers> realmUsers;
 
         /**
-         * A list of kerberos realm users for an OCI IAM User
+         * A list of kerberos realm users for an Oracle Identity Cloud Service User
          *
          * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
          * readWrite - required: false - returned: request - type: complex - uniqueness: none
@@ -85,7 +85,7 @@ public final class ExtensionKerberosUserUser
     }
 
     /**
-     * A list of kerberos realm users for an OCI IAM User
+     * A list of kerberos realm users for an Oracle Identity Cloud Service User
      *
      * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
      * readWrite - required: false - returned: request - type: complex - uniqueness: none
@@ -94,7 +94,7 @@ public final class ExtensionKerberosUserUser
     private final java.util.List<UserExtRealmUsers> realmUsers;
 
     /**
-     * A list of kerberos realm users for an OCI IAM User
+     * A list of kerberos realm users for an Oracle Identity Cloud Service User
      *
      * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
      * readWrite - required: false - returned: request - type: complex - uniqueness: none

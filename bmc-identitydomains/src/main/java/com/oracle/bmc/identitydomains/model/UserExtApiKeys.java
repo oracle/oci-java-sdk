@@ -5,7 +5,7 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * A list of api keys corresponding to user.
+ * A list of API keys corresponding to user.
  *
  * <p>*Added In:** 2012271618
  *
@@ -40,7 +40,7 @@ public final class UserExtApiKeys
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The value of of the User's api key.
+         * The user's API key value.
          *
          * <p>*Added In:** 2106240046
          *
@@ -52,7 +52,7 @@ public final class UserExtApiKeys
         private String key;
 
         /**
-         * The value of of the User's api key.
+         * The user's API key value.
          *
          * <p>*Added In:** 2106240046
          *
@@ -69,7 +69,7 @@ public final class UserExtApiKeys
             return this;
         }
         /**
-         * The identifier of the User's api key.
+         * The user's API key identifier.
          *
          * <p>*Added In:** 2012271618
          *
@@ -81,7 +81,7 @@ public final class UserExtApiKeys
         private String value;
 
         /**
-         * The identifier of the User's api key.
+         * The user's API key identifier.
          *
          * <p>*Added In:** 2012271618
          *
@@ -98,7 +98,7 @@ public final class UserExtApiKeys
             return this;
         }
         /**
-         * Ocid of the User's api key.
+         * The user's API key OCID.
          *
          * <p>*Added In:** 2012271618
          *
@@ -110,7 +110,7 @@ public final class UserExtApiKeys
         private String ocid;
 
         /**
-         * Ocid of the User's api key.
+         * The user's API key OCID.
          *
          * <p>*Added In:** 2012271618
          *
@@ -127,7 +127,7 @@ public final class UserExtApiKeys
             return this;
         }
         /**
-         * The URI of the corresponding ApiKey resource to which the user belongs
+         * The URI of the corresponding ApiKey resource to which the user belongs.
          *
          * <p>*Added In:** 2012271618
          *
@@ -138,7 +138,7 @@ public final class UserExtApiKeys
         private String ref;
 
         /**
-         * The URI of the corresponding ApiKey resource to which the user belongs
+         * The URI of the corresponding ApiKey resource to which the user belongs.
          *
          * <p>*Added In:** 2012271618
          *
@@ -193,7 +193,7 @@ public final class UserExtApiKeys
     }
 
     /**
-     * The value of of the User's api key.
+     * The user's API key value.
      *
      * <p>*Added In:** 2106240046
      *
@@ -204,7 +204,7 @@ public final class UserExtApiKeys
     private final String key;
 
     /**
-     * The value of of the User's api key.
+     * The user's API key value.
      *
      * <p>*Added In:** 2106240046
      *
@@ -218,7 +218,7 @@ public final class UserExtApiKeys
     }
 
     /**
-     * The identifier of the User's api key.
+     * The user's API key identifier.
      *
      * <p>*Added In:** 2012271618
      *
@@ -229,7 +229,7 @@ public final class UserExtApiKeys
     private final String value;
 
     /**
-     * The identifier of the User's api key.
+     * The user's API key identifier.
      *
      * <p>*Added In:** 2012271618
      *
@@ -243,7 +243,7 @@ public final class UserExtApiKeys
     }
 
     /**
-     * Ocid of the User's api key.
+     * The user's API key OCID.
      *
      * <p>*Added In:** 2012271618
      *
@@ -254,7 +254,7 @@ public final class UserExtApiKeys
     private final String ocid;
 
     /**
-     * Ocid of the User's api key.
+     * The user's API key OCID.
      *
      * <p>*Added In:** 2012271618
      *
@@ -268,7 +268,7 @@ public final class UserExtApiKeys
     }
 
     /**
-     * The URI of the corresponding ApiKey resource to which the user belongs
+     * The URI of the corresponding ApiKey resource to which the user belongs.
      *
      * <p>*Added In:** 2012271618
      *
@@ -279,7 +279,7 @@ public final class UserExtApiKeys
     private final String ref;
 
     /**
-     * The URI of the corresponding ApiKey resource to which the user belongs
+     * The URI of the corresponding ApiKey resource to which the user belongs.
      *
      * <p>*Added In:** 2012271618
      *

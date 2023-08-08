@@ -44,6 +44,7 @@ public final class UserCapabilitiesChanger
         "canUseOAuth2ClientCredentials",
         "canUseSmtpCredentials",
         "canUseDbCredentials",
+        "canUseConsole",
         "urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser"
     })
     public UserCapabilitiesChanger(
@@ -67,6 +68,7 @@ public final class UserCapabilitiesChanger
             Boolean canUseOAuth2ClientCredentials,
             Boolean canUseSmtpCredentials,
             Boolean canUseDbCredentials,
+            Boolean canUseConsole,
             ExtensionSelfChangeUser urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser) {
         super();
         this.id = id;
@@ -89,6 +91,7 @@ public final class UserCapabilitiesChanger
         this.canUseOAuth2ClientCredentials = canUseOAuth2ClientCredentials;
         this.canUseSmtpCredentials = canUseSmtpCredentials;
         this.canUseDbCredentials = canUseDbCredentials;
+        this.canUseConsole = canUseConsole;
         this.urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser =
                 urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser;
     }
@@ -400,7 +403,7 @@ public final class UserCapabilitiesChanger
             return this;
         }
         /**
-         * Indicates weather a user can use api keys
+         * Indicates whether a user can use API keys.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
@@ -410,7 +413,7 @@ public final class UserCapabilitiesChanger
         private Boolean canUseApiKeys;
 
         /**
-         * Indicates weather a user can use api keys
+         * Indicates whether a user can use API keys.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
@@ -425,7 +428,7 @@ public final class UserCapabilitiesChanger
             return this;
         }
         /**
-         * Indicates weather a user can use auth tokens
+         * Indicates whether a user can use Auth tokens.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
@@ -435,7 +438,7 @@ public final class UserCapabilitiesChanger
         private Boolean canUseAuthTokens;
 
         /**
-         * Indicates weather a user can use auth tokens
+         * Indicates whether a user can use Auth tokens.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
@@ -450,7 +453,7 @@ public final class UserCapabilitiesChanger
             return this;
         }
         /**
-         * Indicates weather a user can use console password
+         * Indicates whether a user can use Console passwords.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
@@ -460,7 +463,7 @@ public final class UserCapabilitiesChanger
         private Boolean canUseConsolePassword;
 
         /**
-         * Indicates weather a user can use console password
+         * Indicates whether a user can use Console passwords.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
@@ -475,7 +478,7 @@ public final class UserCapabilitiesChanger
             return this;
         }
         /**
-         * Indicates weather a user can use customer secret keys
+         * Indicates whether a user can use customer secret keys.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
@@ -485,7 +488,7 @@ public final class UserCapabilitiesChanger
         private Boolean canUseCustomerSecretKeys;
 
         /**
-         * Indicates weather a user can use customer secret keys
+         * Indicates whether a user can use customer secret keys.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
@@ -500,7 +503,7 @@ public final class UserCapabilitiesChanger
             return this;
         }
         /**
-         * Indicates weather a user can use oauth2 client credentials
+         * Indicates whether a user can use OAuth2 client credentials.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
@@ -510,7 +513,7 @@ public final class UserCapabilitiesChanger
         private Boolean canUseOAuth2ClientCredentials;
 
         /**
-         * Indicates weather a user can use oauth2 client credentials
+         * Indicates whether a user can use OAuth2 client credentials.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
@@ -525,7 +528,7 @@ public final class UserCapabilitiesChanger
             return this;
         }
         /**
-         * Indicates weather a user can use smtp credentials
+         * Indicates whether a user can use SMTP credentials.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
@@ -535,7 +538,7 @@ public final class UserCapabilitiesChanger
         private Boolean canUseSmtpCredentials;
 
         /**
-         * Indicates weather a user can use smtp credentials
+         * Indicates whether a user can use SMTP credentials.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
@@ -550,7 +553,7 @@ public final class UserCapabilitiesChanger
             return this;
         }
         /**
-         * Indicates weather a user can use db credentials
+         * Indicates whether a user can use database credentials.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
@@ -560,7 +563,7 @@ public final class UserCapabilitiesChanger
         private Boolean canUseDbCredentials;
 
         /**
-         * Indicates weather a user can use db credentials
+         * Indicates whether a user can use database credentials.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
@@ -572,6 +575,31 @@ public final class UserCapabilitiesChanger
         public Builder canUseDbCredentials(Boolean canUseDbCredentials) {
             this.canUseDbCredentials = canUseDbCredentials;
             this.__explicitlySet__.add("canUseDbCredentials");
+            return this;
+        }
+        /**
+         * Indicates whether a user can use the Console.
+         *
+         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
+         * mutability: readWrite - idcsDefaultValue: false - required: false - returned: default -
+         * type: boolean - uniqueness: none
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("canUseConsole")
+        private Boolean canUseConsole;
+
+        /**
+         * Indicates whether a user can use the Console.
+         *
+         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
+         * mutability: readWrite - idcsDefaultValue: false - required: false - returned: default -
+         * type: boolean - uniqueness: none
+         *
+         * @param canUseConsole the value to set
+         * @return this builder
+         */
+        public Builder canUseConsole(Boolean canUseConsole) {
+            this.canUseConsole = canUseConsole;
+            this.__explicitlySet__.add("canUseConsole");
             return this;
         }
 
@@ -613,6 +641,7 @@ public final class UserCapabilitiesChanger
                             this.canUseOAuth2ClientCredentials,
                             this.canUseSmtpCredentials,
                             this.canUseDbCredentials,
+                            this.canUseConsole,
                             this.urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -681,6 +710,9 @@ public final class UserCapabilitiesChanger
             }
             if (model.wasPropertyExplicitlySet("canUseDbCredentials")) {
                 this.canUseDbCredentials(model.getCanUseDbCredentials());
+            }
+            if (model.wasPropertyExplicitlySet("canUseConsole")) {
+                this.canUseConsole(model.getCanUseConsole());
             }
             if (model.wasPropertyExplicitlySet(
                     "urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser")) {
@@ -964,7 +996,7 @@ public final class UserCapabilitiesChanger
     }
 
     /**
-     * Indicates weather a user can use api keys
+     * Indicates whether a user can use API keys.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
@@ -974,7 +1006,7 @@ public final class UserCapabilitiesChanger
     private final Boolean canUseApiKeys;
 
     /**
-     * Indicates weather a user can use api keys
+     * Indicates whether a user can use API keys.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
@@ -987,7 +1019,7 @@ public final class UserCapabilitiesChanger
     }
 
     /**
-     * Indicates weather a user can use auth tokens
+     * Indicates whether a user can use Auth tokens.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
@@ -997,7 +1029,7 @@ public final class UserCapabilitiesChanger
     private final Boolean canUseAuthTokens;
 
     /**
-     * Indicates weather a user can use auth tokens
+     * Indicates whether a user can use Auth tokens.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
@@ -1010,7 +1042,7 @@ public final class UserCapabilitiesChanger
     }
 
     /**
-     * Indicates weather a user can use console password
+     * Indicates whether a user can use Console passwords.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
@@ -1020,7 +1052,7 @@ public final class UserCapabilitiesChanger
     private final Boolean canUseConsolePassword;
 
     /**
-     * Indicates weather a user can use console password
+     * Indicates whether a user can use Console passwords.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
@@ -1033,7 +1065,7 @@ public final class UserCapabilitiesChanger
     }
 
     /**
-     * Indicates weather a user can use customer secret keys
+     * Indicates whether a user can use customer secret keys.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
@@ -1043,7 +1075,7 @@ public final class UserCapabilitiesChanger
     private final Boolean canUseCustomerSecretKeys;
 
     /**
-     * Indicates weather a user can use customer secret keys
+     * Indicates whether a user can use customer secret keys.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
@@ -1056,7 +1088,7 @@ public final class UserCapabilitiesChanger
     }
 
     /**
-     * Indicates weather a user can use oauth2 client credentials
+     * Indicates whether a user can use OAuth2 client credentials.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
@@ -1066,7 +1098,7 @@ public final class UserCapabilitiesChanger
     private final Boolean canUseOAuth2ClientCredentials;
 
     /**
-     * Indicates weather a user can use oauth2 client credentials
+     * Indicates whether a user can use OAuth2 client credentials.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
@@ -1079,7 +1111,7 @@ public final class UserCapabilitiesChanger
     }
 
     /**
-     * Indicates weather a user can use smtp credentials
+     * Indicates whether a user can use SMTP credentials.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
@@ -1089,7 +1121,7 @@ public final class UserCapabilitiesChanger
     private final Boolean canUseSmtpCredentials;
 
     /**
-     * Indicates weather a user can use smtp credentials
+     * Indicates whether a user can use SMTP credentials.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
@@ -1102,7 +1134,7 @@ public final class UserCapabilitiesChanger
     }
 
     /**
-     * Indicates weather a user can use db credentials
+     * Indicates whether a user can use database credentials.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
@@ -1112,7 +1144,7 @@ public final class UserCapabilitiesChanger
     private final Boolean canUseDbCredentials;
 
     /**
-     * Indicates weather a user can use db credentials
+     * Indicates whether a user can use database credentials.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
@@ -1122,6 +1154,29 @@ public final class UserCapabilitiesChanger
      */
     public Boolean getCanUseDbCredentials() {
         return canUseDbCredentials;
+    }
+
+    /**
+     * Indicates whether a user can use the Console.
+     *
+     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
+     * mutability: readWrite - idcsDefaultValue: false - required: false - returned: default - type:
+     * boolean - uniqueness: none
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("canUseConsole")
+    private final Boolean canUseConsole;
+
+    /**
+     * Indicates whether a user can use the Console.
+     *
+     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
+     * mutability: readWrite - idcsDefaultValue: false - required: false - returned: default - type:
+     * boolean - uniqueness: none
+     *
+     * @return the value
+     */
+    public Boolean getCanUseConsole() {
+        return canUseConsole;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty(
@@ -1171,6 +1226,7 @@ public final class UserCapabilitiesChanger
                 .append(String.valueOf(this.canUseOAuth2ClientCredentials));
         sb.append(", canUseSmtpCredentials=").append(String.valueOf(this.canUseSmtpCredentials));
         sb.append(", canUseDbCredentials=").append(String.valueOf(this.canUseDbCredentials));
+        sb.append(", canUseConsole=").append(String.valueOf(this.canUseConsole));
         sb.append(", urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser=")
                 .append(
                         String.valueOf(
@@ -1213,6 +1269,7 @@ public final class UserCapabilitiesChanger
                         this.canUseOAuth2ClientCredentials, other.canUseOAuth2ClientCredentials)
                 && java.util.Objects.equals(this.canUseSmtpCredentials, other.canUseSmtpCredentials)
                 && java.util.Objects.equals(this.canUseDbCredentials, other.canUseDbCredentials)
+                && java.util.Objects.equals(this.canUseConsole, other.canUseConsole)
                 && java.util.Objects.equals(
                         this.urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser,
                         other.urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser)
@@ -1285,6 +1342,9 @@ public final class UserCapabilitiesChanger
                         + (this.canUseDbCredentials == null
                                 ? 43
                                 : this.canUseDbCredentials.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.canUseConsole == null ? 43 : this.canUseConsole.hashCode());
         result =
                 (result * PRIME)
                         + (this.urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser == null

@@ -5,7 +5,7 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * User linked to api key
+ * The user linked to the API key.
  *
  * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
  * mutability: immutable - required: false - returned: default - type: complex - uniqueness: none
@@ -38,7 +38,7 @@ public final class MyApiKeyUser extends com.oracle.bmc.http.client.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * User's id
+         * The user's ID.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: immutable - required: false - returned: always - type: string - uniqueness:
@@ -48,7 +48,7 @@ public final class MyApiKeyUser extends com.oracle.bmc.http.client.internal.Expl
         private String value;
 
         /**
-         * User's id
+         * The user's ID.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: immutable - required: false - returned: always - type: string - uniqueness:
@@ -63,7 +63,7 @@ public final class MyApiKeyUser extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * User's ocid
+         * The user's OCID.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: immutable - required: false - returned: always - type: string - uniqueness:
@@ -73,7 +73,7 @@ public final class MyApiKeyUser extends com.oracle.bmc.http.client.internal.Expl
         private String ocid;
 
         /**
-         * User's ocid
+         * The user's OCID.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: immutable - required: false - returned: always - type: string - uniqueness:
@@ -88,7 +88,7 @@ public final class MyApiKeyUser extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * The URI that corresponds to the user linked to this credential
+         * The URI that corresponds to the user linked to this credential.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
          * mutability: readOnly - required: false - returned: default - type: reference -
@@ -98,7 +98,7 @@ public final class MyApiKeyUser extends com.oracle.bmc.http.client.internal.Expl
         private String ref;
 
         /**
-         * The URI that corresponds to the user linked to this credential
+         * The URI that corresponds to the user linked to this credential.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
          * mutability: readOnly - required: false - returned: default - type: reference -
@@ -113,7 +113,7 @@ public final class MyApiKeyUser extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * User display name
+         * The user's display name.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
@@ -123,7 +123,7 @@ public final class MyApiKeyUser extends com.oracle.bmc.http.client.internal.Expl
         private String display;
 
         /**
-         * User display name
+         * The user's display name.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
@@ -138,7 +138,7 @@ public final class MyApiKeyUser extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * User name
+         * The username.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
          * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
@@ -148,7 +148,7 @@ public final class MyApiKeyUser extends com.oracle.bmc.http.client.internal.Expl
         private String name;
 
         /**
-         * User name
+         * The username.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
          * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
@@ -206,7 +206,7 @@ public final class MyApiKeyUser extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * User's id
+     * The user's ID.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: immutable - required: false - returned: always - type: string - uniqueness: none
@@ -215,7 +215,7 @@ public final class MyApiKeyUser extends com.oracle.bmc.http.client.internal.Expl
     private final String value;
 
     /**
-     * User's id
+     * The user's ID.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: immutable - required: false - returned: always - type: string - uniqueness: none
@@ -227,7 +227,7 @@ public final class MyApiKeyUser extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * User's ocid
+     * The user's OCID.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: immutable - required: false - returned: always - type: string - uniqueness: none
@@ -236,7 +236,7 @@ public final class MyApiKeyUser extends com.oracle.bmc.http.client.internal.Expl
     private final String ocid;
 
     /**
-     * User's ocid
+     * The user's OCID.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: immutable - required: false - returned: always - type: string - uniqueness: none
@@ -248,7 +248,7 @@ public final class MyApiKeyUser extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The URI that corresponds to the user linked to this credential
+     * The URI that corresponds to the user linked to this credential.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
      * mutability: readOnly - required: false - returned: default - type: reference - uniqueness:
@@ -258,7 +258,7 @@ public final class MyApiKeyUser extends com.oracle.bmc.http.client.internal.Expl
     private final String ref;
 
     /**
-     * The URI that corresponds to the user linked to this credential
+     * The URI that corresponds to the user linked to this credential.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
      * mutability: readOnly - required: false - returned: default - type: reference - uniqueness:
@@ -271,7 +271,7 @@ public final class MyApiKeyUser extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * User display name
+     * The user's display name.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
@@ -280,7 +280,7 @@ public final class MyApiKeyUser extends com.oracle.bmc.http.client.internal.Expl
     private final String display;
 
     /**
-     * User display name
+     * The user's display name.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
@@ -292,7 +292,7 @@ public final class MyApiKeyUser extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * User name
+     * The username.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
      * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
@@ -301,7 +301,7 @@ public final class MyApiKeyUser extends com.oracle.bmc.http.client.internal.Expl
     private final String name;
 
     /**
-     * User name
+     * The username.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
      * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none

@@ -38,7 +38,8 @@ public final class MyDeviceAuthenticationFactors
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: true - returned: default - type: string - uniqueness:
-         * none
+         * none - idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
@@ -48,7 +49,8 @@ public final class MyDeviceAuthenticationFactors
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: true - returned: default - type: string - uniqueness:
-         * none
+         * none - idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *
          * @param type the value to set
          * @return this builder
@@ -62,7 +64,9 @@ public final class MyDeviceAuthenticationFactors
          * Authentication Factor Status
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
+         * readWrite - required: false - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
@@ -71,7 +75,9 @@ public final class MyDeviceAuthenticationFactors
          * Authentication Factor Status
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
+         * readWrite - required: false - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *
          * @param status the value to set
          * @return this builder
@@ -85,7 +91,9 @@ public final class MyDeviceAuthenticationFactors
          * Authentication Factor public key issued by client
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: string - uniqueness: none
+         * readOnly - required: false - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          */
         @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
         private String publicKey;
@@ -94,7 +102,9 @@ public final class MyDeviceAuthenticationFactors
          * Authentication Factor public key issued by client
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: string - uniqueness: none
+         * readOnly - required: false - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *
          * @param publicKey the value to set
          * @return this builder
@@ -146,6 +156,8 @@ public final class MyDeviceAuthenticationFactors
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Email("EMAIL"),
@@ -203,6 +215,8 @@ public final class MyDeviceAuthenticationFactors
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
@@ -212,6 +226,8 @@ public final class MyDeviceAuthenticationFactors
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      *
      * @return the value
      */
@@ -223,7 +239,9 @@ public final class MyDeviceAuthenticationFactors
      * Authentication Factor Status
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - required: false - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Initiated("INITIATED"),
@@ -277,7 +295,9 @@ public final class MyDeviceAuthenticationFactors
      * Authentication Factor Status
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - required: false - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
@@ -286,7 +306,9 @@ public final class MyDeviceAuthenticationFactors
      * Authentication Factor Status
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - required: false - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      *
      * @return the value
      */
@@ -298,7 +320,9 @@ public final class MyDeviceAuthenticationFactors
      * Authentication Factor public key issued by client
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - required: false - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
     private final String publicKey;
@@ -307,7 +331,9 @@ public final class MyDeviceAuthenticationFactors
      * Authentication Factor public key issued by client
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - required: false - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      *
      * @return the value
      */

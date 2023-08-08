@@ -57,7 +57,9 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         "maintenanceWindow",
         "timeOfNextMaintenance",
         "nextMaintenanceActionType",
-        "nextMaintenanceDescription"
+        "nextMaintenanceDescription",
+        "maintenanceConfiguration",
+        "timeOggVersionSupportedUntil"
     })
     public Deployment(
             String id,
@@ -94,7 +96,9 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
             MaintenanceWindow maintenanceWindow,
             java.util.Date timeOfNextMaintenance,
             MaintenanceActionType nextMaintenanceActionType,
-            String nextMaintenanceDescription) {
+            String nextMaintenanceDescription,
+            MaintenanceConfiguration maintenanceConfiguration,
+            java.util.Date timeOggVersionSupportedUntil) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -131,6 +135,8 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         this.timeOfNextMaintenance = timeOfNextMaintenance;
         this.nextMaintenanceActionType = nextMaintenanceActionType;
         this.nextMaintenanceDescription = nextMaintenanceDescription;
+        this.maintenanceConfiguration = maintenanceConfiguration;
+        this.timeOggVersionSupportedUntil = timeOggVersionSupportedUntil;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -735,6 +741,36 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceConfiguration")
+        private MaintenanceConfiguration maintenanceConfiguration;
+
+        public Builder maintenanceConfiguration(MaintenanceConfiguration maintenanceConfiguration) {
+            this.maintenanceConfiguration = maintenanceConfiguration;
+            this.__explicitlySet__.add("maintenanceConfiguration");
+            return this;
+        }
+        /**
+         * The time until OGG version is supported. After this date has passed OGG version will not
+         * be available anymore. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeOggVersionSupportedUntil")
+        private java.util.Date timeOggVersionSupportedUntil;
+
+        /**
+         * The time until OGG version is supported. After this date has passed OGG version will not
+         * be available anymore. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         *
+         * @param timeOggVersionSupportedUntil the value to set
+         * @return this builder
+         */
+        public Builder timeOggVersionSupportedUntil(java.util.Date timeOggVersionSupportedUntil) {
+            this.timeOggVersionSupportedUntil = timeOggVersionSupportedUntil;
+            this.__explicitlySet__.add("timeOggVersionSupportedUntil");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -775,7 +811,9 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
                             this.maintenanceWindow,
                             this.timeOfNextMaintenance,
                             this.nextMaintenanceActionType,
-                            this.nextMaintenanceDescription);
+                            this.nextMaintenanceDescription,
+                            this.maintenanceConfiguration,
+                            this.timeOggVersionSupportedUntil);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -889,6 +927,12 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("nextMaintenanceDescription")) {
                 this.nextMaintenanceDescription(model.getNextMaintenanceDescription());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceConfiguration")) {
+                this.maintenanceConfiguration(model.getMaintenanceConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("timeOggVersionSupportedUntil")) {
+                this.timeOggVersionSupportedUntil(model.getTimeOggVersionSupportedUntil());
             }
             return this;
         }
@@ -1430,6 +1474,32 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         return nextMaintenanceDescription;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceConfiguration")
+    private final MaintenanceConfiguration maintenanceConfiguration;
+
+    public MaintenanceConfiguration getMaintenanceConfiguration() {
+        return maintenanceConfiguration;
+    }
+
+    /**
+     * The time until OGG version is supported. After this date has passed OGG version will not be
+     * available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339),
+     * such as {@code 2016-08-25T21:10:29.600Z}.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeOggVersionSupportedUntil")
+    private final java.util.Date timeOggVersionSupportedUntil;
+
+    /**
+     * The time until OGG version is supported. After this date has passed OGG version will not be
+     * available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339),
+     * such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeOggVersionSupportedUntil() {
+        return timeOggVersionSupportedUntil;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1485,6 +1555,10 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
                 .append(String.valueOf(this.nextMaintenanceActionType));
         sb.append(", nextMaintenanceDescription=")
                 .append(String.valueOf(this.nextMaintenanceDescription));
+        sb.append(", maintenanceConfiguration=")
+                .append(String.valueOf(this.maintenanceConfiguration));
+        sb.append(", timeOggVersionSupportedUntil=")
+                .append(String.valueOf(this.timeOggVersionSupportedUntil));
         sb.append(")");
         return sb.toString();
     }
@@ -1540,6 +1614,10 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
                         this.nextMaintenanceActionType, other.nextMaintenanceActionType)
                 && java.util.Objects.equals(
                         this.nextMaintenanceDescription, other.nextMaintenanceDescription)
+                && java.util.Objects.equals(
+                        this.maintenanceConfiguration, other.maintenanceConfiguration)
+                && java.util.Objects.equals(
+                        this.timeOggVersionSupportedUntil, other.timeOggVersionSupportedUntil)
                 && super.equals(other);
     }
 
@@ -1638,6 +1716,16 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
                         + (this.nextMaintenanceDescription == null
                                 ? 43
                                 : this.nextMaintenanceDescription.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceConfiguration == null
+                                ? 43
+                                : this.maintenanceConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOggVersionSupportedUntil == null
+                                ? 43
+                                : this.timeOggVersionSupportedUntil.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

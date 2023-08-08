@@ -5,7 +5,7 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Schema to handle userpassword change by self. <br>
+ * The schema used for a user changing their own password. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -446,7 +446,7 @@ public final class MePasswordChanger
             return this;
         }
         /**
-         * Old password attribute
+         * The old password attribute.
          *
          * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: true -
          * mutability: writeOnly - returned: never - uniqueness: none - caseExact: false -
@@ -456,7 +456,7 @@ public final class MePasswordChanger
         private String oldPassword;
 
         /**
-         * Old password attribute
+         * The old password attribute.
          *
          * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: true -
          * mutability: writeOnly - returned: never - uniqueness: none - caseExact: false -
@@ -884,7 +884,7 @@ public final class MePasswordChanger
     }
 
     /**
-     * Old password attribute
+     * The old password attribute.
      *
      * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: true - mutability:
      * writeOnly - returned: never - uniqueness: none - caseExact: false - idcsSensitive: none -
@@ -894,7 +894,7 @@ public final class MePasswordChanger
     private final String oldPassword;
 
     /**
-     * Old password attribute
+     * The old password attribute.
      *
      * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: true - mutability:
      * writeOnly - returned: never - uniqueness: none - caseExact: false - idcsSensitive: none -

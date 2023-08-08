@@ -47,6 +47,7 @@ public final class AutonomousDatabaseSummary
         "backupConfig",
         "keyHistoryEntry",
         "cpuCoreCount",
+        "localAdgAutoFailoverMaxDataLossLimit",
         "computeModel",
         "computeCount",
         "backupRetentionPeriodInDays",
@@ -152,6 +153,7 @@ public final class AutonomousDatabaseSummary
             AutonomousDatabaseBackupConfig backupConfig,
             java.util.List<AutonomousDatabaseKeyHistoryEntry> keyHistoryEntry,
             Integer cpuCoreCount,
+            Integer localAdgAutoFailoverMaxDataLossLimit,
             ComputeModel computeModel,
             Float computeCount,
             Integer backupRetentionPeriodInDays,
@@ -256,6 +258,7 @@ public final class AutonomousDatabaseSummary
         this.backupConfig = backupConfig;
         this.keyHistoryEntry = keyHistoryEntry;
         this.cpuCoreCount = cpuCoreCount;
+        this.localAdgAutoFailoverMaxDataLossLimit = localAdgAutoFailoverMaxDataLossLimit;
         this.computeModel = computeModel;
         this.computeCount = computeCount;
         this.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
@@ -751,6 +754,28 @@ public final class AutonomousDatabaseSummary
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             this.cpuCoreCount = cpuCoreCount;
             this.__explicitlySet__.add("cpuCoreCount");
+            return this;
+        }
+        /**
+         * Parameter that allows users to select an acceptable maximum data loss limit in seconds,
+         * up to which Automatic Failover will be triggered when necessary for a Local Autonomous
+         * Data Guard
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("localAdgAutoFailoverMaxDataLossLimit")
+        private Integer localAdgAutoFailoverMaxDataLossLimit;
+
+        /**
+         * Parameter that allows users to select an acceptable maximum data loss limit in seconds,
+         * up to which Automatic Failover will be triggered when necessary for a Local Autonomous
+         * Data Guard
+         *
+         * @param localAdgAutoFailoverMaxDataLossLimit the value to set
+         * @return this builder
+         */
+        public Builder localAdgAutoFailoverMaxDataLossLimit(
+                Integer localAdgAutoFailoverMaxDataLossLimit) {
+            this.localAdgAutoFailoverMaxDataLossLimit = localAdgAutoFailoverMaxDataLossLimit;
+            this.__explicitlySet__.add("localAdgAutoFailoverMaxDataLossLimit");
             return this;
         }
         /**
@@ -2591,6 +2616,7 @@ public final class AutonomousDatabaseSummary
                             this.backupConfig,
                             this.keyHistoryEntry,
                             this.cpuCoreCount,
+                            this.localAdgAutoFailoverMaxDataLossLimit,
                             this.computeModel,
                             this.computeCount,
                             this.backupRetentionPeriodInDays,
@@ -2743,6 +2769,10 @@ public final class AutonomousDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("cpuCoreCount")) {
                 this.cpuCoreCount(model.getCpuCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("localAdgAutoFailoverMaxDataLossLimit")) {
+                this.localAdgAutoFailoverMaxDataLossLimit(
+                        model.getLocalAdgAutoFailoverMaxDataLossLimit());
             }
             if (model.wasPropertyExplicitlySet("computeModel")) {
                 this.computeModel(model.getComputeModel());
@@ -3431,6 +3461,23 @@ public final class AutonomousDatabaseSummary
      */
     public Integer getCpuCoreCount() {
         return cpuCoreCount;
+    }
+
+    /**
+     * Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to
+     * which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("localAdgAutoFailoverMaxDataLossLimit")
+    private final Integer localAdgAutoFailoverMaxDataLossLimit;
+
+    /**
+     * Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to
+     * which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+     *
+     * @return the value
+     */
+    public Integer getLocalAdgAutoFailoverMaxDataLossLimit() {
+        return localAdgAutoFailoverMaxDataLossLimit;
     }
 
     /**
@@ -5902,6 +5949,8 @@ public final class AutonomousDatabaseSummary
         sb.append(", backupConfig=").append(String.valueOf(this.backupConfig));
         sb.append(", keyHistoryEntry=").append(String.valueOf(this.keyHistoryEntry));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
+        sb.append(", localAdgAutoFailoverMaxDataLossLimit=")
+                .append(String.valueOf(this.localAdgAutoFailoverMaxDataLossLimit));
         sb.append(", computeModel=").append(String.valueOf(this.computeModel));
         sb.append(", computeCount=").append(String.valueOf(this.computeCount));
         sb.append(", backupRetentionPeriodInDays=")
@@ -6053,6 +6102,9 @@ public final class AutonomousDatabaseSummary
                 && java.util.Objects.equals(this.backupConfig, other.backupConfig)
                 && java.util.Objects.equals(this.keyHistoryEntry, other.keyHistoryEntry)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
+                && java.util.Objects.equals(
+                        this.localAdgAutoFailoverMaxDataLossLimit,
+                        other.localAdgAutoFailoverMaxDataLossLimit)
                 && java.util.Objects.equals(this.computeModel, other.computeModel)
                 && java.util.Objects.equals(this.computeCount, other.computeCount)
                 && java.util.Objects.equals(
@@ -6226,6 +6278,11 @@ public final class AutonomousDatabaseSummary
                 (result * PRIME)
                         + (this.keyHistoryEntry == null ? 43 : this.keyHistoryEntry.hashCode());
         result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.localAdgAutoFailoverMaxDataLossLimit == null
+                                ? 43
+                                : this.localAdgAutoFailoverMaxDataLossLimit.hashCode());
         result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
         result = (result * PRIME) + (this.computeCount == null ? 43 : this.computeCount.hashCode());
         result =

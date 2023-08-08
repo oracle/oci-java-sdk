@@ -130,7 +130,7 @@ public final class UserExtSupportAccounts
             return this;
         }
         /**
-         * Ocid of the User's Support Account.
+         * The OCID of the user's support account.
          *
          * <p>*Added In:** 2103141444
          *
@@ -142,7 +142,7 @@ public final class UserExtSupportAccounts
         private String ocid;
 
         /**
-         * Ocid of the User's Support Account.
+         * The OCID of the user's support account.
          *
          * <p>*Added In:** 2103141444
          *
@@ -305,7 +305,7 @@ public final class UserExtSupportAccounts
     }
 
     /**
-     * Ocid of the User's Support Account.
+     * The OCID of the user's support account.
      *
      * <p>*Added In:** 2103141444
      *
@@ -316,7 +316,7 @@ public final class UserExtSupportAccounts
     private final String ocid;
 
     /**
-     * Ocid of the User's Support Account.
+     * The OCID of the user's support account.
      *
      * <p>*Added In:** 2103141444
      *

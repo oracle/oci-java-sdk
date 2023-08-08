@@ -5,7 +5,7 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * A complex attribute that indicates an account is locked (blocking new sessions)
+ * A complex attribute that indicates an account is locked (blocking any new sessions).
  *
  * <p>*SCIM++ Properties:** - idcsCsvAttributeNameMappings: [[columnHeaderName:Locked,
  * mapsTo:locked.on], [columnHeaderName:Locked Reason, mapsTo:locked.reason],
@@ -39,23 +39,29 @@ public final class UserExtLocked extends com.oracle.bmc.http.client.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Indicates the reason for locking. Valid values are: 0 - failed password login attempts, 1
-         * - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 -
-         * failed MFA login attempts for federated user, 5 - failed Database login attempts
+         * Indicates the reason for locking the account. Valid values are: 0 - failed password login
+         * attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login
+         * attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login
+         * attempts
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: integer - uniqueness: none
+         * readWrite - idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true - required: false - returned:
+         * default - type: integer - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("reason")
         private Integer reason;
 
         /**
-         * Indicates the reason for locking. Valid values are: 0 - failed password login attempts, 1
-         * - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 -
-         * failed MFA login attempts for federated user, 5 - failed Database login attempts
+         * Indicates the reason for locking the account. Valid values are: 0 - failed password login
+         * attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login
+         * attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login
+         * attempts
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: integer - uniqueness: none
+         * readWrite - idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true - required: false - returned:
+         * default - type: integer - uniqueness: none
          *
          * @param reason the value to set
          * @return this builder
@@ -66,21 +72,23 @@ public final class UserExtLocked extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /**
-         * Indicates tat the account is locked
+         * Indicates that the account is locked.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-         * none
+         * mutability: readWrite - idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true - required: false - returned:
+         * default - type: boolean - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("on")
         private Boolean on;
 
         /**
-         * Indicates tat the account is locked
+         * Indicates that the account is locked.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-         * none
+         * mutability: readWrite - idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true - required: false - returned:
+         * default - type: boolean - uniqueness: none
          *
          * @param on the value to set
          * @return this builder
@@ -91,19 +99,21 @@ public final class UserExtLocked extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /**
-         * The date and time that the current resource was locked
+         * The date and time that the current resource was locked.
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: dateTime - uniqueness: none
+         * readWrite - idcsRequiresWriteForAccessFlows: true - required: false - returned: default -
+         * type: dateTime - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("lockDate")
         private String lockDate;
 
         /**
-         * The date and time that the current resource was locked
+         * The date and time that the current resource was locked.
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: dateTime - uniqueness: none
+         * readWrite - idcsRequiresWriteForAccessFlows: true - required: false - returned: default -
+         * type: dateTime - uniqueness: none
          *
          * @param lockDate the value to set
          * @return this builder
@@ -114,8 +124,8 @@ public final class UserExtLocked extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /**
-         * Indicates whether user password is expired. If this value is false, password expiry will
-         * still be evaluated during user login.
+         * Indicates whether the user password is expired. If this value is false, password expiry
+         * is still evaluated during user login.
          *
          * <p>*Added In:** 20.1.3
          *
@@ -127,8 +137,8 @@ public final class UserExtLocked extends com.oracle.bmc.http.client.internal.Exp
         private Boolean expired;
 
         /**
-         * Indicates whether user password is expired. If this value is false, password expiry will
-         * still be evaluated during user login.
+         * Indicates whether the user password is expired. If this value is false, password expiry
+         * is still evaluated during user login.
          *
          * <p>*Added In:** 20.1.3
          *
@@ -185,23 +195,25 @@ public final class UserExtLocked extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * Indicates the reason for locking. Valid values are: 0 - failed password login attempts, 1 -
-     * admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA
-     * login attempts for federated user, 5 - failed Database login attempts
+     * Indicates the reason for locking the account. Valid values are: 0 - failed password login
+     * attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts,
+     * 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: integer - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true - required: false - returned: default - type: integer - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("reason")
     private final Integer reason;
 
     /**
-     * Indicates the reason for locking. Valid values are: 0 - failed password login attempts, 1 -
-     * admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA
-     * login attempts for federated user, 5 - failed Database login attempts
+     * Indicates the reason for locking the account. Valid values are: 0 - failed password login
+     * attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts,
+     * 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: integer - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true - required: false - returned: default - type: integer - uniqueness: none
      *
      * @return the value
      */
@@ -210,21 +222,23 @@ public final class UserExtLocked extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * Indicates tat the account is locked
+     * Indicates that the account is locked.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
+     * mutability: readWrite - idcsRequiresWriteForAccessFlows: true -
+     * idcsRequiresImmediateReadAfterWriteForAccessFlows: true - required: false - returned: default
+     * - type: boolean - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("on")
     private final Boolean on;
 
     /**
-     * Indicates tat the account is locked
+     * Indicates that the account is locked.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
+     * mutability: readWrite - idcsRequiresWriteForAccessFlows: true -
+     * idcsRequiresImmediateReadAfterWriteForAccessFlows: true - required: false - returned: default
+     * - type: boolean - uniqueness: none
      *
      * @return the value
      */
@@ -233,19 +247,21 @@ public final class UserExtLocked extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * The date and time that the current resource was locked
+     * The date and time that the current resource was locked.
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: dateTime - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - required: false - returned: default - type:
+     * dateTime - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lockDate")
     private final String lockDate;
 
     /**
-     * The date and time that the current resource was locked
+     * The date and time that the current resource was locked.
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: dateTime - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - required: false - returned: default - type:
+     * dateTime - uniqueness: none
      *
      * @return the value
      */
@@ -254,8 +270,8 @@ public final class UserExtLocked extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * Indicates whether user password is expired. If this value is false, password expiry will
-     * still be evaluated during user login.
+     * Indicates whether the user password is expired. If this value is false, password expiry is
+     * still evaluated during user login.
      *
      * <p>*Added In:** 20.1.3
      *
@@ -267,8 +283,8 @@ public final class UserExtLocked extends com.oracle.bmc.http.client.internal.Exp
     private final Boolean expired;
 
     /**
-     * Indicates whether user password is expired. If this value is false, password expiry will
-     * still be evaluated during user login.
+     * Indicates whether the user password is expired. If this value is false, password expiry is
+     * still evaluated during user login.
      *
      * <p>*Added In:** 20.1.3
      *

@@ -44,6 +44,15 @@ public final class SubnetTopology extends Topology {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("limitedEntities")
+        private java.util.List<String> limitedEntities;
+
+        public Builder limitedEntities(java.util.List<String> limitedEntities) {
+            this.limitedEntities = limitedEntities;
+            this.__explicitlySet__.add("limitedEntities");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -78,7 +87,11 @@ public final class SubnetTopology extends Topology {
         public SubnetTopology build() {
             SubnetTopology model =
                     new SubnetTopology(
-                            this.entities, this.relationships, this.timeCreated, this.subnetId);
+                            this.entities,
+                            this.relationships,
+                            this.limitedEntities,
+                            this.timeCreated,
+                            this.subnetId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -92,6 +105,9 @@ public final class SubnetTopology extends Topology {
             }
             if (model.wasPropertyExplicitlySet("relationships")) {
                 this.relationships(model.getRelationships());
+            }
+            if (model.wasPropertyExplicitlySet("limitedEntities")) {
+                this.limitedEntities(model.getLimitedEntities());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -116,9 +132,10 @@ public final class SubnetTopology extends Topology {
     public SubnetTopology(
             java.util.List<Object> entities,
             java.util.List<TopologyEntityRelationship> relationships,
+            java.util.List<String> limitedEntities,
             java.util.Date timeCreated,
             String subnetId) {
-        super(entities, relationships, timeCreated);
+        super(entities, relationships, limitedEntities, timeCreated);
         this.subnetId = subnetId;
     }
 

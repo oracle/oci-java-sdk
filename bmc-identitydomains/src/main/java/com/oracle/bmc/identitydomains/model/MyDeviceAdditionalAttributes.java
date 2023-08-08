@@ -36,7 +36,9 @@ public final class MyDeviceAdditionalAttributes
          * Device Attribute Key Name
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: true - returned: always - type: string - uniqueness: none
+         * readOnly - required: true - returned: always - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -45,7 +47,9 @@ public final class MyDeviceAdditionalAttributes
          * Device Attribute Key Name
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: true - returned: always - type: string - uniqueness: none
+         * readOnly - required: true - returned: always - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *
          * @param key the value to set
          * @return this builder
@@ -59,7 +63,9 @@ public final class MyDeviceAdditionalAttributes
          * Device Attribute Value
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: true - returned: default - type: string - uniqueness: none
+         * readOnly - required: true - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
@@ -68,7 +74,9 @@ public final class MyDeviceAdditionalAttributes
          * Device Attribute Value
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: true - returned: default - type: string - uniqueness: none
+         * readOnly - required: true - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *
          * @param value the value to set
          * @return this builder
@@ -116,7 +124,9 @@ public final class MyDeviceAdditionalAttributes
      * Device Attribute Key Name
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: true - returned: always - type: string - uniqueness: none
+     * - required: true - returned: always - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
@@ -125,7 +135,9 @@ public final class MyDeviceAdditionalAttributes
      * Device Attribute Key Name
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: true - returned: always - type: string - uniqueness: none
+     * - required: true - returned: always - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      *
      * @return the value
      */
@@ -137,7 +149,9 @@ public final class MyDeviceAdditionalAttributes
      * Device Attribute Value
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: true - returned: default - type: string - uniqueness: none
+     * - required: true - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
@@ -146,7 +160,9 @@ public final class MyDeviceAdditionalAttributes
      * Device Attribute Value
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: true - returned: default - type: string - uniqueness: none
+     * - required: true - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      *
      * @return the value
      */

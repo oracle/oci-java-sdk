@@ -35,14 +35,21 @@ package com.oracle.bmc.vnmonitoring.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public class Topology extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"entities", "relationships", "timeCreated"})
+    @java.beans.ConstructorProperties({
+        "entities",
+        "relationships",
+        "limitedEntities",
+        "timeCreated"
+    })
     protected Topology(
             java.util.List<Object> entities,
             java.util.List<TopologyEntityRelationship> relationships,
+            java.util.List<String> limitedEntities,
             java.util.Date timeCreated) {
         super();
         this.entities = entities;
         this.relationships = relationships;
+        this.limitedEntities = limitedEntities;
         this.timeCreated = timeCreated;
     }
 
@@ -70,6 +77,23 @@ public class Topology extends com.oracle.bmc.http.client.internal.ExplicitlySetB
      */
     public java.util.List<TopologyEntityRelationship> getRelationships() {
         return relationships;
+    }
+
+    /**
+     * Lists entities that are limited during ingestion. The values for the items in the list are
+     * the entity type names of the limitedEntities. Example: {@code vcn}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("limitedEntities")
+    private final java.util.List<String> limitedEntities;
+
+    /**
+     * Lists entities that are limited during ingestion. The values for the items in the list are
+     * the entity type names of the limitedEntities. Example: {@code vcn}
+     *
+     * @return the value
+     */
+    public java.util.List<String> getLimitedEntities() {
+        return limitedEntities;
     }
 
     /**
@@ -106,6 +130,7 @@ public class Topology extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         sb.append("super=").append(super.toString());
         sb.append("entities=").append(String.valueOf(this.entities));
         sb.append(", relationships=").append(String.valueOf(this.relationships));
+        sb.append(", limitedEntities=").append(String.valueOf(this.limitedEntities));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(")");
         return sb.toString();
@@ -123,6 +148,7 @@ public class Topology extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         Topology other = (Topology) o;
         return java.util.Objects.equals(this.entities, other.entities)
                 && java.util.Objects.equals(this.relationships, other.relationships)
+                && java.util.Objects.equals(this.limitedEntities, other.limitedEntities)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && super.equals(other);
     }
@@ -135,6 +161,9 @@ public class Topology extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         result =
                 (result * PRIME)
                         + (this.relationships == null ? 43 : this.relationships.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.limitedEntities == null ? 43 : this.limitedEntities.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

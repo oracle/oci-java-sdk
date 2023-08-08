@@ -23,11 +23,41 @@ package com.oracle.bmc.ailanguage.model;
         defaultImpl = ModelDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PreTrainedKeyPhraseExtractionModelDetails.class,
+            name = "PRE_TRAINED_KEYPHRASE_EXTRACTION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PreTrainedHealthNluModelDetails.class,
+            name = "PRE_TRAINED_HEALTH_NLU"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PreTrainedUniversalModel.class,
+            name = "PRE_TRAINED_UNIVERSAL"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = NamedEntityRecognitionModelDetails.class,
             name = "NAMED_ENTITY_RECOGNITION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PreTrainedLanguageDetectionModelDetails.class,
+            name = "PRE_TRAINED_LANGUAGE_DETECTION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PreTrainedNamedEntityRecognitionModelDetails.class,
+            name = "PRE_TRAINED_NAMED_ENTITY_RECOGNITION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PreTrainedSentimentAnalysisModelDetails.class,
+            name = "PRE_TRAINED_SENTIMENT_ANALYSIS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PreTrainedPhiModelDetails.class,
+            name = "PRE_TRAINED_PHI"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PreTrainedTextClassificationModelDetails.class,
+            name = "PRE_TRAINED_TEXT_CLASSIFICATION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = TextClassificationModelDetails.class,
-            name = "TEXT_CLASSIFICATION")
+            name = "TEXT_CLASSIFICATION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PreTrainedSummarization.class,
+            name = "PRE_TRAINED_SUMMARIZATION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PreTrainedPiiModelDetails.class,
+            name = "PRE_TRAINED_PII")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -99,6 +129,16 @@ public class ModelDetails extends com.oracle.bmc.http.client.internal.Explicitly
     public enum ModelType implements com.oracle.bmc.http.internal.BmcEnum {
         NamedEntityRecognition("NAMED_ENTITY_RECOGNITION"),
         TextClassification("TEXT_CLASSIFICATION"),
+        PreTrainedNamedEntityRecognition("PRE_TRAINED_NAMED_ENTITY_RECOGNITION"),
+        PreTrainedTextClassification("PRE_TRAINED_TEXT_CLASSIFICATION"),
+        PreTrainedSentimentAnalysis("PRE_TRAINED_SENTIMENT_ANALYSIS"),
+        PreTrainedKeyphraseExtraction("PRE_TRAINED_KEYPHRASE_EXTRACTION"),
+        PreTrainedLanguageDetection("PRE_TRAINED_LANGUAGE_DETECTION"),
+        PreTrainedPii("PRE_TRAINED_PII"),
+        PreTrainedTranslation("PRE_TRAINED_TRANSLATION"),
+        PreTrainedHealthNlu("PRE_TRAINED_HEALTH_NLU"),
+        PreTrainedSummarization("PRE_TRAINED_SUMMARIZATION"),
+        PreTrainedUniversal("PRE_TRAINED_UNIVERSAL"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

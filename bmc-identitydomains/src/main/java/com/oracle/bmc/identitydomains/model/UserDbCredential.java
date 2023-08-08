@@ -5,7 +5,7 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * User's Db Credential <br>
+ * User's Database Credential <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -438,7 +438,7 @@ public final class UserDbCredential
             return this;
         }
         /**
-         * The db password of the user
+         * The user's database password.
          *
          * <p>*SCIM++ Properties:** - type: string - mutability: immutable - returned: default -
          * required: true
@@ -447,7 +447,7 @@ public final class UserDbCredential
         private String dbPassword;
 
         /**
-         * The db password of the user
+         * The user's database password.
          *
          * <p>*SCIM++ Properties:** - type: string - mutability: immutable - returned: default -
          * required: true
@@ -488,7 +488,7 @@ public final class UserDbCredential
             return this;
         }
         /**
-         * The db password of the user with mixed salt
+         * The user's database password with mixed salt.
          *
          * <p>*SCIM++ Properties:** - type: string - mutability: readOnly - returned: default -
          * required: false
@@ -497,7 +497,7 @@ public final class UserDbCredential
         private String mixedDbPassword;
 
         /**
-         * The db password of the user with mixed salt
+         * The user's database password with mixed salt.
          *
          * <p>*SCIM++ Properties:** - type: string - mutability: readOnly - returned: default -
          * required: false
@@ -511,7 +511,7 @@ public final class UserDbCredential
             return this;
         }
         /**
-         * The salt of the password
+         * The salt of the password.
          *
          * <p>*SCIM++ Properties:** - type: string - mutability: readOnly - returned: default -
          * required: false
@@ -520,7 +520,7 @@ public final class UserDbCredential
         private String salt;
 
         /**
-         * The salt of the password
+         * The salt of the password.
          *
          * <p>*SCIM++ Properties:** - type: string - mutability: readOnly - returned: default -
          * required: false
@@ -534,7 +534,7 @@ public final class UserDbCredential
             return this;
         }
         /**
-         * The mixed salt of the password
+         * The mixed salt of the password.
          *
          * <p>*SCIM++ Properties:** - type: string - mutability: readOnly - returned: default -
          * required: false
@@ -543,7 +543,7 @@ public final class UserDbCredential
         private String mixedSalt;
 
         /**
-         * The mixed salt of the password
+         * The mixed salt of the password.
          *
          * <p>*SCIM++ Properties:** - type: string - mutability: readOnly - returned: default -
          * required: false
@@ -557,7 +557,7 @@ public final class UserDbCredential
             return this;
         }
         /**
-         * A DateTime that specifies the date and time when the current db password was set
+         * A DateTime that specifies the date and time when the current database password was set.
          *
          * <p>*SCIM++ Properties:** - type: dateTime - mutability: readOnly - returned: default
          */
@@ -565,7 +565,7 @@ public final class UserDbCredential
         private String lastSetDate;
 
         /**
-         * A DateTime that specifies the date and time when the current db password was set
+         * A DateTime that specifies the date and time when the current database password was set.
          *
          * <p>*SCIM++ Properties:** - type: dateTime - mutability: readOnly - returned: default
          *
@@ -578,7 +578,7 @@ public final class UserDbCredential
             return this;
         }
         /**
-         * Indicates that the db password has expired
+         * Indicates that the database password has expired.
          *
          * <p>*SCIM++ Properties:** - type: boolean - mutability: readOnly - returned: default
          */
@@ -586,7 +586,7 @@ public final class UserDbCredential
         private Boolean expired;
 
         /**
-         * Indicates that the db password has expired
+         * Indicates that the database password has expired.
          *
          * <p>*SCIM++ Properties:** - type: boolean - mutability: readOnly - returned: default
          *
@@ -628,7 +628,7 @@ public final class UserDbCredential
             return this;
         }
         /**
-         * User credential expires on
+         * When the user credential expires.
          *
          * <p>*Added In:** 2109090424
          *
@@ -640,7 +640,7 @@ public final class UserDbCredential
         private String expiresOn;
 
         /**
-         * User credential expires on
+         * When the user credential expires.
          *
          * <p>*Added In:** 2109090424
          *
@@ -1096,7 +1096,7 @@ public final class UserDbCredential
     }
 
     /**
-     * The db password of the user
+     * The user's database password.
      *
      * <p>*SCIM++ Properties:** - type: string - mutability: immutable - returned: default -
      * required: true
@@ -1105,7 +1105,7 @@ public final class UserDbCredential
     private final String dbPassword;
 
     /**
-     * The db password of the user
+     * The user's database password.
      *
      * <p>*SCIM++ Properties:** - type: string - mutability: immutable - returned: default -
      * required: true
@@ -1142,7 +1142,7 @@ public final class UserDbCredential
     }
 
     /**
-     * The db password of the user with mixed salt
+     * The user's database password with mixed salt.
      *
      * <p>*SCIM++ Properties:** - type: string - mutability: readOnly - returned: default -
      * required: false
@@ -1151,7 +1151,7 @@ public final class UserDbCredential
     private final String mixedDbPassword;
 
     /**
-     * The db password of the user with mixed salt
+     * The user's database password with mixed salt.
      *
      * <p>*SCIM++ Properties:** - type: string - mutability: readOnly - returned: default -
      * required: false
@@ -1163,7 +1163,7 @@ public final class UserDbCredential
     }
 
     /**
-     * The salt of the password
+     * The salt of the password.
      *
      * <p>*SCIM++ Properties:** - type: string - mutability: readOnly - returned: default -
      * required: false
@@ -1172,7 +1172,7 @@ public final class UserDbCredential
     private final String salt;
 
     /**
-     * The salt of the password
+     * The salt of the password.
      *
      * <p>*SCIM++ Properties:** - type: string - mutability: readOnly - returned: default -
      * required: false
@@ -1184,7 +1184,7 @@ public final class UserDbCredential
     }
 
     /**
-     * The mixed salt of the password
+     * The mixed salt of the password.
      *
      * <p>*SCIM++ Properties:** - type: string - mutability: readOnly - returned: default -
      * required: false
@@ -1193,7 +1193,7 @@ public final class UserDbCredential
     private final String mixedSalt;
 
     /**
-     * The mixed salt of the password
+     * The mixed salt of the password.
      *
      * <p>*SCIM++ Properties:** - type: string - mutability: readOnly - returned: default -
      * required: false
@@ -1205,7 +1205,7 @@ public final class UserDbCredential
     }
 
     /**
-     * A DateTime that specifies the date and time when the current db password was set
+     * A DateTime that specifies the date and time when the current database password was set.
      *
      * <p>*SCIM++ Properties:** - type: dateTime - mutability: readOnly - returned: default
      */
@@ -1213,7 +1213,7 @@ public final class UserDbCredential
     private final String lastSetDate;
 
     /**
-     * A DateTime that specifies the date and time when the current db password was set
+     * A DateTime that specifies the date and time when the current database password was set.
      *
      * <p>*SCIM++ Properties:** - type: dateTime - mutability: readOnly - returned: default
      *
@@ -1224,7 +1224,7 @@ public final class UserDbCredential
     }
 
     /**
-     * Indicates that the db password has expired
+     * Indicates that the database password has expired.
      *
      * <p>*SCIM++ Properties:** - type: boolean - mutability: readOnly - returned: default
      */
@@ -1232,7 +1232,7 @@ public final class UserDbCredential
     private final Boolean expired;
 
     /**
-     * Indicates that the db password has expired
+     * Indicates that the database password has expired.
      *
      * <p>*SCIM++ Properties:** - type: boolean - mutability: readOnly - returned: default
      *
@@ -1320,7 +1320,7 @@ public final class UserDbCredential
     }
 
     /**
-     * User credential expires on
+     * When the user credential expires.
      *
      * <p>*Added In:** 2109090424
      *
@@ -1332,7 +1332,7 @@ public final class UserDbCredential
     private final String expiresOn;
 
     /**
-     * User credential expires on
+     * When the user credential expires.
      *
      * <p>*Added In:** 2109090424
      *

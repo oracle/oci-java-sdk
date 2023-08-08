@@ -37,7 +37,9 @@ public final class MyDeviceNonCompliances
          * Device Compliance name
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: true - returned: default - type: string - uniqueness: none
+         * readOnly - required: true - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -46,7 +48,9 @@ public final class MyDeviceNonCompliances
          * Device Compliance name
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: true - returned: default - type: string - uniqueness: none
+         * readOnly - required: true - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *
          * @param name the value to set
          * @return this builder
@@ -60,7 +64,9 @@ public final class MyDeviceNonCompliances
          * Device Compliance value
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: true - returned: default - type: string - uniqueness: none
+         * readOnly - required: true - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
@@ -69,7 +75,9 @@ public final class MyDeviceNonCompliances
          * Device Compliance value
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: true - returned: default - type: string - uniqueness: none
+         * readOnly - required: true - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *
          * @param value the value to set
          * @return this builder
@@ -83,7 +91,9 @@ public final class MyDeviceNonCompliances
          * Device Compliance Action
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: true - returned: default - type: string - uniqueness: none
+         * readOnly - required: true - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          */
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
@@ -92,7 +102,9 @@ public final class MyDeviceNonCompliances
          * Device Compliance Action
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: true - returned: default - type: string - uniqueness: none
+         * readOnly - required: true - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *
          * @param action the value to set
          * @return this builder
@@ -143,7 +155,9 @@ public final class MyDeviceNonCompliances
      * Device Compliance name
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: true - returned: default - type: string - uniqueness: none
+     * - required: true - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
@@ -152,7 +166,9 @@ public final class MyDeviceNonCompliances
      * Device Compliance name
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: true - returned: default - type: string - uniqueness: none
+     * - required: true - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      *
      * @return the value
      */
@@ -164,7 +180,9 @@ public final class MyDeviceNonCompliances
      * Device Compliance value
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: true - returned: default - type: string - uniqueness: none
+     * - required: true - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
@@ -173,7 +191,9 @@ public final class MyDeviceNonCompliances
      * Device Compliance value
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: true - returned: default - type: string - uniqueness: none
+     * - required: true - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      *
      * @return the value
      */
@@ -185,7 +205,9 @@ public final class MyDeviceNonCompliances
      * Device Compliance Action
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: true - returned: default - type: string - uniqueness: none
+     * - required: true - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     public enum Action implements com.oracle.bmc.http.internal.BmcEnum {
         Notify("NOTIFY"),
@@ -237,7 +259,9 @@ public final class MyDeviceNonCompliances
      * Device Compliance Action
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: true - returned: default - type: string - uniqueness: none
+     * - required: true - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
@@ -246,7 +270,9 @@ public final class MyDeviceNonCompliances
      * Device Compliance Action
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: true - returned: default - type: string - uniqueness: none
+     * - required: true - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      *
      * @return the value
      */

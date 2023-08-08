@@ -23,14 +23,49 @@ package com.oracle.bmc.vnmonitoring.model;
 public final class UpdateCrossConnectGroupDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"displayName"})
-    public UpdateCrossConnectGroupDetails(String displayName) {
+    @java.beans.ConstructorProperties({
+        "definedTags",
+        "displayName",
+        "customerReferenceName",
+        "freeformTags",
+        "macsecProperties"
+    })
+    public UpdateCrossConnectGroupDetails(
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String displayName,
+            String customerReferenceName,
+            java.util.Map<String, String> freeformTags,
+            UpdateMacsecProperties macsecProperties) {
         super();
+        this.definedTags = definedTags;
         this.displayName = displayName;
+        this.customerReferenceName = customerReferenceName;
+        this.freeformTags = freeformTags;
+        this.macsecProperties = macsecProperties;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         */
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
         /**
          * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
          * confidential information.
@@ -50,13 +85,65 @@ public final class UpdateCrossConnectGroupDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
+        /**
+         * A reference name or identifier for the physical fiber connection this cross-connect group
+         * uses.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("customerReferenceName")
+        private String customerReferenceName;
+
+        /**
+         * A reference name or identifier for the physical fiber connection this cross-connect group
+         * uses.
+         *
+         * @param customerReferenceName the value to set
+         * @return this builder
+         */
+        public Builder customerReferenceName(String customerReferenceName) {
+            this.customerReferenceName = customerReferenceName;
+            this.__explicitlySet__.add("customerReferenceName");
+            return this;
+        }
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         */
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("macsecProperties")
+        private UpdateMacsecProperties macsecProperties;
+
+        public Builder macsecProperties(UpdateMacsecProperties macsecProperties) {
+            this.macsecProperties = macsecProperties;
+            this.__explicitlySet__.add("macsecProperties");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateCrossConnectGroupDetails build() {
             UpdateCrossConnectGroupDetails model =
-                    new UpdateCrossConnectGroupDetails(this.displayName);
+                    new UpdateCrossConnectGroupDetails(
+                            this.definedTags,
+                            this.displayName,
+                            this.customerReferenceName,
+                            this.freeformTags,
+                            this.macsecProperties);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -65,8 +152,20 @@ public final class UpdateCrossConnectGroupDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateCrossConnectGroupDetails model) {
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("customerReferenceName")) {
+                this.customerReferenceName(model.getCustomerReferenceName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("macsecProperties")) {
+                this.macsecProperties(model.getMacsecProperties());
             }
             return this;
         }
@@ -79,6 +178,23 @@ public final class UpdateCrossConnectGroupDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
     }
 
     /**
@@ -98,6 +214,47 @@ public final class UpdateCrossConnectGroupDetails
         return displayName;
     }
 
+    /**
+     * A reference name or identifier for the physical fiber connection this cross-connect group
+     * uses.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("customerReferenceName")
+    private final String customerReferenceName;
+
+    /**
+     * A reference name or identifier for the physical fiber connection this cross-connect group
+     * uses.
+     *
+     * @return the value
+     */
+    public String getCustomerReferenceName() {
+        return customerReferenceName;
+    }
+
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    private final java.util.Map<String, String> freeformTags;
+
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("macsecProperties")
+    private final UpdateMacsecProperties macsecProperties;
+
+    public UpdateMacsecProperties getMacsecProperties() {
+        return macsecProperties;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -113,7 +270,11 @@ public final class UpdateCrossConnectGroupDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateCrossConnectGroupDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append("definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", customerReferenceName=").append(String.valueOf(this.customerReferenceName));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", macsecProperties=").append(String.valueOf(this.macsecProperties));
         sb.append(")");
         return sb.toString();
     }
@@ -128,14 +289,29 @@ public final class UpdateCrossConnectGroupDetails
         }
 
         UpdateCrossConnectGroupDetails other = (UpdateCrossConnectGroupDetails) o;
-        return java.util.Objects.equals(this.displayName, other.displayName) && super.equals(other);
+        return java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.customerReferenceName, other.customerReferenceName)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.macsecProperties, other.macsecProperties)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customerReferenceName == null
+                                ? 43
+                                : this.customerReferenceName.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.macsecProperties == null ? 43 : this.macsecProperties.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

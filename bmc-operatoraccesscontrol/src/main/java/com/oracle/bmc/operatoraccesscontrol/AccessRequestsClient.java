@@ -152,6 +152,7 @@ public class AccessRequestsClient extends com.oracle.bmc.http.internal.BaseSyncC
                         ApproveAccessRequestResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ApproveAccessRequestResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -178,6 +179,7 @@ public class AccessRequestsClient extends com.oracle.bmc.http.internal.BaseSyncC
                         GetAccessRequestResponse.Builder::accessRequest)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAccessRequestResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -212,6 +214,7 @@ public class AccessRequestsClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString("etag", InteractionRequestResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", InteractionRequestResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -245,6 +248,7 @@ public class AccessRequestsClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-request-id", ListAccessRequestHistoriesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAccessRequestHistoriesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -281,6 +285,7 @@ public class AccessRequestsClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-request-id", ListAccessRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAccessRequestsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -312,6 +317,7 @@ public class AccessRequestsClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-request-id", ListInteractionsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListInteractionsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -345,6 +351,7 @@ public class AccessRequestsClient extends com.oracle.bmc.http.internal.BaseSyncC
                         RejectAccessRequestResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RejectAccessRequestResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -379,6 +386,7 @@ public class AccessRequestsClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString("etag", ReviewAccessRequestResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", ReviewAccessRequestResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -412,6 +420,7 @@ public class AccessRequestsClient extends com.oracle.bmc.http.internal.BaseSyncC
                         RevokeAccessRequestResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RevokeAccessRequestResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 

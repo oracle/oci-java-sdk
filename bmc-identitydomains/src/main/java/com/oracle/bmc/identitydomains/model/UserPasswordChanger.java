@@ -5,7 +5,7 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Schema to handle userpassword change by administrator. <br>
+ * The schema used to handle a user password change by an administrator. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -428,7 +428,8 @@ public final class UserPasswordChanger
             return this;
         }
         /**
-         * Password attribute. Max length for password is controlled via Password Policy.
+         * The password attribute. The maximum length for the password is set in the password
+         * policy.
          *
          * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: true -
          * mutability: writeOnly - returned: never - uniqueness: none - idcsSensitive: none
@@ -437,7 +438,8 @@ public final class UserPasswordChanger
         private String password;
 
         /**
-         * Password attribute. Max length for password is controlled via Password Policy.
+         * The password attribute. The maximum length for the password is set in the password
+         * policy.
          *
          * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: true -
          * mutability: writeOnly - returned: never - uniqueness: none - idcsSensitive: none
@@ -451,8 +453,7 @@ public final class UserPasswordChanger
             return this;
         }
         /**
-         * A Boolean value indicating whether or not to send email notification after password is
-         * changed.
+         * Indicates whether to send an email notification after a password is changed.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
          * - mutability: immutable - required: false - returned: never - type: boolean - uniqueness:
@@ -462,8 +463,7 @@ public final class UserPasswordChanger
         private Boolean bypassNotification;
 
         /**
-         * A Boolean value indicating whether or not to send email notification after password is
-         * changed.
+         * Indicates whether to send an email notification after a password is changed.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
          * - mutability: immutable - required: false - returned: never - type: boolean - uniqueness:
@@ -478,8 +478,8 @@ public final class UserPasswordChanger
             return this;
         }
         /**
-         * Specifies the EmailTemplate to be used when sending notification to the user this request
-         * is for. If specified, it overrides the default EmailTemplate for this event.
+         * Specifies the EmailTemplate to be used when sending a notification to the user. If
+         * specified, it overrides the default EmailTemplate.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
          * - mutability: writeOnly - required: false - returned: never - type: string - uniqueness:
@@ -489,8 +489,8 @@ public final class UserPasswordChanger
         private String notificationEmailTemplateId;
 
         /**
-         * Specifies the EmailTemplate to be used when sending notification to the user this request
-         * is for. If specified, it overrides the default EmailTemplate for this event.
+         * Specifies the EmailTemplate to be used when sending a notification to the user. If
+         * specified, it overrides the default EmailTemplate.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
          * - mutability: writeOnly - required: false - returned: never - type: string - uniqueness:
@@ -917,7 +917,7 @@ public final class UserPasswordChanger
     }
 
     /**
-     * Password attribute. Max length for password is controlled via Password Policy.
+     * The password attribute. The maximum length for the password is set in the password policy.
      *
      * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: true - mutability:
      * writeOnly - returned: never - uniqueness: none - idcsSensitive: none
@@ -926,7 +926,7 @@ public final class UserPasswordChanger
     private final String password;
 
     /**
-     * Password attribute. Max length for password is controlled via Password Policy.
+     * The password attribute. The maximum length for the password is set in the password policy.
      *
      * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: true - mutability:
      * writeOnly - returned: never - uniqueness: none - idcsSensitive: none
@@ -938,8 +938,7 @@ public final class UserPasswordChanger
     }
 
     /**
-     * A Boolean value indicating whether or not to send email notification after password is
-     * changed.
+     * Indicates whether to send an email notification after a password is changed.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
      * mutability: immutable - required: false - returned: never - type: boolean - uniqueness: none
@@ -948,8 +947,7 @@ public final class UserPasswordChanger
     private final Boolean bypassNotification;
 
     /**
-     * A Boolean value indicating whether or not to send email notification after password is
-     * changed.
+     * Indicates whether to send an email notification after a password is changed.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
      * mutability: immutable - required: false - returned: never - type: boolean - uniqueness: none
@@ -961,8 +959,8 @@ public final class UserPasswordChanger
     }
 
     /**
-     * Specifies the EmailTemplate to be used when sending notification to the user this request is
-     * for. If specified, it overrides the default EmailTemplate for this event.
+     * Specifies the EmailTemplate to be used when sending a notification to the user. If specified,
+     * it overrides the default EmailTemplate.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
      * mutability: writeOnly - required: false - returned: never - type: string - uniqueness: none
@@ -971,8 +969,8 @@ public final class UserPasswordChanger
     private final String notificationEmailTemplateId;
 
     /**
-     * Specifies the EmailTemplate to be used when sending notification to the user this request is
-     * for. If specified, it overrides the default EmailTemplate for this event.
+     * Specifies the EmailTemplate to be used when sending a notification to the user. If specified,
+     * it overrides the default EmailTemplate.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
      * mutability: writeOnly - required: false - returned: never - type: string - uniqueness: none

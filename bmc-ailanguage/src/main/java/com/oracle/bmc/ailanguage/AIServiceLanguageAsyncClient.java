@@ -877,6 +877,35 @@ public class AIServiceLanguageAsyncClient extends com.oracle.bmc.http.internal.B
     }
 
     @Override
+    public java.util.concurrent.Future<GetModelTypeResponse> getModelType(
+            GetModelTypeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetModelTypeRequest, GetModelTypeResponse>
+                    handler) {
+
+        Validate.notBlank(request.getModelType(), "modelType must not be blank");
+
+        return clientCall(request, GetModelTypeResponse::builder)
+                .logger(LOG, "getModelType")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "GetModelType",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/ModelTypeInfo/GetModelType")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetModelTypeRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("modelTypes")
+                .appendPathParam(request.getModelType())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.ModelTypeInfo.class,
+                        GetModelTypeResponse.Builder::modelTypeInfo)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetModelTypeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetProjectResponse> getProject(
             GetProjectRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetProjectRequest, GetProjectResponse>

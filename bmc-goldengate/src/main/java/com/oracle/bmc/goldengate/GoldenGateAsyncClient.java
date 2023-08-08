@@ -131,6 +131,46 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<CancelDeploymentUpgradeResponse> cancelDeploymentUpgrade(
+            CancelDeploymentUpgradeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CancelDeploymentUpgradeRequest, CancelDeploymentUpgradeResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getDeploymentUpgradeId(), "deploymentUpgradeId must not be blank");
+        Objects.requireNonNull(
+                request.getCancelDeploymentUpgradeDetails(),
+                "cancelDeploymentUpgradeDetails is required");
+
+        return clientCall(request, CancelDeploymentUpgradeResponse::builder)
+                .logger(LOG, "cancelDeploymentUpgrade")
+                .serviceDetails(
+                        "GoldenGate",
+                        "CancelDeploymentUpgrade",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentUpgrade/CancelDeploymentUpgrade")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CancelDeploymentUpgradeRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deploymentUpgrades")
+                .appendPathParam(request.getDeploymentUpgradeId())
+                .appendPathParam("actions")
+                .appendPathParam("cancel")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.DeploymentUpgrade.class,
+                        CancelDeploymentUpgradeResponse.Builder::deploymentUpgrade)
+                .handleResponseHeaderString("etag", CancelDeploymentUpgradeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CancelDeploymentUpgradeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelSnoozeDeploymentUpgradeResponse>
             cancelSnoozeDeploymentUpgrade(
                     CancelSnoozeDeploymentUpgradeRequest request,
@@ -1658,6 +1698,49 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RescheduleDeploymentUpgradeResponse>
+            rescheduleDeploymentUpgrade(
+                    RescheduleDeploymentUpgradeRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RescheduleDeploymentUpgradeRequest,
+                                    RescheduleDeploymentUpgradeResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getDeploymentUpgradeId(), "deploymentUpgradeId must not be blank");
+        Objects.requireNonNull(
+                request.getRescheduleDeploymentUpgradeDetails(),
+                "rescheduleDeploymentUpgradeDetails is required");
+
+        return clientCall(request, RescheduleDeploymentUpgradeResponse::builder)
+                .logger(LOG, "rescheduleDeploymentUpgrade")
+                .serviceDetails(
+                        "GoldenGate",
+                        "RescheduleDeploymentUpgrade",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentUpgrade/RescheduleDeploymentUpgrade")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RescheduleDeploymentUpgradeRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deploymentUpgrades")
+                .appendPathParam(request.getDeploymentUpgradeId())
+                .appendPathParam("actions")
+                .appendPathParam("reschedule")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.DeploymentUpgrade.class,
+                        RescheduleDeploymentUpgradeResponse.Builder::deploymentUpgrade)
+                .handleResponseHeaderString(
+                        "etag", RescheduleDeploymentUpgradeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RescheduleDeploymentUpgradeResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
