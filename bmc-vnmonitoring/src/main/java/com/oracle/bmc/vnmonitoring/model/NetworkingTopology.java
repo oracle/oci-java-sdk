@@ -45,6 +45,15 @@ public final class NetworkingTopology extends Topology {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("limitedEntities")
+        private java.util.List<String> limitedEntities;
+
+        public Builder limitedEntities(java.util.List<String> limitedEntities) {
+            this.limitedEntities = limitedEntities;
+            this.__explicitlySet__.add("limitedEntities");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -59,7 +68,11 @@ public final class NetworkingTopology extends Topology {
 
         public NetworkingTopology build() {
             NetworkingTopology model =
-                    new NetworkingTopology(this.entities, this.relationships, this.timeCreated);
+                    new NetworkingTopology(
+                            this.entities,
+                            this.relationships,
+                            this.limitedEntities,
+                            this.timeCreated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -73,6 +86,9 @@ public final class NetworkingTopology extends Topology {
             }
             if (model.wasPropertyExplicitlySet("relationships")) {
                 this.relationships(model.getRelationships());
+            }
+            if (model.wasPropertyExplicitlySet("limitedEntities")) {
+                this.limitedEntities(model.getLimitedEntities());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -94,8 +110,9 @@ public final class NetworkingTopology extends Topology {
     public NetworkingTopology(
             java.util.List<Object> entities,
             java.util.List<TopologyEntityRelationship> relationships,
+            java.util.List<String> limitedEntities,
             java.util.Date timeCreated) {
-        super(entities, relationships, timeCreated);
+        super(entities, relationships, limitedEntities, timeCreated);
     }
 
     @Override

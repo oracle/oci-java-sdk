@@ -31,6 +31,9 @@ public final class UpdateAutonomousDatabaseDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "backupRetentionPeriodInDays",
+        "computeModel",
+        "localAdgAutoFailoverMaxDataLossLimit",
         "cpuCoreCount",
         "longTermBackupSchedule",
         "computeCount",
@@ -73,6 +76,9 @@ public final class UpdateAutonomousDatabaseDetails
         "secretVersionNumber"
     })
     public UpdateAutonomousDatabaseDetails(
+            Integer backupRetentionPeriodInDays,
+            ComputeModel computeModel,
+            Integer localAdgAutoFailoverMaxDataLossLimit,
             Integer cpuCoreCount,
             LongTermBackUpScheduleDetails longTermBackupSchedule,
             Float computeCount,
@@ -114,6 +120,9 @@ public final class UpdateAutonomousDatabaseDetails
             String secretId,
             Integer secretVersionNumber) {
         super();
+        this.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
+        this.computeModel = computeModel;
+        this.localAdgAutoFailoverMaxDataLossLimit = localAdgAutoFailoverMaxDataLossLimit;
         this.cpuCoreCount = cpuCoreCount;
         this.longTermBackupSchedule = longTermBackupSchedule;
         this.computeCount = computeCount;
@@ -158,6 +167,64 @@ public final class UpdateAutonomousDatabaseDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /** Retention period, in days, for long-term backups */
+        @com.fasterxml.jackson.annotation.JsonProperty("backupRetentionPeriodInDays")
+        private Integer backupRetentionPeriodInDays;
+
+        /**
+         * Retention period, in days, for long-term backups
+         *
+         * @param backupRetentionPeriodInDays the value to set
+         * @return this builder
+         */
+        public Builder backupRetentionPeriodInDays(Integer backupRetentionPeriodInDays) {
+            this.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
+            this.__explicitlySet__.add("backupRetentionPeriodInDays");
+            return this;
+        }
+        /**
+         * The compute model of the Autonomous Database. This is required if using the {@code
+         * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify
+         * {@code computeModel} to a non-null value.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+        private ComputeModel computeModel;
+
+        /**
+         * The compute model of the Autonomous Database. This is required if using the {@code
+         * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify
+         * {@code computeModel} to a non-null value.
+         *
+         * @param computeModel the value to set
+         * @return this builder
+         */
+        public Builder computeModel(ComputeModel computeModel) {
+            this.computeModel = computeModel;
+            this.__explicitlySet__.add("computeModel");
+            return this;
+        }
+        /**
+         * Parameter that allows users to select an acceptable maximum data loss limit in seconds,
+         * up to which Automatic Failover will be triggered when necessary for a Local Autonomous
+         * Data Guard
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("localAdgAutoFailoverMaxDataLossLimit")
+        private Integer localAdgAutoFailoverMaxDataLossLimit;
+
+        /**
+         * Parameter that allows users to select an acceptable maximum data loss limit in seconds,
+         * up to which Automatic Failover will be triggered when necessary for a Local Autonomous
+         * Data Guard
+         *
+         * @param localAdgAutoFailoverMaxDataLossLimit the value to set
+         * @return this builder
+         */
+        public Builder localAdgAutoFailoverMaxDataLossLimit(
+                Integer localAdgAutoFailoverMaxDataLossLimit) {
+            this.localAdgAutoFailoverMaxDataLossLimit = localAdgAutoFailoverMaxDataLossLimit;
+            this.__explicitlySet__.add("localAdgAutoFailoverMaxDataLossLimit");
+            return this;
+        }
         /**
          * The number of CPUs to be made available to the Autonomous Database.<br>
          * For Autonomous Databases on Dedicated Exadata Infrastructure: - The CPU type (OCPUs or
@@ -1432,6 +1499,9 @@ public final class UpdateAutonomousDatabaseDetails
         public UpdateAutonomousDatabaseDetails build() {
             UpdateAutonomousDatabaseDetails model =
                     new UpdateAutonomousDatabaseDetails(
+                            this.backupRetentionPeriodInDays,
+                            this.computeModel,
+                            this.localAdgAutoFailoverMaxDataLossLimit,
                             this.cpuCoreCount,
                             this.longTermBackupSchedule,
                             this.computeCount,
@@ -1480,6 +1550,16 @@ public final class UpdateAutonomousDatabaseDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateAutonomousDatabaseDetails model) {
+            if (model.wasPropertyExplicitlySet("backupRetentionPeriodInDays")) {
+                this.backupRetentionPeriodInDays(model.getBackupRetentionPeriodInDays());
+            }
+            if (model.wasPropertyExplicitlySet("computeModel")) {
+                this.computeModel(model.getComputeModel());
+            }
+            if (model.wasPropertyExplicitlySet("localAdgAutoFailoverMaxDataLossLimit")) {
+                this.localAdgAutoFailoverMaxDataLossLimit(
+                        model.getLocalAdgAutoFailoverMaxDataLossLimit());
+            }
             if (model.wasPropertyExplicitlySet("cpuCoreCount")) {
                 this.cpuCoreCount(model.getCpuCoreCount());
             }
@@ -1611,6 +1691,92 @@ public final class UpdateAutonomousDatabaseDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /** Retention period, in days, for long-term backups */
+    @com.fasterxml.jackson.annotation.JsonProperty("backupRetentionPeriodInDays")
+    private final Integer backupRetentionPeriodInDays;
+
+    /**
+     * Retention period, in days, for long-term backups
+     *
+     * @return the value
+     */
+    public Integer getBackupRetentionPeriodInDays() {
+        return backupRetentionPeriodInDays;
+    }
+
+    /**
+     * The compute model of the Autonomous Database. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value.
+     */
+    public enum ComputeModel implements com.oracle.bmc.http.internal.BmcEnum {
+        Ecpu("ECPU"),
+        Ocpu("OCPU"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ComputeModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ComputeModel v : ComputeModel.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ComputeModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ComputeModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ComputeModel: " + key);
+        }
+    };
+    /**
+     * The compute model of the Autonomous Database. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+    private final ComputeModel computeModel;
+
+    /**
+     * The compute model of the Autonomous Database. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value.
+     *
+     * @return the value
+     */
+    public ComputeModel getComputeModel() {
+        return computeModel;
+    }
+
+    /**
+     * Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to
+     * which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("localAdgAutoFailoverMaxDataLossLimit")
+    private final Integer localAdgAutoFailoverMaxDataLossLimit;
+
+    /**
+     * Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to
+     * which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+     *
+     * @return the value
+     */
+    public Integer getLocalAdgAutoFailoverMaxDataLossLimit() {
+        return localAdgAutoFailoverMaxDataLossLimit;
     }
 
     /**
@@ -2982,7 +3148,12 @@ public final class UpdateAutonomousDatabaseDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateAutonomousDatabaseDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
+        sb.append("backupRetentionPeriodInDays=")
+                .append(String.valueOf(this.backupRetentionPeriodInDays));
+        sb.append(", computeModel=").append(String.valueOf(this.computeModel));
+        sb.append(", localAdgAutoFailoverMaxDataLossLimit=")
+                .append(String.valueOf(this.localAdgAutoFailoverMaxDataLossLimit));
+        sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", longTermBackupSchedule=").append(String.valueOf(this.longTermBackupSchedule));
         sb.append(", computeCount=").append(String.valueOf(this.computeCount));
         sb.append(", ocpuCount=").append(String.valueOf(this.ocpuCount));
@@ -3040,7 +3211,13 @@ public final class UpdateAutonomousDatabaseDetails
         }
 
         UpdateAutonomousDatabaseDetails other = (UpdateAutonomousDatabaseDetails) o;
-        return java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
+        return java.util.Objects.equals(
+                        this.backupRetentionPeriodInDays, other.backupRetentionPeriodInDays)
+                && java.util.Objects.equals(this.computeModel, other.computeModel)
+                && java.util.Objects.equals(
+                        this.localAdgAutoFailoverMaxDataLossLimit,
+                        other.localAdgAutoFailoverMaxDataLossLimit)
+                && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
                 && java.util.Objects.equals(
                         this.longTermBackupSchedule, other.longTermBackupSchedule)
                 && java.util.Objects.equals(this.computeCount, other.computeCount)
@@ -3093,6 +3270,17 @@ public final class UpdateAutonomousDatabaseDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.backupRetentionPeriodInDays == null
+                                ? 43
+                                : this.backupRetentionPeriodInDays.hashCode());
+        result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.localAdgAutoFailoverMaxDataLossLimit == null
+                                ? 43
+                                : this.localAdgAutoFailoverMaxDataLossLimit.hashCode());
         result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
         result =
                 (result * PRIME)

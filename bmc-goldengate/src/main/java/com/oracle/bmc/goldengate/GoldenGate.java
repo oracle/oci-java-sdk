@@ -81,6 +81,23 @@ public interface GoldenGate extends AutoCloseable {
     CancelDeploymentBackupResponse cancelDeploymentBackup(CancelDeploymentBackupRequest request);
 
     /**
+     * Cancels a DeploymentUpgrade, applicable only for DeploymentUpgrade in Waiting state. When
+     * provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/CancelDeploymentUpgradeExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CancelDeploymentUpgrade API.
+     */
+    CancelDeploymentUpgradeResponse cancelDeploymentUpgrade(CancelDeploymentUpgradeRequest request);
+
+    /**
      * Cancel snooze of a DeploymentUpgrade. When provided, If-Match is checked against ETag values
      * of the resource.
      *
@@ -779,6 +796,24 @@ public interface GoldenGate extends AutoCloseable {
      *     API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
+
+    /**
+     * Reschedules a DeploymentUpgrade, applicable only for DeploymentUpgrade in Waiting state. When
+     * provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/RescheduleDeploymentUpgradeExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RescheduleDeploymentUpgrade API.
+     */
+    RescheduleDeploymentUpgradeResponse rescheduleDeploymentUpgrade(
+            RescheduleDeploymentUpgradeRequest request);
 
     /**
      * Restores a Deployment from a Deployment Backup created from the same Deployment.

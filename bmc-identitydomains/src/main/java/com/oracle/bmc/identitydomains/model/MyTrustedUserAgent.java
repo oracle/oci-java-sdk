@@ -411,8 +411,8 @@ public final class MyTrustedUserAgent
          * Multi-Factor Authentication.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: immutable - required: true - returned: always - type: string - uniqueness:
-         * none
+         * - mutability: immutable - idcsRequiresWriteForAccessFlows: true - required: true -
+         * returned: always - type: string - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -422,8 +422,8 @@ public final class MyTrustedUserAgent
          * Multi-Factor Authentication.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: immutable - required: true - returned: always - type: string - uniqueness:
-         * none
+         * - mutability: immutable - idcsRequiresWriteForAccessFlows: true - required: true -
+         * returned: always - type: string - uniqueness: none
          *
          * @param name the value to set
          * @return this builder
@@ -438,8 +438,8 @@ public final class MyTrustedUserAgent
          * whenever a token that has been issued is verified successfully.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - idcsSensitive: none
-         * - multiValued: false - mutability: readOnly - required: true - returned: always - type:
-         * string - uniqueness: none
+         * - multiValued: false - mutability: readOnly - idcsRequiresWriteForAccessFlows: true -
+         * required: true - returned: always - type: string - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("trustToken")
         private String trustToken;
@@ -449,8 +449,8 @@ public final class MyTrustedUserAgent
          * whenever a token that has been issued is verified successfully.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - idcsSensitive: none
-         * - multiValued: false - mutability: readOnly - required: true - returned: always - type:
-         * string - uniqueness: none
+         * - multiValued: false - mutability: readOnly - idcsRequiresWriteForAccessFlows: true -
+         * required: true - returned: always - type: string - uniqueness: none
          *
          * @param trustToken the value to set
          * @return this builder
@@ -464,8 +464,8 @@ public final class MyTrustedUserAgent
          * Trust token issued geo-location.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: immutable - required: false - returned: default - type: string -
-         * uniqueness: none
+         * - mutability: immutable - idcsRequiresWriteForAccessFlows: true - required: false -
+         * returned: default - type: string - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("location")
         private String location;
@@ -474,8 +474,8 @@ public final class MyTrustedUserAgent
          * Trust token issued geo-location.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: immutable - required: false - returned: default - type: string -
-         * uniqueness: none
+         * - mutability: immutable - idcsRequiresWriteForAccessFlows: true - required: false -
+         * returned: default - type: string - uniqueness: none
          *
          * @param location the value to set
          * @return this builder
@@ -489,7 +489,8 @@ public final class MyTrustedUserAgent
          * User agent platform for which the trust token has been issued.
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * immutable - required: false - returned: default - type: string - uniqueness: none
+         * immutable - idcsRequiresWriteForAccessFlows: true - required: false - returned: default -
+         * type: string - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("platform")
         private String platform;
@@ -498,7 +499,8 @@ public final class MyTrustedUserAgent
          * User agent platform for which the trust token has been issued.
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * immutable - required: false - returned: default - type: string - uniqueness: none
+         * immutable - idcsRequiresWriteForAccessFlows: true - required: false - returned: default -
+         * type: string - uniqueness: none
          *
          * @param platform the value to set
          * @return this builder
@@ -512,8 +514,8 @@ public final class MyTrustedUserAgent
          * Validation period of the trust token.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: dateTime - uniqueness:
-         * none
+         * mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: false -
+         * returned: default - type: dateTime - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("expiryTime")
         private String expiryTime;
@@ -522,8 +524,8 @@ public final class MyTrustedUserAgent
          * Validation period of the trust token.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: dateTime - uniqueness:
-         * none
+         * mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: false -
+         * returned: default - type: dateTime - uniqueness: none
          *
          * @param expiryTime the value to set
          * @return this builder
@@ -539,8 +541,8 @@ public final class MyTrustedUserAgent
          * <p>*Added In:** 2111190457
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: dateTime -
-         * uniqueness: none
+         * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: false -
+         * returned: default - type: dateTime - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("lastUsedOn")
         private String lastUsedOn;
@@ -551,8 +553,8 @@ public final class MyTrustedUserAgent
          * <p>*Added In:** 2111190457
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: dateTime -
-         * uniqueness: none
+         * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: false -
+         * returned: default - type: dateTime - uniqueness: none
          *
          * @param lastUsedOn the value to set
          * @return this builder
@@ -568,7 +570,8 @@ public final class MyTrustedUserAgent
          * <p>*Added In:** 2111190457
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
+         * readWrite - idcsRequiresWriteForAccessFlows: true - required: false - returned: default -
+         * type: string - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("tokenType")
         private TokenType tokenType;
@@ -579,7 +582,8 @@ public final class MyTrustedUserAgent
          * <p>*Added In:** 2111190457
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
+         * readWrite - idcsRequiresWriteForAccessFlows: true - required: false - returned: default -
+         * type: string - uniqueness: none
          *
          * @param tokenType the value to set
          * @return this builder
@@ -1012,7 +1016,8 @@ public final class MyTrustedUserAgent
      * Authentication.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: immutable - required: true - returned: always - type: string - uniqueness: none
+     * mutability: immutable - idcsRequiresWriteForAccessFlows: true - required: true - returned:
+     * always - type: string - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
@@ -1022,7 +1027,8 @@ public final class MyTrustedUserAgent
      * Authentication.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: immutable - required: true - returned: always - type: string - uniqueness: none
+     * mutability: immutable - idcsRequiresWriteForAccessFlows: true - required: true - returned:
+     * always - type: string - uniqueness: none
      *
      * @return the value
      */
@@ -1035,8 +1041,8 @@ public final class MyTrustedUserAgent
      * token that has been issued is verified successfully.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - idcsSensitive: none -
-     * multiValued: false - mutability: readOnly - required: true - returned: always - type: string
-     * - uniqueness: none
+     * multiValued: false - mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required:
+     * true - returned: always - type: string - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("trustToken")
     private final String trustToken;
@@ -1046,8 +1052,8 @@ public final class MyTrustedUserAgent
      * token that has been issued is verified successfully.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - idcsSensitive: none -
-     * multiValued: false - mutability: readOnly - required: true - returned: always - type: string
-     * - uniqueness: none
+     * multiValued: false - mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required:
+     * true - returned: always - type: string - uniqueness: none
      *
      * @return the value
      */
@@ -1059,7 +1065,8 @@ public final class MyTrustedUserAgent
      * Trust token issued geo-location.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: immutable - required: false - returned: default - type: string - uniqueness: none
+     * mutability: immutable - idcsRequiresWriteForAccessFlows: true - required: false - returned:
+     * default - type: string - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("location")
     private final String location;
@@ -1068,7 +1075,8 @@ public final class MyTrustedUserAgent
      * Trust token issued geo-location.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: immutable - required: false - returned: default - type: string - uniqueness: none
+     * mutability: immutable - idcsRequiresWriteForAccessFlows: true - required: false - returned:
+     * default - type: string - uniqueness: none
      *
      * @return the value
      */
@@ -1080,7 +1088,8 @@ public final class MyTrustedUserAgent
      * User agent platform for which the trust token has been issued.
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: immutable
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - required: false - returned: default - type: string
+     * - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("platform")
     private final String platform;
@@ -1089,7 +1098,8 @@ public final class MyTrustedUserAgent
      * User agent platform for which the trust token has been issued.
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: immutable
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - required: false - returned: default - type: string
+     * - uniqueness: none
      *
      * @return the value
      */
@@ -1101,8 +1111,8 @@ public final class MyTrustedUserAgent
      * Validation period of the trust token.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: dateTime - uniqueness:
-     * none
+     * mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: false - returned:
+     * default - type: dateTime - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("expiryTime")
     private final String expiryTime;
@@ -1111,8 +1121,8 @@ public final class MyTrustedUserAgent
      * Validation period of the trust token.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: dateTime - uniqueness:
-     * none
+     * mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: false - returned:
+     * default - type: dateTime - uniqueness: none
      *
      * @return the value
      */
@@ -1126,8 +1136,8 @@ public final class MyTrustedUserAgent
      * <p>*Added In:** 2111190457
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: dateTime - uniqueness:
-     * none
+     * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: false - returned:
+     * default - type: dateTime - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lastUsedOn")
     private final String lastUsedOn;
@@ -1138,8 +1148,8 @@ public final class MyTrustedUserAgent
      * <p>*Added In:** 2111190457
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: dateTime - uniqueness:
-     * none
+     * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: false - returned:
+     * default - type: dateTime - uniqueness: none
      *
      * @return the value
      */
@@ -1153,7 +1163,8 @@ public final class MyTrustedUserAgent
      * <p>*Added In:** 2111190457
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - required: false - returned: default - type: string
+     * - uniqueness: none
      */
     public enum TokenType implements com.oracle.bmc.http.internal.BmcEnum {
         Kmsi("KMSI"),
@@ -1206,7 +1217,8 @@ public final class MyTrustedUserAgent
      * <p>*Added In:** 2111190457
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - required: false - returned: default - type: string
+     * - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("tokenType")
     private final TokenType tokenType;
@@ -1217,7 +1229,8 @@ public final class MyTrustedUserAgent
      * <p>*Added In:** 2111190457
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - required: false - returned: default - type: string
+     * - uniqueness: none
      *
      * @return the value
      */

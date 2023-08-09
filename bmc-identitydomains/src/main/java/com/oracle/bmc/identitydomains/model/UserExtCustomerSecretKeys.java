@@ -40,7 +40,7 @@ public final class UserExtCustomerSecretKeys
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The identifier of the User's customer secret key.
+         * The user's customer secret key identifier.
          *
          * <p>*Added In:** 2102181953
          *
@@ -52,7 +52,7 @@ public final class UserExtCustomerSecretKeys
         private String value;
 
         /**
-         * The identifier of the User's customer secret key.
+         * The user's customer secret key identifier.
          *
          * <p>*Added In:** 2102181953
          *
@@ -69,7 +69,7 @@ public final class UserExtCustomerSecretKeys
             return this;
         }
         /**
-         * Ocid of the User's customer secret key.
+         * The user's customer secret key OCID.
          *
          * <p>*Added In:** 2102181953
          *
@@ -81,7 +81,7 @@ public final class UserExtCustomerSecretKeys
         private String ocid;
 
         /**
-         * Ocid of the User's customer secret key.
+         * The user's customer secret key OCID.
          *
          * <p>*Added In:** 2102181953
          *
@@ -98,7 +98,7 @@ public final class UserExtCustomerSecretKeys
             return this;
         }
         /**
-         * The URI of the corresponding CustomerSecretKey resource to which the user belongs
+         * The URI of the corresponding CustomerSecretKey resource to which the user belongs.
          *
          * <p>*Added In:** 2102181953
          *
@@ -109,7 +109,7 @@ public final class UserExtCustomerSecretKeys
         private String ref;
 
         /**
-         * The URI of the corresponding CustomerSecretKey resource to which the user belongs
+         * The URI of the corresponding CustomerSecretKey resource to which the user belongs.
          *
          * <p>*Added In:** 2102181953
          *
@@ -162,7 +162,7 @@ public final class UserExtCustomerSecretKeys
     }
 
     /**
-     * The identifier of the User's customer secret key.
+     * The user's customer secret key identifier.
      *
      * <p>*Added In:** 2102181953
      *
@@ -173,7 +173,7 @@ public final class UserExtCustomerSecretKeys
     private final String value;
 
     /**
-     * The identifier of the User's customer secret key.
+     * The user's customer secret key identifier.
      *
      * <p>*Added In:** 2102181953
      *
@@ -187,7 +187,7 @@ public final class UserExtCustomerSecretKeys
     }
 
     /**
-     * Ocid of the User's customer secret key.
+     * The user's customer secret key OCID.
      *
      * <p>*Added In:** 2102181953
      *
@@ -198,7 +198,7 @@ public final class UserExtCustomerSecretKeys
     private final String ocid;
 
     /**
-     * Ocid of the User's customer secret key.
+     * The user's customer secret key OCID.
      *
      * <p>*Added In:** 2102181953
      *
@@ -212,7 +212,7 @@ public final class UserExtCustomerSecretKeys
     }
 
     /**
-     * The URI of the corresponding CustomerSecretKey resource to which the user belongs
+     * The URI of the corresponding CustomerSecretKey resource to which the user belongs.
      *
      * <p>*Added In:** 2102181953
      *
@@ -223,7 +223,7 @@ public final class UserExtCustomerSecretKeys
     private final String ref;
 
     /**
-     * The URI of the corresponding CustomerSecretKey resource to which the user belongs
+     * The URI of the corresponding CustomerSecretKey resource to which the user belongs.
      *
      * <p>*Added In:** 2102181953
      *

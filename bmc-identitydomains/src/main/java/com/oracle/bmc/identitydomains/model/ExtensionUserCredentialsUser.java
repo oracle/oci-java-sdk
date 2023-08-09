@@ -50,7 +50,7 @@ public final class ExtensionUserCredentialsUser
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A list of db credentials corresponding to user.
+         * A list of database credentials corresponding to user.
          *
          * <p>*Added In:** 2102181953
          *
@@ -62,7 +62,7 @@ public final class ExtensionUserCredentialsUser
         private java.util.List<UserExtDbCredentials> dbCredentials;
 
         /**
-         * A list of db credentials corresponding to user.
+         * A list of database credentials corresponding to user.
          *
          * <p>*Added In:** 2102181953
          *
@@ -109,7 +109,7 @@ public final class ExtensionUserCredentialsUser
             return this;
         }
         /**
-         * A list of auth tokens corresponding to user.
+         * A list of Auth tokens corresponding to user.
          *
          * <p>*Added In:** 2012271618
          *
@@ -121,7 +121,7 @@ public final class ExtensionUserCredentialsUser
         private java.util.List<UserExtAuthTokens> authTokens;
 
         /**
-         * A list of auth tokens corresponding to user.
+         * A list of Auth tokens corresponding to user.
          *
          * <p>*Added In:** 2012271618
          *
@@ -138,7 +138,7 @@ public final class ExtensionUserCredentialsUser
             return this;
         }
         /**
-         * A list of smtp credentials corresponding to user.
+         * A list of SMTP credentials corresponding to user.
          *
          * <p>*Added In:** 2012271618
          *
@@ -150,7 +150,7 @@ public final class ExtensionUserCredentialsUser
         private java.util.List<UserExtSmtpCredentials> smtpCredentials;
 
         /**
-         * A list of smtp credentials corresponding to user.
+         * A list of SMTP credentials corresponding to user.
          *
          * <p>*Added In:** 2012271618
          *
@@ -167,7 +167,7 @@ public final class ExtensionUserCredentialsUser
             return this;
         }
         /**
-         * A list of api keys corresponding to user.
+         * A list of API keys corresponding to user.
          *
          * <p>*Added In:** 2012271618
          *
@@ -179,7 +179,7 @@ public final class ExtensionUserCredentialsUser
         private java.util.List<UserExtApiKeys> apiKeys;
 
         /**
-         * A list of api keys corresponding to user.
+         * A list of API keys corresponding to user.
          *
          * <p>*Added In:** 2012271618
          *
@@ -196,7 +196,7 @@ public final class ExtensionUserCredentialsUser
             return this;
         }
         /**
-         * A list of oauth2 client credentials corresponding to user.
+         * A list of OAuth2 client credentials corresponding to a user.
          *
          * <p>*Added In:** 2012271618
          *
@@ -208,7 +208,7 @@ public final class ExtensionUserCredentialsUser
         private java.util.List<UserExtOAuth2ClientCredentials> oAuth2ClientCredentials;
 
         /**
-         * A list of oauth2 client credentials corresponding to user.
+         * A list of OAuth2 client credentials corresponding to a user.
          *
          * <p>*Added In:** 2012271618
          *
@@ -278,7 +278,7 @@ public final class ExtensionUserCredentialsUser
     }
 
     /**
-     * A list of db credentials corresponding to user.
+     * A list of database credentials corresponding to user.
      *
      * <p>*Added In:** 2102181953
      *
@@ -290,7 +290,7 @@ public final class ExtensionUserCredentialsUser
     private final java.util.List<UserExtDbCredentials> dbCredentials;
 
     /**
-     * A list of db credentials corresponding to user.
+     * A list of database credentials corresponding to user.
      *
      * <p>*Added In:** 2102181953
      *
@@ -332,7 +332,7 @@ public final class ExtensionUserCredentialsUser
     }
 
     /**
-     * A list of auth tokens corresponding to user.
+     * A list of Auth tokens corresponding to user.
      *
      * <p>*Added In:** 2012271618
      *
@@ -344,7 +344,7 @@ public final class ExtensionUserCredentialsUser
     private final java.util.List<UserExtAuthTokens> authTokens;
 
     /**
-     * A list of auth tokens corresponding to user.
+     * A list of Auth tokens corresponding to user.
      *
      * <p>*Added In:** 2012271618
      *
@@ -359,7 +359,7 @@ public final class ExtensionUserCredentialsUser
     }
 
     /**
-     * A list of smtp credentials corresponding to user.
+     * A list of SMTP credentials corresponding to user.
      *
      * <p>*Added In:** 2012271618
      *
@@ -371,7 +371,7 @@ public final class ExtensionUserCredentialsUser
     private final java.util.List<UserExtSmtpCredentials> smtpCredentials;
 
     /**
-     * A list of smtp credentials corresponding to user.
+     * A list of SMTP credentials corresponding to user.
      *
      * <p>*Added In:** 2012271618
      *
@@ -386,7 +386,7 @@ public final class ExtensionUserCredentialsUser
     }
 
     /**
-     * A list of api keys corresponding to user.
+     * A list of API keys corresponding to user.
      *
      * <p>*Added In:** 2012271618
      *
@@ -398,7 +398,7 @@ public final class ExtensionUserCredentialsUser
     private final java.util.List<UserExtApiKeys> apiKeys;
 
     /**
-     * A list of api keys corresponding to user.
+     * A list of API keys corresponding to user.
      *
      * <p>*Added In:** 2012271618
      *
@@ -413,7 +413,7 @@ public final class ExtensionUserCredentialsUser
     }
 
     /**
-     * A list of oauth2 client credentials corresponding to user.
+     * A list of OAuth2 client credentials corresponding to a user.
      *
      * <p>*Added In:** 2012271618
      *
@@ -425,7 +425,7 @@ public final class ExtensionUserCredentialsUser
     private final java.util.List<UserExtOAuth2ClientCredentials> oAuth2ClientCredentials;
 
     /**
-     * A list of oauth2 client credentials corresponding to user.
+     * A list of OAuth2 client credentials corresponding to a user.
      *
      * <p>*Added In:** 2012271618
      *

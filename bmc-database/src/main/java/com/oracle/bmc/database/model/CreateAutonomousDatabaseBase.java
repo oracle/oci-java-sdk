@@ -64,6 +64,7 @@ public class CreateAutonomousDatabaseBase
         "ncharacterSet",
         "dbName",
         "cpuCoreCount",
+        "backupRetentionPeriodInDays",
         "computeModel",
         "computeCount",
         "ocpuCount",
@@ -110,6 +111,7 @@ public class CreateAutonomousDatabaseBase
             String ncharacterSet,
             String dbName,
             Integer cpuCoreCount,
+            Integer backupRetentionPeriodInDays,
             ComputeModel computeModel,
             Float computeCount,
             Float ocpuCount,
@@ -155,6 +157,7 @@ public class CreateAutonomousDatabaseBase
         this.ncharacterSet = ncharacterSet;
         this.dbName = dbName;
         this.cpuCoreCount = cpuCoreCount;
+        this.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
         this.computeModel = computeModel;
         this.computeCount = computeCount;
         this.ocpuCount = ocpuCount;
@@ -337,6 +340,19 @@ public class CreateAutonomousDatabaseBase
      */
     public Integer getCpuCoreCount() {
         return cpuCoreCount;
+    }
+
+    /** Retention period, in days, for long-term backups */
+    @com.fasterxml.jackson.annotation.JsonProperty("backupRetentionPeriodInDays")
+    private final Integer backupRetentionPeriodInDays;
+
+    /**
+     * Retention period, in days, for long-term backups
+     *
+     * @return the value
+     */
+    public Integer getBackupRetentionPeriodInDays() {
+        return backupRetentionPeriodInDays;
     }
 
     /**
@@ -1498,6 +1514,8 @@ public class CreateAutonomousDatabaseBase
         sb.append(", ncharacterSet=").append(String.valueOf(this.ncharacterSet));
         sb.append(", dbName=").append(String.valueOf(this.dbName));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
+        sb.append(", backupRetentionPeriodInDays=")
+                .append(String.valueOf(this.backupRetentionPeriodInDays));
         sb.append(", computeModel=").append(String.valueOf(this.computeModel));
         sb.append(", computeCount=").append(String.valueOf(this.computeCount));
         sb.append(", ocpuCount=").append(String.valueOf(this.ocpuCount));
@@ -1563,6 +1581,8 @@ public class CreateAutonomousDatabaseBase
                 && java.util.Objects.equals(this.ncharacterSet, other.ncharacterSet)
                 && java.util.Objects.equals(this.dbName, other.dbName)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
+                && java.util.Objects.equals(
+                        this.backupRetentionPeriodInDays, other.backupRetentionPeriodInDays)
                 && java.util.Objects.equals(this.computeModel, other.computeModel)
                 && java.util.Objects.equals(this.computeCount, other.computeCount)
                 && java.util.Objects.equals(this.ocpuCount, other.ocpuCount)
@@ -1628,6 +1648,11 @@ public class CreateAutonomousDatabaseBase
                         + (this.ncharacterSet == null ? 43 : this.ncharacterSet.hashCode());
         result = (result * PRIME) + (this.dbName == null ? 43 : this.dbName.hashCode());
         result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupRetentionPeriodInDays == null
+                                ? 43
+                                : this.backupRetentionPeriodInDays.hashCode());
         result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
         result = (result * PRIME) + (this.computeCount == null ? 43 : this.computeCount.hashCode());
         result = (result * PRIME) + (this.ocpuCount == null ? 43 : this.ocpuCount.hashCode());

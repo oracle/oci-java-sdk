@@ -30,7 +30,8 @@ public final class ExtensionCapabilitiesUser
         "canUseCustomerSecretKeys",
         "canUseOAuth2ClientCredentials",
         "canUseSmtpCredentials",
-        "canUseDbCredentials"
+        "canUseDbCredentials",
+        "canUseConsole"
     })
     public ExtensionCapabilitiesUser(
             Boolean canUseApiKeys,
@@ -39,7 +40,8 @@ public final class ExtensionCapabilitiesUser
             Boolean canUseCustomerSecretKeys,
             Boolean canUseOAuth2ClientCredentials,
             Boolean canUseSmtpCredentials,
-            Boolean canUseDbCredentials) {
+            Boolean canUseDbCredentials,
+            Boolean canUseConsole) {
         super();
         this.canUseApiKeys = canUseApiKeys;
         this.canUseAuthTokens = canUseAuthTokens;
@@ -48,12 +50,13 @@ public final class ExtensionCapabilitiesUser
         this.canUseOAuth2ClientCredentials = canUseOAuth2ClientCredentials;
         this.canUseSmtpCredentials = canUseSmtpCredentials;
         this.canUseDbCredentials = canUseDbCredentials;
+        this.canUseConsole = canUseConsole;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Indicates weather a user can use api keys
+         * Indicates whether a user can use API keys.
          *
          * <p>*Added In:** 2012271618
          *
@@ -65,7 +68,7 @@ public final class ExtensionCapabilitiesUser
         private Boolean canUseApiKeys;
 
         /**
-         * Indicates weather a user can use api keys
+         * Indicates whether a user can use API keys.
          *
          * <p>*Added In:** 2012271618
          *
@@ -82,7 +85,7 @@ public final class ExtensionCapabilitiesUser
             return this;
         }
         /**
-         * Indicates weather a user can use auth tokens
+         * Indicates whether a user can use Auth tokens.
          *
          * <p>*Added In:** 2012271618
          *
@@ -94,7 +97,7 @@ public final class ExtensionCapabilitiesUser
         private Boolean canUseAuthTokens;
 
         /**
-         * Indicates weather a user can use auth tokens
+         * Indicates whether a user can use Auth tokens.
          *
          * <p>*Added In:** 2012271618
          *
@@ -111,7 +114,7 @@ public final class ExtensionCapabilitiesUser
             return this;
         }
         /**
-         * Indicates weather a user can use console password
+         * Indicates whether a user can use Console passwords.
          *
          * <p>*Added In:** 2012271618
          *
@@ -123,7 +126,7 @@ public final class ExtensionCapabilitiesUser
         private Boolean canUseConsolePassword;
 
         /**
-         * Indicates weather a user can use console password
+         * Indicates whether a user can use Console passwords.
          *
          * <p>*Added In:** 2012271618
          *
@@ -140,7 +143,7 @@ public final class ExtensionCapabilitiesUser
             return this;
         }
         /**
-         * Indicates weather a user can use customer secret keys
+         * Indicates whether a user can use customer secret keys.
          *
          * <p>*Added In:** 2012271618
          *
@@ -152,7 +155,7 @@ public final class ExtensionCapabilitiesUser
         private Boolean canUseCustomerSecretKeys;
 
         /**
-         * Indicates weather a user can use customer secret keys
+         * Indicates whether a user can use customer secret keys.
          *
          * <p>*Added In:** 2012271618
          *
@@ -169,7 +172,7 @@ public final class ExtensionCapabilitiesUser
             return this;
         }
         /**
-         * Indicates weather a user can use oauth2 client credentials
+         * Indicates whether a user can use OAuth2 client credentials.
          *
          * <p>*Added In:** 2012271618
          *
@@ -181,7 +184,7 @@ public final class ExtensionCapabilitiesUser
         private Boolean canUseOAuth2ClientCredentials;
 
         /**
-         * Indicates weather a user can use oauth2 client credentials
+         * Indicates whether a user can use OAuth2 client credentials.
          *
          * <p>*Added In:** 2012271618
          *
@@ -198,7 +201,7 @@ public final class ExtensionCapabilitiesUser
             return this;
         }
         /**
-         * Indicates weather a user can use smtp credentials
+         * Indicates whether a user can use SMTP credentials.
          *
          * <p>*Added In:** 2012271618
          *
@@ -210,7 +213,7 @@ public final class ExtensionCapabilitiesUser
         private Boolean canUseSmtpCredentials;
 
         /**
-         * Indicates weather a user can use smtp credentials
+         * Indicates whether a user can use SMTP credentials.
          *
          * <p>*Added In:** 2012271618
          *
@@ -227,7 +230,7 @@ public final class ExtensionCapabilitiesUser
             return this;
         }
         /**
-         * Indicates weather a user can use db credentials
+         * Indicates whether a user can use database credentials.
          *
          * <p>*Added In:** 2012271618
          *
@@ -239,7 +242,7 @@ public final class ExtensionCapabilitiesUser
         private Boolean canUseDbCredentials;
 
         /**
-         * Indicates weather a user can use db credentials
+         * Indicates whether a user can use database credentials.
          *
          * <p>*Added In:** 2012271618
          *
@@ -255,6 +258,35 @@ public final class ExtensionCapabilitiesUser
             this.__explicitlySet__.add("canUseDbCredentials");
             return this;
         }
+        /**
+         * Specifies whether user can access the Console.
+         *
+         * <p>*Added In:** 2206280902
+         *
+         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
+         * - mutability: readWrite - required: false - returned: default - type: boolean -
+         * uniqueness: none
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("canUseConsole")
+        private Boolean canUseConsole;
+
+        /**
+         * Specifies whether user can access the Console.
+         *
+         * <p>*Added In:** 2206280902
+         *
+         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
+         * - mutability: readWrite - required: false - returned: default - type: boolean -
+         * uniqueness: none
+         *
+         * @param canUseConsole the value to set
+         * @return this builder
+         */
+        public Builder canUseConsole(Boolean canUseConsole) {
+            this.canUseConsole = canUseConsole;
+            this.__explicitlySet__.add("canUseConsole");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -268,7 +300,8 @@ public final class ExtensionCapabilitiesUser
                             this.canUseCustomerSecretKeys,
                             this.canUseOAuth2ClientCredentials,
                             this.canUseSmtpCredentials,
-                            this.canUseDbCredentials);
+                            this.canUseDbCredentials,
+                            this.canUseConsole);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -298,6 +331,9 @@ public final class ExtensionCapabilitiesUser
             if (model.wasPropertyExplicitlySet("canUseDbCredentials")) {
                 this.canUseDbCredentials(model.getCanUseDbCredentials());
             }
+            if (model.wasPropertyExplicitlySet("canUseConsole")) {
+                this.canUseConsole(model.getCanUseConsole());
+            }
             return this;
         }
     }
@@ -312,7 +348,7 @@ public final class ExtensionCapabilitiesUser
     }
 
     /**
-     * Indicates weather a user can use api keys
+     * Indicates whether a user can use API keys.
      *
      * <p>*Added In:** 2012271618
      *
@@ -324,7 +360,7 @@ public final class ExtensionCapabilitiesUser
     private final Boolean canUseApiKeys;
 
     /**
-     * Indicates weather a user can use api keys
+     * Indicates whether a user can use API keys.
      *
      * <p>*Added In:** 2012271618
      *
@@ -339,7 +375,7 @@ public final class ExtensionCapabilitiesUser
     }
 
     /**
-     * Indicates weather a user can use auth tokens
+     * Indicates whether a user can use Auth tokens.
      *
      * <p>*Added In:** 2012271618
      *
@@ -351,7 +387,7 @@ public final class ExtensionCapabilitiesUser
     private final Boolean canUseAuthTokens;
 
     /**
-     * Indicates weather a user can use auth tokens
+     * Indicates whether a user can use Auth tokens.
      *
      * <p>*Added In:** 2012271618
      *
@@ -366,7 +402,7 @@ public final class ExtensionCapabilitiesUser
     }
 
     /**
-     * Indicates weather a user can use console password
+     * Indicates whether a user can use Console passwords.
      *
      * <p>*Added In:** 2012271618
      *
@@ -378,7 +414,7 @@ public final class ExtensionCapabilitiesUser
     private final Boolean canUseConsolePassword;
 
     /**
-     * Indicates weather a user can use console password
+     * Indicates whether a user can use Console passwords.
      *
      * <p>*Added In:** 2012271618
      *
@@ -393,7 +429,7 @@ public final class ExtensionCapabilitiesUser
     }
 
     /**
-     * Indicates weather a user can use customer secret keys
+     * Indicates whether a user can use customer secret keys.
      *
      * <p>*Added In:** 2012271618
      *
@@ -405,7 +441,7 @@ public final class ExtensionCapabilitiesUser
     private final Boolean canUseCustomerSecretKeys;
 
     /**
-     * Indicates weather a user can use customer secret keys
+     * Indicates whether a user can use customer secret keys.
      *
      * <p>*Added In:** 2012271618
      *
@@ -420,7 +456,7 @@ public final class ExtensionCapabilitiesUser
     }
 
     /**
-     * Indicates weather a user can use oauth2 client credentials
+     * Indicates whether a user can use OAuth2 client credentials.
      *
      * <p>*Added In:** 2012271618
      *
@@ -432,7 +468,7 @@ public final class ExtensionCapabilitiesUser
     private final Boolean canUseOAuth2ClientCredentials;
 
     /**
-     * Indicates weather a user can use oauth2 client credentials
+     * Indicates whether a user can use OAuth2 client credentials.
      *
      * <p>*Added In:** 2012271618
      *
@@ -447,7 +483,7 @@ public final class ExtensionCapabilitiesUser
     }
 
     /**
-     * Indicates weather a user can use smtp credentials
+     * Indicates whether a user can use SMTP credentials.
      *
      * <p>*Added In:** 2012271618
      *
@@ -459,7 +495,7 @@ public final class ExtensionCapabilitiesUser
     private final Boolean canUseSmtpCredentials;
 
     /**
-     * Indicates weather a user can use smtp credentials
+     * Indicates whether a user can use SMTP credentials.
      *
      * <p>*Added In:** 2012271618
      *
@@ -474,7 +510,7 @@ public final class ExtensionCapabilitiesUser
     }
 
     /**
-     * Indicates weather a user can use db credentials
+     * Indicates whether a user can use database credentials.
      *
      * <p>*Added In:** 2012271618
      *
@@ -486,7 +522,7 @@ public final class ExtensionCapabilitiesUser
     private final Boolean canUseDbCredentials;
 
     /**
-     * Indicates weather a user can use db credentials
+     * Indicates whether a user can use database credentials.
      *
      * <p>*Added In:** 2012271618
      *
@@ -498,6 +534,33 @@ public final class ExtensionCapabilitiesUser
      */
     public Boolean getCanUseDbCredentials() {
         return canUseDbCredentials;
+    }
+
+    /**
+     * Specifies whether user can access the Console.
+     *
+     * <p>*Added In:** 2206280902
+     *
+     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
+     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
+     * none
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("canUseConsole")
+    private final Boolean canUseConsole;
+
+    /**
+     * Specifies whether user can access the Console.
+     *
+     * <p>*Added In:** 2206280902
+     *
+     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
+     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
+     * none
+     *
+     * @return the value
+     */
+    public Boolean getCanUseConsole() {
+        return canUseConsole;
     }
 
     @Override
@@ -524,6 +587,7 @@ public final class ExtensionCapabilitiesUser
                 .append(String.valueOf(this.canUseOAuth2ClientCredentials));
         sb.append(", canUseSmtpCredentials=").append(String.valueOf(this.canUseSmtpCredentials));
         sb.append(", canUseDbCredentials=").append(String.valueOf(this.canUseDbCredentials));
+        sb.append(", canUseConsole=").append(String.valueOf(this.canUseConsole));
         sb.append(")");
         return sb.toString();
     }
@@ -547,6 +611,7 @@ public final class ExtensionCapabilitiesUser
                         this.canUseOAuth2ClientCredentials, other.canUseOAuth2ClientCredentials)
                 && java.util.Objects.equals(this.canUseSmtpCredentials, other.canUseSmtpCredentials)
                 && java.util.Objects.equals(this.canUseDbCredentials, other.canUseDbCredentials)
+                && java.util.Objects.equals(this.canUseConsole, other.canUseConsole)
                 && super.equals(other);
     }
 
@@ -585,6 +650,9 @@ public final class ExtensionCapabilitiesUser
                         + (this.canUseDbCredentials == null
                                 ? 43
                                 : this.canUseDbCredentials.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.canUseConsole == null ? 43 : this.canUseConsole.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

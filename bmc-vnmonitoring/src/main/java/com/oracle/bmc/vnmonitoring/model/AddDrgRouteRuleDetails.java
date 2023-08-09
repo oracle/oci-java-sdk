@@ -35,17 +35,15 @@ public final class AddDrgRouteRuleDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Type of destination for the rule. Required if {@code direction} = {@code EGRESS}. Allowed
-         * values: * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in
-         * CIDR notation.
+         * Type of destination for the rule. Allowed values: * {@code CIDR_BLOCK}: If the rule's
+         * {@code destination} is an IP address range in CIDR notation.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
         private DestinationType destinationType;
 
         /**
-         * Type of destination for the rule. Required if {@code direction} = {@code EGRESS}. Allowed
-         * values: * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in
-         * CIDR notation.
+         * Type of destination for the rule. Allowed values: * {@code CIDR_BLOCK}: If the rule's
+         * {@code destination} is an IP address range in CIDR notation.
          *
          * @param destinationType the value to set
          * @return this builder
@@ -140,9 +138,8 @@ public final class AddDrgRouteRuleDetails
     }
 
     /**
-     * Type of destination for the rule. Required if {@code direction} = {@code EGRESS}. Allowed
-     * values: * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in
-     * CIDR notation.
+     * Type of destination for the rule. Allowed values: * {@code CIDR_BLOCK}: If the rule's {@code
+     * destination} is an IP address range in CIDR notation.
      */
     public enum DestinationType implements com.oracle.bmc.http.internal.BmcEnum {
         CidrBlock("CIDR_BLOCK"),
@@ -176,17 +173,15 @@ public final class AddDrgRouteRuleDetails
         }
     };
     /**
-     * Type of destination for the rule. Required if {@code direction} = {@code EGRESS}. Allowed
-     * values: * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in
-     * CIDR notation.
+     * Type of destination for the rule. Allowed values: * {@code CIDR_BLOCK}: If the rule's {@code
+     * destination} is an IP address range in CIDR notation.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
     private final DestinationType destinationType;
 
     /**
-     * Type of destination for the rule. Required if {@code direction} = {@code EGRESS}. Allowed
-     * values: * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in
-     * CIDR notation.
+     * Type of destination for the rule. Allowed values: * {@code CIDR_BLOCK}: If the rule's {@code
+     * destination} is an IP address range in CIDR notation.
      *
      * @return the value
      */

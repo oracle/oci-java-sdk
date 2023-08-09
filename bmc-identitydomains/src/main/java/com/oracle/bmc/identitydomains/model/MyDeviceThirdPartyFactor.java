@@ -51,7 +51,9 @@ public final class MyDeviceThirdPartyFactor
          * <p>*Added In:** 19.2.1
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * immutable - required: true - returned: default - type: string - uniqueness: none
+         * immutable - required: true - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          */
         @com.fasterxml.jackson.annotation.JsonProperty("thirdPartyVendorName")
         private String thirdPartyVendorName;
@@ -62,7 +64,9 @@ public final class MyDeviceThirdPartyFactor
          * <p>*Added In:** 19.2.1
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * immutable - required: true - returned: default - type: string - uniqueness: none
+         * immutable - required: true - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *
          * @param thirdPartyVendorName the value to set
          * @return this builder
@@ -78,7 +82,9 @@ public final class MyDeviceThirdPartyFactor
          * <p>*Added In:** 19.2.1
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * immutable - required: false - returned: default - type: string - uniqueness: none
+         * immutable - required: false - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          */
         @com.fasterxml.jackson.annotation.JsonProperty("thirdPartyFactorType")
         private String thirdPartyFactorType;
@@ -89,7 +95,9 @@ public final class MyDeviceThirdPartyFactor
          * <p>*Added In:** 19.2.1
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * immutable - required: false - returned: default - type: string - uniqueness: none
+         * immutable - required: false - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *
          * @param thirdPartyFactorType the value to set
          * @return this builder
@@ -105,7 +113,9 @@ public final class MyDeviceThirdPartyFactor
          * <p>*Added In:** 19.2.1
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * immutable - required: true - returned: default - type: string - uniqueness: none
+         * immutable - required: true - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
@@ -116,7 +126,9 @@ public final class MyDeviceThirdPartyFactor
          * <p>*Added In:** 19.2.1
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * immutable - required: true - returned: default - type: string - uniqueness: none
+         * immutable - required: true - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *
          * @param value the value to set
          * @return this builder
@@ -132,7 +144,9 @@ public final class MyDeviceThirdPartyFactor
          * <p>*Added In:** 19.2.1
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: reference - uniqueness: none
+         * readOnly - required: false - returned: default - type: reference - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          */
         @com.fasterxml.jackson.annotation.JsonProperty("$ref")
         private String ref;
@@ -143,7 +157,9 @@ public final class MyDeviceThirdPartyFactor
          * <p>*Added In:** 19.2.1
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: reference - uniqueness: none
+         * readOnly - required: false - returned: default - type: reference - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *
          * @param ref the value to set
          * @return this builder
@@ -203,7 +219,9 @@ public final class MyDeviceThirdPartyFactor
      * <p>*Added In:** 19.2.1
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: immutable
-     * - required: true - returned: default - type: string - uniqueness: none
+     * - required: true - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     @com.fasterxml.jackson.annotation.JsonProperty("thirdPartyVendorName")
     private final String thirdPartyVendorName;
@@ -214,7 +232,9 @@ public final class MyDeviceThirdPartyFactor
      * <p>*Added In:** 19.2.1
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: immutable
-     * - required: true - returned: default - type: string - uniqueness: none
+     * - required: true - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      *
      * @return the value
      */
@@ -228,7 +248,9 @@ public final class MyDeviceThirdPartyFactor
      * <p>*Added In:** 19.2.1
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: immutable
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - required: false - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     @com.fasterxml.jackson.annotation.JsonProperty("thirdPartyFactorType")
     private final String thirdPartyFactorType;
@@ -239,7 +261,9 @@ public final class MyDeviceThirdPartyFactor
      * <p>*Added In:** 19.2.1
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: immutable
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - required: false - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      *
      * @return the value
      */
@@ -253,7 +277,9 @@ public final class MyDeviceThirdPartyFactor
      * <p>*Added In:** 19.2.1
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: immutable
-     * - required: true - returned: default - type: string - uniqueness: none
+     * - required: true - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
@@ -264,7 +290,9 @@ public final class MyDeviceThirdPartyFactor
      * <p>*Added In:** 19.2.1
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: immutable
-     * - required: true - returned: default - type: string - uniqueness: none
+     * - required: true - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      *
      * @return the value
      */
@@ -278,7 +306,9 @@ public final class MyDeviceThirdPartyFactor
      * <p>*Added In:** 19.2.1
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: reference - uniqueness: none
+     * - required: false - returned: default - type: reference - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     @com.fasterxml.jackson.annotation.JsonProperty("$ref")
     private final String ref;
@@ -289,7 +319,9 @@ public final class MyDeviceThirdPartyFactor
      * <p>*Added In:** 19.2.1
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: reference - uniqueness: none
+     * - required: false - returned: default - type: reference - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      *
      * @return the value
      */

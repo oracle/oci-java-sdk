@@ -64,7 +64,6 @@ public final class IdentityProvider
         "jitUserProvAttributeUpdateEnabled",
         "jitUserProvGroupAssignmentMethod",
         "jitUserProvGroupMappingMode",
-        "jitUserProvGroupMappings",
         "jitUserProvGroupSAMLAttributeName",
         "serviceInstanceIdentifier",
         "userMappingMethod",
@@ -76,6 +75,8 @@ public final class IdentityProvider
         "samlHoKRequired",
         "requestedAuthenticationContext",
         "jitUserProvIgnoreErrorOnAbsentGroups",
+        "lastNotificationSentTime",
+        "jitUserProvGroupMappings",
         "jitUserProvAttributes",
         "jitUserProvAssignedGroups",
         "correlationPolicy",
@@ -124,7 +125,6 @@ public final class IdentityProvider
             Boolean jitUserProvAttributeUpdateEnabled,
             JitUserProvGroupAssignmentMethod jitUserProvGroupAssignmentMethod,
             JitUserProvGroupMappingMode jitUserProvGroupMappingMode,
-            java.util.List<IdentityProviderJitUserProvGroupMappings> jitUserProvGroupMappings,
             String jitUserProvGroupSAMLAttributeName,
             String serviceInstanceIdentifier,
             UserMappingMethod userMappingMethod,
@@ -136,6 +136,8 @@ public final class IdentityProvider
             Boolean samlHoKRequired,
             java.util.List<String> requestedAuthenticationContext,
             Boolean jitUserProvIgnoreErrorOnAbsentGroups,
+            String lastNotificationSentTime,
+            java.util.List<IdentityProviderJitUserProvGroupMappings> jitUserProvGroupMappings,
             IdentityProviderJitUserProvAttributes jitUserProvAttributes,
             java.util.List<IdentityProviderJitUserProvAssignedGroups> jitUserProvAssignedGroups,
             IdentityProviderCorrelationPolicy correlationPolicy,
@@ -185,7 +187,6 @@ public final class IdentityProvider
         this.jitUserProvAttributeUpdateEnabled = jitUserProvAttributeUpdateEnabled;
         this.jitUserProvGroupAssignmentMethod = jitUserProvGroupAssignmentMethod;
         this.jitUserProvGroupMappingMode = jitUserProvGroupMappingMode;
-        this.jitUserProvGroupMappings = jitUserProvGroupMappings;
         this.jitUserProvGroupSAMLAttributeName = jitUserProvGroupSAMLAttributeName;
         this.serviceInstanceIdentifier = serviceInstanceIdentifier;
         this.userMappingMethod = userMappingMethod;
@@ -197,6 +198,8 @@ public final class IdentityProvider
         this.samlHoKRequired = samlHoKRequired;
         this.requestedAuthenticationContext = requestedAuthenticationContext;
         this.jitUserProvIgnoreErrorOnAbsentGroups = jitUserProvIgnoreErrorOnAbsentGroups;
+        this.lastNotificationSentTime = lastNotificationSentTime;
+        this.jitUserProvGroupMappings = jitUserProvGroupMappings;
         this.jitUserProvAttributes = jitUserProvAttributes;
         this.jitUserProvAssignedGroups = jitUserProvAssignedGroups;
         this.correlationPolicy = correlationPolicy;
@@ -1273,34 +1276,6 @@ public final class IdentityProvider
             return this;
         }
         /**
-         * The list of mappings between the Identity Domain Group and the IDP group.
-         *
-         * <p>*Added In:** 2205120021
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [idpGroup] - multiValued: true - mutability:
-         * readWrite - required: false - returned: default - type: complex - uniqueness: none
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("jitUserProvGroupMappings")
-        private java.util.List<IdentityProviderJitUserProvGroupMappings> jitUserProvGroupMappings;
-
-        /**
-         * The list of mappings between the Identity Domain Group and the IDP group.
-         *
-         * <p>*Added In:** 2205120021
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [idpGroup] - multiValued: true - mutability:
-         * readWrite - required: false - returned: default - type: complex - uniqueness: none
-         *
-         * @param jitUserProvGroupMappings the value to set
-         * @return this builder
-         */
-        public Builder jitUserProvGroupMappings(
-                java.util.List<IdentityProviderJitUserProvGroupMappings> jitUserProvGroupMappings) {
-            this.jitUserProvGroupMappings = jitUserProvGroupMappings;
-            this.__explicitlySet__.add("jitUserProvGroupMappings");
-            return this;
-        }
-        /**
          * Name of the assertion attribute containing the users groups
          *
          * <p>*Added In:** 20.1.3
@@ -1639,6 +1614,65 @@ public final class IdentityProvider
             this.__explicitlySet__.add("jitUserProvIgnoreErrorOnAbsentGroups");
             return this;
         }
+        /**
+         * Records the notification timestamp for the IdP whose signing certificate is about to
+         * expire
+         *
+         * <p>*Added In:** 2302092332
+         *
+         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
+         * - mutability: readOnly - required: false - returned: default - type: dateTime -
+         * uniqueness: none
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("lastNotificationSentTime")
+        private String lastNotificationSentTime;
+
+        /**
+         * Records the notification timestamp for the IdP whose signing certificate is about to
+         * expire
+         *
+         * <p>*Added In:** 2302092332
+         *
+         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
+         * - mutability: readOnly - required: false - returned: default - type: dateTime -
+         * uniqueness: none
+         *
+         * @param lastNotificationSentTime the value to set
+         * @return this builder
+         */
+        public Builder lastNotificationSentTime(String lastNotificationSentTime) {
+            this.lastNotificationSentTime = lastNotificationSentTime;
+            this.__explicitlySet__.add("lastNotificationSentTime");
+            return this;
+        }
+        /**
+         * The list of mappings between the Identity Domain Group and the IDP group.
+         *
+         * <p>*Added In:** 2205120021
+         *
+         * <p>*SCIM++ Properties:** - idcsCompositeKey: [idpGroup] - multiValued: true - mutability:
+         * readWrite - required: false - returned: default - type: complex - uniqueness: none
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("jitUserProvGroupMappings")
+        private java.util.List<IdentityProviderJitUserProvGroupMappings> jitUserProvGroupMappings;
+
+        /**
+         * The list of mappings between the Identity Domain Group and the IDP group.
+         *
+         * <p>*Added In:** 2205120021
+         *
+         * <p>*SCIM++ Properties:** - idcsCompositeKey: [idpGroup] - multiValued: true - mutability:
+         * readWrite - required: false - returned: default - type: complex - uniqueness: none
+         *
+         * @param jitUserProvGroupMappings the value to set
+         * @return this builder
+         */
+        public Builder jitUserProvGroupMappings(
+                java.util.List<IdentityProviderJitUserProvGroupMappings> jitUserProvGroupMappings) {
+            this.jitUserProvGroupMappings = jitUserProvGroupMappings;
+            this.__explicitlySet__.add("jitUserProvGroupMappings");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("jitUserProvAttributes")
         private IdentityProviderJitUserProvAttributes jitUserProvAttributes;
@@ -1769,7 +1803,6 @@ public final class IdentityProvider
                             this.jitUserProvAttributeUpdateEnabled,
                             this.jitUserProvGroupAssignmentMethod,
                             this.jitUserProvGroupMappingMode,
-                            this.jitUserProvGroupMappings,
                             this.jitUserProvGroupSAMLAttributeName,
                             this.serviceInstanceIdentifier,
                             this.userMappingMethod,
@@ -1781,6 +1814,8 @@ public final class IdentityProvider
                             this.samlHoKRequired,
                             this.requestedAuthenticationContext,
                             this.jitUserProvIgnoreErrorOnAbsentGroups,
+                            this.lastNotificationSentTime,
+                            this.jitUserProvGroupMappings,
                             this.jitUserProvAttributes,
                             this.jitUserProvAssignedGroups,
                             this.correlationPolicy,
@@ -1920,9 +1955,6 @@ public final class IdentityProvider
             if (model.wasPropertyExplicitlySet("jitUserProvGroupMappingMode")) {
                 this.jitUserProvGroupMappingMode(model.getJitUserProvGroupMappingMode());
             }
-            if (model.wasPropertyExplicitlySet("jitUserProvGroupMappings")) {
-                this.jitUserProvGroupMappings(model.getJitUserProvGroupMappings());
-            }
             if (model.wasPropertyExplicitlySet("jitUserProvGroupSAMLAttributeName")) {
                 this.jitUserProvGroupSAMLAttributeName(
                         model.getJitUserProvGroupSAMLAttributeName());
@@ -1957,6 +1989,12 @@ public final class IdentityProvider
             if (model.wasPropertyExplicitlySet("jitUserProvIgnoreErrorOnAbsentGroups")) {
                 this.jitUserProvIgnoreErrorOnAbsentGroups(
                         model.getJitUserProvIgnoreErrorOnAbsentGroups());
+            }
+            if (model.wasPropertyExplicitlySet("lastNotificationSentTime")) {
+                this.lastNotificationSentTime(model.getLastNotificationSentTime());
+            }
+            if (model.wasPropertyExplicitlySet("jitUserProvGroupMappings")) {
+                this.jitUserProvGroupMappings(model.getJitUserProvGroupMappings());
             }
             if (model.wasPropertyExplicitlySet("jitUserProvAttributes")) {
                 this.jitUserProvAttributes(model.getJitUserProvAttributes());
@@ -3181,31 +3219,6 @@ public final class IdentityProvider
     }
 
     /**
-     * The list of mappings between the Identity Domain Group and the IDP group.
-     *
-     * <p>*Added In:** 2205120021
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [idpGroup] - multiValued: true - mutability:
-     * readWrite - required: false - returned: default - type: complex - uniqueness: none
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("jitUserProvGroupMappings")
-    private final java.util.List<IdentityProviderJitUserProvGroupMappings> jitUserProvGroupMappings;
-
-    /**
-     * The list of mappings between the Identity Domain Group and the IDP group.
-     *
-     * <p>*Added In:** 2205120021
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [idpGroup] - multiValued: true - mutability:
-     * readWrite - required: false - returned: default - type: complex - uniqueness: none
-     *
-     * @return the value
-     */
-    public java.util.List<IdentityProviderJitUserProvGroupMappings> getJitUserProvGroupMappings() {
-        return jitUserProvGroupMappings;
-    }
-
-    /**
      * Name of the assertion attribute containing the users groups
      *
      * <p>*Added In:** 20.1.3
@@ -3621,6 +3634,58 @@ public final class IdentityProvider
         return jitUserProvIgnoreErrorOnAbsentGroups;
     }
 
+    /**
+     * Records the notification timestamp for the IdP whose signing certificate is about to expire
+     *
+     * <p>*Added In:** 2302092332
+     *
+     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
+     * mutability: readOnly - required: false - returned: default - type: dateTime - uniqueness:
+     * none
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("lastNotificationSentTime")
+    private final String lastNotificationSentTime;
+
+    /**
+     * Records the notification timestamp for the IdP whose signing certificate is about to expire
+     *
+     * <p>*Added In:** 2302092332
+     *
+     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
+     * mutability: readOnly - required: false - returned: default - type: dateTime - uniqueness:
+     * none
+     *
+     * @return the value
+     */
+    public String getLastNotificationSentTime() {
+        return lastNotificationSentTime;
+    }
+
+    /**
+     * The list of mappings between the Identity Domain Group and the IDP group.
+     *
+     * <p>*Added In:** 2205120021
+     *
+     * <p>*SCIM++ Properties:** - idcsCompositeKey: [idpGroup] - multiValued: true - mutability:
+     * readWrite - required: false - returned: default - type: complex - uniqueness: none
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("jitUserProvGroupMappings")
+    private final java.util.List<IdentityProviderJitUserProvGroupMappings> jitUserProvGroupMappings;
+
+    /**
+     * The list of mappings between the Identity Domain Group and the IDP group.
+     *
+     * <p>*Added In:** 2205120021
+     *
+     * <p>*SCIM++ Properties:** - idcsCompositeKey: [idpGroup] - multiValued: true - mutability:
+     * readWrite - required: false - returned: default - type: complex - uniqueness: none
+     *
+     * @return the value
+     */
+    public java.util.List<IdentityProviderJitUserProvGroupMappings> getJitUserProvGroupMappings() {
+        return jitUserProvGroupMappings;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("jitUserProvAttributes")
     private final IdentityProviderJitUserProvAttributes jitUserProvAttributes;
 
@@ -3751,8 +3816,6 @@ public final class IdentityProvider
                 .append(String.valueOf(this.jitUserProvGroupAssignmentMethod));
         sb.append(", jitUserProvGroupMappingMode=")
                 .append(String.valueOf(this.jitUserProvGroupMappingMode));
-        sb.append(", jitUserProvGroupMappings=")
-                .append(String.valueOf(this.jitUserProvGroupMappings));
         sb.append(", jitUserProvGroupSAMLAttributeName=")
                 .append(String.valueOf(this.jitUserProvGroupSAMLAttributeName));
         sb.append(", serviceInstanceIdentifier=")
@@ -3770,6 +3833,10 @@ public final class IdentityProvider
                 .append(String.valueOf(this.requestedAuthenticationContext));
         sb.append(", jitUserProvIgnoreErrorOnAbsentGroups=")
                 .append(String.valueOf(this.jitUserProvIgnoreErrorOnAbsentGroups));
+        sb.append(", lastNotificationSentTime=")
+                .append(String.valueOf(this.lastNotificationSentTime));
+        sb.append(", jitUserProvGroupMappings=")
+                .append(String.valueOf(this.jitUserProvGroupMappings));
         sb.append(", jitUserProvAttributes=").append(String.valueOf(this.jitUserProvAttributes));
         sb.append(", jitUserProvAssignedGroups=")
                 .append(String.valueOf(this.jitUserProvAssignedGroups));
@@ -3854,8 +3921,6 @@ public final class IdentityProvider
                 && java.util.Objects.equals(
                         this.jitUserProvGroupMappingMode, other.jitUserProvGroupMappingMode)
                 && java.util.Objects.equals(
-                        this.jitUserProvGroupMappings, other.jitUserProvGroupMappings)
-                && java.util.Objects.equals(
                         this.jitUserProvGroupSAMLAttributeName,
                         other.jitUserProvGroupSAMLAttributeName)
                 && java.util.Objects.equals(
@@ -3874,6 +3939,10 @@ public final class IdentityProvider
                 && java.util.Objects.equals(
                         this.jitUserProvIgnoreErrorOnAbsentGroups,
                         other.jitUserProvIgnoreErrorOnAbsentGroups)
+                && java.util.Objects.equals(
+                        this.lastNotificationSentTime, other.lastNotificationSentTime)
+                && java.util.Objects.equals(
+                        this.jitUserProvGroupMappings, other.jitUserProvGroupMappings)
                 && java.util.Objects.equals(this.jitUserProvAttributes, other.jitUserProvAttributes)
                 && java.util.Objects.equals(
                         this.jitUserProvAssignedGroups, other.jitUserProvAssignedGroups)
@@ -4014,11 +4083,6 @@ public final class IdentityProvider
                                 : this.jitUserProvGroupMappingMode.hashCode());
         result =
                 (result * PRIME)
-                        + (this.jitUserProvGroupMappings == null
-                                ? 43
-                                : this.jitUserProvGroupMappings.hashCode());
-        result =
-                (result * PRIME)
                         + (this.jitUserProvGroupSAMLAttributeName == null
                                 ? 43
                                 : this.jitUserProvGroupSAMLAttributeName.hashCode());
@@ -4062,6 +4126,16 @@ public final class IdentityProvider
                         + (this.jitUserProvIgnoreErrorOnAbsentGroups == null
                                 ? 43
                                 : this.jitUserProvIgnoreErrorOnAbsentGroups.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lastNotificationSentTime == null
+                                ? 43
+                                : this.lastNotificationSentTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jitUserProvGroupMappings == null
+                                ? 43
+                                : this.jitUserProvGroupMappings.hashCode());
         result =
                 (result * PRIME)
                         + (this.jitUserProvAttributes == null

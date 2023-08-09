@@ -5,9 +5,11 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Group members - when requesting members attribute, a max of 10,000 members will be returned in a
- * single request. It is recommended to use startIndex and count to return members in pages instead
- * of in a single response, eg : #attributes=members[startIndex=1%26count=10] <br>
+ * The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members
+ * can be returned in a single request. If the response contains more than 10,000 members, the
+ * request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single
+ * response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM
+ * compliant. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -56,7 +58,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * ID of the member of this Group
+         * The ID of the member of this Group
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: true - returned: always - type: string - uniqueness:
@@ -66,7 +68,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
         private String value;
 
         /**
-         * ID of the member of this Group
+         * The ID of the member of this Group
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: true - returned: always - type: string - uniqueness:
@@ -81,7 +83,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * The DateTime the member was added to the Group.
+         * The date and time that the member was added to the group.
          *
          * <p>*Added In:** 2012271618
          *
@@ -92,7 +94,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
         private String dateAdded;
 
         /**
-         * The DateTime the member was added to the Group.
+         * The date and time that the member was added to the group.
          *
          * <p>*Added In:** 2012271618
          *
@@ -108,7 +110,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * OCID of the member of this Group
+         * The OCID of the member of this group.
          *
          * <p>*Added In:** 2012271618
          *
@@ -120,7 +122,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
         private String ocid;
 
         /**
-         * OCID of the member of this Group
+         * The OCID of the member of this group.
          *
          * <p>*Added In:** 2012271618
          *
@@ -137,7 +139,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * Membership Ocid
+         * The membership OCID.
          *
          * <p>*Added In:** 2102181953
          *
@@ -149,7 +151,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
         private String membershipOcid;
 
         /**
-         * Membership Ocid
+         * The membership OCID.
          *
          * <p>*Added In:** 2102181953
          *
@@ -166,7 +168,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * The URI that corresponds to the member Resource of this Group
+         * The URI that corresponds to the member Resource of this group.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
          * mutability: readOnly - required: false - returned: default - type: reference -
@@ -176,7 +178,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
         private String ref;
 
         /**
-         * The URI that corresponds to the member Resource of this Group
+         * The URI that corresponds to the member Resource of this group.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
          * mutability: readOnly - required: false - returned: default - type: reference -
@@ -191,7 +193,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * Member display name
+         * The member's display name.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
@@ -201,7 +203,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
         private String display;
 
         /**
-         * Member display name
+         * The member's display name.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
@@ -216,7 +218,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * Indicates the type of resource--for example, User or Group
+         * Indicates the type of resource, for example, User or Group.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - idcsDefaultValue:
          * User - multiValued: false - mutability: readWrite - required: true - returned: default -
@@ -226,7 +228,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
         private Type type;
 
         /**
-         * Indicates the type of resource--for example, User or Group
+         * Indicates the type of resource, for example, User or Group.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - idcsDefaultValue:
          * User - multiValued: false - mutability: readWrite - required: true - returned: default -
@@ -241,7 +243,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * Member name
+         * The member's name.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
          * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
@@ -251,7 +253,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
         private String name;
 
         /**
-         * Member name
+         * The member's name.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
          * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
@@ -326,7 +328,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * ID of the member of this Group
+     * The ID of the member of this Group
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: true - returned: always - type: string - uniqueness: none
@@ -335,7 +337,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
     private final String value;
 
     /**
-     * ID of the member of this Group
+     * The ID of the member of this Group
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: true - returned: always - type: string - uniqueness: none
@@ -347,7 +349,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The DateTime the member was added to the Group.
+     * The date and time that the member was added to the group.
      *
      * <p>*Added In:** 2012271618
      *
@@ -358,7 +360,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
     private final String dateAdded;
 
     /**
-     * The DateTime the member was added to the Group.
+     * The date and time that the member was added to the group.
      *
      * <p>*Added In:** 2012271618
      *
@@ -372,7 +374,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * OCID of the member of this Group
+     * The OCID of the member of this group.
      *
      * <p>*Added In:** 2012271618
      *
@@ -383,7 +385,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
     private final String ocid;
 
     /**
-     * OCID of the member of this Group
+     * The OCID of the member of this group.
      *
      * <p>*Added In:** 2012271618
      *
@@ -397,7 +399,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * Membership Ocid
+     * The membership OCID.
      *
      * <p>*Added In:** 2102181953
      *
@@ -408,7 +410,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
     private final String membershipOcid;
 
     /**
-     * Membership Ocid
+     * The membership OCID.
      *
      * <p>*Added In:** 2102181953
      *
@@ -422,7 +424,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The URI that corresponds to the member Resource of this Group
+     * The URI that corresponds to the member Resource of this group.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
      * mutability: readOnly - required: false - returned: default - type: reference - uniqueness:
@@ -432,7 +434,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
     private final String ref;
 
     /**
-     * The URI that corresponds to the member Resource of this Group
+     * The URI that corresponds to the member Resource of this group.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
      * mutability: readOnly - required: false - returned: default - type: reference - uniqueness:
@@ -445,7 +447,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * Member display name
+     * The member's display name.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
@@ -454,7 +456,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
     private final String display;
 
     /**
-     * Member display name
+     * The member's display name.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
@@ -466,7 +468,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * Indicates the type of resource--for example, User or Group
+     * Indicates the type of resource, for example, User or Group.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - idcsDefaultValue: User -
      * multiValued: false - mutability: readWrite - required: true - returned: default - type:
@@ -515,7 +517,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
         }
     };
     /**
-     * Indicates the type of resource--for example, User or Group
+     * Indicates the type of resource, for example, User or Group.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - idcsDefaultValue: User -
      * multiValued: false - mutability: readWrite - required: true - returned: default - type:
@@ -525,7 +527,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
     private final Type type;
 
     /**
-     * Indicates the type of resource--for example, User or Group
+     * Indicates the type of resource, for example, User or Group.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - idcsDefaultValue: User -
      * multiValued: false - mutability: readWrite - required: true - returned: default - type:
@@ -538,7 +540,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * Member name
+     * The member's name.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
      * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
@@ -547,7 +549,7 @@ public final class GroupMembers extends com.oracle.bmc.http.client.internal.Expl
     private final String name;
 
     /**
-     * Member name
+     * The member's name.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
      * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none

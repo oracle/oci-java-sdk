@@ -33,7 +33,7 @@ public interface IdentityDomains extends AutoCloseable {
     String getEndpoint();
 
     /**
-     * Add a user's api key
+     * Create a user's API key.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -48,7 +48,37 @@ public interface IdentityDomains extends AutoCloseable {
     CreateApiKeyResponse createApiKey(CreateApiKeyRequest request);
 
     /**
-     * Add a user's auth token
+     * Create an App
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/CreateAppExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateApp API.
+     */
+    CreateAppResponse createApp(CreateAppRequest request);
+
+    /**
+     * Create an AppRole
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/CreateAppRoleExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAppRole API.
+     */
+    CreateAppRoleResponse createAppRole(CreateAppRoleRequest request);
+
+    /**
+     * Create a user's Auth token.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -81,7 +111,7 @@ public interface IdentityDomains extends AutoCloseable {
             CreateAuthenticationFactorsRemoverRequest request);
 
     /**
-     * Add a user's customer secret key
+     * Create a user's customer secret key.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -97,7 +127,7 @@ public interface IdentityDomains extends AutoCloseable {
     CreateCustomerSecretKeyResponse createCustomerSecretKey(CreateCustomerSecretKeyRequest request);
 
     /**
-     * Create a DynamicResourceGroup
+     * Create a Dynamic Resource Group.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -114,7 +144,22 @@ public interface IdentityDomains extends AutoCloseable {
             CreateDynamicResourceGroupRequest request);
 
     /**
-     * Create a Group
+     * Add a Grantee to an AppRole
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/CreateGrantExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateGrant API.
+     */
+    CreateGrantResponse createGrant(CreateGrantRequest request);
+
+    /**
+     * Create a group.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -145,7 +190,7 @@ public interface IdentityDomains extends AutoCloseable {
     CreateIdentityProviderResponse createIdentityProvider(CreateIdentityProviderRequest request);
 
     /**
-     * Self Register
+     * Self register a user.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -160,7 +205,7 @@ public interface IdentityDomains extends AutoCloseable {
     CreateMeResponse createMe(CreateMeRequest request);
 
     /**
-     * Add a user's api key
+     * Add a user's own API key.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -175,7 +220,7 @@ public interface IdentityDomains extends AutoCloseable {
     CreateMyApiKeyResponse createMyApiKey(CreateMyApiKeyRequest request);
 
     /**
-     * Add user's auth token
+     * Create a user's own Auth token.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -242,7 +287,7 @@ public interface IdentityDomains extends AutoCloseable {
             CreateMyAuthenticationFactorsRemoverRequest request);
 
     /**
-     * Add a user's customer secret key
+     * Add a user's own customer secret key.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -259,7 +304,7 @@ public interface IdentityDomains extends AutoCloseable {
             CreateMyCustomerSecretKeyRequest request);
 
     /**
-     * Add a user's oauth2 client credential
+     * Create a user's own OAuth2 client credential.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -276,7 +321,23 @@ public interface IdentityDomains extends AutoCloseable {
             CreateMyOAuth2ClientCredentialRequest request);
 
     /**
-     * Add a user's smtp credenials
+     * Create a Request
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/CreateMyRequestExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMyRequest
+     *     API.
+     */
+    CreateMyRequestResponse createMyRequest(CreateMyRequestRequest request);
+
+    /**
+     * Create a user's own SMTP credential.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -292,7 +353,7 @@ public interface IdentityDomains extends AutoCloseable {
     CreateMySmtpCredentialResponse createMySmtpCredential(CreateMySmtpCredentialRequest request);
 
     /**
-     * Create a Support Account
+     * Create a user's own support account.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -308,7 +369,7 @@ public interface IdentityDomains extends AutoCloseable {
     CreateMySupportAccountResponse createMySupportAccount(CreateMySupportAccountRequest request);
 
     /**
-     * Set a User's DbCredential
+     * Create a user's own database (DB) credential.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -325,7 +386,7 @@ public interface IdentityDomains extends AutoCloseable {
             CreateMyUserDbCredentialRequest request);
 
     /**
-     * Add a user's oauth2 client credential
+     * Add a user's OAuth2 client credentials.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -342,7 +403,7 @@ public interface IdentityDomains extends AutoCloseable {
             CreateOAuth2ClientCredentialRequest request);
 
     /**
-     * Create a Password Policy
+     * Create a password policy.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -358,7 +419,23 @@ public interface IdentityDomains extends AutoCloseable {
     CreatePasswordPolicyResponse createPasswordPolicy(CreatePasswordPolicyRequest request);
 
     /**
-     * Add a user's smtp credenials
+     * Create a security question.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/CreateSecurityQuestionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateSecurityQuestion API.
+     */
+    CreateSecurityQuestionResponse createSecurityQuestion(CreateSecurityQuestionRequest request);
+
+    /**
+     * Create a user's SMTP credentials.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -374,7 +451,7 @@ public interface IdentityDomains extends AutoCloseable {
     CreateSmtpCredentialResponse createSmtpCredential(CreateSmtpCredentialRequest request);
 
     /**
-     * Create a User
+     * Create a user.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -389,7 +466,7 @@ public interface IdentityDomains extends AutoCloseable {
     CreateUserResponse createUser(CreateUserRequest request);
 
     /**
-     * Set a User's DbCredential
+     * Create a user's database (DB) credentials.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -405,7 +482,7 @@ public interface IdentityDomains extends AutoCloseable {
     CreateUserDbCredentialResponse createUserDbCredential(CreateUserDbCredentialRequest request);
 
     /**
-     * Delete user's api key
+     * Delete a user's API key.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -420,7 +497,37 @@ public interface IdentityDomains extends AutoCloseable {
     DeleteApiKeyResponse deleteApiKey(DeleteApiKeyRequest request);
 
     /**
-     * Delete user's auth token
+     * Delete an App
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/DeleteAppExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteApp API.
+     */
+    DeleteAppResponse deleteApp(DeleteAppRequest request);
+
+    /**
+     * Delete an AppRole
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/DeleteAppRoleExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAppRole API.
+     */
+    DeleteAppRoleResponse deleteAppRole(DeleteAppRoleRequest request);
+
+    /**
+     * Delete a user's Auth token.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -436,7 +543,7 @@ public interface IdentityDomains extends AutoCloseable {
     DeleteAuthTokenResponse deleteAuthToken(DeleteAuthTokenRequest request);
 
     /**
-     * Delete user's customer secret key
+     * Delete a user's customer secret key.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -452,7 +559,7 @@ public interface IdentityDomains extends AutoCloseable {
     DeleteCustomerSecretKeyResponse deleteCustomerSecretKey(DeleteCustomerSecretKeyRequest request);
 
     /**
-     * Delete a DynamicResourceGroup
+     * Delete a Dynamic Resource Group.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -469,7 +576,22 @@ public interface IdentityDomains extends AutoCloseable {
             DeleteDynamicResourceGroupRequest request);
 
     /**
-     * Delete a Group
+     * Remove a Grantee from an AppRole
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/DeleteGrantExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteGrant API.
+     */
+    DeleteGrantResponse deleteGrant(DeleteGrantRequest request);
+
+    /**
+     * Delete a group.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -500,7 +622,7 @@ public interface IdentityDomains extends AutoCloseable {
     DeleteIdentityProviderResponse deleteIdentityProvider(DeleteIdentityProviderRequest request);
 
     /**
-     * Delete user's api key
+     * Delete a user's own API key.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -515,7 +637,7 @@ public interface IdentityDomains extends AutoCloseable {
     DeleteMyApiKeyResponse deleteMyApiKey(DeleteMyApiKeyRequest request);
 
     /**
-     * Delete user's auth token
+     * Delete a user's own Auth token.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -531,7 +653,7 @@ public interface IdentityDomains extends AutoCloseable {
     DeleteMyAuthTokenResponse deleteMyAuthToken(DeleteMyAuthTokenRequest request);
 
     /**
-     * Delete user's customer secret key
+     * Delete a user's own customer secret key.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -563,7 +685,7 @@ public interface IdentityDomains extends AutoCloseable {
     DeleteMyDeviceResponse deleteMyDevice(DeleteMyDeviceRequest request);
 
     /**
-     * Delete user's oauth2 client credential
+     * Delete a user's own OAuth2 client credential.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -580,7 +702,7 @@ public interface IdentityDomains extends AutoCloseable {
             DeleteMyOAuth2ClientCredentialRequest request);
 
     /**
-     * Delete user's smtp credenials
+     * Delete a user's own SMTP credential.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -596,7 +718,7 @@ public interface IdentityDomains extends AutoCloseable {
     DeleteMySmtpCredentialResponse deleteMySmtpCredential(DeleteMySmtpCredentialRequest request);
 
     /**
-     * Delete a Support Account
+     * Delete a user's own support account.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -629,7 +751,7 @@ public interface IdentityDomains extends AutoCloseable {
             DeleteMyTrustedUserAgentRequest request);
 
     /**
-     * Remove a User's DbCredential
+     * Delete a user's own database (DB) credential.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -646,7 +768,7 @@ public interface IdentityDomains extends AutoCloseable {
             DeleteMyUserDbCredentialRequest request);
 
     /**
-     * Delete user's oauth2 client credential
+     * Delete a user's OAuth2 client credentials.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -663,7 +785,7 @@ public interface IdentityDomains extends AutoCloseable {
             DeleteOAuth2ClientCredentialRequest request);
 
     /**
-     * Delete a Password Policy
+     * Delete a password policy.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -679,7 +801,23 @@ public interface IdentityDomains extends AutoCloseable {
     DeletePasswordPolicyResponse deletePasswordPolicy(DeletePasswordPolicyRequest request);
 
     /**
-     * Delete user's smtp credenials
+     * Delete a security question.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/DeleteSecurityQuestionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteSecurityQuestion API.
+     */
+    DeleteSecurityQuestionResponse deleteSecurityQuestion(DeleteSecurityQuestionRequest request);
+
+    /**
+     * Delete a user's SMTP credentials.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -695,7 +833,7 @@ public interface IdentityDomains extends AutoCloseable {
     DeleteSmtpCredentialResponse deleteSmtpCredential(DeleteSmtpCredentialRequest request);
 
     /**
-     * Delete a User
+     * Delete a user.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -710,7 +848,7 @@ public interface IdentityDomains extends AutoCloseable {
     DeleteUserResponse deleteUser(DeleteUserRequest request);
 
     /**
-     * Remove a User's DbCredential
+     * Delete a user's database (DB) credentials.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -726,7 +864,40 @@ public interface IdentityDomains extends AutoCloseable {
     DeleteUserDbCredentialResponse deleteUserDbCredential(DeleteUserDbCredentialRequest request);
 
     /**
-     * Get user's api key
+     * Get Account Mgmt Info
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/GetAccountMgmtInfoExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAccountMgmtInfo
+     *     API.
+     */
+    GetAccountMgmtInfoResponse getAccountMgmtInfo(GetAccountMgmtInfoRequest request);
+
+    /**
+     * Get an account recovery setting.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/GetAccountRecoverySettingExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetAccountRecoverySetting API.
+     */
+    GetAccountRecoverySettingResponse getAccountRecoverySetting(
+            GetAccountRecoverySettingRequest request);
+
+    /**
+     * Get a user's API key.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -741,7 +912,37 @@ public interface IdentityDomains extends AutoCloseable {
     GetApiKeyResponse getApiKey(GetApiKeyRequest request);
 
     /**
-     * Get user's auth token
+     * Get an App
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/GetAppExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetApp API.
+     */
+    GetAppResponse getApp(GetAppRequest request);
+
+    /**
+     * Get an AppRole
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/GetAppRoleExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAppRole API.
+     */
+    GetAppRoleResponse getAppRole(GetAppRoleRequest request);
+
+    /**
+     * Get a user's Auth token.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -773,7 +974,7 @@ public interface IdentityDomains extends AutoCloseable {
             GetAuthenticationFactorSettingRequest request);
 
     /**
-     * Get user's customer secret key
+     * Get a user's customer secret key.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -789,7 +990,7 @@ public interface IdentityDomains extends AutoCloseable {
     GetCustomerSecretKeyResponse getCustomerSecretKey(GetCustomerSecretKeyRequest request);
 
     /**
-     * Get a DynamicResourceGroup
+     * Get a Dynamic Resource Group.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -805,9 +1006,24 @@ public interface IdentityDomains extends AutoCloseable {
     GetDynamicResourceGroupResponse getDynamicResourceGroup(GetDynamicResourceGroupRequest request);
 
     /**
-     * Get a Group - The Group search and get operations on users/members will throw an exception if
-     * it has more than 10K members, to avoid the exception use the pagination filter to get or
-     * search group members
+     * Get a Grant
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/GetGrantExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetGrant API.
+     */
+    GetGrantResponse getGrant(GetGrantRequest request);
+
+    /**
+     * Get a group. <b>Important:</b> The Group SEARCH and GET operations on users and members will
+     * throw an exception if the response has more than 10,000 members. To avoid the exception, use
+     * the pagination filter to GET or SEARCH group members.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -838,6 +1054,22 @@ public interface IdentityDomains extends AutoCloseable {
     GetIdentityProviderResponse getIdentityProvider(GetIdentityProviderRequest request);
 
     /**
+     * Get an Identity setting.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/GetIdentitySettingExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIdentitySetting
+     *     API.
+     */
+    GetIdentitySettingResponse getIdentitySetting(GetIdentitySettingRequest request);
+
+    /**
      * Get KmsiSettings
      *
      * @param request The request object containing the details to send
@@ -853,7 +1085,7 @@ public interface IdentityDomains extends AutoCloseable {
     GetKmsiSettingResponse getKmsiSetting(GetKmsiSettingRequest request);
 
     /**
-     * Get User Info
+     * Get a user's own information.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -868,7 +1100,7 @@ public interface IdentityDomains extends AutoCloseable {
     GetMeResponse getMe(GetMeRequest request);
 
     /**
-     * Get user's api key
+     * Get a user's own API key.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -883,7 +1115,7 @@ public interface IdentityDomains extends AutoCloseable {
     GetMyApiKeyResponse getMyApiKey(GetMyApiKeyRequest request);
 
     /**
-     * Get user's auth token
+     * Get a user's own Auth token.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -898,7 +1130,7 @@ public interface IdentityDomains extends AutoCloseable {
     GetMyAuthTokenResponse getMyAuthToken(GetMyAuthTokenRequest request);
 
     /**
-     * Get user's customer secret key
+     * Get a user's own customer secret key.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -929,7 +1161,7 @@ public interface IdentityDomains extends AutoCloseable {
     GetMyDeviceResponse getMyDevice(GetMyDeviceRequest request);
 
     /**
-     * Get user's oauth2 client credential
+     * Get a user's own OAuth2 client credential.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -946,7 +1178,7 @@ public interface IdentityDomains extends AutoCloseable {
             GetMyOAuth2ClientCredentialRequest request);
 
     /**
-     * Get user's smtp credentials
+     * Get a user's own SMTP credential.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -962,7 +1194,7 @@ public interface IdentityDomains extends AutoCloseable {
     GetMySmtpCredentialResponse getMySmtpCredential(GetMySmtpCredentialRequest request);
 
     /**
-     * Get a Support Account
+     * Get a user's own support account.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -994,7 +1226,7 @@ public interface IdentityDomains extends AutoCloseable {
     GetMyTrustedUserAgentResponse getMyTrustedUserAgent(GetMyTrustedUserAgentRequest request);
 
     /**
-     * Get a User's DbCredentials
+     * Get a user's own database (DB) credential.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1010,7 +1242,7 @@ public interface IdentityDomains extends AutoCloseable {
     GetMyUserDbCredentialResponse getMyUserDbCredential(GetMyUserDbCredentialRequest request);
 
     /**
-     * Get user's oauth2 client credential
+     * Get a user's OAuth2 client credentials.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1027,7 +1259,7 @@ public interface IdentityDomains extends AutoCloseable {
             GetOAuth2ClientCredentialRequest request);
 
     /**
-     * Get a Password Policy
+     * Get a password policy.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1043,7 +1275,40 @@ public interface IdentityDomains extends AutoCloseable {
     GetPasswordPolicyResponse getPasswordPolicy(GetPasswordPolicyRequest request);
 
     /**
-     * Get user's smtp credentials
+     * Get a security question.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/GetSecurityQuestionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecurityQuestion
+     *     API.
+     */
+    GetSecurityQuestionResponse getSecurityQuestion(GetSecurityQuestionRequest request);
+
+    /**
+     * Get a security question setting.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/GetSecurityQuestionSettingExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetSecurityQuestionSetting API.
+     */
+    GetSecurityQuestionSettingResponse getSecurityQuestionSetting(
+            GetSecurityQuestionSettingRequest request);
+
+    /**
+     * Get a user's SMTP credentials.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1059,7 +1324,7 @@ public interface IdentityDomains extends AutoCloseable {
     GetSmtpCredentialResponse getSmtpCredential(GetSmtpCredentialRequest request);
 
     /**
-     * Get a User
+     * Get a user.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1074,7 +1339,24 @@ public interface IdentityDomains extends AutoCloseable {
     GetUserResponse getUser(GetUserRequest request);
 
     /**
-     * Get a User's DbCredentials
+     * Get User Schema Attribute Settings
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/GetUserAttributesSettingExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetUserAttributesSetting API.
+     */
+    GetUserAttributesSettingResponse getUserAttributesSetting(
+            GetUserAttributesSettingRequest request);
+
+    /**
+     * Get a user's database (DB) credentials.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1090,7 +1372,40 @@ public interface IdentityDomains extends AutoCloseable {
     GetUserDbCredentialResponse getUserDbCredential(GetUserDbCredentialRequest request);
 
     /**
-     * Search Api Key
+     * Search Account Mgmt Info
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/ListAccountMgmtInfosExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListAccountMgmtInfos API.
+     */
+    ListAccountMgmtInfosResponse listAccountMgmtInfos(ListAccountMgmtInfosRequest request);
+
+    /**
+     * Search for account recovery settings.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/ListAccountRecoverySettingsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListAccountRecoverySettings API.
+     */
+    ListAccountRecoverySettingsResponse listAccountRecoverySettings(
+            ListAccountRecoverySettingsRequest request);
+
+    /**
+     * Search API keys.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1105,7 +1420,37 @@ public interface IdentityDomains extends AutoCloseable {
     ListApiKeysResponse listApiKeys(ListApiKeysRequest request);
 
     /**
-     * Search AuthTokens
+     * Search AppRoles
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/ListAppRolesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAppRoles API.
+     */
+    ListAppRolesResponse listAppRoles(ListAppRolesRequest request);
+
+    /**
+     * Search Apps
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/ListAppsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListApps API.
+     */
+    ListAppsResponse listApps(ListAppsRequest request);
+
+    /**
+     * Search for Auth tokens.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1137,7 +1482,7 @@ public interface IdentityDomains extends AutoCloseable {
             ListAuthenticationFactorSettingsRequest request);
 
     /**
-     * Search user's customer secret key
+     * Search for a user's customer secret keys.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1153,7 +1498,7 @@ public interface IdentityDomains extends AutoCloseable {
     ListCustomerSecretKeysResponse listCustomerSecretKeys(ListCustomerSecretKeysRequest request);
 
     /**
-     * Search DynamicResourceGroups
+     * Search for Dynamic Resource Groups.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1170,9 +1515,24 @@ public interface IdentityDomains extends AutoCloseable {
             ListDynamicResourceGroupsRequest request);
 
     /**
-     * Search Groups.The Group search and get operations on users/members will throw an exception if
-     * it has more than 10K members, to avoid the exception use the pagination filter to get or
-     * search group members
+     * Search Grants
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/ListGrantsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListGrants API.
+     */
+    ListGrantsResponse listGrants(ListGrantsRequest request);
+
+    /**
+     * Search for groups. <b>Important:</b> The Group SEARCH and GET operations on users and members
+     * will throw an exception if the response has more than 10,000 members. To avoid the exception,
+     * use the pagination filter to GET or SEARCH group members.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1203,6 +1563,22 @@ public interface IdentityDomains extends AutoCloseable {
     ListIdentityProvidersResponse listIdentityProviders(ListIdentityProvidersRequest request);
 
     /**
+     * Search for Identity settings.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/ListIdentitySettingsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListIdentitySettings API.
+     */
+    ListIdentitySettingsResponse listIdentitySettings(ListIdentitySettingsRequest request);
+
+    /**
      * Search KmsiSettings
      *
      * @param request The request object containing the details to send
@@ -1219,7 +1595,7 @@ public interface IdentityDomains extends AutoCloseable {
     ListKmsiSettingsResponse listKmsiSettings(ListKmsiSettingsRequest request);
 
     /**
-     * Search Api Key
+     * Search for a user's own API key.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1234,7 +1610,22 @@ public interface IdentityDomains extends AutoCloseable {
     ListMyApiKeysResponse listMyApiKeys(ListMyApiKeysRequest request);
 
     /**
-     * Search AuthTokens
+     * Search My Apps
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/ListMyAppsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMyApps API.
+     */
+    ListMyAppsResponse listMyApps(ListMyAppsRequest request);
+
+    /**
+     * Search for a user's own Auth token.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1250,7 +1641,7 @@ public interface IdentityDomains extends AutoCloseable {
     ListMyAuthTokensResponse listMyAuthTokens(ListMyAuthTokensRequest request);
 
     /**
-     * Search user's customer secret key
+     * Search for a user's own customer secret key.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1282,7 +1673,7 @@ public interface IdentityDomains extends AutoCloseable {
     ListMyDevicesResponse listMyDevices(ListMyDevicesRequest request);
 
     /**
-     * Search My Groups
+     * Search for 'My Groups'.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1297,7 +1688,7 @@ public interface IdentityDomains extends AutoCloseable {
     ListMyGroupsResponse listMyGroups(ListMyGroupsRequest request);
 
     /**
-     * Search oauth2 client credentials
+     * Search for a user's own OAuth2 client credential.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1314,7 +1705,38 @@ public interface IdentityDomains extends AutoCloseable {
             ListMyOAuth2ClientCredentialsRequest request);
 
     /**
-     * Search smtp credentials
+     * Search My Requestable Groups
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/ListMyRequestableGroupsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListMyRequestableGroups API.
+     */
+    ListMyRequestableGroupsResponse listMyRequestableGroups(ListMyRequestableGroupsRequest request);
+
+    /**
+     * Search My Requests
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/ListMyRequestsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMyRequests API.
+     */
+    ListMyRequestsResponse listMyRequests(ListMyRequestsRequest request);
+
+    /**
+     * Search for a user's own SMTP credential.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1330,7 +1752,7 @@ public interface IdentityDomains extends AutoCloseable {
     ListMySmtpCredentialsResponse listMySmtpCredentials(ListMySmtpCredentialsRequest request);
 
     /**
-     * Search Support Accounts
+     * Search for a user's own support account.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1362,7 +1784,7 @@ public interface IdentityDomains extends AutoCloseable {
     ListMyTrustedUserAgentsResponse listMyTrustedUserAgents(ListMyTrustedUserAgentsRequest request);
 
     /**
-     * Search a User's DBCredentials
+     * Search for a user's own database (DB) credential.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1378,7 +1800,7 @@ public interface IdentityDomains extends AutoCloseable {
     ListMyUserDbCredentialsResponse listMyUserDbCredentials(ListMyUserDbCredentialsRequest request);
 
     /**
-     * Search oauth2 client credentials
+     * Search for a user's OAuth2 client credentials.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1395,7 +1817,7 @@ public interface IdentityDomains extends AutoCloseable {
             ListOAuth2ClientCredentialsRequest request);
 
     /**
-     * Search Password Policies
+     * Search for password policies.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1411,7 +1833,57 @@ public interface IdentityDomains extends AutoCloseable {
     ListPasswordPoliciesResponse listPasswordPolicies(ListPasswordPoliciesRequest request);
 
     /**
-     * Search smtp credentials
+     * Search Resource Type Schema Attributes
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/ListResourceTypeSchemaAttributesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListResourceTypeSchemaAttributes API.
+     */
+    ListResourceTypeSchemaAttributesResponse listResourceTypeSchemaAttributes(
+            ListResourceTypeSchemaAttributesRequest request);
+
+    /**
+     * Search for security question settings.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/ListSecurityQuestionSettingsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListSecurityQuestionSettings API.
+     */
+    ListSecurityQuestionSettingsResponse listSecurityQuestionSettings(
+            ListSecurityQuestionSettingsRequest request);
+
+    /**
+     * Search for security questions.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/ListSecurityQuestionsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListSecurityQuestions API.
+     */
+    ListSecurityQuestionsResponse listSecurityQuestions(ListSecurityQuestionsRequest request);
+
+    /**
+     * Search for SMTP credentials.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1427,7 +1899,24 @@ public interface IdentityDomains extends AutoCloseable {
     ListSmtpCredentialsResponse listSmtpCredentials(ListSmtpCredentialsRequest request);
 
     /**
-     * Search a User's DBCredentials
+     * Search User Schema Attribute Settings
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/ListUserAttributesSettingsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListUserAttributesSettings API.
+     */
+    ListUserAttributesSettingsResponse listUserAttributesSettings(
+            ListUserAttributesSettingsRequest request);
+
+    /**
+     * Search for a user's database (DB) credentials.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1443,7 +1932,7 @@ public interface IdentityDomains extends AutoCloseable {
     ListUserDbCredentialsResponse listUserDbCredentials(ListUserDbCredentialsRequest request);
 
     /**
-     * Search Users
+     * Search for users.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1458,7 +1947,24 @@ public interface IdentityDomains extends AutoCloseable {
     ListUsersResponse listUsers(ListUsersRequest request);
 
     /**
-     * Update user's api key
+     * Update an account recovery setting.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PatchAccountRecoverySettingExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     PatchAccountRecoverySetting API.
+     */
+    PatchAccountRecoverySettingResponse patchAccountRecoverySetting(
+            PatchAccountRecoverySettingRequest request);
+
+    /**
+     * Update a user's API key.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1473,7 +1979,37 @@ public interface IdentityDomains extends AutoCloseable {
     PatchApiKeyResponse patchApiKey(PatchApiKeyRequest request);
 
     /**
-     * Update user's AuthToken
+     * Update an App
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PatchAppExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchApp API.
+     */
+    PatchAppResponse patchApp(PatchAppRequest request);
+
+    /**
+     * Update an AppRole
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PatchAppRoleExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchAppRole API.
+     */
+    PatchAppRoleResponse patchAppRole(PatchAppRoleRequest request);
+
+    /**
+     * Update a user's Auth token.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1488,7 +2024,7 @@ public interface IdentityDomains extends AutoCloseable {
     PatchAuthTokenResponse patchAuthToken(PatchAuthTokenRequest request);
 
     /**
-     * Update user's customer secret key
+     * Update a user's customer secret key.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1504,7 +2040,7 @@ public interface IdentityDomains extends AutoCloseable {
     PatchCustomerSecretKeyResponse patchCustomerSecretKey(PatchCustomerSecretKeyRequest request);
 
     /**
-     * Update a DynamicResourceGroup
+     * Update a Dynamic Resource Group.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1521,7 +2057,22 @@ public interface IdentityDomains extends AutoCloseable {
             PatchDynamicResourceGroupRequest request);
 
     /**
-     * Update a Group
+     * Update a Grant
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PatchGrantExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchGrant API.
+     */
+    PatchGrantResponse patchGrant(PatchGrantRequest request);
+
+    /**
+     * Update a group.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1552,6 +2103,22 @@ public interface IdentityDomains extends AutoCloseable {
     PatchIdentityProviderResponse patchIdentityProvider(PatchIdentityProviderRequest request);
 
     /**
+     * Update an Identity setting.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PatchIdentitySettingExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     PatchIdentitySetting API.
+     */
+    PatchIdentitySettingResponse patchIdentitySetting(PatchIdentitySettingRequest request);
+
+    /**
      * Update a Setting
      *
      * @param request The request object containing the details to send
@@ -1568,7 +2135,7 @@ public interface IdentityDomains extends AutoCloseable {
     PatchKmsiSettingResponse patchKmsiSetting(PatchKmsiSettingRequest request);
 
     /**
-     * Update User Info
+     * Update a user's own information.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1583,7 +2150,7 @@ public interface IdentityDomains extends AutoCloseable {
     PatchMeResponse patchMe(PatchMeRequest request);
 
     /**
-     * Update user's api key
+     * Update a user's own API key.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1598,7 +2165,7 @@ public interface IdentityDomains extends AutoCloseable {
     PatchMyApiKeyResponse patchMyApiKey(PatchMyApiKeyRequest request);
 
     /**
-     * Update user's AuthToken
+     * Update a user's own Auth token.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1614,7 +2181,7 @@ public interface IdentityDomains extends AutoCloseable {
     PatchMyAuthTokenResponse patchMyAuthToken(PatchMyAuthTokenRequest request);
 
     /**
-     * Update user's customer secret key
+     * Update a user's own customer secret key.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1646,7 +2213,7 @@ public interface IdentityDomains extends AutoCloseable {
     PatchMyDeviceResponse patchMyDevice(PatchMyDeviceRequest request);
 
     /**
-     * Update user's oauth2 client credential
+     * Update a user's own OAuth2 client credential.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1663,7 +2230,7 @@ public interface IdentityDomains extends AutoCloseable {
             PatchMyOAuth2ClientCredentialRequest request);
 
     /**
-     * Update user's smtp credentials
+     * Update a user's own SMTP credential.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1679,7 +2246,7 @@ public interface IdentityDomains extends AutoCloseable {
     PatchMySmtpCredentialResponse patchMySmtpCredential(PatchMySmtpCredentialRequest request);
 
     /**
-     * Update user's oauth2 client credential
+     * Update a user's OAuth2 client credentials.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1696,7 +2263,7 @@ public interface IdentityDomains extends AutoCloseable {
             PatchOAuth2ClientCredentialRequest request);
 
     /**
-     * Update a Password Policy
+     * Update a password policy.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1712,7 +2279,40 @@ public interface IdentityDomains extends AutoCloseable {
     PatchPasswordPolicyResponse patchPasswordPolicy(PatchPasswordPolicyRequest request);
 
     /**
-     * Update user's smtp credentials
+     * Update a security question.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PatchSecurityQuestionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     PatchSecurityQuestion API.
+     */
+    PatchSecurityQuestionResponse patchSecurityQuestion(PatchSecurityQuestionRequest request);
+
+    /**
+     * Update a security question setting.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PatchSecurityQuestionSettingExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     PatchSecurityQuestionSetting API.
+     */
+    PatchSecurityQuestionSettingResponse patchSecurityQuestionSetting(
+            PatchSecurityQuestionSettingRequest request);
+
+    /**
+     * Update a user's SMTP credentials.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1728,7 +2328,7 @@ public interface IdentityDomains extends AutoCloseable {
     PatchSmtpCredentialResponse patchSmtpCredential(PatchSmtpCredentialRequest request);
 
     /**
-     * Update a User
+     * Update a user.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1741,6 +2341,71 @@ public interface IdentityDomains extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchUser API.
      */
     PatchUserResponse patchUser(PatchUserRequest request);
+
+    /**
+     * Update User Schema Attribute Settings
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PatchUserAttributesSettingExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     PatchUserAttributesSetting API.
+     */
+    PatchUserAttributesSettingResponse patchUserAttributesSetting(
+            PatchUserAttributesSettingRequest request);
+
+    /**
+     * Replace an account recovery setting.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PutAccountRecoverySettingExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     PutAccountRecoverySetting API.
+     */
+    PutAccountRecoverySettingResponse putAccountRecoverySetting(
+            PutAccountRecoverySettingRequest request);
+
+    /**
+     * Replace an App
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PutAppExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use PutApp API.
+     */
+    PutAppResponse putApp(PutAppRequest request);
+
+    /**
+     * Activate/Deactivate an App
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PutAppStatusChangerExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use PutAppStatusChanger
+     *     API.
+     */
+    PutAppStatusChangerResponse putAppStatusChanger(PutAppStatusChangerRequest request);
 
     /**
      * Replace Authentication Factor Settings
@@ -1760,7 +2425,7 @@ public interface IdentityDomains extends AutoCloseable {
             PutAuthenticationFactorSettingRequest request);
 
     /**
-     * Replace a DynamicResourceGroup
+     * Replace a Dynamic Resource Group.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1776,7 +2441,7 @@ public interface IdentityDomains extends AutoCloseable {
     PutDynamicResourceGroupResponse putDynamicResourceGroup(PutDynamicResourceGroupRequest request);
 
     /**
-     * Replace a Group
+     * Replace a group.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1807,6 +2472,22 @@ public interface IdentityDomains extends AutoCloseable {
     PutIdentityProviderResponse putIdentityProvider(PutIdentityProviderRequest request);
 
     /**
+     * Replace an Identity setting.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PutIdentitySettingExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use PutIdentitySetting
+     *     API.
+     */
+    PutIdentitySettingResponse putIdentitySetting(PutIdentitySettingRequest request);
+
+    /**
      * Replace KmsiSettings
      *
      * @param request The request object containing the details to send
@@ -1822,7 +2503,7 @@ public interface IdentityDomains extends AutoCloseable {
     PutKmsiSettingResponse putKmsiSetting(PutKmsiSettingRequest request);
 
     /**
-     * Replace User Info
+     * Replace a user's own information.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1837,7 +2518,7 @@ public interface IdentityDomains extends AutoCloseable {
     PutMeResponse putMe(PutMeRequest request);
 
     /**
-     * Self-Service Password Update
+     * Update a user's own password.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1853,7 +2534,7 @@ public interface IdentityDomains extends AutoCloseable {
     PutMePasswordChangerResponse putMePasswordChanger(PutMePasswordChangerRequest request);
 
     /**
-     * Replace a Password Policy
+     * Replace a password policy.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1869,7 +2550,24 @@ public interface IdentityDomains extends AutoCloseable {
     PutPasswordPolicyResponse putPasswordPolicy(PutPasswordPolicyRequest request);
 
     /**
-     * Replace a User
+     * Replace a security question setting.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PutSecurityQuestionSettingExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     PutSecurityQuestionSetting API.
+     */
+    PutSecurityQuestionSettingResponse putSecurityQuestionSetting(
+            PutSecurityQuestionSettingRequest request);
+
+    /**
+     * Replace a user.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1884,7 +2582,7 @@ public interface IdentityDomains extends AutoCloseable {
     PutUserResponse putUser(PutUserRequest request);
 
     /**
-     * Change user capabilities
+     * Change a user's capabilities.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1901,7 +2599,7 @@ public interface IdentityDomains extends AutoCloseable {
             PutUserCapabilitiesChangerRequest request);
 
     /**
-     * Change a User Password (Known Value)
+     * Change a user's password to a known value.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1917,7 +2615,7 @@ public interface IdentityDomains extends AutoCloseable {
     PutUserPasswordChangerResponse putUserPasswordChanger(PutUserPasswordChangerRequest request);
 
     /**
-     * Reset a User Password (Random Value)
+     * Reset a user's password to a randomly-generated value.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1933,7 +2631,7 @@ public interface IdentityDomains extends AutoCloseable {
     PutUserPasswordResetterResponse putUserPasswordResetter(PutUserPasswordResetterRequest request);
 
     /**
-     * Change User Status
+     * Change a user's status.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1947,6 +2645,22 @@ public interface IdentityDomains extends AutoCloseable {
      *     PutUserStatusChanger API.
      */
     PutUserStatusChangerResponse putUserStatusChanger(PutUserStatusChangerRequest request);
+
+    /**
+     * Search Account Mgmt Info Using POST
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/SearchAccountMgmtInfosExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SearchAccountMgmtInfos API.
+     */
+    SearchAccountMgmtInfosResponse searchAccountMgmtInfos(SearchAccountMgmtInfosRequest request);
 
     /**
      * Search ApiKeys Using POST
@@ -1964,7 +2678,37 @@ public interface IdentityDomains extends AutoCloseable {
     SearchApiKeysResponse searchApiKeys(SearchApiKeysRequest request);
 
     /**
-     * Search AuthTokens Using POST
+     * Search AppRoles Using POST
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/SearchAppRolesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use SearchAppRoles API.
+     */
+    SearchAppRolesResponse searchAppRoles(SearchAppRolesRequest request);
+
+    /**
+     * Search Apps Using POST
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/SearchAppsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use SearchApps API.
+     */
+    SearchAppsResponse searchApps(SearchAppsRequest request);
+
+    /**
+     * Search for Auth tokens using POST.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1997,7 +2741,7 @@ public interface IdentityDomains extends AutoCloseable {
             SearchAuthenticationFactorSettingsRequest request);
 
     /**
-     * Search CustomerSecretKeys Using POST
+     * Search for customer secret keys using POST.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2014,7 +2758,7 @@ public interface IdentityDomains extends AutoCloseable {
             SearchCustomerSecretKeysRequest request);
 
     /**
-     * Search DynamicResourceGroups Using POST
+     * Search for Dynamic Resource Groups using POST.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2031,7 +2775,22 @@ public interface IdentityDomains extends AutoCloseable {
             SearchDynamicResourceGroupsRequest request);
 
     /**
-     * Search Groups Using POST
+     * Search Grants Using POST
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/SearchGrantsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use SearchGrants API.
+     */
+    SearchGrantsResponse searchGrants(SearchGrantsRequest request);
+
+    /**
+     * Search for groups using POST.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2062,6 +2821,22 @@ public interface IdentityDomains extends AutoCloseable {
     SearchIdentityProvidersResponse searchIdentityProviders(SearchIdentityProvidersRequest request);
 
     /**
+     * Search for Identity settings using POST.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/SearchIdentitySettingsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SearchIdentitySettings API.
+     */
+    SearchIdentitySettingsResponse searchIdentitySettings(SearchIdentitySettingsRequest request);
+
+    /**
      * Search KmsiSettings Using POST
      *
      * @param request The request object containing the details to send
@@ -2078,7 +2853,22 @@ public interface IdentityDomains extends AutoCloseable {
     SearchKmsiSettingsResponse searchKmsiSettings(SearchKmsiSettingsRequest request);
 
     /**
-     * Search My Groups Using POST
+     * Search My Apps Using POST
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/SearchMyAppsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use SearchMyApps API.
+     */
+    SearchMyAppsResponse searchMyApps(SearchMyAppsRequest request);
+
+    /**
+     * Search for 'My Groups' using POST.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2093,7 +2883,40 @@ public interface IdentityDomains extends AutoCloseable {
     SearchMyGroupsResponse searchMyGroups(SearchMyGroupsRequest request);
 
     /**
-     * Search Oauth2Clients Using POST
+     * Search My Requestable Groups Using POST
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/SearchMyRequestableGroupsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SearchMyRequestableGroups API.
+     */
+    SearchMyRequestableGroupsResponse searchMyRequestableGroups(
+            SearchMyRequestableGroupsRequest request);
+
+    /**
+     * Search My Requests Using POST
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/SearchMyRequestsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use SearchMyRequests
+     *     API.
+     */
+    SearchMyRequestsResponse searchMyRequests(SearchMyRequestsRequest request);
+
+    /**
+     * Search for OAuth2 client credentials using POST.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2110,7 +2933,7 @@ public interface IdentityDomains extends AutoCloseable {
             SearchOAuth2ClientCredentialsRequest request);
 
     /**
-     * Search Password Policies Using POST
+     * Search for password policies using POST.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2126,7 +2949,57 @@ public interface IdentityDomains extends AutoCloseable {
     SearchPasswordPoliciesResponse searchPasswordPolicies(SearchPasswordPoliciesRequest request);
 
     /**
-     * Search smtp credentials Using POST
+     * Search Resource Type Schema Attributes Using POST
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/SearchResourceTypeSchemaAttributesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SearchResourceTypeSchemaAttributes API.
+     */
+    SearchResourceTypeSchemaAttributesResponse searchResourceTypeSchemaAttributes(
+            SearchResourceTypeSchemaAttributesRequest request);
+
+    /**
+     * Search for security question settings using POST.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/SearchSecurityQuestionSettingsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SearchSecurityQuestionSettings API.
+     */
+    SearchSecurityQuestionSettingsResponse searchSecurityQuestionSettings(
+            SearchSecurityQuestionSettingsRequest request);
+
+    /**
+     * Search for security questions using POST.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/SearchSecurityQuestionsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SearchSecurityQuestions API.
+     */
+    SearchSecurityQuestionsResponse searchSecurityQuestions(SearchSecurityQuestionsRequest request);
+
+    /**
+     * Search for SMTP credentials using POST.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2142,7 +3015,24 @@ public interface IdentityDomains extends AutoCloseable {
     SearchSmtpCredentialsResponse searchSmtpCredentials(SearchSmtpCredentialsRequest request);
 
     /**
-     * Search a User's DBCredentials using POST
+     * Search User Schema Attribute Settings Using POST
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/SearchUserAttributesSettingsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SearchUserAttributesSettings API.
+     */
+    SearchUserAttributesSettingsResponse searchUserAttributesSettings(
+            SearchUserAttributesSettingsRequest request);
+
+    /**
+     * Search for a user's database (DB) credentials using POST.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2158,7 +3048,7 @@ public interface IdentityDomains extends AutoCloseable {
     SearchUserDbCredentialsResponse searchUserDbCredentials(SearchUserDbCredentialsRequest request);
 
     /**
-     * Search Users Using POST
+     * Search for users using POST.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

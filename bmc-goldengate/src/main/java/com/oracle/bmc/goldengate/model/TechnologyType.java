@@ -44,6 +44,8 @@ public enum TechnologyType implements com.oracle.bmc.http.internal.BmcEnum {
     Mongodb("MONGODB"),
     MysqlServer("MYSQL_SERVER"),
     PostgresqlServer("POSTGRESQL_SERVER"),
+    Singlestoredb("SINGLESTOREDB"),
+    SinglestoredbCloud("SINGLESTOREDB_CLOUD"),
     Snowflake("SNOWFLAKE"),
     ;
 

@@ -63,7 +63,7 @@ public final class UserExtDevices
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The identifier of the User's device.
+         * The user's device identifier.
          *
          * <p>*Added In:** 18.3.6
          *
@@ -75,7 +75,7 @@ public final class UserExtDevices
         private String value;
 
         /**
-         * The identifier of the User's device.
+         * The user's device identifier.
          *
          * <p>*Added In:** 18.3.6
          *
@@ -92,7 +92,7 @@ public final class UserExtDevices
             return this;
         }
         /**
-         * The URI of the corresponding Device resource which belongs to user
+         * The URI of the corresponding Device resource which belongs to user.
          *
          * <p>*Added In:** 18.3.6
          *
@@ -103,7 +103,7 @@ public final class UserExtDevices
         private String ref;
 
         /**
-         * The URI of the corresponding Device resource which belongs to user
+         * The URI of the corresponding Device resource which belongs to user.
          *
          * <p>*Added In:** 18.3.6
          *
@@ -146,7 +146,7 @@ public final class UserExtDevices
             return this;
         }
         /**
-         * Device status.
+         * The device's status.
          *
          * <p>*Added In:** 18.4.2
          *
@@ -157,7 +157,7 @@ public final class UserExtDevices
         private String status;
 
         /**
-         * Device status.
+         * The device's status.
          *
          * <p>*Added In:** 18.4.2
          *
@@ -173,7 +173,7 @@ public final class UserExtDevices
             return this;
         }
         /**
-         * Last Sync time for device.
+         * The last sync time for device.
          *
          * <p>*Added In:** 18.4.2
          *
@@ -184,7 +184,7 @@ public final class UserExtDevices
         private String lastSyncTime;
 
         /**
-         * Last Sync time for device.
+         * The last sync time for device.
          *
          * <p>*Added In:** 18.4.2
          *
@@ -200,7 +200,7 @@ public final class UserExtDevices
             return this;
         }
         /**
-         * Device authentication factor type.
+         * The device authentication factor type.
          *
          * <p>*Added In:** 18.4.2
          *
@@ -211,7 +211,7 @@ public final class UserExtDevices
         private String factorType;
 
         /**
-         * Device authentication factor type.
+         * The device authentication factor type.
          *
          * <p>*Added In:** 18.4.2
          *
@@ -227,7 +227,7 @@ public final class UserExtDevices
             return this;
         }
         /**
-         * Device authentication factor status.
+         * The device authentication factor status.
          *
          * <p>*Added In:** 18.4.2
          *
@@ -238,7 +238,7 @@ public final class UserExtDevices
         private String factorStatus;
 
         /**
-         * Device authentication factor status.
+         * The device authentication factor status.
          *
          * <p>*Added In:** 18.4.2
          *
@@ -254,7 +254,7 @@ public final class UserExtDevices
             return this;
         }
         /**
-         * Authentication method.
+         * The authentication method.
          *
          * <p>*Added In:** 2009232244
          *
@@ -265,7 +265,7 @@ public final class UserExtDevices
         private String authenticationMethod;
 
         /**
-         * Authentication method.
+         * The authentication method.
          *
          * <p>*Added In:** 2009232244
          *
@@ -281,7 +281,7 @@ public final class UserExtDevices
             return this;
         }
         /**
-         * Third party factor vendor name.
+         * The third-party factor vendor name.
          *
          * <p>*Added In:** 2009232244
          *
@@ -292,7 +292,7 @@ public final class UserExtDevices
         private String thirdPartyVendorName;
 
         /**
-         * Third party factor vendor name.
+         * The third-party factor vendor name.
          *
          * <p>*Added In:** 2009232244
          *
@@ -372,7 +372,7 @@ public final class UserExtDevices
     }
 
     /**
-     * The identifier of the User's device.
+     * The user's device identifier.
      *
      * <p>*Added In:** 18.3.6
      *
@@ -383,7 +383,7 @@ public final class UserExtDevices
     private final String value;
 
     /**
-     * The identifier of the User's device.
+     * The user's device identifier.
      *
      * <p>*Added In:** 18.3.6
      *
@@ -397,7 +397,7 @@ public final class UserExtDevices
     }
 
     /**
-     * The URI of the corresponding Device resource which belongs to user
+     * The URI of the corresponding Device resource which belongs to user.
      *
      * <p>*Added In:** 18.3.6
      *
@@ -408,7 +408,7 @@ public final class UserExtDevices
     private final String ref;
 
     /**
-     * The URI of the corresponding Device resource which belongs to user
+     * The URI of the corresponding Device resource which belongs to user.
      *
      * <p>*Added In:** 18.3.6
      *
@@ -447,7 +447,7 @@ public final class UserExtDevices
     }
 
     /**
-     * Device status.
+     * The device's status.
      *
      * <p>*Added In:** 18.4.2
      *
@@ -458,7 +458,7 @@ public final class UserExtDevices
     private final String status;
 
     /**
-     * Device status.
+     * The device's status.
      *
      * <p>*Added In:** 18.4.2
      *
@@ -472,7 +472,7 @@ public final class UserExtDevices
     }
 
     /**
-     * Last Sync time for device.
+     * The last sync time for device.
      *
      * <p>*Added In:** 18.4.2
      *
@@ -483,7 +483,7 @@ public final class UserExtDevices
     private final String lastSyncTime;
 
     /**
-     * Last Sync time for device.
+     * The last sync time for device.
      *
      * <p>*Added In:** 18.4.2
      *
@@ -497,7 +497,7 @@ public final class UserExtDevices
     }
 
     /**
-     * Device authentication factor type.
+     * The device authentication factor type.
      *
      * <p>*Added In:** 18.4.2
      *
@@ -508,7 +508,7 @@ public final class UserExtDevices
     private final String factorType;
 
     /**
-     * Device authentication factor type.
+     * The device authentication factor type.
      *
      * <p>*Added In:** 18.4.2
      *
@@ -522,7 +522,7 @@ public final class UserExtDevices
     }
 
     /**
-     * Device authentication factor status.
+     * The device authentication factor status.
      *
      * <p>*Added In:** 18.4.2
      *
@@ -533,7 +533,7 @@ public final class UserExtDevices
     private final String factorStatus;
 
     /**
-     * Device authentication factor status.
+     * The device authentication factor status.
      *
      * <p>*Added In:** 18.4.2
      *
@@ -547,7 +547,7 @@ public final class UserExtDevices
     }
 
     /**
-     * Authentication method.
+     * The authentication method.
      *
      * <p>*Added In:** 2009232244
      *
@@ -558,7 +558,7 @@ public final class UserExtDevices
     private final String authenticationMethod;
 
     /**
-     * Authentication method.
+     * The authentication method.
      *
      * <p>*Added In:** 2009232244
      *
@@ -572,7 +572,7 @@ public final class UserExtDevices
     }
 
     /**
-     * Third party factor vendor name.
+     * The third-party factor vendor name.
      *
      * <p>*Added In:** 2009232244
      *
@@ -583,7 +583,7 @@ public final class UserExtDevices
     private final String thirdPartyVendorName;
 
     /**
-     * Third party factor vendor name.
+     * The third-party factor vendor name.
      *
      * <p>*Added In:** 2009232244
      *

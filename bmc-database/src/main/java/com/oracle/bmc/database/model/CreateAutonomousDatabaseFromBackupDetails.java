@@ -73,6 +73,15 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("backupRetentionPeriodInDays")
+        private Integer backupRetentionPeriodInDays;
+
+        public Builder backupRetentionPeriodInDays(Integer backupRetentionPeriodInDays) {
+            this.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
+            this.__explicitlySet__.add("backupRetentionPeriodInDays");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
         private ComputeModel computeModel;
 
@@ -476,6 +485,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
                             this.ncharacterSet,
                             this.dbName,
                             this.cpuCoreCount,
+                            this.backupRetentionPeriodInDays,
                             this.computeModel,
                             this.computeCount,
                             this.ocpuCount,
@@ -539,6 +549,9 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             }
             if (model.wasPropertyExplicitlySet("cpuCoreCount")) {
                 this.cpuCoreCount(model.getCpuCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("backupRetentionPeriodInDays")) {
+                this.backupRetentionPeriodInDays(model.getBackupRetentionPeriodInDays());
             }
             if (model.wasPropertyExplicitlySet("computeModel")) {
                 this.computeModel(model.getComputeModel());
@@ -685,6 +698,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             String ncharacterSet,
             String dbName,
             Integer cpuCoreCount,
+            Integer backupRetentionPeriodInDays,
             ComputeModel computeModel,
             Float computeCount,
             Float ocpuCount,
@@ -732,6 +746,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
                 ncharacterSet,
                 dbName,
                 cpuCoreCount,
+                backupRetentionPeriodInDays,
                 computeModel,
                 computeCount,
                 ocpuCount,

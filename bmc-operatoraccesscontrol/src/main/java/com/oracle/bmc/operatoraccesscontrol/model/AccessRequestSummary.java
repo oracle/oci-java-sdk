@@ -30,6 +30,7 @@ public final class AccessRequestSummary
         "compartmentId",
         "resourceId",
         "resourceName",
+        "subResourceList",
         "resourceType",
         "lifecycleState",
         "lifecycleDetails",
@@ -50,6 +51,7 @@ public final class AccessRequestSummary
             String compartmentId,
             String resourceId,
             String resourceName,
+            java.util.List<String> subResourceList,
             ResourceTypes resourceType,
             AccessRequestLifecycleStates lifecycleState,
             String lifecycleDetails,
@@ -69,6 +71,7 @@ public final class AccessRequestSummary
         this.compartmentId = compartmentId;
         this.resourceId = resourceId;
         this.resourceName = resourceName;
+        this.subResourceList = subResourceList;
         this.resourceType = resourceType;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
@@ -177,6 +180,21 @@ public final class AccessRequestSummary
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
+            return this;
+        }
+        /** The subresources requested for approval. */
+        @com.fasterxml.jackson.annotation.JsonProperty("subResourceList")
+        private java.util.List<String> subResourceList;
+
+        /**
+         * The subresources requested for approval.
+         *
+         * @param subResourceList the value to set
+         * @return this builder
+         */
+        public Builder subResourceList(java.util.List<String> subResourceList) {
+            this.subResourceList = subResourceList;
+            this.__explicitlySet__.add("subResourceList");
             return this;
         }
         /** resourceType for which the AccessRequest is applicable */
@@ -395,6 +413,7 @@ public final class AccessRequestSummary
                             this.compartmentId,
                             this.resourceId,
                             this.resourceName,
+                            this.subResourceList,
                             this.resourceType,
                             this.lifecycleState,
                             this.lifecycleDetails,
@@ -432,6 +451,9 @@ public final class AccessRequestSummary
             }
             if (model.wasPropertyExplicitlySet("resourceName")) {
                 this.resourceName(model.getResourceName());
+            }
+            if (model.wasPropertyExplicitlySet("subResourceList")) {
+                this.subResourceList(model.getSubResourceList());
             }
             if (model.wasPropertyExplicitlySet("resourceType")) {
                 this.resourceType(model.getResourceType());
@@ -562,6 +584,19 @@ public final class AccessRequestSummary
      */
     public String getResourceName() {
         return resourceName;
+    }
+
+    /** The subresources requested for approval. */
+    @com.fasterxml.jackson.annotation.JsonProperty("subResourceList")
+    private final java.util.List<String> subResourceList;
+
+    /**
+     * The subresources requested for approval.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getSubResourceList() {
+        return subResourceList;
     }
 
     /** resourceType for which the AccessRequest is applicable */
@@ -763,6 +798,7 @@ public final class AccessRequestSummary
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", resourceId=").append(String.valueOf(this.resourceId));
         sb.append(", resourceName=").append(String.valueOf(this.resourceName));
+        sb.append(", subResourceList=").append(String.valueOf(this.subResourceList));
         sb.append(", resourceType=").append(String.valueOf(this.resourceType));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
@@ -795,6 +831,7 @@ public final class AccessRequestSummary
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.resourceId, other.resourceId)
                 && java.util.Objects.equals(this.resourceName, other.resourceName)
+                && java.util.Objects.equals(this.subResourceList, other.subResourceList)
                 && java.util.Objects.equals(this.resourceType, other.resourceType)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
@@ -826,6 +863,9 @@ public final class AccessRequestSummary
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
         result = (result * PRIME) + (this.resourceName == null ? 43 : this.resourceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subResourceList == null ? 43 : this.subResourceList.hashCode());
         result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
         result =
                 (result * PRIME)

@@ -5,7 +5,7 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * A list of bypass codes belongs to user
+ * A list of bypass codes that belongs to the user.
  *
  * <p>*Added In:** 18.3.6
  *
@@ -38,7 +38,7 @@ public final class UserExtBypassCodes
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The identifier of the User's bypass code.
+         * The user's bypass code identifier.
          *
          * <p>*Added In:** 18.3.6
          *
@@ -50,7 +50,7 @@ public final class UserExtBypassCodes
         private String value;
 
         /**
-         * The identifier of the User's bypass code.
+         * The user's bypass code identifier.
          *
          * <p>*Added In:** 18.3.6
          *
@@ -127,7 +127,7 @@ public final class UserExtBypassCodes
     }
 
     /**
-     * The identifier of the User's bypass code.
+     * The user's bypass code identifier.
      *
      * <p>*Added In:** 18.3.6
      *
@@ -138,7 +138,7 @@ public final class UserExtBypassCodes
     private final String value;
 
     /**
-     * The identifier of the User's bypass code.
+     * The user's bypass code identifier.
      *
      * <p>*Added In:** 18.3.6
      *

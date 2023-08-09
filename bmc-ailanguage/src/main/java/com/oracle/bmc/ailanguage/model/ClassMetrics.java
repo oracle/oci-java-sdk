@@ -21,13 +21,14 @@ package com.oracle.bmc.ailanguage.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class ClassMetrics extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"label", "f1", "precision", "recall"})
-    public ClassMetrics(String label, Float f1, Float precision, Float recall) {
+    @java.beans.ConstructorProperties({"label", "f1", "precision", "recall", "support"})
+    public ClassMetrics(String label, Float f1, Float precision, Float recall, Float support) {
         super();
         this.label = label;
         this.f1 = f1;
         this.precision = precision;
         this.recall = recall;
+        this.support = support;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -102,12 +103,29 @@ public final class ClassMetrics extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("recall");
             return this;
         }
+        /** number of samples in the test set */
+        @com.fasterxml.jackson.annotation.JsonProperty("support")
+        private Float support;
+
+        /**
+         * number of samples in the test set
+         *
+         * @param support the value to set
+         * @return this builder
+         */
+        public Builder support(Float support) {
+            this.support = support;
+            this.__explicitlySet__.add("support");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ClassMetrics build() {
-            ClassMetrics model = new ClassMetrics(this.label, this.f1, this.precision, this.recall);
+            ClassMetrics model =
+                    new ClassMetrics(
+                            this.label, this.f1, this.precision, this.recall, this.support);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -127,6 +145,9 @@ public final class ClassMetrics extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("recall")) {
                 this.recall(model.getRecall());
+            }
+            if (model.wasPropertyExplicitlySet("support")) {
+                this.support(model.getSupport());
             }
             return this;
         }
@@ -203,6 +224,19 @@ public final class ClassMetrics extends com.oracle.bmc.http.client.internal.Expl
         return recall;
     }
 
+    /** number of samples in the test set */
+    @com.fasterxml.jackson.annotation.JsonProperty("support")
+    private final Float support;
+
+    /**
+     * number of samples in the test set
+     *
+     * @return the value
+     */
+    public Float getSupport() {
+        return support;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -222,6 +256,7 @@ public final class ClassMetrics extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", f1=").append(String.valueOf(this.f1));
         sb.append(", precision=").append(String.valueOf(this.precision));
         sb.append(", recall=").append(String.valueOf(this.recall));
+        sb.append(", support=").append(String.valueOf(this.support));
         sb.append(")");
         return sb.toString();
     }
@@ -240,6 +275,7 @@ public final class ClassMetrics extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.f1, other.f1)
                 && java.util.Objects.equals(this.precision, other.precision)
                 && java.util.Objects.equals(this.recall, other.recall)
+                && java.util.Objects.equals(this.support, other.support)
                 && super.equals(other);
     }
 
@@ -251,6 +287,7 @@ public final class ClassMetrics extends com.oracle.bmc.http.client.internal.Expl
         result = (result * PRIME) + (this.f1 == null ? 43 : this.f1.hashCode());
         result = (result * PRIME) + (this.precision == null ? 43 : this.precision.hashCode());
         result = (result * PRIME) + (this.recall == null ? 43 : this.recall.hashCode());
+        result = (result * PRIME) + (this.support == null ? 43 : this.support.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

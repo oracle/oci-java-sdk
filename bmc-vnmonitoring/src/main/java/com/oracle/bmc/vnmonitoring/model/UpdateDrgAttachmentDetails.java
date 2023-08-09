@@ -29,7 +29,8 @@ public final class UpdateDrgAttachmentDetails
         "networkDetails",
         "definedTags",
         "freeformTags",
-        "exportDrgRouteDistributionId"
+        "exportDrgRouteDistributionId",
+        "routeTableId"
     })
     public UpdateDrgAttachmentDetails(
             String displayName,
@@ -37,7 +38,8 @@ public final class UpdateDrgAttachmentDetails
             DrgAttachmentNetworkUpdateDetails networkDetails,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
-            String exportDrgRouteDistributionId) {
+            String exportDrgRouteDistributionId,
+            String routeTableId) {
         super();
         this.displayName = displayName;
         this.drgRouteTableId = drgRouteTableId;
@@ -45,6 +47,7 @@ public final class UpdateDrgAttachmentDetails
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
         this.exportDrgRouteDistributionId = exportDrgRouteDistributionId;
+        this.routeTableId = routeTableId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -168,6 +171,45 @@ public final class UpdateDrgAttachmentDetails
             this.__explicitlySet__.add("exportDrgRouteDistributionId");
             return this;
         }
+        /**
+         * This is the
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * the route table that is used to route the traffic as it enters a VCN through this
+         * attachment.
+         *
+         * <p>For information about why you would associate a route table with a DRG attachment,
+         * see:
+         *
+         * <p>[Transit Routing: Access to Multiple VCNs in Same
+         * Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm) *
+         * [Transit Routing: Private Access to Oracle
+         * Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+        private String routeTableId;
+
+        /**
+         * This is the
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * the route table that is used to route the traffic as it enters a VCN through this
+         * attachment.
+         *
+         * <p>For information about why you would associate a route table with a DRG attachment,
+         * see:
+         *
+         * <p>[Transit Routing: Access to Multiple VCNs in Same
+         * Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm) *
+         * [Transit Routing: Private Access to Oracle
+         * Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
+         *
+         * @param routeTableId the value to set
+         * @return this builder
+         */
+        public Builder routeTableId(String routeTableId) {
+            this.routeTableId = routeTableId;
+            this.__explicitlySet__.add("routeTableId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -180,7 +222,8 @@ public final class UpdateDrgAttachmentDetails
                             this.networkDetails,
                             this.definedTags,
                             this.freeformTags,
-                            this.exportDrgRouteDistributionId);
+                            this.exportDrgRouteDistributionId,
+                            this.routeTableId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -206,6 +249,9 @@ public final class UpdateDrgAttachmentDetails
             }
             if (model.wasPropertyExplicitlySet("exportDrgRouteDistributionId")) {
                 this.exportDrgRouteDistributionId(model.getExportDrgRouteDistributionId());
+            }
+            if (model.wasPropertyExplicitlySet("routeTableId")) {
+                this.routeTableId(model.getRouteTableId());
             }
             return this;
         }
@@ -326,6 +372,39 @@ public final class UpdateDrgAttachmentDetails
         return exportDrgRouteDistributionId;
     }
 
+    /**
+     * This is the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * route table that is used to route the traffic as it enters a VCN through this attachment.
+     *
+     * <p>For information about why you would associate a route table with a DRG attachment, see:
+     *
+     * <p>[Transit Routing: Access to Multiple VCNs in Same
+     * Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm) *
+     * [Transit Routing: Private Access to Oracle
+     * Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+    private final String routeTableId;
+
+    /**
+     * This is the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * route table that is used to route the traffic as it enters a VCN through this attachment.
+     *
+     * <p>For information about why you would associate a route table with a DRG attachment, see:
+     *
+     * <p>[Transit Routing: Access to Multiple VCNs in Same
+     * Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm) *
+     * [Transit Routing: Private Access to Oracle
+     * Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
+     *
+     * @return the value
+     */
+    public String getRouteTableId() {
+        return routeTableId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -348,6 +427,7 @@ public final class UpdateDrgAttachmentDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", exportDrgRouteDistributionId=")
                 .append(String.valueOf(this.exportDrgRouteDistributionId));
+        sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(")");
         return sb.toString();
     }
@@ -369,6 +449,7 @@ public final class UpdateDrgAttachmentDetails
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(
                         this.exportDrgRouteDistributionId, other.exportDrgRouteDistributionId)
+                && java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && super.equals(other);
     }
 
@@ -390,6 +471,7 @@ public final class UpdateDrgAttachmentDetails
                         + (this.exportDrgRouteDistributionId == null
                                 ? 43
                                 : this.exportDrgRouteDistributionId.hashCode());
+        result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

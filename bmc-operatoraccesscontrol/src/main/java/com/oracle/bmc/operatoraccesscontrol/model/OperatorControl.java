@@ -40,6 +40,7 @@ public final class OperatorControl
         "lifecycleState",
         "timeOfCreation",
         "timeOfModification",
+        "isDefaultOperatorControl",
         "timeOfDeletion",
         "lastModifiedInfo",
         "freeformTags",
@@ -61,6 +62,7 @@ public final class OperatorControl
             OperatorControlLifecycleStates lifecycleState,
             java.util.Date timeOfCreation,
             java.util.Date timeOfModification,
+            Boolean isDefaultOperatorControl,
             java.util.Date timeOfDeletion,
             String lastModifiedInfo,
             java.util.Map<String, String> freeformTags,
@@ -81,6 +83,7 @@ public final class OperatorControl
         this.lifecycleState = lifecycleState;
         this.timeOfCreation = timeOfCreation;
         this.timeOfModification = timeOfModification;
+        this.isDefaultOperatorControl = isDefaultOperatorControl;
         this.timeOfDeletion = timeOfDeletion;
         this.lastModifiedInfo = lastModifiedInfo;
         this.freeformTags = freeformTags;
@@ -357,6 +360,21 @@ public final class OperatorControl
             this.__explicitlySet__.add("timeOfModification");
             return this;
         }
+        /** Whether the operator control is a default Operator Control. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isDefaultOperatorControl")
+        private Boolean isDefaultOperatorControl;
+
+        /**
+         * Whether the operator control is a default Operator Control.
+         *
+         * @param isDefaultOperatorControl the value to set
+         * @return this builder
+         */
+        public Builder isDefaultOperatorControl(Boolean isDefaultOperatorControl) {
+            this.isDefaultOperatorControl = isDefaultOperatorControl;
+            this.__explicitlySet__.add("isDefaultOperatorControl");
+            return this;
+        }
         /**
          * Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp
          * format. Example: '2020-05-22T21:10:29.600Z'. Note a deleted operator control still stays
@@ -452,6 +470,7 @@ public final class OperatorControl
                             this.lifecycleState,
                             this.timeOfCreation,
                             this.timeOfModification,
+                            this.isDefaultOperatorControl,
                             this.timeOfDeletion,
                             this.lastModifiedInfo,
                             this.freeformTags,
@@ -508,6 +527,9 @@ public final class OperatorControl
             }
             if (model.wasPropertyExplicitlySet("timeOfModification")) {
                 this.timeOfModification(model.getTimeOfModification());
+            }
+            if (model.wasPropertyExplicitlySet("isDefaultOperatorControl")) {
+                this.isDefaultOperatorControl(model.getIsDefaultOperatorControl());
             }
             if (model.wasPropertyExplicitlySet("timeOfDeletion")) {
                 this.timeOfDeletion(model.getTimeOfDeletion());
@@ -771,6 +793,19 @@ public final class OperatorControl
         return timeOfModification;
     }
 
+    /** Whether the operator control is a default Operator Control. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isDefaultOperatorControl")
+    private final Boolean isDefaultOperatorControl;
+
+    /**
+     * Whether the operator control is a default Operator Control.
+     *
+     * @return the value
+     */
+    public Boolean getIsDefaultOperatorControl() {
+        return isDefaultOperatorControl;
+    }
+
     /**
      * Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp
      * format. Example: '2020-05-22T21:10:29.600Z'. Note a deleted operator control still stays in
@@ -867,6 +902,8 @@ public final class OperatorControl
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeOfCreation=").append(String.valueOf(this.timeOfCreation));
         sb.append(", timeOfModification=").append(String.valueOf(this.timeOfModification));
+        sb.append(", isDefaultOperatorControl=")
+                .append(String.valueOf(this.isDefaultOperatorControl));
         sb.append(", timeOfDeletion=").append(String.valueOf(this.timeOfDeletion));
         sb.append(", lastModifiedInfo=").append(String.valueOf(this.lastModifiedInfo));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -902,6 +939,8 @@ public final class OperatorControl
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeOfCreation, other.timeOfCreation)
                 && java.util.Objects.equals(this.timeOfModification, other.timeOfModification)
+                && java.util.Objects.equals(
+                        this.isDefaultOperatorControl, other.isDefaultOperatorControl)
                 && java.util.Objects.equals(this.timeOfDeletion, other.timeOfDeletion)
                 && java.util.Objects.equals(this.lastModifiedInfo, other.lastModifiedInfo)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -962,6 +1001,11 @@ public final class OperatorControl
                         + (this.timeOfModification == null
                                 ? 43
                                 : this.timeOfModification.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDefaultOperatorControl == null
+                                ? 43
+                                : this.isDefaultOperatorControl.hashCode());
         result =
                 (result * PRIME)
                         + (this.timeOfDeletion == null ? 43 : this.timeOfDeletion.hashCode());

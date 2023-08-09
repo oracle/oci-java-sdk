@@ -26,18 +26,24 @@ public final class RouteRule extends com.oracle.bmc.http.client.internal.Explici
         "cidrBlock",
         "destination",
         "destinationType",
-        "networkEntityId"
+        "networkEntityId",
+        "description",
+        "routeType"
     })
     public RouteRule(
             String cidrBlock,
             String destination,
             DestinationType destinationType,
-            String networkEntityId) {
+            String networkEntityId,
+            String description,
+            RouteType routeType) {
         super();
         this.cidrBlock = cidrBlock;
         this.destination = destination;
         this.destinationType = destinationType;
         this.networkEntityId = networkEntityId;
+        this.description = description;
+        this.routeType = routeType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -172,6 +178,40 @@ public final class RouteRule extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("networkEntityId");
             return this;
         }
+        /** An optional description of your choice for the rule. */
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        /**
+         * An optional description of your choice for the rule.
+         *
+         * @param description the value to set
+         * @return this builder
+         */
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
+        /**
+         * A route rule can be STATIC if manually added to the route table, LOCAL if added by OCI to
+         * the route table.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("routeType")
+        private RouteType routeType;
+
+        /**
+         * A route rule can be STATIC if manually added to the route table, LOCAL if added by OCI to
+         * the route table.
+         *
+         * @param routeType the value to set
+         * @return this builder
+         */
+        public Builder routeType(RouteType routeType) {
+            this.routeType = routeType;
+            this.__explicitlySet__.add("routeType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -182,7 +222,9 @@ public final class RouteRule extends com.oracle.bmc.http.client.internal.Explici
                             this.cidrBlock,
                             this.destination,
                             this.destinationType,
-                            this.networkEntityId);
+                            this.networkEntityId,
+                            this.description,
+                            this.routeType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -202,6 +244,12 @@ public final class RouteRule extends com.oracle.bmc.http.client.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("networkEntityId")) {
                 this.networkEntityId(model.getNetworkEntityId());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("routeType")) {
+                this.routeType(model.getRouteType());
             }
             return this;
         }
@@ -393,6 +441,85 @@ public final class RouteRule extends com.oracle.bmc.http.client.internal.Explici
         return networkEntityId;
     }
 
+    /** An optional description of your choice for the rule. */
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    private final String description;
+
+    /**
+     * An optional description of your choice for the rule.
+     *
+     * @return the value
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * A route rule can be STATIC if manually added to the route table, LOCAL if added by OCI to the
+     * route table.
+     */
+    public enum RouteType implements com.oracle.bmc.http.internal.BmcEnum {
+        Static("STATIC"),
+        Local("LOCAL"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(RouteType.class);
+
+        private final String value;
+        private static java.util.Map<String, RouteType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (RouteType v : RouteType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        RouteType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static RouteType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'RouteType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * A route rule can be STATIC if manually added to the route table, LOCAL if added by OCI to the
+     * route table.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("routeType")
+    private final RouteType routeType;
+
+    /**
+     * A route rule can be STATIC if manually added to the route table, LOCAL if added by OCI to the
+     * route table.
+     *
+     * @return the value
+     */
+    public RouteType getRouteType() {
+        return routeType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -412,6 +539,8 @@ public final class RouteRule extends com.oracle.bmc.http.client.internal.Explici
         sb.append(", destination=").append(String.valueOf(this.destination));
         sb.append(", destinationType=").append(String.valueOf(this.destinationType));
         sb.append(", networkEntityId=").append(String.valueOf(this.networkEntityId));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", routeType=").append(String.valueOf(this.routeType));
         sb.append(")");
         return sb.toString();
     }
@@ -430,6 +559,8 @@ public final class RouteRule extends com.oracle.bmc.http.client.internal.Explici
                 && java.util.Objects.equals(this.destination, other.destination)
                 && java.util.Objects.equals(this.destinationType, other.destinationType)
                 && java.util.Objects.equals(this.networkEntityId, other.networkEntityId)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.routeType, other.routeType)
                 && super.equals(other);
     }
 
@@ -445,6 +576,8 @@ public final class RouteRule extends com.oracle.bmc.http.client.internal.Explici
         result =
                 (result * PRIME)
                         + (this.networkEntityId == null ? 43 : this.networkEntityId.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.routeType == null ? 43 : this.routeType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

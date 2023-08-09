@@ -156,6 +156,7 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeOperatorControlAssignmentCompartmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -191,6 +192,7 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
                 .handleResponseHeaderString(
                         "opc-request-id",
                         CreateOperatorControlAssignmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -220,6 +222,7 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteOperatorControlAssignmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -252,6 +255,7 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetOperatorControlAssignmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -292,6 +296,7 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListOperatorControlAssignmentsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -329,6 +334,7 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateOperatorControlAssignmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 

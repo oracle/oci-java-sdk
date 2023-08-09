@@ -285,7 +285,7 @@ public final class ExtensionFidoAuthenticationFactorSettings
             return this;
         }
         /**
-         * Number of domain levels IDCS should use for origin comparision
+         * Number of domain levels Oracle Identity Cloud Service should use for origin comparision
          *
          * <p>*Added In:** 2109020413
          *
@@ -297,7 +297,7 @@ public final class ExtensionFidoAuthenticationFactorSettings
         private Integer domainValidationLevel;
 
         /**
-         * Number of domain levels IDCS should use for origin comparision
+         * Number of domain levels Oracle Identity Cloud Service should use for origin comparision
          *
          * <p>*Added In:** 2109020413
          *
@@ -851,7 +851,7 @@ public final class ExtensionFidoAuthenticationFactorSettings
     }
 
     /**
-     * Number of domain levels IDCS should use for origin comparision
+     * Number of domain levels Oracle Identity Cloud Service should use for origin comparision
      *
      * <p>*Added In:** 2109020413
      *
@@ -863,7 +863,7 @@ public final class ExtensionFidoAuthenticationFactorSettings
     private final Integer domainValidationLevel;
 
     /**
-     * Number of domain levels IDCS should use for origin comparision
+     * Number of domain levels Oracle Identity Cloud Service should use for origin comparision
      *
      * <p>*Added In:** 2109020413
      *

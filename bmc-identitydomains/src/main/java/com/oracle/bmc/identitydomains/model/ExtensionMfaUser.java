@@ -66,7 +66,7 @@ public final class ExtensionMfaUser
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Preferred Authentication Factor Type
+         * The preferred authentication factor type.
          *
          * <p>*Added In:** 18.3.6
          *
@@ -78,7 +78,7 @@ public final class ExtensionMfaUser
         private PreferredAuthenticationFactor preferredAuthenticationFactor;
 
         /**
-         * Preferred Authentication Factor Type
+         * The preferred authentication factor type.
          *
          * <p>*Added In:** 18.3.6
          *
@@ -96,25 +96,25 @@ public final class ExtensionMfaUser
             return this;
         }
         /**
-         * User Opted for MFA
+         * The user opted for MFA.
          *
          * <p>*Added In:** 18.3.6
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
+         * mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: false -
+         * returned: default - type: string - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("mfaStatus")
         private MfaStatus mfaStatus;
 
         /**
-         * User Opted for MFA
+         * The user opted for MFA.
          *
          * <p>*Added In:** 18.3.6
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
+         * mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: false -
+         * returned: default - type: string - uniqueness: none
          *
          * @param mfaStatus the value to set
          * @return this builder
@@ -125,7 +125,7 @@ public final class ExtensionMfaUser
             return this;
         }
         /**
-         * Preferred Third party vendor name
+         * The preferred third-party vendor name.
          *
          * <p>*Added In:** 19.2.1
          *
@@ -137,7 +137,7 @@ public final class ExtensionMfaUser
         private String preferredThirdPartyVendor;
 
         /**
-         * Preferred Third party vendor name
+         * The preferred third-party vendor name.
          *
          * <p>*Added In:** 19.2.1
          *
@@ -154,7 +154,7 @@ public final class ExtensionMfaUser
             return this;
         }
         /**
-         * Preferred Authentication method
+         * The preferred authentication method.
          *
          * <p>*Added In:** 2009232244
          *
@@ -166,7 +166,7 @@ public final class ExtensionMfaUser
         private String preferredAuthenticationMethod;
 
         /**
-         * Preferred Authentication method
+         * The preferred authentication method.
          *
          * <p>*Added In:** 2009232244
          *
@@ -183,27 +183,31 @@ public final class ExtensionMfaUser
             return this;
         }
         /**
-         * Number of incorrect Multi Factor Authentication login attempts made by this user. The
-         * user gets locked, if this reaches the threshold specified in the maxIncorrectAttempts
-         * attribute in AuthenticationFactorSettings
+         * The number of incorrect multi factor authentication sign in attempts made by this user.
+         * The user is locked if this reaches the threshold specified in the maxIncorrectAttempts
+         * attribute in AuthenticationFactorSettings.
          *
          * <p>*Added In:** 18.3.6
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: integer - uniqueness: none
+         * readOnly - idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true - required: false - returned:
+         * default - type: integer - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("loginAttempts")
         private Integer loginAttempts;
 
         /**
-         * Number of incorrect Multi Factor Authentication login attempts made by this user. The
-         * user gets locked, if this reaches the threshold specified in the maxIncorrectAttempts
-         * attribute in AuthenticationFactorSettings
+         * The number of incorrect multi factor authentication sign in attempts made by this user.
+         * The user is locked if this reaches the threshold specified in the maxIncorrectAttempts
+         * attribute in AuthenticationFactorSettings.
          *
          * <p>*Added In:** 18.3.6
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: integer - uniqueness: none
+         * readOnly - idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true - required: false - returned:
+         * default - type: integer - uniqueness: none
          *
          * @param loginAttempts the value to set
          * @return this builder
@@ -214,8 +218,8 @@ public final class ExtensionMfaUser
             return this;
         }
         /**
-         * This represents the date when the user enrolled for multi factor authentication. This
-         * will be set to null, when the user resets his factors.
+         * The date when the user enrolled in multi factor authentication. This will be set to null,
+         * when the user resets their factors.
          *
          * <p>*Added In:** 18.3.6
          *
@@ -226,8 +230,8 @@ public final class ExtensionMfaUser
         private String mfaEnabledOn;
 
         /**
-         * This represents the date when the user enrolled for multi factor authentication. This
-         * will be set to null, when the user resets his factors.
+         * The date when the user enrolled in multi factor authentication. This will be set to null,
+         * when the user resets their factors.
          *
          * <p>*Added In:** 18.3.6
          *
@@ -308,7 +312,7 @@ public final class ExtensionMfaUser
             return this;
         }
         /**
-         * A list of bypass codes belongs to user
+         * A list of bypass codes that belongs to the user.
          *
          * <p>*Added In:** 18.3.6
          *
@@ -319,7 +323,7 @@ public final class ExtensionMfaUser
         private java.util.List<UserExtBypassCodes> bypassCodes;
 
         /**
-         * A list of bypass codes belongs to user
+         * A list of bypass codes that belongs to the user.
          *
          * <p>*Added In:** 18.3.6
          *
@@ -445,7 +449,7 @@ public final class ExtensionMfaUser
     }
 
     /**
-     * Preferred Authentication Factor Type
+     * The preferred authentication factor type.
      *
      * <p>*Added In:** 18.3.6
      *
@@ -508,7 +512,7 @@ public final class ExtensionMfaUser
         }
     };
     /**
-     * Preferred Authentication Factor Type
+     * The preferred authentication factor type.
      *
      * <p>*Added In:** 18.3.6
      *
@@ -519,7 +523,7 @@ public final class ExtensionMfaUser
     private final PreferredAuthenticationFactor preferredAuthenticationFactor;
 
     /**
-     * Preferred Authentication Factor Type
+     * The preferred authentication factor type.
      *
      * <p>*Added In:** 18.3.6
      *
@@ -533,12 +537,13 @@ public final class ExtensionMfaUser
     }
 
     /**
-     * User Opted for MFA
+     * The user opted for MFA.
      *
      * <p>*Added In:** 18.3.6
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
+     * mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: false - returned:
+     * default - type: string - uniqueness: none
      */
     public enum MfaStatus implements com.oracle.bmc.http.internal.BmcEnum {
         Enrolled("ENROLLED"),
@@ -588,23 +593,25 @@ public final class ExtensionMfaUser
         }
     };
     /**
-     * User Opted for MFA
+     * The user opted for MFA.
      *
      * <p>*Added In:** 18.3.6
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
+     * mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: false - returned:
+     * default - type: string - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("mfaStatus")
     private final MfaStatus mfaStatus;
 
     /**
-     * User Opted for MFA
+     * The user opted for MFA.
      *
      * <p>*Added In:** 18.3.6
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
+     * mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: false - returned:
+     * default - type: string - uniqueness: none
      *
      * @return the value
      */
@@ -613,7 +620,7 @@ public final class ExtensionMfaUser
     }
 
     /**
-     * Preferred Third party vendor name
+     * The preferred third-party vendor name.
      *
      * <p>*Added In:** 19.2.1
      *
@@ -624,7 +631,7 @@ public final class ExtensionMfaUser
     private final String preferredThirdPartyVendor;
 
     /**
-     * Preferred Third party vendor name
+     * The preferred third-party vendor name.
      *
      * <p>*Added In:** 19.2.1
      *
@@ -638,7 +645,7 @@ public final class ExtensionMfaUser
     }
 
     /**
-     * Preferred Authentication method
+     * The preferred authentication method.
      *
      * <p>*Added In:** 2009232244
      *
@@ -649,7 +656,7 @@ public final class ExtensionMfaUser
     private final String preferredAuthenticationMethod;
 
     /**
-     * Preferred Authentication method
+     * The preferred authentication method.
      *
      * <p>*Added In:** 2009232244
      *
@@ -663,27 +670,29 @@ public final class ExtensionMfaUser
     }
 
     /**
-     * Number of incorrect Multi Factor Authentication login attempts made by this user. The user
-     * gets locked, if this reaches the threshold specified in the maxIncorrectAttempts attribute in
-     * AuthenticationFactorSettings
+     * The number of incorrect multi factor authentication sign in attempts made by this user. The
+     * user is locked if this reaches the threshold specified in the maxIncorrectAttempts attribute
+     * in AuthenticationFactorSettings.
      *
      * <p>*Added In:** 18.3.6
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: integer - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true - required: false - returned: default - type: integer - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("loginAttempts")
     private final Integer loginAttempts;
 
     /**
-     * Number of incorrect Multi Factor Authentication login attempts made by this user. The user
-     * gets locked, if this reaches the threshold specified in the maxIncorrectAttempts attribute in
-     * AuthenticationFactorSettings
+     * The number of incorrect multi factor authentication sign in attempts made by this user. The
+     * user is locked if this reaches the threshold specified in the maxIncorrectAttempts attribute
+     * in AuthenticationFactorSettings.
      *
      * <p>*Added In:** 18.3.6
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: integer - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true - required: false - returned: default - type: integer - uniqueness: none
      *
      * @return the value
      */
@@ -692,8 +701,8 @@ public final class ExtensionMfaUser
     }
 
     /**
-     * This represents the date when the user enrolled for multi factor authentication. This will be
-     * set to null, when the user resets his factors.
+     * The date when the user enrolled in multi factor authentication. This will be set to null,
+     * when the user resets their factors.
      *
      * <p>*Added In:** 18.3.6
      *
@@ -704,8 +713,8 @@ public final class ExtensionMfaUser
     private final String mfaEnabledOn;
 
     /**
-     * This represents the date when the user enrolled for multi factor authentication. This will be
-     * set to null, when the user resets his factors.
+     * The date when the user enrolled in multi factor authentication. This will be set to null,
+     * when the user resets their factors.
      *
      * <p>*Added In:** 18.3.6
      *
@@ -776,7 +785,7 @@ public final class ExtensionMfaUser
     }
 
     /**
-     * A list of bypass codes belongs to user
+     * A list of bypass codes that belongs to the user.
      *
      * <p>*Added In:** 18.3.6
      *
@@ -787,7 +796,7 @@ public final class ExtensionMfaUser
     private final java.util.List<UserExtBypassCodes> bypassCodes;
 
     /**
-     * A list of bypass codes belongs to user
+     * A list of bypass codes that belongs to the user.
      *
      * <p>*Added In:** 18.3.6
      *

@@ -110,7 +110,7 @@ public final class UpdateVnicDetails
         /**
          * The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname
          * portion of the primary private IP's fully qualified domain name (FQDN) (for example,
-         * {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Must be
+         * {@code bminstance1} in FQDN {@code bminstance1.subnet123.vcn1.oraclevcn.com}). Must be
          * unique across all VNICs in the subnet and comply with [RFC
          * 952](https://tools.ietf.org/html/rfc952) and [RFC
          * 1123](https://tools.ietf.org/html/rfc1123). The value appears in the {@link Vnic} object
@@ -127,7 +127,7 @@ public final class UpdateVnicDetails
         /**
          * The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname
          * portion of the primary private IP's fully qualified domain name (FQDN) (for example,
-         * {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Must be
+         * {@code bminstance1} in FQDN {@code bminstance1.subnet123.vcn1.oraclevcn.com}). Must be
          * unique across all VNICs in the subnet and comply with [RFC
          * 952](https://tools.ietf.org/html/rfc952) and [RFC
          * 1123](https://tools.ietf.org/html/rfc1123). The value appears in the {@link Vnic} object
@@ -150,6 +150,10 @@ public final class UpdateVnicDetails
          * A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. Setting
          * this as an empty array removes the VNIC from all network security groups.
          *
+         * <p>If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
+         * belonging to a subnet), the value of the {@code nsgIds} attribute is ignored. Instead,
+         * the VNIC belongs to the NSGs that are associated with the VLAN itself. See {@link Vlan}.
+         *
          * <p>For more information about NSGs, see {@link NetworkSecurityGroup}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -158,6 +162,10 @@ public final class UpdateVnicDetails
         /**
          * A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. Setting
          * this as an empty array removes the VNIC from all network security groups.
+         *
+         * <p>If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
+         * belonging to a subnet), the value of the {@code nsgIds} attribute is ignored. Instead,
+         * the VNIC belongs to the NSGs that are associated with the VLAN itself. See {@link Vlan}.
          *
          * <p>For more information about NSGs, see {@link NetworkSecurityGroup}.
          *
@@ -174,7 +182,11 @@ public final class UpdateVnicDetails
          * which means the check is performed. For information about why you would skip the
          * source/destination check, see [Using a Private IP as a Route
          * Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
-         * Example: {@code true}
+         *
+         * <p>If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
+         * belonging to a subnet), the value of the {@code skipSourceDestCheck} attribute is
+         * ignored. This is because the source/destination check is always disabled for VNICs in a
+         * VLAN. Example: {@code true}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("skipSourceDestCheck")
         private Boolean skipSourceDestCheck;
@@ -184,7 +196,11 @@ public final class UpdateVnicDetails
          * which means the check is performed. For information about why you would skip the
          * source/destination check, see [Using a Private IP as a Route
          * Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
-         * Example: {@code true}
+         *
+         * <p>If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
+         * belonging to a subnet), the value of the {@code skipSourceDestCheck} attribute is
+         * ignored. This is because the source/destination check is always disabled for VNICs in a
+         * VLAN. Example: {@code true}
          *
          * @param skipSourceDestCheck the value to set
          * @return this builder
@@ -300,10 +316,10 @@ public final class UpdateVnicDetails
     /**
      * The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname
      * portion of the primary private IP's fully qualified domain name (FQDN) (for example, {@code
-     * bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Must be unique
-     * across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952)
-     * and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the {@link Vnic}
-     * object and also the {@link PrivateIp} object returned by {@link
+     * bminstance1} in FQDN {@code bminstance1.subnet123.vcn1.oraclevcn.com}). Must be unique across
+     * all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and
+     * [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the {@link Vnic} object
+     * and also the {@link PrivateIp} object returned by {@link
      * #listPrivateIps(ListPrivateIpsRequest) listPrivateIps} and {@link
      * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
      *
@@ -316,10 +332,10 @@ public final class UpdateVnicDetails
     /**
      * The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname
      * portion of the primary private IP's fully qualified domain name (FQDN) (for example, {@code
-     * bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Must be unique
-     * across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952)
-     * and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the {@link Vnic}
-     * object and also the {@link PrivateIp} object returned by {@link
+     * bminstance1} in FQDN {@code bminstance1.subnet123.vcn1.oraclevcn.com}). Must be unique across
+     * all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and
+     * [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the {@link Vnic} object
+     * and also the {@link PrivateIp} object returned by {@link
      * #listPrivateIps(ListPrivateIpsRequest) listPrivateIps} and {@link
      * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
      *
@@ -336,6 +352,10 @@ public final class UpdateVnicDetails
      * A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. Setting this as
      * an empty array removes the VNIC from all network security groups.
      *
+     * <p>If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
+     * belonging to a subnet), the value of the {@code nsgIds} attribute is ignored. Instead, the
+     * VNIC belongs to the NSGs that are associated with the VLAN itself. See {@link Vlan}.
+     *
      * <p>For more information about NSGs, see {@link NetworkSecurityGroup}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -344,6 +364,10 @@ public final class UpdateVnicDetails
     /**
      * A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. Setting this as
      * an empty array removes the VNIC from all network security groups.
+     *
+     * <p>If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
+     * belonging to a subnet), the value of the {@code nsgIds} attribute is ignored. Instead, the
+     * VNIC belongs to the NSGs that are associated with the VLAN itself. See {@link Vlan}.
      *
      * <p>For more information about NSGs, see {@link NetworkSecurityGroup}.
      *
@@ -358,7 +382,11 @@ public final class UpdateVnicDetails
      * which means the check is performed. For information about why you would skip the
      * source/destination check, see [Using a Private IP as a Route
      * Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
-     * Example: {@code true}
+     *
+     * <p>If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
+     * belonging to a subnet), the value of the {@code skipSourceDestCheck} attribute is ignored.
+     * This is because the source/destination check is always disabled for VNICs in a VLAN. Example:
+     * {@code true}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("skipSourceDestCheck")
     private final Boolean skipSourceDestCheck;
@@ -368,7 +396,11 @@ public final class UpdateVnicDetails
      * which means the check is performed. For information about why you would skip the
      * source/destination check, see [Using a Private IP as a Route
      * Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
-     * Example: {@code true}
+     *
+     * <p>If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
+     * belonging to a subnet), the value of the {@code skipSourceDestCheck} attribute is ignored.
+     * This is because the source/destination check is always disabled for VNICs in a VLAN. Example:
+     * {@code true}
      *
      * @return the value
      */

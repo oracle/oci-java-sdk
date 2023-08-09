@@ -5,7 +5,7 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Db Credentials User extension <br>
+ * The database credentials user extension. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -33,7 +33,7 @@ public final class ExtensionDbCredentialsUser
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The Database User Name
+         * The database username.
          *
          * <p>*Added In:** 2102181953
          *
@@ -45,7 +45,7 @@ public final class ExtensionDbCredentialsUser
         private String dbUserName;
 
         /**
-         * The Database User Name
+         * The database username.
          *
          * <p>*Added In:** 2102181953
          *
@@ -123,7 +123,7 @@ public final class ExtensionDbCredentialsUser
     }
 
     /**
-     * The Database User Name
+     * The database username.
      *
      * <p>*Added In:** 2102181953
      *
@@ -134,7 +134,7 @@ public final class ExtensionDbCredentialsUser
     private final String dbUserName;
 
     /**
-     * The Database User Name
+     * The database username.
      *
      * <p>*Added In:** 2102181953
      *

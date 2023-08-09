@@ -32,6 +32,10 @@ public final class FastConnectProviderService
         "providerServiceName",
         "publicPeeringBgpManagement",
         "supportedVirtualCircuitTypes",
+        "customerAsnManagement",
+        "providerServiceKeyManagement",
+        "bandwithShapeManagement",
+        "requiredTotalCrossConnects",
         "type"
     })
     public FastConnectProviderService(
@@ -42,6 +46,10 @@ public final class FastConnectProviderService
             String providerServiceName,
             PublicPeeringBgpManagement publicPeeringBgpManagement,
             java.util.List<SupportedVirtualCircuitTypes> supportedVirtualCircuitTypes,
+            CustomerAsnManagement customerAsnManagement,
+            ProviderServiceKeyManagement providerServiceKeyManagement,
+            BandwithShapeManagement bandwithShapeManagement,
+            Integer requiredTotalCrossConnects,
             Type type) {
         super();
         this.description = description;
@@ -51,6 +59,10 @@ public final class FastConnectProviderService
         this.providerServiceName = providerServiceName;
         this.publicPeeringBgpManagement = publicPeeringBgpManagement;
         this.supportedVirtualCircuitTypes = supportedVirtualCircuitTypes;
+        this.customerAsnManagement = customerAsnManagement;
+        this.providerServiceKeyManagement = providerServiceKeyManagement;
+        this.bandwithShapeManagement = bandwithShapeManagement;
+        this.requiredTotalCrossConnects = requiredTotalCrossConnects;
         this.type = type;
     }
 
@@ -180,6 +192,73 @@ public final class FastConnectProviderService
             this.__explicitlySet__.add("supportedVirtualCircuitTypes");
             return this;
         }
+        /**
+         * Who is responsible for managing the ASN information for the network at the other end of
+         * the connection from Oracle.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("customerAsnManagement")
+        private CustomerAsnManagement customerAsnManagement;
+
+        /**
+         * Who is responsible for managing the ASN information for the network at the other end of
+         * the connection from Oracle.
+         *
+         * @param customerAsnManagement the value to set
+         * @return this builder
+         */
+        public Builder customerAsnManagement(CustomerAsnManagement customerAsnManagement) {
+            this.customerAsnManagement = customerAsnManagement;
+            this.__explicitlySet__.add("customerAsnManagement");
+            return this;
+        }
+        /** Who is responsible for managing the provider service key. */
+        @com.fasterxml.jackson.annotation.JsonProperty("providerServiceKeyManagement")
+        private ProviderServiceKeyManagement providerServiceKeyManagement;
+
+        /**
+         * Who is responsible for managing the provider service key.
+         *
+         * @param providerServiceKeyManagement the value to set
+         * @return this builder
+         */
+        public Builder providerServiceKeyManagement(
+                ProviderServiceKeyManagement providerServiceKeyManagement) {
+            this.providerServiceKeyManagement = providerServiceKeyManagement;
+            this.__explicitlySet__.add("providerServiceKeyManagement");
+            return this;
+        }
+        /** Who is responsible for managing the virtual circuit bandwidth. */
+        @com.fasterxml.jackson.annotation.JsonProperty("bandwithShapeManagement")
+        private BandwithShapeManagement bandwithShapeManagement;
+
+        /**
+         * Who is responsible for managing the virtual circuit bandwidth.
+         *
+         * @param bandwithShapeManagement the value to set
+         * @return this builder
+         */
+        public Builder bandwithShapeManagement(BandwithShapeManagement bandwithShapeManagement) {
+            this.bandwithShapeManagement = bandwithShapeManagement;
+            this.__explicitlySet__.add("bandwithShapeManagement");
+            return this;
+        }
+        /**
+         * Total number of cross-connect or cross-connect groups required for the virtual circuit.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("requiredTotalCrossConnects")
+        private Integer requiredTotalCrossConnects;
+
+        /**
+         * Total number of cross-connect or cross-connect groups required for the virtual circuit.
+         *
+         * @param requiredTotalCrossConnects the value to set
+         * @return this builder
+         */
+        public Builder requiredTotalCrossConnects(Integer requiredTotalCrossConnects) {
+            this.requiredTotalCrossConnects = requiredTotalCrossConnects;
+            this.__explicitlySet__.add("requiredTotalCrossConnects");
+            return this;
+        }
         /** Provider service type. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
@@ -209,6 +288,10 @@ public final class FastConnectProviderService
                             this.providerServiceName,
                             this.publicPeeringBgpManagement,
                             this.supportedVirtualCircuitTypes,
+                            this.customerAsnManagement,
+                            this.providerServiceKeyManagement,
+                            this.bandwithShapeManagement,
+                            this.requiredTotalCrossConnects,
                             this.type);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -238,6 +321,18 @@ public final class FastConnectProviderService
             }
             if (model.wasPropertyExplicitlySet("supportedVirtualCircuitTypes")) {
                 this.supportedVirtualCircuitTypes(model.getSupportedVirtualCircuitTypes());
+            }
+            if (model.wasPropertyExplicitlySet("customerAsnManagement")) {
+                this.customerAsnManagement(model.getCustomerAsnManagement());
+            }
+            if (model.wasPropertyExplicitlySet("providerServiceKeyManagement")) {
+                this.providerServiceKeyManagement(model.getProviderServiceKeyManagement());
+            }
+            if (model.wasPropertyExplicitlySet("bandwithShapeManagement")) {
+                this.bandwithShapeManagement(model.getBandwithShapeManagement());
+            }
+            if (model.wasPropertyExplicitlySet("requiredTotalCrossConnects")) {
+                this.requiredTotalCrossConnects(model.getRequiredTotalCrossConnects());
             }
             if (model.wasPropertyExplicitlySet("type")) {
                 this.type(model.getType());
@@ -463,6 +558,167 @@ public final class FastConnectProviderService
         return supportedVirtualCircuitTypes;
     }
 
+    /**
+     * Who is responsible for managing the ASN information for the network at the other end of the
+     * connection from Oracle.
+     */
+    public enum CustomerAsnManagement implements com.oracle.bmc.http.internal.BmcEnum {
+        CustomerManaged("CUSTOMER_MANAGED"),
+        ProviderManaged("PROVIDER_MANAGED"),
+        OracleManaged("ORACLE_MANAGED"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, CustomerAsnManagement> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (CustomerAsnManagement v : CustomerAsnManagement.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        CustomerAsnManagement(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static CustomerAsnManagement create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid CustomerAsnManagement: " + key);
+        }
+    };
+    /**
+     * Who is responsible for managing the ASN information for the network at the other end of the
+     * connection from Oracle.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("customerAsnManagement")
+    private final CustomerAsnManagement customerAsnManagement;
+
+    /**
+     * Who is responsible for managing the ASN information for the network at the other end of the
+     * connection from Oracle.
+     *
+     * @return the value
+     */
+    public CustomerAsnManagement getCustomerAsnManagement() {
+        return customerAsnManagement;
+    }
+
+    /** Who is responsible for managing the provider service key. */
+    public enum ProviderServiceKeyManagement implements com.oracle.bmc.http.internal.BmcEnum {
+        CustomerManaged("CUSTOMER_MANAGED"),
+        ProviderManaged("PROVIDER_MANAGED"),
+        OracleManaged("ORACLE_MANAGED"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ProviderServiceKeyManagement> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ProviderServiceKeyManagement v : ProviderServiceKeyManagement.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ProviderServiceKeyManagement(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ProviderServiceKeyManagement create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ProviderServiceKeyManagement: " + key);
+        }
+    };
+    /** Who is responsible for managing the provider service key. */
+    @com.fasterxml.jackson.annotation.JsonProperty("providerServiceKeyManagement")
+    private final ProviderServiceKeyManagement providerServiceKeyManagement;
+
+    /**
+     * Who is responsible for managing the provider service key.
+     *
+     * @return the value
+     */
+    public ProviderServiceKeyManagement getProviderServiceKeyManagement() {
+        return providerServiceKeyManagement;
+    }
+
+    /** Who is responsible for managing the virtual circuit bandwidth. */
+    public enum BandwithShapeManagement implements com.oracle.bmc.http.internal.BmcEnum {
+        CustomerManaged("CUSTOMER_MANAGED"),
+        ProviderManaged("PROVIDER_MANAGED"),
+        OracleManaged("ORACLE_MANAGED"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, BandwithShapeManagement> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (BandwithShapeManagement v : BandwithShapeManagement.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        BandwithShapeManagement(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static BandwithShapeManagement create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid BandwithShapeManagement: " + key);
+        }
+    };
+    /** Who is responsible for managing the virtual circuit bandwidth. */
+    @com.fasterxml.jackson.annotation.JsonProperty("bandwithShapeManagement")
+    private final BandwithShapeManagement bandwithShapeManagement;
+
+    /**
+     * Who is responsible for managing the virtual circuit bandwidth.
+     *
+     * @return the value
+     */
+    public BandwithShapeManagement getBandwithShapeManagement() {
+        return bandwithShapeManagement;
+    }
+
+    /** Total number of cross-connect or cross-connect groups required for the virtual circuit. */
+    @com.fasterxml.jackson.annotation.JsonProperty("requiredTotalCrossConnects")
+    private final Integer requiredTotalCrossConnects;
+
+    /**
+     * Total number of cross-connect or cross-connect groups required for the virtual circuit.
+     *
+     * @return the value
+     */
+    public Integer getRequiredTotalCrossConnects() {
+        return requiredTotalCrossConnects;
+    }
+
     /** Provider service type. */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Layer2("LAYER2"),
@@ -534,6 +790,13 @@ public final class FastConnectProviderService
                 .append(String.valueOf(this.publicPeeringBgpManagement));
         sb.append(", supportedVirtualCircuitTypes=")
                 .append(String.valueOf(this.supportedVirtualCircuitTypes));
+        sb.append(", customerAsnManagement=").append(String.valueOf(this.customerAsnManagement));
+        sb.append(", providerServiceKeyManagement=")
+                .append(String.valueOf(this.providerServiceKeyManagement));
+        sb.append(", bandwithShapeManagement=")
+                .append(String.valueOf(this.bandwithShapeManagement));
+        sb.append(", requiredTotalCrossConnects=")
+                .append(String.valueOf(this.requiredTotalCrossConnects));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(")");
         return sb.toString();
@@ -559,6 +822,13 @@ public final class FastConnectProviderService
                         this.publicPeeringBgpManagement, other.publicPeeringBgpManagement)
                 && java.util.Objects.equals(
                         this.supportedVirtualCircuitTypes, other.supportedVirtualCircuitTypes)
+                && java.util.Objects.equals(this.customerAsnManagement, other.customerAsnManagement)
+                && java.util.Objects.equals(
+                        this.providerServiceKeyManagement, other.providerServiceKeyManagement)
+                && java.util.Objects.equals(
+                        this.bandwithShapeManagement, other.bandwithShapeManagement)
+                && java.util.Objects.equals(
+                        this.requiredTotalCrossConnects, other.requiredTotalCrossConnects)
                 && java.util.Objects.equals(this.type, other.type)
                 && super.equals(other);
     }
@@ -590,6 +860,26 @@ public final class FastConnectProviderService
                         + (this.supportedVirtualCircuitTypes == null
                                 ? 43
                                 : this.supportedVirtualCircuitTypes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customerAsnManagement == null
+                                ? 43
+                                : this.customerAsnManagement.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.providerServiceKeyManagement == null
+                                ? 43
+                                : this.providerServiceKeyManagement.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bandwithShapeManagement == null
+                                ? 43
+                                : this.bandwithShapeManagement.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.requiredTotalCrossConnects == null
+                                ? 43
+                                : this.requiredTotalCrossConnects.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

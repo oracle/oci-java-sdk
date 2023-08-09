@@ -5,7 +5,7 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * User's Auth token resource <br>
+ * The user's Auth token resource. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -412,7 +412,7 @@ public final class MyAuthToken extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * User credential status
+         * The user's credential status.
          *
          * <p>*Added In:** 2109090424
          *
@@ -424,7 +424,7 @@ public final class MyAuthToken extends com.oracle.bmc.http.client.internal.Expli
         private Status status;
 
         /**
-         * User credential status
+         * The user's credential status.
          *
          * <p>*Added In:** 2109090424
          *
@@ -441,7 +441,7 @@ public final class MyAuthToken extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * User credential expires on
+         * When the user's credential expire.
          *
          * <p>*Added In:** 2109090424
          *
@@ -453,7 +453,7 @@ public final class MyAuthToken extends com.oracle.bmc.http.client.internal.Expli
         private String expiresOn;
 
         /**
-         * User credential expires on
+         * When the user's credential expire.
          *
          * <p>*Added In:** 2109090424
          *
@@ -863,7 +863,7 @@ public final class MyAuthToken extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * User credential status
+     * The user's credential status.
      *
      * <p>*Added In:** 2109090424
      *
@@ -915,7 +915,7 @@ public final class MyAuthToken extends com.oracle.bmc.http.client.internal.Expli
         }
     };
     /**
-     * User credential status
+     * The user's credential status.
      *
      * <p>*Added In:** 2109090424
      *
@@ -926,7 +926,7 @@ public final class MyAuthToken extends com.oracle.bmc.http.client.internal.Expli
     private final Status status;
 
     /**
-     * User credential status
+     * The user's credential status.
      *
      * <p>*Added In:** 2109090424
      *
@@ -940,7 +940,7 @@ public final class MyAuthToken extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * User credential expires on
+     * When the user's credential expire.
      *
      * <p>*Added In:** 2109090424
      *
@@ -952,7 +952,7 @@ public final class MyAuthToken extends com.oracle.bmc.http.client.internal.Expli
     private final String expiresOn;
 
     /**
-     * User credential expires on
+     * When the user's credential expire.
      *
      * <p>*Added In:** 2109090424
      *

@@ -7,7 +7,7 @@ package com.oracle.bmc.identitydomains.model;
 /**
  * If set, indicates the user's preferred authentication target app. If not set and the user's
  * \\"syncedFromApp\\" is set and is enabled for delegated authentication, it is used. Otherwise,
- * the user authenticates locally to OCI IAM.
+ * the user authenticates locally to Oracle Identity Cloud Service.
  *
  * <p>*Added In:** 17.4.6
  *

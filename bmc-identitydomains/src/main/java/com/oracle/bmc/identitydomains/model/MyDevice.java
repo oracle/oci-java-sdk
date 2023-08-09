@@ -492,7 +492,8 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
+         * none - idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -502,7 +503,8 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
+         * none - idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *
          * @param displayName the value to set
          * @return this builder
@@ -516,7 +518,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
          * Device Platform
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * immutable - required: false - returned: default - type: string - uniqueness: none
+         * immutable - idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true - required: false - returned:
+         * default - type: string - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("platform")
         private Platform platform;
@@ -525,7 +529,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
          * Device Platform
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * immutable - required: false - returned: default - type: string - uniqueness: none
+         * immutable - idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true - required: false - returned:
+         * default - type: string - uniqueness: none
          *
          * @param platform the value to set
          * @return this builder
@@ -540,7 +546,8 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
+         * none - idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
@@ -550,7 +557,8 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
+         * none - idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *
          * @param status the value to set
          * @return this builder
@@ -587,7 +595,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
          * Device hardware name/model
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: string - uniqueness: none
+         * readOnly - required: false - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          */
         @com.fasterxml.jackson.annotation.JsonProperty("deviceType")
         private String deviceType;
@@ -596,7 +606,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
          * Device hardware name/model
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: string - uniqueness: none
+         * readOnly - required: false - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *
          * @param deviceType the value to set
          * @return this builder
@@ -610,7 +622,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
          * Mobile Authenticator App Version
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: string - uniqueness: none
+         * readOnly - required: false - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          */
         @com.fasterxml.jackson.annotation.JsonProperty("appVersion")
         private String appVersion;
@@ -619,7 +633,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
          * Mobile Authenticator App Version
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: string - uniqueness: none
+         * readOnly - required: false - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *
          * @param appVersion the value to set
          * @return this builder
@@ -633,7 +649,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
          * Mobile Authenticator App Package Id
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: string - uniqueness: none
+         * readOnly - required: false - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          */
         @com.fasterxml.jackson.annotation.JsonProperty("packageId")
         private String packageId;
@@ -642,7 +660,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
          * Mobile Authenticator App Package Id
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: string - uniqueness: none
+         * readOnly - required: false - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *
          * @param packageId the value to set
          * @return this builder
@@ -656,7 +676,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
          * Last Sync time for device
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: dateTime - uniqueness: none
+         * readWrite - idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true - required: false - returned:
+         * default - type: dateTime - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("lastSyncTime")
         private String lastSyncTime;
@@ -665,7 +687,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
          * Last Sync time for device
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: dateTime - uniqueness: none
+         * readWrite - idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true - required: false - returned:
+         * default - type: dateTime - uniqueness: none
          *
          * @param lastSyncTime the value to set
          * @return this builder
@@ -682,8 +706,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
          * <p>*Added In:** 17.3.6
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsAllowUpdatesInReadOnlyMode: true -
-         * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-         * dateTime - uniqueness: none
+         * multiValued: false - mutability: readWrite - idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true - required: false - returned:
+         * default - type: dateTime - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("lastValidatedTime")
         private String lastValidatedTime;
@@ -695,8 +720,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
          * <p>*Added In:** 17.3.6
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsAllowUpdatesInReadOnlyMode: true -
-         * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-         * dateTime - uniqueness: none
+         * multiValued: false - mutability: readWrite - idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true - required: false - returned:
+         * default - type: dateTime - uniqueness: none
          *
          * @param lastValidatedTime the value to set
          * @return this builder
@@ -737,7 +763,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
          * <p>*Added In:** 19.1.4
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * immutable - required: false - returned: default - type: string - uniqueness: none
+         * immutable - required: false - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          */
         @com.fasterxml.jackson.annotation.JsonProperty("countryCode")
         private String countryCode;
@@ -748,7 +776,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
          * <p>*Added In:** 19.1.4
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * immutable - required: false - returned: default - type: string - uniqueness: none
+         * immutable - required: false - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *
          * @param countryCode the value to set
          * @return this builder
@@ -762,7 +792,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
          * User's Phone Number
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * immutable - required: false - returned: default - type: string - uniqueness: none
+         * immutable - required: false - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          */
         @com.fasterxml.jackson.annotation.JsonProperty("phoneNumber")
         private String phoneNumber;
@@ -771,7 +803,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
          * User's Phone Number
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * immutable - required: false - returned: default - type: string - uniqueness: none
+         * immutable - required: false - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *
          * @param phoneNumber the value to set
          * @return this builder
@@ -786,7 +820,8 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-         * none
+         * none - idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isAccRecEnabled")
         private Boolean isAccRecEnabled;
@@ -796,7 +831,8 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-         * none
+         * none - idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *
          * @param isAccRecEnabled the value to set
          * @return this builder
@@ -810,7 +846,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
          * Unique id sent from device
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: string - uniqueness: none
+         * readOnly - required: false - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          */
         @com.fasterxml.jackson.annotation.JsonProperty("deviceUUID")
         private String deviceUUID;
@@ -819,7 +857,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
          * Unique id sent from device
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: string - uniqueness: none
+         * readOnly - required: false - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *
          * @param deviceUUID the value to set
          * @return this builder
@@ -833,7 +873,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
          * Device base public Key
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: string - uniqueness: none
+         * readOnly - required: false - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          */
         @com.fasterxml.jackson.annotation.JsonProperty("basePublicKey")
         private String basePublicKey;
@@ -842,7 +884,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
          * Device base public Key
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: string - uniqueness: none
+         * readOnly - required: false - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *
          * @param basePublicKey the value to set
          * @return this builder
@@ -859,7 +903,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
          * <p>*Added In:** 2009232244
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
+         * readWrite - required: false - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          */
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationMethod")
         private String authenticationMethod;
@@ -871,7 +917,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
          * <p>*Added In:** 2009232244
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
+         * readWrite - required: false - returned: default - type: string - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *
          * @param authenticationMethod the value to set
          * @return this builder
@@ -1558,6 +1606,8 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
@@ -1567,6 +1617,8 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      *
      * @return the value
      */
@@ -1578,7 +1630,8 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      * Device Platform
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: immutable
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true - required: false - returned: default - type: string - uniqueness: none
      */
     public enum Platform implements com.oracle.bmc.http.internal.BmcEnum {
         Ios("IOS"),
@@ -1631,7 +1684,8 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      * Device Platform
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: immutable
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true - required: false - returned: default - type: string - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("platform")
     private final Platform platform;
@@ -1640,7 +1694,8 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      * Device Platform
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: immutable
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true - required: false - returned: default - type: string - uniqueness: none
      *
      * @return the value
      */
@@ -1653,6 +1708,8 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Initiated("INITIATED"),
@@ -1707,6 +1764,8 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
@@ -1716,6 +1775,8 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      *
      * @return the value
      */
@@ -1748,7 +1809,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      * Device hardware name/model
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - required: false - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     @com.fasterxml.jackson.annotation.JsonProperty("deviceType")
     private final String deviceType;
@@ -1757,7 +1820,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      * Device hardware name/model
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - required: false - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      *
      * @return the value
      */
@@ -1769,7 +1834,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      * Mobile Authenticator App Version
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - required: false - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     @com.fasterxml.jackson.annotation.JsonProperty("appVersion")
     private final String appVersion;
@@ -1778,7 +1845,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      * Mobile Authenticator App Version
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - required: false - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      *
      * @return the value
      */
@@ -1790,7 +1859,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      * Mobile Authenticator App Package Id
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - required: false - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     @com.fasterxml.jackson.annotation.JsonProperty("packageId")
     private final String packageId;
@@ -1799,7 +1870,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      * Mobile Authenticator App Package Id
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - required: false - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      *
      * @return the value
      */
@@ -1811,7 +1884,8 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      * Last Sync time for device
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: dateTime - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true - required: false - returned: default - type: dateTime - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lastSyncTime")
     private final String lastSyncTime;
@@ -1820,7 +1894,8 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      * Last Sync time for device
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: dateTime - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true - required: false - returned: default - type: dateTime - uniqueness: none
      *
      * @return the value
      */
@@ -1834,8 +1909,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      * <p>*Added In:** 17.3.6
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsAllowUpdatesInReadOnlyMode: true -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * dateTime - uniqueness: none
+     * multiValued: false - mutability: readWrite - idcsRequiresWriteForAccessFlows: true -
+     * idcsRequiresImmediateReadAfterWriteForAccessFlows: true - required: false - returned: default
+     * - type: dateTime - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lastValidatedTime")
     private final String lastValidatedTime;
@@ -1846,8 +1922,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      * <p>*Added In:** 17.3.6
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsAllowUpdatesInReadOnlyMode: true -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * dateTime - uniqueness: none
+     * multiValued: false - mutability: readWrite - idcsRequiresWriteForAccessFlows: true -
+     * idcsRequiresImmediateReadAfterWriteForAccessFlows: true - required: false - returned: default
+     * - type: dateTime - uniqueness: none
      *
      * @return the value
      */
@@ -1882,7 +1959,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      * <p>*Added In:** 19.1.4
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: immutable
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - required: false - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     @com.fasterxml.jackson.annotation.JsonProperty("countryCode")
     private final String countryCode;
@@ -1893,7 +1972,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      * <p>*Added In:** 19.1.4
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: immutable
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - required: false - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      *
      * @return the value
      */
@@ -1905,7 +1986,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      * User's Phone Number
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: immutable
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - required: false - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     @com.fasterxml.jackson.annotation.JsonProperty("phoneNumber")
     private final String phoneNumber;
@@ -1914,7 +1997,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      * User's Phone Number
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: immutable
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - required: false - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      *
      * @return the value
      */
@@ -1927,7 +2012,8 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
+     * none - idcsRequiresWriteForAccessFlows: true -
+     * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isAccRecEnabled")
     private final Boolean isAccRecEnabled;
@@ -1937,7 +2023,8 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
+     * none - idcsRequiresWriteForAccessFlows: true -
+     * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      *
      * @return the value
      */
@@ -1949,7 +2036,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      * Unique id sent from device
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - required: false - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     @com.fasterxml.jackson.annotation.JsonProperty("deviceUUID")
     private final String deviceUUID;
@@ -1958,7 +2047,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      * Unique id sent from device
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - required: false - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      *
      * @return the value
      */
@@ -1970,7 +2061,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      * Device base public Key
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - required: false - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     @com.fasterxml.jackson.annotation.JsonProperty("basePublicKey")
     private final String basePublicKey;
@@ -1979,7 +2072,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      * Device base public Key
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - required: false - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      *
      * @return the value
      */
@@ -1994,7 +2089,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      * <p>*Added In:** 2009232244
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - required: false - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationMethod")
     private final String authenticationMethod;
@@ -2006,7 +2103,9 @@ public final class MyDevice extends com.oracle.bmc.http.client.internal.Explicit
      * <p>*Added In:** 2009232244
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
+     * - required: false - returned: default - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      *
      * @return the value
      */

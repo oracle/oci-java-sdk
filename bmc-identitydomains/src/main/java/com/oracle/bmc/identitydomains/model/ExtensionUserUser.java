@@ -5,7 +5,7 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * OCI IAM User <br>
+ * Oracle Identity Cloud Service User <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -28,7 +28,9 @@ public final class ExtensionUserUser
         "isAuthenticationDelegated",
         "status",
         "provider",
+        "preferredUiLandingPage",
         "creationMechanism",
+        "groupMembershipLastModified",
         "doNotShowGettingStarted",
         "bypassNotification",
         "isAccountRecoveryEnrolled",
@@ -52,7 +54,9 @@ public final class ExtensionUserUser
             Boolean isAuthenticationDelegated,
             Status status,
             Provider provider,
+            PreferredUiLandingPage preferredUiLandingPage,
             CreationMechanism creationMechanism,
+            String groupMembershipLastModified,
             Boolean doNotShowGettingStarted,
             Boolean bypassNotification,
             Boolean isAccountRecoveryEnrolled,
@@ -75,7 +79,9 @@ public final class ExtensionUserUser
         this.isAuthenticationDelegated = isAuthenticationDelegated;
         this.status = status;
         this.provider = provider;
+        this.preferredUiLandingPage = preferredUiLandingPage;
         this.creationMechanism = creationMechanism;
+        this.groupMembershipLastModified = groupMembershipLastModified;
         this.doNotShowGettingStarted = doNotShowGettingStarted;
         this.bypassNotification = bypassNotification;
         this.isAccountRecoveryEnrolled = isAccountRecoveryEnrolled;
@@ -102,8 +108,8 @@ public final class ExtensionUserUser
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Federated -
          * idcsCsvAttributeNameMappings: [[columnHeaderName:Federated]] - idcsSearchable: true -
-         * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-         * boolean - uniqueness: none
+         * multiValued: false - mutability: readWrite - idcsRequiresWriteForAccessFlows: true -
+         * required: false - returned: default - type: boolean - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isFederatedUser")
         private Boolean isFederatedUser;
@@ -113,8 +119,8 @@ public final class ExtensionUserUser
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Federated -
          * idcsCsvAttributeNameMappings: [[columnHeaderName:Federated]] - idcsSearchable: true -
-         * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-         * boolean - uniqueness: none
+         * multiValued: false - mutability: readWrite - idcsRequiresWriteForAccessFlows: true -
+         * required: false - returned: default - type: boolean - uniqueness: none
          *
          * @param isFederatedUser the value to set
          * @return this builder
@@ -208,11 +214,41 @@ public final class ExtensionUserUser
             return this;
         }
         /**
+         * User's preferred landing page following login, logout and reset password.
+         *
+         * <p>*Added In:** 2302092332
+         *
+         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
+         * - mutability: readWrite - required: false - returned: default - type: string -
+         * uniqueness: none
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("preferredUiLandingPage")
+        private PreferredUiLandingPage preferredUiLandingPage;
+
+        /**
+         * User's preferred landing page following login, logout and reset password.
+         *
+         * <p>*Added In:** 2302092332
+         *
+         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
+         * - mutability: readWrite - required: false - returned: default - type: string -
+         * uniqueness: none
+         *
+         * @param preferredUiLandingPage the value to set
+         * @return this builder
+         */
+        public Builder preferredUiLandingPage(PreferredUiLandingPage preferredUiLandingPage) {
+            this.preferredUiLandingPage = preferredUiLandingPage;
+            this.__explicitlySet__.add("preferredUiLandingPage");
+            return this;
+        }
+        /**
          * User creation mechanism
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeNameMappings:
          * [[defaultValue:import]] - idcsSearchable: true - multiValued: false - mutability:
-         * immutable - required: false - returned: request - type: string - uniqueness: none
+         * immutable - idcsRequiresWriteForAccessFlows: true - required: false - returned: request -
+         * type: string - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("creationMechanism")
         private CreationMechanism creationMechanism;
@@ -222,7 +258,8 @@ public final class ExtensionUserUser
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeNameMappings:
          * [[defaultValue:import]] - idcsSearchable: true - multiValued: false - mutability:
-         * immutable - required: false - returned: request - type: string - uniqueness: none
+         * immutable - idcsRequiresWriteForAccessFlows: true - required: false - returned: request -
+         * type: string - uniqueness: none
          *
          * @param creationMechanism the value to set
          * @return this builder
@@ -230,6 +267,33 @@ public final class ExtensionUserUser
         public Builder creationMechanism(CreationMechanism creationMechanism) {
             this.creationMechanism = creationMechanism;
             this.__explicitlySet__.add("creationMechanism");
+            return this;
+        }
+        /**
+         * Specifies date time when a User's group membership was last modified.
+         *
+         * <p>*Added In:** 2304270343
+         *
+         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
+         * required: false - returned: request - type: dateTime - uniqueness: none
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("groupMembershipLastModified")
+        private String groupMembershipLastModified;
+
+        /**
+         * Specifies date time when a User's group membership was last modified.
+         *
+         * <p>*Added In:** 2304270343
+         *
+         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
+         * required: false - returned: request - type: dateTime - uniqueness: none
+         *
+         * @param groupMembershipLastModified the value to set
+         * @return this builder
+         */
+        public Builder groupMembershipLastModified(String groupMembershipLastModified) {
+            this.groupMembershipLastModified = groupMembershipLastModified;
+            this.__explicitlySet__.add("groupMembershipLastModified");
             return this;
         }
         /**
@@ -263,8 +327,8 @@ public final class ExtensionUserUser
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeNameMappings:
          * [[columnHeaderName:ByPass Notification]] - idcsSearchable: false - multiValued: false -
-         * mutability: immutable - required: false - returned: never - type: boolean - uniqueness:
-         * none
+         * mutability: immutable - idcsRequiresWriteForAccessFlows: true - required: false -
+         * returned: never - type: boolean - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("bypassNotification")
         private Boolean bypassNotification;
@@ -275,8 +339,8 @@ public final class ExtensionUserUser
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeNameMappings:
          * [[columnHeaderName:ByPass Notification]] - idcsSearchable: false - multiValued: false -
-         * mutability: immutable - required: false - returned: never - type: boolean - uniqueness:
-         * none
+         * mutability: immutable - idcsRequiresWriteForAccessFlows: true - required: false -
+         * returned: never - type: boolean - uniqueness: none
          *
          * @param bypassNotification the value to set
          * @return this builder
@@ -655,7 +719,9 @@ public final class ExtensionUserUser
                             this.isAuthenticationDelegated,
                             this.status,
                             this.provider,
+                            this.preferredUiLandingPage,
                             this.creationMechanism,
+                            this.groupMembershipLastModified,
                             this.doNotShowGettingStarted,
                             this.bypassNotification,
                             this.isAccountRecoveryEnrolled,
@@ -693,8 +759,14 @@ public final class ExtensionUserUser
             if (model.wasPropertyExplicitlySet("provider")) {
                 this.provider(model.getProvider());
             }
+            if (model.wasPropertyExplicitlySet("preferredUiLandingPage")) {
+                this.preferredUiLandingPage(model.getPreferredUiLandingPage());
+            }
             if (model.wasPropertyExplicitlySet("creationMechanism")) {
                 this.creationMechanism(model.getCreationMechanism());
+            }
+            if (model.wasPropertyExplicitlySet("groupMembershipLastModified")) {
+                this.groupMembershipLastModified(model.getGroupMembershipLastModified());
             }
             if (model.wasPropertyExplicitlySet("doNotShowGettingStarted")) {
                 this.doNotShowGettingStarted(model.getDoNotShowGettingStarted());
@@ -768,8 +840,8 @@ public final class ExtensionUserUser
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Federated -
      * idcsCsvAttributeNameMappings: [[columnHeaderName:Federated]] - idcsSearchable: true -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * boolean - uniqueness: none
+     * multiValued: false - mutability: readWrite - idcsRequiresWriteForAccessFlows: true -
+     * required: false - returned: default - type: boolean - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isFederatedUser")
     private final Boolean isFederatedUser;
@@ -779,8 +851,8 @@ public final class ExtensionUserUser
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Federated -
      * idcsCsvAttributeNameMappings: [[columnHeaderName:Federated]] - idcsSearchable: true -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * boolean - uniqueness: none
+     * multiValued: false - mutability: readWrite - idcsRequiresWriteForAccessFlows: true -
+     * required: false - returned: default - type: boolean - uniqueness: none
      *
      * @return the value
      */
@@ -963,11 +1035,91 @@ public final class ExtensionUserUser
     }
 
     /**
+     * User's preferred landing page following login, logout and reset password.
+     *
+     * <p>*Added In:** 2302092332
+     *
+     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
+     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
+     */
+    public enum PreferredUiLandingPage implements com.oracle.bmc.http.internal.BmcEnum {
+        MyApps("MyApps"),
+        MyProfile("MyProfile"),
+        OciConsole("OciConsole"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PreferredUiLandingPage.class);
+
+        private final String value;
+        private static java.util.Map<String, PreferredUiLandingPage> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (PreferredUiLandingPage v : PreferredUiLandingPage.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        PreferredUiLandingPage(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static PreferredUiLandingPage create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'PreferredUiLandingPage', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * User's preferred landing page following login, logout and reset password.
+     *
+     * <p>*Added In:** 2302092332
+     *
+     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
+     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("preferredUiLandingPage")
+    private final PreferredUiLandingPage preferredUiLandingPage;
+
+    /**
+     * User's preferred landing page following login, logout and reset password.
+     *
+     * <p>*Added In:** 2302092332
+     *
+     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
+     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
+     *
+     * @return the value
+     */
+    public PreferredUiLandingPage getPreferredUiLandingPage() {
+        return preferredUiLandingPage;
+    }
+
+    /**
      * User creation mechanism
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeNameMappings:
      * [[defaultValue:import]] - idcsSearchable: true - multiValued: false - mutability: immutable -
-     * required: false - returned: request - type: string - uniqueness: none
+     * idcsRequiresWriteForAccessFlows: true - required: false - returned: request - type: string -
+     * uniqueness: none
      */
     public enum CreationMechanism implements com.oracle.bmc.http.internal.BmcEnum {
         Bulk("bulk"),
@@ -1025,7 +1177,8 @@ public final class ExtensionUserUser
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeNameMappings:
      * [[defaultValue:import]] - idcsSearchable: true - multiValued: false - mutability: immutable -
-     * required: false - returned: request - type: string - uniqueness: none
+     * idcsRequiresWriteForAccessFlows: true - required: false - returned: request - type: string -
+     * uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("creationMechanism")
     private final CreationMechanism creationMechanism;
@@ -1035,12 +1188,38 @@ public final class ExtensionUserUser
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeNameMappings:
      * [[defaultValue:import]] - idcsSearchable: true - multiValued: false - mutability: immutable -
-     * required: false - returned: request - type: string - uniqueness: none
+     * idcsRequiresWriteForAccessFlows: true - required: false - returned: request - type: string -
+     * uniqueness: none
      *
      * @return the value
      */
     public CreationMechanism getCreationMechanism() {
         return creationMechanism;
+    }
+
+    /**
+     * Specifies date time when a User's group membership was last modified.
+     *
+     * <p>*Added In:** 2304270343
+     *
+     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
+     * required: false - returned: request - type: dateTime - uniqueness: none
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("groupMembershipLastModified")
+    private final String groupMembershipLastModified;
+
+    /**
+     * Specifies date time when a User's group membership was last modified.
+     *
+     * <p>*Added In:** 2304270343
+     *
+     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
+     * required: false - returned: request - type: dateTime - uniqueness: none
+     *
+     * @return the value
+     */
+    public String getGroupMembershipLastModified() {
+        return groupMembershipLastModified;
     }
 
     /**
@@ -1072,7 +1251,8 @@ public final class ExtensionUserUser
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeNameMappings:
      * [[columnHeaderName:ByPass Notification]] - idcsSearchable: false - multiValued: false -
-     * mutability: immutable - required: false - returned: never - type: boolean - uniqueness: none
+     * mutability: immutable - idcsRequiresWriteForAccessFlows: true - required: false - returned:
+     * never - type: boolean - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("bypassNotification")
     private final Boolean bypassNotification;
@@ -1083,7 +1263,8 @@ public final class ExtensionUserUser
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeNameMappings:
      * [[columnHeaderName:ByPass Notification]] - idcsSearchable: false - multiValued: false -
-     * mutability: immutable - required: false - returned: never - type: boolean - uniqueness: none
+     * mutability: immutable - idcsRequiresWriteForAccessFlows: true - required: false - returned:
+     * never - type: boolean - uniqueness: none
      *
      * @return the value
      */
@@ -1422,7 +1603,10 @@ public final class ExtensionUserUser
                 .append(String.valueOf(this.isAuthenticationDelegated));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", provider=").append(String.valueOf(this.provider));
+        sb.append(", preferredUiLandingPage=").append(String.valueOf(this.preferredUiLandingPage));
         sb.append(", creationMechanism=").append(String.valueOf(this.creationMechanism));
+        sb.append(", groupMembershipLastModified=")
+                .append(String.valueOf(this.groupMembershipLastModified));
         sb.append(", doNotShowGettingStarted=")
                 .append(String.valueOf(this.doNotShowGettingStarted));
         sb.append(", bypassNotification=").append(String.valueOf(this.bypassNotification));
@@ -1469,7 +1653,11 @@ public final class ExtensionUserUser
                         this.isAuthenticationDelegated, other.isAuthenticationDelegated)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.provider, other.provider)
+                && java.util.Objects.equals(
+                        this.preferredUiLandingPage, other.preferredUiLandingPage)
                 && java.util.Objects.equals(this.creationMechanism, other.creationMechanism)
+                && java.util.Objects.equals(
+                        this.groupMembershipLastModified, other.groupMembershipLastModified)
                 && java.util.Objects.equals(
                         this.doNotShowGettingStarted, other.doNotShowGettingStarted)
                 && java.util.Objects.equals(this.bypassNotification, other.bypassNotification)
@@ -1520,7 +1708,17 @@ public final class ExtensionUserUser
         result = (result * PRIME) + (this.provider == null ? 43 : this.provider.hashCode());
         result =
                 (result * PRIME)
+                        + (this.preferredUiLandingPage == null
+                                ? 43
+                                : this.preferredUiLandingPage.hashCode());
+        result =
+                (result * PRIME)
                         + (this.creationMechanism == null ? 43 : this.creationMechanism.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.groupMembershipLastModified == null
+                                ? 43
+                                : this.groupMembershipLastModified.hashCode());
         result =
                 (result * PRIME)
                         + (this.doNotShowGettingStarted == null

@@ -5,7 +5,7 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * A list of kerberos realm users for an OCI IAM User
+ * A list of kerberos realm users for an Oracle Identity Cloud Service User
  *
  * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability: readWrite
  * - required: false - returned: request - type: complex - uniqueness: none <br>
@@ -38,7 +38,7 @@ public final class UserExtRealmUsers
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * id of the KerberosRealmUser associated with the OCI IAM User.
+         * id of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: true - returned: default - type: string - uniqueness:
@@ -48,7 +48,7 @@ public final class UserExtRealmUsers
         private String value;
 
         /**
-         * id of the KerberosRealmUser associated with the OCI IAM User.
+         * id of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: true - returned: default - type: string - uniqueness:
@@ -63,7 +63,8 @@ public final class UserExtRealmUsers
             return this;
         }
         /**
-         * The URI of the corresponding KerberosRealmUser resource associated with the OCI IAM User.
+         * The URI of the corresponding KerberosRealmUser resource associated with the Oracle
+         * Identity Cloud Service User.
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
          * readOnly - required: false - returned: default - type: reference - uniqueness: none
@@ -72,7 +73,8 @@ public final class UserExtRealmUsers
         private String ref;
 
         /**
-         * The URI of the corresponding KerberosRealmUser resource associated with the OCI IAM User.
+         * The URI of the corresponding KerberosRealmUser resource associated with the Oracle
+         * Identity Cloud Service User.
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
          * readOnly - required: false - returned: default - type: reference - uniqueness: none
@@ -86,7 +88,8 @@ public final class UserExtRealmUsers
             return this;
         }
         /**
-         * Principal Name of the KerberosRealmUser associated with the OCI IAM User.
+         * Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service
+         * User.
          *
          * <p>*SCIM++ Properties:** - idcsPii: true - idcsSearchable: true - multiValued: false -
          * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
@@ -96,7 +99,8 @@ public final class UserExtRealmUsers
         private String principalName;
 
         /**
-         * Principal Name of the KerberosRealmUser associated with the OCI IAM User.
+         * Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service
+         * User.
          *
          * <p>*SCIM++ Properties:** - idcsPii: true - idcsSearchable: true - multiValued: false -
          * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
@@ -111,7 +115,8 @@ public final class UserExtRealmUsers
             return this;
         }
         /**
-         * Realm Name for the KerberosRealmUser associated with the OCI IAM User.
+         * Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service
+         * User.
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
          * readOnly - required: false - returned: default - type: string - uniqueness: none
@@ -120,7 +125,8 @@ public final class UserExtRealmUsers
         private String realmName;
 
         /**
-         * Realm Name for the KerberosRealmUser associated with the OCI IAM User.
+         * Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service
+         * User.
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
          * readOnly - required: false - returned: default - type: string - uniqueness: none
@@ -174,7 +180,7 @@ public final class UserExtRealmUsers
     }
 
     /**
-     * id of the KerberosRealmUser associated with the OCI IAM User.
+     * id of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
@@ -183,7 +189,7 @@ public final class UserExtRealmUsers
     private final String value;
 
     /**
-     * id of the KerberosRealmUser associated with the OCI IAM User.
+     * id of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
@@ -195,7 +201,8 @@ public final class UserExtRealmUsers
     }
 
     /**
-     * The URI of the corresponding KerberosRealmUser resource associated with the OCI IAM User.
+     * The URI of the corresponding KerberosRealmUser resource associated with the Oracle Identity
+     * Cloud Service User.
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
      * - required: false - returned: default - type: reference - uniqueness: none
@@ -204,7 +211,8 @@ public final class UserExtRealmUsers
     private final String ref;
 
     /**
-     * The URI of the corresponding KerberosRealmUser resource associated with the OCI IAM User.
+     * The URI of the corresponding KerberosRealmUser resource associated with the Oracle Identity
+     * Cloud Service User.
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
      * - required: false - returned: default - type: reference - uniqueness: none
@@ -216,7 +224,8 @@ public final class UserExtRealmUsers
     }
 
     /**
-     * Principal Name of the KerberosRealmUser associated with the OCI IAM User.
+     * Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service
+     * User.
      *
      * <p>*SCIM++ Properties:** - idcsPii: true - idcsSearchable: true - multiValued: false -
      * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
@@ -225,7 +234,8 @@ public final class UserExtRealmUsers
     private final String principalName;
 
     /**
-     * Principal Name of the KerberosRealmUser associated with the OCI IAM User.
+     * Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service
+     * User.
      *
      * <p>*SCIM++ Properties:** - idcsPii: true - idcsSearchable: true - multiValued: false -
      * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
@@ -237,7 +247,7 @@ public final class UserExtRealmUsers
     }
 
     /**
-     * Realm Name for the KerberosRealmUser associated with the OCI IAM User.
+     * Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readOnly -
      * required: false - returned: default - type: string - uniqueness: none
@@ -246,7 +256,7 @@ public final class UserExtRealmUsers
     private final String realmName;
 
     /**
-     * Realm Name for the KerberosRealmUser associated with the OCI IAM User.
+     * Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readOnly -
      * required: false - returned: default - type: string - uniqueness: none

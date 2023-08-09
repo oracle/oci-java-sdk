@@ -5,8 +5,8 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Security question and answers provided by end-user for Account recovery and/or MFA. While setting
- * up security questions, end-user can also provide hint along with answer.
+ * The schema used to mnage security question and answers provided by a user for account recovery
+ * and/or MFA. While setting up security questions, a user can also provide a hint for the answer.
  *
  * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability: readWrite
  * - required: false - returned: request - type: complex - uniqueness: none <br>
@@ -39,7 +39,7 @@ public final class UserExtSecQuestions
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Id of the question selected by user while setting up Security Question.
+         * The identifier of the question selected by the user when setting up a security question.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: true - returned: always - type: string - uniqueness:
@@ -49,7 +49,7 @@ public final class UserExtSecQuestions
         private String value;
 
         /**
-         * Id of the question selected by user while setting up Security Question.
+         * The identifier of the question selected by the user when setting up a security question.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: true - returned: always - type: string - uniqueness:
@@ -64,7 +64,7 @@ public final class UserExtSecQuestions
             return this;
         }
         /**
-         * The URI of the corresponding SecurityQuestion resource
+         * The URI of the corresponding Security Question resource.
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
          * readOnly - required: false - returned: default - type: reference - uniqueness: none
@@ -73,7 +73,7 @@ public final class UserExtSecQuestions
         private String ref;
 
         /**
-         * The URI of the corresponding SecurityQuestion resource
+         * The URI of the corresponding Security Question resource.
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
          * readOnly - required: false - returned: default - type: reference - uniqueness: none
@@ -87,7 +87,7 @@ public final class UserExtSecQuestions
             return this;
         }
         /**
-         * Answer provided by an user for a security question.
+         * The answer provided by a user for a security question.
          *
          * <p>*SCIM++ Properties:** - idcsCsvAttributeName: Answer - idcsSearchable: false -
          * idcsSensitive: hash - multiValued: false - mutability: writeOnly - required: true -
@@ -97,7 +97,7 @@ public final class UserExtSecQuestions
         private String answer;
 
         /**
-         * Answer provided by an user for a security question.
+         * The answer provided by a user for a security question.
          *
          * <p>*SCIM++ Properties:** - idcsCsvAttributeName: Answer - idcsSearchable: false -
          * idcsSensitive: hash - multiValued: false - mutability: writeOnly - required: true -
@@ -112,7 +112,7 @@ public final class UserExtSecQuestions
             return this;
         }
         /**
-         * Hint for an answer given by user while setting up Security Question.
+         * The hint for an answer that's given by user when setting up a security question.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
          * - required: false - returned: default - type: string - uniqueness: none
@@ -121,7 +121,7 @@ public final class UserExtSecQuestions
         private String hintText;
 
         /**
-         * Hint for an answer given by user while setting up Security Question.
+         * The hint for an answer that's given by user when setting up a security question.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
          * - required: false - returned: default - type: string - uniqueness: none
@@ -175,7 +175,7 @@ public final class UserExtSecQuestions
     }
 
     /**
-     * Id of the question selected by user while setting up Security Question.
+     * The identifier of the question selected by the user when setting up a security question.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: true - returned: always - type: string - uniqueness: none
@@ -184,7 +184,7 @@ public final class UserExtSecQuestions
     private final String value;
 
     /**
-     * Id of the question selected by user while setting up Security Question.
+     * The identifier of the question selected by the user when setting up a security question.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: true - returned: always - type: string - uniqueness: none
@@ -196,7 +196,7 @@ public final class UserExtSecQuestions
     }
 
     /**
-     * The URI of the corresponding SecurityQuestion resource
+     * The URI of the corresponding Security Question resource.
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
      * - required: false - returned: default - type: reference - uniqueness: none
@@ -205,7 +205,7 @@ public final class UserExtSecQuestions
     private final String ref;
 
     /**
-     * The URI of the corresponding SecurityQuestion resource
+     * The URI of the corresponding Security Question resource.
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
      * - required: false - returned: default - type: reference - uniqueness: none
@@ -217,7 +217,7 @@ public final class UserExtSecQuestions
     }
 
     /**
-     * Answer provided by an user for a security question.
+     * The answer provided by a user for a security question.
      *
      * <p>*SCIM++ Properties:** - idcsCsvAttributeName: Answer - idcsSearchable: false -
      * idcsSensitive: hash - multiValued: false - mutability: writeOnly - required: true - returned:
@@ -227,7 +227,7 @@ public final class UserExtSecQuestions
     private final String answer;
 
     /**
-     * Answer provided by an user for a security question.
+     * The answer provided by a user for a security question.
      *
      * <p>*SCIM++ Properties:** - idcsCsvAttributeName: Answer - idcsSearchable: false -
      * idcsSensitive: hash - multiValued: false - mutability: writeOnly - required: true - returned:
@@ -240,7 +240,7 @@ public final class UserExtSecQuestions
     }
 
     /**
-     * Hint for an answer given by user while setting up Security Question.
+     * The hint for an answer that's given by user when setting up a security question.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
      * required: false - returned: default - type: string - uniqueness: none
@@ -249,7 +249,7 @@ public final class UserExtSecQuestions
     private final String hintText;
 
     /**
-     * Hint for an answer given by user while setting up Security Question.
+     * The hint for an answer that's given by user when setting up a security question.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
      * required: false - returned: default - type: string - uniqueness: none

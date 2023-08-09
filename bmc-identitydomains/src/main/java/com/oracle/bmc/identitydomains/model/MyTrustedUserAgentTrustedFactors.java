@@ -39,8 +39,8 @@ public final class MyTrustedUserAgentTrustedFactors
          * <p>*Added In:** 19.2.1
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: true - returned: default - type: string - uniqueness:
-         * none
+         * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: true -
+         * returned: default - type: string - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
@@ -51,8 +51,8 @@ public final class MyTrustedUserAgentTrustedFactors
          * <p>*Added In:** 19.2.1
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: true - returned: default - type: string - uniqueness:
-         * none
+         * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: true -
+         * returned: default - type: string - uniqueness: none
          *
          * @param type the value to set
          * @return this builder
@@ -68,8 +68,8 @@ public final class MyTrustedUserAgentTrustedFactors
          * <p>*Added In:** 2111190457
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
+         * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: false -
+         * returned: default - type: string - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private Category category;
@@ -80,8 +80,8 @@ public final class MyTrustedUserAgentTrustedFactors
          * <p>*Added In:** 2111190457
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
+         * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: false -
+         * returned: default - type: string - uniqueness: none
          *
          * @param category the value to set
          * @return this builder
@@ -97,8 +97,8 @@ public final class MyTrustedUserAgentTrustedFactors
          * <p>*Added In:** 19.2.1
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readOnly - required: true - returned: default - type: dateTime - uniqueness:
-         * none
+         * mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: true - returned:
+         * default - type: dateTime - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("creationTime")
         private String creationTime;
@@ -109,8 +109,8 @@ public final class MyTrustedUserAgentTrustedFactors
          * <p>*Added In:** 19.2.1
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readOnly - required: true - returned: default - type: dateTime - uniqueness:
-         * none
+         * mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: true - returned:
+         * default - type: dateTime - uniqueness: none
          *
          * @param creationTime the value to set
          * @return this builder
@@ -164,7 +164,8 @@ public final class MyTrustedUserAgentTrustedFactors
      * <p>*Added In:** 19.2.1
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
+     * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: true - returned:
+     * default - type: string - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
@@ -175,7 +176,8 @@ public final class MyTrustedUserAgentTrustedFactors
      * <p>*Added In:** 19.2.1
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
+     * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: true - returned:
+     * default - type: string - uniqueness: none
      *
      * @return the value
      */
@@ -189,7 +191,8 @@ public final class MyTrustedUserAgentTrustedFactors
      * <p>*Added In:** 2111190457
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
+     * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: false - returned:
+     * default - type: string - uniqueness: none
      */
     public enum Category implements com.oracle.bmc.http.internal.BmcEnum {
         Saml("SAML"),
@@ -245,7 +248,8 @@ public final class MyTrustedUserAgentTrustedFactors
      * <p>*Added In:** 2111190457
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
+     * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: false - returned:
+     * default - type: string - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final Category category;
@@ -256,7 +260,8 @@ public final class MyTrustedUserAgentTrustedFactors
      * <p>*Added In:** 2111190457
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
+     * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: false - returned:
+     * default - type: string - uniqueness: none
      *
      * @return the value
      */
@@ -270,7 +275,8 @@ public final class MyTrustedUserAgentTrustedFactors
      * <p>*Added In:** 19.2.1
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: true - returned: default - type: dateTime - uniqueness: none
+     * mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: true - returned:
+     * default - type: dateTime - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("creationTime")
     private final String creationTime;
@@ -281,7 +287,8 @@ public final class MyTrustedUserAgentTrustedFactors
      * <p>*Added In:** 19.2.1
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: true - returned: default - type: dateTime - uniqueness: none
+     * mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: true - returned:
+     * default - type: dateTime - uniqueness: none
      *
      * @return the value
      */

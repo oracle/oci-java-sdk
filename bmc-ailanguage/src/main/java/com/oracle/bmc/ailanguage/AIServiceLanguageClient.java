@@ -831,6 +831,33 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
     }
 
     @Override
+    public GetModelTypeResponse getModelType(GetModelTypeRequest request) {
+
+        Validate.notBlank(request.getModelType(), "modelType must not be blank");
+
+        return clientCall(request, GetModelTypeResponse::builder)
+                .logger(LOG, "getModelType")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "GetModelType",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/ModelTypeInfo/GetModelType")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetModelTypeRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("modelTypes")
+                .appendPathParam(request.getModelType())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.ModelTypeInfo.class,
+                        GetModelTypeResponse.Builder::modelTypeInfo)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetModelTypeResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public GetProjectResponse getProject(GetProjectRequest request) {
 
         Validate.notBlank(request.getProjectId(), "projectId must not be blank");

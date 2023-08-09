@@ -5,7 +5,7 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * A complex attribute that indicates an password recovery is locked (blocking new sessions)
+ * A complex attribute that indicates a password recovery is locked (blocking any new sessions).
  *
  * <p>*Added In:** 19.1.4
  *
@@ -38,25 +38,25 @@ public final class UserExtRecoveryLocked
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Indicates that the rev is locked
+         * Indicates that the recovery is locked.
          *
          * <p>*Added In:** 19.1.4
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-         * none
+         * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: false -
+         * returned: default - type: boolean - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("on")
         private Boolean on;
 
         /**
-         * Indicates that the rev is locked
+         * Indicates that the recovery is locked.
          *
          * <p>*Added In:** 19.1.4
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-         * none
+         * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: false -
+         * returned: default - type: boolean - uniqueness: none
          *
          * @param on the value to set
          * @return this builder
@@ -67,23 +67,25 @@ public final class UserExtRecoveryLocked
             return this;
         }
         /**
-         * The date and time that the current resource was locked
+         * The date and time that the current resource was locked.
          *
          * <p>*Added In:** 19.1.4
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: dateTime - uniqueness: none
+         * readWrite - idcsRequiresWriteForAccessFlows: true - required: false - returned: default -
+         * type: dateTime - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("lockDate")
         private String lockDate;
 
         /**
-         * The date and time that the current resource was locked
+         * The date and time that the current resource was locked.
          *
          * <p>*Added In:** 19.1.4
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: dateTime - uniqueness: none
+         * readWrite - idcsRequiresWriteForAccessFlows: true - required: false - returned: default -
+         * type: dateTime - uniqueness: none
          *
          * @param lockDate the value to set
          * @return this builder
@@ -127,25 +129,25 @@ public final class UserExtRecoveryLocked
     }
 
     /**
-     * Indicates that the rev is locked
+     * Indicates that the recovery is locked.
      *
      * <p>*Added In:** 19.1.4
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
+     * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: false - returned:
+     * default - type: boolean - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("on")
     private final Boolean on;
 
     /**
-     * Indicates that the rev is locked
+     * Indicates that the recovery is locked.
      *
      * <p>*Added In:** 19.1.4
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
+     * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: false - returned:
+     * default - type: boolean - uniqueness: none
      *
      * @return the value
      */
@@ -154,23 +156,25 @@ public final class UserExtRecoveryLocked
     }
 
     /**
-     * The date and time that the current resource was locked
+     * The date and time that the current resource was locked.
      *
      * <p>*Added In:** 19.1.4
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: dateTime - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - required: false - returned: default - type:
+     * dateTime - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lockDate")
     private final String lockDate;
 
     /**
-     * The date and time that the current resource was locked
+     * The date and time that the current resource was locked.
      *
      * <p>*Added In:** 19.1.4
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: dateTime - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - required: false - returned: default - type:
+     * dateTime - uniqueness: none
      *
      * @return the value
      */

@@ -5,9 +5,9 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * This extension defines attributes used to manage account passwords within a service provider. The
- * extension is typically applied to a User resource, but MAY be applied to other resources that use
- * passwords. <br>
+ * This extension defines the attributes used to manage account passwords within a service provider.
+ * The extension is typically applied to a User resource, but MAY be applied to other resources that
+ * use passwords. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -61,21 +61,21 @@ public final class ExtensionUserStateUser
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The last successful login date
+         * The last successful login date.
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: true - idcsAllowUpdatesInReadOnlyMode: true -
-         * multiValued: false - mutability: readOnly - required: false - returned: request - type:
-         * dateTime - uniqueness: none
+         * multiValued: false - mutability: readOnly - idcsRequiresWriteForAccessFlows: true -
+         * required: false - returned: request - type: dateTime - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("lastSuccessfulLoginDate")
         private String lastSuccessfulLoginDate;
 
         /**
-         * The last successful login date
+         * The last successful login date.
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: true - idcsAllowUpdatesInReadOnlyMode: true -
-         * multiValued: false - mutability: readOnly - required: false - returned: request - type:
-         * dateTime - uniqueness: none
+         * multiValued: false - mutability: readOnly - idcsRequiresWriteForAccessFlows: true -
+         * required: false - returned: request - type: dateTime - uniqueness: none
          *
          * @param lastSuccessfulLoginDate the value to set
          * @return this builder
@@ -86,21 +86,21 @@ public final class ExtensionUserStateUser
             return this;
         }
         /**
-         * The previous successful login date
+         * The previous successful login date.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: request - type: dateTime -
-         * uniqueness: none
+         * - mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: false -
+         * returned: request - type: dateTime - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("previousSuccessfulLoginDate")
         private String previousSuccessfulLoginDate;
 
         /**
-         * The previous successful login date
+         * The previous successful login date.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: request - type: dateTime -
-         * uniqueness: none
+         * - mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: false -
+         * returned: request - type: dateTime - uniqueness: none
          *
          * @param previousSuccessfulLoginDate the value to set
          * @return this builder
@@ -111,21 +111,21 @@ public final class ExtensionUserStateUser
             return this;
         }
         /**
-         * The last failed login date
+         * The last failed login date.
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsAllowUpdatesInReadOnlyMode: true -
-         * multiValued: false - mutability: readOnly - required: false - returned: request - type:
-         * dateTime - uniqueness: none
+         * multiValued: false - mutability: readOnly - idcsRequiresWriteForAccessFlows: true -
+         * required: false - returned: request - type: dateTime - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("lastFailedLoginDate")
         private String lastFailedLoginDate;
 
         /**
-         * The last failed login date
+         * The last failed login date.
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsAllowUpdatesInReadOnlyMode: true -
-         * multiValued: false - mutability: readOnly - required: false - returned: request - type:
-         * dateTime - uniqueness: none
+         * multiValued: false - mutability: readOnly - idcsRequiresWriteForAccessFlows: true -
+         * required: false - returned: request - type: dateTime - uniqueness: none
          *
          * @param lastFailedLoginDate the value to set
          * @return this builder
@@ -139,8 +139,9 @@ public final class ExtensionUserStateUser
          * The number of failed login attempts. The value is reset to 0 after a successful login.
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsAllowUpdatesInReadOnlyMode: true -
-         * multiValued: false - mutability: readOnly - required: false - returned: request - type:
-         * integer - uniqueness: none
+         * multiValued: false - mutability: readOnly - idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true - required: false - returned:
+         * request - type: integer - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("loginAttempts")
         private Integer loginAttempts;
@@ -149,8 +150,9 @@ public final class ExtensionUserStateUser
          * The number of failed login attempts. The value is reset to 0 after a successful login.
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsAllowUpdatesInReadOnlyMode: true -
-         * multiValued: false - mutability: readOnly - required: false - returned: request - type:
-         * integer - uniqueness: none
+         * multiValued: false - mutability: readOnly - idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true - required: false - returned:
+         * request - type: integer - uniqueness: none
          *
          * @param loginAttempts the value to set
          * @return this builder
@@ -166,7 +168,8 @@ public final class ExtensionUserStateUser
          * <p>*Added In:** 19.1.4
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: request - type: integer - uniqueness: none
+         * readOnly - idcsRequiresWriteForAccessFlows: true - required: false - returned: request -
+         * type: integer - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("recoveryAttempts")
         private Integer recoveryAttempts;
@@ -177,7 +180,8 @@ public final class ExtensionUserStateUser
          * <p>*Added In:** 19.1.4
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: request - type: integer - uniqueness: none
+         * readOnly - idcsRequiresWriteForAccessFlows: true - required: false - returned: request -
+         * type: integer - uniqueness: none
          *
          * @param recoveryAttempts the value to set
          * @return this builder
@@ -215,7 +219,7 @@ public final class ExtensionUserStateUser
             return this;
         }
         /**
-         * Maximum number of concurrent sessions for a User
+         * The maximum number of concurrent sessions for a user.
          *
          * <p>*Added In:** 20.1.3
          *
@@ -227,7 +231,7 @@ public final class ExtensionUserStateUser
         private Integer maxConcurrentSessions;
 
         /**
-         * Maximum number of concurrent sessions for a User
+         * The maximum number of concurrent sessions for a user.
          *
          * <p>*Added In:** 20.1.3
          *
@@ -326,21 +330,21 @@ public final class ExtensionUserStateUser
     }
 
     /**
-     * The last successful login date
+     * The last successful login date.
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: true - idcsAllowUpdatesInReadOnlyMode: true -
-     * multiValued: false - mutability: readOnly - required: false - returned: request - type:
-     * dateTime - uniqueness: none
+     * multiValued: false - mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required:
+     * false - returned: request - type: dateTime - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lastSuccessfulLoginDate")
     private final String lastSuccessfulLoginDate;
 
     /**
-     * The last successful login date
+     * The last successful login date.
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: true - idcsAllowUpdatesInReadOnlyMode: true -
-     * multiValued: false - mutability: readOnly - required: false - returned: request - type:
-     * dateTime - uniqueness: none
+     * multiValued: false - mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required:
+     * false - returned: request - type: dateTime - uniqueness: none
      *
      * @return the value
      */
@@ -349,21 +353,21 @@ public final class ExtensionUserStateUser
     }
 
     /**
-     * The previous successful login date
+     * The previous successful login date.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: request - type: dateTime - uniqueness:
-     * none
+     * mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: false - returned:
+     * request - type: dateTime - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("previousSuccessfulLoginDate")
     private final String previousSuccessfulLoginDate;
 
     /**
-     * The previous successful login date
+     * The previous successful login date.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: request - type: dateTime - uniqueness:
-     * none
+     * mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: false - returned:
+     * request - type: dateTime - uniqueness: none
      *
      * @return the value
      */
@@ -372,21 +376,21 @@ public final class ExtensionUserStateUser
     }
 
     /**
-     * The last failed login date
+     * The last failed login date.
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsAllowUpdatesInReadOnlyMode: true -
-     * multiValued: false - mutability: readOnly - required: false - returned: request - type:
-     * dateTime - uniqueness: none
+     * multiValued: false - mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required:
+     * false - returned: request - type: dateTime - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lastFailedLoginDate")
     private final String lastFailedLoginDate;
 
     /**
-     * The last failed login date
+     * The last failed login date.
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsAllowUpdatesInReadOnlyMode: true -
-     * multiValued: false - mutability: readOnly - required: false - returned: request - type:
-     * dateTime - uniqueness: none
+     * multiValued: false - mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required:
+     * false - returned: request - type: dateTime - uniqueness: none
      *
      * @return the value
      */
@@ -398,8 +402,9 @@ public final class ExtensionUserStateUser
      * The number of failed login attempts. The value is reset to 0 after a successful login.
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsAllowUpdatesInReadOnlyMode: true -
-     * multiValued: false - mutability: readOnly - required: false - returned: request - type:
-     * integer - uniqueness: none
+     * multiValued: false - mutability: readOnly - idcsRequiresWriteForAccessFlows: true -
+     * idcsRequiresImmediateReadAfterWriteForAccessFlows: true - required: false - returned: request
+     * - type: integer - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("loginAttempts")
     private final Integer loginAttempts;
@@ -408,8 +413,9 @@ public final class ExtensionUserStateUser
      * The number of failed login attempts. The value is reset to 0 after a successful login.
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsAllowUpdatesInReadOnlyMode: true -
-     * multiValued: false - mutability: readOnly - required: false - returned: request - type:
-     * integer - uniqueness: none
+     * multiValued: false - mutability: readOnly - idcsRequiresWriteForAccessFlows: true -
+     * idcsRequiresImmediateReadAfterWriteForAccessFlows: true - required: false - returned: request
+     * - type: integer - uniqueness: none
      *
      * @return the value
      */
@@ -423,7 +429,8 @@ public final class ExtensionUserStateUser
      * <p>*Added In:** 19.1.4
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: request - type: integer - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - required: false - returned: request - type: integer
+     * - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("recoveryAttempts")
     private final Integer recoveryAttempts;
@@ -434,7 +441,8 @@ public final class ExtensionUserStateUser
      * <p>*Added In:** 19.1.4
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: request - type: integer - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - required: false - returned: request - type: integer
+     * - uniqueness: none
      *
      * @return the value
      */
@@ -468,7 +476,7 @@ public final class ExtensionUserStateUser
     }
 
     /**
-     * Maximum number of concurrent sessions for a User
+     * The maximum number of concurrent sessions for a user.
      *
      * <p>*Added In:** 20.1.3
      *
@@ -480,7 +488,7 @@ public final class ExtensionUserStateUser
     private final Integer maxConcurrentSessions;
 
     /**
-     * Maximum number of concurrent sessions for a User
+     * The maximum number of concurrent sessions for a user.
      *
      * <p>*Added In:** 20.1.3
      *

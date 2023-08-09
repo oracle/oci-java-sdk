@@ -5,7 +5,7 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Schema to handle userpassword reset by administrator. <br>
+ * The schema used to handle a user password reset by an administrator. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -434,8 +434,7 @@ public final class UserPasswordResetter
             return this;
         }
         /**
-         * A Boolean value indicating whether or not to send email notification after resetting the
-         * password of the OCI IAM user.
+         * Indicates whether to send an email notification after resetting the user's password.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
          * - mutability: immutable - required: false - returned: never - type: boolean - uniqueness:
@@ -445,8 +444,7 @@ public final class UserPasswordResetter
         private Boolean bypassNotification;
 
         /**
-         * A Boolean value indicating whether or not to send email notification after resetting the
-         * password of the OCI IAM user.
+         * Indicates whether to send an email notification after resetting the user's password.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
          * - mutability: immutable - required: false - returned: never - type: boolean - uniqueness:
@@ -498,8 +496,8 @@ public final class UserPasswordResetter
             return this;
         }
         /**
-         * Specifies the EmailTemplate to be used when sending notification to the user this request
-         * is for. If specified, it overrides the default EmailTemplate for this event.
+         * Specifies the EmailTemplate to be used when sending notifications to the user. If
+         * specified, it overrides the default EmailTemplate.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
          * - mutability: writeOnly - required: false - returned: never - type: string - uniqueness:
@@ -509,8 +507,8 @@ public final class UserPasswordResetter
         private String notificationEmailTemplateId;
 
         /**
-         * Specifies the EmailTemplate to be used when sending notification to the user this request
-         * is for. If specified, it overrides the default EmailTemplate for this event.
+         * Specifies the EmailTemplate to be used when sending notifications to the user. If
+         * specified, it overrides the default EmailTemplate.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
          * - mutability: writeOnly - required: false - returned: never - type: string - uniqueness:
@@ -525,7 +523,7 @@ public final class UserPasswordResetter
             return this;
         }
         /**
-         * One time password will be returned when user does not have primary email address
+         * A one time password will be returned when the user doesn't have a primary email address.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
          * - mutability: readOnly - required: false - returned: request - type: string - uniqueness:
@@ -535,7 +533,7 @@ public final class UserPasswordResetter
         private String oneTimePassword;
 
         /**
-         * One time password will be returned when user does not have primary email address
+         * A one time password will be returned when the user doesn't have a primary email address.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
          * - mutability: readOnly - required: false - returned: request - type: string - uniqueness:
@@ -971,8 +969,7 @@ public final class UserPasswordResetter
     }
 
     /**
-     * A Boolean value indicating whether or not to send email notification after resetting the
-     * password of the OCI IAM user.
+     * Indicates whether to send an email notification after resetting the user's password.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
      * mutability: immutable - required: false - returned: never - type: boolean - uniqueness: none
@@ -981,8 +978,7 @@ public final class UserPasswordResetter
     private final Boolean bypassNotification;
 
     /**
-     * A Boolean value indicating whether or not to send email notification after resetting the
-     * password of the OCI IAM user.
+     * Indicates whether to send an email notification after resetting the user's password.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
      * mutability: immutable - required: false - returned: never - type: boolean - uniqueness: none
@@ -1026,8 +1022,8 @@ public final class UserPasswordResetter
     }
 
     /**
-     * Specifies the EmailTemplate to be used when sending notification to the user this request is
-     * for. If specified, it overrides the default EmailTemplate for this event.
+     * Specifies the EmailTemplate to be used when sending notifications to the user. If specified,
+     * it overrides the default EmailTemplate.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
      * mutability: writeOnly - required: false - returned: never - type: string - uniqueness: none
@@ -1036,8 +1032,8 @@ public final class UserPasswordResetter
     private final String notificationEmailTemplateId;
 
     /**
-     * Specifies the EmailTemplate to be used when sending notification to the user this request is
-     * for. If specified, it overrides the default EmailTemplate for this event.
+     * Specifies the EmailTemplate to be used when sending notifications to the user. If specified,
+     * it overrides the default EmailTemplate.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
      * mutability: writeOnly - required: false - returned: never - type: string - uniqueness: none
@@ -1049,7 +1045,7 @@ public final class UserPasswordResetter
     }
 
     /**
-     * One time password will be returned when user does not have primary email address
+     * A one time password will be returned when the user doesn't have a primary email address.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
      * mutability: readOnly - required: false - returned: request - type: string - uniqueness: none
@@ -1058,7 +1054,7 @@ public final class UserPasswordResetter
     private final String oneTimePassword;
 
     /**
-     * One time password will be returned when user does not have primary email address
+     * A one time password will be returned when the user doesn't have a primary email address.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
      * mutability: readOnly - required: false - returned: request - type: string - uniqueness: none

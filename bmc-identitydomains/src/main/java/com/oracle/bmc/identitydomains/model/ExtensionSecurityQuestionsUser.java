@@ -5,7 +5,7 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * This extension defines attributes used to store Security Questions of User. <br>
+ * This extension defines the attributes used to store the security questions of a user. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,8 +32,9 @@ public final class ExtensionSecurityQuestionsUser
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Security question and answers provided by end-user for Account recovery and/or MFA. While
-         * setting up security questions, end-user can also provide hint along with answer.
+         * The schema used to mnage security question and answers provided by a user for account
+         * recovery and/or MFA. While setting up security questions, a user can also provide a hint
+         * for the answer.
          *
          * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
          * readWrite - required: false - returned: request - type: complex - uniqueness: none
@@ -42,8 +43,9 @@ public final class ExtensionSecurityQuestionsUser
         private java.util.List<UserExtSecQuestions> secQuestions;
 
         /**
-         * Security question and answers provided by end-user for Account recovery and/or MFA. While
-         * setting up security questions, end-user can also provide hint along with answer.
+         * The schema used to mnage security question and answers provided by a user for account
+         * recovery and/or MFA. While setting up security questions, a user can also provide a hint
+         * for the answer.
          *
          * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
          * readWrite - required: false - returned: request - type: complex - uniqueness: none
@@ -88,8 +90,9 @@ public final class ExtensionSecurityQuestionsUser
     }
 
     /**
-     * Security question and answers provided by end-user for Account recovery and/or MFA. While
-     * setting up security questions, end-user can also provide hint along with answer.
+     * The schema used to mnage security question and answers provided by a user for account
+     * recovery and/or MFA. While setting up security questions, a user can also provide a hint for
+     * the answer.
      *
      * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
      * readWrite - required: false - returned: request - type: complex - uniqueness: none
@@ -98,8 +101,9 @@ public final class ExtensionSecurityQuestionsUser
     private final java.util.List<UserExtSecQuestions> secQuestions;
 
     /**
-     * Security question and answers provided by end-user for Account recovery and/or MFA. While
-     * setting up security questions, end-user can also provide hint along with answer.
+     * The schema used to mnage security question and answers provided by a user for account
+     * recovery and/or MFA. While setting up security questions, a user can also provide a hint for
+     * the answer.
      *
      * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
      * readWrite - required: false - returned: request - type: complex - uniqueness: none

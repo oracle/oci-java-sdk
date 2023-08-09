@@ -33,6 +33,8 @@ public final class CreateSubnetDetails
         "dnsLabel",
         "freeformTags",
         "ipv6CidrBlock",
+        "ipv6CidrBlocks",
+        "prohibitInternetIngress",
         "prohibitPublicIpOnVnic",
         "routeTableId",
         "securityListIds",
@@ -48,6 +50,8 @@ public final class CreateSubnetDetails
             String dnsLabel,
             java.util.Map<String, String> freeformTags,
             String ipv6CidrBlock,
+            java.util.List<String> ipv6CidrBlocks,
+            Boolean prohibitInternetIngress,
             Boolean prohibitPublicIpOnVnic,
             String routeTableId,
             java.util.List<String> securityListIds,
@@ -62,6 +66,8 @@ public final class CreateSubnetDetails
         this.dnsLabel = dnsLabel;
         this.freeformTags = freeformTags;
         this.ipv6CidrBlock = ipv6CidrBlock;
+        this.ipv6CidrBlocks = ipv6CidrBlocks;
+        this.prohibitInternetIngress = prohibitInternetIngress;
         this.prohibitPublicIpOnVnic = prohibitPublicIpOnVnic;
         this.routeTableId = routeTableId;
         this.securityListIds = securityListIds;
@@ -71,7 +77,18 @@ public final class CreateSubnetDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The availability domain to contain the subnet.
+         * Controls whether the subnet is regional or specific to an availability domain. Oracle
+         * recommends creating regional subnets because they're more flexible and make it easier to
+         * implement failover across availability domains. Originally, AD-specific subnets were the
+         * only kind available to use.
+         *
+         * <p>To create a regional subnet, omit this attribute. Then any resources later created in
+         * this subnet (such as a Compute instance) can be created in any availability domain in the
+         * region.
+         *
+         * <p>To instead create an AD-specific subnet, set this attribute to the availability domain
+         * you want this subnet to be in. Then any resources later created in this subnet can only
+         * be created in that availability domain.
          *
          * <p>Example: {@code Uocm:PHX-AD-1}
          */
@@ -79,7 +96,18 @@ public final class CreateSubnetDetails
         private String availabilityDomain;
 
         /**
-         * The availability domain to contain the subnet.
+         * Controls whether the subnet is regional or specific to an availability domain. Oracle
+         * recommends creating regional subnets because they're more flexible and make it easier to
+         * implement failover across availability domains. Originally, AD-specific subnets were the
+         * only kind available to use.
+         *
+         * <p>To create a regional subnet, omit this attribute. Then any resources later created in
+         * this subnet (such as a Compute instance) can be created in any availability domain in the
+         * region.
+         *
+         * <p>To instead create an AD-specific subnet, set this attribute to the availability domain
+         * you want this subnet to be in. Then any resources later created in this subnet can only
+         * be created in that availability domain.
          *
          * <p>Example: {@code Uocm:PHX-AD-1}
          *
@@ -200,7 +228,7 @@ public final class CreateSubnetDetails
         /**
          * A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS
          * label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for
-         * example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric
+         * example, {@code bminstance1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric
          * string that begins with a letter and is unique within the VCN. The value cannot be
          * changed.
          *
@@ -219,7 +247,7 @@ public final class CreateSubnetDetails
         /**
          * A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS
          * label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for
-         * example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric
+         * example, {@code bminstance1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric
          * string that begins with a letter and is unique within the VCN. The value cannot be
          * changed.
          *
@@ -293,6 +321,70 @@ public final class CreateSubnetDetails
             return this;
         }
         /**
+         * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR
+         * blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria: - The CIDR
+         * blocks must be valid. - Multiple CIDR blocks must not overlap each other or the
+         * on-premises network CIDR block. - The number of CIDR blocks must not exceed the limit of
+         * IPv6 CIDR blocks allowed to a subnet.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
+        private java.util.List<String> ipv6CidrBlocks;
+
+        /**
+         * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR
+         * blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria: - The CIDR
+         * blocks must be valid. - Multiple CIDR blocks must not overlap each other or the
+         * on-premises network CIDR block. - The number of CIDR blocks must not exceed the limit of
+         * IPv6 CIDR blocks allowed to a subnet.
+         *
+         * @param ipv6CidrBlocks the value to set
+         * @return this builder
+         */
+        public Builder ipv6CidrBlocks(java.util.List<String> ipv6CidrBlocks) {
+            this.ipv6CidrBlocks = ipv6CidrBlocks;
+            this.__explicitlySet__.add("ipv6CidrBlocks");
+            return this;
+        }
+        /**
+         * Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to
+         * false.
+         *
+         * <p>For IPv6, if {@code prohibitInternetIngress} is set to {@code true}, internet access
+         * is not allowed for any IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet
+         * traffic is allowed by default.
+         *
+         * <p>{@code prohibitPublicIpOnVnic} will be set to the value of {@code
+         * prohibitInternetIngress} to dictate IPv4 behavior in this subnet. Only one or the other
+         * flag should be specified.
+         *
+         * <p>Example: {@code true}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("prohibitInternetIngress")
+        private Boolean prohibitInternetIngress;
+
+        /**
+         * Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to
+         * false.
+         *
+         * <p>For IPv6, if {@code prohibitInternetIngress} is set to {@code true}, internet access
+         * is not allowed for any IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet
+         * traffic is allowed by default.
+         *
+         * <p>{@code prohibitPublicIpOnVnic} will be set to the value of {@code
+         * prohibitInternetIngress} to dictate IPv4 behavior in this subnet. Only one or the other
+         * flag should be specified.
+         *
+         * <p>Example: {@code true}
+         *
+         * @param prohibitInternetIngress the value to set
+         * @return this builder
+         */
+        public Builder prohibitInternetIngress(Boolean prohibitInternetIngress) {
+            this.prohibitInternetIngress = prohibitInternetIngress;
+            this.__explicitlySet__.add("prohibitInternetIngress");
+            return this;
+        }
+        /**
          * Whether VNICs within this subnet can have public IP addresses. Defaults to false, which
          * means VNICs created in this subnet will automatically be assigned public IP addresses
          * unless specified otherwise during instance launch or VNIC creation (with the {@code
@@ -300,8 +392,8 @@ public final class CreateSubnetDetails
          * set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's
          * a private subnet).
          *
-         * <p>For IPv6, if {@code prohibitPublicIpOnVnic} is set to {@code true}, internet access is
-         * not allowed for any IPv6s assigned to VNICs in the subnet.
+         * <p>If you intend to use an IPv6 CIDR block, you should use the flag {@code
+         * prohibitInternetIngress} to specify ingress internet traffic behavior of the subnet.
          *
          * <p>Example: {@code true}
          */
@@ -316,8 +408,8 @@ public final class CreateSubnetDetails
          * set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's
          * a private subnet).
          *
-         * <p>For IPv6, if {@code prohibitPublicIpOnVnic} is set to {@code true}, internet access is
-         * not allowed for any IPv6s assigned to VNICs in the subnet.
+         * <p>If you intend to use an IPv6 CIDR block, you should use the flag {@code
+         * prohibitInternetIngress} to specify ingress internet traffic behavior of the subnet.
          *
          * <p>Example: {@code true}
          *
@@ -408,6 +500,8 @@ public final class CreateSubnetDetails
                             this.dnsLabel,
                             this.freeformTags,
                             this.ipv6CidrBlock,
+                            this.ipv6CidrBlocks,
+                            this.prohibitInternetIngress,
                             this.prohibitPublicIpOnVnic,
                             this.routeTableId,
                             this.securityListIds,
@@ -447,6 +541,12 @@ public final class CreateSubnetDetails
             if (model.wasPropertyExplicitlySet("ipv6CidrBlock")) {
                 this.ipv6CidrBlock(model.getIpv6CidrBlock());
             }
+            if (model.wasPropertyExplicitlySet("ipv6CidrBlocks")) {
+                this.ipv6CidrBlocks(model.getIpv6CidrBlocks());
+            }
+            if (model.wasPropertyExplicitlySet("prohibitInternetIngress")) {
+                this.prohibitInternetIngress(model.getProhibitInternetIngress());
+            }
             if (model.wasPropertyExplicitlySet("prohibitPublicIpOnVnic")) {
                 this.prohibitPublicIpOnVnic(model.getProhibitPublicIpOnVnic());
             }
@@ -473,7 +573,17 @@ public final class CreateSubnetDetails
     }
 
     /**
-     * The availability domain to contain the subnet.
+     * Controls whether the subnet is regional or specific to an availability domain. Oracle
+     * recommends creating regional subnets because they're more flexible and make it easier to
+     * implement failover across availability domains. Originally, AD-specific subnets were the only
+     * kind available to use.
+     *
+     * <p>To create a regional subnet, omit this attribute. Then any resources later created in this
+     * subnet (such as a Compute instance) can be created in any availability domain in the region.
+     *
+     * <p>To instead create an AD-specific subnet, set this attribute to the availability domain you
+     * want this subnet to be in. Then any resources later created in this subnet can only be
+     * created in that availability domain.
      *
      * <p>Example: {@code Uocm:PHX-AD-1}
      */
@@ -481,7 +591,17 @@ public final class CreateSubnetDetails
     private final String availabilityDomain;
 
     /**
-     * The availability domain to contain the subnet.
+     * Controls whether the subnet is regional or specific to an availability domain. Oracle
+     * recommends creating regional subnets because they're more flexible and make it easier to
+     * implement failover across availability domains. Originally, AD-specific subnets were the only
+     * kind available to use.
+     *
+     * <p>To create a regional subnet, omit this attribute. Then any resources later created in this
+     * subnet (such as a Compute instance) can be created in any availability domain in the region.
+     *
+     * <p>To instead create an AD-specific subnet, set this attribute to the availability domain you
+     * want this subnet to be in. Then any resources later created in this subnet can only be
+     * created in that availability domain.
      *
      * <p>Example: {@code Uocm:PHX-AD-1}
      *
@@ -589,8 +709,8 @@ public final class CreateSubnetDetails
     /**
      * A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label
      * to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example,
-     * {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric string that
-     * begins with a letter and is unique within the VCN. The value cannot be changed.
+     * {@code bminstance1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric string that begins
+     * with a letter and is unique within the VCN. The value cannot be changed.
      *
      * <p>This value must be set if you want to use the Internet and VCN Resolver to resolve the
      * hostnames of instances in the subnet. It can only be set if the VCN itself was created with a
@@ -607,8 +727,8 @@ public final class CreateSubnetDetails
     /**
      * A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label
      * to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example,
-     * {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric string that
-     * begins with a letter and is unique within the VCN. The value cannot be changed.
+     * {@code bminstance1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric string that begins
+     * with a letter and is unique within the VCN. The value cannot be changed.
      *
      * <p>This value must be set if you want to use the Internet and VCN Resolver to resolve the
      * hostnames of instances in the subnet. It can only be set if the VCN itself was created with a
@@ -674,14 +794,70 @@ public final class CreateSubnetDetails
     }
 
     /**
+     * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks,
+     * BYOIPv6 CIDR blocks) for the subnet that meets the following criteria: - The CIDR blocks must
+     * be valid. - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR
+     * block. - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a
+     * subnet.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
+    private final java.util.List<String> ipv6CidrBlocks;
+
+    /**
+     * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks,
+     * BYOIPv6 CIDR blocks) for the subnet that meets the following criteria: - The CIDR blocks must
+     * be valid. - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR
+     * block. - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a
+     * subnet.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getIpv6CidrBlocks() {
+        return ipv6CidrBlocks;
+    }
+
+    /**
+     * Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
+     *
+     * <p>For IPv6, if {@code prohibitInternetIngress} is set to {@code true}, internet access is
+     * not allowed for any IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet
+     * traffic is allowed by default.
+     *
+     * <p>{@code prohibitPublicIpOnVnic} will be set to the value of {@code prohibitInternetIngress}
+     * to dictate IPv4 behavior in this subnet. Only one or the other flag should be specified.
+     *
+     * <p>Example: {@code true}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("prohibitInternetIngress")
+    private final Boolean prohibitInternetIngress;
+
+    /**
+     * Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
+     *
+     * <p>For IPv6, if {@code prohibitInternetIngress} is set to {@code true}, internet access is
+     * not allowed for any IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet
+     * traffic is allowed by default.
+     *
+     * <p>{@code prohibitPublicIpOnVnic} will be set to the value of {@code prohibitInternetIngress}
+     * to dictate IPv4 behavior in this subnet. Only one or the other flag should be specified.
+     *
+     * <p>Example: {@code true}
+     *
+     * @return the value
+     */
+    public Boolean getProhibitInternetIngress() {
+        return prohibitInternetIngress;
+    }
+
+    /**
      * Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means
      * VNICs created in this subnet will automatically be assigned public IP addresses unless
      * specified otherwise during instance launch or VNIC creation (with the {@code assignPublicIp}
      * flag in {@link CreateVnicDetails}). If {@code prohibitPublicIpOnVnic} is set to true, VNICs
      * created in this subnet cannot have public IP addresses (that is, it's a private subnet).
      *
-     * <p>For IPv6, if {@code prohibitPublicIpOnVnic} is set to {@code true}, internet access is not
-     * allowed for any IPv6s assigned to VNICs in the subnet.
+     * <p>If you intend to use an IPv6 CIDR block, you should use the flag {@code
+     * prohibitInternetIngress} to specify ingress internet traffic behavior of the subnet.
      *
      * <p>Example: {@code true}
      */
@@ -695,8 +871,8 @@ public final class CreateSubnetDetails
      * flag in {@link CreateVnicDetails}). If {@code prohibitPublicIpOnVnic} is set to true, VNICs
      * created in this subnet cannot have public IP addresses (that is, it's a private subnet).
      *
-     * <p>For IPv6, if {@code prohibitPublicIpOnVnic} is set to {@code true}, internet access is not
-     * allowed for any IPv6s assigned to VNICs in the subnet.
+     * <p>If you intend to use an IPv6 CIDR block, you should use the flag {@code
+     * prohibitInternetIngress} to specify ingress internet traffic behavior of the subnet.
      *
      * <p>Example: {@code true}
      *
@@ -785,6 +961,9 @@ public final class CreateSubnetDetails
         sb.append(", dnsLabel=").append(String.valueOf(this.dnsLabel));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", ipv6CidrBlock=").append(String.valueOf(this.ipv6CidrBlock));
+        sb.append(", ipv6CidrBlocks=").append(String.valueOf(this.ipv6CidrBlocks));
+        sb.append(", prohibitInternetIngress=")
+                .append(String.valueOf(this.prohibitInternetIngress));
         sb.append(", prohibitPublicIpOnVnic=").append(String.valueOf(this.prohibitPublicIpOnVnic));
         sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(", securityListIds=").append(String.valueOf(this.securityListIds));
@@ -812,6 +991,9 @@ public final class CreateSubnetDetails
                 && java.util.Objects.equals(this.dnsLabel, other.dnsLabel)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.ipv6CidrBlock, other.ipv6CidrBlock)
+                && java.util.Objects.equals(this.ipv6CidrBlocks, other.ipv6CidrBlocks)
+                && java.util.Objects.equals(
+                        this.prohibitInternetIngress, other.prohibitInternetIngress)
                 && java.util.Objects.equals(
                         this.prohibitPublicIpOnVnic, other.prohibitPublicIpOnVnic)
                 && java.util.Objects.equals(this.routeTableId, other.routeTableId)
@@ -843,6 +1025,14 @@ public final class CreateSubnetDetails
         result =
                 (result * PRIME)
                         + (this.ipv6CidrBlock == null ? 43 : this.ipv6CidrBlock.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ipv6CidrBlocks == null ? 43 : this.ipv6CidrBlocks.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.prohibitInternetIngress == null
+                                ? 43
+                                : this.prohibitInternetIngress.hashCode());
         result =
                 (result * PRIME)
                         + (this.prohibitPublicIpOnVnic == null

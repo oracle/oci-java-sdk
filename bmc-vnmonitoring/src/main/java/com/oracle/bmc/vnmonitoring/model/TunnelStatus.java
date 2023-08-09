@@ -5,7 +5,7 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * Specific connection details for an IPSec tunnel. <br>
+ * Deprecated. For tunnel information, instead see {@link IPSecConnectionTunnel}. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -191,6 +191,7 @@ public final class TunnelStatus extends com.oracle.bmc.http.client.internal.Expl
         Up("UP"),
         Down("DOWN"),
         DownForMaintenance("DOWN_FOR_MAINTENANCE"),
+        PartialUp("PARTIAL_UP"),
         ;
 
         private final String value;

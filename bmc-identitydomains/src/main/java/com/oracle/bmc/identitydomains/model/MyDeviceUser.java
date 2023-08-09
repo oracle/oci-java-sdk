@@ -45,7 +45,8 @@ public final class MyDeviceUser extends com.oracle.bmc.http.client.internal.Expl
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: immutable - required: true - returned: always - type: string - uniqueness:
-         * none
+         * none - idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
@@ -57,7 +58,8 @@ public final class MyDeviceUser extends com.oracle.bmc.http.client.internal.Expl
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: immutable - required: true - returned: always - type: string - uniqueness:
-         * none
+         * none - idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *
          * @param value the value to set
          * @return this builder
@@ -73,7 +75,9 @@ public final class MyDeviceUser extends com.oracle.bmc.http.client.internal.Expl
          * <p>*Deprecated Since: 17.3.4**
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: reference - uniqueness: none
+         * readOnly - required: false - returned: default - type: reference - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          */
         @com.fasterxml.jackson.annotation.JsonProperty("$ref")
         private String ref;
@@ -84,7 +88,9 @@ public final class MyDeviceUser extends com.oracle.bmc.http.client.internal.Expl
          * <p>*Deprecated Since: 17.3.4**
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: reference - uniqueness: none
+         * readOnly - required: false - returned: default - type: reference - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *
          * @param ref the value to set
          * @return this builder
@@ -130,7 +136,8 @@ public final class MyDeviceUser extends com.oracle.bmc.http.client.internal.Expl
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: false - returned: always - type: string - uniqueness:
-         * none
+         * none - idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          */
         @com.fasterxml.jackson.annotation.JsonProperty("ocid")
         private String ocid;
@@ -142,7 +149,8 @@ public final class MyDeviceUser extends com.oracle.bmc.http.client.internal.Expl
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: false - returned: always - type: string - uniqueness:
-         * none
+         * none - idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *
          * @param ocid the value to set
          * @return this builder
@@ -197,7 +205,9 @@ public final class MyDeviceUser extends com.oracle.bmc.http.client.internal.Expl
      * <p>*Deprecated Since: 17.3.4**
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: immutable - required: true - returned: always - type: string - uniqueness: none
+     * mutability: immutable - required: true - returned: always - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
@@ -208,7 +218,9 @@ public final class MyDeviceUser extends com.oracle.bmc.http.client.internal.Expl
      * <p>*Deprecated Since: 17.3.4**
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: immutable - required: true - returned: always - type: string - uniqueness: none
+     * mutability: immutable - required: true - returned: always - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      *
      * @return the value
      */
@@ -222,7 +234,9 @@ public final class MyDeviceUser extends com.oracle.bmc.http.client.internal.Expl
      * <p>*Deprecated Since: 17.3.4**
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: reference - uniqueness: none
+     * - required: false - returned: default - type: reference - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     @com.fasterxml.jackson.annotation.JsonProperty("$ref")
     private final String ref;
@@ -233,7 +247,9 @@ public final class MyDeviceUser extends com.oracle.bmc.http.client.internal.Expl
      * <p>*Deprecated Since: 17.3.4**
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: reference - uniqueness: none
+     * - required: false - returned: default - type: reference - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      *
      * @return the value
      */
@@ -273,6 +289,8 @@ public final class MyDeviceUser extends com.oracle.bmc.http.client.internal.Expl
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: false - returned: always - type: string - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     @com.fasterxml.jackson.annotation.JsonProperty("ocid")
     private final String ocid;
@@ -284,6 +302,8 @@ public final class MyDeviceUser extends com.oracle.bmc.http.client.internal.Expl
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: false - returned: always - type: string - uniqueness: none
+     * - idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      *
      * @return the value
      */

@@ -5,7 +5,7 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * User linked to auth token
+ * The user linked to the Auth token.
  *
  * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
  * mutability: immutable - required: false - returned: default - type: complex - uniqueness: none
@@ -39,7 +39,7 @@ public final class MyAuthTokenUser
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * User's id
+         * The user's ID.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: immutable - required: false - returned: always - type: string - uniqueness:
@@ -49,7 +49,7 @@ public final class MyAuthTokenUser
         private String value;
 
         /**
-         * User's id
+         * The user's ID.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: immutable - required: false - returned: always - type: string - uniqueness:
@@ -64,7 +64,7 @@ public final class MyAuthTokenUser
             return this;
         }
         /**
-         * User's ocid
+         * The user's OCID.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: immutable - required: false - returned: always - type: string - uniqueness:
@@ -74,7 +74,7 @@ public final class MyAuthTokenUser
         private String ocid;
 
         /**
-         * User's ocid
+         * The user's OCID.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: immutable - required: false - returned: always - type: string - uniqueness:
@@ -114,7 +114,7 @@ public final class MyAuthTokenUser
             return this;
         }
         /**
-         * User display name
+         * The user's display name.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
@@ -124,7 +124,7 @@ public final class MyAuthTokenUser
         private String display;
 
         /**
-         * User display name
+         * The user's display name.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
@@ -139,7 +139,7 @@ public final class MyAuthTokenUser
             return this;
         }
         /**
-         * User name
+         * The username.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
@@ -149,7 +149,7 @@ public final class MyAuthTokenUser
         private String name;
 
         /**
-         * User name
+         * The username.
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
@@ -207,7 +207,7 @@ public final class MyAuthTokenUser
     }
 
     /**
-     * User's id
+     * The user's ID.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: immutable - required: false - returned: always - type: string - uniqueness: none
@@ -216,7 +216,7 @@ public final class MyAuthTokenUser
     private final String value;
 
     /**
-     * User's id
+     * The user's ID.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: immutable - required: false - returned: always - type: string - uniqueness: none
@@ -228,7 +228,7 @@ public final class MyAuthTokenUser
     }
 
     /**
-     * User's ocid
+     * The user's OCID.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: immutable - required: false - returned: always - type: string - uniqueness: none
@@ -237,7 +237,7 @@ public final class MyAuthTokenUser
     private final String ocid;
 
     /**
-     * User's ocid
+     * The user's OCID.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: immutable - required: false - returned: always - type: string - uniqueness: none
@@ -272,7 +272,7 @@ public final class MyAuthTokenUser
     }
 
     /**
-     * User display name
+     * The user's display name.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
@@ -281,7 +281,7 @@ public final class MyAuthTokenUser
     private final String display;
 
     /**
-     * User display name
+     * The user's display name.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
@@ -293,7 +293,7 @@ public final class MyAuthTokenUser
     }
 
     /**
-     * User name
+     * The username.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
@@ -302,7 +302,7 @@ public final class MyAuthTokenUser
     private final String name;
 
     /**
-     * User name
+     * The username.
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none

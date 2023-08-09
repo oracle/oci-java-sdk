@@ -1747,6 +1747,7 @@ public final class AuthenticationFactorSetting
         PhoneCall("PHONE_CALL"),
         Thirdparty("THIRDPARTY"),
         FidoAuthenticator("FIDO_AUTHENTICATOR"),
+        YubicoOtp("YUBICO_OTP"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

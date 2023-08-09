@@ -151,6 +151,7 @@ public class OperatorControlClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeOperatorControlCompartmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -181,6 +182,7 @@ public class OperatorControlClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", CreateOperatorControlResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateOperatorControlResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -207,6 +209,7 @@ public class OperatorControlClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteOperatorControlResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -234,6 +237,7 @@ public class OperatorControlClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", GetOperatorControlResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetOperatorControlResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -268,6 +272,7 @@ public class OperatorControlClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-request-id", ListOperatorControlsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListOperatorControlsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -301,6 +306,7 @@ public class OperatorControlClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", UpdateOperatorControlResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateOperatorControlResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 

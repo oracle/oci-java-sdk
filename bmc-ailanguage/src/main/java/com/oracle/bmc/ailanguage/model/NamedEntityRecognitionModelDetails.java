@@ -35,13 +35,32 @@ public final class NamedEntityRecognitionModelDetails extends ModelDetails {
             this.__explicitlySet__.add("languageCode");
             return this;
         }
+        /**
+         * Optional if nothing specified latest base model will be used for training. Supported
+         * versions can be found at /modelTypes/{modelType}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("version")
+        private String version;
+
+        /**
+         * Optional if nothing specified latest base model will be used for training. Supported
+         * versions can be found at /modelTypes/{modelType}
+         *
+         * @param version the value to set
+         * @return this builder
+         */
+        public Builder version(String version) {
+            this.version = version;
+            this.__explicitlySet__.add("version");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NamedEntityRecognitionModelDetails build() {
             NamedEntityRecognitionModelDetails model =
-                    new NamedEntityRecognitionModelDetails(this.languageCode);
+                    new NamedEntityRecognitionModelDetails(this.languageCode, this.version);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -52,6 +71,9 @@ public final class NamedEntityRecognitionModelDetails extends ModelDetails {
         public Builder copy(NamedEntityRecognitionModelDetails model) {
             if (model.wasPropertyExplicitlySet("languageCode")) {
                 this.languageCode(model.getLanguageCode());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
             }
             return this;
         }
@@ -67,8 +89,26 @@ public final class NamedEntityRecognitionModelDetails extends ModelDetails {
     }
 
     @Deprecated
-    public NamedEntityRecognitionModelDetails(String languageCode) {
+    public NamedEntityRecognitionModelDetails(String languageCode, String version) {
         super(languageCode);
+        this.version = version;
+    }
+
+    /**
+     * Optional if nothing specified latest base model will be used for training. Supported versions
+     * can be found at /modelTypes/{modelType}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("version")
+    private final String version;
+
+    /**
+     * Optional if nothing specified latest base model will be used for training. Supported versions
+     * can be found at /modelTypes/{modelType}
+     *
+     * @return the value
+     */
+    public String getVersion() {
+        return version;
     }
 
     @Override
@@ -86,6 +126,7 @@ public final class NamedEntityRecognitionModelDetails extends ModelDetails {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("NamedEntityRecognitionModelDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", version=").append(String.valueOf(this.version));
         sb.append(")");
         return sb.toString();
     }
@@ -100,13 +141,14 @@ public final class NamedEntityRecognitionModelDetails extends ModelDetails {
         }
 
         NamedEntityRecognitionModelDetails other = (NamedEntityRecognitionModelDetails) o;
-        return super.equals(other);
+        return java.util.Objects.equals(this.version, other.version) && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
         return result;
     }
 }

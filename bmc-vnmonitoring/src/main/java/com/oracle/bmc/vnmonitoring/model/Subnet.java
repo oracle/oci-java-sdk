@@ -42,9 +42,10 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
         "freeformTags",
         "id",
         "ipv6CidrBlock",
-        "ipv6PublicCidrBlock",
+        "ipv6CidrBlocks",
         "ipv6VirtualRouterIp",
         "lifecycleState",
+        "prohibitInternetIngress",
         "prohibitPublicIpOnVnic",
         "routeTableId",
         "securityListIds",
@@ -65,9 +66,10 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
             java.util.Map<String, String> freeformTags,
             String id,
             String ipv6CidrBlock,
-            String ipv6PublicCidrBlock,
+            java.util.List<String> ipv6CidrBlocks,
             String ipv6VirtualRouterIp,
             LifecycleState lifecycleState,
+            Boolean prohibitInternetIngress,
             Boolean prohibitPublicIpOnVnic,
             String routeTableId,
             java.util.List<String> securityListIds,
@@ -87,9 +89,10 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
         this.freeformTags = freeformTags;
         this.id = id;
         this.ipv6CidrBlock = ipv6CidrBlock;
-        this.ipv6PublicCidrBlock = ipv6PublicCidrBlock;
+        this.ipv6CidrBlocks = ipv6CidrBlocks;
         this.ipv6VirtualRouterIp = ipv6VirtualRouterIp;
         this.lifecycleState = lifecycleState;
+        this.prohibitInternetIngress = prohibitInternetIngress;
         this.prohibitPublicIpOnVnic = prohibitPublicIpOnVnic;
         this.routeTableId = routeTableId;
         this.securityListIds = securityListIds;
@@ -103,7 +106,8 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The subnet's availability domain.
+         * The subnet's availability domain. This attribute will be null if this is a regional
+         * subnet instead of an AD-specific subnet. Oracle recommends creating regional subnets.
          *
          * <p>Example: {@code Uocm:PHX-AD-1}
          */
@@ -111,7 +115,8 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
         private String availabilityDomain;
 
         /**
-         * The subnet's availability domain.
+         * The subnet's availability domain. This attribute will be null if this is a regional
+         * subnet instead of an AD-specific subnet. Oracle recommends creating regional subnets.
          *
          * <p>Example: {@code Uocm:PHX-AD-1}
          *
@@ -224,7 +229,7 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS
          * label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for
-         * example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric
+         * example, {@code bminstance1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric
          * string that begins with a letter and is unique within the VCN. The value cannot be
          * changed.
          *
@@ -242,7 +247,7 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS
          * label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for
-         * example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric
+         * example, {@code bminstance1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric
          * string that begins with a letter and is unique within the VCN. The value cannot be
          * changed.
          *
@@ -301,9 +306,8 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's private IP
-         * address space. The subnet size is always /64. IPv6 addressing is supported for all
-         * commercial and government regions. See [IPv6
+         * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's IP address
+         * space. The subnet size is always /64. See [IPv6
          * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          *
          * <p>Example: {@code 2001:0db8:0123:1111::/64}
@@ -312,9 +316,8 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
         private String ipv6CidrBlock;
 
         /**
-         * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's private IP
-         * address space. The subnet size is always /64. IPv6 addressing is supported for all
-         * commercial and government regions. See [IPv6
+         * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's IP address
+         * space. The subnet size is always /64. See [IPv6
          * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          *
          * <p>Example: {@code 2001:0db8:0123:1111::/64}
@@ -328,30 +331,22 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's public IP
-         * address space. The subnet size is always /64. The left 48 bits are inherited from the
-         * {@code ipv6PublicCidrBlock} of the {@link Vcn}, and the remaining 16 bits are from the
-         * subnet's {@code ipv6CidrBlock}.
-         *
-         * <p>Example: {@code 2001:0db8:0123:1111::/64}
+         * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR
+         * blocks, BYOIPv6 CIDR blocks) for the subnet.
          */
-        @com.fasterxml.jackson.annotation.JsonProperty("ipv6PublicCidrBlock")
-        private String ipv6PublicCidrBlock;
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
+        private java.util.List<String> ipv6CidrBlocks;
 
         /**
-         * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's public IP
-         * address space. The subnet size is always /64. The left 48 bits are inherited from the
-         * {@code ipv6PublicCidrBlock} of the {@link Vcn}, and the remaining 16 bits are from the
-         * subnet's {@code ipv6CidrBlock}.
+         * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR
+         * blocks, BYOIPv6 CIDR blocks) for the subnet.
          *
-         * <p>Example: {@code 2001:0db8:0123:1111::/64}
-         *
-         * @param ipv6PublicCidrBlock the value to set
+         * @param ipv6CidrBlocks the value to set
          * @return this builder
          */
-        public Builder ipv6PublicCidrBlock(String ipv6PublicCidrBlock) {
-            this.ipv6PublicCidrBlock = ipv6PublicCidrBlock;
-            this.__explicitlySet__.add("ipv6PublicCidrBlock");
+        public Builder ipv6CidrBlocks(java.util.List<String> ipv6CidrBlocks) {
+            this.ipv6CidrBlocks = ipv6CidrBlocks;
+            this.__explicitlySet__.add("ipv6CidrBlocks");
             return this;
         }
         /**
@@ -388,6 +383,51 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /**
+         * Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to
+         * false.
+         *
+         * <p>For IPV4, {@code prohibitInternetIngress} behaves similarly to {@code
+         * prohibitPublicIpOnVnic}. If it is set to false, VNICs created in this subnet will
+         * automatically be assigned public IP addresses unless specified otherwise during instance
+         * launch or VNIC creation (with the {@code assignPublicIp} flag in {@link
+         * CreateVnicDetails}). If {@code prohibitInternetIngress} is set to true, VNICs created in
+         * this subnet cannot have public IP addresses (that is, it's a privatesubnet).
+         *
+         * <p>For IPv6, if {@code prohibitInternetIngress} is set to {@code true}, internet access
+         * is not allowed for any IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet
+         * traffic is allowed by default.
+         *
+         * <p>Example: {@code true}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("prohibitInternetIngress")
+        private Boolean prohibitInternetIngress;
+
+        /**
+         * Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to
+         * false.
+         *
+         * <p>For IPV4, {@code prohibitInternetIngress} behaves similarly to {@code
+         * prohibitPublicIpOnVnic}. If it is set to false, VNICs created in this subnet will
+         * automatically be assigned public IP addresses unless specified otherwise during instance
+         * launch or VNIC creation (with the {@code assignPublicIp} flag in {@link
+         * CreateVnicDetails}). If {@code prohibitInternetIngress} is set to true, VNICs created in
+         * this subnet cannot have public IP addresses (that is, it's a privatesubnet).
+         *
+         * <p>For IPv6, if {@code prohibitInternetIngress} is set to {@code true}, internet access
+         * is not allowed for any IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet
+         * traffic is allowed by default.
+         *
+         * <p>Example: {@code true}
+         *
+         * @param prohibitInternetIngress the value to set
+         * @return this builder
+         */
+        public Builder prohibitInternetIngress(Boolean prohibitInternetIngress) {
+            this.prohibitInternetIngress = prohibitInternetIngress;
+            this.__explicitlySet__.add("prohibitInternetIngress");
             return this;
         }
         /**
@@ -591,9 +631,10 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
                             this.freeformTags,
                             this.id,
                             this.ipv6CidrBlock,
-                            this.ipv6PublicCidrBlock,
+                            this.ipv6CidrBlocks,
                             this.ipv6VirtualRouterIp,
                             this.lifecycleState,
+                            this.prohibitInternetIngress,
                             this.prohibitPublicIpOnVnic,
                             this.routeTableId,
                             this.securityListIds,
@@ -640,14 +681,17 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
             if (model.wasPropertyExplicitlySet("ipv6CidrBlock")) {
                 this.ipv6CidrBlock(model.getIpv6CidrBlock());
             }
-            if (model.wasPropertyExplicitlySet("ipv6PublicCidrBlock")) {
-                this.ipv6PublicCidrBlock(model.getIpv6PublicCidrBlock());
+            if (model.wasPropertyExplicitlySet("ipv6CidrBlocks")) {
+                this.ipv6CidrBlocks(model.getIpv6CidrBlocks());
             }
             if (model.wasPropertyExplicitlySet("ipv6VirtualRouterIp")) {
                 this.ipv6VirtualRouterIp(model.getIpv6VirtualRouterIp());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("prohibitInternetIngress")) {
+                this.prohibitInternetIngress(model.getProhibitInternetIngress());
             }
             if (model.wasPropertyExplicitlySet("prohibitPublicIpOnVnic")) {
                 this.prohibitPublicIpOnVnic(model.getProhibitPublicIpOnVnic());
@@ -687,7 +731,8 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The subnet's availability domain.
+     * The subnet's availability domain. This attribute will be null if this is a regional subnet
+     * instead of an AD-specific subnet. Oracle recommends creating regional subnets.
      *
      * <p>Example: {@code Uocm:PHX-AD-1}
      */
@@ -695,7 +740,8 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
     private final String availabilityDomain;
 
     /**
-     * The subnet's availability domain.
+     * The subnet's availability domain. This attribute will be null if this is a regional subnet
+     * instead of an AD-specific subnet. Oracle recommends creating regional subnets.
      *
      * <p>Example: {@code Uocm:PHX-AD-1}
      *
@@ -795,8 +841,8 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label
      * to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example,
-     * {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric string that
-     * begins with a letter and is unique within the VCN. The value cannot be changed.
+     * {@code bminstance1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric string that begins
+     * with a letter and is unique within the VCN. The value cannot be changed.
      *
      * <p>The absence of this parameter means the Internet and VCN Resolver will not resolve
      * hostnames of instances in this subnet.
@@ -812,8 +858,8 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label
      * to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example,
-     * {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric string that
-     * begins with a letter and is unique within the VCN. The value cannot be changed.
+     * {@code bminstance1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric string that begins
+     * with a letter and is unique within the VCN. The value cannot be changed.
      *
      * <p>The absence of this parameter means the Internet and VCN Resolver will not resolve
      * hostnames of instances in this subnet.
@@ -864,9 +910,8 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's private IP address
-     * space. The subnet size is always /64. IPv6 addressing is supported for all commercial and
-     * government regions. See [IPv6
+     * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's IP address space.
+     * The subnet size is always /64. See [IPv6
      * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      *
      * <p>Example: {@code 2001:0db8:0123:1111::/64}
@@ -875,9 +920,8 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
     private final String ipv6CidrBlock;
 
     /**
-     * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's private IP address
-     * space. The subnet size is always /64. IPv6 addressing is supported for all commercial and
-     * government regions. See [IPv6
+     * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's IP address space.
+     * The subnet size is always /64. See [IPv6
      * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      *
      * <p>Example: {@code 2001:0db8:0123:1111::/64}
@@ -889,28 +933,20 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's public IP address
-     * space. The subnet size is always /64. The left 48 bits are inherited from the {@code
-     * ipv6PublicCidrBlock} of the {@link Vcn}, and the remaining 16 bits are from the subnet's
-     * {@code ipv6CidrBlock}.
-     *
-     * <p>Example: {@code 2001:0db8:0123:1111::/64}
+     * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks,
+     * BYOIPv6 CIDR blocks) for the subnet.
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("ipv6PublicCidrBlock")
-    private final String ipv6PublicCidrBlock;
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
+    private final java.util.List<String> ipv6CidrBlocks;
 
     /**
-     * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's public IP address
-     * space. The subnet size is always /64. The left 48 bits are inherited from the {@code
-     * ipv6PublicCidrBlock} of the {@link Vcn}, and the remaining 16 bits are from the subnet's
-     * {@code ipv6CidrBlock}.
-     *
-     * <p>Example: {@code 2001:0db8:0123:1111::/64}
+     * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks,
+     * BYOIPv6 CIDR blocks) for the subnet.
      *
      * @return the value
      */
-    public String getIpv6PublicCidrBlock() {
-        return ipv6PublicCidrBlock;
+    public java.util.List<String> getIpv6CidrBlocks() {
+        return ipv6CidrBlocks;
     }
 
     /**
@@ -938,6 +974,7 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
         Available("AVAILABLE"),
         Terminating("TERMINATING"),
         Terminated("TERMINATED"),
+        Updating("UPDATING"),
         ;
 
         private final String value;
@@ -978,6 +1015,47 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
      */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
+    }
+
+    /**
+     * Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
+     *
+     * <p>For IPV4, {@code prohibitInternetIngress} behaves similarly to {@code
+     * prohibitPublicIpOnVnic}. If it is set to false, VNICs created in this subnet will
+     * automatically be assigned public IP addresses unless specified otherwise during instance
+     * launch or VNIC creation (with the {@code assignPublicIp} flag in {@link CreateVnicDetails}).
+     * If {@code prohibitInternetIngress} is set to true, VNICs created in this subnet cannot have
+     * public IP addresses (that is, it's a privatesubnet).
+     *
+     * <p>For IPv6, if {@code prohibitInternetIngress} is set to {@code true}, internet access is
+     * not allowed for any IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet
+     * traffic is allowed by default.
+     *
+     * <p>Example: {@code true}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("prohibitInternetIngress")
+    private final Boolean prohibitInternetIngress;
+
+    /**
+     * Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
+     *
+     * <p>For IPV4, {@code prohibitInternetIngress} behaves similarly to {@code
+     * prohibitPublicIpOnVnic}. If it is set to false, VNICs created in this subnet will
+     * automatically be assigned public IP addresses unless specified otherwise during instance
+     * launch or VNIC creation (with the {@code assignPublicIp} flag in {@link CreateVnicDetails}).
+     * If {@code prohibitInternetIngress} is set to true, VNICs created in this subnet cannot have
+     * public IP addresses (that is, it's a privatesubnet).
+     *
+     * <p>For IPv6, if {@code prohibitInternetIngress} is set to {@code true}, internet access is
+     * not allowed for any IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet
+     * traffic is allowed by default.
+     *
+     * <p>Example: {@code true}
+     *
+     * @return the value
+     */
+    public Boolean getProhibitInternetIngress() {
+        return prohibitInternetIngress;
     }
 
     /**
@@ -1171,9 +1249,11 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", ipv6CidrBlock=").append(String.valueOf(this.ipv6CidrBlock));
-        sb.append(", ipv6PublicCidrBlock=").append(String.valueOf(this.ipv6PublicCidrBlock));
+        sb.append(", ipv6CidrBlocks=").append(String.valueOf(this.ipv6CidrBlocks));
         sb.append(", ipv6VirtualRouterIp=").append(String.valueOf(this.ipv6VirtualRouterIp));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", prohibitInternetIngress=")
+                .append(String.valueOf(this.prohibitInternetIngress));
         sb.append(", prohibitPublicIpOnVnic=").append(String.valueOf(this.prohibitPublicIpOnVnic));
         sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(", securityListIds=").append(String.valueOf(this.securityListIds));
@@ -1206,9 +1286,11 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.ipv6CidrBlock, other.ipv6CidrBlock)
-                && java.util.Objects.equals(this.ipv6PublicCidrBlock, other.ipv6PublicCidrBlock)
+                && java.util.Objects.equals(this.ipv6CidrBlocks, other.ipv6CidrBlocks)
                 && java.util.Objects.equals(this.ipv6VirtualRouterIp, other.ipv6VirtualRouterIp)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(
+                        this.prohibitInternetIngress, other.prohibitInternetIngress)
                 && java.util.Objects.equals(
                         this.prohibitPublicIpOnVnic, other.prohibitPublicIpOnVnic)
                 && java.util.Objects.equals(this.routeTableId, other.routeTableId)
@@ -1247,9 +1329,7 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
                         + (this.ipv6CidrBlock == null ? 43 : this.ipv6CidrBlock.hashCode());
         result =
                 (result * PRIME)
-                        + (this.ipv6PublicCidrBlock == null
-                                ? 43
-                                : this.ipv6PublicCidrBlock.hashCode());
+                        + (this.ipv6CidrBlocks == null ? 43 : this.ipv6CidrBlocks.hashCode());
         result =
                 (result * PRIME)
                         + (this.ipv6VirtualRouterIp == null
@@ -1258,6 +1338,11 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.prohibitInternetIngress == null
+                                ? 43
+                                : this.prohibitInternetIngress.hashCode());
         result =
                 (result * PRIME)
                         + (this.prohibitPublicIpOnVnic == null

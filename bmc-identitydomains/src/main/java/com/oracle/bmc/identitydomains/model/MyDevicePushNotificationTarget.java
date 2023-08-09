@@ -40,7 +40,8 @@ public final class MyDevicePushNotificationTarget
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: readOnly - required: true - returned: always - type: string - uniqueness:
-         * none
+         * none - idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
@@ -50,7 +51,8 @@ public final class MyDevicePushNotificationTarget
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: readOnly - required: true - returned: always - type: string - uniqueness:
-         * none
+         * none - idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *
          * @param value the value to set
          * @return this builder
@@ -64,7 +66,9 @@ public final class MyDevicePushNotificationTarget
          * The URI that corresponds to the push notification target resource of this device
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: reference - uniqueness: none
+         * readOnly - required: false - returned: default - type: reference - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          */
         @com.fasterxml.jackson.annotation.JsonProperty("$ref")
         private String ref;
@@ -73,7 +77,9 @@ public final class MyDevicePushNotificationTarget
          * The URI that corresponds to the push notification target resource of this device
          *
          * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: reference - uniqueness: none
+         * readOnly - required: false - returned: default - type: reference - uniqueness: none -
+         * idcsRequiresWriteForAccessFlows: true -
+         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *
          * @param ref the value to set
          * @return this builder
@@ -121,7 +127,9 @@ public final class MyDevicePushNotificationTarget
      * The identifier of the push notification target
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: true - returned: always - type: string - uniqueness: none
+     * mutability: readOnly - required: true - returned: always - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
@@ -130,7 +138,9 @@ public final class MyDevicePushNotificationTarget
      * The identifier of the push notification target
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: true - returned: always - type: string - uniqueness: none
+     * mutability: readOnly - required: true - returned: always - type: string - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      *
      * @return the value
      */
@@ -142,7 +152,9 @@ public final class MyDevicePushNotificationTarget
      * The URI that corresponds to the push notification target resource of this device
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: reference - uniqueness: none
+     * - required: false - returned: default - type: reference - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      */
     @com.fasterxml.jackson.annotation.JsonProperty("$ref")
     private final String ref;
@@ -151,7 +163,9 @@ public final class MyDevicePushNotificationTarget
      * The URI that corresponds to the push notification target resource of this device
      *
      * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: reference - uniqueness: none
+     * - required: false - returned: default - type: reference - uniqueness: none -
+     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
+     * true
      *
      * @return the value
      */

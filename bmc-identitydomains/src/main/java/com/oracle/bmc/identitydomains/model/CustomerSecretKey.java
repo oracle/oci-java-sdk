@@ -5,7 +5,7 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * User's customer secret key <br>
+ * The user's customer secret key. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -443,7 +443,7 @@ public final class CustomerSecretKey
             return this;
         }
         /**
-         * User credential status
+         * The user's credential status.
          *
          * <p>*Added In:** 2109090424
          *
@@ -455,7 +455,7 @@ public final class CustomerSecretKey
         private Status status;
 
         /**
-         * User credential status
+         * The user's credential status.
          *
          * <p>*Added In:** 2109090424
          *
@@ -472,7 +472,7 @@ public final class CustomerSecretKey
             return this;
         }
         /**
-         * User credential expires on
+         * When the user's credential expire.
          *
          * <p>*Added In:** 2109090424
          *
@@ -484,7 +484,7 @@ public final class CustomerSecretKey
         private String expiresOn;
 
         /**
-         * User credential expires on
+         * When the user's credential expire.
          *
          * <p>*Added In:** 2109090424
          *
@@ -501,7 +501,7 @@ public final class CustomerSecretKey
             return this;
         }
         /**
-         * Access key
+         * The access key.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - type: string - mutability: readOnly -
          * required: false - returned: default
@@ -510,7 +510,7 @@ public final class CustomerSecretKey
         private String accessKey;
 
         /**
-         * Access key
+         * The access key.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - type: string - mutability: readOnly -
          * required: false - returned: default
@@ -960,7 +960,7 @@ public final class CustomerSecretKey
     }
 
     /**
-     * User credential status
+     * The user's credential status.
      *
      * <p>*Added In:** 2109090424
      *
@@ -1012,7 +1012,7 @@ public final class CustomerSecretKey
         }
     };
     /**
-     * User credential status
+     * The user's credential status.
      *
      * <p>*Added In:** 2109090424
      *
@@ -1023,7 +1023,7 @@ public final class CustomerSecretKey
     private final Status status;
 
     /**
-     * User credential status
+     * The user's credential status.
      *
      * <p>*Added In:** 2109090424
      *
@@ -1037,7 +1037,7 @@ public final class CustomerSecretKey
     }
 
     /**
-     * User credential expires on
+     * When the user's credential expire.
      *
      * <p>*Added In:** 2109090424
      *
@@ -1049,7 +1049,7 @@ public final class CustomerSecretKey
     private final String expiresOn;
 
     /**
-     * User credential expires on
+     * When the user's credential expire.
      *
      * <p>*Added In:** 2109090424
      *
@@ -1064,7 +1064,7 @@ public final class CustomerSecretKey
     }
 
     /**
-     * Access key
+     * The access key.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - type: string - mutability: readOnly - required:
      * false - returned: default
@@ -1073,7 +1073,7 @@ public final class CustomerSecretKey
     private final String accessKey;
 
     /**
-     * Access key
+     * The access key.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - type: string - mutability: readOnly - required:
      * false - returned: default

@@ -28,7 +28,10 @@ package com.oracle.bmc.vnmonitoring.model;
             name = "DRG_ATTACHMENT_ID"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DrgAttachmentTypeDrgRouteDistributionMatchCriteria.class,
-            name = "DRG_ATTACHMENT_TYPE")
+            name = "DRG_ATTACHMENT_TYPE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DrgAttachmentMatchAllDrgRouteDistributionMatchCriteria.class,
+            name = "MATCH_ALL")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -84,6 +87,7 @@ public class DrgRouteDistributionMatchCriteria
     public enum MatchType implements com.oracle.bmc.http.internal.BmcEnum {
         DrgAttachmentType("DRG_ATTACHMENT_TYPE"),
         DrgAttachmentId("DRG_ATTACHMENT_ID"),
+        MatchAll("MATCH_ALL"),
         ;
 
         private final String value;

@@ -44,7 +44,7 @@ public final class UserExtTrustedUserAgents
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The identifier of the User's trusted user agent.
+         * The user's trusted user agent identifier.
          *
          * <p>*Added In:** 18.3.6
          *
@@ -56,7 +56,7 @@ public final class UserExtTrustedUserAgents
         private String value;
 
         /**
-         * The identifier of the User's trusted user agent.
+         * The user's trusted user agent identifier.
          *
          * <p>*Added In:** 18.3.6
          *
@@ -166,7 +166,7 @@ public final class UserExtTrustedUserAgents
     }
 
     /**
-     * The identifier of the User's trusted user agent.
+     * The user's trusted user agent identifier.
      *
      * <p>*Added In:** 18.3.6
      *
@@ -177,7 +177,7 @@ public final class UserExtTrustedUserAgents
     private final String value;
 
     /**
-     * The identifier of the User's trusted user agent.
+     * The user's trusted user agent identifier.
      *
      * <p>*Added In:** 18.3.6
      *

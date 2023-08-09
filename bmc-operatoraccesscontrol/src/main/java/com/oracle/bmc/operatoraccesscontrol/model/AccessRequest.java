@@ -41,6 +41,7 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
         "operatorId",
         "resourceId",
         "resourceName",
+        "subResourceList",
         "compartmentId",
         "resourceType",
         "actionRequestsList",
@@ -73,6 +74,7 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
             String operatorId,
             String resourceId,
             String resourceName,
+            java.util.List<String> subResourceList,
             String compartmentId,
             ResourceTypes resourceType,
             java.util.List<String> actionRequestsList,
@@ -104,6 +106,7 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
         this.operatorId = operatorId;
         this.resourceId = resourceId;
         this.resourceName = resourceName;
+        this.subResourceList = subResourceList;
         this.compartmentId = compartmentId;
         this.resourceType = resourceType;
         this.actionRequestsList = actionRequestsList;
@@ -236,6 +239,21 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
+            return this;
+        }
+        /** The subresources requested for approval. */
+        @com.fasterxml.jackson.annotation.JsonProperty("subResourceList")
+        private java.util.List<String> subResourceList;
+
+        /**
+         * The subresources requested for approval.
+         *
+         * @param subResourceList the value to set
+         * @return this builder
+         */
+        public Builder subResourceList(java.util.List<String> subResourceList) {
+            this.subResourceList = subResourceList;
+            this.__explicitlySet__.add("subResourceList");
             return this;
         }
         /** The OCID of the compartment that contains the access request. */
@@ -654,6 +672,7 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
                             this.operatorId,
                             this.resourceId,
                             this.resourceName,
+                            this.subResourceList,
                             this.compartmentId,
                             this.resourceType,
                             this.actionRequestsList,
@@ -703,6 +722,9 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("resourceName")) {
                 this.resourceName(model.getResourceName());
+            }
+            if (model.wasPropertyExplicitlySet("subResourceList")) {
+                this.subResourceList(model.getSubResourceList());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
@@ -881,6 +903,19 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
      */
     public String getResourceName() {
         return resourceName;
+    }
+
+    /** The subresources requested for approval. */
+    @com.fasterxml.jackson.annotation.JsonProperty("subResourceList")
+    private final java.util.List<String> subResourceList;
+
+    /**
+     * The subresources requested for approval.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getSubResourceList() {
+        return subResourceList;
     }
 
     /** The OCID of the compartment that contains the access request. */
@@ -1256,6 +1291,7 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", operatorId=").append(String.valueOf(this.operatorId));
         sb.append(", resourceId=").append(String.valueOf(this.resourceId));
         sb.append(", resourceName=").append(String.valueOf(this.resourceName));
+        sb.append(", subResourceList=").append(String.valueOf(this.subResourceList));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", resourceType=").append(String.valueOf(this.resourceType));
         sb.append(", actionRequestsList=").append(String.valueOf(this.actionRequestsList));
@@ -1300,6 +1336,7 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.operatorId, other.operatorId)
                 && java.util.Objects.equals(this.resourceId, other.resourceId)
                 && java.util.Objects.equals(this.resourceName, other.resourceName)
+                && java.util.Objects.equals(this.subResourceList, other.subResourceList)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.resourceType, other.resourceType)
                 && java.util.Objects.equals(this.actionRequestsList, other.actionRequestsList)
@@ -1342,6 +1379,9 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
         result = (result * PRIME) + (this.operatorId == null ? 43 : this.operatorId.hashCode());
         result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
         result = (result * PRIME) + (this.resourceName == null ? 43 : this.resourceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subResourceList == null ? 43 : this.subResourceList.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

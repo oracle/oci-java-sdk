@@ -5,7 +5,7 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * User's oauth2 client credential <br>
+ * The user's OAuth2 client credentials. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -446,7 +446,7 @@ public final class MyOAuth2ClientCredential
             return this;
         }
         /**
-         * User credential status
+         * The user's credential status.
          *
          * <p>*Added In:** 2109090424
          *
@@ -458,7 +458,7 @@ public final class MyOAuth2ClientCredential
         private Status status;
 
         /**
-         * User credential status
+         * The user's credential status.
          *
          * <p>*Added In:** 2109090424
          *
@@ -475,7 +475,7 @@ public final class MyOAuth2ClientCredential
             return this;
         }
         /**
-         * User credential expires on
+         * When the user's credentials expire.
          *
          * <p>*Added In:** 2109090424
          *
@@ -487,7 +487,7 @@ public final class MyOAuth2ClientCredential
         private String expiresOn;
 
         /**
-         * User credential expires on
+         * When the user's credentials expire.
          *
          * <p>*Added In:** 2109090424
          *
@@ -504,7 +504,7 @@ public final class MyOAuth2ClientCredential
             return this;
         }
         /**
-         * Specifies if secret need to be reset
+         * Specifies whether the secret must be reset.
          *
          * <p>*Added In:** 2109090424
          *
@@ -516,7 +516,7 @@ public final class MyOAuth2ClientCredential
         private Boolean isResetSecret;
 
         /**
-         * Specifies if secret need to be reset
+         * Specifies whether the secret must be reset.
          *
          * <p>*Added In:** 2109090424
          *
@@ -982,7 +982,7 @@ public final class MyOAuth2ClientCredential
     }
 
     /**
-     * User credential status
+     * The user's credential status.
      *
      * <p>*Added In:** 2109090424
      *
@@ -1034,7 +1034,7 @@ public final class MyOAuth2ClientCredential
         }
     };
     /**
-     * User credential status
+     * The user's credential status.
      *
      * <p>*Added In:** 2109090424
      *
@@ -1045,7 +1045,7 @@ public final class MyOAuth2ClientCredential
     private final Status status;
 
     /**
-     * User credential status
+     * The user's credential status.
      *
      * <p>*Added In:** 2109090424
      *
@@ -1059,7 +1059,7 @@ public final class MyOAuth2ClientCredential
     }
 
     /**
-     * User credential expires on
+     * When the user's credentials expire.
      *
      * <p>*Added In:** 2109090424
      *
@@ -1071,7 +1071,7 @@ public final class MyOAuth2ClientCredential
     private final String expiresOn;
 
     /**
-     * User credential expires on
+     * When the user's credentials expire.
      *
      * <p>*Added In:** 2109090424
      *
@@ -1086,7 +1086,7 @@ public final class MyOAuth2ClientCredential
     }
 
     /**
-     * Specifies if secret need to be reset
+     * Specifies whether the secret must be reset.
      *
      * <p>*Added In:** 2109090424
      *
@@ -1098,7 +1098,7 @@ public final class MyOAuth2ClientCredential
     private final Boolean isResetSecret;
 
     /**
-     * Specifies if secret need to be reset
+     * Specifies whether the secret must be reset.
      *
      * <p>*Added In:** 2109090424
      *
