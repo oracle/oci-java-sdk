@@ -87,14 +87,12 @@ public final class CreateByoipRangeDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The BYOIPv6 CIDR block. You can assign some or all of it to a VCN after it is validated.
-         */
+        /** The BYOIPv6 prefix. You can assign some or all of it to a VCN after it is validated. */
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
         private String ipv6CidrBlock;
 
         /**
-         * The BYOIPv6 CIDR block. You can assign some or all of it to a VCN after it is validated.
+         * The BYOIPv6 prefix. You can assign some or all of it to a VCN after it is validated.
          *
          * @param ipv6CidrBlock the value to set
          * @return this builder
@@ -260,12 +258,12 @@ public final class CreateByoipRangeDetails
         return compartmentId;
     }
 
-    /** The BYOIPv6 CIDR block. You can assign some or all of it to a VCN after it is validated. */
+    /** The BYOIPv6 prefix. You can assign some or all of it to a VCN after it is validated. */
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
     private final String ipv6CidrBlock;
 
     /**
-     * The BYOIPv6 CIDR block. You can assign some or all of it to a VCN after it is validated.
+     * The BYOIPv6 prefix. You can assign some or all of it to a VCN after it is validated.
      *
      * @return the value
      */

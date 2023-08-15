@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * A summary of IPv6 CIDR block subranges currently allocated to a VCN. <br>
+ * A summary of IPv6 prefix subranges currently allocated to a VCN. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -74,15 +74,15 @@ public final class ByoipRangeVcnIpv6AllocationSummary
             return this;
         }
         /**
-         * The BYOIPv6 CIDR block range or subrange allocated to a VCN. This could be all or part of
-         * a BYOIPv6 CIDR block. Each VCN allocation must be /64 or larger.
+         * The BYOIPv6 prefix range or subrange allocated to a VCN. This could be all or part of a
+         * BYOIPv6 prefix. Each VCN allocation must be /64 or larger.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
         private String ipv6CidrBlock;
 
         /**
-         * The BYOIPv6 CIDR block range or subrange allocated to a VCN. This could be all or part of
-         * a BYOIPv6 CIDR block. Each VCN allocation must be /64 or larger.
+         * The BYOIPv6 prefix range or subrange allocated to a VCN. This could be all or part of a
+         * BYOIPv6 prefix. Each VCN allocation must be /64 or larger.
          *
          * @param ipv6CidrBlock the value to set
          * @return this builder
@@ -187,15 +187,15 @@ public final class ByoipRangeVcnIpv6AllocationSummary
     }
 
     /**
-     * The BYOIPv6 CIDR block range or subrange allocated to a VCN. This could be all or part of a
-     * BYOIPv6 CIDR block. Each VCN allocation must be /64 or larger.
+     * The BYOIPv6 prefix range or subrange allocated to a VCN. This could be all or part of a
+     * BYOIPv6 prefix. Each VCN allocation must be /64 or larger.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
     private final String ipv6CidrBlock;
 
     /**
-     * The BYOIPv6 CIDR block range or subrange allocated to a VCN. This could be all or part of a
-     * BYOIPv6 CIDR block. Each VCN allocation must be /64 or larger.
+     * The BYOIPv6 prefix range or subrange allocated to a VCN. This could be all or part of a
+     * BYOIPv6 prefix. Each VCN allocation must be /64 or larger.
      *
      * @return the value
      */

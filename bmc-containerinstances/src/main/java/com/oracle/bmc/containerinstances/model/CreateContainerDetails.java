@@ -40,6 +40,7 @@ public final class CreateContainerDetails
         "isResourcePrincipalDisabled",
         "resourceConfig",
         "healthChecks",
+        "securityContext",
         "freeformTags",
         "definedTags"
     })
@@ -54,6 +55,7 @@ public final class CreateContainerDetails
             Boolean isResourcePrincipalDisabled,
             CreateContainerResourceConfigDetails resourceConfig,
             java.util.List<CreateContainerHealthCheckDetails> healthChecks,
+            CreateSecurityContextDetails securityContext,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -67,6 +69,7 @@ public final class CreateContainerDetails
         this.isResourcePrincipalDisabled = isResourcePrincipalDisabled;
         this.resourceConfig = resourceConfig;
         this.healthChecks = healthChecks;
+        this.securityContext = securityContext;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -75,18 +78,14 @@ public final class CreateContainerDetails
     public static class Builder {
         /**
          * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         *
-         * <p>If you don't provide a name, a name is generated automatically.
+         * confidential information. If you don't provide a name, a name is generated automatically.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         *
-         * <p>If you don't provide a name, a name is generated automatically.
+         * confidential information. If you don't provide a name, a name is generated automatically.
          *
          * @param displayName the value to set
          * @return this builder
@@ -294,6 +293,15 @@ public final class CreateContainerDetails
             this.__explicitlySet__.add("healthChecks");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityContext")
+        private CreateSecurityContextDetails securityContext;
+
+        public Builder securityContext(CreateSecurityContextDetails securityContext) {
+            this.securityContext = securityContext;
+            this.__explicitlySet__.add("securityContext");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -350,6 +358,7 @@ public final class CreateContainerDetails
                             this.isResourcePrincipalDisabled,
                             this.resourceConfig,
                             this.healthChecks,
+                            this.securityContext,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -390,6 +399,9 @@ public final class CreateContainerDetails
             if (model.wasPropertyExplicitlySet("healthChecks")) {
                 this.healthChecks(model.getHealthChecks());
             }
+            if (model.wasPropertyExplicitlySet("securityContext")) {
+                this.securityContext(model.getSecurityContext());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -411,18 +423,14 @@ public final class CreateContainerDetails
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     *
-     * <p>If you don't provide a name, a name is generated automatically.
+     * confidential information. If you don't provide a name, a name is generated automatically.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     *
-     * <p>If you don't provide a name, a name is generated automatically.
+     * confidential information. If you don't provide a name, a name is generated automatically.
      *
      * @return the value
      */
@@ -607,6 +615,13 @@ public final class CreateContainerDetails
         return healthChecks;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("securityContext")
+    private final CreateSecurityContextDetails securityContext;
+
+    public CreateSecurityContextDetails getSecurityContext() {
+        return securityContext;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -667,6 +682,7 @@ public final class CreateContainerDetails
                 .append(String.valueOf(this.isResourcePrincipalDisabled));
         sb.append(", resourceConfig=").append(String.valueOf(this.resourceConfig));
         sb.append(", healthChecks=").append(String.valueOf(this.healthChecks));
+        sb.append(", securityContext=").append(String.valueOf(this.securityContext));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -694,6 +710,7 @@ public final class CreateContainerDetails
                         this.isResourcePrincipalDisabled, other.isResourcePrincipalDisabled)
                 && java.util.Objects.equals(this.resourceConfig, other.resourceConfig)
                 && java.util.Objects.equals(this.healthChecks, other.healthChecks)
+                && java.util.Objects.equals(this.securityContext, other.securityContext)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -725,6 +742,9 @@ public final class CreateContainerDetails
                 (result * PRIME)
                         + (this.resourceConfig == null ? 43 : this.resourceConfig.hashCode());
         result = (result * PRIME) + (this.healthChecks == null ? 43 : this.healthChecks.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityContext == null ? 43 : this.securityContext.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

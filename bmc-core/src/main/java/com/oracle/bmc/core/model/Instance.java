@@ -390,10 +390,11 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
          * the following iSCSI IP address: 169.254.0.2, and boot volume IQN:
          * iqn.2015-02.oracle.boot.
          *
-         * <p>If your instance boot volume type is paravirtualized, the boot volume is attached to
-         * the instance through virtio-scsi and no iPXE script is used. If your instance boot volume
-         * type is paravirtualized and you use custom iPXE to network boot into your instance, the
-         * primary boot volume is attached as a data volume through virtio-scsi drive.
+         * <p>If your instance boot volume attachment type is paravirtualized, the boot volume is
+         * attached to the instance through virtio-scsi and no iPXE script is used. If your instance
+         * boot volume attachment type is paravirtualized and you use custom iPXE to network boot
+         * into your instance, the primary boot volume is attached as a data volume through
+         * virtio-scsi drive.
          *
          * <p>For more information about the Bring Your Own Image feature of Oracle Cloud
          * Infrastructure, see [Bring Your Own
@@ -418,10 +419,11 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
          * the following iSCSI IP address: 169.254.0.2, and boot volume IQN:
          * iqn.2015-02.oracle.boot.
          *
-         * <p>If your instance boot volume type is paravirtualized, the boot volume is attached to
-         * the instance through virtio-scsi and no iPXE script is used. If your instance boot volume
-         * type is paravirtualized and you use custom iPXE to network boot into your instance, the
-         * primary boot volume is attached as a data volume through virtio-scsi drive.
+         * <p>If your instance boot volume attachment type is paravirtualized, the boot volume is
+         * attached to the instance through virtio-scsi and no iPXE script is used. If your instance
+         * boot volume attachment type is paravirtualized and you use custom iPXE to network boot
+         * into your instance, the primary boot volume is attached as a data volume through
+         * virtio-scsi drive.
          *
          * <p>For more information about the Bring Your Own Image feature of Oracle Cloud
          * Infrastructure, see [Bring Your Own
@@ -1096,10 +1098,11 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
      * instance's local boot volume over iSCSI the same way as the default iPXE script, use the
      * following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
      *
-     * <p>If your instance boot volume type is paravirtualized, the boot volume is attached to the
-     * instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is
-     * paravirtualized and you use custom iPXE to network boot into your instance, the primary boot
-     * volume is attached as a data volume through virtio-scsi drive.
+     * <p>If your instance boot volume attachment type is paravirtualized, the boot volume is
+     * attached to the instance through virtio-scsi and no iPXE script is used. If your instance
+     * boot volume attachment type is paravirtualized and you use custom iPXE to network boot into
+     * your instance, the primary boot volume is attached as a data volume through virtio-scsi
+     * drive.
      *
      * <p>For more information about the Bring Your Own Image feature of Oracle Cloud
      * Infrastructure, see [Bring Your Own
@@ -1123,10 +1126,11 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
      * instance's local boot volume over iSCSI the same way as the default iPXE script, use the
      * following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
      *
-     * <p>If your instance boot volume type is paravirtualized, the boot volume is attached to the
-     * instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is
-     * paravirtualized and you use custom iPXE to network boot into your instance, the primary boot
-     * volume is attached as a data volume through virtio-scsi drive.
+     * <p>If your instance boot volume attachment type is paravirtualized, the boot volume is
+     * attached to the instance through virtio-scsi and no iPXE script is used. If your instance
+     * boot volume attachment type is paravirtualized and you use custom iPXE to network boot into
+     * your instance, the primary boot volume is attached as a data volume through virtio-scsi
+     * drive.
      *
      * <p>For more information about the Bring Your Own Image feature of Oracle Cloud
      * Infrastructure, see [Bring Your Own

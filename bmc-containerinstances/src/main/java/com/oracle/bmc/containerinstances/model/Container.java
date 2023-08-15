@@ -49,7 +49,8 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
         "healthChecks",
         "isResourcePrincipalDisabled",
         "resourceConfig",
-        "containerRestartAttemptCount"
+        "containerRestartAttemptCount",
+        "securityContext"
     })
     public Container(
             String id,
@@ -76,7 +77,8 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
             java.util.List<ContainerHealthCheck> healthChecks,
             Boolean isResourcePrincipalDisabled,
             ContainerResourceConfig resourceConfig,
-            Integer containerRestartAttemptCount) {
+            Integer containerRestartAttemptCount,
+            SecurityContext securityContext) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -103,6 +105,7 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
         this.isResourcePrincipalDisabled = isResourcePrincipalDisabled;
         this.resourceConfig = resourceConfig;
         this.containerRestartAttemptCount = containerRestartAttemptCount;
+        this.securityContext = securityContext;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -576,6 +579,15 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("securityContext")
+        private SecurityContext securityContext;
+
+        public Builder securityContext(SecurityContext securityContext) {
+            this.securityContext = securityContext;
+            this.__explicitlySet__.add("securityContext");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -606,7 +618,8 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
                             this.healthChecks,
                             this.isResourcePrincipalDisabled,
                             this.resourceConfig,
-                            this.containerRestartAttemptCount);
+                            this.containerRestartAttemptCount,
+                            this.securityContext);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -689,6 +702,9 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("containerRestartAttemptCount")) {
                 this.containerRestartAttemptCount(model.getContainerRestartAttemptCount());
+            }
+            if (model.wasPropertyExplicitlySet("securityContext")) {
+                this.securityContext(model.getSecurityContext());
             }
             return this;
         }
@@ -1169,6 +1185,13 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
         return containerRestartAttemptCount;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("securityContext")
+    private final SecurityContext securityContext;
+
+    public SecurityContext getSecurityContext() {
+        return securityContext;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1211,6 +1234,7 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
         sb.append(", resourceConfig=").append(String.valueOf(this.resourceConfig));
         sb.append(", containerRestartAttemptCount=")
                 .append(String.valueOf(this.containerRestartAttemptCount));
+        sb.append(", securityContext=").append(String.valueOf(this.securityContext));
         sb.append(")");
         return sb.toString();
     }
@@ -1252,6 +1276,7 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
                 && java.util.Objects.equals(this.resourceConfig, other.resourceConfig)
                 && java.util.Objects.equals(
                         this.containerRestartAttemptCount, other.containerRestartAttemptCount)
+                && java.util.Objects.equals(this.securityContext, other.securityContext)
                 && super.equals(other);
     }
 
@@ -1316,6 +1341,9 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
                         + (this.containerRestartAttemptCount == null
                                 ? 43
                                 : this.containerRestartAttemptCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityContext == null ? 43 : this.securityContext.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

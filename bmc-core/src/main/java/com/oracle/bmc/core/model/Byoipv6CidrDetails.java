@@ -5,10 +5,10 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The list of one or more BYOIPv6 CIDR blocks for the VCN that meets the following criteria: - The
- * CIDR must from a BYOIPv6 range. - The IPv6 CIDR blocks must be valid. - Multiple CIDR blocks must
- * not overlap each other or the on-premises network CIDR block. - The number of CIDR blocks must
- * not exceed the limit of IPv6 CIDR blocks allowed to a VCN. <br>
+ * The list of one or more BYOIPv6 prefixes for the VCN that meets the following criteria: - The
+ * prefix must be from a BYOIPv6 range. - The IPv6 prefixes must be valid. - Multiple prefix must
+ * not overlap each other or the on-premises network prefix. - The number of prefixes must not
+ * exceed the limit of IPv6 prefixes allowed to a VCN. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -55,17 +55,15 @@ public final class Byoipv6CidrDetails
             return this;
         }
         /**
-         * An IPv6 CIDR block required to create a VCN with a BYOIP prefix. It could be the whole
-         * CIDR block identified in {@code byoipv6RangeId}, or a subrange. Example: {@code
-         * 2001:0db8:0123::/48}
+         * An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix
+         * identified in {@code byoipv6RangeId}, or a subrange. Example: {@code 2001:0db8:0123::/48}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
         private String ipv6CidrBlock;
 
         /**
-         * An IPv6 CIDR block required to create a VCN with a BYOIP prefix. It could be the whole
-         * CIDR block identified in {@code byoipv6RangeId}, or a subrange. Example: {@code
-         * 2001:0db8:0123::/48}
+         * An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix
+         * identified in {@code byoipv6RangeId}, or a subrange. Example: {@code 2001:0db8:0123::/48}
          *
          * @param ipv6CidrBlock the value to set
          * @return this builder
@@ -127,17 +125,15 @@ public final class Byoipv6CidrDetails
     }
 
     /**
-     * An IPv6 CIDR block required to create a VCN with a BYOIP prefix. It could be the whole CIDR
-     * block identified in {@code byoipv6RangeId}, or a subrange. Example: {@code
-     * 2001:0db8:0123::/48}
+     * An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix
+     * identified in {@code byoipv6RangeId}, or a subrange. Example: {@code 2001:0db8:0123::/48}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
     private final String ipv6CidrBlock;
 
     /**
-     * An IPv6 CIDR block required to create a VCN with a BYOIP prefix. It could be the whole CIDR
-     * block identified in {@code byoipv6RangeId}, or a subrange. Example: {@code
-     * 2001:0db8:0123::/48}
+     * An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix
+     * identified in {@code byoipv6RangeId}, or a subrange. Example: {@code 2001:0db8:0123::/48}
      *
      * @return the value
      */

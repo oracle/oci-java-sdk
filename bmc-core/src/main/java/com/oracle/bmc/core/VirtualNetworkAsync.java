@@ -102,7 +102,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Add an IPv6 CIDR to a subnet.
+     * Add an IPv6 prefix to a subnet.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -118,8 +118,8 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Add an IPv6 CIDR to a VCN. The VCN size is always /56 and assigned by Oracle. Once added the
-     * IPv6 CIDR block cannot be removed or modified.
+     * Add an IPv6 prefix to a VCN. The VCN size is always /56 and assigned by Oracle. Once added
+     * the IPv6 prefix cannot be removed or modified.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -4068,7 +4068,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Remove an IPv6 CIDR from a subnet. At least one IPv6 CIDR should remain.
+     * Remove an IPv6 prefix from a subnet. At least one IPv6 CIDR should remain.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -4084,7 +4084,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Removing an existing IPv6 CIDR from a VCN.
+     * Removing an existing IPv6 prefix from a VCN.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

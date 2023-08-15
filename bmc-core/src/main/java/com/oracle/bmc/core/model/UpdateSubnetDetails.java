@@ -227,13 +227,13 @@ public final class UpdateSubnetDetails
             return this;
         }
         /**
-         * This is the IPv6 CIDR block for the subnet's IP address space. The subnet size is always
-         * /64. See [IPv6
+         * This is the IPv6 prefix for the subnet's IP address space. The subnet size is always /64.
+         * See [IPv6
          * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm). The
-         * provided CIDR must maintain the following rules -
+         * provided prefix must maintain the following rules -
          *
-         * <p>a. The IPv6 CIDR block is valid and correctly formatted. b. The IPv6 CIDR is within
-         * the parent VCN IPv6 range.
+         * <p>a. The IPv6 prefix is valid and correctly formatted. b. The IPv6 prefix is within the
+         * parent VCN IPv6 range.
          *
          * <p>Example: {@code 2001:0db8:0123:1111::/64}
          */
@@ -241,13 +241,13 @@ public final class UpdateSubnetDetails
         private String ipv6CidrBlock;
 
         /**
-         * This is the IPv6 CIDR block for the subnet's IP address space. The subnet size is always
-         * /64. See [IPv6
+         * This is the IPv6 prefix for the subnet's IP address space. The subnet size is always /64.
+         * See [IPv6
          * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm). The
-         * provided CIDR must maintain the following rules -
+         * provided prefix must maintain the following rules -
          *
-         * <p>a. The IPv6 CIDR block is valid and correctly formatted. b. The IPv6 CIDR is within
-         * the parent VCN IPv6 range.
+         * <p>a. The IPv6 prefix is valid and correctly formatted. b. The IPv6 prefix is within the
+         * parent VCN IPv6 range.
          *
          * <p>Example: {@code 2001:0db8:0123:1111::/64}
          *
@@ -260,21 +260,21 @@ public final class UpdateSubnetDetails
             return this;
         }
         /**
-         * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR
-         * blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria: - The CIDR
-         * blocks must be valid. - Multiple CIDR blocks must not overlap each other or the
-         * on-premises network CIDR block. - The number of CIDR blocks must not exceed the limit of
-         * IPv6 CIDR blocks allowed to a subnet.
+         * The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefix,
+         * BYOIPv6 prefixes) for the subnet that meets the following criteria: - The prefixes must
+         * be valid. - Multiple prefixes must not overlap each other or the on-premises network
+         * prefix. - The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a
+         * subnet.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
         private java.util.List<String> ipv6CidrBlocks;
 
         /**
-         * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR
-         * blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria: - The CIDR
-         * blocks must be valid. - Multiple CIDR blocks must not overlap each other or the
-         * on-premises network CIDR block. - The number of CIDR blocks must not exceed the limit of
-         * IPv6 CIDR blocks allowed to a subnet.
+         * The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefix,
+         * BYOIPv6 prefixes) for the subnet that meets the following criteria: - The prefixes must
+         * be valid. - Multiple prefixes must not overlap each other or the on-premises network
+         * prefix. - The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a
+         * subnet.
          *
          * @param ipv6CidrBlocks the value to set
          * @return this builder
@@ -502,11 +502,11 @@ public final class UpdateSubnetDetails
     }
 
     /**
-     * This is the IPv6 CIDR block for the subnet's IP address space. The subnet size is always /64.
-     * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-     * The provided CIDR must maintain the following rules -
+     * This is the IPv6 prefix for the subnet's IP address space. The subnet size is always /64. See
+     * [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm). The
+     * provided prefix must maintain the following rules -
      *
-     * <p>a. The IPv6 CIDR block is valid and correctly formatted. b. The IPv6 CIDR is within the
+     * <p>a. The IPv6 prefix is valid and correctly formatted. b. The IPv6 prefix is within the
      * parent VCN IPv6 range.
      *
      * <p>Example: {@code 2001:0db8:0123:1111::/64}
@@ -515,11 +515,11 @@ public final class UpdateSubnetDetails
     private final String ipv6CidrBlock;
 
     /**
-     * This is the IPv6 CIDR block for the subnet's IP address space. The subnet size is always /64.
-     * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-     * The provided CIDR must maintain the following rules -
+     * This is the IPv6 prefix for the subnet's IP address space. The subnet size is always /64. See
+     * [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm). The
+     * provided prefix must maintain the following rules -
      *
-     * <p>a. The IPv6 CIDR block is valid and correctly formatted. b. The IPv6 CIDR is within the
+     * <p>a. The IPv6 prefix is valid and correctly formatted. b. The IPv6 prefix is within the
      * parent VCN IPv6 range.
      *
      * <p>Example: {@code 2001:0db8:0123:1111::/64}
@@ -531,21 +531,19 @@ public final class UpdateSubnetDetails
     }
 
     /**
-     * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks,
-     * BYOIPv6 CIDR blocks) for the subnet that meets the following criteria: - The CIDR blocks must
-     * be valid. - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR
-     * block. - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a
-     * subnet.
+     * The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefix, BYOIPv6
+     * prefixes) for the subnet that meets the following criteria: - The prefixes must be valid. -
+     * Multiple prefixes must not overlap each other or the on-premises network prefix. - The number
+     * of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
     private final java.util.List<String> ipv6CidrBlocks;
 
     /**
-     * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks,
-     * BYOIPv6 CIDR blocks) for the subnet that meets the following criteria: - The CIDR blocks must
-     * be valid. - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR
-     * block. - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a
-     * subnet.
+     * The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefix, BYOIPv6
+     * prefixes) for the subnet that meets the following criteria: - The prefixes must be valid. -
+     * Multiple prefixes must not overlap each other or the on-premises network prefix. - The number
+     * of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
      *
      * @return the value
      */

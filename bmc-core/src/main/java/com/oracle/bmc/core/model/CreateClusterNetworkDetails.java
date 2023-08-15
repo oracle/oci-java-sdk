@@ -38,7 +38,8 @@ public final class CreateClusterNetworkDetails
         "displayName",
         "freeformTags",
         "instancePools",
-        "placementConfiguration"
+        "placementConfiguration",
+        "clusterConfiguration"
     })
     public CreateClusterNetworkDetails(
             String compartmentId,
@@ -46,7 +47,8 @@ public final class CreateClusterNetworkDetails
             String displayName,
             java.util.Map<String, String> freeformTags,
             java.util.List<CreateClusterNetworkInstancePoolDetails> instancePools,
-            ClusterNetworkPlacementConfigurationDetails placementConfiguration) {
+            ClusterNetworkPlacementConfigurationDetails placementConfiguration,
+            ClusterConfigurationDetails clusterConfiguration) {
         super();
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
@@ -54,6 +56,7 @@ public final class CreateClusterNetworkDetails
         this.freeformTags = freeformTags;
         this.instancePools = instancePools;
         this.placementConfiguration = placementConfiguration;
+        this.clusterConfiguration = clusterConfiguration;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -180,6 +183,15 @@ public final class CreateClusterNetworkDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterConfiguration")
+        private ClusterConfigurationDetails clusterConfiguration;
+
+        public Builder clusterConfiguration(ClusterConfigurationDetails clusterConfiguration) {
+            this.clusterConfiguration = clusterConfiguration;
+            this.__explicitlySet__.add("clusterConfiguration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -191,7 +203,8 @@ public final class CreateClusterNetworkDetails
                             this.displayName,
                             this.freeformTags,
                             this.instancePools,
-                            this.placementConfiguration);
+                            this.placementConfiguration,
+                            this.clusterConfiguration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -217,6 +230,9 @@ public final class CreateClusterNetworkDetails
             }
             if (model.wasPropertyExplicitlySet("placementConfiguration")) {
                 this.placementConfiguration(model.getPlacementConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("clusterConfiguration")) {
+                this.clusterConfiguration(model.getClusterConfiguration());
             }
             return this;
         }
@@ -337,6 +353,13 @@ public final class CreateClusterNetworkDetails
         return placementConfiguration;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterConfiguration")
+    private final ClusterConfigurationDetails clusterConfiguration;
+
+    public ClusterConfigurationDetails getClusterConfiguration() {
+        return clusterConfiguration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -358,6 +381,7 @@ public final class CreateClusterNetworkDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", instancePools=").append(String.valueOf(this.instancePools));
         sb.append(", placementConfiguration=").append(String.valueOf(this.placementConfiguration));
+        sb.append(", clusterConfiguration=").append(String.valueOf(this.clusterConfiguration));
         sb.append(")");
         return sb.toString();
     }
@@ -379,6 +403,7 @@ public final class CreateClusterNetworkDetails
                 && java.util.Objects.equals(this.instancePools, other.instancePools)
                 && java.util.Objects.equals(
                         this.placementConfiguration, other.placementConfiguration)
+                && java.util.Objects.equals(this.clusterConfiguration, other.clusterConfiguration)
                 && super.equals(other);
     }
 
@@ -400,6 +425,11 @@ public final class CreateClusterNetworkDetails
                         + (this.placementConfiguration == null
                                 ? 43
                                 : this.placementConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterConfiguration == null
+                                ? 43
+                                : this.clusterConfiguration.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

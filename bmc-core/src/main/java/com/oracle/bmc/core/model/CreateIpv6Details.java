@@ -164,15 +164,15 @@ public final class CreateIpv6Details
             return this;
         }
         /**
-         * The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists
-         * on the subnet.
+         * The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix
+         * exists on the subnet.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6SubnetCidr")
         private String ipv6SubnetCidr;
 
         /**
-         * The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists
-         * on the subnet.
+         * The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix
+         * exists on the subnet.
          *
          * @param ipv6SubnetCidr the value to set
          * @return this builder
@@ -338,15 +338,15 @@ public final class CreateIpv6Details
     }
 
     /**
-     * The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on
-     * the subnet.
+     * The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists
+     * on the subnet.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6SubnetCidr")
     private final String ipv6SubnetCidr;
 
     /**
-     * The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on
-     * the subnet.
+     * The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists
+     * on the subnet.
      *
      * @return the value
      */
