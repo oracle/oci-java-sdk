@@ -25,15 +25,18 @@ public final class ClusterNetworkPlacementConfigurationDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
+        "placementConstraint",
         "primarySubnetId",
         "secondaryVnicSubnets"
     })
     public ClusterNetworkPlacementConfigurationDetails(
             String availabilityDomain,
+            PlacementConstraint placementConstraint,
             String primarySubnetId,
             java.util.List<InstancePoolPlacementSecondaryVnicSubnet> secondaryVnicSubnets) {
         super();
         this.availabilityDomain = availabilityDomain;
+        this.placementConstraint = placementConstraint;
         this.primarySubnetId = primarySubnetId;
         this.secondaryVnicSubnets = secondaryVnicSubnets;
     }
@@ -59,6 +62,21 @@ public final class ClusterNetworkPlacementConfigurationDetails
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
+            return this;
+        }
+        /** The placement constraint when reserving hosts. */
+        @com.fasterxml.jackson.annotation.JsonProperty("placementConstraint")
+        private PlacementConstraint placementConstraint;
+
+        /**
+         * The placement constraint when reserving hosts.
+         *
+         * @param placementConstraint the value to set
+         * @return this builder
+         */
+        public Builder placementConstraint(PlacementConstraint placementConstraint) {
+            this.placementConstraint = placementConstraint;
+            this.__explicitlySet__.add("placementConstraint");
             return this;
         }
         /**
@@ -104,6 +122,7 @@ public final class ClusterNetworkPlacementConfigurationDetails
             ClusterNetworkPlacementConfigurationDetails model =
                     new ClusterNetworkPlacementConfigurationDetails(
                             this.availabilityDomain,
+                            this.placementConstraint,
                             this.primarySubnetId,
                             this.secondaryVnicSubnets);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -116,6 +135,9 @@ public final class ClusterNetworkPlacementConfigurationDetails
         public Builder copy(ClusterNetworkPlacementConfigurationDetails model) {
             if (model.wasPropertyExplicitlySet("availabilityDomain")) {
                 this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("placementConstraint")) {
+                this.placementConstraint(model.getPlacementConstraint());
             }
             if (model.wasPropertyExplicitlySet("primarySubnetId")) {
                 this.primarySubnetId(model.getPrimarySubnetId());
@@ -153,6 +175,66 @@ public final class ClusterNetworkPlacementConfigurationDetails
      */
     public String getAvailabilityDomain() {
         return availabilityDomain;
+    }
+
+    /** The placement constraint when reserving hosts. */
+    public enum PlacementConstraint implements com.oracle.bmc.http.internal.BmcEnum {
+        SingleTier("SINGLE_TIER"),
+        SingleBlock("SINGLE_BLOCK"),
+        PackedDistributionMultiBlock("PACKED_DISTRIBUTION_MULTI_BLOCK"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PlacementConstraint.class);
+
+        private final String value;
+        private static java.util.Map<String, PlacementConstraint> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (PlacementConstraint v : PlacementConstraint.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        PlacementConstraint(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static PlacementConstraint create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'PlacementConstraint', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The placement constraint when reserving hosts. */
+    @com.fasterxml.jackson.annotation.JsonProperty("placementConstraint")
+    private final PlacementConstraint placementConstraint;
+
+    /**
+     * The placement constraint when reserving hosts.
+     *
+     * @return the value
+     */
+    public PlacementConstraint getPlacementConstraint() {
+        return placementConstraint;
     }
 
     /**
@@ -201,6 +283,7 @@ public final class ClusterNetworkPlacementConfigurationDetails
         sb.append("ClusterNetworkPlacementConfigurationDetails(");
         sb.append("super=").append(super.toString());
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", placementConstraint=").append(String.valueOf(this.placementConstraint));
         sb.append(", primarySubnetId=").append(String.valueOf(this.primarySubnetId));
         sb.append(", secondaryVnicSubnets=").append(String.valueOf(this.secondaryVnicSubnets));
         sb.append(")");
@@ -219,6 +302,7 @@ public final class ClusterNetworkPlacementConfigurationDetails
         ClusterNetworkPlacementConfigurationDetails other =
                 (ClusterNetworkPlacementConfigurationDetails) o;
         return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.placementConstraint, other.placementConstraint)
                 && java.util.Objects.equals(this.primarySubnetId, other.primarySubnetId)
                 && java.util.Objects.equals(this.secondaryVnicSubnets, other.secondaryVnicSubnets)
                 && super.equals(other);
@@ -233,6 +317,11 @@ public final class ClusterNetworkPlacementConfigurationDetails
                         + (this.availabilityDomain == null
                                 ? 43
                                 : this.availabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.placementConstraint == null
+                                ? 43
+                                : this.placementConstraint.hashCode());
         result =
                 (result * PRIME)
                         + (this.primarySubnetId == null ? 43 : this.primarySubnetId.hashCode());

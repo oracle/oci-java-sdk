@@ -25,15 +25,27 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
         "deploymentName",
         "adminUsername",
         "oggVersion",
-        "certificate"
+        "certificate",
+        "credentialStore",
+        "identityDomainId",
+        "passwordSecretId"
     })
     public OggDeployment(
-            String deploymentName, String adminUsername, String oggVersion, String certificate) {
+            String deploymentName,
+            String adminUsername,
+            String oggVersion,
+            String certificate,
+            CredentialStore credentialStore,
+            String identityDomainId,
+            String passwordSecretId) {
         super();
         this.deploymentName = deploymentName;
         this.adminUsername = adminUsername;
         this.oggVersion = oggVersion;
         this.certificate = certificate;
+        this.credentialStore = credentialStore;
+        this.identityDomainId = identityDomainId;
+        this.passwordSecretId = passwordSecretId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -102,6 +114,59 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("certificate");
             return this;
         }
+        /** The type of credential store for OGG. */
+        @com.fasterxml.jackson.annotation.JsonProperty("credentialStore")
+        private CredentialStore credentialStore;
+
+        /**
+         * The type of credential store for OGG.
+         *
+         * @param credentialStore the value to set
+         * @return this builder
+         */
+        public Builder credentialStore(CredentialStore credentialStore) {
+            this.credentialStore = credentialStore;
+            this.__explicitlySet__.add("credentialStore");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Identity Domain when IAM credential store is used.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("identityDomainId")
+        private String identityDomainId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Identity Domain when IAM credential store is used.
+         *
+         * @param identityDomainId the value to set
+         * @return this builder
+         */
+        public Builder identityDomainId(String identityDomainId) {
+            this.identityDomainId = identityDomainId;
+            this.__explicitlySet__.add("identityDomainId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the deployment password is stored.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+        private String passwordSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the deployment password is stored.
+         *
+         * @param passwordSecretId the value to set
+         * @return this builder
+         */
+        public Builder passwordSecretId(String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
+            this.__explicitlySet__.add("passwordSecretId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -112,7 +177,10 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
                             this.deploymentName,
                             this.adminUsername,
                             this.oggVersion,
-                            this.certificate);
+                            this.certificate,
+                            this.credentialStore,
+                            this.identityDomainId,
+                            this.passwordSecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -132,6 +200,15 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("certificate")) {
                 this.certificate(model.getCertificate());
+            }
+            if (model.wasPropertyExplicitlySet("credentialStore")) {
+                this.credentialStore(model.getCredentialStore());
+            }
+            if (model.wasPropertyExplicitlySet("identityDomainId")) {
+                this.identityDomainId(model.getIdentityDomainId());
+            }
+            if (model.wasPropertyExplicitlySet("passwordSecretId")) {
+                this.passwordSecretId(model.getPasswordSecretId());
             }
             return this;
         }
@@ -202,6 +279,53 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
         return certificate;
     }
 
+    /** The type of credential store for OGG. */
+    @com.fasterxml.jackson.annotation.JsonProperty("credentialStore")
+    private final CredentialStore credentialStore;
+
+    /**
+     * The type of credential store for OGG.
+     *
+     * @return the value
+     */
+    public CredentialStore getCredentialStore() {
+        return credentialStore;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Identity Domain when IAM credential store is used.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("identityDomainId")
+    private final String identityDomainId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Identity Domain when IAM credential store is used.
+     *
+     * @return the value
+     */
+    public String getIdentityDomainId() {
+        return identityDomainId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the deployment password is stored.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+    private final String passwordSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the deployment password is stored.
+     *
+     * @return the value
+     */
+    public String getPasswordSecretId() {
+        return passwordSecretId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -221,6 +345,9 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", adminUsername=").append(String.valueOf(this.adminUsername));
         sb.append(", oggVersion=").append(String.valueOf(this.oggVersion));
         sb.append(", certificate=").append(String.valueOf(this.certificate));
+        sb.append(", credentialStore=").append(String.valueOf(this.credentialStore));
+        sb.append(", identityDomainId=").append(String.valueOf(this.identityDomainId));
+        sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
         sb.append(")");
         return sb.toString();
     }
@@ -239,6 +366,9 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.adminUsername, other.adminUsername)
                 && java.util.Objects.equals(this.oggVersion, other.oggVersion)
                 && java.util.Objects.equals(this.certificate, other.certificate)
+                && java.util.Objects.equals(this.credentialStore, other.credentialStore)
+                && java.util.Objects.equals(this.identityDomainId, other.identityDomainId)
+                && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
                 && super.equals(other);
     }
 
@@ -254,6 +384,15 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
                         + (this.adminUsername == null ? 43 : this.adminUsername.hashCode());
         result = (result * PRIME) + (this.oggVersion == null ? 43 : this.oggVersion.hashCode());
         result = (result * PRIME) + (this.certificate == null ? 43 : this.certificate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.credentialStore == null ? 43 : this.credentialStore.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.identityDomainId == null ? 43 : this.identityDomainId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -38,7 +38,8 @@ public final class ContainerSummary
         "containerInstanceId",
         "resourceConfig",
         "imageUrl",
-        "isResourcePrincipalDisabled"
+        "isResourcePrincipalDisabled",
+        "securityContext"
     })
     public ContainerSummary(
             String id,
@@ -56,7 +57,8 @@ public final class ContainerSummary
             String containerInstanceId,
             ContainerResourceConfig resourceConfig,
             String imageUrl,
-            Boolean isResourcePrincipalDisabled) {
+            Boolean isResourcePrincipalDisabled,
+            SecurityContext securityContext) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -74,6 +76,7 @@ public final class ContainerSummary
         this.resourceConfig = resourceConfig;
         this.imageUrl = imageUrl;
         this.isResourcePrincipalDisabled = isResourcePrincipalDisabled;
+        this.securityContext = securityContext;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -380,6 +383,15 @@ public final class ContainerSummary
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("securityContext")
+        private SecurityContext securityContext;
+
+        public Builder securityContext(SecurityContext securityContext) {
+            this.securityContext = securityContext;
+            this.__explicitlySet__.add("securityContext");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -401,7 +413,8 @@ public final class ContainerSummary
                             this.containerInstanceId,
                             this.resourceConfig,
                             this.imageUrl,
-                            this.isResourcePrincipalDisabled);
+                            this.isResourcePrincipalDisabled,
+                            this.securityContext);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -457,6 +470,9 @@ public final class ContainerSummary
             }
             if (model.wasPropertyExplicitlySet("isResourcePrincipalDisabled")) {
                 this.isResourcePrincipalDisabled(model.getIsResourcePrincipalDisabled());
+            }
+            if (model.wasPropertyExplicitlySet("securityContext")) {
+                this.securityContext(model.getSecurityContext());
             }
             return this;
         }
@@ -739,6 +755,13 @@ public final class ContainerSummary
         return isResourcePrincipalDisabled;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("securityContext")
+    private final SecurityContext securityContext;
+
+    public SecurityContext getSecurityContext() {
+        return securityContext;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -771,6 +794,7 @@ public final class ContainerSummary
         sb.append(", imageUrl=").append(String.valueOf(this.imageUrl));
         sb.append(", isResourcePrincipalDisabled=")
                 .append(String.valueOf(this.isResourcePrincipalDisabled));
+        sb.append(", securityContext=").append(String.valueOf(this.securityContext));
         sb.append(")");
         return sb.toString();
     }
@@ -802,6 +826,7 @@ public final class ContainerSummary
                 && java.util.Objects.equals(this.imageUrl, other.imageUrl)
                 && java.util.Objects.equals(
                         this.isResourcePrincipalDisabled, other.isResourcePrincipalDisabled)
+                && java.util.Objects.equals(this.securityContext, other.securityContext)
                 && super.equals(other);
     }
 
@@ -845,6 +870,9 @@ public final class ContainerSummary
                         + (this.isResourcePrincipalDisabled == null
                                 ? 43
                                 : this.isResourcePrincipalDisabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityContext == null ? 43 : this.securityContext.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

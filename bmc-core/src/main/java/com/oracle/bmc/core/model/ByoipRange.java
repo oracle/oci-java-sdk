@@ -219,21 +219,21 @@ public final class ByoipRange extends com.oracle.bmc.http.client.internal.Explic
             return this;
         }
         /**
-         * The IPv6 CIDR block being imported to the Oracle cloud. This CIDR block must be /48 or
-         * larger, and can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix
-         * can be also assigned across multiple VCNs, and each VCN must be /64 or larger. You may
-         * specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled
-         * subnets will remain a fixed /64 in size.
+         * The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger,
+         * and can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be
+         * also assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a
+         * ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will
+         * remain a fixed /64 in size.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
         private String ipv6CidrBlock;
 
         /**
-         * The IPv6 CIDR block being imported to the Oracle cloud. This CIDR block must be /48 or
-         * larger, and can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix
-         * can be also assigned across multiple VCNs, and each VCN must be /64 or larger. You may
-         * specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled
-         * subnets will remain a fixed /64 in size.
+         * The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger,
+         * and can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be
+         * also assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a
+         * ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will
+         * remain a fixed /64 in size.
          *
          * @param ipv6CidrBlock the value to set
          * @return this builder
@@ -600,21 +600,21 @@ public final class ByoipRange extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The IPv6 CIDR block being imported to the Oracle cloud. This CIDR block must be /48 or
-     * larger, and can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can
-     * be also assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a
-     * ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will
-     * remain a fixed /64 in size.
+     * The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and
+     * can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be also
+     * assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or
+     * private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a
+     * fixed /64 in size.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
     private final String ipv6CidrBlock;
 
     /**
-     * The IPv6 CIDR block being imported to the Oracle cloud. This CIDR block must be /48 or
-     * larger, and can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can
-     * be also assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a
-     * ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will
-     * remain a fixed /64 in size.
+     * The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and
+     * can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be also
+     * assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or
+     * private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a
+     * fixed /64 in size.
      *
      * @return the value
      */

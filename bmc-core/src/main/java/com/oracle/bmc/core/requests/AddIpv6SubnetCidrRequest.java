@@ -28,10 +28,10 @@ public class AddIpv6SubnetCidrRequest
     public String getSubnetId() {
         return subnetId;
     }
-    /** Details object for adding an IPv6 CIDR to a subnet. */
+    /** Details object for adding an IPv6 prefix to a subnet. */
     private com.oracle.bmc.core.model.AddSubnetIpv6CidrDetails addSubnetIpv6CidrDetails;
 
-    /** Details object for adding an IPv6 CIDR to a subnet. */
+    /** Details object for adding an IPv6 prefix to a subnet. */
     public com.oracle.bmc.core.model.AddSubnetIpv6CidrDetails getAddSubnetIpv6CidrDetails() {
         return addSubnetIpv6CidrDetails;
     }
@@ -120,11 +120,11 @@ public class AddIpv6SubnetCidrRequest
             return this;
         }
 
-        /** Details object for adding an IPv6 CIDR to a subnet. */
+        /** Details object for adding an IPv6 prefix to a subnet. */
         private com.oracle.bmc.core.model.AddSubnetIpv6CidrDetails addSubnetIpv6CidrDetails = null;
 
         /**
-         * Details object for adding an IPv6 CIDR to a subnet.
+         * Details object for adding an IPv6 prefix to a subnet.
          *
          * @param addSubnetIpv6CidrDetails the value to set
          * @return this builder instance

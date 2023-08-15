@@ -28,10 +28,10 @@ public class RemoveIpv6SubnetCidrRequest
     public String getSubnetId() {
         return subnetId;
     }
-    /** Details object for removing an IPv6 SUBNET CIDR. */
+    /** Details object for removing an IPv6 SUBNET prefix. */
     private com.oracle.bmc.core.model.RemoveSubnetIpv6CidrDetails removeSubnetIpv6CidrDetails;
 
-    /** Details object for removing an IPv6 SUBNET CIDR. */
+    /** Details object for removing an IPv6 SUBNET prefix. */
     public com.oracle.bmc.core.model.RemoveSubnetIpv6CidrDetails getRemoveSubnetIpv6CidrDetails() {
         return removeSubnetIpv6CidrDetails;
     }
@@ -121,12 +121,12 @@ public class RemoveIpv6SubnetCidrRequest
             return this;
         }
 
-        /** Details object for removing an IPv6 SUBNET CIDR. */
+        /** Details object for removing an IPv6 SUBNET prefix. */
         private com.oracle.bmc.core.model.RemoveSubnetIpv6CidrDetails removeSubnetIpv6CidrDetails =
                 null;
 
         /**
-         * Details object for removing an IPv6 SUBNET CIDR.
+         * Details object for removing an IPv6 SUBNET prefix.
          *
          * @param removeSubnetIpv6CidrDetails the value to set
          * @return this builder instance

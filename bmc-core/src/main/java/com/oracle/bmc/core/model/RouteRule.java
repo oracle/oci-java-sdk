@@ -55,7 +55,7 @@ public final class RouteRule extends com.oracle.bmc.http.client.internal.Explici
          * <p>A destination IP address range in CIDR notation. Matching packets will be routed to
          * the indicated network entity (the target).
          *
-         * <p>Cannot be an IPv6 CIDR.
+         * <p>Cannot be an IPv6 prefix.
          *
          * <p>Example: {@code 0.0.0.0/0}
          */
@@ -69,7 +69,7 @@ public final class RouteRule extends com.oracle.bmc.http.client.internal.Explici
          * <p>A destination IP address range in CIDR notation. Matching packets will be routed to
          * the indicated network entity (the target).
          *
-         * <p>Cannot be an IPv6 CIDR.
+         * <p>Cannot be an IPv6 prefix.
          *
          * <p>Example: {@code 0.0.0.0/0}
          *
@@ -87,10 +87,10 @@ public final class RouteRule extends com.oracle.bmc.http.client.internal.Explici
          *
          * <p>Allowed values:
          *
-         * <p>IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For example: {@code
-         * 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}. If you set this to an IPv6 CIDR, the
-         * route rule's target can only be a DRG or internet gateway. IPv6 addressing is supported
-         * for all commercial and government regions. See [IPv6
+         * <p>IP address range in CIDR notation. Can be an IPv4 CIDR block or IPv6 prefix. For
+         * example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}. If you set this to an
+         * IPv6 prefix, the route rule's target can only be a DRG or internet gateway. IPv6
+         * addressing is supported for all commercial and government regions. See [IPv6
          * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          *
          * <p>The {@code cidrBlock} value for a {@link Service}, if you're setting up a route rule
@@ -106,10 +106,10 @@ public final class RouteRule extends com.oracle.bmc.http.client.internal.Explici
          *
          * <p>Allowed values:
          *
-         * <p>IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For example: {@code
-         * 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}. If you set this to an IPv6 CIDR, the
-         * route rule's target can only be a DRG or internet gateway. IPv6 addressing is supported
-         * for all commercial and government regions. See [IPv6
+         * <p>IP address range in CIDR notation. Can be an IPv4 CIDR block or IPv6 prefix. For
+         * example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}. If you set this to an
+         * IPv6 prefix, the route rule's target can only be a DRG or internet gateway. IPv6
+         * addressing is supported for all commercial and government regions. See [IPv6
          * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          *
          * <p>The {@code cidrBlock} value for a {@link Service}, if you're setting up a route rule
@@ -271,7 +271,7 @@ public final class RouteRule extends com.oracle.bmc.http.client.internal.Explici
      * <p>A destination IP address range in CIDR notation. Matching packets will be routed to the
      * indicated network entity (the target).
      *
-     * <p>Cannot be an IPv6 CIDR.
+     * <p>Cannot be an IPv6 prefix.
      *
      * <p>Example: {@code 0.0.0.0/0}
      */
@@ -285,7 +285,7 @@ public final class RouteRule extends com.oracle.bmc.http.client.internal.Explici
      * <p>A destination IP address range in CIDR notation. Matching packets will be routed to the
      * indicated network entity (the target).
      *
-     * <p>Cannot be an IPv6 CIDR.
+     * <p>Cannot be an IPv6 prefix.
      *
      * <p>Example: {@code 0.0.0.0/0}
      *
@@ -301,10 +301,10 @@ public final class RouteRule extends com.oracle.bmc.http.client.internal.Explici
      *
      * <p>Allowed values:
      *
-     * <p>IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For example: {@code
-     * 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}. If you set this to an IPv6 CIDR, the route
-     * rule's target can only be a DRG or internet gateway. IPv6 addressing is supported for all
-     * commercial and government regions. See [IPv6
+     * <p>IP address range in CIDR notation. Can be an IPv4 CIDR block or IPv6 prefix. For example:
+     * {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}. If you set this to an IPv6 prefix,
+     * the route rule's target can only be a DRG or internet gateway. IPv6 addressing is supported
+     * for all commercial and government regions. See [IPv6
      * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      *
      * <p>The {@code cidrBlock} value for a {@link Service}, if you're setting up a route rule for
@@ -320,10 +320,10 @@ public final class RouteRule extends com.oracle.bmc.http.client.internal.Explici
      *
      * <p>Allowed values:
      *
-     * <p>IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For example: {@code
-     * 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}. If you set this to an IPv6 CIDR, the route
-     * rule's target can only be a DRG or internet gateway. IPv6 addressing is supported for all
-     * commercial and government regions. See [IPv6
+     * <p>IP address range in CIDR notation. Can be an IPv4 CIDR block or IPv6 prefix. For example:
+     * {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}. If you set this to an IPv6 prefix,
+     * the route rule's target can only be a DRG or internet gateway. IPv6 addressing is supported
+     * for all commercial and government regions. See [IPv6
      * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      *
      * <p>The {@code cidrBlock} value for a {@link Service}, if you're setting up a route rule for

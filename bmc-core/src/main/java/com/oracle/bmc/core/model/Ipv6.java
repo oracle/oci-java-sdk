@@ -176,8 +176,8 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
             return this;
         }
         /**
-         * The IPv6 address of the {@code IPv6} object. The address is within the IPv6 CIDR block of
-         * the VNIC's subnet (see the {@code ipv6CidrBlock} attribute for the {@link Subnet} object.
+         * The IPv6 address of the {@code IPv6} object. The address is within the IPv6 prefix of the
+         * VNIC's subnet (see the {@code ipv6CidrBlock} attribute for the {@link Subnet} object.
          *
          * <p>Example: {@code 2001:0db8:0123:1111:abcd:ef01:2345:6789}
          */
@@ -185,8 +185,8 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
         private String ipAddress;
 
         /**
-         * The IPv6 address of the {@code IPv6} object. The address is within the IPv6 CIDR block of
-         * the VNIC's subnet (see the {@code ipv6CidrBlock} attribute for the {@link Subnet} object.
+         * The IPv6 address of the {@code IPv6} object. The address is within the IPv6 prefix of the
+         * VNIC's subnet (see the {@code ipv6CidrBlock} attribute for the {@link Subnet} object.
          *
          * <p>Example: {@code 2001:0db8:0123:1111:abcd:ef01:2345:6789}
          *
@@ -440,7 +440,7 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
     }
 
     /**
-     * The IPv6 address of the {@code IPv6} object. The address is within the IPv6 CIDR block of the
+     * The IPv6 address of the {@code IPv6} object. The address is within the IPv6 prefix of the
      * VNIC's subnet (see the {@code ipv6CidrBlock} attribute for the {@link Subnet} object.
      *
      * <p>Example: {@code 2001:0db8:0123:1111:abcd:ef01:2345:6789}
@@ -449,7 +449,7 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
     private final String ipAddress;
 
     /**
-     * The IPv6 address of the {@code IPv6} object. The address is within the IPv6 CIDR block of the
+     * The IPv6 address of the {@code IPv6} object. The address is within the IPv6 prefix of the
      * VNIC's subnet (see the {@code ipv6CidrBlock} attribute for the {@link Subnet} object.
      *
      * <p>Example: {@code 2001:0db8:0123:1111:abcd:ef01:2345:6789}

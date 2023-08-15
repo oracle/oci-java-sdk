@@ -105,7 +105,7 @@ public interface VirtualNetwork extends AutoCloseable {
     AddDrgRouteRulesResponse addDrgRouteRules(AddDrgRouteRulesRequest request);
 
     /**
-     * Add an IPv6 CIDR to a subnet.
+     * Add an IPv6 prefix to a subnet.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -121,8 +121,8 @@ public interface VirtualNetwork extends AutoCloseable {
     AddIpv6SubnetCidrResponse addIpv6SubnetCidr(AddIpv6SubnetCidrRequest request);
 
     /**
-     * Add an IPv6 CIDR to a VCN. The VCN size is always /56 and assigned by Oracle. Once added the
-     * IPv6 CIDR block cannot be removed or modified.
+     * Add an IPv6 prefix to a VCN. The VCN size is always /56 and assigned by Oracle. Once added
+     * the IPv6 prefix cannot be removed or modified.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -4097,7 +4097,7 @@ public interface VirtualNetwork extends AutoCloseable {
             RemoveImportDrgRouteDistributionRequest request);
 
     /**
-     * Remove an IPv6 CIDR from a subnet. At least one IPv6 CIDR should remain.
+     * Remove an IPv6 prefix from a subnet. At least one IPv6 CIDR should remain.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -4113,7 +4113,7 @@ public interface VirtualNetwork extends AutoCloseable {
     RemoveIpv6SubnetCidrResponse removeIpv6SubnetCidr(RemoveIpv6SubnetCidrRequest request);
 
     /**
-     * Removing an existing IPv6 CIDR from a VCN.
+     * Removing an existing IPv6 prefix from a VCN.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

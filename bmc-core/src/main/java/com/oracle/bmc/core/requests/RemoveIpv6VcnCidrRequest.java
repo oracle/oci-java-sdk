@@ -77,10 +77,10 @@ public class RemoveIpv6VcnCidrRequest
     public String getIfMatch() {
         return ifMatch;
     }
-    /** Details object for removing a VCN ipv6 CIDR. */
+    /** Details object for removing a VCN IPv6 prefix. */
     private com.oracle.bmc.core.model.RemoveVcnIpv6CidrDetails removeVcnIpv6CidrDetails;
 
-    /** Details object for removing a VCN ipv6 CIDR. */
+    /** Details object for removing a VCN IPv6 prefix. */
     public com.oracle.bmc.core.model.RemoveVcnIpv6CidrDetails getRemoveVcnIpv6CidrDetails() {
         return removeVcnIpv6CidrDetails;
     }
@@ -184,11 +184,11 @@ public class RemoveIpv6VcnCidrRequest
             return this;
         }
 
-        /** Details object for removing a VCN ipv6 CIDR. */
+        /** Details object for removing a VCN IPv6 prefix. */
         private com.oracle.bmc.core.model.RemoveVcnIpv6CidrDetails removeVcnIpv6CidrDetails = null;
 
         /**
-         * Details object for removing a VCN ipv6 CIDR.
+         * Details object for removing a VCN IPv6 prefix.
          *
          * @param removeVcnIpv6CidrDetails the value to set
          * @return this builder instance

@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Details used when adding an IPv6 CIDR block to a subnet. <br>
+ * Details used when adding an IPv6 prefix to a subnet. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,7 +32,7 @@ public final class AddSubnetIpv6CidrDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * This field is not required and should only be specified when adding an IPv6 CIDR to a
+         * This field is not required and should only be specified when adding an IPv6 prefix to a
          * subnet's IPv6 address space. See[IPv6
          * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          *
@@ -42,7 +42,7 @@ public final class AddSubnetIpv6CidrDetails
         private String ipv6CidrBlock;
 
         /**
-         * This field is not required and should only be specified when adding an IPv6 CIDR to a
+         * This field is not required and should only be specified when adding an IPv6 prefix to a
          * subnet's IPv6 address space. See[IPv6
          * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          *
@@ -87,7 +87,7 @@ public final class AddSubnetIpv6CidrDetails
     }
 
     /**
-     * This field is not required and should only be specified when adding an IPv6 CIDR to a
+     * This field is not required and should only be specified when adding an IPv6 prefix to a
      * subnet's IPv6 address space. See[IPv6
      * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      *
@@ -97,7 +97,7 @@ public final class AddSubnetIpv6CidrDetails
     private final String ipv6CidrBlock;
 
     /**
-     * This field is not required and should only be specified when adding an IPv6 CIDR to a
+     * This field is not required and should only be specified when adding an IPv6 prefix to a
      * subnet's IPv6 address space. See[IPv6
      * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      *
