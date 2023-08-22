@@ -56,11 +56,11 @@ public class ActivateExadataInfrastructureResponse extends com.oracle.bmc.respon
         return opcRequestId;
     }
 
-    /** The returned ExadataInfrastructure instance. */
+    /** The returned {@code ExadataInfrastructure} instance. */
     private com.oracle.bmc.database.model.ExadataInfrastructure exadataInfrastructure;
 
     /**
-     * The returned ExadataInfrastructure instance.
+     * The returned {@code ExadataInfrastructure} instance.
      *
      * @return the value
      */
@@ -163,11 +163,11 @@ public class ActivateExadataInfrastructureResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned ExadataInfrastructure instance. */
+        /** The returned {@code ExadataInfrastructure} instance. */
         private com.oracle.bmc.database.model.ExadataInfrastructure exadataInfrastructure;
 
         /**
-         * The returned ExadataInfrastructure instance.
+         * The returned {@code ExadataInfrastructure} instance.
          *
          * @param exadataInfrastructure the value to set
          * @return this builder

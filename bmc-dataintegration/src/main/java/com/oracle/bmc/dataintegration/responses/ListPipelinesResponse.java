@@ -72,12 +72,12 @@ public class ListPipelinesResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcTotalItems;
     }
 
-    /** The returned PipelineSummaryCollection instance. */
+    /** The returned {@code PipelineSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.PipelineSummaryCollection
             pipelineSummaryCollection;
 
     /**
-     * The returned PipelineSummaryCollection instance.
+     * The returned {@code PipelineSummaryCollection} instance.
      *
      * @return the value
      */
@@ -202,12 +202,12 @@ public class ListPipelinesResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned PipelineSummaryCollection instance. */
+        /** The returned {@code PipelineSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.PipelineSummaryCollection
                 pipelineSummaryCollection;
 
         /**
-         * The returned PipelineSummaryCollection instance.
+         * The returned {@code PipelineSummaryCollection} instance.
          *
          * @param pipelineSummaryCollection the value to set
          * @return this builder

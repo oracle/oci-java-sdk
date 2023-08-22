@@ -24,11 +24,11 @@ public class GetStatusResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Status instance. */
+    /** The returned {@code Status} instance. */
     private com.oracle.bmc.cims.model.Status status;
 
     /**
-     * The returned Status instance.
+     * The returned {@code Status} instance.
      *
      * @return the value
      */
@@ -83,11 +83,11 @@ public class GetStatusResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Status instance. */
+        /** The returned {@code Status} instance. */
         private com.oracle.bmc.cims.model.Status status;
 
         /**
-         * The returned Status instance.
+         * The returned {@code Status} instance.
          *
          * @param status the value to set
          * @return this builder

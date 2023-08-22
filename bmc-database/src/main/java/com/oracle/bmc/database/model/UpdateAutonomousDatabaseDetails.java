@@ -33,6 +33,7 @@ public final class UpdateAutonomousDatabaseDetails
     @java.beans.ConstructorProperties({
         "backupRetentionPeriodInDays",
         "computeModel",
+        "inMemoryPercentage",
         "localAdgAutoFailoverMaxDataLossLimit",
         "cpuCoreCount",
         "longTermBackupSchedule",
@@ -78,6 +79,7 @@ public final class UpdateAutonomousDatabaseDetails
     public UpdateAutonomousDatabaseDetails(
             Integer backupRetentionPeriodInDays,
             ComputeModel computeModel,
+            Integer inMemoryPercentage,
             Integer localAdgAutoFailoverMaxDataLossLimit,
             Integer cpuCoreCount,
             LongTermBackUpScheduleDetails longTermBackupSchedule,
@@ -122,6 +124,7 @@ public final class UpdateAutonomousDatabaseDetails
         super();
         this.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
         this.computeModel = computeModel;
+        this.inMemoryPercentage = inMemoryPercentage;
         this.localAdgAutoFailoverMaxDataLossLimit = localAdgAutoFailoverMaxDataLossLimit;
         this.cpuCoreCount = cpuCoreCount;
         this.longTermBackupSchedule = longTermBackupSchedule;
@@ -201,6 +204,25 @@ public final class UpdateAutonomousDatabaseDetails
         public Builder computeModel(ComputeModel computeModel) {
             this.computeModel = computeModel;
             this.__explicitlySet__.add("computeModel");
+            return this;
+        }
+        /**
+         * The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous
+         * Database.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("inMemoryPercentage")
+        private Integer inMemoryPercentage;
+
+        /**
+         * The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous
+         * Database.
+         *
+         * @param inMemoryPercentage the value to set
+         * @return this builder
+         */
+        public Builder inMemoryPercentage(Integer inMemoryPercentage) {
+            this.inMemoryPercentage = inMemoryPercentage;
+            this.__explicitlySet__.add("inMemoryPercentage");
             return this;
         }
         /**
@@ -1501,6 +1523,7 @@ public final class UpdateAutonomousDatabaseDetails
                     new UpdateAutonomousDatabaseDetails(
                             this.backupRetentionPeriodInDays,
                             this.computeModel,
+                            this.inMemoryPercentage,
                             this.localAdgAutoFailoverMaxDataLossLimit,
                             this.cpuCoreCount,
                             this.longTermBackupSchedule,
@@ -1555,6 +1578,9 @@ public final class UpdateAutonomousDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("computeModel")) {
                 this.computeModel(model.getComputeModel());
+            }
+            if (model.wasPropertyExplicitlySet("inMemoryPercentage")) {
+                this.inMemoryPercentage(model.getInMemoryPercentage());
             }
             if (model.wasPropertyExplicitlySet("localAdgAutoFailoverMaxDataLossLimit")) {
                 this.localAdgAutoFailoverMaxDataLossLimit(
@@ -1760,6 +1786,23 @@ public final class UpdateAutonomousDatabaseDetails
      */
     public ComputeModel getComputeModel() {
         return computeModel;
+    }
+
+    /**
+     * The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous
+     * Database.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("inMemoryPercentage")
+    private final Integer inMemoryPercentage;
+
+    /**
+     * The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous
+     * Database.
+     *
+     * @return the value
+     */
+    public Integer getInMemoryPercentage() {
+        return inMemoryPercentage;
     }
 
     /**
@@ -3151,6 +3194,7 @@ public final class UpdateAutonomousDatabaseDetails
         sb.append("backupRetentionPeriodInDays=")
                 .append(String.valueOf(this.backupRetentionPeriodInDays));
         sb.append(", computeModel=").append(String.valueOf(this.computeModel));
+        sb.append(", inMemoryPercentage=").append(String.valueOf(this.inMemoryPercentage));
         sb.append(", localAdgAutoFailoverMaxDataLossLimit=")
                 .append(String.valueOf(this.localAdgAutoFailoverMaxDataLossLimit));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
@@ -3214,6 +3258,7 @@ public final class UpdateAutonomousDatabaseDetails
         return java.util.Objects.equals(
                         this.backupRetentionPeriodInDays, other.backupRetentionPeriodInDays)
                 && java.util.Objects.equals(this.computeModel, other.computeModel)
+                && java.util.Objects.equals(this.inMemoryPercentage, other.inMemoryPercentage)
                 && java.util.Objects.equals(
                         this.localAdgAutoFailoverMaxDataLossLimit,
                         other.localAdgAutoFailoverMaxDataLossLimit)
@@ -3276,6 +3321,11 @@ public final class UpdateAutonomousDatabaseDetails
                                 ? 43
                                 : this.backupRetentionPeriodInDays.hashCode());
         result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.inMemoryPercentage == null
+                                ? 43
+                                : this.inMemoryPercentage.hashCode());
         result =
                 (result * PRIME)
                         + (this.localAdgAutoFailoverMaxDataLossLimit == null

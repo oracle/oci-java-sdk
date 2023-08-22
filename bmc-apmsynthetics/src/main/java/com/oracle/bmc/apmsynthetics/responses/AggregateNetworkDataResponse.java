@@ -36,12 +36,12 @@ public class AggregateNetworkDataResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned AggregatedNetworkDataResult instance. */
+    /** The returned {@code AggregatedNetworkDataResult} instance. */
     private com.oracle.bmc.apmsynthetics.model.AggregatedNetworkDataResult
             aggregatedNetworkDataResult;
 
     /**
-     * The returned AggregatedNetworkDataResult instance.
+     * The returned {@code AggregatedNetworkDataResult} instance.
      *
      * @return the value
      */
@@ -120,12 +120,12 @@ public class AggregateNetworkDataResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned AggregatedNetworkDataResult instance. */
+        /** The returned {@code AggregatedNetworkDataResult} instance. */
         private com.oracle.bmc.apmsynthetics.model.AggregatedNetworkDataResult
                 aggregatedNetworkDataResult;
 
         /**
-         * The returned AggregatedNetworkDataResult instance.
+         * The returned {@code AggregatedNetworkDataResult} instance.
          *
          * @param aggregatedNetworkDataResult the value to set
          * @return this builder

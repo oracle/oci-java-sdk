@@ -36,11 +36,11 @@ public class PayInvoiceResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned PayInvoiceReceipt instance. */
+    /** The returned {@code PayInvoiceReceipt} instance. */
     private com.oracle.bmc.ospgateway.model.PayInvoiceReceipt payInvoiceReceipt;
 
     /**
-     * The returned PayInvoiceReceipt instance.
+     * The returned {@code PayInvoiceReceipt} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class PayInvoiceResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned PayInvoiceReceipt instance. */
+        /** The returned {@code PayInvoiceReceipt} instance. */
         private com.oracle.bmc.ospgateway.model.PayInvoiceReceipt payInvoiceReceipt;
 
         /**
-         * The returned PayInvoiceReceipt instance.
+         * The returned {@code PayInvoiceReceipt} instance.
          *
          * @param payInvoiceReceipt the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class GetApiValidationsResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned ApiValidations instance. */
+    /** The returned {@code ApiValidations} instance. */
     private com.oracle.bmc.apigateway.model.ApiValidations apiValidations;
 
     /**
-     * The returned ApiValidations instance.
+     * The returned {@code ApiValidations} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetApiValidationsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned ApiValidations instance. */
+        /** The returned {@code ApiValidations} instance. */
         private com.oracle.bmc.apigateway.model.ApiValidations apiValidations;
 
         /**
-         * The returned ApiValidations instance.
+         * The returned {@code ApiValidations} instance.
          *
          * @param apiValidations the value to set
          * @return this builder

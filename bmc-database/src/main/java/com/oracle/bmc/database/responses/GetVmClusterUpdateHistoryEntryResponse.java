@@ -36,11 +36,11 @@ public class GetVmClusterUpdateHistoryEntryResponse extends com.oracle.bmc.respo
         return opcRequestId;
     }
 
-    /** The returned VmClusterUpdateHistoryEntry instance. */
+    /** The returned {@code VmClusterUpdateHistoryEntry} instance. */
     private com.oracle.bmc.database.model.VmClusterUpdateHistoryEntry vmClusterUpdateHistoryEntry;
 
     /**
-     * The returned VmClusterUpdateHistoryEntry instance.
+     * The returned {@code VmClusterUpdateHistoryEntry} instance.
      *
      * @return the value
      */
@@ -119,12 +119,12 @@ public class GetVmClusterUpdateHistoryEntryResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned VmClusterUpdateHistoryEntry instance. */
+        /** The returned {@code VmClusterUpdateHistoryEntry} instance. */
         private com.oracle.bmc.database.model.VmClusterUpdateHistoryEntry
                 vmClusterUpdateHistoryEntry;
 
         /**
-         * The returned VmClusterUpdateHistoryEntry instance.
+         * The returned {@code VmClusterUpdateHistoryEntry} instance.
          *
          * @param vmClusterUpdateHistoryEntry the value to set
          * @return this builder

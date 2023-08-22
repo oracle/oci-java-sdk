@@ -52,11 +52,11 @@ public class CreateDomainResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned Domain instance. */
+    /** The returned {@code Domain} instance. */
     private com.oracle.bmc.tenantmanagercontrolplane.model.Domain domain;
 
     /**
-     * The returned Domain instance.
+     * The returned {@code Domain} instance.
      *
      * @return the value
      */
@@ -154,11 +154,11 @@ public class CreateDomainResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Domain instance. */
+        /** The returned {@code Domain} instance. */
         private com.oracle.bmc.tenantmanagercontrolplane.model.Domain domain;
 
         /**
-         * The returned Domain instance.
+         * The returned {@code Domain} instance.
          *
          * @param domain the value to set
          * @return this builder

@@ -62,11 +62,11 @@ public class ListUserAssessmentsResponse extends com.oracle.bmc.responses.BmcRes
         return opcPrevPage;
     }
 
-    /** A list of com.oracle.bmc.datasafe.model.UserAssessmentSummary instances. */
+    /** A list of {@code com.oracle.bmc.datasafe.model.UserAssessmentSummary} instances. */
     private java.util.List<com.oracle.bmc.datasafe.model.UserAssessmentSummary> items;
 
     /**
-     * A list of com.oracle.bmc.datasafe.model.UserAssessmentSummary instances.
+     * A list of {@code com.oracle.bmc.datasafe.model.UserAssessmentSummary} instances.
      *
      * @return the value
      */
@@ -174,11 +174,11 @@ public class ListUserAssessmentsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** A list of com.oracle.bmc.datasafe.model.UserAssessmentSummary instances. */
+        /** A list of {@code com.oracle.bmc.datasafe.model.UserAssessmentSummary} instances. */
         private java.util.List<com.oracle.bmc.datasafe.model.UserAssessmentSummary> items;
 
         /**
-         * A list of com.oracle.bmc.datasafe.model.UserAssessmentSummary instances.
+         * A list of {@code com.oracle.bmc.datasafe.model.UserAssessmentSummary} instances.
          *
          * @param items the value to set
          * @return this builder

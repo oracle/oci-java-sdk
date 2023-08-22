@@ -36,11 +36,11 @@ public class GetLinkResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Link instance. */
+    /** The returned {@code Link} instance. */
     private com.oracle.bmc.tenantmanagercontrolplane.model.Link link;
 
     /**
-     * The returned Link instance.
+     * The returned {@code Link} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetLinkResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Link instance. */
+        /** The returned {@code Link} instance. */
         private com.oracle.bmc.tenantmanagercontrolplane.model.Link link;
 
         /**
-         * The returned Link instance.
+         * The returned {@code Link} instance.
          *
          * @param link the value to set
          * @return this builder

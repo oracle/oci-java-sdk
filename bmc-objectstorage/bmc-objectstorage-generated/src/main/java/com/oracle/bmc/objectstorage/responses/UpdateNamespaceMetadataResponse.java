@@ -40,11 +40,11 @@ public class UpdateNamespaceMetadataResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned NamespaceMetadata instance. */
+    /** The returned {@code NamespaceMetadata} instance. */
     private com.oracle.bmc.objectstorage.model.NamespaceMetadata namespaceMetadata;
 
     /**
-     * The returned NamespaceMetadata instance.
+     * The returned {@code NamespaceMetadata} instance.
      *
      * @return the value
      */
@@ -126,11 +126,11 @@ public class UpdateNamespaceMetadataResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned NamespaceMetadata instance. */
+        /** The returned {@code NamespaceMetadata} instance. */
         private com.oracle.bmc.objectstorage.model.NamespaceMetadata namespaceMetadata;
 
         /**
-         * The returned NamespaceMetadata instance.
+         * The returned {@code NamespaceMetadata} instance.
          *
          * @param namespaceMetadata the value to set
          * @return this builder

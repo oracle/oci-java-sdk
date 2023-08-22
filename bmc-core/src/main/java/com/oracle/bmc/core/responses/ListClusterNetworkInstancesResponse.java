@@ -42,11 +42,11 @@ public class ListClusterNetworkInstancesResponse extends com.oracle.bmc.response
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.InstanceSummary instances. */
+    /** A list of {@code com.oracle.bmc.core.model.InstanceSummary} instances. */
     private java.util.List<com.oracle.bmc.core.model.InstanceSummary> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.InstanceSummary instances.
+     * A list of {@code com.oracle.bmc.core.model.InstanceSummary} instances.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListClusterNetworkInstancesResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.InstanceSummary instances. */
+        /** A list of {@code com.oracle.bmc.core.model.InstanceSummary} instances. */
         private java.util.List<com.oracle.bmc.core.model.InstanceSummary> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.InstanceSummary instances.
+         * A list of {@code com.oracle.bmc.core.model.InstanceSummary} instances.
          *
          * @param items the value to set
          * @return this builder

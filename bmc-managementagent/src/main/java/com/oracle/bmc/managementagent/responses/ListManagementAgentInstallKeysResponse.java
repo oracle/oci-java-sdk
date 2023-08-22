@@ -43,13 +43,15 @@ public class ListManagementAgentInstallKeysResponse extends com.oracle.bmc.respo
     }
 
     /**
-     * A list of com.oracle.bmc.managementagent.model.ManagementAgentInstallKeySummary instances.
+     * A list of {@code com.oracle.bmc.managementagent.model.ManagementAgentInstallKeySummary}
+     * instances.
      */
     private java.util.List<com.oracle.bmc.managementagent.model.ManagementAgentInstallKeySummary>
             items;
 
     /**
-     * A list of com.oracle.bmc.managementagent.model.ManagementAgentInstallKeySummary instances.
+     * A list of {@code com.oracle.bmc.managementagent.model.ManagementAgentInstallKeySummary}
+     * instances.
      *
      * @return the value
      */
@@ -136,7 +138,7 @@ public class ListManagementAgentInstallKeysResponse extends com.oracle.bmc.respo
         }
 
         /**
-         * A list of com.oracle.bmc.managementagent.model.ManagementAgentInstallKeySummary
+         * A list of {@code com.oracle.bmc.managementagent.model.ManagementAgentInstallKeySummary}
          * instances.
          */
         private java.util.List<
@@ -144,7 +146,7 @@ public class ListManagementAgentInstallKeysResponse extends com.oracle.bmc.respo
                 items;
 
         /**
-         * A list of com.oracle.bmc.managementagent.model.ManagementAgentInstallKeySummary
+         * A list of {@code com.oracle.bmc.managementagent.model.ManagementAgentInstallKeySummary}
          * instances.
          *
          * @param items the value to set

@@ -42,11 +42,11 @@ public class ListUsersResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned UserCollection instance. */
+    /** The returned {@code UserCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.UserCollection userCollection;
 
     /**
-     * The returned UserCollection instance.
+     * The returned {@code UserCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListUsersResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned UserCollection instance. */
+        /** The returned {@code UserCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.UserCollection userCollection;
 
         /**
-         * The returned UserCollection instance.
+         * The returned {@code UserCollection} instance.
          *
          * @param userCollection the value to set
          * @return this builder

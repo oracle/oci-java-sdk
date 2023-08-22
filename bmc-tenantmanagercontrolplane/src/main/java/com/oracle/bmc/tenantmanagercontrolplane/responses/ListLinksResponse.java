@@ -42,11 +42,11 @@ public class ListLinksResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned LinkCollection instance. */
+    /** The returned {@code LinkCollection} instance. */
     private com.oracle.bmc.tenantmanagercontrolplane.model.LinkCollection linkCollection;
 
     /**
-     * The returned LinkCollection instance.
+     * The returned {@code LinkCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListLinksResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned LinkCollection instance. */
+        /** The returned {@code LinkCollection} instance. */
         private com.oracle.bmc.tenantmanagercontrolplane.model.LinkCollection linkCollection;
 
         /**
-         * The returned LinkCollection instance.
+         * The returned {@code LinkCollection} instance.
          *
          * @param linkCollection the value to set
          * @return this builder

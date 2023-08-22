@@ -42,11 +42,11 @@ public class ListApmDomainWorkRequestsResponse extends com.oracle.bmc.responses.
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.apmcontrolplane.model.WorkRequest instances. */
+    /** A list of {@code com.oracle.bmc.apmcontrolplane.model.WorkRequest} instances. */
     private java.util.List<com.oracle.bmc.apmcontrolplane.model.WorkRequest> items;
 
     /**
-     * A list of com.oracle.bmc.apmcontrolplane.model.WorkRequest instances.
+     * A list of {@code com.oracle.bmc.apmcontrolplane.model.WorkRequest} instances.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListApmDomainWorkRequestsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** A list of com.oracle.bmc.apmcontrolplane.model.WorkRequest instances. */
+        /** A list of {@code com.oracle.bmc.apmcontrolplane.model.WorkRequest} instances. */
         private java.util.List<com.oracle.bmc.apmcontrolplane.model.WorkRequest> items;
 
         /**
-         * A list of com.oracle.bmc.apmcontrolplane.model.WorkRequest instances.
+         * A list of {@code com.oracle.bmc.apmcontrolplane.model.WorkRequest} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -37,12 +37,12 @@ public class GetExadataInfrastructureUnAllocatedResourcesResponse
         return opcRequestId;
     }
 
-    /** The returned ExadataInfrastructureUnAllocatedResources instance. */
+    /** The returned {@code ExadataInfrastructureUnAllocatedResources} instance. */
     private com.oracle.bmc.database.model.ExadataInfrastructureUnAllocatedResources
             exadataInfrastructureUnAllocatedResources;
 
     /**
-     * The returned ExadataInfrastructureUnAllocatedResources instance.
+     * The returned {@code ExadataInfrastructureUnAllocatedResources} instance.
      *
      * @return the value
      */
@@ -122,12 +122,12 @@ public class GetExadataInfrastructureUnAllocatedResourcesResponse
             return this;
         }
 
-        /** The returned ExadataInfrastructureUnAllocatedResources instance. */
+        /** The returned {@code ExadataInfrastructureUnAllocatedResources} instance. */
         private com.oracle.bmc.database.model.ExadataInfrastructureUnAllocatedResources
                 exadataInfrastructureUnAllocatedResources;
 
         /**
-         * The returned ExadataInfrastructureUnAllocatedResources instance.
+         * The returned {@code ExadataInfrastructureUnAllocatedResources} instance.
          *
          * @param exadataInfrastructureUnAllocatedResources the value to set
          * @return this builder

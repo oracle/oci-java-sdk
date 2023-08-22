@@ -52,11 +52,11 @@ public class CreateChannelResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** The returned CreateChannelResult instance. */
+    /** The returned {@code CreateChannelResult} instance. */
     private com.oracle.bmc.oda.model.CreateChannelResult createChannelResult;
 
     /**
-     * The returned CreateChannelResult instance.
+     * The returned {@code CreateChannelResult} instance.
      *
      * @return the value
      */
@@ -154,11 +154,11 @@ public class CreateChannelResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned CreateChannelResult instance. */
+        /** The returned {@code CreateChannelResult} instance. */
         private com.oracle.bmc.oda.model.CreateChannelResult createChannelResult;
 
         /**
-         * The returned CreateChannelResult instance.
+         * The returned {@code CreateChannelResult} instance.
          *
          * @param createChannelResult the value to set
          * @return this builder

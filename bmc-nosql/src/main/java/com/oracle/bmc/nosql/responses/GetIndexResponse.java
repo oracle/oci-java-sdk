@@ -36,11 +36,11 @@ public class GetIndexResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Index instance. */
+    /** The returned {@code Index} instance. */
     private com.oracle.bmc.nosql.model.Index index;
 
     /**
-     * The returned Index instance.
+     * The returned {@code Index} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetIndexResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Index instance. */
+        /** The returned {@code Index} instance. */
         private com.oracle.bmc.nosql.model.Index index;
 
         /**
-         * The returned Index instance.
+         * The returned {@code Index} instance.
          *
          * @param index the value to set
          * @return this builder

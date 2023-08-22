@@ -42,12 +42,12 @@ public class ListDiscoverySchedulesResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** The returned DiscoveryScheduleCollection instance. */
+    /** The returned {@code DiscoveryScheduleCollection} instance. */
     private com.oracle.bmc.cloudbridge.model.DiscoveryScheduleCollection
             discoveryScheduleCollection;
 
     /**
-     * The returned DiscoveryScheduleCollection instance.
+     * The returned {@code DiscoveryScheduleCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListDiscoverySchedulesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned DiscoveryScheduleCollection instance. */
+        /** The returned {@code DiscoveryScheduleCollection} instance. */
         private com.oracle.bmc.cloudbridge.model.DiscoveryScheduleCollection
                 discoveryScheduleCollection;
 
         /**
-         * The returned DiscoveryScheduleCollection instance.
+         * The returned {@code DiscoveryScheduleCollection} instance.
          *
          * @param discoveryScheduleCollection the value to set
          * @return this builder

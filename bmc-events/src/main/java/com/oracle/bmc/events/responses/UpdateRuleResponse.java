@@ -42,11 +42,11 @@ public class UpdateRuleResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Rule instance. */
+    /** The returned {@code Rule} instance. */
     private com.oracle.bmc.events.model.Rule rule;
 
     /**
-     * The returned Rule instance.
+     * The returned {@code Rule} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class UpdateRuleResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Rule instance. */
+        /** The returned {@code Rule} instance. */
         private com.oracle.bmc.events.model.Rule rule;
 
         /**
-         * The returned Rule instance.
+         * The returned {@code Rule} instance.
          *
          * @param rule the value to set
          * @return this builder

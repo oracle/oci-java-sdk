@@ -36,11 +36,11 @@ public class CreateAcceptedAgreementResponse extends com.oracle.bmc.responses.Bm
         return etag;
     }
 
-    /** The returned AcceptedAgreement instance. */
+    /** The returned {@code AcceptedAgreement} instance. */
     private com.oracle.bmc.marketplace.model.AcceptedAgreement acceptedAgreement;
 
     /**
-     * The returned AcceptedAgreement instance.
+     * The returned {@code AcceptedAgreement} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class CreateAcceptedAgreementResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned AcceptedAgreement instance. */
+        /** The returned {@code AcceptedAgreement} instance. */
         private com.oracle.bmc.marketplace.model.AcceptedAgreement acceptedAgreement;
 
         /**
-         * The returned AcceptedAgreement instance.
+         * The returned {@code AcceptedAgreement} instance.
          *
          * @param acceptedAgreement the value to set
          * @return this builder

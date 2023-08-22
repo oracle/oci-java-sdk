@@ -36,11 +36,11 @@ public class CreateServiceCatalogAssociationResponse extends com.oracle.bmc.resp
         return etag;
     }
 
-    /** The returned ServiceCatalogAssociation instance. */
+    /** The returned {@code ServiceCatalogAssociation} instance. */
     private com.oracle.bmc.servicecatalog.model.ServiceCatalogAssociation serviceCatalogAssociation;
 
     /**
-     * The returned ServiceCatalogAssociation instance.
+     * The returned {@code ServiceCatalogAssociation} instance.
      *
      * @return the value
      */
@@ -120,12 +120,12 @@ public class CreateServiceCatalogAssociationResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned ServiceCatalogAssociation instance. */
+        /** The returned {@code ServiceCatalogAssociation} instance. */
         private com.oracle.bmc.servicecatalog.model.ServiceCatalogAssociation
                 serviceCatalogAssociation;
 
         /**
-         * The returned ServiceCatalogAssociation instance.
+         * The returned {@code ServiceCatalogAssociation} instance.
          *
          * @param serviceCatalogAssociation the value to set
          * @return this builder

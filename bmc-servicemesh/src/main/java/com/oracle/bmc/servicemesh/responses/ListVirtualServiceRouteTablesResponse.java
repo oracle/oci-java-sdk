@@ -42,12 +42,12 @@ public class ListVirtualServiceRouteTablesResponse extends com.oracle.bmc.respon
         return opcNextPage;
     }
 
-    /** The returned VirtualServiceRouteTableCollection instance. */
+    /** The returned {@code VirtualServiceRouteTableCollection} instance. */
     private com.oracle.bmc.servicemesh.model.VirtualServiceRouteTableCollection
             virtualServiceRouteTableCollection;
 
     /**
-     * The returned VirtualServiceRouteTableCollection instance.
+     * The returned {@code VirtualServiceRouteTableCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListVirtualServiceRouteTablesResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned VirtualServiceRouteTableCollection instance. */
+        /** The returned {@code VirtualServiceRouteTableCollection} instance. */
         private com.oracle.bmc.servicemesh.model.VirtualServiceRouteTableCollection
                 virtualServiceRouteTableCollection;
 
         /**
-         * The returned VirtualServiceRouteTableCollection instance.
+         * The returned {@code VirtualServiceRouteTableCollection} instance.
          *
          * @param virtualServiceRouteTableCollection the value to set
          * @return this builder

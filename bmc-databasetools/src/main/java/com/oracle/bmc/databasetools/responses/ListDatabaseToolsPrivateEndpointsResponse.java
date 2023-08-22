@@ -43,12 +43,12 @@ public class ListDatabaseToolsPrivateEndpointsResponse
         return opcNextPage;
     }
 
-    /** The returned DatabaseToolsPrivateEndpointCollection instance. */
+    /** The returned {@code DatabaseToolsPrivateEndpointCollection} instance. */
     private com.oracle.bmc.databasetools.model.DatabaseToolsPrivateEndpointCollection
             databaseToolsPrivateEndpointCollection;
 
     /**
-     * The returned DatabaseToolsPrivateEndpointCollection instance.
+     * The returned {@code DatabaseToolsPrivateEndpointCollection} instance.
      *
      * @return the value
      */
@@ -134,12 +134,12 @@ public class ListDatabaseToolsPrivateEndpointsResponse
             return this;
         }
 
-        /** The returned DatabaseToolsPrivateEndpointCollection instance. */
+        /** The returned {@code DatabaseToolsPrivateEndpointCollection} instance. */
         private com.oracle.bmc.databasetools.model.DatabaseToolsPrivateEndpointCollection
                 databaseToolsPrivateEndpointCollection;
 
         /**
-         * The returned DatabaseToolsPrivateEndpointCollection instance.
+         * The returned {@code DatabaseToolsPrivateEndpointCollection} instance.
          *
          * @param databaseToolsPrivateEndpointCollection the value to set
          * @return this builder

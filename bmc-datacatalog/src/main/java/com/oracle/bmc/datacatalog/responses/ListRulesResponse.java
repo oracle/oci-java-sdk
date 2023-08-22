@@ -42,11 +42,11 @@ public class ListRulesResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned RuleCollection instance. */
+    /** The returned {@code RuleCollection} instance. */
     private com.oracle.bmc.datacatalog.model.RuleCollection ruleCollection;
 
     /**
-     * The returned RuleCollection instance.
+     * The returned {@code RuleCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListRulesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned RuleCollection instance. */
+        /** The returned {@code RuleCollection} instance. */
         private com.oracle.bmc.datacatalog.model.RuleCollection ruleCollection;
 
         /**
-         * The returned RuleCollection instance.
+         * The returned {@code RuleCollection} instance.
          *
          * @param ruleCollection the value to set
          * @return this builder

@@ -42,12 +42,12 @@ public class ListContainerInstancesResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** The returned ContainerInstanceCollection instance. */
+    /** The returned {@code ContainerInstanceCollection} instance. */
     private com.oracle.bmc.containerinstances.model.ContainerInstanceCollection
             containerInstanceCollection;
 
     /**
-     * The returned ContainerInstanceCollection instance.
+     * The returned {@code ContainerInstanceCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListContainerInstancesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned ContainerInstanceCollection instance. */
+        /** The returned {@code ContainerInstanceCollection} instance. */
         private com.oracle.bmc.containerinstances.model.ContainerInstanceCollection
                 containerInstanceCollection;
 
         /**
-         * The returned ContainerInstanceCollection instance.
+         * The returned {@code ContainerInstanceCollection} instance.
          *
          * @param containerInstanceCollection the value to set
          * @return this builder

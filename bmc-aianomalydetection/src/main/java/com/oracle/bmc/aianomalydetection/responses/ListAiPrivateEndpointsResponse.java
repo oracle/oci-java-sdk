@@ -42,12 +42,12 @@ public class ListAiPrivateEndpointsResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** The returned AiPrivateEndpointCollection instance. */
+    /** The returned {@code AiPrivateEndpointCollection} instance. */
     private com.oracle.bmc.aianomalydetection.model.AiPrivateEndpointCollection
             aiPrivateEndpointCollection;
 
     /**
-     * The returned AiPrivateEndpointCollection instance.
+     * The returned {@code AiPrivateEndpointCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListAiPrivateEndpointsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned AiPrivateEndpointCollection instance. */
+        /** The returned {@code AiPrivateEndpointCollection} instance. */
         private com.oracle.bmc.aianomalydetection.model.AiPrivateEndpointCollection
                 aiPrivateEndpointCollection;
 
         /**
-         * The returned AiPrivateEndpointCollection instance.
+         * The returned {@code AiPrivateEndpointCollection} instance.
          *
          * @param aiPrivateEndpointCollection the value to set
          * @return this builder

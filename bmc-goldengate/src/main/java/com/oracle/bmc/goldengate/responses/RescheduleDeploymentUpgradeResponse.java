@@ -36,11 +36,11 @@ public class RescheduleDeploymentUpgradeResponse extends com.oracle.bmc.response
         return opcRequestId;
     }
 
-    /** The returned DeploymentUpgrade instance. */
+    /** The returned {@code DeploymentUpgrade} instance. */
     private com.oracle.bmc.goldengate.model.DeploymentUpgrade deploymentUpgrade;
 
     /**
-     * The returned DeploymentUpgrade instance.
+     * The returned {@code DeploymentUpgrade} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class RescheduleDeploymentUpgradeResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned DeploymentUpgrade instance. */
+        /** The returned {@code DeploymentUpgrade} instance. */
         private com.oracle.bmc.goldengate.model.DeploymentUpgrade deploymentUpgrade;
 
         /**
-         * The returned DeploymentUpgrade instance.
+         * The returned {@code DeploymentUpgrade} instance.
          *
          * @param deploymentUpgrade the value to set
          * @return this builder

@@ -64,11 +64,11 @@ public class ListRecalledDataResponse extends com.oracle.bmc.responses.BmcRespon
         return opcPrevPage;
     }
 
-    /** The returned RecalledDataCollection instance. */
+    /** The returned {@code RecalledDataCollection} instance. */
     private com.oracle.bmc.loganalytics.model.RecalledDataCollection recalledDataCollection;
 
     /**
-     * The returned RecalledDataCollection instance.
+     * The returned {@code RecalledDataCollection} instance.
      *
      * @return the value
      */
@@ -178,11 +178,11 @@ public class ListRecalledDataResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned RecalledDataCollection instance. */
+        /** The returned {@code RecalledDataCollection} instance. */
         private com.oracle.bmc.loganalytics.model.RecalledDataCollection recalledDataCollection;
 
         /**
-         * The returned RecalledDataCollection instance.
+         * The returned {@code RecalledDataCollection} instance.
          *
          * @param recalledDataCollection the value to set
          * @return this builder

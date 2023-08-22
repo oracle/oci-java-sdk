@@ -64,11 +64,11 @@ public class ListScheduledTasksResponse extends com.oracle.bmc.responses.BmcResp
         return opcPrevPage;
     }
 
-    /** The returned ScheduledTaskCollection instance. */
+    /** The returned {@code ScheduledTaskCollection} instance. */
     private com.oracle.bmc.loganalytics.model.ScheduledTaskCollection scheduledTaskCollection;
 
     /**
-     * The returned ScheduledTaskCollection instance.
+     * The returned {@code ScheduledTaskCollection} instance.
      *
      * @return the value
      */
@@ -178,11 +178,11 @@ public class ListScheduledTasksResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned ScheduledTaskCollection instance. */
+        /** The returned {@code ScheduledTaskCollection} instance. */
         private com.oracle.bmc.loganalytics.model.ScheduledTaskCollection scheduledTaskCollection;
 
         /**
-         * The returned ScheduledTaskCollection instance.
+         * The returned {@code ScheduledTaskCollection} instance.
          *
          * @param scheduledTaskCollection the value to set
          * @return this builder

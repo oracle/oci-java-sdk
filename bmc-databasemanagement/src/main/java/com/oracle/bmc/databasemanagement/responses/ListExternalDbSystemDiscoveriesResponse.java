@@ -42,12 +42,12 @@ public class ListExternalDbSystemDiscoveriesResponse extends com.oracle.bmc.resp
         return opcNextPage;
     }
 
-    /** The returned ExternalDbSystemDiscoveryCollection instance. */
+    /** The returned {@code ExternalDbSystemDiscoveryCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.ExternalDbSystemDiscoveryCollection
             externalDbSystemDiscoveryCollection;
 
     /**
-     * The returned ExternalDbSystemDiscoveryCollection instance.
+     * The returned {@code ExternalDbSystemDiscoveryCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListExternalDbSystemDiscoveriesResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned ExternalDbSystemDiscoveryCollection instance. */
+        /** The returned {@code ExternalDbSystemDiscoveryCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.ExternalDbSystemDiscoveryCollection
                 externalDbSystemDiscoveryCollection;
 
         /**
-         * The returned ExternalDbSystemDiscoveryCollection instance.
+         * The returned {@code ExternalDbSystemDiscoveryCollection} instance.
          *
          * @param externalDbSystemDiscoveryCollection the value to set
          * @return this builder

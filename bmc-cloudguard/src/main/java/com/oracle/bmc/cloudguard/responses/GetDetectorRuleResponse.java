@@ -54,11 +54,11 @@ public class GetDetectorRuleResponse extends com.oracle.bmc.responses.BmcRespons
         return opcNextPage;
     }
 
-    /** The returned DetectorRule instance. */
+    /** The returned {@code DetectorRule} instance. */
     private com.oracle.bmc.cloudguard.model.DetectorRule detectorRule;
 
     /**
-     * The returned DetectorRule instance.
+     * The returned {@code DetectorRule} instance.
      *
      * @return the value
      */
@@ -158,11 +158,11 @@ public class GetDetectorRuleResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned DetectorRule instance. */
+        /** The returned {@code DetectorRule} instance. */
         private com.oracle.bmc.cloudguard.model.DetectorRule detectorRule;
 
         /**
-         * The returned DetectorRule instance.
+         * The returned {@code DetectorRule} instance.
          *
          * @param detectorRule the value to set
          * @return this builder

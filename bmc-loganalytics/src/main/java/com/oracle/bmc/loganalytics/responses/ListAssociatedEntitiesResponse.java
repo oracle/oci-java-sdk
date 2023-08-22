@@ -64,12 +64,12 @@ public class ListAssociatedEntitiesResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsAssociatedEntityCollection instance. */
+    /** The returned {@code LogAnalyticsAssociatedEntityCollection} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsAssociatedEntityCollection
             logAnalyticsAssociatedEntityCollection;
 
     /**
-     * The returned LogAnalyticsAssociatedEntityCollection instance.
+     * The returned {@code LogAnalyticsAssociatedEntityCollection} instance.
      *
      * @return the value
      */
@@ -182,12 +182,12 @@ public class ListAssociatedEntitiesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned LogAnalyticsAssociatedEntityCollection instance. */
+        /** The returned {@code LogAnalyticsAssociatedEntityCollection} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsAssociatedEntityCollection
                 logAnalyticsAssociatedEntityCollection;
 
         /**
-         * The returned LogAnalyticsAssociatedEntityCollection instance.
+         * The returned {@code LogAnalyticsAssociatedEntityCollection} instance.
          *
          * @param logAnalyticsAssociatedEntityCollection the value to set
          * @return this builder

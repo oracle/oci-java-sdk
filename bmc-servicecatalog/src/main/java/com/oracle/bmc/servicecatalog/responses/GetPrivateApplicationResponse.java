@@ -36,11 +36,11 @@ public class GetPrivateApplicationResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned PrivateApplication instance. */
+    /** The returned {@code PrivateApplication} instance. */
     private com.oracle.bmc.servicecatalog.model.PrivateApplication privateApplication;
 
     /**
-     * The returned PrivateApplication instance.
+     * The returned {@code PrivateApplication} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetPrivateApplicationResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned PrivateApplication instance. */
+        /** The returned {@code PrivateApplication} instance. */
         private com.oracle.bmc.servicecatalog.model.PrivateApplication privateApplication;
 
         /**
-         * The returned PrivateApplication instance.
+         * The returned {@code PrivateApplication} instance.
          *
          * @param privateApplication the value to set
          * @return this builder

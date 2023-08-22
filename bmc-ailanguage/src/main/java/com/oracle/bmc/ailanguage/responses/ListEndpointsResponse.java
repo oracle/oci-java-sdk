@@ -42,11 +42,11 @@ public class ListEndpointsResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcNextPage;
     }
 
-    /** The returned EndpointCollection instance. */
+    /** The returned {@code EndpointCollection} instance. */
     private com.oracle.bmc.ailanguage.model.EndpointCollection endpointCollection;
 
     /**
-     * The returned EndpointCollection instance.
+     * The returned {@code EndpointCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListEndpointsResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned EndpointCollection instance. */
+        /** The returned {@code EndpointCollection} instance. */
         private com.oracle.bmc.ailanguage.model.EndpointCollection endpointCollection;
 
         /**
-         * The returned EndpointCollection instance.
+         * The returned {@code EndpointCollection} instance.
          *
          * @param endpointCollection the value to set
          * @return this builder

@@ -60,11 +60,11 @@ public class ListSdkLanguageTypesResponse extends com.oracle.bmc.responses.BmcRe
         return opcPrevPage;
     }
 
-    /** The returned SdkLanguageTypeCollection instance. */
+    /** The returned {@code SdkLanguageTypeCollection} instance. */
     private com.oracle.bmc.apigateway.model.SdkLanguageTypeCollection sdkLanguageTypeCollection;
 
     /**
-     * The returned SdkLanguageTypeCollection instance.
+     * The returned {@code SdkLanguageTypeCollection} instance.
      *
      * @return the value
      */
@@ -171,11 +171,11 @@ public class ListSdkLanguageTypesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned SdkLanguageTypeCollection instance. */
+        /** The returned {@code SdkLanguageTypeCollection} instance. */
         private com.oracle.bmc.apigateway.model.SdkLanguageTypeCollection sdkLanguageTypeCollection;
 
         /**
-         * The returned SdkLanguageTypeCollection instance.
+         * The returned {@code SdkLanguageTypeCollection} instance.
          *
          * @param sdkLanguageTypeCollection the value to set
          * @return this builder

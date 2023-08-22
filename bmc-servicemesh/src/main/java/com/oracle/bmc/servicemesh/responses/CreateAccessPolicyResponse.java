@@ -64,11 +64,11 @@ public class CreateAccessPolicyResponse extends com.oracle.bmc.responses.BmcResp
         return location;
     }
 
-    /** The returned AccessPolicy instance. */
+    /** The returned {@code AccessPolicy} instance. */
     private com.oracle.bmc.servicemesh.model.AccessPolicy accessPolicy;
 
     /**
-     * The returned AccessPolicy instance.
+     * The returned {@code AccessPolicy} instance.
      *
      * @return the value
      */
@@ -183,11 +183,11 @@ public class CreateAccessPolicyResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned AccessPolicy instance. */
+        /** The returned {@code AccessPolicy} instance. */
         private com.oracle.bmc.servicemesh.model.AccessPolicy accessPolicy;
 
         /**
-         * The returned AccessPolicy instance.
+         * The returned {@code AccessPolicy} instance.
          *
          * @param accessPolicy the value to set
          * @return this builder

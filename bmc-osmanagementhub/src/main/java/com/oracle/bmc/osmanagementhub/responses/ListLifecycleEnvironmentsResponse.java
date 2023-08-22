@@ -42,12 +42,12 @@ public class ListLifecycleEnvironmentsResponse extends com.oracle.bmc.responses.
         return opcNextPage;
     }
 
-    /** The returned LifecycleEnvironmentCollection instance. */
+    /** The returned {@code LifecycleEnvironmentCollection} instance. */
     private com.oracle.bmc.osmanagementhub.model.LifecycleEnvironmentCollection
             lifecycleEnvironmentCollection;
 
     /**
-     * The returned LifecycleEnvironmentCollection instance.
+     * The returned {@code LifecycleEnvironmentCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListLifecycleEnvironmentsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned LifecycleEnvironmentCollection instance. */
+        /** The returned {@code LifecycleEnvironmentCollection} instance. */
         private com.oracle.bmc.osmanagementhub.model.LifecycleEnvironmentCollection
                 lifecycleEnvironmentCollection;
 
         /**
-         * The returned LifecycleEnvironmentCollection instance.
+         * The returned {@code LifecycleEnvironmentCollection} instance.
          *
          * @param lifecycleEnvironmentCollection the value to set
          * @return this builder

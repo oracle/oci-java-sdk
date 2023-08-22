@@ -46,11 +46,11 @@ public class ListSourcesResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.applicationmigration.model.SourceSummary instances. */
+    /** A list of {@code com.oracle.bmc.applicationmigration.model.SourceSummary} instances. */
     private java.util.List<com.oracle.bmc.applicationmigration.model.SourceSummary> items;
 
     /**
-     * A list of com.oracle.bmc.applicationmigration.model.SourceSummary instances.
+     * A list of {@code com.oracle.bmc.applicationmigration.model.SourceSummary} instances.
      *
      * @return the value
      */
@@ -137,11 +137,11 @@ public class ListSourcesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.applicationmigration.model.SourceSummary instances. */
+        /** A list of {@code com.oracle.bmc.applicationmigration.model.SourceSummary} instances. */
         private java.util.List<com.oracle.bmc.applicationmigration.model.SourceSummary> items;
 
         /**
-         * A list of com.oracle.bmc.applicationmigration.model.SourceSummary instances.
+         * A list of {@code com.oracle.bmc.applicationmigration.model.SourceSummary} instances.
          *
          * @param items the value to set
          * @return this builder

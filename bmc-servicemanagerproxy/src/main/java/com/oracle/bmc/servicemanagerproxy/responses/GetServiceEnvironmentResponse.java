@@ -36,11 +36,11 @@ public class GetServiceEnvironmentResponse extends com.oracle.bmc.responses.BmcR
         return etag;
     }
 
-    /** The returned ServiceEnvironment instance. */
+    /** The returned {@code ServiceEnvironment} instance. */
     private com.oracle.bmc.servicemanagerproxy.model.ServiceEnvironment serviceEnvironment;
 
     /**
-     * The returned ServiceEnvironment instance.
+     * The returned {@code ServiceEnvironment} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetServiceEnvironmentResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned ServiceEnvironment instance. */
+        /** The returned {@code ServiceEnvironment} instance. */
         private com.oracle.bmc.servicemanagerproxy.model.ServiceEnvironment serviceEnvironment;
 
         /**
-         * The returned ServiceEnvironment instance.
+         * The returned {@code ServiceEnvironment} instance.
          *
          * @param serviceEnvironment the value to set
          * @return this builder

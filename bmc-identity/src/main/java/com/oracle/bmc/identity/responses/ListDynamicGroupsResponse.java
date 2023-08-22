@@ -42,11 +42,11 @@ public class ListDynamicGroupsResponse extends com.oracle.bmc.responses.BmcRespo
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.identity.model.DynamicGroup instances. */
+    /** A list of {@code com.oracle.bmc.identity.model.DynamicGroup} instances. */
     private java.util.List<com.oracle.bmc.identity.model.DynamicGroup> items;
 
     /**
-     * A list of com.oracle.bmc.identity.model.DynamicGroup instances.
+     * A list of {@code com.oracle.bmc.identity.model.DynamicGroup} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListDynamicGroupsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** A list of com.oracle.bmc.identity.model.DynamicGroup instances. */
+        /** A list of {@code com.oracle.bmc.identity.model.DynamicGroup} instances. */
         private java.util.List<com.oracle.bmc.identity.model.DynamicGroup> items;
 
         /**
-         * A list of com.oracle.bmc.identity.model.DynamicGroup instances.
+         * A list of {@code com.oracle.bmc.identity.model.DynamicGroup} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -37,12 +37,12 @@ public class GetFusionEnvironmentFamilyLimitsAndUsageResponse
         return opcRequestId;
     }
 
-    /** The returned FusionEnvironmentFamilyLimitsAndUsage instance. */
+    /** The returned {@code FusionEnvironmentFamilyLimitsAndUsage} instance. */
     private com.oracle.bmc.fusionapps.model.FusionEnvironmentFamilyLimitsAndUsage
             fusionEnvironmentFamilyLimitsAndUsage;
 
     /**
-     * The returned FusionEnvironmentFamilyLimitsAndUsage instance.
+     * The returned {@code FusionEnvironmentFamilyLimitsAndUsage} instance.
      *
      * @return the value
      */
@@ -122,12 +122,12 @@ public class GetFusionEnvironmentFamilyLimitsAndUsageResponse
             return this;
         }
 
-        /** The returned FusionEnvironmentFamilyLimitsAndUsage instance. */
+        /** The returned {@code FusionEnvironmentFamilyLimitsAndUsage} instance. */
         private com.oracle.bmc.fusionapps.model.FusionEnvironmentFamilyLimitsAndUsage
                 fusionEnvironmentFamilyLimitsAndUsage;
 
         /**
-         * The returned FusionEnvironmentFamilyLimitsAndUsage instance.
+         * The returned {@code FusionEnvironmentFamilyLimitsAndUsage} instance.
          *
          * @param fusionEnvironmentFamilyLimitsAndUsage the value to set
          * @return this builder

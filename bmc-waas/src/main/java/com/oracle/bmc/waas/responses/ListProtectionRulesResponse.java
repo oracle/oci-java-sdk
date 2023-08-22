@@ -54,11 +54,11 @@ public class ListProtectionRulesResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.waas.model.ProtectionRule instances. */
+    /** A list of {@code com.oracle.bmc.waas.model.ProtectionRule} instances. */
     private java.util.List<com.oracle.bmc.waas.model.ProtectionRule> items;
 
     /**
-     * A list of com.oracle.bmc.waas.model.ProtectionRule instances.
+     * A list of {@code com.oracle.bmc.waas.model.ProtectionRule} instances.
      *
      * @return the value
      */
@@ -158,11 +158,11 @@ public class ListProtectionRulesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** A list of com.oracle.bmc.waas.model.ProtectionRule instances. */
+        /** A list of {@code com.oracle.bmc.waas.model.ProtectionRule} instances. */
         private java.util.List<com.oracle.bmc.waas.model.ProtectionRule> items;
 
         /**
-         * A list of com.oracle.bmc.waas.model.ProtectionRule instances.
+         * A list of {@code com.oracle.bmc.waas.model.ProtectionRule} instances.
          *
          * @param items the value to set
          * @return this builder

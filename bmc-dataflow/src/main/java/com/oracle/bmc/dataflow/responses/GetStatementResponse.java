@@ -40,11 +40,11 @@ public class GetStatementResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Statement instance. */
+    /** The returned {@code Statement} instance. */
     private com.oracle.bmc.dataflow.model.Statement statement;
 
     /**
-     * The returned Statement instance.
+     * The returned {@code Statement} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetStatementResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Statement instance. */
+        /** The returned {@code Statement} instance. */
         private com.oracle.bmc.dataflow.model.Statement statement;
 
         /**
-         * The returned Statement instance.
+         * The returned {@code Statement} instance.
          *
          * @param statement the value to set
          * @return this builder

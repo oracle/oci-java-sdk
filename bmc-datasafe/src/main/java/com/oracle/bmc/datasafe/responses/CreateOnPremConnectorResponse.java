@@ -70,11 +70,11 @@ public class CreateOnPremConnectorResponse extends com.oracle.bmc.responses.BmcR
         return location;
     }
 
-    /** The returned OnPremConnector instance. */
+    /** The returned {@code OnPremConnector} instance. */
     private com.oracle.bmc.datasafe.model.OnPremConnector onPremConnector;
 
     /**
-     * The returned OnPremConnector instance.
+     * The returned {@code OnPremConnector} instance.
      *
      * @return the value
      */
@@ -195,11 +195,11 @@ public class CreateOnPremConnectorResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned OnPremConnector instance. */
+        /** The returned {@code OnPremConnector} instance. */
         private com.oracle.bmc.datasafe.model.OnPremConnector onPremConnector;
 
         /**
-         * The returned OnPremConnector instance.
+         * The returned {@code OnPremConnector} instance.
          *
          * @param onPremConnector the value to set
          * @return this builder

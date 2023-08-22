@@ -43,12 +43,12 @@ public class ListSupportedVmwareSoftwareVersionsResponse
         return opcNextPage;
     }
 
-    /** The returned SupportedVmwareSoftwareVersionCollection instance. */
+    /** The returned {@code SupportedVmwareSoftwareVersionCollection} instance. */
     private com.oracle.bmc.ocvp.model.SupportedVmwareSoftwareVersionCollection
             supportedVmwareSoftwareVersionCollection;
 
     /**
-     * The returned SupportedVmwareSoftwareVersionCollection instance.
+     * The returned {@code SupportedVmwareSoftwareVersionCollection} instance.
      *
      * @return the value
      */
@@ -134,12 +134,12 @@ public class ListSupportedVmwareSoftwareVersionsResponse
             return this;
         }
 
-        /** The returned SupportedVmwareSoftwareVersionCollection instance. */
+        /** The returned {@code SupportedVmwareSoftwareVersionCollection} instance. */
         private com.oracle.bmc.ocvp.model.SupportedVmwareSoftwareVersionCollection
                 supportedVmwareSoftwareVersionCollection;
 
         /**
-         * The returned SupportedVmwareSoftwareVersionCollection instance.
+         * The returned {@code SupportedVmwareSoftwareVersionCollection} instance.
          *
          * @param supportedVmwareSoftwareVersionCollection the value to set
          * @return this builder

@@ -36,12 +36,12 @@ public class CreateAnnouncementSubscriptionResponse extends com.oracle.bmc.respo
         return etag;
     }
 
-    /** The returned AnnouncementSubscription instance. */
+    /** The returned {@code AnnouncementSubscription} instance. */
     private com.oracle.bmc.announcementsservice.model.AnnouncementSubscription
             announcementSubscription;
 
     /**
-     * The returned AnnouncementSubscription instance.
+     * The returned {@code AnnouncementSubscription} instance.
      *
      * @return the value
      */
@@ -121,12 +121,12 @@ public class CreateAnnouncementSubscriptionResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned AnnouncementSubscription instance. */
+        /** The returned {@code AnnouncementSubscription} instance. */
         private com.oracle.bmc.announcementsservice.model.AnnouncementSubscription
                 announcementSubscription;
 
         /**
-         * The returned AnnouncementSubscription instance.
+         * The returned {@code AnnouncementSubscription} instance.
          *
          * @param announcementSubscription the value to set
          * @return this builder

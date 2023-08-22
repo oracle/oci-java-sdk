@@ -42,11 +42,11 @@ public class ListTermRelationshipsResponse extends com.oracle.bmc.responses.BmcR
         return opcNextPage;
     }
 
-    /** The returned TermRelationshipCollection instance. */
+    /** The returned {@code TermRelationshipCollection} instance. */
     private com.oracle.bmc.datacatalog.model.TermRelationshipCollection termRelationshipCollection;
 
     /**
-     * The returned TermRelationshipCollection instance.
+     * The returned {@code TermRelationshipCollection} instance.
      *
      * @return the value
      */
@@ -131,12 +131,12 @@ public class ListTermRelationshipsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned TermRelationshipCollection instance. */
+        /** The returned {@code TermRelationshipCollection} instance. */
         private com.oracle.bmc.datacatalog.model.TermRelationshipCollection
                 termRelationshipCollection;
 
         /**
-         * The returned TermRelationshipCollection instance.
+         * The returned {@code TermRelationshipCollection} instance.
          *
          * @param termRelationshipCollection the value to set
          * @return this builder

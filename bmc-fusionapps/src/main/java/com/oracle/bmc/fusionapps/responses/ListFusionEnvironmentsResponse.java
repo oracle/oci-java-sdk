@@ -42,11 +42,11 @@ public class ListFusionEnvironmentsResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** The returned FusionEnvironmentCollection instance. */
+    /** The returned {@code FusionEnvironmentCollection} instance. */
     private com.oracle.bmc.fusionapps.model.FusionEnvironmentCollection fusionEnvironmentCollection;
 
     /**
-     * The returned FusionEnvironmentCollection instance.
+     * The returned {@code FusionEnvironmentCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListFusionEnvironmentsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned FusionEnvironmentCollection instance. */
+        /** The returned {@code FusionEnvironmentCollection} instance. */
         private com.oracle.bmc.fusionapps.model.FusionEnvironmentCollection
                 fusionEnvironmentCollection;
 
         /**
-         * The returned FusionEnvironmentCollection instance.
+         * The returned {@code FusionEnvironmentCollection} instance.
          *
          * @param fusionEnvironmentCollection the value to set
          * @return this builder

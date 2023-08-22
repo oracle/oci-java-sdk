@@ -25,12 +25,12 @@ public class GetOptimizerStatisticsAdvisorExecutionScriptResponse
         return opcRequestId;
     }
 
-    /** The returned OptimizerStatisticsAdvisorExecutionScript instance. */
+    /** The returned {@code OptimizerStatisticsAdvisorExecutionScript} instance. */
     private com.oracle.bmc.databasemanagement.model.OptimizerStatisticsAdvisorExecutionScript
             optimizerStatisticsAdvisorExecutionScript;
 
     /**
-     * The returned OptimizerStatisticsAdvisorExecutionScript instance.
+     * The returned {@code OptimizerStatisticsAdvisorExecutionScript} instance.
      *
      * @return the value
      */
@@ -93,12 +93,12 @@ public class GetOptimizerStatisticsAdvisorExecutionScriptResponse
             return this;
         }
 
-        /** The returned OptimizerStatisticsAdvisorExecutionScript instance. */
+        /** The returned {@code OptimizerStatisticsAdvisorExecutionScript} instance. */
         private com.oracle.bmc.databasemanagement.model.OptimizerStatisticsAdvisorExecutionScript
                 optimizerStatisticsAdvisorExecutionScript;
 
         /**
-         * The returned OptimizerStatisticsAdvisorExecutionScript instance.
+         * The returned {@code OptimizerStatisticsAdvisorExecutionScript} instance.
          *
          * @param optimizerStatisticsAdvisorExecutionScript the value to set
          * @return this builder

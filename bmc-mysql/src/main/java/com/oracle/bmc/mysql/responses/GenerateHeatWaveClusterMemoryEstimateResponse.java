@@ -41,11 +41,11 @@ public class GenerateHeatWaveClusterMemoryEstimateResponse
         return opcWorkRequestId;
     }
 
-    /** The returned HeatWaveClusterMemoryEstimate instance. */
+    /** The returned {@code HeatWaveClusterMemoryEstimate} instance. */
     private com.oracle.bmc.mysql.model.HeatWaveClusterMemoryEstimate heatWaveClusterMemoryEstimate;
 
     /**
-     * The returned HeatWaveClusterMemoryEstimate instance.
+     * The returned {@code HeatWaveClusterMemoryEstimate} instance.
      *
      * @return the value
      */
@@ -129,12 +129,12 @@ public class GenerateHeatWaveClusterMemoryEstimateResponse
             return this;
         }
 
-        /** The returned HeatWaveClusterMemoryEstimate instance. */
+        /** The returned {@code HeatWaveClusterMemoryEstimate} instance. */
         private com.oracle.bmc.mysql.model.HeatWaveClusterMemoryEstimate
                 heatWaveClusterMemoryEstimate;
 
         /**
-         * The returned HeatWaveClusterMemoryEstimate instance.
+         * The returned {@code HeatWaveClusterMemoryEstimate} instance.
          *
          * @param heatWaveClusterMemoryEstimate the value to set
          * @return this builder

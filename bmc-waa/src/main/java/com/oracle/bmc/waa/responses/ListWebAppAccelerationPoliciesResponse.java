@@ -42,12 +42,12 @@ public class ListWebAppAccelerationPoliciesResponse extends com.oracle.bmc.respo
         return opcNextPage;
     }
 
-    /** The returned WebAppAccelerationPolicyCollection instance. */
+    /** The returned {@code WebAppAccelerationPolicyCollection} instance. */
     private com.oracle.bmc.waa.model.WebAppAccelerationPolicyCollection
             webAppAccelerationPolicyCollection;
 
     /**
-     * The returned WebAppAccelerationPolicyCollection instance.
+     * The returned {@code WebAppAccelerationPolicyCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListWebAppAccelerationPoliciesResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned WebAppAccelerationPolicyCollection instance. */
+        /** The returned {@code WebAppAccelerationPolicyCollection} instance. */
         private com.oracle.bmc.waa.model.WebAppAccelerationPolicyCollection
                 webAppAccelerationPolicyCollection;
 
         /**
-         * The returned WebAppAccelerationPolicyCollection instance.
+         * The returned {@code WebAppAccelerationPolicyCollection} instance.
          *
          * @param webAppAccelerationPolicyCollection the value to set
          * @return this builder

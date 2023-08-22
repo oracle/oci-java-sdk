@@ -36,11 +36,11 @@ public class GetImageJobResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned ImageJob instance. */
+    /** The returned {@code ImageJob} instance. */
     private com.oracle.bmc.aivision.model.ImageJob imageJob;
 
     /**
-     * The returned ImageJob instance.
+     * The returned {@code ImageJob} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetImageJobResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned ImageJob instance. */
+        /** The returned {@code ImageJob} instance. */
         private com.oracle.bmc.aivision.model.ImageJob imageJob;
 
         /**
-         * The returned ImageJob instance.
+         * The returned {@code ImageJob} instance.
          *
          * @param imageJob the value to set
          * @return this builder

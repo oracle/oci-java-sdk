@@ -42,11 +42,11 @@ public class ListAlarmsStatusResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.monitoring.model.AlarmStatusSummary instances. */
+    /** A list of {@code com.oracle.bmc.monitoring.model.AlarmStatusSummary} instances. */
     private java.util.List<com.oracle.bmc.monitoring.model.AlarmStatusSummary> items;
 
     /**
-     * A list of com.oracle.bmc.monitoring.model.AlarmStatusSummary instances.
+     * A list of {@code com.oracle.bmc.monitoring.model.AlarmStatusSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListAlarmsStatusResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** A list of com.oracle.bmc.monitoring.model.AlarmStatusSummary instances. */
+        /** A list of {@code com.oracle.bmc.monitoring.model.AlarmStatusSummary} instances. */
         private java.util.List<com.oracle.bmc.monitoring.model.AlarmStatusSummary> items;
 
         /**
-         * A list of com.oracle.bmc.monitoring.model.AlarmStatusSummary instances.
+         * A list of {@code com.oracle.bmc.monitoring.model.AlarmStatusSummary} instances.
          *
          * @param items the value to set
          * @return this builder

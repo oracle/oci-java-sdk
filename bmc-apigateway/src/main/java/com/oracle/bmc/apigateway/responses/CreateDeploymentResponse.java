@@ -64,11 +64,11 @@ public class CreateDeploymentResponse extends com.oracle.bmc.responses.BmcRespon
         return location;
     }
 
-    /** The returned Deployment instance. */
+    /** The returned {@code Deployment} instance. */
     private com.oracle.bmc.apigateway.model.Deployment deployment;
 
     /**
-     * The returned Deployment instance.
+     * The returned {@code Deployment} instance.
      *
      * @return the value
      */
@@ -183,11 +183,11 @@ public class CreateDeploymentResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned Deployment instance. */
+        /** The returned {@code Deployment} instance. */
         private com.oracle.bmc.apigateway.model.Deployment deployment;
 
         /**
-         * The returned Deployment instance.
+         * The returned {@code Deployment} instance.
          *
          * @param deployment the value to set
          * @return this builder

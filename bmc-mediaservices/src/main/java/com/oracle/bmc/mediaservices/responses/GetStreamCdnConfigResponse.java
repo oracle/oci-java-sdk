@@ -36,11 +36,11 @@ public class GetStreamCdnConfigResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned StreamCdnConfig instance. */
+    /** The returned {@code StreamCdnConfig} instance. */
     private com.oracle.bmc.mediaservices.model.StreamCdnConfig streamCdnConfig;
 
     /**
-     * The returned StreamCdnConfig instance.
+     * The returned {@code StreamCdnConfig} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetStreamCdnConfigResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned StreamCdnConfig instance. */
+        /** The returned {@code StreamCdnConfig} instance. */
         private com.oracle.bmc.mediaservices.model.StreamCdnConfig streamCdnConfig;
 
         /**
-         * The returned StreamCdnConfig instance.
+         * The returned {@code StreamCdnConfig} instance.
          *
          * @param streamCdnConfig the value to set
          * @return this builder

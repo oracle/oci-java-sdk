@@ -43,12 +43,12 @@ public class SummarizeSqlResponseTimeDistributionsResponse
         return opcNextPage;
     }
 
-    /** The returned SqlResponseTimeDistributionAggregationCollection instance. */
+    /** The returned {@code SqlResponseTimeDistributionAggregationCollection} instance. */
     private com.oracle.bmc.opsi.model.SqlResponseTimeDistributionAggregationCollection
             sqlResponseTimeDistributionAggregationCollection;
 
     /**
-     * The returned SqlResponseTimeDistributionAggregationCollection instance.
+     * The returned {@code SqlResponseTimeDistributionAggregationCollection} instance.
      *
      * @return the value
      */
@@ -135,12 +135,12 @@ public class SummarizeSqlResponseTimeDistributionsResponse
             return this;
         }
 
-        /** The returned SqlResponseTimeDistributionAggregationCollection instance. */
+        /** The returned {@code SqlResponseTimeDistributionAggregationCollection} instance. */
         private com.oracle.bmc.opsi.model.SqlResponseTimeDistributionAggregationCollection
                 sqlResponseTimeDistributionAggregationCollection;
 
         /**
-         * The returned SqlResponseTimeDistributionAggregationCollection instance.
+         * The returned {@code SqlResponseTimeDistributionAggregationCollection} instance.
          *
          * @param sqlResponseTimeDistributionAggregationCollection the value to set
          * @return this builder

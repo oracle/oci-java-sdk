@@ -36,11 +36,11 @@ public class UpdateLocalPeeringGatewayResponse extends com.oracle.bmc.responses.
         return opcRequestId;
     }
 
-    /** The returned LocalPeeringGateway instance. */
+    /** The returned {@code LocalPeeringGateway} instance. */
     private com.oracle.bmc.core.model.LocalPeeringGateway localPeeringGateway;
 
     /**
-     * The returned LocalPeeringGateway instance.
+     * The returned {@code LocalPeeringGateway} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class UpdateLocalPeeringGatewayResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned LocalPeeringGateway instance. */
+        /** The returned {@code LocalPeeringGateway} instance. */
         private com.oracle.bmc.core.model.LocalPeeringGateway localPeeringGateway;
 
         /**
-         * The returned LocalPeeringGateway instance.
+         * The returned {@code LocalPeeringGateway} instance.
          *
          * @param localPeeringGateway the value to set
          * @return this builder

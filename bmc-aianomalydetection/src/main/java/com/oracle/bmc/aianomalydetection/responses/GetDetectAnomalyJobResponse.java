@@ -36,11 +36,11 @@ public class GetDetectAnomalyJobResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned DetectAnomalyJob instance. */
+    /** The returned {@code DetectAnomalyJob} instance. */
     private com.oracle.bmc.aianomalydetection.model.DetectAnomalyJob detectAnomalyJob;
 
     /**
-     * The returned DetectAnomalyJob instance.
+     * The returned {@code DetectAnomalyJob} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetDetectAnomalyJobResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned DetectAnomalyJob instance. */
+        /** The returned {@code DetectAnomalyJob} instance. */
         private com.oracle.bmc.aianomalydetection.model.DetectAnomalyJob detectAnomalyJob;
 
         /**
-         * The returned DetectAnomalyJob instance.
+         * The returned {@code DetectAnomalyJob} instance.
          *
          * @param detectAnomalyJob the value to set
          * @return this builder

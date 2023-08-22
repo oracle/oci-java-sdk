@@ -46,11 +46,11 @@ public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.resourcemanager.model.WorkRequestError instances. */
+    /** A list of {@code com.oracle.bmc.resourcemanager.model.WorkRequestError} instances. */
     private java.util.List<com.oracle.bmc.resourcemanager.model.WorkRequestError> items;
 
     /**
-     * A list of com.oracle.bmc.resourcemanager.model.WorkRequestError instances.
+     * A list of {@code com.oracle.bmc.resourcemanager.model.WorkRequestError} instances.
      *
      * @return the value
      */
@@ -137,11 +137,11 @@ public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** A list of com.oracle.bmc.resourcemanager.model.WorkRequestError instances. */
+        /** A list of {@code com.oracle.bmc.resourcemanager.model.WorkRequestError} instances. */
         private java.util.List<com.oracle.bmc.resourcemanager.model.WorkRequestError> items;
 
         /**
-         * A list of com.oracle.bmc.resourcemanager.model.WorkRequestError instances.
+         * A list of {@code com.oracle.bmc.resourcemanager.model.WorkRequestError} instances.
          *
          * @param items the value to set
          * @return this builder

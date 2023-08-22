@@ -52,11 +52,11 @@ public class GetQueryWorkRequestResponse extends com.oracle.bmc.responses.BmcRes
         return retryAfter;
     }
 
-    /** The returned QueryWorkRequest instance. */
+    /** The returned {@code QueryWorkRequest} instance. */
     private com.oracle.bmc.loganalytics.model.QueryWorkRequest queryWorkRequest;
 
     /**
-     * The returned QueryWorkRequest instance.
+     * The returned {@code QueryWorkRequest} instance.
      *
      * @return the value
      */
@@ -154,11 +154,11 @@ public class GetQueryWorkRequestResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned QueryWorkRequest instance. */
+        /** The returned {@code QueryWorkRequest} instance. */
         private com.oracle.bmc.loganalytics.model.QueryWorkRequest queryWorkRequest;
 
         /**
-         * The returned QueryWorkRequest instance.
+         * The returned {@code QueryWorkRequest} instance.
          *
          * @param queryWorkRequest the value to set
          * @return this builder

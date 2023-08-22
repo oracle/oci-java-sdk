@@ -40,11 +40,11 @@ public class ListTrailFilesResponse extends com.oracle.bmc.responses.BmcResponse
         return opcNextPage;
     }
 
-    /** The returned TrailFileCollection instance. */
+    /** The returned {@code TrailFileCollection} instance. */
     private com.oracle.bmc.goldengate.model.TrailFileCollection trailFileCollection;
 
     /**
-     * The returned TrailFileCollection instance.
+     * The returned {@code TrailFileCollection} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class ListTrailFilesResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned TrailFileCollection instance. */
+        /** The returned {@code TrailFileCollection} instance. */
         private com.oracle.bmc.goldengate.model.TrailFileCollection trailFileCollection;
 
         /**
-         * The returned TrailFileCollection instance.
+         * The returned {@code TrailFileCollection} instance.
          *
          * @param trailFileCollection the value to set
          * @return this builder

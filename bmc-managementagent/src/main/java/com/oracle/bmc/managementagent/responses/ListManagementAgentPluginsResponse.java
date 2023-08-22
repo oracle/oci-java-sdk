@@ -42,11 +42,15 @@ public class ListManagementAgentPluginsResponse extends com.oracle.bmc.responses
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.managementagent.model.ManagementAgentPluginSummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.managementagent.model.ManagementAgentPluginSummary}
+     * instances.
+     */
     private java.util.List<com.oracle.bmc.managementagent.model.ManagementAgentPluginSummary> items;
 
     /**
-     * A list of com.oracle.bmc.managementagent.model.ManagementAgentPluginSummary instances.
+     * A list of {@code com.oracle.bmc.managementagent.model.ManagementAgentPluginSummary}
+     * instances.
      *
      * @return the value
      */
@@ -133,13 +137,15 @@ public class ListManagementAgentPluginsResponse extends com.oracle.bmc.responses
         }
 
         /**
-         * A list of com.oracle.bmc.managementagent.model.ManagementAgentPluginSummary instances.
+         * A list of {@code com.oracle.bmc.managementagent.model.ManagementAgentPluginSummary}
+         * instances.
          */
         private java.util.List<com.oracle.bmc.managementagent.model.ManagementAgentPluginSummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.managementagent.model.ManagementAgentPluginSummary instances.
+         * A list of {@code com.oracle.bmc.managementagent.model.ManagementAgentPluginSummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

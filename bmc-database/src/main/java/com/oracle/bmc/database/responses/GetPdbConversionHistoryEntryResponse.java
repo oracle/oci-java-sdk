@@ -24,11 +24,11 @@ public class GetPdbConversionHistoryEntryResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /** The returned PdbConversionHistoryEntry instance. */
+    /** The returned {@code PdbConversionHistoryEntry} instance. */
     private com.oracle.bmc.database.model.PdbConversionHistoryEntry pdbConversionHistoryEntry;
 
     /**
-     * The returned PdbConversionHistoryEntry instance.
+     * The returned {@code PdbConversionHistoryEntry} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class GetPdbConversionHistoryEntryResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned PdbConversionHistoryEntry instance. */
+        /** The returned {@code PdbConversionHistoryEntry} instance. */
         private com.oracle.bmc.database.model.PdbConversionHistoryEntry pdbConversionHistoryEntry;
 
         /**
-         * The returned PdbConversionHistoryEntry instance.
+         * The returned {@code PdbConversionHistoryEntry} instance.
          *
          * @param pdbConversionHistoryEntry the value to set
          * @return this builder

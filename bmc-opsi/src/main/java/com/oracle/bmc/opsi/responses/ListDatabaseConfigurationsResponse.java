@@ -54,12 +54,12 @@ public class ListDatabaseConfigurationsResponse extends com.oracle.bmc.responses
         return opcNextPage;
     }
 
-    /** The returned DatabaseConfigurationCollection instance. */
+    /** The returned {@code DatabaseConfigurationCollection} instance. */
     private com.oracle.bmc.opsi.model.DatabaseConfigurationCollection
             databaseConfigurationCollection;
 
     /**
-     * The returned DatabaseConfigurationCollection instance.
+     * The returned {@code DatabaseConfigurationCollection} instance.
      *
      * @return the value
      */
@@ -162,12 +162,12 @@ public class ListDatabaseConfigurationsResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned DatabaseConfigurationCollection instance. */
+        /** The returned {@code DatabaseConfigurationCollection} instance. */
         private com.oracle.bmc.opsi.model.DatabaseConfigurationCollection
                 databaseConfigurationCollection;
 
         /**
-         * The returned DatabaseConfigurationCollection instance.
+         * The returned {@code DatabaseConfigurationCollection} instance.
          *
          * @param databaseConfigurationCollection the value to set
          * @return this builder

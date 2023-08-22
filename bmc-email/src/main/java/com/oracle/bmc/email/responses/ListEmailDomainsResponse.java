@@ -42,11 +42,11 @@ public class ListEmailDomainsResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned EmailDomainCollection instance. */
+    /** The returned {@code EmailDomainCollection} instance. */
     private com.oracle.bmc.email.model.EmailDomainCollection emailDomainCollection;
 
     /**
-     * The returned EmailDomainCollection instance.
+     * The returned {@code EmailDomainCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListEmailDomainsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned EmailDomainCollection instance. */
+        /** The returned {@code EmailDomainCollection} instance. */
         private com.oracle.bmc.email.model.EmailDomainCollection emailDomainCollection;
 
         /**
-         * The returned EmailDomainCollection instance.
+         * The returned {@code EmailDomainCollection} instance.
          *
          * @param emailDomainCollection the value to set
          * @return this builder

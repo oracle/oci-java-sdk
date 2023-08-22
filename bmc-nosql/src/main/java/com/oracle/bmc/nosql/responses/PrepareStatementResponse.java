@@ -24,11 +24,11 @@ public class PrepareStatementResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned PreparedStatement instance. */
+    /** The returned {@code PreparedStatement} instance. */
     private com.oracle.bmc.nosql.model.PreparedStatement preparedStatement;
 
     /**
-     * The returned PreparedStatement instance.
+     * The returned {@code PreparedStatement} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class PrepareStatementResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned PreparedStatement instance. */
+        /** The returned {@code PreparedStatement} instance. */
         private com.oracle.bmc.nosql.model.PreparedStatement preparedStatement;
 
         /**
-         * The returned PreparedStatement instance.
+         * The returned {@code PreparedStatement} instance.
          *
          * @param preparedStatement the value to set
          * @return this builder

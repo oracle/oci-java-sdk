@@ -36,11 +36,11 @@ public class UpdateLogSavedSearchResponse extends com.oracle.bmc.responses.BmcRe
         return etag;
     }
 
-    /** The returned LogSavedSearch instance. */
+    /** The returned {@code LogSavedSearch} instance. */
     private com.oracle.bmc.logging.model.LogSavedSearch logSavedSearch;
 
     /**
-     * The returned LogSavedSearch instance.
+     * The returned {@code LogSavedSearch} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateLogSavedSearchResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned LogSavedSearch instance. */
+        /** The returned {@code LogSavedSearch} instance. */
         private com.oracle.bmc.logging.model.LogSavedSearch logSavedSearch;
 
         /**
-         * The returned LogSavedSearch instance.
+         * The returned {@code LogSavedSearch} instance.
          *
          * @param logSavedSearch the value to set
          * @return this builder

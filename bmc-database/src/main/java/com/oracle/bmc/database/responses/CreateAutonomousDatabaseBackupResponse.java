@@ -56,11 +56,11 @@ public class CreateAutonomousDatabaseBackupResponse extends com.oracle.bmc.respo
         return opcWorkRequestId;
     }
 
-    /** The returned AutonomousDatabaseBackup instance. */
+    /** The returned {@code AutonomousDatabaseBackup} instance. */
     private com.oracle.bmc.database.model.AutonomousDatabaseBackup autonomousDatabaseBackup;
 
     /**
-     * The returned AutonomousDatabaseBackup instance.
+     * The returned {@code AutonomousDatabaseBackup} instance.
      *
      * @return the value
      */
@@ -163,11 +163,11 @@ public class CreateAutonomousDatabaseBackupResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned AutonomousDatabaseBackup instance. */
+        /** The returned {@code AutonomousDatabaseBackup} instance. */
         private com.oracle.bmc.database.model.AutonomousDatabaseBackup autonomousDatabaseBackup;
 
         /**
-         * The returned AutonomousDatabaseBackup instance.
+         * The returned {@code AutonomousDatabaseBackup} instance.
          *
          * @param autonomousDatabaseBackup the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListResourcesResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** The returned ResourcesCollection instance. */
+    /** The returned {@code ResourcesCollection} instance. */
     private com.oracle.bmc.usage.model.ResourcesCollection resourcesCollection;
 
     /**
-     * The returned ResourcesCollection instance.
+     * The returned {@code ResourcesCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListResourcesResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned ResourcesCollection instance. */
+        /** The returned {@code ResourcesCollection} instance. */
         private com.oracle.bmc.usage.model.ResourcesCollection resourcesCollection;
 
         /**
-         * The returned ResourcesCollection instance.
+         * The returned {@code ResourcesCollection} instance.
          *
          * @param resourcesCollection the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListAuthTokensResponse extends com.oracle.bmc.responses.BmcResponse
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.identity.model.AuthToken instances. */
+    /** A list of {@code com.oracle.bmc.identity.model.AuthToken} instances. */
     private java.util.List<com.oracle.bmc.identity.model.AuthToken> items;
 
     /**
-     * A list of com.oracle.bmc.identity.model.AuthToken instances.
+     * A list of {@code com.oracle.bmc.identity.model.AuthToken} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListAuthTokensResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** A list of com.oracle.bmc.identity.model.AuthToken instances. */
+        /** A list of {@code com.oracle.bmc.identity.model.AuthToken} instances. */
         private java.util.List<com.oracle.bmc.identity.model.AuthToken> items;
 
         /**
-         * A list of com.oracle.bmc.identity.model.AuthToken instances.
+         * A list of {@code com.oracle.bmc.identity.model.AuthToken} instances.
          *
          * @param items the value to set
          * @return this builder

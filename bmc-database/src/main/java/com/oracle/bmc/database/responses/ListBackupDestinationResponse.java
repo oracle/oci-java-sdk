@@ -56,11 +56,11 @@ public class ListBackupDestinationResponse extends com.oracle.bmc.responses.BmcR
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.database.model.BackupDestinationSummary instances. */
+    /** A list of {@code com.oracle.bmc.database.model.BackupDestinationSummary} instances. */
     private java.util.List<com.oracle.bmc.database.model.BackupDestinationSummary> items;
 
     /**
-     * A list of com.oracle.bmc.database.model.BackupDestinationSummary instances.
+     * A list of {@code com.oracle.bmc.database.model.BackupDestinationSummary} instances.
      *
      * @return the value
      */
@@ -164,11 +164,11 @@ public class ListBackupDestinationResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** A list of com.oracle.bmc.database.model.BackupDestinationSummary instances. */
+        /** A list of {@code com.oracle.bmc.database.model.BackupDestinationSummary} instances. */
         private java.util.List<com.oracle.bmc.database.model.BackupDestinationSummary> items;
 
         /**
-         * A list of com.oracle.bmc.database.model.BackupDestinationSummary instances.
+         * A list of {@code com.oracle.bmc.database.model.BackupDestinationSummary} instances.
          *
          * @param items the value to set
          * @return this builder

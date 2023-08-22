@@ -36,11 +36,11 @@ public class PatchUserAttributesSettingResponse extends com.oracle.bmc.responses
         return etag;
     }
 
-    /** The returned UserAttributesSetting instance. */
+    /** The returned {@code UserAttributesSetting} instance. */
     private com.oracle.bmc.identitydomains.model.UserAttributesSetting userAttributesSetting;
 
     /**
-     * The returned UserAttributesSetting instance.
+     * The returned {@code UserAttributesSetting} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class PatchUserAttributesSettingResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned UserAttributesSetting instance. */
+        /** The returned {@code UserAttributesSetting} instance. */
         private com.oracle.bmc.identitydomains.model.UserAttributesSetting userAttributesSetting;
 
         /**
-         * The returned UserAttributesSetting instance.
+         * The returned {@code UserAttributesSetting} instance.
          *
          * @param userAttributesSetting the value to set
          * @return this builder

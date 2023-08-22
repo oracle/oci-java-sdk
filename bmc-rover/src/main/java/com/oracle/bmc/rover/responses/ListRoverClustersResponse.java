@@ -60,11 +60,11 @@ public class ListRoverClustersResponse extends com.oracle.bmc.responses.BmcRespo
         return opcPrevPage;
     }
 
-    /** The returned RoverClusterCollection instance. */
+    /** The returned {@code RoverClusterCollection} instance. */
     private com.oracle.bmc.rover.model.RoverClusterCollection roverClusterCollection;
 
     /**
-     * The returned RoverClusterCollection instance.
+     * The returned {@code RoverClusterCollection} instance.
      *
      * @return the value
      */
@@ -170,11 +170,11 @@ public class ListRoverClustersResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned RoverClusterCollection instance. */
+        /** The returned {@code RoverClusterCollection} instance. */
         private com.oracle.bmc.rover.model.RoverClusterCollection roverClusterCollection;
 
         /**
-         * The returned RoverClusterCollection instance.
+         * The returned {@code RoverClusterCollection} instance.
          *
          * @param roverClusterCollection the value to set
          * @return this builder

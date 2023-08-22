@@ -36,11 +36,11 @@ public class GetWebAppAccelerationResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned WebAppAcceleration instance. */
+    /** The returned {@code WebAppAcceleration} instance. */
     private com.oracle.bmc.waa.model.WebAppAcceleration webAppAcceleration;
 
     /**
-     * The returned WebAppAcceleration instance.
+     * The returned {@code WebAppAcceleration} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetWebAppAccelerationResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned WebAppAcceleration instance. */
+        /** The returned {@code WebAppAcceleration} instance. */
         private com.oracle.bmc.waa.model.WebAppAcceleration webAppAcceleration;
 
         /**
-         * The returned WebAppAcceleration instance.
+         * The returned {@code WebAppAcceleration} instance.
          *
          * @param webAppAcceleration the value to set
          * @return this builder

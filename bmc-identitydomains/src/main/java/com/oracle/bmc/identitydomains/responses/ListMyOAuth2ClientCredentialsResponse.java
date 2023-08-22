@@ -42,12 +42,12 @@ public class ListMyOAuth2ClientCredentialsResponse extends com.oracle.bmc.respon
         return opcNextPage;
     }
 
-    /** The returned MyOAuth2ClientCredentials instance. */
+    /** The returned {@code MyOAuth2ClientCredentials} instance. */
     private com.oracle.bmc.identitydomains.model.MyOAuth2ClientCredentials
             myOAuth2ClientCredentials;
 
     /**
-     * The returned MyOAuth2ClientCredentials instance.
+     * The returned {@code MyOAuth2ClientCredentials} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListMyOAuth2ClientCredentialsResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned MyOAuth2ClientCredentials instance. */
+        /** The returned {@code MyOAuth2ClientCredentials} instance. */
         private com.oracle.bmc.identitydomains.model.MyOAuth2ClientCredentials
                 myOAuth2ClientCredentials;
 
         /**
-         * The returned MyOAuth2ClientCredentials instance.
+         * The returned {@code MyOAuth2ClientCredentials} instance.
          *
          * @param myOAuth2ClientCredentials the value to set
          * @return this builder

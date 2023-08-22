@@ -36,11 +36,11 @@ public class GetMirrorRecordResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned RepositoryMirrorRecord instance. */
+    /** The returned {@code RepositoryMirrorRecord} instance. */
     private com.oracle.bmc.devops.model.RepositoryMirrorRecord repositoryMirrorRecord;
 
     /**
-     * The returned RepositoryMirrorRecord instance.
+     * The returned {@code RepositoryMirrorRecord} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetMirrorRecordResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned RepositoryMirrorRecord instance. */
+        /** The returned {@code RepositoryMirrorRecord} instance. */
         private com.oracle.bmc.devops.model.RepositoryMirrorRecord repositoryMirrorRecord;
 
         /**
-         * The returned RepositoryMirrorRecord instance.
+         * The returned {@code RepositoryMirrorRecord} instance.
          *
          * @param repositoryMirrorRecord the value to set
          * @return this builder

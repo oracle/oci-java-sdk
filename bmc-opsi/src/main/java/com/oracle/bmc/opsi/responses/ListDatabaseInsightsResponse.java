@@ -54,11 +54,11 @@ public class ListDatabaseInsightsResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** The returned DatabaseInsightsCollection instance. */
+    /** The returned {@code DatabaseInsightsCollection} instance. */
     private com.oracle.bmc.opsi.model.DatabaseInsightsCollection databaseInsightsCollection;
 
     /**
-     * The returned DatabaseInsightsCollection instance.
+     * The returned {@code DatabaseInsightsCollection} instance.
      *
      * @return the value
      */
@@ -158,11 +158,11 @@ public class ListDatabaseInsightsResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned DatabaseInsightsCollection instance. */
+        /** The returned {@code DatabaseInsightsCollection} instance. */
         private com.oracle.bmc.opsi.model.DatabaseInsightsCollection databaseInsightsCollection;
 
         /**
-         * The returned DatabaseInsightsCollection instance.
+         * The returned {@code DatabaseInsightsCollection} instance.
          *
          * @param databaseInsightsCollection the value to set
          * @return this builder

@@ -64,11 +64,11 @@ public class ListAssociableEntitiesResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned AssociableEntityCollection instance. */
+    /** The returned {@code AssociableEntityCollection} instance. */
     private com.oracle.bmc.loganalytics.model.AssociableEntityCollection associableEntityCollection;
 
     /**
-     * The returned AssociableEntityCollection instance.
+     * The returned {@code AssociableEntityCollection} instance.
      *
      * @return the value
      */
@@ -181,12 +181,12 @@ public class ListAssociableEntitiesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned AssociableEntityCollection instance. */
+        /** The returned {@code AssociableEntityCollection} instance. */
         private com.oracle.bmc.loganalytics.model.AssociableEntityCollection
                 associableEntityCollection;
 
         /**
-         * The returned AssociableEntityCollection instance.
+         * The returned {@code AssociableEntityCollection} instance.
          *
          * @param associableEntityCollection the value to set
          * @return this builder

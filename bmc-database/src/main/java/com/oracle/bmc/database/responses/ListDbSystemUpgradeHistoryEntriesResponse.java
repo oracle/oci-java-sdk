@@ -45,11 +45,13 @@ public class ListDbSystemUpgradeHistoryEntriesResponse
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary} instances.
+     */
     private java.util.List<com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary> items;
 
     /**
-     * A list of com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary instances.
+     * A list of {@code com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary} instances.
      *
      * @return the value
      */
@@ -139,12 +141,16 @@ public class ListDbSystemUpgradeHistoryEntriesResponse
             return this;
         }
 
-        /** A list of com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary}
+         * instances.
+         */
         private java.util.List<com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary instances.
+         * A list of {@code com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

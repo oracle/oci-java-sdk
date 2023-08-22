@@ -37,11 +37,11 @@ public class GetFusionEnvironmentFamilySubscriptionDetailResponse
         return opcRequestId;
     }
 
-    /** The returned SubscriptionDetail instance. */
+    /** The returned {@code SubscriptionDetail} instance. */
     private com.oracle.bmc.fusionapps.model.SubscriptionDetail subscriptionDetail;
 
     /**
-     * The returned SubscriptionDetail instance.
+     * The returned {@code SubscriptionDetail} instance.
      *
      * @return the value
      */
@@ -119,11 +119,11 @@ public class GetFusionEnvironmentFamilySubscriptionDetailResponse
             return this;
         }
 
-        /** The returned SubscriptionDetail instance. */
+        /** The returned {@code SubscriptionDetail} instance. */
         private com.oracle.bmc.fusionapps.model.SubscriptionDetail subscriptionDetail;
 
         /**
-         * The returned SubscriptionDetail instance.
+         * The returned {@code SubscriptionDetail} instance.
          *
          * @param subscriptionDetail the value to set
          * @return this builder

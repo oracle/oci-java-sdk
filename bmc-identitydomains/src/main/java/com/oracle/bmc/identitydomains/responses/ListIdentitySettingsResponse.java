@@ -42,11 +42,11 @@ public class ListIdentitySettingsResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** The returned IdentitySettings instance. */
+    /** The returned {@code IdentitySettings} instance. */
     private com.oracle.bmc.identitydomains.model.IdentitySettings identitySettings;
 
     /**
-     * The returned IdentitySettings instance.
+     * The returned {@code IdentitySettings} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListIdentitySettingsResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned IdentitySettings instance. */
+        /** The returned {@code IdentitySettings} instance. */
         private com.oracle.bmc.identitydomains.model.IdentitySettings identitySettings;
 
         /**
-         * The returned IdentitySettings instance.
+         * The returned {@code IdentitySettings} instance.
          *
          * @param identitySettings the value to set
          * @return this builder

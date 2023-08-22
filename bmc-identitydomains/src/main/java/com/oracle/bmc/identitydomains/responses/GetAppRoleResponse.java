@@ -24,11 +24,11 @@ public class GetAppRoleResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned AppRole instance. */
+    /** The returned {@code AppRole} instance. */
     private com.oracle.bmc.identitydomains.model.AppRole appRole;
 
     /**
-     * The returned AppRole instance.
+     * The returned {@code AppRole} instance.
      *
      * @return the value
      */
@@ -83,11 +83,11 @@ public class GetAppRoleResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned AppRole instance. */
+        /** The returned {@code AppRole} instance. */
         private com.oracle.bmc.identitydomains.model.AppRole appRole;
 
         /**
-         * The returned AppRole instance.
+         * The returned {@code AppRole} instance.
          *
          * @param appRole the value to set
          * @return this builder

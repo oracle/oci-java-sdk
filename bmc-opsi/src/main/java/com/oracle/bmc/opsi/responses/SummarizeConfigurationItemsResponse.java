@@ -42,11 +42,11 @@ public class SummarizeConfigurationItemsResponse extends com.oracle.bmc.response
         return opcNextPage;
     }
 
-    /** The returned ConfigurationItemsCollection instance. */
+    /** The returned {@code ConfigurationItemsCollection} instance. */
     private com.oracle.bmc.opsi.model.ConfigurationItemsCollection configurationItemsCollection;
 
     /**
-     * The returned ConfigurationItemsCollection instance.
+     * The returned {@code ConfigurationItemsCollection} instance.
      *
      * @return the value
      */
@@ -131,11 +131,11 @@ public class SummarizeConfigurationItemsResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned ConfigurationItemsCollection instance. */
+        /** The returned {@code ConfigurationItemsCollection} instance. */
         private com.oracle.bmc.opsi.model.ConfigurationItemsCollection configurationItemsCollection;
 
         /**
-         * The returned ConfigurationItemsCollection instance.
+         * The returned {@code ConfigurationItemsCollection} instance.
          *
          * @param configurationItemsCollection the value to set
          * @return this builder

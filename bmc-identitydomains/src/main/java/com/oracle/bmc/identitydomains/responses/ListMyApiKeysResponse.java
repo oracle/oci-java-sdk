@@ -42,11 +42,11 @@ public class ListMyApiKeysResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcNextPage;
     }
 
-    /** The returned MyApiKeys instance. */
+    /** The returned {@code MyApiKeys} instance. */
     private com.oracle.bmc.identitydomains.model.MyApiKeys myApiKeys;
 
     /**
-     * The returned MyApiKeys instance.
+     * The returned {@code MyApiKeys} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListMyApiKeysResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned MyApiKeys instance. */
+        /** The returned {@code MyApiKeys} instance. */
         private com.oracle.bmc.identitydomains.model.MyApiKeys myApiKeys;
 
         /**
-         * The returned MyApiKeys instance.
+         * The returned {@code MyApiKeys} instance.
          *
          * @param myApiKeys the value to set
          * @return this builder

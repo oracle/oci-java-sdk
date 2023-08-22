@@ -43,13 +43,17 @@ public class SummarizeDatabaseInsightResourceCapacityTrendResponse
         return opcNextPage;
     }
 
-    /** The returned SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection instance. */
+    /**
+     * The returned {@code SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection}
+     * instance.
+     */
     private com.oracle.bmc.opsi.model
                     .SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection
             summarizeDatabaseInsightResourceCapacityTrendAggregationCollection;
 
     /**
-     * The returned SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection instance.
+     * The returned {@code SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection}
+     * instance.
      *
      * @return the value
      */
@@ -139,14 +143,16 @@ public class SummarizeDatabaseInsightResourceCapacityTrendResponse
         }
 
         /**
-         * The returned SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection instance.
+         * The returned {@code SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection}
+         * instance.
          */
         private com.oracle.bmc.opsi.model
                         .SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection
                 summarizeDatabaseInsightResourceCapacityTrendAggregationCollection;
 
         /**
-         * The returned SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection instance.
+         * The returned {@code SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection}
+         * instance.
          *
          * @param summarizeDatabaseInsightResourceCapacityTrendAggregationCollection the value to
          *     set

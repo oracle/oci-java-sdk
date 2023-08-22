@@ -42,12 +42,12 @@ public class ListExternalAsmDiskGroupsResponse extends com.oracle.bmc.responses.
         return opcNextPage;
     }
 
-    /** The returned ExternalAsmDiskGroupCollection instance. */
+    /** The returned {@code ExternalAsmDiskGroupCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.ExternalAsmDiskGroupCollection
             externalAsmDiskGroupCollection;
 
     /**
-     * The returned ExternalAsmDiskGroupCollection instance.
+     * The returned {@code ExternalAsmDiskGroupCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListExternalAsmDiskGroupsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned ExternalAsmDiskGroupCollection instance. */
+        /** The returned {@code ExternalAsmDiskGroupCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.ExternalAsmDiskGroupCollection
                 externalAsmDiskGroupCollection;
 
         /**
-         * The returned ExternalAsmDiskGroupCollection instance.
+         * The returned {@code ExternalAsmDiskGroupCollection} instance.
          *
          * @param externalAsmDiskGroupCollection the value to set
          * @return this builder

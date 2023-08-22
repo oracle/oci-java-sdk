@@ -42,12 +42,16 @@ public class ListInstanceAgentPluginsResponse extends com.oracle.bmc.responses.B
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.computeinstanceagent.model.InstanceAgentPluginSummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.computeinstanceagent.model.InstanceAgentPluginSummary}
+     * instances.
+     */
     private java.util.List<com.oracle.bmc.computeinstanceagent.model.InstanceAgentPluginSummary>
             items;
 
     /**
-     * A list of com.oracle.bmc.computeinstanceagent.model.InstanceAgentPluginSummary instances.
+     * A list of {@code com.oracle.bmc.computeinstanceagent.model.InstanceAgentPluginSummary}
+     * instances.
      *
      * @return the value
      */
@@ -134,13 +138,15 @@ public class ListInstanceAgentPluginsResponse extends com.oracle.bmc.responses.B
         }
 
         /**
-         * A list of com.oracle.bmc.computeinstanceagent.model.InstanceAgentPluginSummary instances.
+         * A list of {@code com.oracle.bmc.computeinstanceagent.model.InstanceAgentPluginSummary}
+         * instances.
          */
         private java.util.List<com.oracle.bmc.computeinstanceagent.model.InstanceAgentPluginSummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.computeinstanceagent.model.InstanceAgentPluginSummary instances.
+         * A list of {@code com.oracle.bmc.computeinstanceagent.model.InstanceAgentPluginSummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

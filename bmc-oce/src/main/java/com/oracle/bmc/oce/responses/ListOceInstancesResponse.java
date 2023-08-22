@@ -42,11 +42,11 @@ public class ListOceInstancesResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.oce.model.OceInstanceSummary instances. */
+    /** A list of {@code com.oracle.bmc.oce.model.OceInstanceSummary} instances. */
     private java.util.List<com.oracle.bmc.oce.model.OceInstanceSummary> items;
 
     /**
-     * A list of com.oracle.bmc.oce.model.OceInstanceSummary instances.
+     * A list of {@code com.oracle.bmc.oce.model.OceInstanceSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListOceInstancesResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** A list of com.oracle.bmc.oce.model.OceInstanceSummary instances. */
+        /** A list of {@code com.oracle.bmc.oce.model.OceInstanceSummary} instances. */
         private java.util.List<com.oracle.bmc.oce.model.OceInstanceSummary> items;
 
         /**
-         * A list of com.oracle.bmc.oce.model.OceInstanceSummary instances.
+         * A list of {@code com.oracle.bmc.oce.model.OceInstanceSummary} instances.
          *
          * @param items the value to set
          * @return this builder

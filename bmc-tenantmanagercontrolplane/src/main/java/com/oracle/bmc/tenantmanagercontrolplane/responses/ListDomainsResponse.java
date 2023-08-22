@@ -42,11 +42,11 @@ public class ListDomainsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned DomainCollection instance. */
+    /** The returned {@code DomainCollection} instance. */
     private com.oracle.bmc.tenantmanagercontrolplane.model.DomainCollection domainCollection;
 
     /**
-     * The returned DomainCollection instance.
+     * The returned {@code DomainCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListDomainsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned DomainCollection instance. */
+        /** The returned {@code DomainCollection} instance. */
         private com.oracle.bmc.tenantmanagercontrolplane.model.DomainCollection domainCollection;
 
         /**
-         * The returned DomainCollection instance.
+         * The returned {@code DomainCollection} instance.
          *
          * @param domainCollection the value to set
          * @return this builder

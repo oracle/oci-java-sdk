@@ -45,12 +45,16 @@ public class ListAutonomousDatabaseDataguardAssociationsResponse
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation instances. */
+    /**
+     * A list of {@code com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation}
+     * instances.
+     */
     private java.util.List<com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation>
             items;
 
     /**
-     * A list of com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation instances.
+     * A list of {@code com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation}
+     * instances.
      *
      * @return the value
      */
@@ -141,13 +145,15 @@ public class ListAutonomousDatabaseDataguardAssociationsResponse
         }
 
         /**
-         * A list of com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation instances.
+         * A list of {@code com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation}
+         * instances.
          */
         private java.util.List<com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation>
                 items;
 
         /**
-         * A list of com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation instances.
+         * A list of {@code com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

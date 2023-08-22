@@ -40,11 +40,11 @@ public class GetReferenceResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Reference instance. */
+    /** The returned {@code Reference} instance. */
     private com.oracle.bmc.dataintegration.model.Reference reference;
 
     /**
-     * The returned Reference instance.
+     * The returned {@code Reference} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetReferenceResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Reference instance. */
+        /** The returned {@code Reference} instance. */
         private com.oracle.bmc.dataintegration.model.Reference reference;
 
         /**
-         * The returned Reference instance.
+         * The returned {@code Reference} instance.
          *
          * @param reference the value to set
          * @return this builder

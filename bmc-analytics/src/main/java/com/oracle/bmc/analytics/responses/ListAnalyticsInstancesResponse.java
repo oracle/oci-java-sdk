@@ -42,11 +42,11 @@ public class ListAnalyticsInstancesResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.analytics.model.AnalyticsInstanceSummary instances. */
+    /** A list of {@code com.oracle.bmc.analytics.model.AnalyticsInstanceSummary} instances. */
     private java.util.List<com.oracle.bmc.analytics.model.AnalyticsInstanceSummary> items;
 
     /**
-     * A list of com.oracle.bmc.analytics.model.AnalyticsInstanceSummary instances.
+     * A list of {@code com.oracle.bmc.analytics.model.AnalyticsInstanceSummary} instances.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListAnalyticsInstancesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** A list of com.oracle.bmc.analytics.model.AnalyticsInstanceSummary instances. */
+        /** A list of {@code com.oracle.bmc.analytics.model.AnalyticsInstanceSummary} instances. */
         private java.util.List<com.oracle.bmc.analytics.model.AnalyticsInstanceSummary> items;
 
         /**
-         * A list of com.oracle.bmc.analytics.model.AnalyticsInstanceSummary instances.
+         * A list of {@code com.oracle.bmc.analytics.model.AnalyticsInstanceSummary} instances.
          *
          * @param items the value to set
          * @return this builder

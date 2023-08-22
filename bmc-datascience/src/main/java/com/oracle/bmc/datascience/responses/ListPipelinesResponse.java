@@ -60,11 +60,11 @@ public class ListPipelinesResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcPrevPage;
     }
 
-    /** A list of com.oracle.bmc.datascience.model.PipelineSummary instances. */
+    /** A list of {@code com.oracle.bmc.datascience.model.PipelineSummary} instances. */
     private java.util.List<com.oracle.bmc.datascience.model.PipelineSummary> items;
 
     /**
-     * A list of com.oracle.bmc.datascience.model.PipelineSummary instances.
+     * A list of {@code com.oracle.bmc.datascience.model.PipelineSummary} instances.
      *
      * @return the value
      */
@@ -170,11 +170,11 @@ public class ListPipelinesResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** A list of com.oracle.bmc.datascience.model.PipelineSummary instances. */
+        /** A list of {@code com.oracle.bmc.datascience.model.PipelineSummary} instances. */
         private java.util.List<com.oracle.bmc.datascience.model.PipelineSummary> items;
 
         /**
-         * A list of com.oracle.bmc.datascience.model.PipelineSummary instances.
+         * A list of {@code com.oracle.bmc.datascience.model.PipelineSummary} instances.
          *
          * @param items the value to set
          * @return this builder

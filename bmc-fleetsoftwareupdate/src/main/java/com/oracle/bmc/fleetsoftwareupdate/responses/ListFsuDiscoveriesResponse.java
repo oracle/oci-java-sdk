@@ -42,12 +42,12 @@ public class ListFsuDiscoveriesResponse extends com.oracle.bmc.responses.BmcResp
         return opcNextPage;
     }
 
-    /** The returned FsuDiscoverySummaryCollection instance. */
+    /** The returned {@code FsuDiscoverySummaryCollection} instance. */
     private com.oracle.bmc.fleetsoftwareupdate.model.FsuDiscoverySummaryCollection
             fsuDiscoverySummaryCollection;
 
     /**
-     * The returned FsuDiscoverySummaryCollection instance.
+     * The returned {@code FsuDiscoverySummaryCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListFsuDiscoveriesResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned FsuDiscoverySummaryCollection instance. */
+        /** The returned {@code FsuDiscoverySummaryCollection} instance. */
         private com.oracle.bmc.fleetsoftwareupdate.model.FsuDiscoverySummaryCollection
                 fsuDiscoverySummaryCollection;
 
         /**
-         * The returned FsuDiscoverySummaryCollection instance.
+         * The returned {@code FsuDiscoverySummaryCollection} instance.
          *
          * @param fsuDiscoverySummaryCollection the value to set
          * @return this builder

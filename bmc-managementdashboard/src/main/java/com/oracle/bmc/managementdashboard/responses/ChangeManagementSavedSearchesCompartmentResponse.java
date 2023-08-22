@@ -53,11 +53,11 @@ public class ChangeManagementSavedSearchesCompartmentResponse
         return opcWorkRequestId;
     }
 
-    /** The returned ManagementSavedSearch instance. */
+    /** The returned {@code ManagementSavedSearch} instance. */
     private com.oracle.bmc.managementdashboard.model.ManagementSavedSearch managementSavedSearch;
 
     /**
-     * The returned ManagementSavedSearch instance.
+     * The returned {@code ManagementSavedSearch} instance.
      *
      * @return the value
      */
@@ -157,12 +157,12 @@ public class ChangeManagementSavedSearchesCompartmentResponse
             return this;
         }
 
-        /** The returned ManagementSavedSearch instance. */
+        /** The returned {@code ManagementSavedSearch} instance. */
         private com.oracle.bmc.managementdashboard.model.ManagementSavedSearch
                 managementSavedSearch;
 
         /**
-         * The returned ManagementSavedSearch instance.
+         * The returned {@code ManagementSavedSearch} instance.
          *
          * @param managementSavedSearch the value to set
          * @return this builder

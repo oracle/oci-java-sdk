@@ -42,11 +42,11 @@ public class ListMySmtpCredentialsResponse extends com.oracle.bmc.responses.BmcR
         return opcNextPage;
     }
 
-    /** The returned MySmtpCredentials instance. */
+    /** The returned {@code MySmtpCredentials} instance. */
     private com.oracle.bmc.identitydomains.model.MySmtpCredentials mySmtpCredentials;
 
     /**
-     * The returned MySmtpCredentials instance.
+     * The returned {@code MySmtpCredentials} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListMySmtpCredentialsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned MySmtpCredentials instance. */
+        /** The returned {@code MySmtpCredentials} instance. */
         private com.oracle.bmc.identitydomains.model.MySmtpCredentials mySmtpCredentials;
 
         /**
-         * The returned MySmtpCredentials instance.
+         * The returned {@code MySmtpCredentials} instance.
          *
          * @param mySmtpCredentials the value to set
          * @return this builder

@@ -24,11 +24,11 @@ public class CloneSqlTuningTaskResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned SqlTuningTaskReturn instance. */
+    /** The returned {@code SqlTuningTaskReturn} instance. */
     private com.oracle.bmc.databasemanagement.model.SqlTuningTaskReturn sqlTuningTaskReturn;
 
     /**
-     * The returned SqlTuningTaskReturn instance.
+     * The returned {@code SqlTuningTaskReturn} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class CloneSqlTuningTaskResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned SqlTuningTaskReturn instance. */
+        /** The returned {@code SqlTuningTaskReturn} instance. */
         private com.oracle.bmc.databasemanagement.model.SqlTuningTaskReturn sqlTuningTaskReturn;
 
         /**
-         * The returned SqlTuningTaskReturn instance.
+         * The returned {@code SqlTuningTaskReturn} instance.
          *
          * @param sqlTuningTaskReturn the value to set
          * @return this builder

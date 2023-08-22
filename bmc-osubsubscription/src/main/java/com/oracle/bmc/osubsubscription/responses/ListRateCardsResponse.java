@@ -42,11 +42,11 @@ public class ListRateCardsResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.osubsubscription.model.RateCardSummary instances. */
+    /** A list of {@code com.oracle.bmc.osubsubscription.model.RateCardSummary} instances. */
     private java.util.List<com.oracle.bmc.osubsubscription.model.RateCardSummary> items;
 
     /**
-     * A list of com.oracle.bmc.osubsubscription.model.RateCardSummary instances.
+     * A list of {@code com.oracle.bmc.osubsubscription.model.RateCardSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListRateCardsResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** A list of com.oracle.bmc.osubsubscription.model.RateCardSummary instances. */
+        /** A list of {@code com.oracle.bmc.osubsubscription.model.RateCardSummary} instances. */
         private java.util.List<com.oracle.bmc.osubsubscription.model.RateCardSummary> items;
 
         /**
-         * A list of com.oracle.bmc.osubsubscription.model.RateCardSummary instances.
+         * A list of {@code com.oracle.bmc.osubsubscription.model.RateCardSummary} instances.
          *
          * @param items the value to set
          * @return this builder

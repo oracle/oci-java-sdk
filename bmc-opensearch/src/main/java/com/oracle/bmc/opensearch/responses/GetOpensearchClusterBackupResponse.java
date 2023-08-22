@@ -36,11 +36,11 @@ public class GetOpensearchClusterBackupResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    /** The returned OpensearchClusterBackup instance. */
+    /** The returned {@code OpensearchClusterBackup} instance. */
     private com.oracle.bmc.opensearch.model.OpensearchClusterBackup opensearchClusterBackup;
 
     /**
-     * The returned OpensearchClusterBackup instance.
+     * The returned {@code OpensearchClusterBackup} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetOpensearchClusterBackupResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned OpensearchClusterBackup instance. */
+        /** The returned {@code OpensearchClusterBackup} instance. */
         private com.oracle.bmc.opensearch.model.OpensearchClusterBackup opensearchClusterBackup;
 
         /**
-         * The returned OpensearchClusterBackup instance.
+         * The returned {@code OpensearchClusterBackup} instance.
          *
          * @param opensearchClusterBackup the value to set
          * @return this builder

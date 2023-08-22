@@ -44,6 +44,7 @@ package com.oracle.bmc.graalvm;
     "com.oracle.bmc.cloudguard.SdkClientsMetadata",
     "com.oracle.bmc.cloudmigrations.SdkClientsMetadata",
     "com.oracle.bmc.compdocsapi.SdkClientsMetadata",
+    "com.oracle.bmc.computecloudatcustomer.SdkClientsMetadata",
     "com.oracle.bmc.computeinstanceagent.SdkClientsMetadata",
     "com.oracle.bmc.containerengine.SdkClientsMetadata",
     "com.oracle.bmc.containerinstances.SdkClientsMetadata",

@@ -36,11 +36,11 @@ public class UpdateVnicResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Vnic instance. */
+    /** The returned {@code Vnic} instance. */
     private com.oracle.bmc.core.model.Vnic vnic;
 
     /**
-     * The returned Vnic instance.
+     * The returned {@code Vnic} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateVnicResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Vnic instance. */
+        /** The returned {@code Vnic} instance. */
         private com.oracle.bmc.core.model.Vnic vnic;
 
         /**
-         * The returned Vnic instance.
+         * The returned {@code Vnic} instance.
          *
          * @param vnic the value to set
          * @return this builder

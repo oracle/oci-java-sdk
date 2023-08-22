@@ -24,11 +24,11 @@ public class GetUnsubscriptionResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned String instance. */
+    /** The returned {@code String} instance. */
     private String value;
 
     /**
-     * The returned String instance.
+     * The returned {@code String} instance.
      *
      * @return the value
      */
@@ -83,11 +83,11 @@ public class GetUnsubscriptionResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned String instance. */
+        /** The returned {@code String} instance. */
         private String value;
 
         /**
-         * The returned String instance.
+         * The returned {@code String} instance.
          *
          * @param value the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListRedeemableUsersResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** The returned RedeemableUserCollection instance. */
+    /** The returned {@code RedeemableUserCollection} instance. */
     private com.oracle.bmc.usage.model.RedeemableUserCollection redeemableUserCollection;
 
     /**
-     * The returned RedeemableUserCollection instance.
+     * The returned {@code RedeemableUserCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListRedeemableUsersResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned RedeemableUserCollection instance. */
+        /** The returned {@code RedeemableUserCollection} instance. */
         private com.oracle.bmc.usage.model.RedeemableUserCollection redeemableUserCollection;
 
         /**
-         * The returned RedeemableUserCollection instance.
+         * The returned {@code RedeemableUserCollection} instance.
          *
          * @param redeemableUserCollection the value to set
          * @return this builder

@@ -43,12 +43,12 @@ public class ListManagedInstanceAvailablePackagesResponse
         return opcNextPage;
     }
 
-    /** The returned AvailablePackageCollection instance. */
+    /** The returned {@code AvailablePackageCollection} instance. */
     private com.oracle.bmc.osmanagementhub.model.AvailablePackageCollection
             availablePackageCollection;
 
     /**
-     * The returned AvailablePackageCollection instance.
+     * The returned {@code AvailablePackageCollection} instance.
      *
      * @return the value
      */
@@ -134,12 +134,12 @@ public class ListManagedInstanceAvailablePackagesResponse
             return this;
         }
 
-        /** The returned AvailablePackageCollection instance. */
+        /** The returned {@code AvailablePackageCollection} instance. */
         private com.oracle.bmc.osmanagementhub.model.AvailablePackageCollection
                 availablePackageCollection;
 
         /**
-         * The returned AvailablePackageCollection instance.
+         * The returned {@code AvailablePackageCollection} instance.
          *
          * @param availablePackageCollection the value to set
          * @return this builder

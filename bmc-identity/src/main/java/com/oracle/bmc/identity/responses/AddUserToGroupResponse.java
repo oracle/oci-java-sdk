@@ -36,11 +36,11 @@ public class AddUserToGroupResponse extends com.oracle.bmc.responses.BmcResponse
         return etag;
     }
 
-    /** The returned UserGroupMembership instance. */
+    /** The returned {@code UserGroupMembership} instance. */
     private com.oracle.bmc.identity.model.UserGroupMembership userGroupMembership;
 
     /**
-     * The returned UserGroupMembership instance.
+     * The returned {@code UserGroupMembership} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class AddUserToGroupResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned UserGroupMembership instance. */
+        /** The returned {@code UserGroupMembership} instance. */
         private com.oracle.bmc.identity.model.UserGroupMembership userGroupMembership;
 
         /**
-         * The returned UserGroupMembership instance.
+         * The returned {@code UserGroupMembership} instance.
          *
          * @param userGroupMembership the value to set
          * @return this builder

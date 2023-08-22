@@ -36,11 +36,11 @@ public class RoverNodeRetrieveLeafCertificateResponse extends com.oracle.bmc.res
         return opcRequestId;
     }
 
-    /** The returned LeafCertificateResponse instance. */
+    /** The returned {@code LeafCertificateResponse} instance. */
     private com.oracle.bmc.rover.model.LeafCertificateResponse leafCertificateResponse;
 
     /**
-     * The returned LeafCertificateResponse instance.
+     * The returned {@code LeafCertificateResponse} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class RoverNodeRetrieveLeafCertificateResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /** The returned LeafCertificateResponse instance. */
+        /** The returned {@code LeafCertificateResponse} instance. */
         private com.oracle.bmc.rover.model.LeafCertificateResponse leafCertificateResponse;
 
         /**
-         * The returned LeafCertificateResponse instance.
+         * The returned {@code LeafCertificateResponse} instance.
          *
          * @param leafCertificateResponse the value to set
          * @return this builder

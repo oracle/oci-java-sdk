@@ -42,12 +42,12 @@ public class ListBulkActionResourceTypesResponse extends com.oracle.bmc.response
         return opcNextPage;
     }
 
-    /** The returned BulkActionResourceTypeCollection instance. */
+    /** The returned {@code BulkActionResourceTypeCollection} instance. */
     private com.oracle.bmc.identity.model.BulkActionResourceTypeCollection
             bulkActionResourceTypeCollection;
 
     /**
-     * The returned BulkActionResourceTypeCollection instance.
+     * The returned {@code BulkActionResourceTypeCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListBulkActionResourceTypesResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned BulkActionResourceTypeCollection instance. */
+        /** The returned {@code BulkActionResourceTypeCollection} instance. */
         private com.oracle.bmc.identity.model.BulkActionResourceTypeCollection
                 bulkActionResourceTypeCollection;
 
         /**
-         * The returned BulkActionResourceTypeCollection instance.
+         * The returned {@code BulkActionResourceTypeCollection} instance.
          *
          * @param bulkActionResourceTypeCollection the value to set
          * @return this builder

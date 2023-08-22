@@ -46,11 +46,11 @@ public class ListCostTrackingTagsResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.identity.model.Tag instances. */
+    /** A list of {@code com.oracle.bmc.identity.model.Tag} instances. */
     private java.util.List<com.oracle.bmc.identity.model.Tag> items;
 
     /**
-     * A list of com.oracle.bmc.identity.model.Tag instances.
+     * A list of {@code com.oracle.bmc.identity.model.Tag} instances.
      *
      * @return the value
      */
@@ -137,11 +137,11 @@ public class ListCostTrackingTagsResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** A list of com.oracle.bmc.identity.model.Tag instances. */
+        /** A list of {@code com.oracle.bmc.identity.model.Tag} instances. */
         private java.util.List<com.oracle.bmc.identity.model.Tag> items;
 
         /**
-         * A list of com.oracle.bmc.identity.model.Tag instances.
+         * A list of {@code com.oracle.bmc.identity.model.Tag} instances.
          *
          * @param items the value to set
          * @return this builder

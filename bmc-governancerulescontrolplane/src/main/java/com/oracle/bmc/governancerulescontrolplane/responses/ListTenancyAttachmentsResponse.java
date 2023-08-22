@@ -42,12 +42,12 @@ public class ListTenancyAttachmentsResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** The returned TenancyAttachmentCollection instance. */
+    /** The returned {@code TenancyAttachmentCollection} instance. */
     private com.oracle.bmc.governancerulescontrolplane.model.TenancyAttachmentCollection
             tenancyAttachmentCollection;
 
     /**
-     * The returned TenancyAttachmentCollection instance.
+     * The returned {@code TenancyAttachmentCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListTenancyAttachmentsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned TenancyAttachmentCollection instance. */
+        /** The returned {@code TenancyAttachmentCollection} instance. */
         private com.oracle.bmc.governancerulescontrolplane.model.TenancyAttachmentCollection
                 tenancyAttachmentCollection;
 
         /**
-         * The returned TenancyAttachmentCollection instance.
+         * The returned {@code TenancyAttachmentCollection} instance.
          *
          * @param tenancyAttachmentCollection the value to set
          * @return this builder

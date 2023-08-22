@@ -36,11 +36,11 @@ public class GetDataGuardAssociationResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned DataGuardAssociation instance. */
+    /** The returned {@code DataGuardAssociation} instance. */
     private com.oracle.bmc.database.model.DataGuardAssociation dataGuardAssociation;
 
     /**
-     * The returned DataGuardAssociation instance.
+     * The returned {@code DataGuardAssociation} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetDataGuardAssociationResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned DataGuardAssociation instance. */
+        /** The returned {@code DataGuardAssociation} instance. */
         private com.oracle.bmc.database.model.DataGuardAssociation dataGuardAssociation;
 
         /**
-         * The returned DataGuardAssociation instance.
+         * The returned {@code DataGuardAssociation} instance.
          *
          * @param dataGuardAssociation the value to set
          * @return this builder

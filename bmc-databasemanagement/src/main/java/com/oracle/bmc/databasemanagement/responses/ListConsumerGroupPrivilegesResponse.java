@@ -42,12 +42,12 @@ public class ListConsumerGroupPrivilegesResponse extends com.oracle.bmc.response
         return opcRequestId;
     }
 
-    /** The returned ConsumerGroupPrivilegeCollection instance. */
+    /** The returned {@code ConsumerGroupPrivilegeCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.ConsumerGroupPrivilegeCollection
             consumerGroupPrivilegeCollection;
 
     /**
-     * The returned ConsumerGroupPrivilegeCollection instance.
+     * The returned {@code ConsumerGroupPrivilegeCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListConsumerGroupPrivilegesResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned ConsumerGroupPrivilegeCollection instance. */
+        /** The returned {@code ConsumerGroupPrivilegeCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.ConsumerGroupPrivilegeCollection
                 consumerGroupPrivilegeCollection;
 
         /**
-         * The returned ConsumerGroupPrivilegeCollection instance.
+         * The returned {@code ConsumerGroupPrivilegeCollection} instance.
          *
          * @param consumerGroupPrivilegeCollection the value to set
          * @return this builder

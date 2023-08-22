@@ -36,11 +36,11 @@ public class GetTranscriptionTaskResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned TranscriptionTask instance. */
+    /** The returned {@code TranscriptionTask} instance. */
     private com.oracle.bmc.aispeech.model.TranscriptionTask transcriptionTask;
 
     /**
-     * The returned TranscriptionTask instance.
+     * The returned {@code TranscriptionTask} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetTranscriptionTaskResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned TranscriptionTask instance. */
+        /** The returned {@code TranscriptionTask} instance. */
         private com.oracle.bmc.aispeech.model.TranscriptionTask transcriptionTask;
 
         /**
-         * The returned TranscriptionTask instance.
+         * The returned {@code TranscriptionTask} instance.
          *
          * @param transcriptionTask the value to set
          * @return this builder

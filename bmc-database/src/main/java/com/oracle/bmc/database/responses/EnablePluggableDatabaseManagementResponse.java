@@ -57,11 +57,11 @@ public class EnablePluggableDatabaseManagementResponse
         return opcRequestId;
     }
 
-    /** The returned PluggableDatabase instance. */
+    /** The returned {@code PluggableDatabase} instance. */
     private com.oracle.bmc.database.model.PluggableDatabase pluggableDatabase;
 
     /**
-     * The returned PluggableDatabase instance.
+     * The returned {@code PluggableDatabase} instance.
      *
      * @return the value
      */
@@ -164,11 +164,11 @@ public class EnablePluggableDatabaseManagementResponse
             return this;
         }
 
-        /** The returned PluggableDatabase instance. */
+        /** The returned {@code PluggableDatabase} instance. */
         private com.oracle.bmc.database.model.PluggableDatabase pluggableDatabase;
 
         /**
-         * The returned PluggableDatabase instance.
+         * The returned {@code PluggableDatabase} instance.
          *
          * @param pluggableDatabase the value to set
          * @return this builder

@@ -24,12 +24,12 @@ public class GetExecutionPlanStatsComparisionResponse extends com.oracle.bmc.res
         return opcRequestId;
     }
 
-    /** The returned ExecutionPlanStatsComparision instance. */
+    /** The returned {@code ExecutionPlanStatsComparision} instance. */
     private com.oracle.bmc.databasemanagement.model.ExecutionPlanStatsComparision
             executionPlanStatsComparision;
 
     /**
-     * The returned ExecutionPlanStatsComparision instance.
+     * The returned {@code ExecutionPlanStatsComparision} instance.
      *
      * @return the value
      */
@@ -92,12 +92,12 @@ public class GetExecutionPlanStatsComparisionResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /** The returned ExecutionPlanStatsComparision instance. */
+        /** The returned {@code ExecutionPlanStatsComparision} instance. */
         private com.oracle.bmc.databasemanagement.model.ExecutionPlanStatsComparision
                 executionPlanStatsComparision;
 
         /**
-         * The returned ExecutionPlanStatsComparision instance.
+         * The returned {@code ExecutionPlanStatsComparision} instance.
          *
          * @param executionPlanStatsComparision the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class RemoveQuotaLockResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned Quota instance. */
+    /** The returned {@code Quota} instance. */
     private com.oracle.bmc.limits.model.Quota quota;
 
     /**
-     * The returned Quota instance.
+     * The returned {@code Quota} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class RemoveQuotaLockResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned Quota instance. */
+        /** The returned {@code Quota} instance. */
         private com.oracle.bmc.limits.model.Quota quota;
 
         /**
-         * The returned Quota instance.
+         * The returned {@code Quota} instance.
          *
          * @param quota the value to set
          * @return this builder

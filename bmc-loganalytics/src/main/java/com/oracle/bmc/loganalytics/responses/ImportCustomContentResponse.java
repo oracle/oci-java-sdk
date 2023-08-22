@@ -24,12 +24,12 @@ public class ImportCustomContentResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsImportCustomContent instance. */
+    /** The returned {@code LogAnalyticsImportCustomContent} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsImportCustomContent
             logAnalyticsImportCustomContent;
 
     /**
-     * The returned LogAnalyticsImportCustomContent instance.
+     * The returned {@code LogAnalyticsImportCustomContent} instance.
      *
      * @return the value
      */
@@ -91,12 +91,12 @@ public class ImportCustomContentResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned LogAnalyticsImportCustomContent instance. */
+        /** The returned {@code LogAnalyticsImportCustomContent} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsImportCustomContent
                 logAnalyticsImportCustomContent;
 
         /**
-         * The returned LogAnalyticsImportCustomContent instance.
+         * The returned {@code LogAnalyticsImportCustomContent} instance.
          *
          * @param logAnalyticsImportCustomContent the value to set
          * @return this builder

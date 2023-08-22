@@ -42,11 +42,11 @@ public class ListResolverEndpointsResponse extends com.oracle.bmc.responses.BmcR
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.dns.model.ResolverEndpointSummary instances. */
+    /** A list of {@code com.oracle.bmc.dns.model.ResolverEndpointSummary} instances. */
     private java.util.List<com.oracle.bmc.dns.model.ResolverEndpointSummary> items;
 
     /**
-     * A list of com.oracle.bmc.dns.model.ResolverEndpointSummary instances.
+     * A list of {@code com.oracle.bmc.dns.model.ResolverEndpointSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListResolverEndpointsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** A list of com.oracle.bmc.dns.model.ResolverEndpointSummary instances. */
+        /** A list of {@code com.oracle.bmc.dns.model.ResolverEndpointSummary} instances. */
         private java.util.List<com.oracle.bmc.dns.model.ResolverEndpointSummary> items;
 
         /**
-         * A list of com.oracle.bmc.dns.model.ResolverEndpointSummary instances.
+         * A list of {@code com.oracle.bmc.dns.model.ResolverEndpointSummary} instances.
          *
          * @param items the value to set
          * @return this builder

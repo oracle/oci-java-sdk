@@ -25,11 +25,11 @@ public class UpdateDrgRouteDistributionStatementsResponse
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.DrgRouteDistributionStatement instances. */
+    /** A list of {@code com.oracle.bmc.core.model.DrgRouteDistributionStatement} instances. */
     private java.util.List<com.oracle.bmc.core.model.DrgRouteDistributionStatement> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.DrgRouteDistributionStatement instances.
+     * A list of {@code com.oracle.bmc.core.model.DrgRouteDistributionStatement} instances.
      *
      * @return the value
      */
@@ -85,11 +85,11 @@ public class UpdateDrgRouteDistributionStatementsResponse
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.DrgRouteDistributionStatement instances. */
+        /** A list of {@code com.oracle.bmc.core.model.DrgRouteDistributionStatement} instances. */
         private java.util.List<com.oracle.bmc.core.model.DrgRouteDistributionStatement> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.DrgRouteDistributionStatement instances.
+         * A list of {@code com.oracle.bmc.core.model.DrgRouteDistributionStatement} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class UpdateEventResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Event instance. */
+    /** The returned {@code Event} instance. */
     private com.oracle.bmc.osmanagement.model.Event event;
 
     /**
-     * The returned Event instance.
+     * The returned {@code Event} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateEventResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Event instance. */
+        /** The returned {@code Event} instance. */
         private com.oracle.bmc.osmanagement.model.Event event;
 
         /**
-         * The returned Event instance.
+         * The returned {@code Event} instance.
          *
          * @param event the value to set
          * @return this builder

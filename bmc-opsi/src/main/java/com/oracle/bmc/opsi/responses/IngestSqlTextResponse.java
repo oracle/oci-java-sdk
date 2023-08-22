@@ -36,11 +36,11 @@ public class IngestSqlTextResponse extends com.oracle.bmc.responses.BmcResponse 
         return etag;
     }
 
-    /** The returned IngestSqlTextResponseDetails instance. */
+    /** The returned {@code IngestSqlTextResponseDetails} instance. */
     private com.oracle.bmc.opsi.model.IngestSqlTextResponseDetails ingestSqlTextResponseDetails;
 
     /**
-     * The returned IngestSqlTextResponseDetails instance.
+     * The returned {@code IngestSqlTextResponseDetails} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class IngestSqlTextResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned IngestSqlTextResponseDetails instance. */
+        /** The returned {@code IngestSqlTextResponseDetails} instance. */
         private com.oracle.bmc.opsi.model.IngestSqlTextResponseDetails ingestSqlTextResponseDetails;
 
         /**
-         * The returned IngestSqlTextResponseDetails instance.
+         * The returned {@code IngestSqlTextResponseDetails} instance.
          *
          * @param ingestSqlTextResponseDetails the value to set
          * @return this builder

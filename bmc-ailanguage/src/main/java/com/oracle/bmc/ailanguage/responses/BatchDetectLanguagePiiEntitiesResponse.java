@@ -24,12 +24,12 @@ public class BatchDetectLanguagePiiEntitiesResponse extends com.oracle.bmc.respo
         return opcRequestId;
     }
 
-    /** The returned BatchDetectLanguagePiiEntitiesResult instance. */
+    /** The returned {@code BatchDetectLanguagePiiEntitiesResult} instance. */
     private com.oracle.bmc.ailanguage.model.BatchDetectLanguagePiiEntitiesResult
             batchDetectLanguagePiiEntitiesResult;
 
     /**
-     * The returned BatchDetectLanguagePiiEntitiesResult instance.
+     * The returned {@code BatchDetectLanguagePiiEntitiesResult} instance.
      *
      * @return the value
      */
@@ -92,12 +92,12 @@ public class BatchDetectLanguagePiiEntitiesResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned BatchDetectLanguagePiiEntitiesResult instance. */
+        /** The returned {@code BatchDetectLanguagePiiEntitiesResult} instance. */
         private com.oracle.bmc.ailanguage.model.BatchDetectLanguagePiiEntitiesResult
                 batchDetectLanguagePiiEntitiesResult;
 
         /**
-         * The returned BatchDetectLanguagePiiEntitiesResult instance.
+         * The returned {@code BatchDetectLanguagePiiEntitiesResult} instance.
          *
          * @param batchDetectLanguagePiiEntitiesResult the value to set
          * @return this builder

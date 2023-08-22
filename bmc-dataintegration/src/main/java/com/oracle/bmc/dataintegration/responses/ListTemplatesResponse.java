@@ -72,12 +72,12 @@ public class ListTemplatesResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcTotalItems;
     }
 
-    /** The returned TemplateSummaryCollection instance. */
+    /** The returned {@code TemplateSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.TemplateSummaryCollection
             templateSummaryCollection;
 
     /**
-     * The returned TemplateSummaryCollection instance.
+     * The returned {@code TemplateSummaryCollection} instance.
      *
      * @return the value
      */
@@ -202,12 +202,12 @@ public class ListTemplatesResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned TemplateSummaryCollection instance. */
+        /** The returned {@code TemplateSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.TemplateSummaryCollection
                 templateSummaryCollection;
 
         /**
-         * The returned TemplateSummaryCollection instance.
+         * The returned {@code TemplateSummaryCollection} instance.
          *
          * @param templateSummaryCollection the value to set
          * @return this builder

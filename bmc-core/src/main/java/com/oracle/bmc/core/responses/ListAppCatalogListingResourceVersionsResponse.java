@@ -43,11 +43,15 @@ public class ListAppCatalogListingResourceVersionsResponse
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.AppCatalogListingResourceVersionSummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.core.model.AppCatalogListingResourceVersionSummary}
+     * instances.
+     */
     private java.util.List<com.oracle.bmc.core.model.AppCatalogListingResourceVersionSummary> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.AppCatalogListingResourceVersionSummary instances.
+     * A list of {@code com.oracle.bmc.core.model.AppCatalogListingResourceVersionSummary}
+     * instances.
      *
      * @return the value
      */
@@ -134,13 +138,15 @@ public class ListAppCatalogListingResourceVersionsResponse
         }
 
         /**
-         * A list of com.oracle.bmc.core.model.AppCatalogListingResourceVersionSummary instances.
+         * A list of {@code com.oracle.bmc.core.model.AppCatalogListingResourceVersionSummary}
+         * instances.
          */
         private java.util.List<com.oracle.bmc.core.model.AppCatalogListingResourceVersionSummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.core.model.AppCatalogListingResourceVersionSummary instances.
+         * A list of {@code com.oracle.bmc.core.model.AppCatalogListingResourceVersionSummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class GetKnowledgeBaseResponse extends com.oracle.bmc.responses.BmcRespon
         return etag;
     }
 
-    /** The returned KnowledgeBase instance. */
+    /** The returned {@code KnowledgeBase} instance. */
     private com.oracle.bmc.adm.model.KnowledgeBase knowledgeBase;
 
     /**
-     * The returned KnowledgeBase instance.
+     * The returned {@code KnowledgeBase} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetKnowledgeBaseResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned KnowledgeBase instance. */
+        /** The returned {@code KnowledgeBase} instance. */
         private com.oracle.bmc.adm.model.KnowledgeBase knowledgeBase;
 
         /**
-         * The returned KnowledgeBase instance.
+         * The returned {@code KnowledgeBase} instance.
          *
          * @param knowledgeBase the value to set
          * @return this builder

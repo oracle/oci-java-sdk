@@ -24,11 +24,11 @@ public class LoadSqlPlanBaselinesFromAwrResponse extends com.oracle.bmc.response
         return opcRequestId;
     }
 
-    /** The returned SqlPlanBaselineJob instance. */
+    /** The returned {@code SqlPlanBaselineJob} instance. */
     private com.oracle.bmc.databasemanagement.model.SqlPlanBaselineJob sqlPlanBaselineJob;
 
     /**
-     * The returned SqlPlanBaselineJob instance.
+     * The returned {@code SqlPlanBaselineJob} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class LoadSqlPlanBaselinesFromAwrResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned SqlPlanBaselineJob instance. */
+        /** The returned {@code SqlPlanBaselineJob} instance. */
         private com.oracle.bmc.databasemanagement.model.SqlPlanBaselineJob sqlPlanBaselineJob;
 
         /**
-         * The returned SqlPlanBaselineJob instance.
+         * The returned {@code SqlPlanBaselineJob} instance.
          *
          * @param sqlPlanBaselineJob the value to set
          * @return this builder

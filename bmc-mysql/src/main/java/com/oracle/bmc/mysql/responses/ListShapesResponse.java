@@ -24,11 +24,11 @@ public class ListShapesResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.mysql.model.ShapeSummary instances. */
+    /** A list of {@code com.oracle.bmc.mysql.model.ShapeSummary} instances. */
     private java.util.List<com.oracle.bmc.mysql.model.ShapeSummary> items;
 
     /**
-     * A list of com.oracle.bmc.mysql.model.ShapeSummary instances.
+     * A list of {@code com.oracle.bmc.mysql.model.ShapeSummary} instances.
      *
      * @return the value
      */
@@ -83,11 +83,11 @@ public class ListShapesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.mysql.model.ShapeSummary instances. */
+        /** A list of {@code com.oracle.bmc.mysql.model.ShapeSummary} instances. */
         private java.util.List<com.oracle.bmc.mysql.model.ShapeSummary> items;
 
         /**
-         * A list of com.oracle.bmc.mysql.model.ShapeSummary instances.
+         * A list of {@code com.oracle.bmc.mysql.model.ShapeSummary} instances.
          *
          * @param items the value to set
          * @return this builder

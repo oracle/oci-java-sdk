@@ -24,11 +24,11 @@ public class GetTunnelCpeDeviceConfigContentResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** The returned java.io.InputStream instance. */
+    /** The returned {@code java.io.InputStream} instance. */
     private java.io.InputStream inputStream;
 
     /**
-     * The returned java.io.InputStream instance.
+     * The returned {@code java.io.InputStream} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class GetTunnelCpeDeviceConfigContentResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned java.io.InputStream instance. */
+        /** The returned {@code java.io.InputStream} instance. */
         private java.io.InputStream inputStream;
 
         /**
-         * The returned java.io.InputStream instance.
+         * The returned {@code java.io.InputStream} instance.
          *
          * @param inputStream the value to set
          * @return this builder

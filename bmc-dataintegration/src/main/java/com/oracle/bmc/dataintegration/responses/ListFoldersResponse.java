@@ -72,11 +72,11 @@ public class ListFoldersResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcTotalItems;
     }
 
-    /** The returned FolderSummaryCollection instance. */
+    /** The returned {@code FolderSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.FolderSummaryCollection folderSummaryCollection;
 
     /**
-     * The returned FolderSummaryCollection instance.
+     * The returned {@code FolderSummaryCollection} instance.
      *
      * @return the value
      */
@@ -200,12 +200,12 @@ public class ListFoldersResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned FolderSummaryCollection instance. */
+        /** The returned {@code FolderSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.FolderSummaryCollection
                 folderSummaryCollection;
 
         /**
-         * The returned FolderSummaryCollection instance.
+         * The returned {@code FolderSummaryCollection} instance.
          *
          * @param folderSummaryCollection the value to set
          * @return this builder

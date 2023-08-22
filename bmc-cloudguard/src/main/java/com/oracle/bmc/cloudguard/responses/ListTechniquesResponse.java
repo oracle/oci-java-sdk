@@ -42,11 +42,11 @@ public class ListTechniquesResponse extends com.oracle.bmc.responses.BmcResponse
         return opcNextPage;
     }
 
-    /** The returned TechniqueCollection instance. */
+    /** The returned {@code TechniqueCollection} instance. */
     private com.oracle.bmc.cloudguard.model.TechniqueCollection techniqueCollection;
 
     /**
-     * The returned TechniqueCollection instance.
+     * The returned {@code TechniqueCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListTechniquesResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned TechniqueCollection instance. */
+        /** The returned {@code TechniqueCollection} instance. */
         private com.oracle.bmc.cloudguard.model.TechniqueCollection techniqueCollection;
 
         /**
-         * The returned TechniqueCollection instance.
+         * The returned {@code TechniqueCollection} instance.
          *
          * @param techniqueCollection the value to set
          * @return this builder

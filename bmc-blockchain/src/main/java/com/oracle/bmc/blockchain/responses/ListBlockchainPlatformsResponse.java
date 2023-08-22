@@ -42,12 +42,12 @@ public class ListBlockchainPlatformsResponse extends com.oracle.bmc.responses.Bm
         return opcNextPage;
     }
 
-    /** The returned BlockchainPlatformCollection instance. */
+    /** The returned {@code BlockchainPlatformCollection} instance. */
     private com.oracle.bmc.blockchain.model.BlockchainPlatformCollection
             blockchainPlatformCollection;
 
     /**
-     * The returned BlockchainPlatformCollection instance.
+     * The returned {@code BlockchainPlatformCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListBlockchainPlatformsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned BlockchainPlatformCollection instance. */
+        /** The returned {@code BlockchainPlatformCollection} instance. */
         private com.oracle.bmc.blockchain.model.BlockchainPlatformCollection
                 blockchainPlatformCollection;
 
         /**
-         * The returned BlockchainPlatformCollection instance.
+         * The returned {@code BlockchainPlatformCollection} instance.
          *
          * @param blockchainPlatformCollection the value to set
          * @return this builder

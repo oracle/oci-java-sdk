@@ -42,11 +42,11 @@ public class ListScriptsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned ScriptCollection instance. */
+    /** The returned {@code ScriptCollection} instance. */
     private com.oracle.bmc.apmsynthetics.model.ScriptCollection scriptCollection;
 
     /**
-     * The returned ScriptCollection instance.
+     * The returned {@code ScriptCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListScriptsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned ScriptCollection instance. */
+        /** The returned {@code ScriptCollection} instance. */
         private com.oracle.bmc.apmsynthetics.model.ScriptCollection scriptCollection;
 
         /**
-         * The returned ScriptCollection instance.
+         * The returned {@code ScriptCollection} instance.
          *
          * @param scriptCollection the value to set
          * @return this builder

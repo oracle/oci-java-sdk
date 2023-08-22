@@ -24,11 +24,11 @@ public class GetStatsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned QueueStats instance. */
+    /** The returned {@code QueueStats} instance. */
     private com.oracle.bmc.queue.model.QueueStats queueStats;
 
     /**
-     * The returned QueueStats instance.
+     * The returned {@code QueueStats} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetStatsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned QueueStats instance. */
+        /** The returned {@code QueueStats} instance. */
         private com.oracle.bmc.queue.model.QueueStats queueStats;
 
         /**
-         * The returned QueueStats instance.
+         * The returned {@code QueueStats} instance.
          *
          * @param queueStats the value to set
          * @return this builder

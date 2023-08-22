@@ -24,11 +24,11 @@ public class CreateTransferApplianceResponse extends com.oracle.bmc.responses.Bm
         return etag;
     }
 
-    /** The returned TransferAppliance instance. */
+    /** The returned {@code TransferAppliance} instance. */
     private com.oracle.bmc.dts.model.TransferAppliance transferAppliance;
 
     /**
-     * The returned TransferAppliance instance.
+     * The returned {@code TransferAppliance} instance.
      *
      * @return the value
      */
@@ -98,11 +98,11 @@ public class CreateTransferApplianceResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned TransferAppliance instance. */
+        /** The returned {@code TransferAppliance} instance. */
         private com.oracle.bmc.dts.model.TransferAppliance transferAppliance;
 
         /**
-         * The returned TransferAppliance instance.
+         * The returned {@code TransferAppliance} instance.
          *
          * @param transferAppliance the value to set
          * @return this builder

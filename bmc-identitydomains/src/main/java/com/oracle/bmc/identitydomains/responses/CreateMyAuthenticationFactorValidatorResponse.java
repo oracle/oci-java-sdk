@@ -37,12 +37,12 @@ public class CreateMyAuthenticationFactorValidatorResponse
         return etag;
     }
 
-    /** The returned MyAuthenticationFactorValidator instance. */
+    /** The returned {@code MyAuthenticationFactorValidator} instance. */
     private com.oracle.bmc.identitydomains.model.MyAuthenticationFactorValidator
             myAuthenticationFactorValidator;
 
     /**
-     * The returned MyAuthenticationFactorValidator instance.
+     * The returned {@code MyAuthenticationFactorValidator} instance.
      *
      * @return the value
      */
@@ -122,12 +122,12 @@ public class CreateMyAuthenticationFactorValidatorResponse
             return this;
         }
 
-        /** The returned MyAuthenticationFactorValidator instance. */
+        /** The returned {@code MyAuthenticationFactorValidator} instance. */
         private com.oracle.bmc.identitydomains.model.MyAuthenticationFactorValidator
                 myAuthenticationFactorValidator;
 
         /**
-         * The returned MyAuthenticationFactorValidator instance.
+         * The returned {@code MyAuthenticationFactorValidator} instance.
          *
          * @param myAuthenticationFactorValidator the value to set
          * @return this builder

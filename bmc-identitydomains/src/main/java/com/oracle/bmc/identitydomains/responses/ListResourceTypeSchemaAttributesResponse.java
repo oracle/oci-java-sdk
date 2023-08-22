@@ -42,12 +42,12 @@ public class ListResourceTypeSchemaAttributesResponse extends com.oracle.bmc.res
         return opcNextPage;
     }
 
-    /** The returned ResourceTypeSchemaAttributes instance. */
+    /** The returned {@code ResourceTypeSchemaAttributes} instance. */
     private com.oracle.bmc.identitydomains.model.ResourceTypeSchemaAttributes
             resourceTypeSchemaAttributes;
 
     /**
-     * The returned ResourceTypeSchemaAttributes instance.
+     * The returned {@code ResourceTypeSchemaAttributes} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListResourceTypeSchemaAttributesResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /** The returned ResourceTypeSchemaAttributes instance. */
+        /** The returned {@code ResourceTypeSchemaAttributes} instance. */
         private com.oracle.bmc.identitydomains.model.ResourceTypeSchemaAttributes
                 resourceTypeSchemaAttributes;
 
         /**
-         * The returned ResourceTypeSchemaAttributes instance.
+         * The returned {@code ResourceTypeSchemaAttributes} instance.
          *
          * @param resourceTypeSchemaAttributes the value to set
          * @return this builder

@@ -40,11 +40,11 @@ public class GetOdaPrivateEndpointResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned OdaPrivateEndpoint instance. */
+    /** The returned {@code OdaPrivateEndpoint} instance. */
     private com.oracle.bmc.oda.model.OdaPrivateEndpoint odaPrivateEndpoint;
 
     /**
-     * The returned OdaPrivateEndpoint instance.
+     * The returned {@code OdaPrivateEndpoint} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetOdaPrivateEndpointResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned OdaPrivateEndpoint instance. */
+        /** The returned {@code OdaPrivateEndpoint} instance. */
         private com.oracle.bmc.oda.model.OdaPrivateEndpoint odaPrivateEndpoint;
 
         /**
-         * The returned OdaPrivateEndpoint instance.
+         * The returned {@code OdaPrivateEndpoint} instance.
          *
          * @param odaPrivateEndpoint the value to set
          * @return this builder

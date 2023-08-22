@@ -42,12 +42,12 @@ public class ListDrProtectionGroupsResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** The returned DrProtectionGroupCollection instance. */
+    /** The returned {@code DrProtectionGroupCollection} instance. */
     private com.oracle.bmc.disasterrecovery.model.DrProtectionGroupCollection
             drProtectionGroupCollection;
 
     /**
-     * The returned DrProtectionGroupCollection instance.
+     * The returned {@code DrProtectionGroupCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListDrProtectionGroupsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned DrProtectionGroupCollection instance. */
+        /** The returned {@code DrProtectionGroupCollection} instance. */
         private com.oracle.bmc.disasterrecovery.model.DrProtectionGroupCollection
                 drProtectionGroupCollection;
 
         /**
-         * The returned DrProtectionGroupCollection instance.
+         * The returned {@code DrProtectionGroupCollection} instance.
          *
          * @param drProtectionGroupCollection the value to set
          * @return this builder

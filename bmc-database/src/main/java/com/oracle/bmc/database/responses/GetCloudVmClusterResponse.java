@@ -36,11 +36,11 @@ public class GetCloudVmClusterResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned CloudVmCluster instance. */
+    /** The returned {@code CloudVmCluster} instance. */
     private com.oracle.bmc.database.model.CloudVmCluster cloudVmCluster;
 
     /**
-     * The returned CloudVmCluster instance.
+     * The returned {@code CloudVmCluster} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetCloudVmClusterResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned CloudVmCluster instance. */
+        /** The returned {@code CloudVmCluster} instance. */
         private com.oracle.bmc.database.model.CloudVmCluster cloudVmCluster;
 
         /**
-         * The returned CloudVmCluster instance.
+         * The returned {@code CloudVmCluster} instance.
          *
          * @param cloudVmCluster the value to set
          * @return this builder

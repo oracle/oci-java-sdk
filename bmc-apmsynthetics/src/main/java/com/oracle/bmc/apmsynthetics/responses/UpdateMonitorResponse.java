@@ -36,11 +36,11 @@ public class UpdateMonitorResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** The returned Monitor instance. */
+    /** The returned {@code Monitor} instance. */
     private com.oracle.bmc.apmsynthetics.model.Monitor monitor;
 
     /**
-     * The returned Monitor instance.
+     * The returned {@code Monitor} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateMonitorResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned Monitor instance. */
+        /** The returned {@code Monitor} instance. */
         private com.oracle.bmc.apmsynthetics.model.Monitor monitor;
 
         /**
-         * The returned Monitor instance.
+         * The returned {@code Monitor} instance.
          *
          * @param monitor the value to set
          * @return this builder

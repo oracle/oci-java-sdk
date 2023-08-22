@@ -43,11 +43,11 @@ public class ListVirtualCircuitBandwidthShapesResponse
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.VirtualCircuitBandwidthShape instances. */
+    /** A list of {@code com.oracle.bmc.core.model.VirtualCircuitBandwidthShape} instances. */
     private java.util.List<com.oracle.bmc.core.model.VirtualCircuitBandwidthShape> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.VirtualCircuitBandwidthShape instances.
+     * A list of {@code com.oracle.bmc.core.model.VirtualCircuitBandwidthShape} instances.
      *
      * @return the value
      */
@@ -131,11 +131,11 @@ public class ListVirtualCircuitBandwidthShapesResponse
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.VirtualCircuitBandwidthShape instances. */
+        /** A list of {@code com.oracle.bmc.core.model.VirtualCircuitBandwidthShape} instances. */
         private java.util.List<com.oracle.bmc.core.model.VirtualCircuitBandwidthShape> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.VirtualCircuitBandwidthShape instances.
+         * A list of {@code com.oracle.bmc.core.model.VirtualCircuitBandwidthShape} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class GetAuthenticationPolicyResponse extends com.oracle.bmc.responses.Bm
         return etag;
     }
 
-    /** The returned AuthenticationPolicy instance. */
+    /** The returned {@code AuthenticationPolicy} instance. */
     private com.oracle.bmc.identity.model.AuthenticationPolicy authenticationPolicy;
 
     /**
-     * The returned AuthenticationPolicy instance.
+     * The returned {@code AuthenticationPolicy} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetAuthenticationPolicyResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned AuthenticationPolicy instance. */
+        /** The returned {@code AuthenticationPolicy} instance. */
         private com.oracle.bmc.identity.model.AuthenticationPolicy authenticationPolicy;
 
         /**
-         * The returned AuthenticationPolicy instance.
+         * The returned {@code AuthenticationPolicy} instance.
          *
          * @param authenticationPolicy the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class CreateDashboardResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned Dashboard instance. */
+    /** The returned {@code Dashboard} instance. */
     private com.oracle.bmc.dashboardservice.model.Dashboard dashboard;
 
     /**
-     * The returned Dashboard instance.
+     * The returned {@code Dashboard} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class CreateDashboardResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned Dashboard instance. */
+        /** The returned {@code Dashboard} instance. */
         private com.oracle.bmc.dashboardservice.model.Dashboard dashboard;
 
         /**
-         * The returned Dashboard instance.
+         * The returned {@code Dashboard} instance.
          *
          * @param dashboard the value to set
          * @return this builder

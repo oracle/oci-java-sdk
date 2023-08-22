@@ -42,11 +42,11 @@ public class ListServiceGatewaysResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.ServiceGateway instances. */
+    /** A list of {@code com.oracle.bmc.core.model.ServiceGateway} instances. */
     private java.util.List<com.oracle.bmc.core.model.ServiceGateway> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.ServiceGateway instances.
+     * A list of {@code com.oracle.bmc.core.model.ServiceGateway} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListServiceGatewaysResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.ServiceGateway instances. */
+        /** A list of {@code com.oracle.bmc.core.model.ServiceGateway} instances. */
         private java.util.List<com.oracle.bmc.core.model.ServiceGateway> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.ServiceGateway instances.
+         * A list of {@code com.oracle.bmc.core.model.ServiceGateway} instances.
          *
          * @param items the value to set
          * @return this builder

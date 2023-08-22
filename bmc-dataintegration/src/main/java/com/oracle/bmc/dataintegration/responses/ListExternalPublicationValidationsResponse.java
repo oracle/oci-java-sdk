@@ -73,12 +73,12 @@ public class ListExternalPublicationValidationsResponse
         return opcTotalItems;
     }
 
-    /** The returned ExternalPublicationValidationSummaryCollection instance. */
+    /** The returned {@code ExternalPublicationValidationSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.ExternalPublicationValidationSummaryCollection
             externalPublicationValidationSummaryCollection;
 
     /**
-     * The returned ExternalPublicationValidationSummaryCollection instance.
+     * The returned {@code ExternalPublicationValidationSummaryCollection} instance.
      *
      * @return the value
      */
@@ -205,12 +205,12 @@ public class ListExternalPublicationValidationsResponse
             return this;
         }
 
-        /** The returned ExternalPublicationValidationSummaryCollection instance. */
+        /** The returned {@code ExternalPublicationValidationSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.ExternalPublicationValidationSummaryCollection
                 externalPublicationValidationSummaryCollection;
 
         /**
-         * The returned ExternalPublicationValidationSummaryCollection instance.
+         * The returned {@code ExternalPublicationValidationSummaryCollection} instance.
          *
          * @param externalPublicationValidationSummaryCollection the value to set
          * @return this builder

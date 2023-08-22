@@ -40,11 +40,11 @@ public class GetTermRelationshipResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned TermRelationship instance. */
+    /** The returned {@code TermRelationship} instance. */
     private com.oracle.bmc.datacatalog.model.TermRelationship termRelationship;
 
     /**
-     * The returned TermRelationship instance.
+     * The returned {@code TermRelationship} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetTermRelationshipResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned TermRelationship instance. */
+        /** The returned {@code TermRelationship} instance. */
         private com.oracle.bmc.datacatalog.model.TermRelationship termRelationship;
 
         /**
-         * The returned TermRelationship instance.
+         * The returned {@code TermRelationship} instance.
          *
          * @param termRelationship the value to set
          * @return this builder

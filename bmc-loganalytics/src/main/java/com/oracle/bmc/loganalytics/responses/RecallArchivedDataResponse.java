@@ -64,11 +64,11 @@ public class RecallArchivedDataResponse extends com.oracle.bmc.responses.BmcResp
         return etag;
     }
 
-    /** The returned RecalledDataInfo instance. */
+    /** The returned {@code RecalledDataInfo} instance. */
     private com.oracle.bmc.loganalytics.model.RecalledDataInfo recalledDataInfo;
 
     /**
-     * The returned RecalledDataInfo instance.
+     * The returned {@code RecalledDataInfo} instance.
      *
      * @return the value
      */
@@ -183,11 +183,11 @@ public class RecallArchivedDataResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned RecalledDataInfo instance. */
+        /** The returned {@code RecalledDataInfo} instance. */
         private com.oracle.bmc.loganalytics.model.RecalledDataInfo recalledDataInfo;
 
         /**
-         * The returned RecalledDataInfo instance.
+         * The returned {@code RecalledDataInfo} instance.
          *
          * @param recalledDataInfo the value to set
          * @return this builder

@@ -42,12 +42,12 @@ public class RequestSummarizedTrendProblemsResponse extends com.oracle.bmc.respo
         return opcNextPage;
     }
 
-    /** The returned ProblemTrendAggregationCollection instance. */
+    /** The returned {@code ProblemTrendAggregationCollection} instance. */
     private com.oracle.bmc.cloudguard.model.ProblemTrendAggregationCollection
             problemTrendAggregationCollection;
 
     /**
-     * The returned ProblemTrendAggregationCollection instance.
+     * The returned {@code ProblemTrendAggregationCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class RequestSummarizedTrendProblemsResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned ProblemTrendAggregationCollection instance. */
+        /** The returned {@code ProblemTrendAggregationCollection} instance. */
         private com.oracle.bmc.cloudguard.model.ProblemTrendAggregationCollection
                 problemTrendAggregationCollection;
 
         /**
-         * The returned ProblemTrendAggregationCollection instance.
+         * The returned {@code ProblemTrendAggregationCollection} instance.
          *
          * @param problemTrendAggregationCollection the value to set
          * @return this builder

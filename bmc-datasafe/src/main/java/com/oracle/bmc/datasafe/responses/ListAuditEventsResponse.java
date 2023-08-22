@@ -62,11 +62,11 @@ public class ListAuditEventsResponse extends com.oracle.bmc.responses.BmcRespons
         return opcPrevPage;
     }
 
-    /** The returned AuditEventCollection instance. */
+    /** The returned {@code AuditEventCollection} instance. */
     private com.oracle.bmc.datasafe.model.AuditEventCollection auditEventCollection;
 
     /**
-     * The returned AuditEventCollection instance.
+     * The returned {@code AuditEventCollection} instance.
      *
      * @return the value
      */
@@ -174,11 +174,11 @@ public class ListAuditEventsResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned AuditEventCollection instance. */
+        /** The returned {@code AuditEventCollection} instance. */
         private com.oracle.bmc.datasafe.model.AuditEventCollection auditEventCollection;
 
         /**
-         * The returned AuditEventCollection instance.
+         * The returned {@code AuditEventCollection} instance.
          *
          * @param auditEventCollection the value to set
          * @return this builder

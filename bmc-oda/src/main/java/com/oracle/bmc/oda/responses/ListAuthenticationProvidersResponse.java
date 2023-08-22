@@ -54,12 +54,12 @@ public class ListAuthenticationProvidersResponse extends com.oracle.bmc.response
         return opcTotalItems;
     }
 
-    /** The returned AuthenticationProviderCollection instance. */
+    /** The returned {@code AuthenticationProviderCollection} instance. */
     private com.oracle.bmc.oda.model.AuthenticationProviderCollection
             authenticationProviderCollection;
 
     /**
-     * The returned AuthenticationProviderCollection instance.
+     * The returned {@code AuthenticationProviderCollection} instance.
      *
      * @return the value
      */
@@ -162,12 +162,12 @@ public class ListAuthenticationProvidersResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned AuthenticationProviderCollection instance. */
+        /** The returned {@code AuthenticationProviderCollection} instance. */
         private com.oracle.bmc.oda.model.AuthenticationProviderCollection
                 authenticationProviderCollection;
 
         /**
-         * The returned AuthenticationProviderCollection instance.
+         * The returned {@code AuthenticationProviderCollection} instance.
          *
          * @param authenticationProviderCollection the value to set
          * @return this builder

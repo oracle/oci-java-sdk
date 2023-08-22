@@ -62,11 +62,11 @@ public class ListAlertsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcPrevPage;
     }
 
-    /** The returned AlertCollection instance. */
+    /** The returned {@code AlertCollection} instance. */
     private com.oracle.bmc.datasafe.model.AlertCollection alertCollection;
 
     /**
-     * The returned AlertCollection instance.
+     * The returned {@code AlertCollection} instance.
      *
      * @return the value
      */
@@ -174,11 +174,11 @@ public class ListAlertsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned AlertCollection instance. */
+        /** The returned {@code AlertCollection} instance. */
         private com.oracle.bmc.datasafe.model.AlertCollection alertCollection;
 
         /**
-         * The returned AlertCollection instance.
+         * The returned {@code AlertCollection} instance.
          *
          * @param alertCollection the value to set
          * @return this builder

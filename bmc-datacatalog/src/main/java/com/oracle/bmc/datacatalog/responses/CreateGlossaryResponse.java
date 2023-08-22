@@ -40,11 +40,11 @@ public class CreateGlossaryResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned Glossary instance. */
+    /** The returned {@code Glossary} instance. */
     private com.oracle.bmc.datacatalog.model.Glossary glossary;
 
     /**
-     * The returned Glossary instance.
+     * The returned {@code Glossary} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class CreateGlossaryResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned Glossary instance. */
+        /** The returned {@code Glossary} instance. */
         private com.oracle.bmc.datacatalog.model.Glossary glossary;
 
         /**
-         * The returned Glossary instance.
+         * The returned {@code Glossary} instance.
          *
          * @param glossary the value to set
          * @return this builder

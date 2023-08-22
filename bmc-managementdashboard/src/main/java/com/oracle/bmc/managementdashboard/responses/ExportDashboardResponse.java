@@ -40,12 +40,12 @@ public class ExportDashboardResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned ManagementDashboardExportDetails instance. */
+    /** The returned {@code ManagementDashboardExportDetails} instance. */
     private com.oracle.bmc.managementdashboard.model.ManagementDashboardExportDetails
             managementDashboardExportDetails;
 
     /**
-     * The returned ManagementDashboardExportDetails instance.
+     * The returned {@code ManagementDashboardExportDetails} instance.
      *
      * @return the value
      */
@@ -128,12 +128,12 @@ public class ExportDashboardResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned ManagementDashboardExportDetails instance. */
+        /** The returned {@code ManagementDashboardExportDetails} instance. */
         private com.oracle.bmc.managementdashboard.model.ManagementDashboardExportDetails
                 managementDashboardExportDetails;
 
         /**
-         * The returned ManagementDashboardExportDetails instance.
+         * The returned {@code ManagementDashboardExportDetails} instance.
          *
          * @param managementDashboardExportDetails the value to set
          * @return this builder

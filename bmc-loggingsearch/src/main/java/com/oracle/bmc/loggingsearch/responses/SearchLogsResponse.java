@@ -42,11 +42,11 @@ public class SearchLogsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned SearchResponse instance. */
+    /** The returned {@code SearchResponse} instance. */
     private com.oracle.bmc.loggingsearch.model.SearchResponse searchResponse;
 
     /**
-     * The returned SearchResponse instance.
+     * The returned {@code SearchResponse} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class SearchLogsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned SearchResponse instance. */
+        /** The returned {@code SearchResponse} instance. */
         private com.oracle.bmc.loggingsearch.model.SearchResponse searchResponse;
 
         /**
-         * The returned SearchResponse instance.
+         * The returned {@code SearchResponse} instance.
          *
          * @param searchResponse the value to set
          * @return this builder

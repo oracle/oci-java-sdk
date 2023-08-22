@@ -68,11 +68,11 @@ public class ListReplicationSourcesResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.objectstorage.model.ReplicationSource instances. */
+    /** A list of {@code com.oracle.bmc.objectstorage.model.ReplicationSource} instances. */
     private java.util.List<com.oracle.bmc.objectstorage.model.ReplicationSource> items;
 
     /**
-     * A list of com.oracle.bmc.objectstorage.model.ReplicationSource instances.
+     * A list of {@code com.oracle.bmc.objectstorage.model.ReplicationSource} instances.
      *
      * @return the value
      */
@@ -189,11 +189,11 @@ public class ListReplicationSourcesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** A list of com.oracle.bmc.objectstorage.model.ReplicationSource instances. */
+        /** A list of {@code com.oracle.bmc.objectstorage.model.ReplicationSource} instances. */
         private java.util.List<com.oracle.bmc.objectstorage.model.ReplicationSource> items;
 
         /**
-         * A list of com.oracle.bmc.objectstorage.model.ReplicationSource instances.
+         * A list of {@code com.oracle.bmc.objectstorage.model.ReplicationSource} instances.
          *
          * @param items the value to set
          * @return this builder

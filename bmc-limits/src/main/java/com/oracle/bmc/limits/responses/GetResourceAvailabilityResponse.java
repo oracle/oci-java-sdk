@@ -24,11 +24,11 @@ public class GetResourceAvailabilityResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned ResourceAvailability instance. */
+    /** The returned {@code ResourceAvailability} instance. */
     private com.oracle.bmc.limits.model.ResourceAvailability resourceAvailability;
 
     /**
-     * The returned ResourceAvailability instance.
+     * The returned {@code ResourceAvailability} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class GetResourceAvailabilityResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned ResourceAvailability instance. */
+        /** The returned {@code ResourceAvailability} instance. */
         private com.oracle.bmc.limits.model.ResourceAvailability resourceAvailability;
 
         /**
-         * The returned ResourceAvailability instance.
+         * The returned {@code ResourceAvailability} instance.
          *
          * @param resourceAvailability the value to set
          * @return this builder

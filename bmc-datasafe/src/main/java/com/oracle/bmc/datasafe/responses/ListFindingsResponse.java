@@ -62,11 +62,11 @@ public class ListFindingsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcPrevPage;
     }
 
-    /** A list of com.oracle.bmc.datasafe.model.FindingSummary instances. */
+    /** A list of {@code com.oracle.bmc.datasafe.model.FindingSummary} instances. */
     private java.util.List<com.oracle.bmc.datasafe.model.FindingSummary> items;
 
     /**
-     * A list of com.oracle.bmc.datasafe.model.FindingSummary instances.
+     * A list of {@code com.oracle.bmc.datasafe.model.FindingSummary} instances.
      *
      * @return the value
      */
@@ -174,11 +174,11 @@ public class ListFindingsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.datasafe.model.FindingSummary instances. */
+        /** A list of {@code com.oracle.bmc.datasafe.model.FindingSummary} instances. */
         private java.util.List<com.oracle.bmc.datasafe.model.FindingSummary> items;
 
         /**
-         * A list of com.oracle.bmc.datasafe.model.FindingSummary instances.
+         * A list of {@code com.oracle.bmc.datasafe.model.FindingSummary} instances.
          *
          * @param items the value to set
          * @return this builder

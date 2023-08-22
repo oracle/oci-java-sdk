@@ -42,12 +42,12 @@ public class ListTimeAvailableForRefreshesResponse extends com.oracle.bmc.respon
         return opcNextPage;
     }
 
-    /** The returned TimeAvailableForRefreshCollection instance. */
+    /** The returned {@code TimeAvailableForRefreshCollection} instance. */
     private com.oracle.bmc.fusionapps.model.TimeAvailableForRefreshCollection
             timeAvailableForRefreshCollection;
 
     /**
-     * The returned TimeAvailableForRefreshCollection instance.
+     * The returned {@code TimeAvailableForRefreshCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListTimeAvailableForRefreshesResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned TimeAvailableForRefreshCollection instance. */
+        /** The returned {@code TimeAvailableForRefreshCollection} instance. */
         private com.oracle.bmc.fusionapps.model.TimeAvailableForRefreshCollection
                 timeAvailableForRefreshCollection;
 
         /**
-         * The returned TimeAvailableForRefreshCollection instance.
+         * The returned {@code TimeAvailableForRefreshCollection} instance.
          *
          * @param timeAvailableForRefreshCollection the value to set
          * @return this builder

@@ -40,12 +40,12 @@ public class ListDeploymentWalletsOperationsResponse extends com.oracle.bmc.resp
         return opcNextPage;
     }
 
-    /** The returned DeploymentWalletsOperationCollection instance. */
+    /** The returned {@code DeploymentWalletsOperationCollection} instance. */
     private com.oracle.bmc.goldengate.model.DeploymentWalletsOperationCollection
             deploymentWalletsOperationCollection;
 
     /**
-     * The returned DeploymentWalletsOperationCollection instance.
+     * The returned {@code DeploymentWalletsOperationCollection} instance.
      *
      * @return the value
      */
@@ -129,12 +129,12 @@ public class ListDeploymentWalletsOperationsResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned DeploymentWalletsOperationCollection instance. */
+        /** The returned {@code DeploymentWalletsOperationCollection} instance. */
         private com.oracle.bmc.goldengate.model.DeploymentWalletsOperationCollection
                 deploymentWalletsOperationCollection;
 
         /**
-         * The returned DeploymentWalletsOperationCollection instance.
+         * The returned {@code DeploymentWalletsOperationCollection} instance.
          *
          * @param deploymentWalletsOperationCollection the value to set
          * @return this builder

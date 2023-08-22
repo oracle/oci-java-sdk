@@ -24,11 +24,11 @@ public class GetLogSetsCountResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned LogSetsCount instance. */
+    /** The returned {@code LogSetsCount} instance. */
     private com.oracle.bmc.loganalytics.model.LogSetsCount logSetsCount;
 
     /**
-     * The returned LogSetsCount instance.
+     * The returned {@code LogSetsCount} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetLogSetsCountResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned LogSetsCount instance. */
+        /** The returned {@code LogSetsCount} instance. */
         private com.oracle.bmc.loganalytics.model.LogSetsCount logSetsCount;
 
         /**
-         * The returned LogSetsCount instance.
+         * The returned {@code LogSetsCount} instance.
          *
          * @param logSetsCount the value to set
          * @return this builder

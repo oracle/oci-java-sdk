@@ -37,12 +37,12 @@ public class CreateMyAuthenticationFactorInitiatorResponse
         return etag;
     }
 
-    /** The returned MyAuthenticationFactorInitiator instance. */
+    /** The returned {@code MyAuthenticationFactorInitiator} instance. */
     private com.oracle.bmc.identitydomains.model.MyAuthenticationFactorInitiator
             myAuthenticationFactorInitiator;
 
     /**
-     * The returned MyAuthenticationFactorInitiator instance.
+     * The returned {@code MyAuthenticationFactorInitiator} instance.
      *
      * @return the value
      */
@@ -122,12 +122,12 @@ public class CreateMyAuthenticationFactorInitiatorResponse
             return this;
         }
 
-        /** The returned MyAuthenticationFactorInitiator instance. */
+        /** The returned {@code MyAuthenticationFactorInitiator} instance. */
         private com.oracle.bmc.identitydomains.model.MyAuthenticationFactorInitiator
                 myAuthenticationFactorInitiator;
 
         /**
-         * The returned MyAuthenticationFactorInitiator instance.
+         * The returned {@code MyAuthenticationFactorInitiator} instance.
          *
          * @param myAuthenticationFactorInitiator the value to set
          * @return this builder

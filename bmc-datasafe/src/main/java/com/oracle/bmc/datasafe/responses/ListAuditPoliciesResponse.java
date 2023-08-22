@@ -62,11 +62,11 @@ public class ListAuditPoliciesResponse extends com.oracle.bmc.responses.BmcRespo
         return opcPrevPage;
     }
 
-    /** The returned AuditPolicyCollection instance. */
+    /** The returned {@code AuditPolicyCollection} instance. */
     private com.oracle.bmc.datasafe.model.AuditPolicyCollection auditPolicyCollection;
 
     /**
-     * The returned AuditPolicyCollection instance.
+     * The returned {@code AuditPolicyCollection} instance.
      *
      * @return the value
      */
@@ -174,11 +174,11 @@ public class ListAuditPoliciesResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned AuditPolicyCollection instance. */
+        /** The returned {@code AuditPolicyCollection} instance. */
         private com.oracle.bmc.datasafe.model.AuditPolicyCollection auditPolicyCollection;
 
         /**
-         * The returned AuditPolicyCollection instance.
+         * The returned {@code AuditPolicyCollection} instance.
          *
          * @param auditPolicyCollection the value to set
          * @return this builder

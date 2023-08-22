@@ -24,12 +24,12 @@ public class SummarizeJobExecutionsStatusesResponse extends com.oracle.bmc.respo
         return opcRequestId;
     }
 
-    /** The returned JobExecutionsStatusSummaryCollection instance. */
+    /** The returned {@code JobExecutionsStatusSummaryCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.JobExecutionsStatusSummaryCollection
             jobExecutionsStatusSummaryCollection;
 
     /**
-     * The returned JobExecutionsStatusSummaryCollection instance.
+     * The returned {@code JobExecutionsStatusSummaryCollection} instance.
      *
      * @return the value
      */
@@ -92,12 +92,12 @@ public class SummarizeJobExecutionsStatusesResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned JobExecutionsStatusSummaryCollection instance. */
+        /** The returned {@code JobExecutionsStatusSummaryCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.JobExecutionsStatusSummaryCollection
                 jobExecutionsStatusSummaryCollection;
 
         /**
-         * The returned JobExecutionsStatusSummaryCollection instance.
+         * The returned {@code JobExecutionsStatusSummaryCollection} instance.
          *
          * @param jobExecutionsStatusSummaryCollection the value to set
          * @return this builder

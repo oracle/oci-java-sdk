@@ -36,11 +36,11 @@ public class GetWafConfigResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned WafConfig instance. */
+    /** The returned {@code WafConfig} instance. */
     private com.oracle.bmc.waas.model.WafConfig wafConfig;
 
     /**
-     * The returned WafConfig instance.
+     * The returned {@code WafConfig} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetWafConfigResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned WafConfig instance. */
+        /** The returned {@code WafConfig} instance. */
         private com.oracle.bmc.waas.model.WafConfig wafConfig;
 
         /**
-         * The returned WafConfig instance.
+         * The returned {@code WafConfig} instance.
          *
          * @param wafConfig the value to set
          * @return this builder

@@ -24,12 +24,12 @@ public class PostMetricDataResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned PostMetricDataResponseDetails instance. */
+    /** The returned {@code PostMetricDataResponseDetails} instance. */
     private com.oracle.bmc.monitoring.model.PostMetricDataResponseDetails
             postMetricDataResponseDetails;
 
     /**
-     * The returned PostMetricDataResponseDetails instance.
+     * The returned {@code PostMetricDataResponseDetails} instance.
      *
      * @return the value
      */
@@ -91,12 +91,12 @@ public class PostMetricDataResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned PostMetricDataResponseDetails instance. */
+        /** The returned {@code PostMetricDataResponseDetails} instance. */
         private com.oracle.bmc.monitoring.model.PostMetricDataResponseDetails
                 postMetricDataResponseDetails;
 
         /**
-         * The returned PostMetricDataResponseDetails instance.
+         * The returned {@code PostMetricDataResponseDetails} instance.
          *
          * @param postMetricDataResponseDetails the value to set
          * @return this builder

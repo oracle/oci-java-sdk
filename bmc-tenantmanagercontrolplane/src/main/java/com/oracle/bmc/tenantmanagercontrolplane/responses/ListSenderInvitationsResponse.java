@@ -42,12 +42,12 @@ public class ListSenderInvitationsResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned SenderInvitationCollection instance. */
+    /** The returned {@code SenderInvitationCollection} instance. */
     private com.oracle.bmc.tenantmanagercontrolplane.model.SenderInvitationCollection
             senderInvitationCollection;
 
     /**
-     * The returned SenderInvitationCollection instance.
+     * The returned {@code SenderInvitationCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListSenderInvitationsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned SenderInvitationCollection instance. */
+        /** The returned {@code SenderInvitationCollection} instance. */
         private com.oracle.bmc.tenantmanagercontrolplane.model.SenderInvitationCollection
                 senderInvitationCollection;
 
         /**
-         * The returned SenderInvitationCollection instance.
+         * The returned {@code SenderInvitationCollection} instance.
          *
          * @param senderInvitationCollection the value to set
          * @return this builder

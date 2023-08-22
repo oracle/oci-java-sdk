@@ -56,11 +56,11 @@ public class CreateImageResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcWorkRequestId;
     }
 
-    /** The returned Image instance. */
+    /** The returned {@code Image} instance. */
     private com.oracle.bmc.core.model.Image image;
 
     /**
-     * The returned Image instance.
+     * The returned {@code Image} instance.
      *
      * @return the value
      */
@@ -162,11 +162,11 @@ public class CreateImageResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Image instance. */
+        /** The returned {@code Image} instance. */
         private com.oracle.bmc.core.model.Image image;
 
         /**
-         * The returned Image instance.
+         * The returned {@code Image} instance.
          *
          * @param image the value to set
          * @return this builder

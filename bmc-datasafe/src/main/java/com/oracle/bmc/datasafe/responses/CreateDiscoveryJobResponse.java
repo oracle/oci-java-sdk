@@ -70,11 +70,11 @@ public class CreateDiscoveryJobResponse extends com.oracle.bmc.responses.BmcResp
         return location;
     }
 
-    /** The returned DiscoveryJob instance. */
+    /** The returned {@code DiscoveryJob} instance. */
     private com.oracle.bmc.datasafe.model.DiscoveryJob discoveryJob;
 
     /**
-     * The returned DiscoveryJob instance.
+     * The returned {@code DiscoveryJob} instance.
      *
      * @return the value
      */
@@ -195,11 +195,11 @@ public class CreateDiscoveryJobResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned DiscoveryJob instance. */
+        /** The returned {@code DiscoveryJob} instance. */
         private com.oracle.bmc.datasafe.model.DiscoveryJob discoveryJob;
 
         /**
-         * The returned DiscoveryJob instance.
+         * The returned {@code DiscoveryJob} instance.
          *
          * @param discoveryJob the value to set
          * @return this builder

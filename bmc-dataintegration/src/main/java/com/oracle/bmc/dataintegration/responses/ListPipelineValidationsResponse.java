@@ -72,12 +72,12 @@ public class ListPipelineValidationsResponse extends com.oracle.bmc.responses.Bm
         return opcTotalItems;
     }
 
-    /** The returned PipelineValidationSummaryCollection instance. */
+    /** The returned {@code PipelineValidationSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.PipelineValidationSummaryCollection
             pipelineValidationSummaryCollection;
 
     /**
-     * The returned PipelineValidationSummaryCollection instance.
+     * The returned {@code PipelineValidationSummaryCollection} instance.
      *
      * @return the value
      */
@@ -203,12 +203,12 @@ public class ListPipelineValidationsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned PipelineValidationSummaryCollection instance. */
+        /** The returned {@code PipelineValidationSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.PipelineValidationSummaryCollection
                 pipelineValidationSummaryCollection;
 
         /**
-         * The returned PipelineValidationSummaryCollection instance.
+         * The returned {@code PipelineValidationSummaryCollection} instance.
          *
          * @param pipelineValidationSummaryCollection the value to set
          * @return this builder

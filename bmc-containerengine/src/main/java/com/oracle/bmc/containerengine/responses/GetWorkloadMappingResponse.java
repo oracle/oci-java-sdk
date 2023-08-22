@@ -36,11 +36,11 @@ public class GetWorkloadMappingResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned WorkloadMapping instance. */
+    /** The returned {@code WorkloadMapping} instance. */
     private com.oracle.bmc.containerengine.model.WorkloadMapping workloadMapping;
 
     /**
-     * The returned WorkloadMapping instance.
+     * The returned {@code WorkloadMapping} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetWorkloadMappingResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned WorkloadMapping instance. */
+        /** The returned {@code WorkloadMapping} instance. */
         private com.oracle.bmc.containerengine.model.WorkloadMapping workloadMapping;
 
         /**
-         * The returned WorkloadMapping instance.
+         * The returned {@code WorkloadMapping} instance.
          *
          * @param workloadMapping the value to set
          * @return this builder

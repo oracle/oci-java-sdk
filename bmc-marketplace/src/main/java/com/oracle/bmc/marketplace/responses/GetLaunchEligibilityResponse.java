@@ -24,11 +24,11 @@ public class GetLaunchEligibilityResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned LaunchEligibility instance. */
+    /** The returned {@code LaunchEligibility} instance. */
     private com.oracle.bmc.marketplace.model.LaunchEligibility launchEligibility;
 
     /**
-     * The returned LaunchEligibility instance.
+     * The returned {@code LaunchEligibility} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetLaunchEligibilityResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned LaunchEligibility instance. */
+        /** The returned {@code LaunchEligibility} instance. */
         private com.oracle.bmc.marketplace.model.LaunchEligibility launchEligibility;
 
         /**
-         * The returned LaunchEligibility instance.
+         * The returned {@code LaunchEligibility} instance.
          *
          * @param launchEligibility the value to set
          * @return this builder

@@ -52,12 +52,12 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
         return sunset;
     }
 
-    /** The returned DatabaseRegistrationCollection instance. */
+    /** The returned {@code DatabaseRegistrationCollection} instance. */
     private com.oracle.bmc.goldengate.model.DatabaseRegistrationCollection
             databaseRegistrationCollection;
 
     /**
-     * The returned DatabaseRegistrationCollection instance.
+     * The returned {@code DatabaseRegistrationCollection} instance.
      *
      * @return the value
      */
@@ -158,12 +158,12 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned DatabaseRegistrationCollection instance. */
+        /** The returned {@code DatabaseRegistrationCollection} instance. */
         private com.oracle.bmc.goldengate.model.DatabaseRegistrationCollection
                 databaseRegistrationCollection;
 
         /**
-         * The returned DatabaseRegistrationCollection instance.
+         * The returned {@code DatabaseRegistrationCollection} instance.
          *
          * @param databaseRegistrationCollection the value to set
          * @return this builder

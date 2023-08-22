@@ -42,11 +42,11 @@ public class ListAgentImagesResponse extends com.oracle.bmc.responses.BmcRespons
         return opcNextPage;
     }
 
-    /** The returned AgentImageCollection instance. */
+    /** The returned {@code AgentImageCollection} instance. */
     private com.oracle.bmc.databasemigration.model.AgentImageCollection agentImageCollection;
 
     /**
-     * The returned AgentImageCollection instance.
+     * The returned {@code AgentImageCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListAgentImagesResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned AgentImageCollection instance. */
+        /** The returned {@code AgentImageCollection} instance. */
         private com.oracle.bmc.databasemigration.model.AgentImageCollection agentImageCollection;
 
         /**
-         * The returned AgentImageCollection instance.
+         * The returned {@code AgentImageCollection} instance.
          *
          * @param agentImageCollection the value to set
          * @return this builder

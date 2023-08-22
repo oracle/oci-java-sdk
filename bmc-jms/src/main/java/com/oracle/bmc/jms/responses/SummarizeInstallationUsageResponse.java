@@ -44,11 +44,11 @@ public class SummarizeInstallationUsageResponse extends com.oracle.bmc.responses
         return opcNextPage;
     }
 
-    /** The returned InstallationUsageCollection instance. */
+    /** The returned {@code InstallationUsageCollection} instance. */
     private com.oracle.bmc.jms.model.InstallationUsageCollection installationUsageCollection;
 
     /**
-     * The returned InstallationUsageCollection instance.
+     * The returned {@code InstallationUsageCollection} instance.
      *
      * @return the value
      */
@@ -136,11 +136,11 @@ public class SummarizeInstallationUsageResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned InstallationUsageCollection instance. */
+        /** The returned {@code InstallationUsageCollection} instance. */
         private com.oracle.bmc.jms.model.InstallationUsageCollection installationUsageCollection;
 
         /**
-         * The returned InstallationUsageCollection instance.
+         * The returned {@code InstallationUsageCollection} instance.
          *
          * @param installationUsageCollection the value to set
          * @return this builder

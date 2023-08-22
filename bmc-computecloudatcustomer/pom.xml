@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.oracle.oci.sdk</groupId>
+    <artifactId>oci-java-sdk</artifactId>
+    <version>3.23.2</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+  <artifactId>oci-java-sdk-computecloudatcustomer</artifactId>
+  <name>Oracle Cloud Infrastructure SDK - Compute Cloud At Customer</name>
+  <description>This project contains the SDK used for Oracle Cloud Infrastructure Compute Cloud At Customer</description>
+  <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+  <dependencies>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-common</artifactId>
+      <version>3.23.2</version>
+    </dependency>
+  </dependencies>
+</project>

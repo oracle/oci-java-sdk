@@ -42,11 +42,11 @@ public class ListSqlSearchesResponse extends com.oracle.bmc.responses.BmcRespons
         return opcNextPage;
     }
 
-    /** The returned SqlSearchCollection instance. */
+    /** The returned {@code SqlSearchCollection} instance. */
     private com.oracle.bmc.opsi.model.SqlSearchCollection sqlSearchCollection;
 
     /**
-     * The returned SqlSearchCollection instance.
+     * The returned {@code SqlSearchCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListSqlSearchesResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned SqlSearchCollection instance. */
+        /** The returned {@code SqlSearchCollection} instance. */
         private com.oracle.bmc.opsi.model.SqlSearchCollection sqlSearchCollection;
 
         /**
-         * The returned SqlSearchCollection instance.
+         * The returned {@code SqlSearchCollection} instance.
          *
          * @param sqlSearchCollection the value to set
          * @return this builder

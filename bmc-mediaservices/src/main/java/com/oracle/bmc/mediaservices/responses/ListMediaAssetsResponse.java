@@ -42,11 +42,11 @@ public class ListMediaAssetsResponse extends com.oracle.bmc.responses.BmcRespons
         return opcNextPage;
     }
 
-    /** The returned MediaAssetCollection instance. */
+    /** The returned {@code MediaAssetCollection} instance. */
     private com.oracle.bmc.mediaservices.model.MediaAssetCollection mediaAssetCollection;
 
     /**
-     * The returned MediaAssetCollection instance.
+     * The returned {@code MediaAssetCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListMediaAssetsResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned MediaAssetCollection instance. */
+        /** The returned {@code MediaAssetCollection} instance. */
         private com.oracle.bmc.mediaservices.model.MediaAssetCollection mediaAssetCollection;
 
         /**
-         * The returned MediaAssetCollection instance.
+         * The returned {@code MediaAssetCollection} instance.
          *
          * @param mediaAssetCollection the value to set
          * @return this builder

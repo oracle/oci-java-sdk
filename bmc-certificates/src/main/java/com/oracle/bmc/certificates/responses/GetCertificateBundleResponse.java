@@ -36,11 +36,11 @@ public class GetCertificateBundleResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned CertificateBundle instance. */
+    /** The returned {@code CertificateBundle} instance. */
     private com.oracle.bmc.certificates.model.CertificateBundle certificateBundle;
 
     /**
-     * The returned CertificateBundle instance.
+     * The returned {@code CertificateBundle} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetCertificateBundleResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned CertificateBundle instance. */
+        /** The returned {@code CertificateBundle} instance. */
         private com.oracle.bmc.certificates.model.CertificateBundle certificateBundle;
 
         /**
-         * The returned CertificateBundle instance.
+         * The returned {@code CertificateBundle} instance.
          *
          * @param certificateBundle the value to set
          * @return this builder

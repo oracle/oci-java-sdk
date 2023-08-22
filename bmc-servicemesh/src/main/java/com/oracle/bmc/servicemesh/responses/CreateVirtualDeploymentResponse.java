@@ -64,11 +64,11 @@ public class CreateVirtualDeploymentResponse extends com.oracle.bmc.responses.Bm
         return location;
     }
 
-    /** The returned VirtualDeployment instance. */
+    /** The returned {@code VirtualDeployment} instance. */
     private com.oracle.bmc.servicemesh.model.VirtualDeployment virtualDeployment;
 
     /**
-     * The returned VirtualDeployment instance.
+     * The returned {@code VirtualDeployment} instance.
      *
      * @return the value
      */
@@ -184,11 +184,11 @@ public class CreateVirtualDeploymentResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned VirtualDeployment instance. */
+        /** The returned {@code VirtualDeployment} instance. */
         private com.oracle.bmc.servicemesh.model.VirtualDeployment virtualDeployment;
 
         /**
-         * The returned VirtualDeployment instance.
+         * The returned {@code VirtualDeployment} instance.
          *
          * @param virtualDeployment the value to set
          * @return this builder

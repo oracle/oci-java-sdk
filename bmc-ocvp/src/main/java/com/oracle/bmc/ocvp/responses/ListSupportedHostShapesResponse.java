@@ -42,11 +42,11 @@ public class ListSupportedHostShapesResponse extends com.oracle.bmc.responses.Bm
         return opcNextPage;
     }
 
-    /** The returned SupportedHostShapeCollection instance. */
+    /** The returned {@code SupportedHostShapeCollection} instance. */
     private com.oracle.bmc.ocvp.model.SupportedHostShapeCollection supportedHostShapeCollection;
 
     /**
-     * The returned SupportedHostShapeCollection instance.
+     * The returned {@code SupportedHostShapeCollection} instance.
      *
      * @return the value
      */
@@ -131,11 +131,11 @@ public class ListSupportedHostShapesResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned SupportedHostShapeCollection instance. */
+        /** The returned {@code SupportedHostShapeCollection} instance. */
         private com.oracle.bmc.ocvp.model.SupportedHostShapeCollection supportedHostShapeCollection;
 
         /**
-         * The returned SupportedHostShapeCollection instance.
+         * The returned {@code SupportedHostShapeCollection} instance.
          *
          * @param supportedHostShapeCollection the value to set
          * @return this builder

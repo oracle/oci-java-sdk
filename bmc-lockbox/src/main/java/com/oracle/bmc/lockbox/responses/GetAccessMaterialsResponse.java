@@ -24,11 +24,11 @@ public class GetAccessMaterialsResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned AccessMaterials instance. */
+    /** The returned {@code AccessMaterials} instance. */
     private com.oracle.bmc.lockbox.model.AccessMaterials accessMaterials;
 
     /**
-     * The returned AccessMaterials instance.
+     * The returned {@code AccessMaterials} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetAccessMaterialsResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned AccessMaterials instance. */
+        /** The returned {@code AccessMaterials} instance. */
         private com.oracle.bmc.lockbox.model.AccessMaterials accessMaterials;
 
         /**
-         * The returned AccessMaterials instance.
+         * The returned {@code AccessMaterials} instance.
          *
          * @param accessMaterials the value to set
          * @return this builder

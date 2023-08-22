@@ -44,11 +44,11 @@ public class GetHostnameResponse extends com.oracle.bmc.responses.BmcResponse {
         return eTag;
     }
 
-    /** The returned Hostname instance. */
+    /** The returned {@code Hostname} instance. */
     private com.oracle.bmc.loadbalancer.model.Hostname hostname;
 
     /**
-     * The returned Hostname instance.
+     * The returned {@code Hostname} instance.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class GetHostnameResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Hostname instance. */
+        /** The returned {@code Hostname} instance. */
         private com.oracle.bmc.loadbalancer.model.Hostname hostname;
 
         /**
-         * The returned Hostname instance.
+         * The returned {@code Hostname} instance.
          *
          * @param hostname the value to set
          * @return this builder

@@ -70,11 +70,11 @@ public class ListReplicationPoliciesResponse extends com.oracle.bmc.responses.Bm
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.objectstorage.model.ReplicationPolicySummary instances. */
+    /** A list of {@code com.oracle.bmc.objectstorage.model.ReplicationPolicySummary} instances. */
     private java.util.List<com.oracle.bmc.objectstorage.model.ReplicationPolicySummary> items;
 
     /**
-     * A list of com.oracle.bmc.objectstorage.model.ReplicationPolicySummary instances.
+     * A list of {@code com.oracle.bmc.objectstorage.model.ReplicationPolicySummary} instances.
      *
      * @return the value
      */
@@ -191,11 +191,13 @@ public class ListReplicationPoliciesResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** A list of com.oracle.bmc.objectstorage.model.ReplicationPolicySummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.objectstorage.model.ReplicationPolicySummary} instances.
+         */
         private java.util.List<com.oracle.bmc.objectstorage.model.ReplicationPolicySummary> items;
 
         /**
-         * A list of com.oracle.bmc.objectstorage.model.ReplicationPolicySummary instances.
+         * A list of {@code com.oracle.bmc.objectstorage.model.ReplicationPolicySummary} instances.
          *
          * @param items the value to set
          * @return this builder

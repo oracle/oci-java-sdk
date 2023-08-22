@@ -42,12 +42,12 @@ public class ListMediaWorkflowJobFactsResponse extends com.oracle.bmc.responses.
         return opcNextPage;
     }
 
-    /** The returned MediaWorkflowJobFactCollection instance. */
+    /** The returned {@code MediaWorkflowJobFactCollection} instance. */
     private com.oracle.bmc.mediaservices.model.MediaWorkflowJobFactCollection
             mediaWorkflowJobFactCollection;
 
     /**
-     * The returned MediaWorkflowJobFactCollection instance.
+     * The returned {@code MediaWorkflowJobFactCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListMediaWorkflowJobFactsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned MediaWorkflowJobFactCollection instance. */
+        /** The returned {@code MediaWorkflowJobFactCollection} instance. */
         private com.oracle.bmc.mediaservices.model.MediaWorkflowJobFactCollection
                 mediaWorkflowJobFactCollection;
 
         /**
-         * The returned MediaWorkflowJobFactCollection instance.
+         * The returned {@code MediaWorkflowJobFactCollection} instance.
          *
          * @param mediaWorkflowJobFactCollection the value to set
          * @return this builder

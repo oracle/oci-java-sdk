@@ -42,11 +42,11 @@ public class GetAlarmHistoryResponse extends com.oracle.bmc.responses.BmcRespons
         return opcNextPage;
     }
 
-    /** The returned AlarmHistoryCollection instance. */
+    /** The returned {@code AlarmHistoryCollection} instance. */
     private com.oracle.bmc.monitoring.model.AlarmHistoryCollection alarmHistoryCollection;
 
     /**
-     * The returned AlarmHistoryCollection instance.
+     * The returned {@code AlarmHistoryCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class GetAlarmHistoryResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned AlarmHistoryCollection instance. */
+        /** The returned {@code AlarmHistoryCollection} instance. */
         private com.oracle.bmc.monitoring.model.AlarmHistoryCollection alarmHistoryCollection;
 
         /**
-         * The returned AlarmHistoryCollection instance.
+         * The returned {@code AlarmHistoryCollection} instance.
          *
          * @param alarmHistoryCollection the value to set
          * @return this builder

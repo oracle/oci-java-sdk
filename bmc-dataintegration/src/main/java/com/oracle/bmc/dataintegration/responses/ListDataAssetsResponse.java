@@ -72,12 +72,12 @@ public class ListDataAssetsResponse extends com.oracle.bmc.responses.BmcResponse
         return opcTotalItems;
     }
 
-    /** The returned DataAssetSummaryCollection instance. */
+    /** The returned {@code DataAssetSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.DataAssetSummaryCollection
             dataAssetSummaryCollection;
 
     /**
-     * The returned DataAssetSummaryCollection instance.
+     * The returned {@code DataAssetSummaryCollection} instance.
      *
      * @return the value
      */
@@ -202,12 +202,12 @@ public class ListDataAssetsResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned DataAssetSummaryCollection instance. */
+        /** The returned {@code DataAssetSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.DataAssetSummaryCollection
                 dataAssetSummaryCollection;
 
         /**
-         * The returned DataAssetSummaryCollection instance.
+         * The returned {@code DataAssetSummaryCollection} instance.
          *
          * @param dataAssetSummaryCollection the value to set
          * @return this builder

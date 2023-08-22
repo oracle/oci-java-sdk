@@ -44,12 +44,12 @@ public class ListLogAnalyticsEntityTopologyResponse extends com.oracle.bmc.respo
         return opcNextPage;
     }
 
-    /** The returned LogAnalyticsEntityTopologyCollection instance. */
+    /** The returned {@code LogAnalyticsEntityTopologyCollection} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsEntityTopologyCollection
             logAnalyticsEntityTopologyCollection;
 
     /**
-     * The returned LogAnalyticsEntityTopologyCollection instance.
+     * The returned {@code LogAnalyticsEntityTopologyCollection} instance.
      *
      * @return the value
      */
@@ -137,12 +137,12 @@ public class ListLogAnalyticsEntityTopologyResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned LogAnalyticsEntityTopologyCollection instance. */
+        /** The returned {@code LogAnalyticsEntityTopologyCollection} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsEntityTopologyCollection
                 logAnalyticsEntityTopologyCollection;
 
         /**
-         * The returned LogAnalyticsEntityTopologyCollection instance.
+         * The returned {@code LogAnalyticsEntityTopologyCollection} instance.
          *
          * @param logAnalyticsEntityTopologyCollection the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class GetSubnetTopologyResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned SubnetTopology instance. */
+    /** The returned {@code SubnetTopology} instance. */
     private com.oracle.bmc.core.model.SubnetTopology subnetTopology;
 
     /**
-     * The returned SubnetTopology instance.
+     * The returned {@code SubnetTopology} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetSubnetTopologyResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned SubnetTopology instance. */
+        /** The returned {@code SubnetTopology} instance. */
         private com.oracle.bmc.core.model.SubnetTopology subnetTopology;
 
         /**
-         * The returned SubnetTopology instance.
+         * The returned {@code SubnetTopology} instance.
          *
          * @param subnetTopology the value to set
          * @return this builder

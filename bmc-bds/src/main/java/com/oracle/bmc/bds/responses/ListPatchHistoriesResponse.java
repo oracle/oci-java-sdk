@@ -42,11 +42,11 @@ public class ListPatchHistoriesResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.bds.model.PatchHistorySummary instances. */
+    /** A list of {@code com.oracle.bmc.bds.model.PatchHistorySummary} instances. */
     private java.util.List<com.oracle.bmc.bds.model.PatchHistorySummary> items;
 
     /**
-     * A list of com.oracle.bmc.bds.model.PatchHistorySummary instances.
+     * A list of {@code com.oracle.bmc.bds.model.PatchHistorySummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListPatchHistoriesResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** A list of com.oracle.bmc.bds.model.PatchHistorySummary instances. */
+        /** A list of {@code com.oracle.bmc.bds.model.PatchHistorySummary} instances. */
         private java.util.List<com.oracle.bmc.bds.model.PatchHistorySummary> items;
 
         /**
-         * A list of com.oracle.bmc.bds.model.PatchHistorySummary instances.
+         * A list of {@code com.oracle.bmc.bds.model.PatchHistorySummary} instances.
          *
          * @param items the value to set
          * @return this builder

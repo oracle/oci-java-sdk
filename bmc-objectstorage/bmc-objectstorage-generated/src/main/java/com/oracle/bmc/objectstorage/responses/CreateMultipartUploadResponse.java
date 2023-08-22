@@ -52,11 +52,11 @@ public class CreateMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
         return location;
     }
 
-    /** The returned MultipartUpload instance. */
+    /** The returned {@code MultipartUpload} instance. */
     private com.oracle.bmc.objectstorage.model.MultipartUpload multipartUpload;
 
     /**
-     * The returned MultipartUpload instance.
+     * The returned {@code MultipartUpload} instance.
      *
      * @return the value
      */
@@ -154,11 +154,11 @@ public class CreateMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned MultipartUpload instance. */
+        /** The returned {@code MultipartUpload} instance. */
         private com.oracle.bmc.objectstorage.model.MultipartUpload multipartUpload;
 
         /**
-         * The returned MultipartUpload instance.
+         * The returned {@code MultipartUpload} instance.
          *
          * @param multipartUpload the value to set
          * @return this builder

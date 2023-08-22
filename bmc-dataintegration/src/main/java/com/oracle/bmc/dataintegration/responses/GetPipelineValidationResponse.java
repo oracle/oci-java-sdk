@@ -40,11 +40,11 @@ public class GetPipelineValidationResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned PipelineValidation instance. */
+    /** The returned {@code PipelineValidation} instance. */
     private com.oracle.bmc.dataintegration.model.PipelineValidation pipelineValidation;
 
     /**
-     * The returned PipelineValidation instance.
+     * The returned {@code PipelineValidation} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetPipelineValidationResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned PipelineValidation instance. */
+        /** The returned {@code PipelineValidation} instance. */
         private com.oracle.bmc.dataintegration.model.PipelineValidation pipelineValidation;
 
         /**
-         * The returned PipelineValidation instance.
+         * The returned {@code PipelineValidation} instance.
          *
          * @param pipelineValidation the value to set
          * @return this builder

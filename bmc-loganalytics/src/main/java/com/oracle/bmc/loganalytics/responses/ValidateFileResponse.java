@@ -24,11 +24,11 @@ public class ValidateFileResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned FileValidationResponse instance. */
+    /** The returned {@code FileValidationResponse} instance. */
     private com.oracle.bmc.loganalytics.model.FileValidationResponse fileValidationResponse;
 
     /**
-     * The returned FileValidationResponse instance.
+     * The returned {@code FileValidationResponse} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class ValidateFileResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned FileValidationResponse instance. */
+        /** The returned {@code FileValidationResponse} instance. */
         private com.oracle.bmc.loganalytics.model.FileValidationResponse fileValidationResponse;
 
         /**
-         * The returned FileValidationResponse instance.
+         * The returned {@code FileValidationResponse} instance.
          *
          * @param fileValidationResponse the value to set
          * @return this builder

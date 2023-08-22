@@ -36,11 +36,11 @@ public class RemoveCompartmentResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned SecurityZone instance. */
+    /** The returned {@code SecurityZone} instance. */
     private com.oracle.bmc.cloudguard.model.SecurityZone securityZone;
 
     /**
-     * The returned SecurityZone instance.
+     * The returned {@code SecurityZone} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class RemoveCompartmentResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned SecurityZone instance. */
+        /** The returned {@code SecurityZone} instance. */
         private com.oracle.bmc.cloudguard.model.SecurityZone securityZone;
 
         /**
-         * The returned SecurityZone instance.
+         * The returned {@code SecurityZone} instance.
          *
          * @param securityZone the value to set
          * @return this builder

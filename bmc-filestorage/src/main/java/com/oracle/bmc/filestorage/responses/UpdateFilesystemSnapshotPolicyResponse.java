@@ -36,11 +36,11 @@ public class UpdateFilesystemSnapshotPolicyResponse extends com.oracle.bmc.respo
         return opcRequestId;
     }
 
-    /** The returned FilesystemSnapshotPolicy instance. */
+    /** The returned {@code FilesystemSnapshotPolicy} instance. */
     private com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicy filesystemSnapshotPolicy;
 
     /**
-     * The returned FilesystemSnapshotPolicy instance.
+     * The returned {@code FilesystemSnapshotPolicy} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class UpdateFilesystemSnapshotPolicyResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned FilesystemSnapshotPolicy instance. */
+        /** The returned {@code FilesystemSnapshotPolicy} instance. */
         private com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicy filesystemSnapshotPolicy;
 
         /**
-         * The returned FilesystemSnapshotPolicy instance.
+         * The returned {@code FilesystemSnapshotPolicy} instance.
          *
          * @param filesystemSnapshotPolicy the value to set
          * @return this builder

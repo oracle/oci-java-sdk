@@ -42,11 +42,11 @@ public class ListOAuthClientCredentialsResponse extends com.oracle.bmc.responses
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary instances. */
+    /** A list of {@code com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary} instances. */
     private java.util.List<com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary> items;
 
     /**
-     * A list of com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary instances.
+     * A list of {@code com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary} instances.
      *
      * @return the value
      */
@@ -130,11 +130,13 @@ public class ListOAuthClientCredentialsResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** A list of com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary} instances.
+         */
         private java.util.List<com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary> items;
 
         /**
-         * A list of com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary instances.
+         * A list of {@code com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary} instances.
          *
          * @param items the value to set
          * @return this builder

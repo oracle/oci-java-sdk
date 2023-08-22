@@ -42,11 +42,11 @@ public class ListDbCredentialsResponse extends com.oracle.bmc.responses.BmcRespo
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.identity.model.DbCredentialSummary instances. */
+    /** A list of {@code com.oracle.bmc.identity.model.DbCredentialSummary} instances. */
     private java.util.List<com.oracle.bmc.identity.model.DbCredentialSummary> items;
 
     /**
-     * A list of com.oracle.bmc.identity.model.DbCredentialSummary instances.
+     * A list of {@code com.oracle.bmc.identity.model.DbCredentialSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListDbCredentialsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** A list of com.oracle.bmc.identity.model.DbCredentialSummary instances. */
+        /** A list of {@code com.oracle.bmc.identity.model.DbCredentialSummary} instances. */
         private java.util.List<com.oracle.bmc.identity.model.DbCredentialSummary> items;
 
         /**
-         * A list of com.oracle.bmc.identity.model.DbCredentialSummary instances.
+         * A list of {@code com.oracle.bmc.identity.model.DbCredentialSummary} instances.
          *
          * @param items the value to set
          * @return this builder

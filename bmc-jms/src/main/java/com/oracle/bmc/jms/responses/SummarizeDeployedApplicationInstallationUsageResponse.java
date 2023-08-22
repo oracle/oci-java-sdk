@@ -45,12 +45,12 @@ public class SummarizeDeployedApplicationInstallationUsageResponse
         return opcNextPage;
     }
 
-    /** The returned DeployedApplicationInstallationUsageSummaryCollection instance. */
+    /** The returned {@code DeployedApplicationInstallationUsageSummaryCollection} instance. */
     private com.oracle.bmc.jms.model.DeployedApplicationInstallationUsageSummaryCollection
             deployedApplicationInstallationUsageSummaryCollection;
 
     /**
-     * The returned DeployedApplicationInstallationUsageSummaryCollection instance.
+     * The returned {@code DeployedApplicationInstallationUsageSummaryCollection} instance.
      *
      * @return the value
      */
@@ -141,12 +141,12 @@ public class SummarizeDeployedApplicationInstallationUsageResponse
             return this;
         }
 
-        /** The returned DeployedApplicationInstallationUsageSummaryCollection instance. */
+        /** The returned {@code DeployedApplicationInstallationUsageSummaryCollection} instance. */
         private com.oracle.bmc.jms.model.DeployedApplicationInstallationUsageSummaryCollection
                 deployedApplicationInstallationUsageSummaryCollection;
 
         /**
-         * The returned DeployedApplicationInstallationUsageSummaryCollection instance.
+         * The returned {@code DeployedApplicationInstallationUsageSummaryCollection} instance.
          *
          * @param deployedApplicationInstallationUsageSummaryCollection the value to set
          * @return this builder

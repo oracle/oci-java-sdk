@@ -42,12 +42,12 @@ public class ListManagementStationsResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** The returned ManagementStationCollection instance. */
+    /** The returned {@code ManagementStationCollection} instance. */
     private com.oracle.bmc.osmanagementhub.model.ManagementStationCollection
             managementStationCollection;
 
     /**
-     * The returned ManagementStationCollection instance.
+     * The returned {@code ManagementStationCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListManagementStationsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned ManagementStationCollection instance. */
+        /** The returned {@code ManagementStationCollection} instance. */
         private com.oracle.bmc.osmanagementhub.model.ManagementStationCollection
                 managementStationCollection;
 
         /**
-         * The returned ManagementStationCollection instance.
+         * The returned {@code ManagementStationCollection} instance.
          *
          * @param managementStationCollection the value to set
          * @return this builder

@@ -54,11 +54,11 @@ public class ListTaggingWorkRequestLogsResponse extends com.oracle.bmc.responses
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary instances. */
+    /** A list of {@code com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary} instances. */
     private java.util.List<com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary> items;
 
     /**
-     * A list of com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary instances.
+     * A list of {@code com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary} instances.
      *
      * @return the value
      */
@@ -159,11 +159,13 @@ public class ListTaggingWorkRequestLogsResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** A list of com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary} instances.
+         */
         private java.util.List<com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary> items;
 
         /**
-         * A list of com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary instances.
+         * A list of {@code com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary} instances.
          *
          * @param items the value to set
          * @return this builder

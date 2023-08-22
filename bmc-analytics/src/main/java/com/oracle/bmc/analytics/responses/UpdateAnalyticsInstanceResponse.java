@@ -36,11 +36,11 @@ public class UpdateAnalyticsInstanceResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned AnalyticsInstance instance. */
+    /** The returned {@code AnalyticsInstance} instance. */
     private com.oracle.bmc.analytics.model.AnalyticsInstance analyticsInstance;
 
     /**
-     * The returned AnalyticsInstance instance.
+     * The returned {@code AnalyticsInstance} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class UpdateAnalyticsInstanceResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned AnalyticsInstance instance. */
+        /** The returned {@code AnalyticsInstance} instance. */
         private com.oracle.bmc.analytics.model.AnalyticsInstance analyticsInstance;
 
         /**
-         * The returned AnalyticsInstance instance.
+         * The returned {@code AnalyticsInstance} instance.
          *
          * @param analyticsInstance the value to set
          * @return this builder

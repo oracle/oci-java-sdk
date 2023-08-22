@@ -40,11 +40,11 @@ public class UpdateDigitalAssistantParameterResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** The returned DigitalAssistantParameter instance. */
+    /** The returned {@code DigitalAssistantParameter} instance. */
     private com.oracle.bmc.oda.model.DigitalAssistantParameter digitalAssistantParameter;
 
     /**
-     * The returned DigitalAssistantParameter instance.
+     * The returned {@code DigitalAssistantParameter} instance.
      *
      * @return the value
      */
@@ -126,11 +126,11 @@ public class UpdateDigitalAssistantParameterResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned DigitalAssistantParameter instance. */
+        /** The returned {@code DigitalAssistantParameter} instance. */
         private com.oracle.bmc.oda.model.DigitalAssistantParameter digitalAssistantParameter;
 
         /**
-         * The returned DigitalAssistantParameter instance.
+         * The returned {@code DigitalAssistantParameter} instance.
          *
          * @param digitalAssistantParameter the value to set
          * @return this builder

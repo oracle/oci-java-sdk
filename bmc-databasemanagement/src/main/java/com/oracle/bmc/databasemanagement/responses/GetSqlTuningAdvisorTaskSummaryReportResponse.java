@@ -25,12 +25,12 @@ public class GetSqlTuningAdvisorTaskSummaryReportResponse
         return opcRequestId;
     }
 
-    /** The returned SqlTuningAdvisorTaskSummaryReport instance. */
+    /** The returned {@code SqlTuningAdvisorTaskSummaryReport} instance. */
     private com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskSummaryReport
             sqlTuningAdvisorTaskSummaryReport;
 
     /**
-     * The returned SqlTuningAdvisorTaskSummaryReport instance.
+     * The returned {@code SqlTuningAdvisorTaskSummaryReport} instance.
      *
      * @return the value
      */
@@ -93,12 +93,12 @@ public class GetSqlTuningAdvisorTaskSummaryReportResponse
             return this;
         }
 
-        /** The returned SqlTuningAdvisorTaskSummaryReport instance. */
+        /** The returned {@code SqlTuningAdvisorTaskSummaryReport} instance. */
         private com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskSummaryReport
                 sqlTuningAdvisorTaskSummaryReport;
 
         /**
-         * The returned SqlTuningAdvisorTaskSummaryReport instance.
+         * The returned {@code SqlTuningAdvisorTaskSummaryReport} instance.
          *
          * @param sqlTuningAdvisorTaskSummaryReport the value to set
          * @return this builder

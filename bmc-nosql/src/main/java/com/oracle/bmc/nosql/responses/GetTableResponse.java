@@ -36,11 +36,11 @@ public class GetTableResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Table instance. */
+    /** The returned {@code Table} instance. */
     private com.oracle.bmc.nosql.model.Table table;
 
     /**
-     * The returned Table instance.
+     * The returned {@code Table} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetTableResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Table instance. */
+        /** The returned {@code Table} instance. */
         private com.oracle.bmc.nosql.model.Table table;
 
         /**
-         * The returned Table instance.
+         * The returned {@code Table} instance.
          *
          * @param table the value to set
          * @return this builder

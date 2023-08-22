@@ -36,11 +36,11 @@ public class GetExternalAsmResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned ExternalAsm instance. */
+    /** The returned {@code ExternalAsm} instance. */
     private com.oracle.bmc.databasemanagement.model.ExternalAsm externalAsm;
 
     /**
-     * The returned ExternalAsm instance.
+     * The returned {@code ExternalAsm} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetExternalAsmResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned ExternalAsm instance. */
+        /** The returned {@code ExternalAsm} instance. */
         private com.oracle.bmc.databasemanagement.model.ExternalAsm externalAsm;
 
         /**
-         * The returned ExternalAsm instance.
+         * The returned {@code ExternalAsm} instance.
          *
          * @param externalAsm the value to set
          * @return this builder

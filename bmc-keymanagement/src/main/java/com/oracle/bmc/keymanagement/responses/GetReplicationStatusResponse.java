@@ -36,11 +36,11 @@ public class GetReplicationStatusResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned ReplicationStatusDetails instance. */
+    /** The returned {@code ReplicationStatusDetails} instance. */
     private com.oracle.bmc.keymanagement.model.ReplicationStatusDetails replicationStatusDetails;
 
     /**
-     * The returned ReplicationStatusDetails instance.
+     * The returned {@code ReplicationStatusDetails} instance.
      *
      * @return the value
      */
@@ -118,12 +118,12 @@ public class GetReplicationStatusResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned ReplicationStatusDetails instance. */
+        /** The returned {@code ReplicationStatusDetails} instance. */
         private com.oracle.bmc.keymanagement.model.ReplicationStatusDetails
                 replicationStatusDetails;
 
         /**
-         * The returned ReplicationStatusDetails instance.
+         * The returned {@code ReplicationStatusDetails} instance.
          *
          * @param replicationStatusDetails the value to set
          * @return this builder

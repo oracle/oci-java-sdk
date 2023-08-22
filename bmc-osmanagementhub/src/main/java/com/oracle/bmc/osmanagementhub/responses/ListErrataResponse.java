@@ -42,11 +42,11 @@ public class ListErrataResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned ErratumCollection instance. */
+    /** The returned {@code ErratumCollection} instance. */
     private com.oracle.bmc.osmanagementhub.model.ErratumCollection erratumCollection;
 
     /**
-     * The returned ErratumCollection instance.
+     * The returned {@code ErratumCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListErrataResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned ErratumCollection instance. */
+        /** The returned {@code ErratumCollection} instance. */
         private com.oracle.bmc.osmanagementhub.model.ErratumCollection erratumCollection;
 
         /**
-         * The returned ErratumCollection instance.
+         * The returned {@code ErratumCollection} instance.
          *
          * @param erratumCollection the value to set
          * @return this builder

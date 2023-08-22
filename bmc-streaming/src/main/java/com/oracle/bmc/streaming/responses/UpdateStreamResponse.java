@@ -36,11 +36,11 @@ public class UpdateStreamResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned Stream instance. */
+    /** The returned {@code Stream} instance. */
     private com.oracle.bmc.streaming.model.Stream stream;
 
     /**
-     * The returned Stream instance.
+     * The returned {@code Stream} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateStreamResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Stream instance. */
+        /** The returned {@code Stream} instance. */
         private com.oracle.bmc.streaming.model.Stream stream;
 
         /**
-         * The returned Stream instance.
+         * The returned {@code Stream} instance.
          *
          * @param stream the value to set
          * @return this builder

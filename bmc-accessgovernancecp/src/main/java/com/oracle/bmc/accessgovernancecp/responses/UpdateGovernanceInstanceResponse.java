@@ -52,11 +52,11 @@ public class UpdateGovernanceInstanceResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** The returned GovernanceInstance instance. */
+    /** The returned {@code GovernanceInstance} instance. */
     private com.oracle.bmc.accessgovernancecp.model.GovernanceInstance governanceInstance;
 
     /**
-     * The returned GovernanceInstance instance.
+     * The returned {@code GovernanceInstance} instance.
      *
      * @return the value
      */
@@ -155,11 +155,11 @@ public class UpdateGovernanceInstanceResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned GovernanceInstance instance. */
+        /** The returned {@code GovernanceInstance} instance. */
         private com.oracle.bmc.accessgovernancecp.model.GovernanceInstance governanceInstance;
 
         /**
-         * The returned GovernanceInstance instance.
+         * The returned {@code GovernanceInstance} instance.
          *
          * @param governanceInstance the value to set
          * @return this builder

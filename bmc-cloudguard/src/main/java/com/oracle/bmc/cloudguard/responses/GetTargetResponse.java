@@ -36,11 +36,11 @@ public class GetTargetResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Target instance. */
+    /** The returned {@code Target} instance. */
     private com.oracle.bmc.cloudguard.model.Target target;
 
     /**
-     * The returned Target instance.
+     * The returned {@code Target} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetTargetResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Target instance. */
+        /** The returned {@code Target} instance. */
         private com.oracle.bmc.cloudguard.model.Target target;
 
         /**
-         * The returned Target instance.
+         * The returned {@code Target} instance.
          *
          * @param target the value to set
          * @return this builder

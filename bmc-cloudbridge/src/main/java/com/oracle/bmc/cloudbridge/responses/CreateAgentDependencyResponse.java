@@ -48,11 +48,11 @@ public class CreateAgentDependencyResponse extends com.oracle.bmc.responses.BmcR
         return opcWorkRequestId;
     }
 
-    /** The returned AgentDependency instance. */
+    /** The returned {@code AgentDependency} instance. */
     private com.oracle.bmc.cloudbridge.model.AgentDependency agentDependency;
 
     /**
-     * The returned AgentDependency instance.
+     * The returned {@code AgentDependency} instance.
      *
      * @return the value
      */
@@ -148,11 +148,11 @@ public class CreateAgentDependencyResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned AgentDependency instance. */
+        /** The returned {@code AgentDependency} instance. */
         private com.oracle.bmc.cloudbridge.model.AgentDependency agentDependency;
 
         /**
-         * The returned AgentDependency instance.
+         * The returned {@code AgentDependency} instance.
          *
          * @param agentDependency the value to set
          * @return this builder

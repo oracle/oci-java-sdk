@@ -36,11 +36,11 @@ public class GetExadataInsightResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned ExadataInsight instance. */
+    /** The returned {@code ExadataInsight} instance. */
     private com.oracle.bmc.opsi.model.ExadataInsight exadataInsight;
 
     /**
-     * The returned ExadataInsight instance.
+     * The returned {@code ExadataInsight} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetExadataInsightResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned ExadataInsight instance. */
+        /** The returned {@code ExadataInsight} instance. */
         private com.oracle.bmc.opsi.model.ExadataInsight exadataInsight;
 
         /**
-         * The returned ExadataInsight instance.
+         * The returned {@code ExadataInsight} instance.
          *
          * @param exadataInsight the value to set
          * @return this builder

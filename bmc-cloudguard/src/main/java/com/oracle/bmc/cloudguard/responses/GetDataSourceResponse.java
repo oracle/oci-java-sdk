@@ -36,11 +36,11 @@ public class GetDataSourceResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** The returned DataSource instance. */
+    /** The returned {@code DataSource} instance. */
     private com.oracle.bmc.cloudguard.model.DataSource dataSource;
 
     /**
-     * The returned DataSource instance.
+     * The returned {@code DataSource} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetDataSourceResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned DataSource instance. */
+        /** The returned {@code DataSource} instance. */
         private com.oracle.bmc.cloudguard.model.DataSource dataSource;
 
         /**
-         * The returned DataSource instance.
+         * The returned {@code DataSource} instance.
          *
          * @param dataSource the value to set
          * @return this builder

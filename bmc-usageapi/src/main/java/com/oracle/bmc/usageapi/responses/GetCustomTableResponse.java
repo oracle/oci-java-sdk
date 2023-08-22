@@ -36,11 +36,11 @@ public class GetCustomTableResponse extends com.oracle.bmc.responses.BmcResponse
         return etag;
     }
 
-    /** The returned CustomTable instance. */
+    /** The returned {@code CustomTable} instance. */
     private com.oracle.bmc.usageapi.model.CustomTable customTable;
 
     /**
-     * The returned CustomTable instance.
+     * The returned {@code CustomTable} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetCustomTableResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned CustomTable instance. */
+        /** The returned {@code CustomTable} instance. */
         private com.oracle.bmc.usageapi.model.CustomTable customTable;
 
         /**
-         * The returned CustomTable instance.
+         * The returned {@code CustomTable} instance.
          *
          * @param customTable the value to set
          * @return this builder

@@ -42,12 +42,12 @@ public class ListSqlPlanBaselineJobsResponse extends com.oracle.bmc.responses.Bm
         return opcNextPage;
     }
 
-    /** The returned SqlPlanBaselineJobCollection instance. */
+    /** The returned {@code SqlPlanBaselineJobCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.SqlPlanBaselineJobCollection
             sqlPlanBaselineJobCollection;
 
     /**
-     * The returned SqlPlanBaselineJobCollection instance.
+     * The returned {@code SqlPlanBaselineJobCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListSqlPlanBaselineJobsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned SqlPlanBaselineJobCollection instance. */
+        /** The returned {@code SqlPlanBaselineJobCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.SqlPlanBaselineJobCollection
                 sqlPlanBaselineJobCollection;
 
         /**
-         * The returned SqlPlanBaselineJobCollection instance.
+         * The returned {@code SqlPlanBaselineJobCollection} instance.
          *
          * @param sqlPlanBaselineJobCollection the value to set
          * @return this builder

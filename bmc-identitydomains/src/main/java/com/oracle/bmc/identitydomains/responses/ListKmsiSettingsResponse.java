@@ -42,11 +42,11 @@ public class ListKmsiSettingsResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /** The returned KmsiSettings instance. */
+    /** The returned {@code KmsiSettings} instance. */
     private com.oracle.bmc.identitydomains.model.KmsiSettings kmsiSettings;
 
     /**
-     * The returned KmsiSettings instance.
+     * The returned {@code KmsiSettings} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListKmsiSettingsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned KmsiSettings instance. */
+        /** The returned {@code KmsiSettings} instance. */
         private com.oracle.bmc.identitydomains.model.KmsiSettings kmsiSettings;
 
         /**
-         * The returned KmsiSettings instance.
+         * The returned {@code KmsiSettings} instance.
          *
          * @param kmsiSettings the value to set
          * @return this builder

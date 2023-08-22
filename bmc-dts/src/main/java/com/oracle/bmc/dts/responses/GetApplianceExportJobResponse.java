@@ -24,11 +24,11 @@ public class GetApplianceExportJobResponse extends com.oracle.bmc.responses.BmcR
         return etag;
     }
 
-    /** The returned ApplianceExportJob instance. */
+    /** The returned {@code ApplianceExportJob} instance. */
     private com.oracle.bmc.dts.model.ApplianceExportJob applianceExportJob;
 
     /**
-     * The returned ApplianceExportJob instance.
+     * The returned {@code ApplianceExportJob} instance.
      *
      * @return the value
      */
@@ -97,11 +97,11 @@ public class GetApplianceExportJobResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned ApplianceExportJob instance. */
+        /** The returned {@code ApplianceExportJob} instance. */
         private com.oracle.bmc.dts.model.ApplianceExportJob applianceExportJob;
 
         /**
-         * The returned ApplianceExportJob instance.
+         * The returned {@code ApplianceExportJob} instance.
          *
          * @param applianceExportJob the value to set
          * @return this builder

@@ -76,11 +76,11 @@ public class CreateExadataInsightResponse extends com.oracle.bmc.responses.BmcRe
         return etag;
     }
 
-    /** The returned ExadataInsight instance. */
+    /** The returned {@code ExadataInsight} instance. */
     private com.oracle.bmc.opsi.model.ExadataInsight exadataInsight;
 
     /**
-     * The returned ExadataInsight instance.
+     * The returned {@code ExadataInsight} instance.
      *
      * @return the value
      */
@@ -212,11 +212,11 @@ public class CreateExadataInsightResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned ExadataInsight instance. */
+        /** The returned {@code ExadataInsight} instance. */
         private com.oracle.bmc.opsi.model.ExadataInsight exadataInsight;
 
         /**
-         * The returned ExadataInsight instance.
+         * The returned {@code ExadataInsight} instance.
          *
          * @param exadataInsight the value to set
          * @return this builder

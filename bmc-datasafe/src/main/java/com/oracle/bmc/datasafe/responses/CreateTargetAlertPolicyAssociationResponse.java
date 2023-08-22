@@ -71,11 +71,11 @@ public class CreateTargetAlertPolicyAssociationResponse
         return location;
     }
 
-    /** The returned TargetAlertPolicyAssociation instance. */
+    /** The returned {@code TargetAlertPolicyAssociation} instance. */
     private com.oracle.bmc.datasafe.model.TargetAlertPolicyAssociation targetAlertPolicyAssociation;
 
     /**
-     * The returned TargetAlertPolicyAssociation instance.
+     * The returned {@code TargetAlertPolicyAssociation} instance.
      *
      * @return the value
      */
@@ -199,12 +199,12 @@ public class CreateTargetAlertPolicyAssociationResponse
             return this;
         }
 
-        /** The returned TargetAlertPolicyAssociation instance. */
+        /** The returned {@code TargetAlertPolicyAssociation} instance. */
         private com.oracle.bmc.datasafe.model.TargetAlertPolicyAssociation
                 targetAlertPolicyAssociation;
 
         /**
-         * The returned TargetAlertPolicyAssociation instance.
+         * The returned {@code TargetAlertPolicyAssociation} instance.
          *
          * @param targetAlertPolicyAssociation the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListUserGroupMembershipsResponse extends com.oracle.bmc.responses.B
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.identity.model.UserGroupMembership instances. */
+    /** A list of {@code com.oracle.bmc.identity.model.UserGroupMembership} instances. */
     private java.util.List<com.oracle.bmc.identity.model.UserGroupMembership> items;
 
     /**
-     * A list of com.oracle.bmc.identity.model.UserGroupMembership instances.
+     * A list of {@code com.oracle.bmc.identity.model.UserGroupMembership} instances.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListUserGroupMembershipsResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** A list of com.oracle.bmc.identity.model.UserGroupMembership instances. */
+        /** A list of {@code com.oracle.bmc.identity.model.UserGroupMembership} instances. */
         private java.util.List<com.oracle.bmc.identity.model.UserGroupMembership> items;
 
         /**
-         * A list of com.oracle.bmc.identity.model.UserGroupMembership instances.
+         * A list of {@code com.oracle.bmc.identity.model.UserGroupMembership} instances.
          *
          * @param items the value to set
          * @return this builder

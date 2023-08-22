@@ -36,11 +36,11 @@ public class GetRoverClusterResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned RoverCluster instance. */
+    /** The returned {@code RoverCluster} instance. */
     private com.oracle.bmc.rover.model.RoverCluster roverCluster;
 
     /**
-     * The returned RoverCluster instance.
+     * The returned {@code RoverCluster} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetRoverClusterResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned RoverCluster instance. */
+        /** The returned {@code RoverCluster} instance. */
         private com.oracle.bmc.rover.model.RoverCluster roverCluster;
 
         /**
-         * The returned RoverCluster instance.
+         * The returned {@code RoverCluster} instance.
          *
          * @param roverCluster the value to set
          * @return this builder

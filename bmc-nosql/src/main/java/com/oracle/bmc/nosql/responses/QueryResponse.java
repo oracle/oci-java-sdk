@@ -42,11 +42,11 @@ public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned QueryResultCollection instance. */
+    /** The returned {@code QueryResultCollection} instance. */
     private com.oracle.bmc.nosql.model.QueryResultCollection queryResultCollection;
 
     /**
-     * The returned QueryResultCollection instance.
+     * The returned {@code QueryResultCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned QueryResultCollection instance. */
+        /** The returned {@code QueryResultCollection} instance. */
         private com.oracle.bmc.nosql.model.QueryResultCollection queryResultCollection;
 
         /**
-         * The returned QueryResultCollection instance.
+         * The returned {@code QueryResultCollection} instance.
          *
          * @param queryResultCollection the value to set
          * @return this builder

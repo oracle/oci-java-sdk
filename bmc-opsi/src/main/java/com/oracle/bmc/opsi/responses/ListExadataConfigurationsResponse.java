@@ -54,11 +54,11 @@ public class ListExadataConfigurationsResponse extends com.oracle.bmc.responses.
         return opcNextPage;
     }
 
-    /** The returned ExadataConfigurationCollection instance. */
+    /** The returned {@code ExadataConfigurationCollection} instance. */
     private com.oracle.bmc.opsi.model.ExadataConfigurationCollection exadataConfigurationCollection;
 
     /**
-     * The returned ExadataConfigurationCollection instance.
+     * The returned {@code ExadataConfigurationCollection} instance.
      *
      * @return the value
      */
@@ -161,12 +161,12 @@ public class ListExadataConfigurationsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned ExadataConfigurationCollection instance. */
+        /** The returned {@code ExadataConfigurationCollection} instance. */
         private com.oracle.bmc.opsi.model.ExadataConfigurationCollection
                 exadataConfigurationCollection;
 
         /**
-         * The returned ExadataConfigurationCollection instance.
+         * The returned {@code ExadataConfigurationCollection} instance.
          *
          * @param exadataConfigurationCollection the value to set
          * @return this builder

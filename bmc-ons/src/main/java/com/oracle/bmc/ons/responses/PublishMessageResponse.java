@@ -24,11 +24,11 @@ public class PublishMessageResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned PublishResult instance. */
+    /** The returned {@code PublishResult} instance. */
     private com.oracle.bmc.ons.model.PublishResult publishResult;
 
     /**
-     * The returned PublishResult instance.
+     * The returned {@code PublishResult} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class PublishMessageResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned PublishResult instance. */
+        /** The returned {@code PublishResult} instance. */
         private com.oracle.bmc.ons.model.PublishResult publishResult;
 
         /**
-         * The returned PublishResult instance.
+         * The returned {@code PublishResult} instance.
          *
          * @param publishResult the value to set
          * @return this builder

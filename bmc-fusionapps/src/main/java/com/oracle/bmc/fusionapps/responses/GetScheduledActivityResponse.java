@@ -36,11 +36,11 @@ public class GetScheduledActivityResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned ScheduledActivity instance. */
+    /** The returned {@code ScheduledActivity} instance. */
     private com.oracle.bmc.fusionapps.model.ScheduledActivity scheduledActivity;
 
     /**
-     * The returned ScheduledActivity instance.
+     * The returned {@code ScheduledActivity} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetScheduledActivityResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned ScheduledActivity instance. */
+        /** The returned {@code ScheduledActivity} instance. */
         private com.oracle.bmc.fusionapps.model.ScheduledActivity scheduledActivity;
 
         /**
-         * The returned ScheduledActivity instance.
+         * The returned {@code ScheduledActivity} instance.
          *
          * @param scheduledActivity the value to set
          * @return this builder

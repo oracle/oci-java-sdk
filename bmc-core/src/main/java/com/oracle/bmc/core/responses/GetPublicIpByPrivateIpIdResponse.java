@@ -36,11 +36,11 @@ public class GetPublicIpByPrivateIpIdResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** The returned PublicIp instance. */
+    /** The returned {@code PublicIp} instance. */
     private com.oracle.bmc.core.model.PublicIp publicIp;
 
     /**
-     * The returned PublicIp instance.
+     * The returned {@code PublicIp} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetPublicIpByPrivateIpIdResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned PublicIp instance. */
+        /** The returned {@code PublicIp} instance. */
         private com.oracle.bmc.core.model.PublicIp publicIp;
 
         /**
-         * The returned PublicIp instance.
+         * The returned {@code PublicIp} instance.
          *
          * @param publicIp the value to set
          * @return this builder

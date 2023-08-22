@@ -46,11 +46,11 @@ public class ListEventsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.audit.model.AuditEvent instances. */
+    /** A list of {@code com.oracle.bmc.audit.model.AuditEvent} instances. */
     private java.util.List<com.oracle.bmc.audit.model.AuditEvent> items;
 
     /**
-     * A list of com.oracle.bmc.audit.model.AuditEvent instances.
+     * A list of {@code com.oracle.bmc.audit.model.AuditEvent} instances.
      *
      * @return the value
      */
@@ -137,11 +137,11 @@ public class ListEventsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.audit.model.AuditEvent instances. */
+        /** A list of {@code com.oracle.bmc.audit.model.AuditEvent} instances. */
         private java.util.List<com.oracle.bmc.audit.model.AuditEvent> items;
 
         /**
-         * A list of com.oracle.bmc.audit.model.AuditEvent instances.
+         * A list of {@code com.oracle.bmc.audit.model.AuditEvent} instances.
          *
          * @param items the value to set
          * @return this builder

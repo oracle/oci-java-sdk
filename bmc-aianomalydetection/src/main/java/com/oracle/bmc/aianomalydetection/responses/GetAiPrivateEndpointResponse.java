@@ -36,11 +36,11 @@ public class GetAiPrivateEndpointResponse extends com.oracle.bmc.responses.BmcRe
         return etag;
     }
 
-    /** The returned AiPrivateEndpoint instance. */
+    /** The returned {@code AiPrivateEndpoint} instance. */
     private com.oracle.bmc.aianomalydetection.model.AiPrivateEndpoint aiPrivateEndpoint;
 
     /**
-     * The returned AiPrivateEndpoint instance.
+     * The returned {@code AiPrivateEndpoint} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetAiPrivateEndpointResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned AiPrivateEndpoint instance. */
+        /** The returned {@code AiPrivateEndpoint} instance. */
         private com.oracle.bmc.aianomalydetection.model.AiPrivateEndpoint aiPrivateEndpoint;
 
         /**
-         * The returned AiPrivateEndpoint instance.
+         * The returned {@code AiPrivateEndpoint} instance.
          *
          * @param aiPrivateEndpoint the value to set
          * @return this builder

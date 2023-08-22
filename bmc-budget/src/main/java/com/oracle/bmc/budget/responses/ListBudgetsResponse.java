@@ -42,11 +42,11 @@ public class ListBudgetsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.budget.model.BudgetSummary instances. */
+    /** A list of {@code com.oracle.bmc.budget.model.BudgetSummary} instances. */
     private java.util.List<com.oracle.bmc.budget.model.BudgetSummary> items;
 
     /**
-     * A list of com.oracle.bmc.budget.model.BudgetSummary instances.
+     * A list of {@code com.oracle.bmc.budget.model.BudgetSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListBudgetsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.budget.model.BudgetSummary instances. */
+        /** A list of {@code com.oracle.bmc.budget.model.BudgetSummary} instances. */
         private java.util.List<com.oracle.bmc.budget.model.BudgetSummary> items;
 
         /**
-         * A list of com.oracle.bmc.budget.model.BudgetSummary instances.
+         * A list of {@code com.oracle.bmc.budget.model.BudgetSummary} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class CreateOrResetUIPasswordResponse extends com.oracle.bmc.responses.Bm
         return etag;
     }
 
-    /** The returned UIPassword instance. */
+    /** The returned {@code UIPassword} instance. */
     private com.oracle.bmc.identity.model.UIPassword uIPassword;
 
     /**
-     * The returned UIPassword instance.
+     * The returned {@code UIPassword} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class CreateOrResetUIPasswordResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned UIPassword instance. */
+        /** The returned {@code UIPassword} instance. */
         private com.oracle.bmc.identity.model.UIPassword uIPassword;
 
         /**
-         * The returned UIPassword instance.
+         * The returned {@code UIPassword} instance.
          *
          * @param uIPassword the value to set
          * @return this builder

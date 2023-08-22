@@ -60,11 +60,11 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.datascience.model.WorkRequestSummary instances. */
+    /** A list of {@code com.oracle.bmc.datascience.model.WorkRequestSummary} instances. */
     private java.util.List<com.oracle.bmc.datascience.model.WorkRequestSummary> items;
 
     /**
-     * A list of com.oracle.bmc.datascience.model.WorkRequestSummary instances.
+     * A list of {@code com.oracle.bmc.datascience.model.WorkRequestSummary} instances.
      *
      * @return the value
      */
@@ -170,11 +170,11 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** A list of com.oracle.bmc.datascience.model.WorkRequestSummary instances. */
+        /** A list of {@code com.oracle.bmc.datascience.model.WorkRequestSummary} instances. */
         private java.util.List<com.oracle.bmc.datascience.model.WorkRequestSummary> items;
 
         /**
-         * A list of com.oracle.bmc.datascience.model.WorkRequestSummary instances.
+         * A list of {@code com.oracle.bmc.datascience.model.WorkRequestSummary} instances.
          *
          * @param items the value to set
          * @return this builder

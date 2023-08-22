@@ -44,11 +44,11 @@ public class ListVmClusterUpdatesResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.database.model.VmClusterUpdateSummary instances. */
+    /** A list of {@code com.oracle.bmc.database.model.VmClusterUpdateSummary} instances. */
     private java.util.List<com.oracle.bmc.database.model.VmClusterUpdateSummary> items;
 
     /**
-     * A list of com.oracle.bmc.database.model.VmClusterUpdateSummary instances.
+     * A list of {@code com.oracle.bmc.database.model.VmClusterUpdateSummary} instances.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListVmClusterUpdatesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** A list of com.oracle.bmc.database.model.VmClusterUpdateSummary instances. */
+        /** A list of {@code com.oracle.bmc.database.model.VmClusterUpdateSummary} instances. */
         private java.util.List<com.oracle.bmc.database.model.VmClusterUpdateSummary> items;
 
         /**
-         * A list of com.oracle.bmc.database.model.VmClusterUpdateSummary instances.
+         * A list of {@code com.oracle.bmc.database.model.VmClusterUpdateSummary} instances.
          *
          * @param items the value to set
          * @return this builder

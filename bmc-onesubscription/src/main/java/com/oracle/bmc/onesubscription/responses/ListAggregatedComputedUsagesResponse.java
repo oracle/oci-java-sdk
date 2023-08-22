@@ -42,12 +42,16 @@ public class ListAggregatedComputedUsagesResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.onesubscription.model.AggregatedComputedUsageSummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.onesubscription.model.AggregatedComputedUsageSummary}
+     * instances.
+     */
     private java.util.List<com.oracle.bmc.onesubscription.model.AggregatedComputedUsageSummary>
             items;
 
     /**
-     * A list of com.oracle.bmc.onesubscription.model.AggregatedComputedUsageSummary instances.
+     * A list of {@code com.oracle.bmc.onesubscription.model.AggregatedComputedUsageSummary}
+     * instances.
      *
      * @return the value
      */
@@ -134,13 +138,15 @@ public class ListAggregatedComputedUsagesResponse extends com.oracle.bmc.respons
         }
 
         /**
-         * A list of com.oracle.bmc.onesubscription.model.AggregatedComputedUsageSummary instances.
+         * A list of {@code com.oracle.bmc.onesubscription.model.AggregatedComputedUsageSummary}
+         * instances.
          */
         private java.util.List<com.oracle.bmc.onesubscription.model.AggregatedComputedUsageSummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.onesubscription.model.AggregatedComputedUsageSummary instances.
+         * A list of {@code com.oracle.bmc.onesubscription.model.AggregatedComputedUsageSummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

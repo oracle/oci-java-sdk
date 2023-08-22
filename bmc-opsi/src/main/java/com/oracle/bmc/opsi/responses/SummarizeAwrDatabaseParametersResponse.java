@@ -42,11 +42,11 @@ public class SummarizeAwrDatabaseParametersResponse extends com.oracle.bmc.respo
         return opcNextPage;
     }
 
-    /** The returned AwrDatabaseParameterCollection instance. */
+    /** The returned {@code AwrDatabaseParameterCollection} instance. */
     private com.oracle.bmc.opsi.model.AwrDatabaseParameterCollection awrDatabaseParameterCollection;
 
     /**
-     * The returned AwrDatabaseParameterCollection instance.
+     * The returned {@code AwrDatabaseParameterCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class SummarizeAwrDatabaseParametersResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned AwrDatabaseParameterCollection instance. */
+        /** The returned {@code AwrDatabaseParameterCollection} instance. */
         private com.oracle.bmc.opsi.model.AwrDatabaseParameterCollection
                 awrDatabaseParameterCollection;
 
         /**
-         * The returned AwrDatabaseParameterCollection instance.
+         * The returned {@code AwrDatabaseParameterCollection} instance.
          *
          * @param awrDatabaseParameterCollection the value to set
          * @return this builder

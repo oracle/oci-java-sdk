@@ -52,11 +52,11 @@ public class AddHeatWaveClusterResponse extends com.oracle.bmc.responses.BmcResp
         return opcWorkRequestId;
     }
 
-    /** The returned HeatWaveCluster instance. */
+    /** The returned {@code HeatWaveCluster} instance. */
     private com.oracle.bmc.mysql.model.HeatWaveCluster heatWaveCluster;
 
     /**
-     * The returned HeatWaveCluster instance.
+     * The returned {@code HeatWaveCluster} instance.
      *
      * @return the value
      */
@@ -154,11 +154,11 @@ public class AddHeatWaveClusterResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned HeatWaveCluster instance. */
+        /** The returned {@code HeatWaveCluster} instance. */
         private com.oracle.bmc.mysql.model.HeatWaveCluster heatWaveCluster;
 
         /**
-         * The returned HeatWaveCluster instance.
+         * The returned {@code HeatWaveCluster} instance.
          *
          * @param heatWaveCluster the value to set
          * @return this builder

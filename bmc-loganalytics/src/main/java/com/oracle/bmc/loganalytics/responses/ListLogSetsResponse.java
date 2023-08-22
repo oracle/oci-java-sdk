@@ -44,11 +44,11 @@ public class ListLogSetsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned LogSetCollection instance. */
+    /** The returned {@code LogSetCollection} instance. */
     private com.oracle.bmc.loganalytics.model.LogSetCollection logSetCollection;
 
     /**
-     * The returned LogSetCollection instance.
+     * The returned {@code LogSetCollection} instance.
      *
      * @return the value
      */
@@ -133,11 +133,11 @@ public class ListLogSetsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned LogSetCollection instance. */
+        /** The returned {@code LogSetCollection} instance. */
         private com.oracle.bmc.loganalytics.model.LogSetCollection logSetCollection;
 
         /**
-         * The returned LogSetCollection instance.
+         * The returned {@code LogSetCollection} instance.
          *
          * @param logSetCollection the value to set
          * @return this builder

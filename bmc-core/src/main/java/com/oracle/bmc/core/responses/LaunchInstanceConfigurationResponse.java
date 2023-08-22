@@ -56,11 +56,11 @@ public class LaunchInstanceConfigurationResponse extends com.oracle.bmc.response
         return opcWorkRequestId;
     }
 
-    /** The returned Instance instance. */
+    /** The returned {@code Instance} instance. */
     private com.oracle.bmc.core.model.Instance instance;
 
     /**
-     * The returned Instance instance.
+     * The returned {@code Instance} instance.
      *
      * @return the value
      */
@@ -163,11 +163,11 @@ public class LaunchInstanceConfigurationResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned Instance instance. */
+        /** The returned {@code Instance} instance. */
         private com.oracle.bmc.core.model.Instance instance;
 
         /**
-         * The returned Instance instance.
+         * The returned {@code Instance} instance.
          *
          * @param instance the value to set
          * @return this builder

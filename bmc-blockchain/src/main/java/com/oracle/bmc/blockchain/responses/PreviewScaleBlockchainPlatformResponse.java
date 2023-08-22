@@ -36,12 +36,12 @@ public class PreviewScaleBlockchainPlatformResponse extends com.oracle.bmc.respo
         return opcRequestId;
     }
 
-    /** The returned ScaledBlockchainPlatformPreview instance. */
+    /** The returned {@code ScaledBlockchainPlatformPreview} instance. */
     private com.oracle.bmc.blockchain.model.ScaledBlockchainPlatformPreview
             scaledBlockchainPlatformPreview;
 
     /**
-     * The returned ScaledBlockchainPlatformPreview instance.
+     * The returned {@code ScaledBlockchainPlatformPreview} instance.
      *
      * @return the value
      */
@@ -121,12 +121,12 @@ public class PreviewScaleBlockchainPlatformResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned ScaledBlockchainPlatformPreview instance. */
+        /** The returned {@code ScaledBlockchainPlatformPreview} instance. */
         private com.oracle.bmc.blockchain.model.ScaledBlockchainPlatformPreview
                 scaledBlockchainPlatformPreview;
 
         /**
-         * The returned ScaledBlockchainPlatformPreview instance.
+         * The returned {@code ScaledBlockchainPlatformPreview} instance.
          *
          * @param scaledBlockchainPlatformPreview the value to set
          * @return this builder

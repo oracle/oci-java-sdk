@@ -36,12 +36,12 @@ public class GetExternalExadataStorageGridResponse extends com.oracle.bmc.respon
         return opcRequestId;
     }
 
-    /** The returned ExternalExadataStorageGrid instance. */
+    /** The returned {@code ExternalExadataStorageGrid} instance. */
     private com.oracle.bmc.databasemanagement.model.ExternalExadataStorageGrid
             externalExadataStorageGrid;
 
     /**
-     * The returned ExternalExadataStorageGrid instance.
+     * The returned {@code ExternalExadataStorageGrid} instance.
      *
      * @return the value
      */
@@ -121,12 +121,12 @@ public class GetExternalExadataStorageGridResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned ExternalExadataStorageGrid instance. */
+        /** The returned {@code ExternalExadataStorageGrid} instance. */
         private com.oracle.bmc.databasemanagement.model.ExternalExadataStorageGrid
                 externalExadataStorageGrid;
 
         /**
-         * The returned ExternalExadataStorageGrid instance.
+         * The returned {@code ExternalExadataStorageGrid} instance.
          *
          * @param externalExadataStorageGrid the value to set
          * @return this builder

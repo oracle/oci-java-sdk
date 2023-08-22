@@ -42,11 +42,11 @@ public class ListPackageGroupsResponse extends com.oracle.bmc.responses.BmcRespo
         return opcNextPage;
     }
 
-    /** The returned PackageGroupCollection instance. */
+    /** The returned {@code PackageGroupCollection} instance. */
     private com.oracle.bmc.osmanagementhub.model.PackageGroupCollection packageGroupCollection;
 
     /**
-     * The returned PackageGroupCollection instance.
+     * The returned {@code PackageGroupCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListPackageGroupsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned PackageGroupCollection instance. */
+        /** The returned {@code PackageGroupCollection} instance. */
         private com.oracle.bmc.osmanagementhub.model.PackageGroupCollection packageGroupCollection;
 
         /**
-         * The returned PackageGroupCollection instance.
+         * The returned {@code PackageGroupCollection} instance.
          *
          * @param packageGroupCollection the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class GetOceInstanceResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned OceInstance instance. */
+    /** The returned {@code OceInstance} instance. */
     private com.oracle.bmc.oce.model.OceInstance oceInstance;
 
     /**
-     * The returned OceInstance instance.
+     * The returned {@code OceInstance} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetOceInstanceResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned OceInstance instance. */
+        /** The returned {@code OceInstance} instance. */
         private com.oracle.bmc.oce.model.OceInstance oceInstance;
 
         /**
-         * The returned OceInstance instance.
+         * The returned {@code OceInstance} instance.
          *
          * @param oceInstance the value to set
          * @return this builder

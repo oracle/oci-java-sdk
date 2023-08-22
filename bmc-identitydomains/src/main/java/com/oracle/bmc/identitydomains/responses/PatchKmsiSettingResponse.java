@@ -36,11 +36,11 @@ public class PatchKmsiSettingResponse extends com.oracle.bmc.responses.BmcRespon
         return etag;
     }
 
-    /** The returned KmsiSetting instance. */
+    /** The returned {@code KmsiSetting} instance. */
     private com.oracle.bmc.identitydomains.model.KmsiSetting kmsiSetting;
 
     /**
-     * The returned KmsiSetting instance.
+     * The returned {@code KmsiSetting} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class PatchKmsiSettingResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned KmsiSetting instance. */
+        /** The returned {@code KmsiSetting} instance. */
         private com.oracle.bmc.identitydomains.model.KmsiSetting kmsiSetting;
 
         /**
-         * The returned KmsiSetting instance.
+         * The returned {@code KmsiSetting} instance.
          *
          * @param kmsiSetting the value to set
          * @return this builder

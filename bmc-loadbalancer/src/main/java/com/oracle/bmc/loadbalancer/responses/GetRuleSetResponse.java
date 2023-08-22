@@ -44,11 +44,11 @@ public class GetRuleSetResponse extends com.oracle.bmc.responses.BmcResponse {
         return eTag;
     }
 
-    /** The returned RuleSet instance. */
+    /** The returned {@code RuleSet} instance. */
     private com.oracle.bmc.loadbalancer.model.RuleSet ruleSet;
 
     /**
-     * The returned RuleSet instance.
+     * The returned {@code RuleSet} instance.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class GetRuleSetResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned RuleSet instance. */
+        /** The returned {@code RuleSet} instance. */
         private com.oracle.bmc.loadbalancer.model.RuleSet ruleSet;
 
         /**
-         * The returned RuleSet instance.
+         * The returned {@code RuleSet} instance.
          *
          * @param ruleSet the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class GetDeployStageResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned DeployStage instance. */
+    /** The returned {@code DeployStage} instance. */
     private com.oracle.bmc.devops.model.DeployStage deployStage;
 
     /**
-     * The returned DeployStage instance.
+     * The returned {@code DeployStage} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetDeployStageResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned DeployStage instance. */
+        /** The returned {@code DeployStage} instance. */
         private com.oracle.bmc.devops.model.DeployStage deployStage;
 
         /**
-         * The returned DeployStage instance.
+         * The returned {@code DeployStage} instance.
          *
          * @param deployStage the value to set
          * @return this builder

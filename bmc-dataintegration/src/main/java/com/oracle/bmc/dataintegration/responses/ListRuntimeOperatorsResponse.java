@@ -42,12 +42,12 @@ public class ListRuntimeOperatorsResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** The returned RuntimeOperatorSummaryCollection instance. */
+    /** The returned {@code RuntimeOperatorSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.RuntimeOperatorSummaryCollection
             runtimeOperatorSummaryCollection;
 
     /**
-     * The returned RuntimeOperatorSummaryCollection instance.
+     * The returned {@code RuntimeOperatorSummaryCollection} instance.
      *
      * @return the value
      */
@@ -134,12 +134,12 @@ public class ListRuntimeOperatorsResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned RuntimeOperatorSummaryCollection instance. */
+        /** The returned {@code RuntimeOperatorSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.RuntimeOperatorSummaryCollection
                 runtimeOperatorSummaryCollection;
 
         /**
-         * The returned RuntimeOperatorSummaryCollection instance.
+         * The returned {@code RuntimeOperatorSummaryCollection} instance.
          *
          * @param runtimeOperatorSummaryCollection the value to set
          * @return this builder

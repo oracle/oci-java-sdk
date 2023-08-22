@@ -24,11 +24,11 @@ public class GetSubscribedServiceResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned SubscribedService instance. */
+    /** The returned {@code SubscribedService} instance. */
     private com.oracle.bmc.onesubscription.model.SubscribedService subscribedService;
 
     /**
-     * The returned SubscribedService instance.
+     * The returned {@code SubscribedService} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetSubscribedServiceResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned SubscribedService instance. */
+        /** The returned {@code SubscribedService} instance. */
         private com.oracle.bmc.onesubscription.model.SubscribedService subscribedService;
 
         /**
-         * The returned SubscribedService instance.
+         * The returned {@code SubscribedService} instance.
          *
          * @param subscribedService the value to set
          * @return this builder

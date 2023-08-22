@@ -56,11 +56,11 @@ public class CreateCopyObjectRequestResponse extends com.oracle.bmc.responses.Bm
         return opcWorkRequestId;
     }
 
-    /** The returned CopyObjectRequest instance. */
+    /** The returned {@code CopyObjectRequest} instance. */
     private com.oracle.bmc.dataintegration.model.CopyObjectRequest copyObjectRequest;
 
     /**
-     * The returned CopyObjectRequest instance.
+     * The returned {@code CopyObjectRequest} instance.
      *
      * @return the value
      */
@@ -163,11 +163,11 @@ public class CreateCopyObjectRequestResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned CopyObjectRequest instance. */
+        /** The returned {@code CopyObjectRequest} instance. */
         private com.oracle.bmc.dataintegration.model.CopyObjectRequest copyObjectRequest;
 
         /**
-         * The returned CopyObjectRequest instance.
+         * The returned {@code CopyObjectRequest} instance.
          *
          * @param copyObjectRequest the value to set
          * @return this builder

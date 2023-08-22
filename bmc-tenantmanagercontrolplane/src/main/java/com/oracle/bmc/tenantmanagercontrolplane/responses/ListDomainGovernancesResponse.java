@@ -42,12 +42,12 @@ public class ListDomainGovernancesResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned DomainGovernanceCollection instance. */
+    /** The returned {@code DomainGovernanceCollection} instance. */
     private com.oracle.bmc.tenantmanagercontrolplane.model.DomainGovernanceCollection
             domainGovernanceCollection;
 
     /**
-     * The returned DomainGovernanceCollection instance.
+     * The returned {@code DomainGovernanceCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListDomainGovernancesResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned DomainGovernanceCollection instance. */
+        /** The returned {@code DomainGovernanceCollection} instance. */
         private com.oracle.bmc.tenantmanagercontrolplane.model.DomainGovernanceCollection
                 domainGovernanceCollection;
 
         /**
-         * The returned DomainGovernanceCollection instance.
+         * The returned {@code DomainGovernanceCollection} instance.
          *
          * @param domainGovernanceCollection the value to set
          * @return this builder

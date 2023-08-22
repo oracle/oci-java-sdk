@@ -44,11 +44,11 @@ public class ListExadataInfrastructuresResponse extends com.oracle.bmc.responses
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.database.model.ExadataInfrastructureSummary instances. */
+    /** A list of {@code com.oracle.bmc.database.model.ExadataInfrastructureSummary} instances. */
     private java.util.List<com.oracle.bmc.database.model.ExadataInfrastructureSummary> items;
 
     /**
-     * A list of com.oracle.bmc.database.model.ExadataInfrastructureSummary instances.
+     * A list of {@code com.oracle.bmc.database.model.ExadataInfrastructureSummary} instances.
      *
      * @return the value
      */
@@ -136,11 +136,13 @@ public class ListExadataInfrastructuresResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** A list of com.oracle.bmc.database.model.ExadataInfrastructureSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.database.model.ExadataInfrastructureSummary} instances.
+         */
         private java.util.List<com.oracle.bmc.database.model.ExadataInfrastructureSummary> items;
 
         /**
-         * A list of com.oracle.bmc.database.model.ExadataInfrastructureSummary instances.
+         * A list of {@code com.oracle.bmc.database.model.ExadataInfrastructureSummary} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -42,12 +42,12 @@ public class SummarizeSqlStatisticsResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** The returned SqlStatisticAggregationCollection instance. */
+    /** The returned {@code SqlStatisticAggregationCollection} instance. */
     private com.oracle.bmc.opsi.model.SqlStatisticAggregationCollection
             sqlStatisticAggregationCollection;
 
     /**
-     * The returned SqlStatisticAggregationCollection instance.
+     * The returned {@code SqlStatisticAggregationCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class SummarizeSqlStatisticsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned SqlStatisticAggregationCollection instance. */
+        /** The returned {@code SqlStatisticAggregationCollection} instance. */
         private com.oracle.bmc.opsi.model.SqlStatisticAggregationCollection
                 sqlStatisticAggregationCollection;
 
         /**
-         * The returned SqlStatisticAggregationCollection instance.
+         * The returned {@code SqlStatisticAggregationCollection} instance.
          *
          * @param sqlStatisticAggregationCollection the value to set
          * @return this builder

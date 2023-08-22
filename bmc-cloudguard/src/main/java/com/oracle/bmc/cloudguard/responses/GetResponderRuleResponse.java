@@ -36,11 +36,11 @@ public class GetResponderRuleResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned ResponderRule instance. */
+    /** The returned {@code ResponderRule} instance. */
     private com.oracle.bmc.cloudguard.model.ResponderRule responderRule;
 
     /**
-     * The returned ResponderRule instance.
+     * The returned {@code ResponderRule} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetResponderRuleResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned ResponderRule instance. */
+        /** The returned {@code ResponderRule} instance. */
         private com.oracle.bmc.cloudguard.model.ResponderRule responderRule;
 
         /**
-         * The returned ResponderRule instance.
+         * The returned {@code ResponderRule} instance.
          *
          * @param responderRule the value to set
          * @return this builder

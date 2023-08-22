@@ -36,11 +36,11 @@ public class GetFusionEnvironmentResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned FusionEnvironment instance. */
+    /** The returned {@code FusionEnvironment} instance. */
     private com.oracle.bmc.fusionapps.model.FusionEnvironment fusionEnvironment;
 
     /**
-     * The returned FusionEnvironment instance.
+     * The returned {@code FusionEnvironment} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetFusionEnvironmentResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned FusionEnvironment instance. */
+        /** The returned {@code FusionEnvironment} instance. */
         private com.oracle.bmc.fusionapps.model.FusionEnvironment fusionEnvironment;
 
         /**
-         * The returned FusionEnvironment instance.
+         * The returned {@code FusionEnvironment} instance.
          *
          * @param fusionEnvironment the value to set
          * @return this builder

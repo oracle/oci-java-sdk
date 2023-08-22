@@ -8,11 +8,11 @@ import com.oracle.bmc.objectstorage.model.*;
 
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetNamespaceResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** The returned String instance. */
+    /** The returned {@code String} instance. */
     private String value;
 
     /**
-     * The returned String instance.
+     * The returned {@code String} instance.
      *
      * @return the value
      */
@@ -47,11 +47,11 @@ public class GetNamespaceResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned String instance. */
+        /** The returned {@code String} instance. */
         private String value;
 
         /**
-         * The returned String instance.
+         * The returned {@code String} instance.
          *
          * @param value the value to set
          * @return this builder

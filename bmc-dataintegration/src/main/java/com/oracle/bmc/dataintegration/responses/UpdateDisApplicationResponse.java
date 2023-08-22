@@ -40,11 +40,11 @@ public class UpdateDisApplicationResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned DisApplication instance. */
+    /** The returned {@code DisApplication} instance. */
     private com.oracle.bmc.dataintegration.model.DisApplication disApplication;
 
     /**
-     * The returned DisApplication instance.
+     * The returned {@code DisApplication} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class UpdateDisApplicationResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned DisApplication instance. */
+        /** The returned {@code DisApplication} instance. */
         private com.oracle.bmc.dataintegration.model.DisApplication disApplication;
 
         /**
-         * The returned DisApplication instance.
+         * The returned {@code DisApplication} instance.
          *
          * @param disApplication the value to set
          * @return this builder

@@ -24,12 +24,12 @@ public class IngestStreamDistributionChannelResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** The returned IngestStreamDistributionChannelResult instance. */
+    /** The returned {@code IngestStreamDistributionChannelResult} instance. */
     private com.oracle.bmc.mediaservices.model.IngestStreamDistributionChannelResult
             ingestStreamDistributionChannelResult;
 
     /**
-     * The returned IngestStreamDistributionChannelResult instance.
+     * The returned {@code IngestStreamDistributionChannelResult} instance.
      *
      * @return the value
      */
@@ -92,12 +92,12 @@ public class IngestStreamDistributionChannelResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned IngestStreamDistributionChannelResult instance. */
+        /** The returned {@code IngestStreamDistributionChannelResult} instance. */
         private com.oracle.bmc.mediaservices.model.IngestStreamDistributionChannelResult
                 ingestStreamDistributionChannelResult;
 
         /**
-         * The returned IngestStreamDistributionChannelResult instance.
+         * The returned {@code IngestStreamDistributionChannelResult} instance.
          *
          * @param ingestStreamDistributionChannelResult the value to set
          * @return this builder

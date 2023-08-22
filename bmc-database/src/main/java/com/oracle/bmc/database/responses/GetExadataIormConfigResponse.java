@@ -24,11 +24,11 @@ public class GetExadataIormConfigResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned ExadataIormConfig instance. */
+    /** The returned {@code ExadataIormConfig} instance. */
     private com.oracle.bmc.database.model.ExadataIormConfig exadataIormConfig;
 
     /**
-     * The returned ExadataIormConfig instance.
+     * The returned {@code ExadataIormConfig} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetExadataIormConfigResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned ExadataIormConfig instance. */
+        /** The returned {@code ExadataIormConfig} instance. */
         private com.oracle.bmc.database.model.ExadataIormConfig exadataIormConfig;
 
         /**
-         * The returned ExadataIormConfig instance.
+         * The returned {@code ExadataIormConfig} instance.
          *
          * @param exadataIormConfig the value to set
          * @return this builder

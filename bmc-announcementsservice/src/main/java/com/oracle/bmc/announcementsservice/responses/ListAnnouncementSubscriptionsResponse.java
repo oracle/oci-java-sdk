@@ -42,12 +42,12 @@ public class ListAnnouncementSubscriptionsResponse extends com.oracle.bmc.respon
         return opcNextPage;
     }
 
-    /** The returned AnnouncementSubscriptionCollection instance. */
+    /** The returned {@code AnnouncementSubscriptionCollection} instance. */
     private com.oracle.bmc.announcementsservice.model.AnnouncementSubscriptionCollection
             announcementSubscriptionCollection;
 
     /**
-     * The returned AnnouncementSubscriptionCollection instance.
+     * The returned {@code AnnouncementSubscriptionCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListAnnouncementSubscriptionsResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned AnnouncementSubscriptionCollection instance. */
+        /** The returned {@code AnnouncementSubscriptionCollection} instance. */
         private com.oracle.bmc.announcementsservice.model.AnnouncementSubscriptionCollection
                 announcementSubscriptionCollection;
 
         /**
-         * The returned AnnouncementSubscriptionCollection instance.
+         * The returned {@code AnnouncementSubscriptionCollection} instance.
          *
          * @param announcementSubscriptionCollection the value to set
          * @return this builder

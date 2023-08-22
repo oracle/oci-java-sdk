@@ -64,11 +64,11 @@ public class CreateDbSystemResponse extends com.oracle.bmc.responses.BmcResponse
         return opcWorkRequestId;
     }
 
-    /** The returned DbSystem instance. */
+    /** The returned {@code DbSystem} instance. */
     private com.oracle.bmc.mysql.model.DbSystem dbSystem;
 
     /**
-     * The returned DbSystem instance.
+     * The returned {@code DbSystem} instance.
      *
      * @return the value
      */
@@ -183,11 +183,11 @@ public class CreateDbSystemResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned DbSystem instance. */
+        /** The returned {@code DbSystem} instance. */
         private com.oracle.bmc.mysql.model.DbSystem dbSystem;
 
         /**
-         * The returned DbSystem instance.
+         * The returned {@code DbSystem} instance.
          *
          * @param dbSystem the value to set
          * @return this builder

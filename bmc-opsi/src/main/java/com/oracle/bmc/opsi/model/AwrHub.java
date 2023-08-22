@@ -34,7 +34,8 @@ public final class AwrHub extends com.oracle.bmc.http.client.internal.Explicitly
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
-        "lifecycleDetails"
+        "lifecycleDetails",
+        "hubDstTimezoneVersion"
     })
     public AwrHub(
             String operationsInsightsWarehouseId,
@@ -49,7 +50,8 @@ public final class AwrHub extends com.oracle.bmc.http.client.internal.Explicitly
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             AwrHubLifecycleState lifecycleState,
-            String lifecycleDetails) {
+            String lifecycleDetails,
+            String hubDstTimezoneVersion) {
         super();
         this.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
         this.id = id;
@@ -64,6 +66,7 @@ public final class AwrHub extends com.oracle.bmc.http.client.internal.Explicitly
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
+        this.hubDstTimezoneVersion = hubDstTimezoneVersion;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -286,6 +289,21 @@ public final class AwrHub extends com.oracle.bmc.http.client.internal.Explicitly
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
+        /** Dst Time Zone Version of the AWR Hub */
+        @com.fasterxml.jackson.annotation.JsonProperty("hubDstTimezoneVersion")
+        private String hubDstTimezoneVersion;
+
+        /**
+         * Dst Time Zone Version of the AWR Hub
+         *
+         * @param hubDstTimezoneVersion the value to set
+         * @return this builder
+         */
+        public Builder hubDstTimezoneVersion(String hubDstTimezoneVersion) {
+            this.hubDstTimezoneVersion = hubDstTimezoneVersion;
+            this.__explicitlySet__.add("hubDstTimezoneVersion");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -305,7 +323,8 @@ public final class AwrHub extends com.oracle.bmc.http.client.internal.Explicitly
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
-                            this.lifecycleDetails);
+                            this.lifecycleDetails,
+                            this.hubDstTimezoneVersion);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -352,6 +371,9 @@ public final class AwrHub extends com.oracle.bmc.http.client.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("hubDstTimezoneVersion")) {
+                this.hubDstTimezoneVersion(model.getHubDstTimezoneVersion());
             }
             return this;
         }
@@ -555,6 +577,19 @@ public final class AwrHub extends com.oracle.bmc.http.client.internal.Explicitly
         return lifecycleDetails;
     }
 
+    /** Dst Time Zone Version of the AWR Hub */
+    @com.fasterxml.jackson.annotation.JsonProperty("hubDstTimezoneVersion")
+    private final String hubDstTimezoneVersion;
+
+    /**
+     * Dst Time Zone Version of the AWR Hub
+     *
+     * @return the value
+     */
+    public String getHubDstTimezoneVersion() {
+        return hubDstTimezoneVersion;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -585,6 +620,7 @@ public final class AwrHub extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", hubDstTimezoneVersion=").append(String.valueOf(this.hubDstTimezoneVersion));
         sb.append(")");
         return sb.toString();
     }
@@ -614,6 +650,7 @@ public final class AwrHub extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.hubDstTimezoneVersion, other.hubDstTimezoneVersion)
                 && super.equals(other);
     }
 
@@ -650,6 +687,11 @@ public final class AwrHub extends com.oracle.bmc.http.client.internal.Explicitly
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hubDstTimezoneVersion == null
+                                ? 43
+                                : this.hubDstTimezoneVersion.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

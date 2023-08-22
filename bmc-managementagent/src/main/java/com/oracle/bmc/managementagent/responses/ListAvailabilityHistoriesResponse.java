@@ -42,11 +42,13 @@ public class ListAvailabilityHistoriesResponse extends com.oracle.bmc.responses.
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.managementagent.model.AvailabilityHistorySummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.managementagent.model.AvailabilityHistorySummary} instances.
+     */
     private java.util.List<com.oracle.bmc.managementagent.model.AvailabilityHistorySummary> items;
 
     /**
-     * A list of com.oracle.bmc.managementagent.model.AvailabilityHistorySummary instances.
+     * A list of {@code com.oracle.bmc.managementagent.model.AvailabilityHistorySummary} instances.
      *
      * @return the value
      */
@@ -131,12 +133,16 @@ public class ListAvailabilityHistoriesResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** A list of com.oracle.bmc.managementagent.model.AvailabilityHistorySummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.managementagent.model.AvailabilityHistorySummary}
+         * instances.
+         */
         private java.util.List<com.oracle.bmc.managementagent.model.AvailabilityHistorySummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.managementagent.model.AvailabilityHistorySummary instances.
+         * A list of {@code com.oracle.bmc.managementagent.model.AvailabilityHistorySummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

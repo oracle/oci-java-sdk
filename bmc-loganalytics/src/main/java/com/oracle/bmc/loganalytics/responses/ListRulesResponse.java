@@ -64,11 +64,11 @@ public class ListRulesResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned RuleSummaryCollection instance. */
+    /** The returned {@code RuleSummaryCollection} instance. */
     private com.oracle.bmc.loganalytics.model.RuleSummaryCollection ruleSummaryCollection;
 
     /**
-     * The returned RuleSummaryCollection instance.
+     * The returned {@code RuleSummaryCollection} instance.
      *
      * @return the value
      */
@@ -178,11 +178,11 @@ public class ListRulesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned RuleSummaryCollection instance. */
+        /** The returned {@code RuleSummaryCollection} instance. */
         private com.oracle.bmc.loganalytics.model.RuleSummaryCollection ruleSummaryCollection;
 
         /**
-         * The returned RuleSummaryCollection instance.
+         * The returned {@code RuleSummaryCollection} instance.
          *
          * @param ruleSummaryCollection the value to set
          * @return this builder

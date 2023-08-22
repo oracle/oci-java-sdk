@@ -42,11 +42,11 @@ public class ListPeersResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned PeerCollection instance. */
+    /** The returned {@code PeerCollection} instance. */
     private com.oracle.bmc.blockchain.model.PeerCollection peerCollection;
 
     /**
-     * The returned PeerCollection instance.
+     * The returned {@code PeerCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListPeersResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned PeerCollection instance. */
+        /** The returned {@code PeerCollection} instance. */
         private com.oracle.bmc.blockchain.model.PeerCollection peerCollection;
 
         /**
-         * The returned PeerCollection instance.
+         * The returned {@code PeerCollection} instance.
          *
          * @param peerCollection the value to set
          * @return this builder

@@ -42,11 +42,13 @@ public class ListComputedUsageAggregatedsResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.osubusage.model.ComputedUsageAggregatedSummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.osubusage.model.ComputedUsageAggregatedSummary} instances.
+     */
     private java.util.List<com.oracle.bmc.osubusage.model.ComputedUsageAggregatedSummary> items;
 
     /**
-     * A list of com.oracle.bmc.osubusage.model.ComputedUsageAggregatedSummary instances.
+     * A list of {@code com.oracle.bmc.osubusage.model.ComputedUsageAggregatedSummary} instances.
      *
      * @return the value
      */
@@ -131,11 +133,15 @@ public class ListComputedUsageAggregatedsResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** A list of com.oracle.bmc.osubusage.model.ComputedUsageAggregatedSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.osubusage.model.ComputedUsageAggregatedSummary}
+         * instances.
+         */
         private java.util.List<com.oracle.bmc.osubusage.model.ComputedUsageAggregatedSummary> items;
 
         /**
-         * A list of com.oracle.bmc.osubusage.model.ComputedUsageAggregatedSummary instances.
+         * A list of {@code com.oracle.bmc.osubusage.model.ComputedUsageAggregatedSummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

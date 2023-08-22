@@ -64,11 +64,11 @@ public class CreatePrivateEndpointResponse extends com.oracle.bmc.responses.BmcR
         return location;
     }
 
-    /** The returned PrivateEndpoint instance. */
+    /** The returned {@code PrivateEndpoint} instance. */
     private com.oracle.bmc.dataflow.model.PrivateEndpoint privateEndpoint;
 
     /**
-     * The returned PrivateEndpoint instance.
+     * The returned {@code PrivateEndpoint} instance.
      *
      * @return the value
      */
@@ -183,11 +183,11 @@ public class CreatePrivateEndpointResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned PrivateEndpoint instance. */
+        /** The returned {@code PrivateEndpoint} instance. */
         private com.oracle.bmc.dataflow.model.PrivateEndpoint privateEndpoint;
 
         /**
-         * The returned PrivateEndpoint instance.
+         * The returned {@code PrivateEndpoint} instance.
          *
          * @param privateEndpoint the value to set
          * @return this builder

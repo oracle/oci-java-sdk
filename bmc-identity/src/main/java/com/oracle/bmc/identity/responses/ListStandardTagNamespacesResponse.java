@@ -42,11 +42,15 @@ public class ListStandardTagNamespacesResponse extends com.oracle.bmc.responses.
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.identity.model.StandardTagNamespaceTemplateSummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.identity.model.StandardTagNamespaceTemplateSummary}
+     * instances.
+     */
     private java.util.List<com.oracle.bmc.identity.model.StandardTagNamespaceTemplateSummary> items;
 
     /**
-     * A list of com.oracle.bmc.identity.model.StandardTagNamespaceTemplateSummary instances.
+     * A list of {@code com.oracle.bmc.identity.model.StandardTagNamespaceTemplateSummary}
+     * instances.
      *
      * @return the value
      */
@@ -133,13 +137,15 @@ public class ListStandardTagNamespacesResponse extends com.oracle.bmc.responses.
         }
 
         /**
-         * A list of com.oracle.bmc.identity.model.StandardTagNamespaceTemplateSummary instances.
+         * A list of {@code com.oracle.bmc.identity.model.StandardTagNamespaceTemplateSummary}
+         * instances.
          */
         private java.util.List<com.oracle.bmc.identity.model.StandardTagNamespaceTemplateSummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.identity.model.StandardTagNamespaceTemplateSummary instances.
+         * A list of {@code com.oracle.bmc.identity.model.StandardTagNamespaceTemplateSummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

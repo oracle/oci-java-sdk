@@ -42,11 +42,11 @@ public class ListResourceTypesResponse extends com.oracle.bmc.responses.BmcRespo
         return opcNextPage;
     }
 
-    /** The returned ResourceTypeCollection instance. */
+    /** The returned {@code ResourceTypeCollection} instance. */
     private com.oracle.bmc.cloudguard.model.ResourceTypeCollection resourceTypeCollection;
 
     /**
-     * The returned ResourceTypeCollection instance.
+     * The returned {@code ResourceTypeCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListResourceTypesResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned ResourceTypeCollection instance. */
+        /** The returned {@code ResourceTypeCollection} instance. */
         private com.oracle.bmc.cloudguard.model.ResourceTypeCollection resourceTypeCollection;
 
         /**
-         * The returned ResourceTypeCollection instance.
+         * The returned {@code ResourceTypeCollection} instance.
          *
          * @param resourceTypeCollection the value to set
          * @return this builder

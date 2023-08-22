@@ -36,11 +36,11 @@ public class GetMeshResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Mesh instance. */
+    /** The returned {@code Mesh} instance. */
     private com.oracle.bmc.servicemesh.model.Mesh mesh;
 
     /**
-     * The returned Mesh instance.
+     * The returned {@code Mesh} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetMeshResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Mesh instance. */
+        /** The returned {@code Mesh} instance. */
         private com.oracle.bmc.servicemesh.model.Mesh mesh;
 
         /**
-         * The returned Mesh instance.
+         * The returned {@code Mesh} instance.
          *
          * @param mesh the value to set
          * @return this builder

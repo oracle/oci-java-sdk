@@ -36,11 +36,11 @@ public class GetOsPatchDetailsResponse extends com.oracle.bmc.responses.BmcRespo
         return etag;
     }
 
-    /** The returned OsPatchDetails instance. */
+    /** The returned {@code OsPatchDetails} instance. */
     private com.oracle.bmc.bds.model.OsPatchDetails osPatchDetails;
 
     /**
-     * The returned OsPatchDetails instance.
+     * The returned {@code OsPatchDetails} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetOsPatchDetailsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned OsPatchDetails instance. */
+        /** The returned {@code OsPatchDetails} instance. */
         private com.oracle.bmc.bds.model.OsPatchDetails osPatchDetails;
 
         /**
-         * The returned OsPatchDetails instance.
+         * The returned {@code OsPatchDetails} instance.
          *
          * @param osPatchDetails the value to set
          * @return this builder

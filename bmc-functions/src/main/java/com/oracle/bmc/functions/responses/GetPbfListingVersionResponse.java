@@ -36,11 +36,11 @@ public class GetPbfListingVersionResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned PbfListingVersion instance. */
+    /** The returned {@code PbfListingVersion} instance. */
     private com.oracle.bmc.functions.model.PbfListingVersion pbfListingVersion;
 
     /**
-     * The returned PbfListingVersion instance.
+     * The returned {@code PbfListingVersion} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetPbfListingVersionResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned PbfListingVersion instance. */
+        /** The returned {@code PbfListingVersion} instance. */
         private com.oracle.bmc.functions.model.PbfListingVersion pbfListingVersion;
 
         /**
-         * The returned PbfListingVersion instance.
+         * The returned {@code PbfListingVersion} instance.
          *
          * @param pbfListingVersion the value to set
          * @return this builder

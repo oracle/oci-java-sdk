@@ -36,12 +36,12 @@ public class DetectLanguageTextClassificationResponse extends com.oracle.bmc.res
         return sunset;
     }
 
-    /** The returned DetectLanguageTextClassificationResult instance. */
+    /** The returned {@code DetectLanguageTextClassificationResult} instance. */
     private com.oracle.bmc.ailanguage.model.DetectLanguageTextClassificationResult
             detectLanguageTextClassificationResult;
 
     /**
-     * The returned DetectLanguageTextClassificationResult instance.
+     * The returned {@code DetectLanguageTextClassificationResult} instance.
      *
      * @return the value
      */
@@ -121,12 +121,12 @@ public class DetectLanguageTextClassificationResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /** The returned DetectLanguageTextClassificationResult instance. */
+        /** The returned {@code DetectLanguageTextClassificationResult} instance. */
         private com.oracle.bmc.ailanguage.model.DetectLanguageTextClassificationResult
                 detectLanguageTextClassificationResult;
 
         /**
-         * The returned DetectLanguageTextClassificationResult instance.
+         * The returned {@code DetectLanguageTextClassificationResult} instance.
          *
          * @param detectLanguageTextClassificationResult the value to set
          * @return this builder

@@ -72,12 +72,12 @@ public class ListUserDefinedFunctionsResponse extends com.oracle.bmc.responses.B
         return opcTotalItems;
     }
 
-    /** The returned UserDefinedFunctionSummaryCollection instance. */
+    /** The returned {@code UserDefinedFunctionSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.UserDefinedFunctionSummaryCollection
             userDefinedFunctionSummaryCollection;
 
     /**
-     * The returned UserDefinedFunctionSummaryCollection instance.
+     * The returned {@code UserDefinedFunctionSummaryCollection} instance.
      *
      * @return the value
      */
@@ -203,12 +203,12 @@ public class ListUserDefinedFunctionsResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned UserDefinedFunctionSummaryCollection instance. */
+        /** The returned {@code UserDefinedFunctionSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.UserDefinedFunctionSummaryCollection
                 userDefinedFunctionSummaryCollection;
 
         /**
-         * The returned UserDefinedFunctionSummaryCollection instance.
+         * The returned {@code UserDefinedFunctionSummaryCollection} instance.
          *
          * @param userDefinedFunctionSummaryCollection the value to set
          * @return this builder

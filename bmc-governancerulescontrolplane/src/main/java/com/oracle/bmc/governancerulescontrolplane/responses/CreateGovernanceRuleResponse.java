@@ -64,11 +64,11 @@ public class CreateGovernanceRuleResponse extends com.oracle.bmc.responses.BmcRe
         return location;
     }
 
-    /** The returned GovernanceRule instance. */
+    /** The returned {@code GovernanceRule} instance. */
     private com.oracle.bmc.governancerulescontrolplane.model.GovernanceRule governanceRule;
 
     /**
-     * The returned GovernanceRule instance.
+     * The returned {@code GovernanceRule} instance.
      *
      * @return the value
      */
@@ -183,11 +183,11 @@ public class CreateGovernanceRuleResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned GovernanceRule instance. */
+        /** The returned {@code GovernanceRule} instance. */
         private com.oracle.bmc.governancerulescontrolplane.model.GovernanceRule governanceRule;
 
         /**
-         * The returned GovernanceRule instance.
+         * The returned {@code GovernanceRule} instance.
          *
          * @param governanceRule the value to set
          * @return this builder

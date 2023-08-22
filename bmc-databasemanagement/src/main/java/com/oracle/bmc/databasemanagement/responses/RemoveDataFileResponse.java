@@ -24,11 +24,11 @@ public class RemoveDataFileResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned TablespaceAdminStatus instance. */
+    /** The returned {@code TablespaceAdminStatus} instance. */
     private com.oracle.bmc.databasemanagement.model.TablespaceAdminStatus tablespaceAdminStatus;
 
     /**
-     * The returned TablespaceAdminStatus instance.
+     * The returned {@code TablespaceAdminStatus} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class RemoveDataFileResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned TablespaceAdminStatus instance. */
+        /** The returned {@code TablespaceAdminStatus} instance. */
         private com.oracle.bmc.databasemanagement.model.TablespaceAdminStatus tablespaceAdminStatus;
 
         /**
-         * The returned TablespaceAdminStatus instance.
+         * The returned {@code TablespaceAdminStatus} instance.
          *
          * @param tablespaceAdminStatus the value to set
          * @return this builder

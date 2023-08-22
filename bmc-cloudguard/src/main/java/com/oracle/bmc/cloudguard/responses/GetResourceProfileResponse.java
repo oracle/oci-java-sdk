@@ -36,11 +36,11 @@ public class GetResourceProfileResponse extends com.oracle.bmc.responses.BmcResp
         return etag;
     }
 
-    /** The returned ResourceProfile instance. */
+    /** The returned {@code ResourceProfile} instance. */
     private com.oracle.bmc.cloudguard.model.ResourceProfile resourceProfile;
 
     /**
-     * The returned ResourceProfile instance.
+     * The returned {@code ResourceProfile} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetResourceProfileResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned ResourceProfile instance. */
+        /** The returned {@code ResourceProfile} instance. */
         private com.oracle.bmc.cloudguard.model.ResourceProfile resourceProfile;
 
         /**
-         * The returned ResourceProfile instance.
+         * The returned {@code ResourceProfile} instance.
          *
          * @param resourceProfile the value to set
          * @return this builder

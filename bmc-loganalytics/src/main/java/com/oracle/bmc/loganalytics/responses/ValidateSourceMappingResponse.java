@@ -24,11 +24,11 @@ public class ValidateSourceMappingResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned SourceMappingResponse instance. */
+    /** The returned {@code SourceMappingResponse} instance. */
     private com.oracle.bmc.loganalytics.model.SourceMappingResponse sourceMappingResponse;
 
     /**
-     * The returned SourceMappingResponse instance.
+     * The returned {@code SourceMappingResponse} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class ValidateSourceMappingResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned SourceMappingResponse instance. */
+        /** The returned {@code SourceMappingResponse} instance. */
         private com.oracle.bmc.loganalytics.model.SourceMappingResponse sourceMappingResponse;
 
         /**
-         * The returned SourceMappingResponse instance.
+         * The returned {@code SourceMappingResponse} instance.
          *
          * @param sourceMappingResponse the value to set
          * @return this builder

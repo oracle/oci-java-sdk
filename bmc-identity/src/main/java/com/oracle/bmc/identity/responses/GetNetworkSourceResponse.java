@@ -36,11 +36,11 @@ public class GetNetworkSourceResponse extends com.oracle.bmc.responses.BmcRespon
         return etag;
     }
 
-    /** The returned NetworkSources instance. */
+    /** The returned {@code NetworkSources} instance. */
     private com.oracle.bmc.identity.model.NetworkSources networkSources;
 
     /**
-     * The returned NetworkSources instance.
+     * The returned {@code NetworkSources} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetNetworkSourceResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned NetworkSources instance. */
+        /** The returned {@code NetworkSources} instance. */
         private com.oracle.bmc.identity.model.NetworkSources networkSources;
 
         /**
-         * The returned NetworkSources instance.
+         * The returned {@code NetworkSources} instance.
          *
          * @param networkSources the value to set
          * @return this builder

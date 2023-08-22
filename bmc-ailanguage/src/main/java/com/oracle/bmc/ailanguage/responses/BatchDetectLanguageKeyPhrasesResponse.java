@@ -24,12 +24,12 @@ public class BatchDetectLanguageKeyPhrasesResponse extends com.oracle.bmc.respon
         return opcRequestId;
     }
 
-    /** The returned BatchDetectLanguageKeyPhrasesResult instance. */
+    /** The returned {@code BatchDetectLanguageKeyPhrasesResult} instance. */
     private com.oracle.bmc.ailanguage.model.BatchDetectLanguageKeyPhrasesResult
             batchDetectLanguageKeyPhrasesResult;
 
     /**
-     * The returned BatchDetectLanguageKeyPhrasesResult instance.
+     * The returned {@code BatchDetectLanguageKeyPhrasesResult} instance.
      *
      * @return the value
      */
@@ -92,12 +92,12 @@ public class BatchDetectLanguageKeyPhrasesResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned BatchDetectLanguageKeyPhrasesResult instance. */
+        /** The returned {@code BatchDetectLanguageKeyPhrasesResult} instance. */
         private com.oracle.bmc.ailanguage.model.BatchDetectLanguageKeyPhrasesResult
                 batchDetectLanguageKeyPhrasesResult;
 
         /**
-         * The returned BatchDetectLanguageKeyPhrasesResult instance.
+         * The returned {@code BatchDetectLanguageKeyPhrasesResult} instance.
          *
          * @param batchDetectLanguageKeyPhrasesResult the value to set
          * @return this builder

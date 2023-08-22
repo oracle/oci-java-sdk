@@ -36,11 +36,11 @@ public class GetExternalContainerDatabaseResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /** The returned ExternalContainerDatabase instance. */
+    /** The returned {@code ExternalContainerDatabase} instance. */
     private com.oracle.bmc.database.model.ExternalContainerDatabase externalContainerDatabase;
 
     /**
-     * The returned ExternalContainerDatabase instance.
+     * The returned {@code ExternalContainerDatabase} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetExternalContainerDatabaseResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned ExternalContainerDatabase instance. */
+        /** The returned {@code ExternalContainerDatabase} instance. */
         private com.oracle.bmc.database.model.ExternalContainerDatabase externalContainerDatabase;
 
         /**
-         * The returned ExternalContainerDatabase instance.
+         * The returned {@code ExternalContainerDatabase} instance.
          *
          * @param externalContainerDatabase the value to set
          * @return this builder

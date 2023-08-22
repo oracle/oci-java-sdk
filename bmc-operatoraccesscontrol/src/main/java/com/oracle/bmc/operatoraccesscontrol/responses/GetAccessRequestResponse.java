@@ -24,11 +24,11 @@ public class GetAccessRequestResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned AccessRequest instance. */
+    /** The returned {@code AccessRequest} instance. */
     private com.oracle.bmc.operatoraccesscontrol.model.AccessRequest accessRequest;
 
     /**
-     * The returned AccessRequest instance.
+     * The returned {@code AccessRequest} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetAccessRequestResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned AccessRequest instance. */
+        /** The returned {@code AccessRequest} instance. */
         private com.oracle.bmc.operatoraccesscontrol.model.AccessRequest accessRequest;
 
         /**
-         * The returned AccessRequest instance.
+         * The returned {@code AccessRequest} instance.
          *
          * @param accessRequest the value to set
          * @return this builder

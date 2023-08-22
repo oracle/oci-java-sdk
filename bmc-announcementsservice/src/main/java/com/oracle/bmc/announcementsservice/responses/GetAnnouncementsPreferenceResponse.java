@@ -36,12 +36,12 @@ public class GetAnnouncementsPreferenceResponse extends com.oracle.bmc.responses
         return etag;
     }
 
-    /** The returned AnnouncementsPreferences instance. */
+    /** The returned {@code AnnouncementsPreferences} instance. */
     private com.oracle.bmc.announcementsservice.model.AnnouncementsPreferences
             announcementsPreferences;
 
     /**
-     * The returned AnnouncementsPreferences instance.
+     * The returned {@code AnnouncementsPreferences} instance.
      *
      * @return the value
      */
@@ -121,12 +121,12 @@ public class GetAnnouncementsPreferenceResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned AnnouncementsPreferences instance. */
+        /** The returned {@code AnnouncementsPreferences} instance. */
         private com.oracle.bmc.announcementsservice.model.AnnouncementsPreferences
                 announcementsPreferences;
 
         /**
-         * The returned AnnouncementsPreferences instance.
+         * The returned {@code AnnouncementsPreferences} instance.
          *
          * @param announcementsPreferences the value to set
          * @return this builder

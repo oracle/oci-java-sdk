@@ -36,12 +36,12 @@ public class GetExternalDbSystemConnectorResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /** The returned ExternalDbSystemConnector instance. */
+    /** The returned {@code ExternalDbSystemConnector} instance. */
     private com.oracle.bmc.databasemanagement.model.ExternalDbSystemConnector
             externalDbSystemConnector;
 
     /**
-     * The returned ExternalDbSystemConnector instance.
+     * The returned {@code ExternalDbSystemConnector} instance.
      *
      * @return the value
      */
@@ -121,12 +121,12 @@ public class GetExternalDbSystemConnectorResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned ExternalDbSystemConnector instance. */
+        /** The returned {@code ExternalDbSystemConnector} instance. */
         private com.oracle.bmc.databasemanagement.model.ExternalDbSystemConnector
                 externalDbSystemConnector;
 
         /**
-         * The returned ExternalDbSystemConnector instance.
+         * The returned {@code ExternalDbSystemConnector} instance.
          *
          * @param externalDbSystemConnector the value to set
          * @return this builder

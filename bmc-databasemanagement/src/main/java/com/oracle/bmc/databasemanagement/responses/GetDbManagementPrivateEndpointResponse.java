@@ -36,12 +36,12 @@ public class GetDbManagementPrivateEndpointResponse extends com.oracle.bmc.respo
         return opcRequestId;
     }
 
-    /** The returned DbManagementPrivateEndpoint instance. */
+    /** The returned {@code DbManagementPrivateEndpoint} instance. */
     private com.oracle.bmc.databasemanagement.model.DbManagementPrivateEndpoint
             dbManagementPrivateEndpoint;
 
     /**
-     * The returned DbManagementPrivateEndpoint instance.
+     * The returned {@code DbManagementPrivateEndpoint} instance.
      *
      * @return the value
      */
@@ -121,12 +121,12 @@ public class GetDbManagementPrivateEndpointResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned DbManagementPrivateEndpoint instance. */
+        /** The returned {@code DbManagementPrivateEndpoint} instance. */
         private com.oracle.bmc.databasemanagement.model.DbManagementPrivateEndpoint
                 dbManagementPrivateEndpoint;
 
         /**
-         * The returned DbManagementPrivateEndpoint instance.
+         * The returned {@code DbManagementPrivateEndpoint} instance.
          *
          * @param dbManagementPrivateEndpoint the value to set
          * @return this builder

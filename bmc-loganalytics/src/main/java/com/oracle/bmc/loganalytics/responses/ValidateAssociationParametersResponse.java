@@ -36,12 +36,12 @@ public class ValidateAssociationParametersResponse extends com.oracle.bmc.respon
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsAssociationParameterCollection instance. */
+    /** The returned {@code LogAnalyticsAssociationParameterCollection} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsAssociationParameterCollection
             logAnalyticsAssociationParameterCollection;
 
     /**
-     * The returned LogAnalyticsAssociationParameterCollection instance.
+     * The returned {@code LogAnalyticsAssociationParameterCollection} instance.
      *
      * @return the value
      */
@@ -122,12 +122,12 @@ public class ValidateAssociationParametersResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned LogAnalyticsAssociationParameterCollection instance. */
+        /** The returned {@code LogAnalyticsAssociationParameterCollection} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsAssociationParameterCollection
                 logAnalyticsAssociationParameterCollection;
 
         /**
-         * The returned LogAnalyticsAssociationParameterCollection instance.
+         * The returned {@code LogAnalyticsAssociationParameterCollection} instance.
          *
          * @param logAnalyticsAssociationParameterCollection the value to set
          * @return this builder

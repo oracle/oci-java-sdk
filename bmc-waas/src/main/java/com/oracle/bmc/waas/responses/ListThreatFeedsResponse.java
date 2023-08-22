@@ -54,11 +54,11 @@ public class ListThreatFeedsResponse extends com.oracle.bmc.responses.BmcRespons
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.waas.model.ThreatFeed instances. */
+    /** A list of {@code com.oracle.bmc.waas.model.ThreatFeed} instances. */
     private java.util.List<com.oracle.bmc.waas.model.ThreatFeed> items;
 
     /**
-     * A list of com.oracle.bmc.waas.model.ThreatFeed instances.
+     * A list of {@code com.oracle.bmc.waas.model.ThreatFeed} instances.
      *
      * @return the value
      */
@@ -158,11 +158,11 @@ public class ListThreatFeedsResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** A list of com.oracle.bmc.waas.model.ThreatFeed instances. */
+        /** A list of {@code com.oracle.bmc.waas.model.ThreatFeed} instances. */
         private java.util.List<com.oracle.bmc.waas.model.ThreatFeed> items;
 
         /**
-         * A list of com.oracle.bmc.waas.model.ThreatFeed instances.
+         * A list of {@code com.oracle.bmc.waas.model.ThreatFeed} instances.
          *
          * @param items the value to set
          * @return this builder

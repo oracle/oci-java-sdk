@@ -42,11 +42,11 @@ public class ListResponderRecipesResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** The returned ResponderRecipeCollection instance. */
+    /** The returned {@code ResponderRecipeCollection} instance. */
     private com.oracle.bmc.cloudguard.model.ResponderRecipeCollection responderRecipeCollection;
 
     /**
-     * The returned ResponderRecipeCollection instance.
+     * The returned {@code ResponderRecipeCollection} instance.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListResponderRecipesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned ResponderRecipeCollection instance. */
+        /** The returned {@code ResponderRecipeCollection} instance. */
         private com.oracle.bmc.cloudguard.model.ResponderRecipeCollection responderRecipeCollection;
 
         /**
-         * The returned ResponderRecipeCollection instance.
+         * The returned {@code ResponderRecipeCollection} instance.
          *
          * @param responderRecipeCollection the value to set
          * @return this builder

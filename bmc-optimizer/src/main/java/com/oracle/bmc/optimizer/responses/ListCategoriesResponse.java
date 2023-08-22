@@ -60,11 +60,11 @@ public class ListCategoriesResponse extends com.oracle.bmc.responses.BmcResponse
         return opcPrevPage;
     }
 
-    /** The returned CategoryCollection instance. */
+    /** The returned {@code CategoryCollection} instance. */
     private com.oracle.bmc.optimizer.model.CategoryCollection categoryCollection;
 
     /**
-     * The returned CategoryCollection instance.
+     * The returned {@code CategoryCollection} instance.
      *
      * @return the value
      */
@@ -170,11 +170,11 @@ public class ListCategoriesResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned CategoryCollection instance. */
+        /** The returned {@code CategoryCollection} instance. */
         private com.oracle.bmc.optimizer.model.CategoryCollection categoryCollection;
 
         /**
-         * The returned CategoryCollection instance.
+         * The returned {@code CategoryCollection} instance.
          *
          * @param categoryCollection the value to set
          * @return this builder

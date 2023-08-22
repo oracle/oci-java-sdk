@@ -54,11 +54,11 @@ public class SummarizeExadataMembersResponse extends com.oracle.bmc.responses.Bm
         return opcNextPage;
     }
 
-    /** The returned ExadataMemberCollection instance. */
+    /** The returned {@code ExadataMemberCollection} instance. */
     private com.oracle.bmc.opsi.model.ExadataMemberCollection exadataMemberCollection;
 
     /**
-     * The returned ExadataMemberCollection instance.
+     * The returned {@code ExadataMemberCollection} instance.
      *
      * @return the value
      */
@@ -159,11 +159,11 @@ public class SummarizeExadataMembersResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned ExadataMemberCollection instance. */
+        /** The returned {@code ExadataMemberCollection} instance. */
         private com.oracle.bmc.opsi.model.ExadataMemberCollection exadataMemberCollection;
 
         /**
-         * The returned ExadataMemberCollection instance.
+         * The returned {@code ExadataMemberCollection} instance.
          *
          * @param exadataMemberCollection the value to set
          * @return this builder

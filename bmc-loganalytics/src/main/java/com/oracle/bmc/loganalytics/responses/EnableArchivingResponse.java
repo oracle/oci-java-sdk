@@ -36,11 +36,11 @@ public class EnableArchivingResponse extends com.oracle.bmc.responses.BmcRespons
         return etag;
     }
 
-    /** The returned Success instance. */
+    /** The returned {@code Success} instance. */
     private com.oracle.bmc.loganalytics.model.Success success;
 
     /**
-     * The returned Success instance.
+     * The returned {@code Success} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class EnableArchivingResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned Success instance. */
+        /** The returned {@code Success} instance. */
         private com.oracle.bmc.loganalytics.model.Success success;
 
         /**
-         * The returned Success instance.
+         * The returned {@code Success} instance.
          *
          * @param success the value to set
          * @return this builder

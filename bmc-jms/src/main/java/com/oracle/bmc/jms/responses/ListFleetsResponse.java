@@ -44,11 +44,11 @@ public class ListFleetsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned FleetCollection instance. */
+    /** The returned {@code FleetCollection} instance. */
     private com.oracle.bmc.jms.model.FleetCollection fleetCollection;
 
     /**
-     * The returned FleetCollection instance.
+     * The returned {@code FleetCollection} instance.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListFleetsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned FleetCollection instance. */
+        /** The returned {@code FleetCollection} instance. */
         private com.oracle.bmc.jms.model.FleetCollection fleetCollection;
 
         /**
-         * The returned FleetCollection instance.
+         * The returned {@code FleetCollection} instance.
          *
          * @param fleetCollection the value to set
          * @return this builder

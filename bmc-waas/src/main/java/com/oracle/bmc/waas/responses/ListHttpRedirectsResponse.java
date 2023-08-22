@@ -42,11 +42,11 @@ public class ListHttpRedirectsResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.waas.model.HttpRedirectSummary instances. */
+    /** A list of {@code com.oracle.bmc.waas.model.HttpRedirectSummary} instances. */
     private java.util.List<com.oracle.bmc.waas.model.HttpRedirectSummary> items;
 
     /**
-     * A list of com.oracle.bmc.waas.model.HttpRedirectSummary instances.
+     * A list of {@code com.oracle.bmc.waas.model.HttpRedirectSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListHttpRedirectsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** A list of com.oracle.bmc.waas.model.HttpRedirectSummary instances. */
+        /** A list of {@code com.oracle.bmc.waas.model.HttpRedirectSummary} instances. */
         private java.util.List<com.oracle.bmc.waas.model.HttpRedirectSummary> items;
 
         /**
-         * A list of com.oracle.bmc.waas.model.HttpRedirectSummary instances.
+         * A list of {@code com.oracle.bmc.waas.model.HttpRedirectSummary} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class GetContainerResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Container instance. */
+    /** The returned {@code Container} instance. */
     private com.oracle.bmc.containerinstances.model.Container container;
 
     /**
-     * The returned Container instance.
+     * The returned {@code Container} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetContainerResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Container instance. */
+        /** The returned {@code Container} instance. */
         private com.oracle.bmc.containerinstances.model.Container container;
 
         /**
-         * The returned Container instance.
+         * The returned {@code Container} instance.
          *
          * @param container the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListConsoleHistoriesResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.ConsoleHistory instances. */
+    /** A list of {@code com.oracle.bmc.core.model.ConsoleHistory} instances. */
     private java.util.List<com.oracle.bmc.core.model.ConsoleHistory> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.ConsoleHistory instances.
+     * A list of {@code com.oracle.bmc.core.model.ConsoleHistory} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListConsoleHistoriesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.ConsoleHistory instances. */
+        /** A list of {@code com.oracle.bmc.core.model.ConsoleHistory} instances. */
         private java.util.List<com.oracle.bmc.core.model.ConsoleHistory> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.ConsoleHistory instances.
+         * A list of {@code com.oracle.bmc.core.model.ConsoleHistory} instances.
          *
          * @param items the value to set
          * @return this builder

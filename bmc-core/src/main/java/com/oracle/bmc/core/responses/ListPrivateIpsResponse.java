@@ -42,11 +42,11 @@ public class ListPrivateIpsResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.PrivateIp instances. */
+    /** A list of {@code com.oracle.bmc.core.model.PrivateIp} instances. */
     private java.util.List<com.oracle.bmc.core.model.PrivateIp> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.PrivateIp instances.
+     * A list of {@code com.oracle.bmc.core.model.PrivateIp} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListPrivateIpsResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.PrivateIp instances. */
+        /** A list of {@code com.oracle.bmc.core.model.PrivateIp} instances. */
         private java.util.List<com.oracle.bmc.core.model.PrivateIp> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.PrivateIp instances.
+         * A list of {@code com.oracle.bmc.core.model.PrivateIp} instances.
          *
          * @param items the value to set
          * @return this builder

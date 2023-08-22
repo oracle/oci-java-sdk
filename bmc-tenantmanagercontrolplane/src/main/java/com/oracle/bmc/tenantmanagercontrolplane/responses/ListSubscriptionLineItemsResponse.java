@@ -42,12 +42,12 @@ public class ListSubscriptionLineItemsResponse extends com.oracle.bmc.responses.
         return opcNextPage;
     }
 
-    /** The returned SubscriptionLineItemCollection instance. */
+    /** The returned {@code SubscriptionLineItemCollection} instance. */
     private com.oracle.bmc.tenantmanagercontrolplane.model.SubscriptionLineItemCollection
             subscriptionLineItemCollection;
 
     /**
-     * The returned SubscriptionLineItemCollection instance.
+     * The returned {@code SubscriptionLineItemCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListSubscriptionLineItemsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned SubscriptionLineItemCollection instance. */
+        /** The returned {@code SubscriptionLineItemCollection} instance. */
         private com.oracle.bmc.tenantmanagercontrolplane.model.SubscriptionLineItemCollection
                 subscriptionLineItemCollection;
 
         /**
-         * The returned SubscriptionLineItemCollection instance.
+         * The returned {@code SubscriptionLineItemCollection} instance.
          *
          * @param subscriptionLineItemCollection the value to set
          * @return this builder

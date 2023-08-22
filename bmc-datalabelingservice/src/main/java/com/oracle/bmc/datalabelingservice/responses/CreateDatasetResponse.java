@@ -76,11 +76,11 @@ public class CreateDatasetResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** The returned Dataset instance. */
+    /** The returned {@code Dataset} instance. */
     private com.oracle.bmc.datalabelingservice.model.Dataset dataset;
 
     /**
-     * The returned Dataset instance.
+     * The returned {@code Dataset} instance.
      *
      * @return the value
      */
@@ -212,11 +212,11 @@ public class CreateDatasetResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned Dataset instance. */
+        /** The returned {@code Dataset} instance. */
         private com.oracle.bmc.datalabelingservice.model.Dataset dataset;
 
         /**
-         * The returned Dataset instance.
+         * The returned {@code Dataset} instance.
          *
          * @param dataset the value to set
          * @return this builder

@@ -24,11 +24,11 @@ public class GetTemplateResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Template instance. */
+    /** The returned {@code Template} instance. */
     private com.oracle.bmc.dataintegration.model.Template template;
 
     /**
-     * The returned Template instance.
+     * The returned {@code Template} instance.
      *
      * @return the value
      */
@@ -83,11 +83,11 @@ public class GetTemplateResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Template instance. */
+        /** The returned {@code Template} instance. */
         private com.oracle.bmc.dataintegration.model.Template template;
 
         /**
-         * The returned Template instance.
+         * The returned {@code Template} instance.
          *
          * @param template the value to set
          * @return this builder

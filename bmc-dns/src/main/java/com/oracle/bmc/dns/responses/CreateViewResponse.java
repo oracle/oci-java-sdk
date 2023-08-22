@@ -68,11 +68,11 @@ public class CreateViewResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcWorkRequestId;
     }
 
-    /** The returned View instance. */
+    /** The returned {@code View} instance. */
     private com.oracle.bmc.dns.model.View view;
 
     /**
-     * The returned View instance.
+     * The returned {@code View} instance.
      *
      * @return the value
      */
@@ -193,11 +193,11 @@ public class CreateViewResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned View instance. */
+        /** The returned {@code View} instance. */
         private com.oracle.bmc.dns.model.View view;
 
         /**
-         * The returned View instance.
+         * The returned {@code View} instance.
          *
          * @param view the value to set
          * @return this builder

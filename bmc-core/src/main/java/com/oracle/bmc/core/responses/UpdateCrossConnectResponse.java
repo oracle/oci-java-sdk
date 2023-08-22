@@ -36,11 +36,11 @@ public class UpdateCrossConnectResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned CrossConnect instance. */
+    /** The returned {@code CrossConnect} instance. */
     private com.oracle.bmc.core.model.CrossConnect crossConnect;
 
     /**
-     * The returned CrossConnect instance.
+     * The returned {@code CrossConnect} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateCrossConnectResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned CrossConnect instance. */
+        /** The returned {@code CrossConnect} instance. */
         private com.oracle.bmc.core.model.CrossConnect crossConnect;
 
         /**
-         * The returned CrossConnect instance.
+         * The returned {@code CrossConnect} instance.
          *
          * @param crossConnect the value to set
          * @return this builder

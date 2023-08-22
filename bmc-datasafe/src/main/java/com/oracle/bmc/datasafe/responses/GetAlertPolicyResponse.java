@@ -42,11 +42,11 @@ public class GetAlertPolicyResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned AlertPolicy instance. */
+    /** The returned {@code AlertPolicy} instance. */
     private com.oracle.bmc.datasafe.model.AlertPolicy alertPolicy;
 
     /**
-     * The returned AlertPolicy instance.
+     * The returned {@code AlertPolicy} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class GetAlertPolicyResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned AlertPolicy instance. */
+        /** The returned {@code AlertPolicy} instance. */
         private com.oracle.bmc.datasafe.model.AlertPolicy alertPolicy;
 
         /**
-         * The returned AlertPolicy instance.
+         * The returned {@code AlertPolicy} instance.
          *
          * @param alertPolicy the value to set
          * @return this builder

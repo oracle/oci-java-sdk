@@ -56,11 +56,11 @@ public class ListIntegrationInstancesResponse extends com.oracle.bmc.responses.B
         return opcPreviousPage;
     }
 
-    /** A list of com.oracle.bmc.integration.model.IntegrationInstanceSummary instances. */
+    /** A list of {@code com.oracle.bmc.integration.model.IntegrationInstanceSummary} instances. */
     private java.util.List<com.oracle.bmc.integration.model.IntegrationInstanceSummary> items;
 
     /**
-     * A list of com.oracle.bmc.integration.model.IntegrationInstanceSummary instances.
+     * A list of {@code com.oracle.bmc.integration.model.IntegrationInstanceSummary} instances.
      *
      * @return the value
      */
@@ -163,11 +163,13 @@ public class ListIntegrationInstancesResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** A list of com.oracle.bmc.integration.model.IntegrationInstanceSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.integration.model.IntegrationInstanceSummary} instances.
+         */
         private java.util.List<com.oracle.bmc.integration.model.IntegrationInstanceSummary> items;
 
         /**
-         * A list of com.oracle.bmc.integration.model.IntegrationInstanceSummary instances.
+         * A list of {@code com.oracle.bmc.integration.model.IntegrationInstanceSummary} instances.
          *
          * @param items the value to set
          * @return this builder

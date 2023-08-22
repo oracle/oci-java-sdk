@@ -43,12 +43,12 @@ public class ListManagedInstanceGroupAvailableSoftwareSourcesResponse
         return opcNextPage;
     }
 
-    /** The returned AvailableSoftwareSourceCollection instance. */
+    /** The returned {@code AvailableSoftwareSourceCollection} instance. */
     private com.oracle.bmc.osmanagementhub.model.AvailableSoftwareSourceCollection
             availableSoftwareSourceCollection;
 
     /**
-     * The returned AvailableSoftwareSourceCollection instance.
+     * The returned {@code AvailableSoftwareSourceCollection} instance.
      *
      * @return the value
      */
@@ -134,12 +134,12 @@ public class ListManagedInstanceGroupAvailableSoftwareSourcesResponse
             return this;
         }
 
-        /** The returned AvailableSoftwareSourceCollection instance. */
+        /** The returned {@code AvailableSoftwareSourceCollection} instance. */
         private com.oracle.bmc.osmanagementhub.model.AvailableSoftwareSourceCollection
                 availableSoftwareSourceCollection;
 
         /**
-         * The returned AvailableSoftwareSourceCollection instance.
+         * The returned {@code AvailableSoftwareSourceCollection} instance.
          *
          * @param availableSoftwareSourceCollection the value to set
          * @return this builder

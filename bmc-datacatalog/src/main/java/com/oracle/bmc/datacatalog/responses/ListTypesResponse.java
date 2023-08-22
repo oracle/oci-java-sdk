@@ -42,11 +42,11 @@ public class ListTypesResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned TypeCollection instance. */
+    /** The returned {@code TypeCollection} instance. */
     private com.oracle.bmc.datacatalog.model.TypeCollection typeCollection;
 
     /**
-     * The returned TypeCollection instance.
+     * The returned {@code TypeCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListTypesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned TypeCollection instance. */
+        /** The returned {@code TypeCollection} instance. */
         private com.oracle.bmc.datacatalog.model.TypeCollection typeCollection;
 
         /**
-         * The returned TypeCollection instance.
+         * The returned {@code TypeCollection} instance.
          *
          * @param typeCollection the value to set
          * @return this builder

@@ -37,12 +37,12 @@ public class GetGovernanceInstanceConfigurationResponse
         return opcRequestId;
     }
 
-    /** The returned GovernanceInstanceConfiguration instance. */
+    /** The returned {@code GovernanceInstanceConfiguration} instance. */
     private com.oracle.bmc.accessgovernancecp.model.GovernanceInstanceConfiguration
             governanceInstanceConfiguration;
 
     /**
-     * The returned GovernanceInstanceConfiguration instance.
+     * The returned {@code GovernanceInstanceConfiguration} instance.
      *
      * @return the value
      */
@@ -122,12 +122,12 @@ public class GetGovernanceInstanceConfigurationResponse
             return this;
         }
 
-        /** The returned GovernanceInstanceConfiguration instance. */
+        /** The returned {@code GovernanceInstanceConfiguration} instance. */
         private com.oracle.bmc.accessgovernancecp.model.GovernanceInstanceConfiguration
                 governanceInstanceConfiguration;
 
         /**
-         * The returned GovernanceInstanceConfiguration instance.
+         * The returned {@code GovernanceInstanceConfiguration} instance.
          *
          * @param governanceInstanceConfiguration the value to set
          * @return this builder

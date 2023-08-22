@@ -40,11 +40,11 @@ public class CreateTermResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Term instance. */
+    /** The returned {@code Term} instance. */
     private com.oracle.bmc.datacatalog.model.Term term;
 
     /**
-     * The returned Term instance.
+     * The returned {@code Term} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class CreateTermResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Term instance. */
+        /** The returned {@code Term} instance. */
         private com.oracle.bmc.datacatalog.model.Term term;
 
         /**
-         * The returned Term instance.
+         * The returned {@code Term} instance.
          *
          * @param term the value to set
          * @return this builder

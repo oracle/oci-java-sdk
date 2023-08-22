@@ -52,11 +52,11 @@ public class CreateMigrationResponse extends com.oracle.bmc.responses.BmcRespons
         return opcWorkRequestId;
     }
 
-    /** The returned Migration instance. */
+    /** The returned {@code Migration} instance. */
     private com.oracle.bmc.databasemigration.model.Migration migration;
 
     /**
-     * The returned Migration instance.
+     * The returned {@code Migration} instance.
      *
      * @return the value
      */
@@ -154,11 +154,11 @@ public class CreateMigrationResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned Migration instance. */
+        /** The returned {@code Migration} instance. */
         private com.oracle.bmc.databasemigration.model.Migration migration;
 
         /**
-         * The returned Migration instance.
+         * The returned {@code Migration} instance.
          *
          * @param migration the value to set
          * @return this builder

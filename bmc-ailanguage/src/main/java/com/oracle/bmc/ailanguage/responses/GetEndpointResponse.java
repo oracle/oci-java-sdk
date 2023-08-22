@@ -36,11 +36,11 @@ public class GetEndpointResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Endpoint instance. */
+    /** The returned {@code Endpoint} instance. */
     private com.oracle.bmc.ailanguage.model.Endpoint endpoint;
 
     /**
-     * The returned Endpoint instance.
+     * The returned {@code Endpoint} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetEndpointResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Endpoint instance. */
+        /** The returned {@code Endpoint} instance. */
         private com.oracle.bmc.ailanguage.model.Endpoint endpoint;
 
         /**
-         * The returned Endpoint instance.
+         * The returned {@code Endpoint} instance.
          *
          * @param endpoint the value to set
          * @return this builder

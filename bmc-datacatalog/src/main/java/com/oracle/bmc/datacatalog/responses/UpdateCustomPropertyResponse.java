@@ -40,11 +40,11 @@ public class UpdateCustomPropertyResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned CustomProperty instance. */
+    /** The returned {@code CustomProperty} instance. */
     private com.oracle.bmc.datacatalog.model.CustomProperty customProperty;
 
     /**
-     * The returned CustomProperty instance.
+     * The returned {@code CustomProperty} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class UpdateCustomPropertyResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned CustomProperty instance. */
+        /** The returned {@code CustomProperty} instance. */
         private com.oracle.bmc.datacatalog.model.CustomProperty customProperty;
 
         /**
-         * The returned CustomProperty instance.
+         * The returned {@code CustomProperty} instance.
          *
          * @param customProperty the value to set
          * @return this builder

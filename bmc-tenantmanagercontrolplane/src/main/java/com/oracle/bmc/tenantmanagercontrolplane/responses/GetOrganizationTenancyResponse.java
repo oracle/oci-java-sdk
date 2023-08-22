@@ -36,11 +36,11 @@ public class GetOrganizationTenancyResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned OrganizationTenancy instance. */
+    /** The returned {@code OrganizationTenancy} instance. */
     private com.oracle.bmc.tenantmanagercontrolplane.model.OrganizationTenancy organizationTenancy;
 
     /**
-     * The returned OrganizationTenancy instance.
+     * The returned {@code OrganizationTenancy} instance.
      *
      * @return the value
      */
@@ -120,12 +120,12 @@ public class GetOrganizationTenancyResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned OrganizationTenancy instance. */
+        /** The returned {@code OrganizationTenancy} instance. */
         private com.oracle.bmc.tenantmanagercontrolplane.model.OrganizationTenancy
                 organizationTenancy;
 
         /**
-         * The returned OrganizationTenancy instance.
+         * The returned {@code OrganizationTenancy} instance.
          *
          * @param organizationTenancy the value to set
          * @return this builder

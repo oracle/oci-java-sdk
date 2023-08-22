@@ -36,11 +36,11 @@ public class GetUploadResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Upload instance. */
+    /** The returned {@code Upload} instance. */
     private com.oracle.bmc.loganalytics.model.Upload upload;
 
     /**
-     * The returned Upload instance.
+     * The returned {@code Upload} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetUploadResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Upload instance. */
+        /** The returned {@code Upload} instance. */
         private com.oracle.bmc.loganalytics.model.Upload upload;
 
         /**
-         * The returned Upload instance.
+         * The returned {@code Upload} instance.
          *
          * @param upload the value to set
          * @return this builder

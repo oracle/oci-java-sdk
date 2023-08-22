@@ -42,11 +42,11 @@ public class ListHttpProbeResultsResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.healthchecks.model.HttpProbeResultSummary instances. */
+    /** A list of {@code com.oracle.bmc.healthchecks.model.HttpProbeResultSummary} instances. */
     private java.util.List<com.oracle.bmc.healthchecks.model.HttpProbeResultSummary> items;
 
     /**
-     * A list of com.oracle.bmc.healthchecks.model.HttpProbeResultSummary instances.
+     * A list of {@code com.oracle.bmc.healthchecks.model.HttpProbeResultSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListHttpProbeResultsResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** A list of com.oracle.bmc.healthchecks.model.HttpProbeResultSummary instances. */
+        /** A list of {@code com.oracle.bmc.healthchecks.model.HttpProbeResultSummary} instances. */
         private java.util.List<com.oracle.bmc.healthchecks.model.HttpProbeResultSummary> items;
 
         /**
-         * A list of com.oracle.bmc.healthchecks.model.HttpProbeResultSummary instances.
+         * A list of {@code com.oracle.bmc.healthchecks.model.HttpProbeResultSummary} instances.
          *
          * @param items the value to set
          * @return this builder

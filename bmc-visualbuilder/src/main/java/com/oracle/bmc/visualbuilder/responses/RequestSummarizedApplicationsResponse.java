@@ -36,12 +36,12 @@ public class RequestSummarizedApplicationsResponse extends com.oracle.bmc.respon
         return opcRequestId;
     }
 
-    /** The returned ApplicationSummaryCollection instance. */
+    /** The returned {@code ApplicationSummaryCollection} instance. */
     private com.oracle.bmc.visualbuilder.model.ApplicationSummaryCollection
             applicationSummaryCollection;
 
     /**
-     * The returned ApplicationSummaryCollection instance.
+     * The returned {@code ApplicationSummaryCollection} instance.
      *
      * @return the value
      */
@@ -121,12 +121,12 @@ public class RequestSummarizedApplicationsResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned ApplicationSummaryCollection instance. */
+        /** The returned {@code ApplicationSummaryCollection} instance. */
         private com.oracle.bmc.visualbuilder.model.ApplicationSummaryCollection
                 applicationSummaryCollection;
 
         /**
-         * The returned ApplicationSummaryCollection instance.
+         * The returned {@code ApplicationSummaryCollection} instance.
          *
          * @param applicationSummaryCollection the value to set
          * @return this builder

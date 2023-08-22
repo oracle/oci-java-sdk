@@ -36,11 +36,11 @@ public class CreateDhcpOptionsResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned DhcpOptions instance. */
+    /** The returned {@code DhcpOptions} instance. */
     private com.oracle.bmc.core.model.DhcpOptions dhcpOptions;
 
     /**
-     * The returned DhcpOptions instance.
+     * The returned {@code DhcpOptions} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class CreateDhcpOptionsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned DhcpOptions instance. */
+        /** The returned {@code DhcpOptions} instance. */
         private com.oracle.bmc.core.model.DhcpOptions dhcpOptions;
 
         /**
-         * The returned DhcpOptions instance.
+         * The returned {@code DhcpOptions} instance.
          *
          * @param dhcpOptions the value to set
          * @return this builder

@@ -57,11 +57,11 @@ public class MigrateExadataDbSystemResourceModelResponse
         return etag;
     }
 
-    /** The returned ExadataDbSystemMigration instance. */
+    /** The returned {@code ExadataDbSystemMigration} instance. */
     private com.oracle.bmc.database.model.ExadataDbSystemMigration exadataDbSystemMigration;
 
     /**
-     * The returned ExadataDbSystemMigration instance.
+     * The returned {@code ExadataDbSystemMigration} instance.
      *
      * @return the value
      */
@@ -164,11 +164,11 @@ public class MigrateExadataDbSystemResourceModelResponse
             return this;
         }
 
-        /** The returned ExadataDbSystemMigration instance. */
+        /** The returned {@code ExadataDbSystemMigration} instance. */
         private com.oracle.bmc.database.model.ExadataDbSystemMigration exadataDbSystemMigration;
 
         /**
-         * The returned ExadataDbSystemMigration instance.
+         * The returned {@code ExadataDbSystemMigration} instance.
          *
          * @param exadataDbSystemMigration the value to set
          * @return this builder

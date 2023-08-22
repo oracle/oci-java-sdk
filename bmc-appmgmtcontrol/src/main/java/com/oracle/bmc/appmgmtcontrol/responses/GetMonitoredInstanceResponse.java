@@ -36,11 +36,11 @@ public class GetMonitoredInstanceResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned MonitoredInstance instance. */
+    /** The returned {@code MonitoredInstance} instance. */
     private com.oracle.bmc.appmgmtcontrol.model.MonitoredInstance monitoredInstance;
 
     /**
-     * The returned MonitoredInstance instance.
+     * The returned {@code MonitoredInstance} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetMonitoredInstanceResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned MonitoredInstance instance. */
+        /** The returned {@code MonitoredInstance} instance. */
         private com.oracle.bmc.appmgmtcontrol.model.MonitoredInstance monitoredInstance;
 
         /**
-         * The returned MonitoredInstance instance.
+         * The returned {@code MonitoredInstance} instance.
          *
          * @param monitoredInstance the value to set
          * @return this builder

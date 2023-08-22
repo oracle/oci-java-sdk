@@ -36,11 +36,11 @@ public class UpdateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned Configuration instance. */
+    /** The returned {@code Configuration} instance. */
     private com.oracle.bmc.mysql.model.Configuration configuration;
 
     /**
-     * The returned Configuration instance.
+     * The returned {@code Configuration} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned Configuration instance. */
+        /** The returned {@code Configuration} instance. */
         private com.oracle.bmc.mysql.model.Configuration configuration;
 
         /**
-         * The returned Configuration instance.
+         * The returned {@code Configuration} instance.
          *
          * @param configuration the value to set
          * @return this builder

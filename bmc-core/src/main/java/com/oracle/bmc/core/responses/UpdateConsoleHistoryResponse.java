@@ -36,11 +36,11 @@ public class UpdateConsoleHistoryResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned ConsoleHistory instance. */
+    /** The returned {@code ConsoleHistory} instance. */
     private com.oracle.bmc.core.model.ConsoleHistory consoleHistory;
 
     /**
-     * The returned ConsoleHistory instance.
+     * The returned {@code ConsoleHistory} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateConsoleHistoryResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned ConsoleHistory instance. */
+        /** The returned {@code ConsoleHistory} instance. */
         private com.oracle.bmc.core.model.ConsoleHistory consoleHistory;
 
         /**
-         * The returned ConsoleHistory instance.
+         * The returned {@code ConsoleHistory} instance.
          *
          * @param consoleHistory the value to set
          * @return this builder

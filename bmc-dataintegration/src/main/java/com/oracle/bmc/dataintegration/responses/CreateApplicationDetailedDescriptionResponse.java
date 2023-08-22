@@ -41,11 +41,11 @@ public class CreateApplicationDetailedDescriptionResponse
         return opcRequestId;
     }
 
-    /** The returned DetailedDescription instance. */
+    /** The returned {@code DetailedDescription} instance. */
     private com.oracle.bmc.dataintegration.model.DetailedDescription detailedDescription;
 
     /**
-     * The returned DetailedDescription instance.
+     * The returned {@code DetailedDescription} instance.
      *
      * @return the value
      */
@@ -127,11 +127,11 @@ public class CreateApplicationDetailedDescriptionResponse
             return this;
         }
 
-        /** The returned DetailedDescription instance. */
+        /** The returned {@code DetailedDescription} instance. */
         private com.oracle.bmc.dataintegration.model.DetailedDescription detailedDescription;
 
         /**
-         * The returned DetailedDescription instance.
+         * The returned {@code DetailedDescription} instance.
          *
          * @param detailedDescription the value to set
          * @return this builder

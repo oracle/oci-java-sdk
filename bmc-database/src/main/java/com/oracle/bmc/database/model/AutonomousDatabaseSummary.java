@@ -38,6 +38,8 @@ public final class AutonomousDatabaseSummary
         "dbName",
         "characterSet",
         "ncharacterSet",
+        "inMemoryPercentage",
+        "inMemoryAreaInGBs",
         "nextLongTermBackupTimeStamp",
         "longTermBackupSchedule",
         "isFreeTier",
@@ -144,6 +146,8 @@ public final class AutonomousDatabaseSummary
             String dbName,
             String characterSet,
             String ncharacterSet,
+            Integer inMemoryPercentage,
+            Integer inMemoryAreaInGBs,
             java.util.Date nextLongTermBackupTimeStamp,
             LongTermBackUpScheduleDetails longTermBackupSchedule,
             Boolean isFreeTier,
@@ -249,6 +253,8 @@ public final class AutonomousDatabaseSummary
         this.dbName = dbName;
         this.characterSet = characterSet;
         this.ncharacterSet = ncharacterSet;
+        this.inMemoryPercentage = inMemoryPercentage;
+        this.inMemoryAreaInGBs = inMemoryAreaInGBs;
         this.nextLongTermBackupTimeStamp = nextLongTermBackupTimeStamp;
         this.longTermBackupSchedule = longTermBackupSchedule;
         this.isFreeTier = isFreeTier;
@@ -575,6 +581,40 @@ public final class AutonomousDatabaseSummary
         public Builder ncharacterSet(String ncharacterSet) {
             this.ncharacterSet = ncharacterSet;
             this.__explicitlySet__.add("ncharacterSet");
+            return this;
+        }
+        /**
+         * The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous
+         * Database.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("inMemoryPercentage")
+        private Integer inMemoryPercentage;
+
+        /**
+         * The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous
+         * Database.
+         *
+         * @param inMemoryPercentage the value to set
+         * @return this builder
+         */
+        public Builder inMemoryPercentage(Integer inMemoryPercentage) {
+            this.inMemoryPercentage = inMemoryPercentage;
+            this.__explicitlySet__.add("inMemoryPercentage");
+            return this;
+        }
+        /** The area assigned to In-Memory tables in Autonomous Database. */
+        @com.fasterxml.jackson.annotation.JsonProperty("inMemoryAreaInGBs")
+        private Integer inMemoryAreaInGBs;
+
+        /**
+         * The area assigned to In-Memory tables in Autonomous Database.
+         *
+         * @param inMemoryAreaInGBs the value to set
+         * @return this builder
+         */
+        public Builder inMemoryAreaInGBs(Integer inMemoryAreaInGBs) {
+            this.inMemoryAreaInGBs = inMemoryAreaInGBs;
+            this.__explicitlySet__.add("inMemoryAreaInGBs");
             return this;
         }
         /** The date and time when the next long-term backup would be created. */
@@ -2607,6 +2647,8 @@ public final class AutonomousDatabaseSummary
                             this.dbName,
                             this.characterSet,
                             this.ncharacterSet,
+                            this.inMemoryPercentage,
+                            this.inMemoryAreaInGBs,
                             this.nextLongTermBackupTimeStamp,
                             this.longTermBackupSchedule,
                             this.isFreeTier,
@@ -2740,6 +2782,12 @@ public final class AutonomousDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("ncharacterSet")) {
                 this.ncharacterSet(model.getNcharacterSet());
+            }
+            if (model.wasPropertyExplicitlySet("inMemoryPercentage")) {
+                this.inMemoryPercentage(model.getInMemoryPercentage());
+            }
+            if (model.wasPropertyExplicitlySet("inMemoryAreaInGBs")) {
+                this.inMemoryAreaInGBs(model.getInMemoryAreaInGBs());
             }
             if (model.wasPropertyExplicitlySet("nextLongTermBackupTimeStamp")) {
                 this.nextLongTermBackupTimeStamp(model.getNextLongTermBackupTimeStamp());
@@ -3306,6 +3354,36 @@ public final class AutonomousDatabaseSummary
      */
     public String getNcharacterSet() {
         return ncharacterSet;
+    }
+
+    /**
+     * The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous
+     * Database.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("inMemoryPercentage")
+    private final Integer inMemoryPercentage;
+
+    /**
+     * The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous
+     * Database.
+     *
+     * @return the value
+     */
+    public Integer getInMemoryPercentage() {
+        return inMemoryPercentage;
+    }
+
+    /** The area assigned to In-Memory tables in Autonomous Database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("inMemoryAreaInGBs")
+    private final Integer inMemoryAreaInGBs;
+
+    /**
+     * The area assigned to In-Memory tables in Autonomous Database.
+     *
+     * @return the value
+     */
+    public Integer getInMemoryAreaInGBs() {
+        return inMemoryAreaInGBs;
     }
 
     /** The date and time when the next long-term backup would be created. */
@@ -5937,6 +6015,8 @@ public final class AutonomousDatabaseSummary
         sb.append(", dbName=").append(String.valueOf(this.dbName));
         sb.append(", characterSet=").append(String.valueOf(this.characterSet));
         sb.append(", ncharacterSet=").append(String.valueOf(this.ncharacterSet));
+        sb.append(", inMemoryPercentage=").append(String.valueOf(this.inMemoryPercentage));
+        sb.append(", inMemoryAreaInGBs=").append(String.valueOf(this.inMemoryAreaInGBs));
         sb.append(", nextLongTermBackupTimeStamp=")
                 .append(String.valueOf(this.nextLongTermBackupTimeStamp));
         sb.append(", longTermBackupSchedule=").append(String.valueOf(this.longTermBackupSchedule));
@@ -6087,6 +6167,8 @@ public final class AutonomousDatabaseSummary
                 && java.util.Objects.equals(this.dbName, other.dbName)
                 && java.util.Objects.equals(this.characterSet, other.characterSet)
                 && java.util.Objects.equals(this.ncharacterSet, other.ncharacterSet)
+                && java.util.Objects.equals(this.inMemoryPercentage, other.inMemoryPercentage)
+                && java.util.Objects.equals(this.inMemoryAreaInGBs, other.inMemoryAreaInGBs)
                 && java.util.Objects.equals(
                         this.nextLongTermBackupTimeStamp, other.nextLongTermBackupTimeStamp)
                 && java.util.Objects.equals(
@@ -6251,6 +6333,14 @@ public final class AutonomousDatabaseSummary
         result =
                 (result * PRIME)
                         + (this.ncharacterSet == null ? 43 : this.ncharacterSet.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.inMemoryPercentage == null
+                                ? 43
+                                : this.inMemoryPercentage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.inMemoryAreaInGBs == null ? 43 : this.inMemoryAreaInGBs.hashCode());
         result =
                 (result * PRIME)
                         + (this.nextLongTermBackupTimeStamp == null

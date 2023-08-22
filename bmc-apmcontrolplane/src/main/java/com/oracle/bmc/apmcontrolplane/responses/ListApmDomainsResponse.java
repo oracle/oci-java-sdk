@@ -42,11 +42,11 @@ public class ListApmDomainsResponse extends com.oracle.bmc.responses.BmcResponse
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.apmcontrolplane.model.ApmDomainSummary instances. */
+    /** A list of {@code com.oracle.bmc.apmcontrolplane.model.ApmDomainSummary} instances. */
     private java.util.List<com.oracle.bmc.apmcontrolplane.model.ApmDomainSummary> items;
 
     /**
-     * A list of com.oracle.bmc.apmcontrolplane.model.ApmDomainSummary instances.
+     * A list of {@code com.oracle.bmc.apmcontrolplane.model.ApmDomainSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListApmDomainsResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** A list of com.oracle.bmc.apmcontrolplane.model.ApmDomainSummary instances. */
+        /** A list of {@code com.oracle.bmc.apmcontrolplane.model.ApmDomainSummary} instances. */
         private java.util.List<com.oracle.bmc.apmcontrolplane.model.ApmDomainSummary> items;
 
         /**
-         * A list of com.oracle.bmc.apmcontrolplane.model.ApmDomainSummary instances.
+         * A list of {@code com.oracle.bmc.apmcontrolplane.model.ApmDomainSummary} instances.
          *
          * @param items the value to set
          * @return this builder

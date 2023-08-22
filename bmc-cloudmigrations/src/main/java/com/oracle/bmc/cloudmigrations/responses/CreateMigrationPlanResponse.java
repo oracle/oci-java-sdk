@@ -76,11 +76,11 @@ public class CreateMigrationPlanResponse extends com.oracle.bmc.responses.BmcRes
         return contentLocation;
     }
 
-    /** The returned MigrationPlan instance. */
+    /** The returned {@code MigrationPlan} instance. */
     private com.oracle.bmc.cloudmigrations.model.MigrationPlan migrationPlan;
 
     /**
-     * The returned MigrationPlan instance.
+     * The returned {@code MigrationPlan} instance.
      *
      * @return the value
      */
@@ -212,11 +212,11 @@ public class CreateMigrationPlanResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned MigrationPlan instance. */
+        /** The returned {@code MigrationPlan} instance. */
         private com.oracle.bmc.cloudmigrations.model.MigrationPlan migrationPlan;
 
         /**
-         * The returned MigrationPlan instance.
+         * The returned {@code MigrationPlan} instance.
          *
          * @param migrationPlan the value to set
          * @return this builder

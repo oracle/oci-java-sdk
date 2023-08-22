@@ -52,11 +52,11 @@ public class CreateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned SteeringPolicy instance. */
+    /** The returned {@code SteeringPolicy} instance. */
     private com.oracle.bmc.dns.model.SteeringPolicy steeringPolicy;
 
     /**
-     * The returned SteeringPolicy instance.
+     * The returned {@code SteeringPolicy} instance.
      *
      * @return the value
      */
@@ -156,11 +156,11 @@ public class CreateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned SteeringPolicy instance. */
+        /** The returned {@code SteeringPolicy} instance. */
         private com.oracle.bmc.dns.model.SteeringPolicy steeringPolicy;
 
         /**
-         * The returned SteeringPolicy instance.
+         * The returned {@code SteeringPolicy} instance.
          *
          * @param steeringPolicy the value to set
          * @return this builder

@@ -20,11 +20,11 @@ public class UpdateVolumeGroupBackupResponse extends com.oracle.bmc.responses.Bm
         return etag;
     }
 
-    /** The returned VolumeGroupBackup instance. */
+    /** The returned {@code VolumeGroupBackup} instance. */
     private com.oracle.bmc.core.model.VolumeGroupBackup volumeGroupBackup;
 
     /**
-     * The returned VolumeGroupBackup instance.
+     * The returned {@code VolumeGroupBackup} instance.
      *
      * @return the value
      */
@@ -81,11 +81,11 @@ public class UpdateVolumeGroupBackupResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned VolumeGroupBackup instance. */
+        /** The returned {@code VolumeGroupBackup} instance. */
         private com.oracle.bmc.core.model.VolumeGroupBackup volumeGroupBackup;
 
         /**
-         * The returned VolumeGroupBackup instance.
+         * The returned {@code VolumeGroupBackup} instance.
          *
          * @param volumeGroupBackup the value to set
          * @return this builder

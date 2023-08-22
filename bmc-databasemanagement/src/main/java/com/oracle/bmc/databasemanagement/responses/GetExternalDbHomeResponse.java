@@ -24,11 +24,11 @@ public class GetExternalDbHomeResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned ExternalDbHome instance. */
+    /** The returned {@code ExternalDbHome} instance. */
     private com.oracle.bmc.databasemanagement.model.ExternalDbHome externalDbHome;
 
     /**
-     * The returned ExternalDbHome instance.
+     * The returned {@code ExternalDbHome} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetExternalDbHomeResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned ExternalDbHome instance. */
+        /** The returned {@code ExternalDbHome} instance. */
         private com.oracle.bmc.databasemanagement.model.ExternalDbHome externalDbHome;
 
         /**
-         * The returned ExternalDbHome instance.
+         * The returned {@code ExternalDbHome} instance.
          *
          * @param externalDbHome the value to set
          * @return this builder

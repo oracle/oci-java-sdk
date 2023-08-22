@@ -36,11 +36,11 @@ public class RemoveImportDrgRouteDistributionResponse extends com.oracle.bmc.res
         return opcRequestId;
     }
 
-    /** The returned DrgRouteTable instance. */
+    /** The returned {@code DrgRouteTable} instance. */
     private com.oracle.bmc.core.model.DrgRouteTable drgRouteTable;
 
     /**
-     * The returned DrgRouteTable instance.
+     * The returned {@code DrgRouteTable} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class RemoveImportDrgRouteDistributionResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /** The returned DrgRouteTable instance. */
+        /** The returned {@code DrgRouteTable} instance. */
         private com.oracle.bmc.core.model.DrgRouteTable drgRouteTable;
 
         /**
-         * The returned DrgRouteTable instance.
+         * The returned {@code DrgRouteTable} instance.
          *
          * @param drgRouteTable the value to set
          * @return this builder

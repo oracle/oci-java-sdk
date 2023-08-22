@@ -42,11 +42,11 @@ public class ListAddmDbsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned AddmDbCollection instance. */
+    /** The returned {@code AddmDbCollection} instance. */
     private com.oracle.bmc.opsi.model.AddmDbCollection addmDbCollection;
 
     /**
-     * The returned AddmDbCollection instance.
+     * The returned {@code AddmDbCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListAddmDbsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned AddmDbCollection instance. */
+        /** The returned {@code AddmDbCollection} instance. */
         private com.oracle.bmc.opsi.model.AddmDbCollection addmDbCollection;
 
         /**
-         * The returned AddmDbCollection instance.
+         * The returned {@code AddmDbCollection} instance.
          *
          * @param addmDbCollection the value to set
          * @return this builder

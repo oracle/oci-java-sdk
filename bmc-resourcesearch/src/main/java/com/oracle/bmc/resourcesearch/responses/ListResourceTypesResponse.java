@@ -36,11 +36,11 @@ public class ListResourceTypesResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.resourcesearch.model.ResourceType instances. */
+    /** A list of {@code com.oracle.bmc.resourcesearch.model.ResourceType} instances. */
     private java.util.List<com.oracle.bmc.resourcesearch.model.ResourceType> items;
 
     /**
-     * A list of com.oracle.bmc.resourcesearch.model.ResourceType instances.
+     * A list of {@code com.oracle.bmc.resourcesearch.model.ResourceType} instances.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class ListResourceTypesResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** A list of com.oracle.bmc.resourcesearch.model.ResourceType instances. */
+        /** A list of {@code com.oracle.bmc.resourcesearch.model.ResourceType} instances. */
         private java.util.List<com.oracle.bmc.resourcesearch.model.ResourceType> items;
 
         /**
-         * A list of com.oracle.bmc.resourcesearch.model.ResourceType instances.
+         * A list of {@code com.oracle.bmc.resourcesearch.model.ResourceType} instances.
          *
          * @param items the value to set
          * @return this builder

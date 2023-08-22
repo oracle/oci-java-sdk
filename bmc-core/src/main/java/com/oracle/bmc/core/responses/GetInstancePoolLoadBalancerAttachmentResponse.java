@@ -25,12 +25,12 @@ public class GetInstancePoolLoadBalancerAttachmentResponse
         return opcRequestId;
     }
 
-    /** The returned InstancePoolLoadBalancerAttachment instance. */
+    /** The returned {@code InstancePoolLoadBalancerAttachment} instance. */
     private com.oracle.bmc.core.model.InstancePoolLoadBalancerAttachment
             instancePoolLoadBalancerAttachment;
 
     /**
-     * The returned InstancePoolLoadBalancerAttachment instance.
+     * The returned {@code InstancePoolLoadBalancerAttachment} instance.
      *
      * @return the value
      */
@@ -93,12 +93,12 @@ public class GetInstancePoolLoadBalancerAttachmentResponse
             return this;
         }
 
-        /** The returned InstancePoolLoadBalancerAttachment instance. */
+        /** The returned {@code InstancePoolLoadBalancerAttachment} instance. */
         private com.oracle.bmc.core.model.InstancePoolLoadBalancerAttachment
                 instancePoolLoadBalancerAttachment;
 
         /**
-         * The returned InstancePoolLoadBalancerAttachment instance.
+         * The returned {@code InstancePoolLoadBalancerAttachment} instance.
          *
          * @param instancePoolLoadBalancerAttachment the value to set
          * @return this builder

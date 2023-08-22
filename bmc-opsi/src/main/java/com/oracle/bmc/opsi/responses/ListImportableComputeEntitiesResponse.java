@@ -42,12 +42,12 @@ public class ListImportableComputeEntitiesResponse extends com.oracle.bmc.respon
         return opcNextPage;
     }
 
-    /** The returned ImportableComputeEntitySummaryCollection instance. */
+    /** The returned {@code ImportableComputeEntitySummaryCollection} instance. */
     private com.oracle.bmc.opsi.model.ImportableComputeEntitySummaryCollection
             importableComputeEntitySummaryCollection;
 
     /**
-     * The returned ImportableComputeEntitySummaryCollection instance.
+     * The returned {@code ImportableComputeEntitySummaryCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListImportableComputeEntitiesResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned ImportableComputeEntitySummaryCollection instance. */
+        /** The returned {@code ImportableComputeEntitySummaryCollection} instance. */
         private com.oracle.bmc.opsi.model.ImportableComputeEntitySummaryCollection
                 importableComputeEntitySummaryCollection;
 
         /**
-         * The returned ImportableComputeEntitySummaryCollection instance.
+         * The returned {@code ImportableComputeEntitySummaryCollection} instance.
          *
          * @param importableComputeEntitySummaryCollection the value to set
          * @return this builder

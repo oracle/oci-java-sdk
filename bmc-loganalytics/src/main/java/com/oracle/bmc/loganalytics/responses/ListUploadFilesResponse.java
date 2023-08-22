@@ -44,11 +44,11 @@ public class ListUploadFilesResponse extends com.oracle.bmc.responses.BmcRespons
         return opcNextPage;
     }
 
-    /** The returned UploadFileCollection instance. */
+    /** The returned {@code UploadFileCollection} instance. */
     private com.oracle.bmc.loganalytics.model.UploadFileCollection uploadFileCollection;
 
     /**
-     * The returned UploadFileCollection instance.
+     * The returned {@code UploadFileCollection} instance.
      *
      * @return the value
      */
@@ -133,11 +133,11 @@ public class ListUploadFilesResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned UploadFileCollection instance. */
+        /** The returned {@code UploadFileCollection} instance. */
         private com.oracle.bmc.loganalytics.model.UploadFileCollection uploadFileCollection;
 
         /**
-         * The returned UploadFileCollection instance.
+         * The returned {@code UploadFileCollection} instance.
          *
          * @param uploadFileCollection the value to set
          * @return this builder

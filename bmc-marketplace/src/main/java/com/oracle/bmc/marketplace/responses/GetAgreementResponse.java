@@ -24,11 +24,11 @@ public class GetAgreementResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Agreement instance. */
+    /** The returned {@code Agreement} instance. */
     private com.oracle.bmc.marketplace.model.Agreement agreement;
 
     /**
-     * The returned Agreement instance.
+     * The returned {@code Agreement} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetAgreementResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Agreement instance. */
+        /** The returned {@code Agreement} instance. */
         private com.oracle.bmc.marketplace.model.Agreement agreement;
 
         /**
-         * The returned Agreement instance.
+         * The returned {@code Agreement} instance.
          *
          * @param agreement the value to set
          * @return this builder

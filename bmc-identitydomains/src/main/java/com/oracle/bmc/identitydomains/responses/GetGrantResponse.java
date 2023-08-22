@@ -24,11 +24,11 @@ public class GetGrantResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Grant instance. */
+    /** The returned {@code Grant} instance. */
     private com.oracle.bmc.identitydomains.model.Grant grant;
 
     /**
-     * The returned Grant instance.
+     * The returned {@code Grant} instance.
      *
      * @return the value
      */
@@ -83,11 +83,11 @@ public class GetGrantResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Grant instance. */
+        /** The returned {@code Grant} instance. */
         private com.oracle.bmc.identitydomains.model.Grant grant;
 
         /**
-         * The returned Grant instance.
+         * The returned {@code Grant} instance.
          *
          * @param grant the value to set
          * @return this builder

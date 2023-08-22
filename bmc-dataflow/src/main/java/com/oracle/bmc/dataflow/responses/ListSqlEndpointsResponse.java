@@ -42,11 +42,11 @@ public class ListSqlEndpointsResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned SqlEndpointCollection instance. */
+    /** The returned {@code SqlEndpointCollection} instance. */
     private com.oracle.bmc.dataflow.model.SqlEndpointCollection sqlEndpointCollection;
 
     /**
-     * The returned SqlEndpointCollection instance.
+     * The returned {@code SqlEndpointCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListSqlEndpointsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned SqlEndpointCollection instance. */
+        /** The returned {@code SqlEndpointCollection} instance. */
         private com.oracle.bmc.dataflow.model.SqlEndpointCollection sqlEndpointCollection;
 
         /**
-         * The returned SqlEndpointCollection instance.
+         * The returned {@code SqlEndpointCollection} instance.
          *
          * @param sqlEndpointCollection the value to set
          * @return this builder

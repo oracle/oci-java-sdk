@@ -36,12 +36,12 @@ public class GetExternalExadataInfrastructureResponse extends com.oracle.bmc.res
         return etag;
     }
 
-    /** The returned ExternalExadataInfrastructure instance. */
+    /** The returned {@code ExternalExadataInfrastructure} instance. */
     private com.oracle.bmc.databasemanagement.model.ExternalExadataInfrastructure
             externalExadataInfrastructure;
 
     /**
-     * The returned ExternalExadataInfrastructure instance.
+     * The returned {@code ExternalExadataInfrastructure} instance.
      *
      * @return the value
      */
@@ -121,12 +121,12 @@ public class GetExternalExadataInfrastructureResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /** The returned ExternalExadataInfrastructure instance. */
+        /** The returned {@code ExternalExadataInfrastructure} instance. */
         private com.oracle.bmc.databasemanagement.model.ExternalExadataInfrastructure
                 externalExadataInfrastructure;
 
         /**
-         * The returned ExternalExadataInfrastructure instance.
+         * The returned {@code ExternalExadataInfrastructure} instance.
          *
          * @param externalExadataInfrastructure the value to set
          * @return this builder

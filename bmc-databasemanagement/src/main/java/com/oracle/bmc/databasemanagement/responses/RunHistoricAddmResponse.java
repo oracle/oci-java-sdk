@@ -24,11 +24,11 @@ public class RunHistoricAddmResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned HistoricAddmResult instance. */
+    /** The returned {@code HistoricAddmResult} instance. */
     private com.oracle.bmc.databasemanagement.model.HistoricAddmResult historicAddmResult;
 
     /**
-     * The returned HistoricAddmResult instance.
+     * The returned {@code HistoricAddmResult} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class RunHistoricAddmResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned HistoricAddmResult instance. */
+        /** The returned {@code HistoricAddmResult} instance. */
         private com.oracle.bmc.databasemanagement.model.HistoricAddmResult historicAddmResult;
 
         /**
-         * The returned HistoricAddmResult instance.
+         * The returned {@code HistoricAddmResult} instance.
          *
          * @param historicAddmResult the value to set
          * @return this builder

@@ -24,11 +24,11 @@ public class GetAssociationSummaryResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned AssociationSummaryReport instance. */
+    /** The returned {@code AssociationSummaryReport} instance. */
     private com.oracle.bmc.loganalytics.model.AssociationSummaryReport associationSummaryReport;
 
     /**
-     * The returned AssociationSummaryReport instance.
+     * The returned {@code AssociationSummaryReport} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class GetAssociationSummaryResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned AssociationSummaryReport instance. */
+        /** The returned {@code AssociationSummaryReport} instance. */
         private com.oracle.bmc.loganalytics.model.AssociationSummaryReport associationSummaryReport;
 
         /**
-         * The returned AssociationSummaryReport instance.
+         * The returned {@code AssociationSummaryReport} instance.
          *
          * @param associationSummaryReport the value to set
          * @return this builder

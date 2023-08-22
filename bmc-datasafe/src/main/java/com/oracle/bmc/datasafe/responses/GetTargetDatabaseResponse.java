@@ -42,11 +42,11 @@ public class GetTargetDatabaseResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned TargetDatabase instance. */
+    /** The returned {@code TargetDatabase} instance. */
     private com.oracle.bmc.datasafe.model.TargetDatabase targetDatabase;
 
     /**
-     * The returned TargetDatabase instance.
+     * The returned {@code TargetDatabase} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class GetTargetDatabaseResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned TargetDatabase instance. */
+        /** The returned {@code TargetDatabase} instance. */
         private com.oracle.bmc.datasafe.model.TargetDatabase targetDatabase;
 
         /**
-         * The returned TargetDatabase instance.
+         * The returned {@code TargetDatabase} instance.
          *
          * @param targetDatabase the value to set
          * @return this builder

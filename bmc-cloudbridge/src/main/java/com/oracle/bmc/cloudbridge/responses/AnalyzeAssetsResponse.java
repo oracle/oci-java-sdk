@@ -42,11 +42,11 @@ public class AnalyzeAssetsResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcNextPage;
     }
 
-    /** The returned AssetAggregationCollection instance. */
+    /** The returned {@code AssetAggregationCollection} instance. */
     private com.oracle.bmc.cloudbridge.model.AssetAggregationCollection assetAggregationCollection;
 
     /**
-     * The returned AssetAggregationCollection instance.
+     * The returned {@code AssetAggregationCollection} instance.
      *
      * @return the value
      */
@@ -131,12 +131,12 @@ public class AnalyzeAssetsResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned AssetAggregationCollection instance. */
+        /** The returned {@code AssetAggregationCollection} instance. */
         private com.oracle.bmc.cloudbridge.model.AssetAggregationCollection
                 assetAggregationCollection;
 
         /**
-         * The returned AssetAggregationCollection instance.
+         * The returned {@code AssetAggregationCollection} instance.
          *
          * @param assetAggregationCollection the value to set
          * @return this builder

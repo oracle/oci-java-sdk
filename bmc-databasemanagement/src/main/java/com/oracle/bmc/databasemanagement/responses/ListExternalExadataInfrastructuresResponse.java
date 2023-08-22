@@ -43,12 +43,12 @@ public class ListExternalExadataInfrastructuresResponse
         return opcNextPage;
     }
 
-    /** The returned ExternalExadataInfrastructureCollection instance. */
+    /** The returned {@code ExternalExadataInfrastructureCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.ExternalExadataInfrastructureCollection
             externalExadataInfrastructureCollection;
 
     /**
-     * The returned ExternalExadataInfrastructureCollection instance.
+     * The returned {@code ExternalExadataInfrastructureCollection} instance.
      *
      * @return the value
      */
@@ -134,12 +134,12 @@ public class ListExternalExadataInfrastructuresResponse
             return this;
         }
 
-        /** The returned ExternalExadataInfrastructureCollection instance. */
+        /** The returned {@code ExternalExadataInfrastructureCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.ExternalExadataInfrastructureCollection
                 externalExadataInfrastructureCollection;
 
         /**
-         * The returned ExternalExadataInfrastructureCollection instance.
+         * The returned {@code ExternalExadataInfrastructureCollection} instance.
          *
          * @param externalExadataInfrastructureCollection the value to set
          * @return this builder

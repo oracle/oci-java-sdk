@@ -42,12 +42,12 @@ public class ListSubscriptionsResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned SubscriptionCollection instance. */
+    /** The returned {@code SubscriptionCollection} instance. */
     private com.oracle.bmc.tenantmanagercontrolplane.model.SubscriptionCollection
             subscriptionCollection;
 
     /**
-     * The returned SubscriptionCollection instance.
+     * The returned {@code SubscriptionCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListSubscriptionsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned SubscriptionCollection instance. */
+        /** The returned {@code SubscriptionCollection} instance. */
         private com.oracle.bmc.tenantmanagercontrolplane.model.SubscriptionCollection
                 subscriptionCollection;
 
         /**
-         * The returned SubscriptionCollection instance.
+         * The returned {@code SubscriptionCollection} instance.
          *
          * @param subscriptionCollection the value to set
          * @return this builder

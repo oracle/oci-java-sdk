@@ -42,11 +42,11 @@ public class ListMyRequestsResponse extends com.oracle.bmc.responses.BmcResponse
         return opcNextPage;
     }
 
-    /** The returned MyRequests instance. */
+    /** The returned {@code MyRequests} instance. */
     private com.oracle.bmc.identitydomains.model.MyRequests myRequests;
 
     /**
-     * The returned MyRequests instance.
+     * The returned {@code MyRequests} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListMyRequestsResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned MyRequests instance. */
+        /** The returned {@code MyRequests} instance. */
         private com.oracle.bmc.identitydomains.model.MyRequests myRequests;
 
         /**
-         * The returned MyRequests instance.
+         * The returned {@code MyRequests} instance.
          *
          * @param myRequests the value to set
          * @return this builder

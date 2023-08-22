@@ -42,11 +42,11 @@ public class ListAccessPoliciesResponse extends com.oracle.bmc.responses.BmcResp
         return opcNextPage;
     }
 
-    /** The returned AccessPolicyCollection instance. */
+    /** The returned {@code AccessPolicyCollection} instance. */
     private com.oracle.bmc.servicemesh.model.AccessPolicyCollection accessPolicyCollection;
 
     /**
-     * The returned AccessPolicyCollection instance.
+     * The returned {@code AccessPolicyCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListAccessPoliciesResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned AccessPolicyCollection instance. */
+        /** The returned {@code AccessPolicyCollection} instance. */
         private com.oracle.bmc.servicemesh.model.AccessPolicyCollection accessPolicyCollection;
 
         /**
-         * The returned AccessPolicyCollection instance.
+         * The returned {@code AccessPolicyCollection} instance.
          *
          * @param accessPolicyCollection the value to set
          * @return this builder

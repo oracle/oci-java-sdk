@@ -42,11 +42,11 @@ public class ListDrgRouteTablesResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.DrgRouteTable instances. */
+    /** A list of {@code com.oracle.bmc.core.model.DrgRouteTable} instances. */
     private java.util.List<com.oracle.bmc.core.model.DrgRouteTable> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.DrgRouteTable instances.
+     * A list of {@code com.oracle.bmc.core.model.DrgRouteTable} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListDrgRouteTablesResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.DrgRouteTable instances. */
+        /** A list of {@code com.oracle.bmc.core.model.DrgRouteTable} instances. */
         private java.util.List<com.oracle.bmc.core.model.DrgRouteTable> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.DrgRouteTable instances.
+         * A list of {@code com.oracle.bmc.core.model.DrgRouteTable} instances.
          *
          * @param items the value to set
          * @return this builder

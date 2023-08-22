@@ -40,11 +40,11 @@ public class CreateJobDefinitionResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned JobDefinition instance. */
+    /** The returned {@code JobDefinition} instance. */
     private com.oracle.bmc.datacatalog.model.JobDefinition jobDefinition;
 
     /**
-     * The returned JobDefinition instance.
+     * The returned {@code JobDefinition} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class CreateJobDefinitionResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned JobDefinition instance. */
+        /** The returned {@code JobDefinition} instance. */
         private com.oracle.bmc.datacatalog.model.JobDefinition jobDefinition;
 
         /**
-         * The returned JobDefinition instance.
+         * The returned {@code JobDefinition} instance.
          *
          * @param jobDefinition the value to set
          * @return this builder

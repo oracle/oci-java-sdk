@@ -24,12 +24,12 @@ public class ResetDatabaseParametersResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned UpdateDatabaseParametersResult instance. */
+    /** The returned {@code UpdateDatabaseParametersResult} instance. */
     private com.oracle.bmc.databasemanagement.model.UpdateDatabaseParametersResult
             updateDatabaseParametersResult;
 
     /**
-     * The returned UpdateDatabaseParametersResult instance.
+     * The returned {@code UpdateDatabaseParametersResult} instance.
      *
      * @return the value
      */
@@ -92,12 +92,12 @@ public class ResetDatabaseParametersResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned UpdateDatabaseParametersResult instance. */
+        /** The returned {@code UpdateDatabaseParametersResult} instance. */
         private com.oracle.bmc.databasemanagement.model.UpdateDatabaseParametersResult
                 updateDatabaseParametersResult;
 
         /**
-         * The returned UpdateDatabaseParametersResult instance.
+         * The returned {@code UpdateDatabaseParametersResult} instance.
          *
          * @param updateDatabaseParametersResult the value to set
          * @return this builder

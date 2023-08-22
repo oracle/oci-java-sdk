@@ -42,11 +42,11 @@ public class GetDataSafeConfigurationResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** The returned DataSafeConfiguration instance. */
+    /** The returned {@code DataSafeConfiguration} instance. */
     private com.oracle.bmc.datasafe.model.DataSafeConfiguration dataSafeConfiguration;
 
     /**
-     * The returned DataSafeConfiguration instance.
+     * The returned {@code DataSafeConfiguration} instance.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class GetDataSafeConfigurationResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned DataSafeConfiguration instance. */
+        /** The returned {@code DataSafeConfiguration} instance. */
         private com.oracle.bmc.datasafe.model.DataSafeConfiguration dataSafeConfiguration;
 
         /**
-         * The returned DataSafeConfiguration instance.
+         * The returned {@code DataSafeConfiguration} instance.
          *
          * @param dataSafeConfiguration the value to set
          * @return this builder

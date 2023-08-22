@@ -36,11 +36,11 @@ public class GetClusterResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Cluster instance. */
+    /** The returned {@code Cluster} instance. */
     private com.oracle.bmc.containerengine.model.Cluster cluster;
 
     /**
-     * The returned Cluster instance.
+     * The returned {@code Cluster} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetClusterResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Cluster instance. */
+        /** The returned {@code Cluster} instance. */
         private com.oracle.bmc.containerengine.model.Cluster cluster;
 
         /**
-         * The returned Cluster instance.
+         * The returned {@code Cluster} instance.
          *
          * @param cluster the value to set
          * @return this builder

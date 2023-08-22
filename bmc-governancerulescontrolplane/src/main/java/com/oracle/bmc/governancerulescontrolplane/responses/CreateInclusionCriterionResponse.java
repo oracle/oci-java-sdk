@@ -64,11 +64,11 @@ public class CreateInclusionCriterionResponse extends com.oracle.bmc.responses.B
         return location;
     }
 
-    /** The returned InclusionCriterion instance. */
+    /** The returned {@code InclusionCriterion} instance. */
     private com.oracle.bmc.governancerulescontrolplane.model.InclusionCriterion inclusionCriterion;
 
     /**
-     * The returned InclusionCriterion instance.
+     * The returned {@code InclusionCriterion} instance.
      *
      * @return the value
      */
@@ -186,12 +186,12 @@ public class CreateInclusionCriterionResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned InclusionCriterion instance. */
+        /** The returned {@code InclusionCriterion} instance. */
         private com.oracle.bmc.governancerulescontrolplane.model.InclusionCriterion
                 inclusionCriterion;
 
         /**
-         * The returned InclusionCriterion instance.
+         * The returned {@code InclusionCriterion} instance.
          *
          * @param inclusionCriterion the value to set
          * @return this builder

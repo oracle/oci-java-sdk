@@ -36,11 +36,11 @@ public class GetDynamicGroupResponse extends com.oracle.bmc.responses.BmcRespons
         return etag;
     }
 
-    /** The returned DynamicGroup instance. */
+    /** The returned {@code DynamicGroup} instance. */
     private com.oracle.bmc.identity.model.DynamicGroup dynamicGroup;
 
     /**
-     * The returned DynamicGroup instance.
+     * The returned {@code DynamicGroup} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetDynamicGroupResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned DynamicGroup instance. */
+        /** The returned {@code DynamicGroup} instance. */
         private com.oracle.bmc.identity.model.DynamicGroup dynamicGroup;
 
         /**
-         * The returned DynamicGroup instance.
+         * The returned {@code DynamicGroup} instance.
          *
          * @param dynamicGroup the value to set
          * @return this builder

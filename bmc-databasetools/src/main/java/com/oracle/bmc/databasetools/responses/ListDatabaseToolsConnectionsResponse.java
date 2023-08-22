@@ -42,12 +42,12 @@ public class ListDatabaseToolsConnectionsResponse extends com.oracle.bmc.respons
         return opcNextPage;
     }
 
-    /** The returned DatabaseToolsConnectionCollection instance. */
+    /** The returned {@code DatabaseToolsConnectionCollection} instance. */
     private com.oracle.bmc.databasetools.model.DatabaseToolsConnectionCollection
             databaseToolsConnectionCollection;
 
     /**
-     * The returned DatabaseToolsConnectionCollection instance.
+     * The returned {@code DatabaseToolsConnectionCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListDatabaseToolsConnectionsResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned DatabaseToolsConnectionCollection instance. */
+        /** The returned {@code DatabaseToolsConnectionCollection} instance. */
         private com.oracle.bmc.databasetools.model.DatabaseToolsConnectionCollection
                 databaseToolsConnectionCollection;
 
         /**
-         * The returned DatabaseToolsConnectionCollection instance.
+         * The returned {@code DatabaseToolsConnectionCollection} instance.
          *
          * @param databaseToolsConnectionCollection the value to set
          * @return this builder

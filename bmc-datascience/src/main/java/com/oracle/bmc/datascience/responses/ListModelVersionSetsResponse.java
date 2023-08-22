@@ -60,11 +60,11 @@ public class ListModelVersionSetsResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.datascience.model.ModelVersionSetSummary instances. */
+    /** A list of {@code com.oracle.bmc.datascience.model.ModelVersionSetSummary} instances. */
     private java.util.List<com.oracle.bmc.datascience.model.ModelVersionSetSummary> items;
 
     /**
-     * A list of com.oracle.bmc.datascience.model.ModelVersionSetSummary instances.
+     * A list of {@code com.oracle.bmc.datascience.model.ModelVersionSetSummary} instances.
      *
      * @return the value
      */
@@ -170,11 +170,11 @@ public class ListModelVersionSetsResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** A list of com.oracle.bmc.datascience.model.ModelVersionSetSummary instances. */
+        /** A list of {@code com.oracle.bmc.datascience.model.ModelVersionSetSummary} instances. */
         private java.util.List<com.oracle.bmc.datascience.model.ModelVersionSetSummary> items;
 
         /**
-         * A list of com.oracle.bmc.datascience.model.ModelVersionSetSummary instances.
+         * A list of {@code com.oracle.bmc.datascience.model.ModelVersionSetSummary} instances.
          *
          * @param items the value to set
          * @return this builder

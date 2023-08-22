@@ -42,12 +42,12 @@ public class ListOpensearchVersionsResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** The returned OpensearchVersionsCollection instance. */
+    /** The returned {@code OpensearchVersionsCollection} instance. */
     private com.oracle.bmc.opensearch.model.OpensearchVersionsCollection
             opensearchVersionsCollection;
 
     /**
-     * The returned OpensearchVersionsCollection instance.
+     * The returned {@code OpensearchVersionsCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListOpensearchVersionsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned OpensearchVersionsCollection instance. */
+        /** The returned {@code OpensearchVersionsCollection} instance. */
         private com.oracle.bmc.opensearch.model.OpensearchVersionsCollection
                 opensearchVersionsCollection;
 
         /**
-         * The returned OpensearchVersionsCollection instance.
+         * The returned {@code OpensearchVersionsCollection} instance.
          *
          * @param opensearchVersionsCollection the value to set
          * @return this builder

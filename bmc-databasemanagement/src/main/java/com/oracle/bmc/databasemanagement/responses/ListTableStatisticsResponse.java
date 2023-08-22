@@ -24,12 +24,12 @@ public class ListTableStatisticsResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned TableStatisticsCollection instance. */
+    /** The returned {@code TableStatisticsCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.TableStatisticsCollection
             tableStatisticsCollection;
 
     /**
-     * The returned TableStatisticsCollection instance.
+     * The returned {@code TableStatisticsCollection} instance.
      *
      * @return the value
      */
@@ -91,12 +91,12 @@ public class ListTableStatisticsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned TableStatisticsCollection instance. */
+        /** The returned {@code TableStatisticsCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.TableStatisticsCollection
                 tableStatisticsCollection;
 
         /**
-         * The returned TableStatisticsCollection instance.
+         * The returned {@code TableStatisticsCollection} instance.
          *
          * @param tableStatisticsCollection the value to set
          * @return this builder

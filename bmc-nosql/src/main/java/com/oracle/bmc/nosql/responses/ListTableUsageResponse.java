@@ -42,11 +42,11 @@ public class ListTableUsageResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned TableUsageCollection instance. */
+    /** The returned {@code TableUsageCollection} instance. */
     private com.oracle.bmc.nosql.model.TableUsageCollection tableUsageCollection;
 
     /**
-     * The returned TableUsageCollection instance.
+     * The returned {@code TableUsageCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListTableUsageResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned TableUsageCollection instance. */
+        /** The returned {@code TableUsageCollection} instance. */
         private com.oracle.bmc.nosql.model.TableUsageCollection tableUsageCollection;
 
         /**
-         * The returned TableUsageCollection instance.
+         * The returned {@code TableUsageCollection} instance.
          *
          * @param tableUsageCollection the value to set
          * @return this builder

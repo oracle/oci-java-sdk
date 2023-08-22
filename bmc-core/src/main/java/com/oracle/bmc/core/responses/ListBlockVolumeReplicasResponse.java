@@ -42,11 +42,11 @@ public class ListBlockVolumeReplicasResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.BlockVolumeReplica instances. */
+    /** A list of {@code com.oracle.bmc.core.model.BlockVolumeReplica} instances. */
     private java.util.List<com.oracle.bmc.core.model.BlockVolumeReplica> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.BlockVolumeReplica instances.
+     * A list of {@code com.oracle.bmc.core.model.BlockVolumeReplica} instances.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListBlockVolumeReplicasResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.BlockVolumeReplica instances. */
+        /** A list of {@code com.oracle.bmc.core.model.BlockVolumeReplica} instances. */
         private java.util.List<com.oracle.bmc.core.model.BlockVolumeReplica> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.BlockVolumeReplica instances.
+         * A list of {@code com.oracle.bmc.core.model.BlockVolumeReplica} instances.
          *
          * @param items the value to set
          * @return this builder

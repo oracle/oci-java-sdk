@@ -44,11 +44,11 @@ public class ListUserAnalyticsResponse extends com.oracle.bmc.responses.BmcRespo
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.datasafe.model.UserAggregation instances. */
+    /** A list of {@code com.oracle.bmc.datasafe.model.UserAggregation} instances. */
     private java.util.List<com.oracle.bmc.datasafe.model.UserAggregation> items;
 
     /**
-     * A list of com.oracle.bmc.datasafe.model.UserAggregation instances.
+     * A list of {@code com.oracle.bmc.datasafe.model.UserAggregation} instances.
      *
      * @return the value
      */
@@ -133,11 +133,11 @@ public class ListUserAnalyticsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** A list of com.oracle.bmc.datasafe.model.UserAggregation instances. */
+        /** A list of {@code com.oracle.bmc.datasafe.model.UserAggregation} instances. */
         private java.util.List<com.oracle.bmc.datasafe.model.UserAggregation> items;
 
         /**
-         * A list of com.oracle.bmc.datasafe.model.UserAggregation instances.
+         * A list of {@code com.oracle.bmc.datasafe.model.UserAggregation} instances.
          *
          * @param items the value to set
          * @return this builder

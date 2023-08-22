@@ -36,11 +36,11 @@ public class GetPrivateApplicationPackageResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /** The returned PrivateApplicationPackage instance. */
+    /** The returned {@code PrivateApplicationPackage} instance. */
     private com.oracle.bmc.servicecatalog.model.PrivateApplicationPackage privateApplicationPackage;
 
     /**
-     * The returned PrivateApplicationPackage instance.
+     * The returned {@code PrivateApplicationPackage} instance.
      *
      * @return the value
      */
@@ -120,12 +120,12 @@ public class GetPrivateApplicationPackageResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned PrivateApplicationPackage instance. */
+        /** The returned {@code PrivateApplicationPackage} instance. */
         private com.oracle.bmc.servicecatalog.model.PrivateApplicationPackage
                 privateApplicationPackage;
 
         /**
-         * The returned PrivateApplicationPackage instance.
+         * The returned {@code PrivateApplicationPackage} instance.
          *
          * @param privateApplicationPackage the value to set
          * @return this builder

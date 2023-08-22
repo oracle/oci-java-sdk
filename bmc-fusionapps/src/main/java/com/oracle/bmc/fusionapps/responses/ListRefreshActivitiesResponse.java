@@ -42,11 +42,11 @@ public class ListRefreshActivitiesResponse extends com.oracle.bmc.responses.BmcR
         return opcNextPage;
     }
 
-    /** The returned RefreshActivityCollection instance. */
+    /** The returned {@code RefreshActivityCollection} instance. */
     private com.oracle.bmc.fusionapps.model.RefreshActivityCollection refreshActivityCollection;
 
     /**
-     * The returned RefreshActivityCollection instance.
+     * The returned {@code RefreshActivityCollection} instance.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListRefreshActivitiesResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned RefreshActivityCollection instance. */
+        /** The returned {@code RefreshActivityCollection} instance. */
         private com.oracle.bmc.fusionapps.model.RefreshActivityCollection refreshActivityCollection;
 
         /**
-         * The returned RefreshActivityCollection instance.
+         * The returned {@code RefreshActivityCollection} instance.
          *
          * @param refreshActivityCollection the value to set
          * @return this builder

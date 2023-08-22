@@ -36,11 +36,11 @@ public class GetAddressListResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned AddressList instance. */
+    /** The returned {@code AddressList} instance. */
     private com.oracle.bmc.waas.model.AddressList addressList;
 
     /**
-     * The returned AddressList instance.
+     * The returned {@code AddressList} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetAddressListResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned AddressList instance. */
+        /** The returned {@code AddressList} instance. */
         private com.oracle.bmc.waas.model.AddressList addressList;
 
         /**
-         * The returned AddressList instance.
+         * The returned {@code AddressList} instance.
          *
          * @param addressList the value to set
          * @return this builder

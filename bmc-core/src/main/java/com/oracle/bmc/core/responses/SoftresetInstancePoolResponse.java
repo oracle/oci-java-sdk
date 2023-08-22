@@ -36,11 +36,11 @@ public class SoftresetInstancePoolResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned InstancePool instance. */
+    /** The returned {@code InstancePool} instance. */
     private com.oracle.bmc.core.model.InstancePool instancePool;
 
     /**
-     * The returned InstancePool instance.
+     * The returned {@code InstancePool} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class SoftresetInstancePoolResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned InstancePool instance. */
+        /** The returned {@code InstancePool} instance. */
         private com.oracle.bmc.core.model.InstancePool instancePool;
 
         /**
-         * The returned InstancePool instance.
+         * The returned {@code InstancePool} instance.
          *
          * @param instancePool the value to set
          * @return this builder

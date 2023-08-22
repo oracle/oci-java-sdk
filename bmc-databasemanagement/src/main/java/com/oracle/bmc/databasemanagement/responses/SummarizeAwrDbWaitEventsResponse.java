@@ -42,12 +42,12 @@ public class SummarizeAwrDbWaitEventsResponse extends com.oracle.bmc.responses.B
         return opcNextPage;
     }
 
-    /** The returned AwrDbWaitEventCollection instance. */
+    /** The returned {@code AwrDbWaitEventCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.AwrDbWaitEventCollection
             awrDbWaitEventCollection;
 
     /**
-     * The returned AwrDbWaitEventCollection instance.
+     * The returned {@code AwrDbWaitEventCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class SummarizeAwrDbWaitEventsResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned AwrDbWaitEventCollection instance. */
+        /** The returned {@code AwrDbWaitEventCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.AwrDbWaitEventCollection
                 awrDbWaitEventCollection;
 
         /**
-         * The returned AwrDbWaitEventCollection instance.
+         * The returned {@code AwrDbWaitEventCollection} instance.
          *
          * @param awrDbWaitEventCollection the value to set
          * @return this builder

@@ -36,12 +36,12 @@ public class GetAnnouncementUserStatusResponse extends com.oracle.bmc.responses.
         return etag;
     }
 
-    /** The returned AnnouncementUserStatusDetails instance. */
+    /** The returned {@code AnnouncementUserStatusDetails} instance. */
     private com.oracle.bmc.announcementsservice.model.AnnouncementUserStatusDetails
             announcementUserStatusDetails;
 
     /**
-     * The returned AnnouncementUserStatusDetails instance.
+     * The returned {@code AnnouncementUserStatusDetails} instance.
      *
      * @return the value
      */
@@ -121,12 +121,12 @@ public class GetAnnouncementUserStatusResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned AnnouncementUserStatusDetails instance. */
+        /** The returned {@code AnnouncementUserStatusDetails} instance. */
         private com.oracle.bmc.announcementsservice.model.AnnouncementUserStatusDetails
                 announcementUserStatusDetails;
 
         /**
-         * The returned AnnouncementUserStatusDetails instance.
+         * The returned {@code AnnouncementUserStatusDetails} instance.
          *
          * @param announcementUserStatusDetails the value to set
          * @return this builder

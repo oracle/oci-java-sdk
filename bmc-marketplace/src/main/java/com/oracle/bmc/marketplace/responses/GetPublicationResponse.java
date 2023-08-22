@@ -36,11 +36,11 @@ public class GetPublicationResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned Publication instance. */
+    /** The returned {@code Publication} instance. */
     private com.oracle.bmc.marketplace.model.Publication publication;
 
     /**
-     * The returned Publication instance.
+     * The returned {@code Publication} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetPublicationResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned Publication instance. */
+        /** The returned {@code Publication} instance. */
         private com.oracle.bmc.marketplace.model.Publication publication;
 
         /**
-         * The returned Publication instance.
+         * The returned {@code Publication} instance.
          *
          * @param publication the value to set
          * @return this builder

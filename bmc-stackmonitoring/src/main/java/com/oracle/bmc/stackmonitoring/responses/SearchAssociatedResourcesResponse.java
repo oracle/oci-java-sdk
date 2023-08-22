@@ -54,12 +54,12 @@ public class SearchAssociatedResourcesResponse extends com.oracle.bmc.responses.
         return opcTotalItems;
     }
 
-    /** The returned AssociatedResourcesCollection instance. */
+    /** The returned {@code AssociatedResourcesCollection} instance. */
     private com.oracle.bmc.stackmonitoring.model.AssociatedResourcesCollection
             associatedResourcesCollection;
 
     /**
-     * The returned AssociatedResourcesCollection instance.
+     * The returned {@code AssociatedResourcesCollection} instance.
      *
      * @return the value
      */
@@ -162,12 +162,12 @@ public class SearchAssociatedResourcesResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned AssociatedResourcesCollection instance. */
+        /** The returned {@code AssociatedResourcesCollection} instance. */
         private com.oracle.bmc.stackmonitoring.model.AssociatedResourcesCollection
                 associatedResourcesCollection;
 
         /**
-         * The returned AssociatedResourcesCollection instance.
+         * The returned {@code AssociatedResourcesCollection} instance.
          *
          * @param associatedResourcesCollection the value to set
          * @return this builder

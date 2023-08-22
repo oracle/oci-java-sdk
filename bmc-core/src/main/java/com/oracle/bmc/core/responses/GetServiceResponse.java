@@ -36,11 +36,11 @@ public class GetServiceResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Service instance. */
+    /** The returned {@code Service} instance. */
     private com.oracle.bmc.core.model.Service service;
 
     /**
-     * The returned Service instance.
+     * The returned {@code Service} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetServiceResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Service instance. */
+        /** The returned {@code Service} instance. */
         private com.oracle.bmc.core.model.Service service;
 
         /**
-         * The returned Service instance.
+         * The returned {@code Service} instance.
          *
          * @param service the value to set
          * @return this builder

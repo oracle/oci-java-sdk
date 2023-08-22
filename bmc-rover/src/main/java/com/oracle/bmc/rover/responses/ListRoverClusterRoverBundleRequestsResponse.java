@@ -43,11 +43,11 @@ public class ListRoverClusterRoverBundleRequestsResponse
         return opcNextPage;
     }
 
-    /** The returned RoverBundleRequestCollection instance. */
+    /** The returned {@code RoverBundleRequestCollection} instance. */
     private com.oracle.bmc.rover.model.RoverBundleRequestCollection roverBundleRequestCollection;
 
     /**
-     * The returned RoverBundleRequestCollection instance.
+     * The returned {@code RoverBundleRequestCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListRoverClusterRoverBundleRequestsResponse
             return this;
         }
 
-        /** The returned RoverBundleRequestCollection instance. */
+        /** The returned {@code RoverBundleRequestCollection} instance. */
         private com.oracle.bmc.rover.model.RoverBundleRequestCollection
                 roverBundleRequestCollection;
 
         /**
-         * The returned RoverBundleRequestCollection instance.
+         * The returned {@code RoverBundleRequestCollection} instance.
          *
          * @param roverBundleRequestCollection the value to set
          * @return this builder

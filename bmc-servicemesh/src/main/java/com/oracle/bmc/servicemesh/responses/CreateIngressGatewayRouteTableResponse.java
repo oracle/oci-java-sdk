@@ -64,11 +64,11 @@ public class CreateIngressGatewayRouteTableResponse extends com.oracle.bmc.respo
         return location;
     }
 
-    /** The returned IngressGatewayRouteTable instance. */
+    /** The returned {@code IngressGatewayRouteTable} instance. */
     private com.oracle.bmc.servicemesh.model.IngressGatewayRouteTable ingressGatewayRouteTable;
 
     /**
-     * The returned IngressGatewayRouteTable instance.
+     * The returned {@code IngressGatewayRouteTable} instance.
      *
      * @return the value
      */
@@ -184,11 +184,11 @@ public class CreateIngressGatewayRouteTableResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned IngressGatewayRouteTable instance. */
+        /** The returned {@code IngressGatewayRouteTable} instance. */
         private com.oracle.bmc.servicemesh.model.IngressGatewayRouteTable ingressGatewayRouteTable;
 
         /**
-         * The returned IngressGatewayRouteTable instance.
+         * The returned {@code IngressGatewayRouteTable} instance.
          *
          * @param ingressGatewayRouteTable the value to set
          * @return this builder

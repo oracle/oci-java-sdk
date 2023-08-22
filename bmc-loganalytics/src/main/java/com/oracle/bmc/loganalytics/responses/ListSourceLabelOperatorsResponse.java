@@ -64,12 +64,12 @@ public class ListSourceLabelOperatorsResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsLabelOperatorCollection instance. */
+    /** The returned {@code LogAnalyticsLabelOperatorCollection} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsLabelOperatorCollection
             logAnalyticsLabelOperatorCollection;
 
     /**
-     * The returned LogAnalyticsLabelOperatorCollection instance.
+     * The returned {@code LogAnalyticsLabelOperatorCollection} instance.
      *
      * @return the value
      */
@@ -182,12 +182,12 @@ public class ListSourceLabelOperatorsResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned LogAnalyticsLabelOperatorCollection instance. */
+        /** The returned {@code LogAnalyticsLabelOperatorCollection} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsLabelOperatorCollection
                 logAnalyticsLabelOperatorCollection;
 
         /**
-         * The returned LogAnalyticsLabelOperatorCollection instance.
+         * The returned {@code LogAnalyticsLabelOperatorCollection} instance.
          *
          * @param logAnalyticsLabelOperatorCollection the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class GetMountTargetResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned MountTarget instance. */
+    /** The returned {@code MountTarget} instance. */
     private com.oracle.bmc.filestorage.model.MountTarget mountTarget;
 
     /**
-     * The returned MountTarget instance.
+     * The returned {@code MountTarget} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetMountTargetResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned MountTarget instance. */
+        /** The returned {@code MountTarget} instance. */
         private com.oracle.bmc.filestorage.model.MountTarget mountTarget;
 
         /**
-         * The returned MountTarget instance.
+         * The returned {@code MountTarget} instance.
          *
          * @param mountTarget the value to set
          * @return this builder

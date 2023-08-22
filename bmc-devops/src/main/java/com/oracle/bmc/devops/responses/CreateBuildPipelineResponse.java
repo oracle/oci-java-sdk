@@ -64,11 +64,11 @@ public class CreateBuildPipelineResponse extends com.oracle.bmc.responses.BmcRes
         return location;
     }
 
-    /** The returned BuildPipeline instance. */
+    /** The returned {@code BuildPipeline} instance. */
     private com.oracle.bmc.devops.model.BuildPipeline buildPipeline;
 
     /**
-     * The returned BuildPipeline instance.
+     * The returned {@code BuildPipeline} instance.
      *
      * @return the value
      */
@@ -183,11 +183,11 @@ public class CreateBuildPipelineResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned BuildPipeline instance. */
+        /** The returned {@code BuildPipeline} instance. */
         private com.oracle.bmc.devops.model.BuildPipeline buildPipeline;
 
         /**
-         * The returned BuildPipeline instance.
+         * The returned {@code BuildPipeline} instance.
          *
          * @param buildPipeline the value to set
          * @return this builder

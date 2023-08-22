@@ -42,11 +42,11 @@ public class ListScheduledRunsResponse extends com.oracle.bmc.responses.BmcRespo
         return opcNextPage;
     }
 
-    /** The returned ScheduledRunCollection instance. */
+    /** The returned {@code ScheduledRunCollection} instance. */
     private com.oracle.bmc.usageapi.model.ScheduledRunCollection scheduledRunCollection;
 
     /**
-     * The returned ScheduledRunCollection instance.
+     * The returned {@code ScheduledRunCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListScheduledRunsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned ScheduledRunCollection instance. */
+        /** The returned {@code ScheduledRunCollection} instance. */
         private com.oracle.bmc.usageapi.model.ScheduledRunCollection scheduledRunCollection;
 
         /**
-         * The returned ScheduledRunCollection instance.
+         * The returned {@code ScheduledRunCollection} instance.
          *
          * @param scheduledRunCollection the value to set
          * @return this builder

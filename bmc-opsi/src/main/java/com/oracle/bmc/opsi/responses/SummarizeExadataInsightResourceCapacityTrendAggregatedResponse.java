@@ -43,12 +43,12 @@ public class SummarizeExadataInsightResourceCapacityTrendAggregatedResponse
         return opcNextPage;
     }
 
-    /** The returned SummarizeExadataInsightResourceCapacityTrendAggregation instance. */
+    /** The returned {@code SummarizeExadataInsightResourceCapacityTrendAggregation} instance. */
     private com.oracle.bmc.opsi.model.SummarizeExadataInsightResourceCapacityTrendAggregation
             summarizeExadataInsightResourceCapacityTrendAggregation;
 
     /**
-     * The returned SummarizeExadataInsightResourceCapacityTrendAggregation instance.
+     * The returned {@code SummarizeExadataInsightResourceCapacityTrendAggregation} instance.
      *
      * @return the value
      */
@@ -135,12 +135,14 @@ public class SummarizeExadataInsightResourceCapacityTrendAggregatedResponse
             return this;
         }
 
-        /** The returned SummarizeExadataInsightResourceCapacityTrendAggregation instance. */
+        /**
+         * The returned {@code SummarizeExadataInsightResourceCapacityTrendAggregation} instance.
+         */
         private com.oracle.bmc.opsi.model.SummarizeExadataInsightResourceCapacityTrendAggregation
                 summarizeExadataInsightResourceCapacityTrendAggregation;
 
         /**
-         * The returned SummarizeExadataInsightResourceCapacityTrendAggregation instance.
+         * The returned {@code SummarizeExadataInsightResourceCapacityTrendAggregation} instance.
          *
          * @param summarizeExadataInsightResourceCapacityTrendAggregation the value to set
          * @return this builder

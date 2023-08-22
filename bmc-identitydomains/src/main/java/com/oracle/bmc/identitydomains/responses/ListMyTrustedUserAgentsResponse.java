@@ -42,11 +42,11 @@ public class ListMyTrustedUserAgentsResponse extends com.oracle.bmc.responses.Bm
         return opcNextPage;
     }
 
-    /** The returned MyTrustedUserAgents instance. */
+    /** The returned {@code MyTrustedUserAgents} instance. */
     private com.oracle.bmc.identitydomains.model.MyTrustedUserAgents myTrustedUserAgents;
 
     /**
-     * The returned MyTrustedUserAgents instance.
+     * The returned {@code MyTrustedUserAgents} instance.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListMyTrustedUserAgentsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned MyTrustedUserAgents instance. */
+        /** The returned {@code MyTrustedUserAgents} instance. */
         private com.oracle.bmc.identitydomains.model.MyTrustedUserAgents myTrustedUserAgents;
 
         /**
-         * The returned MyTrustedUserAgents instance.
+         * The returned {@code MyTrustedUserAgents} instance.
          *
          * @param myTrustedUserAgents the value to set
          * @return this builder

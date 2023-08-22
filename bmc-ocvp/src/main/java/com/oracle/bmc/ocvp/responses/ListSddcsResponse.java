@@ -42,11 +42,11 @@ public class ListSddcsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned SddcCollection instance. */
+    /** The returned {@code SddcCollection} instance. */
     private com.oracle.bmc.ocvp.model.SddcCollection sddcCollection;
 
     /**
-     * The returned SddcCollection instance.
+     * The returned {@code SddcCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListSddcsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned SddcCollection instance. */
+        /** The returned {@code SddcCollection} instance. */
         private com.oracle.bmc.ocvp.model.SddcCollection sddcCollection;
 
         /**
-         * The returned SddcCollection instance.
+         * The returned {@code SddcCollection} instance.
          *
          * @param sddcCollection the value to set
          * @return this builder

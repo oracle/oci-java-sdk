@@ -57,11 +57,11 @@ public class RemoveVirtualMachineFromVmClusterResponse
         return opcRequestId;
     }
 
-    /** The returned VmCluster instance. */
+    /** The returned {@code VmCluster} instance. */
     private com.oracle.bmc.database.model.VmCluster vmCluster;
 
     /**
-     * The returned VmCluster instance.
+     * The returned {@code VmCluster} instance.
      *
      * @return the value
      */
@@ -164,11 +164,11 @@ public class RemoveVirtualMachineFromVmClusterResponse
             return this;
         }
 
-        /** The returned VmCluster instance. */
+        /** The returned {@code VmCluster} instance. */
         private com.oracle.bmc.database.model.VmCluster vmCluster;
 
         /**
-         * The returned VmCluster instance.
+         * The returned {@code VmCluster} instance.
          *
          * @param vmCluster the value to set
          * @return this builder

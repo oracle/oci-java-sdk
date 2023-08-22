@@ -36,11 +36,11 @@ public class GetInvoiceResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Invoice instance. */
+    /** The returned {@code Invoice} instance. */
     private com.oracle.bmc.ospgateway.model.Invoice invoice;
 
     /**
-     * The returned Invoice instance.
+     * The returned {@code Invoice} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetInvoiceResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Invoice instance. */
+        /** The returned {@code Invoice} instance. */
         private com.oracle.bmc.ospgateway.model.Invoice invoice;
 
         /**
-         * The returned Invoice instance.
+         * The returned {@code Invoice} instance.
          *
          * @param invoice the value to set
          * @return this builder

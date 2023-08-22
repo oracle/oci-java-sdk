@@ -42,11 +42,11 @@ public class ListWindowsUpdatesResponse extends com.oracle.bmc.responses.BmcResp
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.osmanagement.model.WindowsUpdateSummary instances. */
+    /** A list of {@code com.oracle.bmc.osmanagement.model.WindowsUpdateSummary} instances. */
     private java.util.List<com.oracle.bmc.osmanagement.model.WindowsUpdateSummary> items;
 
     /**
-     * A list of com.oracle.bmc.osmanagement.model.WindowsUpdateSummary instances.
+     * A list of {@code com.oracle.bmc.osmanagement.model.WindowsUpdateSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListWindowsUpdatesResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** A list of com.oracle.bmc.osmanagement.model.WindowsUpdateSummary instances. */
+        /** A list of {@code com.oracle.bmc.osmanagement.model.WindowsUpdateSummary} instances. */
         private java.util.List<com.oracle.bmc.osmanagement.model.WindowsUpdateSummary> items;
 
         /**
-         * A list of com.oracle.bmc.osmanagement.model.WindowsUpdateSummary instances.
+         * A list of {@code com.oracle.bmc.osmanagement.model.WindowsUpdateSummary} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -42,12 +42,12 @@ public class ListDiscoveryJobLogsResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned DiscoveryJobLogCollection instance. */
+    /** The returned {@code DiscoveryJobLogCollection} instance. */
     private com.oracle.bmc.stackmonitoring.model.DiscoveryJobLogCollection
             discoveryJobLogCollection;
 
     /**
-     * The returned DiscoveryJobLogCollection instance.
+     * The returned {@code DiscoveryJobLogCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListDiscoveryJobLogsResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned DiscoveryJobLogCollection instance. */
+        /** The returned {@code DiscoveryJobLogCollection} instance. */
         private com.oracle.bmc.stackmonitoring.model.DiscoveryJobLogCollection
                 discoveryJobLogCollection;
 
         /**
-         * The returned DiscoveryJobLogCollection instance.
+         * The returned {@code DiscoveryJobLogCollection} instance.
          *
          * @param discoveryJobLogCollection the value to set
          * @return this builder

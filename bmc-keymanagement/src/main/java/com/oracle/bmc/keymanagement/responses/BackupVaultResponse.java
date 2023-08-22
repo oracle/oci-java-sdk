@@ -52,11 +52,11 @@ public class BackupVaultResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcWorkRequestId;
     }
 
-    /** The returned Vault instance. */
+    /** The returned {@code Vault} instance. */
     private com.oracle.bmc.keymanagement.model.Vault vault;
 
     /**
-     * The returned Vault instance.
+     * The returned {@code Vault} instance.
      *
      * @return the value
      */
@@ -154,11 +154,11 @@ public class BackupVaultResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Vault instance. */
+        /** The returned {@code Vault} instance. */
         private com.oracle.bmc.keymanagement.model.Vault vault;
 
         /**
-         * The returned Vault instance.
+         * The returned {@code Vault} instance.
          *
          * @param vault the value to set
          * @return this builder

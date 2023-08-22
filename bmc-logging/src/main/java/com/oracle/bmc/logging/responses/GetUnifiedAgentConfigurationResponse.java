@@ -36,11 +36,11 @@ public class GetUnifiedAgentConfigurationResponse extends com.oracle.bmc.respons
         return etag;
     }
 
-    /** The returned UnifiedAgentConfiguration instance. */
+    /** The returned {@code UnifiedAgentConfiguration} instance. */
     private com.oracle.bmc.logging.model.UnifiedAgentConfiguration unifiedAgentConfiguration;
 
     /**
-     * The returned UnifiedAgentConfiguration instance.
+     * The returned {@code UnifiedAgentConfiguration} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetUnifiedAgentConfigurationResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned UnifiedAgentConfiguration instance. */
+        /** The returned {@code UnifiedAgentConfiguration} instance. */
         private com.oracle.bmc.logging.model.UnifiedAgentConfiguration unifiedAgentConfiguration;
 
         /**
-         * The returned UnifiedAgentConfiguration instance.
+         * The returned {@code UnifiedAgentConfiguration} instance.
          *
          * @param unifiedAgentConfiguration the value to set
          * @return this builder

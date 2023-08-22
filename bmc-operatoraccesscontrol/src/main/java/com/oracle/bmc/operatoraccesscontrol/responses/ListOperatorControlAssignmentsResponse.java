@@ -42,12 +42,12 @@ public class ListOperatorControlAssignmentsResponse extends com.oracle.bmc.respo
         return opcNextPage;
     }
 
-    /** The returned OperatorControlAssignmentCollection instance. */
+    /** The returned {@code OperatorControlAssignmentCollection} instance. */
     private com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignmentCollection
             operatorControlAssignmentCollection;
 
     /**
-     * The returned OperatorControlAssignmentCollection instance.
+     * The returned {@code OperatorControlAssignmentCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListOperatorControlAssignmentsResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned OperatorControlAssignmentCollection instance. */
+        /** The returned {@code OperatorControlAssignmentCollection} instance. */
         private com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignmentCollection
                 operatorControlAssignmentCollection;
 
         /**
-         * The returned OperatorControlAssignmentCollection instance.
+         * The returned {@code OperatorControlAssignmentCollection} instance.
          *
          * @param operatorControlAssignmentCollection the value to set
          * @return this builder

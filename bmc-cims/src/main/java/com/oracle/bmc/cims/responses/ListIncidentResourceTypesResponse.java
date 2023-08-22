@@ -42,11 +42,11 @@ public class ListIncidentResourceTypesResponse extends com.oracle.bmc.responses.
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.cims.model.IncidentResourceType instances. */
+    /** A list of {@code com.oracle.bmc.cims.model.IncidentResourceType} instances. */
     private java.util.List<com.oracle.bmc.cims.model.IncidentResourceType> items;
 
     /**
-     * A list of com.oracle.bmc.cims.model.IncidentResourceType instances.
+     * A list of {@code com.oracle.bmc.cims.model.IncidentResourceType} instances.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListIncidentResourceTypesResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** A list of com.oracle.bmc.cims.model.IncidentResourceType instances. */
+        /** A list of {@code com.oracle.bmc.cims.model.IncidentResourceType} instances. */
         private java.util.List<com.oracle.bmc.cims.model.IncidentResourceType> items;
 
         /**
-         * A list of com.oracle.bmc.cims.model.IncidentResourceType instances.
+         * A list of {@code com.oracle.bmc.cims.model.IncidentResourceType} instances.
          *
          * @param items the value to set
          * @return this builder

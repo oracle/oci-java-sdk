@@ -36,11 +36,11 @@ public class UpdateFilterGroupResponse extends com.oracle.bmc.responses.BmcRespo
         return etag;
     }
 
-    /** The returned FilterGroup instance. */
+    /** The returned {@code FilterGroup} instance. */
     private com.oracle.bmc.announcementsservice.model.FilterGroup filterGroup;
 
     /**
-     * The returned FilterGroup instance.
+     * The returned {@code FilterGroup} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateFilterGroupResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned FilterGroup instance. */
+        /** The returned {@code FilterGroup} instance. */
         private com.oracle.bmc.announcementsservice.model.FilterGroup filterGroup;
 
         /**
-         * The returned FilterGroup instance.
+         * The returned {@code FilterGroup} instance.
          *
          * @param filterGroup the value to set
          * @return this builder

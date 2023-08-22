@@ -36,11 +36,11 @@ public class GetBuildPipelineStageResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned BuildPipelineStage instance. */
+    /** The returned {@code BuildPipelineStage} instance. */
     private com.oracle.bmc.devops.model.BuildPipelineStage buildPipelineStage;
 
     /**
-     * The returned BuildPipelineStage instance.
+     * The returned {@code BuildPipelineStage} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetBuildPipelineStageResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned BuildPipelineStage instance. */
+        /** The returned {@code BuildPipelineStage} instance. */
         private com.oracle.bmc.devops.model.BuildPipelineStage buildPipelineStage;
 
         /**
-         * The returned BuildPipelineStage instance.
+         * The returned {@code BuildPipelineStage} instance.
          *
          * @param buildPipelineStage the value to set
          * @return this builder

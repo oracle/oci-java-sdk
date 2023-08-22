@@ -36,11 +36,11 @@ public class CreateProfileResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** The returned Profile instance. */
+    /** The returned {@code Profile} instance. */
     private com.oracle.bmc.osmanagementhub.model.Profile profile;
 
     /**
-     * The returned Profile instance.
+     * The returned {@code Profile} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class CreateProfileResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned Profile instance. */
+        /** The returned {@code Profile} instance. */
         private com.oracle.bmc.osmanagementhub.model.Profile profile;
 
         /**
-         * The returned Profile instance.
+         * The returned {@code Profile} instance.
          *
          * @param profile the value to set
          * @return this builder

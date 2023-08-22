@@ -54,11 +54,11 @@ public class ListHostInsightsResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /** The returned HostInsightSummaryCollection instance. */
+    /** The returned {@code HostInsightSummaryCollection} instance. */
     private com.oracle.bmc.opsi.model.HostInsightSummaryCollection hostInsightSummaryCollection;
 
     /**
-     * The returned HostInsightSummaryCollection instance.
+     * The returned {@code HostInsightSummaryCollection} instance.
      *
      * @return the value
      */
@@ -159,11 +159,11 @@ public class ListHostInsightsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned HostInsightSummaryCollection instance. */
+        /** The returned {@code HostInsightSummaryCollection} instance. */
         private com.oracle.bmc.opsi.model.HostInsightSummaryCollection hostInsightSummaryCollection;
 
         /**
-         * The returned HostInsightSummaryCollection instance.
+         * The returned {@code HostInsightSummaryCollection} instance.
          *
          * @param hostInsightSummaryCollection the value to set
          * @return this builder

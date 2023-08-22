@@ -24,12 +24,12 @@ public class GetLogAnalyticsEmBridgeSummaryResponse extends com.oracle.bmc.respo
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsEmBridgeSummaryReport instance. */
+    /** The returned {@code LogAnalyticsEmBridgeSummaryReport} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsEmBridgeSummaryReport
             logAnalyticsEmBridgeSummaryReport;
 
     /**
-     * The returned LogAnalyticsEmBridgeSummaryReport instance.
+     * The returned {@code LogAnalyticsEmBridgeSummaryReport} instance.
      *
      * @return the value
      */
@@ -92,12 +92,12 @@ public class GetLogAnalyticsEmBridgeSummaryResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned LogAnalyticsEmBridgeSummaryReport instance. */
+        /** The returned {@code LogAnalyticsEmBridgeSummaryReport} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsEmBridgeSummaryReport
                 logAnalyticsEmBridgeSummaryReport;
 
         /**
-         * The returned LogAnalyticsEmBridgeSummaryReport instance.
+         * The returned {@code LogAnalyticsEmBridgeSummaryReport} instance.
          *
          * @param logAnalyticsEmBridgeSummaryReport the value to set
          * @return this builder

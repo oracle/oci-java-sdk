@@ -44,11 +44,11 @@ public class ListAssociationsResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /** The returned AssociationCollection instance. */
+    /** The returned {@code AssociationCollection} instance. */
     private com.oracle.bmc.certificatesmanagement.model.AssociationCollection associationCollection;
 
     /**
-     * The returned AssociationCollection instance.
+     * The returned {@code AssociationCollection} instance.
      *
      * @return the value
      */
@@ -137,12 +137,12 @@ public class ListAssociationsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned AssociationCollection instance. */
+        /** The returned {@code AssociationCollection} instance. */
         private com.oracle.bmc.certificatesmanagement.model.AssociationCollection
                 associationCollection;
 
         /**
-         * The returned AssociationCollection instance.
+         * The returned {@code AssociationCollection} instance.
          *
          * @param associationCollection the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class UpdateSenderResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned Sender instance. */
+    /** The returned {@code Sender} instance. */
     private com.oracle.bmc.email.model.Sender sender;
 
     /**
-     * The returned Sender instance.
+     * The returned {@code Sender} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateSenderResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Sender instance. */
+        /** The returned {@code Sender} instance. */
         private com.oracle.bmc.email.model.Sender sender;
 
         /**
-         * The returned Sender instance.
+         * The returned {@code Sender} instance.
          *
          * @param sender the value to set
          * @return this builder

@@ -43,11 +43,11 @@ public class ListNetworkSecurityGroupSecurityRulesResponse
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.SecurityRule instances. */
+    /** A list of {@code com.oracle.bmc.core.model.SecurityRule} instances. */
     private java.util.List<com.oracle.bmc.core.model.SecurityRule> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.SecurityRule instances.
+     * A list of {@code com.oracle.bmc.core.model.SecurityRule} instances.
      *
      * @return the value
      */
@@ -131,11 +131,11 @@ public class ListNetworkSecurityGroupSecurityRulesResponse
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.SecurityRule instances. */
+        /** A list of {@code com.oracle.bmc.core.model.SecurityRule} instances. */
         private java.util.List<com.oracle.bmc.core.model.SecurityRule> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.SecurityRule instances.
+         * A list of {@code com.oracle.bmc.core.model.SecurityRule} instances.
          *
          * @param items the value to set
          * @return this builder

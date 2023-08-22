@@ -70,11 +70,11 @@ public class CreateTargetDatabaseResponse extends com.oracle.bmc.responses.BmcRe
         return location;
     }
 
-    /** The returned TargetDatabase instance. */
+    /** The returned {@code TargetDatabase} instance. */
     private com.oracle.bmc.datasafe.model.TargetDatabase targetDatabase;
 
     /**
-     * The returned TargetDatabase instance.
+     * The returned {@code TargetDatabase} instance.
      *
      * @return the value
      */
@@ -195,11 +195,11 @@ public class CreateTargetDatabaseResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned TargetDatabase instance. */
+        /** The returned {@code TargetDatabase} instance. */
         private com.oracle.bmc.datasafe.model.TargetDatabase targetDatabase;
 
         /**
-         * The returned TargetDatabase instance.
+         * The returned {@code TargetDatabase} instance.
          *
          * @param targetDatabase the value to set
          * @return this builder

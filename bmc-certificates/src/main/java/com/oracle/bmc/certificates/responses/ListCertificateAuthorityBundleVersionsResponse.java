@@ -25,12 +25,12 @@ public class ListCertificateAuthorityBundleVersionsResponse
         return opcRequestId;
     }
 
-    /** The returned CertificateAuthorityBundleVersionCollection instance. */
+    /** The returned {@code CertificateAuthorityBundleVersionCollection} instance. */
     private com.oracle.bmc.certificates.model.CertificateAuthorityBundleVersionCollection
             certificateAuthorityBundleVersionCollection;
 
     /**
-     * The returned CertificateAuthorityBundleVersionCollection instance.
+     * The returned {@code CertificateAuthorityBundleVersionCollection} instance.
      *
      * @return the value
      */
@@ -94,12 +94,12 @@ public class ListCertificateAuthorityBundleVersionsResponse
             return this;
         }
 
-        /** The returned CertificateAuthorityBundleVersionCollection instance. */
+        /** The returned {@code CertificateAuthorityBundleVersionCollection} instance. */
         private com.oracle.bmc.certificates.model.CertificateAuthorityBundleVersionCollection
                 certificateAuthorityBundleVersionCollection;
 
         /**
-         * The returned CertificateAuthorityBundleVersionCollection instance.
+         * The returned {@code CertificateAuthorityBundleVersionCollection} instance.
          *
          * @param certificateAuthorityBundleVersionCollection the value to set
          * @return this builder

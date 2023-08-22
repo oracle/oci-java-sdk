@@ -36,12 +36,12 @@ public class GetDatabaseToolsEndpointServiceResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** The returned DatabaseToolsEndpointService instance. */
+    /** The returned {@code DatabaseToolsEndpointService} instance. */
     private com.oracle.bmc.databasetools.model.DatabaseToolsEndpointService
             databaseToolsEndpointService;
 
     /**
-     * The returned DatabaseToolsEndpointService instance.
+     * The returned {@code DatabaseToolsEndpointService} instance.
      *
      * @return the value
      */
@@ -121,12 +121,12 @@ public class GetDatabaseToolsEndpointServiceResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned DatabaseToolsEndpointService instance. */
+        /** The returned {@code DatabaseToolsEndpointService} instance. */
         private com.oracle.bmc.databasetools.model.DatabaseToolsEndpointService
                 databaseToolsEndpointService;
 
         /**
-         * The returned DatabaseToolsEndpointService instance.
+         * The returned {@code DatabaseToolsEndpointService} instance.
          *
          * @param databaseToolsEndpointService the value to set
          * @return this builder

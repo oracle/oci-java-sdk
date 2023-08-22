@@ -42,12 +42,12 @@ public class RequestSecurityScoresResponse extends com.oracle.bmc.responses.BmcR
         return opcNextPage;
     }
 
-    /** The returned SecurityScoreAggregationCollection instance. */
+    /** The returned {@code SecurityScoreAggregationCollection} instance. */
     private com.oracle.bmc.cloudguard.model.SecurityScoreAggregationCollection
             securityScoreAggregationCollection;
 
     /**
-     * The returned SecurityScoreAggregationCollection instance.
+     * The returned {@code SecurityScoreAggregationCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class RequestSecurityScoresResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned SecurityScoreAggregationCollection instance. */
+        /** The returned {@code SecurityScoreAggregationCollection} instance. */
         private com.oracle.bmc.cloudguard.model.SecurityScoreAggregationCollection
                 securityScoreAggregationCollection;
 
         /**
-         * The returned SecurityScoreAggregationCollection instance.
+         * The returned {@code SecurityScoreAggregationCollection} instance.
          *
          * @param securityScoreAggregationCollection the value to set
          * @return this builder

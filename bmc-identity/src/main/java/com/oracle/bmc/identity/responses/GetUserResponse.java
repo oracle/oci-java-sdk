@@ -36,11 +36,11 @@ public class GetUserResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned User instance. */
+    /** The returned {@code User} instance. */
     private com.oracle.bmc.identity.model.User user;
 
     /**
-     * The returned User instance.
+     * The returned {@code User} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetUserResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned User instance. */
+        /** The returned {@code User} instance. */
         private com.oracle.bmc.identity.model.User user;
 
         /**
-         * The returned User instance.
+         * The returned {@code User} instance.
          *
          * @param user the value to set
          * @return this builder

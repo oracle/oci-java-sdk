@@ -36,12 +36,12 @@ public class AuthorizeSubscriptionPaymentResponse extends com.oracle.bmc.respons
         return etag;
     }
 
-    /** The returned AuthorizeSubscriptionPaymentReceipt instance. */
+    /** The returned {@code AuthorizeSubscriptionPaymentReceipt} instance. */
     private com.oracle.bmc.ospgateway.model.AuthorizeSubscriptionPaymentReceipt
             authorizeSubscriptionPaymentReceipt;
 
     /**
-     * The returned AuthorizeSubscriptionPaymentReceipt instance.
+     * The returned {@code AuthorizeSubscriptionPaymentReceipt} instance.
      *
      * @return the value
      */
@@ -121,12 +121,12 @@ public class AuthorizeSubscriptionPaymentResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned AuthorizeSubscriptionPaymentReceipt instance. */
+        /** The returned {@code AuthorizeSubscriptionPaymentReceipt} instance. */
         private com.oracle.bmc.ospgateway.model.AuthorizeSubscriptionPaymentReceipt
                 authorizeSubscriptionPaymentReceipt;
 
         /**
-         * The returned AuthorizeSubscriptionPaymentReceipt instance.
+         * The returned {@code AuthorizeSubscriptionPaymentReceipt} instance.
          *
          * @param authorizeSubscriptionPaymentReceipt the value to set
          * @return this builder

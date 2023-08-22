@@ -43,12 +43,12 @@ public class ListOperationsInsightsWarehouseUsersResponse
         return opcNextPage;
     }
 
-    /** The returned OperationsInsightsWarehouseUserSummaryCollection instance. */
+    /** The returned {@code OperationsInsightsWarehouseUserSummaryCollection} instance. */
     private com.oracle.bmc.opsi.model.OperationsInsightsWarehouseUserSummaryCollection
             operationsInsightsWarehouseUserSummaryCollection;
 
     /**
-     * The returned OperationsInsightsWarehouseUserSummaryCollection instance.
+     * The returned {@code OperationsInsightsWarehouseUserSummaryCollection} instance.
      *
      * @return the value
      */
@@ -135,12 +135,12 @@ public class ListOperationsInsightsWarehouseUsersResponse
             return this;
         }
 
-        /** The returned OperationsInsightsWarehouseUserSummaryCollection instance. */
+        /** The returned {@code OperationsInsightsWarehouseUserSummaryCollection} instance. */
         private com.oracle.bmc.opsi.model.OperationsInsightsWarehouseUserSummaryCollection
                 operationsInsightsWarehouseUserSummaryCollection;
 
         /**
-         * The returned OperationsInsightsWarehouseUserSummaryCollection instance.
+         * The returned {@code OperationsInsightsWarehouseUserSummaryCollection} instance.
          *
          * @param operationsInsightsWarehouseUserSummaryCollection the value to set
          * @return this builder

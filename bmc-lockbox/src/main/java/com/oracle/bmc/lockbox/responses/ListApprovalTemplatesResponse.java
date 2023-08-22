@@ -42,11 +42,11 @@ public class ListApprovalTemplatesResponse extends com.oracle.bmc.responses.BmcR
         return opcNextPage;
     }
 
-    /** The returned ApprovalTemplateCollection instance. */
+    /** The returned {@code ApprovalTemplateCollection} instance. */
     private com.oracle.bmc.lockbox.model.ApprovalTemplateCollection approvalTemplateCollection;
 
     /**
-     * The returned ApprovalTemplateCollection instance.
+     * The returned {@code ApprovalTemplateCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListApprovalTemplatesResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned ApprovalTemplateCollection instance. */
+        /** The returned {@code ApprovalTemplateCollection} instance. */
         private com.oracle.bmc.lockbox.model.ApprovalTemplateCollection approvalTemplateCollection;
 
         /**
-         * The returned ApprovalTemplateCollection instance.
+         * The returned {@code ApprovalTemplateCollection} instance.
          *
          * @param approvalTemplateCollection the value to set
          * @return this builder

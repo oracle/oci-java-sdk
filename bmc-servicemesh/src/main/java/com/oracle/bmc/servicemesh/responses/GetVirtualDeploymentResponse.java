@@ -36,11 +36,11 @@ public class GetVirtualDeploymentResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned VirtualDeployment instance. */
+    /** The returned {@code VirtualDeployment} instance. */
     private com.oracle.bmc.servicemesh.model.VirtualDeployment virtualDeployment;
 
     /**
-     * The returned VirtualDeployment instance.
+     * The returned {@code VirtualDeployment} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetVirtualDeploymentResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned VirtualDeployment instance. */
+        /** The returned {@code VirtualDeployment} instance. */
         private com.oracle.bmc.servicemesh.model.VirtualDeployment virtualDeployment;
 
         /**
-         * The returned VirtualDeployment instance.
+         * The returned {@code VirtualDeployment} instance.
          *
          * @param virtualDeployment the value to set
          * @return this builder

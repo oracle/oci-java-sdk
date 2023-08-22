@@ -24,11 +24,11 @@ public class GetDbSystemUpgradeHistoryEntryResponse extends com.oracle.bmc.respo
         return opcRequestId;
     }
 
-    /** The returned DbSystemUpgradeHistoryEntry instance. */
+    /** The returned {@code DbSystemUpgradeHistoryEntry} instance. */
     private com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntry dbSystemUpgradeHistoryEntry;
 
     /**
-     * The returned DbSystemUpgradeHistoryEntry instance.
+     * The returned {@code DbSystemUpgradeHistoryEntry} instance.
      *
      * @return the value
      */
@@ -90,12 +90,12 @@ public class GetDbSystemUpgradeHistoryEntryResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned DbSystemUpgradeHistoryEntry instance. */
+        /** The returned {@code DbSystemUpgradeHistoryEntry} instance. */
         private com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntry
                 dbSystemUpgradeHistoryEntry;
 
         /**
-         * The returned DbSystemUpgradeHistoryEntry instance.
+         * The returned {@code DbSystemUpgradeHistoryEntry} instance.
          *
          * @param dbSystemUpgradeHistoryEntry the value to set
          * @return this builder

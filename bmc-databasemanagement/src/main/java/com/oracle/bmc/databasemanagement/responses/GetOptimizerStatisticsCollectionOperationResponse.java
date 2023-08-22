@@ -25,12 +25,12 @@ public class GetOptimizerStatisticsCollectionOperationResponse
         return opcRequestId;
     }
 
-    /** The returned OptimizerStatisticsCollectionOperation instance. */
+    /** The returned {@code OptimizerStatisticsCollectionOperation} instance. */
     private com.oracle.bmc.databasemanagement.model.OptimizerStatisticsCollectionOperation
             optimizerStatisticsCollectionOperation;
 
     /**
-     * The returned OptimizerStatisticsCollectionOperation instance.
+     * The returned {@code OptimizerStatisticsCollectionOperation} instance.
      *
      * @return the value
      */
@@ -93,12 +93,12 @@ public class GetOptimizerStatisticsCollectionOperationResponse
             return this;
         }
 
-        /** The returned OptimizerStatisticsCollectionOperation instance. */
+        /** The returned {@code OptimizerStatisticsCollectionOperation} instance. */
         private com.oracle.bmc.databasemanagement.model.OptimizerStatisticsCollectionOperation
                 optimizerStatisticsCollectionOperation;
 
         /**
-         * The returned OptimizerStatisticsCollectionOperation instance.
+         * The returned {@code OptimizerStatisticsCollectionOperation} instance.
          *
          * @param optimizerStatisticsCollectionOperation the value to set
          * @return this builder

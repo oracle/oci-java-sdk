@@ -52,11 +52,11 @@ public class PutObjectLifecyclePolicyResponse extends com.oracle.bmc.responses.B
         return eTag;
     }
 
-    /** The returned ObjectLifecyclePolicy instance. */
+    /** The returned {@code ObjectLifecyclePolicy} instance. */
     private com.oracle.bmc.objectstorage.model.ObjectLifecyclePolicy objectLifecyclePolicy;
 
     /**
-     * The returned ObjectLifecyclePolicy instance.
+     * The returned {@code ObjectLifecyclePolicy} instance.
      *
      * @return the value
      */
@@ -155,11 +155,11 @@ public class PutObjectLifecyclePolicyResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned ObjectLifecyclePolicy instance. */
+        /** The returned {@code ObjectLifecyclePolicy} instance. */
         private com.oracle.bmc.objectstorage.model.ObjectLifecyclePolicy objectLifecyclePolicy;
 
         /**
-         * The returned ObjectLifecyclePolicy instance.
+         * The returned {@code ObjectLifecyclePolicy} instance.
          *
          * @param objectLifecyclePolicy the value to set
          * @return this builder

@@ -60,11 +60,11 @@ public class ListEnrollmentStatusesResponse extends com.oracle.bmc.responses.Bmc
         return opcPrevPage;
     }
 
-    /** The returned EnrollmentStatusCollection instance. */
+    /** The returned {@code EnrollmentStatusCollection} instance. */
     private com.oracle.bmc.optimizer.model.EnrollmentStatusCollection enrollmentStatusCollection;
 
     /**
-     * The returned EnrollmentStatusCollection instance.
+     * The returned {@code EnrollmentStatusCollection} instance.
      *
      * @return the value
      */
@@ -172,12 +172,12 @@ public class ListEnrollmentStatusesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned EnrollmentStatusCollection instance. */
+        /** The returned {@code EnrollmentStatusCollection} instance. */
         private com.oracle.bmc.optimizer.model.EnrollmentStatusCollection
                 enrollmentStatusCollection;
 
         /**
-         * The returned EnrollmentStatusCollection instance.
+         * The returned {@code EnrollmentStatusCollection} instance.
          *
          * @param enrollmentStatusCollection the value to set
          * @return this builder

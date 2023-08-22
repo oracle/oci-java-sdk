@@ -42,11 +42,11 @@ public class SearchIdentityProvidersResponse extends com.oracle.bmc.responses.Bm
         return opcNextPage;
     }
 
-    /** The returned IdentityProviders instance. */
+    /** The returned {@code IdentityProviders} instance. */
     private com.oracle.bmc.identitydomains.model.IdentityProviders identityProviders;
 
     /**
-     * The returned IdentityProviders instance.
+     * The returned {@code IdentityProviders} instance.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class SearchIdentityProvidersResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned IdentityProviders instance. */
+        /** The returned {@code IdentityProviders} instance. */
         private com.oracle.bmc.identitydomains.model.IdentityProviders identityProviders;
 
         /**
-         * The returned IdentityProviders instance.
+         * The returned {@code IdentityProviders} instance.
          *
          * @param identityProviders the value to set
          * @return this builder

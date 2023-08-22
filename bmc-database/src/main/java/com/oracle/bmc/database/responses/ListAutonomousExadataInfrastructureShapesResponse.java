@@ -46,7 +46,7 @@ public class ListAutonomousExadataInfrastructureShapesResponse
     }
 
     /**
-     * A list of com.oracle.bmc.database.model.AutonomousExadataInfrastructureShapeSummary
+     * A list of {@code com.oracle.bmc.database.model.AutonomousExadataInfrastructureShapeSummary}
      * instances.
      */
     private java.util.List<
@@ -54,7 +54,7 @@ public class ListAutonomousExadataInfrastructureShapesResponse
             items;
 
     /**
-     * A list of com.oracle.bmc.database.model.AutonomousExadataInfrastructureShapeSummary
+     * A list of {@code com.oracle.bmc.database.model.AutonomousExadataInfrastructureShapeSummary}
      * instances.
      *
      * @return the value
@@ -148,16 +148,16 @@ public class ListAutonomousExadataInfrastructureShapesResponse
         }
 
         /**
-         * A list of com.oracle.bmc.database.model.AutonomousExadataInfrastructureShapeSummary
-         * instances.
+         * A list of {@code
+         * com.oracle.bmc.database.model.AutonomousExadataInfrastructureShapeSummary} instances.
          */
         private java.util.List<
                         com.oracle.bmc.database.model.AutonomousExadataInfrastructureShapeSummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.database.model.AutonomousExadataInfrastructureShapeSummary
-         * instances.
+         * A list of {@code
+         * com.oracle.bmc.database.model.AutonomousExadataInfrastructureShapeSummary} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -21,15 +21,21 @@ import org.bouncycastle.openssl.PEMEncryptedKeyPair;
 import org.bouncycastle.openssl.PEMKeyPair;
 import org.bouncycastle.openssl.PEMParser;
 import org.bouncycastle.openssl.jcajce.JcaPEMKeyConverter;
+import org.bouncycastle.openssl.jcajce.JceOpenSSLPKCS8DecryptorProviderBuilder;
 import org.bouncycastle.openssl.jcajce.JcePEMDecryptorProviderBuilder;
 
 import java.util.Optional;
 import com.oracle.bmc.util.internal.Validate;
+import org.bouncycastle.operator.InputDecryptorProvider;
+import org.bouncycastle.operator.OperatorCreationException;
+import org.bouncycastle.pkcs.PKCS8EncryptedPrivateKeyInfo;
+import org.bouncycastle.pkcs.PKCSException;
 
 /**
  * An implementation of {@link KeySupplier} that supplies a RSA private key from a PEM file.
- * Supports both PKCS#8 (starts with '-----BEGIN PRIVATE KEY-----' tag) and PKCS#1 (i.e., starts
- * with '-----BEGIN RSA PRIVATE KEY-----' tag) format.
+ * Supports PKCS#8 (starts with '-----BEGIN PRIVATE KEY-----' tag), PKCS#8 encrypted key (starts
+ * with '-----BEGIN ENCRYPTED PRIVATE KEY-----' tag) and PKCS#1 (i.e., starts with '-----BEGIN RSA
+ * PRIVATE KEY-----' tag) format.
  *
  * <p>Example commands that can be used to generate a 2048 bits RSA private key: <code>
  * $ openssl genrsa -out privateKey 2048</code>
@@ -98,6 +104,27 @@ public class PEMFileRSAPrivateKeySupplier implements KeySupplier<RSAPrivateKey> 
                         throw new IllegalArgumentException(
                                 "The provided passphrase is incorrect.", ex);
                     }
+                } else if (object instanceof PKCS8EncryptedPrivateKeyInfo) {
+                    Validate.notNull(
+                            passphraseCharacters, "The provided private key requires a passphrase");
+
+                    JceOpenSSLPKCS8DecryptorProviderBuilder decryptorProviderBuilder =
+                            new JceOpenSSLPKCS8DecryptorProviderBuilder();
+
+                    if (!BouncyCastleHelper.getInstance().isProviderInstalled()) {
+                        decryptorProviderBuilder.setProvider(
+                                BouncyCastleHelper.getInstance().getBouncyCastleProvider());
+                    }
+                    InputDecryptorProvider decProv =
+                            decryptorProviderBuilder.build(passphraseCharacters);
+                    try {
+                        keyInfo =
+                                ((PKCS8EncryptedPrivateKeyInfo) object)
+                                        .decryptPrivateKeyInfo(decProv);
+                    } catch (PKCSException ex) {
+                        throw new IllegalArgumentException(
+                                "The provided passphrase is incorrect.", ex);
+                    }
                 } else if (object instanceof PrivateKeyInfo) {
                     keyInfo = (PrivateKeyInfo) object;
                 } else if (object instanceof PEMKeyPair) {
@@ -111,7 +138,7 @@ public class PEMFileRSAPrivateKeySupplier implements KeySupplier<RSAPrivateKey> 
 
                 this.key = (RSAPrivateKey) converter.getPrivateKey(keyInfo);
             }
-        } catch (IOException ex) {
+        } catch (IOException | OperatorCreationException ex) {
             LOG.debug("Failed to read RSA private key from file ", ex);
             throw new PEMFileRSAPrivateKeySupplierException(
                     "Failed to read RSA private key from file ", ex);

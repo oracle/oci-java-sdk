@@ -42,11 +42,11 @@ public class ListCompartmentsResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.identity.model.Compartment instances. */
+    /** A list of {@code com.oracle.bmc.identity.model.Compartment} instances. */
     private java.util.List<com.oracle.bmc.identity.model.Compartment> items;
 
     /**
-     * A list of com.oracle.bmc.identity.model.Compartment instances.
+     * A list of {@code com.oracle.bmc.identity.model.Compartment} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListCompartmentsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** A list of com.oracle.bmc.identity.model.Compartment instances. */
+        /** A list of {@code com.oracle.bmc.identity.model.Compartment} instances. */
         private java.util.List<com.oracle.bmc.identity.model.Compartment> items;
 
         /**
-         * A list of com.oracle.bmc.identity.model.Compartment instances.
+         * A list of {@code com.oracle.bmc.identity.model.Compartment} instances.
          *
          * @param items the value to set
          * @return this builder

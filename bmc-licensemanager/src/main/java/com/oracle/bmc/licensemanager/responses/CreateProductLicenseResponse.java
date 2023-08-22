@@ -64,11 +64,11 @@ public class CreateProductLicenseResponse extends com.oracle.bmc.responses.BmcRe
         return location;
     }
 
-    /** The returned ProductLicense instance. */
+    /** The returned {@code ProductLicense} instance. */
     private com.oracle.bmc.licensemanager.model.ProductLicense productLicense;
 
     /**
-     * The returned ProductLicense instance.
+     * The returned {@code ProductLicense} instance.
      *
      * @return the value
      */
@@ -183,11 +183,11 @@ public class CreateProductLicenseResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned ProductLicense instance. */
+        /** The returned {@code ProductLicense} instance. */
         private com.oracle.bmc.licensemanager.model.ProductLicense productLicense;
 
         /**
-         * The returned ProductLicense instance.
+         * The returned {@code ProductLicense} instance.
          *
          * @param productLicense the value to set
          * @return this builder

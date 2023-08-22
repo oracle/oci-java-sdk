@@ -40,11 +40,11 @@ public class GetPatternResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Pattern instance. */
+    /** The returned {@code Pattern} instance. */
     private com.oracle.bmc.datacatalog.model.Pattern pattern;
 
     /**
-     * The returned Pattern instance.
+     * The returned {@code Pattern} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetPatternResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Pattern instance. */
+        /** The returned {@code Pattern} instance. */
         private com.oracle.bmc.datacatalog.model.Pattern pattern;
 
         /**
-         * The returned Pattern instance.
+         * The returned {@code Pattern} instance.
          *
          * @param pattern the value to set
          * @return this builder

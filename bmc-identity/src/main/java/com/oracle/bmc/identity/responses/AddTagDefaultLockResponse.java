@@ -24,11 +24,11 @@ public class AddTagDefaultLockResponse extends com.oracle.bmc.responses.BmcRespo
         return etag;
     }
 
-    /** The returned TagDefault instance. */
+    /** The returned {@code TagDefault} instance. */
     private com.oracle.bmc.identity.model.TagDefault tagDefault;
 
     /**
-     * The returned TagDefault instance.
+     * The returned {@code TagDefault} instance.
      *
      * @return the value
      */
@@ -97,11 +97,11 @@ public class AddTagDefaultLockResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned TagDefault instance. */
+        /** The returned {@code TagDefault} instance. */
         private com.oracle.bmc.identity.model.TagDefault tagDefault;
 
         /**
-         * The returned TagDefault instance.
+         * The returned {@code TagDefault} instance.
          *
          * @param tagDefault the value to set
          * @return this builder

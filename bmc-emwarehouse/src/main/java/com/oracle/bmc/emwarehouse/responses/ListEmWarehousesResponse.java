@@ -42,11 +42,11 @@ public class ListEmWarehousesResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /** The returned EmWarehouseCollection instance. */
+    /** The returned {@code EmWarehouseCollection} instance. */
     private com.oracle.bmc.emwarehouse.model.EmWarehouseCollection emWarehouseCollection;
 
     /**
-     * The returned EmWarehouseCollection instance.
+     * The returned {@code EmWarehouseCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListEmWarehousesResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned EmWarehouseCollection instance. */
+        /** The returned {@code EmWarehouseCollection} instance. */
         private com.oracle.bmc.emwarehouse.model.EmWarehouseCollection emWarehouseCollection;
 
         /**
-         * The returned EmWarehouseCollection instance.
+         * The returned {@code EmWarehouseCollection} instance.
          *
          * @param emWarehouseCollection the value to set
          * @return this builder

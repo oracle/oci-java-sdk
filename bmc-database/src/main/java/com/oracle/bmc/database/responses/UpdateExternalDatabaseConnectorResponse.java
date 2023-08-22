@@ -56,11 +56,11 @@ public class UpdateExternalDatabaseConnectorResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** The returned ExternalDatabaseConnector instance. */
+    /** The returned {@code ExternalDatabaseConnector} instance. */
     private com.oracle.bmc.database.model.ExternalDatabaseConnector externalDatabaseConnector;
 
     /**
-     * The returned ExternalDatabaseConnector instance.
+     * The returned {@code ExternalDatabaseConnector} instance.
      *
      * @return the value
      */
@@ -163,11 +163,11 @@ public class UpdateExternalDatabaseConnectorResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned ExternalDatabaseConnector instance. */
+        /** The returned {@code ExternalDatabaseConnector} instance. */
         private com.oracle.bmc.database.model.ExternalDatabaseConnector externalDatabaseConnector;
 
         /**
-         * The returned ExternalDatabaseConnector instance.
+         * The returned {@code ExternalDatabaseConnector} instance.
          *
          * @param externalDatabaseConnector the value to set
          * @return this builder

@@ -37,12 +37,12 @@ public class CreateLogAnalyticsObjectCollectionRuleResponse
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsObjectCollectionRule instance. */
+    /** The returned {@code LogAnalyticsObjectCollectionRule} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsObjectCollectionRule
             logAnalyticsObjectCollectionRule;
 
     /**
-     * The returned LogAnalyticsObjectCollectionRule instance.
+     * The returned {@code LogAnalyticsObjectCollectionRule} instance.
      *
      * @return the value
      */
@@ -122,12 +122,12 @@ public class CreateLogAnalyticsObjectCollectionRuleResponse
             return this;
         }
 
-        /** The returned LogAnalyticsObjectCollectionRule instance. */
+        /** The returned {@code LogAnalyticsObjectCollectionRule} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsObjectCollectionRule
                 logAnalyticsObjectCollectionRule;
 
         /**
-         * The returned LogAnalyticsObjectCollectionRule instance.
+         * The returned {@code LogAnalyticsObjectCollectionRule} instance.
          *
          * @param logAnalyticsObjectCollectionRule the value to set
          * @return this builder

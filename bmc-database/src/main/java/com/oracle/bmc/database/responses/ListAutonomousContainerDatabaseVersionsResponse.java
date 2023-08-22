@@ -46,13 +46,15 @@ public class ListAutonomousContainerDatabaseVersionsResponse
     }
 
     /**
-     * A list of com.oracle.bmc.database.model.AutonomousContainerDatabaseVersionSummary instances.
+     * A list of {@code com.oracle.bmc.database.model.AutonomousContainerDatabaseVersionSummary}
+     * instances.
      */
     private java.util.List<com.oracle.bmc.database.model.AutonomousContainerDatabaseVersionSummary>
             items;
 
     /**
-     * A list of com.oracle.bmc.database.model.AutonomousContainerDatabaseVersionSummary instances.
+     * A list of {@code com.oracle.bmc.database.model.AutonomousContainerDatabaseVersionSummary}
+     * instances.
      *
      * @return the value
      */
@@ -143,7 +145,7 @@ public class ListAutonomousContainerDatabaseVersionsResponse
         }
 
         /**
-         * A list of com.oracle.bmc.database.model.AutonomousContainerDatabaseVersionSummary
+         * A list of {@code com.oracle.bmc.database.model.AutonomousContainerDatabaseVersionSummary}
          * instances.
          */
         private java.util.List<
@@ -151,7 +153,7 @@ public class ListAutonomousContainerDatabaseVersionsResponse
                 items;
 
         /**
-         * A list of com.oracle.bmc.database.model.AutonomousContainerDatabaseVersionSummary
+         * A list of {@code com.oracle.bmc.database.model.AutonomousContainerDatabaseVersionSummary}
          * instances.
          *
          * @param items the value to set

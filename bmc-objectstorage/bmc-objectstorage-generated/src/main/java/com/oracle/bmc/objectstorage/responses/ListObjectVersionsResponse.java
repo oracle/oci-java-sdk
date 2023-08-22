@@ -70,11 +70,11 @@ public class ListObjectVersionsResponse extends com.oracle.bmc.responses.BmcResp
         return opcNextPage;
     }
 
-    /** The returned ObjectVersionCollection instance. */
+    /** The returned {@code ObjectVersionCollection} instance. */
     private com.oracle.bmc.objectstorage.model.ObjectVersionCollection objectVersionCollection;
 
     /**
-     * The returned ObjectVersionCollection instance.
+     * The returned {@code ObjectVersionCollection} instance.
      *
      * @return the value
      */
@@ -190,11 +190,11 @@ public class ListObjectVersionsResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned ObjectVersionCollection instance. */
+        /** The returned {@code ObjectVersionCollection} instance. */
         private com.oracle.bmc.objectstorage.model.ObjectVersionCollection objectVersionCollection;
 
         /**
-         * The returned ObjectVersionCollection instance.
+         * The returned {@code ObjectVersionCollection} instance.
          *
          * @param objectVersionCollection the value to set
          * @return this builder

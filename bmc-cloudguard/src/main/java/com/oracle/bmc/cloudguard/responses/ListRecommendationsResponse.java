@@ -42,12 +42,12 @@ public class ListRecommendationsResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** The returned RecommendationSummaryCollection instance. */
+    /** The returned {@code RecommendationSummaryCollection} instance. */
     private com.oracle.bmc.cloudguard.model.RecommendationSummaryCollection
             recommendationSummaryCollection;
 
     /**
-     * The returned RecommendationSummaryCollection instance.
+     * The returned {@code RecommendationSummaryCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListRecommendationsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned RecommendationSummaryCollection instance. */
+        /** The returned {@code RecommendationSummaryCollection} instance. */
         private com.oracle.bmc.cloudguard.model.RecommendationSummaryCollection
                 recommendationSummaryCollection;
 
         /**
-         * The returned RecommendationSummaryCollection instance.
+         * The returned {@code RecommendationSummaryCollection} instance.
          *
          * @param recommendationSummaryCollection the value to set
          * @return this builder

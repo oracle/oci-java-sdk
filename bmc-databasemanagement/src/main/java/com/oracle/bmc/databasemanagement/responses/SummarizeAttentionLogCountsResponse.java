@@ -42,12 +42,12 @@ public class SummarizeAttentionLogCountsResponse extends com.oracle.bmc.response
         return opcNextPage;
     }
 
-    /** The returned AttentionLogCountsCollection instance. */
+    /** The returned {@code AttentionLogCountsCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.AttentionLogCountsCollection
             attentionLogCountsCollection;
 
     /**
-     * The returned AttentionLogCountsCollection instance.
+     * The returned {@code AttentionLogCountsCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class SummarizeAttentionLogCountsResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned AttentionLogCountsCollection instance. */
+        /** The returned {@code AttentionLogCountsCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.AttentionLogCountsCollection
                 attentionLogCountsCollection;
 
         /**
-         * The returned AttentionLogCountsCollection instance.
+         * The returned {@code AttentionLogCountsCollection} instance.
          *
          * @param attentionLogCountsCollection the value to set
          * @return this builder

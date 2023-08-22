@@ -54,12 +54,49 @@ public final class DatabaseInsightsDataObject extends OpsiDataObject {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
+        private String name;
+
+        public Builder name(String name) {
+            this.name = name;
+            this.__explicitlySet__.add("name");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("groupNames")
+        private java.util.List<String> groupNames;
+
+        public Builder groupNames(java.util.List<String> groupNames) {
+            this.groupNames = groupNames;
+            this.__explicitlySet__.add("groupNames");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("supportedQueryTimePeriod")
+        private String supportedQueryTimePeriod;
+
+        public Builder supportedQueryTimePeriod(String supportedQueryTimePeriod) {
+            this.supportedQueryTimePeriod = supportedQueryTimePeriod;
+            this.__explicitlySet__.add("supportedQueryTimePeriod");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("columnsMetadata")
         private java.util.List<DataObjectColumnMetadata> columnsMetadata;
 
         public Builder columnsMetadata(java.util.List<DataObjectColumnMetadata> columnsMetadata) {
             this.columnsMetadata = columnsMetadata;
             this.__explicitlySet__.add("columnsMetadata");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("supportedQueryParams")
+        private java.util.List<OpsiDataObjectSupportedQueryParam> supportedQueryParams;
+
+        public Builder supportedQueryParams(
+                java.util.List<OpsiDataObjectSupportedQueryParam> supportedQueryParams) {
+            this.supportedQueryParams = supportedQueryParams;
+            this.__explicitlySet__.add("supportedQueryParams");
             return this;
         }
 
@@ -72,7 +109,11 @@ public final class DatabaseInsightsDataObject extends OpsiDataObject {
                             this.identifier,
                             this.displayName,
                             this.description,
-                            this.columnsMetadata);
+                            this.name,
+                            this.groupNames,
+                            this.supportedQueryTimePeriod,
+                            this.columnsMetadata,
+                            this.supportedQueryParams);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -90,8 +131,20 @@ public final class DatabaseInsightsDataObject extends OpsiDataObject {
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
             }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("groupNames")) {
+                this.groupNames(model.getGroupNames());
+            }
+            if (model.wasPropertyExplicitlySet("supportedQueryTimePeriod")) {
+                this.supportedQueryTimePeriod(model.getSupportedQueryTimePeriod());
+            }
             if (model.wasPropertyExplicitlySet("columnsMetadata")) {
                 this.columnsMetadata(model.getColumnsMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("supportedQueryParams")) {
+                this.supportedQueryParams(model.getSupportedQueryParams());
             }
             return this;
         }
@@ -111,8 +164,20 @@ public final class DatabaseInsightsDataObject extends OpsiDataObject {
             String identifier,
             String displayName,
             String description,
-            java.util.List<DataObjectColumnMetadata> columnsMetadata) {
-        super(identifier, displayName, description, columnsMetadata);
+            String name,
+            java.util.List<String> groupNames,
+            String supportedQueryTimePeriod,
+            java.util.List<DataObjectColumnMetadata> columnsMetadata,
+            java.util.List<OpsiDataObjectSupportedQueryParam> supportedQueryParams) {
+        super(
+                identifier,
+                displayName,
+                description,
+                name,
+                groupNames,
+                supportedQueryTimePeriod,
+                columnsMetadata,
+                supportedQueryParams);
     }
 
     @Override

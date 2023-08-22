@@ -42,11 +42,11 @@ public class ListTriggersResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned TriggersCollection instance. */
+    /** The returned {@code TriggersCollection} instance. */
     private com.oracle.bmc.functions.model.TriggersCollection triggersCollection;
 
     /**
-     * The returned TriggersCollection instance.
+     * The returned {@code TriggersCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListTriggersResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned TriggersCollection instance. */
+        /** The returned {@code TriggersCollection} instance. */
         private com.oracle.bmc.functions.model.TriggersCollection triggersCollection;
 
         /**
-         * The returned TriggersCollection instance.
+         * The returned {@code TriggersCollection} instance.
          *
          * @param triggersCollection the value to set
          * @return this builder

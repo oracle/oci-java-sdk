@@ -42,11 +42,11 @@ public class ListDrPlansResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned DrPlanCollection instance. */
+    /** The returned {@code DrPlanCollection} instance. */
     private com.oracle.bmc.disasterrecovery.model.DrPlanCollection drPlanCollection;
 
     /**
-     * The returned DrPlanCollection instance.
+     * The returned {@code DrPlanCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListDrPlansResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned DrPlanCollection instance. */
+        /** The returned {@code DrPlanCollection} instance. */
         private com.oracle.bmc.disasterrecovery.model.DrPlanCollection drPlanCollection;
 
         /**
-         * The returned DrPlanCollection instance.
+         * The returned {@code DrPlanCollection} instance.
          *
          * @param drPlanCollection the value to set
          * @return this builder

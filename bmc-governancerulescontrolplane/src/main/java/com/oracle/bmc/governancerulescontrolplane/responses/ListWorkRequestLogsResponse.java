@@ -42,12 +42,12 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned WorkRequestLogEntryCollection instance. */
+    /** The returned {@code WorkRequestLogEntryCollection} instance. */
     private com.oracle.bmc.governancerulescontrolplane.model.WorkRequestLogEntryCollection
             workRequestLogEntryCollection;
 
     /**
-     * The returned WorkRequestLogEntryCollection instance.
+     * The returned {@code WorkRequestLogEntryCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned WorkRequestLogEntryCollection instance. */
+        /** The returned {@code WorkRequestLogEntryCollection} instance. */
         private com.oracle.bmc.governancerulescontrolplane.model.WorkRequestLogEntryCollection
                 workRequestLogEntryCollection;
 
         /**
-         * The returned WorkRequestLogEntryCollection instance.
+         * The returned {@code WorkRequestLogEntryCollection} instance.
          *
          * @param workRequestLogEntryCollection the value to set
          * @return this builder

@@ -40,11 +40,11 @@ public class GetJobMetricsResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** The returned JobMetric instance. */
+    /** The returned {@code JobMetric} instance. */
     private com.oracle.bmc.datacatalog.model.JobMetric jobMetric;
 
     /**
-     * The returned JobMetric instance.
+     * The returned {@code JobMetric} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetJobMetricsResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned JobMetric instance. */
+        /** The returned {@code JobMetric} instance. */
         private com.oracle.bmc.datacatalog.model.JobMetric jobMetric;
 
         /**
-         * The returned JobMetric instance.
+         * The returned {@code JobMetric} instance.
          *
          * @param jobMetric the value to set
          * @return this builder

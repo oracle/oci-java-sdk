@@ -36,11 +36,11 @@ public class GetConfirmSubscriptionResponse extends com.oracle.bmc.responses.Bmc
         return etag;
     }
 
-    /** The returned ConfirmationResult instance. */
+    /** The returned {@code ConfirmationResult} instance. */
     private com.oracle.bmc.ons.model.ConfirmationResult confirmationResult;
 
     /**
-     * The returned ConfirmationResult instance.
+     * The returned {@code ConfirmationResult} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetConfirmSubscriptionResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned ConfirmationResult instance. */
+        /** The returned {@code ConfirmationResult} instance. */
         private com.oracle.bmc.ons.model.ConfirmationResult confirmationResult;
 
         /**
-         * The returned ConfirmationResult instance.
+         * The returned {@code ConfirmationResult} instance.
          *
          * @param confirmationResult the value to set
          * @return this builder

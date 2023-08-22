@@ -76,11 +76,11 @@ public class CreateEmailDomainResponse extends com.oracle.bmc.responses.BmcRespo
         return opcWorkRequestId;
     }
 
-    /** The returned EmailDomain instance. */
+    /** The returned {@code EmailDomain} instance. */
     private com.oracle.bmc.email.model.EmailDomain emailDomain;
 
     /**
-     * The returned EmailDomain instance.
+     * The returned {@code EmailDomain} instance.
      *
      * @return the value
      */
@@ -212,11 +212,11 @@ public class CreateEmailDomainResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned EmailDomain instance. */
+        /** The returned {@code EmailDomain} instance. */
         private com.oracle.bmc.email.model.EmailDomain emailDomain;
 
         /**
-         * The returned EmailDomain instance.
+         * The returned {@code EmailDomain} instance.
          *
          * @param emailDomain the value to set
          * @return this builder

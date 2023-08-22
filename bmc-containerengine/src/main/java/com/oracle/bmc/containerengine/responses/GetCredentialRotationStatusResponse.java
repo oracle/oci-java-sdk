@@ -36,11 +36,11 @@ public class GetCredentialRotationStatusResponse extends com.oracle.bmc.response
         return opcRequestId;
     }
 
-    /** The returned CredentialRotationStatus instance. */
+    /** The returned {@code CredentialRotationStatus} instance. */
     private com.oracle.bmc.containerengine.model.CredentialRotationStatus credentialRotationStatus;
 
     /**
-     * The returned CredentialRotationStatus instance.
+     * The returned {@code CredentialRotationStatus} instance.
      *
      * @return the value
      */
@@ -120,12 +120,12 @@ public class GetCredentialRotationStatusResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned CredentialRotationStatus instance. */
+        /** The returned {@code CredentialRotationStatus} instance. */
         private com.oracle.bmc.containerengine.model.CredentialRotationStatus
                 credentialRotationStatus;
 
         /**
-         * The returned CredentialRotationStatus instance.
+         * The returned {@code CredentialRotationStatus} instance.
          *
          * @param credentialRotationStatus the value to set
          * @return this builder

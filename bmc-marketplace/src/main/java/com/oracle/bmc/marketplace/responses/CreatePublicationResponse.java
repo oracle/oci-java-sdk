@@ -36,11 +36,11 @@ public class CreatePublicationResponse extends com.oracle.bmc.responses.BmcRespo
         return etag;
     }
 
-    /** The returned Publication instance. */
+    /** The returned {@code Publication} instance. */
     private com.oracle.bmc.marketplace.model.Publication publication;
 
     /**
-     * The returned Publication instance.
+     * The returned {@code Publication} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class CreatePublicationResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned Publication instance. */
+        /** The returned {@code Publication} instance. */
         private com.oracle.bmc.marketplace.model.Publication publication;
 
         /**
-         * The returned Publication instance.
+         * The returned {@code Publication} instance.
          *
          * @param publication the value to set
          * @return this builder

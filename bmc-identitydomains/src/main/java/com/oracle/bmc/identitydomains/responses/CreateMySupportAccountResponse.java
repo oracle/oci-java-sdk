@@ -36,11 +36,11 @@ public class CreateMySupportAccountResponse extends com.oracle.bmc.responses.Bmc
         return etag;
     }
 
-    /** The returned MySupportAccount instance. */
+    /** The returned {@code MySupportAccount} instance. */
     private com.oracle.bmc.identitydomains.model.MySupportAccount mySupportAccount;
 
     /**
-     * The returned MySupportAccount instance.
+     * The returned {@code MySupportAccount} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class CreateMySupportAccountResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned MySupportAccount instance. */
+        /** The returned {@code MySupportAccount} instance. */
         private com.oracle.bmc.identitydomains.model.MySupportAccount mySupportAccount;
 
         /**
-         * The returned MySupportAccount instance.
+         * The returned {@code MySupportAccount} instance.
          *
          * @param mySupportAccount the value to set
          * @return this builder

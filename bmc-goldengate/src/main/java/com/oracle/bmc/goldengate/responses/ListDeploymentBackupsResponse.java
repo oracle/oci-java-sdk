@@ -40,11 +40,11 @@ public class ListDeploymentBackupsResponse extends com.oracle.bmc.responses.BmcR
         return opcNextPage;
     }
 
-    /** The returned DeploymentBackupCollection instance. */
+    /** The returned {@code DeploymentBackupCollection} instance. */
     private com.oracle.bmc.goldengate.model.DeploymentBackupCollection deploymentBackupCollection;
 
     /**
-     * The returned DeploymentBackupCollection instance.
+     * The returned {@code DeploymentBackupCollection} instance.
      *
      * @return the value
      */
@@ -126,12 +126,12 @@ public class ListDeploymentBackupsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned DeploymentBackupCollection instance. */
+        /** The returned {@code DeploymentBackupCollection} instance. */
         private com.oracle.bmc.goldengate.model.DeploymentBackupCollection
                 deploymentBackupCollection;
 
         /**
-         * The returned DeploymentBackupCollection instance.
+         * The returned {@code DeploymentBackupCollection} instance.
          *
          * @param deploymentBackupCollection the value to set
          * @return this builder

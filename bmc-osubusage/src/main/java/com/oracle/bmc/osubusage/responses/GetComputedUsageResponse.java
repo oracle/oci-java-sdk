@@ -24,11 +24,11 @@ public class GetComputedUsageResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned ComputedUsage instance. */
+    /** The returned {@code ComputedUsage} instance. */
     private com.oracle.bmc.osubusage.model.ComputedUsage computedUsage;
 
     /**
-     * The returned ComputedUsage instance.
+     * The returned {@code ComputedUsage} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetComputedUsageResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned ComputedUsage instance. */
+        /** The returned {@code ComputedUsage} instance. */
         private com.oracle.bmc.osubusage.model.ComputedUsage computedUsage;
 
         /**
-         * The returned ComputedUsage instance.
+         * The returned {@code ComputedUsage} instance.
          *
          * @param computedUsage the value to set
          * @return this builder

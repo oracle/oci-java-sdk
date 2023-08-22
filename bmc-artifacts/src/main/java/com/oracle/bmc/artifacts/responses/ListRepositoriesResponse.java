@@ -42,11 +42,11 @@ public class ListRepositoriesResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned RepositoryCollection instance. */
+    /** The returned {@code RepositoryCollection} instance. */
     private com.oracle.bmc.artifacts.model.RepositoryCollection repositoryCollection;
 
     /**
-     * The returned RepositoryCollection instance.
+     * The returned {@code RepositoryCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListRepositoriesResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned RepositoryCollection instance. */
+        /** The returned {@code RepositoryCollection} instance. */
         private com.oracle.bmc.artifacts.model.RepositoryCollection repositoryCollection;
 
         /**
-         * The returned RepositoryCollection instance.
+         * The returned {@code RepositoryCollection} instance.
          *
          * @param repositoryCollection the value to set
          * @return this builder

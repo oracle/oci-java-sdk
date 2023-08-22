@@ -24,11 +24,11 @@ public class GetSqlPlanBaselineResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned SqlPlanBaseline instance. */
+    /** The returned {@code SqlPlanBaseline} instance. */
     private com.oracle.bmc.databasemanagement.model.SqlPlanBaseline sqlPlanBaseline;
 
     /**
-     * The returned SqlPlanBaseline instance.
+     * The returned {@code SqlPlanBaseline} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetSqlPlanBaselineResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned SqlPlanBaseline instance. */
+        /** The returned {@code SqlPlanBaseline} instance. */
         private com.oracle.bmc.databasemanagement.model.SqlPlanBaseline sqlPlanBaseline;
 
         /**
-         * The returned SqlPlanBaseline instance.
+         * The returned {@code SqlPlanBaseline} instance.
          *
          * @param sqlPlanBaseline the value to set
          * @return this builder

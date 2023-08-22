@@ -40,11 +40,11 @@ public class CreatePreauthenticatedRequestResponse extends com.oracle.bmc.respon
         return opcRequestId;
     }
 
-    /** The returned PreauthenticatedRequest instance. */
+    /** The returned {@code PreauthenticatedRequest} instance. */
     private com.oracle.bmc.objectstorage.model.PreauthenticatedRequest preauthenticatedRequest;
 
     /**
-     * The returned PreauthenticatedRequest instance.
+     * The returned {@code PreauthenticatedRequest} instance.
      *
      * @return the value
      */
@@ -126,11 +126,11 @@ public class CreatePreauthenticatedRequestResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned PreauthenticatedRequest instance. */
+        /** The returned {@code PreauthenticatedRequest} instance. */
         private com.oracle.bmc.objectstorage.model.PreauthenticatedRequest preauthenticatedRequest;
 
         /**
-         * The returned PreauthenticatedRequest instance.
+         * The returned {@code PreauthenticatedRequest} instance.
          *
          * @param preauthenticatedRequest the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class PutMePasswordChangerResponse extends com.oracle.bmc.responses.BmcRe
         return etag;
     }
 
-    /** The returned MePasswordChanger instance. */
+    /** The returned {@code MePasswordChanger} instance. */
     private com.oracle.bmc.identitydomains.model.MePasswordChanger mePasswordChanger;
 
     /**
-     * The returned MePasswordChanger instance.
+     * The returned {@code MePasswordChanger} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class PutMePasswordChangerResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned MePasswordChanger instance. */
+        /** The returned {@code MePasswordChanger} instance. */
         private com.oracle.bmc.identitydomains.model.MePasswordChanger mePasswordChanger;
 
         /**
-         * The returned MePasswordChanger instance.
+         * The returned {@code MePasswordChanger} instance.
          *
          * @param mePasswordChanger the value to set
          * @return this builder

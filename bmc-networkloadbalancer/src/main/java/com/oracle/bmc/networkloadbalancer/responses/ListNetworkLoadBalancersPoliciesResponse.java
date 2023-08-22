@@ -42,12 +42,12 @@ public class ListNetworkLoadBalancersPoliciesResponse extends com.oracle.bmc.res
         return opcRequestId;
     }
 
-    /** The returned NetworkLoadBalancersPolicyCollection instance. */
+    /** The returned {@code NetworkLoadBalancersPolicyCollection} instance. */
     private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancersPolicyCollection
             networkLoadBalancersPolicyCollection;
 
     /**
-     * The returned NetworkLoadBalancersPolicyCollection instance.
+     * The returned {@code NetworkLoadBalancersPolicyCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListNetworkLoadBalancersPoliciesResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /** The returned NetworkLoadBalancersPolicyCollection instance. */
+        /** The returned {@code NetworkLoadBalancersPolicyCollection} instance. */
         private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancersPolicyCollection
                 networkLoadBalancersPolicyCollection;
 
         /**
-         * The returned NetworkLoadBalancersPolicyCollection instance.
+         * The returned {@code NetworkLoadBalancersPolicyCollection} instance.
          *
          * @param networkLoadBalancersPolicyCollection the value to set
          * @return this builder

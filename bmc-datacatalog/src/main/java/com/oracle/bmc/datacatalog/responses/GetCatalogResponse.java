@@ -40,11 +40,11 @@ public class GetCatalogResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Catalog instance. */
+    /** The returned {@code Catalog} instance. */
     private com.oracle.bmc.datacatalog.model.Catalog catalog;
 
     /**
-     * The returned Catalog instance.
+     * The returned {@code Catalog} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetCatalogResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Catalog instance. */
+        /** The returned {@code Catalog} instance. */
         private com.oracle.bmc.datacatalog.model.Catalog catalog;
 
         /**
-         * The returned Catalog instance.
+         * The returned {@code Catalog} instance.
          *
          * @param catalog the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class GetExternalClusterInstanceResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    /** The returned ExternalClusterInstance instance. */
+    /** The returned {@code ExternalClusterInstance} instance. */
     private com.oracle.bmc.databasemanagement.model.ExternalClusterInstance externalClusterInstance;
 
     /**
-     * The returned ExternalClusterInstance instance.
+     * The returned {@code ExternalClusterInstance} instance.
      *
      * @return the value
      */
@@ -120,12 +120,12 @@ public class GetExternalClusterInstanceResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned ExternalClusterInstance instance. */
+        /** The returned {@code ExternalClusterInstance} instance. */
         private com.oracle.bmc.databasemanagement.model.ExternalClusterInstance
                 externalClusterInstance;
 
         /**
-         * The returned ExternalClusterInstance instance.
+         * The returned {@code ExternalClusterInstance} instance.
          *
          * @param externalClusterInstance the value to set
          * @return this builder

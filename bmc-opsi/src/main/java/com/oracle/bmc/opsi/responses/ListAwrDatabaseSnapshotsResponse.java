@@ -42,11 +42,11 @@ public class ListAwrDatabaseSnapshotsResponse extends com.oracle.bmc.responses.B
         return opcNextPage;
     }
 
-    /** The returned AwrDatabaseSnapshotCollection instance. */
+    /** The returned {@code AwrDatabaseSnapshotCollection} instance. */
     private com.oracle.bmc.opsi.model.AwrDatabaseSnapshotCollection awrDatabaseSnapshotCollection;
 
     /**
-     * The returned AwrDatabaseSnapshotCollection instance.
+     * The returned {@code AwrDatabaseSnapshotCollection} instance.
      *
      * @return the value
      */
@@ -131,12 +131,12 @@ public class ListAwrDatabaseSnapshotsResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned AwrDatabaseSnapshotCollection instance. */
+        /** The returned {@code AwrDatabaseSnapshotCollection} instance. */
         private com.oracle.bmc.opsi.model.AwrDatabaseSnapshotCollection
                 awrDatabaseSnapshotCollection;
 
         /**
-         * The returned AwrDatabaseSnapshotCollection instance.
+         * The returned {@code AwrDatabaseSnapshotCollection} instance.
          *
          * @param awrDatabaseSnapshotCollection the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class PutUserPasswordResetterResponse extends com.oracle.bmc.responses.Bm
         return etag;
     }
 
-    /** The returned UserPasswordResetter instance. */
+    /** The returned {@code UserPasswordResetter} instance. */
     private com.oracle.bmc.identitydomains.model.UserPasswordResetter userPasswordResetter;
 
     /**
-     * The returned UserPasswordResetter instance.
+     * The returned {@code UserPasswordResetter} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class PutUserPasswordResetterResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned UserPasswordResetter instance. */
+        /** The returned {@code UserPasswordResetter} instance. */
         private com.oracle.bmc.identitydomains.model.UserPasswordResetter userPasswordResetter;
 
         /**
-         * The returned UserPasswordResetter instance.
+         * The returned {@code UserPasswordResetter} instance.
          *
          * @param userPasswordResetter the value to set
          * @return this builder

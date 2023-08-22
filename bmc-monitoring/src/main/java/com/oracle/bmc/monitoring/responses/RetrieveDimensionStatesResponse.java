@@ -42,12 +42,12 @@ public class RetrieveDimensionStatesResponse extends com.oracle.bmc.responses.Bm
         return opcNextPage;
     }
 
-    /** The returned AlarmDimensionStatesCollection instance. */
+    /** The returned {@code AlarmDimensionStatesCollection} instance. */
     private com.oracle.bmc.monitoring.model.AlarmDimensionStatesCollection
             alarmDimensionStatesCollection;
 
     /**
-     * The returned AlarmDimensionStatesCollection instance.
+     * The returned {@code AlarmDimensionStatesCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class RetrieveDimensionStatesResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned AlarmDimensionStatesCollection instance. */
+        /** The returned {@code AlarmDimensionStatesCollection} instance. */
         private com.oracle.bmc.monitoring.model.AlarmDimensionStatesCollection
                 alarmDimensionStatesCollection;
 
         /**
-         * The returned AlarmDimensionStatesCollection instance.
+         * The returned {@code AlarmDimensionStatesCollection} instance.
          *
          * @param alarmDimensionStatesCollection the value to set
          * @return this builder

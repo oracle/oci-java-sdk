@@ -42,11 +42,11 @@ public class SearchMyAppsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned MyApps instance. */
+    /** The returned {@code MyApps} instance. */
     private com.oracle.bmc.identitydomains.model.MyApps myApps;
 
     /**
-     * The returned MyApps instance.
+     * The returned {@code MyApps} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class SearchMyAppsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned MyApps instance. */
+        /** The returned {@code MyApps} instance. */
         private com.oracle.bmc.identitydomains.model.MyApps myApps;
 
         /**
-         * The returned MyApps instance.
+         * The returned {@code MyApps} instance.
          *
          * @param myApps the value to set
          * @return this builder

@@ -60,11 +60,11 @@ public class ListProfileLevelsResponse extends com.oracle.bmc.responses.BmcRespo
         return opcPrevPage;
     }
 
-    /** The returned ProfileLevelCollection instance. */
+    /** The returned {@code ProfileLevelCollection} instance. */
     private com.oracle.bmc.optimizer.model.ProfileLevelCollection profileLevelCollection;
 
     /**
-     * The returned ProfileLevelCollection instance.
+     * The returned {@code ProfileLevelCollection} instance.
      *
      * @return the value
      */
@@ -170,11 +170,11 @@ public class ListProfileLevelsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned ProfileLevelCollection instance. */
+        /** The returned {@code ProfileLevelCollection} instance. */
         private com.oracle.bmc.optimizer.model.ProfileLevelCollection profileLevelCollection;
 
         /**
-         * The returned ProfileLevelCollection instance.
+         * The returned {@code ProfileLevelCollection} instance.
          *
          * @param profileLevelCollection the value to set
          * @return this builder

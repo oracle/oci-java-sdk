@@ -60,11 +60,11 @@ public class ListStreamsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.streaming.model.StreamSummary instances. */
+    /** A list of {@code com.oracle.bmc.streaming.model.StreamSummary} instances. */
     private java.util.List<com.oracle.bmc.streaming.model.StreamSummary> items;
 
     /**
-     * A list of com.oracle.bmc.streaming.model.StreamSummary instances.
+     * A list of {@code com.oracle.bmc.streaming.model.StreamSummary} instances.
      *
      * @return the value
      */
@@ -170,11 +170,11 @@ public class ListStreamsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.streaming.model.StreamSummary instances. */
+        /** A list of {@code com.oracle.bmc.streaming.model.StreamSummary} instances. */
         private java.util.List<com.oracle.bmc.streaming.model.StreamSummary> items;
 
         /**
-         * A list of com.oracle.bmc.streaming.model.StreamSummary instances.
+         * A list of {@code com.oracle.bmc.streaming.model.StreamSummary} instances.
          *
          * @param items the value to set
          * @return this builder

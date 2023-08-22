@@ -24,11 +24,11 @@ public class CreateRegionSubscriptionResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** The returned RegionSubscription instance. */
+    /** The returned {@code RegionSubscription} instance. */
     private com.oracle.bmc.identity.model.RegionSubscription regionSubscription;
 
     /**
-     * The returned RegionSubscription instance.
+     * The returned {@code RegionSubscription} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class CreateRegionSubscriptionResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned RegionSubscription instance. */
+        /** The returned {@code RegionSubscription} instance. */
         private com.oracle.bmc.identity.model.RegionSubscription regionSubscription;
 
         /**
-         * The returned RegionSubscription instance.
+         * The returned {@code RegionSubscription} instance.
          *
          * @param regionSubscription the value to set
          * @return this builder

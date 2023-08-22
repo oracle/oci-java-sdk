@@ -42,11 +42,11 @@ public class GetOnPremConnectorResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned OnPremConnector instance. */
+    /** The returned {@code OnPremConnector} instance. */
     private com.oracle.bmc.datasafe.model.OnPremConnector onPremConnector;
 
     /**
-     * The returned OnPremConnector instance.
+     * The returned {@code OnPremConnector} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class GetOnPremConnectorResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned OnPremConnector instance. */
+        /** The returned {@code OnPremConnector} instance. */
         private com.oracle.bmc.datasafe.model.OnPremConnector onPremConnector;
 
         /**
-         * The returned OnPremConnector instance.
+         * The returned {@code OnPremConnector} instance.
          *
          * @param onPremConnector the value to set
          * @return this builder

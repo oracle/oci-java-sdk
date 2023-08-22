@@ -40,11 +40,11 @@ public class GetUserDefinedFunctionResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned UserDefinedFunction instance. */
+    /** The returned {@code UserDefinedFunction} instance. */
     private com.oracle.bmc.dataintegration.model.UserDefinedFunction userDefinedFunction;
 
     /**
-     * The returned UserDefinedFunction instance.
+     * The returned {@code UserDefinedFunction} instance.
      *
      * @return the value
      */
@@ -126,11 +126,11 @@ public class GetUserDefinedFunctionResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned UserDefinedFunction instance. */
+        /** The returned {@code UserDefinedFunction} instance. */
         private com.oracle.bmc.dataintegration.model.UserDefinedFunction userDefinedFunction;
 
         /**
-         * The returned UserDefinedFunction instance.
+         * The returned {@code UserDefinedFunction} instance.
          *
          * @param userDefinedFunction the value to set
          * @return this builder

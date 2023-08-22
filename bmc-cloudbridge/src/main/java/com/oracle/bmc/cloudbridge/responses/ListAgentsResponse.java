@@ -42,11 +42,11 @@ public class ListAgentsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned AgentCollection instance. */
+    /** The returned {@code AgentCollection} instance. */
     private com.oracle.bmc.cloudbridge.model.AgentCollection agentCollection;
 
     /**
-     * The returned AgentCollection instance.
+     * The returned {@code AgentCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListAgentsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned AgentCollection instance. */
+        /** The returned {@code AgentCollection} instance. */
         private com.oracle.bmc.cloudbridge.model.AgentCollection agentCollection;
 
         /**
-         * The returned AgentCollection instance.
+         * The returned {@code AgentCollection} instance.
          *
          * @param agentCollection the value to set
          * @return this builder

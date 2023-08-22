@@ -24,11 +24,11 @@ public class ListRegionSubscriptionsResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.identity.model.RegionSubscription instances. */
+    /** A list of {@code com.oracle.bmc.identity.model.RegionSubscription} instances. */
     private java.util.List<com.oracle.bmc.identity.model.RegionSubscription> items;
 
     /**
-     * A list of com.oracle.bmc.identity.model.RegionSubscription instances.
+     * A list of {@code com.oracle.bmc.identity.model.RegionSubscription} instances.
      *
      * @return the value
      */
@@ -84,11 +84,11 @@ public class ListRegionSubscriptionsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** A list of com.oracle.bmc.identity.model.RegionSubscription instances. */
+        /** A list of {@code com.oracle.bmc.identity.model.RegionSubscription} instances. */
         private java.util.List<com.oracle.bmc.identity.model.RegionSubscription> items;
 
         /**
-         * A list of com.oracle.bmc.identity.model.RegionSubscription instances.
+         * A list of {@code com.oracle.bmc.identity.model.RegionSubscription} instances.
          *
          * @param items the value to set
          * @return this builder

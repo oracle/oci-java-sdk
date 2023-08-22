@@ -40,11 +40,11 @@ public class GetNamespaceResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Namespace instance. */
+    /** The returned {@code Namespace} instance. */
     private com.oracle.bmc.datacatalog.model.Namespace namespace;
 
     /**
-     * The returned Namespace instance.
+     * The returned {@code Namespace} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetNamespaceResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Namespace instance. */
+        /** The returned {@code Namespace} instance. */
         private com.oracle.bmc.datacatalog.model.Namespace namespace;
 
         /**
-         * The returned Namespace instance.
+         * The returned {@code Namespace} instance.
          *
          * @param namespace the value to set
          * @return this builder

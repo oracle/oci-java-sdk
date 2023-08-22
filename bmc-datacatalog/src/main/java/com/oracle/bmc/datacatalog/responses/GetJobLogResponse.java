@@ -40,11 +40,11 @@ public class GetJobLogResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned JobLog instance. */
+    /** The returned {@code JobLog} instance. */
     private com.oracle.bmc.datacatalog.model.JobLog jobLog;
 
     /**
-     * The returned JobLog instance.
+     * The returned {@code JobLog} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetJobLogResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned JobLog instance. */
+        /** The returned {@code JobLog} instance. */
         private com.oracle.bmc.datacatalog.model.JobLog jobLog;
 
         /**
-         * The returned JobLog instance.
+         * The returned {@code JobLog} instance.
          *
          * @param jobLog the value to set
          * @return this builder

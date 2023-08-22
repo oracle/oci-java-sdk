@@ -24,11 +24,11 @@ public class GetTopSqlCpuActivityResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned TopSqlCpuActivity instance. */
+    /** The returned {@code TopSqlCpuActivity} instance. */
     private com.oracle.bmc.databasemanagement.model.TopSqlCpuActivity topSqlCpuActivity;
 
     /**
-     * The returned TopSqlCpuActivity instance.
+     * The returned {@code TopSqlCpuActivity} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetTopSqlCpuActivityResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned TopSqlCpuActivity instance. */
+        /** The returned {@code TopSqlCpuActivity} instance. */
         private com.oracle.bmc.databasemanagement.model.TopSqlCpuActivity topSqlCpuActivity;
 
         /**
-         * The returned TopSqlCpuActivity instance.
+         * The returned {@code TopSqlCpuActivity} instance.
          *
          * @param topSqlCpuActivity the value to set
          * @return this builder

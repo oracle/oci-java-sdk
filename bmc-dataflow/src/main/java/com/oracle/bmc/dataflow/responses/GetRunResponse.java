@@ -40,11 +40,11 @@ public class GetRunResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Run instance. */
+    /** The returned {@code Run} instance. */
     private com.oracle.bmc.dataflow.model.Run run;
 
     /**
-     * The returned Run instance.
+     * The returned {@code Run} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetRunResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Run instance. */
+        /** The returned {@code Run} instance. */
         private com.oracle.bmc.dataflow.model.Run run;
 
         /**
-         * The returned Run instance.
+         * The returned {@code Run} instance.
          *
          * @param run the value to set
          * @return this builder

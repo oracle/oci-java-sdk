@@ -36,11 +36,11 @@ public class UpdateProblemStatusResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned Problem instance. */
+    /** The returned {@code Problem} instance. */
     private com.oracle.bmc.cloudguard.model.Problem problem;
 
     /**
-     * The returned Problem instance.
+     * The returned {@code Problem} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateProblemStatusResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned Problem instance. */
+        /** The returned {@code Problem} instance. */
         private com.oracle.bmc.cloudguard.model.Problem problem;
 
         /**
-         * The returned Problem instance.
+         * The returned {@code Problem} instance.
          *
          * @param problem the value to set
          * @return this builder

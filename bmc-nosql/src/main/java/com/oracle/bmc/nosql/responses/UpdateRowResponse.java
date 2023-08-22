@@ -36,11 +36,11 @@ public class UpdateRowResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned UpdateRowResult instance. */
+    /** The returned {@code UpdateRowResult} instance. */
     private com.oracle.bmc.nosql.model.UpdateRowResult updateRowResult;
 
     /**
-     * The returned UpdateRowResult instance.
+     * The returned {@code UpdateRowResult} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateRowResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned UpdateRowResult instance. */
+        /** The returned {@code UpdateRowResult} instance. */
         private com.oracle.bmc.nosql.model.UpdateRowResult updateRowResult;
 
         /**
-         * The returned UpdateRowResult instance.
+         * The returned {@code UpdateRowResult} instance.
          *
          * @param updateRowResult the value to set
          * @return this builder

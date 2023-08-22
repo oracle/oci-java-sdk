@@ -42,12 +42,12 @@ public class ListManagedInstanceGroupsResponse extends com.oracle.bmc.responses.
         return opcNextPage;
     }
 
-    /** The returned ManagedInstanceGroupCollection instance. */
+    /** The returned {@code ManagedInstanceGroupCollection} instance. */
     private com.oracle.bmc.osmanagementhub.model.ManagedInstanceGroupCollection
             managedInstanceGroupCollection;
 
     /**
-     * The returned ManagedInstanceGroupCollection instance.
+     * The returned {@code ManagedInstanceGroupCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListManagedInstanceGroupsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned ManagedInstanceGroupCollection instance. */
+        /** The returned {@code ManagedInstanceGroupCollection} instance. */
         private com.oracle.bmc.osmanagementhub.model.ManagedInstanceGroupCollection
                 managedInstanceGroupCollection;
 
         /**
-         * The returned ManagedInstanceGroupCollection instance.
+         * The returned {@code ManagedInstanceGroupCollection} instance.
          *
          * @param managedInstanceGroupCollection the value to set
          * @return this builder

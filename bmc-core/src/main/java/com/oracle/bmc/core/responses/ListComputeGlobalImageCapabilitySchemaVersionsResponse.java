@@ -44,7 +44,7 @@ public class ListComputeGlobalImageCapabilitySchemaVersionsResponse
     }
 
     /**
-     * A list of com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersionSummary
+     * A list of {@code com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersionSummary}
      * instances.
      */
     private java.util.List<
@@ -52,7 +52,7 @@ public class ListComputeGlobalImageCapabilitySchemaVersionsResponse
             items;
 
     /**
-     * A list of com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersionSummary
+     * A list of {@code com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersionSummary}
      * instances.
      *
      * @return the value
@@ -143,16 +143,16 @@ public class ListComputeGlobalImageCapabilitySchemaVersionsResponse
         }
 
         /**
-         * A list of com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersionSummary
-         * instances.
+         * A list of {@code
+         * com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersionSummary} instances.
          */
         private java.util.List<
                         com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersionSummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersionSummary
-         * instances.
+         * A list of {@code
+         * com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersionSummary} instances.
          *
          * @param items the value to set
          * @return this builder

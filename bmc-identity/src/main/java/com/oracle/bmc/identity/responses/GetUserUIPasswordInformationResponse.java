@@ -36,11 +36,11 @@ public class GetUserUIPasswordInformationResponse extends com.oracle.bmc.respons
         return etag;
     }
 
-    /** The returned UIPasswordInformation instance. */
+    /** The returned {@code UIPasswordInformation} instance. */
     private com.oracle.bmc.identity.model.UIPasswordInformation uIPasswordInformation;
 
     /**
-     * The returned UIPasswordInformation instance.
+     * The returned {@code UIPasswordInformation} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetUserUIPasswordInformationResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned UIPasswordInformation instance. */
+        /** The returned {@code UIPasswordInformation} instance. */
         private com.oracle.bmc.identity.model.UIPasswordInformation uIPasswordInformation;
 
         /**
-         * The returned UIPasswordInformation instance.
+         * The returned {@code UIPasswordInformation} instance.
          *
          * @param uIPasswordInformation the value to set
          * @return this builder

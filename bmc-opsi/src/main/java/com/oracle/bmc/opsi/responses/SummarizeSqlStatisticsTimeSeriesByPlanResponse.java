@@ -43,12 +43,12 @@ public class SummarizeSqlStatisticsTimeSeriesByPlanResponse
         return opcNextPage;
     }
 
-    /** The returned SqlStatisticsTimeSeriesByPlanAggregationCollection instance. */
+    /** The returned {@code SqlStatisticsTimeSeriesByPlanAggregationCollection} instance. */
     private com.oracle.bmc.opsi.model.SqlStatisticsTimeSeriesByPlanAggregationCollection
             sqlStatisticsTimeSeriesByPlanAggregationCollection;
 
     /**
-     * The returned SqlStatisticsTimeSeriesByPlanAggregationCollection instance.
+     * The returned {@code SqlStatisticsTimeSeriesByPlanAggregationCollection} instance.
      *
      * @return the value
      */
@@ -135,12 +135,12 @@ public class SummarizeSqlStatisticsTimeSeriesByPlanResponse
             return this;
         }
 
-        /** The returned SqlStatisticsTimeSeriesByPlanAggregationCollection instance. */
+        /** The returned {@code SqlStatisticsTimeSeriesByPlanAggregationCollection} instance. */
         private com.oracle.bmc.opsi.model.SqlStatisticsTimeSeriesByPlanAggregationCollection
                 sqlStatisticsTimeSeriesByPlanAggregationCollection;
 
         /**
-         * The returned SqlStatisticsTimeSeriesByPlanAggregationCollection instance.
+         * The returned {@code SqlStatisticsTimeSeriesByPlanAggregationCollection} instance.
          *
          * @param sqlStatisticsTimeSeriesByPlanAggregationCollection the value to set
          * @return this builder

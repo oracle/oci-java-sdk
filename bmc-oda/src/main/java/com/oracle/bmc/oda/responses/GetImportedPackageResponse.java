@@ -40,11 +40,11 @@ public class GetImportedPackageResponse extends com.oracle.bmc.responses.BmcResp
         return etag;
     }
 
-    /** The returned ImportedPackage instance. */
+    /** The returned {@code ImportedPackage} instance. */
     private com.oracle.bmc.oda.model.ImportedPackage importedPackage;
 
     /**
-     * The returned ImportedPackage instance.
+     * The returned {@code ImportedPackage} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetImportedPackageResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned ImportedPackage instance. */
+        /** The returned {@code ImportedPackage} instance. */
         private com.oracle.bmc.oda.model.ImportedPackage importedPackage;
 
         /**
-         * The returned ImportedPackage instance.
+         * The returned {@code ImportedPackage} instance.
          *
          * @param importedPackage the value to set
          * @return this builder

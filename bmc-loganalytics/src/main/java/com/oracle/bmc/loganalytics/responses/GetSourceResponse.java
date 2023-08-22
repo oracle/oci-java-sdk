@@ -36,11 +36,11 @@ public class GetSourceResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsSource instance. */
+    /** The returned {@code LogAnalyticsSource} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsSource logAnalyticsSource;
 
     /**
-     * The returned LogAnalyticsSource instance.
+     * The returned {@code LogAnalyticsSource} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetSourceResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned LogAnalyticsSource instance. */
+        /** The returned {@code LogAnalyticsSource} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsSource logAnalyticsSource;
 
         /**
-         * The returned LogAnalyticsSource instance.
+         * The returned {@code LogAnalyticsSource} instance.
          *
          * @param logAnalyticsSource the value to set
          * @return this builder

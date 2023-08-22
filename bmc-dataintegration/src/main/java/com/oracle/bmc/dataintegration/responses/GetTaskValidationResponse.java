@@ -40,11 +40,11 @@ public class GetTaskValidationResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned TaskValidation instance. */
+    /** The returned {@code TaskValidation} instance. */
     private com.oracle.bmc.dataintegration.model.TaskValidation taskValidation;
 
     /**
-     * The returned TaskValidation instance.
+     * The returned {@code TaskValidation} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetTaskValidationResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned TaskValidation instance. */
+        /** The returned {@code TaskValidation} instance. */
         private com.oracle.bmc.dataintegration.model.TaskValidation taskValidation;
 
         /**
-         * The returned TaskValidation instance.
+         * The returned {@code TaskValidation} instance.
          *
          * @param taskValidation the value to set
          * @return this builder

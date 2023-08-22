@@ -64,12 +64,12 @@ public class ListLookupsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsLookupCollection instance. */
+    /** The returned {@code LogAnalyticsLookupCollection} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsLookupCollection
             logAnalyticsLookupCollection;
 
     /**
-     * The returned LogAnalyticsLookupCollection instance.
+     * The returned {@code LogAnalyticsLookupCollection} instance.
      *
      * @return the value
      */
@@ -181,12 +181,12 @@ public class ListLookupsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned LogAnalyticsLookupCollection instance. */
+        /** The returned {@code LogAnalyticsLookupCollection} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsLookupCollection
                 logAnalyticsLookupCollection;
 
         /**
-         * The returned LogAnalyticsLookupCollection instance.
+         * The returned {@code LogAnalyticsLookupCollection} instance.
          *
          * @param logAnalyticsLookupCollection the value to set
          * @return this builder

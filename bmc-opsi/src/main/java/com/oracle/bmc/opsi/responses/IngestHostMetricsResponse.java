@@ -36,12 +36,12 @@ public class IngestHostMetricsResponse extends com.oracle.bmc.responses.BmcRespo
         return etag;
     }
 
-    /** The returned IngestHostMetricsResponseDetails instance. */
+    /** The returned {@code IngestHostMetricsResponseDetails} instance. */
     private com.oracle.bmc.opsi.model.IngestHostMetricsResponseDetails
             ingestHostMetricsResponseDetails;
 
     /**
-     * The returned IngestHostMetricsResponseDetails instance.
+     * The returned {@code IngestHostMetricsResponseDetails} instance.
      *
      * @return the value
      */
@@ -120,12 +120,12 @@ public class IngestHostMetricsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned IngestHostMetricsResponseDetails instance. */
+        /** The returned {@code IngestHostMetricsResponseDetails} instance. */
         private com.oracle.bmc.opsi.model.IngestHostMetricsResponseDetails
                 ingestHostMetricsResponseDetails;
 
         /**
-         * The returned IngestHostMetricsResponseDetails instance.
+         * The returned {@code IngestHostMetricsResponseDetails} instance.
          *
          * @param ingestHostMetricsResponseDetails the value to set
          * @return this builder

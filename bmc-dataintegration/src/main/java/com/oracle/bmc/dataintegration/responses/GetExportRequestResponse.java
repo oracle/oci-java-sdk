@@ -40,11 +40,11 @@ public class GetExportRequestResponse extends com.oracle.bmc.responses.BmcRespon
         return etag;
     }
 
-    /** The returned ExportRequest instance. */
+    /** The returned {@code ExportRequest} instance. */
     private com.oracle.bmc.dataintegration.model.ExportRequest exportRequest;
 
     /**
-     * The returned ExportRequest instance.
+     * The returned {@code ExportRequest} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetExportRequestResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned ExportRequest instance. */
+        /** The returned {@code ExportRequest} instance. */
         private com.oracle.bmc.dataintegration.model.ExportRequest exportRequest;
 
         /**
-         * The returned ExportRequest instance.
+         * The returned {@code ExportRequest} instance.
          *
          * @param exportRequest the value to set
          * @return this builder

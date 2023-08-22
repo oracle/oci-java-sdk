@@ -36,11 +36,11 @@ public class UpdateScheduledJobResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned ScheduledJob instance. */
+    /** The returned {@code ScheduledJob} instance. */
     private com.oracle.bmc.osmanagementhub.model.ScheduledJob scheduledJob;
 
     /**
-     * The returned ScheduledJob instance.
+     * The returned {@code ScheduledJob} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateScheduledJobResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned ScheduledJob instance. */
+        /** The returned {@code ScheduledJob} instance. */
         private com.oracle.bmc.osmanagementhub.model.ScheduledJob scheduledJob;
 
         /**
-         * The returned ScheduledJob instance.
+         * The returned {@code ScheduledJob} instance.
          *
          * @param scheduledJob the value to set
          * @return this builder

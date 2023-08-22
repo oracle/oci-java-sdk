@@ -25,12 +25,12 @@ public class ListOptimizerStatisticsAdvisorExecutionsResponse
         return opcRequestId;
     }
 
-    /** The returned OptimizerStatisticsAdvisorExecutionsCollection instance. */
+    /** The returned {@code OptimizerStatisticsAdvisorExecutionsCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.OptimizerStatisticsAdvisorExecutionsCollection
             optimizerStatisticsAdvisorExecutionsCollection;
 
     /**
-     * The returned OptimizerStatisticsAdvisorExecutionsCollection instance.
+     * The returned {@code OptimizerStatisticsAdvisorExecutionsCollection} instance.
      *
      * @return the value
      */
@@ -94,13 +94,13 @@ public class ListOptimizerStatisticsAdvisorExecutionsResponse
             return this;
         }
 
-        /** The returned OptimizerStatisticsAdvisorExecutionsCollection instance. */
+        /** The returned {@code OptimizerStatisticsAdvisorExecutionsCollection} instance. */
         private com.oracle.bmc.databasemanagement.model
                         .OptimizerStatisticsAdvisorExecutionsCollection
                 optimizerStatisticsAdvisorExecutionsCollection;
 
         /**
-         * The returned OptimizerStatisticsAdvisorExecutionsCollection instance.
+         * The returned {@code OptimizerStatisticsAdvisorExecutionsCollection} instance.
          *
          * @param optimizerStatisticsAdvisorExecutionsCollection the value to set
          * @return this builder

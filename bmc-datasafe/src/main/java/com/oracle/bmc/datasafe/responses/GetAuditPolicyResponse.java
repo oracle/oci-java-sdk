@@ -42,11 +42,11 @@ public class GetAuditPolicyResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned AuditPolicy instance. */
+    /** The returned {@code AuditPolicy} instance. */
     private com.oracle.bmc.datasafe.model.AuditPolicy auditPolicy;
 
     /**
-     * The returned AuditPolicy instance.
+     * The returned {@code AuditPolicy} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class GetAuditPolicyResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned AuditPolicy instance. */
+        /** The returned {@code AuditPolicy} instance. */
         private com.oracle.bmc.datasafe.model.AuditPolicy auditPolicy;
 
         /**
-         * The returned AuditPolicy instance.
+         * The returned {@code AuditPolicy} instance.
          *
          * @param auditPolicy the value to set
          * @return this builder

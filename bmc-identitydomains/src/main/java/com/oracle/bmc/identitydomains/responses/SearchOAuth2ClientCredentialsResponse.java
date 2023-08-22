@@ -42,11 +42,11 @@ public class SearchOAuth2ClientCredentialsResponse extends com.oracle.bmc.respon
         return opcNextPage;
     }
 
-    /** The returned OAuth2ClientCredentials instance. */
+    /** The returned {@code OAuth2ClientCredentials} instance. */
     private com.oracle.bmc.identitydomains.model.OAuth2ClientCredentials oAuth2ClientCredentials;
 
     /**
-     * The returned OAuth2ClientCredentials instance.
+     * The returned {@code OAuth2ClientCredentials} instance.
      *
      * @return the value
      */
@@ -131,12 +131,12 @@ public class SearchOAuth2ClientCredentialsResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned OAuth2ClientCredentials instance. */
+        /** The returned {@code OAuth2ClientCredentials} instance. */
         private com.oracle.bmc.identitydomains.model.OAuth2ClientCredentials
                 oAuth2ClientCredentials;
 
         /**
-         * The returned OAuth2ClientCredentials instance.
+         * The returned {@code OAuth2ClientCredentials} instance.
          *
          * @param oAuth2ClientCredentials the value to set
          * @return this builder

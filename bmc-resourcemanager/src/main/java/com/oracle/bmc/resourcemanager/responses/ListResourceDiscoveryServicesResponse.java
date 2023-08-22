@@ -24,12 +24,12 @@ public class ListResourceDiscoveryServicesResponse extends com.oracle.bmc.respon
         return opcRequestId;
     }
 
-    /** The returned ResourceDiscoveryServiceCollection instance. */
+    /** The returned {@code ResourceDiscoveryServiceCollection} instance. */
     private com.oracle.bmc.resourcemanager.model.ResourceDiscoveryServiceCollection
             resourceDiscoveryServiceCollection;
 
     /**
-     * The returned ResourceDiscoveryServiceCollection instance.
+     * The returned {@code ResourceDiscoveryServiceCollection} instance.
      *
      * @return the value
      */
@@ -92,12 +92,12 @@ public class ListResourceDiscoveryServicesResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned ResourceDiscoveryServiceCollection instance. */
+        /** The returned {@code ResourceDiscoveryServiceCollection} instance. */
         private com.oracle.bmc.resourcemanager.model.ResourceDiscoveryServiceCollection
                 resourceDiscoveryServiceCollection;
 
         /**
-         * The returned ResourceDiscoveryServiceCollection instance.
+         * The returned {@code ResourceDiscoveryServiceCollection} instance.
          *
          * @param resourceDiscoveryServiceCollection the value to set
          * @return this builder

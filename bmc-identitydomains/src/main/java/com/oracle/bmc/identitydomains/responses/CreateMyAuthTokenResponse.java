@@ -36,11 +36,11 @@ public class CreateMyAuthTokenResponse extends com.oracle.bmc.responses.BmcRespo
         return etag;
     }
 
-    /** The returned MyAuthToken instance. */
+    /** The returned {@code MyAuthToken} instance. */
     private com.oracle.bmc.identitydomains.model.MyAuthToken myAuthToken;
 
     /**
-     * The returned MyAuthToken instance.
+     * The returned {@code MyAuthToken} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class CreateMyAuthTokenResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned MyAuthToken instance. */
+        /** The returned {@code MyAuthToken} instance. */
         private com.oracle.bmc.identitydomains.model.MyAuthToken myAuthToken;
 
         /**
-         * The returned MyAuthToken instance.
+         * The returned {@code MyAuthToken} instance.
          *
          * @param myAuthToken the value to set
          * @return this builder

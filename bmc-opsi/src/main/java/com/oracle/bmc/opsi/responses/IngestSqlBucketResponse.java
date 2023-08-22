@@ -36,11 +36,11 @@ public class IngestSqlBucketResponse extends com.oracle.bmc.responses.BmcRespons
         return etag;
     }
 
-    /** The returned IngestSqlBucketResponseDetails instance. */
+    /** The returned {@code IngestSqlBucketResponseDetails} instance. */
     private com.oracle.bmc.opsi.model.IngestSqlBucketResponseDetails ingestSqlBucketResponseDetails;
 
     /**
-     * The returned IngestSqlBucketResponseDetails instance.
+     * The returned {@code IngestSqlBucketResponseDetails} instance.
      *
      * @return the value
      */
@@ -119,12 +119,12 @@ public class IngestSqlBucketResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned IngestSqlBucketResponseDetails instance. */
+        /** The returned {@code IngestSqlBucketResponseDetails} instance. */
         private com.oracle.bmc.opsi.model.IngestSqlBucketResponseDetails
                 ingestSqlBucketResponseDetails;
 
         /**
-         * The returned IngestSqlBucketResponseDetails instance.
+         * The returned {@code IngestSqlBucketResponseDetails} instance.
          *
          * @param ingestSqlBucketResponseDetails the value to set
          * @return this builder

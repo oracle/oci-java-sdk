@@ -36,11 +36,11 @@ public class AnalyzeImageResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned AnalyzeImageResult instance. */
+    /** The returned {@code AnalyzeImageResult} instance. */
     private com.oracle.bmc.aivision.model.AnalyzeImageResult analyzeImageResult;
 
     /**
-     * The returned AnalyzeImageResult instance.
+     * The returned {@code AnalyzeImageResult} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class AnalyzeImageResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned AnalyzeImageResult instance. */
+        /** The returned {@code AnalyzeImageResult} instance. */
         private com.oracle.bmc.aivision.model.AnalyzeImageResult analyzeImageResult;
 
         /**
-         * The returned AnalyzeImageResult instance.
+         * The returned {@code AnalyzeImageResult} instance.
          *
          * @param analyzeImageResult the value to set
          * @return this builder

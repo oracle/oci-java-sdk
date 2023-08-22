@@ -64,12 +64,12 @@ public class ListEntitySourceAssociationsResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsAssociationCollection instance. */
+    /** The returned {@code LogAnalyticsAssociationCollection} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsAssociationCollection
             logAnalyticsAssociationCollection;
 
     /**
-     * The returned LogAnalyticsAssociationCollection instance.
+     * The returned {@code LogAnalyticsAssociationCollection} instance.
      *
      * @return the value
      */
@@ -182,12 +182,12 @@ public class ListEntitySourceAssociationsResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned LogAnalyticsAssociationCollection instance. */
+        /** The returned {@code LogAnalyticsAssociationCollection} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsAssociationCollection
                 logAnalyticsAssociationCollection;
 
         /**
-         * The returned LogAnalyticsAssociationCollection instance.
+         * The returned {@code LogAnalyticsAssociationCollection} instance.
          *
          * @param logAnalyticsAssociationCollection the value to set
          * @return this builder

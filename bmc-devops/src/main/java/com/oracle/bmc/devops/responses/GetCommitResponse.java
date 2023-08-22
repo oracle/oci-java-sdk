@@ -36,11 +36,11 @@ public class GetCommitResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned RepositoryCommit instance. */
+    /** The returned {@code RepositoryCommit} instance. */
     private com.oracle.bmc.devops.model.RepositoryCommit repositoryCommit;
 
     /**
-     * The returned RepositoryCommit instance.
+     * The returned {@code RepositoryCommit} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetCommitResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned RepositoryCommit instance. */
+        /** The returned {@code RepositoryCommit} instance. */
         private com.oracle.bmc.devops.model.RepositoryCommit repositoryCommit;
 
         /**
-         * The returned RepositoryCommit instance.
+         * The returned {@code RepositoryCommit} instance.
          *
          * @param repositoryCommit the value to set
          * @return this builder

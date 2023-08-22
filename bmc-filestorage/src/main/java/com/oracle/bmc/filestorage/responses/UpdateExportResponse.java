@@ -36,11 +36,11 @@ public class UpdateExportResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Export instance. */
+    /** The returned {@code Export} instance. */
     private com.oracle.bmc.filestorage.model.Export export;
 
     /**
-     * The returned Export instance.
+     * The returned {@code Export} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateExportResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Export instance. */
+        /** The returned {@code Export} instance. */
         private com.oracle.bmc.filestorage.model.Export export;
 
         /**
-         * The returned Export instance.
+         * The returned {@code Export} instance.
          *
          * @param export the value to set
          * @return this builder

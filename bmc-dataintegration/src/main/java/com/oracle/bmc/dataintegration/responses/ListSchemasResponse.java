@@ -72,11 +72,11 @@ public class ListSchemasResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcTotalItems;
     }
 
-    /** The returned SchemaSummaryCollection instance. */
+    /** The returned {@code SchemaSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.SchemaSummaryCollection schemaSummaryCollection;
 
     /**
-     * The returned SchemaSummaryCollection instance.
+     * The returned {@code SchemaSummaryCollection} instance.
      *
      * @return the value
      */
@@ -200,12 +200,12 @@ public class ListSchemasResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned SchemaSummaryCollection instance. */
+        /** The returned {@code SchemaSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.SchemaSummaryCollection
                 schemaSummaryCollection;
 
         /**
-         * The returned SchemaSummaryCollection instance.
+         * The returned {@code SchemaSummaryCollection} instance.
          *
          * @param schemaSummaryCollection the value to set
          * @return this builder

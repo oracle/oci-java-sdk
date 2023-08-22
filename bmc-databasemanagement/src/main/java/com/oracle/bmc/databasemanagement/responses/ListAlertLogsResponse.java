@@ -42,11 +42,11 @@ public class ListAlertLogsResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcNextPage;
     }
 
-    /** The returned AlertLogCollection instance. */
+    /** The returned {@code AlertLogCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.AlertLogCollection alertLogCollection;
 
     /**
-     * The returned AlertLogCollection instance.
+     * The returned {@code AlertLogCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListAlertLogsResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned AlertLogCollection instance. */
+        /** The returned {@code AlertLogCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.AlertLogCollection alertLogCollection;
 
         /**
-         * The returned AlertLogCollection instance.
+         * The returned {@code AlertLogCollection} instance.
          *
          * @param alertLogCollection the value to set
          * @return this builder

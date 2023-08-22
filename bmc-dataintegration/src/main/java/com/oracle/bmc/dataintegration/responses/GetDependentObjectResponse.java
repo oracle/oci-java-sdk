@@ -40,11 +40,11 @@ public class GetDependentObjectResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned DependentObject instance. */
+    /** The returned {@code DependentObject} instance. */
     private com.oracle.bmc.dataintegration.model.DependentObject dependentObject;
 
     /**
-     * The returned DependentObject instance.
+     * The returned {@code DependentObject} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetDependentObjectResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned DependentObject instance. */
+        /** The returned {@code DependentObject} instance. */
         private com.oracle.bmc.dataintegration.model.DependentObject dependentObject;
 
         /**
-         * The returned DependentObject instance.
+         * The returned {@code DependentObject} instance.
          *
          * @param dependentObject the value to set
          * @return this builder

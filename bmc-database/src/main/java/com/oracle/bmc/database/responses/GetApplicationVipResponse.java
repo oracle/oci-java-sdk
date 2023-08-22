@@ -36,11 +36,11 @@ public class GetApplicationVipResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned ApplicationVip instance. */
+    /** The returned {@code ApplicationVip} instance. */
     private com.oracle.bmc.database.model.ApplicationVip applicationVip;
 
     /**
-     * The returned ApplicationVip instance.
+     * The returned {@code ApplicationVip} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetApplicationVipResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned ApplicationVip instance. */
+        /** The returned {@code ApplicationVip} instance. */
         private com.oracle.bmc.database.model.ApplicationVip applicationVip;
 
         /**
-         * The returned ApplicationVip instance.
+         * The returned {@code ApplicationVip} instance.
          *
          * @param applicationVip the value to set
          * @return this builder

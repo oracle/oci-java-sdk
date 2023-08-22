@@ -36,11 +36,11 @@ public class CreateSwiftPasswordResponse extends com.oracle.bmc.responses.BmcRes
         return etag;
     }
 
-    /** The returned SwiftPassword instance. */
+    /** The returned {@code SwiftPassword} instance. */
     private com.oracle.bmc.identity.model.SwiftPassword swiftPassword;
 
     /**
-     * The returned SwiftPassword instance.
+     * The returned {@code SwiftPassword} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class CreateSwiftPasswordResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned SwiftPassword instance. */
+        /** The returned {@code SwiftPassword} instance. */
         private com.oracle.bmc.identity.model.SwiftPassword swiftPassword;
 
         /**
-         * The returned SwiftPassword instance.
+         * The returned {@code SwiftPassword} instance.
          *
          * @param swiftPassword the value to set
          * @return this builder

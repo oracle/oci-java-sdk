@@ -36,11 +36,11 @@ public class GetPolicyResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned Policy instance. */
+    /** The returned {@code Policy} instance. */
     private com.oracle.bmc.identity.model.Policy policy;
 
     /**
-     * The returned Policy instance.
+     * The returned {@code Policy} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetPolicyResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Policy instance. */
+        /** The returned {@code Policy} instance. */
         private com.oracle.bmc.identity.model.Policy policy;
 
         /**
-         * The returned Policy instance.
+         * The returned {@code Policy} instance.
          *
          * @param policy the value to set
          * @return this builder

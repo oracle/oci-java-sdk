@@ -36,11 +36,11 @@ public class GetDrgResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Drg instance. */
+    /** The returned {@code Drg} instance. */
     private com.oracle.bmc.core.model.Drg drg;
 
     /**
-     * The returned Drg instance.
+     * The returned {@code Drg} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetDrgResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Drg instance. */
+        /** The returned {@code Drg} instance. */
         private com.oracle.bmc.core.model.Drg drg;
 
         /**
-         * The returned Drg instance.
+         * The returned {@code Drg} instance.
          *
          * @param drg the value to set
          * @return this builder

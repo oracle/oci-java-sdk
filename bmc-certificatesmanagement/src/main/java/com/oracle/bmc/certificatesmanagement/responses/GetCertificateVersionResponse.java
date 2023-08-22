@@ -36,11 +36,11 @@ public class GetCertificateVersionResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned CertificateVersion instance. */
+    /** The returned {@code CertificateVersion} instance. */
     private com.oracle.bmc.certificatesmanagement.model.CertificateVersion certificateVersion;
 
     /**
-     * The returned CertificateVersion instance.
+     * The returned {@code CertificateVersion} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetCertificateVersionResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned CertificateVersion instance. */
+        /** The returned {@code CertificateVersion} instance. */
         private com.oracle.bmc.certificatesmanagement.model.CertificateVersion certificateVersion;
 
         /**
-         * The returned CertificateVersion instance.
+         * The returned {@code CertificateVersion} instance.
          *
          * @param certificateVersion the value to set
          * @return this builder

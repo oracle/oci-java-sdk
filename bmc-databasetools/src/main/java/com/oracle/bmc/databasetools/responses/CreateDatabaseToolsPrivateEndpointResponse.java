@@ -65,12 +65,12 @@ public class CreateDatabaseToolsPrivateEndpointResponse
         return opcRequestId;
     }
 
-    /** The returned DatabaseToolsPrivateEndpoint instance. */
+    /** The returned {@code DatabaseToolsPrivateEndpoint} instance. */
     private com.oracle.bmc.databasetools.model.DatabaseToolsPrivateEndpoint
             databaseToolsPrivateEndpoint;
 
     /**
-     * The returned DatabaseToolsPrivateEndpoint instance.
+     * The returned {@code DatabaseToolsPrivateEndpoint} instance.
      *
      * @return the value
      */
@@ -188,12 +188,12 @@ public class CreateDatabaseToolsPrivateEndpointResponse
             return this;
         }
 
-        /** The returned DatabaseToolsPrivateEndpoint instance. */
+        /** The returned {@code DatabaseToolsPrivateEndpoint} instance. */
         private com.oracle.bmc.databasetools.model.DatabaseToolsPrivateEndpoint
                 databaseToolsPrivateEndpoint;
 
         /**
-         * The returned DatabaseToolsPrivateEndpoint instance.
+         * The returned {@code DatabaseToolsPrivateEndpoint} instance.
          *
          * @param databaseToolsPrivateEndpoint the value to set
          * @return this builder

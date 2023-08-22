@@ -36,11 +36,11 @@ public class GetManagementAgentResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned ManagementAgent instance. */
+    /** The returned {@code ManagementAgent} instance. */
     private com.oracle.bmc.managementagent.model.ManagementAgent managementAgent;
 
     /**
-     * The returned ManagementAgent instance.
+     * The returned {@code ManagementAgent} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetManagementAgentResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned ManagementAgent instance. */
+        /** The returned {@code ManagementAgent} instance. */
         private com.oracle.bmc.managementagent.model.ManagementAgent managementAgent;
 
         /**
-         * The returned ManagementAgent instance.
+         * The returned {@code ManagementAgent} instance.
          *
          * @param managementAgent the value to set
          * @return this builder

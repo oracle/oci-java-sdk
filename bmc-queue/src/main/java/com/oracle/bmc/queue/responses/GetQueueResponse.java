@@ -36,11 +36,11 @@ public class GetQueueResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Queue instance. */
+    /** The returned {@code Queue} instance. */
     private com.oracle.bmc.queue.model.Queue queue;
 
     /**
-     * The returned Queue instance.
+     * The returned {@code Queue} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetQueueResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Queue instance. */
+        /** The returned {@code Queue} instance. */
         private com.oracle.bmc.queue.model.Queue queue;
 
         /**
-         * The returned Queue instance.
+         * The returned {@code Queue} instance.
          *
          * @param queue the value to set
          * @return this builder

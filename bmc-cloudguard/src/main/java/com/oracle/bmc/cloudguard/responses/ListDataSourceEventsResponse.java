@@ -42,11 +42,11 @@ public class ListDataSourceEventsResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** The returned DataSourceEventCollection instance. */
+    /** The returned {@code DataSourceEventCollection} instance. */
     private com.oracle.bmc.cloudguard.model.DataSourceEventCollection dataSourceEventCollection;
 
     /**
-     * The returned DataSourceEventCollection instance.
+     * The returned {@code DataSourceEventCollection} instance.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListDataSourceEventsResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned DataSourceEventCollection instance. */
+        /** The returned {@code DataSourceEventCollection} instance. */
         private com.oracle.bmc.cloudguard.model.DataSourceEventCollection dataSourceEventCollection;
 
         /**
-         * The returned DataSourceEventCollection instance.
+         * The returned {@code DataSourceEventCollection} instance.
          *
          * @param dataSourceEventCollection the value to set
          * @return this builder

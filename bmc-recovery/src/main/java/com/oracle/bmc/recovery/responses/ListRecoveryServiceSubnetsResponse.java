@@ -42,12 +42,12 @@ public class ListRecoveryServiceSubnetsResponse extends com.oracle.bmc.responses
         return opcNextPage;
     }
 
-    /** The returned RecoveryServiceSubnetCollection instance. */
+    /** The returned {@code RecoveryServiceSubnetCollection} instance. */
     private com.oracle.bmc.recovery.model.RecoveryServiceSubnetCollection
             recoveryServiceSubnetCollection;
 
     /**
-     * The returned RecoveryServiceSubnetCollection instance.
+     * The returned {@code RecoveryServiceSubnetCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListRecoveryServiceSubnetsResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned RecoveryServiceSubnetCollection instance. */
+        /** The returned {@code RecoveryServiceSubnetCollection} instance. */
         private com.oracle.bmc.recovery.model.RecoveryServiceSubnetCollection
                 recoveryServiceSubnetCollection;
 
         /**
-         * The returned RecoveryServiceSubnetCollection instance.
+         * The returned {@code RecoveryServiceSubnetCollection} instance.
          *
          * @param recoveryServiceSubnetCollection the value to set
          * @return this builder

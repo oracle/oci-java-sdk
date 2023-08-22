@@ -42,11 +42,11 @@ public class SummarizeAddmDbSchemaObjectsResponse extends com.oracle.bmc.respons
         return opcNextPage;
     }
 
-    /** The returned AddmDbSchemaObjectCollection instance. */
+    /** The returned {@code AddmDbSchemaObjectCollection} instance. */
     private com.oracle.bmc.opsi.model.AddmDbSchemaObjectCollection addmDbSchemaObjectCollection;
 
     /**
-     * The returned AddmDbSchemaObjectCollection instance.
+     * The returned {@code AddmDbSchemaObjectCollection} instance.
      *
      * @return the value
      */
@@ -131,11 +131,11 @@ public class SummarizeAddmDbSchemaObjectsResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned AddmDbSchemaObjectCollection instance. */
+        /** The returned {@code AddmDbSchemaObjectCollection} instance. */
         private com.oracle.bmc.opsi.model.AddmDbSchemaObjectCollection addmDbSchemaObjectCollection;
 
         /**
-         * The returned AddmDbSchemaObjectCollection instance.
+         * The returned {@code AddmDbSchemaObjectCollection} instance.
          *
          * @param addmDbSchemaObjectCollection the value to set
          * @return this builder

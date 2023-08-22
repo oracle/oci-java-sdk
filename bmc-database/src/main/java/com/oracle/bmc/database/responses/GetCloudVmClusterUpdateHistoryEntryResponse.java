@@ -37,11 +37,11 @@ public class GetCloudVmClusterUpdateHistoryEntryResponse
         return opcRequestId;
     }
 
-    /** The returned UpdateHistoryEntry instance. */
+    /** The returned {@code UpdateHistoryEntry} instance. */
     private com.oracle.bmc.database.model.UpdateHistoryEntry updateHistoryEntry;
 
     /**
-     * The returned UpdateHistoryEntry instance.
+     * The returned {@code UpdateHistoryEntry} instance.
      *
      * @return the value
      */
@@ -119,11 +119,11 @@ public class GetCloudVmClusterUpdateHistoryEntryResponse
             return this;
         }
 
-        /** The returned UpdateHistoryEntry instance. */
+        /** The returned {@code UpdateHistoryEntry} instance. */
         private com.oracle.bmc.database.model.UpdateHistoryEntry updateHistoryEntry;
 
         /**
-         * The returned UpdateHistoryEntry instance.
+         * The returned {@code UpdateHistoryEntry} instance.
          *
          * @param updateHistoryEntry the value to set
          * @return this builder

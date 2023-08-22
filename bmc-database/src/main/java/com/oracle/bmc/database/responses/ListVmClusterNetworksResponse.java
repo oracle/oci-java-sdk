@@ -44,11 +44,11 @@ public class ListVmClusterNetworksResponse extends com.oracle.bmc.responses.BmcR
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.database.model.VmClusterNetworkSummary instances. */
+    /** A list of {@code com.oracle.bmc.database.model.VmClusterNetworkSummary} instances. */
     private java.util.List<com.oracle.bmc.database.model.VmClusterNetworkSummary> items;
 
     /**
-     * A list of com.oracle.bmc.database.model.VmClusterNetworkSummary instances.
+     * A list of {@code com.oracle.bmc.database.model.VmClusterNetworkSummary} instances.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListVmClusterNetworksResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** A list of com.oracle.bmc.database.model.VmClusterNetworkSummary instances. */
+        /** A list of {@code com.oracle.bmc.database.model.VmClusterNetworkSummary} instances. */
         private java.util.List<com.oracle.bmc.database.model.VmClusterNetworkSummary> items;
 
         /**
-         * A list of com.oracle.bmc.database.model.VmClusterNetworkSummary instances.
+         * A list of {@code com.oracle.bmc.database.model.VmClusterNetworkSummary} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListJobRunsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned JobRunCollection instance. */
+    /** The returned {@code JobRunCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.JobRunCollection jobRunCollection;
 
     /**
-     * The returned JobRunCollection instance.
+     * The returned {@code JobRunCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListJobRunsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned JobRunCollection instance. */
+        /** The returned {@code JobRunCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.JobRunCollection jobRunCollection;
 
         /**
-         * The returned JobRunCollection instance.
+         * The returned {@code JobRunCollection} instance.
          *
          * @param jobRunCollection the value to set
          * @return this builder

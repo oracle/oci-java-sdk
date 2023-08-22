@@ -60,16 +60,16 @@ public class ListModuleStreamProfilesOnManagedInstanceResponse
     }
 
     /**
-     * A list of com.oracle.bmc.osmanagement.model.ModuleStreamProfileOnManagedInstanceSummary
-     * instances.
+     * A list of {@code
+     * com.oracle.bmc.osmanagement.model.ModuleStreamProfileOnManagedInstanceSummary} instances.
      */
     private java.util.List<
                     com.oracle.bmc.osmanagement.model.ModuleStreamProfileOnManagedInstanceSummary>
             items;
 
     /**
-     * A list of com.oracle.bmc.osmanagement.model.ModuleStreamProfileOnManagedInstanceSummary
-     * instances.
+     * A list of {@code
+     * com.oracle.bmc.osmanagement.model.ModuleStreamProfileOnManagedInstanceSummary} instances.
      *
      * @return the value
      */
@@ -180,8 +180,8 @@ public class ListModuleStreamProfilesOnManagedInstanceResponse
         }
 
         /**
-         * A list of com.oracle.bmc.osmanagement.model.ModuleStreamProfileOnManagedInstanceSummary
-         * instances.
+         * A list of {@code
+         * com.oracle.bmc.osmanagement.model.ModuleStreamProfileOnManagedInstanceSummary} instances.
          */
         private java.util.List<
                         com.oracle.bmc.osmanagement.model
@@ -189,8 +189,8 @@ public class ListModuleStreamProfilesOnManagedInstanceResponse
                 items;
 
         /**
-         * A list of com.oracle.bmc.osmanagement.model.ModuleStreamProfileOnManagedInstanceSummary
-         * instances.
+         * A list of {@code
+         * com.oracle.bmc.osmanagement.model.ModuleStreamProfileOnManagedInstanceSummary} instances.
          *
          * @param items the value to set
          * @return this builder

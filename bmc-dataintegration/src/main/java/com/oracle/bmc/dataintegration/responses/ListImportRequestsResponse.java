@@ -42,12 +42,12 @@ public class ListImportRequestsResponse extends com.oracle.bmc.responses.BmcResp
         return opcNextPage;
     }
 
-    /** The returned ImportRequestSummaryCollection instance. */
+    /** The returned {@code ImportRequestSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.ImportRequestSummaryCollection
             importRequestSummaryCollection;
 
     /**
-     * The returned ImportRequestSummaryCollection instance.
+     * The returned {@code ImportRequestSummaryCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListImportRequestsResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned ImportRequestSummaryCollection instance. */
+        /** The returned {@code ImportRequestSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.ImportRequestSummaryCollection
                 importRequestSummaryCollection;
 
         /**
-         * The returned ImportRequestSummaryCollection instance.
+         * The returned {@code ImportRequestSummaryCollection} instance.
          *
          * @param importRequestSummaryCollection the value to set
          * @return this builder

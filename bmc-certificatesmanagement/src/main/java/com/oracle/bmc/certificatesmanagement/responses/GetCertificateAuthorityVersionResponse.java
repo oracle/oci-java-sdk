@@ -36,12 +36,12 @@ public class GetCertificateAuthorityVersionResponse extends com.oracle.bmc.respo
         return opcRequestId;
     }
 
-    /** The returned CertificateAuthorityVersion instance. */
+    /** The returned {@code CertificateAuthorityVersion} instance. */
     private com.oracle.bmc.certificatesmanagement.model.CertificateAuthorityVersion
             certificateAuthorityVersion;
 
     /**
-     * The returned CertificateAuthorityVersion instance.
+     * The returned {@code CertificateAuthorityVersion} instance.
      *
      * @return the value
      */
@@ -121,12 +121,12 @@ public class GetCertificateAuthorityVersionResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned CertificateAuthorityVersion instance. */
+        /** The returned {@code CertificateAuthorityVersion} instance. */
         private com.oracle.bmc.certificatesmanagement.model.CertificateAuthorityVersion
                 certificateAuthorityVersion;
 
         /**
-         * The returned CertificateAuthorityVersion instance.
+         * The returned {@code CertificateAuthorityVersion} instance.
          *
          * @param certificateAuthorityVersion the value to set
          * @return this builder

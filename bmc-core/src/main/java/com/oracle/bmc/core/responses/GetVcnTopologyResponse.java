@@ -36,11 +36,11 @@ public class GetVcnTopologyResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned VcnTopology instance. */
+    /** The returned {@code VcnTopology} instance. */
     private com.oracle.bmc.core.model.VcnTopology vcnTopology;
 
     /**
-     * The returned VcnTopology instance.
+     * The returned {@code VcnTopology} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetVcnTopologyResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned VcnTopology instance. */
+        /** The returned {@code VcnTopology} instance. */
         private com.oracle.bmc.core.model.VcnTopology vcnTopology;
 
         /**
-         * The returned VcnTopology instance.
+         * The returned {@code VcnTopology} instance.
          *
          * @param vcnTopology the value to set
          * @return this builder

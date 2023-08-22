@@ -44,11 +44,11 @@ public class ListDatabaseSoftwareImagesResponse extends com.oracle.bmc.responses
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.database.model.DatabaseSoftwareImageSummary instances. */
+    /** A list of {@code com.oracle.bmc.database.model.DatabaseSoftwareImageSummary} instances. */
     private java.util.List<com.oracle.bmc.database.model.DatabaseSoftwareImageSummary> items;
 
     /**
-     * A list of com.oracle.bmc.database.model.DatabaseSoftwareImageSummary instances.
+     * A list of {@code com.oracle.bmc.database.model.DatabaseSoftwareImageSummary} instances.
      *
      * @return the value
      */
@@ -136,11 +136,13 @@ public class ListDatabaseSoftwareImagesResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** A list of com.oracle.bmc.database.model.DatabaseSoftwareImageSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.database.model.DatabaseSoftwareImageSummary} instances.
+         */
         private java.util.List<com.oracle.bmc.database.model.DatabaseSoftwareImageSummary> items;
 
         /**
-         * A list of com.oracle.bmc.database.model.DatabaseSoftwareImageSummary instances.
+         * A list of {@code com.oracle.bmc.database.model.DatabaseSoftwareImageSummary} instances.
          *
          * @param items the value to set
          * @return this builder

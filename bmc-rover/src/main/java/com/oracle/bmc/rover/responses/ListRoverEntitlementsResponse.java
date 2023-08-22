@@ -52,11 +52,11 @@ public class ListRoverEntitlementsResponse extends com.oracle.bmc.responses.BmcR
         return opcPrevPage;
     }
 
-    /** The returned RoverEntitlementCollection instance. */
+    /** The returned {@code RoverEntitlementCollection} instance. */
     private com.oracle.bmc.rover.model.RoverEntitlementCollection roverEntitlementCollection;
 
     /**
-     * The returned RoverEntitlementCollection instance.
+     * The returned {@code RoverEntitlementCollection} instance.
      *
      * @return the value
      */
@@ -156,11 +156,11 @@ public class ListRoverEntitlementsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned RoverEntitlementCollection instance. */
+        /** The returned {@code RoverEntitlementCollection} instance. */
         private com.oracle.bmc.rover.model.RoverEntitlementCollection roverEntitlementCollection;
 
         /**
-         * The returned RoverEntitlementCollection instance.
+         * The returned {@code RoverEntitlementCollection} instance.
          *
          * @param roverEntitlementCollection the value to set
          * @return this builder

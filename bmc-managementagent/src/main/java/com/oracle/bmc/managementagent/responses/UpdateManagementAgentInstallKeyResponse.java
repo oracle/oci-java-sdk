@@ -36,12 +36,12 @@ public class UpdateManagementAgentInstallKeyResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** The returned ManagementAgentInstallKey instance. */
+    /** The returned {@code ManagementAgentInstallKey} instance. */
     private com.oracle.bmc.managementagent.model.ManagementAgentInstallKey
             managementAgentInstallKey;
 
     /**
-     * The returned ManagementAgentInstallKey instance.
+     * The returned {@code ManagementAgentInstallKey} instance.
      *
      * @return the value
      */
@@ -121,12 +121,12 @@ public class UpdateManagementAgentInstallKeyResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned ManagementAgentInstallKey instance. */
+        /** The returned {@code ManagementAgentInstallKey} instance. */
         private com.oracle.bmc.managementagent.model.ManagementAgentInstallKey
                 managementAgentInstallKey;
 
         /**
-         * The returned ManagementAgentInstallKey instance.
+         * The returned {@code ManagementAgentInstallKey} instance.
          *
          * @param managementAgentInstallKey the value to set
          * @return this builder

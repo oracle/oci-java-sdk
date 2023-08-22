@@ -37,12 +37,12 @@ public class GetExternalExadataStorageConnectorResponse
         return opcRequestId;
     }
 
-    /** The returned ExternalExadataStorageConnector instance. */
+    /** The returned {@code ExternalExadataStorageConnector} instance. */
     private com.oracle.bmc.databasemanagement.model.ExternalExadataStorageConnector
             externalExadataStorageConnector;
 
     /**
-     * The returned ExternalExadataStorageConnector instance.
+     * The returned {@code ExternalExadataStorageConnector} instance.
      *
      * @return the value
      */
@@ -122,12 +122,12 @@ public class GetExternalExadataStorageConnectorResponse
             return this;
         }
 
-        /** The returned ExternalExadataStorageConnector instance. */
+        /** The returned {@code ExternalExadataStorageConnector} instance. */
         private com.oracle.bmc.databasemanagement.model.ExternalExadataStorageConnector
                 externalExadataStorageConnector;
 
         /**
-         * The returned ExternalExadataStorageConnector instance.
+         * The returned {@code ExternalExadataStorageConnector} instance.
          *
          * @param externalExadataStorageConnector the value to set
          * @return this builder

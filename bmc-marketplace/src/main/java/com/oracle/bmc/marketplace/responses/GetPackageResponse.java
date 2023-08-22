@@ -36,11 +36,11 @@ public class GetPackageResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned ListingPackage instance. */
+    /** The returned {@code ListingPackage} instance. */
     private com.oracle.bmc.marketplace.model.ListingPackage listingPackage;
 
     /**
-     * The returned ListingPackage instance.
+     * The returned {@code ListingPackage} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetPackageResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned ListingPackage instance. */
+        /** The returned {@code ListingPackage} instance. */
         private com.oracle.bmc.marketplace.model.ListingPackage listingPackage;
 
         /**
-         * The returned ListingPackage instance.
+         * The returned {@code ListingPackage} instance.
          *
          * @param listingPackage the value to set
          * @return this builder

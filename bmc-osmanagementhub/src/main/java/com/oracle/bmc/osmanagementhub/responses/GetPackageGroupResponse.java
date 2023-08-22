@@ -24,11 +24,11 @@ public class GetPackageGroupResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned PackageGroup instance. */
+    /** The returned {@code PackageGroup} instance. */
     private com.oracle.bmc.osmanagementhub.model.PackageGroup packageGroup;
 
     /**
-     * The returned PackageGroup instance.
+     * The returned {@code PackageGroup} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetPackageGroupResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned PackageGroup instance. */
+        /** The returned {@code PackageGroup} instance. */
         private com.oracle.bmc.osmanagementhub.model.PackageGroup packageGroup;
 
         /**
-         * The returned PackageGroup instance.
+         * The returned {@code PackageGroup} instance.
          *
          * @param packageGroup the value to set
          * @return this builder

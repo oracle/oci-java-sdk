@@ -64,11 +64,11 @@ public class ListStorageWorkRequestErrorsResponse extends com.oracle.bmc.respons
         return opcPrevPage;
     }
 
-    /** The returned WorkRequestErrorCollection instance. */
+    /** The returned {@code WorkRequestErrorCollection} instance. */
     private com.oracle.bmc.loganalytics.model.WorkRequestErrorCollection workRequestErrorCollection;
 
     /**
-     * The returned WorkRequestErrorCollection instance.
+     * The returned {@code WorkRequestErrorCollection} instance.
      *
      * @return the value
      */
@@ -181,12 +181,12 @@ public class ListStorageWorkRequestErrorsResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned WorkRequestErrorCollection instance. */
+        /** The returned {@code WorkRequestErrorCollection} instance. */
         private com.oracle.bmc.loganalytics.model.WorkRequestErrorCollection
                 workRequestErrorCollection;
 
         /**
-         * The returned WorkRequestErrorCollection instance.
+         * The returned {@code WorkRequestErrorCollection} instance.
          *
          * @param workRequestErrorCollection the value to set
          * @return this builder

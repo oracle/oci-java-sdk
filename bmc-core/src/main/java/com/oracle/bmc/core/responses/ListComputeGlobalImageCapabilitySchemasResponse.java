@@ -43,12 +43,16 @@ public class ListComputeGlobalImageCapabilitySchemasResponse
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary}
+     * instances.
+     */
     private java.util.List<com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary>
             items;
 
     /**
-     * A list of com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary instances.
+     * A list of {@code com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary}
+     * instances.
      *
      * @return the value
      */
@@ -135,13 +139,15 @@ public class ListComputeGlobalImageCapabilitySchemasResponse
         }
 
         /**
-         * A list of com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary instances.
+         * A list of {@code com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary}
+         * instances.
          */
         private java.util.List<com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary instances.
+         * A list of {@code com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

@@ -72,11 +72,11 @@ public class ListPatchesResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcTotalItems;
     }
 
-    /** The returned PatchSummaryCollection instance. */
+    /** The returned {@code PatchSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.PatchSummaryCollection patchSummaryCollection;
 
     /**
-     * The returned PatchSummaryCollection instance.
+     * The returned {@code PatchSummaryCollection} instance.
      *
      * @return the value
      */
@@ -199,11 +199,11 @@ public class ListPatchesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned PatchSummaryCollection instance. */
+        /** The returned {@code PatchSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.PatchSummaryCollection patchSummaryCollection;
 
         /**
-         * The returned PatchSummaryCollection instance.
+         * The returned {@code PatchSummaryCollection} instance.
          *
          * @param patchSummaryCollection the value to set
          * @return this builder

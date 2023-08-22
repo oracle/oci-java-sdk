@@ -56,6 +56,12 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     EnableAdbAdvancedFeatures("ENABLE_ADB_ADVANCED_FEATURES"),
     DisableAdbAdvancedFeatures("DISABLE_ADB_ADVANCED_FEATURES"),
     UpdateAdbAdvancedFeatures("UPDATE_ADB_ADVANCED_FEATURES"),
+    CreateNewsReport("CREATE_NEWS_REPORT"),
+    EnableNewsReport("ENABLE_NEWS_REPORT"),
+    DisableNewsReport("DISABLE_NEWS_REPORT"),
+    UpdateNewsReport("UPDATE_NEWS_REPORT"),
+    MoveNewsReport("MOVE_NEWS_REPORT"),
+    DeleteNewsReport("DELETE_NEWS_REPORT"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

@@ -36,11 +36,11 @@ public class GetServiceAttachmentResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned ServiceAttachment instance. */
+    /** The returned {@code ServiceAttachment} instance. */
     private com.oracle.bmc.fusionapps.model.ServiceAttachment serviceAttachment;
 
     /**
-     * The returned ServiceAttachment instance.
+     * The returned {@code ServiceAttachment} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetServiceAttachmentResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned ServiceAttachment instance. */
+        /** The returned {@code ServiceAttachment} instance. */
         private com.oracle.bmc.fusionapps.model.ServiceAttachment serviceAttachment;
 
         /**
-         * The returned ServiceAttachment instance.
+         * The returned {@code ServiceAttachment} instance.
          *
          * @param serviceAttachment the value to set
          * @return this builder

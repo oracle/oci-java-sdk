@@ -40,11 +40,11 @@ public class GetProjectResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Project instance. */
+    /** The returned {@code Project} instance. */
     private com.oracle.bmc.datascience.model.Project project;
 
     /**
-     * The returned Project instance.
+     * The returned {@code Project} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetProjectResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Project instance. */
+        /** The returned {@code Project} instance. */
         private com.oracle.bmc.datascience.model.Project project;
 
         /**
-         * The returned Project instance.
+         * The returned {@code Project} instance.
          *
          * @param project the value to set
          * @return this builder

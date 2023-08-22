@@ -42,12 +42,12 @@ public class SummarizeRecordAnalyticsResponse extends com.oracle.bmc.responses.B
         return opcNextPage;
     }
 
-    /** The returned RecordAnalyticsAggregationCollection instance. */
+    /** The returned {@code RecordAnalyticsAggregationCollection} instance. */
     private com.oracle.bmc.datalabelingservicedataplane.model.RecordAnalyticsAggregationCollection
             recordAnalyticsAggregationCollection;
 
     /**
-     * The returned RecordAnalyticsAggregationCollection instance.
+     * The returned {@code RecordAnalyticsAggregationCollection} instance.
      *
      * @return the value
      */
@@ -133,13 +133,13 @@ public class SummarizeRecordAnalyticsResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned RecordAnalyticsAggregationCollection instance. */
+        /** The returned {@code RecordAnalyticsAggregationCollection} instance. */
         private com.oracle.bmc.datalabelingservicedataplane.model
                         .RecordAnalyticsAggregationCollection
                 recordAnalyticsAggregationCollection;
 
         /**
-         * The returned RecordAnalyticsAggregationCollection instance.
+         * The returned {@code RecordAnalyticsAggregationCollection} instance.
          *
          * @param recordAnalyticsAggregationCollection the value to set
          * @return this builder

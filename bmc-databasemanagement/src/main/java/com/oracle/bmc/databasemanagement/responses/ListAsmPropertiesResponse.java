@@ -42,11 +42,11 @@ public class ListAsmPropertiesResponse extends com.oracle.bmc.responses.BmcRespo
         return opcNextPage;
     }
 
-    /** The returned AsmPropertyCollection instance. */
+    /** The returned {@code AsmPropertyCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.AsmPropertyCollection asmPropertyCollection;
 
     /**
-     * The returned AsmPropertyCollection instance.
+     * The returned {@code AsmPropertyCollection} instance.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListAsmPropertiesResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned AsmPropertyCollection instance. */
+        /** The returned {@code AsmPropertyCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.AsmPropertyCollection asmPropertyCollection;
 
         /**
-         * The returned AsmPropertyCollection instance.
+         * The returned {@code AsmPropertyCollection} instance.
          *
          * @param asmPropertyCollection the value to set
          * @return this builder

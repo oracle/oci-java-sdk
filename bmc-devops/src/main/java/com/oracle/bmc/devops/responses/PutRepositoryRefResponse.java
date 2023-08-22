@@ -64,11 +64,11 @@ public class PutRepositoryRefResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned RepositoryRef instance. */
+    /** The returned {@code RepositoryRef} instance. */
     private com.oracle.bmc.devops.model.RepositoryRef repositoryRef;
 
     /**
-     * The returned RepositoryRef instance.
+     * The returned {@code RepositoryRef} instance.
      *
      * @return the value
      */
@@ -183,11 +183,11 @@ public class PutRepositoryRefResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned RepositoryRef instance. */
+        /** The returned {@code RepositoryRef} instance. */
         private com.oracle.bmc.devops.model.RepositoryRef repositoryRef;
 
         /**
-         * The returned RepositoryRef instance.
+         * The returned {@code RepositoryRef} instance.
          *
          * @param repositoryRef the value to set
          * @return this builder

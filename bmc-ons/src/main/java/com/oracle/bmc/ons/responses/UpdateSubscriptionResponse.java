@@ -36,11 +36,11 @@ public class UpdateSubscriptionResponse extends com.oracle.bmc.responses.BmcResp
         return etag;
     }
 
-    /** The returned UpdateSubscriptionDetails instance. */
+    /** The returned {@code UpdateSubscriptionDetails} instance. */
     private com.oracle.bmc.ons.model.UpdateSubscriptionDetails updateSubscriptionDetails;
 
     /**
-     * The returned UpdateSubscriptionDetails instance.
+     * The returned {@code UpdateSubscriptionDetails} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateSubscriptionResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned UpdateSubscriptionDetails instance. */
+        /** The returned {@code UpdateSubscriptionDetails} instance. */
         private com.oracle.bmc.ons.model.UpdateSubscriptionDetails updateSubscriptionDetails;
 
         /**
-         * The returned UpdateSubscriptionDetails instance.
+         * The returned {@code UpdateSubscriptionDetails} instance.
          *
          * @param updateSubscriptionDetails the value to set
          * @return this builder

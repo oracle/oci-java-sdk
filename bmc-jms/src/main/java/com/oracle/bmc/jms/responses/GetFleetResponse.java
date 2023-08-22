@@ -36,11 +36,11 @@ public class GetFleetResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Fleet instance. */
+    /** The returned {@code Fleet} instance. */
     private com.oracle.bmc.jms.model.Fleet fleet;
 
     /**
-     * The returned Fleet instance.
+     * The returned {@code Fleet} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetFleetResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Fleet instance. */
+        /** The returned {@code Fleet} instance. */
         private com.oracle.bmc.jms.model.Fleet fleet;
 
         /**
-         * The returned Fleet instance.
+         * The returned {@code Fleet} instance.
          *
          * @param fleet the value to set
          * @return this builder

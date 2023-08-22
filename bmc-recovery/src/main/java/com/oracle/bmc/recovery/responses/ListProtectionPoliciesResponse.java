@@ -42,11 +42,11 @@ public class ListProtectionPoliciesResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** The returned ProtectionPolicyCollection instance. */
+    /** The returned {@code ProtectionPolicyCollection} instance. */
     private com.oracle.bmc.recovery.model.ProtectionPolicyCollection protectionPolicyCollection;
 
     /**
-     * The returned ProtectionPolicyCollection instance.
+     * The returned {@code ProtectionPolicyCollection} instance.
      *
      * @return the value
      */
@@ -131,11 +131,11 @@ public class ListProtectionPoliciesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned ProtectionPolicyCollection instance. */
+        /** The returned {@code ProtectionPolicyCollection} instance. */
         private com.oracle.bmc.recovery.model.ProtectionPolicyCollection protectionPolicyCollection;
 
         /**
-         * The returned ProtectionPolicyCollection instance.
+         * The returned {@code ProtectionPolicyCollection} instance.
          *
          * @param protectionPolicyCollection the value to set
          * @return this builder

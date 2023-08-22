@@ -62,11 +62,11 @@ public class ListSensitiveDataModelsResponse extends com.oracle.bmc.responses.Bm
         return opcPrevPage;
     }
 
-    /** The returned SensitiveDataModelCollection instance. */
+    /** The returned {@code SensitiveDataModelCollection} instance. */
     private com.oracle.bmc.datasafe.model.SensitiveDataModelCollection sensitiveDataModelCollection;
 
     /**
-     * The returned SensitiveDataModelCollection instance.
+     * The returned {@code SensitiveDataModelCollection} instance.
      *
      * @return the value
      */
@@ -177,12 +177,12 @@ public class ListSensitiveDataModelsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned SensitiveDataModelCollection instance. */
+        /** The returned {@code SensitiveDataModelCollection} instance. */
         private com.oracle.bmc.datasafe.model.SensitiveDataModelCollection
                 sensitiveDataModelCollection;
 
         /**
-         * The returned SensitiveDataModelCollection instance.
+         * The returned {@code SensitiveDataModelCollection} instance.
          *
          * @param sensitiveDataModelCollection the value to set
          * @return this builder

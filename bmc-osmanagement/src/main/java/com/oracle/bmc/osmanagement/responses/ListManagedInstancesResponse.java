@@ -42,11 +42,11 @@ public class ListManagedInstancesResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.osmanagement.model.ManagedInstanceSummary instances. */
+    /** A list of {@code com.oracle.bmc.osmanagement.model.ManagedInstanceSummary} instances. */
     private java.util.List<com.oracle.bmc.osmanagement.model.ManagedInstanceSummary> items;
 
     /**
-     * A list of com.oracle.bmc.osmanagement.model.ManagedInstanceSummary instances.
+     * A list of {@code com.oracle.bmc.osmanagement.model.ManagedInstanceSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListManagedInstancesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** A list of com.oracle.bmc.osmanagement.model.ManagedInstanceSummary instances. */
+        /** A list of {@code com.oracle.bmc.osmanagement.model.ManagedInstanceSummary} instances. */
         private java.util.List<com.oracle.bmc.osmanagement.model.ManagedInstanceSummary> items;
 
         /**
-         * A list of com.oracle.bmc.osmanagement.model.ManagedInstanceSummary instances.
+         * A list of {@code com.oracle.bmc.osmanagement.model.ManagedInstanceSummary} instances.
          *
          * @param items the value to set
          * @return this builder

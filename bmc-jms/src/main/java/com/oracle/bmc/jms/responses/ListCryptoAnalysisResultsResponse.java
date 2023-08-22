@@ -44,11 +44,11 @@ public class ListCryptoAnalysisResultsResponse extends com.oracle.bmc.responses.
         return opcNextPage;
     }
 
-    /** The returned CryptoAnalysisResultCollection instance. */
+    /** The returned {@code CryptoAnalysisResultCollection} instance. */
     private com.oracle.bmc.jms.model.CryptoAnalysisResultCollection cryptoAnalysisResultCollection;
 
     /**
-     * The returned CryptoAnalysisResultCollection instance.
+     * The returned {@code CryptoAnalysisResultCollection} instance.
      *
      * @return the value
      */
@@ -138,12 +138,12 @@ public class ListCryptoAnalysisResultsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned CryptoAnalysisResultCollection instance. */
+        /** The returned {@code CryptoAnalysisResultCollection} instance. */
         private com.oracle.bmc.jms.model.CryptoAnalysisResultCollection
                 cryptoAnalysisResultCollection;
 
         /**
-         * The returned CryptoAnalysisResultCollection instance.
+         * The returned {@code CryptoAnalysisResultCollection} instance.
          *
          * @param cryptoAnalysisResultCollection the value to set
          * @return this builder

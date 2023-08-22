@@ -62,11 +62,11 @@ public class ListAuditProfilesResponse extends com.oracle.bmc.responses.BmcRespo
         return opcPrevPage;
     }
 
-    /** The returned AuditProfileCollection instance. */
+    /** The returned {@code AuditProfileCollection} instance. */
     private com.oracle.bmc.datasafe.model.AuditProfileCollection auditProfileCollection;
 
     /**
-     * The returned AuditProfileCollection instance.
+     * The returned {@code AuditProfileCollection} instance.
      *
      * @return the value
      */
@@ -174,11 +174,11 @@ public class ListAuditProfilesResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned AuditProfileCollection instance. */
+        /** The returned {@code AuditProfileCollection} instance. */
         private com.oracle.bmc.datasafe.model.AuditProfileCollection auditProfileCollection;
 
         /**
-         * The returned AuditProfileCollection instance.
+         * The returned {@code AuditProfileCollection} instance.
          *
          * @param auditProfileCollection the value to set
          * @return this builder

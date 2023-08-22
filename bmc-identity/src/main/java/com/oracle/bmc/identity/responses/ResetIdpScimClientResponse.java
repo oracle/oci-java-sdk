@@ -24,11 +24,11 @@ public class ResetIdpScimClientResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned ScimClientCredentials instance. */
+    /** The returned {@code ScimClientCredentials} instance. */
     private com.oracle.bmc.identity.model.ScimClientCredentials scimClientCredentials;
 
     /**
-     * The returned ScimClientCredentials instance.
+     * The returned {@code ScimClientCredentials} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class ResetIdpScimClientResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned ScimClientCredentials instance. */
+        /** The returned {@code ScimClientCredentials} instance. */
         private com.oracle.bmc.identity.model.ScimClientCredentials scimClientCredentials;
 
         /**
-         * The returned ScimClientCredentials instance.
+         * The returned {@code ScimClientCredentials} instance.
          *
          * @param scimClientCredentials the value to set
          * @return this builder

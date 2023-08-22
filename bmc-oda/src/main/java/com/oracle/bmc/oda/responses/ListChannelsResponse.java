@@ -54,11 +54,11 @@ public class ListChannelsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcTotalItems;
     }
 
-    /** The returned ChannelCollection instance. */
+    /** The returned {@code ChannelCollection} instance. */
     private com.oracle.bmc.oda.model.ChannelCollection channelCollection;
 
     /**
-     * The returned ChannelCollection instance.
+     * The returned {@code ChannelCollection} instance.
      *
      * @return the value
      */
@@ -158,11 +158,11 @@ public class ListChannelsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned ChannelCollection instance. */
+        /** The returned {@code ChannelCollection} instance. */
         private com.oracle.bmc.oda.model.ChannelCollection channelCollection;
 
         /**
-         * The returned ChannelCollection instance.
+         * The returned {@code ChannelCollection} instance.
          *
          * @param channelCollection the value to set
          * @return this builder

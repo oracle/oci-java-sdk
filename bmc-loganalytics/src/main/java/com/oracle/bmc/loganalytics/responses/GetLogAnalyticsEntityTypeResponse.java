@@ -36,11 +36,11 @@ public class GetLogAnalyticsEntityTypeResponse extends com.oracle.bmc.responses.
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsEntityType instance. */
+    /** The returned {@code LogAnalyticsEntityType} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsEntityType logAnalyticsEntityType;
 
     /**
-     * The returned LogAnalyticsEntityType instance.
+     * The returned {@code LogAnalyticsEntityType} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetLogAnalyticsEntityTypeResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned LogAnalyticsEntityType instance. */
+        /** The returned {@code LogAnalyticsEntityType} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsEntityType logAnalyticsEntityType;
 
         /**
-         * The returned LogAnalyticsEntityType instance.
+         * The returned {@code LogAnalyticsEntityType} instance.
          *
          * @param logAnalyticsEntityType the value to set
          * @return this builder

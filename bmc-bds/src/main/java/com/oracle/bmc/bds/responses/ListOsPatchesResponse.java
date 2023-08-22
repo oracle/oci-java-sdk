@@ -54,11 +54,11 @@ public class ListOsPatchesResponse extends com.oracle.bmc.responses.BmcResponse 
         return etag;
     }
 
-    /** A list of com.oracle.bmc.bds.model.OsPatchSummary instances. */
+    /** A list of {@code com.oracle.bmc.bds.model.OsPatchSummary} instances. */
     private java.util.List<com.oracle.bmc.bds.model.OsPatchSummary> items;
 
     /**
-     * A list of com.oracle.bmc.bds.model.OsPatchSummary instances.
+     * A list of {@code com.oracle.bmc.bds.model.OsPatchSummary} instances.
      *
      * @return the value
      */
@@ -158,11 +158,11 @@ public class ListOsPatchesResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** A list of com.oracle.bmc.bds.model.OsPatchSummary instances. */
+        /** A list of {@code com.oracle.bmc.bds.model.OsPatchSummary} instances. */
         private java.util.List<com.oracle.bmc.bds.model.OsPatchSummary> items;
 
         /**
-         * A list of com.oracle.bmc.bds.model.OsPatchSummary instances.
+         * A list of {@code com.oracle.bmc.bds.model.OsPatchSummary} instances.
          *
          * @param items the value to set
          * @return this builder

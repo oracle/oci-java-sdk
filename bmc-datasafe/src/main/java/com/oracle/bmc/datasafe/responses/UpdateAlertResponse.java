@@ -42,11 +42,11 @@ public class UpdateAlertResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Alert instance. */
+    /** The returned {@code Alert} instance. */
     private com.oracle.bmc.datasafe.model.Alert alert;
 
     /**
-     * The returned Alert instance.
+     * The returned {@code Alert} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class UpdateAlertResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Alert instance. */
+        /** The returned {@code Alert} instance. */
         private com.oracle.bmc.datasafe.model.Alert alert;
 
         /**
-         * The returned Alert instance.
+         * The returned {@code Alert} instance.
          *
          * @param alert the value to set
          * @return this builder

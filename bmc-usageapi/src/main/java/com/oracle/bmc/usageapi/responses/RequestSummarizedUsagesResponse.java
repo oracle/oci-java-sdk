@@ -42,11 +42,11 @@ public class RequestSummarizedUsagesResponse extends com.oracle.bmc.responses.Bm
         return opcNextPage;
     }
 
-    /** The returned UsageAggregation instance. */
+    /** The returned {@code UsageAggregation} instance. */
     private com.oracle.bmc.usageapi.model.UsageAggregation usageAggregation;
 
     /**
-     * The returned UsageAggregation instance.
+     * The returned {@code UsageAggregation} instance.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class RequestSummarizedUsagesResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned UsageAggregation instance. */
+        /** The returned {@code UsageAggregation} instance. */
         private com.oracle.bmc.usageapi.model.UsageAggregation usageAggregation;
 
         /**
-         * The returned UsageAggregation instance.
+         * The returned {@code UsageAggregation} instance.
          *
          * @param usageAggregation the value to set
          * @return this builder

@@ -42,12 +42,12 @@ public class ListManagedDatabasesResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** The returned ManagedDatabaseCollection instance. */
+    /** The returned {@code ManagedDatabaseCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.ManagedDatabaseCollection
             managedDatabaseCollection;
 
     /**
-     * The returned ManagedDatabaseCollection instance.
+     * The returned {@code ManagedDatabaseCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListManagedDatabasesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned ManagedDatabaseCollection instance. */
+        /** The returned {@code ManagedDatabaseCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.ManagedDatabaseCollection
                 managedDatabaseCollection;
 
         /**
-         * The returned ManagedDatabaseCollection instance.
+         * The returned {@code ManagedDatabaseCollection} instance.
          *
          * @param managedDatabaseCollection the value to set
          * @return this builder

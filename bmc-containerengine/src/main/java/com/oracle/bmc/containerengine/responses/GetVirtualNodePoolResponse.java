@@ -36,11 +36,11 @@ public class GetVirtualNodePoolResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned VirtualNodePool instance. */
+    /** The returned {@code VirtualNodePool} instance. */
     private com.oracle.bmc.containerengine.model.VirtualNodePool virtualNodePool;
 
     /**
-     * The returned VirtualNodePool instance.
+     * The returned {@code VirtualNodePool} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetVirtualNodePoolResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned VirtualNodePool instance. */
+        /** The returned {@code VirtualNodePool} instance. */
         private com.oracle.bmc.containerengine.model.VirtualNodePool virtualNodePool;
 
         /**
-         * The returned VirtualNodePool instance.
+         * The returned {@code VirtualNodePool} instance.
          *
          * @param virtualNodePool the value to set
          * @return this builder

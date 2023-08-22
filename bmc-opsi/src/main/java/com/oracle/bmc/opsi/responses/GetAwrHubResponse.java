@@ -36,11 +36,11 @@ public class GetAwrHubResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned AwrHub instance. */
+    /** The returned {@code AwrHub} instance. */
     private com.oracle.bmc.opsi.model.AwrHub awrHub;
 
     /**
-     * The returned AwrHub instance.
+     * The returned {@code AwrHub} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetAwrHubResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned AwrHub instance. */
+        /** The returned {@code AwrHub} instance. */
         private com.oracle.bmc.opsi.model.AwrHub awrHub;
 
         /**
-         * The returned AwrHub instance.
+         * The returned {@code AwrHub} instance.
          *
          * @param awrHub the value to set
          * @return this builder

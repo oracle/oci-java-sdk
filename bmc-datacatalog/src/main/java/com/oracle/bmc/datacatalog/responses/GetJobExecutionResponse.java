@@ -40,11 +40,11 @@ public class GetJobExecutionResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned JobExecution instance. */
+    /** The returned {@code JobExecution} instance. */
     private com.oracle.bmc.datacatalog.model.JobExecution jobExecution;
 
     /**
-     * The returned JobExecution instance.
+     * The returned {@code JobExecution} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetJobExecutionResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned JobExecution instance. */
+        /** The returned {@code JobExecution} instance. */
         private com.oracle.bmc.datacatalog.model.JobExecution jobExecution;
 
         /**
-         * The returned JobExecution instance.
+         * The returned {@code JobExecution} instance.
          *
          * @param jobExecution the value to set
          * @return this builder

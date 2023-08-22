@@ -36,11 +36,11 @@ public class RetrieveNamespaceMetricsResponse extends com.oracle.bmc.responses.B
         return etag;
     }
 
-    /** The returned NamespaceMetricCollection instance. */
+    /** The returned {@code NamespaceMetricCollection} instance. */
     private com.oracle.bmc.apmconfig.model.NamespaceMetricCollection namespaceMetricCollection;
 
     /**
-     * The returned NamespaceMetricCollection instance.
+     * The returned {@code NamespaceMetricCollection} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class RetrieveNamespaceMetricsResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned NamespaceMetricCollection instance. */
+        /** The returned {@code NamespaceMetricCollection} instance. */
         private com.oracle.bmc.apmconfig.model.NamespaceMetricCollection namespaceMetricCollection;
 
         /**
-         * The returned NamespaceMetricCollection instance.
+         * The returned {@code NamespaceMetricCollection} instance.
          *
          * @param namespaceMetricCollection the value to set
          * @return this builder

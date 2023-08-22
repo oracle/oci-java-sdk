@@ -36,11 +36,11 @@ public class PutUserStatusChangerResponse extends com.oracle.bmc.responses.BmcRe
         return etag;
     }
 
-    /** The returned UserStatusChanger instance. */
+    /** The returned {@code UserStatusChanger} instance. */
     private com.oracle.bmc.identitydomains.model.UserStatusChanger userStatusChanger;
 
     /**
-     * The returned UserStatusChanger instance.
+     * The returned {@code UserStatusChanger} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class PutUserStatusChangerResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned UserStatusChanger instance. */
+        /** The returned {@code UserStatusChanger} instance. */
         private com.oracle.bmc.identitydomains.model.UserStatusChanger userStatusChanger;
 
         /**
-         * The returned UserStatusChanger instance.
+         * The returned {@code UserStatusChanger} instance.
          *
          * @param userStatusChanger the value to set
          * @return this builder

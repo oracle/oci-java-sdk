@@ -36,11 +36,11 @@ public class GetAutonomousVirtualMachineResponse extends com.oracle.bmc.response
         return opcRequestId;
     }
 
-    /** The returned AutonomousVirtualMachine instance. */
+    /** The returned {@code AutonomousVirtualMachine} instance. */
     private com.oracle.bmc.database.model.AutonomousVirtualMachine autonomousVirtualMachine;
 
     /**
-     * The returned AutonomousVirtualMachine instance.
+     * The returned {@code AutonomousVirtualMachine} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetAutonomousVirtualMachineResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned AutonomousVirtualMachine instance. */
+        /** The returned {@code AutonomousVirtualMachine} instance. */
         private com.oracle.bmc.database.model.AutonomousVirtualMachine autonomousVirtualMachine;
 
         /**
-         * The returned AutonomousVirtualMachine instance.
+         * The returned {@code AutonomousVirtualMachine} instance.
          *
          * @param autonomousVirtualMachine the value to set
          * @return this builder

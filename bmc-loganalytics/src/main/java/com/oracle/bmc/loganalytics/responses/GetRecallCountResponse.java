@@ -24,11 +24,11 @@ public class GetRecallCountResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned RecallCount instance. */
+    /** The returned {@code RecallCount} instance. */
     private com.oracle.bmc.loganalytics.model.RecallCount recallCount;
 
     /**
-     * The returned RecallCount instance.
+     * The returned {@code RecallCount} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetRecallCountResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned RecallCount instance. */
+        /** The returned {@code RecallCount} instance. */
         private com.oracle.bmc.loganalytics.model.RecallCount recallCount;
 
         /**
-         * The returned RecallCount instance.
+         * The returned {@code RecallCount} instance.
          *
          * @param recallCount the value to set
          * @return this builder

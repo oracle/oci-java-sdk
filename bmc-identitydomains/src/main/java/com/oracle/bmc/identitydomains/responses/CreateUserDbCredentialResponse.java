@@ -36,11 +36,11 @@ public class CreateUserDbCredentialResponse extends com.oracle.bmc.responses.Bmc
         return etag;
     }
 
-    /** The returned UserDbCredential instance. */
+    /** The returned {@code UserDbCredential} instance. */
     private com.oracle.bmc.identitydomains.model.UserDbCredential userDbCredential;
 
     /**
-     * The returned UserDbCredential instance.
+     * The returned {@code UserDbCredential} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class CreateUserDbCredentialResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned UserDbCredential instance. */
+        /** The returned {@code UserDbCredential} instance. */
         private com.oracle.bmc.identitydomains.model.UserDbCredential userDbCredential;
 
         /**
-         * The returned UserDbCredential instance.
+         * The returned {@code UserDbCredential} instance.
          *
          * @param userDbCredential the value to set
          * @return this builder

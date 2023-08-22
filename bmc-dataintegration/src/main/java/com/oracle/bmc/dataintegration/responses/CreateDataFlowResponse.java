@@ -40,11 +40,11 @@ public class CreateDataFlowResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned DataFlow instance. */
+    /** The returned {@code DataFlow} instance. */
     private com.oracle.bmc.dataintegration.model.DataFlow dataFlow;
 
     /**
-     * The returned DataFlow instance.
+     * The returned {@code DataFlow} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class CreateDataFlowResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned DataFlow instance. */
+        /** The returned {@code DataFlow} instance. */
         private com.oracle.bmc.dataintegration.model.DataFlow dataFlow;
 
         /**
-         * The returned DataFlow instance.
+         * The returned {@code DataFlow} instance.
          *
          * @param dataFlow the value to set
          * @return this builder

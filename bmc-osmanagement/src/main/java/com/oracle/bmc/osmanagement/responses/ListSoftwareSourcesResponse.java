@@ -42,11 +42,11 @@ public class ListSoftwareSourcesResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.osmanagement.model.SoftwareSourceSummary instances. */
+    /** A list of {@code com.oracle.bmc.osmanagement.model.SoftwareSourceSummary} instances. */
     private java.util.List<com.oracle.bmc.osmanagement.model.SoftwareSourceSummary> items;
 
     /**
-     * A list of com.oracle.bmc.osmanagement.model.SoftwareSourceSummary instances.
+     * A list of {@code com.oracle.bmc.osmanagement.model.SoftwareSourceSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListSoftwareSourcesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** A list of com.oracle.bmc.osmanagement.model.SoftwareSourceSummary instances. */
+        /** A list of {@code com.oracle.bmc.osmanagement.model.SoftwareSourceSummary} instances. */
         private java.util.List<com.oracle.bmc.osmanagement.model.SoftwareSourceSummary> items;
 
         /**
-         * A list of com.oracle.bmc.osmanagement.model.SoftwareSourceSummary instances.
+         * A list of {@code com.oracle.bmc.osmanagement.model.SoftwareSourceSummary} instances.
          *
          * @param items the value to set
          * @return this builder

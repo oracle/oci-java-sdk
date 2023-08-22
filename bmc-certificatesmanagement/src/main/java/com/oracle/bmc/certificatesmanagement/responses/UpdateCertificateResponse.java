@@ -36,11 +36,11 @@ public class UpdateCertificateResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned Certificate instance. */
+    /** The returned {@code Certificate} instance. */
     private com.oracle.bmc.certificatesmanagement.model.Certificate certificate;
 
     /**
-     * The returned Certificate instance.
+     * The returned {@code Certificate} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateCertificateResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned Certificate instance. */
+        /** The returned {@code Certificate} instance. */
         private com.oracle.bmc.certificatesmanagement.model.Certificate certificate;
 
         /**
-         * The returned Certificate instance.
+         * The returned {@code Certificate} instance.
          *
          * @param certificate the value to set
          * @return this builder

@@ -66,11 +66,11 @@ public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned ResourceSummaryCollection instance. */
+    /** The returned {@code ResourceSummaryCollection} instance. */
     private com.oracle.bmc.resourcesearch.model.ResourceSummaryCollection resourceSummaryCollection;
 
     /**
-     * The returned ResourceSummaryCollection instance.
+     * The returned {@code ResourceSummaryCollection} instance.
      *
      * @return the value
      */
@@ -184,12 +184,12 @@ public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned ResourceSummaryCollection instance. */
+        /** The returned {@code ResourceSummaryCollection} instance. */
         private com.oracle.bmc.resourcesearch.model.ResourceSummaryCollection
                 resourceSummaryCollection;
 
         /**
-         * The returned ResourceSummaryCollection instance.
+         * The returned {@code ResourceSummaryCollection} instance.
          *
          * @param resourceSummaryCollection the value to set
          * @return this builder

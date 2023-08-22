@@ -36,11 +36,11 @@ public class GetDrgAttachmentResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned DrgAttachment instance. */
+    /** The returned {@code DrgAttachment} instance. */
     private com.oracle.bmc.core.model.DrgAttachment drgAttachment;
 
     /**
-     * The returned DrgAttachment instance.
+     * The returned {@code DrgAttachment} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetDrgAttachmentResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned DrgAttachment instance. */
+        /** The returned {@code DrgAttachment} instance. */
         private com.oracle.bmc.core.model.DrgAttachment drgAttachment;
 
         /**
-         * The returned DrgAttachment instance.
+         * The returned {@code DrgAttachment} instance.
          *
          * @param drgAttachment the value to set
          * @return this builder

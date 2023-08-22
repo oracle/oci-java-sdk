@@ -44,11 +44,11 @@ public class ListPathRouteSetsResponse extends com.oracle.bmc.responses.BmcRespo
         return eTag;
     }
 
-    /** A list of com.oracle.bmc.loadbalancer.model.PathRouteSet instances. */
+    /** A list of {@code com.oracle.bmc.loadbalancer.model.PathRouteSet} instances. */
     private java.util.List<com.oracle.bmc.loadbalancer.model.PathRouteSet> items;
 
     /**
-     * A list of com.oracle.bmc.loadbalancer.model.PathRouteSet instances.
+     * A list of {@code com.oracle.bmc.loadbalancer.model.PathRouteSet} instances.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListPathRouteSetsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** A list of com.oracle.bmc.loadbalancer.model.PathRouteSet instances. */
+        /** A list of {@code com.oracle.bmc.loadbalancer.model.PathRouteSet} instances. */
         private java.util.List<com.oracle.bmc.loadbalancer.model.PathRouteSet> items;
 
         /**
-         * A list of com.oracle.bmc.loadbalancer.model.PathRouteSet instances.
+         * A list of {@code com.oracle.bmc.loadbalancer.model.PathRouteSet} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListAppCatalogListingsResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.AppCatalogListingSummary instances. */
+    /** A list of {@code com.oracle.bmc.core.model.AppCatalogListingSummary} instances. */
     private java.util.List<com.oracle.bmc.core.model.AppCatalogListingSummary> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.AppCatalogListingSummary instances.
+     * A list of {@code com.oracle.bmc.core.model.AppCatalogListingSummary} instances.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListAppCatalogListingsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.AppCatalogListingSummary instances. */
+        /** A list of {@code com.oracle.bmc.core.model.AppCatalogListingSummary} instances. */
         private java.util.List<com.oracle.bmc.core.model.AppCatalogListingSummary> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.AppCatalogListingSummary instances.
+         * A list of {@code com.oracle.bmc.core.model.AppCatalogListingSummary} instances.
          *
          * @param items the value to set
          * @return this builder

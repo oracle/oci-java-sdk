@@ -42,12 +42,12 @@ public class ListDbManagementPrivateEndpointsResponse extends com.oracle.bmc.res
         return opcNextPage;
     }
 
-    /** The returned DbManagementPrivateEndpointCollection instance. */
+    /** The returned {@code DbManagementPrivateEndpointCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.DbManagementPrivateEndpointCollection
             dbManagementPrivateEndpointCollection;
 
     /**
-     * The returned DbManagementPrivateEndpointCollection instance.
+     * The returned {@code DbManagementPrivateEndpointCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListDbManagementPrivateEndpointsResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /** The returned DbManagementPrivateEndpointCollection instance. */
+        /** The returned {@code DbManagementPrivateEndpointCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.DbManagementPrivateEndpointCollection
                 dbManagementPrivateEndpointCollection;
 
         /**
-         * The returned DbManagementPrivateEndpointCollection instance.
+         * The returned {@code DbManagementPrivateEndpointCollection} instance.
          *
          * @param dbManagementPrivateEndpointCollection the value to set
          * @return this builder

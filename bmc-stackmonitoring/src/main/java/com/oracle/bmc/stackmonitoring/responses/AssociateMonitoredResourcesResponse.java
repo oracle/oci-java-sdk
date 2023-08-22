@@ -36,12 +36,12 @@ public class AssociateMonitoredResourcesResponse extends com.oracle.bmc.response
         return opcRequestId;
     }
 
-    /** The returned MonitoredResourceAssociation instance. */
+    /** The returned {@code MonitoredResourceAssociation} instance. */
     private com.oracle.bmc.stackmonitoring.model.MonitoredResourceAssociation
             monitoredResourceAssociation;
 
     /**
-     * The returned MonitoredResourceAssociation instance.
+     * The returned {@code MonitoredResourceAssociation} instance.
      *
      * @return the value
      */
@@ -121,12 +121,12 @@ public class AssociateMonitoredResourcesResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned MonitoredResourceAssociation instance. */
+        /** The returned {@code MonitoredResourceAssociation} instance. */
         private com.oracle.bmc.stackmonitoring.model.MonitoredResourceAssociation
                 monitoredResourceAssociation;
 
         /**
-         * The returned MonitoredResourceAssociation instance.
+         * The returned {@code MonitoredResourceAssociation} instance.
          *
          * @param monitoredResourceAssociation the value to set
          * @return this builder

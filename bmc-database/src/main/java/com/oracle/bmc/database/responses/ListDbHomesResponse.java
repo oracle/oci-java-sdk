@@ -44,11 +44,11 @@ public class ListDbHomesResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.database.model.DbHomeSummary instances. */
+    /** A list of {@code com.oracle.bmc.database.model.DbHomeSummary} instances. */
     private java.util.List<com.oracle.bmc.database.model.DbHomeSummary> items;
 
     /**
-     * A list of com.oracle.bmc.database.model.DbHomeSummary instances.
+     * A list of {@code com.oracle.bmc.database.model.DbHomeSummary} instances.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListDbHomesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.database.model.DbHomeSummary instances. */
+        /** A list of {@code com.oracle.bmc.database.model.DbHomeSummary} instances. */
         private java.util.List<com.oracle.bmc.database.model.DbHomeSummary> items;
 
         /**
-         * A list of com.oracle.bmc.database.model.DbHomeSummary instances.
+         * A list of {@code com.oracle.bmc.database.model.DbHomeSummary} instances.
          *
          * @param items the value to set
          * @return this builder

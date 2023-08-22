@@ -60,11 +60,11 @@ public class ListSdksResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcPrevPage;
     }
 
-    /** The returned SdkCollection instance. */
+    /** The returned {@code SdkCollection} instance. */
     private com.oracle.bmc.apigateway.model.SdkCollection sdkCollection;
 
     /**
-     * The returned SdkCollection instance.
+     * The returned {@code SdkCollection} instance.
      *
      * @return the value
      */
@@ -170,11 +170,11 @@ public class ListSdksResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned SdkCollection instance. */
+        /** The returned {@code SdkCollection} instance. */
         private com.oracle.bmc.apigateway.model.SdkCollection sdkCollection;
 
         /**
-         * The returned SdkCollection instance.
+         * The returned {@code SdkCollection} instance.
          *
          * @param sdkCollection the value to set
          * @return this builder

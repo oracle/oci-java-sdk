@@ -36,11 +36,11 @@ public class CreateVtapResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Vtap instance. */
+    /** The returned {@code Vtap} instance. */
     private com.oracle.bmc.core.model.Vtap vtap;
 
     /**
-     * The returned Vtap instance.
+     * The returned {@code Vtap} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class CreateVtapResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Vtap instance. */
+        /** The returned {@code Vtap} instance. */
         private com.oracle.bmc.core.model.Vtap vtap;
 
         /**
-         * The returned Vtap instance.
+         * The returned {@code Vtap} instance.
          *
          * @param vtap the value to set
          * @return this builder

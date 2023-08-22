@@ -42,12 +42,12 @@ public class ListFsuCollectionTargetsResponse extends com.oracle.bmc.responses.B
         return opcNextPage;
     }
 
-    /** The returned TargetSummaryCollection instance. */
+    /** The returned {@code TargetSummaryCollection} instance. */
     private com.oracle.bmc.fleetsoftwareupdate.model.TargetSummaryCollection
             targetSummaryCollection;
 
     /**
-     * The returned TargetSummaryCollection instance.
+     * The returned {@code TargetSummaryCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListFsuCollectionTargetsResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned TargetSummaryCollection instance. */
+        /** The returned {@code TargetSummaryCollection} instance. */
         private com.oracle.bmc.fleetsoftwareupdate.model.TargetSummaryCollection
                 targetSummaryCollection;
 
         /**
-         * The returned TargetSummaryCollection instance.
+         * The returned {@code TargetSummaryCollection} instance.
          *
          * @param targetSummaryCollection the value to set
          * @return this builder

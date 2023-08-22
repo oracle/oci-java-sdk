@@ -76,11 +76,11 @@ public class CreateNewsReportResponse extends com.oracle.bmc.responses.BmcRespon
         return etag;
     }
 
-    /** The returned NewsReport instance. */
+    /** The returned {@code NewsReport} instance. */
     private com.oracle.bmc.opsi.model.NewsReport newsReport;
 
     /**
-     * The returned NewsReport instance.
+     * The returned {@code NewsReport} instance.
      *
      * @return the value
      */
@@ -212,11 +212,11 @@ public class CreateNewsReportResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned NewsReport instance. */
+        /** The returned {@code NewsReport} instance. */
         private com.oracle.bmc.opsi.model.NewsReport newsReport;
 
         /**
-         * The returned NewsReport instance.
+         * The returned {@code NewsReport} instance.
          *
          * @param newsReport the value to set
          * @return this builder

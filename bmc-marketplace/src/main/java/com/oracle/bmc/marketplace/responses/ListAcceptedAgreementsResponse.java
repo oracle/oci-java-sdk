@@ -42,11 +42,11 @@ public class ListAcceptedAgreementsResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.marketplace.model.AcceptedAgreementSummary instances. */
+    /** A list of {@code com.oracle.bmc.marketplace.model.AcceptedAgreementSummary} instances. */
     private java.util.List<com.oracle.bmc.marketplace.model.AcceptedAgreementSummary> items;
 
     /**
-     * A list of com.oracle.bmc.marketplace.model.AcceptedAgreementSummary instances.
+     * A list of {@code com.oracle.bmc.marketplace.model.AcceptedAgreementSummary} instances.
      *
      * @return the value
      */
@@ -130,11 +130,13 @@ public class ListAcceptedAgreementsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** A list of com.oracle.bmc.marketplace.model.AcceptedAgreementSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.marketplace.model.AcceptedAgreementSummary} instances.
+         */
         private java.util.List<com.oracle.bmc.marketplace.model.AcceptedAgreementSummary> items;
 
         /**
-         * A list of com.oracle.bmc.marketplace.model.AcceptedAgreementSummary instances.
+         * A list of {@code com.oracle.bmc.marketplace.model.AcceptedAgreementSummary} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class GetStreamPackagingConfigResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** The returned StreamPackagingConfig instance. */
+    /** The returned {@code StreamPackagingConfig} instance. */
     private com.oracle.bmc.mediaservices.model.StreamPackagingConfig streamPackagingConfig;
 
     /**
-     * The returned StreamPackagingConfig instance.
+     * The returned {@code StreamPackagingConfig} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetStreamPackagingConfigResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned StreamPackagingConfig instance. */
+        /** The returned {@code StreamPackagingConfig} instance. */
         private com.oracle.bmc.mediaservices.model.StreamPackagingConfig streamPackagingConfig;
 
         /**
-         * The returned StreamPackagingConfig instance.
+         * The returned {@code StreamPackagingConfig} instance.
          *
          * @param streamPackagingConfig the value to set
          * @return this builder

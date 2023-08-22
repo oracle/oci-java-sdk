@@ -42,11 +42,11 @@ public class ListEdgeSubnetsResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.waas.model.EdgeSubnet instances. */
+    /** A list of {@code com.oracle.bmc.waas.model.EdgeSubnet} instances. */
     private java.util.List<com.oracle.bmc.waas.model.EdgeSubnet> items;
 
     /**
-     * A list of com.oracle.bmc.waas.model.EdgeSubnet instances.
+     * A list of {@code com.oracle.bmc.waas.model.EdgeSubnet} instances.
      *
      * @return the value
      */
@@ -131,11 +131,11 @@ public class ListEdgeSubnetsResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** A list of com.oracle.bmc.waas.model.EdgeSubnet instances. */
+        /** A list of {@code com.oracle.bmc.waas.model.EdgeSubnet} instances. */
         private java.util.List<com.oracle.bmc.waas.model.EdgeSubnet> items;
 
         /**
-         * A list of com.oracle.bmc.waas.model.EdgeSubnet instances.
+         * A list of {@code com.oracle.bmc.waas.model.EdgeSubnet} instances.
          *
          * @param items the value to set
          * @return this builder

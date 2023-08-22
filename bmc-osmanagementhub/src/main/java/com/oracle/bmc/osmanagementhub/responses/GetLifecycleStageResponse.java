@@ -36,11 +36,11 @@ public class GetLifecycleStageResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned LifecycleStage instance. */
+    /** The returned {@code LifecycleStage} instance. */
     private com.oracle.bmc.osmanagementhub.model.LifecycleStage lifecycleStage;
 
     /**
-     * The returned LifecycleStage instance.
+     * The returned {@code LifecycleStage} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetLifecycleStageResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned LifecycleStage instance. */
+        /** The returned {@code LifecycleStage} instance. */
         private com.oracle.bmc.osmanagementhub.model.LifecycleStage lifecycleStage;
 
         /**
-         * The returned LifecycleStage instance.
+         * The returned {@code LifecycleStage} instance.
          *
          * @param lifecycleStage the value to set
          * @return this builder

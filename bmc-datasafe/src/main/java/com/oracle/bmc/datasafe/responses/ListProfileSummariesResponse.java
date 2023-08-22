@@ -62,11 +62,11 @@ public class ListProfileSummariesResponse extends com.oracle.bmc.responses.BmcRe
         return opcPrevPage;
     }
 
-    /** A list of com.oracle.bmc.datasafe.model.ProfileSummary instances. */
+    /** A list of {@code com.oracle.bmc.datasafe.model.ProfileSummary} instances. */
     private java.util.List<com.oracle.bmc.datasafe.model.ProfileSummary> items;
 
     /**
-     * A list of com.oracle.bmc.datasafe.model.ProfileSummary instances.
+     * A list of {@code com.oracle.bmc.datasafe.model.ProfileSummary} instances.
      *
      * @return the value
      */
@@ -174,11 +174,11 @@ public class ListProfileSummariesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** A list of com.oracle.bmc.datasafe.model.ProfileSummary instances. */
+        /** A list of {@code com.oracle.bmc.datasafe.model.ProfileSummary} instances. */
         private java.util.List<com.oracle.bmc.datasafe.model.ProfileSummary> items;
 
         /**
-         * A list of com.oracle.bmc.datasafe.model.ProfileSummary instances.
+         * A list of {@code com.oracle.bmc.datasafe.model.ProfileSummary} instances.
          *
          * @param items the value to set
          * @return this builder

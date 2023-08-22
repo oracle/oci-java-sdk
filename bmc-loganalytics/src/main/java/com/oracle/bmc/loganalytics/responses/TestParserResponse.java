@@ -24,11 +24,11 @@ public class TestParserResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned ParserTestResult instance. */
+    /** The returned {@code ParserTestResult} instance. */
     private com.oracle.bmc.loganalytics.model.ParserTestResult parserTestResult;
 
     /**
-     * The returned ParserTestResult instance.
+     * The returned {@code ParserTestResult} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class TestParserResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned ParserTestResult instance. */
+        /** The returned {@code ParserTestResult} instance. */
         private com.oracle.bmc.loganalytics.model.ParserTestResult parserTestResult;
 
         /**
-         * The returned ParserTestResult instance.
+         * The returned {@code ParserTestResult} instance.
          *
          * @param parserTestResult the value to set
          * @return this builder

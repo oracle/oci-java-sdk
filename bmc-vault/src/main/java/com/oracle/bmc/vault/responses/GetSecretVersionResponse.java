@@ -36,11 +36,11 @@ public class GetSecretVersionResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned SecretVersion instance. */
+    /** The returned {@code SecretVersion} instance. */
     private com.oracle.bmc.vault.model.SecretVersion secretVersion;
 
     /**
-     * The returned SecretVersion instance.
+     * The returned {@code SecretVersion} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetSecretVersionResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned SecretVersion instance. */
+        /** The returned {@code SecretVersion} instance. */
         private com.oracle.bmc.vault.model.SecretVersion secretVersion;
 
         /**
-         * The returned SecretVersion instance.
+         * The returned {@code SecretVersion} instance.
          *
          * @param secretVersion the value to set
          * @return this builder

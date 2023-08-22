@@ -42,11 +42,11 @@ public class ListVlansResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.Vlan instances. */
+    /** A list of {@code com.oracle.bmc.core.model.Vlan} instances. */
     private java.util.List<com.oracle.bmc.core.model.Vlan> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.Vlan instances.
+     * A list of {@code com.oracle.bmc.core.model.Vlan} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListVlansResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.Vlan instances. */
+        /** A list of {@code com.oracle.bmc.core.model.Vlan} instances. */
         private java.util.List<com.oracle.bmc.core.model.Vlan> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.Vlan instances.
+         * A list of {@code com.oracle.bmc.core.model.Vlan} instances.
          *
          * @param items the value to set
          * @return this builder

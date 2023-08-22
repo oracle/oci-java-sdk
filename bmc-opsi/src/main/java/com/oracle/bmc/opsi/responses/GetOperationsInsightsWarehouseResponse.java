@@ -36,11 +36,11 @@ public class GetOperationsInsightsWarehouseResponse extends com.oracle.bmc.respo
         return opcRequestId;
     }
 
-    /** The returned OperationsInsightsWarehouse instance. */
+    /** The returned {@code OperationsInsightsWarehouse} instance. */
     private com.oracle.bmc.opsi.model.OperationsInsightsWarehouse operationsInsightsWarehouse;
 
     /**
-     * The returned OperationsInsightsWarehouse instance.
+     * The returned {@code OperationsInsightsWarehouse} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetOperationsInsightsWarehouseResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned OperationsInsightsWarehouse instance. */
+        /** The returned {@code OperationsInsightsWarehouse} instance. */
         private com.oracle.bmc.opsi.model.OperationsInsightsWarehouse operationsInsightsWarehouse;
 
         /**
-         * The returned OperationsInsightsWarehouse instance.
+         * The returned {@code OperationsInsightsWarehouse} instance.
          *
          * @param operationsInsightsWarehouse the value to set
          * @return this builder

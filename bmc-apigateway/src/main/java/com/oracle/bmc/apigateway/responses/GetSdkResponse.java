@@ -36,11 +36,11 @@ public class GetSdkResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Sdk instance. */
+    /** The returned {@code Sdk} instance. */
     private com.oracle.bmc.apigateway.model.Sdk sdk;
 
     /**
-     * The returned Sdk instance.
+     * The returned {@code Sdk} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetSdkResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Sdk instance. */
+        /** The returned {@code Sdk} instance. */
         private com.oracle.bmc.apigateway.model.Sdk sdk;
 
         /**
-         * The returned Sdk instance.
+         * The returned {@code Sdk} instance.
          *
          * @param sdk the value to set
          * @return this builder

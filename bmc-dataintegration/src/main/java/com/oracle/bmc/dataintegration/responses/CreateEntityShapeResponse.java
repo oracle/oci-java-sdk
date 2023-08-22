@@ -24,11 +24,11 @@ public class CreateEntityShapeResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned EntityShape instance. */
+    /** The returned {@code EntityShape} instance. */
     private com.oracle.bmc.dataintegration.model.EntityShape entityShape;
 
     /**
-     * The returned EntityShape instance.
+     * The returned {@code EntityShape} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class CreateEntityShapeResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned EntityShape instance. */
+        /** The returned {@code EntityShape} instance. */
         private com.oracle.bmc.dataintegration.model.EntityShape entityShape;
 
         /**
-         * The returned EntityShape instance.
+         * The returned {@code EntityShape} instance.
          *
          * @param entityShape the value to set
          * @return this builder

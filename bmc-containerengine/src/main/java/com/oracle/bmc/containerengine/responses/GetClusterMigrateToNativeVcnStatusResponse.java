@@ -37,12 +37,12 @@ public class GetClusterMigrateToNativeVcnStatusResponse
         return opcRequestId;
     }
 
-    /** The returned ClusterMigrateToNativeVcnStatus instance. */
+    /** The returned {@code ClusterMigrateToNativeVcnStatus} instance. */
     private com.oracle.bmc.containerengine.model.ClusterMigrateToNativeVcnStatus
             clusterMigrateToNativeVcnStatus;
 
     /**
-     * The returned ClusterMigrateToNativeVcnStatus instance.
+     * The returned {@code ClusterMigrateToNativeVcnStatus} instance.
      *
      * @return the value
      */
@@ -122,12 +122,12 @@ public class GetClusterMigrateToNativeVcnStatusResponse
             return this;
         }
 
-        /** The returned ClusterMigrateToNativeVcnStatus instance. */
+        /** The returned {@code ClusterMigrateToNativeVcnStatus} instance. */
         private com.oracle.bmc.containerengine.model.ClusterMigrateToNativeVcnStatus
                 clusterMigrateToNativeVcnStatus;
 
         /**
-         * The returned ClusterMigrateToNativeVcnStatus instance.
+         * The returned {@code ClusterMigrateToNativeVcnStatus} instance.
          *
          * @param clusterMigrateToNativeVcnStatus the value to set
          * @return this builder

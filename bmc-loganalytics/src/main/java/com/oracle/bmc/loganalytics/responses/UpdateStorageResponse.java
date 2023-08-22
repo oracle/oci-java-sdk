@@ -36,11 +36,11 @@ public class UpdateStorageResponse extends com.oracle.bmc.responses.BmcResponse 
         return etag;
     }
 
-    /** The returned Storage instance. */
+    /** The returned {@code Storage} instance. */
     private com.oracle.bmc.loganalytics.model.Storage storage;
 
     /**
-     * The returned Storage instance.
+     * The returned {@code Storage} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateStorageResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned Storage instance. */
+        /** The returned {@code Storage} instance. */
         private com.oracle.bmc.loganalytics.model.Storage storage;
 
         /**
-         * The returned Storage instance.
+         * The returned {@code Storage} instance.
          *
          * @param storage the value to set
          * @return this builder

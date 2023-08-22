@@ -42,11 +42,11 @@ public class ListProjectsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned ProjectCollection instance. */
+    /** The returned {@code ProjectCollection} instance. */
     private com.oracle.bmc.ailanguage.model.ProjectCollection projectCollection;
 
     /**
-     * The returned ProjectCollection instance.
+     * The returned {@code ProjectCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListProjectsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned ProjectCollection instance. */
+        /** The returned {@code ProjectCollection} instance. */
         private com.oracle.bmc.ailanguage.model.ProjectCollection projectCollection;
 
         /**
-         * The returned ProjectCollection instance.
+         * The returned {@code ProjectCollection} instance.
          *
          * @param projectCollection the value to set
          * @return this builder

@@ -42,12 +42,12 @@ public class SummarizeManagementAgentCountsResponse extends com.oracle.bmc.respo
         return opcNextPage;
     }
 
-    /** The returned ManagementAgentAggregationCollection instance. */
+    /** The returned {@code ManagementAgentAggregationCollection} instance. */
     private com.oracle.bmc.managementagent.model.ManagementAgentAggregationCollection
             managementAgentAggregationCollection;
 
     /**
-     * The returned ManagementAgentAggregationCollection instance.
+     * The returned {@code ManagementAgentAggregationCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class SummarizeManagementAgentCountsResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned ManagementAgentAggregationCollection instance. */
+        /** The returned {@code ManagementAgentAggregationCollection} instance. */
         private com.oracle.bmc.managementagent.model.ManagementAgentAggregationCollection
                 managementAgentAggregationCollection;
 
         /**
-         * The returned ManagementAgentAggregationCollection instance.
+         * The returned {@code ManagementAgentAggregationCollection} instance.
          *
          * @param managementAgentAggregationCollection the value to set
          * @return this builder

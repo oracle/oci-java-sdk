@@ -24,11 +24,11 @@ public class DecryptResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned DecryptedData instance. */
+    /** The returned {@code DecryptedData} instance. */
     private com.oracle.bmc.keymanagement.model.DecryptedData decryptedData;
 
     /**
-     * The returned DecryptedData instance.
+     * The returned {@code DecryptedData} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class DecryptResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned DecryptedData instance. */
+        /** The returned {@code DecryptedData} instance. */
         private com.oracle.bmc.keymanagement.model.DecryptedData decryptedData;
 
         /**
-         * The returned DecryptedData instance.
+         * The returned {@code DecryptedData} instance.
          *
          * @param decryptedData the value to set
          * @return this builder

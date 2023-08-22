@@ -52,11 +52,11 @@ public class CreateRetentionRuleResponse extends com.oracle.bmc.responses.BmcRes
         return etag;
     }
 
-    /** The returned RetentionRule instance. */
+    /** The returned {@code RetentionRule} instance. */
     private com.oracle.bmc.objectstorage.model.RetentionRule retentionRule;
 
     /**
-     * The returned RetentionRule instance.
+     * The returned {@code RetentionRule} instance.
      *
      * @return the value
      */
@@ -154,11 +154,11 @@ public class CreateRetentionRuleResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned RetentionRule instance. */
+        /** The returned {@code RetentionRule} instance. */
         private com.oracle.bmc.objectstorage.model.RetentionRule retentionRule;
 
         /**
-         * The returned RetentionRule instance.
+         * The returned {@code RetentionRule} instance.
          *
          * @param retentionRule the value to set
          * @return this builder

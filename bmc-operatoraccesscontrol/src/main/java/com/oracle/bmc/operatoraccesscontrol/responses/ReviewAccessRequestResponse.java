@@ -36,11 +36,11 @@ public class ReviewAccessRequestResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned AccessRequest instance. */
+    /** The returned {@code AccessRequest} instance. */
     private com.oracle.bmc.operatoraccesscontrol.model.AccessRequest accessRequest;
 
     /**
-     * The returned AccessRequest instance.
+     * The returned {@code AccessRequest} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class ReviewAccessRequestResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned AccessRequest instance. */
+        /** The returned {@code AccessRequest} instance. */
         private com.oracle.bmc.operatoraccesscontrol.model.AccessRequest accessRequest;
 
         /**
-         * The returned AccessRequest instance.
+         * The returned {@code AccessRequest} instance.
          *
          * @param accessRequest the value to set
          * @return this builder

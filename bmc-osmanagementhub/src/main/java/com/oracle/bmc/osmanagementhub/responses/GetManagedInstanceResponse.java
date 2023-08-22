@@ -52,11 +52,11 @@ public class GetManagedInstanceResponse extends com.oracle.bmc.responses.BmcResp
         return retryAfter;
     }
 
-    /** The returned ManagedInstance instance. */
+    /** The returned {@code ManagedInstance} instance. */
     private com.oracle.bmc.osmanagementhub.model.ManagedInstance managedInstance;
 
     /**
-     * The returned ManagedInstance instance.
+     * The returned {@code ManagedInstance} instance.
      *
      * @return the value
      */
@@ -154,11 +154,11 @@ public class GetManagedInstanceResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned ManagedInstance instance. */
+        /** The returned {@code ManagedInstance} instance. */
         private com.oracle.bmc.osmanagementhub.model.ManagedInstance managedInstance;
 
         /**
-         * The returned ManagedInstance instance.
+         * The returned {@code ManagedInstance} instance.
          *
          * @param managedInstance the value to set
          * @return this builder

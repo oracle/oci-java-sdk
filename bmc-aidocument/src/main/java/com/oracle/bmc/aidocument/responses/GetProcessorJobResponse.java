@@ -36,11 +36,11 @@ public class GetProcessorJobResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned ProcessorJob instance. */
+    /** The returned {@code ProcessorJob} instance. */
     private com.oracle.bmc.aidocument.model.ProcessorJob processorJob;
 
     /**
-     * The returned ProcessorJob instance.
+     * The returned {@code ProcessorJob} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetProcessorJobResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned ProcessorJob instance. */
+        /** The returned {@code ProcessorJob} instance. */
         private com.oracle.bmc.aidocument.model.ProcessorJob processorJob;
 
         /**
-         * The returned ProcessorJob instance.
+         * The returned {@code ProcessorJob} instance.
          *
          * @param processorJob the value to set
          * @return this builder

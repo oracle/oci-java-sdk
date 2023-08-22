@@ -42,12 +42,12 @@ public class ListFsuCollectionsResponse extends com.oracle.bmc.responses.BmcResp
         return opcNextPage;
     }
 
-    /** The returned FsuCollectionSummaryCollection instance. */
+    /** The returned {@code FsuCollectionSummaryCollection} instance. */
     private com.oracle.bmc.fleetsoftwareupdate.model.FsuCollectionSummaryCollection
             fsuCollectionSummaryCollection;
 
     /**
-     * The returned FsuCollectionSummaryCollection instance.
+     * The returned {@code FsuCollectionSummaryCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListFsuCollectionsResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned FsuCollectionSummaryCollection instance. */
+        /** The returned {@code FsuCollectionSummaryCollection} instance. */
         private com.oracle.bmc.fleetsoftwareupdate.model.FsuCollectionSummaryCollection
                 fsuCollectionSummaryCollection;
 
         /**
-         * The returned FsuCollectionSummaryCollection instance.
+         * The returned {@code FsuCollectionSummaryCollection} instance.
          *
          * @param fsuCollectionSummaryCollection the value to set
          * @return this builder

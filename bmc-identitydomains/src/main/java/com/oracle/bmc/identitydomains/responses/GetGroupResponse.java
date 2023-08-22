@@ -24,11 +24,11 @@ public class GetGroupResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Group instance. */
+    /** The returned {@code Group} instance. */
     private com.oracle.bmc.identitydomains.model.Group group;
 
     /**
-     * The returned Group instance.
+     * The returned {@code Group} instance.
      *
      * @return the value
      */
@@ -83,11 +83,11 @@ public class GetGroupResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Group instance. */
+        /** The returned {@code Group} instance. */
         private com.oracle.bmc.identitydomains.model.Group group;
 
         /**
-         * The returned Group instance.
+         * The returned {@code Group} instance.
          *
          * @param group the value to set
          * @return this builder

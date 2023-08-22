@@ -36,11 +36,11 @@ public class GetListenerResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned Listener instance. */
+    /** The returned {@code Listener} instance. */
     private com.oracle.bmc.networkloadbalancer.model.Listener listener;
 
     /**
-     * The returned Listener instance.
+     * The returned {@code Listener} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetListenerResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Listener instance. */
+        /** The returned {@code Listener} instance. */
         private com.oracle.bmc.networkloadbalancer.model.Listener listener;
 
         /**
-         * The returned Listener instance.
+         * The returned {@code Listener} instance.
          *
          * @param listener the value to set
          * @return this builder

@@ -40,11 +40,11 @@ public class CreateFolderTagResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned FolderTag instance. */
+    /** The returned {@code FolderTag} instance. */
     private com.oracle.bmc.datacatalog.model.FolderTag folderTag;
 
     /**
-     * The returned FolderTag instance.
+     * The returned {@code FolderTag} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class CreateFolderTagResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned FolderTag instance. */
+        /** The returned {@code FolderTag} instance. */
         private com.oracle.bmc.datacatalog.model.FolderTag folderTag;
 
         /**
-         * The returned FolderTag instance.
+         * The returned {@code FolderTag} instance.
          *
          * @param folderTag the value to set
          * @return this builder

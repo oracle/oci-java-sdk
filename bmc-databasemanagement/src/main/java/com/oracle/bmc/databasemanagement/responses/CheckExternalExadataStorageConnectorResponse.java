@@ -37,12 +37,12 @@ public class CheckExternalExadataStorageConnectorResponse
         return opcRequestId;
     }
 
-    /** The returned ExternalExadataStorageConnectorStatus instance. */
+    /** The returned {@code ExternalExadataStorageConnectorStatus} instance. */
     private com.oracle.bmc.databasemanagement.model.ExternalExadataStorageConnectorStatus
             externalExadataStorageConnectorStatus;
 
     /**
-     * The returned ExternalExadataStorageConnectorStatus instance.
+     * The returned {@code ExternalExadataStorageConnectorStatus} instance.
      *
      * @return the value
      */
@@ -122,12 +122,12 @@ public class CheckExternalExadataStorageConnectorResponse
             return this;
         }
 
-        /** The returned ExternalExadataStorageConnectorStatus instance. */
+        /** The returned {@code ExternalExadataStorageConnectorStatus} instance. */
         private com.oracle.bmc.databasemanagement.model.ExternalExadataStorageConnectorStatus
                 externalExadataStorageConnectorStatus;
 
         /**
-         * The returned ExternalExadataStorageConnectorStatus instance.
+         * The returned {@code ExternalExadataStorageConnectorStatus} instance.
          *
          * @param externalExadataStorageConnectorStatus the value to set
          * @return this builder

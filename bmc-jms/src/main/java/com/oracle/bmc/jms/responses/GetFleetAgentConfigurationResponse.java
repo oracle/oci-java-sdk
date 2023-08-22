@@ -36,11 +36,11 @@ public class GetFleetAgentConfigurationResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    /** The returned FleetAgentConfiguration instance. */
+    /** The returned {@code FleetAgentConfiguration} instance. */
     private com.oracle.bmc.jms.model.FleetAgentConfiguration fleetAgentConfiguration;
 
     /**
-     * The returned FleetAgentConfiguration instance.
+     * The returned {@code FleetAgentConfiguration} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetFleetAgentConfigurationResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned FleetAgentConfiguration instance. */
+        /** The returned {@code FleetAgentConfiguration} instance. */
         private com.oracle.bmc.jms.model.FleetAgentConfiguration fleetAgentConfiguration;
 
         /**
-         * The returned FleetAgentConfiguration instance.
+         * The returned {@code FleetAgentConfiguration} instance.
          *
          * @param fleetAgentConfiguration the value to set
          * @return this builder

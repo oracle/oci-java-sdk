@@ -36,11 +36,11 @@ public class GetLifecycleEnvironmentResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned LifecycleEnvironment instance. */
+    /** The returned {@code LifecycleEnvironment} instance. */
     private com.oracle.bmc.osmanagementhub.model.LifecycleEnvironment lifecycleEnvironment;
 
     /**
-     * The returned LifecycleEnvironment instance.
+     * The returned {@code LifecycleEnvironment} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetLifecycleEnvironmentResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned LifecycleEnvironment instance. */
+        /** The returned {@code LifecycleEnvironment} instance. */
         private com.oracle.bmc.osmanagementhub.model.LifecycleEnvironment lifecycleEnvironment;
 
         /**
-         * The returned LifecycleEnvironment instance.
+         * The returned {@code LifecycleEnvironment} instance.
          *
          * @param lifecycleEnvironment the value to set
          * @return this builder

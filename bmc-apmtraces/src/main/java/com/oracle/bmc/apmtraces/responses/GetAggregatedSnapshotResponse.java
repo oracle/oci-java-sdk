@@ -24,11 +24,11 @@ public class GetAggregatedSnapshotResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned AggregatedSnapshot instance. */
+    /** The returned {@code AggregatedSnapshot} instance. */
     private com.oracle.bmc.apmtraces.model.AggregatedSnapshot aggregatedSnapshot;
 
     /**
-     * The returned AggregatedSnapshot instance.
+     * The returned {@code AggregatedSnapshot} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetAggregatedSnapshotResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned AggregatedSnapshot instance. */
+        /** The returned {@code AggregatedSnapshot} instance. */
         private com.oracle.bmc.apmtraces.model.AggregatedSnapshot aggregatedSnapshot;
 
         /**
-         * The returned AggregatedSnapshot instance.
+         * The returned {@code AggregatedSnapshot} instance.
          *
          * @param aggregatedSnapshot the value to set
          * @return this builder

@@ -64,12 +64,12 @@ public class ListWarningsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsWarningCollection instance. */
+    /** The returned {@code LogAnalyticsWarningCollection} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsWarningCollection
             logAnalyticsWarningCollection;
 
     /**
-     * The returned LogAnalyticsWarningCollection instance.
+     * The returned {@code LogAnalyticsWarningCollection} instance.
      *
      * @return the value
      */
@@ -181,12 +181,12 @@ public class ListWarningsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned LogAnalyticsWarningCollection instance. */
+        /** The returned {@code LogAnalyticsWarningCollection} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsWarningCollection
                 logAnalyticsWarningCollection;
 
         /**
-         * The returned LogAnalyticsWarningCollection instance.
+         * The returned {@code LogAnalyticsWarningCollection} instance.
          *
          * @param logAnalyticsWarningCollection the value to set
          * @return this builder

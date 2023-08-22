@@ -42,11 +42,11 @@ public class ListCrossconnectPortSpeedShapesResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.CrossConnectPortSpeedShape instances. */
+    /** A list of {@code com.oracle.bmc.core.model.CrossConnectPortSpeedShape} instances. */
     private java.util.List<com.oracle.bmc.core.model.CrossConnectPortSpeedShape> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.CrossConnectPortSpeedShape instances.
+     * A list of {@code com.oracle.bmc.core.model.CrossConnectPortSpeedShape} instances.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListCrossconnectPortSpeedShapesResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.CrossConnectPortSpeedShape instances. */
+        /** A list of {@code com.oracle.bmc.core.model.CrossConnectPortSpeedShape} instances. */
         private java.util.List<com.oracle.bmc.core.model.CrossConnectPortSpeedShape> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.CrossConnectPortSpeedShape instances.
+         * A list of {@code com.oracle.bmc.core.model.CrossConnectPortSpeedShape} instances.
          *
          * @param items the value to set
          * @return this builder

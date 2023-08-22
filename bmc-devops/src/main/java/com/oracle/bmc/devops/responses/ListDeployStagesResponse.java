@@ -42,11 +42,11 @@ public class ListDeployStagesResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /** The returned DeployStageCollection instance. */
+    /** The returned {@code DeployStageCollection} instance. */
     private com.oracle.bmc.devops.model.DeployStageCollection deployStageCollection;
 
     /**
-     * The returned DeployStageCollection instance.
+     * The returned {@code DeployStageCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListDeployStagesResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned DeployStageCollection instance. */
+        /** The returned {@code DeployStageCollection} instance. */
         private com.oracle.bmc.devops.model.DeployStageCollection deployStageCollection;
 
         /**
-         * The returned DeployStageCollection instance.
+         * The returned {@code DeployStageCollection} instance.
          *
          * @param deployStageCollection the value to set
          * @return this builder

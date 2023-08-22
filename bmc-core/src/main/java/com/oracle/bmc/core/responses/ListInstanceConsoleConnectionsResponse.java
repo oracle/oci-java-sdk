@@ -42,11 +42,11 @@ public class ListInstanceConsoleConnectionsResponse extends com.oracle.bmc.respo
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.InstanceConsoleConnection instances. */
+    /** A list of {@code com.oracle.bmc.core.model.InstanceConsoleConnection} instances. */
     private java.util.List<com.oracle.bmc.core.model.InstanceConsoleConnection> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.InstanceConsoleConnection instances.
+     * A list of {@code com.oracle.bmc.core.model.InstanceConsoleConnection} instances.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListInstanceConsoleConnectionsResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.InstanceConsoleConnection instances. */
+        /** A list of {@code com.oracle.bmc.core.model.InstanceConsoleConnection} instances. */
         private java.util.List<com.oracle.bmc.core.model.InstanceConsoleConnection> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.InstanceConsoleConnection instances.
+         * A list of {@code com.oracle.bmc.core.model.InstanceConsoleConnection} instances.
          *
          * @param items the value to set
          * @return this builder

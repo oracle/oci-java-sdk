@@ -36,11 +36,11 @@ public class UpdateDetectorRecipeDetectorRuleResponse extends com.oracle.bmc.res
         return opcRequestId;
     }
 
-    /** The returned DetectorRecipeDetectorRule instance. */
+    /** The returned {@code DetectorRecipeDetectorRule} instance. */
     private com.oracle.bmc.cloudguard.model.DetectorRecipeDetectorRule detectorRecipeDetectorRule;
 
     /**
-     * The returned DetectorRecipeDetectorRule instance.
+     * The returned {@code DetectorRecipeDetectorRule} instance.
      *
      * @return the value
      */
@@ -119,12 +119,12 @@ public class UpdateDetectorRecipeDetectorRuleResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /** The returned DetectorRecipeDetectorRule instance. */
+        /** The returned {@code DetectorRecipeDetectorRule} instance. */
         private com.oracle.bmc.cloudguard.model.DetectorRecipeDetectorRule
                 detectorRecipeDetectorRule;
 
         /**
-         * The returned DetectorRecipeDetectorRule instance.
+         * The returned {@code DetectorRecipeDetectorRule} instance.
          *
          * @param detectorRecipeDetectorRule the value to set
          * @return this builder

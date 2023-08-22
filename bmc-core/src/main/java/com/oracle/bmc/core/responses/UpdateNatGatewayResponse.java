@@ -36,11 +36,11 @@ public class UpdateNatGatewayResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned NatGateway instance. */
+    /** The returned {@code NatGateway} instance. */
     private com.oracle.bmc.core.model.NatGateway natGateway;
 
     /**
-     * The returned NatGateway instance.
+     * The returned {@code NatGateway} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateNatGatewayResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned NatGateway instance. */
+        /** The returned {@code NatGateway} instance. */
         private com.oracle.bmc.core.model.NatGateway natGateway;
 
         /**
-         * The returned NatGateway instance.
+         * The returned {@code NatGateway} instance.
          *
          * @param natGateway the value to set
          * @return this builder

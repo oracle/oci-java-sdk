@@ -36,11 +36,11 @@ public class GetSnapshotResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Snapshot instance. */
+    /** The returned {@code Snapshot} instance. */
     private com.oracle.bmc.filestorage.model.Snapshot snapshot;
 
     /**
-     * The returned Snapshot instance.
+     * The returned {@code Snapshot} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetSnapshotResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Snapshot instance. */
+        /** The returned {@code Snapshot} instance. */
         private com.oracle.bmc.filestorage.model.Snapshot snapshot;
 
         /**
-         * The returned Snapshot instance.
+         * The returned {@code Snapshot} instance.
          *
          * @param snapshot the value to set
          * @return this builder

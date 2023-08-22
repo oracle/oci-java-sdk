@@ -36,11 +36,11 @@ public class GetWrappingKeyResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned WrappingKey instance. */
+    /** The returned {@code WrappingKey} instance. */
     private com.oracle.bmc.keymanagement.model.WrappingKey wrappingKey;
 
     /**
-     * The returned WrappingKey instance.
+     * The returned {@code WrappingKey} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetWrappingKeyResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned WrappingKey instance. */
+        /** The returned {@code WrappingKey} instance. */
         private com.oracle.bmc.keymanagement.model.WrappingKey wrappingKey;
 
         /**
-         * The returned WrappingKey instance.
+         * The returned {@code WrappingKey} instance.
          *
          * @param wrappingKey the value to set
          * @return this builder

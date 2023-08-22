@@ -36,11 +36,11 @@ public class GetConditionMetadataTypeResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** The returned ConditionMetadataType instance. */
+    /** The returned {@code ConditionMetadataType} instance. */
     private com.oracle.bmc.cloudguard.model.ConditionMetadataType conditionMetadataType;
 
     /**
-     * The returned ConditionMetadataType instance.
+     * The returned {@code ConditionMetadataType} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetConditionMetadataTypeResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned ConditionMetadataType instance. */
+        /** The returned {@code ConditionMetadataType} instance. */
         private com.oracle.bmc.cloudguard.model.ConditionMetadataType conditionMetadataType;
 
         /**
-         * The returned ConditionMetadataType instance.
+         * The returned {@code ConditionMetadataType} instance.
          *
          * @param conditionMetadataType the value to set
          * @return this builder

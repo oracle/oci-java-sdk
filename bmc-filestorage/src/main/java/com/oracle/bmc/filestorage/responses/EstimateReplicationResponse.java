@@ -36,11 +36,11 @@ public class EstimateReplicationResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned ReplicationEstimate instance. */
+    /** The returned {@code ReplicationEstimate} instance. */
     private com.oracle.bmc.filestorage.model.ReplicationEstimate replicationEstimate;
 
     /**
-     * The returned ReplicationEstimate instance.
+     * The returned {@code ReplicationEstimate} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class EstimateReplicationResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned ReplicationEstimate instance. */
+        /** The returned {@code ReplicationEstimate} instance. */
         private com.oracle.bmc.filestorage.model.ReplicationEstimate replicationEstimate;
 
         /**
-         * The returned ReplicationEstimate instance.
+         * The returned {@code ReplicationEstimate} instance.
          *
          * @param replicationEstimate the value to set
          * @return this builder

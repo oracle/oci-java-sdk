@@ -36,11 +36,11 @@ public class UpdateContainerConfigurationResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /** The returned ContainerConfiguration instance. */
+    /** The returned {@code ContainerConfiguration} instance. */
     private com.oracle.bmc.artifacts.model.ContainerConfiguration containerConfiguration;
 
     /**
-     * The returned ContainerConfiguration instance.
+     * The returned {@code ContainerConfiguration} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class UpdateContainerConfigurationResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned ContainerConfiguration instance. */
+        /** The returned {@code ContainerConfiguration} instance. */
         private com.oracle.bmc.artifacts.model.ContainerConfiguration containerConfiguration;
 
         /**
-         * The returned ContainerConfiguration instance.
+         * The returned {@code ContainerConfiguration} instance.
          *
          * @param containerConfiguration the value to set
          * @return this builder

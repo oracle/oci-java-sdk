@@ -43,11 +43,11 @@ public class GetVolumeBackupPolicyAssetAssignmentResponse
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.VolumeBackupPolicyAssignment instances. */
+    /** A list of {@code com.oracle.bmc.core.model.VolumeBackupPolicyAssignment} instances. */
     private java.util.List<com.oracle.bmc.core.model.VolumeBackupPolicyAssignment> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.VolumeBackupPolicyAssignment instances.
+     * A list of {@code com.oracle.bmc.core.model.VolumeBackupPolicyAssignment} instances.
      *
      * @return the value
      */
@@ -131,11 +131,11 @@ public class GetVolumeBackupPolicyAssetAssignmentResponse
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.VolumeBackupPolicyAssignment instances. */
+        /** A list of {@code com.oracle.bmc.core.model.VolumeBackupPolicyAssignment} instances. */
         private java.util.List<com.oracle.bmc.core.model.VolumeBackupPolicyAssignment> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.VolumeBackupPolicyAssignment instances.
+         * A list of {@code com.oracle.bmc.core.model.VolumeBackupPolicyAssignment} instances.
          *
          * @param items the value to set
          * @return this builder

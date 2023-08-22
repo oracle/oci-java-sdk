@@ -36,11 +36,11 @@ public class DetachLoadBalancerResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned InstancePool instance. */
+    /** The returned {@code InstancePool} instance. */
     private com.oracle.bmc.core.model.InstancePool instancePool;
 
     /**
-     * The returned InstancePool instance.
+     * The returned {@code InstancePool} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class DetachLoadBalancerResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned InstancePool instance. */
+        /** The returned {@code InstancePool} instance. */
         private com.oracle.bmc.core.model.InstancePool instancePool;
 
         /**
-         * The returned InstancePool instance.
+         * The returned {@code InstancePool} instance.
          *
          * @param instancePool the value to set
          * @return this builder

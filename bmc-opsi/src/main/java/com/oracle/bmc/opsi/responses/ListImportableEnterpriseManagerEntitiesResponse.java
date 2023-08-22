@@ -43,12 +43,12 @@ public class ListImportableEnterpriseManagerEntitiesResponse
         return opcNextPage;
     }
 
-    /** The returned ImportableEnterpriseManagerEntityCollection instance. */
+    /** The returned {@code ImportableEnterpriseManagerEntityCollection} instance. */
     private com.oracle.bmc.opsi.model.ImportableEnterpriseManagerEntityCollection
             importableEnterpriseManagerEntityCollection;
 
     /**
-     * The returned ImportableEnterpriseManagerEntityCollection instance.
+     * The returned {@code ImportableEnterpriseManagerEntityCollection} instance.
      *
      * @return the value
      */
@@ -135,12 +135,12 @@ public class ListImportableEnterpriseManagerEntitiesResponse
             return this;
         }
 
-        /** The returned ImportableEnterpriseManagerEntityCollection instance. */
+        /** The returned {@code ImportableEnterpriseManagerEntityCollection} instance. */
         private com.oracle.bmc.opsi.model.ImportableEnterpriseManagerEntityCollection
                 importableEnterpriseManagerEntityCollection;
 
         /**
-         * The returned ImportableEnterpriseManagerEntityCollection instance.
+         * The returned {@code ImportableEnterpriseManagerEntityCollection} instance.
          *
          * @param importableEnterpriseManagerEntityCollection the value to set
          * @return this builder

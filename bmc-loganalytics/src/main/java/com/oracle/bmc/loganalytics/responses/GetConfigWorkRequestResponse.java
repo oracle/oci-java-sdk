@@ -24,12 +24,12 @@ public class GetConfigWorkRequestResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsConfigWorkRequest instance. */
+    /** The returned {@code LogAnalyticsConfigWorkRequest} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsConfigWorkRequest
             logAnalyticsConfigWorkRequest;
 
     /**
-     * The returned LogAnalyticsConfigWorkRequest instance.
+     * The returned {@code LogAnalyticsConfigWorkRequest} instance.
      *
      * @return the value
      */
@@ -91,12 +91,12 @@ public class GetConfigWorkRequestResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned LogAnalyticsConfigWorkRequest instance. */
+        /** The returned {@code LogAnalyticsConfigWorkRequest} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsConfigWorkRequest
                 logAnalyticsConfigWorkRequest;
 
         /**
-         * The returned LogAnalyticsConfigWorkRequest instance.
+         * The returned {@code LogAnalyticsConfigWorkRequest} instance.
          *
          * @param logAnalyticsConfigWorkRequest the value to set
          * @return this builder

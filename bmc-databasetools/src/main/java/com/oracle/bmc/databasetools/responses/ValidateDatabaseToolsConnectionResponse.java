@@ -24,12 +24,12 @@ public class ValidateDatabaseToolsConnectionResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** The returned ValidateDatabaseToolsConnectionResult instance. */
+    /** The returned {@code ValidateDatabaseToolsConnectionResult} instance. */
     private com.oracle.bmc.databasetools.model.ValidateDatabaseToolsConnectionResult
             validateDatabaseToolsConnectionResult;
 
     /**
-     * The returned ValidateDatabaseToolsConnectionResult instance.
+     * The returned {@code ValidateDatabaseToolsConnectionResult} instance.
      *
      * @return the value
      */
@@ -92,12 +92,12 @@ public class ValidateDatabaseToolsConnectionResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned ValidateDatabaseToolsConnectionResult instance. */
+        /** The returned {@code ValidateDatabaseToolsConnectionResult} instance. */
         private com.oracle.bmc.databasetools.model.ValidateDatabaseToolsConnectionResult
                 validateDatabaseToolsConnectionResult;
 
         /**
-         * The returned ValidateDatabaseToolsConnectionResult instance.
+         * The returned {@code ValidateDatabaseToolsConnectionResult} instance.
          *
          * @param validateDatabaseToolsConnectionResult the value to set
          * @return this builder

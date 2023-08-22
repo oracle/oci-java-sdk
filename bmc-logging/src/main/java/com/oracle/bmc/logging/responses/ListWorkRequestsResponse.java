@@ -60,11 +60,11 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.logging.model.WorkRequestSummary instances. */
+    /** A list of {@code com.oracle.bmc.logging.model.WorkRequestSummary} instances. */
     private java.util.List<com.oracle.bmc.logging.model.WorkRequestSummary> items;
 
     /**
-     * A list of com.oracle.bmc.logging.model.WorkRequestSummary instances.
+     * A list of {@code com.oracle.bmc.logging.model.WorkRequestSummary} instances.
      *
      * @return the value
      */
@@ -170,11 +170,11 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** A list of com.oracle.bmc.logging.model.WorkRequestSummary instances. */
+        /** A list of {@code com.oracle.bmc.logging.model.WorkRequestSummary} instances. */
         private java.util.List<com.oracle.bmc.logging.model.WorkRequestSummary> items;
 
         /**
-         * A list of com.oracle.bmc.logging.model.WorkRequestSummary instances.
+         * A list of {@code com.oracle.bmc.logging.model.WorkRequestSummary} instances.
          *
          * @param items the value to set
          * @return this builder

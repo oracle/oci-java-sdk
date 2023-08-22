@@ -40,11 +40,11 @@ public class GetOdaInstanceAttachmentResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** The returned OdaInstanceAttachment instance. */
+    /** The returned {@code OdaInstanceAttachment} instance. */
     private com.oracle.bmc.oda.model.OdaInstanceAttachment odaInstanceAttachment;
 
     /**
-     * The returned OdaInstanceAttachment instance.
+     * The returned {@code OdaInstanceAttachment} instance.
      *
      * @return the value
      */
@@ -126,11 +126,11 @@ public class GetOdaInstanceAttachmentResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned OdaInstanceAttachment instance. */
+        /** The returned {@code OdaInstanceAttachment} instance. */
         private com.oracle.bmc.oda.model.OdaInstanceAttachment odaInstanceAttachment;
 
         /**
-         * The returned OdaInstanceAttachment instance.
+         * The returned {@code OdaInstanceAttachment} instance.
          *
          * @param odaInstanceAttachment the value to set
          * @return this builder

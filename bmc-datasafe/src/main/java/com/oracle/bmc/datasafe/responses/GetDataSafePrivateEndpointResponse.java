@@ -42,11 +42,11 @@ public class GetDataSafePrivateEndpointResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    /** The returned DataSafePrivateEndpoint instance. */
+    /** The returned {@code DataSafePrivateEndpoint} instance. */
     private com.oracle.bmc.datasafe.model.DataSafePrivateEndpoint dataSafePrivateEndpoint;
 
     /**
-     * The returned DataSafePrivateEndpoint instance.
+     * The returned {@code DataSafePrivateEndpoint} instance.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class GetDataSafePrivateEndpointResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned DataSafePrivateEndpoint instance. */
+        /** The returned {@code DataSafePrivateEndpoint} instance. */
         private com.oracle.bmc.datasafe.model.DataSafePrivateEndpoint dataSafePrivateEndpoint;
 
         /**
-         * The returned DataSafePrivateEndpoint instance.
+         * The returned {@code DataSafePrivateEndpoint} instance.
          *
          * @param dataSafePrivateEndpoint the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListEsxiHostsResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcNextPage;
     }
 
-    /** The returned EsxiHostCollection instance. */
+    /** The returned {@code EsxiHostCollection} instance. */
     private com.oracle.bmc.ocvp.model.EsxiHostCollection esxiHostCollection;
 
     /**
-     * The returned EsxiHostCollection instance.
+     * The returned {@code EsxiHostCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListEsxiHostsResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned EsxiHostCollection instance. */
+        /** The returned {@code EsxiHostCollection} instance. */
         private com.oracle.bmc.ocvp.model.EsxiHostCollection esxiHostCollection;
 
         /**
-         * The returned EsxiHostCollection instance.
+         * The returned {@code EsxiHostCollection} instance.
          *
          * @param esxiHostCollection the value to set
          * @return this builder

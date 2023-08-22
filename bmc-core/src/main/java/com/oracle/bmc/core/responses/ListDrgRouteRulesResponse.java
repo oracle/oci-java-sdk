@@ -42,11 +42,11 @@ public class ListDrgRouteRulesResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.DrgRouteRule instances. */
+    /** A list of {@code com.oracle.bmc.core.model.DrgRouteRule} instances. */
     private java.util.List<com.oracle.bmc.core.model.DrgRouteRule> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.DrgRouteRule instances.
+     * A list of {@code com.oracle.bmc.core.model.DrgRouteRule} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListDrgRouteRulesResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.DrgRouteRule instances. */
+        /** A list of {@code com.oracle.bmc.core.model.DrgRouteRule} instances. */
         private java.util.List<com.oracle.bmc.core.model.DrgRouteRule> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.DrgRouteRule instances.
+         * A list of {@code com.oracle.bmc.core.model.DrgRouteRule} instances.
          *
          * @param items the value to set
          * @return this builder

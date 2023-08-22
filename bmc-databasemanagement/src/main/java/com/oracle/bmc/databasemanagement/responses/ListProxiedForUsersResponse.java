@@ -42,12 +42,12 @@ public class ListProxiedForUsersResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned ProxiedForUserCollection instance. */
+    /** The returned {@code ProxiedForUserCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.ProxiedForUserCollection
             proxiedForUserCollection;
 
     /**
-     * The returned ProxiedForUserCollection instance.
+     * The returned {@code ProxiedForUserCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListProxiedForUsersResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned ProxiedForUserCollection instance. */
+        /** The returned {@code ProxiedForUserCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.ProxiedForUserCollection
                 proxiedForUserCollection;
 
         /**
-         * The returned ProxiedForUserCollection instance.
+         * The returned {@code ProxiedForUserCollection} instance.
          *
          * @param proxiedForUserCollection the value to set
          * @return this builder

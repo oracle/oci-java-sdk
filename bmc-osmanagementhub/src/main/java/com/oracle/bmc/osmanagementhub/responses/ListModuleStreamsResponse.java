@@ -42,11 +42,11 @@ public class ListModuleStreamsResponse extends com.oracle.bmc.responses.BmcRespo
         return opcNextPage;
     }
 
-    /** The returned ModuleStreamCollection instance. */
+    /** The returned {@code ModuleStreamCollection} instance. */
     private com.oracle.bmc.osmanagementhub.model.ModuleStreamCollection moduleStreamCollection;
 
     /**
-     * The returned ModuleStreamCollection instance.
+     * The returned {@code ModuleStreamCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListModuleStreamsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned ModuleStreamCollection instance. */
+        /** The returned {@code ModuleStreamCollection} instance. */
         private com.oracle.bmc.osmanagementhub.model.ModuleStreamCollection moduleStreamCollection;
 
         /**
-         * The returned ModuleStreamCollection instance.
+         * The returned {@code ModuleStreamCollection} instance.
          *
          * @param moduleStreamCollection the value to set
          * @return this builder

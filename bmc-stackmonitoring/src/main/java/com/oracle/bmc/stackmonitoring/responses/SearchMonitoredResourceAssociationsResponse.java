@@ -55,12 +55,12 @@ public class SearchMonitoredResourceAssociationsResponse
         return opcTotalItems;
     }
 
-    /** The returned MonitoredResourceAssociationsCollection instance. */
+    /** The returned {@code MonitoredResourceAssociationsCollection} instance. */
     private com.oracle.bmc.stackmonitoring.model.MonitoredResourceAssociationsCollection
             monitoredResourceAssociationsCollection;
 
     /**
-     * The returned MonitoredResourceAssociationsCollection instance.
+     * The returned {@code MonitoredResourceAssociationsCollection} instance.
      *
      * @return the value
      */
@@ -163,12 +163,12 @@ public class SearchMonitoredResourceAssociationsResponse
             return this;
         }
 
-        /** The returned MonitoredResourceAssociationsCollection instance. */
+        /** The returned {@code MonitoredResourceAssociationsCollection} instance. */
         private com.oracle.bmc.stackmonitoring.model.MonitoredResourceAssociationsCollection
                 monitoredResourceAssociationsCollection;
 
         /**
-         * The returned MonitoredResourceAssociationsCollection instance.
+         * The returned {@code MonitoredResourceAssociationsCollection} instance.
          *
          * @param monitoredResourceAssociationsCollection the value to set
          * @return this builder

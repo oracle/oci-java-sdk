@@ -36,11 +36,11 @@ public class GetJsChallengeResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned JsChallenge instance. */
+    /** The returned {@code JsChallenge} instance. */
     private com.oracle.bmc.waas.model.JsChallenge jsChallenge;
 
     /**
-     * The returned JsChallenge instance.
+     * The returned {@code JsChallenge} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetJsChallengeResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned JsChallenge instance. */
+        /** The returned {@code JsChallenge} instance. */
         private com.oracle.bmc.waas.model.JsChallenge jsChallenge;
 
         /**
-         * The returned JsChallenge instance.
+         * The returned {@code JsChallenge} instance.
          *
          * @param jsChallenge the value to set
          * @return this builder

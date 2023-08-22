@@ -44,11 +44,11 @@ public class SummarizeManagedInstanceUsageResponse extends com.oracle.bmc.respon
         return opcNextPage;
     }
 
-    /** The returned ManagedInstanceUsageCollection instance. */
+    /** The returned {@code ManagedInstanceUsageCollection} instance. */
     private com.oracle.bmc.jms.model.ManagedInstanceUsageCollection managedInstanceUsageCollection;
 
     /**
-     * The returned ManagedInstanceUsageCollection instance.
+     * The returned {@code ManagedInstanceUsageCollection} instance.
      *
      * @return the value
      */
@@ -138,12 +138,12 @@ public class SummarizeManagedInstanceUsageResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned ManagedInstanceUsageCollection instance. */
+        /** The returned {@code ManagedInstanceUsageCollection} instance. */
         private com.oracle.bmc.jms.model.ManagedInstanceUsageCollection
                 managedInstanceUsageCollection;
 
         /**
-         * The returned ManagedInstanceUsageCollection instance.
+         * The returned {@code ManagedInstanceUsageCollection} instance.
          *
          * @param managedInstanceUsageCollection the value to set
          * @return this builder

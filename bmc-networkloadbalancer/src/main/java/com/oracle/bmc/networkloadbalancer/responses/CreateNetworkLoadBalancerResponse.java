@@ -52,11 +52,11 @@ public class CreateNetworkLoadBalancerResponse extends com.oracle.bmc.responses.
         return etag;
     }
 
-    /** The returned NetworkLoadBalancer instance. */
+    /** The returned {@code NetworkLoadBalancer} instance. */
     private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancer networkLoadBalancer;
 
     /**
-     * The returned NetworkLoadBalancer instance.
+     * The returned {@code NetworkLoadBalancer} instance.
      *
      * @return the value
      */
@@ -155,11 +155,11 @@ public class CreateNetworkLoadBalancerResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned NetworkLoadBalancer instance. */
+        /** The returned {@code NetworkLoadBalancer} instance. */
         private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancer networkLoadBalancer;
 
         /**
-         * The returned NetworkLoadBalancer instance.
+         * The returned {@code NetworkLoadBalancer} instance.
          *
          * @param networkLoadBalancer the value to set
          * @return this builder

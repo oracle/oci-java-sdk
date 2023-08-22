@@ -36,11 +36,11 @@ public class GetTaggingWorkRequestResponse extends com.oracle.bmc.responses.BmcR
         return retryAfter;
     }
 
-    /** The returned TaggingWorkRequest instance. */
+    /** The returned {@code TaggingWorkRequest} instance. */
     private com.oracle.bmc.identity.model.TaggingWorkRequest taggingWorkRequest;
 
     /**
-     * The returned TaggingWorkRequest instance.
+     * The returned {@code TaggingWorkRequest} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetTaggingWorkRequestResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned TaggingWorkRequest instance. */
+        /** The returned {@code TaggingWorkRequest} instance. */
         private com.oracle.bmc.identity.model.TaggingWorkRequest taggingWorkRequest;
 
         /**
-         * The returned TaggingWorkRequest instance.
+         * The returned {@code TaggingWorkRequest} instance.
          *
          * @param taggingWorkRequest the value to set
          * @return this builder

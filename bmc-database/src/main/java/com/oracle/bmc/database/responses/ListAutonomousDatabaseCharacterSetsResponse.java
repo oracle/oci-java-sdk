@@ -45,11 +45,13 @@ public class ListAutonomousDatabaseCharacterSetsResponse
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.database.model.AutonomousDatabaseCharacterSets instances. */
+    /**
+     * A list of {@code com.oracle.bmc.database.model.AutonomousDatabaseCharacterSets} instances.
+     */
     private java.util.List<com.oracle.bmc.database.model.AutonomousDatabaseCharacterSets> items;
 
     /**
-     * A list of com.oracle.bmc.database.model.AutonomousDatabaseCharacterSets instances.
+     * A list of {@code com.oracle.bmc.database.model.AutonomousDatabaseCharacterSets} instances.
      *
      * @return the value
      */
@@ -138,11 +140,15 @@ public class ListAutonomousDatabaseCharacterSetsResponse
             return this;
         }
 
-        /** A list of com.oracle.bmc.database.model.AutonomousDatabaseCharacterSets instances. */
+        /**
+         * A list of {@code com.oracle.bmc.database.model.AutonomousDatabaseCharacterSets}
+         * instances.
+         */
         private java.util.List<com.oracle.bmc.database.model.AutonomousDatabaseCharacterSets> items;
 
         /**
-         * A list of com.oracle.bmc.database.model.AutonomousDatabaseCharacterSets instances.
+         * A list of {@code com.oracle.bmc.database.model.AutonomousDatabaseCharacterSets}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

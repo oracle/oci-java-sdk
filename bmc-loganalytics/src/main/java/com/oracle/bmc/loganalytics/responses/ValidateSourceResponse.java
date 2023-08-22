@@ -24,11 +24,11 @@ public class ValidateSourceResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned SourceValidateResults instance. */
+    /** The returned {@code SourceValidateResults} instance. */
     private com.oracle.bmc.loganalytics.model.SourceValidateResults sourceValidateResults;
 
     /**
-     * The returned SourceValidateResults instance.
+     * The returned {@code SourceValidateResults} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class ValidateSourceResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned SourceValidateResults instance. */
+        /** The returned {@code SourceValidateResults} instance. */
         private com.oracle.bmc.loganalytics.model.SourceValidateResults sourceValidateResults;
 
         /**
-         * The returned SourceValidateResults instance.
+         * The returned {@code SourceValidateResults} instance.
          *
          * @param sourceValidateResults the value to set
          * @return this builder

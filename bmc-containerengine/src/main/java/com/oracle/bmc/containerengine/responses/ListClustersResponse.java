@@ -42,11 +42,11 @@ public class ListClustersResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.containerengine.model.ClusterSummary instances. */
+    /** A list of {@code com.oracle.bmc.containerengine.model.ClusterSummary} instances. */
     private java.util.List<com.oracle.bmc.containerengine.model.ClusterSummary> items;
 
     /**
-     * A list of com.oracle.bmc.containerengine.model.ClusterSummary instances.
+     * A list of {@code com.oracle.bmc.containerengine.model.ClusterSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListClustersResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.containerengine.model.ClusterSummary instances. */
+        /** A list of {@code com.oracle.bmc.containerengine.model.ClusterSummary} instances. */
         private java.util.List<com.oracle.bmc.containerengine.model.ClusterSummary> items;
 
         /**
-         * A list of com.oracle.bmc.containerengine.model.ClusterSummary instances.
+         * A list of {@code com.oracle.bmc.containerengine.model.ClusterSummary} instances.
          *
          * @param items the value to set
          * @return this builder

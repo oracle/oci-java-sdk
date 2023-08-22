@@ -42,11 +42,11 @@ public class ListFoldersResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned FolderCollection instance. */
+    /** The returned {@code FolderCollection} instance. */
     private com.oracle.bmc.datacatalog.model.FolderCollection folderCollection;
 
     /**
-     * The returned FolderCollection instance.
+     * The returned {@code FolderCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListFoldersResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned FolderCollection instance. */
+        /** The returned {@code FolderCollection} instance. */
         private com.oracle.bmc.datacatalog.model.FolderCollection folderCollection;
 
         /**
-         * The returned FolderCollection instance.
+         * The returned {@code FolderCollection} instance.
          *
          * @param folderCollection the value to set
          * @return this builder

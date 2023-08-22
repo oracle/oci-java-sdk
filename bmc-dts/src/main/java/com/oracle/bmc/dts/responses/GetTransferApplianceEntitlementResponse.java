@@ -16,11 +16,11 @@ public class GetTransferApplianceEntitlementResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** The returned TransferApplianceEntitlement instance. */
+    /** The returned {@code TransferApplianceEntitlement} instance. */
     private com.oracle.bmc.dts.model.TransferApplianceEntitlement transferApplianceEntitlement;
 
     /**
-     * The returned TransferApplianceEntitlement instance.
+     * The returned {@code TransferApplianceEntitlement} instance.
      *
      * @return the value
      */
@@ -75,11 +75,11 @@ public class GetTransferApplianceEntitlementResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned TransferApplianceEntitlement instance. */
+        /** The returned {@code TransferApplianceEntitlement} instance. */
         private com.oracle.bmc.dts.model.TransferApplianceEntitlement transferApplianceEntitlement;
 
         /**
-         * The returned TransferApplianceEntitlement instance.
+         * The returned {@code TransferApplianceEntitlement} instance.
          *
          * @param transferApplianceEntitlement the value to set
          * @return this builder

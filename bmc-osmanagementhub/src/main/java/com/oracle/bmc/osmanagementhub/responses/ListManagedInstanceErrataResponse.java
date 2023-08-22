@@ -42,12 +42,12 @@ public class ListManagedInstanceErrataResponse extends com.oracle.bmc.responses.
         return opcNextPage;
     }
 
-    /** The returned ManagedInstanceErratumSummaryCollection instance. */
+    /** The returned {@code ManagedInstanceErratumSummaryCollection} instance. */
     private com.oracle.bmc.osmanagementhub.model.ManagedInstanceErratumSummaryCollection
             managedInstanceErratumSummaryCollection;
 
     /**
-     * The returned ManagedInstanceErratumSummaryCollection instance.
+     * The returned {@code ManagedInstanceErratumSummaryCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListManagedInstanceErrataResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned ManagedInstanceErratumSummaryCollection instance. */
+        /** The returned {@code ManagedInstanceErratumSummaryCollection} instance. */
         private com.oracle.bmc.osmanagementhub.model.ManagedInstanceErratumSummaryCollection
                 managedInstanceErratumSummaryCollection;
 
         /**
-         * The returned ManagedInstanceErratumSummaryCollection instance.
+         * The returned {@code ManagedInstanceErratumSummaryCollection} instance.
          *
          * @param managedInstanceErratumSummaryCollection the value to set
          * @return this builder

@@ -40,11 +40,11 @@ public class GetModelProvenanceResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned ModelProvenance instance. */
+    /** The returned {@code ModelProvenance} instance. */
     private com.oracle.bmc.datascience.model.ModelProvenance modelProvenance;
 
     /**
-     * The returned ModelProvenance instance.
+     * The returned {@code ModelProvenance} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetModelProvenanceResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned ModelProvenance instance. */
+        /** The returned {@code ModelProvenance} instance. */
         private com.oracle.bmc.datascience.model.ModelProvenance modelProvenance;
 
         /**
-         * The returned ModelProvenance instance.
+         * The returned {@code ModelProvenance} instance.
          *
          * @param modelProvenance the value to set
          * @return this builder

@@ -42,12 +42,12 @@ public class QueryOpsiDataObjectDataResponse extends com.oracle.bmc.responses.Bm
         return opcNextPage;
     }
 
-    /** The returned QueryDataObjectResultSetRowsCollection instance. */
+    /** The returned {@code QueryDataObjectResultSetRowsCollection} instance. */
     private com.oracle.bmc.opsi.model.QueryDataObjectResultSetRowsCollection
             queryDataObjectResultSetRowsCollection;
 
     /**
-     * The returned QueryDataObjectResultSetRowsCollection instance.
+     * The returned {@code QueryDataObjectResultSetRowsCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class QueryOpsiDataObjectDataResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned QueryDataObjectResultSetRowsCollection instance. */
+        /** The returned {@code QueryDataObjectResultSetRowsCollection} instance. */
         private com.oracle.bmc.opsi.model.QueryDataObjectResultSetRowsCollection
                 queryDataObjectResultSetRowsCollection;
 
         /**
-         * The returned QueryDataObjectResultSetRowsCollection instance.
+         * The returned {@code QueryDataObjectResultSetRowsCollection} instance.
          *
          * @param queryDataObjectResultSetRowsCollection the value to set
          * @return this builder

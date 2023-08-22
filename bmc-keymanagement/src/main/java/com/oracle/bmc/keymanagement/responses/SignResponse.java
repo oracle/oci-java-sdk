@@ -24,11 +24,11 @@ public class SignResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned SignedData instance. */
+    /** The returned {@code SignedData} instance. */
     private com.oracle.bmc.keymanagement.model.SignedData signedData;
 
     /**
-     * The returned SignedData instance.
+     * The returned {@code SignedData} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class SignResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned SignedData instance. */
+        /** The returned {@code SignedData} instance. */
         private com.oracle.bmc.keymanagement.model.SignedData signedData;
 
         /**
-         * The returned SignedData instance.
+         * The returned {@code SignedData} instance.
          *
          * @param signedData the value to set
          * @return this builder

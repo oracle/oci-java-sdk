@@ -42,11 +42,11 @@ public class ListProfilesResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned ProfileCollection instance. */
+    /** The returned {@code ProfileCollection} instance. */
     private com.oracle.bmc.osmanagementhub.model.ProfileCollection profileCollection;
 
     /**
-     * The returned ProfileCollection instance.
+     * The returned {@code ProfileCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListProfilesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned ProfileCollection instance. */
+        /** The returned {@code ProfileCollection} instance. */
         private com.oracle.bmc.osmanagementhub.model.ProfileCollection profileCollection;
 
         /**
-         * The returned ProfileCollection instance.
+         * The returned {@code ProfileCollection} instance.
          *
          * @param profileCollection the value to set
          * @return this builder

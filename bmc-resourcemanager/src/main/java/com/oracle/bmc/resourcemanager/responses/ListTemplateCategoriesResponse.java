@@ -20,12 +20,12 @@ public class ListTemplateCategoriesResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned TemplateCategorySummaryCollection instance. */
+    /** The returned {@code TemplateCategorySummaryCollection} instance. */
     private com.oracle.bmc.resourcemanager.model.TemplateCategorySummaryCollection
             templateCategorySummaryCollection;
 
     /**
-     * The returned TemplateCategorySummaryCollection instance.
+     * The returned {@code TemplateCategorySummaryCollection} instance.
      *
      * @return the value
      */
@@ -84,12 +84,12 @@ public class ListTemplateCategoriesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned TemplateCategorySummaryCollection instance. */
+        /** The returned {@code TemplateCategorySummaryCollection} instance. */
         private com.oracle.bmc.resourcemanager.model.TemplateCategorySummaryCollection
                 templateCategorySummaryCollection;
 
         /**
-         * The returned TemplateCategorySummaryCollection instance.
+         * The returned {@code TemplateCategorySummaryCollection} instance.
          *
          * @param templateCategorySummaryCollection the value to set
          * @return this builder

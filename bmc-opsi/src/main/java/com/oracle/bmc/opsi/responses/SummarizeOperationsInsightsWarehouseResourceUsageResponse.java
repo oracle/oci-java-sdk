@@ -37,12 +37,14 @@ public class SummarizeOperationsInsightsWarehouseResourceUsageResponse
         return opcRequestId;
     }
 
-    /** The returned SummarizeOperationsInsightsWarehouseResourceUsageAggregation instance. */
+    /**
+     * The returned {@code SummarizeOperationsInsightsWarehouseResourceUsageAggregation} instance.
+     */
     private com.oracle.bmc.opsi.model.SummarizeOperationsInsightsWarehouseResourceUsageAggregation
             summarizeOperationsInsightsWarehouseResourceUsageAggregation;
 
     /**
-     * The returned SummarizeOperationsInsightsWarehouseResourceUsageAggregation instance.
+     * The returned {@code SummarizeOperationsInsightsWarehouseResourceUsageAggregation} instance.
      *
      * @return the value
      */
@@ -123,13 +125,17 @@ public class SummarizeOperationsInsightsWarehouseResourceUsageResponse
             return this;
         }
 
-        /** The returned SummarizeOperationsInsightsWarehouseResourceUsageAggregation instance. */
+        /**
+         * The returned {@code SummarizeOperationsInsightsWarehouseResourceUsageAggregation}
+         * instance.
+         */
         private com.oracle.bmc.opsi.model
                         .SummarizeOperationsInsightsWarehouseResourceUsageAggregation
                 summarizeOperationsInsightsWarehouseResourceUsageAggregation;
 
         /**
-         * The returned SummarizeOperationsInsightsWarehouseResourceUsageAggregation instance.
+         * The returned {@code SummarizeOperationsInsightsWarehouseResourceUsageAggregation}
+         * instance.
          *
          * @param summarizeOperationsInsightsWarehouseResourceUsageAggregation the value to set
          * @return this builder

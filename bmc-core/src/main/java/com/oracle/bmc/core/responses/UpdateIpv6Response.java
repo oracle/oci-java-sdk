@@ -36,11 +36,11 @@ public class UpdateIpv6Response extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Ipv6 instance. */
+    /** The returned {@code Ipv6} instance. */
     private com.oracle.bmc.core.model.Ipv6 ipv6;
 
     /**
-     * The returned Ipv6 instance.
+     * The returned {@code Ipv6} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateIpv6Response extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Ipv6 instance. */
+        /** The returned {@code Ipv6} instance. */
         private com.oracle.bmc.core.model.Ipv6 ipv6;
 
         /**
-         * The returned Ipv6 instance.
+         * The returned {@code Ipv6} instance.
          *
          * @param ipv6 the value to set
          * @return this builder

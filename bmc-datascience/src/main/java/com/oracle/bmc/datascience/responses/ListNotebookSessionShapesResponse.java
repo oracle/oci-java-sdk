@@ -60,11 +60,11 @@ public class ListNotebookSessionShapesResponse extends com.oracle.bmc.responses.
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.datascience.model.NotebookSessionShapeSummary instances. */
+    /** A list of {@code com.oracle.bmc.datascience.model.NotebookSessionShapeSummary} instances. */
     private java.util.List<com.oracle.bmc.datascience.model.NotebookSessionShapeSummary> items;
 
     /**
-     * A list of com.oracle.bmc.datascience.model.NotebookSessionShapeSummary instances.
+     * A list of {@code com.oracle.bmc.datascience.model.NotebookSessionShapeSummary} instances.
      *
      * @return the value
      */
@@ -171,11 +171,13 @@ public class ListNotebookSessionShapesResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** A list of com.oracle.bmc.datascience.model.NotebookSessionShapeSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.datascience.model.NotebookSessionShapeSummary} instances.
+         */
         private java.util.List<com.oracle.bmc.datascience.model.NotebookSessionShapeSummary> items;
 
         /**
-         * A list of com.oracle.bmc.datascience.model.NotebookSessionShapeSummary instances.
+         * A list of {@code com.oracle.bmc.datascience.model.NotebookSessionShapeSummary} instances.
          *
          * @param items the value to set
          * @return this builder

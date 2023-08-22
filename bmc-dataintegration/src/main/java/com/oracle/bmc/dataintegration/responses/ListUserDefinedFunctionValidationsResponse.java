@@ -73,12 +73,12 @@ public class ListUserDefinedFunctionValidationsResponse
         return opcTotalItems;
     }
 
-    /** The returned UserDefinedFunctionValidationSummaryCollection instance. */
+    /** The returned {@code UserDefinedFunctionValidationSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.UserDefinedFunctionValidationSummaryCollection
             userDefinedFunctionValidationSummaryCollection;
 
     /**
-     * The returned UserDefinedFunctionValidationSummaryCollection instance.
+     * The returned {@code UserDefinedFunctionValidationSummaryCollection} instance.
      *
      * @return the value
      */
@@ -205,12 +205,12 @@ public class ListUserDefinedFunctionValidationsResponse
             return this;
         }
 
-        /** The returned UserDefinedFunctionValidationSummaryCollection instance. */
+        /** The returned {@code UserDefinedFunctionValidationSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.UserDefinedFunctionValidationSummaryCollection
                 userDefinedFunctionValidationSummaryCollection;
 
         /**
-         * The returned UserDefinedFunctionValidationSummaryCollection instance.
+         * The returned {@code UserDefinedFunctionValidationSummaryCollection} instance.
          *
          * @param userDefinedFunctionValidationSummaryCollection the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListWafLogsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.waas.model.WafLog instances. */
+    /** A list of {@code com.oracle.bmc.waas.model.WafLog} instances. */
     private java.util.List<com.oracle.bmc.waas.model.WafLog> items;
 
     /**
-     * A list of com.oracle.bmc.waas.model.WafLog instances.
+     * A list of {@code com.oracle.bmc.waas.model.WafLog} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListWafLogsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.waas.model.WafLog instances. */
+        /** A list of {@code com.oracle.bmc.waas.model.WafLog} instances. */
         private java.util.List<com.oracle.bmc.waas.model.WafLog> items;
 
         /**
-         * A list of com.oracle.bmc.waas.model.WafLog instances.
+         * A list of {@code com.oracle.bmc.waas.model.WafLog} instances.
          *
          * @param items the value to set
          * @return this builder

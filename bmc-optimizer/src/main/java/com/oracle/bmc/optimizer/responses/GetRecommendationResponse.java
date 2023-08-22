@@ -36,11 +36,11 @@ public class GetRecommendationResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned Recommendation instance. */
+    /** The returned {@code Recommendation} instance. */
     private com.oracle.bmc.optimizer.model.Recommendation recommendation;
 
     /**
-     * The returned Recommendation instance.
+     * The returned {@code Recommendation} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetRecommendationResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned Recommendation instance. */
+        /** The returned {@code Recommendation} instance. */
         private com.oracle.bmc.optimizer.model.Recommendation recommendation;
 
         /**
-         * The returned Recommendation instance.
+         * The returned {@code Recommendation} instance.
          *
          * @param recommendation the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListAppsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned Apps instance. */
+    /** The returned {@code Apps} instance. */
     private com.oracle.bmc.identitydomains.model.Apps apps;
 
     /**
-     * The returned Apps instance.
+     * The returned {@code Apps} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListAppsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Apps instance. */
+        /** The returned {@code Apps} instance. */
         private com.oracle.bmc.identitydomains.model.Apps apps;
 
         /**
-         * The returned Apps instance.
+         * The returned {@code Apps} instance.
          *
          * @param apps the value to set
          * @return this builder

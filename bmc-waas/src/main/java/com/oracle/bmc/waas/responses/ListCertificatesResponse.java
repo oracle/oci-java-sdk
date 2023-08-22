@@ -42,11 +42,11 @@ public class ListCertificatesResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.waas.model.CertificateSummary instances. */
+    /** A list of {@code com.oracle.bmc.waas.model.CertificateSummary} instances. */
     private java.util.List<com.oracle.bmc.waas.model.CertificateSummary> items;
 
     /**
-     * A list of com.oracle.bmc.waas.model.CertificateSummary instances.
+     * A list of {@code com.oracle.bmc.waas.model.CertificateSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListCertificatesResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** A list of com.oracle.bmc.waas.model.CertificateSummary instances. */
+        /** A list of {@code com.oracle.bmc.waas.model.CertificateSummary} instances. */
         private java.util.List<com.oracle.bmc.waas.model.CertificateSummary> items;
 
         /**
-         * A list of com.oracle.bmc.waas.model.CertificateSummary instances.
+         * A list of {@code com.oracle.bmc.waas.model.CertificateSummary} instances.
          *
          * @param items the value to set
          * @return this builder

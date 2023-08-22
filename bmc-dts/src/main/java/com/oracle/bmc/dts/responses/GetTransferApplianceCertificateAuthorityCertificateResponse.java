@@ -25,11 +25,11 @@ public class GetTransferApplianceCertificateAuthorityCertificateResponse
         return etag;
     }
 
-    /** The returned TransferApplianceCertificate instance. */
+    /** The returned {@code TransferApplianceCertificate} instance. */
     private com.oracle.bmc.dts.model.TransferApplianceCertificate transferApplianceCertificate;
 
     /**
-     * The returned TransferApplianceCertificate instance.
+     * The returned {@code TransferApplianceCertificate} instance.
      *
      * @return the value
      */
@@ -99,11 +99,11 @@ public class GetTransferApplianceCertificateAuthorityCertificateResponse
             return this;
         }
 
-        /** The returned TransferApplianceCertificate instance. */
+        /** The returned {@code TransferApplianceCertificate} instance. */
         private com.oracle.bmc.dts.model.TransferApplianceCertificate transferApplianceCertificate;
 
         /**
-         * The returned TransferApplianceCertificate instance.
+         * The returned {@code TransferApplianceCertificate} instance.
          *
          * @param transferApplianceCertificate the value to set
          * @return this builder

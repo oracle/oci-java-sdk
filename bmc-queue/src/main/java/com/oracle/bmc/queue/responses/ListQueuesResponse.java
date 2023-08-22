@@ -42,11 +42,11 @@ public class ListQueuesResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned QueueCollection instance. */
+    /** The returned {@code QueueCollection} instance. */
     private com.oracle.bmc.queue.model.QueueCollection queueCollection;
 
     /**
-     * The returned QueueCollection instance.
+     * The returned {@code QueueCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListQueuesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned QueueCollection instance. */
+        /** The returned {@code QueueCollection} instance. */
         private com.oracle.bmc.queue.model.QueueCollection queueCollection;
 
         /**
-         * The returned QueueCollection instance.
+         * The returned {@code QueueCollection} instance.
          *
          * @param queueCollection the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class CreatePasswordPolicyResponse extends com.oracle.bmc.responses.BmcRe
         return etag;
     }
 
-    /** The returned PasswordPolicy instance. */
+    /** The returned {@code PasswordPolicy} instance. */
     private com.oracle.bmc.identitydomains.model.PasswordPolicy passwordPolicy;
 
     /**
-     * The returned PasswordPolicy instance.
+     * The returned {@code PasswordPolicy} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class CreatePasswordPolicyResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned PasswordPolicy instance. */
+        /** The returned {@code PasswordPolicy} instance. */
         private com.oracle.bmc.identitydomains.model.PasswordPolicy passwordPolicy;
 
         /**
-         * The returned PasswordPolicy instance.
+         * The returned {@code PasswordPolicy} instance.
          *
          * @param passwordPolicy the value to set
          * @return this builder

@@ -36,12 +36,12 @@ public class GetEnforcedGovernanceRuleResponse extends com.oracle.bmc.responses.
         return opcRequestId;
     }
 
-    /** The returned EnforcedGovernanceRule instance. */
+    /** The returned {@code EnforcedGovernanceRule} instance. */
     private com.oracle.bmc.governancerulescontrolplane.model.EnforcedGovernanceRule
             enforcedGovernanceRule;
 
     /**
-     * The returned EnforcedGovernanceRule instance.
+     * The returned {@code EnforcedGovernanceRule} instance.
      *
      * @return the value
      */
@@ -121,12 +121,12 @@ public class GetEnforcedGovernanceRuleResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned EnforcedGovernanceRule instance. */
+        /** The returned {@code EnforcedGovernanceRule} instance. */
         private com.oracle.bmc.governancerulescontrolplane.model.EnforcedGovernanceRule
                 enforcedGovernanceRule;
 
         /**
-         * The returned EnforcedGovernanceRule instance.
+         * The returned {@code EnforcedGovernanceRule} instance.
          *
          * @param enforcedGovernanceRule the value to set
          * @return this builder

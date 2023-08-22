@@ -42,11 +42,11 @@ public class ListCustomTablesResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /** The returned CustomTableCollection instance. */
+    /** The returned {@code CustomTableCollection} instance. */
     private com.oracle.bmc.usageapi.model.CustomTableCollection customTableCollection;
 
     /**
-     * The returned CustomTableCollection instance.
+     * The returned {@code CustomTableCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListCustomTablesResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned CustomTableCollection instance. */
+        /** The returned {@code CustomTableCollection} instance. */
         private com.oracle.bmc.usageapi.model.CustomTableCollection customTableCollection;
 
         /**
-         * The returned CustomTableCollection instance.
+         * The returned {@code CustomTableCollection} instance.
          *
          * @param customTableCollection the value to set
          * @return this builder

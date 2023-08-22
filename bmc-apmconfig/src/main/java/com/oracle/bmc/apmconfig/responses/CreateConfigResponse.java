@@ -36,11 +36,11 @@ public class CreateConfigResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Config instance. */
+    /** The returned {@code Config} instance. */
     private com.oracle.bmc.apmconfig.model.Config config;
 
     /**
-     * The returned Config instance.
+     * The returned {@code Config} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class CreateConfigResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Config instance. */
+        /** The returned {@code Config} instance. */
         private com.oracle.bmc.apmconfig.model.Config config;
 
         /**
-         * The returned Config instance.
+         * The returned {@code Config} instance.
          *
          * @param config the value to set
          * @return this builder

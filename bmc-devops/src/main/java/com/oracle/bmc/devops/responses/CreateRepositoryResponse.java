@@ -64,11 +64,11 @@ public class CreateRepositoryResponse extends com.oracle.bmc.responses.BmcRespon
         return etag;
     }
 
-    /** The returned Repository instance. */
+    /** The returned {@code Repository} instance. */
     private com.oracle.bmc.devops.model.Repository repository;
 
     /**
-     * The returned Repository instance.
+     * The returned {@code Repository} instance.
      *
      * @return the value
      */
@@ -183,11 +183,11 @@ public class CreateRepositoryResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned Repository instance. */
+        /** The returned {@code Repository} instance. */
         private com.oracle.bmc.devops.model.Repository repository;
 
         /**
-         * The returned Repository instance.
+         * The returned {@code Repository} instance.
          *
          * @param repository the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListAddonOptionsResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.containerengine.model.AddonOptionSummary instances. */
+    /** A list of {@code com.oracle.bmc.containerengine.model.AddonOptionSummary} instances. */
     private java.util.List<com.oracle.bmc.containerengine.model.AddonOptionSummary> items;
 
     /**
-     * A list of com.oracle.bmc.containerengine.model.AddonOptionSummary instances.
+     * A list of {@code com.oracle.bmc.containerengine.model.AddonOptionSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListAddonOptionsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** A list of com.oracle.bmc.containerengine.model.AddonOptionSummary instances. */
+        /** A list of {@code com.oracle.bmc.containerengine.model.AddonOptionSummary} instances. */
         private java.util.List<com.oracle.bmc.containerengine.model.AddonOptionSummary> items;
 
         /**
-         * A list of com.oracle.bmc.containerengine.model.AddonOptionSummary instances.
+         * A list of {@code com.oracle.bmc.containerengine.model.AddonOptionSummary} instances.
          *
          * @param items the value to set
          * @return this builder

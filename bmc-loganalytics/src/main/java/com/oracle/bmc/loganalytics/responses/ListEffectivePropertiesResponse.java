@@ -64,12 +64,12 @@ public class ListEffectivePropertiesResponse extends com.oracle.bmc.responses.Bm
         return opcNextPage;
     }
 
-    /** The returned EffectivePropertyCollection instance. */
+    /** The returned {@code EffectivePropertyCollection} instance. */
     private com.oracle.bmc.loganalytics.model.EffectivePropertyCollection
             effectivePropertyCollection;
 
     /**
-     * The returned EffectivePropertyCollection instance.
+     * The returned {@code EffectivePropertyCollection} instance.
      *
      * @return the value
      */
@@ -182,12 +182,12 @@ public class ListEffectivePropertiesResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned EffectivePropertyCollection instance. */
+        /** The returned {@code EffectivePropertyCollection} instance. */
         private com.oracle.bmc.loganalytics.model.EffectivePropertyCollection
                 effectivePropertyCollection;
 
         /**
-         * The returned EffectivePropertyCollection instance.
+         * The returned {@code EffectivePropertyCollection} instance.
          *
          * @param effectivePropertyCollection the value to set
          * @return this builder

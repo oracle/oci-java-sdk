@@ -36,11 +36,11 @@ public class GetOpaInstanceResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned OpaInstance instance. */
+    /** The returned {@code OpaInstance} instance. */
     private com.oracle.bmc.opa.model.OpaInstance opaInstance;
 
     /**
-     * The returned OpaInstance instance.
+     * The returned {@code OpaInstance} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetOpaInstanceResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned OpaInstance instance. */
+        /** The returned {@code OpaInstance} instance. */
         private com.oracle.bmc.opa.model.OpaInstance opaInstance;
 
         /**
-         * The returned OpaInstance instance.
+         * The returned {@code OpaInstance} instance.
          *
          * @param opaInstance the value to set
          * @return this builder

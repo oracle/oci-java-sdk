@@ -24,11 +24,11 @@ public class DeleteMessagesResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned DeleteMessagesResult instance. */
+    /** The returned {@code DeleteMessagesResult} instance. */
     private com.oracle.bmc.queue.model.DeleteMessagesResult deleteMessagesResult;
 
     /**
-     * The returned DeleteMessagesResult instance.
+     * The returned {@code DeleteMessagesResult} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class DeleteMessagesResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned DeleteMessagesResult instance. */
+        /** The returned {@code DeleteMessagesResult} instance. */
         private com.oracle.bmc.queue.model.DeleteMessagesResult deleteMessagesResult;
 
         /**
-         * The returned DeleteMessagesResult instance.
+         * The returned {@code DeleteMessagesResult} instance.
          *
          * @param deleteMessagesResult the value to set
          * @return this builder

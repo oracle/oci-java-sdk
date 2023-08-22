@@ -24,12 +24,12 @@ public class GetDatabaseFleetHealthMetricsResponse extends com.oracle.bmc.respon
         return opcRequestId;
     }
 
-    /** The returned DatabaseFleetHealthMetrics instance. */
+    /** The returned {@code DatabaseFleetHealthMetrics} instance. */
     private com.oracle.bmc.databasemanagement.model.DatabaseFleetHealthMetrics
             databaseFleetHealthMetrics;
 
     /**
-     * The returned DatabaseFleetHealthMetrics instance.
+     * The returned {@code DatabaseFleetHealthMetrics} instance.
      *
      * @return the value
      */
@@ -92,12 +92,12 @@ public class GetDatabaseFleetHealthMetricsResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned DatabaseFleetHealthMetrics instance. */
+        /** The returned {@code DatabaseFleetHealthMetrics} instance. */
         private com.oracle.bmc.databasemanagement.model.DatabaseFleetHealthMetrics
                 databaseFleetHealthMetrics;
 
         /**
-         * The returned DatabaseFleetHealthMetrics instance.
+         * The returned {@code DatabaseFleetHealthMetrics} instance.
          *
          * @param databaseFleetHealthMetrics the value to set
          * @return this builder

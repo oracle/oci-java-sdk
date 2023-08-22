@@ -36,11 +36,11 @@ public class GetMonitoredResourceResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned MonitoredResource instance. */
+    /** The returned {@code MonitoredResource} instance. */
     private com.oracle.bmc.stackmonitoring.model.MonitoredResource monitoredResource;
 
     /**
-     * The returned MonitoredResource instance.
+     * The returned {@code MonitoredResource} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetMonitoredResourceResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned MonitoredResource instance. */
+        /** The returned {@code MonitoredResource} instance. */
         private com.oracle.bmc.stackmonitoring.model.MonitoredResource monitoredResource;
 
         /**
-         * The returned MonitoredResource instance.
+         * The returned {@code MonitoredResource} instance.
          *
          * @param monitoredResource the value to set
          * @return this builder

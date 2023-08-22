@@ -42,11 +42,11 @@ public class ListNetworkAddressListsResponse extends com.oracle.bmc.responses.Bm
         return opcNextPage;
     }
 
-    /** The returned NetworkAddressListCollection instance. */
+    /** The returned {@code NetworkAddressListCollection} instance. */
     private com.oracle.bmc.waf.model.NetworkAddressListCollection networkAddressListCollection;
 
     /**
-     * The returned NetworkAddressListCollection instance.
+     * The returned {@code NetworkAddressListCollection} instance.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListNetworkAddressListsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned NetworkAddressListCollection instance. */
+        /** The returned {@code NetworkAddressListCollection} instance. */
         private com.oracle.bmc.waf.model.NetworkAddressListCollection networkAddressListCollection;
 
         /**
-         * The returned NetworkAddressListCollection instance.
+         * The returned {@code NetworkAddressListCollection} instance.
          *
          * @param networkAddressListCollection the value to set
          * @return this builder

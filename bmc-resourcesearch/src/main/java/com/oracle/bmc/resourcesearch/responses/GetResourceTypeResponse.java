@@ -24,11 +24,11 @@ public class GetResourceTypeResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned ResourceType instance. */
+    /** The returned {@code ResourceType} instance. */
     private com.oracle.bmc.resourcesearch.model.ResourceType resourceType;
 
     /**
-     * The returned ResourceType instance.
+     * The returned {@code ResourceType} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetResourceTypeResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned ResourceType instance. */
+        /** The returned {@code ResourceType} instance. */
         private com.oracle.bmc.resourcesearch.model.ResourceType resourceType;
 
         /**
-         * The returned ResourceType instance.
+         * The returned {@code ResourceType} instance.
          *
          * @param resourceType the value to set
          * @return this builder

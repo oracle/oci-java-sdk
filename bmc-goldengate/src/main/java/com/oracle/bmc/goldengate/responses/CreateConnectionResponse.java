@@ -52,11 +52,11 @@ public class CreateConnectionResponse extends com.oracle.bmc.responses.BmcRespon
         return etag;
     }
 
-    /** The returned Connection instance. */
+    /** The returned {@code Connection} instance. */
     private com.oracle.bmc.goldengate.model.Connection connection;
 
     /**
-     * The returned Connection instance.
+     * The returned {@code Connection} instance.
      *
      * @return the value
      */
@@ -154,11 +154,11 @@ public class CreateConnectionResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned Connection instance. */
+        /** The returned {@code Connection} instance. */
         private com.oracle.bmc.goldengate.model.Connection connection;
 
         /**
-         * The returned Connection instance.
+         * The returned {@code Connection} instance.
          *
          * @param connection the value to set
          * @return this builder

@@ -42,12 +42,12 @@ public class ListConditionMetadataTypesResponse extends com.oracle.bmc.responses
         return opcNextPage;
     }
 
-    /** The returned ConditionMetadataTypeCollection instance. */
+    /** The returned {@code ConditionMetadataTypeCollection} instance. */
     private com.oracle.bmc.cloudguard.model.ConditionMetadataTypeCollection
             conditionMetadataTypeCollection;
 
     /**
-     * The returned ConditionMetadataTypeCollection instance.
+     * The returned {@code ConditionMetadataTypeCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListConditionMetadataTypesResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned ConditionMetadataTypeCollection instance. */
+        /** The returned {@code ConditionMetadataTypeCollection} instance. */
         private com.oracle.bmc.cloudguard.model.ConditionMetadataTypeCollection
                 conditionMetadataTypeCollection;
 
         /**
-         * The returned ConditionMetadataTypeCollection instance.
+         * The returned {@code ConditionMetadataTypeCollection} instance.
          *
          * @param conditionMetadataTypeCollection the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListRulesResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.events.model.RuleSummary instances. */
+    /** A list of {@code com.oracle.bmc.events.model.RuleSummary} instances. */
     private java.util.List<com.oracle.bmc.events.model.RuleSummary> items;
 
     /**
-     * A list of com.oracle.bmc.events.model.RuleSummary instances.
+     * A list of {@code com.oracle.bmc.events.model.RuleSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListRulesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.events.model.RuleSummary instances. */
+        /** A list of {@code com.oracle.bmc.events.model.RuleSummary} instances. */
         private java.util.List<com.oracle.bmc.events.model.RuleSummary> items;
 
         /**
-         * A list of com.oracle.bmc.events.model.RuleSummary instances.
+         * A list of {@code com.oracle.bmc.events.model.RuleSummary} instances.
          *
          * @param items the value to set
          * @return this builder

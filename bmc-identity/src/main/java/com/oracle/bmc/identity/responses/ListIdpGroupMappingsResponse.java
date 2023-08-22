@@ -42,11 +42,11 @@ public class ListIdpGroupMappingsResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.identity.model.IdpGroupMapping instances. */
+    /** A list of {@code com.oracle.bmc.identity.model.IdpGroupMapping} instances. */
     private java.util.List<com.oracle.bmc.identity.model.IdpGroupMapping> items;
 
     /**
-     * A list of com.oracle.bmc.identity.model.IdpGroupMapping instances.
+     * A list of {@code com.oracle.bmc.identity.model.IdpGroupMapping} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListIdpGroupMappingsResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** A list of com.oracle.bmc.identity.model.IdpGroupMapping instances. */
+        /** A list of {@code com.oracle.bmc.identity.model.IdpGroupMapping} instances. */
         private java.util.List<com.oracle.bmc.identity.model.IdpGroupMapping> items;
 
         /**
-         * A list of com.oracle.bmc.identity.model.IdpGroupMapping instances.
+         * A list of {@code com.oracle.bmc.identity.model.IdpGroupMapping} instances.
          *
          * @param items the value to set
          * @return this builder

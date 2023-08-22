@@ -36,11 +36,11 @@ public class SubmitHistoricalMetricsResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned HistoricalMetricCollection instance. */
+    /** The returned {@code HistoricalMetricCollection} instance. */
     private com.oracle.bmc.cloudbridge.model.HistoricalMetricCollection historicalMetricCollection;
 
     /**
-     * The returned HistoricalMetricCollection instance.
+     * The returned {@code HistoricalMetricCollection} instance.
      *
      * @return the value
      */
@@ -120,12 +120,12 @@ public class SubmitHistoricalMetricsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned HistoricalMetricCollection instance. */
+        /** The returned {@code HistoricalMetricCollection} instance. */
         private com.oracle.bmc.cloudbridge.model.HistoricalMetricCollection
                 historicalMetricCollection;
 
         /**
-         * The returned HistoricalMetricCollection instance.
+         * The returned {@code HistoricalMetricCollection} instance.
          *
          * @param historicalMetricCollection the value to set
          * @return this builder

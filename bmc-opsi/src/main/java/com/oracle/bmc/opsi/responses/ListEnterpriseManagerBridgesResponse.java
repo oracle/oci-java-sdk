@@ -42,12 +42,12 @@ public class ListEnterpriseManagerBridgesResponse extends com.oracle.bmc.respons
         return opcNextPage;
     }
 
-    /** The returned EnterpriseManagerBridgeCollection instance. */
+    /** The returned {@code EnterpriseManagerBridgeCollection} instance. */
     private com.oracle.bmc.opsi.model.EnterpriseManagerBridgeCollection
             enterpriseManagerBridgeCollection;
 
     /**
-     * The returned EnterpriseManagerBridgeCollection instance.
+     * The returned {@code EnterpriseManagerBridgeCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListEnterpriseManagerBridgesResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned EnterpriseManagerBridgeCollection instance. */
+        /** The returned {@code EnterpriseManagerBridgeCollection} instance. */
         private com.oracle.bmc.opsi.model.EnterpriseManagerBridgeCollection
                 enterpriseManagerBridgeCollection;
 
         /**
-         * The returned EnterpriseManagerBridgeCollection instance.
+         * The returned {@code EnterpriseManagerBridgeCollection} instance.
          *
          * @param enterpriseManagerBridgeCollection the value to set
          * @return this builder

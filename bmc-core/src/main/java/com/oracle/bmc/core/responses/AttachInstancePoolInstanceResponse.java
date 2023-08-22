@@ -68,11 +68,11 @@ public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses
         return location;
     }
 
-    /** The returned InstancePoolInstance instance. */
+    /** The returned {@code InstancePoolInstance} instance. */
     private com.oracle.bmc.core.model.InstancePoolInstance instancePoolInstance;
 
     /**
-     * The returned InstancePoolInstance instance.
+     * The returned {@code InstancePoolInstance} instance.
      *
      * @return the value
      */
@@ -192,11 +192,11 @@ public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned InstancePoolInstance instance. */
+        /** The returned {@code InstancePoolInstance} instance. */
         private com.oracle.bmc.core.model.InstancePoolInstance instancePoolInstance;
 
         /**
-         * The returned InstancePoolInstance instance.
+         * The returned {@code InstancePoolInstance} instance.
          *
          * @param instancePoolInstance the value to set
          * @return this builder

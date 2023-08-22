@@ -42,11 +42,11 @@ public class ListTagsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.identity.model.TagSummary instances. */
+    /** A list of {@code com.oracle.bmc.identity.model.TagSummary} instances. */
     private java.util.List<com.oracle.bmc.identity.model.TagSummary> items;
 
     /**
-     * A list of com.oracle.bmc.identity.model.TagSummary instances.
+     * A list of {@code com.oracle.bmc.identity.model.TagSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListTagsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.identity.model.TagSummary instances. */
+        /** A list of {@code com.oracle.bmc.identity.model.TagSummary} instances. */
         private java.util.List<com.oracle.bmc.identity.model.TagSummary> items;
 
         /**
-         * A list of com.oracle.bmc.identity.model.TagSummary instances.
+         * A list of {@code com.oracle.bmc.identity.model.TagSummary} instances.
          *
          * @param items the value to set
          * @return this builder

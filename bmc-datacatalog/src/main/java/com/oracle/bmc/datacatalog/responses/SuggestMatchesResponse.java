@@ -24,11 +24,11 @@ public class SuggestMatchesResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned SuggestResults instance. */
+    /** The returned {@code SuggestResults} instance. */
     private com.oracle.bmc.datacatalog.model.SuggestResults suggestResults;
 
     /**
-     * The returned SuggestResults instance.
+     * The returned {@code SuggestResults} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class SuggestMatchesResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned SuggestResults instance. */
+        /** The returned {@code SuggestResults} instance. */
         private com.oracle.bmc.datacatalog.model.SuggestResults suggestResults;
 
         /**
-         * The returned SuggestResults instance.
+         * The returned {@code SuggestResults} instance.
          *
          * @param suggestResults the value to set
          * @return this builder

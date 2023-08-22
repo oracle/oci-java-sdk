@@ -54,11 +54,11 @@ public class ListHostConfigurationsResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** The returned HostConfigurationCollection instance. */
+    /** The returned {@code HostConfigurationCollection} instance. */
     private com.oracle.bmc.opsi.model.HostConfigurationCollection hostConfigurationCollection;
 
     /**
-     * The returned HostConfigurationCollection instance.
+     * The returned {@code HostConfigurationCollection} instance.
      *
      * @return the value
      */
@@ -159,11 +159,11 @@ public class ListHostConfigurationsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned HostConfigurationCollection instance. */
+        /** The returned {@code HostConfigurationCollection} instance. */
         private com.oracle.bmc.opsi.model.HostConfigurationCollection hostConfigurationCollection;
 
         /**
-         * The returned HostConfigurationCollection instance.
+         * The returned {@code HostConfigurationCollection} instance.
          *
          * @param hostConfigurationCollection the value to set
          * @return this builder

@@ -43,12 +43,12 @@ public class RequestSummarizedResponderExecutionsResponse
         return opcNextPage;
     }
 
-    /** The returned ResponderExecutionAggregationCollection instance. */
+    /** The returned {@code ResponderExecutionAggregationCollection} instance. */
     private com.oracle.bmc.cloudguard.model.ResponderExecutionAggregationCollection
             responderExecutionAggregationCollection;
 
     /**
-     * The returned ResponderExecutionAggregationCollection instance.
+     * The returned {@code ResponderExecutionAggregationCollection} instance.
      *
      * @return the value
      */
@@ -134,12 +134,12 @@ public class RequestSummarizedResponderExecutionsResponse
             return this;
         }
 
-        /** The returned ResponderExecutionAggregationCollection instance. */
+        /** The returned {@code ResponderExecutionAggregationCollection} instance. */
         private com.oracle.bmc.cloudguard.model.ResponderExecutionAggregationCollection
                 responderExecutionAggregationCollection;
 
         /**
-         * The returned ResponderExecutionAggregationCollection instance.
+         * The returned {@code ResponderExecutionAggregationCollection} instance.
          *
          * @param responderExecutionAggregationCollection the value to set
          * @return this builder

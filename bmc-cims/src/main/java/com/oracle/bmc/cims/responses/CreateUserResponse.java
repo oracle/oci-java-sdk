@@ -24,11 +24,11 @@ public class CreateUserResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned User instance. */
+    /** The returned {@code User} instance. */
     private com.oracle.bmc.cims.model.User user;
 
     /**
-     * The returned User instance.
+     * The returned {@code User} instance.
      *
      * @return the value
      */
@@ -83,11 +83,11 @@ public class CreateUserResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned User instance. */
+        /** The returned {@code User} instance. */
         private com.oracle.bmc.cims.model.User user;
 
         /**
-         * The returned User instance.
+         * The returned {@code User} instance.
          *
          * @param user the value to set
          * @return this builder

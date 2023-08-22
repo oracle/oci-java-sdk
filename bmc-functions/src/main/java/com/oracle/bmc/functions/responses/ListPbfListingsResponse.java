@@ -42,11 +42,11 @@ public class ListPbfListingsResponse extends com.oracle.bmc.responses.BmcRespons
         return opcNextPage;
     }
 
-    /** The returned PbfListingsCollection instance. */
+    /** The returned {@code PbfListingsCollection} instance. */
     private com.oracle.bmc.functions.model.PbfListingsCollection pbfListingsCollection;
 
     /**
-     * The returned PbfListingsCollection instance.
+     * The returned {@code PbfListingsCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListPbfListingsResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned PbfListingsCollection instance. */
+        /** The returned {@code PbfListingsCollection} instance. */
         private com.oracle.bmc.functions.model.PbfListingsCollection pbfListingsCollection;
 
         /**
-         * The returned PbfListingsCollection instance.
+         * The returned {@code PbfListingsCollection} instance.
          *
          * @param pbfListingsCollection the value to set
          * @return this builder

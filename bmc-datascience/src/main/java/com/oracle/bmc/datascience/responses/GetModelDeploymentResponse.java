@@ -40,11 +40,11 @@ public class GetModelDeploymentResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned ModelDeployment instance. */
+    /** The returned {@code ModelDeployment} instance. */
     private com.oracle.bmc.datascience.model.ModelDeployment modelDeployment;
 
     /**
-     * The returned ModelDeployment instance.
+     * The returned {@code ModelDeployment} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetModelDeploymentResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned ModelDeployment instance. */
+        /** The returned {@code ModelDeployment} instance. */
         private com.oracle.bmc.datascience.model.ModelDeployment modelDeployment;
 
         /**
-         * The returned ModelDeployment instance.
+         * The returned {@code ModelDeployment} instance.
          *
          * @param modelDeployment the value to set
          * @return this builder

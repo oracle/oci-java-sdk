@@ -24,11 +24,11 @@ public class GetCategoryResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Category instance. */
+    /** The returned {@code Category} instance. */
     private com.oracle.bmc.optimizer.model.Category category;
 
     /**
-     * The returned Category instance.
+     * The returned {@code Category} instance.
      *
      * @return the value
      */
@@ -83,11 +83,11 @@ public class GetCategoryResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Category instance. */
+        /** The returned {@code Category} instance. */
         private com.oracle.bmc.optimizer.model.Category category;
 
         /**
-         * The returned Category instance.
+         * The returned {@code Category} instance.
          *
          * @param category the value to set
          * @return this builder

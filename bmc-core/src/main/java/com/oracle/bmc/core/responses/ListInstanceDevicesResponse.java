@@ -42,11 +42,11 @@ public class ListInstanceDevicesResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.Device instances. */
+    /** A list of {@code com.oracle.bmc.core.model.Device} instances. */
     private java.util.List<com.oracle.bmc.core.model.Device> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.Device instances.
+     * A list of {@code com.oracle.bmc.core.model.Device} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListInstanceDevicesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.Device instances. */
+        /** A list of {@code com.oracle.bmc.core.model.Device} instances. */
         private java.util.List<com.oracle.bmc.core.model.Device> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.Device instances.
+         * A list of {@code com.oracle.bmc.core.model.Device} instances.
          *
          * @param items the value to set
          * @return this builder

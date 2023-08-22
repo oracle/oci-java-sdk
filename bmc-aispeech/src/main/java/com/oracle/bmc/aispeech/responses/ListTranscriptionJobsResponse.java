@@ -60,11 +60,11 @@ public class ListTranscriptionJobsResponse extends com.oracle.bmc.responses.BmcR
         return opcPrevPage;
     }
 
-    /** The returned TranscriptionJobCollection instance. */
+    /** The returned {@code TranscriptionJobCollection} instance. */
     private com.oracle.bmc.aispeech.model.TranscriptionJobCollection transcriptionJobCollection;
 
     /**
-     * The returned TranscriptionJobCollection instance.
+     * The returned {@code TranscriptionJobCollection} instance.
      *
      * @return the value
      */
@@ -171,11 +171,11 @@ public class ListTranscriptionJobsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned TranscriptionJobCollection instance. */
+        /** The returned {@code TranscriptionJobCollection} instance. */
         private com.oracle.bmc.aispeech.model.TranscriptionJobCollection transcriptionJobCollection;
 
         /**
-         * The returned TranscriptionJobCollection instance.
+         * The returned {@code TranscriptionJobCollection} instance.
          *
          * @param transcriptionJobCollection the value to set
          * @return this builder

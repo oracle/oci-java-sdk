@@ -72,12 +72,12 @@ public class ListApplicationsResponse extends com.oracle.bmc.responses.BmcRespon
         return opcTotalItems;
     }
 
-    /** The returned ApplicationSummaryCollection instance. */
+    /** The returned {@code ApplicationSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.ApplicationSummaryCollection
             applicationSummaryCollection;
 
     /**
-     * The returned ApplicationSummaryCollection instance.
+     * The returned {@code ApplicationSummaryCollection} instance.
      *
      * @return the value
      */
@@ -202,12 +202,12 @@ public class ListApplicationsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned ApplicationSummaryCollection instance. */
+        /** The returned {@code ApplicationSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.ApplicationSummaryCollection
                 applicationSummaryCollection;
 
         /**
-         * The returned ApplicationSummaryCollection instance.
+         * The returned {@code ApplicationSummaryCollection} instance.
          *
          * @param applicationSummaryCollection the value to set
          * @return this builder

@@ -46,11 +46,11 @@ public class ListOutboundConnectorsResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.filestorage.model.OutboundConnectorSummary instances. */
+    /** A list of {@code com.oracle.bmc.filestorage.model.OutboundConnectorSummary} instances. */
     private java.util.List<com.oracle.bmc.filestorage.model.OutboundConnectorSummary> items;
 
     /**
-     * A list of com.oracle.bmc.filestorage.model.OutboundConnectorSummary instances.
+     * A list of {@code com.oracle.bmc.filestorage.model.OutboundConnectorSummary} instances.
      *
      * @return the value
      */
@@ -138,11 +138,13 @@ public class ListOutboundConnectorsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** A list of com.oracle.bmc.filestorage.model.OutboundConnectorSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.filestorage.model.OutboundConnectorSummary} instances.
+         */
         private java.util.List<com.oracle.bmc.filestorage.model.OutboundConnectorSummary> items;
 
         /**
-         * A list of com.oracle.bmc.filestorage.model.OutboundConnectorSummary instances.
+         * A list of {@code com.oracle.bmc.filestorage.model.OutboundConnectorSummary} instances.
          *
          * @param items the value to set
          * @return this builder

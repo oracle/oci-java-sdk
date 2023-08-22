@@ -42,11 +42,11 @@ public class ListBdsInstancesResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.bds.model.BdsInstanceSummary instances. */
+    /** A list of {@code com.oracle.bmc.bds.model.BdsInstanceSummary} instances. */
     private java.util.List<com.oracle.bmc.bds.model.BdsInstanceSummary> items;
 
     /**
-     * A list of com.oracle.bmc.bds.model.BdsInstanceSummary instances.
+     * A list of {@code com.oracle.bmc.bds.model.BdsInstanceSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListBdsInstancesResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** A list of com.oracle.bmc.bds.model.BdsInstanceSummary instances. */
+        /** A list of {@code com.oracle.bmc.bds.model.BdsInstanceSummary} instances. */
         private java.util.List<com.oracle.bmc.bds.model.BdsInstanceSummary> items;
 
         /**
-         * A list of com.oracle.bmc.bds.model.BdsInstanceSummary instances.
+         * A list of {@code com.oracle.bmc.bds.model.BdsInstanceSummary} instances.
          *
          * @param items the value to set
          * @return this builder

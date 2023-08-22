@@ -42,11 +42,11 @@ public class ListProductsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned ProductCollection instance. */
+    /** The returned {@code ProductCollection} instance. */
     private com.oracle.bmc.usage.model.ProductCollection productCollection;
 
     /**
-     * The returned ProductCollection instance.
+     * The returned {@code ProductCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListProductsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned ProductCollection instance. */
+        /** The returned {@code ProductCollection} instance. */
         private com.oracle.bmc.usage.model.ProductCollection productCollection;
 
         /**
-         * The returned ProductCollection instance.
+         * The returned {@code ProductCollection} instance.
          *
          * @param productCollection the value to set
          * @return this builder

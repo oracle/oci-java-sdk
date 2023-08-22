@@ -64,11 +64,11 @@ public class CreateReplicaResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcWorkRequestId;
     }
 
-    /** The returned Replica instance. */
+    /** The returned {@code Replica} instance. */
     private com.oracle.bmc.mysql.model.Replica replica;
 
     /**
-     * The returned Replica instance.
+     * The returned {@code Replica} instance.
      *
      * @return the value
      */
@@ -183,11 +183,11 @@ public class CreateReplicaResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned Replica instance. */
+        /** The returned {@code Replica} instance. */
         private com.oracle.bmc.mysql.model.Replica replica;
 
         /**
-         * The returned Replica instance.
+         * The returned {@code Replica} instance.
          *
          * @param replica the value to set
          * @return this builder

@@ -44,11 +44,11 @@ public class ListInstallationSitesResponse extends com.oracle.bmc.responses.BmcR
         return opcNextPage;
     }
 
-    /** The returned InstallationSiteCollection instance. */
+    /** The returned {@code InstallationSiteCollection} instance. */
     private com.oracle.bmc.jms.model.InstallationSiteCollection installationSiteCollection;
 
     /**
-     * The returned InstallationSiteCollection instance.
+     * The returned {@code InstallationSiteCollection} instance.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListInstallationSitesResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned InstallationSiteCollection instance. */
+        /** The returned {@code InstallationSiteCollection} instance. */
         private com.oracle.bmc.jms.model.InstallationSiteCollection installationSiteCollection;
 
         /**
-         * The returned InstallationSiteCollection instance.
+         * The returned {@code InstallationSiteCollection} instance.
          *
          * @param installationSiteCollection the value to set
          * @return this builder

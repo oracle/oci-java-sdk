@@ -36,11 +36,11 @@ public class UpdateGenericArtifactByPathResponse extends com.oracle.bmc.response
         return opcRequestId;
     }
 
-    /** The returned GenericArtifact instance. */
+    /** The returned {@code GenericArtifact} instance. */
     private com.oracle.bmc.artifacts.model.GenericArtifact genericArtifact;
 
     /**
-     * The returned GenericArtifact instance.
+     * The returned {@code GenericArtifact} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class UpdateGenericArtifactByPathResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned GenericArtifact instance. */
+        /** The returned {@code GenericArtifact} instance. */
         private com.oracle.bmc.artifacts.model.GenericArtifact genericArtifact;
 
         /**
-         * The returned GenericArtifact instance.
+         * The returned {@code GenericArtifact} instance.
          *
          * @param genericArtifact the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class DisableKeyResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Key instance. */
+    /** The returned {@code Key} instance. */
     private com.oracle.bmc.keymanagement.model.Key key;
 
     /**
-     * The returned Key instance.
+     * The returned {@code Key} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class DisableKeyResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Key instance. */
+        /** The returned {@code Key} instance. */
         private com.oracle.bmc.keymanagement.model.Key key;
 
         /**
-         * The returned Key instance.
+         * The returned {@code Key} instance.
          *
          * @param key the value to set
          * @return this builder

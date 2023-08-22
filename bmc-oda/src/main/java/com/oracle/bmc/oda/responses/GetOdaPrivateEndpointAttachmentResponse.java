@@ -40,11 +40,11 @@ public class GetOdaPrivateEndpointAttachmentResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** The returned OdaPrivateEndpointAttachment instance. */
+    /** The returned {@code OdaPrivateEndpointAttachment} instance. */
     private com.oracle.bmc.oda.model.OdaPrivateEndpointAttachment odaPrivateEndpointAttachment;
 
     /**
-     * The returned OdaPrivateEndpointAttachment instance.
+     * The returned {@code OdaPrivateEndpointAttachment} instance.
      *
      * @return the value
      */
@@ -126,11 +126,11 @@ public class GetOdaPrivateEndpointAttachmentResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned OdaPrivateEndpointAttachment instance. */
+        /** The returned {@code OdaPrivateEndpointAttachment} instance. */
         private com.oracle.bmc.oda.model.OdaPrivateEndpointAttachment odaPrivateEndpointAttachment;
 
         /**
-         * The returned OdaPrivateEndpointAttachment instance.
+         * The returned {@code OdaPrivateEndpointAttachment} instance.
          *
          * @param odaPrivateEndpointAttachment the value to set
          * @return this builder

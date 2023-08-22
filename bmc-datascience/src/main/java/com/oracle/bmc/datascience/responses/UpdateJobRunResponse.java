@@ -40,11 +40,11 @@ public class UpdateJobRunResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned JobRun instance. */
+    /** The returned {@code JobRun} instance. */
     private com.oracle.bmc.datascience.model.JobRun jobRun;
 
     /**
-     * The returned JobRun instance.
+     * The returned {@code JobRun} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class UpdateJobRunResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned JobRun instance. */
+        /** The returned {@code JobRun} instance. */
         private com.oracle.bmc.datascience.model.JobRun jobRun;
 
         /**
-         * The returned JobRun instance.
+         * The returned {@code JobRun} instance.
          *
          * @param jobRun the value to set
          * @return this builder

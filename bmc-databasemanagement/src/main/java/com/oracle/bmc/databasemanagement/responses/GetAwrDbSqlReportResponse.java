@@ -24,11 +24,11 @@ public class GetAwrDbSqlReportResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned AwrDbSqlReport instance. */
+    /** The returned {@code AwrDbSqlReport} instance. */
     private com.oracle.bmc.databasemanagement.model.AwrDbSqlReport awrDbSqlReport;
 
     /**
-     * The returned AwrDbSqlReport instance.
+     * The returned {@code AwrDbSqlReport} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetAwrDbSqlReportResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned AwrDbSqlReport instance. */
+        /** The returned {@code AwrDbSqlReport} instance. */
         private com.oracle.bmc.databasemanagement.model.AwrDbSqlReport awrDbSqlReport;
 
         /**
-         * The returned AwrDbSqlReport instance.
+         * The returned {@code AwrDbSqlReport} instance.
          *
          * @param awrDbSqlReport the value to set
          * @return this builder

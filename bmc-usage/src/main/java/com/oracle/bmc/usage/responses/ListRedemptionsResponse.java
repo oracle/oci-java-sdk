@@ -42,11 +42,11 @@ public class ListRedemptionsResponse extends com.oracle.bmc.responses.BmcRespons
         return opcNextPage;
     }
 
-    /** The returned RedemptionCollection instance. */
+    /** The returned {@code RedemptionCollection} instance. */
     private com.oracle.bmc.usage.model.RedemptionCollection redemptionCollection;
 
     /**
-     * The returned RedemptionCollection instance.
+     * The returned {@code RedemptionCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListRedemptionsResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned RedemptionCollection instance. */
+        /** The returned {@code RedemptionCollection} instance. */
         private com.oracle.bmc.usage.model.RedemptionCollection redemptionCollection;
 
         /**
-         * The returned RedemptionCollection instance.
+         * The returned {@code RedemptionCollection} instance.
          *
          * @param redemptionCollection the value to set
          * @return this builder

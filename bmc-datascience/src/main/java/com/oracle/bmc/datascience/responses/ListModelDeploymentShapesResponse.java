@@ -60,11 +60,11 @@ public class ListModelDeploymentShapesResponse extends com.oracle.bmc.responses.
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary instances. */
+    /** A list of {@code com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary} instances. */
     private java.util.List<com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary> items;
 
     /**
-     * A list of com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary instances.
+     * A list of {@code com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary} instances.
      *
      * @return the value
      */
@@ -171,11 +171,13 @@ public class ListModelDeploymentShapesResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** A list of com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary} instances.
+         */
         private java.util.List<com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary> items;
 
         /**
-         * A list of com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary instances.
+         * A list of {@code com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class GetDifferenceColumnResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned DifferenceColumn instance. */
+    /** The returned {@code DifferenceColumn} instance. */
     private com.oracle.bmc.datasafe.model.DifferenceColumn differenceColumn;
 
     /**
-     * The returned DifferenceColumn instance.
+     * The returned {@code DifferenceColumn} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class GetDifferenceColumnResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned DifferenceColumn instance. */
+        /** The returned {@code DifferenceColumn} instance. */
         private com.oracle.bmc.datasafe.model.DifferenceColumn differenceColumn;
 
         /**
-         * The returned DifferenceColumn instance.
+         * The returned {@code DifferenceColumn} instance.
          *
          * @param differenceColumn the value to set
          * @return this builder

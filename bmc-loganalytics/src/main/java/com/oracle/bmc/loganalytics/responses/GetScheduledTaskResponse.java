@@ -36,11 +36,11 @@ public class GetScheduledTaskResponse extends com.oracle.bmc.responses.BmcRespon
         return etag;
     }
 
-    /** The returned ScheduledTask instance. */
+    /** The returned {@code ScheduledTask} instance. */
     private com.oracle.bmc.loganalytics.model.ScheduledTask scheduledTask;
 
     /**
-     * The returned ScheduledTask instance.
+     * The returned {@code ScheduledTask} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetScheduledTaskResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned ScheduledTask instance. */
+        /** The returned {@code ScheduledTask} instance. */
         private com.oracle.bmc.loganalytics.model.ScheduledTask scheduledTask;
 
         /**
-         * The returned ScheduledTask instance.
+         * The returned {@code ScheduledTask} instance.
          *
          * @param scheduledTask the value to set
          * @return this builder

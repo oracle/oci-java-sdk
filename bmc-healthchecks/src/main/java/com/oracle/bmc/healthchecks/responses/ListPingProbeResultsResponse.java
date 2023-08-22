@@ -44,11 +44,11 @@ public class ListPingProbeResultsResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.healthchecks.model.PingProbeResultSummary instances. */
+    /** A list of {@code com.oracle.bmc.healthchecks.model.PingProbeResultSummary} instances. */
     private java.util.List<com.oracle.bmc.healthchecks.model.PingProbeResultSummary> items;
 
     /**
-     * A list of com.oracle.bmc.healthchecks.model.PingProbeResultSummary instances.
+     * A list of {@code com.oracle.bmc.healthchecks.model.PingProbeResultSummary} instances.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListPingProbeResultsResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** A list of com.oracle.bmc.healthchecks.model.PingProbeResultSummary instances. */
+        /** A list of {@code com.oracle.bmc.healthchecks.model.PingProbeResultSummary} instances. */
         private java.util.List<com.oracle.bmc.healthchecks.model.PingProbeResultSummary> items;
 
         /**
-         * A list of com.oracle.bmc.healthchecks.model.PingProbeResultSummary instances.
+         * A list of {@code com.oracle.bmc.healthchecks.model.PingProbeResultSummary} instances.
          *
          * @param items the value to set
          * @return this builder

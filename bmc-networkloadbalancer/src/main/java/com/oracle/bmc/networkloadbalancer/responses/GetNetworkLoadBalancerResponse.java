@@ -36,11 +36,11 @@ public class GetNetworkLoadBalancerResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned NetworkLoadBalancer instance. */
+    /** The returned {@code NetworkLoadBalancer} instance. */
     private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancer networkLoadBalancer;
 
     /**
-     * The returned NetworkLoadBalancer instance.
+     * The returned {@code NetworkLoadBalancer} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetNetworkLoadBalancerResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned NetworkLoadBalancer instance. */
+        /** The returned {@code NetworkLoadBalancer} instance. */
         private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancer networkLoadBalancer;
 
         /**
-         * The returned NetworkLoadBalancer instance.
+         * The returned {@code NetworkLoadBalancer} instance.
          *
          * @param networkLoadBalancer the value to set
          * @return this builder

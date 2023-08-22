@@ -24,11 +24,11 @@ public class GetSourceSummaryResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned SourceSummaryReport instance. */
+    /** The returned {@code SourceSummaryReport} instance. */
     private com.oracle.bmc.loganalytics.model.SourceSummaryReport sourceSummaryReport;
 
     /**
-     * The returned SourceSummaryReport instance.
+     * The returned {@code SourceSummaryReport} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetSourceSummaryResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned SourceSummaryReport instance. */
+        /** The returned {@code SourceSummaryReport} instance. */
         private com.oracle.bmc.loganalytics.model.SourceSummaryReport sourceSummaryReport;
 
         /**
-         * The returned SourceSummaryReport instance.
+         * The returned {@code SourceSummaryReport} instance.
          *
          * @param sourceSummaryReport the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListVirtualServicesResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** The returned VirtualServiceCollection instance. */
+    /** The returned {@code VirtualServiceCollection} instance. */
     private com.oracle.bmc.servicemesh.model.VirtualServiceCollection virtualServiceCollection;
 
     /**
-     * The returned VirtualServiceCollection instance.
+     * The returned {@code VirtualServiceCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListVirtualServicesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned VirtualServiceCollection instance. */
+        /** The returned {@code VirtualServiceCollection} instance. */
         private com.oracle.bmc.servicemesh.model.VirtualServiceCollection virtualServiceCollection;
 
         /**
-         * The returned VirtualServiceCollection instance.
+         * The returned {@code VirtualServiceCollection} instance.
          *
          * @param virtualServiceCollection the value to set
          * @return this builder

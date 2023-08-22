@@ -36,11 +36,11 @@ public class GetHttpRedirectResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned HttpRedirect instance. */
+    /** The returned {@code HttpRedirect} instance. */
     private com.oracle.bmc.waas.model.HttpRedirect httpRedirect;
 
     /**
-     * The returned HttpRedirect instance.
+     * The returned {@code HttpRedirect} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetHttpRedirectResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned HttpRedirect instance. */
+        /** The returned {@code HttpRedirect} instance. */
         private com.oracle.bmc.waas.model.HttpRedirect httpRedirect;
 
         /**
-         * The returned HttpRedirect instance.
+         * The returned {@code HttpRedirect} instance.
          *
          * @param httpRedirect the value to set
          * @return this builder

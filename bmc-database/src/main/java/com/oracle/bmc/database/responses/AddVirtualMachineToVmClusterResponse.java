@@ -56,11 +56,11 @@ public class AddVirtualMachineToVmClusterResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /** The returned VmCluster instance. */
+    /** The returned {@code VmCluster} instance. */
     private com.oracle.bmc.database.model.VmCluster vmCluster;
 
     /**
-     * The returned VmCluster instance.
+     * The returned {@code VmCluster} instance.
      *
      * @return the value
      */
@@ -163,11 +163,11 @@ public class AddVirtualMachineToVmClusterResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned VmCluster instance. */
+        /** The returned {@code VmCluster} instance. */
         private com.oracle.bmc.database.model.VmCluster vmCluster;
 
         /**
-         * The returned VmCluster instance.
+         * The returned {@code VmCluster} instance.
          *
          * @param vmCluster the value to set
          * @return this builder

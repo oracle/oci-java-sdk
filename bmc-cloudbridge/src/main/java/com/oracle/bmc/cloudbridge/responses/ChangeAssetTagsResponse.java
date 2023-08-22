@@ -36,11 +36,11 @@ public class ChangeAssetTagsResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned Asset instance. */
+    /** The returned {@code Asset} instance. */
     private com.oracle.bmc.cloudbridge.model.Asset asset;
 
     /**
-     * The returned Asset instance.
+     * The returned {@code Asset} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class ChangeAssetTagsResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned Asset instance. */
+        /** The returned {@code Asset} instance. */
         private com.oracle.bmc.cloudbridge.model.Asset asset;
 
         /**
-         * The returned Asset instance.
+         * The returned {@code Asset} instance.
          *
          * @param asset the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class GetTenancyAttachmentResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned TenancyAttachment instance. */
+    /** The returned {@code TenancyAttachment} instance. */
     private com.oracle.bmc.governancerulescontrolplane.model.TenancyAttachment tenancyAttachment;
 
     /**
-     * The returned TenancyAttachment instance.
+     * The returned {@code TenancyAttachment} instance.
      *
      * @return the value
      */
@@ -118,12 +118,12 @@ public class GetTenancyAttachmentResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned TenancyAttachment instance. */
+        /** The returned {@code TenancyAttachment} instance. */
         private com.oracle.bmc.governancerulescontrolplane.model.TenancyAttachment
                 tenancyAttachment;
 
         /**
-         * The returned TenancyAttachment instance.
+         * The returned {@code TenancyAttachment} instance.
          *
          * @param tenancyAttachment the value to set
          * @return this builder

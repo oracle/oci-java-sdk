@@ -54,11 +54,11 @@ public class ListCachingRulesResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.waas.model.CachingRuleSummary instances. */
+    /** A list of {@code com.oracle.bmc.waas.model.CachingRuleSummary} instances. */
     private java.util.List<com.oracle.bmc.waas.model.CachingRuleSummary> items;
 
     /**
-     * A list of com.oracle.bmc.waas.model.CachingRuleSummary instances.
+     * A list of {@code com.oracle.bmc.waas.model.CachingRuleSummary} instances.
      *
      * @return the value
      */
@@ -158,11 +158,11 @@ public class ListCachingRulesResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** A list of com.oracle.bmc.waas.model.CachingRuleSummary instances. */
+        /** A list of {@code com.oracle.bmc.waas.model.CachingRuleSummary} instances. */
         private java.util.List<com.oracle.bmc.waas.model.CachingRuleSummary> items;
 
         /**
-         * A list of com.oracle.bmc.waas.model.CachingRuleSummary instances.
+         * A list of {@code com.oracle.bmc.waas.model.CachingRuleSummary} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -24,11 +24,11 @@ public class CreateSuppressionResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned Suppression instance. */
+    /** The returned {@code Suppression} instance. */
     private com.oracle.bmc.email.model.Suppression suppression;
 
     /**
-     * The returned Suppression instance.
+     * The returned {@code Suppression} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class CreateSuppressionResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned Suppression instance. */
+        /** The returned {@code Suppression} instance. */
         private com.oracle.bmc.email.model.Suppression suppression;
 
         /**
-         * The returned Suppression instance.
+         * The returned {@code Suppression} instance.
          *
          * @param suppression the value to set
          * @return this builder

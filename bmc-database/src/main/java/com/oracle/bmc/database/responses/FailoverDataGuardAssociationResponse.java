@@ -56,11 +56,11 @@ public class FailoverDataGuardAssociationResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /** The returned DataGuardAssociation instance. */
+    /** The returned {@code DataGuardAssociation} instance. */
     private com.oracle.bmc.database.model.DataGuardAssociation dataGuardAssociation;
 
     /**
-     * The returned DataGuardAssociation instance.
+     * The returned {@code DataGuardAssociation} instance.
      *
      * @return the value
      */
@@ -163,11 +163,11 @@ public class FailoverDataGuardAssociationResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned DataGuardAssociation instance. */
+        /** The returned {@code DataGuardAssociation} instance. */
         private com.oracle.bmc.database.model.DataGuardAssociation dataGuardAssociation;
 
         /**
-         * The returned DataGuardAssociation instance.
+         * The returned {@code DataGuardAssociation} instance.
          *
          * @param dataGuardAssociation the value to set
          * @return this builder

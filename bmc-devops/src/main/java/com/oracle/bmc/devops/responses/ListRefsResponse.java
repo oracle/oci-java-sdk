@@ -42,11 +42,11 @@ public class ListRefsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned RepositoryRefCollection instance. */
+    /** The returned {@code RepositoryRefCollection} instance. */
     private com.oracle.bmc.devops.model.RepositoryRefCollection repositoryRefCollection;
 
     /**
-     * The returned RepositoryRefCollection instance.
+     * The returned {@code RepositoryRefCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListRefsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned RepositoryRefCollection instance. */
+        /** The returned {@code RepositoryRefCollection} instance. */
         private com.oracle.bmc.devops.model.RepositoryRefCollection repositoryRefCollection;
 
         /**
-         * The returned RepositoryRefCollection instance.
+         * The returned {@code RepositoryRefCollection} instance.
          *
          * @param repositoryRefCollection the value to set
          * @return this builder

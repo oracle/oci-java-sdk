@@ -43,12 +43,12 @@ public class SummarizeManagedInstanceAnalyticsResponse
         return opcNextPage;
     }
 
-    /** The returned ManagedInstanceAnalyticCollection instance. */
+    /** The returned {@code ManagedInstanceAnalyticCollection} instance. */
     private com.oracle.bmc.osmanagementhub.model.ManagedInstanceAnalyticCollection
             managedInstanceAnalyticCollection;
 
     /**
-     * The returned ManagedInstanceAnalyticCollection instance.
+     * The returned {@code ManagedInstanceAnalyticCollection} instance.
      *
      * @return the value
      */
@@ -134,12 +134,12 @@ public class SummarizeManagedInstanceAnalyticsResponse
             return this;
         }
 
-        /** The returned ManagedInstanceAnalyticCollection instance. */
+        /** The returned {@code ManagedInstanceAnalyticCollection} instance. */
         private com.oracle.bmc.osmanagementhub.model.ManagedInstanceAnalyticCollection
                 managedInstanceAnalyticCollection;
 
         /**
-         * The returned ManagedInstanceAnalyticCollection instance.
+         * The returned {@code ManagedInstanceAnalyticCollection} instance.
          *
          * @param managedInstanceAnalyticCollection the value to set
          * @return this builder

@@ -40,11 +40,11 @@ public class GetPoolResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Pool instance. */
+    /** The returned {@code Pool} instance. */
     private com.oracle.bmc.dataflow.model.Pool pool;
 
     /**
-     * The returned Pool instance.
+     * The returned {@code Pool} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetPoolResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Pool instance. */
+        /** The returned {@code Pool} instance. */
         private com.oracle.bmc.dataflow.model.Pool pool;
 
         /**
-         * The returned Pool instance.
+         * The returned {@code Pool} instance.
          *
          * @param pool the value to set
          * @return this builder

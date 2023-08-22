@@ -45,12 +45,12 @@ public class ListLogAnalyticsObjectCollectionRulesResponse
         return opcNextPage;
     }
 
-    /** The returned LogAnalyticsObjectCollectionRuleCollection instance. */
+    /** The returned {@code LogAnalyticsObjectCollectionRuleCollection} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsObjectCollectionRuleCollection
             logAnalyticsObjectCollectionRuleCollection;
 
     /**
-     * The returned LogAnalyticsObjectCollectionRuleCollection instance.
+     * The returned {@code LogAnalyticsObjectCollectionRuleCollection} instance.
      *
      * @return the value
      */
@@ -139,12 +139,12 @@ public class ListLogAnalyticsObjectCollectionRulesResponse
             return this;
         }
 
-        /** The returned LogAnalyticsObjectCollectionRuleCollection instance. */
+        /** The returned {@code LogAnalyticsObjectCollectionRuleCollection} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsObjectCollectionRuleCollection
                 logAnalyticsObjectCollectionRuleCollection;
 
         /**
-         * The returned LogAnalyticsObjectCollectionRuleCollection instance.
+         * The returned {@code LogAnalyticsObjectCollectionRuleCollection} instance.
          *
          * @param logAnalyticsObjectCollectionRuleCollection the value to set
          * @return this builder

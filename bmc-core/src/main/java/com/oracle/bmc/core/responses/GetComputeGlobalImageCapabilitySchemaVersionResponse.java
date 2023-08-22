@@ -37,12 +37,12 @@ public class GetComputeGlobalImageCapabilitySchemaVersionResponse
         return opcRequestId;
     }
 
-    /** The returned ComputeGlobalImageCapabilitySchemaVersion instance. */
+    /** The returned {@code ComputeGlobalImageCapabilitySchemaVersion} instance. */
     private com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersion
             computeGlobalImageCapabilitySchemaVersion;
 
     /**
-     * The returned ComputeGlobalImageCapabilitySchemaVersion instance.
+     * The returned {@code ComputeGlobalImageCapabilitySchemaVersion} instance.
      *
      * @return the value
      */
@@ -122,12 +122,12 @@ public class GetComputeGlobalImageCapabilitySchemaVersionResponse
             return this;
         }
 
-        /** The returned ComputeGlobalImageCapabilitySchemaVersion instance. */
+        /** The returned {@code ComputeGlobalImageCapabilitySchemaVersion} instance. */
         private com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersion
                 computeGlobalImageCapabilitySchemaVersion;
 
         /**
-         * The returned ComputeGlobalImageCapabilitySchemaVersion instance.
+         * The returned {@code ComputeGlobalImageCapabilitySchemaVersion} instance.
          *
          * @param computeGlobalImageCapabilitySchemaVersion the value to set
          * @return this builder

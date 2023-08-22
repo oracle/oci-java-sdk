@@ -56,11 +56,11 @@ public class ListVaultReplicasResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.keymanagement.model.VaultReplicaSummary instances. */
+    /** A list of {@code com.oracle.bmc.keymanagement.model.VaultReplicaSummary} instances. */
     private java.util.List<com.oracle.bmc.keymanagement.model.VaultReplicaSummary> items;
 
     /**
-     * A list of com.oracle.bmc.keymanagement.model.VaultReplicaSummary instances.
+     * A list of {@code com.oracle.bmc.keymanagement.model.VaultReplicaSummary} instances.
      *
      * @return the value
      */
@@ -164,11 +164,11 @@ public class ListVaultReplicasResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** A list of com.oracle.bmc.keymanagement.model.VaultReplicaSummary instances. */
+        /** A list of {@code com.oracle.bmc.keymanagement.model.VaultReplicaSummary} instances. */
         private java.util.List<com.oracle.bmc.keymanagement.model.VaultReplicaSummary> items;
 
         /**
-         * A list of com.oracle.bmc.keymanagement.model.VaultReplicaSummary instances.
+         * A list of {@code com.oracle.bmc.keymanagement.model.VaultReplicaSummary} instances.
          *
          * @param items the value to set
          * @return this builder

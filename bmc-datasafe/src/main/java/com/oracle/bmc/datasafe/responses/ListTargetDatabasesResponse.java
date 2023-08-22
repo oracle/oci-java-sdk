@@ -62,11 +62,11 @@ public class ListTargetDatabasesResponse extends com.oracle.bmc.responses.BmcRes
         return opcPrevPage;
     }
 
-    /** A list of com.oracle.bmc.datasafe.model.TargetDatabaseSummary instances. */
+    /** A list of {@code com.oracle.bmc.datasafe.model.TargetDatabaseSummary} instances. */
     private java.util.List<com.oracle.bmc.datasafe.model.TargetDatabaseSummary> items;
 
     /**
-     * A list of com.oracle.bmc.datasafe.model.TargetDatabaseSummary instances.
+     * A list of {@code com.oracle.bmc.datasafe.model.TargetDatabaseSummary} instances.
      *
      * @return the value
      */
@@ -174,11 +174,11 @@ public class ListTargetDatabasesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** A list of com.oracle.bmc.datasafe.model.TargetDatabaseSummary instances. */
+        /** A list of {@code com.oracle.bmc.datasafe.model.TargetDatabaseSummary} instances. */
         private java.util.List<com.oracle.bmc.datasafe.model.TargetDatabaseSummary> items;
 
         /**
-         * A list of com.oracle.bmc.datasafe.model.TargetDatabaseSummary instances.
+         * A list of {@code com.oracle.bmc.datasafe.model.TargetDatabaseSummary} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -70,11 +70,11 @@ public class CreateMaskingPolicyResponse extends com.oracle.bmc.responses.BmcRes
         return location;
     }
 
-    /** The returned MaskingPolicy instance. */
+    /** The returned {@code MaskingPolicy} instance. */
     private com.oracle.bmc.datasafe.model.MaskingPolicy maskingPolicy;
 
     /**
-     * The returned MaskingPolicy instance.
+     * The returned {@code MaskingPolicy} instance.
      *
      * @return the value
      */
@@ -195,11 +195,11 @@ public class CreateMaskingPolicyResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned MaskingPolicy instance. */
+        /** The returned {@code MaskingPolicy} instance. */
         private com.oracle.bmc.datasafe.model.MaskingPolicy maskingPolicy;
 
         /**
-         * The returned MaskingPolicy instance.
+         * The returned {@code MaskingPolicy} instance.
          *
          * @param maskingPolicy the value to set
          * @return this builder

@@ -41,12 +41,12 @@ public class CreateUserDefinedFunctionValidationResponse
         return opcRequestId;
     }
 
-    /** The returned UserDefinedFunctionValidation instance. */
+    /** The returned {@code UserDefinedFunctionValidation} instance. */
     private com.oracle.bmc.dataintegration.model.UserDefinedFunctionValidation
             userDefinedFunctionValidation;
 
     /**
-     * The returned UserDefinedFunctionValidation instance.
+     * The returned {@code UserDefinedFunctionValidation} instance.
      *
      * @return the value
      */
@@ -130,12 +130,12 @@ public class CreateUserDefinedFunctionValidationResponse
             return this;
         }
 
-        /** The returned UserDefinedFunctionValidation instance. */
+        /** The returned {@code UserDefinedFunctionValidation} instance. */
         private com.oracle.bmc.dataintegration.model.UserDefinedFunctionValidation
                 userDefinedFunctionValidation;
 
         /**
-         * The returned UserDefinedFunctionValidation instance.
+         * The returned {@code UserDefinedFunctionValidation} instance.
          *
          * @param userDefinedFunctionValidation the value to set
          * @return this builder

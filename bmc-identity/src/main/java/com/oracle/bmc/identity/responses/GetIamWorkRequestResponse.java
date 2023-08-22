@@ -24,11 +24,11 @@ public class GetIamWorkRequestResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned IamWorkRequest instance. */
+    /** The returned {@code IamWorkRequest} instance. */
     private com.oracle.bmc.identity.model.IamWorkRequest iamWorkRequest;
 
     /**
-     * The returned IamWorkRequest instance.
+     * The returned {@code IamWorkRequest} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetIamWorkRequestResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned IamWorkRequest instance. */
+        /** The returned {@code IamWorkRequest} instance. */
         private com.oracle.bmc.identity.model.IamWorkRequest iamWorkRequest;
 
         /**
-         * The returned IamWorkRequest instance.
+         * The returned {@code IamWorkRequest} instance.
          *
          * @param iamWorkRequest the value to set
          * @return this builder

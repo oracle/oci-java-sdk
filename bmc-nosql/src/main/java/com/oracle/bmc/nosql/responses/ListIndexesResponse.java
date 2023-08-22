@@ -42,11 +42,11 @@ public class ListIndexesResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned IndexCollection instance. */
+    /** The returned {@code IndexCollection} instance. */
     private com.oracle.bmc.nosql.model.IndexCollection indexCollection;
 
     /**
-     * The returned IndexCollection instance.
+     * The returned {@code IndexCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListIndexesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned IndexCollection instance. */
+        /** The returned {@code IndexCollection} instance. */
         private com.oracle.bmc.nosql.model.IndexCollection indexCollection;
 
         /**
-         * The returned IndexCollection instance.
+         * The returned {@code IndexCollection} instance.
          *
          * @param indexCollection the value to set
          * @return this builder

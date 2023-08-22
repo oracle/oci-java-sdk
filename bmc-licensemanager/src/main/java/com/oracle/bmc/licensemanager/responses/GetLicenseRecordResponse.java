@@ -36,11 +36,11 @@ public class GetLicenseRecordResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned LicenseRecord instance. */
+    /** The returned {@code LicenseRecord} instance. */
     private com.oracle.bmc.licensemanager.model.LicenseRecord licenseRecord;
 
     /**
-     * The returned LicenseRecord instance.
+     * The returned {@code LicenseRecord} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetLicenseRecordResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned LicenseRecord instance. */
+        /** The returned {@code LicenseRecord} instance. */
         private com.oracle.bmc.licensemanager.model.LicenseRecord licenseRecord;
 
         /**
-         * The returned LicenseRecord instance.
+         * The returned {@code LicenseRecord} instance.
          *
          * @param licenseRecord the value to set
          * @return this builder

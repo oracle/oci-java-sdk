@@ -72,11 +72,11 @@ public class ListTaskRunLogsResponse extends com.oracle.bmc.responses.BmcRespons
         return opcTotalItems;
     }
 
-    /** A list of com.oracle.bmc.dataintegration.model.TaskRunLogSummary instances. */
+    /** A list of {@code com.oracle.bmc.dataintegration.model.TaskRunLogSummary} instances. */
     private java.util.List<com.oracle.bmc.dataintegration.model.TaskRunLogSummary> items;
 
     /**
-     * A list of com.oracle.bmc.dataintegration.model.TaskRunLogSummary instances.
+     * A list of {@code com.oracle.bmc.dataintegration.model.TaskRunLogSummary} instances.
      *
      * @return the value
      */
@@ -199,11 +199,11 @@ public class ListTaskRunLogsResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** A list of com.oracle.bmc.dataintegration.model.TaskRunLogSummary instances. */
+        /** A list of {@code com.oracle.bmc.dataintegration.model.TaskRunLogSummary} instances. */
         private java.util.List<com.oracle.bmc.dataintegration.model.TaskRunLogSummary> items;
 
         /**
-         * A list of com.oracle.bmc.dataintegration.model.TaskRunLogSummary instances.
+         * A list of {@code com.oracle.bmc.dataintegration.model.TaskRunLogSummary} instances.
          *
          * @param items the value to set
          * @return this builder

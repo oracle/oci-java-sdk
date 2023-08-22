@@ -42,11 +42,11 @@ public class ListPathsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned RepositoryPathCollection instance. */
+    /** The returned {@code RepositoryPathCollection} instance. */
     private com.oracle.bmc.devops.model.RepositoryPathCollection repositoryPathCollection;
 
     /**
-     * The returned RepositoryPathCollection instance.
+     * The returned {@code RepositoryPathCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListPathsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned RepositoryPathCollection instance. */
+        /** The returned {@code RepositoryPathCollection} instance. */
         private com.oracle.bmc.devops.model.RepositoryPathCollection repositoryPathCollection;
 
         /**
-         * The returned RepositoryPathCollection instance.
+         * The returned {@code RepositoryPathCollection} instance.
          *
          * @param repositoryPathCollection the value to set
          * @return this builder

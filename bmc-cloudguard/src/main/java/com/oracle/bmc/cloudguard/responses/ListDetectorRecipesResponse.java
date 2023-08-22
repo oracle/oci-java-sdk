@@ -42,11 +42,11 @@ public class ListDetectorRecipesResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** The returned DetectorRecipeCollection instance. */
+    /** The returned {@code DetectorRecipeCollection} instance. */
     private com.oracle.bmc.cloudguard.model.DetectorRecipeCollection detectorRecipeCollection;
 
     /**
-     * The returned DetectorRecipeCollection instance.
+     * The returned {@code DetectorRecipeCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListDetectorRecipesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned DetectorRecipeCollection instance. */
+        /** The returned {@code DetectorRecipeCollection} instance. */
         private com.oracle.bmc.cloudguard.model.DetectorRecipeCollection detectorRecipeCollection;
 
         /**
-         * The returned DetectorRecipeCollection instance.
+         * The returned {@code DetectorRecipeCollection} instance.
          *
          * @param detectorRecipeCollection the value to set
          * @return this builder

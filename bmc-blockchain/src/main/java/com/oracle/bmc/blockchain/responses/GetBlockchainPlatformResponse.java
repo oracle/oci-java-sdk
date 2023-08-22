@@ -36,11 +36,11 @@ public class GetBlockchainPlatformResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned BlockchainPlatform instance. */
+    /** The returned {@code BlockchainPlatform} instance. */
     private com.oracle.bmc.blockchain.model.BlockchainPlatform blockchainPlatform;
 
     /**
-     * The returned BlockchainPlatform instance.
+     * The returned {@code BlockchainPlatform} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetBlockchainPlatformResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned BlockchainPlatform instance. */
+        /** The returned {@code BlockchainPlatform} instance. */
         private com.oracle.bmc.blockchain.model.BlockchainPlatform blockchainPlatform;
 
         /**
-         * The returned BlockchainPlatform instance.
+         * The returned {@code BlockchainPlatform} instance.
          *
          * @param blockchainPlatform the value to set
          * @return this builder

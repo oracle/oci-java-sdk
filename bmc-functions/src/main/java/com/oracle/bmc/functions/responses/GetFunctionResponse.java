@@ -42,11 +42,11 @@ public class GetFunctionResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Function instance. */
+    /** The returned {@code Function} instance. */
     private com.oracle.bmc.functions.model.Function function;
 
     /**
-     * The returned Function instance.
+     * The returned {@code Function} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class GetFunctionResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Function instance. */
+        /** The returned {@code Function} instance. */
         private com.oracle.bmc.functions.model.Function function;
 
         /**
-         * The returned Function instance.
+         * The returned {@code Function} instance.
          *
          * @param function the value to set
          * @return this builder

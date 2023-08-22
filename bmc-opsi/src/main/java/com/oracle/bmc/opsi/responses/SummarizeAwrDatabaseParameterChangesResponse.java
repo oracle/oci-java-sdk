@@ -43,12 +43,12 @@ public class SummarizeAwrDatabaseParameterChangesResponse
         return opcNextPage;
     }
 
-    /** The returned AwrDatabaseParameterChangeCollection instance. */
+    /** The returned {@code AwrDatabaseParameterChangeCollection} instance. */
     private com.oracle.bmc.opsi.model.AwrDatabaseParameterChangeCollection
             awrDatabaseParameterChangeCollection;
 
     /**
-     * The returned AwrDatabaseParameterChangeCollection instance.
+     * The returned {@code AwrDatabaseParameterChangeCollection} instance.
      *
      * @return the value
      */
@@ -134,12 +134,12 @@ public class SummarizeAwrDatabaseParameterChangesResponse
             return this;
         }
 
-        /** The returned AwrDatabaseParameterChangeCollection instance. */
+        /** The returned {@code AwrDatabaseParameterChangeCollection} instance. */
         private com.oracle.bmc.opsi.model.AwrDatabaseParameterChangeCollection
                 awrDatabaseParameterChangeCollection;
 
         /**
-         * The returned AwrDatabaseParameterChangeCollection instance.
+         * The returned {@code AwrDatabaseParameterChangeCollection} instance.
          *
          * @param awrDatabaseParameterChangeCollection the value to set
          * @return this builder

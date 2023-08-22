@@ -43,12 +43,12 @@ public class ListResourceProfileImpactedResourcesResponse
         return opcNextPage;
     }
 
-    /** The returned ResourceProfileImpactedResourceCollection instance. */
+    /** The returned {@code ResourceProfileImpactedResourceCollection} instance. */
     private com.oracle.bmc.cloudguard.model.ResourceProfileImpactedResourceCollection
             resourceProfileImpactedResourceCollection;
 
     /**
-     * The returned ResourceProfileImpactedResourceCollection instance.
+     * The returned {@code ResourceProfileImpactedResourceCollection} instance.
      *
      * @return the value
      */
@@ -134,12 +134,12 @@ public class ListResourceProfileImpactedResourcesResponse
             return this;
         }
 
-        /** The returned ResourceProfileImpactedResourceCollection instance. */
+        /** The returned {@code ResourceProfileImpactedResourceCollection} instance. */
         private com.oracle.bmc.cloudguard.model.ResourceProfileImpactedResourceCollection
                 resourceProfileImpactedResourceCollection;
 
         /**
-         * The returned ResourceProfileImpactedResourceCollection instance.
+         * The returned {@code ResourceProfileImpactedResourceCollection} instance.
          *
          * @param resourceProfileImpactedResourceCollection the value to set
          * @return this builder

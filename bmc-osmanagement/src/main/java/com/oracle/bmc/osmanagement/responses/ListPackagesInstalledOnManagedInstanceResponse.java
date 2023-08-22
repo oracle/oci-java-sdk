@@ -43,11 +43,11 @@ public class ListPackagesInstalledOnManagedInstanceResponse
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.osmanagement.model.InstalledPackageSummary instances. */
+    /** A list of {@code com.oracle.bmc.osmanagement.model.InstalledPackageSummary} instances. */
     private java.util.List<com.oracle.bmc.osmanagement.model.InstalledPackageSummary> items;
 
     /**
-     * A list of com.oracle.bmc.osmanagement.model.InstalledPackageSummary instances.
+     * A list of {@code com.oracle.bmc.osmanagement.model.InstalledPackageSummary} instances.
      *
      * @return the value
      */
@@ -131,11 +131,13 @@ public class ListPackagesInstalledOnManagedInstanceResponse
             return this;
         }
 
-        /** A list of com.oracle.bmc.osmanagement.model.InstalledPackageSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.osmanagement.model.InstalledPackageSummary} instances.
+         */
         private java.util.List<com.oracle.bmc.osmanagement.model.InstalledPackageSummary> items;
 
         /**
-         * A list of com.oracle.bmc.osmanagement.model.InstalledPackageSummary instances.
+         * A list of {@code com.oracle.bmc.osmanagement.model.InstalledPackageSummary} instances.
          *
          * @param items the value to set
          * @return this builder

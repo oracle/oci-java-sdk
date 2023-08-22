@@ -42,12 +42,12 @@ public class ListImportableAgentEntitiesResponse extends com.oracle.bmc.response
         return opcNextPage;
     }
 
-    /** The returned ImportableAgentEntitySummaryCollection instance. */
+    /** The returned {@code ImportableAgentEntitySummaryCollection} instance. */
     private com.oracle.bmc.opsi.model.ImportableAgentEntitySummaryCollection
             importableAgentEntitySummaryCollection;
 
     /**
-     * The returned ImportableAgentEntitySummaryCollection instance.
+     * The returned {@code ImportableAgentEntitySummaryCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListImportableAgentEntitiesResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned ImportableAgentEntitySummaryCollection instance. */
+        /** The returned {@code ImportableAgentEntitySummaryCollection} instance. */
         private com.oracle.bmc.opsi.model.ImportableAgentEntitySummaryCollection
                 importableAgentEntitySummaryCollection;
 
         /**
-         * The returned ImportableAgentEntitySummaryCollection instance.
+         * The returned {@code ImportableAgentEntitySummaryCollection} instance.
          *
          * @param importableAgentEntitySummaryCollection the value to set
          * @return this builder

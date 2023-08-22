@@ -52,11 +52,11 @@ public class CreateSubscriptionMappingResponse extends com.oracle.bmc.responses.
         return etag;
     }
 
-    /** The returned SubscriptionMapping instance. */
+    /** The returned {@code SubscriptionMapping} instance. */
     private com.oracle.bmc.tenantmanagercontrolplane.model.SubscriptionMapping subscriptionMapping;
 
     /**
-     * The returned SubscriptionMapping instance.
+     * The returned {@code SubscriptionMapping} instance.
      *
      * @return the value
      */
@@ -157,12 +157,12 @@ public class CreateSubscriptionMappingResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned SubscriptionMapping instance. */
+        /** The returned {@code SubscriptionMapping} instance. */
         private com.oracle.bmc.tenantmanagercontrolplane.model.SubscriptionMapping
                 subscriptionMapping;
 
         /**
-         * The returned SubscriptionMapping instance.
+         * The returned {@code SubscriptionMapping} instance.
          *
          * @param subscriptionMapping the value to set
          * @return this builder

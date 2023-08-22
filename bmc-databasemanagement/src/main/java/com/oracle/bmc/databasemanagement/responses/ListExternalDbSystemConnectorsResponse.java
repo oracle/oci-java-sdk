@@ -42,12 +42,12 @@ public class ListExternalDbSystemConnectorsResponse extends com.oracle.bmc.respo
         return opcNextPage;
     }
 
-    /** The returned ExternalDbSystemConnectorCollection instance. */
+    /** The returned {@code ExternalDbSystemConnectorCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.ExternalDbSystemConnectorCollection
             externalDbSystemConnectorCollection;
 
     /**
-     * The returned ExternalDbSystemConnectorCollection instance.
+     * The returned {@code ExternalDbSystemConnectorCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListExternalDbSystemConnectorsResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned ExternalDbSystemConnectorCollection instance. */
+        /** The returned {@code ExternalDbSystemConnectorCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.ExternalDbSystemConnectorCollection
                 externalDbSystemConnectorCollection;
 
         /**
-         * The returned ExternalDbSystemConnectorCollection instance.
+         * The returned {@code ExternalDbSystemConnectorCollection} instance.
          *
          * @param externalDbSystemConnectorCollection the value to set
          * @return this builder

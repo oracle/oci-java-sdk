@@ -42,11 +42,11 @@ public class ListRolesResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned RoleCollection instance. */
+    /** The returned {@code RoleCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.RoleCollection roleCollection;
 
     /**
-     * The returned RoleCollection instance.
+     * The returned {@code RoleCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListRolesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned RoleCollection instance. */
+        /** The returned {@code RoleCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.RoleCollection roleCollection;
 
         /**
-         * The returned RoleCollection instance.
+         * The returned {@code RoleCollection} instance.
          *
          * @param roleCollection the value to set
          * @return this builder

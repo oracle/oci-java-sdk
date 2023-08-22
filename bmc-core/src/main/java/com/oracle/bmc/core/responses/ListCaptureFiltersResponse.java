@@ -42,11 +42,11 @@ public class ListCaptureFiltersResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.CaptureFilter instances. */
+    /** A list of {@code com.oracle.bmc.core.model.CaptureFilter} instances. */
     private java.util.List<com.oracle.bmc.core.model.CaptureFilter> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.CaptureFilter instances.
+     * A list of {@code com.oracle.bmc.core.model.CaptureFilter} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListCaptureFiltersResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.CaptureFilter instances. */
+        /** A list of {@code com.oracle.bmc.core.model.CaptureFilter} instances. */
         private java.util.List<com.oracle.bmc.core.model.CaptureFilter> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.CaptureFilter instances.
+         * A list of {@code com.oracle.bmc.core.model.CaptureFilter} instances.
          *
          * @param items the value to set
          * @return this builder

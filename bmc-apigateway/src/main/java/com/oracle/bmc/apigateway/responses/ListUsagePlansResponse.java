@@ -60,11 +60,11 @@ public class ListUsagePlansResponse extends com.oracle.bmc.responses.BmcResponse
         return opcPrevPage;
     }
 
-    /** The returned UsagePlanCollection instance. */
+    /** The returned {@code UsagePlanCollection} instance. */
     private com.oracle.bmc.apigateway.model.UsagePlanCollection usagePlanCollection;
 
     /**
-     * The returned UsagePlanCollection instance.
+     * The returned {@code UsagePlanCollection} instance.
      *
      * @return the value
      */
@@ -170,11 +170,11 @@ public class ListUsagePlansResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned UsagePlanCollection instance. */
+        /** The returned {@code UsagePlanCollection} instance. */
         private com.oracle.bmc.apigateway.model.UsagePlanCollection usagePlanCollection;
 
         /**
-         * The returned UsagePlanCollection instance.
+         * The returned {@code UsagePlanCollection} instance.
          *
          * @param usagePlanCollection the value to set
          * @return this builder

@@ -40,11 +40,11 @@ public class GetDataAssetTagResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned DataAssetTag instance. */
+    /** The returned {@code DataAssetTag} instance. */
     private com.oracle.bmc.datacatalog.model.DataAssetTag dataAssetTag;
 
     /**
-     * The returned DataAssetTag instance.
+     * The returned {@code DataAssetTag} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetDataAssetTagResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned DataAssetTag instance. */
+        /** The returned {@code DataAssetTag} instance. */
         private com.oracle.bmc.datacatalog.model.DataAssetTag dataAssetTag;
 
         /**
-         * The returned DataAssetTag instance.
+         * The returned {@code DataAssetTag} instance.
          *
          * @param dataAssetTag the value to set
          * @return this builder

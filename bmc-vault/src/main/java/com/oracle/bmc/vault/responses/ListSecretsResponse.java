@@ -44,11 +44,11 @@ public class ListSecretsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.vault.model.SecretSummary instances. */
+    /** A list of {@code com.oracle.bmc.vault.model.SecretSummary} instances. */
     private java.util.List<com.oracle.bmc.vault.model.SecretSummary> items;
 
     /**
-     * A list of com.oracle.bmc.vault.model.SecretSummary instances.
+     * A list of {@code com.oracle.bmc.vault.model.SecretSummary} instances.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListSecretsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.vault.model.SecretSummary instances. */
+        /** A list of {@code com.oracle.bmc.vault.model.SecretSummary} instances. */
         private java.util.List<com.oracle.bmc.vault.model.SecretSummary> items;
 
         /**
-         * A list of com.oracle.bmc.vault.model.SecretSummary instances.
+         * A list of {@code com.oracle.bmc.vault.model.SecretSummary} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -40,11 +40,11 @@ public class CreateAttributeTagResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned AttributeTag instance. */
+    /** The returned {@code AttributeTag} instance. */
     private com.oracle.bmc.datacatalog.model.AttributeTag attributeTag;
 
     /**
-     * The returned AttributeTag instance.
+     * The returned {@code AttributeTag} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class CreateAttributeTagResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned AttributeTag instance. */
+        /** The returned {@code AttributeTag} instance. */
         private com.oracle.bmc.datacatalog.model.AttributeTag attributeTag;
 
         /**
-         * The returned AttributeTag instance.
+         * The returned {@code AttributeTag} instance.
          *
          * @param attributeTag the value to set
          * @return this builder

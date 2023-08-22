@@ -36,11 +36,11 @@ public class GetCrossConnectGroupResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned CrossConnectGroup instance. */
+    /** The returned {@code CrossConnectGroup} instance. */
     private com.oracle.bmc.core.model.CrossConnectGroup crossConnectGroup;
 
     /**
-     * The returned CrossConnectGroup instance.
+     * The returned {@code CrossConnectGroup} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetCrossConnectGroupResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned CrossConnectGroup instance. */
+        /** The returned {@code CrossConnectGroup} instance. */
         private com.oracle.bmc.core.model.CrossConnectGroup crossConnectGroup;
 
         /**
-         * The returned CrossConnectGroup instance.
+         * The returned {@code CrossConnectGroup} instance.
          *
          * @param crossConnectGroup the value to set
          * @return this builder

@@ -60,11 +60,11 @@ public class CreateProtectionPolicyResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned ProtectionPolicy instance. */
+    /** The returned {@code ProtectionPolicy} instance. */
     private com.oracle.bmc.recovery.model.ProtectionPolicy protectionPolicy;
 
     /**
-     * The returned ProtectionPolicy instance.
+     * The returned {@code ProtectionPolicy} instance.
      *
      * @return the value
      */
@@ -176,11 +176,11 @@ public class CreateProtectionPolicyResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned ProtectionPolicy instance. */
+        /** The returned {@code ProtectionPolicy} instance. */
         private com.oracle.bmc.recovery.model.ProtectionPolicy protectionPolicy;
 
         /**
-         * The returned ProtectionPolicy instance.
+         * The returned {@code ProtectionPolicy} instance.
          *
          * @param protectionPolicy the value to set
          * @return this builder

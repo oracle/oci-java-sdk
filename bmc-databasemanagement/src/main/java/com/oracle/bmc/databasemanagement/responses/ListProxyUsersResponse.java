@@ -42,11 +42,11 @@ public class ListProxyUsersResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned ProxyUserCollection instance. */
+    /** The returned {@code ProxyUserCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.ProxyUserCollection proxyUserCollection;
 
     /**
-     * The returned ProxyUserCollection instance.
+     * The returned {@code ProxyUserCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListProxyUsersResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned ProxyUserCollection instance. */
+        /** The returned {@code ProxyUserCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.ProxyUserCollection proxyUserCollection;
 
         /**
-         * The returned ProxyUserCollection instance.
+         * The returned {@code ProxyUserCollection} instance.
          *
          * @param proxyUserCollection the value to set
          * @return this builder

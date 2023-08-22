@@ -42,11 +42,11 @@ public class ListScheduledJobsResponse extends com.oracle.bmc.responses.BmcRespo
         return opcNextPage;
     }
 
-    /** The returned ScheduledJobCollection instance. */
+    /** The returned {@code ScheduledJobCollection} instance. */
     private com.oracle.bmc.osmanagementhub.model.ScheduledJobCollection scheduledJobCollection;
 
     /**
-     * The returned ScheduledJobCollection instance.
+     * The returned {@code ScheduledJobCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListScheduledJobsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned ScheduledJobCollection instance. */
+        /** The returned {@code ScheduledJobCollection} instance. */
         private com.oracle.bmc.osmanagementhub.model.ScheduledJobCollection scheduledJobCollection;
 
         /**
-         * The returned ScheduledJobCollection instance.
+         * The returned {@code ScheduledJobCollection} instance.
          *
          * @param scheduledJobCollection the value to set
          * @return this builder

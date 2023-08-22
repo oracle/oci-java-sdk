@@ -42,11 +42,11 @@ public class SummarizeAwrDbSysstatsResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** The returned AwrDbSysstatCollection instance. */
+    /** The returned {@code AwrDbSysstatCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.AwrDbSysstatCollection awrDbSysstatCollection;
 
     /**
-     * The returned AwrDbSysstatCollection instance.
+     * The returned {@code AwrDbSysstatCollection} instance.
      *
      * @return the value
      */
@@ -131,12 +131,12 @@ public class SummarizeAwrDbSysstatsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned AwrDbSysstatCollection instance. */
+        /** The returned {@code AwrDbSysstatCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.AwrDbSysstatCollection
                 awrDbSysstatCollection;
 
         /**
-         * The returned AwrDbSysstatCollection instance.
+         * The returned {@code AwrDbSysstatCollection} instance.
          *
          * @param awrDbSysstatCollection the value to set
          * @return this builder

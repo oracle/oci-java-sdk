@@ -68,11 +68,11 @@ public class CreateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
         return opcWorkRequestId;
     }
 
-    /** The returned SoftwareSource instance. */
+    /** The returned {@code SoftwareSource} instance. */
     private com.oracle.bmc.osmanagementhub.model.SoftwareSource softwareSource;
 
     /**
-     * The returned SoftwareSource instance.
+     * The returned {@code SoftwareSource} instance.
      *
      * @return the value
      */
@@ -191,11 +191,11 @@ public class CreateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned SoftwareSource instance. */
+        /** The returned {@code SoftwareSource} instance. */
         private com.oracle.bmc.osmanagementhub.model.SoftwareSource softwareSource;
 
         /**
-         * The returned SoftwareSource instance.
+         * The returned {@code SoftwareSource} instance.
          *
          * @param softwareSource the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListAppCatalogSubscriptionsResponse extends com.oracle.bmc.response
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.AppCatalogSubscriptionSummary instances. */
+    /** A list of {@code com.oracle.bmc.core.model.AppCatalogSubscriptionSummary} instances. */
     private java.util.List<com.oracle.bmc.core.model.AppCatalogSubscriptionSummary> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.AppCatalogSubscriptionSummary instances.
+     * A list of {@code com.oracle.bmc.core.model.AppCatalogSubscriptionSummary} instances.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListAppCatalogSubscriptionsResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.AppCatalogSubscriptionSummary instances. */
+        /** A list of {@code com.oracle.bmc.core.model.AppCatalogSubscriptionSummary} instances. */
         private java.util.List<com.oracle.bmc.core.model.AppCatalogSubscriptionSummary> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.AppCatalogSubscriptionSummary instances.
+         * A list of {@code com.oracle.bmc.core.model.AppCatalogSubscriptionSummary} instances.
          *
          * @param items the value to set
          * @return this builder

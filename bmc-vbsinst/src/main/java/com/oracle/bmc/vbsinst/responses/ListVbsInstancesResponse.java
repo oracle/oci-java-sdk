@@ -42,11 +42,11 @@ public class ListVbsInstancesResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /** The returned VbsInstanceSummaryCollection instance. */
+    /** The returned {@code VbsInstanceSummaryCollection} instance. */
     private com.oracle.bmc.vbsinst.model.VbsInstanceSummaryCollection vbsInstanceSummaryCollection;
 
     /**
-     * The returned VbsInstanceSummaryCollection instance.
+     * The returned {@code VbsInstanceSummaryCollection} instance.
      *
      * @return the value
      */
@@ -131,12 +131,12 @@ public class ListVbsInstancesResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned VbsInstanceSummaryCollection instance. */
+        /** The returned {@code VbsInstanceSummaryCollection} instance. */
         private com.oracle.bmc.vbsinst.model.VbsInstanceSummaryCollection
                 vbsInstanceSummaryCollection;
 
         /**
-         * The returned VbsInstanceSummaryCollection instance.
+         * The returned {@code VbsInstanceSummaryCollection} instance.
          *
          * @param vbsInstanceSummaryCollection the value to set
          * @return this builder

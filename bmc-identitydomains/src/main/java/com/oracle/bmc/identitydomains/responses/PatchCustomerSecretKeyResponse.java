@@ -36,11 +36,11 @@ public class PatchCustomerSecretKeyResponse extends com.oracle.bmc.responses.Bmc
         return etag;
     }
 
-    /** The returned CustomerSecretKey instance. */
+    /** The returned {@code CustomerSecretKey} instance. */
     private com.oracle.bmc.identitydomains.model.CustomerSecretKey customerSecretKey;
 
     /**
-     * The returned CustomerSecretKey instance.
+     * The returned {@code CustomerSecretKey} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class PatchCustomerSecretKeyResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned CustomerSecretKey instance. */
+        /** The returned {@code CustomerSecretKey} instance. */
         private com.oracle.bmc.identitydomains.model.CustomerSecretKey customerSecretKey;
 
         /**
-         * The returned CustomerSecretKey instance.
+         * The returned {@code CustomerSecretKey} instance.
          *
          * @param customerSecretKey the value to set
          * @return this builder

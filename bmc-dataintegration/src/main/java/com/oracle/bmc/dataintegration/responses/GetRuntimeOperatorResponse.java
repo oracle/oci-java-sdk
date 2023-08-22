@@ -36,11 +36,11 @@ public class GetRuntimeOperatorResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned RuntimeOperator instance. */
+    /** The returned {@code RuntimeOperator} instance. */
     private com.oracle.bmc.dataintegration.model.RuntimeOperator runtimeOperator;
 
     /**
-     * The returned RuntimeOperator instance.
+     * The returned {@code RuntimeOperator} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetRuntimeOperatorResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned RuntimeOperator instance. */
+        /** The returned {@code RuntimeOperator} instance. */
         private com.oracle.bmc.dataintegration.model.RuntimeOperator runtimeOperator;
 
         /**
-         * The returned RuntimeOperator instance.
+         * The returned {@code RuntimeOperator} instance.
          *
          * @param runtimeOperator the value to set
          * @return this builder

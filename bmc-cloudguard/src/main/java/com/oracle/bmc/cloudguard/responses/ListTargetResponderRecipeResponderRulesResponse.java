@@ -43,12 +43,12 @@ public class ListTargetResponderRecipeResponderRulesResponse
         return opcNextPage;
     }
 
-    /** The returned TargetResponderRecipeResponderRuleCollection instance. */
+    /** The returned {@code TargetResponderRecipeResponderRuleCollection} instance. */
     private com.oracle.bmc.cloudguard.model.TargetResponderRecipeResponderRuleCollection
             targetResponderRecipeResponderRuleCollection;
 
     /**
-     * The returned TargetResponderRecipeResponderRuleCollection instance.
+     * The returned {@code TargetResponderRecipeResponderRuleCollection} instance.
      *
      * @return the value
      */
@@ -135,12 +135,12 @@ public class ListTargetResponderRecipeResponderRulesResponse
             return this;
         }
 
-        /** The returned TargetResponderRecipeResponderRuleCollection instance. */
+        /** The returned {@code TargetResponderRecipeResponderRuleCollection} instance. */
         private com.oracle.bmc.cloudguard.model.TargetResponderRecipeResponderRuleCollection
                 targetResponderRecipeResponderRuleCollection;
 
         /**
-         * The returned TargetResponderRecipeResponderRuleCollection instance.
+         * The returned {@code TargetResponderRecipeResponderRuleCollection} instance.
          *
          * @param targetResponderRecipeResponderRuleCollection the value to set
          * @return this builder

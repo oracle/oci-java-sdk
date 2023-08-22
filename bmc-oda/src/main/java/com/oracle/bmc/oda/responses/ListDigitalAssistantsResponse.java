@@ -54,11 +54,11 @@ public class ListDigitalAssistantsResponse extends com.oracle.bmc.responses.BmcR
         return opcTotalItems;
     }
 
-    /** The returned DigitalAssistantCollection instance. */
+    /** The returned {@code DigitalAssistantCollection} instance. */
     private com.oracle.bmc.oda.model.DigitalAssistantCollection digitalAssistantCollection;
 
     /**
-     * The returned DigitalAssistantCollection instance.
+     * The returned {@code DigitalAssistantCollection} instance.
      *
      * @return the value
      */
@@ -158,11 +158,11 @@ public class ListDigitalAssistantsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned DigitalAssistantCollection instance. */
+        /** The returned {@code DigitalAssistantCollection} instance. */
         private com.oracle.bmc.oda.model.DigitalAssistantCollection digitalAssistantCollection;
 
         /**
-         * The returned DigitalAssistantCollection instance.
+         * The returned {@code DigitalAssistantCollection} instance.
          *
          * @param digitalAssistantCollection the value to set
          * @return this builder

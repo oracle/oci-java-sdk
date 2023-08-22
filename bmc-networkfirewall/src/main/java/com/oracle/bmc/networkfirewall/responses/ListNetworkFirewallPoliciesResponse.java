@@ -90,12 +90,12 @@ public class ListNetworkFirewallPoliciesResponse extends com.oracle.bmc.response
         return opcTotalItems;
     }
 
-    /** The returned NetworkFirewallPolicySummaryCollection instance. */
+    /** The returned {@code NetworkFirewallPolicySummaryCollection} instance. */
     private com.oracle.bmc.networkfirewall.model.NetworkFirewallPolicySummaryCollection
             networkFirewallPolicySummaryCollection;
 
     /**
-     * The returned NetworkFirewallPolicySummaryCollection instance.
+     * The returned {@code NetworkFirewallPolicySummaryCollection} instance.
      *
      * @return the value
      */
@@ -246,12 +246,12 @@ public class ListNetworkFirewallPoliciesResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned NetworkFirewallPolicySummaryCollection instance. */
+        /** The returned {@code NetworkFirewallPolicySummaryCollection} instance. */
         private com.oracle.bmc.networkfirewall.model.NetworkFirewallPolicySummaryCollection
                 networkFirewallPolicySummaryCollection;
 
         /**
-         * The returned NetworkFirewallPolicySummaryCollection instance.
+         * The returned {@code NetworkFirewallPolicySummaryCollection} instance.
          *
          * @param networkFirewallPolicySummaryCollection the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListBackendsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned BackendCollection instance. */
+    /** The returned {@code BackendCollection} instance. */
     private com.oracle.bmc.networkloadbalancer.model.BackendCollection backendCollection;
 
     /**
-     * The returned BackendCollection instance.
+     * The returned {@code BackendCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListBackendsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned BackendCollection instance. */
+        /** The returned {@code BackendCollection} instance. */
         private com.oracle.bmc.networkloadbalancer.model.BackendCollection backendCollection;
 
         /**
-         * The returned BackendCollection instance.
+         * The returned {@code BackendCollection} instance.
          *
          * @param backendCollection the value to set
          * @return this builder

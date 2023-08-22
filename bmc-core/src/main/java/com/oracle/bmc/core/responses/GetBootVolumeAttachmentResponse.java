@@ -36,11 +36,11 @@ public class GetBootVolumeAttachmentResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned BootVolumeAttachment instance. */
+    /** The returned {@code BootVolumeAttachment} instance. */
     private com.oracle.bmc.core.model.BootVolumeAttachment bootVolumeAttachment;
 
     /**
-     * The returned BootVolumeAttachment instance.
+     * The returned {@code BootVolumeAttachment} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetBootVolumeAttachmentResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned BootVolumeAttachment instance. */
+        /** The returned {@code BootVolumeAttachment} instance. */
         private com.oracle.bmc.core.model.BootVolumeAttachment bootVolumeAttachment;
 
         /**
-         * The returned BootVolumeAttachment instance.
+         * The returned {@code BootVolumeAttachment} instance.
          *
          * @param bootVolumeAttachment the value to set
          * @return this builder

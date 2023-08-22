@@ -36,11 +36,11 @@ public class UpdateInventoryResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned Inventory instance. */
+    /** The returned {@code Inventory} instance. */
     private com.oracle.bmc.cloudbridge.model.Inventory inventory;
 
     /**
-     * The returned Inventory instance.
+     * The returned {@code Inventory} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateInventoryResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned Inventory instance. */
+        /** The returned {@code Inventory} instance. */
         private com.oracle.bmc.cloudbridge.model.Inventory inventory;
 
         /**
-         * The returned Inventory instance.
+         * The returned {@code Inventory} instance.
          *
          * @param inventory the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListConfigurationsResponse extends com.oracle.bmc.responses.BmcResp
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.mysql.model.ConfigurationSummary instances. */
+    /** A list of {@code com.oracle.bmc.mysql.model.ConfigurationSummary} instances. */
     private java.util.List<com.oracle.bmc.mysql.model.ConfigurationSummary> items;
 
     /**
-     * A list of com.oracle.bmc.mysql.model.ConfigurationSummary instances.
+     * A list of {@code com.oracle.bmc.mysql.model.ConfigurationSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListConfigurationsResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** A list of com.oracle.bmc.mysql.model.ConfigurationSummary instances. */
+        /** A list of {@code com.oracle.bmc.mysql.model.ConfigurationSummary} instances. */
         private java.util.List<com.oracle.bmc.mysql.model.ConfigurationSummary> items;
 
         /**
-         * A list of com.oracle.bmc.mysql.model.ConfigurationSummary instances.
+         * A list of {@code com.oracle.bmc.mysql.model.ConfigurationSummary} instances.
          *
          * @param items the value to set
          * @return this builder

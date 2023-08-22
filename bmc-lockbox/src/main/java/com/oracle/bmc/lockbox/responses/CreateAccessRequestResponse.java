@@ -68,11 +68,11 @@ public class CreateAccessRequestResponse extends com.oracle.bmc.responses.BmcRes
         return etag;
     }
 
-    /** The returned AccessRequest instance. */
+    /** The returned {@code AccessRequest} instance. */
     private com.oracle.bmc.lockbox.model.AccessRequest accessRequest;
 
     /**
-     * The returned AccessRequest instance.
+     * The returned {@code AccessRequest} instance.
      *
      * @return the value
      */
@@ -191,11 +191,11 @@ public class CreateAccessRequestResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned AccessRequest instance. */
+        /** The returned {@code AccessRequest} instance. */
         private com.oracle.bmc.lockbox.model.AccessRequest accessRequest;
 
         /**
-         * The returned AccessRequest instance.
+         * The returned {@code AccessRequest} instance.
          *
          * @param accessRequest the value to set
          * @return this builder

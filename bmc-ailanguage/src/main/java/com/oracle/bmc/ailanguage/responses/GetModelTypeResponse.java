@@ -24,11 +24,11 @@ public class GetModelTypeResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned ModelTypeInfo instance. */
+    /** The returned {@code ModelTypeInfo} instance. */
     private com.oracle.bmc.ailanguage.model.ModelTypeInfo modelTypeInfo;
 
     /**
-     * The returned ModelTypeInfo instance.
+     * The returned {@code ModelTypeInfo} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetModelTypeResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned ModelTypeInfo instance. */
+        /** The returned {@code ModelTypeInfo} instance. */
         private com.oracle.bmc.ailanguage.model.ModelTypeInfo modelTypeInfo;
 
         /**
-         * The returned ModelTypeInfo instance.
+         * The returned {@code ModelTypeInfo} instance.
          *
          * @param modelTypeInfo the value to set
          * @return this builder

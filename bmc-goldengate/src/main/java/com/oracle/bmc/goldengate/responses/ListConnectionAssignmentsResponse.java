@@ -40,12 +40,12 @@ public class ListConnectionAssignmentsResponse extends com.oracle.bmc.responses.
         return opcNextPage;
     }
 
-    /** The returned ConnectionAssignmentCollection instance. */
+    /** The returned {@code ConnectionAssignmentCollection} instance. */
     private com.oracle.bmc.goldengate.model.ConnectionAssignmentCollection
             connectionAssignmentCollection;
 
     /**
-     * The returned ConnectionAssignmentCollection instance.
+     * The returned {@code ConnectionAssignmentCollection} instance.
      *
      * @return the value
      */
@@ -129,12 +129,12 @@ public class ListConnectionAssignmentsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned ConnectionAssignmentCollection instance. */
+        /** The returned {@code ConnectionAssignmentCollection} instance. */
         private com.oracle.bmc.goldengate.model.ConnectionAssignmentCollection
                 connectionAssignmentCollection;
 
         /**
-         * The returned ConnectionAssignmentCollection instance.
+         * The returned {@code ConnectionAssignmentCollection} instance.
          *
          * @param connectionAssignmentCollection the value to set
          * @return this builder

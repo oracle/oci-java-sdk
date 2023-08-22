@@ -36,12 +36,12 @@ public class DetectLanguageEntitiesResponse extends com.oracle.bmc.responses.Bmc
         return sunset;
     }
 
-    /** The returned DetectLanguageEntitiesResult instance. */
+    /** The returned {@code DetectLanguageEntitiesResult} instance. */
     private com.oracle.bmc.ailanguage.model.DetectLanguageEntitiesResult
             detectLanguageEntitiesResult;
 
     /**
-     * The returned DetectLanguageEntitiesResult instance.
+     * The returned {@code DetectLanguageEntitiesResult} instance.
      *
      * @return the value
      */
@@ -121,12 +121,12 @@ public class DetectLanguageEntitiesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned DetectLanguageEntitiesResult instance. */
+        /** The returned {@code DetectLanguageEntitiesResult} instance. */
         private com.oracle.bmc.ailanguage.model.DetectLanguageEntitiesResult
                 detectLanguageEntitiesResult;
 
         /**
-         * The returned DetectLanguageEntitiesResult instance.
+         * The returned {@code DetectLanguageEntitiesResult} instance.
          *
          * @param detectLanguageEntitiesResult the value to set
          * @return this builder

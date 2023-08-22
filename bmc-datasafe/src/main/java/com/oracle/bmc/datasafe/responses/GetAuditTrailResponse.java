@@ -42,11 +42,11 @@ public class GetAuditTrailResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** The returned AuditTrail instance. */
+    /** The returned {@code AuditTrail} instance. */
     private com.oracle.bmc.datasafe.model.AuditTrail auditTrail;
 
     /**
-     * The returned AuditTrail instance.
+     * The returned {@code AuditTrail} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class GetAuditTrailResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned AuditTrail instance. */
+        /** The returned {@code AuditTrail} instance. */
         private com.oracle.bmc.datasafe.model.AuditTrail auditTrail;
 
         /**
-         * The returned AuditTrail instance.
+         * The returned {@code AuditTrail} instance.
          *
          * @param auditTrail the value to set
          * @return this builder

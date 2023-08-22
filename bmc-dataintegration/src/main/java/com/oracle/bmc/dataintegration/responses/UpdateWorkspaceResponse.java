@@ -60,11 +60,11 @@ public class UpdateWorkspaceResponse extends com.oracle.bmc.responses.BmcRespons
         return opcWorkRequestId;
     }
 
-    /** The returned Workspace instance. */
+    /** The returned {@code Workspace} instance. */
     private com.oracle.bmc.dataintegration.model.Workspace workspace;
 
     /**
-     * The returned Workspace instance.
+     * The returned {@code Workspace} instance.
      *
      * @return the value
      */
@@ -170,11 +170,11 @@ public class UpdateWorkspaceResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned Workspace instance. */
+        /** The returned {@code Workspace} instance. */
         private com.oracle.bmc.dataintegration.model.Workspace workspace;
 
         /**
-         * The returned Workspace instance.
+         * The returned {@code Workspace} instance.
          *
          * @param workspace the value to set
          * @return this builder

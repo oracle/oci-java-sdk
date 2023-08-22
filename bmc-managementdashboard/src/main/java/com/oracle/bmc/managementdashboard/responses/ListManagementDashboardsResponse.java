@@ -42,12 +42,12 @@ public class ListManagementDashboardsResponse extends com.oracle.bmc.responses.B
         return opcNextPage;
     }
 
-    /** The returned ManagementDashboardCollection instance. */
+    /** The returned {@code ManagementDashboardCollection} instance. */
     private com.oracle.bmc.managementdashboard.model.ManagementDashboardCollection
             managementDashboardCollection;
 
     /**
-     * The returned ManagementDashboardCollection instance.
+     * The returned {@code ManagementDashboardCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListManagementDashboardsResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned ManagementDashboardCollection instance. */
+        /** The returned {@code ManagementDashboardCollection} instance. */
         private com.oracle.bmc.managementdashboard.model.ManagementDashboardCollection
                 managementDashboardCollection;
 
         /**
-         * The returned ManagementDashboardCollection instance.
+         * The returned {@code ManagementDashboardCollection} instance.
          *
          * @param managementDashboardCollection the value to set
          * @return this builder

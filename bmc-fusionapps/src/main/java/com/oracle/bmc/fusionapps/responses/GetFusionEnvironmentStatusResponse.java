@@ -24,11 +24,11 @@ public class GetFusionEnvironmentStatusResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    /** The returned FusionEnvironmentStatus instance. */
+    /** The returned {@code FusionEnvironmentStatus} instance. */
     private com.oracle.bmc.fusionapps.model.FusionEnvironmentStatus fusionEnvironmentStatus;
 
     /**
-     * The returned FusionEnvironmentStatus instance.
+     * The returned {@code FusionEnvironmentStatus} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class GetFusionEnvironmentStatusResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned FusionEnvironmentStatus instance. */
+        /** The returned {@code FusionEnvironmentStatus} instance. */
         private com.oracle.bmc.fusionapps.model.FusionEnvironmentStatus fusionEnvironmentStatus;
 
         /**
-         * The returned FusionEnvironmentStatus instance.
+         * The returned {@code FusionEnvironmentStatus} instance.
          *
          * @param fusionEnvironmentStatus the value to set
          * @return this builder

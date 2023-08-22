@@ -64,11 +64,11 @@ public class ListSourceEventTypesResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned EventTypeCollection instance. */
+    /** The returned {@code EventTypeCollection} instance. */
     private com.oracle.bmc.loganalytics.model.EventTypeCollection eventTypeCollection;
 
     /**
-     * The returned EventTypeCollection instance.
+     * The returned {@code EventTypeCollection} instance.
      *
      * @return the value
      */
@@ -178,11 +178,11 @@ public class ListSourceEventTypesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned EventTypeCollection instance. */
+        /** The returned {@code EventTypeCollection} instance. */
         private com.oracle.bmc.loganalytics.model.EventTypeCollection eventTypeCollection;
 
         /**
-         * The returned EventTypeCollection instance.
+         * The returned {@code EventTypeCollection} instance.
          *
          * @param eventTypeCollection the value to set
          * @return this builder

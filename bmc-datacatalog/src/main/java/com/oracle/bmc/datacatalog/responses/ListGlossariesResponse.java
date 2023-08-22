@@ -42,11 +42,11 @@ public class ListGlossariesResponse extends com.oracle.bmc.responses.BmcResponse
         return opcNextPage;
     }
 
-    /** The returned GlossaryCollection instance. */
+    /** The returned {@code GlossaryCollection} instance. */
     private com.oracle.bmc.datacatalog.model.GlossaryCollection glossaryCollection;
 
     /**
-     * The returned GlossaryCollection instance.
+     * The returned {@code GlossaryCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListGlossariesResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned GlossaryCollection instance. */
+        /** The returned {@code GlossaryCollection} instance. */
         private com.oracle.bmc.datacatalog.model.GlossaryCollection glossaryCollection;
 
         /**
-         * The returned GlossaryCollection instance.
+         * The returned {@code GlossaryCollection} instance.
          *
          * @param glossaryCollection the value to set
          * @return this builder

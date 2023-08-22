@@ -24,11 +24,11 @@ public class CreateComputeCapacityReportResponse extends com.oracle.bmc.response
         return opcRequestId;
     }
 
-    /** The returned ComputeCapacityReport instance. */
+    /** The returned {@code ComputeCapacityReport} instance. */
     private com.oracle.bmc.core.model.ComputeCapacityReport computeCapacityReport;
 
     /**
-     * The returned ComputeCapacityReport instance.
+     * The returned {@code ComputeCapacityReport} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class CreateComputeCapacityReportResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned ComputeCapacityReport instance. */
+        /** The returned {@code ComputeCapacityReport} instance. */
         private com.oracle.bmc.core.model.ComputeCapacityReport computeCapacityReport;
 
         /**
-         * The returned ComputeCapacityReport instance.
+         * The returned {@code ComputeCapacityReport} instance.
          *
          * @param computeCapacityReport the value to set
          * @return this builder

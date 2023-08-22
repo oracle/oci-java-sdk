@@ -42,12 +42,12 @@ public class RequestSummarizedRiskScoresResponse extends com.oracle.bmc.response
         return opcNextPage;
     }
 
-    /** The returned RiskScoreAggregationCollection instance. */
+    /** The returned {@code RiskScoreAggregationCollection} instance. */
     private com.oracle.bmc.cloudguard.model.RiskScoreAggregationCollection
             riskScoreAggregationCollection;
 
     /**
-     * The returned RiskScoreAggregationCollection instance.
+     * The returned {@code RiskScoreAggregationCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class RequestSummarizedRiskScoresResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned RiskScoreAggregationCollection instance. */
+        /** The returned {@code RiskScoreAggregationCollection} instance. */
         private com.oracle.bmc.cloudguard.model.RiskScoreAggregationCollection
                 riskScoreAggregationCollection;
 
         /**
-         * The returned RiskScoreAggregationCollection instance.
+         * The returned {@code RiskScoreAggregationCollection} instance.
          *
          * @param riskScoreAggregationCollection the value to set
          * @return this builder

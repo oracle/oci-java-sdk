@@ -24,11 +24,11 @@ public class GetModuleStreamProfileResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned ModuleStreamProfile instance. */
+    /** The returned {@code ModuleStreamProfile} instance. */
     private com.oracle.bmc.osmanagementhub.model.ModuleStreamProfile moduleStreamProfile;
 
     /**
-     * The returned ModuleStreamProfile instance.
+     * The returned {@code ModuleStreamProfile} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class GetModuleStreamProfileResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned ModuleStreamProfile instance. */
+        /** The returned {@code ModuleStreamProfile} instance. */
         private com.oracle.bmc.osmanagementhub.model.ModuleStreamProfile moduleStreamProfile;
 
         /**
-         * The returned ModuleStreamProfile instance.
+         * The returned {@code ModuleStreamProfile} instance.
          *
          * @param moduleStreamProfile the value to set
          * @return this builder

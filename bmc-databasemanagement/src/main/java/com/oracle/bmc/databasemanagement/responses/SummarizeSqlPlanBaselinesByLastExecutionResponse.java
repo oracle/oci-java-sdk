@@ -43,12 +43,12 @@ public class SummarizeSqlPlanBaselinesByLastExecutionResponse
         return opcNextPage;
     }
 
-    /** The returned SqlPlanBaselineAggregationCollection instance. */
+    /** The returned {@code SqlPlanBaselineAggregationCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.SqlPlanBaselineAggregationCollection
             sqlPlanBaselineAggregationCollection;
 
     /**
-     * The returned SqlPlanBaselineAggregationCollection instance.
+     * The returned {@code SqlPlanBaselineAggregationCollection} instance.
      *
      * @return the value
      */
@@ -134,12 +134,12 @@ public class SummarizeSqlPlanBaselinesByLastExecutionResponse
             return this;
         }
 
-        /** The returned SqlPlanBaselineAggregationCollection instance. */
+        /** The returned {@code SqlPlanBaselineAggregationCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.SqlPlanBaselineAggregationCollection
                 sqlPlanBaselineAggregationCollection;
 
         /**
-         * The returned SqlPlanBaselineAggregationCollection instance.
+         * The returned {@code SqlPlanBaselineAggregationCollection} instance.
          *
          * @param sqlPlanBaselineAggregationCollection the value to set
          * @return this builder

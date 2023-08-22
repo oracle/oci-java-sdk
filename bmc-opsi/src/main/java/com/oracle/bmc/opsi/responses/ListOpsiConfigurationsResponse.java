@@ -42,11 +42,11 @@ public class ListOpsiConfigurationsResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** The returned OpsiConfigurationsCollection instance. */
+    /** The returned {@code OpsiConfigurationsCollection} instance. */
     private com.oracle.bmc.opsi.model.OpsiConfigurationsCollection opsiConfigurationsCollection;
 
     /**
-     * The returned OpsiConfigurationsCollection instance.
+     * The returned {@code OpsiConfigurationsCollection} instance.
      *
      * @return the value
      */
@@ -131,11 +131,11 @@ public class ListOpsiConfigurationsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned OpsiConfigurationsCollection instance. */
+        /** The returned {@code OpsiConfigurationsCollection} instance. */
         private com.oracle.bmc.opsi.model.OpsiConfigurationsCollection opsiConfigurationsCollection;
 
         /**
-         * The returned OpsiConfigurationsCollection instance.
+         * The returned {@code OpsiConfigurationsCollection} instance.
          *
          * @param opsiConfigurationsCollection the value to set
          * @return this builder

@@ -64,11 +64,11 @@ public class CreateLicenseRecordResponse extends com.oracle.bmc.responses.BmcRes
         return location;
     }
 
-    /** The returned LicenseRecord instance. */
+    /** The returned {@code LicenseRecord} instance. */
     private com.oracle.bmc.licensemanager.model.LicenseRecord licenseRecord;
 
     /**
-     * The returned LicenseRecord instance.
+     * The returned {@code LicenseRecord} instance.
      *
      * @return the value
      */
@@ -183,11 +183,11 @@ public class CreateLicenseRecordResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned LicenseRecord instance. */
+        /** The returned {@code LicenseRecord} instance. */
         private com.oracle.bmc.licensemanager.model.LicenseRecord licenseRecord;
 
         /**
-         * The returned LicenseRecord instance.
+         * The returned {@code LicenseRecord} instance.
          *
          * @param licenseRecord the value to set
          * @return this builder

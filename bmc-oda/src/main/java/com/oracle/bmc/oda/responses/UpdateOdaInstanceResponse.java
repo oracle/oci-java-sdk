@@ -40,11 +40,11 @@ public class UpdateOdaInstanceResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned OdaInstance instance. */
+    /** The returned {@code OdaInstance} instance. */
     private com.oracle.bmc.oda.model.OdaInstance odaInstance;
 
     /**
-     * The returned OdaInstance instance.
+     * The returned {@code OdaInstance} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class UpdateOdaInstanceResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned OdaInstance instance. */
+        /** The returned {@code OdaInstance} instance. */
         private com.oracle.bmc.oda.model.OdaInstance odaInstance;
 
         /**
-         * The returned OdaInstance instance.
+         * The returned {@code OdaInstance} instance.
          *
          * @param odaInstance the value to set
          * @return this builder

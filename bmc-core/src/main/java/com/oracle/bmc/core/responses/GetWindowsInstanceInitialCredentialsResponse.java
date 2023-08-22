@@ -25,11 +25,11 @@ public class GetWindowsInstanceInitialCredentialsResponse
         return opcRequestId;
     }
 
-    /** The returned InstanceCredentials instance. */
+    /** The returned {@code InstanceCredentials} instance. */
     private com.oracle.bmc.core.model.InstanceCredentials instanceCredentials;
 
     /**
-     * The returned InstanceCredentials instance.
+     * The returned {@code InstanceCredentials} instance.
      *
      * @return the value
      */
@@ -90,11 +90,11 @@ public class GetWindowsInstanceInitialCredentialsResponse
             return this;
         }
 
-        /** The returned InstanceCredentials instance. */
+        /** The returned {@code InstanceCredentials} instance. */
         private com.oracle.bmc.core.model.InstanceCredentials instanceCredentials;
 
         /**
-         * The returned InstanceCredentials instance.
+         * The returned {@code InstanceCredentials} instance.
          *
          * @param instanceCredentials the value to set
          * @return this builder

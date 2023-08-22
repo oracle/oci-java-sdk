@@ -41,12 +41,12 @@ public class GenerateAnalyticsClusterMemoryEstimateResponse
         return opcWorkRequestId;
     }
 
-    /** The returned AnalyticsClusterMemoryEstimate instance. */
+    /** The returned {@code AnalyticsClusterMemoryEstimate} instance. */
     private com.oracle.bmc.mysql.model.AnalyticsClusterMemoryEstimate
             analyticsClusterMemoryEstimate;
 
     /**
-     * The returned AnalyticsClusterMemoryEstimate instance.
+     * The returned {@code AnalyticsClusterMemoryEstimate} instance.
      *
      * @return the value
      */
@@ -130,12 +130,12 @@ public class GenerateAnalyticsClusterMemoryEstimateResponse
             return this;
         }
 
-        /** The returned AnalyticsClusterMemoryEstimate instance. */
+        /** The returned {@code AnalyticsClusterMemoryEstimate} instance. */
         private com.oracle.bmc.mysql.model.AnalyticsClusterMemoryEstimate
                 analyticsClusterMemoryEstimate;
 
         /**
-         * The returned AnalyticsClusterMemoryEstimate instance.
+         * The returned {@code AnalyticsClusterMemoryEstimate} instance.
          *
          * @param analyticsClusterMemoryEstimate the value to set
          * @return this builder

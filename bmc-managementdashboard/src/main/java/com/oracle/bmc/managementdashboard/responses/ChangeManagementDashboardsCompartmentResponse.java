@@ -53,11 +53,11 @@ public class ChangeManagementDashboardsCompartmentResponse
         return opcWorkRequestId;
     }
 
-    /** The returned ManagementDashboard instance. */
+    /** The returned {@code ManagementDashboard} instance. */
     private com.oracle.bmc.managementdashboard.model.ManagementDashboard managementDashboard;
 
     /**
-     * The returned ManagementDashboard instance.
+     * The returned {@code ManagementDashboard} instance.
      *
      * @return the value
      */
@@ -156,11 +156,11 @@ public class ChangeManagementDashboardsCompartmentResponse
             return this;
         }
 
-        /** The returned ManagementDashboard instance. */
+        /** The returned {@code ManagementDashboard} instance. */
         private com.oracle.bmc.managementdashboard.model.ManagementDashboard managementDashboard;
 
         /**
-         * The returned ManagementDashboard instance.
+         * The returned {@code ManagementDashboard} instance.
          *
          * @param managementDashboard the value to set
          * @return this builder

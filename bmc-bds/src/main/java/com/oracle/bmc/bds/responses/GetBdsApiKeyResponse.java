@@ -36,11 +36,11 @@ public class GetBdsApiKeyResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned BdsApiKey instance. */
+    /** The returned {@code BdsApiKey} instance. */
     private com.oracle.bmc.bds.model.BdsApiKey bdsApiKey;
 
     /**
-     * The returned BdsApiKey instance.
+     * The returned {@code BdsApiKey} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetBdsApiKeyResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned BdsApiKey instance. */
+        /** The returned {@code BdsApiKey} instance. */
         private com.oracle.bmc.bds.model.BdsApiKey bdsApiKey;
 
         /**
-         * The returned BdsApiKey instance.
+         * The returned {@code BdsApiKey} instance.
          *
          * @param bdsApiKey the value to set
          * @return this builder

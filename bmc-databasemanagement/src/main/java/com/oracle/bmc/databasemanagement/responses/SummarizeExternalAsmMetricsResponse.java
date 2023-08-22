@@ -42,12 +42,12 @@ public class SummarizeExternalAsmMetricsResponse extends com.oracle.bmc.response
         return opcNextPage;
     }
 
-    /** The returned MetricsAggregationRangeCollection instance. */
+    /** The returned {@code MetricsAggregationRangeCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.MetricsAggregationRangeCollection
             metricsAggregationRangeCollection;
 
     /**
-     * The returned MetricsAggregationRangeCollection instance.
+     * The returned {@code MetricsAggregationRangeCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class SummarizeExternalAsmMetricsResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned MetricsAggregationRangeCollection instance. */
+        /** The returned {@code MetricsAggregationRangeCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.MetricsAggregationRangeCollection
                 metricsAggregationRangeCollection;
 
         /**
-         * The returned MetricsAggregationRangeCollection instance.
+         * The returned {@code MetricsAggregationRangeCollection} instance.
          *
          * @param metricsAggregationRangeCollection the value to set
          * @return this builder

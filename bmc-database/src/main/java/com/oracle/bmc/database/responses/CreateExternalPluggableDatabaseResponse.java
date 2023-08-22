@@ -56,11 +56,11 @@ public class CreateExternalPluggableDatabaseResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** The returned ExternalPluggableDatabase instance. */
+    /** The returned {@code ExternalPluggableDatabase} instance. */
     private com.oracle.bmc.database.model.ExternalPluggableDatabase externalPluggableDatabase;
 
     /**
-     * The returned ExternalPluggableDatabase instance.
+     * The returned {@code ExternalPluggableDatabase} instance.
      *
      * @return the value
      */
@@ -163,11 +163,11 @@ public class CreateExternalPluggableDatabaseResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned ExternalPluggableDatabase instance. */
+        /** The returned {@code ExternalPluggableDatabase} instance. */
         private com.oracle.bmc.database.model.ExternalPluggableDatabase externalPluggableDatabase;
 
         /**
-         * The returned ExternalPluggableDatabase instance.
+         * The returned {@code ExternalPluggableDatabase} instance.
          *
          * @param externalPluggableDatabase the value to set
          * @return this builder

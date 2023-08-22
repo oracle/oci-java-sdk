@@ -36,11 +36,11 @@ public class UpdateCustomerSecretKeyResponse extends com.oracle.bmc.responses.Bm
         return etag;
     }
 
-    /** The returned CustomerSecretKeySummary instance. */
+    /** The returned {@code CustomerSecretKeySummary} instance. */
     private com.oracle.bmc.identity.model.CustomerSecretKeySummary customerSecretKeySummary;
 
     /**
-     * The returned CustomerSecretKeySummary instance.
+     * The returned {@code CustomerSecretKeySummary} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class UpdateCustomerSecretKeyResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned CustomerSecretKeySummary instance. */
+        /** The returned {@code CustomerSecretKeySummary} instance. */
         private com.oracle.bmc.identity.model.CustomerSecretKeySummary customerSecretKeySummary;
 
         /**
-         * The returned CustomerSecretKeySummary instance.
+         * The returned {@code CustomerSecretKeySummary} instance.
          *
          * @param customerSecretKeySummary the value to set
          * @return this builder

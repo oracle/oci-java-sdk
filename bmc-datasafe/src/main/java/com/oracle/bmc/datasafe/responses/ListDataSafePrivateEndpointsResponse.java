@@ -44,11 +44,11 @@ public class ListDataSafePrivateEndpointsResponse extends com.oracle.bmc.respons
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.datasafe.model.DataSafePrivateEndpointSummary instances. */
+    /** A list of {@code com.oracle.bmc.datasafe.model.DataSafePrivateEndpointSummary} instances. */
     private java.util.List<com.oracle.bmc.datasafe.model.DataSafePrivateEndpointSummary> items;
 
     /**
-     * A list of com.oracle.bmc.datasafe.model.DataSafePrivateEndpointSummary instances.
+     * A list of {@code com.oracle.bmc.datasafe.model.DataSafePrivateEndpointSummary} instances.
      *
      * @return the value
      */
@@ -134,11 +134,13 @@ public class ListDataSafePrivateEndpointsResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** A list of com.oracle.bmc.datasafe.model.DataSafePrivateEndpointSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.datasafe.model.DataSafePrivateEndpointSummary} instances.
+         */
         private java.util.List<com.oracle.bmc.datasafe.model.DataSafePrivateEndpointSummary> items;
 
         /**
-         * A list of com.oracle.bmc.datasafe.model.DataSafePrivateEndpointSummary instances.
+         * A list of {@code com.oracle.bmc.datasafe.model.DataSafePrivateEndpointSummary} instances.
          *
          * @param items the value to set
          * @return this builder

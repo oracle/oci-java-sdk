@@ -64,11 +64,11 @@ public class CreateDeployArtifactResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned DeployArtifact instance. */
+    /** The returned {@code DeployArtifact} instance. */
     private com.oracle.bmc.devops.model.DeployArtifact deployArtifact;
 
     /**
-     * The returned DeployArtifact instance.
+     * The returned {@code DeployArtifact} instance.
      *
      * @return the value
      */
@@ -183,11 +183,11 @@ public class CreateDeployArtifactResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned DeployArtifact instance. */
+        /** The returned {@code DeployArtifact} instance. */
         private com.oracle.bmc.devops.model.DeployArtifact deployArtifact;
 
         /**
-         * The returned DeployArtifact instance.
+         * The returned {@code DeployArtifact} instance.
          *
          * @param deployArtifact the value to set
          * @return this builder

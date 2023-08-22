@@ -54,11 +54,11 @@ public class ListRecommendationsResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.waas.model.Recommendation instances. */
+    /** A list of {@code com.oracle.bmc.waas.model.Recommendation} instances. */
     private java.util.List<com.oracle.bmc.waas.model.Recommendation> items;
 
     /**
-     * A list of com.oracle.bmc.waas.model.Recommendation instances.
+     * A list of {@code com.oracle.bmc.waas.model.Recommendation} instances.
      *
      * @return the value
      */
@@ -158,11 +158,11 @@ public class ListRecommendationsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** A list of com.oracle.bmc.waas.model.Recommendation instances. */
+        /** A list of {@code com.oracle.bmc.waas.model.Recommendation} instances. */
         private java.util.List<com.oracle.bmc.waas.model.Recommendation> items;
 
         /**
-         * A list of com.oracle.bmc.waas.model.Recommendation instances.
+         * A list of {@code com.oracle.bmc.waas.model.Recommendation} instances.
          *
          * @param items the value to set
          * @return this builder

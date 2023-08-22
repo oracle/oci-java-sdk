@@ -44,11 +44,11 @@ public class ListAnnouncementsResponse extends com.oracle.bmc.responses.BmcRespo
         return opcNextPage;
     }
 
-    /** The returned AnnouncementCollection instance. */
+    /** The returned {@code AnnouncementCollection} instance. */
     private com.oracle.bmc.jms.model.AnnouncementCollection announcementCollection;
 
     /**
-     * The returned AnnouncementCollection instance.
+     * The returned {@code AnnouncementCollection} instance.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListAnnouncementsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned AnnouncementCollection instance. */
+        /** The returned {@code AnnouncementCollection} instance. */
         private com.oracle.bmc.jms.model.AnnouncementCollection announcementCollection;
 
         /**
-         * The returned AnnouncementCollection instance.
+         * The returned {@code AnnouncementCollection} instance.
          *
          * @param announcementCollection the value to set
          * @return this builder

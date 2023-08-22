@@ -36,11 +36,11 @@ public class GetPathAnalyzerTestResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned PathAnalyzerTest instance. */
+    /** The returned {@code PathAnalyzerTest} instance. */
     private com.oracle.bmc.vnmonitoring.model.PathAnalyzerTest pathAnalyzerTest;
 
     /**
-     * The returned PathAnalyzerTest instance.
+     * The returned {@code PathAnalyzerTest} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetPathAnalyzerTestResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned PathAnalyzerTest instance. */
+        /** The returned {@code PathAnalyzerTest} instance. */
         private com.oracle.bmc.vnmonitoring.model.PathAnalyzerTest pathAnalyzerTest;
 
         /**
-         * The returned PathAnalyzerTest instance.
+         * The returned {@code PathAnalyzerTest} instance.
          *
          * @param pathAnalyzerTest the value to set
          * @return this builder

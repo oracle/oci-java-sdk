@@ -36,11 +36,11 @@ public class GetSenderInvitationResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned SenderInvitation instance. */
+    /** The returned {@code SenderInvitation} instance. */
     private com.oracle.bmc.tenantmanagercontrolplane.model.SenderInvitation senderInvitation;
 
     /**
-     * The returned SenderInvitation instance.
+     * The returned {@code SenderInvitation} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetSenderInvitationResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned SenderInvitation instance. */
+        /** The returned {@code SenderInvitation} instance. */
         private com.oracle.bmc.tenantmanagercontrolplane.model.SenderInvitation senderInvitation;
 
         /**
-         * The returned SenderInvitation instance.
+         * The returned {@code SenderInvitation} instance.
          *
          * @param senderInvitation the value to set
          * @return this builder

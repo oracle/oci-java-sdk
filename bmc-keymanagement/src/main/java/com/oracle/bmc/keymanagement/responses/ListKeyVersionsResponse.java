@@ -44,11 +44,11 @@ public class ListKeyVersionsResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.keymanagement.model.KeyVersionSummary instances. */
+    /** A list of {@code com.oracle.bmc.keymanagement.model.KeyVersionSummary} instances. */
     private java.util.List<com.oracle.bmc.keymanagement.model.KeyVersionSummary> items;
 
     /**
-     * A list of com.oracle.bmc.keymanagement.model.KeyVersionSummary instances.
+     * A list of {@code com.oracle.bmc.keymanagement.model.KeyVersionSummary} instances.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListKeyVersionsResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** A list of com.oracle.bmc.keymanagement.model.KeyVersionSummary instances. */
+        /** A list of {@code com.oracle.bmc.keymanagement.model.KeyVersionSummary} instances. */
         private java.util.List<com.oracle.bmc.keymanagement.model.KeyVersionSummary> items;
 
         /**
-         * A list of com.oracle.bmc.keymanagement.model.KeyVersionSummary instances.
+         * A list of {@code com.oracle.bmc.keymanagement.model.KeyVersionSummary} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -25,12 +25,12 @@ public class AddNetworkSecurityGroupSecurityRulesResponse
         return opcRequestId;
     }
 
-    /** The returned AddedNetworkSecurityGroupSecurityRules instance. */
+    /** The returned {@code AddedNetworkSecurityGroupSecurityRules} instance. */
     private com.oracle.bmc.core.model.AddedNetworkSecurityGroupSecurityRules
             addedNetworkSecurityGroupSecurityRules;
 
     /**
-     * The returned AddedNetworkSecurityGroupSecurityRules instance.
+     * The returned {@code AddedNetworkSecurityGroupSecurityRules} instance.
      *
      * @return the value
      */
@@ -93,12 +93,12 @@ public class AddNetworkSecurityGroupSecurityRulesResponse
             return this;
         }
 
-        /** The returned AddedNetworkSecurityGroupSecurityRules instance. */
+        /** The returned {@code AddedNetworkSecurityGroupSecurityRules} instance. */
         private com.oracle.bmc.core.model.AddedNetworkSecurityGroupSecurityRules
                 addedNetworkSecurityGroupSecurityRules;
 
         /**
-         * The returned AddedNetworkSecurityGroupSecurityRules instance.
+         * The returned {@code AddedNetworkSecurityGroupSecurityRules} instance.
          *
          * @param addedNetworkSecurityGroupSecurityRules the value to set
          * @return this builder

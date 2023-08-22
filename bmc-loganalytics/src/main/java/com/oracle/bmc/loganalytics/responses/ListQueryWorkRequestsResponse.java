@@ -64,11 +64,11 @@ public class ListQueryWorkRequestsResponse extends com.oracle.bmc.responses.BmcR
         return opcPrevPage;
     }
 
-    /** The returned QueryWorkRequestCollection instance. */
+    /** The returned {@code QueryWorkRequestCollection} instance. */
     private com.oracle.bmc.loganalytics.model.QueryWorkRequestCollection queryWorkRequestCollection;
 
     /**
-     * The returned QueryWorkRequestCollection instance.
+     * The returned {@code QueryWorkRequestCollection} instance.
      *
      * @return the value
      */
@@ -180,12 +180,12 @@ public class ListQueryWorkRequestsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned QueryWorkRequestCollection instance. */
+        /** The returned {@code QueryWorkRequestCollection} instance. */
         private com.oracle.bmc.loganalytics.model.QueryWorkRequestCollection
                 queryWorkRequestCollection;
 
         /**
-         * The returned QueryWorkRequestCollection instance.
+         * The returned {@code QueryWorkRequestCollection} instance.
          *
          * @param queryWorkRequestCollection the value to set
          * @return this builder

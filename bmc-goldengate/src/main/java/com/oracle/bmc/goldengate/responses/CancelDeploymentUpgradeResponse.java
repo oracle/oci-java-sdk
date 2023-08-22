@@ -36,11 +36,11 @@ public class CancelDeploymentUpgradeResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned DeploymentUpgrade instance. */
+    /** The returned {@code DeploymentUpgrade} instance. */
     private com.oracle.bmc.goldengate.model.DeploymentUpgrade deploymentUpgrade;
 
     /**
-     * The returned DeploymentUpgrade instance.
+     * The returned {@code DeploymentUpgrade} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class CancelDeploymentUpgradeResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned DeploymentUpgrade instance. */
+        /** The returned {@code DeploymentUpgrade} instance. */
         private com.oracle.bmc.goldengate.model.DeploymentUpgrade deploymentUpgrade;
 
         /**
-         * The returned DeploymentUpgrade instance.
+         * The returned {@code DeploymentUpgrade} instance.
          *
          * @param deploymentUpgrade the value to set
          * @return this builder

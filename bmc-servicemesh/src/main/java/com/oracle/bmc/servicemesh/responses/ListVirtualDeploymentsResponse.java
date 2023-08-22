@@ -42,12 +42,12 @@ public class ListVirtualDeploymentsResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** The returned VirtualDeploymentCollection instance. */
+    /** The returned {@code VirtualDeploymentCollection} instance. */
     private com.oracle.bmc.servicemesh.model.VirtualDeploymentCollection
             virtualDeploymentCollection;
 
     /**
-     * The returned VirtualDeploymentCollection instance.
+     * The returned {@code VirtualDeploymentCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListVirtualDeploymentsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned VirtualDeploymentCollection instance. */
+        /** The returned {@code VirtualDeploymentCollection} instance. */
         private com.oracle.bmc.servicemesh.model.VirtualDeploymentCollection
                 virtualDeploymentCollection;
 
         /**
-         * The returned VirtualDeploymentCollection instance.
+         * The returned {@code VirtualDeploymentCollection} instance.
          *
          * @param virtualDeploymentCollection the value to set
          * @return this builder

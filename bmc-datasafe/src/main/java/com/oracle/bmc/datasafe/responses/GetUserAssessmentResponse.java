@@ -42,11 +42,11 @@ public class GetUserAssessmentResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned UserAssessment instance. */
+    /** The returned {@code UserAssessment} instance. */
     private com.oracle.bmc.datasafe.model.UserAssessment userAssessment;
 
     /**
-     * The returned UserAssessment instance.
+     * The returned {@code UserAssessment} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class GetUserAssessmentResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned UserAssessment instance. */
+        /** The returned {@code UserAssessment} instance. */
         private com.oracle.bmc.datasafe.model.UserAssessment userAssessment;
 
         /**
-         * The returned UserAssessment instance.
+         * The returned {@code UserAssessment} instance.
          *
          * @param userAssessment the value to set
          * @return this builder

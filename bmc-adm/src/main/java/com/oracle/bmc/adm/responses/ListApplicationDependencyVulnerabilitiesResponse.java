@@ -43,12 +43,12 @@ public class ListApplicationDependencyVulnerabilitiesResponse
         return opcNextPage;
     }
 
-    /** The returned ApplicationDependencyVulnerabilityCollection instance. */
+    /** The returned {@code ApplicationDependencyVulnerabilityCollection} instance. */
     private com.oracle.bmc.adm.model.ApplicationDependencyVulnerabilityCollection
             applicationDependencyVulnerabilityCollection;
 
     /**
-     * The returned ApplicationDependencyVulnerabilityCollection instance.
+     * The returned {@code ApplicationDependencyVulnerabilityCollection} instance.
      *
      * @return the value
      */
@@ -135,12 +135,12 @@ public class ListApplicationDependencyVulnerabilitiesResponse
             return this;
         }
 
-        /** The returned ApplicationDependencyVulnerabilityCollection instance. */
+        /** The returned {@code ApplicationDependencyVulnerabilityCollection} instance. */
         private com.oracle.bmc.adm.model.ApplicationDependencyVulnerabilityCollection
                 applicationDependencyVulnerabilityCollection;
 
         /**
-         * The returned ApplicationDependencyVulnerabilityCollection instance.
+         * The returned {@code ApplicationDependencyVulnerabilityCollection} instance.
          *
          * @param applicationDependencyVulnerabilityCollection the value to set
          * @return this builder

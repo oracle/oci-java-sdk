@@ -42,12 +42,12 @@ public class ListSightingImpactedResourcesResponse extends com.oracle.bmc.respon
         return opcNextPage;
     }
 
-    /** The returned SightingImpactedResourceCollection instance. */
+    /** The returned {@code SightingImpactedResourceCollection} instance. */
     private com.oracle.bmc.cloudguard.model.SightingImpactedResourceCollection
             sightingImpactedResourceCollection;
 
     /**
-     * The returned SightingImpactedResourceCollection instance.
+     * The returned {@code SightingImpactedResourceCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListSightingImpactedResourcesResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned SightingImpactedResourceCollection instance. */
+        /** The returned {@code SightingImpactedResourceCollection} instance. */
         private com.oracle.bmc.cloudguard.model.SightingImpactedResourceCollection
                 sightingImpactedResourceCollection;
 
         /**
-         * The returned SightingImpactedResourceCollection instance.
+         * The returned {@code SightingImpactedResourceCollection} instance.
          *
          * @param sightingImpactedResourceCollection the value to set
          * @return this builder

@@ -24,12 +24,12 @@ public class ListCrossConnectMappingsResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** The returned CrossConnectMappingDetailsCollection instance. */
+    /** The returned {@code CrossConnectMappingDetailsCollection} instance. */
     private com.oracle.bmc.core.model.CrossConnectMappingDetailsCollection
             crossConnectMappingDetailsCollection;
 
     /**
-     * The returned CrossConnectMappingDetailsCollection instance.
+     * The returned {@code CrossConnectMappingDetailsCollection} instance.
      *
      * @return the value
      */
@@ -92,12 +92,12 @@ public class ListCrossConnectMappingsResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned CrossConnectMappingDetailsCollection instance. */
+        /** The returned {@code CrossConnectMappingDetailsCollection} instance. */
         private com.oracle.bmc.core.model.CrossConnectMappingDetailsCollection
                 crossConnectMappingDetailsCollection;
 
         /**
-         * The returned CrossConnectMappingDetailsCollection instance.
+         * The returned {@code CrossConnectMappingDetailsCollection} instance.
          *
          * @param crossConnectMappingDetailsCollection the value to set
          * @return this builder

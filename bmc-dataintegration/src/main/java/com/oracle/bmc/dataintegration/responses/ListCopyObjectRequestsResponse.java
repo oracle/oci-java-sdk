@@ -42,12 +42,12 @@ public class ListCopyObjectRequestsResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** The returned CopyObjectRequestSummaryCollection instance. */
+    /** The returned {@code CopyObjectRequestSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.CopyObjectRequestSummaryCollection
             copyObjectRequestSummaryCollection;
 
     /**
-     * The returned CopyObjectRequestSummaryCollection instance.
+     * The returned {@code CopyObjectRequestSummaryCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListCopyObjectRequestsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned CopyObjectRequestSummaryCollection instance. */
+        /** The returned {@code CopyObjectRequestSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.CopyObjectRequestSummaryCollection
                 copyObjectRequestSummaryCollection;
 
         /**
-         * The returned CopyObjectRequestSummaryCollection instance.
+         * The returned {@code CopyObjectRequestSummaryCollection} instance.
          *
          * @param copyObjectRequestSummaryCollection the value to set
          * @return this builder

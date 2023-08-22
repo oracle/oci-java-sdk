@@ -40,11 +40,11 @@ public class UpdateScheduleResponse extends com.oracle.bmc.responses.BmcResponse
         return etag;
     }
 
-    /** The returned Schedule instance. */
+    /** The returned {@code Schedule} instance. */
     private com.oracle.bmc.dataintegration.model.Schedule schedule;
 
     /**
-     * The returned Schedule instance.
+     * The returned {@code Schedule} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class UpdateScheduleResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned Schedule instance. */
+        /** The returned {@code Schedule} instance. */
         private com.oracle.bmc.dataintegration.model.Schedule schedule;
 
         /**
-         * The returned Schedule instance.
+         * The returned {@code Schedule} instance.
          *
          * @param schedule the value to set
          * @return this builder

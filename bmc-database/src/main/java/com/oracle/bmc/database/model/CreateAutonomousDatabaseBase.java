@@ -81,6 +81,7 @@ public class CreateAutonomousDatabaseBase
         "isAutoScalingEnabled",
         "isDedicated",
         "autonomousContainerDatabaseId",
+        "inMemoryPercentage",
         "isAccessControlEnabled",
         "whitelistedIps",
         "arePrimaryWhitelistedIpsUsed",
@@ -128,6 +129,7 @@ public class CreateAutonomousDatabaseBase
             Boolean isAutoScalingEnabled,
             Boolean isDedicated,
             String autonomousContainerDatabaseId,
+            Integer inMemoryPercentage,
             Boolean isAccessControlEnabled,
             java.util.List<String> whitelistedIps,
             Boolean arePrimaryWhitelistedIpsUsed,
@@ -174,6 +176,7 @@ public class CreateAutonomousDatabaseBase
         this.isAutoScalingEnabled = isAutoScalingEnabled;
         this.isDedicated = isDedicated;
         this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
+        this.inMemoryPercentage = inMemoryPercentage;
         this.isAccessControlEnabled = isAccessControlEnabled;
         this.whitelistedIps = whitelistedIps;
         this.arePrimaryWhitelistedIpsUsed = arePrimaryWhitelistedIpsUsed;
@@ -884,6 +887,23 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
+     * The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous
+     * Database.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("inMemoryPercentage")
+    private final Integer inMemoryPercentage;
+
+    /**
+     * The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous
+     * Database.
+     *
+     * @return the value
+     */
+    public Integer getInMemoryPercentage() {
+        return inMemoryPercentage;
+    }
+
+    /**
      * Indicates if the database-level access control is enabled. If disabled, database access is
      * defined by the network security rules. If enabled, database access is restricted to the IP
      * addresses defined by the rules specified with the {@code whitelistedIps} property. While
@@ -1534,6 +1554,7 @@ public class CreateAutonomousDatabaseBase
         sb.append(", isDedicated=").append(String.valueOf(this.isDedicated));
         sb.append(", autonomousContainerDatabaseId=")
                 .append(String.valueOf(this.autonomousContainerDatabaseId));
+        sb.append(", inMemoryPercentage=").append(String.valueOf(this.inMemoryPercentage));
         sb.append(", isAccessControlEnabled=").append(String.valueOf(this.isAccessControlEnabled));
         sb.append(", whitelistedIps=").append(String.valueOf(this.whitelistedIps));
         sb.append(", arePrimaryWhitelistedIpsUsed=")
@@ -1602,6 +1623,7 @@ public class CreateAutonomousDatabaseBase
                 && java.util.Objects.equals(this.isDedicated, other.isDedicated)
                 && java.util.Objects.equals(
                         this.autonomousContainerDatabaseId, other.autonomousContainerDatabaseId)
+                && java.util.Objects.equals(this.inMemoryPercentage, other.inMemoryPercentage)
                 && java.util.Objects.equals(
                         this.isAccessControlEnabled, other.isAccessControlEnabled)
                 && java.util.Objects.equals(this.whitelistedIps, other.whitelistedIps)
@@ -1691,6 +1713,11 @@ public class CreateAutonomousDatabaseBase
                         + (this.autonomousContainerDatabaseId == null
                                 ? 43
                                 : this.autonomousContainerDatabaseId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.inMemoryPercentage == null
+                                ? 43
+                                : this.inMemoryPercentage.hashCode());
         result =
                 (result * PRIME)
                         + (this.isAccessControlEnabled == null

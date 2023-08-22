@@ -42,12 +42,12 @@ public class ListMigrationObjectTypesResponse extends com.oracle.bmc.responses.B
         return opcNextPage;
     }
 
-    /** The returned MigrationObjectTypeSummaryCollection instance. */
+    /** The returned {@code MigrationObjectTypeSummaryCollection} instance. */
     private com.oracle.bmc.databasemigration.model.MigrationObjectTypeSummaryCollection
             migrationObjectTypeSummaryCollection;
 
     /**
-     * The returned MigrationObjectTypeSummaryCollection instance.
+     * The returned {@code MigrationObjectTypeSummaryCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListMigrationObjectTypesResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned MigrationObjectTypeSummaryCollection instance. */
+        /** The returned {@code MigrationObjectTypeSummaryCollection} instance. */
         private com.oracle.bmc.databasemigration.model.MigrationObjectTypeSummaryCollection
                 migrationObjectTypeSummaryCollection;
 
         /**
-         * The returned MigrationObjectTypeSummaryCollection instance.
+         * The returned {@code MigrationObjectTypeSummaryCollection} instance.
          *
          * @param migrationObjectTypeSummaryCollection the value to set
          * @return this builder

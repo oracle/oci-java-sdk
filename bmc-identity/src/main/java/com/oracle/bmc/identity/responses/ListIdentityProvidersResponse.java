@@ -42,11 +42,11 @@ public class ListIdentityProvidersResponse extends com.oracle.bmc.responses.BmcR
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.identity.model.IdentityProvider instances. */
+    /** A list of {@code com.oracle.bmc.identity.model.IdentityProvider} instances. */
     private java.util.List<com.oracle.bmc.identity.model.IdentityProvider> items;
 
     /**
-     * A list of com.oracle.bmc.identity.model.IdentityProvider instances.
+     * A list of {@code com.oracle.bmc.identity.model.IdentityProvider} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListIdentityProvidersResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** A list of com.oracle.bmc.identity.model.IdentityProvider instances. */
+        /** A list of {@code com.oracle.bmc.identity.model.IdentityProvider} instances. */
         private java.util.List<com.oracle.bmc.identity.model.IdentityProvider> items;
 
         /**
-         * A list of com.oracle.bmc.identity.model.IdentityProvider instances.
+         * A list of {@code com.oracle.bmc.identity.model.IdentityProvider} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -57,11 +57,11 @@ public class RotateAutonomousDatabaseEncryptionKeyResponse
         return opcRequestId;
     }
 
-    /** The returned AutonomousDatabase instance. */
+    /** The returned {@code AutonomousDatabase} instance. */
     private com.oracle.bmc.database.model.AutonomousDatabase autonomousDatabase;
 
     /**
-     * The returned AutonomousDatabase instance.
+     * The returned {@code AutonomousDatabase} instance.
      *
      * @return the value
      */
@@ -164,11 +164,11 @@ public class RotateAutonomousDatabaseEncryptionKeyResponse
             return this;
         }
 
-        /** The returned AutonomousDatabase instance. */
+        /** The returned {@code AutonomousDatabase} instance. */
         private com.oracle.bmc.database.model.AutonomousDatabase autonomousDatabase;
 
         /**
-         * The returned AutonomousDatabase instance.
+         * The returned {@code AutonomousDatabase} instance.
          *
          * @param autonomousDatabase the value to set
          * @return this builder

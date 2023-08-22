@@ -36,11 +36,11 @@ public class GetAddonResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Addon instance. */
+    /** The returned {@code Addon} instance. */
     private com.oracle.bmc.containerengine.model.Addon addon;
 
     /**
-     * The returned Addon instance.
+     * The returned {@code Addon} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetAddonResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Addon instance. */
+        /** The returned {@code Addon} instance. */
         private com.oracle.bmc.containerengine.model.Addon addon;
 
         /**
-         * The returned Addon instance.
+         * The returned {@code Addon} instance.
          *
          * @param addon the value to set
          * @return this builder

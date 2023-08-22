@@ -42,11 +42,11 @@ public class ListPodShapesResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.containerengine.model.PodShapeSummary instances. */
+    /** A list of {@code com.oracle.bmc.containerengine.model.PodShapeSummary} instances. */
     private java.util.List<com.oracle.bmc.containerengine.model.PodShapeSummary> items;
 
     /**
-     * A list of com.oracle.bmc.containerengine.model.PodShapeSummary instances.
+     * A list of {@code com.oracle.bmc.containerengine.model.PodShapeSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListPodShapesResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** A list of com.oracle.bmc.containerengine.model.PodShapeSummary instances. */
+        /** A list of {@code com.oracle.bmc.containerengine.model.PodShapeSummary} instances. */
         private java.util.List<com.oracle.bmc.containerengine.model.PodShapeSummary> items;
 
         /**
-         * A list of com.oracle.bmc.containerengine.model.PodShapeSummary instances.
+         * A list of {@code com.oracle.bmc.containerengine.model.PodShapeSummary} instances.
          *
          * @param items the value to set
          * @return this builder

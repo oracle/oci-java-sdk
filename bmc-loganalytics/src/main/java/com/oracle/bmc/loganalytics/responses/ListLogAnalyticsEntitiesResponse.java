@@ -44,12 +44,12 @@ public class ListLogAnalyticsEntitiesResponse extends com.oracle.bmc.responses.B
         return opcNextPage;
     }
 
-    /** The returned LogAnalyticsEntityCollection instance. */
+    /** The returned {@code LogAnalyticsEntityCollection} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsEntityCollection
             logAnalyticsEntityCollection;
 
     /**
-     * The returned LogAnalyticsEntityCollection instance.
+     * The returned {@code LogAnalyticsEntityCollection} instance.
      *
      * @return the value
      */
@@ -137,12 +137,12 @@ public class ListLogAnalyticsEntitiesResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned LogAnalyticsEntityCollection instance. */
+        /** The returned {@code LogAnalyticsEntityCollection} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsEntityCollection
                 logAnalyticsEntityCollection;
 
         /**
-         * The returned LogAnalyticsEntityCollection instance.
+         * The returned {@code LogAnalyticsEntityCollection} instance.
          *
          * @param logAnalyticsEntityCollection the value to set
          * @return this builder

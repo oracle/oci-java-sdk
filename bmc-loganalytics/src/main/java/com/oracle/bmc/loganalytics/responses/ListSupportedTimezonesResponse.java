@@ -56,11 +56,11 @@ public class ListSupportedTimezonesResponse extends com.oracle.bmc.responses.Bmc
         return opcTotalItems;
     }
 
-    /** The returned TimezoneCollection instance. */
+    /** The returned {@code TimezoneCollection} instance. */
     private com.oracle.bmc.loganalytics.model.TimezoneCollection timezoneCollection;
 
     /**
-     * The returned TimezoneCollection instance.
+     * The returned {@code TimezoneCollection} instance.
      *
      * @return the value
      */
@@ -163,11 +163,11 @@ public class ListSupportedTimezonesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned TimezoneCollection instance. */
+        /** The returned {@code TimezoneCollection} instance. */
         private com.oracle.bmc.loganalytics.model.TimezoneCollection timezoneCollection;
 
         /**
-         * The returned TimezoneCollection instance.
+         * The returned {@code TimezoneCollection} instance.
          *
          * @param timezoneCollection the value to set
          * @return this builder

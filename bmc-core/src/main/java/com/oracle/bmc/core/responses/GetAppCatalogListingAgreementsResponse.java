@@ -36,12 +36,12 @@ public class GetAppCatalogListingAgreementsResponse extends com.oracle.bmc.respo
         return opcRequestId;
     }
 
-    /** The returned AppCatalogListingResourceVersionAgreements instance. */
+    /** The returned {@code AppCatalogListingResourceVersionAgreements} instance. */
     private com.oracle.bmc.core.model.AppCatalogListingResourceVersionAgreements
             appCatalogListingResourceVersionAgreements;
 
     /**
-     * The returned AppCatalogListingResourceVersionAgreements instance.
+     * The returned {@code AppCatalogListingResourceVersionAgreements} instance.
      *
      * @return the value
      */
@@ -122,12 +122,12 @@ public class GetAppCatalogListingAgreementsResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned AppCatalogListingResourceVersionAgreements instance. */
+        /** The returned {@code AppCatalogListingResourceVersionAgreements} instance. */
         private com.oracle.bmc.core.model.AppCatalogListingResourceVersionAgreements
                 appCatalogListingResourceVersionAgreements;
 
         /**
-         * The returned AppCatalogListingResourceVersionAgreements instance.
+         * The returned {@code AppCatalogListingResourceVersionAgreements} instance.
          *
          * @param appCatalogListingResourceVersionAgreements the value to set
          * @return this builder

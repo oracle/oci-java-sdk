@@ -52,11 +52,11 @@ public class CreateTranslatorResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned Translator instance. */
+    /** The returned {@code Translator} instance. */
     private com.oracle.bmc.oda.model.Translator translator;
 
     /**
-     * The returned Translator instance.
+     * The returned {@code Translator} instance.
      *
      * @return the value
      */
@@ -154,11 +154,11 @@ public class CreateTranslatorResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned Translator instance. */
+        /** The returned {@code Translator} instance. */
         private com.oracle.bmc.oda.model.Translator translator;
 
         /**
-         * The returned Translator instance.
+         * The returned {@code Translator} instance.
          *
          * @param translator the value to set
          * @return this builder

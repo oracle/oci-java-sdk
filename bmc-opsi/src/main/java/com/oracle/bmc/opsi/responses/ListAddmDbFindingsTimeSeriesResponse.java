@@ -42,12 +42,12 @@ public class ListAddmDbFindingsTimeSeriesResponse extends com.oracle.bmc.respons
         return opcNextPage;
     }
 
-    /** The returned AddmDbFindingsTimeSeriesCollection instance. */
+    /** The returned {@code AddmDbFindingsTimeSeriesCollection} instance. */
     private com.oracle.bmc.opsi.model.AddmDbFindingsTimeSeriesCollection
             addmDbFindingsTimeSeriesCollection;
 
     /**
-     * The returned AddmDbFindingsTimeSeriesCollection instance.
+     * The returned {@code AddmDbFindingsTimeSeriesCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListAddmDbFindingsTimeSeriesResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned AddmDbFindingsTimeSeriesCollection instance. */
+        /** The returned {@code AddmDbFindingsTimeSeriesCollection} instance. */
         private com.oracle.bmc.opsi.model.AddmDbFindingsTimeSeriesCollection
                 addmDbFindingsTimeSeriesCollection;
 
         /**
-         * The returned AddmDbFindingsTimeSeriesCollection instance.
+         * The returned {@code AddmDbFindingsTimeSeriesCollection} instance.
          *
          * @param addmDbFindingsTimeSeriesCollection the value to set
          * @return this builder

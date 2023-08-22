@@ -36,11 +36,11 @@ public class GetOpensearchClusterResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned OpensearchCluster instance. */
+    /** The returned {@code OpensearchCluster} instance. */
     private com.oracle.bmc.opensearch.model.OpensearchCluster opensearchCluster;
 
     /**
-     * The returned OpensearchCluster instance.
+     * The returned {@code OpensearchCluster} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetOpensearchClusterResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned OpensearchCluster instance. */
+        /** The returned {@code OpensearchCluster} instance. */
         private com.oracle.bmc.opensearch.model.OpensearchCluster opensearchCluster;
 
         /**
-         * The returned OpensearchCluster instance.
+         * The returned {@code OpensearchCluster} instance.
          *
          * @param opensearchCluster the value to set
          * @return this builder

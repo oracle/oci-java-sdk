@@ -44,11 +44,13 @@ public class ListPdbConversionHistoryEntriesResponse extends com.oracle.bmc.resp
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.database.model.PdbConversionHistoryEntrySummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.database.model.PdbConversionHistoryEntrySummary} instances.
+     */
     private java.util.List<com.oracle.bmc.database.model.PdbConversionHistoryEntrySummary> items;
 
     /**
-     * A list of com.oracle.bmc.database.model.PdbConversionHistoryEntrySummary instances.
+     * A list of {@code com.oracle.bmc.database.model.PdbConversionHistoryEntrySummary} instances.
      *
      * @return the value
      */
@@ -137,12 +139,16 @@ public class ListPdbConversionHistoryEntriesResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** A list of com.oracle.bmc.database.model.PdbConversionHistoryEntrySummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.database.model.PdbConversionHistoryEntrySummary}
+         * instances.
+         */
         private java.util.List<com.oracle.bmc.database.model.PdbConversionHistoryEntrySummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.database.model.PdbConversionHistoryEntrySummary instances.
+         * A list of {@code com.oracle.bmc.database.model.PdbConversionHistoryEntrySummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

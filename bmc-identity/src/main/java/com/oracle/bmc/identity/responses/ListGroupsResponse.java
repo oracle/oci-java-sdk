@@ -42,11 +42,11 @@ public class ListGroupsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.identity.model.Group instances. */
+    /** A list of {@code com.oracle.bmc.identity.model.Group} instances. */
     private java.util.List<com.oracle.bmc.identity.model.Group> items;
 
     /**
-     * A list of com.oracle.bmc.identity.model.Group instances.
+     * A list of {@code com.oracle.bmc.identity.model.Group} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListGroupsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.identity.model.Group instances. */
+        /** A list of {@code com.oracle.bmc.identity.model.Group} instances. */
         private java.util.List<com.oracle.bmc.identity.model.Group> items;
 
         /**
-         * A list of com.oracle.bmc.identity.model.Group instances.
+         * A list of {@code com.oracle.bmc.identity.model.Group} instances.
          *
          * @param items the value to set
          * @return this builder

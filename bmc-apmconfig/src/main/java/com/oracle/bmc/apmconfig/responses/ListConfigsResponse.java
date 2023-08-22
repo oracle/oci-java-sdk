@@ -42,11 +42,11 @@ public class ListConfigsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned ConfigCollection instance. */
+    /** The returned {@code ConfigCollection} instance. */
     private com.oracle.bmc.apmconfig.model.ConfigCollection configCollection;
 
     /**
-     * The returned ConfigCollection instance.
+     * The returned {@code ConfigCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListConfigsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned ConfigCollection instance. */
+        /** The returned {@code ConfigCollection} instance. */
         private com.oracle.bmc.apmconfig.model.ConfigCollection configCollection;
 
         /**
-         * The returned ConfigCollection instance.
+         * The returned {@code ConfigCollection} instance.
          *
          * @param configCollection the value to set
          * @return this builder

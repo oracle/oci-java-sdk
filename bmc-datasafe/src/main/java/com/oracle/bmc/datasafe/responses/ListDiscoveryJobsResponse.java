@@ -62,11 +62,11 @@ public class ListDiscoveryJobsResponse extends com.oracle.bmc.responses.BmcRespo
         return opcPrevPage;
     }
 
-    /** The returned DiscoveryJobCollection instance. */
+    /** The returned {@code DiscoveryJobCollection} instance. */
     private com.oracle.bmc.datasafe.model.DiscoveryJobCollection discoveryJobCollection;
 
     /**
-     * The returned DiscoveryJobCollection instance.
+     * The returned {@code DiscoveryJobCollection} instance.
      *
      * @return the value
      */
@@ -174,11 +174,11 @@ public class ListDiscoveryJobsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned DiscoveryJobCollection instance. */
+        /** The returned {@code DiscoveryJobCollection} instance. */
         private com.oracle.bmc.datasafe.model.DiscoveryJobCollection discoveryJobCollection;
 
         /**
-         * The returned DiscoveryJobCollection instance.
+         * The returned {@code DiscoveryJobCollection} instance.
          *
          * @param discoveryJobCollection the value to set
          * @return this builder

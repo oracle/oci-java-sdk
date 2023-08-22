@@ -37,11 +37,11 @@ public class CreateVolumeBackupPolicyAssignmentResponse
         return opcRequestId;
     }
 
-    /** The returned VolumeBackupPolicyAssignment instance. */
+    /** The returned {@code VolumeBackupPolicyAssignment} instance. */
     private com.oracle.bmc.core.model.VolumeBackupPolicyAssignment volumeBackupPolicyAssignment;
 
     /**
-     * The returned VolumeBackupPolicyAssignment instance.
+     * The returned {@code VolumeBackupPolicyAssignment} instance.
      *
      * @return the value
      */
@@ -120,11 +120,11 @@ public class CreateVolumeBackupPolicyAssignmentResponse
             return this;
         }
 
-        /** The returned VolumeBackupPolicyAssignment instance. */
+        /** The returned {@code VolumeBackupPolicyAssignment} instance. */
         private com.oracle.bmc.core.model.VolumeBackupPolicyAssignment volumeBackupPolicyAssignment;
 
         /**
-         * The returned VolumeBackupPolicyAssignment instance.
+         * The returned {@code VolumeBackupPolicyAssignment} instance.
          *
          * @param volumeBackupPolicyAssignment the value to set
          * @return this builder

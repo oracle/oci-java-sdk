@@ -36,11 +36,11 @@ public class PutDynamicResourceGroupResponse extends com.oracle.bmc.responses.Bm
         return etag;
     }
 
-    /** The returned DynamicResourceGroup instance. */
+    /** The returned {@code DynamicResourceGroup} instance. */
     private com.oracle.bmc.identitydomains.model.DynamicResourceGroup dynamicResourceGroup;
 
     /**
-     * The returned DynamicResourceGroup instance.
+     * The returned {@code DynamicResourceGroup} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class PutDynamicResourceGroupResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned DynamicResourceGroup instance. */
+        /** The returned {@code DynamicResourceGroup} instance. */
         private com.oracle.bmc.identitydomains.model.DynamicResourceGroup dynamicResourceGroup;
 
         /**
-         * The returned DynamicResourceGroup instance.
+         * The returned {@code DynamicResourceGroup} instance.
          *
          * @param dynamicResourceGroup the value to set
          * @return this builder

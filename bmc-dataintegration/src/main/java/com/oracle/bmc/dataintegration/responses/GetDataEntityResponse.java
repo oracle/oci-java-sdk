@@ -24,11 +24,11 @@ public class GetDataEntityResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** The returned DataEntity instance. */
+    /** The returned {@code DataEntity} instance. */
     private com.oracle.bmc.dataintegration.model.DataEntity dataEntity;
 
     /**
-     * The returned DataEntity instance.
+     * The returned {@code DataEntity} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetDataEntityResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned DataEntity instance. */
+        /** The returned {@code DataEntity} instance. */
         private com.oracle.bmc.dataintegration.model.DataEntity dataEntity;
 
         /**
-         * The returned DataEntity instance.
+         * The returned {@code DataEntity} instance.
          *
          * @param dataEntity the value to set
          * @return this builder

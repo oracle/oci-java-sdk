@@ -36,11 +36,11 @@ public class GetMaintenanceRunResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned MaintenanceRun instance. */
+    /** The returned {@code MaintenanceRun} instance. */
     private com.oracle.bmc.database.model.MaintenanceRun maintenanceRun;
 
     /**
-     * The returned MaintenanceRun instance.
+     * The returned {@code MaintenanceRun} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetMaintenanceRunResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned MaintenanceRun instance. */
+        /** The returned {@code MaintenanceRun} instance. */
         private com.oracle.bmc.database.model.MaintenanceRun maintenanceRun;
 
         /**
-         * The returned MaintenanceRun instance.
+         * The returned {@code MaintenanceRun} instance.
          *
          * @param maintenanceRun the value to set
          * @return this builder

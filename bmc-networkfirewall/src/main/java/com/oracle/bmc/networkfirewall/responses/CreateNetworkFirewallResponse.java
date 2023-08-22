@@ -52,11 +52,11 @@ public class CreateNetworkFirewallResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned NetworkFirewall instance. */
+    /** The returned {@code NetworkFirewall} instance. */
     private com.oracle.bmc.networkfirewall.model.NetworkFirewall networkFirewall;
 
     /**
-     * The returned NetworkFirewall instance.
+     * The returned {@code NetworkFirewall} instance.
      *
      * @return the value
      */
@@ -154,11 +154,11 @@ public class CreateNetworkFirewallResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned NetworkFirewall instance. */
+        /** The returned {@code NetworkFirewall} instance. */
         private com.oracle.bmc.networkfirewall.model.NetworkFirewall networkFirewall;
 
         /**
-         * The returned NetworkFirewall instance.
+         * The returned {@code NetworkFirewall} instance.
          *
          * @param networkFirewall the value to set
          * @return this builder

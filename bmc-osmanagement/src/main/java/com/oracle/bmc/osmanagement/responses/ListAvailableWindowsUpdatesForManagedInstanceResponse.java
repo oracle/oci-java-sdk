@@ -43,11 +43,13 @@ public class ListAvailableWindowsUpdatesForManagedInstanceResponse
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.osmanagement.model.AvailableWindowsUpdateSummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.osmanagement.model.AvailableWindowsUpdateSummary} instances.
+     */
     private java.util.List<com.oracle.bmc.osmanagement.model.AvailableWindowsUpdateSummary> items;
 
     /**
-     * A list of com.oracle.bmc.osmanagement.model.AvailableWindowsUpdateSummary instances.
+     * A list of {@code com.oracle.bmc.osmanagement.model.AvailableWindowsUpdateSummary} instances.
      *
      * @return the value
      */
@@ -132,12 +134,16 @@ public class ListAvailableWindowsUpdatesForManagedInstanceResponse
             return this;
         }
 
-        /** A list of com.oracle.bmc.osmanagement.model.AvailableWindowsUpdateSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.osmanagement.model.AvailableWindowsUpdateSummary}
+         * instances.
+         */
         private java.util.List<com.oracle.bmc.osmanagement.model.AvailableWindowsUpdateSummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.osmanagement.model.AvailableWindowsUpdateSummary instances.
+         * A list of {@code com.oracle.bmc.osmanagement.model.AvailableWindowsUpdateSummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

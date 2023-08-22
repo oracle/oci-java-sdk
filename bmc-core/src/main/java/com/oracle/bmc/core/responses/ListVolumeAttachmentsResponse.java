@@ -42,11 +42,11 @@ public class ListVolumeAttachmentsResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.VolumeAttachment instances. */
+    /** A list of {@code com.oracle.bmc.core.model.VolumeAttachment} instances. */
     private java.util.List<com.oracle.bmc.core.model.VolumeAttachment> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.VolumeAttachment instances.
+     * A list of {@code com.oracle.bmc.core.model.VolumeAttachment} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListVolumeAttachmentsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.VolumeAttachment instances. */
+        /** A list of {@code com.oracle.bmc.core.model.VolumeAttachment} instances. */
         private java.util.List<com.oracle.bmc.core.model.VolumeAttachment> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.VolumeAttachment instances.
+         * A list of {@code com.oracle.bmc.core.model.VolumeAttachment} instances.
          *
          * @param items the value to set
          * @return this builder

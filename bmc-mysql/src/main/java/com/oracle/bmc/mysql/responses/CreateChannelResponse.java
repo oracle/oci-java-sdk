@@ -52,11 +52,11 @@ public class CreateChannelResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcWorkRequestId;
     }
 
-    /** The returned Channel instance. */
+    /** The returned {@code Channel} instance. */
     private com.oracle.bmc.mysql.model.Channel channel;
 
     /**
-     * The returned Channel instance.
+     * The returned {@code Channel} instance.
      *
      * @return the value
      */
@@ -154,11 +154,11 @@ public class CreateChannelResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned Channel instance. */
+        /** The returned {@code Channel} instance. */
         private com.oracle.bmc.mysql.model.Channel channel;
 
         /**
-         * The returned Channel instance.
+         * The returned {@code Channel} instance.
          *
          * @param channel the value to set
          * @return this builder

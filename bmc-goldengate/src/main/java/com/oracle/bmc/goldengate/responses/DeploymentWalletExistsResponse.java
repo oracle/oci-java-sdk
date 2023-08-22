@@ -36,12 +36,12 @@ public class DeploymentWalletExistsResponse extends com.oracle.bmc.responses.Bmc
         return etag;
     }
 
-    /** The returned DeploymentWalletExistsResponseDetails instance. */
+    /** The returned {@code DeploymentWalletExistsResponseDetails} instance. */
     private com.oracle.bmc.goldengate.model.DeploymentWalletExistsResponseDetails
             deploymentWalletExistsResponseDetails;
 
     /**
-     * The returned DeploymentWalletExistsResponseDetails instance.
+     * The returned {@code DeploymentWalletExistsResponseDetails} instance.
      *
      * @return the value
      */
@@ -121,12 +121,12 @@ public class DeploymentWalletExistsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned DeploymentWalletExistsResponseDetails instance. */
+        /** The returned {@code DeploymentWalletExistsResponseDetails} instance. */
         private com.oracle.bmc.goldengate.model.DeploymentWalletExistsResponseDetails
                 deploymentWalletExistsResponseDetails;
 
         /**
-         * The returned DeploymentWalletExistsResponseDetails instance.
+         * The returned {@code DeploymentWalletExistsResponseDetails} instance.
          *
          * @param deploymentWalletExistsResponseDetails the value to set
          * @return this builder

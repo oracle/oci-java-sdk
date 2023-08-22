@@ -42,11 +42,11 @@ public class ListKnowledgeBasesResponse extends com.oracle.bmc.responses.BmcResp
         return opcNextPage;
     }
 
-    /** The returned KnowledgeBaseCollection instance. */
+    /** The returned {@code KnowledgeBaseCollection} instance. */
     private com.oracle.bmc.adm.model.KnowledgeBaseCollection knowledgeBaseCollection;
 
     /**
-     * The returned KnowledgeBaseCollection instance.
+     * The returned {@code KnowledgeBaseCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListKnowledgeBasesResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned KnowledgeBaseCollection instance. */
+        /** The returned {@code KnowledgeBaseCollection} instance. */
         private com.oracle.bmc.adm.model.KnowledgeBaseCollection knowledgeBaseCollection;
 
         /**
-         * The returned KnowledgeBaseCollection instance.
+         * The returned {@code KnowledgeBaseCollection} instance.
          *
          * @param knowledgeBaseCollection the value to set
          * @return this builder

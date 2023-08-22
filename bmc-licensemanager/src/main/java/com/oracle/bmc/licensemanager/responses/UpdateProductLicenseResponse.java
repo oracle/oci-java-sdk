@@ -36,11 +36,11 @@ public class UpdateProductLicenseResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned ProductLicense instance. */
+    /** The returned {@code ProductLicense} instance. */
     private com.oracle.bmc.licensemanager.model.ProductLicense productLicense;
 
     /**
-     * The returned ProductLicense instance.
+     * The returned {@code ProductLicense} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateProductLicenseResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned ProductLicense instance. */
+        /** The returned {@code ProductLicense} instance. */
         private com.oracle.bmc.licensemanager.model.ProductLicense productLicense;
 
         /**
-         * The returned ProductLicense instance.
+         * The returned {@code ProductLicense} instance.
          *
          * @param productLicense the value to set
          * @return this builder

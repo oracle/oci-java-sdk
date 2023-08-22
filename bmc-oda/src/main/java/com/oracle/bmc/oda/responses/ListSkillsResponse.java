@@ -54,11 +54,11 @@ public class ListSkillsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcTotalItems;
     }
 
-    /** The returned SkillCollection instance. */
+    /** The returned {@code SkillCollection} instance. */
     private com.oracle.bmc.oda.model.SkillCollection skillCollection;
 
     /**
-     * The returned SkillCollection instance.
+     * The returned {@code SkillCollection} instance.
      *
      * @return the value
      */
@@ -158,11 +158,11 @@ public class ListSkillsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned SkillCollection instance. */
+        /** The returned {@code SkillCollection} instance. */
         private com.oracle.bmc.oda.model.SkillCollection skillCollection;
 
         /**
-         * The returned SkillCollection instance.
+         * The returned {@code SkillCollection} instance.
          *
          * @param skillCollection the value to set
          * @return this builder

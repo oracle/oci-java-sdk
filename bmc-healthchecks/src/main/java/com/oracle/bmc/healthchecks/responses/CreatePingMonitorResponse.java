@@ -48,11 +48,11 @@ public class CreatePingMonitorResponse extends com.oracle.bmc.responses.BmcRespo
         return etag;
     }
 
-    /** The returned PingMonitor instance. */
+    /** The returned {@code PingMonitor} instance. */
     private com.oracle.bmc.healthchecks.model.PingMonitor pingMonitor;
 
     /**
-     * The returned PingMonitor instance.
+     * The returned {@code PingMonitor} instance.
      *
      * @return the value
      */
@@ -146,11 +146,11 @@ public class CreatePingMonitorResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned PingMonitor instance. */
+        /** The returned {@code PingMonitor} instance. */
         private com.oracle.bmc.healthchecks.model.PingMonitor pingMonitor;
 
         /**
-         * The returned PingMonitor instance.
+         * The returned {@code PingMonitor} instance.
          *
          * @param pingMonitor the value to set
          * @return this builder

@@ -24,12 +24,12 @@ public class GetSqlExecutionPlanResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned SqlTuningAdvisorTaskSqlExecutionPlan instance. */
+    /** The returned {@code SqlTuningAdvisorTaskSqlExecutionPlan} instance. */
     private com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskSqlExecutionPlan
             sqlTuningAdvisorTaskSqlExecutionPlan;
 
     /**
-     * The returned SqlTuningAdvisorTaskSqlExecutionPlan instance.
+     * The returned {@code SqlTuningAdvisorTaskSqlExecutionPlan} instance.
      *
      * @return the value
      */
@@ -91,12 +91,12 @@ public class GetSqlExecutionPlanResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned SqlTuningAdvisorTaskSqlExecutionPlan instance. */
+        /** The returned {@code SqlTuningAdvisorTaskSqlExecutionPlan} instance. */
         private com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskSqlExecutionPlan
                 sqlTuningAdvisorTaskSqlExecutionPlan;
 
         /**
-         * The returned SqlTuningAdvisorTaskSqlExecutionPlan instance.
+         * The returned {@code SqlTuningAdvisorTaskSqlExecutionPlan} instance.
          *
          * @param sqlTuningAdvisorTaskSqlExecutionPlan the value to set
          * @return this builder

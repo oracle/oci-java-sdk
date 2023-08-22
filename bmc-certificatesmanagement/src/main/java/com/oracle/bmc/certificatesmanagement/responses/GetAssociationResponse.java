@@ -36,11 +36,11 @@ public class GetAssociationResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned Association instance. */
+    /** The returned {@code Association} instance. */
     private com.oracle.bmc.certificatesmanagement.model.Association association;
 
     /**
-     * The returned Association instance.
+     * The returned {@code Association} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetAssociationResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned Association instance. */
+        /** The returned {@code Association} instance. */
         private com.oracle.bmc.certificatesmanagement.model.Association association;
 
         /**
-         * The returned Association instance.
+         * The returned {@code Association} instance.
          *
          * @param association the value to set
          * @return this builder

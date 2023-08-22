@@ -40,11 +40,11 @@ public class GetTypeResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Type instance. */
+    /** The returned {@code Type} instance. */
     private com.oracle.bmc.datacatalog.model.Type type;
 
     /**
-     * The returned Type instance.
+     * The returned {@code Type} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetTypeResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Type instance. */
+        /** The returned {@code Type} instance. */
         private com.oracle.bmc.datacatalog.model.Type type;
 
         /**
-         * The returned Type instance.
+         * The returned {@code Type} instance.
          *
          * @param type the value to set
          * @return this builder

@@ -43,13 +43,15 @@ public class ListInstanceAgentCommandsResponse extends com.oracle.bmc.responses.
     }
 
     /**
-     * A list of com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandSummary instances.
+     * A list of {@code com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandSummary}
+     * instances.
      */
     private java.util.List<com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandSummary>
             items;
 
     /**
-     * A list of com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandSummary instances.
+     * A list of {@code com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandSummary}
+     * instances.
      *
      * @return the value
      */
@@ -136,7 +138,7 @@ public class ListInstanceAgentCommandsResponse extends com.oracle.bmc.responses.
         }
 
         /**
-         * A list of com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandSummary
+         * A list of {@code com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandSummary}
          * instances.
          */
         private java.util.List<
@@ -144,7 +146,7 @@ public class ListInstanceAgentCommandsResponse extends com.oracle.bmc.responses.
                 items;
 
         /**
-         * A list of com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandSummary
+         * A list of {@code com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandSummary}
          * instances.
          *
          * @param items the value to set

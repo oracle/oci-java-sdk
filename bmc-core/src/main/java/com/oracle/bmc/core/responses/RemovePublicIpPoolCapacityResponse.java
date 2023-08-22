@@ -36,11 +36,11 @@ public class RemovePublicIpPoolCapacityResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    /** The returned PublicIpPool instance. */
+    /** The returned {@code PublicIpPool} instance. */
     private com.oracle.bmc.core.model.PublicIpPool publicIpPool;
 
     /**
-     * The returned PublicIpPool instance.
+     * The returned {@code PublicIpPool} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class RemovePublicIpPoolCapacityResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned PublicIpPool instance. */
+        /** The returned {@code PublicIpPool} instance. */
         private com.oracle.bmc.core.model.PublicIpPool publicIpPool;
 
         /**
-         * The returned PublicIpPool instance.
+         * The returned {@code PublicIpPool} instance.
          *
          * @param publicIpPool the value to set
          * @return this builder

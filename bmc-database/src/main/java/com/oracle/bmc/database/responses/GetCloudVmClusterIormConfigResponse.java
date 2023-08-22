@@ -36,11 +36,11 @@ public class GetCloudVmClusterIormConfigResponse extends com.oracle.bmc.response
         return etag;
     }
 
-    /** The returned ExadataIormConfig instance. */
+    /** The returned {@code ExadataIormConfig} instance. */
     private com.oracle.bmc.database.model.ExadataIormConfig exadataIormConfig;
 
     /**
-     * The returned ExadataIormConfig instance.
+     * The returned {@code ExadataIormConfig} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetCloudVmClusterIormConfigResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned ExadataIormConfig instance. */
+        /** The returned {@code ExadataIormConfig} instance. */
         private com.oracle.bmc.database.model.ExadataIormConfig exadataIormConfig;
 
         /**
-         * The returned ExadataIormConfig instance.
+         * The returned {@code ExadataIormConfig} instance.
          *
          * @param exadataIormConfig the value to set
          * @return this builder

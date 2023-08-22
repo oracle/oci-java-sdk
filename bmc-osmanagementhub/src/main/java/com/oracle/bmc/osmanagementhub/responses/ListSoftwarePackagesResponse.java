@@ -42,12 +42,12 @@ public class ListSoftwarePackagesResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** The returned SoftwarePackageCollection instance. */
+    /** The returned {@code SoftwarePackageCollection} instance. */
     private com.oracle.bmc.osmanagementhub.model.SoftwarePackageCollection
             softwarePackageCollection;
 
     /**
-     * The returned SoftwarePackageCollection instance.
+     * The returned {@code SoftwarePackageCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListSoftwarePackagesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned SoftwarePackageCollection instance. */
+        /** The returned {@code SoftwarePackageCollection} instance. */
         private com.oracle.bmc.osmanagementhub.model.SoftwarePackageCollection
                 softwarePackageCollection;
 
         /**
-         * The returned SoftwarePackageCollection instance.
+         * The returned {@code SoftwarePackageCollection} instance.
          *
          * @param softwarePackageCollection the value to set
          * @return this builder

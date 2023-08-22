@@ -36,11 +36,11 @@ public class UpdateIdentityProviderResponse extends com.oracle.bmc.responses.Bmc
         return etag;
     }
 
-    /** The returned IdentityProvider instance. */
+    /** The returned {@code IdentityProvider} instance. */
     private com.oracle.bmc.identity.model.IdentityProvider identityProvider;
 
     /**
-     * The returned IdentityProvider instance.
+     * The returned {@code IdentityProvider} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class UpdateIdentityProviderResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned IdentityProvider instance. */
+        /** The returned {@code IdentityProvider} instance. */
         private com.oracle.bmc.identity.model.IdentityProvider identityProvider;
 
         /**
-         * The returned IdentityProvider instance.
+         * The returned {@code IdentityProvider} instance.
          *
          * @param identityProvider the value to set
          * @return this builder

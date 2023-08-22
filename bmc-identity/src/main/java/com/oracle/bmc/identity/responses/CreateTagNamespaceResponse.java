@@ -24,11 +24,11 @@ public class CreateTagNamespaceResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned TagNamespace instance. */
+    /** The returned {@code TagNamespace} instance. */
     private com.oracle.bmc.identity.model.TagNamespace tagNamespace;
 
     /**
-     * The returned TagNamespace instance.
+     * The returned {@code TagNamespace} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class CreateTagNamespaceResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned TagNamespace instance. */
+        /** The returned {@code TagNamespace} instance. */
         private com.oracle.bmc.identity.model.TagNamespace tagNamespace;
 
         /**
-         * The returned TagNamespace instance.
+         * The returned {@code TagNamespace} instance.
          *
          * @param tagNamespace the value to set
          * @return this builder

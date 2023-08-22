@@ -46,11 +46,11 @@ public class ListReplicationTargetsResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.filestorage.model.ReplicationTargetSummary instances. */
+    /** A list of {@code com.oracle.bmc.filestorage.model.ReplicationTargetSummary} instances. */
     private java.util.List<com.oracle.bmc.filestorage.model.ReplicationTargetSummary> items;
 
     /**
-     * A list of com.oracle.bmc.filestorage.model.ReplicationTargetSummary instances.
+     * A list of {@code com.oracle.bmc.filestorage.model.ReplicationTargetSummary} instances.
      *
      * @return the value
      */
@@ -138,11 +138,13 @@ public class ListReplicationTargetsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** A list of com.oracle.bmc.filestorage.model.ReplicationTargetSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.filestorage.model.ReplicationTargetSummary} instances.
+         */
         private java.util.List<com.oracle.bmc.filestorage.model.ReplicationTargetSummary> items;
 
         /**
-         * A list of com.oracle.bmc.filestorage.model.ReplicationTargetSummary instances.
+         * A list of {@code com.oracle.bmc.filestorage.model.ReplicationTargetSummary} instances.
          *
          * @param items the value to set
          * @return this builder

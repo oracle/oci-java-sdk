@@ -36,11 +36,11 @@ public class GetRoverNodeEncryptionKeyResponse extends com.oracle.bmc.responses.
         return opcRequestId;
     }
 
-    /** The returned RoverNodeEncryptionKey instance. */
+    /** The returned {@code RoverNodeEncryptionKey} instance. */
     private com.oracle.bmc.rover.model.RoverNodeEncryptionKey roverNodeEncryptionKey;
 
     /**
-     * The returned RoverNodeEncryptionKey instance.
+     * The returned {@code RoverNodeEncryptionKey} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetRoverNodeEncryptionKeyResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned RoverNodeEncryptionKey instance. */
+        /** The returned {@code RoverNodeEncryptionKey} instance. */
         private com.oracle.bmc.rover.model.RoverNodeEncryptionKey roverNodeEncryptionKey;
 
         /**
-         * The returned RoverNodeEncryptionKey instance.
+         * The returned {@code RoverNodeEncryptionKey} instance.
          *
          * @param roverNodeEncryptionKey the value to set
          * @return this builder

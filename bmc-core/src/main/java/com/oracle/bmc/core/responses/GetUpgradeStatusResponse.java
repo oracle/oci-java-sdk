@@ -24,11 +24,11 @@ public class GetUpgradeStatusResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned UpgradeStatus instance. */
+    /** The returned {@code UpgradeStatus} instance. */
     private com.oracle.bmc.core.model.UpgradeStatus upgradeStatus;
 
     /**
-     * The returned UpgradeStatus instance.
+     * The returned {@code UpgradeStatus} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetUpgradeStatusResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned UpgradeStatus instance. */
+        /** The returned {@code UpgradeStatus} instance. */
         private com.oracle.bmc.core.model.UpgradeStatus upgradeStatus;
 
         /**
-         * The returned UpgradeStatus instance.
+         * The returned {@code UpgradeStatus} instance.
          *
          * @param upgradeStatus the value to set
          * @return this builder

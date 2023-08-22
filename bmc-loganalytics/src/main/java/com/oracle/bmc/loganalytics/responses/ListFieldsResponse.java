@@ -64,12 +64,12 @@ public class ListFieldsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsFieldCollection instance. */
+    /** The returned {@code LogAnalyticsFieldCollection} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsFieldCollection
             logAnalyticsFieldCollection;
 
     /**
-     * The returned LogAnalyticsFieldCollection instance.
+     * The returned {@code LogAnalyticsFieldCollection} instance.
      *
      * @return the value
      */
@@ -181,12 +181,12 @@ public class ListFieldsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned LogAnalyticsFieldCollection instance. */
+        /** The returned {@code LogAnalyticsFieldCollection} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsFieldCollection
                 logAnalyticsFieldCollection;
 
         /**
-         * The returned LogAnalyticsFieldCollection instance.
+         * The returned {@code LogAnalyticsFieldCollection} instance.
          *
          * @param logAnalyticsFieldCollection the value to set
          * @return this builder

@@ -40,11 +40,11 @@ public class UpdateNotebookSessionResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned NotebookSession instance. */
+    /** The returned {@code NotebookSession} instance. */
     private com.oracle.bmc.datascience.model.NotebookSession notebookSession;
 
     /**
-     * The returned NotebookSession instance.
+     * The returned {@code NotebookSession} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class UpdateNotebookSessionResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned NotebookSession instance. */
+        /** The returned {@code NotebookSession} instance. */
         private com.oracle.bmc.datascience.model.NotebookSession notebookSession;
 
         /**
-         * The returned NotebookSession instance.
+         * The returned {@code NotebookSession} instance.
          *
          * @param notebookSession the value to set
          * @return this builder

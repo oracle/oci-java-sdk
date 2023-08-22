@@ -42,12 +42,12 @@ public class ListTopUtilizedProductLicensesResponse extends com.oracle.bmc.respo
         return opcNextPage;
     }
 
-    /** The returned TopUtilizedProductLicenseCollection instance. */
+    /** The returned {@code TopUtilizedProductLicenseCollection} instance. */
     private com.oracle.bmc.licensemanager.model.TopUtilizedProductLicenseCollection
             topUtilizedProductLicenseCollection;
 
     /**
-     * The returned TopUtilizedProductLicenseCollection instance.
+     * The returned {@code TopUtilizedProductLicenseCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListTopUtilizedProductLicensesResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned TopUtilizedProductLicenseCollection instance. */
+        /** The returned {@code TopUtilizedProductLicenseCollection} instance. */
         private com.oracle.bmc.licensemanager.model.TopUtilizedProductLicenseCollection
                 topUtilizedProductLicenseCollection;
 
         /**
-         * The returned TopUtilizedProductLicenseCollection instance.
+         * The returned {@code TopUtilizedProductLicenseCollection} instance.
          *
          * @param topUtilizedProductLicenseCollection the value to set
          * @return this builder

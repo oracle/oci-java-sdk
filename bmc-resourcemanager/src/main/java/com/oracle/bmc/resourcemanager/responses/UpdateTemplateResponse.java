@@ -32,11 +32,11 @@ public class UpdateTemplateResponse extends com.oracle.bmc.responses.BmcResponse
         return etag;
     }
 
-    /** The returned Template instance. */
+    /** The returned {@code Template} instance. */
     private com.oracle.bmc.resourcemanager.model.Template template;
 
     /**
-     * The returned Template instance.
+     * The returned {@code Template} instance.
      *
      * @return the value
      */
@@ -109,11 +109,11 @@ public class UpdateTemplateResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned Template instance. */
+        /** The returned {@code Template} instance. */
         private com.oracle.bmc.resourcemanager.model.Template template;
 
         /**
-         * The returned Template instance.
+         * The returned {@code Template} instance.
          *
          * @param template the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class CreateMeResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned Me instance. */
+    /** The returned {@code Me} instance. */
     private com.oracle.bmc.identitydomains.model.Me me;
 
     /**
-     * The returned Me instance.
+     * The returned {@code Me} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class CreateMeResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Me instance. */
+        /** The returned {@code Me} instance. */
         private com.oracle.bmc.identitydomains.model.Me me;
 
         /**
-         * The returned Me instance.
+         * The returned {@code Me} instance.
          *
          * @param me the value to set
          * @return this builder

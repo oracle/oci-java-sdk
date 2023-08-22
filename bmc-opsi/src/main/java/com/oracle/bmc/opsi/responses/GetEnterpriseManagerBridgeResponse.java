@@ -36,11 +36,11 @@ public class GetEnterpriseManagerBridgeResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    /** The returned EnterpriseManagerBridge instance. */
+    /** The returned {@code EnterpriseManagerBridge} instance. */
     private com.oracle.bmc.opsi.model.EnterpriseManagerBridge enterpriseManagerBridge;
 
     /**
-     * The returned EnterpriseManagerBridge instance.
+     * The returned {@code EnterpriseManagerBridge} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetEnterpriseManagerBridgeResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned EnterpriseManagerBridge instance. */
+        /** The returned {@code EnterpriseManagerBridge} instance. */
         private com.oracle.bmc.opsi.model.EnterpriseManagerBridge enterpriseManagerBridge;
 
         /**
-         * The returned EnterpriseManagerBridge instance.
+         * The returned {@code EnterpriseManagerBridge} instance.
          *
          * @param enterpriseManagerBridge the value to set
          * @return this builder

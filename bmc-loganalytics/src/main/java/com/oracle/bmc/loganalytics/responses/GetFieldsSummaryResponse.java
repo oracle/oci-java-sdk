@@ -24,11 +24,11 @@ public class GetFieldsSummaryResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned FieldSummaryReport instance. */
+    /** The returned {@code FieldSummaryReport} instance. */
     private com.oracle.bmc.loganalytics.model.FieldSummaryReport fieldSummaryReport;
 
     /**
-     * The returned FieldSummaryReport instance.
+     * The returned {@code FieldSummaryReport} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetFieldsSummaryResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned FieldSummaryReport instance. */
+        /** The returned {@code FieldSummaryReport} instance. */
         private com.oracle.bmc.loganalytics.model.FieldSummaryReport fieldSummaryReport;
 
         /**
-         * The returned FieldSummaryReport instance.
+         * The returned {@code FieldSummaryReport} instance.
          *
          * @param fieldSummaryReport the value to set
          * @return this builder

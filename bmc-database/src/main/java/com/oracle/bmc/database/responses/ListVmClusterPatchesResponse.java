@@ -44,11 +44,11 @@ public class ListVmClusterPatchesResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.database.model.PatchSummary instances. */
+    /** A list of {@code com.oracle.bmc.database.model.PatchSummary} instances. */
     private java.util.List<com.oracle.bmc.database.model.PatchSummary> items;
 
     /**
-     * A list of com.oracle.bmc.database.model.PatchSummary instances.
+     * A list of {@code com.oracle.bmc.database.model.PatchSummary} instances.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListVmClusterPatchesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** A list of com.oracle.bmc.database.model.PatchSummary instances. */
+        /** A list of {@code com.oracle.bmc.database.model.PatchSummary} instances. */
         private java.util.List<com.oracle.bmc.database.model.PatchSummary> items;
 
         /**
-         * A list of com.oracle.bmc.database.model.PatchSummary instances.
+         * A list of {@code com.oracle.bmc.database.model.PatchSummary} instances.
          *
          * @param items the value to set
          * @return this builder

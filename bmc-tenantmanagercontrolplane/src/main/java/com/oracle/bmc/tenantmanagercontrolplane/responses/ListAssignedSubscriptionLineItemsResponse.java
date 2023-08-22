@@ -43,12 +43,12 @@ public class ListAssignedSubscriptionLineItemsResponse
         return opcNextPage;
     }
 
-    /** The returned AssignedSubscriptionLineItemCollection instance. */
+    /** The returned {@code AssignedSubscriptionLineItemCollection} instance. */
     private com.oracle.bmc.tenantmanagercontrolplane.model.AssignedSubscriptionLineItemCollection
             assignedSubscriptionLineItemCollection;
 
     /**
-     * The returned AssignedSubscriptionLineItemCollection instance.
+     * The returned {@code AssignedSubscriptionLineItemCollection} instance.
      *
      * @return the value
      */
@@ -134,13 +134,13 @@ public class ListAssignedSubscriptionLineItemsResponse
             return this;
         }
 
-        /** The returned AssignedSubscriptionLineItemCollection instance. */
+        /** The returned {@code AssignedSubscriptionLineItemCollection} instance. */
         private com.oracle.bmc.tenantmanagercontrolplane.model
                         .AssignedSubscriptionLineItemCollection
                 assignedSubscriptionLineItemCollection;
 
         /**
-         * The returned AssignedSubscriptionLineItemCollection instance.
+         * The returned {@code AssignedSubscriptionLineItemCollection} instance.
          *
          * @param assignedSubscriptionLineItemCollection the value to set
          * @return this builder

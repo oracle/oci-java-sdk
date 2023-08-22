@@ -54,11 +54,11 @@ public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned QueryResultResponse instance. */
+    /** The returned {@code QueryResultResponse} instance. */
     private com.oracle.bmc.apmtraces.model.QueryResultResponse queryResultResponse;
 
     /**
-     * The returned QueryResultResponse instance.
+     * The returned {@code QueryResultResponse} instance.
      *
      * @return the value
      */
@@ -158,11 +158,11 @@ public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned QueryResultResponse instance. */
+        /** The returned {@code QueryResultResponse} instance. */
         private com.oracle.bmc.apmtraces.model.QueryResultResponse queryResultResponse;
 
         /**
-         * The returned QueryResultResponse instance.
+         * The returned {@code QueryResultResponse} instance.
          *
          * @param queryResultResponse the value to set
          * @return this builder

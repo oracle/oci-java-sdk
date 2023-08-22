@@ -42,12 +42,12 @@ public class ListIndicatorsResponse extends com.oracle.bmc.responses.BmcResponse
         return opcNextPage;
     }
 
-    /** The returned IndicatorSummaryCollection instance. */
+    /** The returned {@code IndicatorSummaryCollection} instance. */
     private com.oracle.bmc.threatintelligence.model.IndicatorSummaryCollection
             indicatorSummaryCollection;
 
     /**
-     * The returned IndicatorSummaryCollection instance.
+     * The returned {@code IndicatorSummaryCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListIndicatorsResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned IndicatorSummaryCollection instance. */
+        /** The returned {@code IndicatorSummaryCollection} instance. */
         private com.oracle.bmc.threatintelligence.model.IndicatorSummaryCollection
                 indicatorSummaryCollection;
 
         /**
-         * The returned IndicatorSummaryCollection instance.
+         * The returned {@code IndicatorSummaryCollection} instance.
          *
          * @param indicatorSummaryCollection the value to set
          * @return this builder

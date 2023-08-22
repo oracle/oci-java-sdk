@@ -42,11 +42,11 @@ public class ListApplianceExportJobsResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.dts.model.ApplianceExportJobSummary instances. */
+    /** A list of {@code com.oracle.bmc.dts.model.ApplianceExportJobSummary} instances. */
     private java.util.List<com.oracle.bmc.dts.model.ApplianceExportJobSummary> items;
 
     /**
-     * A list of com.oracle.bmc.dts.model.ApplianceExportJobSummary instances.
+     * A list of {@code com.oracle.bmc.dts.model.ApplianceExportJobSummary} instances.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListApplianceExportJobsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** A list of com.oracle.bmc.dts.model.ApplianceExportJobSummary instances. */
+        /** A list of {@code com.oracle.bmc.dts.model.ApplianceExportJobSummary} instances. */
         private java.util.List<com.oracle.bmc.dts.model.ApplianceExportJobSummary> items;
 
         /**
-         * A list of com.oracle.bmc.dts.model.ApplianceExportJobSummary instances.
+         * A list of {@code com.oracle.bmc.dts.model.ApplianceExportJobSummary} instances.
          *
          * @param items the value to set
          * @return this builder

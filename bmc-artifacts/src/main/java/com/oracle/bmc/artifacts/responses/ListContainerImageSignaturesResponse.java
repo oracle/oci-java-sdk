@@ -42,12 +42,12 @@ public class ListContainerImageSignaturesResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /** The returned ContainerImageSignatureCollection instance. */
+    /** The returned {@code ContainerImageSignatureCollection} instance. */
     private com.oracle.bmc.artifacts.model.ContainerImageSignatureCollection
             containerImageSignatureCollection;
 
     /**
-     * The returned ContainerImageSignatureCollection instance.
+     * The returned {@code ContainerImageSignatureCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListContainerImageSignaturesResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned ContainerImageSignatureCollection instance. */
+        /** The returned {@code ContainerImageSignatureCollection} instance. */
         private com.oracle.bmc.artifacts.model.ContainerImageSignatureCollection
                 containerImageSignatureCollection;
 
         /**
-         * The returned ContainerImageSignatureCollection instance.
+         * The returned {@code ContainerImageSignatureCollection} instance.
          *
          * @param containerImageSignatureCollection the value to set
          * @return this builder

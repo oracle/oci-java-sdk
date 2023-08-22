@@ -24,11 +24,11 @@ public class GetMyApiKeyResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned MyApiKey instance. */
+    /** The returned {@code MyApiKey} instance. */
     private com.oracle.bmc.identitydomains.model.MyApiKey myApiKey;
 
     /**
-     * The returned MyApiKey instance.
+     * The returned {@code MyApiKey} instance.
      *
      * @return the value
      */
@@ -83,11 +83,11 @@ public class GetMyApiKeyResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned MyApiKey instance. */
+        /** The returned {@code MyApiKey} instance. */
         private com.oracle.bmc.identitydomains.model.MyApiKey myApiKey;
 
         /**
-         * The returned MyApiKey instance.
+         * The returned {@code MyApiKey} instance.
          *
          * @param myApiKey the value to set
          * @return this builder

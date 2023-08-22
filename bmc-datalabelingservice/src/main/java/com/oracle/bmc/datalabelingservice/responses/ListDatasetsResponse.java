@@ -42,11 +42,11 @@ public class ListDatasetsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned DatasetCollection instance. */
+    /** The returned {@code DatasetCollection} instance. */
     private com.oracle.bmc.datalabelingservice.model.DatasetCollection datasetCollection;
 
     /**
-     * The returned DatasetCollection instance.
+     * The returned {@code DatasetCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListDatasetsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned DatasetCollection instance. */
+        /** The returned {@code DatasetCollection} instance. */
         private com.oracle.bmc.datalabelingservice.model.DatasetCollection datasetCollection;
 
         /**
-         * The returned DatasetCollection instance.
+         * The returned {@code DatasetCollection} instance.
          *
          * @param datasetCollection the value to set
          * @return this builder

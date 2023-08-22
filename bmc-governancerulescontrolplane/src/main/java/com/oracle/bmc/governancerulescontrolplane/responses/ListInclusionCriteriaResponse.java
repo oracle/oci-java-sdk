@@ -42,12 +42,12 @@ public class ListInclusionCriteriaResponse extends com.oracle.bmc.responses.BmcR
         return opcNextPage;
     }
 
-    /** The returned InclusionCriterionCollection instance. */
+    /** The returned {@code InclusionCriterionCollection} instance. */
     private com.oracle.bmc.governancerulescontrolplane.model.InclusionCriterionCollection
             inclusionCriterionCollection;
 
     /**
-     * The returned InclusionCriterionCollection instance.
+     * The returned {@code InclusionCriterionCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListInclusionCriteriaResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned InclusionCriterionCollection instance. */
+        /** The returned {@code InclusionCriterionCollection} instance. */
         private com.oracle.bmc.governancerulescontrolplane.model.InclusionCriterionCollection
                 inclusionCriterionCollection;
 
         /**
-         * The returned InclusionCriterionCollection instance.
+         * The returned {@code InclusionCriterionCollection} instance.
          *
          * @param inclusionCriterionCollection the value to set
          * @return this builder

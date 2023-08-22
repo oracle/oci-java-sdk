@@ -44,11 +44,11 @@ public class ListJreUsageResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned JreUsageCollection instance. */
+    /** The returned {@code JreUsageCollection} instance. */
     private com.oracle.bmc.jms.model.JreUsageCollection jreUsageCollection;
 
     /**
-     * The returned JreUsageCollection instance.
+     * The returned {@code JreUsageCollection} instance.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListJreUsageResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned JreUsageCollection instance. */
+        /** The returned {@code JreUsageCollection} instance. */
         private com.oracle.bmc.jms.model.JreUsageCollection jreUsageCollection;
 
         /**
-         * The returned JreUsageCollection instance.
+         * The returned {@code JreUsageCollection} instance.
          *
          * @param jreUsageCollection the value to set
          * @return this builder

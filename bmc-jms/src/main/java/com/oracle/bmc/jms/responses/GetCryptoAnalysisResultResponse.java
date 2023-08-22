@@ -36,11 +36,11 @@ public class GetCryptoAnalysisResultResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned CryptoAnalysisResult instance. */
+    /** The returned {@code CryptoAnalysisResult} instance. */
     private com.oracle.bmc.jms.model.CryptoAnalysisResult cryptoAnalysisResult;
 
     /**
-     * The returned CryptoAnalysisResult instance.
+     * The returned {@code CryptoAnalysisResult} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetCryptoAnalysisResultResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned CryptoAnalysisResult instance. */
+        /** The returned {@code CryptoAnalysisResult} instance. */
         private com.oracle.bmc.jms.model.CryptoAnalysisResult cryptoAnalysisResult;
 
         /**
-         * The returned CryptoAnalysisResult instance.
+         * The returned {@code CryptoAnalysisResult} instance.
          *
          * @param cryptoAnalysisResult the value to set
          * @return this builder

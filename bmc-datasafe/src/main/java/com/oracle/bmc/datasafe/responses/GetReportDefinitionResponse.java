@@ -42,11 +42,11 @@ public class GetReportDefinitionResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned ReportDefinition instance. */
+    /** The returned {@code ReportDefinition} instance. */
     private com.oracle.bmc.datasafe.model.ReportDefinition reportDefinition;
 
     /**
-     * The returned ReportDefinition instance.
+     * The returned {@code ReportDefinition} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class GetReportDefinitionResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned ReportDefinition instance. */
+        /** The returned {@code ReportDefinition} instance. */
         private com.oracle.bmc.datasafe.model.ReportDefinition reportDefinition;
 
         /**
-         * The returned ReportDefinition instance.
+         * The returned {@code ReportDefinition} instance.
          *
          * @param reportDefinition the value to set
          * @return this builder

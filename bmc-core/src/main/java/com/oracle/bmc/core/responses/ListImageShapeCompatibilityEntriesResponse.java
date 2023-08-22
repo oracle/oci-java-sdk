@@ -43,11 +43,11 @@ public class ListImageShapeCompatibilityEntriesResponse
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.ImageShapeCompatibilitySummary instances. */
+    /** A list of {@code com.oracle.bmc.core.model.ImageShapeCompatibilitySummary} instances. */
     private java.util.List<com.oracle.bmc.core.model.ImageShapeCompatibilitySummary> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.ImageShapeCompatibilitySummary instances.
+     * A list of {@code com.oracle.bmc.core.model.ImageShapeCompatibilitySummary} instances.
      *
      * @return the value
      */
@@ -131,11 +131,11 @@ public class ListImageShapeCompatibilityEntriesResponse
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.ImageShapeCompatibilitySummary instances. */
+        /** A list of {@code com.oracle.bmc.core.model.ImageShapeCompatibilitySummary} instances. */
         private java.util.List<com.oracle.bmc.core.model.ImageShapeCompatibilitySummary> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.ImageShapeCompatibilitySummary instances.
+         * A list of {@code com.oracle.bmc.core.model.ImageShapeCompatibilitySummary} instances.
          *
          * @param items the value to set
          * @return this builder

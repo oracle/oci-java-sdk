@@ -36,11 +36,11 @@ public class CreateAppCatalogSubscriptionResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /** The returned AppCatalogSubscription instance. */
+    /** The returned {@code AppCatalogSubscription} instance. */
     private com.oracle.bmc.core.model.AppCatalogSubscription appCatalogSubscription;
 
     /**
-     * The returned AppCatalogSubscription instance.
+     * The returned {@code AppCatalogSubscription} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class CreateAppCatalogSubscriptionResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned AppCatalogSubscription instance. */
+        /** The returned {@code AppCatalogSubscription} instance. */
         private com.oracle.bmc.core.model.AppCatalogSubscription appCatalogSubscription;
 
         /**
-         * The returned AppCatalogSubscription instance.
+         * The returned {@code AppCatalogSubscription} instance.
          *
          * @param appCatalogSubscription the value to set
          * @return this builder

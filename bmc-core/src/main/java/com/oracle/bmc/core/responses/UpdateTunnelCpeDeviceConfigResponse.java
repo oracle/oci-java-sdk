@@ -36,11 +36,11 @@ public class UpdateTunnelCpeDeviceConfigResponse extends com.oracle.bmc.response
         return opcRequestId;
     }
 
-    /** The returned TunnelCpeDeviceConfig instance. */
+    /** The returned {@code TunnelCpeDeviceConfig} instance. */
     private com.oracle.bmc.core.model.TunnelCpeDeviceConfig tunnelCpeDeviceConfig;
 
     /**
-     * The returned TunnelCpeDeviceConfig instance.
+     * The returned {@code TunnelCpeDeviceConfig} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class UpdateTunnelCpeDeviceConfigResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned TunnelCpeDeviceConfig instance. */
+        /** The returned {@code TunnelCpeDeviceConfig} instance. */
         private com.oracle.bmc.core.model.TunnelCpeDeviceConfig tunnelCpeDeviceConfig;
 
         /**
-         * The returned TunnelCpeDeviceConfig instance.
+         * The returned {@code TunnelCpeDeviceConfig} instance.
          *
          * @param tunnelCpeDeviceConfig the value to set
          * @return this builder

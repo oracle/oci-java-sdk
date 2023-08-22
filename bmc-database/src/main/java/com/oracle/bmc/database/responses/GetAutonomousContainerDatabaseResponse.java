@@ -36,11 +36,11 @@ public class GetAutonomousContainerDatabaseResponse extends com.oracle.bmc.respo
         return opcRequestId;
     }
 
-    /** The returned AutonomousContainerDatabase instance. */
+    /** The returned {@code AutonomousContainerDatabase} instance. */
     private com.oracle.bmc.database.model.AutonomousContainerDatabase autonomousContainerDatabase;
 
     /**
-     * The returned AutonomousContainerDatabase instance.
+     * The returned {@code AutonomousContainerDatabase} instance.
      *
      * @return the value
      */
@@ -119,12 +119,12 @@ public class GetAutonomousContainerDatabaseResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned AutonomousContainerDatabase instance. */
+        /** The returned {@code AutonomousContainerDatabase} instance. */
         private com.oracle.bmc.database.model.AutonomousContainerDatabase
                 autonomousContainerDatabase;
 
         /**
-         * The returned AutonomousContainerDatabase instance.
+         * The returned {@code AutonomousContainerDatabase} instance.
          *
          * @param autonomousContainerDatabase the value to set
          * @return this builder

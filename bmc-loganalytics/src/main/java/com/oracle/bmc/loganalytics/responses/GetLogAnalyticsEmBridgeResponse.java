@@ -36,11 +36,11 @@ public class GetLogAnalyticsEmBridgeResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsEmBridge instance. */
+    /** The returned {@code LogAnalyticsEmBridge} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsEmBridge logAnalyticsEmBridge;
 
     /**
-     * The returned LogAnalyticsEmBridge instance.
+     * The returned {@code LogAnalyticsEmBridge} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetLogAnalyticsEmBridgeResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned LogAnalyticsEmBridge instance. */
+        /** The returned {@code LogAnalyticsEmBridge} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsEmBridge logAnalyticsEmBridge;
 
         /**
-         * The returned LogAnalyticsEmBridge instance.
+         * The returned {@code LogAnalyticsEmBridge} instance.
          *
          * @param logAnalyticsEmBridge the value to set
          * @return this builder

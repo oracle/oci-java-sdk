@@ -24,12 +24,12 @@ public class ListSoftwareSourceVendorsResponse extends com.oracle.bmc.responses.
         return opcRequestId;
     }
 
-    /** The returned SoftwareSourceVendorCollection instance. */
+    /** The returned {@code SoftwareSourceVendorCollection} instance. */
     private com.oracle.bmc.osmanagementhub.model.SoftwareSourceVendorCollection
             softwareSourceVendorCollection;
 
     /**
-     * The returned SoftwareSourceVendorCollection instance.
+     * The returned {@code SoftwareSourceVendorCollection} instance.
      *
      * @return the value
      */
@@ -92,12 +92,12 @@ public class ListSoftwareSourceVendorsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned SoftwareSourceVendorCollection instance. */
+        /** The returned {@code SoftwareSourceVendorCollection} instance. */
         private com.oracle.bmc.osmanagementhub.model.SoftwareSourceVendorCollection
                 softwareSourceVendorCollection;
 
         /**
-         * The returned SoftwareSourceVendorCollection instance.
+         * The returned {@code SoftwareSourceVendorCollection} instance.
          *
          * @param softwareSourceVendorCollection the value to set
          * @return this builder

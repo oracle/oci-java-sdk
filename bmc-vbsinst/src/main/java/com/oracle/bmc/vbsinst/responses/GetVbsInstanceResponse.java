@@ -36,11 +36,11 @@ public class GetVbsInstanceResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned VbsInstance instance. */
+    /** The returned {@code VbsInstance} instance. */
     private com.oracle.bmc.vbsinst.model.VbsInstance vbsInstance;
 
     /**
-     * The returned VbsInstance instance.
+     * The returned {@code VbsInstance} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetVbsInstanceResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned VbsInstance instance. */
+        /** The returned {@code VbsInstance} instance. */
         private com.oracle.bmc.vbsinst.model.VbsInstance vbsInstance;
 
         /**
-         * The returned VbsInstance instance.
+         * The returned {@code VbsInstance} instance.
          *
          * @param vbsInstance the value to set
          * @return this builder

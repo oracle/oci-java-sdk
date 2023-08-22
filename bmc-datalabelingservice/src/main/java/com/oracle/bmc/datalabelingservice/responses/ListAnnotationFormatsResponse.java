@@ -42,12 +42,12 @@ public class ListAnnotationFormatsResponse extends com.oracle.bmc.responses.BmcR
         return opcNextPage;
     }
 
-    /** The returned AnnotationFormatCollection instance. */
+    /** The returned {@code AnnotationFormatCollection} instance. */
     private com.oracle.bmc.datalabelingservice.model.AnnotationFormatCollection
             annotationFormatCollection;
 
     /**
-     * The returned AnnotationFormatCollection instance.
+     * The returned {@code AnnotationFormatCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListAnnotationFormatsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned AnnotationFormatCollection instance. */
+        /** The returned {@code AnnotationFormatCollection} instance. */
         private com.oracle.bmc.datalabelingservice.model.AnnotationFormatCollection
                 annotationFormatCollection;
 
         /**
-         * The returned AnnotationFormatCollection instance.
+         * The returned {@code AnnotationFormatCollection} instance.
          *
          * @param annotationFormatCollection the value to set
          * @return this builder

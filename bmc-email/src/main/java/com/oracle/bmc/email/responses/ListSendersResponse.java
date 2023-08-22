@@ -72,11 +72,11 @@ public class ListSendersResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcTotalItems;
     }
 
-    /** A list of com.oracle.bmc.email.model.SenderSummary instances. */
+    /** A list of {@code com.oracle.bmc.email.model.SenderSummary} instances. */
     private java.util.List<com.oracle.bmc.email.model.SenderSummary> items;
 
     /**
-     * A list of com.oracle.bmc.email.model.SenderSummary instances.
+     * A list of {@code com.oracle.bmc.email.model.SenderSummary} instances.
      *
      * @return the value
      */
@@ -199,11 +199,11 @@ public class ListSendersResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.email.model.SenderSummary instances. */
+        /** A list of {@code com.oracle.bmc.email.model.SenderSummary} instances. */
         private java.util.List<com.oracle.bmc.email.model.SenderSummary> items;
 
         /**
-         * A list of com.oracle.bmc.email.model.SenderSummary instances.
+         * A list of {@code com.oracle.bmc.email.model.SenderSummary} instances.
          *
          * @param items the value to set
          * @return this builder

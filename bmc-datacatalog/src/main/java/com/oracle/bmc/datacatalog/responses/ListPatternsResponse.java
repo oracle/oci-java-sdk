@@ -42,11 +42,11 @@ public class ListPatternsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned PatternCollection instance. */
+    /** The returned {@code PatternCollection} instance. */
     private com.oracle.bmc.datacatalog.model.PatternCollection patternCollection;
 
     /**
-     * The returned PatternCollection instance.
+     * The returned {@code PatternCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListPatternsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned PatternCollection instance. */
+        /** The returned {@code PatternCollection} instance. */
         private com.oracle.bmc.datacatalog.model.PatternCollection patternCollection;
 
         /**
-         * The returned PatternCollection instance.
+         * The returned {@code PatternCollection} instance.
          *
          * @param patternCollection the value to set
          * @return this builder

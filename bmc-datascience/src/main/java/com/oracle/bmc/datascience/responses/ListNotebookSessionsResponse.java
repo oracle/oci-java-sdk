@@ -60,11 +60,11 @@ public class ListNotebookSessionsResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.datascience.model.NotebookSessionSummary instances. */
+    /** A list of {@code com.oracle.bmc.datascience.model.NotebookSessionSummary} instances. */
     private java.util.List<com.oracle.bmc.datascience.model.NotebookSessionSummary> items;
 
     /**
-     * A list of com.oracle.bmc.datascience.model.NotebookSessionSummary instances.
+     * A list of {@code com.oracle.bmc.datascience.model.NotebookSessionSummary} instances.
      *
      * @return the value
      */
@@ -170,11 +170,11 @@ public class ListNotebookSessionsResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** A list of com.oracle.bmc.datascience.model.NotebookSessionSummary instances. */
+        /** A list of {@code com.oracle.bmc.datascience.model.NotebookSessionSummary} instances. */
         private java.util.List<com.oracle.bmc.datascience.model.NotebookSessionSummary> items;
 
         /**
-         * A list of com.oracle.bmc.datascience.model.NotebookSessionSummary instances.
+         * A list of {@code com.oracle.bmc.datascience.model.NotebookSessionSummary} instances.
          *
          * @param items the value to set
          * @return this builder

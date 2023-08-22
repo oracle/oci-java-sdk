@@ -20,11 +20,11 @@ public class GetReachableIpResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned ReachableIp instance. */
+    /** The returned {@code ReachableIp} instance. */
     private com.oracle.bmc.resourcemanager.model.ReachableIp reachableIp;
 
     /**
-     * The returned ReachableIp instance.
+     * The returned {@code ReachableIp} instance.
      *
      * @return the value
      */
@@ -80,11 +80,11 @@ public class GetReachableIpResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned ReachableIp instance. */
+        /** The returned {@code ReachableIp} instance. */
         private com.oracle.bmc.resourcemanager.model.ReachableIp reachableIp;
 
         /**
-         * The returned ReachableIp instance.
+         * The returned {@code ReachableIp} instance.
          *
          * @param reachableIp the value to set
          * @return this builder

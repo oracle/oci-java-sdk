@@ -43,12 +43,12 @@ public class RequestSummarizedTrendResourceRiskScoresResponse
         return opcNextPage;
     }
 
-    /** The returned ResourceRiskScoreAggregationCollection instance. */
+    /** The returned {@code ResourceRiskScoreAggregationCollection} instance. */
     private com.oracle.bmc.cloudguard.model.ResourceRiskScoreAggregationCollection
             resourceRiskScoreAggregationCollection;
 
     /**
-     * The returned ResourceRiskScoreAggregationCollection instance.
+     * The returned {@code ResourceRiskScoreAggregationCollection} instance.
      *
      * @return the value
      */
@@ -134,12 +134,12 @@ public class RequestSummarizedTrendResourceRiskScoresResponse
             return this;
         }
 
-        /** The returned ResourceRiskScoreAggregationCollection instance. */
+        /** The returned {@code ResourceRiskScoreAggregationCollection} instance. */
         private com.oracle.bmc.cloudguard.model.ResourceRiskScoreAggregationCollection
                 resourceRiskScoreAggregationCollection;
 
         /**
-         * The returned ResourceRiskScoreAggregationCollection instance.
+         * The returned {@code ResourceRiskScoreAggregationCollection} instance.
          *
          * @param resourceRiskScoreAggregationCollection the value to set
          * @return this builder

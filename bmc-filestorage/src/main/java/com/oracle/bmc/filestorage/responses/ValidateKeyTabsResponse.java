@@ -20,12 +20,12 @@ public class ValidateKeyTabsResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned ValidateKeyTabsResponseDetails instance. */
+    /** The returned {@code ValidateKeyTabsResponseDetails} instance. */
     private com.oracle.bmc.filestorage.model.ValidateKeyTabsResponseDetails
             validateKeyTabsResponseDetails;
 
     /**
-     * The returned ValidateKeyTabsResponseDetails instance.
+     * The returned {@code ValidateKeyTabsResponseDetails} instance.
      *
      * @return the value
      */
@@ -83,12 +83,12 @@ public class ValidateKeyTabsResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned ValidateKeyTabsResponseDetails instance. */
+        /** The returned {@code ValidateKeyTabsResponseDetails} instance. */
         private com.oracle.bmc.filestorage.model.ValidateKeyTabsResponseDetails
                 validateKeyTabsResponseDetails;
 
         /**
-         * The returned ValidateKeyTabsResponseDetails instance.
+         * The returned {@code ValidateKeyTabsResponseDetails} instance.
          *
          * @param validateKeyTabsResponseDetails the value to set
          * @return this builder

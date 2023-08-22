@@ -42,11 +42,11 @@ public class ListInventoriesResponse extends com.oracle.bmc.responses.BmcRespons
         return opcNextPage;
     }
 
-    /** The returned InventoryCollection instance. */
+    /** The returned {@code InventoryCollection} instance. */
     private com.oracle.bmc.cloudbridge.model.InventoryCollection inventoryCollection;
 
     /**
-     * The returned InventoryCollection instance.
+     * The returned {@code InventoryCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListInventoriesResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned InventoryCollection instance. */
+        /** The returned {@code InventoryCollection} instance. */
         private com.oracle.bmc.cloudbridge.model.InventoryCollection inventoryCollection;
 
         /**
-         * The returned InventoryCollection instance.
+         * The returned {@code InventoryCollection} instance.
          *
          * @param inventoryCollection the value to set
          * @return this builder

@@ -46,16 +46,16 @@ public class ListAutonomousContainerDatabaseDataguardAssociationsResponse
     }
 
     /**
-     * A list of com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation
-     * instances.
+     * A list of {@code
+     * com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation} instances.
      */
     private java.util.List<
                     com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation>
             items;
 
     /**
-     * A list of com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation
-     * instances.
+     * A list of {@code
+     * com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation} instances.
      *
      * @return the value
      */
@@ -149,8 +149,8 @@ public class ListAutonomousContainerDatabaseDataguardAssociationsResponse
         }
 
         /**
-         * A list of com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation
-         * instances.
+         * A list of {@code
+         * com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation} instances.
          */
         private java.util.List<
                         com.oracle.bmc.database.model
@@ -158,8 +158,8 @@ public class ListAutonomousContainerDatabaseDataguardAssociationsResponse
                 items;
 
         /**
-         * A list of com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation
-         * instances.
+         * A list of {@code
+         * com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation} instances.
          *
          * @param items the value to set
          * @return this builder

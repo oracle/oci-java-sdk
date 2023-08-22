@@ -24,11 +24,11 @@ public class GetAddressResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Address instance. */
+    /** The returned {@code Address} instance. */
     private com.oracle.bmc.ospgateway.model.Address address;
 
     /**
-     * The returned Address instance.
+     * The returned {@code Address} instance.
      *
      * @return the value
      */
@@ -83,11 +83,11 @@ public class GetAddressResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Address instance. */
+        /** The returned {@code Address} instance. */
         private com.oracle.bmc.ospgateway.model.Address address;
 
         /**
-         * The returned Address instance.
+         * The returned {@code Address} instance.
          *
          * @param address the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class UpdateBudgetResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned Budget instance. */
+    /** The returned {@code Budget} instance. */
     private com.oracle.bmc.budget.model.Budget budget;
 
     /**
-     * The returned Budget instance.
+     * The returned {@code Budget} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateBudgetResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Budget instance. */
+        /** The returned {@code Budget} instance. */
         private com.oracle.bmc.budget.model.Budget budget;
 
         /**
-         * The returned Budget instance.
+         * The returned {@code Budget} instance.
          *
          * @param budget the value to set
          * @return this builder

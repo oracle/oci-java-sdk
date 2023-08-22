@@ -70,11 +70,15 @@ public class ListPreauthenticatedRequestsResponse extends com.oracle.bmc.respons
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.objectstorage.model.PreauthenticatedRequestSummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.objectstorage.model.PreauthenticatedRequestSummary}
+     * instances.
+     */
     private java.util.List<com.oracle.bmc.objectstorage.model.PreauthenticatedRequestSummary> items;
 
     /**
-     * A list of com.oracle.bmc.objectstorage.model.PreauthenticatedRequestSummary instances.
+     * A list of {@code com.oracle.bmc.objectstorage.model.PreauthenticatedRequestSummary}
+     * instances.
      *
      * @return the value
      */
@@ -196,13 +200,15 @@ public class ListPreauthenticatedRequestsResponse extends com.oracle.bmc.respons
         }
 
         /**
-         * A list of com.oracle.bmc.objectstorage.model.PreauthenticatedRequestSummary instances.
+         * A list of {@code com.oracle.bmc.objectstorage.model.PreauthenticatedRequestSummary}
+         * instances.
          */
         private java.util.List<com.oracle.bmc.objectstorage.model.PreauthenticatedRequestSummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.objectstorage.model.PreauthenticatedRequestSummary instances.
+         * A list of {@code com.oracle.bmc.objectstorage.model.PreauthenticatedRequestSummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

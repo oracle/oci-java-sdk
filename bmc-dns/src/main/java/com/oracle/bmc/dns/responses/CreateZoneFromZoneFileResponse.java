@@ -68,11 +68,11 @@ public class CreateZoneFromZoneFileResponse extends com.oracle.bmc.responses.Bmc
         return opcWorkRequestId;
     }
 
-    /** The returned Zone instance. */
+    /** The returned {@code Zone} instance. */
     private com.oracle.bmc.dns.model.Zone zone;
 
     /**
-     * The returned Zone instance.
+     * The returned {@code Zone} instance.
      *
      * @return the value
      */
@@ -194,11 +194,11 @@ public class CreateZoneFromZoneFileResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned Zone instance. */
+        /** The returned {@code Zone} instance. */
         private com.oracle.bmc.dns.model.Zone zone;
 
         /**
-         * The returned Zone instance.
+         * The returned {@code Zone} instance.
          *
          * @param zone the value to set
          * @return this builder

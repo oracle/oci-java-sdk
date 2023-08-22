@@ -24,11 +24,11 @@ public class ListRewardsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned RewardCollection instance. */
+    /** The returned {@code RewardCollection} instance. */
     private com.oracle.bmc.usage.model.RewardCollection rewardCollection;
 
     /**
-     * The returned RewardCollection instance.
+     * The returned {@code RewardCollection} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class ListRewardsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned RewardCollection instance. */
+        /** The returned {@code RewardCollection} instance. */
         private com.oracle.bmc.usage.model.RewardCollection rewardCollection;
 
         /**
-         * The returned RewardCollection instance.
+         * The returned {@code RewardCollection} instance.
          *
          * @param rewardCollection the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class GetDedicatedVantagePointResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** The returned DedicatedVantagePoint instance. */
+    /** The returned {@code DedicatedVantagePoint} instance. */
     private com.oracle.bmc.apmsynthetics.model.DedicatedVantagePoint dedicatedVantagePoint;
 
     /**
-     * The returned DedicatedVantagePoint instance.
+     * The returned {@code DedicatedVantagePoint} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetDedicatedVantagePointResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned DedicatedVantagePoint instance. */
+        /** The returned {@code DedicatedVantagePoint} instance. */
         private com.oracle.bmc.apmsynthetics.model.DedicatedVantagePoint dedicatedVantagePoint;
 
         /**
-         * The returned DedicatedVantagePoint instance.
+         * The returned {@code DedicatedVantagePoint} instance.
          *
          * @param dedicatedVantagePoint the value to set
          * @return this builder

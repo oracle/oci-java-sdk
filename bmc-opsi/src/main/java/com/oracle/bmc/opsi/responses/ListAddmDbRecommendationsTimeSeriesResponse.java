@@ -43,12 +43,12 @@ public class ListAddmDbRecommendationsTimeSeriesResponse
         return opcNextPage;
     }
 
-    /** The returned AddmDbRecommendationsTimeSeriesCollection instance. */
+    /** The returned {@code AddmDbRecommendationsTimeSeriesCollection} instance. */
     private com.oracle.bmc.opsi.model.AddmDbRecommendationsTimeSeriesCollection
             addmDbRecommendationsTimeSeriesCollection;
 
     /**
-     * The returned AddmDbRecommendationsTimeSeriesCollection instance.
+     * The returned {@code AddmDbRecommendationsTimeSeriesCollection} instance.
      *
      * @return the value
      */
@@ -134,12 +134,12 @@ public class ListAddmDbRecommendationsTimeSeriesResponse
             return this;
         }
 
-        /** The returned AddmDbRecommendationsTimeSeriesCollection instance. */
+        /** The returned {@code AddmDbRecommendationsTimeSeriesCollection} instance. */
         private com.oracle.bmc.opsi.model.AddmDbRecommendationsTimeSeriesCollection
                 addmDbRecommendationsTimeSeriesCollection;
 
         /**
-         * The returned AddmDbRecommendationsTimeSeriesCollection instance.
+         * The returned {@code AddmDbRecommendationsTimeSeriesCollection} instance.
          *
          * @param addmDbRecommendationsTimeSeriesCollection the value to set
          * @return this builder

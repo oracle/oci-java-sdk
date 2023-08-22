@@ -42,11 +42,11 @@ public class ListCustomPropertiesResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** The returned CustomPropertyCollection instance. */
+    /** The returned {@code CustomPropertyCollection} instance. */
     private com.oracle.bmc.datacatalog.model.CustomPropertyCollection customPropertyCollection;
 
     /**
-     * The returned CustomPropertyCollection instance.
+     * The returned {@code CustomPropertyCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListCustomPropertiesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned CustomPropertyCollection instance. */
+        /** The returned {@code CustomPropertyCollection} instance. */
         private com.oracle.bmc.datacatalog.model.CustomPropertyCollection customPropertyCollection;
 
         /**
-         * The returned CustomPropertyCollection instance.
+         * The returned {@code CustomPropertyCollection} instance.
          *
          * @param customPropertyCollection the value to set
          * @return this builder

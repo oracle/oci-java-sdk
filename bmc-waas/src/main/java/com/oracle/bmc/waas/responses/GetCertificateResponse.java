@@ -36,11 +36,11 @@ public class GetCertificateResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned Certificate instance. */
+    /** The returned {@code Certificate} instance. */
     private com.oracle.bmc.waas.model.Certificate certificate;
 
     /**
-     * The returned Certificate instance.
+     * The returned {@code Certificate} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetCertificateResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned Certificate instance. */
+        /** The returned {@code Certificate} instance. */
         private com.oracle.bmc.waas.model.Certificate certificate;
 
         /**
-         * The returned Certificate instance.
+         * The returned {@code Certificate} instance.
          *
          * @param certificate the value to set
          * @return this builder

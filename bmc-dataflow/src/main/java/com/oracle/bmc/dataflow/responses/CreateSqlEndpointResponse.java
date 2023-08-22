@@ -52,11 +52,11 @@ public class CreateSqlEndpointResponse extends com.oracle.bmc.responses.BmcRespo
         return etag;
     }
 
-    /** The returned SqlEndpoint instance. */
+    /** The returned {@code SqlEndpoint} instance. */
     private com.oracle.bmc.dataflow.model.SqlEndpoint sqlEndpoint;
 
     /**
-     * The returned SqlEndpoint instance.
+     * The returned {@code SqlEndpoint} instance.
      *
      * @return the value
      */
@@ -154,11 +154,11 @@ public class CreateSqlEndpointResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned SqlEndpoint instance. */
+        /** The returned {@code SqlEndpoint} instance. */
         private com.oracle.bmc.dataflow.model.SqlEndpoint sqlEndpoint;
 
         /**
-         * The returned SqlEndpoint instance.
+         * The returned {@code SqlEndpoint} instance.
          *
          * @param sqlEndpoint the value to set
          * @return this builder

@@ -36,12 +36,12 @@ public class TestConnectionAssignmentResponse extends com.oracle.bmc.responses.B
         return etag;
     }
 
-    /** The returned TestConnectionAssignmentResult instance. */
+    /** The returned {@code TestConnectionAssignmentResult} instance. */
     private com.oracle.bmc.goldengate.model.TestConnectionAssignmentResult
             testConnectionAssignmentResult;
 
     /**
-     * The returned TestConnectionAssignmentResult instance.
+     * The returned {@code TestConnectionAssignmentResult} instance.
      *
      * @return the value
      */
@@ -121,12 +121,12 @@ public class TestConnectionAssignmentResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned TestConnectionAssignmentResult instance. */
+        /** The returned {@code TestConnectionAssignmentResult} instance. */
         private com.oracle.bmc.goldengate.model.TestConnectionAssignmentResult
                 testConnectionAssignmentResult;
 
         /**
-         * The returned TestConnectionAssignmentResult instance.
+         * The returned {@code TestConnectionAssignmentResult} instance.
          *
          * @param testConnectionAssignmentResult the value to set
          * @return this builder

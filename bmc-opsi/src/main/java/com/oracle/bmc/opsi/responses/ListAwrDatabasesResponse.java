@@ -42,11 +42,11 @@ public class ListAwrDatabasesResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /** The returned AwrDatabaseCollection instance. */
+    /** The returned {@code AwrDatabaseCollection} instance. */
     private com.oracle.bmc.opsi.model.AwrDatabaseCollection awrDatabaseCollection;
 
     /**
-     * The returned AwrDatabaseCollection instance.
+     * The returned {@code AwrDatabaseCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListAwrDatabasesResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned AwrDatabaseCollection instance. */
+        /** The returned {@code AwrDatabaseCollection} instance. */
         private com.oracle.bmc.opsi.model.AwrDatabaseCollection awrDatabaseCollection;
 
         /**
-         * The returned AwrDatabaseCollection instance.
+         * The returned {@code AwrDatabaseCollection} instance.
          *
          * @param awrDatabaseCollection the value to set
          * @return this builder

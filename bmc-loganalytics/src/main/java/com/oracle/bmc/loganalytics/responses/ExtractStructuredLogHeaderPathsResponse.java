@@ -24,11 +24,11 @@ public class ExtractStructuredLogHeaderPathsResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** The returned ExtractLogHeaderResults instance. */
+    /** The returned {@code ExtractLogHeaderResults} instance. */
     private com.oracle.bmc.loganalytics.model.ExtractLogHeaderResults extractLogHeaderResults;
 
     /**
-     * The returned ExtractLogHeaderResults instance.
+     * The returned {@code ExtractLogHeaderResults} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class ExtractStructuredLogHeaderPathsResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned ExtractLogHeaderResults instance. */
+        /** The returned {@code ExtractLogHeaderResults} instance. */
         private com.oracle.bmc.loganalytics.model.ExtractLogHeaderResults extractLogHeaderResults;
 
         /**
-         * The returned ExtractLogHeaderResults instance.
+         * The returned {@code ExtractLogHeaderResults} instance.
          *
          * @param extractLogHeaderResults the value to set
          * @return this builder

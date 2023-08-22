@@ -36,11 +36,11 @@ public class RoverNodeActionSetKeyResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned RoverNodeSetKey instance. */
+    /** The returned {@code RoverNodeSetKey} instance. */
     private com.oracle.bmc.rover.model.RoverNodeSetKey roverNodeSetKey;
 
     /**
-     * The returned RoverNodeSetKey instance.
+     * The returned {@code RoverNodeSetKey} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class RoverNodeActionSetKeyResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned RoverNodeSetKey instance. */
+        /** The returned {@code RoverNodeSetKey} instance. */
         private com.oracle.bmc.rover.model.RoverNodeSetKey roverNodeSetKey;
 
         /**
-         * The returned RoverNodeSetKey instance.
+         * The returned {@code RoverNodeSetKey} instance.
          *
          * @param roverNodeSetKey the value to set
          * @return this builder

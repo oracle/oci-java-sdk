@@ -36,11 +36,11 @@ public class GetPrivateAccessChannelResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned PrivateAccessChannel instance. */
+    /** The returned {@code PrivateAccessChannel} instance. */
     private com.oracle.bmc.analytics.model.PrivateAccessChannel privateAccessChannel;
 
     /**
-     * The returned PrivateAccessChannel instance.
+     * The returned {@code PrivateAccessChannel} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetPrivateAccessChannelResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned PrivateAccessChannel instance. */
+        /** The returned {@code PrivateAccessChannel} instance. */
         private com.oracle.bmc.analytics.model.PrivateAccessChannel privateAccessChannel;
 
         /**
-         * The returned PrivateAccessChannel instance.
+         * The returned {@code PrivateAccessChannel} instance.
          *
          * @param privateAccessChannel the value to set
          * @return this builder

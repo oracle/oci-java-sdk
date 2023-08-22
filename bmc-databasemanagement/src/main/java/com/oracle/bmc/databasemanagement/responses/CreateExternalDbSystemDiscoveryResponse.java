@@ -76,12 +76,12 @@ public class CreateExternalDbSystemDiscoveryResponse extends com.oracle.bmc.resp
         return contentLocation;
     }
 
-    /** The returned ExternalDbSystemDiscovery instance. */
+    /** The returned {@code ExternalDbSystemDiscovery} instance. */
     private com.oracle.bmc.databasemanagement.model.ExternalDbSystemDiscovery
             externalDbSystemDiscovery;
 
     /**
-     * The returned ExternalDbSystemDiscovery instance.
+     * The returned {@code ExternalDbSystemDiscovery} instance.
      *
      * @return the value
      */
@@ -216,12 +216,12 @@ public class CreateExternalDbSystemDiscoveryResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned ExternalDbSystemDiscovery instance. */
+        /** The returned {@code ExternalDbSystemDiscovery} instance. */
         private com.oracle.bmc.databasemanagement.model.ExternalDbSystemDiscovery
                 externalDbSystemDiscovery;
 
         /**
-         * The returned ExternalDbSystemDiscovery instance.
+         * The returned {@code ExternalDbSystemDiscovery} instance.
          *
          * @param externalDbSystemDiscovery the value to set
          * @return this builder

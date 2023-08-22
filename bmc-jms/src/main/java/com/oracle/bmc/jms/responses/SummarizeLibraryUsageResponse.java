@@ -44,11 +44,11 @@ public class SummarizeLibraryUsageResponse extends com.oracle.bmc.responses.BmcR
         return opcNextPage;
     }
 
-    /** The returned LibraryUsageCollection instance. */
+    /** The returned {@code LibraryUsageCollection} instance. */
     private com.oracle.bmc.jms.model.LibraryUsageCollection libraryUsageCollection;
 
     /**
-     * The returned LibraryUsageCollection instance.
+     * The returned {@code LibraryUsageCollection} instance.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class SummarizeLibraryUsageResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned LibraryUsageCollection instance. */
+        /** The returned {@code LibraryUsageCollection} instance. */
         private com.oracle.bmc.jms.model.LibraryUsageCollection libraryUsageCollection;
 
         /**
-         * The returned LibraryUsageCollection instance.
+         * The returned {@code LibraryUsageCollection} instance.
          *
          * @param libraryUsageCollection the value to set
          * @return this builder

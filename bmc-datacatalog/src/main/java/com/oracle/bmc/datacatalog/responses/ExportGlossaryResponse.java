@@ -40,11 +40,11 @@ public class ExportGlossaryResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned String instance. */
+    /** The returned {@code String} instance. */
     private String value;
 
     /**
-     * The returned String instance.
+     * The returned {@code String} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class ExportGlossaryResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned String instance. */
+        /** The returned {@code String} instance. */
         private String value;
 
         /**
-         * The returned String instance.
+         * The returned {@code String} instance.
          *
          * @param value the value to set
          * @return this builder

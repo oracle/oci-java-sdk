@@ -52,11 +52,11 @@ public class CreateSenderInvitationResponse extends com.oracle.bmc.responses.Bmc
         return etag;
     }
 
-    /** The returned SenderInvitation instance. */
+    /** The returned {@code SenderInvitation} instance. */
     private com.oracle.bmc.tenantmanagercontrolplane.model.SenderInvitation senderInvitation;
 
     /**
-     * The returned SenderInvitation instance.
+     * The returned {@code SenderInvitation} instance.
      *
      * @return the value
      */
@@ -155,11 +155,11 @@ public class CreateSenderInvitationResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned SenderInvitation instance. */
+        /** The returned {@code SenderInvitation} instance. */
         private com.oracle.bmc.tenantmanagercontrolplane.model.SenderInvitation senderInvitation;
 
         /**
-         * The returned SenderInvitation instance.
+         * The returned {@code SenderInvitation} instance.
          *
          * @param senderInvitation the value to set
          * @return this builder

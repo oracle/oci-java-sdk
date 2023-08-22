@@ -42,13 +42,13 @@ public class SummarizeAnnotationAnalyticsResponse extends com.oracle.bmc.respons
         return opcNextPage;
     }
 
-    /** The returned AnnotationAnalyticsAggregationCollection instance. */
+    /** The returned {@code AnnotationAnalyticsAggregationCollection} instance. */
     private com.oracle.bmc.datalabelingservicedataplane.model
                     .AnnotationAnalyticsAggregationCollection
             annotationAnalyticsAggregationCollection;
 
     /**
-     * The returned AnnotationAnalyticsAggregationCollection instance.
+     * The returned {@code AnnotationAnalyticsAggregationCollection} instance.
      *
      * @return the value
      */
@@ -136,13 +136,13 @@ public class SummarizeAnnotationAnalyticsResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned AnnotationAnalyticsAggregationCollection instance. */
+        /** The returned {@code AnnotationAnalyticsAggregationCollection} instance. */
         private com.oracle.bmc.datalabelingservicedataplane.model
                         .AnnotationAnalyticsAggregationCollection
                 annotationAnalyticsAggregationCollection;
 
         /**
-         * The returned AnnotationAnalyticsAggregationCollection instance.
+         * The returned {@code AnnotationAnalyticsAggregationCollection} instance.
          *
          * @param annotationAnalyticsAggregationCollection the value to set
          * @return this builder

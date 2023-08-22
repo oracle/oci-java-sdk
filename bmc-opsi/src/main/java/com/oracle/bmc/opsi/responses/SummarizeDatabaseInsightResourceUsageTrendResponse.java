@@ -43,13 +43,17 @@ public class SummarizeDatabaseInsightResourceUsageTrendResponse
         return opcNextPage;
     }
 
-    /** The returned SummarizeDatabaseInsightResourceUsageTrendAggregationCollection instance. */
+    /**
+     * The returned {@code SummarizeDatabaseInsightResourceUsageTrendAggregationCollection}
+     * instance.
+     */
     private com.oracle.bmc.opsi.model
                     .SummarizeDatabaseInsightResourceUsageTrendAggregationCollection
             summarizeDatabaseInsightResourceUsageTrendAggregationCollection;
 
     /**
-     * The returned SummarizeDatabaseInsightResourceUsageTrendAggregationCollection instance.
+     * The returned {@code SummarizeDatabaseInsightResourceUsageTrendAggregationCollection}
+     * instance.
      *
      * @return the value
      */
@@ -138,14 +142,16 @@ public class SummarizeDatabaseInsightResourceUsageTrendResponse
         }
 
         /**
-         * The returned SummarizeDatabaseInsightResourceUsageTrendAggregationCollection instance.
+         * The returned {@code SummarizeDatabaseInsightResourceUsageTrendAggregationCollection}
+         * instance.
          */
         private com.oracle.bmc.opsi.model
                         .SummarizeDatabaseInsightResourceUsageTrendAggregationCollection
                 summarizeDatabaseInsightResourceUsageTrendAggregationCollection;
 
         /**
-         * The returned SummarizeDatabaseInsightResourceUsageTrendAggregationCollection instance.
+         * The returned {@code SummarizeDatabaseInsightResourceUsageTrendAggregationCollection}
+         * instance.
          *
          * @param summarizeDatabaseInsightResourceUsageTrendAggregationCollection the value to set
          * @return this builder

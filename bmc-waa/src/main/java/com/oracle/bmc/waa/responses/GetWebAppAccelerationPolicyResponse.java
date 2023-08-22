@@ -36,11 +36,11 @@ public class GetWebAppAccelerationPolicyResponse extends com.oracle.bmc.response
         return opcRequestId;
     }
 
-    /** The returned WebAppAccelerationPolicy instance. */
+    /** The returned {@code WebAppAccelerationPolicy} instance. */
     private com.oracle.bmc.waa.model.WebAppAccelerationPolicy webAppAccelerationPolicy;
 
     /**
-     * The returned WebAppAccelerationPolicy instance.
+     * The returned {@code WebAppAccelerationPolicy} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetWebAppAccelerationPolicyResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned WebAppAccelerationPolicy instance. */
+        /** The returned {@code WebAppAccelerationPolicy} instance. */
         private com.oracle.bmc.waa.model.WebAppAccelerationPolicy webAppAccelerationPolicy;
 
         /**
-         * The returned WebAppAccelerationPolicy instance.
+         * The returned {@code WebAppAccelerationPolicy} instance.
          *
          * @param webAppAccelerationPolicy the value to set
          * @return this builder

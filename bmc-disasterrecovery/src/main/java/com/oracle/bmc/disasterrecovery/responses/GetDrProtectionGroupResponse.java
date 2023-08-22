@@ -42,11 +42,11 @@ public class GetDrProtectionGroupResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned DrProtectionGroup instance. */
+    /** The returned {@code DrProtectionGroup} instance. */
     private com.oracle.bmc.disasterrecovery.model.DrProtectionGroup drProtectionGroup;
 
     /**
-     * The returned DrProtectionGroup instance.
+     * The returned {@code DrProtectionGroup} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class GetDrProtectionGroupResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned DrProtectionGroup instance. */
+        /** The returned {@code DrProtectionGroup} instance. */
         private com.oracle.bmc.disasterrecovery.model.DrProtectionGroup drProtectionGroup;
 
         /**
-         * The returned DrProtectionGroup instance.
+         * The returned {@code DrProtectionGroup} instance.
          *
          * @param drProtectionGroup the value to set
          * @return this builder

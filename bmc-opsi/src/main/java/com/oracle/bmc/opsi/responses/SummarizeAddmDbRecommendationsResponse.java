@@ -42,12 +42,12 @@ public class SummarizeAddmDbRecommendationsResponse extends com.oracle.bmc.respo
         return opcNextPage;
     }
 
-    /** The returned AddmDbRecommendationAggregationCollection instance. */
+    /** The returned {@code AddmDbRecommendationAggregationCollection} instance. */
     private com.oracle.bmc.opsi.model.AddmDbRecommendationAggregationCollection
             addmDbRecommendationAggregationCollection;
 
     /**
-     * The returned AddmDbRecommendationAggregationCollection instance.
+     * The returned {@code AddmDbRecommendationAggregationCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class SummarizeAddmDbRecommendationsResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned AddmDbRecommendationAggregationCollection instance. */
+        /** The returned {@code AddmDbRecommendationAggregationCollection} instance. */
         private com.oracle.bmc.opsi.model.AddmDbRecommendationAggregationCollection
                 addmDbRecommendationAggregationCollection;
 
         /**
-         * The returned AddmDbRecommendationAggregationCollection instance.
+         * The returned {@code AddmDbRecommendationAggregationCollection} instance.
          *
          * @param addmDbRecommendationAggregationCollection the value to set
          * @return this builder

@@ -60,11 +60,11 @@ public class ListTranscriptionTasksResponse extends com.oracle.bmc.responses.Bmc
         return opcPrevPage;
     }
 
-    /** The returned TranscriptionTaskCollection instance. */
+    /** The returned {@code TranscriptionTaskCollection} instance. */
     private com.oracle.bmc.aispeech.model.TranscriptionTaskCollection transcriptionTaskCollection;
 
     /**
-     * The returned TranscriptionTaskCollection instance.
+     * The returned {@code TranscriptionTaskCollection} instance.
      *
      * @return the value
      */
@@ -172,12 +172,12 @@ public class ListTranscriptionTasksResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned TranscriptionTaskCollection instance. */
+        /** The returned {@code TranscriptionTaskCollection} instance. */
         private com.oracle.bmc.aispeech.model.TranscriptionTaskCollection
                 transcriptionTaskCollection;
 
         /**
-         * The returned TranscriptionTaskCollection instance.
+         * The returned {@code TranscriptionTaskCollection} instance.
          *
          * @param transcriptionTaskCollection the value to set
          * @return this builder

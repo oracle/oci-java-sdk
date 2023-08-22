@@ -36,11 +36,11 @@ public class GetFusionEnvironmentFamilyResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    /** The returned FusionEnvironmentFamily instance. */
+    /** The returned {@code FusionEnvironmentFamily} instance. */
     private com.oracle.bmc.fusionapps.model.FusionEnvironmentFamily fusionEnvironmentFamily;
 
     /**
-     * The returned FusionEnvironmentFamily instance.
+     * The returned {@code FusionEnvironmentFamily} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetFusionEnvironmentFamilyResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned FusionEnvironmentFamily instance. */
+        /** The returned {@code FusionEnvironmentFamily} instance. */
         private com.oracle.bmc.fusionapps.model.FusionEnvironmentFamily fusionEnvironmentFamily;
 
         /**
-         * The returned FusionEnvironmentFamily instance.
+         * The returned {@code FusionEnvironmentFamily} instance.
          *
          * @param fusionEnvironmentFamily the value to set
          * @return this builder

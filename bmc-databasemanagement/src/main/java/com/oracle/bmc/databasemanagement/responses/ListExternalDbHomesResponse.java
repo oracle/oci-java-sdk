@@ -42,12 +42,12 @@ public class ListExternalDbHomesResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** The returned ExternalDbHomeCollection instance. */
+    /** The returned {@code ExternalDbHomeCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.ExternalDbHomeCollection
             externalDbHomeCollection;
 
     /**
-     * The returned ExternalDbHomeCollection instance.
+     * The returned {@code ExternalDbHomeCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListExternalDbHomesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned ExternalDbHomeCollection instance. */
+        /** The returned {@code ExternalDbHomeCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.ExternalDbHomeCollection
                 externalDbHomeCollection;
 
         /**
-         * The returned ExternalDbHomeCollection instance.
+         * The returned {@code ExternalDbHomeCollection} instance.
          *
          * @param externalDbHomeCollection the value to set
          * @return this builder

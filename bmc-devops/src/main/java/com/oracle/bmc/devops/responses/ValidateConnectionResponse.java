@@ -36,11 +36,11 @@ public class ValidateConnectionResponse extends com.oracle.bmc.responses.BmcResp
         return etag;
     }
 
-    /** The returned Connection instance. */
+    /** The returned {@code Connection} instance. */
     private com.oracle.bmc.devops.model.Connection connection;
 
     /**
-     * The returned Connection instance.
+     * The returned {@code Connection} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class ValidateConnectionResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned Connection instance. */
+        /** The returned {@code Connection} instance. */
         private com.oracle.bmc.devops.model.Connection connection;
 
         /**
-         * The returned Connection instance.
+         * The returned {@code Connection} instance.
          *
          * @param connection the value to set
          * @return this builder

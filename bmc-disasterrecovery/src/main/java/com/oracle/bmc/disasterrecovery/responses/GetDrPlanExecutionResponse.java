@@ -42,11 +42,11 @@ public class GetDrPlanExecutionResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned DrPlanExecution instance. */
+    /** The returned {@code DrPlanExecution} instance. */
     private com.oracle.bmc.disasterrecovery.model.DrPlanExecution drPlanExecution;
 
     /**
-     * The returned DrPlanExecution instance.
+     * The returned {@code DrPlanExecution} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class GetDrPlanExecutionResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned DrPlanExecution instance. */
+        /** The returned {@code DrPlanExecution} instance. */
         private com.oracle.bmc.disasterrecovery.model.DrPlanExecution drPlanExecution;
 
         /**
-         * The returned DrPlanExecution instance.
+         * The returned {@code DrPlanExecution} instance.
          *
          * @param drPlanExecution the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class GetVirtualServiceResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned VirtualService instance. */
+    /** The returned {@code VirtualService} instance. */
     private com.oracle.bmc.servicemesh.model.VirtualService virtualService;
 
     /**
-     * The returned VirtualService instance.
+     * The returned {@code VirtualService} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetVirtualServiceResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned VirtualService instance. */
+        /** The returned {@code VirtualService} instance. */
         private com.oracle.bmc.servicemesh.model.VirtualService virtualService;
 
         /**
-         * The returned VirtualService instance.
+         * The returned {@code VirtualService} instance.
          *
          * @param virtualService the value to set
          * @return this builder

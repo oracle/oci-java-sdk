@@ -25,11 +25,11 @@ public class ListAllowedPeerRegionsForRemotePeeringResponse
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.PeerRegionForRemotePeering instances. */
+    /** A list of {@code com.oracle.bmc.core.model.PeerRegionForRemotePeering} instances. */
     private java.util.List<com.oracle.bmc.core.model.PeerRegionForRemotePeering> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.PeerRegionForRemotePeering instances.
+     * A list of {@code com.oracle.bmc.core.model.PeerRegionForRemotePeering} instances.
      *
      * @return the value
      */
@@ -85,11 +85,11 @@ public class ListAllowedPeerRegionsForRemotePeeringResponse
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.PeerRegionForRemotePeering instances. */
+        /** A list of {@code com.oracle.bmc.core.model.PeerRegionForRemotePeering} instances. */
         private java.util.List<com.oracle.bmc.core.model.PeerRegionForRemotePeering> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.PeerRegionForRemotePeering instances.
+         * A list of {@code com.oracle.bmc.core.model.PeerRegionForRemotePeering} instances.
          *
          * @param items the value to set
          * @return this builder

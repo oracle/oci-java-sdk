@@ -40,11 +40,11 @@ public class GetCopyObjectRequestResponse extends com.oracle.bmc.responses.BmcRe
         return etag;
     }
 
-    /** The returned CopyObjectRequest instance. */
+    /** The returned {@code CopyObjectRequest} instance. */
     private com.oracle.bmc.dataintegration.model.CopyObjectRequest copyObjectRequest;
 
     /**
-     * The returned CopyObjectRequest instance.
+     * The returned {@code CopyObjectRequest} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetCopyObjectRequestResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned CopyObjectRequest instance. */
+        /** The returned {@code CopyObjectRequest} instance. */
         private com.oracle.bmc.dataintegration.model.CopyObjectRequest copyObjectRequest;
 
         /**
-         * The returned CopyObjectRequest instance.
+         * The returned {@code CopyObjectRequest} instance.
          *
          * @param copyObjectRequest the value to set
          * @return this builder

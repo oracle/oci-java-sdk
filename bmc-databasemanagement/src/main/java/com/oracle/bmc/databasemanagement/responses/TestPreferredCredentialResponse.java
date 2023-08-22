@@ -24,12 +24,12 @@ public class TestPreferredCredentialResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned TestPreferredCredentialStatus instance. */
+    /** The returned {@code TestPreferredCredentialStatus} instance. */
     private com.oracle.bmc.databasemanagement.model.TestPreferredCredentialStatus
             testPreferredCredentialStatus;
 
     /**
-     * The returned TestPreferredCredentialStatus instance.
+     * The returned {@code TestPreferredCredentialStatus} instance.
      *
      * @return the value
      */
@@ -92,12 +92,12 @@ public class TestPreferredCredentialResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned TestPreferredCredentialStatus instance. */
+        /** The returned {@code TestPreferredCredentialStatus} instance. */
         private com.oracle.bmc.databasemanagement.model.TestPreferredCredentialStatus
                 testPreferredCredentialStatus;
 
         /**
-         * The returned TestPreferredCredentialStatus instance.
+         * The returned {@code TestPreferredCredentialStatus} instance.
          *
          * @param testPreferredCredentialStatus the value to set
          * @return this builder

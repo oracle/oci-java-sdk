@@ -36,11 +36,11 @@ public class GetManagedInstanceGroupResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned ManagedInstanceGroup instance. */
+    /** The returned {@code ManagedInstanceGroup} instance. */
     private com.oracle.bmc.osmanagementhub.model.ManagedInstanceGroup managedInstanceGroup;
 
     /**
-     * The returned ManagedInstanceGroup instance.
+     * The returned {@code ManagedInstanceGroup} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetManagedInstanceGroupResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned ManagedInstanceGroup instance. */
+        /** The returned {@code ManagedInstanceGroup} instance. */
         private com.oracle.bmc.osmanagementhub.model.ManagedInstanceGroup managedInstanceGroup;
 
         /**
-         * The returned ManagedInstanceGroup instance.
+         * The returned {@code ManagedInstanceGroup} instance.
          *
          * @param managedInstanceGroup the value to set
          * @return this builder

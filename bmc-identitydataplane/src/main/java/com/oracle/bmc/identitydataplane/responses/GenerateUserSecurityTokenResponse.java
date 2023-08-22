@@ -24,11 +24,11 @@ public class GenerateUserSecurityTokenResponse extends com.oracle.bmc.responses.
         return opcRequestId;
     }
 
-    /** The returned SecurityToken instance. */
+    /** The returned {@code SecurityToken} instance. */
     private com.oracle.bmc.identitydataplane.model.SecurityToken securityToken;
 
     /**
-     * The returned SecurityToken instance.
+     * The returned {@code SecurityToken} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class GenerateUserSecurityTokenResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned SecurityToken instance. */
+        /** The returned {@code SecurityToken} instance. */
         private com.oracle.bmc.identitydataplane.model.SecurityToken securityToken;
 
         /**
-         * The returned SecurityToken instance.
+         * The returned {@code SecurityToken} instance.
          *
          * @param securityToken the value to set
          * @return this builder

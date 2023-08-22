@@ -42,12 +42,12 @@ public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned WorkRequestErrorCollection instance. */
+    /** The returned {@code WorkRequestErrorCollection} instance. */
     private com.oracle.bmc.databasetools.model.WorkRequestErrorCollection
             workRequestErrorCollection;
 
     /**
-     * The returned WorkRequestErrorCollection instance.
+     * The returned {@code WorkRequestErrorCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned WorkRequestErrorCollection instance. */
+        /** The returned {@code WorkRequestErrorCollection} instance. */
         private com.oracle.bmc.databasetools.model.WorkRequestErrorCollection
                 workRequestErrorCollection;
 
         /**
-         * The returned WorkRequestErrorCollection instance.
+         * The returned {@code WorkRequestErrorCollection} instance.
          *
          * @param workRequestErrorCollection the value to set
          * @return this builder

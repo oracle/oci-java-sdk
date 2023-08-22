@@ -24,11 +24,11 @@ public class GetCrossConnectStatusResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned CrossConnectStatus instance. */
+    /** The returned {@code CrossConnectStatus} instance. */
     private com.oracle.bmc.core.model.CrossConnectStatus crossConnectStatus;
 
     /**
-     * The returned CrossConnectStatus instance.
+     * The returned {@code CrossConnectStatus} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetCrossConnectStatusResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned CrossConnectStatus instance. */
+        /** The returned {@code CrossConnectStatus} instance. */
         private com.oracle.bmc.core.model.CrossConnectStatus crossConnectStatus;
 
         /**
-         * The returned CrossConnectStatus instance.
+         * The returned {@code CrossConnectStatus} instance.
          *
          * @param crossConnectStatus the value to set
          * @return this builder

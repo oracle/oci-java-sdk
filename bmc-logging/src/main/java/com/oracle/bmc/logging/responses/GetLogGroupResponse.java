@@ -36,11 +36,11 @@ public class GetLogGroupResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned LogGroup instance. */
+    /** The returned {@code LogGroup} instance. */
     private com.oracle.bmc.logging.model.LogGroup logGroup;
 
     /**
-     * The returned LogGroup instance.
+     * The returned {@code LogGroup} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetLogGroupResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned LogGroup instance. */
+        /** The returned {@code LogGroup} instance. */
         private com.oracle.bmc.logging.model.LogGroup logGroup;
 
         /**
-         * The returned LogGroup instance.
+         * The returned {@code LogGroup} instance.
          *
          * @param logGroup the value to set
          * @return this builder

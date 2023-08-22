@@ -228,6 +228,15 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("inMemoryPercentage")
+        private Integer inMemoryPercentage;
+
+        public Builder inMemoryPercentage(Integer inMemoryPercentage) {
+            this.inMemoryPercentage = inMemoryPercentage;
+            this.__explicitlySet__.add("inMemoryPercentage");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isAccessControlEnabled")
         private Boolean isAccessControlEnabled;
 
@@ -502,6 +511,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
                             this.isAutoScalingEnabled,
                             this.isDedicated,
                             this.autonomousContainerDatabaseId,
+                            this.inMemoryPercentage,
                             this.isAccessControlEnabled,
                             this.whitelistedIps,
                             this.arePrimaryWhitelistedIpsUsed,
@@ -601,6 +611,9 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             }
             if (model.wasPropertyExplicitlySet("autonomousContainerDatabaseId")) {
                 this.autonomousContainerDatabaseId(model.getAutonomousContainerDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("inMemoryPercentage")) {
+                this.inMemoryPercentage(model.getInMemoryPercentage());
             }
             if (model.wasPropertyExplicitlySet("isAccessControlEnabled")) {
                 this.isAccessControlEnabled(model.getIsAccessControlEnabled());
@@ -715,6 +728,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             Boolean isAutoScalingEnabled,
             Boolean isDedicated,
             String autonomousContainerDatabaseId,
+            Integer inMemoryPercentage,
             Boolean isAccessControlEnabled,
             java.util.List<String> whitelistedIps,
             Boolean arePrimaryWhitelistedIpsUsed,
@@ -763,6 +777,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
                 isAutoScalingEnabled,
                 isDedicated,
                 autonomousContainerDatabaseId,
+                inMemoryPercentage,
                 isAccessControlEnabled,
                 whitelistedIps,
                 arePrimaryWhitelistedIpsUsed,

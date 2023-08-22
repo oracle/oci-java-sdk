@@ -45,11 +45,11 @@ public class ListAutonomousDatabaseRefreshableClonesResponse
         return opcNextPage;
     }
 
-    /** The returned RefreshableCloneCollection instance. */
+    /** The returned {@code RefreshableCloneCollection} instance. */
     private com.oracle.bmc.database.model.RefreshableCloneCollection refreshableCloneCollection;
 
     /**
-     * The returned RefreshableCloneCollection instance.
+     * The returned {@code RefreshableCloneCollection} instance.
      *
      * @return the value
      */
@@ -138,11 +138,11 @@ public class ListAutonomousDatabaseRefreshableClonesResponse
             return this;
         }
 
-        /** The returned RefreshableCloneCollection instance. */
+        /** The returned {@code RefreshableCloneCollection} instance. */
         private com.oracle.bmc.database.model.RefreshableCloneCollection refreshableCloneCollection;
 
         /**
-         * The returned RefreshableCloneCollection instance.
+         * The returned {@code RefreshableCloneCollection} instance.
          *
          * @param refreshableCloneCollection the value to set
          * @return this builder

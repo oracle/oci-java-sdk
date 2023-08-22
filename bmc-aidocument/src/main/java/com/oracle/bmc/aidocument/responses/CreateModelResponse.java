@@ -76,11 +76,11 @@ public class CreateModelResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned Model instance. */
+    /** The returned {@code Model} instance. */
     private com.oracle.bmc.aidocument.model.Model model;
 
     /**
-     * The returned Model instance.
+     * The returned {@code Model} instance.
      *
      * @return the value
      */
@@ -212,11 +212,11 @@ public class CreateModelResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Model instance. */
+        /** The returned {@code Model} instance. */
         private com.oracle.bmc.aidocument.model.Model model;
 
         /**
-         * The returned Model instance.
+         * The returned {@code Model} instance.
          *
          * @param model the value to set
          * @return this builder

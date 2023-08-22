@@ -44,11 +44,11 @@ public class ListSecretVersionsResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.vault.model.SecretVersionSummary instances. */
+    /** A list of {@code com.oracle.bmc.vault.model.SecretVersionSummary} instances. */
     private java.util.List<com.oracle.bmc.vault.model.SecretVersionSummary> items;
 
     /**
-     * A list of com.oracle.bmc.vault.model.SecretVersionSummary instances.
+     * A list of {@code com.oracle.bmc.vault.model.SecretVersionSummary} instances.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListSecretVersionsResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** A list of com.oracle.bmc.vault.model.SecretVersionSummary instances. */
+        /** A list of {@code com.oracle.bmc.vault.model.SecretVersionSummary} instances. */
         private java.util.List<com.oracle.bmc.vault.model.SecretVersionSummary> items;
 
         /**
-         * A list of com.oracle.bmc.vault.model.SecretVersionSummary instances.
+         * A list of {@code com.oracle.bmc.vault.model.SecretVersionSummary} instances.
          *
          * @param items the value to set
          * @return this builder

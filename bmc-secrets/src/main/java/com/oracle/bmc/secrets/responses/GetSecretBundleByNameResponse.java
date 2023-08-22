@@ -24,11 +24,11 @@ public class GetSecretBundleByNameResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned SecretBundle instance. */
+    /** The returned {@code SecretBundle} instance. */
     private com.oracle.bmc.secrets.model.SecretBundle secretBundle;
 
     /**
-     * The returned SecretBundle instance.
+     * The returned {@code SecretBundle} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetSecretBundleByNameResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned SecretBundle instance. */
+        /** The returned {@code SecretBundle} instance. */
         private com.oracle.bmc.secrets.model.SecretBundle secretBundle;
 
         /**
-         * The returned SecretBundle instance.
+         * The returned {@code SecretBundle} instance.
          *
          * @param secretBundle the value to set
          * @return this builder

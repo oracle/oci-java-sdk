@@ -42,12 +42,12 @@ public class SummarizeAwrDbSnapshotRangesResponse extends com.oracle.bmc.respons
         return opcNextPage;
     }
 
-    /** The returned AwrDbSnapshotRangeCollection instance. */
+    /** The returned {@code AwrDbSnapshotRangeCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.AwrDbSnapshotRangeCollection
             awrDbSnapshotRangeCollection;
 
     /**
-     * The returned AwrDbSnapshotRangeCollection instance.
+     * The returned {@code AwrDbSnapshotRangeCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class SummarizeAwrDbSnapshotRangesResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned AwrDbSnapshotRangeCollection instance. */
+        /** The returned {@code AwrDbSnapshotRangeCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.AwrDbSnapshotRangeCollection
                 awrDbSnapshotRangeCollection;
 
         /**
-         * The returned AwrDbSnapshotRangeCollection instance.
+         * The returned {@code AwrDbSnapshotRangeCollection} instance.
          *
          * @param awrDbSnapshotRangeCollection the value to set
          * @return this builder

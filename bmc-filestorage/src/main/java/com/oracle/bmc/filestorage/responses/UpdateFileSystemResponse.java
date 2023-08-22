@@ -36,11 +36,11 @@ public class UpdateFileSystemResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned FileSystem instance. */
+    /** The returned {@code FileSystem} instance. */
     private com.oracle.bmc.filestorage.model.FileSystem fileSystem;
 
     /**
-     * The returned FileSystem instance.
+     * The returned {@code FileSystem} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateFileSystemResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned FileSystem instance. */
+        /** The returned {@code FileSystem} instance. */
         private com.oracle.bmc.filestorage.model.FileSystem fileSystem;
 
         /**
-         * The returned FileSystem instance.
+         * The returned {@code FileSystem} instance.
          *
          * @param fileSystem the value to set
          * @return this builder

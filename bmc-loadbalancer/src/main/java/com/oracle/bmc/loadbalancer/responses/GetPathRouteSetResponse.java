@@ -44,11 +44,11 @@ public class GetPathRouteSetResponse extends com.oracle.bmc.responses.BmcRespons
         return eTag;
     }
 
-    /** The returned PathRouteSet instance. */
+    /** The returned {@code PathRouteSet} instance. */
     private com.oracle.bmc.loadbalancer.model.PathRouteSet pathRouteSet;
 
     /**
-     * The returned PathRouteSet instance.
+     * The returned {@code PathRouteSet} instance.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class GetPathRouteSetResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned PathRouteSet instance. */
+        /** The returned {@code PathRouteSet} instance. */
         private com.oracle.bmc.loadbalancer.model.PathRouteSet pathRouteSet;
 
         /**
-         * The returned PathRouteSet instance.
+         * The returned {@code PathRouteSet} instance.
          *
          * @param pathRouteSet the value to set
          * @return this builder

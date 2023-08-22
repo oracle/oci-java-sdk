@@ -61,11 +61,11 @@ public class ListResourceActionQueryableFieldsResponse
         return opcPrevPage;
     }
 
-    /** The returned QueryableFieldCollection instance. */
+    /** The returned {@code QueryableFieldCollection} instance. */
     private com.oracle.bmc.optimizer.model.QueryableFieldCollection queryableFieldCollection;
 
     /**
-     * The returned QueryableFieldCollection instance.
+     * The returned {@code QueryableFieldCollection} instance.
      *
      * @return the value
      */
@@ -172,11 +172,11 @@ public class ListResourceActionQueryableFieldsResponse
             return this;
         }
 
-        /** The returned QueryableFieldCollection instance. */
+        /** The returned {@code QueryableFieldCollection} instance. */
         private com.oracle.bmc.optimizer.model.QueryableFieldCollection queryableFieldCollection;
 
         /**
-         * The returned QueryableFieldCollection instance.
+         * The returned {@code QueryableFieldCollection} instance.
          *
          * @param queryableFieldCollection the value to set
          * @return this builder

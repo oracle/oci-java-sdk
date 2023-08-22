@@ -24,11 +24,11 @@ public class GetTraceResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Trace instance. */
+    /** The returned {@code Trace} instance. */
     private com.oracle.bmc.apmtraces.model.Trace trace;
 
     /**
-     * The returned Trace instance.
+     * The returned {@code Trace} instance.
      *
      * @return the value
      */
@@ -83,11 +83,11 @@ public class GetTraceResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Trace instance. */
+        /** The returned {@code Trace} instance. */
         private com.oracle.bmc.apmtraces.model.Trace trace;
 
         /**
-         * The returned Trace instance.
+         * The returned {@code Trace} instance.
          *
          * @param trace the value to set
          * @return this builder

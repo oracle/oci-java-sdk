@@ -46,11 +46,11 @@ public class ListMigrationsResponse extends com.oracle.bmc.responses.BmcResponse
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.applicationmigration.model.MigrationSummary instances. */
+    /** A list of {@code com.oracle.bmc.applicationmigration.model.MigrationSummary} instances. */
     private java.util.List<com.oracle.bmc.applicationmigration.model.MigrationSummary> items;
 
     /**
-     * A list of com.oracle.bmc.applicationmigration.model.MigrationSummary instances.
+     * A list of {@code com.oracle.bmc.applicationmigration.model.MigrationSummary} instances.
      *
      * @return the value
      */
@@ -137,11 +137,13 @@ public class ListMigrationsResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** A list of com.oracle.bmc.applicationmigration.model.MigrationSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.applicationmigration.model.MigrationSummary} instances.
+         */
         private java.util.List<com.oracle.bmc.applicationmigration.model.MigrationSummary> items;
 
         /**
-         * A list of com.oracle.bmc.applicationmigration.model.MigrationSummary instances.
+         * A list of {@code com.oracle.bmc.applicationmigration.model.MigrationSummary} instances.
          *
          * @param items the value to set
          * @return this builder

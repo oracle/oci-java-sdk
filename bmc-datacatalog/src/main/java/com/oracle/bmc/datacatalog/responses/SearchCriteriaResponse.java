@@ -42,11 +42,11 @@ public class SearchCriteriaResponse extends com.oracle.bmc.responses.BmcResponse
         return opcNextPage;
     }
 
-    /** The returned SearchResultCollection instance. */
+    /** The returned {@code SearchResultCollection} instance. */
     private com.oracle.bmc.datacatalog.model.SearchResultCollection searchResultCollection;
 
     /**
-     * The returned SearchResultCollection instance.
+     * The returned {@code SearchResultCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class SearchCriteriaResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned SearchResultCollection instance. */
+        /** The returned {@code SearchResultCollection} instance. */
         private com.oracle.bmc.datacatalog.model.SearchResultCollection searchResultCollection;
 
         /**
-         * The returned SearchResultCollection instance.
+         * The returned {@code SearchResultCollection} instance.
          *
          * @param searchResultCollection the value to set
          * @return this builder

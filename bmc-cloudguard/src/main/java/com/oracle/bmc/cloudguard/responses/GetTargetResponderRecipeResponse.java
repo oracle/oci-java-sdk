@@ -36,11 +36,11 @@ public class GetTargetResponderRecipeResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** The returned TargetResponderRecipe instance. */
+    /** The returned {@code TargetResponderRecipe} instance. */
     private com.oracle.bmc.cloudguard.model.TargetResponderRecipe targetResponderRecipe;
 
     /**
-     * The returned TargetResponderRecipe instance.
+     * The returned {@code TargetResponderRecipe} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetTargetResponderRecipeResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned TargetResponderRecipe instance. */
+        /** The returned {@code TargetResponderRecipe} instance. */
         private com.oracle.bmc.cloudguard.model.TargetResponderRecipe targetResponderRecipe;
 
         /**
-         * The returned TargetResponderRecipe instance.
+         * The returned {@code TargetResponderRecipe} instance.
          *
          * @param targetResponderRecipe the value to set
          * @return this builder

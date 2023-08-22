@@ -52,11 +52,11 @@ public class CreateLockboxResponse extends com.oracle.bmc.responses.BmcResponse 
         return etag;
     }
 
-    /** The returned Lockbox instance. */
+    /** The returned {@code Lockbox} instance. */
     private com.oracle.bmc.lockbox.model.Lockbox lockbox;
 
     /**
-     * The returned Lockbox instance.
+     * The returned {@code Lockbox} instance.
      *
      * @return the value
      */
@@ -154,11 +154,11 @@ public class CreateLockboxResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned Lockbox instance. */
+        /** The returned {@code Lockbox} instance. */
         private com.oracle.bmc.lockbox.model.Lockbox lockbox;
 
         /**
-         * The returned Lockbox instance.
+         * The returned {@code Lockbox} instance.
          *
          * @param lockbox the value to set
          * @return this builder
