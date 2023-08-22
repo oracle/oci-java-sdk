@@ -36,11 +36,11 @@ public class GetIdpGroupMappingResponse extends com.oracle.bmc.responses.BmcResp
         return etag;
     }
 
-    /** The returned IdpGroupMapping instance. */
+    /** The returned {@code IdpGroupMapping} instance. */
     private com.oracle.bmc.identity.model.IdpGroupMapping idpGroupMapping;
 
     /**
-     * The returned IdpGroupMapping instance.
+     * The returned {@code IdpGroupMapping} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetIdpGroupMappingResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned IdpGroupMapping instance. */
+        /** The returned {@code IdpGroupMapping} instance. */
         private com.oracle.bmc.identity.model.IdpGroupMapping idpGroupMapping;
 
         /**
-         * The returned IdpGroupMapping instance.
+         * The returned {@code IdpGroupMapping} instance.
          *
          * @param idpGroupMapping the value to set
          * @return this builder

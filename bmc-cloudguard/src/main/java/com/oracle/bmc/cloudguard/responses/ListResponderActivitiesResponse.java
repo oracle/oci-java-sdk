@@ -42,11 +42,11 @@ public class ListResponderActivitiesResponse extends com.oracle.bmc.responses.Bm
         return opcNextPage;
     }
 
-    /** The returned ResponderActivityCollection instance. */
+    /** The returned {@code ResponderActivityCollection} instance. */
     private com.oracle.bmc.cloudguard.model.ResponderActivityCollection responderActivityCollection;
 
     /**
-     * The returned ResponderActivityCollection instance.
+     * The returned {@code ResponderActivityCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListResponderActivitiesResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned ResponderActivityCollection instance. */
+        /** The returned {@code ResponderActivityCollection} instance. */
         private com.oracle.bmc.cloudguard.model.ResponderActivityCollection
                 responderActivityCollection;
 
         /**
-         * The returned ResponderActivityCollection instance.
+         * The returned {@code ResponderActivityCollection} instance.
          *
          * @param responderActivityCollection the value to set
          * @return this builder

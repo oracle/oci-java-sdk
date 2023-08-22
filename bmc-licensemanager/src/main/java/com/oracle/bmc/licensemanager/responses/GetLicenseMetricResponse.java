@@ -36,11 +36,11 @@ public class GetLicenseMetricResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned LicenseMetric instance. */
+    /** The returned {@code LicenseMetric} instance. */
     private com.oracle.bmc.licensemanager.model.LicenseMetric licenseMetric;
 
     /**
-     * The returned LicenseMetric instance.
+     * The returned {@code LicenseMetric} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetLicenseMetricResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned LicenseMetric instance. */
+        /** The returned {@code LicenseMetric} instance. */
         private com.oracle.bmc.licensemanager.model.LicenseMetric licenseMetric;
 
         /**
-         * The returned LicenseMetric instance.
+         * The returned {@code LicenseMetric} instance.
          *
          * @param licenseMetric the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class GetRepoFileLinesResponse extends com.oracle.bmc.responses.BmcRespon
         return etag;
     }
 
-    /** The returned RepositoryFileLines instance. */
+    /** The returned {@code RepositoryFileLines} instance. */
     private com.oracle.bmc.devops.model.RepositoryFileLines repositoryFileLines;
 
     /**
-     * The returned RepositoryFileLines instance.
+     * The returned {@code RepositoryFileLines} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetRepoFileLinesResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned RepositoryFileLines instance. */
+        /** The returned {@code RepositoryFileLines} instance. */
         private com.oracle.bmc.devops.model.RepositoryFileLines repositoryFileLines;
 
         /**
-         * The returned RepositoryFileLines instance.
+         * The returned {@code RepositoryFileLines} instance.
          *
          * @param repositoryFileLines the value to set
          * @return this builder

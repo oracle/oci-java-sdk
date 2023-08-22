@@ -36,11 +36,11 @@ public class GetWafAddressRateLimitingResponse extends com.oracle.bmc.responses.
         return opcRequestId;
     }
 
-    /** The returned AddressRateLimiting instance. */
+    /** The returned {@code AddressRateLimiting} instance. */
     private com.oracle.bmc.waas.model.AddressRateLimiting addressRateLimiting;
 
     /**
-     * The returned AddressRateLimiting instance.
+     * The returned {@code AddressRateLimiting} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetWafAddressRateLimitingResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned AddressRateLimiting instance. */
+        /** The returned {@code AddressRateLimiting} instance. */
         private com.oracle.bmc.waas.model.AddressRateLimiting addressRateLimiting;
 
         /**
-         * The returned AddressRateLimiting instance.
+         * The returned {@code AddressRateLimiting} instance.
          *
          * @param addressRateLimiting the value to set
          * @return this builder

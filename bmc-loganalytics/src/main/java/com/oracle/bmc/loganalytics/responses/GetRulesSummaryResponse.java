@@ -24,11 +24,11 @@ public class GetRulesSummaryResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned RuleSummaryReport instance. */
+    /** The returned {@code RuleSummaryReport} instance. */
     private com.oracle.bmc.loganalytics.model.RuleSummaryReport ruleSummaryReport;
 
     /**
-     * The returned RuleSummaryReport instance.
+     * The returned {@code RuleSummaryReport} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetRulesSummaryResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned RuleSummaryReport instance. */
+        /** The returned {@code RuleSummaryReport} instance. */
         private com.oracle.bmc.loganalytics.model.RuleSummaryReport ruleSummaryReport;
 
         /**
-         * The returned RuleSummaryReport instance.
+         * The returned {@code RuleSummaryReport} instance.
          *
          * @param ruleSummaryReport the value to set
          * @return this builder

@@ -54,11 +54,11 @@ public class ListNewsReportsResponse extends com.oracle.bmc.responses.BmcRespons
         return opcNextPage;
     }
 
-    /** The returned NewsReportCollection instance. */
+    /** The returned {@code NewsReportCollection} instance. */
     private com.oracle.bmc.opsi.model.NewsReportCollection newsReportCollection;
 
     /**
-     * The returned NewsReportCollection instance.
+     * The returned {@code NewsReportCollection} instance.
      *
      * @return the value
      */
@@ -158,11 +158,11 @@ public class ListNewsReportsResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned NewsReportCollection instance. */
+        /** The returned {@code NewsReportCollection} instance. */
         private com.oracle.bmc.opsi.model.NewsReportCollection newsReportCollection;
 
         /**
-         * The returned NewsReportCollection instance.
+         * The returned {@code NewsReportCollection} instance.
          *
          * @param newsReportCollection the value to set
          * @return this builder

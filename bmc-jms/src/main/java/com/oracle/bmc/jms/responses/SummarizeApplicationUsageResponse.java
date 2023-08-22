@@ -44,11 +44,11 @@ public class SummarizeApplicationUsageResponse extends com.oracle.bmc.responses.
         return opcNextPage;
     }
 
-    /** The returned ApplicationUsageCollection instance. */
+    /** The returned {@code ApplicationUsageCollection} instance. */
     private com.oracle.bmc.jms.model.ApplicationUsageCollection applicationUsageCollection;
 
     /**
-     * The returned ApplicationUsageCollection instance.
+     * The returned {@code ApplicationUsageCollection} instance.
      *
      * @return the value
      */
@@ -136,11 +136,11 @@ public class SummarizeApplicationUsageResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned ApplicationUsageCollection instance. */
+        /** The returned {@code ApplicationUsageCollection} instance. */
         private com.oracle.bmc.jms.model.ApplicationUsageCollection applicationUsageCollection;
 
         /**
-         * The returned ApplicationUsageCollection instance.
+         * The returned {@code ApplicationUsageCollection} instance.
          *
          * @param applicationUsageCollection the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListByoipAllocatedRangesResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** The returned ByoipAllocatedRangeCollection instance. */
+    /** The returned {@code ByoipAllocatedRangeCollection} instance. */
     private com.oracle.bmc.core.model.ByoipAllocatedRangeCollection byoipAllocatedRangeCollection;
 
     /**
-     * The returned ByoipAllocatedRangeCollection instance.
+     * The returned {@code ByoipAllocatedRangeCollection} instance.
      *
      * @return the value
      */
@@ -131,12 +131,12 @@ public class ListByoipAllocatedRangesResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned ByoipAllocatedRangeCollection instance. */
+        /** The returned {@code ByoipAllocatedRangeCollection} instance. */
         private com.oracle.bmc.core.model.ByoipAllocatedRangeCollection
                 byoipAllocatedRangeCollection;
 
         /**
-         * The returned ByoipAllocatedRangeCollection instance.
+         * The returned {@code ByoipAllocatedRangeCollection} instance.
          *
          * @param byoipAllocatedRangeCollection the value to set
          * @return this builder

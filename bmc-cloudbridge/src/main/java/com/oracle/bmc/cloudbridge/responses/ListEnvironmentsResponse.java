@@ -42,11 +42,11 @@ public class ListEnvironmentsResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /** The returned EnvironmentCollection instance. */
+    /** The returned {@code EnvironmentCollection} instance. */
     private com.oracle.bmc.cloudbridge.model.EnvironmentCollection environmentCollection;
 
     /**
-     * The returned EnvironmentCollection instance.
+     * The returned {@code EnvironmentCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListEnvironmentsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned EnvironmentCollection instance. */
+        /** The returned {@code EnvironmentCollection} instance. */
         private com.oracle.bmc.cloudbridge.model.EnvironmentCollection environmentCollection;
 
         /**
-         * The returned EnvironmentCollection instance.
+         * The returned {@code EnvironmentCollection} instance.
          *
          * @param environmentCollection the value to set
          * @return this builder

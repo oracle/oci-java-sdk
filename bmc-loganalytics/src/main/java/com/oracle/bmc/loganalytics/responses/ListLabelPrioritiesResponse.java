@@ -64,11 +64,11 @@ public class ListLabelPrioritiesResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned LabelPriorityCollection instance. */
+    /** The returned {@code LabelPriorityCollection} instance. */
     private com.oracle.bmc.loganalytics.model.LabelPriorityCollection labelPriorityCollection;
 
     /**
-     * The returned LabelPriorityCollection instance.
+     * The returned {@code LabelPriorityCollection} instance.
      *
      * @return the value
      */
@@ -178,11 +178,11 @@ public class ListLabelPrioritiesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned LabelPriorityCollection instance. */
+        /** The returned {@code LabelPriorityCollection} instance. */
         private com.oracle.bmc.loganalytics.model.LabelPriorityCollection labelPriorityCollection;
 
         /**
-         * The returned LabelPriorityCollection instance.
+         * The returned {@code LabelPriorityCollection} instance.
          *
          * @param labelPriorityCollection the value to set
          * @return this builder

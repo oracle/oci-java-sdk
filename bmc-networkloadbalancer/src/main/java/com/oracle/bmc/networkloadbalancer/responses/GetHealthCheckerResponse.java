@@ -36,11 +36,11 @@ public class GetHealthCheckerResponse extends com.oracle.bmc.responses.BmcRespon
         return etag;
     }
 
-    /** The returned HealthChecker instance. */
+    /** The returned {@code HealthChecker} instance. */
     private com.oracle.bmc.networkloadbalancer.model.HealthChecker healthChecker;
 
     /**
-     * The returned HealthChecker instance.
+     * The returned {@code HealthChecker} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetHealthCheckerResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned HealthChecker instance. */
+        /** The returned {@code HealthChecker} instance. */
         private com.oracle.bmc.networkloadbalancer.model.HealthChecker healthChecker;
 
         /**
-         * The returned HealthChecker instance.
+         * The returned {@code HealthChecker} instance.
          *
          * @param healthChecker the value to set
          * @return this builder

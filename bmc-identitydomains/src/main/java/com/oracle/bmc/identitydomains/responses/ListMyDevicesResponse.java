@@ -42,11 +42,11 @@ public class ListMyDevicesResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcNextPage;
     }
 
-    /** The returned MyDevices instance. */
+    /** The returned {@code MyDevices} instance. */
     private com.oracle.bmc.identitydomains.model.MyDevices myDevices;
 
     /**
-     * The returned MyDevices instance.
+     * The returned {@code MyDevices} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListMyDevicesResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned MyDevices instance. */
+        /** The returned {@code MyDevices} instance. */
         private com.oracle.bmc.identitydomains.model.MyDevices myDevices;
 
         /**
-         * The returned MyDevices instance.
+         * The returned {@code MyDevices} instance.
          *
          * @param myDevices the value to set
          * @return this builder

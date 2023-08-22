@@ -43,12 +43,12 @@ public class SummarizeHostInsightTopProcessesUsageTrendResponse
         return opcNextPage;
     }
 
-    /** The returned SummarizeHostInsightsTopProcessesUsageTrendCollection instance. */
+    /** The returned {@code SummarizeHostInsightsTopProcessesUsageTrendCollection} instance. */
     private com.oracle.bmc.opsi.model.SummarizeHostInsightsTopProcessesUsageTrendCollection
             summarizeHostInsightsTopProcessesUsageTrendCollection;
 
     /**
-     * The returned SummarizeHostInsightsTopProcessesUsageTrendCollection instance.
+     * The returned {@code SummarizeHostInsightsTopProcessesUsageTrendCollection} instance.
      *
      * @return the value
      */
@@ -135,12 +135,12 @@ public class SummarizeHostInsightTopProcessesUsageTrendResponse
             return this;
         }
 
-        /** The returned SummarizeHostInsightsTopProcessesUsageTrendCollection instance. */
+        /** The returned {@code SummarizeHostInsightsTopProcessesUsageTrendCollection} instance. */
         private com.oracle.bmc.opsi.model.SummarizeHostInsightsTopProcessesUsageTrendCollection
                 summarizeHostInsightsTopProcessesUsageTrendCollection;
 
         /**
-         * The returned SummarizeHostInsightsTopProcessesUsageTrendCollection instance.
+         * The returned {@code SummarizeHostInsightsTopProcessesUsageTrendCollection} instance.
          *
          * @param summarizeHostInsightsTopProcessesUsageTrendCollection the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class GetSecurityPolicyResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned SecurityPolicy instance. */
+    /** The returned {@code SecurityPolicy} instance. */
     private com.oracle.bmc.cloudguard.model.SecurityPolicy securityPolicy;
 
     /**
-     * The returned SecurityPolicy instance.
+     * The returned {@code SecurityPolicy} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetSecurityPolicyResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned SecurityPolicy instance. */
+        /** The returned {@code SecurityPolicy} instance. */
         private com.oracle.bmc.cloudguard.model.SecurityPolicy securityPolicy;
 
         /**
-         * The returned SecurityPolicy instance.
+         * The returned {@code SecurityPolicy} instance.
          *
          * @param securityPolicy the value to set
          * @return this builder

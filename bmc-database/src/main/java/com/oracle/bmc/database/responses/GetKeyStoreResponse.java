@@ -36,11 +36,11 @@ public class GetKeyStoreResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned KeyStore instance. */
+    /** The returned {@code KeyStore} instance. */
     private com.oracle.bmc.database.model.KeyStore keyStore;
 
     /**
-     * The returned KeyStore instance.
+     * The returned {@code KeyStore} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetKeyStoreResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned KeyStore instance. */
+        /** The returned {@code KeyStore} instance. */
         private com.oracle.bmc.database.model.KeyStore keyStore;
 
         /**
-         * The returned KeyStore instance.
+         * The returned {@code KeyStore} instance.
          *
          * @param keyStore the value to set
          * @return this builder

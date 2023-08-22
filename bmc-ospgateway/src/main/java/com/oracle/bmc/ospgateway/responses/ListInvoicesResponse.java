@@ -54,11 +54,11 @@ public class ListInvoicesResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcTotalItems;
     }
 
-    /** The returned InvoiceCollection instance. */
+    /** The returned {@code InvoiceCollection} instance. */
     private com.oracle.bmc.ospgateway.model.InvoiceCollection invoiceCollection;
 
     /**
-     * The returned InvoiceCollection instance.
+     * The returned {@code InvoiceCollection} instance.
      *
      * @return the value
      */
@@ -158,11 +158,11 @@ public class ListInvoicesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned InvoiceCollection instance. */
+        /** The returned {@code InvoiceCollection} instance. */
         private com.oracle.bmc.ospgateway.model.InvoiceCollection invoiceCollection;
 
         /**
-         * The returned InvoiceCollection instance.
+         * The returned {@code InvoiceCollection} instance.
          *
          * @param invoiceCollection the value to set
          * @return this builder

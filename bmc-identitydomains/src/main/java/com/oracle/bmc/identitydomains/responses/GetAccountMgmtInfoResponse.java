@@ -24,11 +24,11 @@ public class GetAccountMgmtInfoResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned AccountMgmtInfo instance. */
+    /** The returned {@code AccountMgmtInfo} instance. */
     private com.oracle.bmc.identitydomains.model.AccountMgmtInfo accountMgmtInfo;
 
     /**
-     * The returned AccountMgmtInfo instance.
+     * The returned {@code AccountMgmtInfo} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetAccountMgmtInfoResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned AccountMgmtInfo instance. */
+        /** The returned {@code AccountMgmtInfo} instance. */
         private com.oracle.bmc.identitydomains.model.AccountMgmtInfo accountMgmtInfo;
 
         /**
-         * The returned AccountMgmtInfo instance.
+         * The returned {@code AccountMgmtInfo} instance.
          *
          * @param accountMgmtInfo the value to set
          * @return this builder

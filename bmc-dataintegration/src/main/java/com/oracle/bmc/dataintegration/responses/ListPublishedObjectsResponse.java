@@ -72,12 +72,12 @@ public class ListPublishedObjectsResponse extends com.oracle.bmc.responses.BmcRe
         return opcTotalItems;
     }
 
-    /** The returned PublishedObjectSummaryCollection instance. */
+    /** The returned {@code PublishedObjectSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.PublishedObjectSummaryCollection
             publishedObjectSummaryCollection;
 
     /**
-     * The returned PublishedObjectSummaryCollection instance.
+     * The returned {@code PublishedObjectSummaryCollection} instance.
      *
      * @return the value
      */
@@ -202,12 +202,12 @@ public class ListPublishedObjectsResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned PublishedObjectSummaryCollection instance. */
+        /** The returned {@code PublishedObjectSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.PublishedObjectSummaryCollection
                 publishedObjectSummaryCollection;
 
         /**
-         * The returned PublishedObjectSummaryCollection instance.
+         * The returned {@code PublishedObjectSummaryCollection} instance.
          *
          * @param publishedObjectSummaryCollection the value to set
          * @return this builder

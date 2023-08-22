@@ -52,11 +52,11 @@ public class UpdateBucketResponse extends com.oracle.bmc.responses.BmcResponse {
         return eTag;
     }
 
-    /** The returned Bucket instance. */
+    /** The returned {@code Bucket} instance. */
     private com.oracle.bmc.objectstorage.model.Bucket bucket;
 
     /**
-     * The returned Bucket instance.
+     * The returned {@code Bucket} instance.
      *
      * @return the value
      */
@@ -154,11 +154,11 @@ public class UpdateBucketResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Bucket instance. */
+        /** The returned {@code Bucket} instance. */
         private com.oracle.bmc.objectstorage.model.Bucket bucket;
 
         /**
-         * The returned Bucket instance.
+         * The returned {@code Bucket} instance.
          *
          * @param bucket the value to set
          * @return this builder

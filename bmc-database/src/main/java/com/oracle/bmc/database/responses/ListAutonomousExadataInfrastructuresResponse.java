@@ -45,12 +45,16 @@ public class ListAutonomousExadataInfrastructuresResponse
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.database.model.AutonomousExadataInfrastructureSummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.database.model.AutonomousExadataInfrastructureSummary}
+     * instances.
+     */
     private java.util.List<com.oracle.bmc.database.model.AutonomousExadataInfrastructureSummary>
             items;
 
     /**
-     * A list of com.oracle.bmc.database.model.AutonomousExadataInfrastructureSummary instances.
+     * A list of {@code com.oracle.bmc.database.model.AutonomousExadataInfrastructureSummary}
+     * instances.
      *
      * @return the value
      */
@@ -141,13 +145,15 @@ public class ListAutonomousExadataInfrastructuresResponse
         }
 
         /**
-         * A list of com.oracle.bmc.database.model.AutonomousExadataInfrastructureSummary instances.
+         * A list of {@code com.oracle.bmc.database.model.AutonomousExadataInfrastructureSummary}
+         * instances.
          */
         private java.util.List<com.oracle.bmc.database.model.AutonomousExadataInfrastructureSummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.database.model.AutonomousExadataInfrastructureSummary instances.
+         * A list of {@code com.oracle.bmc.database.model.AutonomousExadataInfrastructureSummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

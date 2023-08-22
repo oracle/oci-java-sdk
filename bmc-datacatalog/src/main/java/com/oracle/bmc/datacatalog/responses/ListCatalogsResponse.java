@@ -42,11 +42,11 @@ public class ListCatalogsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.datacatalog.model.CatalogSummary instances. */
+    /** A list of {@code com.oracle.bmc.datacatalog.model.CatalogSummary} instances. */
     private java.util.List<com.oracle.bmc.datacatalog.model.CatalogSummary> items;
 
     /**
-     * A list of com.oracle.bmc.datacatalog.model.CatalogSummary instances.
+     * A list of {@code com.oracle.bmc.datacatalog.model.CatalogSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListCatalogsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.datacatalog.model.CatalogSummary instances. */
+        /** A list of {@code com.oracle.bmc.datacatalog.model.CatalogSummary} instances. */
         private java.util.List<com.oracle.bmc.datacatalog.model.CatalogSummary> items;
 
         /**
-         * A list of com.oracle.bmc.datacatalog.model.CatalogSummary instances.
+         * A list of {@code com.oracle.bmc.datacatalog.model.CatalogSummary} instances.
          *
          * @param items the value to set
          * @return this builder

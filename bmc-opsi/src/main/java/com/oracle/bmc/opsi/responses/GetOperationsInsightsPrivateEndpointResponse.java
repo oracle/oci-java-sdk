@@ -37,12 +37,12 @@ public class GetOperationsInsightsPrivateEndpointResponse
         return opcRequestId;
     }
 
-    /** The returned OperationsInsightsPrivateEndpoint instance. */
+    /** The returned {@code OperationsInsightsPrivateEndpoint} instance. */
     private com.oracle.bmc.opsi.model.OperationsInsightsPrivateEndpoint
             operationsInsightsPrivateEndpoint;
 
     /**
-     * The returned OperationsInsightsPrivateEndpoint instance.
+     * The returned {@code OperationsInsightsPrivateEndpoint} instance.
      *
      * @return the value
      */
@@ -122,12 +122,12 @@ public class GetOperationsInsightsPrivateEndpointResponse
             return this;
         }
 
-        /** The returned OperationsInsightsPrivateEndpoint instance. */
+        /** The returned {@code OperationsInsightsPrivateEndpoint} instance. */
         private com.oracle.bmc.opsi.model.OperationsInsightsPrivateEndpoint
                 operationsInsightsPrivateEndpoint;
 
         /**
-         * The returned OperationsInsightsPrivateEndpoint instance.
+         * The returned {@code OperationsInsightsPrivateEndpoint} instance.
          *
          * @param operationsInsightsPrivateEndpoint the value to set
          * @return this builder

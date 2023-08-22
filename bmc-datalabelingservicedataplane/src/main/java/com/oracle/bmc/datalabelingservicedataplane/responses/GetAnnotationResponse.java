@@ -36,11 +36,11 @@ public class GetAnnotationResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** The returned Annotation instance. */
+    /** The returned {@code Annotation} instance. */
     private com.oracle.bmc.datalabelingservicedataplane.model.Annotation annotation;
 
     /**
-     * The returned Annotation instance.
+     * The returned {@code Annotation} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetAnnotationResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned Annotation instance. */
+        /** The returned {@code Annotation} instance. */
         private com.oracle.bmc.datalabelingservicedataplane.model.Annotation annotation;
 
         /**
-         * The returned Annotation instance.
+         * The returned {@code Annotation} instance.
          *
          * @param annotation the value to set
          * @return this builder

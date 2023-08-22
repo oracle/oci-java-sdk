@@ -36,11 +36,11 @@ public class UpdateVolumeGroupResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned VolumeGroup instance. */
+    /** The returned {@code VolumeGroup} instance. */
     private com.oracle.bmc.core.model.VolumeGroup volumeGroup;
 
     /**
-     * The returned VolumeGroup instance.
+     * The returned {@code VolumeGroup} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateVolumeGroupResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned VolumeGroup instance. */
+        /** The returned {@code VolumeGroup} instance. */
         private com.oracle.bmc.core.model.VolumeGroup volumeGroup;
 
         /**
-         * The returned VolumeGroup instance.
+         * The returned {@code VolumeGroup} instance.
          *
          * @param volumeGroup the value to set
          * @return this builder

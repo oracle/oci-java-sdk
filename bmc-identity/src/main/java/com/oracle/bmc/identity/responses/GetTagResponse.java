@@ -36,11 +36,11 @@ public class GetTagResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned Tag instance. */
+    /** The returned {@code Tag} instance. */
     private com.oracle.bmc.identity.model.Tag tag;
 
     /**
-     * The returned Tag instance.
+     * The returned {@code Tag} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetTagResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Tag instance. */
+        /** The returned {@code Tag} instance. */
         private com.oracle.bmc.identity.model.Tag tag;
 
         /**
-         * The returned Tag instance.
+         * The returned {@code Tag} instance.
          *
          * @param tag the value to set
          * @return this builder

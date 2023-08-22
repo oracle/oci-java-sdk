@@ -36,11 +36,11 @@ public class GetManagedDatabaseGroupResponse extends com.oracle.bmc.responses.Bm
         return etag;
     }
 
-    /** The returned ManagedDatabaseGroup instance. */
+    /** The returned {@code ManagedDatabaseGroup} instance. */
     private com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroup managedDatabaseGroup;
 
     /**
-     * The returned ManagedDatabaseGroup instance.
+     * The returned {@code ManagedDatabaseGroup} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetManagedDatabaseGroupResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned ManagedDatabaseGroup instance. */
+        /** The returned {@code ManagedDatabaseGroup} instance. */
         private com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroup managedDatabaseGroup;
 
         /**
-         * The returned ManagedDatabaseGroup instance.
+         * The returned {@code ManagedDatabaseGroup} instance.
          *
          * @param managedDatabaseGroup the value to set
          * @return this builder

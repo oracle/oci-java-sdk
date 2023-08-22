@@ -24,11 +24,11 @@ public class SummarizeResourceInventoryResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    /** The returned ResourceInventory instance. */
+    /** The returned {@code ResourceInventory} instance. */
     private com.oracle.bmc.jms.model.ResourceInventory resourceInventory;
 
     /**
-     * The returned ResourceInventory instance.
+     * The returned {@code ResourceInventory} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class SummarizeResourceInventoryResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned ResourceInventory instance. */
+        /** The returned {@code ResourceInventory} instance. */
         private com.oracle.bmc.jms.model.ResourceInventory resourceInventory;
 
         /**
-         * The returned ResourceInventory instance.
+         * The returned {@code ResourceInventory} instance.
          *
          * @param resourceInventory the value to set
          * @return this builder

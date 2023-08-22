@@ -33,12 +33,12 @@ public class UpdateConfigurationSourceProviderResponse
         return etag;
     }
 
-    /** The returned ConfigurationSourceProvider instance. */
+    /** The returned {@code ConfigurationSourceProvider} instance. */
     private com.oracle.bmc.resourcemanager.model.ConfigurationSourceProvider
             configurationSourceProvider;
 
     /**
-     * The returned ConfigurationSourceProvider instance.
+     * The returned {@code ConfigurationSourceProvider} instance.
      *
      * @return the value
      */
@@ -114,12 +114,12 @@ public class UpdateConfigurationSourceProviderResponse
             return this;
         }
 
-        /** The returned ConfigurationSourceProvider instance. */
+        /** The returned {@code ConfigurationSourceProvider} instance. */
         private com.oracle.bmc.resourcemanager.model.ConfigurationSourceProvider
                 configurationSourceProvider;
 
         /**
-         * The returned ConfigurationSourceProvider instance.
+         * The returned {@code ConfigurationSourceProvider} instance.
          *
          * @param configurationSourceProvider the value to set
          * @return this builder

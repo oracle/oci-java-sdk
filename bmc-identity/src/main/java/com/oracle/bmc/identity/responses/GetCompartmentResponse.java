@@ -36,11 +36,11 @@ public class GetCompartmentResponse extends com.oracle.bmc.responses.BmcResponse
         return etag;
     }
 
-    /** The returned Compartment instance. */
+    /** The returned {@code Compartment} instance. */
     private com.oracle.bmc.identity.model.Compartment compartment;
 
     /**
-     * The returned Compartment instance.
+     * The returned {@code Compartment} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetCompartmentResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned Compartment instance. */
+        /** The returned {@code Compartment} instance. */
         private com.oracle.bmc.identity.model.Compartment compartment;
 
         /**
-         * The returned Compartment instance.
+         * The returned {@code Compartment} instance.
          *
          * @param compartment the value to set
          * @return this builder

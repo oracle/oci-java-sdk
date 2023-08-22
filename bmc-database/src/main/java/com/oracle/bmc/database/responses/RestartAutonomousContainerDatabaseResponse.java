@@ -57,11 +57,11 @@ public class RestartAutonomousContainerDatabaseResponse
         return opcWorkRequestId;
     }
 
-    /** The returned AutonomousContainerDatabase instance. */
+    /** The returned {@code AutonomousContainerDatabase} instance. */
     private com.oracle.bmc.database.model.AutonomousContainerDatabase autonomousContainerDatabase;
 
     /**
-     * The returned AutonomousContainerDatabase instance.
+     * The returned {@code AutonomousContainerDatabase} instance.
      *
      * @return the value
      */
@@ -165,12 +165,12 @@ public class RestartAutonomousContainerDatabaseResponse
             return this;
         }
 
-        /** The returned AutonomousContainerDatabase instance. */
+        /** The returned {@code AutonomousContainerDatabase} instance. */
         private com.oracle.bmc.database.model.AutonomousContainerDatabase
                 autonomousContainerDatabase;
 
         /**
-         * The returned AutonomousContainerDatabase instance.
+         * The returned {@code AutonomousContainerDatabase} instance.
          *
          * @param autonomousContainerDatabase the value to set
          * @return this builder

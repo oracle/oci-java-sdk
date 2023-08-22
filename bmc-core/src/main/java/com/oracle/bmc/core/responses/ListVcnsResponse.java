@@ -42,11 +42,11 @@ public class ListVcnsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.Vcn instances. */
+    /** A list of {@code com.oracle.bmc.core.model.Vcn} instances. */
     private java.util.List<com.oracle.bmc.core.model.Vcn> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.Vcn instances.
+     * A list of {@code com.oracle.bmc.core.model.Vcn} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListVcnsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.Vcn instances. */
+        /** A list of {@code com.oracle.bmc.core.model.Vcn} instances. */
         private java.util.List<com.oracle.bmc.core.model.Vcn> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.Vcn instances.
+         * A list of {@code com.oracle.bmc.core.model.Vcn} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListQueriesResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned QueryCollection instance. */
+    /** The returned {@code QueryCollection} instance. */
     private com.oracle.bmc.usageapi.model.QueryCollection queryCollection;
 
     /**
-     * The returned QueryCollection instance.
+     * The returned {@code QueryCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListQueriesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned QueryCollection instance. */
+        /** The returned {@code QueryCollection} instance. */
         private com.oracle.bmc.usageapi.model.QueryCollection queryCollection;
 
         /**
-         * The returned QueryCollection instance.
+         * The returned {@code QueryCollection} instance.
          *
          * @param queryCollection the value to set
          * @return this builder

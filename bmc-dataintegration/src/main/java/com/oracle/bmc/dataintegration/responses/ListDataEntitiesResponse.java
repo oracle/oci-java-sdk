@@ -72,12 +72,12 @@ public class ListDataEntitiesResponse extends com.oracle.bmc.responses.BmcRespon
         return opcTotalItems;
     }
 
-    /** The returned DataEntitySummaryCollection instance. */
+    /** The returned {@code DataEntitySummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.DataEntitySummaryCollection
             dataEntitySummaryCollection;
 
     /**
-     * The returned DataEntitySummaryCollection instance.
+     * The returned {@code DataEntitySummaryCollection} instance.
      *
      * @return the value
      */
@@ -202,12 +202,12 @@ public class ListDataEntitiesResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned DataEntitySummaryCollection instance. */
+        /** The returned {@code DataEntitySummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.DataEntitySummaryCollection
                 dataEntitySummaryCollection;
 
         /**
-         * The returned DataEntitySummaryCollection instance.
+         * The returned {@code DataEntitySummaryCollection} instance.
          *
          * @param dataEntitySummaryCollection the value to set
          * @return this builder

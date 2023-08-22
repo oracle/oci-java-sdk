@@ -37,12 +37,12 @@ public class GetComputeGlobalImageCapabilitySchemaResponse
         return opcRequestId;
     }
 
-    /** The returned ComputeGlobalImageCapabilitySchema instance. */
+    /** The returned {@code ComputeGlobalImageCapabilitySchema} instance. */
     private com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchema
             computeGlobalImageCapabilitySchema;
 
     /**
-     * The returned ComputeGlobalImageCapabilitySchema instance.
+     * The returned {@code ComputeGlobalImageCapabilitySchema} instance.
      *
      * @return the value
      */
@@ -122,12 +122,12 @@ public class GetComputeGlobalImageCapabilitySchemaResponse
             return this;
         }
 
-        /** The returned ComputeGlobalImageCapabilitySchema instance. */
+        /** The returned {@code ComputeGlobalImageCapabilitySchema} instance. */
         private com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchema
                 computeGlobalImageCapabilitySchema;
 
         /**
-         * The returned ComputeGlobalImageCapabilitySchema instance.
+         * The returned {@code ComputeGlobalImageCapabilitySchema} instance.
          *
          * @param computeGlobalImageCapabilitySchema the value to set
          * @return this builder

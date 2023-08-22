@@ -24,11 +24,11 @@ public class ValidatePatternResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned ValidatePatternResult instance. */
+    /** The returned {@code ValidatePatternResult} instance. */
     private com.oracle.bmc.datacatalog.model.ValidatePatternResult validatePatternResult;
 
     /**
-     * The returned ValidatePatternResult instance.
+     * The returned {@code ValidatePatternResult} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class ValidatePatternResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned ValidatePatternResult instance. */
+        /** The returned {@code ValidatePatternResult} instance. */
         private com.oracle.bmc.datacatalog.model.ValidatePatternResult validatePatternResult;
 
         /**
-         * The returned ValidatePatternResult instance.
+         * The returned {@code ValidatePatternResult} instance.
          *
          * @param validatePatternResult the value to set
          * @return this builder

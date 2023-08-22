@@ -64,12 +64,12 @@ public class ListPropertiesMetadataResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** The returned PropertyMetadataSummaryCollection instance. */
+    /** The returned {@code PropertyMetadataSummaryCollection} instance. */
     private com.oracle.bmc.loganalytics.model.PropertyMetadataSummaryCollection
             propertyMetadataSummaryCollection;
 
     /**
-     * The returned PropertyMetadataSummaryCollection instance.
+     * The returned {@code PropertyMetadataSummaryCollection} instance.
      *
      * @return the value
      */
@@ -182,12 +182,12 @@ public class ListPropertiesMetadataResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned PropertyMetadataSummaryCollection instance. */
+        /** The returned {@code PropertyMetadataSummaryCollection} instance. */
         private com.oracle.bmc.loganalytics.model.PropertyMetadataSummaryCollection
                 propertyMetadataSummaryCollection;
 
         /**
-         * The returned PropertyMetadataSummaryCollection instance.
+         * The returned {@code PropertyMetadataSummaryCollection} instance.
          *
          * @param propertyMetadataSummaryCollection the value to set
          * @return this builder

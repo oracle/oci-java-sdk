@@ -64,11 +64,11 @@ public class RestoreKeyFromFileResponse extends com.oracle.bmc.responses.BmcResp
         return opcWorkRequestId;
     }
 
-    /** The returned Key instance. */
+    /** The returned {@code Key} instance. */
     private com.oracle.bmc.keymanagement.model.Key key;
 
     /**
-     * The returned Key instance.
+     * The returned {@code Key} instance.
      *
      * @return the value
      */
@@ -183,11 +183,11 @@ public class RestoreKeyFromFileResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned Key instance. */
+        /** The returned {@code Key} instance. */
         private com.oracle.bmc.keymanagement.model.Key key;
 
         /**
-         * The returned Key instance.
+         * The returned {@code Key} instance.
          *
          * @param key the value to set
          * @return this builder

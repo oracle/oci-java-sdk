@@ -37,12 +37,12 @@ public class CreateAuthenticationFactorsRemoverResponse
         return etag;
     }
 
-    /** The returned AuthenticationFactorsRemover instance. */
+    /** The returned {@code AuthenticationFactorsRemover} instance. */
     private com.oracle.bmc.identitydomains.model.AuthenticationFactorsRemover
             authenticationFactorsRemover;
 
     /**
-     * The returned AuthenticationFactorsRemover instance.
+     * The returned {@code AuthenticationFactorsRemover} instance.
      *
      * @return the value
      */
@@ -122,12 +122,12 @@ public class CreateAuthenticationFactorsRemoverResponse
             return this;
         }
 
-        /** The returned AuthenticationFactorsRemover instance. */
+        /** The returned {@code AuthenticationFactorsRemover} instance. */
         private com.oracle.bmc.identitydomains.model.AuthenticationFactorsRemover
                 authenticationFactorsRemover;
 
         /**
-         * The returned AuthenticationFactorsRemover instance.
+         * The returned {@code AuthenticationFactorsRemover} instance.
          *
          * @param authenticationFactorsRemover the value to set
          * @return this builder

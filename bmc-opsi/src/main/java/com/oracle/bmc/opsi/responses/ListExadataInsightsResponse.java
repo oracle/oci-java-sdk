@@ -54,12 +54,12 @@ public class ListExadataInsightsResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** The returned ExadataInsightSummaryCollection instance. */
+    /** The returned {@code ExadataInsightSummaryCollection} instance. */
     private com.oracle.bmc.opsi.model.ExadataInsightSummaryCollection
             exadataInsightSummaryCollection;
 
     /**
-     * The returned ExadataInsightSummaryCollection instance.
+     * The returned {@code ExadataInsightSummaryCollection} instance.
      *
      * @return the value
      */
@@ -161,12 +161,12 @@ public class ListExadataInsightsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned ExadataInsightSummaryCollection instance. */
+        /** The returned {@code ExadataInsightSummaryCollection} instance. */
         private com.oracle.bmc.opsi.model.ExadataInsightSummaryCollection
                 exadataInsightSummaryCollection;
 
         /**
-         * The returned ExadataInsightSummaryCollection instance.
+         * The returned {@code ExadataInsightSummaryCollection} instance.
          *
          * @param exadataInsightSummaryCollection the value to set
          * @return this builder

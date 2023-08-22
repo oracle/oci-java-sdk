@@ -40,12 +40,12 @@ public class ProcessRecommendationResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned ProcessRecommendationDetails instance. */
+    /** The returned {@code ProcessRecommendationDetails} instance. */
     private com.oracle.bmc.datacatalog.model.ProcessRecommendationDetails
             processRecommendationDetails;
 
     /**
-     * The returned ProcessRecommendationDetails instance.
+     * The returned {@code ProcessRecommendationDetails} instance.
      *
      * @return the value
      */
@@ -128,12 +128,12 @@ public class ProcessRecommendationResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned ProcessRecommendationDetails instance. */
+        /** The returned {@code ProcessRecommendationDetails} instance. */
         private com.oracle.bmc.datacatalog.model.ProcessRecommendationDetails
                 processRecommendationDetails;
 
         /**
-         * The returned ProcessRecommendationDetails instance.
+         * The returned {@code ProcessRecommendationDetails} instance.
          *
          * @param processRecommendationDetails the value to set
          * @return this builder

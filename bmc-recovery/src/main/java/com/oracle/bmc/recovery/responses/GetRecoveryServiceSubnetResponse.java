@@ -36,11 +36,11 @@ public class GetRecoveryServiceSubnetResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** The returned RecoveryServiceSubnet instance. */
+    /** The returned {@code RecoveryServiceSubnet} instance. */
     private com.oracle.bmc.recovery.model.RecoveryServiceSubnet recoveryServiceSubnet;
 
     /**
-     * The returned RecoveryServiceSubnet instance.
+     * The returned {@code RecoveryServiceSubnet} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetRecoveryServiceSubnetResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned RecoveryServiceSubnet instance. */
+        /** The returned {@code RecoveryServiceSubnet} instance. */
         private com.oracle.bmc.recovery.model.RecoveryServiceSubnet recoveryServiceSubnet;
 
         /**
-         * The returned RecoveryServiceSubnet instance.
+         * The returned {@code RecoveryServiceSubnet} instance.
          *
          * @param recoveryServiceSubnet the value to set
          * @return this builder

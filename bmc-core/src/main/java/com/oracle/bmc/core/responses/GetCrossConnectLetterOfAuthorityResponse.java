@@ -24,11 +24,11 @@ public class GetCrossConnectLetterOfAuthorityResponse extends com.oracle.bmc.res
         return opcRequestId;
     }
 
-    /** The returned LetterOfAuthority instance. */
+    /** The returned {@code LetterOfAuthority} instance. */
     private com.oracle.bmc.core.model.LetterOfAuthority letterOfAuthority;
 
     /**
-     * The returned LetterOfAuthority instance.
+     * The returned {@code LetterOfAuthority} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class GetCrossConnectLetterOfAuthorityResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /** The returned LetterOfAuthority instance. */
+        /** The returned {@code LetterOfAuthority} instance. */
         private com.oracle.bmc.core.model.LetterOfAuthority letterOfAuthority;
 
         /**
-         * The returned LetterOfAuthority instance.
+         * The returned {@code LetterOfAuthority} instance.
          *
          * @param letterOfAuthority the value to set
          * @return this builder

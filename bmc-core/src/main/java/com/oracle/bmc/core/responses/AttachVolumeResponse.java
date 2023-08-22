@@ -36,11 +36,11 @@ public class AttachVolumeResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned VolumeAttachment instance. */
+    /** The returned {@code VolumeAttachment} instance. */
     private com.oracle.bmc.core.model.VolumeAttachment volumeAttachment;
 
     /**
-     * The returned VolumeAttachment instance.
+     * The returned {@code VolumeAttachment} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class AttachVolumeResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned VolumeAttachment instance. */
+        /** The returned {@code VolumeAttachment} instance. */
         private com.oracle.bmc.core.model.VolumeAttachment volumeAttachment;
 
         /**
-         * The returned VolumeAttachment instance.
+         * The returned {@code VolumeAttachment} instance.
          *
          * @param volumeAttachment the value to set
          * @return this builder

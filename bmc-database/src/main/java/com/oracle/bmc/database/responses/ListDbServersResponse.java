@@ -44,11 +44,11 @@ public class ListDbServersResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.database.model.DbServerSummary instances. */
+    /** A list of {@code com.oracle.bmc.database.model.DbServerSummary} instances. */
     private java.util.List<com.oracle.bmc.database.model.DbServerSummary> items;
 
     /**
-     * A list of com.oracle.bmc.database.model.DbServerSummary instances.
+     * A list of {@code com.oracle.bmc.database.model.DbServerSummary} instances.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListDbServersResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** A list of com.oracle.bmc.database.model.DbServerSummary instances. */
+        /** A list of {@code com.oracle.bmc.database.model.DbServerSummary} instances. */
         private java.util.List<com.oracle.bmc.database.model.DbServerSummary> items;
 
         /**
-         * A list of com.oracle.bmc.database.model.DbServerSummary instances.
+         * A list of {@code com.oracle.bmc.database.model.DbServerSummary} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -56,11 +56,11 @@ public class ListSupportedCharEncodingsResponse extends com.oracle.bmc.responses
         return opcTotalItems;
     }
 
-    /** The returned CharEncodingCollection instance. */
+    /** The returned {@code CharEncodingCollection} instance. */
     private com.oracle.bmc.loganalytics.model.CharEncodingCollection charEncodingCollection;
 
     /**
-     * The returned CharEncodingCollection instance.
+     * The returned {@code CharEncodingCollection} instance.
      *
      * @return the value
      */
@@ -163,11 +163,11 @@ public class ListSupportedCharEncodingsResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned CharEncodingCollection instance. */
+        /** The returned {@code CharEncodingCollection} instance. */
         private com.oracle.bmc.loganalytics.model.CharEncodingCollection charEncodingCollection;
 
         /**
-         * The returned CharEncodingCollection instance.
+         * The returned {@code CharEncodingCollection} instance.
          *
          * @param charEncodingCollection the value to set
          * @return this builder

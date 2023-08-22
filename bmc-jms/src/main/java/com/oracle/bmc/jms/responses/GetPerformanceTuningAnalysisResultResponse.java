@@ -37,12 +37,12 @@ public class GetPerformanceTuningAnalysisResultResponse
         return opcRequestId;
     }
 
-    /** The returned PerformanceTuningAnalysisResult instance. */
+    /** The returned {@code PerformanceTuningAnalysisResult} instance. */
     private com.oracle.bmc.jms.model.PerformanceTuningAnalysisResult
             performanceTuningAnalysisResult;
 
     /**
-     * The returned PerformanceTuningAnalysisResult instance.
+     * The returned {@code PerformanceTuningAnalysisResult} instance.
      *
      * @return the value
      */
@@ -122,12 +122,12 @@ public class GetPerformanceTuningAnalysisResultResponse
             return this;
         }
 
-        /** The returned PerformanceTuningAnalysisResult instance. */
+        /** The returned {@code PerformanceTuningAnalysisResult} instance. */
         private com.oracle.bmc.jms.model.PerformanceTuningAnalysisResult
                 performanceTuningAnalysisResult;
 
         /**
-         * The returned PerformanceTuningAnalysisResult instance.
+         * The returned {@code PerformanceTuningAnalysisResult} instance.
          *
          * @param performanceTuningAnalysisResult the value to set
          * @return this builder

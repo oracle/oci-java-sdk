@@ -36,11 +36,11 @@ public class GetObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned RepositoryObject instance. */
+    /** The returned {@code RepositoryObject} instance. */
     private com.oracle.bmc.devops.model.RepositoryObject repositoryObject;
 
     /**
-     * The returned RepositoryObject instance.
+     * The returned {@code RepositoryObject} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetObjectResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned RepositoryObject instance. */
+        /** The returned {@code RepositoryObject} instance. */
         private com.oracle.bmc.devops.model.RepositoryObject repositoryObject;
 
         /**
-         * The returned RepositoryObject instance.
+         * The returned {@code RepositoryObject} instance.
          *
          * @param repositoryObject the value to set
          * @return this builder

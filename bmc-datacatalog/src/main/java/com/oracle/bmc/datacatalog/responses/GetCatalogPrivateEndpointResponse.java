@@ -40,11 +40,11 @@ public class GetCatalogPrivateEndpointResponse extends com.oracle.bmc.responses.
         return etag;
     }
 
-    /** The returned CatalogPrivateEndpoint instance. */
+    /** The returned {@code CatalogPrivateEndpoint} instance. */
     private com.oracle.bmc.datacatalog.model.CatalogPrivateEndpoint catalogPrivateEndpoint;
 
     /**
-     * The returned CatalogPrivateEndpoint instance.
+     * The returned {@code CatalogPrivateEndpoint} instance.
      *
      * @return the value
      */
@@ -126,11 +126,11 @@ public class GetCatalogPrivateEndpointResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned CatalogPrivateEndpoint instance. */
+        /** The returned {@code CatalogPrivateEndpoint} instance. */
         private com.oracle.bmc.datacatalog.model.CatalogPrivateEndpoint catalogPrivateEndpoint;
 
         /**
-         * The returned CatalogPrivateEndpoint instance.
+         * The returned {@code CatalogPrivateEndpoint} instance.
          *
          * @param catalogPrivateEndpoint the value to set
          * @return this builder

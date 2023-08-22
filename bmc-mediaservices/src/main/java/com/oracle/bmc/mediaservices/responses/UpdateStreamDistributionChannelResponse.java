@@ -36,11 +36,11 @@ public class UpdateStreamDistributionChannelResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** The returned StreamDistributionChannel instance. */
+    /** The returned {@code StreamDistributionChannel} instance. */
     private com.oracle.bmc.mediaservices.model.StreamDistributionChannel streamDistributionChannel;
 
     /**
-     * The returned StreamDistributionChannel instance.
+     * The returned {@code StreamDistributionChannel} instance.
      *
      * @return the value
      */
@@ -120,12 +120,12 @@ public class UpdateStreamDistributionChannelResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned StreamDistributionChannel instance. */
+        /** The returned {@code StreamDistributionChannel} instance. */
         private com.oracle.bmc.mediaservices.model.StreamDistributionChannel
                 streamDistributionChannel;
 
         /**
-         * The returned StreamDistributionChannel instance.
+         * The returned {@code StreamDistributionChannel} instance.
          *
          * @param streamDistributionChannel the value to set
          * @return this builder

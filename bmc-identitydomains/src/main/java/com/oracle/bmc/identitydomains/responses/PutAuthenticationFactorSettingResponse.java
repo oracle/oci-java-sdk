@@ -36,12 +36,12 @@ public class PutAuthenticationFactorSettingResponse extends com.oracle.bmc.respo
         return etag;
     }
 
-    /** The returned AuthenticationFactorSetting instance. */
+    /** The returned {@code AuthenticationFactorSetting} instance. */
     private com.oracle.bmc.identitydomains.model.AuthenticationFactorSetting
             authenticationFactorSetting;
 
     /**
-     * The returned AuthenticationFactorSetting instance.
+     * The returned {@code AuthenticationFactorSetting} instance.
      *
      * @return the value
      */
@@ -121,12 +121,12 @@ public class PutAuthenticationFactorSettingResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned AuthenticationFactorSetting instance. */
+        /** The returned {@code AuthenticationFactorSetting} instance. */
         private com.oracle.bmc.identitydomains.model.AuthenticationFactorSetting
                 authenticationFactorSetting;
 
         /**
-         * The returned AuthenticationFactorSetting instance.
+         * The returned {@code AuthenticationFactorSetting} instance.
          *
          * @param authenticationFactorSetting the value to set
          * @return this builder

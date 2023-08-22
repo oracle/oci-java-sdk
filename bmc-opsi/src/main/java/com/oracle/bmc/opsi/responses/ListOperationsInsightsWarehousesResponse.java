@@ -42,12 +42,12 @@ public class ListOperationsInsightsWarehousesResponse extends com.oracle.bmc.res
         return opcNextPage;
     }
 
-    /** The returned OperationsInsightsWarehouseSummaryCollection instance. */
+    /** The returned {@code OperationsInsightsWarehouseSummaryCollection} instance. */
     private com.oracle.bmc.opsi.model.OperationsInsightsWarehouseSummaryCollection
             operationsInsightsWarehouseSummaryCollection;
 
     /**
-     * The returned OperationsInsightsWarehouseSummaryCollection instance.
+     * The returned {@code OperationsInsightsWarehouseSummaryCollection} instance.
      *
      * @return the value
      */
@@ -134,12 +134,12 @@ public class ListOperationsInsightsWarehousesResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /** The returned OperationsInsightsWarehouseSummaryCollection instance. */
+        /** The returned {@code OperationsInsightsWarehouseSummaryCollection} instance. */
         private com.oracle.bmc.opsi.model.OperationsInsightsWarehouseSummaryCollection
                 operationsInsightsWarehouseSummaryCollection;
 
         /**
-         * The returned OperationsInsightsWarehouseSummaryCollection instance.
+         * The returned {@code OperationsInsightsWarehouseSummaryCollection} instance.
          *
          * @param operationsInsightsWarehouseSummaryCollection the value to set
          * @return this builder

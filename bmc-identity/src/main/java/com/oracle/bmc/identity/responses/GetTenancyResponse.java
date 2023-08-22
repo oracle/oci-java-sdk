@@ -24,11 +24,11 @@ public class GetTenancyResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Tenancy instance. */
+    /** The returned {@code Tenancy} instance. */
     private com.oracle.bmc.identity.model.Tenancy tenancy;
 
     /**
-     * The returned Tenancy instance.
+     * The returned {@code Tenancy} instance.
      *
      * @return the value
      */
@@ -83,11 +83,11 @@ public class GetTenancyResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Tenancy instance. */
+        /** The returned {@code Tenancy} instance. */
         private com.oracle.bmc.identity.model.Tenancy tenancy;
 
         /**
-         * The returned Tenancy instance.
+         * The returned {@code Tenancy} instance.
          *
          * @param tenancy the value to set
          * @return this builder

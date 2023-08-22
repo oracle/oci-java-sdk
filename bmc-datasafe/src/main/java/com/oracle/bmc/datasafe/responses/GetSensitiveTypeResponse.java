@@ -42,11 +42,11 @@ public class GetSensitiveTypeResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned SensitiveType instance. */
+    /** The returned {@code SensitiveType} instance. */
     private com.oracle.bmc.datasafe.model.SensitiveType sensitiveType;
 
     /**
-     * The returned SensitiveType instance.
+     * The returned {@code SensitiveType} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class GetSensitiveTypeResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned SensitiveType instance. */
+        /** The returned {@code SensitiveType} instance. */
         private com.oracle.bmc.datasafe.model.SensitiveType sensitiveType;
 
         /**
-         * The returned SensitiveType instance.
+         * The returned {@code SensitiveType} instance.
          *
          * @param sensitiveType the value to set
          * @return this builder

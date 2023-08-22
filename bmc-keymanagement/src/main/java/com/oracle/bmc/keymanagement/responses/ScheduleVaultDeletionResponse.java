@@ -36,11 +36,11 @@ public class ScheduleVaultDeletionResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned Vault instance. */
+    /** The returned {@code Vault} instance. */
     private com.oracle.bmc.keymanagement.model.Vault vault;
 
     /**
-     * The returned Vault instance.
+     * The returned {@code Vault} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class ScheduleVaultDeletionResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned Vault instance. */
+        /** The returned {@code Vault} instance. */
         private com.oracle.bmc.keymanagement.model.Vault vault;
 
         /**
-         * The returned Vault instance.
+         * The returned {@code Vault} instance.
          *
          * @param vault the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListInternetGatewaysResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.InternetGateway instances. */
+    /** A list of {@code com.oracle.bmc.core.model.InternetGateway} instances. */
     private java.util.List<com.oracle.bmc.core.model.InternetGateway> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.InternetGateway instances.
+     * A list of {@code com.oracle.bmc.core.model.InternetGateway} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListInternetGatewaysResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.InternetGateway instances. */
+        /** A list of {@code com.oracle.bmc.core.model.InternetGateway} instances. */
         private java.util.List<com.oracle.bmc.core.model.InternetGateway> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.InternetGateway instances.
+         * A list of {@code com.oracle.bmc.core.model.InternetGateway} instances.
          *
          * @param items the value to set
          * @return this builder

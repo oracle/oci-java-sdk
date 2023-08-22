@@ -68,11 +68,11 @@ public class CreateComputeCapacityReservationResponse extends com.oracle.bmc.res
         return location;
     }
 
-    /** The returned ComputeCapacityReservation instance. */
+    /** The returned {@code ComputeCapacityReservation} instance. */
     private com.oracle.bmc.core.model.ComputeCapacityReservation computeCapacityReservation;
 
     /**
-     * The returned ComputeCapacityReservation instance.
+     * The returned {@code ComputeCapacityReservation} instance.
      *
      * @return the value
      */
@@ -192,11 +192,11 @@ public class CreateComputeCapacityReservationResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /** The returned ComputeCapacityReservation instance. */
+        /** The returned {@code ComputeCapacityReservation} instance. */
         private com.oracle.bmc.core.model.ComputeCapacityReservation computeCapacityReservation;
 
         /**
-         * The returned ComputeCapacityReservation instance.
+         * The returned {@code ComputeCapacityReservation} instance.
          *
          * @param computeCapacityReservation the value to set
          * @return this builder

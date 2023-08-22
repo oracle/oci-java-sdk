@@ -36,11 +36,11 @@ public class GetResponderExecutionResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned ResponderExecution instance. */
+    /** The returned {@code ResponderExecution} instance. */
     private com.oracle.bmc.cloudguard.model.ResponderExecution responderExecution;
 
     /**
-     * The returned ResponderExecution instance.
+     * The returned {@code ResponderExecution} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetResponderExecutionResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned ResponderExecution instance. */
+        /** The returned {@code ResponderExecution} instance. */
         private com.oracle.bmc.cloudguard.model.ResponderExecution responderExecution;
 
         /**
-         * The returned ResponderExecution instance.
+         * The returned {@code ResponderExecution} instance.
          *
          * @param responderExecution the value to set
          * @return this builder

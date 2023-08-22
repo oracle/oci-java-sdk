@@ -54,11 +54,11 @@ public class ListPackagesResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcTotalItems;
     }
 
-    /** A list of com.oracle.bmc.oda.model.PackageSummary instances. */
+    /** A list of {@code com.oracle.bmc.oda.model.PackageSummary} instances. */
     private java.util.List<com.oracle.bmc.oda.model.PackageSummary> items;
 
     /**
-     * A list of com.oracle.bmc.oda.model.PackageSummary instances.
+     * A list of {@code com.oracle.bmc.oda.model.PackageSummary} instances.
      *
      * @return the value
      */
@@ -158,11 +158,11 @@ public class ListPackagesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.oda.model.PackageSummary instances. */
+        /** A list of {@code com.oracle.bmc.oda.model.PackageSummary} instances. */
         private java.util.List<com.oracle.bmc.oda.model.PackageSummary> items;
 
         /**
-         * A list of com.oracle.bmc.oda.model.PackageSummary instances.
+         * A list of {@code com.oracle.bmc.oda.model.PackageSummary} instances.
          *
          * @param items the value to set
          * @return this builder

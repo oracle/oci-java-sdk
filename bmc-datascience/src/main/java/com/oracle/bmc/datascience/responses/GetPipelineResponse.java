@@ -40,11 +40,11 @@ public class GetPipelineResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Pipeline instance. */
+    /** The returned {@code Pipeline} instance. */
     private com.oracle.bmc.datascience.model.Pipeline pipeline;
 
     /**
-     * The returned Pipeline instance.
+     * The returned {@code Pipeline} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetPipelineResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Pipeline instance. */
+        /** The returned {@code Pipeline} instance. */
         private com.oracle.bmc.datascience.model.Pipeline pipeline;
 
         /**
-         * The returned Pipeline instance.
+         * The returned {@code Pipeline} instance.
          *
          * @param pipeline the value to set
          * @return this builder

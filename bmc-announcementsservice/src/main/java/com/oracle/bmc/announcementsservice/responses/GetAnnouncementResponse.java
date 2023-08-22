@@ -36,11 +36,11 @@ public class GetAnnouncementResponse extends com.oracle.bmc.responses.BmcRespons
         return etag;
     }
 
-    /** The returned Announcement instance. */
+    /** The returned {@code Announcement} instance. */
     private com.oracle.bmc.announcementsservice.model.Announcement announcement;
 
     /**
-     * The returned Announcement instance.
+     * The returned {@code Announcement} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetAnnouncementResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned Announcement instance. */
+        /** The returned {@code Announcement} instance. */
         private com.oracle.bmc.announcementsservice.model.Announcement announcement;
 
         /**
-         * The returned Announcement instance.
+         * The returned {@code Announcement} instance.
          *
          * @param announcement the value to set
          * @return this builder

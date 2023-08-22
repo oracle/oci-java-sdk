@@ -36,11 +36,11 @@ public class PatchIdentityProviderResponse extends com.oracle.bmc.responses.BmcR
         return etag;
     }
 
-    /** The returned IdentityProvider instance. */
+    /** The returned {@code IdentityProvider} instance. */
     private com.oracle.bmc.identitydomains.model.IdentityProvider identityProvider;
 
     /**
-     * The returned IdentityProvider instance.
+     * The returned {@code IdentityProvider} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class PatchIdentityProviderResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned IdentityProvider instance. */
+        /** The returned {@code IdentityProvider} instance. */
         private com.oracle.bmc.identitydomains.model.IdentityProvider identityProvider;
 
         /**
-         * The returned IdentityProvider instance.
+         * The returned {@code IdentityProvider} instance.
          *
          * @param identityProvider the value to set
          * @return this builder

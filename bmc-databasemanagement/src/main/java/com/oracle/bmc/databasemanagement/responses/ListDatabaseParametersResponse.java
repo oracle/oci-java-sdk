@@ -24,12 +24,12 @@ public class ListDatabaseParametersResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned DatabaseParametersCollection instance. */
+    /** The returned {@code DatabaseParametersCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.DatabaseParametersCollection
             databaseParametersCollection;
 
     /**
-     * The returned DatabaseParametersCollection instance.
+     * The returned {@code DatabaseParametersCollection} instance.
      *
      * @return the value
      */
@@ -92,12 +92,12 @@ public class ListDatabaseParametersResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned DatabaseParametersCollection instance. */
+        /** The returned {@code DatabaseParametersCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.DatabaseParametersCollection
                 databaseParametersCollection;
 
         /**
-         * The returned DatabaseParametersCollection instance.
+         * The returned {@code DatabaseParametersCollection} instance.
          *
          * @param databaseParametersCollection the value to set
          * @return this builder

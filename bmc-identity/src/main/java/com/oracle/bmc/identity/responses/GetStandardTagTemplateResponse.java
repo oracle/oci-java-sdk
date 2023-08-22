@@ -24,11 +24,11 @@ public class GetStandardTagTemplateResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned StandardTagNamespaceTemplate instance. */
+    /** The returned {@code StandardTagNamespaceTemplate} instance. */
     private com.oracle.bmc.identity.model.StandardTagNamespaceTemplate standardTagNamespaceTemplate;
 
     /**
-     * The returned StandardTagNamespaceTemplate instance.
+     * The returned {@code StandardTagNamespaceTemplate} instance.
      *
      * @return the value
      */
@@ -91,12 +91,12 @@ public class GetStandardTagTemplateResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned StandardTagNamespaceTemplate instance. */
+        /** The returned {@code StandardTagNamespaceTemplate} instance. */
         private com.oracle.bmc.identity.model.StandardTagNamespaceTemplate
                 standardTagNamespaceTemplate;
 
         /**
-         * The returned StandardTagNamespaceTemplate instance.
+         * The returned {@code StandardTagNamespaceTemplate} instance.
          *
          * @param standardTagNamespaceTemplate the value to set
          * @return this builder

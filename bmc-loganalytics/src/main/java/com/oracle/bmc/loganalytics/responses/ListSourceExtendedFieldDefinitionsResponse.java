@@ -65,12 +65,12 @@ public class ListSourceExtendedFieldDefinitionsResponse
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsSourceExtendedFieldDefinitionCollection instance. */
+    /** The returned {@code LogAnalyticsSourceExtendedFieldDefinitionCollection} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsSourceExtendedFieldDefinitionCollection
             logAnalyticsSourceExtendedFieldDefinitionCollection;
 
     /**
-     * The returned LogAnalyticsSourceExtendedFieldDefinitionCollection instance.
+     * The returned {@code LogAnalyticsSourceExtendedFieldDefinitionCollection} instance.
      *
      * @return the value
      */
@@ -184,13 +184,13 @@ public class ListSourceExtendedFieldDefinitionsResponse
             return this;
         }
 
-        /** The returned LogAnalyticsSourceExtendedFieldDefinitionCollection instance. */
+        /** The returned {@code LogAnalyticsSourceExtendedFieldDefinitionCollection} instance. */
         private com.oracle.bmc.loganalytics.model
                         .LogAnalyticsSourceExtendedFieldDefinitionCollection
                 logAnalyticsSourceExtendedFieldDefinitionCollection;
 
         /**
-         * The returned LogAnalyticsSourceExtendedFieldDefinitionCollection instance.
+         * The returned {@code LogAnalyticsSourceExtendedFieldDefinitionCollection} instance.
          *
          * @param logAnalyticsSourceExtendedFieldDefinitionCollection the value to set
          * @return this builder

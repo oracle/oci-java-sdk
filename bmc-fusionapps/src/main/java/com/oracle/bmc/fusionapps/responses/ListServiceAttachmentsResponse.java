@@ -42,11 +42,11 @@ public class ListServiceAttachmentsResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** The returned ServiceAttachmentCollection instance. */
+    /** The returned {@code ServiceAttachmentCollection} instance. */
     private com.oracle.bmc.fusionapps.model.ServiceAttachmentCollection serviceAttachmentCollection;
 
     /**
-     * The returned ServiceAttachmentCollection instance.
+     * The returned {@code ServiceAttachmentCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListServiceAttachmentsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned ServiceAttachmentCollection instance. */
+        /** The returned {@code ServiceAttachmentCollection} instance. */
         private com.oracle.bmc.fusionapps.model.ServiceAttachmentCollection
                 serviceAttachmentCollection;
 
         /**
-         * The returned ServiceAttachmentCollection instance.
+         * The returned {@code ServiceAttachmentCollection} instance.
          *
          * @param serviceAttachmentCollection the value to set
          * @return this builder

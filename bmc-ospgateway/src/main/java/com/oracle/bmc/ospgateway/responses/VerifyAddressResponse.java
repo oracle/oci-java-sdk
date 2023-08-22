@@ -36,11 +36,11 @@ public class VerifyAddressResponse extends com.oracle.bmc.responses.BmcResponse 
         return etag;
     }
 
-    /** The returned VerifyAddressReceipt instance. */
+    /** The returned {@code VerifyAddressReceipt} instance. */
     private com.oracle.bmc.ospgateway.model.VerifyAddressReceipt verifyAddressReceipt;
 
     /**
-     * The returned VerifyAddressReceipt instance.
+     * The returned {@code VerifyAddressReceipt} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class VerifyAddressResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned VerifyAddressReceipt instance. */
+        /** The returned {@code VerifyAddressReceipt} instance. */
         private com.oracle.bmc.ospgateway.model.VerifyAddressReceipt verifyAddressReceipt;
 
         /**
-         * The returned VerifyAddressReceipt instance.
+         * The returned {@code VerifyAddressReceipt} instance.
          *
          * @param verifyAddressReceipt the value to set
          * @return this builder

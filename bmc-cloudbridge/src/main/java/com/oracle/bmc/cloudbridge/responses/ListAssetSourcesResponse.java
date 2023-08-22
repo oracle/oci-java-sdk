@@ -42,11 +42,11 @@ public class ListAssetSourcesResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /** The returned AssetSourceCollection instance. */
+    /** The returned {@code AssetSourceCollection} instance. */
     private com.oracle.bmc.cloudbridge.model.AssetSourceCollection assetSourceCollection;
 
     /**
-     * The returned AssetSourceCollection instance.
+     * The returned {@code AssetSourceCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListAssetSourcesResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned AssetSourceCollection instance. */
+        /** The returned {@code AssetSourceCollection} instance. */
         private com.oracle.bmc.cloudbridge.model.AssetSourceCollection assetSourceCollection;
 
         /**
-         * The returned AssetSourceCollection instance.
+         * The returned {@code AssetSourceCollection} instance.
          *
          * @param assetSourceCollection the value to set
          * @return this builder

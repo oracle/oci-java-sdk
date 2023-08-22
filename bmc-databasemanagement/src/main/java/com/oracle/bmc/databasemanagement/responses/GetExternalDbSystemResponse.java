@@ -36,11 +36,11 @@ public class GetExternalDbSystemResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned ExternalDbSystem instance. */
+    /** The returned {@code ExternalDbSystem} instance. */
     private com.oracle.bmc.databasemanagement.model.ExternalDbSystem externalDbSystem;
 
     /**
-     * The returned ExternalDbSystem instance.
+     * The returned {@code ExternalDbSystem} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetExternalDbSystemResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned ExternalDbSystem instance. */
+        /** The returned {@code ExternalDbSystem} instance. */
         private com.oracle.bmc.databasemanagement.model.ExternalDbSystem externalDbSystem;
 
         /**
-         * The returned ExternalDbSystem instance.
+         * The returned {@code ExternalDbSystem} instance.
          *
          * @param externalDbSystem the value to set
          * @return this builder

@@ -45,11 +45,13 @@ public class ListVmClusterUpdateHistoryEntriesResponse
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.database.model.VmClusterUpdateHistoryEntrySummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.database.model.VmClusterUpdateHistoryEntrySummary} instances.
+     */
     private java.util.List<com.oracle.bmc.database.model.VmClusterUpdateHistoryEntrySummary> items;
 
     /**
-     * A list of com.oracle.bmc.database.model.VmClusterUpdateHistoryEntrySummary instances.
+     * A list of {@code com.oracle.bmc.database.model.VmClusterUpdateHistoryEntrySummary} instances.
      *
      * @return the value
      */
@@ -139,12 +141,16 @@ public class ListVmClusterUpdateHistoryEntriesResponse
             return this;
         }
 
-        /** A list of com.oracle.bmc.database.model.VmClusterUpdateHistoryEntrySummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.database.model.VmClusterUpdateHistoryEntrySummary}
+         * instances.
+         */
         private java.util.List<com.oracle.bmc.database.model.VmClusterUpdateHistoryEntrySummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.database.model.VmClusterUpdateHistoryEntrySummary instances.
+         * A list of {@code com.oracle.bmc.database.model.VmClusterUpdateHistoryEntrySummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

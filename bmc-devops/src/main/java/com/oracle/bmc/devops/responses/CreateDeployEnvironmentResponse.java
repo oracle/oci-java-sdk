@@ -64,11 +64,11 @@ public class CreateDeployEnvironmentResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned DeployEnvironment instance. */
+    /** The returned {@code DeployEnvironment} instance. */
     private com.oracle.bmc.devops.model.DeployEnvironment deployEnvironment;
 
     /**
-     * The returned DeployEnvironment instance.
+     * The returned {@code DeployEnvironment} instance.
      *
      * @return the value
      */
@@ -184,11 +184,11 @@ public class CreateDeployEnvironmentResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned DeployEnvironment instance. */
+        /** The returned {@code DeployEnvironment} instance. */
         private com.oracle.bmc.devops.model.DeployEnvironment deployEnvironment;
 
         /**
-         * The returned DeployEnvironment instance.
+         * The returned {@code DeployEnvironment} instance.
          *
          * @param deployEnvironment the value to set
          * @return this builder

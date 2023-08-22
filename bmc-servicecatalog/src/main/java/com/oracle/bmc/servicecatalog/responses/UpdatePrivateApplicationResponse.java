@@ -52,11 +52,11 @@ public class UpdatePrivateApplicationResponse extends com.oracle.bmc.responses.B
         return etag;
     }
 
-    /** The returned PrivateApplication instance. */
+    /** The returned {@code PrivateApplication} instance. */
     private com.oracle.bmc.servicecatalog.model.PrivateApplication privateApplication;
 
     /**
-     * The returned PrivateApplication instance.
+     * The returned {@code PrivateApplication} instance.
      *
      * @return the value
      */
@@ -155,11 +155,11 @@ public class UpdatePrivateApplicationResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned PrivateApplication instance. */
+        /** The returned {@code PrivateApplication} instance. */
         private com.oracle.bmc.servicecatalog.model.PrivateApplication privateApplication;
 
         /**
-         * The returned PrivateApplication instance.
+         * The returned {@code PrivateApplication} instance.
          *
          * @param privateApplication the value to set
          * @return this builder

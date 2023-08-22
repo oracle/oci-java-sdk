@@ -56,11 +56,11 @@ public class UpdateExternalContainerDatabaseResponse extends com.oracle.bmc.resp
         return etag;
     }
 
-    /** The returned ExternalContainerDatabase instance. */
+    /** The returned {@code ExternalContainerDatabase} instance. */
     private com.oracle.bmc.database.model.ExternalContainerDatabase externalContainerDatabase;
 
     /**
-     * The returned ExternalContainerDatabase instance.
+     * The returned {@code ExternalContainerDatabase} instance.
      *
      * @return the value
      */
@@ -163,11 +163,11 @@ public class UpdateExternalContainerDatabaseResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned ExternalContainerDatabase instance. */
+        /** The returned {@code ExternalContainerDatabase} instance. */
         private com.oracle.bmc.database.model.ExternalContainerDatabase externalContainerDatabase;
 
         /**
-         * The returned ExternalContainerDatabase instance.
+         * The returned {@code ExternalContainerDatabase} instance.
          *
          * @param externalContainerDatabase the value to set
          * @return this builder

@@ -24,11 +24,11 @@ public class CreateCursorResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Cursor instance. */
+    /** The returned {@code Cursor} instance. */
     private com.oracle.bmc.streaming.model.Cursor cursor;
 
     /**
-     * The returned Cursor instance.
+     * The returned {@code Cursor} instance.
      *
      * @return the value
      */
@@ -83,11 +83,11 @@ public class CreateCursorResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Cursor instance. */
+        /** The returned {@code Cursor} instance. */
         private com.oracle.bmc.streaming.model.Cursor cursor;
 
         /**
-         * The returned Cursor instance.
+         * The returned {@code Cursor} instance.
          *
          * @param cursor the value to set
          * @return this builder

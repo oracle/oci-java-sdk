@@ -36,11 +36,11 @@ public class GetHumanInteractionChallengeResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /** The returned HumanInteractionChallenge instance. */
+    /** The returned {@code HumanInteractionChallenge} instance. */
     private com.oracle.bmc.waas.model.HumanInteractionChallenge humanInteractionChallenge;
 
     /**
-     * The returned HumanInteractionChallenge instance.
+     * The returned {@code HumanInteractionChallenge} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetHumanInteractionChallengeResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned HumanInteractionChallenge instance. */
+        /** The returned {@code HumanInteractionChallenge} instance. */
         private com.oracle.bmc.waas.model.HumanInteractionChallenge humanInteractionChallenge;
 
         /**
-         * The returned HumanInteractionChallenge instance.
+         * The returned {@code HumanInteractionChallenge} instance.
          *
          * @param humanInteractionChallenge the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListBootVolumeBackupsResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.BootVolumeBackup instances. */
+    /** A list of {@code com.oracle.bmc.core.model.BootVolumeBackup} instances. */
     private java.util.List<com.oracle.bmc.core.model.BootVolumeBackup> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.BootVolumeBackup instances.
+     * A list of {@code com.oracle.bmc.core.model.BootVolumeBackup} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListBootVolumeBackupsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.BootVolumeBackup instances. */
+        /** A list of {@code com.oracle.bmc.core.model.BootVolumeBackup} instances. */
         private java.util.List<com.oracle.bmc.core.model.BootVolumeBackup> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.BootVolumeBackup instances.
+         * A list of {@code com.oracle.bmc.core.model.BootVolumeBackup} instances.
          *
          * @param items the value to set
          * @return this builder

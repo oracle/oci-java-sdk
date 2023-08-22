@@ -68,11 +68,11 @@ public class CreateFsuActionResponse extends com.oracle.bmc.responses.BmcRespons
         return location;
     }
 
-    /** The returned FsuAction instance. */
+    /** The returned {@code FsuAction} instance. */
     private com.oracle.bmc.fleetsoftwareupdate.model.FsuAction fsuAction;
 
     /**
-     * The returned FsuAction instance.
+     * The returned {@code FsuAction} instance.
      *
      * @return the value
      */
@@ -191,11 +191,11 @@ public class CreateFsuActionResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned FsuAction instance. */
+        /** The returned {@code FsuAction} instance. */
         private com.oracle.bmc.fleetsoftwareupdate.model.FsuAction fsuAction;
 
         /**
-         * The returned FsuAction instance.
+         * The returned {@code FsuAction} instance.
          *
          * @param fsuAction the value to set
          * @return this builder

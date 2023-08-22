@@ -42,11 +42,11 @@ public class ListBootVolumeAttachmentsResponse extends com.oracle.bmc.responses.
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.BootVolumeAttachment instances. */
+    /** A list of {@code com.oracle.bmc.core.model.BootVolumeAttachment} instances. */
     private java.util.List<com.oracle.bmc.core.model.BootVolumeAttachment> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.BootVolumeAttachment instances.
+     * A list of {@code com.oracle.bmc.core.model.BootVolumeAttachment} instances.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListBootVolumeAttachmentsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.BootVolumeAttachment instances. */
+        /** A list of {@code com.oracle.bmc.core.model.BootVolumeAttachment} instances. */
         private java.util.List<com.oracle.bmc.core.model.BootVolumeAttachment> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.BootVolumeAttachment instances.
+         * A list of {@code com.oracle.bmc.core.model.BootVolumeAttachment} instances.
          *
          * @param items the value to set
          * @return this builder

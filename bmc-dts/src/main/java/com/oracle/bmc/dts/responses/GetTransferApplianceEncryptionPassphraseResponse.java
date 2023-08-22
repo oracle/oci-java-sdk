@@ -25,12 +25,12 @@ public class GetTransferApplianceEncryptionPassphraseResponse
         return etag;
     }
 
-    /** The returned TransferApplianceEncryptionPassphrase instance. */
+    /** The returned {@code TransferApplianceEncryptionPassphrase} instance. */
     private com.oracle.bmc.dts.model.TransferApplianceEncryptionPassphrase
             transferApplianceEncryptionPassphrase;
 
     /**
-     * The returned TransferApplianceEncryptionPassphrase instance.
+     * The returned {@code TransferApplianceEncryptionPassphrase} instance.
      *
      * @return the value
      */
@@ -102,12 +102,12 @@ public class GetTransferApplianceEncryptionPassphraseResponse
             return this;
         }
 
-        /** The returned TransferApplianceEncryptionPassphrase instance. */
+        /** The returned {@code TransferApplianceEncryptionPassphrase} instance. */
         private com.oracle.bmc.dts.model.TransferApplianceEncryptionPassphrase
                 transferApplianceEncryptionPassphrase;
 
         /**
-         * The returned TransferApplianceEncryptionPassphrase instance.
+         * The returned {@code TransferApplianceEncryptionPassphrase} instance.
          *
          * @param transferApplianceEncryptionPassphrase the value to set
          * @return this builder

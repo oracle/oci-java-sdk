@@ -42,11 +42,11 @@ public class AddmTasksResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned AddmTasksCollection instance. */
+    /** The returned {@code AddmTasksCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.AddmTasksCollection addmTasksCollection;
 
     /**
-     * The returned AddmTasksCollection instance.
+     * The returned {@code AddmTasksCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class AddmTasksResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned AddmTasksCollection instance. */
+        /** The returned {@code AddmTasksCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.AddmTasksCollection addmTasksCollection;
 
         /**
-         * The returned AddmTasksCollection instance.
+         * The returned {@code AddmTasksCollection} instance.
          *
          * @param addmTasksCollection the value to set
          * @return this builder

@@ -16,11 +16,11 @@ public class ListShippingVendorsResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned ShippingVendors instance. */
+    /** The returned {@code ShippingVendors} instance. */
     private com.oracle.bmc.dts.model.ShippingVendors shippingVendors;
 
     /**
-     * The returned ShippingVendors instance.
+     * The returned {@code ShippingVendors} instance.
      *
      * @return the value
      */
@@ -74,11 +74,11 @@ public class ListShippingVendorsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned ShippingVendors instance. */
+        /** The returned {@code ShippingVendors} instance. */
         private com.oracle.bmc.dts.model.ShippingVendors shippingVendors;
 
         /**
-         * The returned ShippingVendors instance.
+         * The returned {@code ShippingVendors} instance.
          *
          * @param shippingVendors the value to set
          * @return this builder

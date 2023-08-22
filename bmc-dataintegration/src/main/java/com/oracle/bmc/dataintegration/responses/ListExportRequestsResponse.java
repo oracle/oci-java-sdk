@@ -42,12 +42,12 @@ public class ListExportRequestsResponse extends com.oracle.bmc.responses.BmcResp
         return opcNextPage;
     }
 
-    /** The returned ExportRequestSummaryCollection instance. */
+    /** The returned {@code ExportRequestSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.ExportRequestSummaryCollection
             exportRequestSummaryCollection;
 
     /**
-     * The returned ExportRequestSummaryCollection instance.
+     * The returned {@code ExportRequestSummaryCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListExportRequestsResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned ExportRequestSummaryCollection instance. */
+        /** The returned {@code ExportRequestSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.ExportRequestSummaryCollection
                 exportRequestSummaryCollection;
 
         /**
-         * The returned ExportRequestSummaryCollection instance.
+         * The returned {@code ExportRequestSummaryCollection} instance.
          *
          * @param exportRequestSummaryCollection the value to set
          * @return this builder

@@ -70,11 +70,11 @@ public class GetRRSetResponse extends com.oracle.bmc.responses.BmcResponse {
         return eTag;
     }
 
-    /** The returned RRSet instance. */
+    /** The returned {@code RRSet} instance. */
     private com.oracle.bmc.dns.model.RRSet rRSet;
 
     /**
-     * The returned RRSet instance.
+     * The returned {@code RRSet} instance.
      *
      * @return the value
      */
@@ -197,11 +197,11 @@ public class GetRRSetResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned RRSet instance. */
+        /** The returned {@code RRSet} instance. */
         private com.oracle.bmc.dns.model.RRSet rRSet;
 
         /**
-         * The returned RRSet instance.
+         * The returned {@code RRSet} instance.
          *
          * @param rRSet the value to set
          * @return this builder

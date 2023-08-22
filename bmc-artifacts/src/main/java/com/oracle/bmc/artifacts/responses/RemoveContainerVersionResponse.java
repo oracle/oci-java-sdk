@@ -36,11 +36,11 @@ public class RemoveContainerVersionResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned ContainerImage instance. */
+    /** The returned {@code ContainerImage} instance. */
     private com.oracle.bmc.artifacts.model.ContainerImage containerImage;
 
     /**
-     * The returned ContainerImage instance.
+     * The returned {@code ContainerImage} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class RemoveContainerVersionResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned ContainerImage instance. */
+        /** The returned {@code ContainerImage} instance. */
         private com.oracle.bmc.artifacts.model.ContainerImage containerImage;
 
         /**
-         * The returned ContainerImage instance.
+         * The returned {@code ContainerImage} instance.
          *
          * @param containerImage the value to set
          * @return this builder

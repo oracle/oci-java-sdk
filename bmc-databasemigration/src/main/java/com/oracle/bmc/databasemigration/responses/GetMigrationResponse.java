@@ -36,11 +36,11 @@ public class GetMigrationResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned Migration instance. */
+    /** The returned {@code Migration} instance. */
     private com.oracle.bmc.databasemigration.model.Migration migration;
 
     /**
-     * The returned Migration instance.
+     * The returned {@code Migration} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetMigrationResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Migration instance. */
+        /** The returned {@code Migration} instance. */
         private com.oracle.bmc.databasemigration.model.Migration migration;
 
         /**
-         * The returned Migration instance.
+         * The returned {@code Migration} instance.
          *
          * @param migration the value to set
          * @return this builder

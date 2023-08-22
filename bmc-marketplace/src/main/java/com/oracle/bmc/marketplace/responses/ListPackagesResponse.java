@@ -42,11 +42,11 @@ public class ListPackagesResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.marketplace.model.ListingPackageSummary instances. */
+    /** A list of {@code com.oracle.bmc.marketplace.model.ListingPackageSummary} instances. */
     private java.util.List<com.oracle.bmc.marketplace.model.ListingPackageSummary> items;
 
     /**
-     * A list of com.oracle.bmc.marketplace.model.ListingPackageSummary instances.
+     * A list of {@code com.oracle.bmc.marketplace.model.ListingPackageSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListPackagesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.marketplace.model.ListingPackageSummary instances. */
+        /** A list of {@code com.oracle.bmc.marketplace.model.ListingPackageSummary} instances. */
         private java.util.List<com.oracle.bmc.marketplace.model.ListingPackageSummary> items;
 
         /**
-         * A list of com.oracle.bmc.marketplace.model.ListingPackageSummary instances.
+         * A list of {@code com.oracle.bmc.marketplace.model.ListingPackageSummary} instances.
          *
          * @param items the value to set
          * @return this builder

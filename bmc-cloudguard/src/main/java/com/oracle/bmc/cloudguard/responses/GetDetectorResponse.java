@@ -42,11 +42,11 @@ public class GetDetectorResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned Detector instance. */
+    /** The returned {@code Detector} instance. */
     private com.oracle.bmc.cloudguard.model.Detector detector;
 
     /**
-     * The returned Detector instance.
+     * The returned {@code Detector} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class GetDetectorResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Detector instance. */
+        /** The returned {@code Detector} instance. */
         private com.oracle.bmc.cloudguard.model.Detector detector;
 
         /**
-         * The returned Detector instance.
+         * The returned {@code Detector} instance.
          *
          * @param detector the value to set
          * @return this builder

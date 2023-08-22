@@ -36,11 +36,11 @@ public class UpsertLabelResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsLabel instance. */
+    /** The returned {@code LogAnalyticsLabel} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsLabel logAnalyticsLabel;
 
     /**
-     * The returned LogAnalyticsLabel instance.
+     * The returned {@code LogAnalyticsLabel} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpsertLabelResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned LogAnalyticsLabel instance. */
+        /** The returned {@code LogAnalyticsLabel} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsLabel logAnalyticsLabel;
 
         /**
-         * The returned LogAnalyticsLabel instance.
+         * The returned {@code LogAnalyticsLabel} instance.
          *
          * @param logAnalyticsLabel the value to set
          * @return this builder

@@ -44,11 +44,11 @@ public class ListCaBundlesResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcNextPage;
     }
 
-    /** The returned CaBundleCollection instance. */
+    /** The returned {@code CaBundleCollection} instance. */
     private com.oracle.bmc.certificatesmanagement.model.CaBundleCollection caBundleCollection;
 
     /**
-     * The returned CaBundleCollection instance.
+     * The returned {@code CaBundleCollection} instance.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListCaBundlesResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned CaBundleCollection instance. */
+        /** The returned {@code CaBundleCollection} instance. */
         private com.oracle.bmc.certificatesmanagement.model.CaBundleCollection caBundleCollection;
 
         /**
-         * The returned CaBundleCollection instance.
+         * The returned {@code CaBundleCollection} instance.
          *
          * @param caBundleCollection the value to set
          * @return this builder

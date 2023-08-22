@@ -42,11 +42,11 @@ public class ListDedicatedVmHostShapesResponse extends com.oracle.bmc.responses.
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.DedicatedVmHostShapeSummary instances. */
+    /** A list of {@code com.oracle.bmc.core.model.DedicatedVmHostShapeSummary} instances. */
     private java.util.List<com.oracle.bmc.core.model.DedicatedVmHostShapeSummary> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.DedicatedVmHostShapeSummary instances.
+     * A list of {@code com.oracle.bmc.core.model.DedicatedVmHostShapeSummary} instances.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListDedicatedVmHostShapesResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.DedicatedVmHostShapeSummary instances. */
+        /** A list of {@code com.oracle.bmc.core.model.DedicatedVmHostShapeSummary} instances. */
         private java.util.List<com.oracle.bmc.core.model.DedicatedVmHostShapeSummary> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.DedicatedVmHostShapeSummary instances.
+         * A list of {@code com.oracle.bmc.core.model.DedicatedVmHostShapeSummary} instances.
          *
          * @param items the value to set
          * @return this builder

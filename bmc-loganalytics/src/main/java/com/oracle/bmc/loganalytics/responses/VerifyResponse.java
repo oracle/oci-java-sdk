@@ -24,11 +24,11 @@ public class VerifyResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned VerifyOutput instance. */
+    /** The returned {@code VerifyOutput} instance. */
     private com.oracle.bmc.loganalytics.model.VerifyOutput verifyOutput;
 
     /**
-     * The returned VerifyOutput instance.
+     * The returned {@code VerifyOutput} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class VerifyResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned VerifyOutput instance. */
+        /** The returned {@code VerifyOutput} instance. */
         private com.oracle.bmc.loganalytics.model.VerifyOutput verifyOutput;
 
         /**
-         * The returned VerifyOutput instance.
+         * The returned {@code VerifyOutput} instance.
          *
          * @param verifyOutput the value to set
          * @return this builder

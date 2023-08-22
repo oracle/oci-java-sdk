@@ -36,11 +36,11 @@ public class GetExternalBackupJobResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned ExternalBackupJob instance. */
+    /** The returned {@code ExternalBackupJob} instance. */
     private com.oracle.bmc.database.model.ExternalBackupJob externalBackupJob;
 
     /**
-     * The returned ExternalBackupJob instance.
+     * The returned {@code ExternalBackupJob} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetExternalBackupJobResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned ExternalBackupJob instance. */
+        /** The returned {@code ExternalBackupJob} instance. */
         private com.oracle.bmc.database.model.ExternalBackupJob externalBackupJob;
 
         /**
-         * The returned ExternalBackupJob instance.
+         * The returned {@code ExternalBackupJob} instance.
          *
          * @param externalBackupJob the value to set
          * @return this builder

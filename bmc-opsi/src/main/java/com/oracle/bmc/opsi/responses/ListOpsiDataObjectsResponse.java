@@ -42,11 +42,11 @@ public class ListOpsiDataObjectsResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** The returned OpsiDataObjectsCollection instance. */
+    /** The returned {@code OpsiDataObjectsCollection} instance. */
     private com.oracle.bmc.opsi.model.OpsiDataObjectsCollection opsiDataObjectsCollection;
 
     /**
-     * The returned OpsiDataObjectsCollection instance.
+     * The returned {@code OpsiDataObjectsCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListOpsiDataObjectsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned OpsiDataObjectsCollection instance. */
+        /** The returned {@code OpsiDataObjectsCollection} instance. */
         private com.oracle.bmc.opsi.model.OpsiDataObjectsCollection opsiDataObjectsCollection;
 
         /**
-         * The returned OpsiDataObjectsCollection instance.
+         * The returned {@code OpsiDataObjectsCollection} instance.
          *
          * @param opsiDataObjectsCollection the value to set
          * @return this builder

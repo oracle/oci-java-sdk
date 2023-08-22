@@ -25,12 +25,12 @@ public class SummarizeHostInsightResourceForecastTrendResponse
         return opcRequestId;
     }
 
-    /** The returned SummarizeHostInsightResourceForecastTrendAggregation instance. */
+    /** The returned {@code SummarizeHostInsightResourceForecastTrendAggregation} instance. */
     private com.oracle.bmc.opsi.model.SummarizeHostInsightResourceForecastTrendAggregation
             summarizeHostInsightResourceForecastTrendAggregation;
 
     /**
-     * The returned SummarizeHostInsightResourceForecastTrendAggregation instance.
+     * The returned {@code SummarizeHostInsightResourceForecastTrendAggregation} instance.
      *
      * @return the value
      */
@@ -94,12 +94,12 @@ public class SummarizeHostInsightResourceForecastTrendResponse
             return this;
         }
 
-        /** The returned SummarizeHostInsightResourceForecastTrendAggregation instance. */
+        /** The returned {@code SummarizeHostInsightResourceForecastTrendAggregation} instance. */
         private com.oracle.bmc.opsi.model.SummarizeHostInsightResourceForecastTrendAggregation
                 summarizeHostInsightResourceForecastTrendAggregation;
 
         /**
-         * The returned SummarizeHostInsightResourceForecastTrendAggregation instance.
+         * The returned {@code SummarizeHostInsightResourceForecastTrendAggregation} instance.
          *
          * @param summarizeHostInsightResourceForecastTrendAggregation the value to set
          * @return this builder

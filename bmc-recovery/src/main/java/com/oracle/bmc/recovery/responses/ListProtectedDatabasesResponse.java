@@ -42,11 +42,11 @@ public class ListProtectedDatabasesResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** The returned ProtectedDatabaseCollection instance. */
+    /** The returned {@code ProtectedDatabaseCollection} instance. */
     private com.oracle.bmc.recovery.model.ProtectedDatabaseCollection protectedDatabaseCollection;
 
     /**
-     * The returned ProtectedDatabaseCollection instance.
+     * The returned {@code ProtectedDatabaseCollection} instance.
      *
      * @return the value
      */
@@ -131,12 +131,12 @@ public class ListProtectedDatabasesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned ProtectedDatabaseCollection instance. */
+        /** The returned {@code ProtectedDatabaseCollection} instance. */
         private com.oracle.bmc.recovery.model.ProtectedDatabaseCollection
                 protectedDatabaseCollection;
 
         /**
-         * The returned ProtectedDatabaseCollection instance.
+         * The returned {@code ProtectedDatabaseCollection} instance.
          *
          * @param protectedDatabaseCollection the value to set
          * @return this builder

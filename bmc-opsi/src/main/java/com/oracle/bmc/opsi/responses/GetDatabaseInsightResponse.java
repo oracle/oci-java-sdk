@@ -36,11 +36,11 @@ public class GetDatabaseInsightResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned DatabaseInsight instance. */
+    /** The returned {@code DatabaseInsight} instance. */
     private com.oracle.bmc.opsi.model.DatabaseInsight databaseInsight;
 
     /**
-     * The returned DatabaseInsight instance.
+     * The returned {@code DatabaseInsight} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetDatabaseInsightResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned DatabaseInsight instance. */
+        /** The returned {@code DatabaseInsight} instance. */
         private com.oracle.bmc.opsi.model.DatabaseInsight databaseInsight;
 
         /**
-         * The returned DatabaseInsight instance.
+         * The returned {@code DatabaseInsight} instance.
          *
          * @param databaseInsight the value to set
          * @return this builder

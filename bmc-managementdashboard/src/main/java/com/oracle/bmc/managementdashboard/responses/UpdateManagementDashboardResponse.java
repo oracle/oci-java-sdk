@@ -52,11 +52,11 @@ public class UpdateManagementDashboardResponse extends com.oracle.bmc.responses.
         return opcRequestId;
     }
 
-    /** The returned ManagementDashboard instance. */
+    /** The returned {@code ManagementDashboard} instance. */
     private com.oracle.bmc.managementdashboard.model.ManagementDashboard managementDashboard;
 
     /**
-     * The returned ManagementDashboard instance.
+     * The returned {@code ManagementDashboard} instance.
      *
      * @return the value
      */
@@ -155,11 +155,11 @@ public class UpdateManagementDashboardResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned ManagementDashboard instance. */
+        /** The returned {@code ManagementDashboard} instance. */
         private com.oracle.bmc.managementdashboard.model.ManagementDashboard managementDashboard;
 
         /**
-         * The returned ManagementDashboard instance.
+         * The returned {@code ManagementDashboard} instance.
          *
          * @param managementDashboard the value to set
          * @return this builder

@@ -42,12 +42,12 @@ public class ListDataMaskingActivitiesResponse extends com.oracle.bmc.responses.
         return opcNextPage;
     }
 
-    /** The returned DataMaskingActivityCollection instance. */
+    /** The returned {@code DataMaskingActivityCollection} instance. */
     private com.oracle.bmc.fusionapps.model.DataMaskingActivityCollection
             dataMaskingActivityCollection;
 
     /**
-     * The returned DataMaskingActivityCollection instance.
+     * The returned {@code DataMaskingActivityCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListDataMaskingActivitiesResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned DataMaskingActivityCollection instance. */
+        /** The returned {@code DataMaskingActivityCollection} instance. */
         private com.oracle.bmc.fusionapps.model.DataMaskingActivityCollection
                 dataMaskingActivityCollection;
 
         /**
-         * The returned DataMaskingActivityCollection instance.
+         * The returned {@code DataMaskingActivityCollection} instance.
          *
          * @param dataMaskingActivityCollection the value to set
          * @return this builder

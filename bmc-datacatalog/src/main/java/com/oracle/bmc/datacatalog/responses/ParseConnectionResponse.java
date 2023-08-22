@@ -40,11 +40,11 @@ public class ParseConnectionResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.datacatalog.model.ConnectionAliasSummary instances. */
+    /** A list of {@code com.oracle.bmc.datacatalog.model.ConnectionAliasSummary} instances. */
     private java.util.List<com.oracle.bmc.datacatalog.model.ConnectionAliasSummary> items;
 
     /**
-     * A list of com.oracle.bmc.datacatalog.model.ConnectionAliasSummary instances.
+     * A list of {@code com.oracle.bmc.datacatalog.model.ConnectionAliasSummary} instances.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class ParseConnectionResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** A list of com.oracle.bmc.datacatalog.model.ConnectionAliasSummary instances. */
+        /** A list of {@code com.oracle.bmc.datacatalog.model.ConnectionAliasSummary} instances. */
         private java.util.List<com.oracle.bmc.datacatalog.model.ConnectionAliasSummary> items;
 
         /**
-         * A list of com.oracle.bmc.datacatalog.model.ConnectionAliasSummary instances.
+         * A list of {@code com.oracle.bmc.datacatalog.model.ConnectionAliasSummary} instances.
          *
          * @param items the value to set
          * @return this builder

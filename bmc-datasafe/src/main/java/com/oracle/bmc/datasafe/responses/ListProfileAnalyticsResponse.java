@@ -62,11 +62,11 @@ public class ListProfileAnalyticsResponse extends com.oracle.bmc.responses.BmcRe
         return opcPrevPage;
     }
 
-    /** A list of com.oracle.bmc.datasafe.model.ProfileAggregation instances. */
+    /** A list of {@code com.oracle.bmc.datasafe.model.ProfileAggregation} instances. */
     private java.util.List<com.oracle.bmc.datasafe.model.ProfileAggregation> items;
 
     /**
-     * A list of com.oracle.bmc.datasafe.model.ProfileAggregation instances.
+     * A list of {@code com.oracle.bmc.datasafe.model.ProfileAggregation} instances.
      *
      * @return the value
      */
@@ -174,11 +174,11 @@ public class ListProfileAnalyticsResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** A list of com.oracle.bmc.datasafe.model.ProfileAggregation instances. */
+        /** A list of {@code com.oracle.bmc.datasafe.model.ProfileAggregation} instances. */
         private java.util.List<com.oracle.bmc.datasafe.model.ProfileAggregation> items;
 
         /**
-         * A list of com.oracle.bmc.datasafe.model.ProfileAggregation instances.
+         * A list of {@code com.oracle.bmc.datasafe.model.ProfileAggregation} instances.
          *
          * @param items the value to set
          * @return this builder

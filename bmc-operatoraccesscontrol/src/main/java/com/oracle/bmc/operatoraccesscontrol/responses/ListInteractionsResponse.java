@@ -42,11 +42,11 @@ public class ListInteractionsResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /** The returned InteractionCollection instance. */
+    /** The returned {@code InteractionCollection} instance. */
     private com.oracle.bmc.operatoraccesscontrol.model.InteractionCollection interactionCollection;
 
     /**
-     * The returned InteractionCollection instance.
+     * The returned {@code InteractionCollection} instance.
      *
      * @return the value
      */
@@ -131,12 +131,12 @@ public class ListInteractionsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned InteractionCollection instance. */
+        /** The returned {@code InteractionCollection} instance. */
         private com.oracle.bmc.operatoraccesscontrol.model.InteractionCollection
                 interactionCollection;
 
         /**
-         * The returned InteractionCollection instance.
+         * The returned {@code InteractionCollection} instance.
          *
          * @param interactionCollection the value to set
          * @return this builder

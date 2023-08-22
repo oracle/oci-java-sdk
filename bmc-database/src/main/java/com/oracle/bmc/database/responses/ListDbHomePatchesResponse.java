@@ -44,11 +44,11 @@ public class ListDbHomePatchesResponse extends com.oracle.bmc.responses.BmcRespo
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.database.model.PatchSummary instances. */
+    /** A list of {@code com.oracle.bmc.database.model.PatchSummary} instances. */
     private java.util.List<com.oracle.bmc.database.model.PatchSummary> items;
 
     /**
-     * A list of com.oracle.bmc.database.model.PatchSummary instances.
+     * A list of {@code com.oracle.bmc.database.model.PatchSummary} instances.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListDbHomePatchesResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** A list of com.oracle.bmc.database.model.PatchSummary instances. */
+        /** A list of {@code com.oracle.bmc.database.model.PatchSummary} instances. */
         private java.util.List<com.oracle.bmc.database.model.PatchSummary> items;
 
         /**
-         * A list of com.oracle.bmc.database.model.PatchSummary instances.
+         * A list of {@code com.oracle.bmc.database.model.PatchSummary} instances.
          *
          * @param items the value to set
          * @return this builder

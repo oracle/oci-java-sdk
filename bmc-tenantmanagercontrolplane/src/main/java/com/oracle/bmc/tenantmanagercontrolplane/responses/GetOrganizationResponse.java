@@ -36,11 +36,11 @@ public class GetOrganizationResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned Organization instance. */
+    /** The returned {@code Organization} instance. */
     private com.oracle.bmc.tenantmanagercontrolplane.model.Organization organization;
 
     /**
-     * The returned Organization instance.
+     * The returned {@code Organization} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetOrganizationResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned Organization instance. */
+        /** The returned {@code Organization} instance. */
         private com.oracle.bmc.tenantmanagercontrolplane.model.Organization organization;
 
         /**
-         * The returned Organization instance.
+         * The returned {@code Organization} instance.
          *
          * @param organization the value to set
          * @return this builder

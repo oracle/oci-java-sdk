@@ -57,11 +57,11 @@ public class CreateExternalNonContainerDatabaseResponse
         return opcRequestId;
     }
 
-    /** The returned ExternalNonContainerDatabase instance. */
+    /** The returned {@code ExternalNonContainerDatabase} instance. */
     private com.oracle.bmc.database.model.ExternalNonContainerDatabase externalNonContainerDatabase;
 
     /**
-     * The returned ExternalNonContainerDatabase instance.
+     * The returned {@code ExternalNonContainerDatabase} instance.
      *
      * @return the value
      */
@@ -166,12 +166,12 @@ public class CreateExternalNonContainerDatabaseResponse
             return this;
         }
 
-        /** The returned ExternalNonContainerDatabase instance. */
+        /** The returned {@code ExternalNonContainerDatabase} instance. */
         private com.oracle.bmc.database.model.ExternalNonContainerDatabase
                 externalNonContainerDatabase;
 
         /**
-         * The returned ExternalNonContainerDatabase instance.
+         * The returned {@code ExternalNonContainerDatabase} instance.
          *
          * @param externalNonContainerDatabase the value to set
          * @return this builder

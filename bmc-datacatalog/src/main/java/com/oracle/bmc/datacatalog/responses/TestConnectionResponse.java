@@ -40,11 +40,11 @@ public class TestConnectionResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned ValidateConnectionResult instance. */
+    /** The returned {@code ValidateConnectionResult} instance. */
     private com.oracle.bmc.datacatalog.model.ValidateConnectionResult validateConnectionResult;
 
     /**
-     * The returned ValidateConnectionResult instance.
+     * The returned {@code ValidateConnectionResult} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class TestConnectionResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned ValidateConnectionResult instance. */
+        /** The returned {@code ValidateConnectionResult} instance. */
         private com.oracle.bmc.datacatalog.model.ValidateConnectionResult validateConnectionResult;
 
         /**
-         * The returned ValidateConnectionResult instance.
+         * The returned {@code ValidateConnectionResult} instance.
          *
          * @param validateConnectionResult the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListDeployEnvironmentsResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** The returned DeployEnvironmentCollection instance. */
+    /** The returned {@code DeployEnvironmentCollection} instance. */
     private com.oracle.bmc.devops.model.DeployEnvironmentCollection deployEnvironmentCollection;
 
     /**
-     * The returned DeployEnvironmentCollection instance.
+     * The returned {@code DeployEnvironmentCollection} instance.
      *
      * @return the value
      */
@@ -131,11 +131,11 @@ public class ListDeployEnvironmentsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned DeployEnvironmentCollection instance. */
+        /** The returned {@code DeployEnvironmentCollection} instance. */
         private com.oracle.bmc.devops.model.DeployEnvironmentCollection deployEnvironmentCollection;
 
         /**
-         * The returned DeployEnvironmentCollection instance.
+         * The returned {@code DeployEnvironmentCollection} instance.
          *
          * @param deployEnvironmentCollection the value to set
          * @return this builder

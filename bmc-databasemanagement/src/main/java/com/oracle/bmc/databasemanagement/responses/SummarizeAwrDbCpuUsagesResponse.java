@@ -42,11 +42,11 @@ public class SummarizeAwrDbCpuUsagesResponse extends com.oracle.bmc.responses.Bm
         return opcNextPage;
     }
 
-    /** The returned AwrDbCpuUsageCollection instance. */
+    /** The returned {@code AwrDbCpuUsageCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.AwrDbCpuUsageCollection awrDbCpuUsageCollection;
 
     /**
-     * The returned AwrDbCpuUsageCollection instance.
+     * The returned {@code AwrDbCpuUsageCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class SummarizeAwrDbCpuUsagesResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned AwrDbCpuUsageCollection instance. */
+        /** The returned {@code AwrDbCpuUsageCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.AwrDbCpuUsageCollection
                 awrDbCpuUsageCollection;
 
         /**
-         * The returned AwrDbCpuUsageCollection instance.
+         * The returned {@code AwrDbCpuUsageCollection} instance.
          *
          * @param awrDbCpuUsageCollection the value to set
          * @return this builder

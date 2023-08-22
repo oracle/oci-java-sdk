@@ -36,11 +36,11 @@ public class UpdateEnrollmentStatusResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned EnrollmentStatus instance. */
+    /** The returned {@code EnrollmentStatus} instance. */
     private com.oracle.bmc.optimizer.model.EnrollmentStatus enrollmentStatus;
 
     /**
-     * The returned EnrollmentStatus instance.
+     * The returned {@code EnrollmentStatus} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class UpdateEnrollmentStatusResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned EnrollmentStatus instance. */
+        /** The returned {@code EnrollmentStatus} instance. */
         private com.oracle.bmc.optimizer.model.EnrollmentStatus enrollmentStatus;
 
         /**
-         * The returned EnrollmentStatus instance.
+         * The returned {@code EnrollmentStatus} instance.
          *
          * @param enrollmentStatus the value to set
          * @return this builder

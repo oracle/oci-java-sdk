@@ -60,11 +60,11 @@ public class ListApisResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcPrevPage;
     }
 
-    /** The returned ApiCollection instance. */
+    /** The returned {@code ApiCollection} instance. */
     private com.oracle.bmc.apigateway.model.ApiCollection apiCollection;
 
     /**
-     * The returned ApiCollection instance.
+     * The returned {@code ApiCollection} instance.
      *
      * @return the value
      */
@@ -170,11 +170,11 @@ public class ListApisResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned ApiCollection instance. */
+        /** The returned {@code ApiCollection} instance. */
         private com.oracle.bmc.apigateway.model.ApiCollection apiCollection;
 
         /**
-         * The returned ApiCollection instance.
+         * The returned {@code ApiCollection} instance.
          *
          * @param apiCollection the value to set
          * @return this builder

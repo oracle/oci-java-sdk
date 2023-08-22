@@ -24,11 +24,11 @@ public class GetInstanceAgentPluginResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned InstanceAgentPlugin instance. */
+    /** The returned {@code InstanceAgentPlugin} instance. */
     private com.oracle.bmc.computeinstanceagent.model.InstanceAgentPlugin instanceAgentPlugin;
 
     /**
-     * The returned InstanceAgentPlugin instance.
+     * The returned {@code InstanceAgentPlugin} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class GetInstanceAgentPluginResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned InstanceAgentPlugin instance. */
+        /** The returned {@code InstanceAgentPlugin} instance. */
         private com.oracle.bmc.computeinstanceagent.model.InstanceAgentPlugin instanceAgentPlugin;
 
         /**
-         * The returned InstanceAgentPlugin instance.
+         * The returned {@code InstanceAgentPlugin} instance.
          *
          * @param instanceAgentPlugin the value to set
          * @return this builder

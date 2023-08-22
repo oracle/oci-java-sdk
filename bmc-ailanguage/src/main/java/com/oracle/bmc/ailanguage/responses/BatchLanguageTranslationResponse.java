@@ -24,12 +24,12 @@ public class BatchLanguageTranslationResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** The returned BatchLanguageTranslationResult instance. */
+    /** The returned {@code BatchLanguageTranslationResult} instance. */
     private com.oracle.bmc.ailanguage.model.BatchLanguageTranslationResult
             batchLanguageTranslationResult;
 
     /**
-     * The returned BatchLanguageTranslationResult instance.
+     * The returned {@code BatchLanguageTranslationResult} instance.
      *
      * @return the value
      */
@@ -92,12 +92,12 @@ public class BatchLanguageTranslationResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned BatchLanguageTranslationResult instance. */
+        /** The returned {@code BatchLanguageTranslationResult} instance. */
         private com.oracle.bmc.ailanguage.model.BatchLanguageTranslationResult
                 batchLanguageTranslationResult;
 
         /**
-         * The returned BatchLanguageTranslationResult instance.
+         * The returned {@code BatchLanguageTranslationResult} instance.
          *
          * @param batchLanguageTranslationResult the value to set
          * @return this builder

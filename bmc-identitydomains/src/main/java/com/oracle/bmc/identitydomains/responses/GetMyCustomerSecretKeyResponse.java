@@ -24,11 +24,11 @@ public class GetMyCustomerSecretKeyResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned MyCustomerSecretKey instance. */
+    /** The returned {@code MyCustomerSecretKey} instance. */
     private com.oracle.bmc.identitydomains.model.MyCustomerSecretKey myCustomerSecretKey;
 
     /**
-     * The returned MyCustomerSecretKey instance.
+     * The returned {@code MyCustomerSecretKey} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class GetMyCustomerSecretKeyResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned MyCustomerSecretKey instance. */
+        /** The returned {@code MyCustomerSecretKey} instance. */
         private com.oracle.bmc.identitydomains.model.MyCustomerSecretKey myCustomerSecretKey;
 
         /**
-         * The returned MyCustomerSecretKey instance.
+         * The returned {@code MyCustomerSecretKey} instance.
          *
          * @param myCustomerSecretKey the value to set
          * @return this builder

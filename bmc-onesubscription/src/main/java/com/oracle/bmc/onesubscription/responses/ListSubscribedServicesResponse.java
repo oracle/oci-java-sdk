@@ -42,11 +42,13 @@ public class ListSubscribedServicesResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.onesubscription.model.SubscribedServiceSummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.onesubscription.model.SubscribedServiceSummary} instances.
+     */
     private java.util.List<com.oracle.bmc.onesubscription.model.SubscribedServiceSummary> items;
 
     /**
-     * A list of com.oracle.bmc.onesubscription.model.SubscribedServiceSummary instances.
+     * A list of {@code com.oracle.bmc.onesubscription.model.SubscribedServiceSummary} instances.
      *
      * @return the value
      */
@@ -131,11 +133,15 @@ public class ListSubscribedServicesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** A list of com.oracle.bmc.onesubscription.model.SubscribedServiceSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.onesubscription.model.SubscribedServiceSummary}
+         * instances.
+         */
         private java.util.List<com.oracle.bmc.onesubscription.model.SubscribedServiceSummary> items;
 
         /**
-         * A list of com.oracle.bmc.onesubscription.model.SubscribedServiceSummary instances.
+         * A list of {@code com.oracle.bmc.onesubscription.model.SubscribedServiceSummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

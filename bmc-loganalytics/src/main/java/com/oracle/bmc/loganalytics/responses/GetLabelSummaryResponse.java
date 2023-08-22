@@ -24,11 +24,11 @@ public class GetLabelSummaryResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned LabelSummaryReport instance. */
+    /** The returned {@code LabelSummaryReport} instance. */
     private com.oracle.bmc.loganalytics.model.LabelSummaryReport labelSummaryReport;
 
     /**
-     * The returned LabelSummaryReport instance.
+     * The returned {@code LabelSummaryReport} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetLabelSummaryResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned LabelSummaryReport instance. */
+        /** The returned {@code LabelSummaryReport} instance. */
         private com.oracle.bmc.loganalytics.model.LabelSummaryReport labelSummaryReport;
 
         /**
-         * The returned LabelSummaryReport instance.
+         * The returned {@code LabelSummaryReport} instance.
          *
          * @param labelSummaryReport the value to set
          * @return this builder

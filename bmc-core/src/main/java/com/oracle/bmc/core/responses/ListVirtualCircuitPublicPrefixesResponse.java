@@ -24,11 +24,11 @@ public class ListVirtualCircuitPublicPrefixesResponse extends com.oracle.bmc.res
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.VirtualCircuitPublicPrefix instances. */
+    /** A list of {@code com.oracle.bmc.core.model.VirtualCircuitPublicPrefix} instances. */
     private java.util.List<com.oracle.bmc.core.model.VirtualCircuitPublicPrefix> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.VirtualCircuitPublicPrefix instances.
+     * A list of {@code com.oracle.bmc.core.model.VirtualCircuitPublicPrefix} instances.
      *
      * @return the value
      */
@@ -84,11 +84,11 @@ public class ListVirtualCircuitPublicPrefixesResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.VirtualCircuitPublicPrefix instances. */
+        /** A list of {@code com.oracle.bmc.core.model.VirtualCircuitPublicPrefix} instances. */
         private java.util.List<com.oracle.bmc.core.model.VirtualCircuitPublicPrefix> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.VirtualCircuitPublicPrefix instances.
+         * A list of {@code com.oracle.bmc.core.model.VirtualCircuitPublicPrefix} instances.
          *
          * @param items the value to set
          * @return this builder

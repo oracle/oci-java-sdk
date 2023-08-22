@@ -42,11 +42,11 @@ public class ListIPSecConnectionTunnelsResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.IPSecConnectionTunnel instances. */
+    /** A list of {@code com.oracle.bmc.core.model.IPSecConnectionTunnel} instances. */
     private java.util.List<com.oracle.bmc.core.model.IPSecConnectionTunnel> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.IPSecConnectionTunnel instances.
+     * A list of {@code com.oracle.bmc.core.model.IPSecConnectionTunnel} instances.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListIPSecConnectionTunnelsResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.IPSecConnectionTunnel instances. */
+        /** A list of {@code com.oracle.bmc.core.model.IPSecConnectionTunnel} instances. */
         private java.util.List<com.oracle.bmc.core.model.IPSecConnectionTunnel> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.IPSecConnectionTunnel instances.
+         * A list of {@code com.oracle.bmc.core.model.IPSecConnectionTunnel} instances.
          *
          * @param items the value to set
          * @return this builder

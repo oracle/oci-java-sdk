@@ -42,11 +42,11 @@ public class ListMigrationAssetsResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** The returned MigrationAssetCollection instance. */
+    /** The returned {@code MigrationAssetCollection} instance. */
     private com.oracle.bmc.cloudmigrations.model.MigrationAssetCollection migrationAssetCollection;
 
     /**
-     * The returned MigrationAssetCollection instance.
+     * The returned {@code MigrationAssetCollection} instance.
      *
      * @return the value
      */
@@ -131,12 +131,12 @@ public class ListMigrationAssetsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned MigrationAssetCollection instance. */
+        /** The returned {@code MigrationAssetCollection} instance. */
         private com.oracle.bmc.cloudmigrations.model.MigrationAssetCollection
                 migrationAssetCollection;
 
         /**
-         * The returned MigrationAssetCollection instance.
+         * The returned {@code MigrationAssetCollection} instance.
          *
          * @param migrationAssetCollection the value to set
          * @return this builder

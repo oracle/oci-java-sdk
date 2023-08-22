@@ -36,11 +36,11 @@ public class PutUserCapabilitiesChangerResponse extends com.oracle.bmc.responses
         return etag;
     }
 
-    /** The returned UserCapabilitiesChanger instance. */
+    /** The returned {@code UserCapabilitiesChanger} instance. */
     private com.oracle.bmc.identitydomains.model.UserCapabilitiesChanger userCapabilitiesChanger;
 
     /**
-     * The returned UserCapabilitiesChanger instance.
+     * The returned {@code UserCapabilitiesChanger} instance.
      *
      * @return the value
      */
@@ -119,12 +119,12 @@ public class PutUserCapabilitiesChangerResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned UserCapabilitiesChanger instance. */
+        /** The returned {@code UserCapabilitiesChanger} instance. */
         private com.oracle.bmc.identitydomains.model.UserCapabilitiesChanger
                 userCapabilitiesChanger;
 
         /**
-         * The returned UserCapabilitiesChanger instance.
+         * The returned {@code UserCapabilitiesChanger} instance.
          *
          * @param userCapabilitiesChanger the value to set
          * @return this builder

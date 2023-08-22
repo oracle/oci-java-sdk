@@ -24,11 +24,11 @@ public class ListDerivedLogicalEntitiesResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    /** The returned EntityCollection instance. */
+    /** The returned {@code EntityCollection} instance. */
     private com.oracle.bmc.datacatalog.model.EntityCollection entityCollection;
 
     /**
-     * The returned EntityCollection instance.
+     * The returned {@code EntityCollection} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class ListDerivedLogicalEntitiesResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned EntityCollection instance. */
+        /** The returned {@code EntityCollection} instance. */
         private com.oracle.bmc.datacatalog.model.EntityCollection entityCollection;
 
         /**
-         * The returned EntityCollection instance.
+         * The returned {@code EntityCollection} instance.
          *
          * @param entityCollection the value to set
          * @return this builder

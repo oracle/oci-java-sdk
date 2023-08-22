@@ -42,11 +42,11 @@ public class ListOsnsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned OsnCollection instance. */
+    /** The returned {@code OsnCollection} instance. */
     private com.oracle.bmc.blockchain.model.OsnCollection osnCollection;
 
     /**
-     * The returned OsnCollection instance.
+     * The returned {@code OsnCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListOsnsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned OsnCollection instance. */
+        /** The returned {@code OsnCollection} instance. */
         private com.oracle.bmc.blockchain.model.OsnCollection osnCollection;
 
         /**
-         * The returned OsnCollection instance.
+         * The returned {@code OsnCollection} instance.
          *
          * @param osnCollection the value to set
          * @return this builder

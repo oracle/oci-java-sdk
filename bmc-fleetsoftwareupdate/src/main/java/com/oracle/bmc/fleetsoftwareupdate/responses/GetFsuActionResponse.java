@@ -36,11 +36,11 @@ public class GetFsuActionResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned FsuAction instance. */
+    /** The returned {@code FsuAction} instance. */
     private com.oracle.bmc.fleetsoftwareupdate.model.FsuAction fsuAction;
 
     /**
-     * The returned FsuAction instance.
+     * The returned {@code FsuAction} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetFsuActionResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned FsuAction instance. */
+        /** The returned {@code FsuAction} instance. */
         private com.oracle.bmc.fleetsoftwareupdate.model.FsuAction fsuAction;
 
         /**
-         * The returned FsuAction instance.
+         * The returned {@code FsuAction} instance.
          *
          * @param fsuAction the value to set
          * @return this builder

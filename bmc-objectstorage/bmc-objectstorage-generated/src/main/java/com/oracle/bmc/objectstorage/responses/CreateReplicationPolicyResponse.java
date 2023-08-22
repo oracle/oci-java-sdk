@@ -40,11 +40,11 @@ public class CreateReplicationPolicyResponse extends com.oracle.bmc.responses.Bm
         return opcClientRequestId;
     }
 
-    /** The returned ReplicationPolicy instance. */
+    /** The returned {@code ReplicationPolicy} instance. */
     private com.oracle.bmc.objectstorage.model.ReplicationPolicy replicationPolicy;
 
     /**
-     * The returned ReplicationPolicy instance.
+     * The returned {@code ReplicationPolicy} instance.
      *
      * @return the value
      */
@@ -126,11 +126,11 @@ public class CreateReplicationPolicyResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned ReplicationPolicy instance. */
+        /** The returned {@code ReplicationPolicy} instance. */
         private com.oracle.bmc.objectstorage.model.ReplicationPolicy replicationPolicy;
 
         /**
-         * The returned ReplicationPolicy instance.
+         * The returned {@code ReplicationPolicy} instance.
          *
          * @param replicationPolicy the value to set
          * @return this builder

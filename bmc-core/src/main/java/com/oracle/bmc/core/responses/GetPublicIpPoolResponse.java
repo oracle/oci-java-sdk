@@ -36,11 +36,11 @@ public class GetPublicIpPoolResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned PublicIpPool instance. */
+    /** The returned {@code PublicIpPool} instance. */
     private com.oracle.bmc.core.model.PublicIpPool publicIpPool;
 
     /**
-     * The returned PublicIpPool instance.
+     * The returned {@code PublicIpPool} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetPublicIpPoolResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned PublicIpPool instance. */
+        /** The returned {@code PublicIpPool} instance. */
         private com.oracle.bmc.core.model.PublicIpPool publicIpPool;
 
         /**
-         * The returned PublicIpPool instance.
+         * The returned {@code PublicIpPool} instance.
          *
          * @param publicIpPool the value to set
          * @return this builder

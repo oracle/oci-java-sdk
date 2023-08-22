@@ -44,11 +44,15 @@ public class ListHealthChecksVantagePointsResponse extends com.oracle.bmc.respon
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.healthchecks.model.HealthChecksVantagePointSummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.healthchecks.model.HealthChecksVantagePointSummary}
+     * instances.
+     */
     private java.util.List<com.oracle.bmc.healthchecks.model.HealthChecksVantagePointSummary> items;
 
     /**
-     * A list of com.oracle.bmc.healthchecks.model.HealthChecksVantagePointSummary instances.
+     * A list of {@code com.oracle.bmc.healthchecks.model.HealthChecksVantagePointSummary}
+     * instances.
      *
      * @return the value
      */
@@ -139,13 +143,15 @@ public class ListHealthChecksVantagePointsResponse extends com.oracle.bmc.respon
         }
 
         /**
-         * A list of com.oracle.bmc.healthchecks.model.HealthChecksVantagePointSummary instances.
+         * A list of {@code com.oracle.bmc.healthchecks.model.HealthChecksVantagePointSummary}
+         * instances.
          */
         private java.util.List<com.oracle.bmc.healthchecks.model.HealthChecksVantagePointSummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.healthchecks.model.HealthChecksVantagePointSummary instances.
+         * A list of {@code com.oracle.bmc.healthchecks.model.HealthChecksVantagePointSummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

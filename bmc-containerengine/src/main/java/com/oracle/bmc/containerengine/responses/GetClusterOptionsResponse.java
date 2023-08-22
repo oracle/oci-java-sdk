@@ -24,11 +24,11 @@ public class GetClusterOptionsResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned ClusterOptions instance. */
+    /** The returned {@code ClusterOptions} instance. */
     private com.oracle.bmc.containerengine.model.ClusterOptions clusterOptions;
 
     /**
-     * The returned ClusterOptions instance.
+     * The returned {@code ClusterOptions} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetClusterOptionsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned ClusterOptions instance. */
+        /** The returned {@code ClusterOptions} instance. */
         private com.oracle.bmc.containerengine.model.ClusterOptions clusterOptions;
 
         /**
-         * The returned ClusterOptions instance.
+         * The returned {@code ClusterOptions} instance.
          *
          * @param clusterOptions the value to set
          * @return this builder

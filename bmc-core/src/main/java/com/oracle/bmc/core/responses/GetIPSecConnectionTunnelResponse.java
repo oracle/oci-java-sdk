@@ -36,11 +36,11 @@ public class GetIPSecConnectionTunnelResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** The returned IPSecConnectionTunnel instance. */
+    /** The returned {@code IPSecConnectionTunnel} instance. */
     private com.oracle.bmc.core.model.IPSecConnectionTunnel iPSecConnectionTunnel;
 
     /**
-     * The returned IPSecConnectionTunnel instance.
+     * The returned {@code IPSecConnectionTunnel} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetIPSecConnectionTunnelResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned IPSecConnectionTunnel instance. */
+        /** The returned {@code IPSecConnectionTunnel} instance. */
         private com.oracle.bmc.core.model.IPSecConnectionTunnel iPSecConnectionTunnel;
 
         /**
-         * The returned IPSecConnectionTunnel instance.
+         * The returned {@code IPSecConnectionTunnel} instance.
          *
          * @param iPSecConnectionTunnel the value to set
          * @return this builder

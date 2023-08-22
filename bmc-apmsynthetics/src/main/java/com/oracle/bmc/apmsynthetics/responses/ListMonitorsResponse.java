@@ -42,11 +42,11 @@ public class ListMonitorsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned MonitorCollection instance. */
+    /** The returned {@code MonitorCollection} instance. */
     private com.oracle.bmc.apmsynthetics.model.MonitorCollection monitorCollection;
 
     /**
-     * The returned MonitorCollection instance.
+     * The returned {@code MonitorCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListMonitorsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned MonitorCollection instance. */
+        /** The returned {@code MonitorCollection} instance. */
         private com.oracle.bmc.apmsynthetics.model.MonitorCollection monitorCollection;
 
         /**
-         * The returned MonitorCollection instance.
+         * The returned {@code MonitorCollection} instance.
          *
          * @param monitorCollection the value to set
          * @return this builder

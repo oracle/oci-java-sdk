@@ -70,11 +70,11 @@ public class CreateDataSafePrivateEndpointResponse extends com.oracle.bmc.respon
         return location;
     }
 
-    /** The returned DataSafePrivateEndpoint instance. */
+    /** The returned {@code DataSafePrivateEndpoint} instance. */
     private com.oracle.bmc.datasafe.model.DataSafePrivateEndpoint dataSafePrivateEndpoint;
 
     /**
-     * The returned DataSafePrivateEndpoint instance.
+     * The returned {@code DataSafePrivateEndpoint} instance.
      *
      * @return the value
      */
@@ -196,11 +196,11 @@ public class CreateDataSafePrivateEndpointResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned DataSafePrivateEndpoint instance. */
+        /** The returned {@code DataSafePrivateEndpoint} instance. */
         private com.oracle.bmc.datasafe.model.DataSafePrivateEndpoint dataSafePrivateEndpoint;
 
         /**
-         * The returned DataSafePrivateEndpoint instance.
+         * The returned {@code DataSafePrivateEndpoint} instance.
          *
          * @param dataSafePrivateEndpoint the value to set
          * @return this builder

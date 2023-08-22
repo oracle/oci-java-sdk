@@ -40,11 +40,11 @@ public class UpdateTaskScheduleResponse extends com.oracle.bmc.responses.BmcResp
         return etag;
     }
 
-    /** The returned TaskSchedule instance. */
+    /** The returned {@code TaskSchedule} instance. */
     private com.oracle.bmc.dataintegration.model.TaskSchedule taskSchedule;
 
     /**
-     * The returned TaskSchedule instance.
+     * The returned {@code TaskSchedule} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class UpdateTaskScheduleResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned TaskSchedule instance. */
+        /** The returned {@code TaskSchedule} instance. */
         private com.oracle.bmc.dataintegration.model.TaskSchedule taskSchedule;
 
         /**
-         * The returned TaskSchedule instance.
+         * The returned {@code TaskSchedule} instance.
          *
          * @param taskSchedule the value to set
          * @return this builder

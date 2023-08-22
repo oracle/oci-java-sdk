@@ -42,12 +42,12 @@ public class ListBulkEditTagsResourceTypesResponse extends com.oracle.bmc.respon
         return opcNextPage;
     }
 
-    /** The returned BulkEditTagsResourceTypeCollection instance. */
+    /** The returned {@code BulkEditTagsResourceTypeCollection} instance. */
     private com.oracle.bmc.identity.model.BulkEditTagsResourceTypeCollection
             bulkEditTagsResourceTypeCollection;
 
     /**
-     * The returned BulkEditTagsResourceTypeCollection instance.
+     * The returned {@code BulkEditTagsResourceTypeCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListBulkEditTagsResourceTypesResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned BulkEditTagsResourceTypeCollection instance. */
+        /** The returned {@code BulkEditTagsResourceTypeCollection} instance. */
         private com.oracle.bmc.identity.model.BulkEditTagsResourceTypeCollection
                 bulkEditTagsResourceTypeCollection;
 
         /**
-         * The returned BulkEditTagsResourceTypeCollection instance.
+         * The returned {@code BulkEditTagsResourceTypeCollection} instance.
          *
          * @param bulkEditTagsResourceTypeCollection the value to set
          * @return this builder

@@ -20,11 +20,11 @@ public class GetEventReportResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned EventReport instance. */
+    /** The returned {@code EventReport} instance. */
     private com.oracle.bmc.osmanagement.model.EventReport eventReport;
 
     /**
-     * The returned EventReport instance.
+     * The returned {@code EventReport} instance.
      *
      * @return the value
      */
@@ -80,11 +80,11 @@ public class GetEventReportResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned EventReport instance. */
+        /** The returned {@code EventReport} instance. */
         private com.oracle.bmc.osmanagement.model.EventReport eventReport;
 
         /**
-         * The returned EventReport instance.
+         * The returned {@code EventReport} instance.
          *
          * @param eventReport the value to set
          * @return this builder

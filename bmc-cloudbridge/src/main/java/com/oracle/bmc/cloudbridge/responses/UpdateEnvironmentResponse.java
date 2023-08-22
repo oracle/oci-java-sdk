@@ -36,11 +36,11 @@ public class UpdateEnvironmentResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned Environment instance. */
+    /** The returned {@code Environment} instance. */
     private com.oracle.bmc.cloudbridge.model.Environment environment;
 
     /**
-     * The returned Environment instance.
+     * The returned {@code Environment} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateEnvironmentResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned Environment instance. */
+        /** The returned {@code Environment} instance. */
         private com.oracle.bmc.cloudbridge.model.Environment environment;
 
         /**
-         * The returned Environment instance.
+         * The returned {@code Environment} instance.
          *
          * @param environment the value to set
          * @return this builder

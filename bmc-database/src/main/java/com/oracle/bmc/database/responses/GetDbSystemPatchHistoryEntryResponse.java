@@ -36,11 +36,11 @@ public class GetDbSystemPatchHistoryEntryResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /** The returned PatchHistoryEntry instance. */
+    /** The returned {@code PatchHistoryEntry} instance. */
     private com.oracle.bmc.database.model.PatchHistoryEntry patchHistoryEntry;
 
     /**
-     * The returned PatchHistoryEntry instance.
+     * The returned {@code PatchHistoryEntry} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetDbSystemPatchHistoryEntryResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned PatchHistoryEntry instance. */
+        /** The returned {@code PatchHistoryEntry} instance. */
         private com.oracle.bmc.database.model.PatchHistoryEntry patchHistoryEntry;
 
         /**
-         * The returned PatchHistoryEntry instance.
+         * The returned {@code PatchHistoryEntry} instance.
          *
          * @param patchHistoryEntry the value to set
          * @return this builder

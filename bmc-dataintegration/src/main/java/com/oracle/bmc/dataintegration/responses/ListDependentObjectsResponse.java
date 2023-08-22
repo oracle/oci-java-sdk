@@ -72,12 +72,12 @@ public class ListDependentObjectsResponse extends com.oracle.bmc.responses.BmcRe
         return opcTotalItems;
     }
 
-    /** The returned DependentObjectSummaryCollection instance. */
+    /** The returned {@code DependentObjectSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.DependentObjectSummaryCollection
             dependentObjectSummaryCollection;
 
     /**
-     * The returned DependentObjectSummaryCollection instance.
+     * The returned {@code DependentObjectSummaryCollection} instance.
      *
      * @return the value
      */
@@ -202,12 +202,12 @@ public class ListDependentObjectsResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned DependentObjectSummaryCollection instance. */
+        /** The returned {@code DependentObjectSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.DependentObjectSummaryCollection
                 dependentObjectSummaryCollection;
 
         /**
-         * The returned DependentObjectSummaryCollection instance.
+         * The returned {@code DependentObjectSummaryCollection} instance.
          *
          * @param dependentObjectSummaryCollection the value to set
          * @return this builder

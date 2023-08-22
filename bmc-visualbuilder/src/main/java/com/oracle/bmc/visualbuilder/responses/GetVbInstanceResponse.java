@@ -36,11 +36,11 @@ public class GetVbInstanceResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** The returned VbInstance instance. */
+    /** The returned {@code VbInstance} instance. */
     private com.oracle.bmc.visualbuilder.model.VbInstance vbInstance;
 
     /**
-     * The returned VbInstance instance.
+     * The returned {@code VbInstance} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetVbInstanceResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned VbInstance instance. */
+        /** The returned {@code VbInstance} instance. */
         private com.oracle.bmc.visualbuilder.model.VbInstance vbInstance;
 
         /**
-         * The returned VbInstance instance.
+         * The returned {@code VbInstance} instance.
          *
          * @param vbInstance the value to set
          * @return this builder

@@ -42,12 +42,12 @@ public class ListResourceProfileEndpointsResponse extends com.oracle.bmc.respons
         return opcNextPage;
     }
 
-    /** The returned ResourceProfileEndpointCollection instance. */
+    /** The returned {@code ResourceProfileEndpointCollection} instance. */
     private com.oracle.bmc.cloudguard.model.ResourceProfileEndpointCollection
             resourceProfileEndpointCollection;
 
     /**
-     * The returned ResourceProfileEndpointCollection instance.
+     * The returned {@code ResourceProfileEndpointCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListResourceProfileEndpointsResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned ResourceProfileEndpointCollection instance. */
+        /** The returned {@code ResourceProfileEndpointCollection} instance. */
         private com.oracle.bmc.cloudguard.model.ResourceProfileEndpointCollection
                 resourceProfileEndpointCollection;
 
         /**
-         * The returned ResourceProfileEndpointCollection instance.
+         * The returned {@code ResourceProfileEndpointCollection} instance.
          *
          * @param resourceProfileEndpointCollection the value to set
          * @return this builder

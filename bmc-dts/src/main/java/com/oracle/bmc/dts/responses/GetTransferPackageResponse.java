@@ -24,11 +24,11 @@ public class GetTransferPackageResponse extends com.oracle.bmc.responses.BmcResp
         return etag;
     }
 
-    /** The returned TransferPackage instance. */
+    /** The returned {@code TransferPackage} instance. */
     private com.oracle.bmc.dts.model.TransferPackage transferPackage;
 
     /**
-     * The returned TransferPackage instance.
+     * The returned {@code TransferPackage} instance.
      *
      * @return the value
      */
@@ -97,11 +97,11 @@ public class GetTransferPackageResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned TransferPackage instance. */
+        /** The returned {@code TransferPackage} instance. */
         private com.oracle.bmc.dts.model.TransferPackage transferPackage;
 
         /**
-         * The returned TransferPackage instance.
+         * The returned {@code TransferPackage} instance.
          *
          * @param transferPackage the value to set
          * @return this builder

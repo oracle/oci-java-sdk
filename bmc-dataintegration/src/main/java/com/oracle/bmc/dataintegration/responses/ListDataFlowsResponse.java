@@ -72,12 +72,12 @@ public class ListDataFlowsResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcTotalItems;
     }
 
-    /** The returned DataFlowSummaryCollection instance. */
+    /** The returned {@code DataFlowSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.DataFlowSummaryCollection
             dataFlowSummaryCollection;
 
     /**
-     * The returned DataFlowSummaryCollection instance.
+     * The returned {@code DataFlowSummaryCollection} instance.
      *
      * @return the value
      */
@@ -202,12 +202,12 @@ public class ListDataFlowsResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned DataFlowSummaryCollection instance. */
+        /** The returned {@code DataFlowSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.DataFlowSummaryCollection
                 dataFlowSummaryCollection;
 
         /**
-         * The returned DataFlowSummaryCollection instance.
+         * The returned {@code DataFlowSummaryCollection} instance.
          *
          * @param dataFlowSummaryCollection the value to set
          * @return this builder

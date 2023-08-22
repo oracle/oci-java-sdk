@@ -42,12 +42,12 @@ public class ListStreamPackagingConfigsResponse extends com.oracle.bmc.responses
         return opcNextPage;
     }
 
-    /** The returned StreamPackagingConfigCollection instance. */
+    /** The returned {@code StreamPackagingConfigCollection} instance. */
     private com.oracle.bmc.mediaservices.model.StreamPackagingConfigCollection
             streamPackagingConfigCollection;
 
     /**
-     * The returned StreamPackagingConfigCollection instance.
+     * The returned {@code StreamPackagingConfigCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListStreamPackagingConfigsResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned StreamPackagingConfigCollection instance. */
+        /** The returned {@code StreamPackagingConfigCollection} instance. */
         private com.oracle.bmc.mediaservices.model.StreamPackagingConfigCollection
                 streamPackagingConfigCollection;
 
         /**
-         * The returned StreamPackagingConfigCollection instance.
+         * The returned {@code StreamPackagingConfigCollection} instance.
          *
          * @param streamPackagingConfigCollection the value to set
          * @return this builder

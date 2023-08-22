@@ -64,12 +64,12 @@ public class ListStorageWorkRequestsResponse extends com.oracle.bmc.responses.Bm
         return opcPrevPage;
     }
 
-    /** The returned StorageWorkRequestCollection instance. */
+    /** The returned {@code StorageWorkRequestCollection} instance. */
     private com.oracle.bmc.loganalytics.model.StorageWorkRequestCollection
             storageWorkRequestCollection;
 
     /**
-     * The returned StorageWorkRequestCollection instance.
+     * The returned {@code StorageWorkRequestCollection} instance.
      *
      * @return the value
      */
@@ -182,12 +182,12 @@ public class ListStorageWorkRequestsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned StorageWorkRequestCollection instance. */
+        /** The returned {@code StorageWorkRequestCollection} instance. */
         private com.oracle.bmc.loganalytics.model.StorageWorkRequestCollection
                 storageWorkRequestCollection;
 
         /**
-         * The returned StorageWorkRequestCollection instance.
+         * The returned {@code StorageWorkRequestCollection} instance.
          *
          * @param storageWorkRequestCollection the value to set
          * @return this builder

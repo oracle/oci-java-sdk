@@ -70,11 +70,11 @@ public class CreateLibraryMaskingFormatResponse extends com.oracle.bmc.responses
         return location;
     }
 
-    /** The returned LibraryMaskingFormat instance. */
+    /** The returned {@code LibraryMaskingFormat} instance. */
     private com.oracle.bmc.datasafe.model.LibraryMaskingFormat libraryMaskingFormat;
 
     /**
-     * The returned LibraryMaskingFormat instance.
+     * The returned {@code LibraryMaskingFormat} instance.
      *
      * @return the value
      */
@@ -196,11 +196,11 @@ public class CreateLibraryMaskingFormatResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned LibraryMaskingFormat instance. */
+        /** The returned {@code LibraryMaskingFormat} instance. */
         private com.oracle.bmc.datasafe.model.LibraryMaskingFormat libraryMaskingFormat;
 
         /**
-         * The returned LibraryMaskingFormat instance.
+         * The returned {@code LibraryMaskingFormat} instance.
          *
          * @param libraryMaskingFormat the value to set
          * @return this builder

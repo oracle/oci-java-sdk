@@ -70,11 +70,11 @@ public class CreateSensitiveDataModelResponse extends com.oracle.bmc.responses.B
         return location;
     }
 
-    /** The returned SensitiveDataModel instance. */
+    /** The returned {@code SensitiveDataModel} instance. */
     private com.oracle.bmc.datasafe.model.SensitiveDataModel sensitiveDataModel;
 
     /**
-     * The returned SensitiveDataModel instance.
+     * The returned {@code SensitiveDataModel} instance.
      *
      * @return the value
      */
@@ -196,11 +196,11 @@ public class CreateSensitiveDataModelResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned SensitiveDataModel instance. */
+        /** The returned {@code SensitiveDataModel} instance. */
         private com.oracle.bmc.datasafe.model.SensitiveDataModel sensitiveDataModel;
 
         /**
-         * The returned SensitiveDataModel instance.
+         * The returned {@code SensitiveDataModel} instance.
          *
          * @param sensitiveDataModel the value to set
          * @return this builder

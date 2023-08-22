@@ -42,11 +42,11 @@ public class ListApplianceImagesResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** The returned ApplianceImageCollection instance. */
+    /** The returned {@code ApplianceImageCollection} instance. */
     private com.oracle.bmc.cloudbridge.model.ApplianceImageCollection applianceImageCollection;
 
     /**
-     * The returned ApplianceImageCollection instance.
+     * The returned {@code ApplianceImageCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListApplianceImagesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned ApplianceImageCollection instance. */
+        /** The returned {@code ApplianceImageCollection} instance. */
         private com.oracle.bmc.cloudbridge.model.ApplianceImageCollection applianceImageCollection;
 
         /**
-         * The returned ApplianceImageCollection instance.
+         * The returned {@code ApplianceImageCollection} instance.
          *
          * @param applianceImageCollection the value to set
          * @return this builder

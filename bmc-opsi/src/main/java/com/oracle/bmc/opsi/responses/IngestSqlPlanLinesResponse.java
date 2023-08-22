@@ -36,12 +36,12 @@ public class IngestSqlPlanLinesResponse extends com.oracle.bmc.responses.BmcResp
         return etag;
     }
 
-    /** The returned IngestSqlPlanLinesResponseDetails instance. */
+    /** The returned {@code IngestSqlPlanLinesResponseDetails} instance. */
     private com.oracle.bmc.opsi.model.IngestSqlPlanLinesResponseDetails
             ingestSqlPlanLinesResponseDetails;
 
     /**
-     * The returned IngestSqlPlanLinesResponseDetails instance.
+     * The returned {@code IngestSqlPlanLinesResponseDetails} instance.
      *
      * @return the value
      */
@@ -120,12 +120,12 @@ public class IngestSqlPlanLinesResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned IngestSqlPlanLinesResponseDetails instance. */
+        /** The returned {@code IngestSqlPlanLinesResponseDetails} instance. */
         private com.oracle.bmc.opsi.model.IngestSqlPlanLinesResponseDetails
                 ingestSqlPlanLinesResponseDetails;
 
         /**
-         * The returned IngestSqlPlanLinesResponseDetails instance.
+         * The returned {@code IngestSqlPlanLinesResponseDetails} instance.
          *
          * @param ingestSqlPlanLinesResponseDetails the value to set
          * @return this builder

@@ -44,11 +44,11 @@ public class ListUploadWarningsResponse extends com.oracle.bmc.responses.BmcResp
         return opcNextPage;
     }
 
-    /** The returned UploadWarningCollection instance. */
+    /** The returned {@code UploadWarningCollection} instance. */
     private com.oracle.bmc.loganalytics.model.UploadWarningCollection uploadWarningCollection;
 
     /**
-     * The returned UploadWarningCollection instance.
+     * The returned {@code UploadWarningCollection} instance.
      *
      * @return the value
      */
@@ -133,11 +133,11 @@ public class ListUploadWarningsResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned UploadWarningCollection instance. */
+        /** The returned {@code UploadWarningCollection} instance. */
         private com.oracle.bmc.loganalytics.model.UploadWarningCollection uploadWarningCollection;
 
         /**
-         * The returned UploadWarningCollection instance.
+         * The returned {@code UploadWarningCollection} instance.
          *
          * @param uploadWarningCollection the value to set
          * @return this builder

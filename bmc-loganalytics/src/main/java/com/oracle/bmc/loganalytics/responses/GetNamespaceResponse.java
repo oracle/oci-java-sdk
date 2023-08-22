@@ -36,11 +36,11 @@ public class GetNamespaceResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned Namespace instance. */
+    /** The returned {@code Namespace} instance. */
     private com.oracle.bmc.loganalytics.model.Namespace namespace;
 
     /**
-     * The returned Namespace instance.
+     * The returned {@code Namespace} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetNamespaceResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Namespace instance. */
+        /** The returned {@code Namespace} instance. */
         private com.oracle.bmc.loganalytics.model.Namespace namespace;
 
         /**
-         * The returned Namespace instance.
+         * The returned {@code Namespace} instance.
          *
          * @param namespace the value to set
          * @return this builder

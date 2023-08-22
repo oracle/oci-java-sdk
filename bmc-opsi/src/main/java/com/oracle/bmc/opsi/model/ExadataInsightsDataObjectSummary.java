@@ -54,13 +54,35 @@ public final class ExadataInsightsDataObjectSummary extends OpsiDataObjectSummar
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
+        private String name;
+
+        public Builder name(String name) {
+            this.name = name;
+            this.__explicitlySet__.add("name");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("groupNames")
+        private java.util.List<String> groupNames;
+
+        public Builder groupNames(java.util.List<String> groupNames) {
+            this.groupNames = groupNames;
+            this.__explicitlySet__.add("groupNames");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExadataInsightsDataObjectSummary build() {
             ExadataInsightsDataObjectSummary model =
                     new ExadataInsightsDataObjectSummary(
-                            this.identifier, this.displayName, this.description);
+                            this.identifier,
+                            this.displayName,
+                            this.description,
+                            this.name,
+                            this.groupNames);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -78,6 +100,12 @@ public final class ExadataInsightsDataObjectSummary extends OpsiDataObjectSummar
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
             }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("groupNames")) {
+                this.groupNames(model.getGroupNames());
+            }
             return this;
         }
     }
@@ -93,8 +121,12 @@ public final class ExadataInsightsDataObjectSummary extends OpsiDataObjectSummar
 
     @Deprecated
     public ExadataInsightsDataObjectSummary(
-            String identifier, String displayName, String description) {
-        super(identifier, displayName, description);
+            String identifier,
+            String displayName,
+            String description,
+            String name,
+            java.util.List<String> groupNames) {
+        super(identifier, displayName, description, name, groupNames);
     }
 
     @Override

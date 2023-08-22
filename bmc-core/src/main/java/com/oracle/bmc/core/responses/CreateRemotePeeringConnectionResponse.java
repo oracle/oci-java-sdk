@@ -36,11 +36,11 @@ public class CreateRemotePeeringConnectionResponse extends com.oracle.bmc.respon
         return opcRequestId;
     }
 
-    /** The returned RemotePeeringConnection instance. */
+    /** The returned {@code RemotePeeringConnection} instance. */
     private com.oracle.bmc.core.model.RemotePeeringConnection remotePeeringConnection;
 
     /**
-     * The returned RemotePeeringConnection instance.
+     * The returned {@code RemotePeeringConnection} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class CreateRemotePeeringConnectionResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned RemotePeeringConnection instance. */
+        /** The returned {@code RemotePeeringConnection} instance. */
         private com.oracle.bmc.core.model.RemotePeeringConnection remotePeeringConnection;
 
         /**
-         * The returned RemotePeeringConnection instance.
+         * The returned {@code RemotePeeringConnection} instance.
          *
          * @param remotePeeringConnection the value to set
          * @return this builder

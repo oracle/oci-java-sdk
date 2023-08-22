@@ -24,11 +24,11 @@ public class SuggestResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned SuggestOutput instance. */
+    /** The returned {@code SuggestOutput} instance. */
     private com.oracle.bmc.loganalytics.model.SuggestOutput suggestOutput;
 
     /**
-     * The returned SuggestOutput instance.
+     * The returned {@code SuggestOutput} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class SuggestResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned SuggestOutput instance. */
+        /** The returned {@code SuggestOutput} instance. */
         private com.oracle.bmc.loganalytics.model.SuggestOutput suggestOutput;
 
         /**
-         * The returned SuggestOutput instance.
+         * The returned {@code SuggestOutput} instance.
          *
          * @param suggestOutput the value to set
          * @return this builder

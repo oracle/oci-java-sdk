@@ -42,11 +42,11 @@ public class ListResponderRulesResponse extends com.oracle.bmc.responses.BmcResp
         return opcNextPage;
     }
 
-    /** The returned ResponderRuleCollection instance. */
+    /** The returned {@code ResponderRuleCollection} instance. */
     private com.oracle.bmc.cloudguard.model.ResponderRuleCollection responderRuleCollection;
 
     /**
-     * The returned ResponderRuleCollection instance.
+     * The returned {@code ResponderRuleCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListResponderRulesResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned ResponderRuleCollection instance. */
+        /** The returned {@code ResponderRuleCollection} instance. */
         private com.oracle.bmc.cloudguard.model.ResponderRuleCollection responderRuleCollection;
 
         /**
-         * The returned ResponderRuleCollection instance.
+         * The returned {@code ResponderRuleCollection} instance.
          *
          * @param responderRuleCollection the value to set
          * @return this builder

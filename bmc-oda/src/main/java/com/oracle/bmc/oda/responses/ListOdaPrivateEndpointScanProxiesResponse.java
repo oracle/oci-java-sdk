@@ -55,12 +55,12 @@ public class ListOdaPrivateEndpointScanProxiesResponse
         return opcTotalItems;
     }
 
-    /** The returned OdaPrivateEndpointScanProxyCollection instance. */
+    /** The returned {@code OdaPrivateEndpointScanProxyCollection} instance. */
     private com.oracle.bmc.oda.model.OdaPrivateEndpointScanProxyCollection
             odaPrivateEndpointScanProxyCollection;
 
     /**
-     * The returned OdaPrivateEndpointScanProxyCollection instance.
+     * The returned {@code OdaPrivateEndpointScanProxyCollection} instance.
      *
      * @return the value
      */
@@ -163,12 +163,12 @@ public class ListOdaPrivateEndpointScanProxiesResponse
             return this;
         }
 
-        /** The returned OdaPrivateEndpointScanProxyCollection instance. */
+        /** The returned {@code OdaPrivateEndpointScanProxyCollection} instance. */
         private com.oracle.bmc.oda.model.OdaPrivateEndpointScanProxyCollection
                 odaPrivateEndpointScanProxyCollection;
 
         /**
-         * The returned OdaPrivateEndpointScanProxyCollection instance.
+         * The returned {@code OdaPrivateEndpointScanProxyCollection} instance.
          *
          * @param odaPrivateEndpointScanProxyCollection the value to set
          * @return this builder

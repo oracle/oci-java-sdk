@@ -8,11 +8,11 @@ import com.oracle.bmc.audit.model.*;
 
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
 public class GetConfigurationResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** The returned Configuration instance. */
+    /** The returned {@code Configuration} instance. */
     private com.oracle.bmc.audit.model.Configuration configuration;
 
     /**
-     * The returned Configuration instance.
+     * The returned {@code Configuration} instance.
      *
      * @return the value
      */
@@ -47,11 +47,11 @@ public class GetConfigurationResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned Configuration instance. */
+        /** The returned {@code Configuration} instance. */
         private com.oracle.bmc.audit.model.Configuration configuration;
 
         /**
-         * The returned Configuration instance.
+         * The returned {@code Configuration} instance.
          *
          * @param configuration the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class GetMeasuredBootReportResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned MeasuredBootReport instance. */
+    /** The returned {@code MeasuredBootReport} instance. */
     private com.oracle.bmc.core.model.MeasuredBootReport measuredBootReport;
 
     /**
-     * The returned MeasuredBootReport instance.
+     * The returned {@code MeasuredBootReport} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetMeasuredBootReportResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned MeasuredBootReport instance. */
+        /** The returned {@code MeasuredBootReport} instance. */
         private com.oracle.bmc.core.model.MeasuredBootReport measuredBootReport;
 
         /**
-         * The returned MeasuredBootReport instance.
+         * The returned {@code MeasuredBootReport} instance.
          *
          * @param measuredBootReport the value to set
          * @return this builder

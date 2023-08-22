@@ -36,12 +36,12 @@ public class DetectDominantLanguageResponse extends com.oracle.bmc.responses.Bmc
         return sunset;
     }
 
-    /** The returned DetectDominantLanguageResult instance. */
+    /** The returned {@code DetectDominantLanguageResult} instance. */
     private com.oracle.bmc.ailanguage.model.DetectDominantLanguageResult
             detectDominantLanguageResult;
 
     /**
-     * The returned DetectDominantLanguageResult instance.
+     * The returned {@code DetectDominantLanguageResult} instance.
      *
      * @return the value
      */
@@ -121,12 +121,12 @@ public class DetectDominantLanguageResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned DetectDominantLanguageResult instance. */
+        /** The returned {@code DetectDominantLanguageResult} instance. */
         private com.oracle.bmc.ailanguage.model.DetectDominantLanguageResult
                 detectDominantLanguageResult;
 
         /**
-         * The returned DetectDominantLanguageResult instance.
+         * The returned {@code DetectDominantLanguageResult} instance.
          *
          * @param detectDominantLanguageResult the value to set
          * @return this builder

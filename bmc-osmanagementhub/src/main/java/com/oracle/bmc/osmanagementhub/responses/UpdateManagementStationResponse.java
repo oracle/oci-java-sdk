@@ -36,11 +36,11 @@ public class UpdateManagementStationResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned ManagementStation instance. */
+    /** The returned {@code ManagementStation} instance. */
     private com.oracle.bmc.osmanagementhub.model.ManagementStation managementStation;
 
     /**
-     * The returned ManagementStation instance.
+     * The returned {@code ManagementStation} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class UpdateManagementStationResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned ManagementStation instance. */
+        /** The returned {@code ManagementStation} instance. */
         private com.oracle.bmc.osmanagementhub.model.ManagementStation managementStation;
 
         /**
-         * The returned ManagementStation instance.
+         * The returned {@code ManagementStation} instance.
          *
          * @param managementStation the value to set
          * @return this builder

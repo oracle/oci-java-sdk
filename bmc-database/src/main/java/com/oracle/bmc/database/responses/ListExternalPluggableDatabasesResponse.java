@@ -44,11 +44,13 @@ public class ListExternalPluggableDatabasesResponse extends com.oracle.bmc.respo
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.database.model.ExternalPluggableDatabaseSummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.database.model.ExternalPluggableDatabaseSummary} instances.
+     */
     private java.util.List<com.oracle.bmc.database.model.ExternalPluggableDatabaseSummary> items;
 
     /**
-     * A list of com.oracle.bmc.database.model.ExternalPluggableDatabaseSummary instances.
+     * A list of {@code com.oracle.bmc.database.model.ExternalPluggableDatabaseSummary} instances.
      *
      * @return the value
      */
@@ -137,12 +139,16 @@ public class ListExternalPluggableDatabasesResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** A list of com.oracle.bmc.database.model.ExternalPluggableDatabaseSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.database.model.ExternalPluggableDatabaseSummary}
+         * instances.
+         */
         private java.util.List<com.oracle.bmc.database.model.ExternalPluggableDatabaseSummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.database.model.ExternalPluggableDatabaseSummary instances.
+         * A list of {@code com.oracle.bmc.database.model.ExternalPluggableDatabaseSummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

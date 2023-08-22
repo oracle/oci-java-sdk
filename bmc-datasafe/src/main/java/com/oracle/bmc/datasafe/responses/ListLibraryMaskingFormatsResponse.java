@@ -62,12 +62,12 @@ public class ListLibraryMaskingFormatsResponse extends com.oracle.bmc.responses.
         return opcPrevPage;
     }
 
-    /** The returned LibraryMaskingFormatCollection instance. */
+    /** The returned {@code LibraryMaskingFormatCollection} instance. */
     private com.oracle.bmc.datasafe.model.LibraryMaskingFormatCollection
             libraryMaskingFormatCollection;
 
     /**
-     * The returned LibraryMaskingFormatCollection instance.
+     * The returned {@code LibraryMaskingFormatCollection} instance.
      *
      * @return the value
      */
@@ -178,12 +178,12 @@ public class ListLibraryMaskingFormatsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned LibraryMaskingFormatCollection instance. */
+        /** The returned {@code LibraryMaskingFormatCollection} instance. */
         private com.oracle.bmc.datasafe.model.LibraryMaskingFormatCollection
                 libraryMaskingFormatCollection;
 
         /**
-         * The returned LibraryMaskingFormatCollection instance.
+         * The returned {@code LibraryMaskingFormatCollection} instance.
          *
          * @param libraryMaskingFormatCollection the value to set
          * @return this builder

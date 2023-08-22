@@ -36,11 +36,11 @@ public class GetPbfListingResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** The returned PbfListing instance. */
+    /** The returned {@code PbfListing} instance. */
     private com.oracle.bmc.functions.model.PbfListing pbfListing;
 
     /**
-     * The returned PbfListing instance.
+     * The returned {@code PbfListing} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetPbfListingResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned PbfListing instance. */
+        /** The returned {@code PbfListing} instance. */
         private com.oracle.bmc.functions.model.PbfListing pbfListing;
 
         /**
-         * The returned PbfListing instance.
+         * The returned {@code PbfListing} instance.
          *
          * @param pbfListing the value to set
          * @return this builder

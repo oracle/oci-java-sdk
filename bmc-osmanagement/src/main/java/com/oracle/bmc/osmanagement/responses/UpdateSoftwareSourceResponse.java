@@ -36,11 +36,11 @@ public class UpdateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned SoftwareSource instance. */
+    /** The returned {@code SoftwareSource} instance. */
     private com.oracle.bmc.osmanagement.model.SoftwareSource softwareSource;
 
     /**
-     * The returned SoftwareSource instance.
+     * The returned {@code SoftwareSource} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned SoftwareSource instance. */
+        /** The returned {@code SoftwareSource} instance. */
         private com.oracle.bmc.osmanagement.model.SoftwareSource softwareSource;
 
         /**
-         * The returned SoftwareSource instance.
+         * The returned {@code SoftwareSource} instance.
          *
          * @param softwareSource the value to set
          * @return this builder

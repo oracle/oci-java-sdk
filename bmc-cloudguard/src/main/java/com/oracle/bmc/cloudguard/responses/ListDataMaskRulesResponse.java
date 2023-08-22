@@ -42,11 +42,11 @@ public class ListDataMaskRulesResponse extends com.oracle.bmc.responses.BmcRespo
         return opcNextPage;
     }
 
-    /** The returned DataMaskRuleCollection instance. */
+    /** The returned {@code DataMaskRuleCollection} instance. */
     private com.oracle.bmc.cloudguard.model.DataMaskRuleCollection dataMaskRuleCollection;
 
     /**
-     * The returned DataMaskRuleCollection instance.
+     * The returned {@code DataMaskRuleCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListDataMaskRulesResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned DataMaskRuleCollection instance. */
+        /** The returned {@code DataMaskRuleCollection} instance. */
         private com.oracle.bmc.cloudguard.model.DataMaskRuleCollection dataMaskRuleCollection;
 
         /**
-         * The returned DataMaskRuleCollection instance.
+         * The returned {@code DataMaskRuleCollection} instance.
          *
          * @param dataMaskRuleCollection the value to set
          * @return this builder

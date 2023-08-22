@@ -68,11 +68,11 @@ public class CreateImportedPackageResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned ImportedPackage instance. */
+    /** The returned {@code ImportedPackage} instance. */
     private com.oracle.bmc.oda.model.ImportedPackage importedPackage;
 
     /**
-     * The returned ImportedPackage instance.
+     * The returned {@code ImportedPackage} instance.
      *
      * @return the value
      */
@@ -191,11 +191,11 @@ public class CreateImportedPackageResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned ImportedPackage instance. */
+        /** The returned {@code ImportedPackage} instance. */
         private com.oracle.bmc.oda.model.ImportedPackage importedPackage;
 
         /**
-         * The returned ImportedPackage instance.
+         * The returned {@code ImportedPackage} instance.
          *
          * @param importedPackage the value to set
          * @return this builder

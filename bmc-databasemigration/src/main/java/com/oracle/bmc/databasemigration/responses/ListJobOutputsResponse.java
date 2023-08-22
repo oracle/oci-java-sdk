@@ -42,12 +42,12 @@ public class ListJobOutputsResponse extends com.oracle.bmc.responses.BmcResponse
         return opcNextPage;
     }
 
-    /** The returned JobOutputSummaryCollection instance. */
+    /** The returned {@code JobOutputSummaryCollection} instance. */
     private com.oracle.bmc.databasemigration.model.JobOutputSummaryCollection
             jobOutputSummaryCollection;
 
     /**
-     * The returned JobOutputSummaryCollection instance.
+     * The returned {@code JobOutputSummaryCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListJobOutputsResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned JobOutputSummaryCollection instance. */
+        /** The returned {@code JobOutputSummaryCollection} instance. */
         private com.oracle.bmc.databasemigration.model.JobOutputSummaryCollection
                 jobOutputSummaryCollection;
 
         /**
-         * The returned JobOutputSummaryCollection instance.
+         * The returned {@code JobOutputSummaryCollection} instance.
          *
          * @param jobOutputSummaryCollection the value to set
          * @return this builder

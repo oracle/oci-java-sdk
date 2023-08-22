@@ -52,11 +52,11 @@ public class CreateBackupResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcWorkRequestId;
     }
 
-    /** The returned Backup instance. */
+    /** The returned {@code Backup} instance. */
     private com.oracle.bmc.mysql.model.Backup backup;
 
     /**
-     * The returned Backup instance.
+     * The returned {@code Backup} instance.
      *
      * @return the value
      */
@@ -154,11 +154,11 @@ public class CreateBackupResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Backup instance. */
+        /** The returned {@code Backup} instance. */
         private com.oracle.bmc.mysql.model.Backup backup;
 
         /**
-         * The returned Backup instance.
+         * The returned {@code Backup} instance.
          *
          * @param backup the value to set
          * @return this builder

@@ -40,11 +40,11 @@ public class ListDeploymentUpgradesResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** The returned DeploymentUpgradeCollection instance. */
+    /** The returned {@code DeploymentUpgradeCollection} instance. */
     private com.oracle.bmc.goldengate.model.DeploymentUpgradeCollection deploymentUpgradeCollection;
 
     /**
-     * The returned DeploymentUpgradeCollection instance.
+     * The returned {@code DeploymentUpgradeCollection} instance.
      *
      * @return the value
      */
@@ -128,12 +128,12 @@ public class ListDeploymentUpgradesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned DeploymentUpgradeCollection instance. */
+        /** The returned {@code DeploymentUpgradeCollection} instance. */
         private com.oracle.bmc.goldengate.model.DeploymentUpgradeCollection
                 deploymentUpgradeCollection;
 
         /**
-         * The returned DeploymentUpgradeCollection instance.
+         * The returned {@code DeploymentUpgradeCollection} instance.
          *
          * @param deploymentUpgradeCollection the value to set
          * @return this builder

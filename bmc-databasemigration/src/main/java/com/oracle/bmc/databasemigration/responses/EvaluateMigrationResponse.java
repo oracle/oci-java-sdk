@@ -52,11 +52,11 @@ public class EvaluateMigrationResponse extends com.oracle.bmc.responses.BmcRespo
         return etag;
     }
 
-    /** The returned Job instance. */
+    /** The returned {@code Job} instance. */
     private com.oracle.bmc.databasemigration.model.Job job;
 
     /**
-     * The returned Job instance.
+     * The returned {@code Job} instance.
      *
      * @return the value
      */
@@ -154,11 +154,11 @@ public class EvaluateMigrationResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned Job instance. */
+        /** The returned {@code Job} instance. */
         private com.oracle.bmc.databasemigration.model.Job job;
 
         /**
-         * The returned Job instance.
+         * The returned {@code Job} instance.
          *
          * @param job the value to set
          * @return this builder

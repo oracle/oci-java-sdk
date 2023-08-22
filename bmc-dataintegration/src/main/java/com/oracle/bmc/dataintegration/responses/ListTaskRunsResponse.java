@@ -72,11 +72,11 @@ public class ListTaskRunsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcTotalItems;
     }
 
-    /** The returned TaskRunSummaryCollection instance. */
+    /** The returned {@code TaskRunSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.TaskRunSummaryCollection taskRunSummaryCollection;
 
     /**
-     * The returned TaskRunSummaryCollection instance.
+     * The returned {@code TaskRunSummaryCollection} instance.
      *
      * @return the value
      */
@@ -201,12 +201,12 @@ public class ListTaskRunsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned TaskRunSummaryCollection instance. */
+        /** The returned {@code TaskRunSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.TaskRunSummaryCollection
                 taskRunSummaryCollection;
 
         /**
-         * The returned TaskRunSummaryCollection instance.
+         * The returned {@code TaskRunSummaryCollection} instance.
          *
          * @param taskRunSummaryCollection the value to set
          * @return this builder

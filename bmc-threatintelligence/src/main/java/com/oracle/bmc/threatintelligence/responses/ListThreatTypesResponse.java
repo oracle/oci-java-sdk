@@ -42,11 +42,11 @@ public class ListThreatTypesResponse extends com.oracle.bmc.responses.BmcRespons
         return opcNextPage;
     }
 
-    /** The returned ThreatTypesCollection instance. */
+    /** The returned {@code ThreatTypesCollection} instance. */
     private com.oracle.bmc.threatintelligence.model.ThreatTypesCollection threatTypesCollection;
 
     /**
-     * The returned ThreatTypesCollection instance.
+     * The returned {@code ThreatTypesCollection} instance.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListThreatTypesResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned ThreatTypesCollection instance. */
+        /** The returned {@code ThreatTypesCollection} instance. */
         private com.oracle.bmc.threatintelligence.model.ThreatTypesCollection threatTypesCollection;
 
         /**
-         * The returned ThreatTypesCollection instance.
+         * The returned {@code ThreatTypesCollection} instance.
          *
          * @param threatTypesCollection the value to set
          * @return this builder

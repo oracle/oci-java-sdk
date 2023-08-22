@@ -36,12 +36,12 @@ public class GetOperatorControlAssignmentResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /** The returned OperatorControlAssignment instance. */
+    /** The returned {@code OperatorControlAssignment} instance. */
     private com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignment
             operatorControlAssignment;
 
     /**
-     * The returned OperatorControlAssignment instance.
+     * The returned {@code OperatorControlAssignment} instance.
      *
      * @return the value
      */
@@ -121,12 +121,12 @@ public class GetOperatorControlAssignmentResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned OperatorControlAssignment instance. */
+        /** The returned {@code OperatorControlAssignment} instance. */
         private com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignment
                 operatorControlAssignment;
 
         /**
-         * The returned OperatorControlAssignment instance.
+         * The returned {@code OperatorControlAssignment} instance.
          *
          * @param operatorControlAssignment the value to set
          * @return this builder

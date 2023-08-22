@@ -60,11 +60,11 @@ public class FilterResourceActionsResponse extends com.oracle.bmc.responses.BmcR
         return opcPrevPage;
     }
 
-    /** The returned ResourceActionCollection instance. */
+    /** The returned {@code ResourceActionCollection} instance. */
     private com.oracle.bmc.optimizer.model.ResourceActionCollection resourceActionCollection;
 
     /**
-     * The returned ResourceActionCollection instance.
+     * The returned {@code ResourceActionCollection} instance.
      *
      * @return the value
      */
@@ -170,11 +170,11 @@ public class FilterResourceActionsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned ResourceActionCollection instance. */
+        /** The returned {@code ResourceActionCollection} instance. */
         private com.oracle.bmc.optimizer.model.ResourceActionCollection resourceActionCollection;
 
         /**
-         * The returned ResourceActionCollection instance.
+         * The returned {@code ResourceActionCollection} instance.
          *
          * @param resourceActionCollection the value to set
          * @return this builder

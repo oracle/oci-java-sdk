@@ -36,11 +36,11 @@ public class GetBuildRunResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned BuildRun instance. */
+    /** The returned {@code BuildRun} instance. */
     private com.oracle.bmc.devops.model.BuildRun buildRun;
 
     /**
-     * The returned BuildRun instance.
+     * The returned {@code BuildRun} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetBuildRunResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned BuildRun instance. */
+        /** The returned {@code BuildRun} instance. */
         private com.oracle.bmc.devops.model.BuildRun buildRun;
 
         /**
-         * The returned BuildRun instance.
+         * The returned {@code BuildRun} instance.
          *
          * @param buildRun the value to set
          * @return this builder

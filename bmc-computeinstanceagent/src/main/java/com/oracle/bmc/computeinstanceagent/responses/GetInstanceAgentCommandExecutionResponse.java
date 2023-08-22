@@ -36,12 +36,12 @@ public class GetInstanceAgentCommandExecutionResponse extends com.oracle.bmc.res
         return opcRequestId;
     }
 
-    /** The returned InstanceAgentCommandExecution instance. */
+    /** The returned {@code InstanceAgentCommandExecution} instance. */
     private com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandExecution
             instanceAgentCommandExecution;
 
     /**
-     * The returned InstanceAgentCommandExecution instance.
+     * The returned {@code InstanceAgentCommandExecution} instance.
      *
      * @return the value
      */
@@ -121,12 +121,12 @@ public class GetInstanceAgentCommandExecutionResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /** The returned InstanceAgentCommandExecution instance. */
+        /** The returned {@code InstanceAgentCommandExecution} instance. */
         private com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandExecution
                 instanceAgentCommandExecution;
 
         /**
-         * The returned InstanceAgentCommandExecution instance.
+         * The returned {@code InstanceAgentCommandExecution} instance.
          *
          * @param instanceAgentCommandExecution the value to set
          * @return this builder

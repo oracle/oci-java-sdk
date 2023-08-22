@@ -42,11 +42,11 @@ public class GetSensitiveColumnResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned SensitiveColumn instance. */
+    /** The returned {@code SensitiveColumn} instance. */
     private com.oracle.bmc.datasafe.model.SensitiveColumn sensitiveColumn;
 
     /**
-     * The returned SensitiveColumn instance.
+     * The returned {@code SensitiveColumn} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class GetSensitiveColumnResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned SensitiveColumn instance. */
+        /** The returned {@code SensitiveColumn} instance. */
         private com.oracle.bmc.datasafe.model.SensitiveColumn sensitiveColumn;
 
         /**
-         * The returned SensitiveColumn instance.
+         * The returned {@code SensitiveColumn} instance.
          *
          * @param sensitiveColumn the value to set
          * @return this builder

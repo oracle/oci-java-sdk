@@ -36,11 +36,11 @@ public class GetBlockVolumeReplicaResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned BlockVolumeReplica instance. */
+    /** The returned {@code BlockVolumeReplica} instance. */
     private com.oracle.bmc.core.model.BlockVolumeReplica blockVolumeReplica;
 
     /**
-     * The returned BlockVolumeReplica instance.
+     * The returned {@code BlockVolumeReplica} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetBlockVolumeReplicaResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned BlockVolumeReplica instance. */
+        /** The returned {@code BlockVolumeReplica} instance. */
         private com.oracle.bmc.core.model.BlockVolumeReplica blockVolumeReplica;
 
         /**
-         * The returned BlockVolumeReplica instance.
+         * The returned {@code BlockVolumeReplica} instance.
          *
          * @param blockVolumeReplica the value to set
          * @return this builder

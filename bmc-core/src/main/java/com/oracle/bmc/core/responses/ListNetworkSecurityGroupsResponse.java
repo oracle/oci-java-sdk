@@ -42,11 +42,11 @@ public class ListNetworkSecurityGroupsResponse extends com.oracle.bmc.responses.
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.NetworkSecurityGroup instances. */
+    /** A list of {@code com.oracle.bmc.core.model.NetworkSecurityGroup} instances. */
     private java.util.List<com.oracle.bmc.core.model.NetworkSecurityGroup> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.NetworkSecurityGroup instances.
+     * A list of {@code com.oracle.bmc.core.model.NetworkSecurityGroup} instances.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListNetworkSecurityGroupsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.NetworkSecurityGroup instances. */
+        /** A list of {@code com.oracle.bmc.core.model.NetworkSecurityGroup} instances. */
         private java.util.List<com.oracle.bmc.core.model.NetworkSecurityGroup> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.NetworkSecurityGroup instances.
+         * A list of {@code com.oracle.bmc.core.model.NetworkSecurityGroup} instances.
          *
          * @param items the value to set
          * @return this builder

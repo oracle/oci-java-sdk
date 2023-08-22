@@ -24,11 +24,11 @@ public class GetSecurityQuestionSettingResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    /** The returned SecurityQuestionSetting instance. */
+    /** The returned {@code SecurityQuestionSetting} instance. */
     private com.oracle.bmc.identitydomains.model.SecurityQuestionSetting securityQuestionSetting;
 
     /**
-     * The returned SecurityQuestionSetting instance.
+     * The returned {@code SecurityQuestionSetting} instance.
      *
      * @return the value
      */
@@ -90,12 +90,12 @@ public class GetSecurityQuestionSettingResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned SecurityQuestionSetting instance. */
+        /** The returned {@code SecurityQuestionSetting} instance. */
         private com.oracle.bmc.identitydomains.model.SecurityQuestionSetting
                 securityQuestionSetting;
 
         /**
-         * The returned SecurityQuestionSetting instance.
+         * The returned {@code SecurityQuestionSetting} instance.
          *
          * @param securityQuestionSetting the value to set
          * @return this builder

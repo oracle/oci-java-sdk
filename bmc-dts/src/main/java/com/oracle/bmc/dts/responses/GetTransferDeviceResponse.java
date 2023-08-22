@@ -24,11 +24,11 @@ public class GetTransferDeviceResponse extends com.oracle.bmc.responses.BmcRespo
         return etag;
     }
 
-    /** The returned TransferDevice instance. */
+    /** The returned {@code TransferDevice} instance. */
     private com.oracle.bmc.dts.model.TransferDevice transferDevice;
 
     /**
-     * The returned TransferDevice instance.
+     * The returned {@code TransferDevice} instance.
      *
      * @return the value
      */
@@ -97,11 +97,11 @@ public class GetTransferDeviceResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned TransferDevice instance. */
+        /** The returned {@code TransferDevice} instance. */
         private com.oracle.bmc.dts.model.TransferDevice transferDevice;
 
         /**
-         * The returned TransferDevice instance.
+         * The returned {@code TransferDevice} instance.
          *
          * @param transferDevice the value to set
          * @return this builder

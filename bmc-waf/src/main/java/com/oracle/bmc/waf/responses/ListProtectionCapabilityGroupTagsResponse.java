@@ -43,12 +43,12 @@ public class ListProtectionCapabilityGroupTagsResponse
         return opcNextPage;
     }
 
-    /** The returned ProtectionCapabilityGroupTagCollection instance. */
+    /** The returned {@code ProtectionCapabilityGroupTagCollection} instance. */
     private com.oracle.bmc.waf.model.ProtectionCapabilityGroupTagCollection
             protectionCapabilityGroupTagCollection;
 
     /**
-     * The returned ProtectionCapabilityGroupTagCollection instance.
+     * The returned {@code ProtectionCapabilityGroupTagCollection} instance.
      *
      * @return the value
      */
@@ -134,12 +134,12 @@ public class ListProtectionCapabilityGroupTagsResponse
             return this;
         }
 
-        /** The returned ProtectionCapabilityGroupTagCollection instance. */
+        /** The returned {@code ProtectionCapabilityGroupTagCollection} instance. */
         private com.oracle.bmc.waf.model.ProtectionCapabilityGroupTagCollection
                 protectionCapabilityGroupTagCollection;
 
         /**
-         * The returned ProtectionCapabilityGroupTagCollection instance.
+         * The returned {@code ProtectionCapabilityGroupTagCollection} instance.
          *
          * @param protectionCapabilityGroupTagCollection the value to set
          * @return this builder

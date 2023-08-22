@@ -81,12 +81,12 @@ public class ListTargetAlertPolicyAssociationsResponse
         return opcPrevPage;
     }
 
-    /** The returned TargetAlertPolicyAssociationCollection instance. */
+    /** The returned {@code TargetAlertPolicyAssociationCollection} instance. */
     private com.oracle.bmc.datasafe.model.TargetAlertPolicyAssociationCollection
             targetAlertPolicyAssociationCollection;
 
     /**
-     * The returned TargetAlertPolicyAssociationCollection instance.
+     * The returned {@code TargetAlertPolicyAssociationCollection} instance.
      *
      * @return the value
      */
@@ -220,12 +220,12 @@ public class ListTargetAlertPolicyAssociationsResponse
             return this;
         }
 
-        /** The returned TargetAlertPolicyAssociationCollection instance. */
+        /** The returned {@code TargetAlertPolicyAssociationCollection} instance. */
         private com.oracle.bmc.datasafe.model.TargetAlertPolicyAssociationCollection
                 targetAlertPolicyAssociationCollection;
 
         /**
-         * The returned TargetAlertPolicyAssociationCollection instance.
+         * The returned {@code TargetAlertPolicyAssociationCollection} instance.
          *
          * @param targetAlertPolicyAssociationCollection the value to set
          * @return this builder

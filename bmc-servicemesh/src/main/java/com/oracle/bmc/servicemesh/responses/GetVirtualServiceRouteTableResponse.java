@@ -36,11 +36,11 @@ public class GetVirtualServiceRouteTableResponse extends com.oracle.bmc.response
         return opcRequestId;
     }
 
-    /** The returned VirtualServiceRouteTable instance. */
+    /** The returned {@code VirtualServiceRouteTable} instance. */
     private com.oracle.bmc.servicemesh.model.VirtualServiceRouteTable virtualServiceRouteTable;
 
     /**
-     * The returned VirtualServiceRouteTable instance.
+     * The returned {@code VirtualServiceRouteTable} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetVirtualServiceRouteTableResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned VirtualServiceRouteTable instance. */
+        /** The returned {@code VirtualServiceRouteTable} instance. */
         private com.oracle.bmc.servicemesh.model.VirtualServiceRouteTable virtualServiceRouteTable;
 
         /**
-         * The returned VirtualServiceRouteTable instance.
+         * The returned {@code VirtualServiceRouteTable} instance.
          *
          * @param virtualServiceRouteTable the value to set
          * @return this builder

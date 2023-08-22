@@ -54,12 +54,12 @@ public class ListDigitalAssistantParametersResponse extends com.oracle.bmc.respo
         return opcTotalItems;
     }
 
-    /** The returned DigitalAssistantParameterCollection instance. */
+    /** The returned {@code DigitalAssistantParameterCollection} instance. */
     private com.oracle.bmc.oda.model.DigitalAssistantParameterCollection
             digitalAssistantParameterCollection;
 
     /**
-     * The returned DigitalAssistantParameterCollection instance.
+     * The returned {@code DigitalAssistantParameterCollection} instance.
      *
      * @return the value
      */
@@ -162,12 +162,12 @@ public class ListDigitalAssistantParametersResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned DigitalAssistantParameterCollection instance. */
+        /** The returned {@code DigitalAssistantParameterCollection} instance. */
         private com.oracle.bmc.oda.model.DigitalAssistantParameterCollection
                 digitalAssistantParameterCollection;
 
         /**
-         * The returned DigitalAssistantParameterCollection instance.
+         * The returned {@code DigitalAssistantParameterCollection} instance.
          *
          * @param digitalAssistantParameterCollection the value to set
          * @return this builder

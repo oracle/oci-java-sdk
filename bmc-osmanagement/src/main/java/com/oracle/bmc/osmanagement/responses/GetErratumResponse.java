@@ -24,11 +24,11 @@ public class GetErratumResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Erratum instance. */
+    /** The returned {@code Erratum} instance. */
     private com.oracle.bmc.osmanagement.model.Erratum erratum;
 
     /**
-     * The returned Erratum instance.
+     * The returned {@code Erratum} instance.
      *
      * @return the value
      */
@@ -83,11 +83,11 @@ public class GetErratumResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Erratum instance. */
+        /** The returned {@code Erratum} instance. */
         private com.oracle.bmc.osmanagement.model.Erratum erratum;
 
         /**
-         * The returned Erratum instance.
+         * The returned {@code Erratum} instance.
          *
          * @param erratum the value to set
          * @return this builder

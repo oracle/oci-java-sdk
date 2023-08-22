@@ -36,11 +36,11 @@ public class GetVcnResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Vcn instance. */
+    /** The returned {@code Vcn} instance. */
     private com.oracle.bmc.core.model.Vcn vcn;
 
     /**
-     * The returned Vcn instance.
+     * The returned {@code Vcn} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetVcnResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Vcn instance. */
+        /** The returned {@code Vcn} instance. */
         private com.oracle.bmc.core.model.Vcn vcn;
 
         /**
-         * The returned Vcn instance.
+         * The returned {@code Vcn} instance.
          *
          * @param vcn the value to set
          * @return this builder

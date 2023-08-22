@@ -52,11 +52,11 @@ public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcR
         return retryAfter;
     }
 
-    /** The returned StorageWorkRequest instance. */
+    /** The returned {@code StorageWorkRequest} instance. */
     private com.oracle.bmc.loganalytics.model.StorageWorkRequest storageWorkRequest;
 
     /**
-     * The returned StorageWorkRequest instance.
+     * The returned {@code StorageWorkRequest} instance.
      *
      * @return the value
      */
@@ -154,11 +154,11 @@ public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned StorageWorkRequest instance. */
+        /** The returned {@code StorageWorkRequest} instance. */
         private com.oracle.bmc.loganalytics.model.StorageWorkRequest storageWorkRequest;
 
         /**
-         * The returned StorageWorkRequest instance.
+         * The returned {@code StorageWorkRequest} instance.
          *
          * @param storageWorkRequest the value to set
          * @return this builder

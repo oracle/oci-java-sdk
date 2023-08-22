@@ -36,11 +36,11 @@ public class CreateQueryResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned Query instance. */
+    /** The returned {@code Query} instance. */
     private com.oracle.bmc.usageapi.model.Query query;
 
     /**
-     * The returned Query instance.
+     * The returned {@code Query} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class CreateQueryResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Query instance. */
+        /** The returned {@code Query} instance. */
         private com.oracle.bmc.usageapi.model.Query query;
 
         /**
-         * The returned Query instance.
+         * The returned {@code Query} instance.
          *
          * @param query the value to set
          * @return this builder

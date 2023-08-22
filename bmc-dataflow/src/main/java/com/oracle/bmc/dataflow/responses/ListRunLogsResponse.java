@@ -60,11 +60,11 @@ public class ListRunLogsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.dataflow.model.RunLogSummary instances. */
+    /** A list of {@code com.oracle.bmc.dataflow.model.RunLogSummary} instances. */
     private java.util.List<com.oracle.bmc.dataflow.model.RunLogSummary> items;
 
     /**
-     * A list of com.oracle.bmc.dataflow.model.RunLogSummary instances.
+     * A list of {@code com.oracle.bmc.dataflow.model.RunLogSummary} instances.
      *
      * @return the value
      */
@@ -170,11 +170,11 @@ public class ListRunLogsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.dataflow.model.RunLogSummary instances. */
+        /** A list of {@code com.oracle.bmc.dataflow.model.RunLogSummary} instances. */
         private java.util.List<com.oracle.bmc.dataflow.model.RunLogSummary> items;
 
         /**
-         * A list of com.oracle.bmc.dataflow.model.RunLogSummary instances.
+         * A list of {@code com.oracle.bmc.dataflow.model.RunLogSummary} instances.
          *
          * @param items the value to set
          * @return this builder

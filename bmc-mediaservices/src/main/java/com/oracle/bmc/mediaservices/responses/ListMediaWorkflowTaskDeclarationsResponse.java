@@ -43,12 +43,12 @@ public class ListMediaWorkflowTaskDeclarationsResponse
         return opcNextPage;
     }
 
-    /** The returned MediaWorkflowTaskDeclarationCollection instance. */
+    /** The returned {@code MediaWorkflowTaskDeclarationCollection} instance. */
     private com.oracle.bmc.mediaservices.model.MediaWorkflowTaskDeclarationCollection
             mediaWorkflowTaskDeclarationCollection;
 
     /**
-     * The returned MediaWorkflowTaskDeclarationCollection instance.
+     * The returned {@code MediaWorkflowTaskDeclarationCollection} instance.
      *
      * @return the value
      */
@@ -134,12 +134,12 @@ public class ListMediaWorkflowTaskDeclarationsResponse
             return this;
         }
 
-        /** The returned MediaWorkflowTaskDeclarationCollection instance. */
+        /** The returned {@code MediaWorkflowTaskDeclarationCollection} instance. */
         private com.oracle.bmc.mediaservices.model.MediaWorkflowTaskDeclarationCollection
                 mediaWorkflowTaskDeclarationCollection;
 
         /**
-         * The returned MediaWorkflowTaskDeclarationCollection instance.
+         * The returned {@code MediaWorkflowTaskDeclarationCollection} instance.
          *
          * @param mediaWorkflowTaskDeclarationCollection the value to set
          * @return this builder

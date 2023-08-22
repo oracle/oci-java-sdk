@@ -43,11 +43,13 @@ public class ListComputeImageCapabilitySchemasResponse
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.ComputeImageCapabilitySchemaSummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.core.model.ComputeImageCapabilitySchemaSummary} instances.
+     */
     private java.util.List<com.oracle.bmc.core.model.ComputeImageCapabilitySchemaSummary> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.ComputeImageCapabilitySchemaSummary instances.
+     * A list of {@code com.oracle.bmc.core.model.ComputeImageCapabilitySchemaSummary} instances.
      *
      * @return the value
      */
@@ -132,11 +134,15 @@ public class ListComputeImageCapabilitySchemasResponse
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.ComputeImageCapabilitySchemaSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.core.model.ComputeImageCapabilitySchemaSummary}
+         * instances.
+         */
         private java.util.List<com.oracle.bmc.core.model.ComputeImageCapabilitySchemaSummary> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.ComputeImageCapabilitySchemaSummary instances.
+         * A list of {@code com.oracle.bmc.core.model.ComputeImageCapabilitySchemaSummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

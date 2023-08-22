@@ -36,11 +36,11 @@ public class UpdateTopicResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned NotificationTopic instance. */
+    /** The returned {@code NotificationTopic} instance. */
     private com.oracle.bmc.ons.model.NotificationTopic notificationTopic;
 
     /**
-     * The returned NotificationTopic instance.
+     * The returned {@code NotificationTopic} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateTopicResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned NotificationTopic instance. */
+        /** The returned {@code NotificationTopic} instance. */
         private com.oracle.bmc.ons.model.NotificationTopic notificationTopic;
 
         /**
-         * The returned NotificationTopic instance.
+         * The returned {@code NotificationTopic} instance.
          *
          * @param notificationTopic the value to set
          * @return this builder

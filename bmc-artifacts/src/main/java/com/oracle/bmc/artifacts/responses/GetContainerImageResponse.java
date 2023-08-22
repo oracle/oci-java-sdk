@@ -36,11 +36,11 @@ public class GetContainerImageResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned ContainerImage instance. */
+    /** The returned {@code ContainerImage} instance. */
     private com.oracle.bmc.artifacts.model.ContainerImage containerImage;
 
     /**
-     * The returned ContainerImage instance.
+     * The returned {@code ContainerImage} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetContainerImageResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned ContainerImage instance. */
+        /** The returned {@code ContainerImage} instance. */
         private com.oracle.bmc.artifacts.model.ContainerImage containerImage;
 
         /**
-         * The returned ContainerImage instance.
+         * The returned {@code ContainerImage} instance.
          *
          * @param containerImage the value to set
          * @return this builder

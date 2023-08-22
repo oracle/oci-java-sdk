@@ -64,11 +64,11 @@ public class ListLabelSourceDetailsResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned LabelSourceCollection instance. */
+    /** The returned {@code LabelSourceCollection} instance. */
     private com.oracle.bmc.loganalytics.model.LabelSourceCollection labelSourceCollection;
 
     /**
-     * The returned LabelSourceCollection instance.
+     * The returned {@code LabelSourceCollection} instance.
      *
      * @return the value
      */
@@ -179,11 +179,11 @@ public class ListLabelSourceDetailsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned LabelSourceCollection instance. */
+        /** The returned {@code LabelSourceCollection} instance. */
         private com.oracle.bmc.loganalytics.model.LabelSourceCollection labelSourceCollection;
 
         /**
-         * The returned LabelSourceCollection instance.
+         * The returned {@code LabelSourceCollection} instance.
          *
          * @param labelSourceCollection the value to set
          * @return this builder

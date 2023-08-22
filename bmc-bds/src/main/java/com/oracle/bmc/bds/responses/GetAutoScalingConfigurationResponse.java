@@ -36,11 +36,11 @@ public class GetAutoScalingConfigurationResponse extends com.oracle.bmc.response
         return etag;
     }
 
-    /** The returned AutoScalingConfiguration instance. */
+    /** The returned {@code AutoScalingConfiguration} instance. */
     private com.oracle.bmc.bds.model.AutoScalingConfiguration autoScalingConfiguration;
 
     /**
-     * The returned AutoScalingConfiguration instance.
+     * The returned {@code AutoScalingConfiguration} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetAutoScalingConfigurationResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned AutoScalingConfiguration instance. */
+        /** The returned {@code AutoScalingConfiguration} instance. */
         private com.oracle.bmc.bds.model.AutoScalingConfiguration autoScalingConfiguration;
 
         /**
-         * The returned AutoScalingConfiguration instance.
+         * The returned {@code AutoScalingConfiguration} instance.
          *
          * @param autoScalingConfiguration the value to set
          * @return this builder

@@ -43,12 +43,12 @@ public class ListExternalExadataStorageServersResponse
         return opcNextPage;
     }
 
-    /** The returned ExternalExadataStorageServerCollection instance. */
+    /** The returned {@code ExternalExadataStorageServerCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.ExternalExadataStorageServerCollection
             externalExadataStorageServerCollection;
 
     /**
-     * The returned ExternalExadataStorageServerCollection instance.
+     * The returned {@code ExternalExadataStorageServerCollection} instance.
      *
      * @return the value
      */
@@ -134,12 +134,12 @@ public class ListExternalExadataStorageServersResponse
             return this;
         }
 
-        /** The returned ExternalExadataStorageServerCollection instance. */
+        /** The returned {@code ExternalExadataStorageServerCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.ExternalExadataStorageServerCollection
                 externalExadataStorageServerCollection;
 
         /**
-         * The returned ExternalExadataStorageServerCollection instance.
+         * The returned {@code ExternalExadataStorageServerCollection} instance.
          *
          * @param externalExadataStorageServerCollection the value to set
          * @return this builder

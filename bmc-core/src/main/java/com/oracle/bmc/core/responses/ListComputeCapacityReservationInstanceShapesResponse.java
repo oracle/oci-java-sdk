@@ -44,13 +44,15 @@ public class ListComputeCapacityReservationInstanceShapesResponse
     }
 
     /**
-     * A list of com.oracle.bmc.core.model.ComputeCapacityReservationInstanceShapeSummary instances.
+     * A list of {@code com.oracle.bmc.core.model.ComputeCapacityReservationInstanceShapeSummary}
+     * instances.
      */
     private java.util.List<com.oracle.bmc.core.model.ComputeCapacityReservationInstanceShapeSummary>
             items;
 
     /**
-     * A list of com.oracle.bmc.core.model.ComputeCapacityReservationInstanceShapeSummary instances.
+     * A list of {@code com.oracle.bmc.core.model.ComputeCapacityReservationInstanceShapeSummary}
+     * instances.
      *
      * @return the value
      */
@@ -137,16 +139,16 @@ public class ListComputeCapacityReservationInstanceShapesResponse
         }
 
         /**
-         * A list of com.oracle.bmc.core.model.ComputeCapacityReservationInstanceShapeSummary
-         * instances.
+         * A list of {@code
+         * com.oracle.bmc.core.model.ComputeCapacityReservationInstanceShapeSummary} instances.
          */
         private java.util.List<
                         com.oracle.bmc.core.model.ComputeCapacityReservationInstanceShapeSummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.core.model.ComputeCapacityReservationInstanceShapeSummary
-         * instances.
+         * A list of {@code
+         * com.oracle.bmc.core.model.ComputeCapacityReservationInstanceShapeSummary} instances.
          *
          * @param items the value to set
          * @return this builder

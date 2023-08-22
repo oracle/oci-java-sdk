@@ -24,11 +24,11 @@ public class GetPdbMetricsResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** The returned PdbMetrics instance. */
+    /** The returned {@code PdbMetrics} instance. */
     private com.oracle.bmc.databasemanagement.model.PdbMetrics pdbMetrics;
 
     /**
-     * The returned PdbMetrics instance.
+     * The returned {@code PdbMetrics} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetPdbMetricsResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned PdbMetrics instance. */
+        /** The returned {@code PdbMetrics} instance. */
         private com.oracle.bmc.databasemanagement.model.PdbMetrics pdbMetrics;
 
         /**
-         * The returned PdbMetrics instance.
+         * The returned {@code PdbMetrics} instance.
          *
          * @param pdbMetrics the value to set
          * @return this builder

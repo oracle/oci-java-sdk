@@ -42,11 +42,11 @@ public class ListDeployPipelinesResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** The returned DeployPipelineCollection instance. */
+    /** The returned {@code DeployPipelineCollection} instance. */
     private com.oracle.bmc.devops.model.DeployPipelineCollection deployPipelineCollection;
 
     /**
-     * The returned DeployPipelineCollection instance.
+     * The returned {@code DeployPipelineCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListDeployPipelinesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned DeployPipelineCollection instance. */
+        /** The returned {@code DeployPipelineCollection} instance. */
         private com.oracle.bmc.devops.model.DeployPipelineCollection deployPipelineCollection;
 
         /**
-         * The returned DeployPipelineCollection instance.
+         * The returned {@code DeployPipelineCollection} instance.
          *
          * @param deployPipelineCollection the value to set
          * @return this builder

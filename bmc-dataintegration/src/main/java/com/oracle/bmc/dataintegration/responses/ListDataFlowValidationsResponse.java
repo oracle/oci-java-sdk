@@ -72,12 +72,12 @@ public class ListDataFlowValidationsResponse extends com.oracle.bmc.responses.Bm
         return opcTotalItems;
     }
 
-    /** The returned DataFlowValidationSummaryCollection instance. */
+    /** The returned {@code DataFlowValidationSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.DataFlowValidationSummaryCollection
             dataFlowValidationSummaryCollection;
 
     /**
-     * The returned DataFlowValidationSummaryCollection instance.
+     * The returned {@code DataFlowValidationSummaryCollection} instance.
      *
      * @return the value
      */
@@ -203,12 +203,12 @@ public class ListDataFlowValidationsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned DataFlowValidationSummaryCollection instance. */
+        /** The returned {@code DataFlowValidationSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.DataFlowValidationSummaryCollection
                 dataFlowValidationSummaryCollection;
 
         /**
-         * The returned DataFlowValidationSummaryCollection instance.
+         * The returned {@code DataFlowValidationSummaryCollection} instance.
          *
          * @param dataFlowValidationSummaryCollection the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class CreateAppResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned App instance. */
+    /** The returned {@code App} instance. */
     private com.oracle.bmc.identitydomains.model.App app;
 
     /**
-     * The returned App instance.
+     * The returned {@code App} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class CreateAppResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned App instance. */
+        /** The returned {@code App} instance. */
         private com.oracle.bmc.identitydomains.model.App app;
 
         /**
-         * The returned App instance.
+         * The returned {@code App} instance.
          *
          * @param app the value to set
          * @return this builder

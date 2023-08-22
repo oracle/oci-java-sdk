@@ -44,12 +44,12 @@ public class ListLogAnalyticsEmBridgesResponse extends com.oracle.bmc.responses.
         return opcNextPage;
     }
 
-    /** The returned LogAnalyticsEmBridgeCollection instance. */
+    /** The returned {@code LogAnalyticsEmBridgeCollection} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsEmBridgeCollection
             logAnalyticsEmBridgeCollection;
 
     /**
-     * The returned LogAnalyticsEmBridgeCollection instance.
+     * The returned {@code LogAnalyticsEmBridgeCollection} instance.
      *
      * @return the value
      */
@@ -137,12 +137,12 @@ public class ListLogAnalyticsEmBridgesResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned LogAnalyticsEmBridgeCollection instance. */
+        /** The returned {@code LogAnalyticsEmBridgeCollection} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsEmBridgeCollection
                 logAnalyticsEmBridgeCollection;
 
         /**
-         * The returned LogAnalyticsEmBridgeCollection instance.
+         * The returned {@code LogAnalyticsEmBridgeCollection} instance.
          *
          * @param logAnalyticsEmBridgeCollection the value to set
          * @return this builder

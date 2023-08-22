@@ -36,11 +36,11 @@ public class GetSecurityListResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned SecurityList instance. */
+    /** The returned {@code SecurityList} instance. */
     private com.oracle.bmc.core.model.SecurityList securityList;
 
     /**
-     * The returned SecurityList instance.
+     * The returned {@code SecurityList} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetSecurityListResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned SecurityList instance. */
+        /** The returned {@code SecurityList} instance. */
         private com.oracle.bmc.core.model.SecurityList securityList;
 
         /**
-         * The returned SecurityList instance.
+         * The returned {@code SecurityList} instance.
          *
          * @param securityList the value to set
          * @return this builder

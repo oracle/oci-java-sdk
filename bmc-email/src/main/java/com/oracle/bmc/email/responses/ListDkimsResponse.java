@@ -42,11 +42,11 @@ public class ListDkimsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned DkimCollection instance. */
+    /** The returned {@code DkimCollection} instance. */
     private com.oracle.bmc.email.model.DkimCollection dkimCollection;
 
     /**
-     * The returned DkimCollection instance.
+     * The returned {@code DkimCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListDkimsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned DkimCollection instance. */
+        /** The returned {@code DkimCollection} instance. */
         private com.oracle.bmc.email.model.DkimCollection dkimCollection;
 
         /**
-         * The returned DkimCollection instance.
+         * The returned {@code DkimCollection} instance.
          *
          * @param dkimCollection the value to set
          * @return this builder

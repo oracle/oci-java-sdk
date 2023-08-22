@@ -76,11 +76,11 @@ public class CreateWebAppFirewallResponse extends com.oracle.bmc.responses.BmcRe
         return contentLocation;
     }
 
-    /** The returned WebAppFirewall instance. */
+    /** The returned {@code WebAppFirewall} instance. */
     private com.oracle.bmc.waf.model.WebAppFirewall webAppFirewall;
 
     /**
-     * The returned WebAppFirewall instance.
+     * The returned {@code WebAppFirewall} instance.
      *
      * @return the value
      */
@@ -212,11 +212,11 @@ public class CreateWebAppFirewallResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned WebAppFirewall instance. */
+        /** The returned {@code WebAppFirewall} instance. */
         private com.oracle.bmc.waf.model.WebAppFirewall webAppFirewall;
 
         /**
-         * The returned WebAppFirewall instance.
+         * The returned {@code WebAppFirewall} instance.
          *
          * @param webAppFirewall the value to set
          * @return this builder

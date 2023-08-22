@@ -42,11 +42,11 @@ public class ListEntitiesResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned EntityCollection instance. */
+    /** The returned {@code EntityCollection} instance. */
     private com.oracle.bmc.datacatalog.model.EntityCollection entityCollection;
 
     /**
-     * The returned EntityCollection instance.
+     * The returned {@code EntityCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListEntitiesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned EntityCollection instance. */
+        /** The returned {@code EntityCollection} instance. */
         private com.oracle.bmc.datacatalog.model.EntityCollection entityCollection;
 
         /**
-         * The returned EntityCollection instance.
+         * The returned {@code EntityCollection} instance.
          *
          * @param entityCollection the value to set
          * @return this builder

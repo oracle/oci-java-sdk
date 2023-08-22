@@ -42,11 +42,11 @@ public class ListLocalPeeringGatewaysResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.LocalPeeringGateway instances. */
+    /** A list of {@code com.oracle.bmc.core.model.LocalPeeringGateway} instances. */
     private java.util.List<com.oracle.bmc.core.model.LocalPeeringGateway> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.LocalPeeringGateway instances.
+     * A list of {@code com.oracle.bmc.core.model.LocalPeeringGateway} instances.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListLocalPeeringGatewaysResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.LocalPeeringGateway instances. */
+        /** A list of {@code com.oracle.bmc.core.model.LocalPeeringGateway} instances. */
         private java.util.List<com.oracle.bmc.core.model.LocalPeeringGateway> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.LocalPeeringGateway instances.
+         * A list of {@code com.oracle.bmc.core.model.LocalPeeringGateway} instances.
          *
          * @param items the value to set
          * @return this builder

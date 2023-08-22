@@ -42,11 +42,11 @@ public class ListGenericArtifactsResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned GenericArtifactCollection instance. */
+    /** The returned {@code GenericArtifactCollection} instance. */
     private com.oracle.bmc.artifacts.model.GenericArtifactCollection genericArtifactCollection;
 
     /**
-     * The returned GenericArtifactCollection instance.
+     * The returned {@code GenericArtifactCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListGenericArtifactsResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned GenericArtifactCollection instance. */
+        /** The returned {@code GenericArtifactCollection} instance. */
         private com.oracle.bmc.artifacts.model.GenericArtifactCollection genericArtifactCollection;
 
         /**
-         * The returned GenericArtifactCollection instance.
+         * The returned {@code GenericArtifactCollection} instance.
          *
          * @param genericArtifactCollection the value to set
          * @return this builder

@@ -24,12 +24,12 @@ public class BatchDetectLanguageSentimentsResponse extends com.oracle.bmc.respon
         return opcRequestId;
     }
 
-    /** The returned BatchDetectLanguageSentimentsResult instance. */
+    /** The returned {@code BatchDetectLanguageSentimentsResult} instance. */
     private com.oracle.bmc.ailanguage.model.BatchDetectLanguageSentimentsResult
             batchDetectLanguageSentimentsResult;
 
     /**
-     * The returned BatchDetectLanguageSentimentsResult instance.
+     * The returned {@code BatchDetectLanguageSentimentsResult} instance.
      *
      * @return the value
      */
@@ -92,12 +92,12 @@ public class BatchDetectLanguageSentimentsResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned BatchDetectLanguageSentimentsResult instance. */
+        /** The returned {@code BatchDetectLanguageSentimentsResult} instance. */
         private com.oracle.bmc.ailanguage.model.BatchDetectLanguageSentimentsResult
                 batchDetectLanguageSentimentsResult;
 
         /**
-         * The returned BatchDetectLanguageSentimentsResult instance.
+         * The returned {@code BatchDetectLanguageSentimentsResult} instance.
          *
          * @param batchDetectLanguageSentimentsResult the value to set
          * @return this builder

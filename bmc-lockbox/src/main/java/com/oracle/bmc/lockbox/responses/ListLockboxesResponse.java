@@ -42,11 +42,11 @@ public class ListLockboxesResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcNextPage;
     }
 
-    /** The returned LockboxCollection instance. */
+    /** The returned {@code LockboxCollection} instance. */
     private com.oracle.bmc.lockbox.model.LockboxCollection lockboxCollection;
 
     /**
-     * The returned LockboxCollection instance.
+     * The returned {@code LockboxCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListLockboxesResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned LockboxCollection instance. */
+        /** The returned {@code LockboxCollection} instance. */
         private com.oracle.bmc.lockbox.model.LockboxCollection lockboxCollection;
 
         /**
-         * The returned LockboxCollection instance.
+         * The returned {@code LockboxCollection} instance.
          *
          * @param lockboxCollection the value to set
          * @return this builder

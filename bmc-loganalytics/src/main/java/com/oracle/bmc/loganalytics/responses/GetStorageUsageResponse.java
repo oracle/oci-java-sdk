@@ -24,11 +24,11 @@ public class GetStorageUsageResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned StorageUsage instance. */
+    /** The returned {@code StorageUsage} instance. */
     private com.oracle.bmc.loganalytics.model.StorageUsage storageUsage;
 
     /**
-     * The returned StorageUsage instance.
+     * The returned {@code StorageUsage} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetStorageUsageResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned StorageUsage instance. */
+        /** The returned {@code StorageUsage} instance. */
         private com.oracle.bmc.loganalytics.model.StorageUsage storageUsage;
 
         /**
-         * The returned StorageUsage instance.
+         * The returned {@code StorageUsage} instance.
          *
          * @param storageUsage the value to set
          * @return this builder

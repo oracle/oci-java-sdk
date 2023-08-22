@@ -44,11 +44,11 @@ public class GetInfrastructureTargetVersionsResponse extends com.oracle.bmc.resp
         return opcNextPage;
     }
 
-    /** The returned InfrastructureTargetVersion instance. */
+    /** The returned {@code InfrastructureTargetVersion} instance. */
     private com.oracle.bmc.database.model.InfrastructureTargetVersion infrastructureTargetVersion;
 
     /**
-     * The returned InfrastructureTargetVersion instance.
+     * The returned {@code InfrastructureTargetVersion} instance.
      *
      * @return the value
      */
@@ -137,12 +137,12 @@ public class GetInfrastructureTargetVersionsResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned InfrastructureTargetVersion instance. */
+        /** The returned {@code InfrastructureTargetVersion} instance. */
         private com.oracle.bmc.database.model.InfrastructureTargetVersion
                 infrastructureTargetVersion;
 
         /**
-         * The returned InfrastructureTargetVersion instance.
+         * The returned {@code InfrastructureTargetVersion} instance.
          *
          * @param infrastructureTargetVersion the value to set
          * @return this builder

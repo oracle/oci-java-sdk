@@ -64,12 +64,12 @@ public class ListSourceMetaFunctionsResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsMetaFunctionCollection instance. */
+    /** The returned {@code LogAnalyticsMetaFunctionCollection} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsMetaFunctionCollection
             logAnalyticsMetaFunctionCollection;
 
     /**
-     * The returned LogAnalyticsMetaFunctionCollection instance.
+     * The returned {@code LogAnalyticsMetaFunctionCollection} instance.
      *
      * @return the value
      */
@@ -182,12 +182,12 @@ public class ListSourceMetaFunctionsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned LogAnalyticsMetaFunctionCollection instance. */
+        /** The returned {@code LogAnalyticsMetaFunctionCollection} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsMetaFunctionCollection
                 logAnalyticsMetaFunctionCollection;
 
         /**
-         * The returned LogAnalyticsMetaFunctionCollection instance.
+         * The returned {@code LogAnalyticsMetaFunctionCollection} instance.
          *
          * @param logAnalyticsMetaFunctionCollection the value to set
          * @return this builder

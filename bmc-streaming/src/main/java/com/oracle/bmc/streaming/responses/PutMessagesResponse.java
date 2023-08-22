@@ -24,11 +24,11 @@ public class PutMessagesResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned PutMessagesResult instance. */
+    /** The returned {@code PutMessagesResult} instance. */
     private com.oracle.bmc.streaming.model.PutMessagesResult putMessagesResult;
 
     /**
-     * The returned PutMessagesResult instance.
+     * The returned {@code PutMessagesResult} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class PutMessagesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned PutMessagesResult instance. */
+        /** The returned {@code PutMessagesResult} instance. */
         private com.oracle.bmc.streaming.model.PutMessagesResult putMessagesResult;
 
         /**
-         * The returned PutMessagesResult instance.
+         * The returned {@code PutMessagesResult} instance.
          *
          * @param putMessagesResult the value to set
          * @return this builder

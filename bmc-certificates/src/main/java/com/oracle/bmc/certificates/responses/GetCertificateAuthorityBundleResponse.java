@@ -36,11 +36,11 @@ public class GetCertificateAuthorityBundleResponse extends com.oracle.bmc.respon
         return opcRequestId;
     }
 
-    /** The returned CertificateAuthorityBundle instance. */
+    /** The returned {@code CertificateAuthorityBundle} instance. */
     private com.oracle.bmc.certificates.model.CertificateAuthorityBundle certificateAuthorityBundle;
 
     /**
-     * The returned CertificateAuthorityBundle instance.
+     * The returned {@code CertificateAuthorityBundle} instance.
      *
      * @return the value
      */
@@ -120,12 +120,12 @@ public class GetCertificateAuthorityBundleResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned CertificateAuthorityBundle instance. */
+        /** The returned {@code CertificateAuthorityBundle} instance. */
         private com.oracle.bmc.certificates.model.CertificateAuthorityBundle
                 certificateAuthorityBundle;
 
         /**
-         * The returned CertificateAuthorityBundle instance.
+         * The returned {@code CertificateAuthorityBundle} instance.
          *
          * @param certificateAuthorityBundle the value to set
          * @return this builder

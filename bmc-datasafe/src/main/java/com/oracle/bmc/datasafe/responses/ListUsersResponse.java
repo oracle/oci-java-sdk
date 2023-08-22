@@ -62,11 +62,11 @@ public class ListUsersResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcPrevPage;
     }
 
-    /** A list of com.oracle.bmc.datasafe.model.UserSummary instances. */
+    /** A list of {@code com.oracle.bmc.datasafe.model.UserSummary} instances. */
     private java.util.List<com.oracle.bmc.datasafe.model.UserSummary> items;
 
     /**
-     * A list of com.oracle.bmc.datasafe.model.UserSummary instances.
+     * A list of {@code com.oracle.bmc.datasafe.model.UserSummary} instances.
      *
      * @return the value
      */
@@ -174,11 +174,11 @@ public class ListUsersResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.datasafe.model.UserSummary instances. */
+        /** A list of {@code com.oracle.bmc.datasafe.model.UserSummary} instances. */
         private java.util.List<com.oracle.bmc.datasafe.model.UserSummary> items;
 
         /**
-         * A list of com.oracle.bmc.datasafe.model.UserSummary instances.
+         * A list of {@code com.oracle.bmc.datasafe.model.UserSummary} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -58,11 +58,11 @@ public class ListModuleStreamProfilesResponse extends com.oracle.bmc.responses.B
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary instances. */
+    /** A list of {@code com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary} instances. */
     private java.util.List<com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary> items;
 
     /**
-     * A list of com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary instances.
+     * A list of {@code com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary} instances.
      *
      * @return the value
      */
@@ -167,11 +167,13 @@ public class ListModuleStreamProfilesResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** A list of com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary} instances.
+         */
         private java.util.List<com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary> items;
 
         /**
-         * A list of com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary instances.
+         * A list of {@code com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary} instances.
          *
          * @param items the value to set
          * @return this builder

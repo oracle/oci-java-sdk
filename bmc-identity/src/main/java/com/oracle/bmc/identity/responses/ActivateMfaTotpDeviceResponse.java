@@ -36,11 +36,11 @@ public class ActivateMfaTotpDeviceResponse extends com.oracle.bmc.responses.BmcR
         return etag;
     }
 
-    /** The returned MfaTotpDeviceSummary instance. */
+    /** The returned {@code MfaTotpDeviceSummary} instance. */
     private com.oracle.bmc.identity.model.MfaTotpDeviceSummary mfaTotpDeviceSummary;
 
     /**
-     * The returned MfaTotpDeviceSummary instance.
+     * The returned {@code MfaTotpDeviceSummary} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class ActivateMfaTotpDeviceResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned MfaTotpDeviceSummary instance. */
+        /** The returned {@code MfaTotpDeviceSummary} instance. */
         private com.oracle.bmc.identity.model.MfaTotpDeviceSummary mfaTotpDeviceSummary;
 
         /**
-         * The returned MfaTotpDeviceSummary instance.
+         * The returned {@code MfaTotpDeviceSummary} instance.
          *
          * @param mfaTotpDeviceSummary the value to set
          * @return this builder

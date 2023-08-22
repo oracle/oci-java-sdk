@@ -54,11 +54,11 @@ public class ListOdaPrivateEndpointsResponse extends com.oracle.bmc.responses.Bm
         return opcTotalItems;
     }
 
-    /** The returned OdaPrivateEndpointCollection instance. */
+    /** The returned {@code OdaPrivateEndpointCollection} instance. */
     private com.oracle.bmc.oda.model.OdaPrivateEndpointCollection odaPrivateEndpointCollection;
 
     /**
-     * The returned OdaPrivateEndpointCollection instance.
+     * The returned {@code OdaPrivateEndpointCollection} instance.
      *
      * @return the value
      */
@@ -159,11 +159,11 @@ public class ListOdaPrivateEndpointsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned OdaPrivateEndpointCollection instance. */
+        /** The returned {@code OdaPrivateEndpointCollection} instance. */
         private com.oracle.bmc.oda.model.OdaPrivateEndpointCollection odaPrivateEndpointCollection;
 
         /**
-         * The returned OdaPrivateEndpointCollection instance.
+         * The returned {@code OdaPrivateEndpointCollection} instance.
          *
          * @param odaPrivateEndpointCollection the value to set
          * @return this builder

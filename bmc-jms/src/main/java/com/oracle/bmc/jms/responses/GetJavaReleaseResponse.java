@@ -24,11 +24,11 @@ public class GetJavaReleaseResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned JavaRelease instance. */
+    /** The returned {@code JavaRelease} instance. */
     private com.oracle.bmc.jms.model.JavaRelease javaRelease;
 
     /**
-     * The returned JavaRelease instance.
+     * The returned {@code JavaRelease} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetJavaReleaseResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned JavaRelease instance. */
+        /** The returned {@code JavaRelease} instance. */
         private com.oracle.bmc.jms.model.JavaRelease javaRelease;
 
         /**
-         * The returned JavaRelease instance.
+         * The returned {@code JavaRelease} instance.
          *
          * @param javaRelease the value to set
          * @return this builder

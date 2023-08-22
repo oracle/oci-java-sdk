@@ -42,11 +42,11 @@ public class ListRelatedEventsResponse extends com.oracle.bmc.responses.BmcRespo
         return opcNextPage;
     }
 
-    /** The returned RelatedEventCollection instance. */
+    /** The returned {@code RelatedEventCollection} instance. */
     private com.oracle.bmc.osmanagement.model.RelatedEventCollection relatedEventCollection;
 
     /**
-     * The returned RelatedEventCollection instance.
+     * The returned {@code RelatedEventCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListRelatedEventsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned RelatedEventCollection instance. */
+        /** The returned {@code RelatedEventCollection} instance. */
         private com.oracle.bmc.osmanagement.model.RelatedEventCollection relatedEventCollection;
 
         /**
-         * The returned RelatedEventCollection instance.
+         * The returned {@code RelatedEventCollection} instance.
          *
          * @param relatedEventCollection the value to set
          * @return this builder

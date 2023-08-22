@@ -42,11 +42,11 @@ public class ListHostedEntitiesResponse extends com.oracle.bmc.responses.BmcResp
         return opcNextPage;
     }
 
-    /** The returned HostedEntityCollection instance. */
+    /** The returned {@code HostedEntityCollection} instance. */
     private com.oracle.bmc.opsi.model.HostedEntityCollection hostedEntityCollection;
 
     /**
-     * The returned HostedEntityCollection instance.
+     * The returned {@code HostedEntityCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListHostedEntitiesResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned HostedEntityCollection instance. */
+        /** The returned {@code HostedEntityCollection} instance. */
         private com.oracle.bmc.opsi.model.HostedEntityCollection hostedEntityCollection;
 
         /**
-         * The returned HostedEntityCollection instance.
+         * The returned {@code HostedEntityCollection} instance.
          *
          * @param hostedEntityCollection the value to set
          * @return this builder

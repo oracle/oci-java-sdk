@@ -42,11 +42,11 @@ public class ListMySupportAccountsResponse extends com.oracle.bmc.responses.BmcR
         return opcNextPage;
     }
 
-    /** The returned MySupportAccounts instance. */
+    /** The returned {@code MySupportAccounts} instance. */
     private com.oracle.bmc.identitydomains.model.MySupportAccounts mySupportAccounts;
 
     /**
-     * The returned MySupportAccounts instance.
+     * The returned {@code MySupportAccounts} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListMySupportAccountsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned MySupportAccounts instance. */
+        /** The returned {@code MySupportAccounts} instance. */
         private com.oracle.bmc.identitydomains.model.MySupportAccounts mySupportAccounts;
 
         /**
-         * The returned MySupportAccounts instance.
+         * The returned {@code MySupportAccounts} instance.
          *
          * @param mySupportAccounts the value to set
          * @return this builder

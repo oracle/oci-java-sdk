@@ -42,11 +42,11 @@ public class SummarizeAwrDbMetricsResponse extends com.oracle.bmc.responses.BmcR
         return opcNextPage;
     }
 
-    /** The returned AwrDbMetricCollection instance. */
+    /** The returned {@code AwrDbMetricCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.AwrDbMetricCollection awrDbMetricCollection;
 
     /**
-     * The returned AwrDbMetricCollection instance.
+     * The returned {@code AwrDbMetricCollection} instance.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class SummarizeAwrDbMetricsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned AwrDbMetricCollection instance. */
+        /** The returned {@code AwrDbMetricCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.AwrDbMetricCollection awrDbMetricCollection;
 
         /**
-         * The returned AwrDbMetricCollection instance.
+         * The returned {@code AwrDbMetricCollection} instance.
          *
          * @param awrDbMetricCollection the value to set
          * @return this builder

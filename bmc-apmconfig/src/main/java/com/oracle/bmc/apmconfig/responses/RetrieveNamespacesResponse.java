@@ -36,11 +36,11 @@ public class RetrieveNamespacesResponse extends com.oracle.bmc.responses.BmcResp
         return etag;
     }
 
-    /** The returned NamespaceCollection instance. */
+    /** The returned {@code NamespaceCollection} instance. */
     private com.oracle.bmc.apmconfig.model.NamespaceCollection namespaceCollection;
 
     /**
-     * The returned NamespaceCollection instance.
+     * The returned {@code NamespaceCollection} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class RetrieveNamespacesResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned NamespaceCollection instance. */
+        /** The returned {@code NamespaceCollection} instance. */
         private com.oracle.bmc.apmconfig.model.NamespaceCollection namespaceCollection;
 
         /**
-         * The returned NamespaceCollection instance.
+         * The returned {@code NamespaceCollection} instance.
          *
          * @param namespaceCollection the value to set
          * @return this builder

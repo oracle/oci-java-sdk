@@ -36,11 +36,11 @@ public class GetRouteTableResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** The returned RouteTable instance. */
+    /** The returned {@code RouteTable} instance. */
     private com.oracle.bmc.core.model.RouteTable routeTable;
 
     /**
-     * The returned RouteTable instance.
+     * The returned {@code RouteTable} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetRouteTableResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned RouteTable instance. */
+        /** The returned {@code RouteTable} instance. */
         private com.oracle.bmc.core.model.RouteTable routeTable;
 
         /**
-         * The returned RouteTable instance.
+         * The returned {@code RouteTable} instance.
          *
          * @param routeTable the value to set
          * @return this builder

@@ -42,12 +42,12 @@ public class ListSqlPlanBaselinesResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** The returned SqlPlanBaselineCollection instance. */
+    /** The returned {@code SqlPlanBaselineCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.SqlPlanBaselineCollection
             sqlPlanBaselineCollection;
 
     /**
-     * The returned SqlPlanBaselineCollection instance.
+     * The returned {@code SqlPlanBaselineCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListSqlPlanBaselinesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned SqlPlanBaselineCollection instance. */
+        /** The returned {@code SqlPlanBaselineCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.SqlPlanBaselineCollection
                 sqlPlanBaselineCollection;
 
         /**
-         * The returned SqlPlanBaselineCollection instance.
+         * The returned {@code SqlPlanBaselineCollection} instance.
          *
          * @param sqlPlanBaselineCollection the value to set
          * @return this builder

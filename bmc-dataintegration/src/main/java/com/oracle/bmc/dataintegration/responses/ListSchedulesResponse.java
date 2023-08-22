@@ -72,12 +72,12 @@ public class ListSchedulesResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcTotalItems;
     }
 
-    /** The returned ScheduleSummaryCollection instance. */
+    /** The returned {@code ScheduleSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.ScheduleSummaryCollection
             scheduleSummaryCollection;
 
     /**
-     * The returned ScheduleSummaryCollection instance.
+     * The returned {@code ScheduleSummaryCollection} instance.
      *
      * @return the value
      */
@@ -202,12 +202,12 @@ public class ListSchedulesResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned ScheduleSummaryCollection instance. */
+        /** The returned {@code ScheduleSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.ScheduleSummaryCollection
                 scheduleSummaryCollection;
 
         /**
-         * The returned ScheduleSummaryCollection instance.
+         * The returned {@code ScheduleSummaryCollection} instance.
          *
          * @param scheduleSummaryCollection the value to set
          * @return this builder

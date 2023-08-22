@@ -36,11 +36,11 @@ public class GetScheduledRunResponse extends com.oracle.bmc.responses.BmcRespons
         return etag;
     }
 
-    /** The returned ScheduledRun instance. */
+    /** The returned {@code ScheduledRun} instance. */
     private com.oracle.bmc.usageapi.model.ScheduledRun scheduledRun;
 
     /**
-     * The returned ScheduledRun instance.
+     * The returned {@code ScheduledRun} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetScheduledRunResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned ScheduledRun instance. */
+        /** The returned {@code ScheduledRun} instance. */
         private com.oracle.bmc.usageapi.model.ScheduledRun scheduledRun;
 
         /**
-         * The returned ScheduledRun instance.
+         * The returned {@code ScheduledRun} instance.
          *
          * @param scheduledRun the value to set
          * @return this builder

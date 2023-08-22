@@ -36,11 +36,11 @@ public class GetVolumeBackupPolicyResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned VolumeBackupPolicy instance. */
+    /** The returned {@code VolumeBackupPolicy} instance. */
     private com.oracle.bmc.core.model.VolumeBackupPolicy volumeBackupPolicy;
 
     /**
-     * The returned VolumeBackupPolicy instance.
+     * The returned {@code VolumeBackupPolicy} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetVolumeBackupPolicyResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned VolumeBackupPolicy instance. */
+        /** The returned {@code VolumeBackupPolicy} instance. */
         private com.oracle.bmc.core.model.VolumeBackupPolicy volumeBackupPolicy;
 
         /**
-         * The returned VolumeBackupPolicy instance.
+         * The returned {@code VolumeBackupPolicy} instance.
          *
          * @param volumeBackupPolicy the value to set
          * @return this builder

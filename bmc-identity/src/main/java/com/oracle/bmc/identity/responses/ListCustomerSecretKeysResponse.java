@@ -42,11 +42,11 @@ public class ListCustomerSecretKeysResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.identity.model.CustomerSecretKeySummary instances. */
+    /** A list of {@code com.oracle.bmc.identity.model.CustomerSecretKeySummary} instances. */
     private java.util.List<com.oracle.bmc.identity.model.CustomerSecretKeySummary> items;
 
     /**
-     * A list of com.oracle.bmc.identity.model.CustomerSecretKeySummary instances.
+     * A list of {@code com.oracle.bmc.identity.model.CustomerSecretKeySummary} instances.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListCustomerSecretKeysResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** A list of com.oracle.bmc.identity.model.CustomerSecretKeySummary instances. */
+        /** A list of {@code com.oracle.bmc.identity.model.CustomerSecretKeySummary} instances. */
         private java.util.List<com.oracle.bmc.identity.model.CustomerSecretKeySummary> items;
 
         /**
-         * A list of com.oracle.bmc.identity.model.CustomerSecretKeySummary instances.
+         * A list of {@code com.oracle.bmc.identity.model.CustomerSecretKeySummary} instances.
          *
          * @param items the value to set
          * @return this builder

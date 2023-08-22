@@ -56,11 +56,11 @@ public class UpdateDbHomeResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned DbHome instance. */
+    /** The returned {@code DbHome} instance. */
     private com.oracle.bmc.database.model.DbHome dbHome;
 
     /**
-     * The returned DbHome instance.
+     * The returned {@code DbHome} instance.
      *
      * @return the value
      */
@@ -162,11 +162,11 @@ public class UpdateDbHomeResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned DbHome instance. */
+        /** The returned {@code DbHome} instance. */
         private com.oracle.bmc.database.model.DbHome dbHome;
 
         /**
-         * The returned DbHome instance.
+         * The returned {@code DbHome} instance.
          *
          * @param dbHome the value to set
          * @return this builder

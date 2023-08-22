@@ -64,11 +64,11 @@ public class CreateAssetSourceResponse extends com.oracle.bmc.responses.BmcRespo
         return location;
     }
 
-    /** The returned AssetSource instance. */
+    /** The returned {@code AssetSource} instance. */
     private com.oracle.bmc.cloudbridge.model.AssetSource assetSource;
 
     /**
-     * The returned AssetSource instance.
+     * The returned {@code AssetSource} instance.
      *
      * @return the value
      */
@@ -185,11 +185,11 @@ public class CreateAssetSourceResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned AssetSource instance. */
+        /** The returned {@code AssetSource} instance. */
         private com.oracle.bmc.cloudbridge.model.AssetSource assetSource;
 
         /**
-         * The returned AssetSource instance.
+         * The returned {@code AssetSource} instance.
          *
          * @param assetSource the value to set
          * @return this builder

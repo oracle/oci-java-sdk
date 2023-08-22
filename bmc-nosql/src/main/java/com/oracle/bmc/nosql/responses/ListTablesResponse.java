@@ -42,11 +42,11 @@ public class ListTablesResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned TableCollection instance. */
+    /** The returned {@code TableCollection} instance. */
     private com.oracle.bmc.nosql.model.TableCollection tableCollection;
 
     /**
-     * The returned TableCollection instance.
+     * The returned {@code TableCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListTablesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned TableCollection instance. */
+        /** The returned {@code TableCollection} instance. */
         private com.oracle.bmc.nosql.model.TableCollection tableCollection;
 
         /**
-         * The returned TableCollection instance.
+         * The returned {@code TableCollection} instance.
          *
          * @param tableCollection the value to set
          * @return this builder

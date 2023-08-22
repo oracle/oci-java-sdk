@@ -42,12 +42,12 @@ public class ListTaskRunLineagesResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** The returned TaskRunLineageSummaryCollection instance. */
+    /** The returned {@code TaskRunLineageSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.TaskRunLineageSummaryCollection
             taskRunLineageSummaryCollection;
 
     /**
-     * The returned TaskRunLineageSummaryCollection instance.
+     * The returned {@code TaskRunLineageSummaryCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListTaskRunLineagesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned TaskRunLineageSummaryCollection instance. */
+        /** The returned {@code TaskRunLineageSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.TaskRunLineageSummaryCollection
                 taskRunLineageSummaryCollection;
 
         /**
-         * The returned TaskRunLineageSummaryCollection instance.
+         * The returned {@code TaskRunLineageSummaryCollection} instance.
          *
          * @param taskRunLineageSummaryCollection the value to set
          * @return this builder

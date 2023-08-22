@@ -37,12 +37,12 @@ public class GetMediaAssetDistributionChannelAttachmentResponse
         return opcRequestId;
     }
 
-    /** The returned MediaAssetDistributionChannelAttachment instance. */
+    /** The returned {@code MediaAssetDistributionChannelAttachment} instance. */
     private com.oracle.bmc.mediaservices.model.MediaAssetDistributionChannelAttachment
             mediaAssetDistributionChannelAttachment;
 
     /**
-     * The returned MediaAssetDistributionChannelAttachment instance.
+     * The returned {@code MediaAssetDistributionChannelAttachment} instance.
      *
      * @return the value
      */
@@ -122,12 +122,12 @@ public class GetMediaAssetDistributionChannelAttachmentResponse
             return this;
         }
 
-        /** The returned MediaAssetDistributionChannelAttachment instance. */
+        /** The returned {@code MediaAssetDistributionChannelAttachment} instance. */
         private com.oracle.bmc.mediaservices.model.MediaAssetDistributionChannelAttachment
                 mediaAssetDistributionChannelAttachment;
 
         /**
-         * The returned MediaAssetDistributionChannelAttachment instance.
+         * The returned {@code MediaAssetDistributionChannelAttachment} instance.
          *
          * @param mediaAssetDistributionChannelAttachment the value to set
          * @return this builder

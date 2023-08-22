@@ -36,11 +36,11 @@ public class GetInclusionCriterionResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned InclusionCriterion instance. */
+    /** The returned {@code InclusionCriterion} instance. */
     private com.oracle.bmc.governancerulescontrolplane.model.InclusionCriterion inclusionCriterion;
 
     /**
-     * The returned InclusionCriterion instance.
+     * The returned {@code InclusionCriterion} instance.
      *
      * @return the value
      */
@@ -119,12 +119,12 @@ public class GetInclusionCriterionResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned InclusionCriterion instance. */
+        /** The returned {@code InclusionCriterion} instance. */
         private com.oracle.bmc.governancerulescontrolplane.model.InclusionCriterion
                 inclusionCriterion;
 
         /**
-         * The returned InclusionCriterion instance.
+         * The returned {@code InclusionCriterion} instance.
          *
          * @param inclusionCriterion the value to set
          * @return this builder

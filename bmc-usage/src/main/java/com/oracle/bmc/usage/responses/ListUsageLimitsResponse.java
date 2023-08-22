@@ -42,11 +42,11 @@ public class ListUsageLimitsResponse extends com.oracle.bmc.responses.BmcRespons
         return opcNextPage;
     }
 
-    /** The returned UsageLimitCollection instance. */
+    /** The returned {@code UsageLimitCollection} instance. */
     private com.oracle.bmc.usage.model.UsageLimitCollection usageLimitCollection;
 
     /**
-     * The returned UsageLimitCollection instance.
+     * The returned {@code UsageLimitCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListUsageLimitsResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned UsageLimitCollection instance. */
+        /** The returned {@code UsageLimitCollection} instance. */
         private com.oracle.bmc.usage.model.UsageLimitCollection usageLimitCollection;
 
         /**
-         * The returned UsageLimitCollection instance.
+         * The returned {@code UsageLimitCollection} instance.
          *
          * @param usageLimitCollection the value to set
          * @return this builder

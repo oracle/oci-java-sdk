@@ -37,12 +37,12 @@ public class UpdateTargetResponderRecipeResponderRuleResponse
         return opcRequestId;
     }
 
-    /** The returned TargetResponderRecipeResponderRule instance. */
+    /** The returned {@code TargetResponderRecipeResponderRule} instance. */
     private com.oracle.bmc.cloudguard.model.TargetResponderRecipeResponderRule
             targetResponderRecipeResponderRule;
 
     /**
-     * The returned TargetResponderRecipeResponderRule instance.
+     * The returned {@code TargetResponderRecipeResponderRule} instance.
      *
      * @return the value
      */
@@ -122,12 +122,12 @@ public class UpdateTargetResponderRecipeResponderRuleResponse
             return this;
         }
 
-        /** The returned TargetResponderRecipeResponderRule instance. */
+        /** The returned {@code TargetResponderRecipeResponderRule} instance. */
         private com.oracle.bmc.cloudguard.model.TargetResponderRecipeResponderRule
                 targetResponderRecipeResponderRule;
 
         /**
-         * The returned TargetResponderRecipeResponderRule instance.
+         * The returned {@code TargetResponderRecipeResponderRule} instance.
          *
          * @param targetResponderRecipeResponderRule the value to set
          * @return this builder

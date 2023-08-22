@@ -24,11 +24,11 @@ public class CompareContentResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned CompareContentResult instance. */
+    /** The returned {@code CompareContentResult} instance. */
     private com.oracle.bmc.loganalytics.model.CompareContentResult compareContentResult;
 
     /**
-     * The returned CompareContentResult instance.
+     * The returned {@code CompareContentResult} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class CompareContentResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned CompareContentResult instance. */
+        /** The returned {@code CompareContentResult} instance. */
         private com.oracle.bmc.loganalytics.model.CompareContentResult compareContentResult;
 
         /**
-         * The returned CompareContentResult instance.
+         * The returned {@code CompareContentResult} instance.
          *
          * @param compareContentResult the value to set
          * @return this builder

@@ -24,11 +24,11 @@ public class GetOrderResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Order instance. */
+    /** The returned {@code Order} instance. */
     private com.oracle.bmc.tenantmanagercontrolplane.model.Order order;
 
     /**
-     * The returned Order instance.
+     * The returned {@code Order} instance.
      *
      * @return the value
      */
@@ -83,11 +83,11 @@ public class GetOrderResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Order instance. */
+        /** The returned {@code Order} instance. */
         private com.oracle.bmc.tenantmanagercontrolplane.model.Order order;
 
         /**
-         * The returned Order instance.
+         * The returned {@code Order} instance.
          *
          * @param order the value to set
          * @return this builder

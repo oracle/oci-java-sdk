@@ -36,11 +36,11 @@ public class GetWebAppFirewallPolicyResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned WebAppFirewallPolicy instance. */
+    /** The returned {@code WebAppFirewallPolicy} instance. */
     private com.oracle.bmc.waf.model.WebAppFirewallPolicy webAppFirewallPolicy;
 
     /**
-     * The returned WebAppFirewallPolicy instance.
+     * The returned {@code WebAppFirewallPolicy} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetWebAppFirewallPolicyResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned WebAppFirewallPolicy instance. */
+        /** The returned {@code WebAppFirewallPolicy} instance. */
         private com.oracle.bmc.waf.model.WebAppFirewallPolicy webAppFirewallPolicy;
 
         /**
-         * The returned WebAppFirewallPolicy instance.
+         * The returned {@code WebAppFirewallPolicy} instance.
          *
          * @param webAppFirewallPolicy the value to set
          * @return this builder

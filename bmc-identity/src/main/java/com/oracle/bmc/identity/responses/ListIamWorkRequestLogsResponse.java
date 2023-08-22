@@ -54,11 +54,11 @@ public class ListIamWorkRequestLogsResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.identity.model.IamWorkRequestLogSummary instances. */
+    /** A list of {@code com.oracle.bmc.identity.model.IamWorkRequestLogSummary} instances. */
     private java.util.List<com.oracle.bmc.identity.model.IamWorkRequestLogSummary> items;
 
     /**
-     * A list of com.oracle.bmc.identity.model.IamWorkRequestLogSummary instances.
+     * A list of {@code com.oracle.bmc.identity.model.IamWorkRequestLogSummary} instances.
      *
      * @return the value
      */
@@ -159,11 +159,11 @@ public class ListIamWorkRequestLogsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** A list of com.oracle.bmc.identity.model.IamWorkRequestLogSummary instances. */
+        /** A list of {@code com.oracle.bmc.identity.model.IamWorkRequestLogSummary} instances. */
         private java.util.List<com.oracle.bmc.identity.model.IamWorkRequestLogSummary> items;
 
         /**
-         * A list of com.oracle.bmc.identity.model.IamWorkRequestLogSummary instances.
+         * A list of {@code com.oracle.bmc.identity.model.IamWorkRequestLogSummary} instances.
          *
          * @param items the value to set
          * @return this builder

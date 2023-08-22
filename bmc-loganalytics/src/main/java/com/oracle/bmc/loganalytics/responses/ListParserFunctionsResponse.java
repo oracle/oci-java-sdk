@@ -64,12 +64,12 @@ public class ListParserFunctionsResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsParserFunctionCollection instance. */
+    /** The returned {@code LogAnalyticsParserFunctionCollection} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsParserFunctionCollection
             logAnalyticsParserFunctionCollection;
 
     /**
-     * The returned LogAnalyticsParserFunctionCollection instance.
+     * The returned {@code LogAnalyticsParserFunctionCollection} instance.
      *
      * @return the value
      */
@@ -181,12 +181,12 @@ public class ListParserFunctionsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned LogAnalyticsParserFunctionCollection instance. */
+        /** The returned {@code LogAnalyticsParserFunctionCollection} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsParserFunctionCollection
                 logAnalyticsParserFunctionCollection;
 
         /**
-         * The returned LogAnalyticsParserFunctionCollection instance.
+         * The returned {@code LogAnalyticsParserFunctionCollection} instance.
          *
          * @param logAnalyticsParserFunctionCollection the value to set
          * @return this builder

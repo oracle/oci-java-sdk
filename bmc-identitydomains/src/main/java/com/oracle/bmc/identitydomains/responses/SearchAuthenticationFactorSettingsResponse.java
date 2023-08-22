@@ -43,12 +43,12 @@ public class SearchAuthenticationFactorSettingsResponse
         return opcNextPage;
     }
 
-    /** The returned AuthenticationFactorSettings instance. */
+    /** The returned {@code AuthenticationFactorSettings} instance. */
     private com.oracle.bmc.identitydomains.model.AuthenticationFactorSettings
             authenticationFactorSettings;
 
     /**
-     * The returned AuthenticationFactorSettings instance.
+     * The returned {@code AuthenticationFactorSettings} instance.
      *
      * @return the value
      */
@@ -134,12 +134,12 @@ public class SearchAuthenticationFactorSettingsResponse
             return this;
         }
 
-        /** The returned AuthenticationFactorSettings instance. */
+        /** The returned {@code AuthenticationFactorSettings} instance. */
         private com.oracle.bmc.identitydomains.model.AuthenticationFactorSettings
                 authenticationFactorSettings;
 
         /**
-         * The returned AuthenticationFactorSettings instance.
+         * The returned {@code AuthenticationFactorSettings} instance.
          *
          * @param authenticationFactorSettings the value to set
          * @return this builder

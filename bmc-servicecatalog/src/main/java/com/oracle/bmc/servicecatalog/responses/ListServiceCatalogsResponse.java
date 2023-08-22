@@ -42,11 +42,11 @@ public class ListServiceCatalogsResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** The returned ServiceCatalogCollection instance. */
+    /** The returned {@code ServiceCatalogCollection} instance. */
     private com.oracle.bmc.servicecatalog.model.ServiceCatalogCollection serviceCatalogCollection;
 
     /**
-     * The returned ServiceCatalogCollection instance.
+     * The returned {@code ServiceCatalogCollection} instance.
      *
      * @return the value
      */
@@ -130,12 +130,12 @@ public class ListServiceCatalogsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned ServiceCatalogCollection instance. */
+        /** The returned {@code ServiceCatalogCollection} instance. */
         private com.oracle.bmc.servicecatalog.model.ServiceCatalogCollection
                 serviceCatalogCollection;
 
         /**
-         * The returned ServiceCatalogCollection instance.
+         * The returned {@code ServiceCatalogCollection} instance.
          *
          * @param serviceCatalogCollection the value to set
          * @return this builder

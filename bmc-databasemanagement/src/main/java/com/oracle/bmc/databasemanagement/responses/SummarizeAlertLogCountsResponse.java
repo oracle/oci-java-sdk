@@ -42,12 +42,12 @@ public class SummarizeAlertLogCountsResponse extends com.oracle.bmc.responses.Bm
         return opcNextPage;
     }
 
-    /** The returned AlertLogCountsCollection instance. */
+    /** The returned {@code AlertLogCountsCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.AlertLogCountsCollection
             alertLogCountsCollection;
 
     /**
-     * The returned AlertLogCountsCollection instance.
+     * The returned {@code AlertLogCountsCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class SummarizeAlertLogCountsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned AlertLogCountsCollection instance. */
+        /** The returned {@code AlertLogCountsCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.AlertLogCountsCollection
                 alertLogCountsCollection;
 
         /**
-         * The returned AlertLogCountsCollection instance.
+         * The returned {@code AlertLogCountsCollection} instance.
          *
          * @param alertLogCountsCollection the value to set
          * @return this builder

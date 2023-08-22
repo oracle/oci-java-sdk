@@ -42,12 +42,12 @@ public class ListNetworkLoadBalancerHealthsResponse extends com.oracle.bmc.respo
         return opcRequestId;
     }
 
-    /** The returned NetworkLoadBalancerHealthCollection instance. */
+    /** The returned {@code NetworkLoadBalancerHealthCollection} instance. */
     private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerHealthCollection
             networkLoadBalancerHealthCollection;
 
     /**
-     * The returned NetworkLoadBalancerHealthCollection instance.
+     * The returned {@code NetworkLoadBalancerHealthCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListNetworkLoadBalancerHealthsResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned NetworkLoadBalancerHealthCollection instance. */
+        /** The returned {@code NetworkLoadBalancerHealthCollection} instance. */
         private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerHealthCollection
                 networkLoadBalancerHealthCollection;
 
         /**
-         * The returned NetworkLoadBalancerHealthCollection instance.
+         * The returned {@code NetworkLoadBalancerHealthCollection} instance.
          *
          * @param networkLoadBalancerHealthCollection the value to set
          * @return this builder

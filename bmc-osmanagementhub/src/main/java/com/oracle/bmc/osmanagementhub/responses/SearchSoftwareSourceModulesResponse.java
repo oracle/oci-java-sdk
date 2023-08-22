@@ -42,11 +42,11 @@ public class SearchSoftwareSourceModulesResponse extends com.oracle.bmc.response
         return opcNextPage;
     }
 
-    /** The returned ModuleCollection instance. */
+    /** The returned {@code ModuleCollection} instance. */
     private com.oracle.bmc.osmanagementhub.model.ModuleCollection moduleCollection;
 
     /**
-     * The returned ModuleCollection instance.
+     * The returned {@code ModuleCollection} instance.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class SearchSoftwareSourceModulesResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned ModuleCollection instance. */
+        /** The returned {@code ModuleCollection} instance. */
         private com.oracle.bmc.osmanagementhub.model.ModuleCollection moduleCollection;
 
         /**
-         * The returned ModuleCollection instance.
+         * The returned {@code ModuleCollection} instance.
          *
          * @param moduleCollection the value to set
          * @return this builder

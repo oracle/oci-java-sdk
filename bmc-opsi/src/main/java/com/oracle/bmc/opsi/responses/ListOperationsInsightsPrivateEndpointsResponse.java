@@ -43,12 +43,12 @@ public class ListOperationsInsightsPrivateEndpointsResponse
         return opcNextPage;
     }
 
-    /** The returned OperationsInsightsPrivateEndpointCollection instance. */
+    /** The returned {@code OperationsInsightsPrivateEndpointCollection} instance. */
     private com.oracle.bmc.opsi.model.OperationsInsightsPrivateEndpointCollection
             operationsInsightsPrivateEndpointCollection;
 
     /**
-     * The returned OperationsInsightsPrivateEndpointCollection instance.
+     * The returned {@code OperationsInsightsPrivateEndpointCollection} instance.
      *
      * @return the value
      */
@@ -135,12 +135,12 @@ public class ListOperationsInsightsPrivateEndpointsResponse
             return this;
         }
 
-        /** The returned OperationsInsightsPrivateEndpointCollection instance. */
+        /** The returned {@code OperationsInsightsPrivateEndpointCollection} instance. */
         private com.oracle.bmc.opsi.model.OperationsInsightsPrivateEndpointCollection
                 operationsInsightsPrivateEndpointCollection;
 
         /**
-         * The returned OperationsInsightsPrivateEndpointCollection instance.
+         * The returned {@code OperationsInsightsPrivateEndpointCollection} instance.
          *
          * @param operationsInsightsPrivateEndpointCollection the value to set
          * @return this builder

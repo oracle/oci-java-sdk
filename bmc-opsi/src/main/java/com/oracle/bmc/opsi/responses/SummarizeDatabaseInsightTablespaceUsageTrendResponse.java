@@ -43,13 +43,17 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendResponse
         return opcNextPage;
     }
 
-    /** The returned SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection instance. */
+    /**
+     * The returned {@code SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection}
+     * instance.
+     */
     private com.oracle.bmc.opsi.model
                     .SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection
             summarizeDatabaseInsightTablespaceUsageTrendAggregationCollection;
 
     /**
-     * The returned SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection instance.
+     * The returned {@code SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection}
+     * instance.
      *
      * @return the value
      */
@@ -139,14 +143,16 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendResponse
         }
 
         /**
-         * The returned SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection instance.
+         * The returned {@code SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection}
+         * instance.
          */
         private com.oracle.bmc.opsi.model
                         .SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection
                 summarizeDatabaseInsightTablespaceUsageTrendAggregationCollection;
 
         /**
-         * The returned SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection instance.
+         * The returned {@code SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection}
+         * instance.
          *
          * @param summarizeDatabaseInsightTablespaceUsageTrendAggregationCollection the value to set
          * @return this builder

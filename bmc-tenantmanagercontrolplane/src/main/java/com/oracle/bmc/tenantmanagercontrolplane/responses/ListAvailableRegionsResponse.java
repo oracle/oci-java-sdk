@@ -42,12 +42,12 @@ public class ListAvailableRegionsResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned AvailableRegionCollection instance. */
+    /** The returned {@code AvailableRegionCollection} instance. */
     private com.oracle.bmc.tenantmanagercontrolplane.model.AvailableRegionCollection
             availableRegionCollection;
 
     /**
-     * The returned AvailableRegionCollection instance.
+     * The returned {@code AvailableRegionCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListAvailableRegionsResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned AvailableRegionCollection instance. */
+        /** The returned {@code AvailableRegionCollection} instance. */
         private com.oracle.bmc.tenantmanagercontrolplane.model.AvailableRegionCollection
                 availableRegionCollection;
 
         /**
-         * The returned AvailableRegionCollection instance.
+         * The returned {@code AvailableRegionCollection} instance.
          *
          * @param availableRegionCollection the value to set
          * @return this builder

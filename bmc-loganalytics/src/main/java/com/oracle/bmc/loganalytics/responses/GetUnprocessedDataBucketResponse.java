@@ -24,11 +24,11 @@ public class GetUnprocessedDataBucketResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** The returned UnprocessedDataBucket instance. */
+    /** The returned {@code UnprocessedDataBucket} instance. */
     private com.oracle.bmc.loganalytics.model.UnprocessedDataBucket unprocessedDataBucket;
 
     /**
-     * The returned UnprocessedDataBucket instance.
+     * The returned {@code UnprocessedDataBucket} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class GetUnprocessedDataBucketResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned UnprocessedDataBucket instance. */
+        /** The returned {@code UnprocessedDataBucket} instance. */
         private com.oracle.bmc.loganalytics.model.UnprocessedDataBucket unprocessedDataBucket;
 
         /**
-         * The returned UnprocessedDataBucket instance.
+         * The returned {@code UnprocessedDataBucket} instance.
          *
          * @param unprocessedDataBucket the value to set
          * @return this builder

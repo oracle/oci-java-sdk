@@ -36,11 +36,11 @@ public class UpdateSmtpCredentialResponse extends com.oracle.bmc.responses.BmcRe
         return etag;
     }
 
-    /** The returned SmtpCredentialSummary instance. */
+    /** The returned {@code SmtpCredentialSummary} instance. */
     private com.oracle.bmc.identity.model.SmtpCredentialSummary smtpCredentialSummary;
 
     /**
-     * The returned SmtpCredentialSummary instance.
+     * The returned {@code SmtpCredentialSummary} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateSmtpCredentialResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned SmtpCredentialSummary instance. */
+        /** The returned {@code SmtpCredentialSummary} instance. */
         private com.oracle.bmc.identity.model.SmtpCredentialSummary smtpCredentialSummary;
 
         /**
-         * The returned SmtpCredentialSummary instance.
+         * The returned {@code SmtpCredentialSummary} instance.
          *
          * @param smtpCredentialSummary the value to set
          * @return this builder

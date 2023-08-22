@@ -42,12 +42,12 @@ public class ListExternalListenerServicesResponse extends com.oracle.bmc.respons
         return opcNextPage;
     }
 
-    /** The returned ExternalListenerServiceCollection instance. */
+    /** The returned {@code ExternalListenerServiceCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.ExternalListenerServiceCollection
             externalListenerServiceCollection;
 
     /**
-     * The returned ExternalListenerServiceCollection instance.
+     * The returned {@code ExternalListenerServiceCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListExternalListenerServicesResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned ExternalListenerServiceCollection instance. */
+        /** The returned {@code ExternalListenerServiceCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.ExternalListenerServiceCollection
                 externalListenerServiceCollection;
 
         /**
-         * The returned ExternalListenerServiceCollection instance.
+         * The returned {@code ExternalListenerServiceCollection} instance.
          *
          * @param externalListenerServiceCollection the value to set
          * @return this builder

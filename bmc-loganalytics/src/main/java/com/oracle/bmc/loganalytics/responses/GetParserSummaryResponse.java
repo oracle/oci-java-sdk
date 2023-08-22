@@ -24,11 +24,11 @@ public class GetParserSummaryResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned ParserSummaryReport instance. */
+    /** The returned {@code ParserSummaryReport} instance. */
     private com.oracle.bmc.loganalytics.model.ParserSummaryReport parserSummaryReport;
 
     /**
-     * The returned ParserSummaryReport instance.
+     * The returned {@code ParserSummaryReport} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetParserSummaryResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned ParserSummaryReport instance. */
+        /** The returned {@code ParserSummaryReport} instance. */
         private com.oracle.bmc.loganalytics.model.ParserSummaryReport parserSummaryReport;
 
         /**
-         * The returned ParserSummaryReport instance.
+         * The returned {@code ParserSummaryReport} instance.
          *
          * @param parserSummaryReport the value to set
          * @return this builder

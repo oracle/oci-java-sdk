@@ -36,11 +36,11 @@ public class GetProtectionRuleResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned ProtectionRule instance. */
+    /** The returned {@code ProtectionRule} instance. */
     private com.oracle.bmc.waas.model.ProtectionRule protectionRule;
 
     /**
-     * The returned ProtectionRule instance.
+     * The returned {@code ProtectionRule} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetProtectionRuleResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned ProtectionRule instance. */
+        /** The returned {@code ProtectionRule} instance. */
         private com.oracle.bmc.waas.model.ProtectionRule protectionRule;
 
         /**
-         * The returned ProtectionRule instance.
+         * The returned {@code ProtectionRule} instance.
          *
          * @param protectionRule the value to set
          * @return this builder

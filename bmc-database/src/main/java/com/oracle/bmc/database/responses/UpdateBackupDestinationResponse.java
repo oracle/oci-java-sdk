@@ -36,11 +36,11 @@ public class UpdateBackupDestinationResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned BackupDestination instance. */
+    /** The returned {@code BackupDestination} instance. */
     private com.oracle.bmc.database.model.BackupDestination backupDestination;
 
     /**
-     * The returned BackupDestination instance.
+     * The returned {@code BackupDestination} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class UpdateBackupDestinationResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned BackupDestination instance. */
+        /** The returned {@code BackupDestination} instance. */
         private com.oracle.bmc.database.model.BackupDestination backupDestination;
 
         /**
-         * The returned BackupDestination instance.
+         * The returned {@code BackupDestination} instance.
          *
          * @param backupDestination the value to set
          * @return this builder

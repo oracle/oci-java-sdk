@@ -36,11 +36,11 @@ public class GetDkimResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Dkim instance. */
+    /** The returned {@code Dkim} instance. */
     private com.oracle.bmc.email.model.Dkim dkim;
 
     /**
-     * The returned Dkim instance.
+     * The returned {@code Dkim} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetDkimResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Dkim instance. */
+        /** The returned {@code Dkim} instance. */
         private com.oracle.bmc.email.model.Dkim dkim;
 
         /**
-         * The returned Dkim instance.
+         * The returned {@code Dkim} instance.
          *
          * @param dkim the value to set
          * @return this builder

@@ -42,12 +42,12 @@ public class ListExternalDbNodesResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** The returned ExternalDbNodeCollection instance. */
+    /** The returned {@code ExternalDbNodeCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.ExternalDbNodeCollection
             externalDbNodeCollection;
 
     /**
-     * The returned ExternalDbNodeCollection instance.
+     * The returned {@code ExternalDbNodeCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListExternalDbNodesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned ExternalDbNodeCollection instance. */
+        /** The returned {@code ExternalDbNodeCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.ExternalDbNodeCollection
                 externalDbNodeCollection;
 
         /**
-         * The returned ExternalDbNodeCollection instance.
+         * The returned {@code ExternalDbNodeCollection} instance.
          *
          * @param externalDbNodeCollection the value to set
          * @return this builder

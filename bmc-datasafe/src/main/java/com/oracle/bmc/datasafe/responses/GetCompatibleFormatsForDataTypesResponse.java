@@ -62,12 +62,12 @@ public class GetCompatibleFormatsForDataTypesResponse extends com.oracle.bmc.res
         return opcPrevPage;
     }
 
-    /** The returned CompatibleFormatsForDataTypes instance. */
+    /** The returned {@code CompatibleFormatsForDataTypes} instance. */
     private com.oracle.bmc.datasafe.model.CompatibleFormatsForDataTypes
             compatibleFormatsForDataTypes;
 
     /**
-     * The returned CompatibleFormatsForDataTypes instance.
+     * The returned {@code CompatibleFormatsForDataTypes} instance.
      *
      * @return the value
      */
@@ -178,12 +178,12 @@ public class GetCompatibleFormatsForDataTypesResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /** The returned CompatibleFormatsForDataTypes instance. */
+        /** The returned {@code CompatibleFormatsForDataTypes} instance. */
         private com.oracle.bmc.datasafe.model.CompatibleFormatsForDataTypes
                 compatibleFormatsForDataTypes;
 
         /**
-         * The returned CompatibleFormatsForDataTypes instance.
+         * The returned {@code CompatibleFormatsForDataTypes} instance.
          *
          * @param compatibleFormatsForDataTypes the value to set
          * @return this builder

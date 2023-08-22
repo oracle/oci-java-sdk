@@ -42,11 +42,11 @@ public class ListSoftwareSourcesResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** The returned SoftwareSourceCollection instance. */
+    /** The returned {@code SoftwareSourceCollection} instance. */
     private com.oracle.bmc.osmanagementhub.model.SoftwareSourceCollection softwareSourceCollection;
 
     /**
-     * The returned SoftwareSourceCollection instance.
+     * The returned {@code SoftwareSourceCollection} instance.
      *
      * @return the value
      */
@@ -131,12 +131,12 @@ public class ListSoftwareSourcesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned SoftwareSourceCollection instance. */
+        /** The returned {@code SoftwareSourceCollection} instance. */
         private com.oracle.bmc.osmanagementhub.model.SoftwareSourceCollection
                 softwareSourceCollection;
 
         /**
-         * The returned SoftwareSourceCollection instance.
+         * The returned {@code SoftwareSourceCollection} instance.
          *
          * @param softwareSourceCollection the value to set
          * @return this builder

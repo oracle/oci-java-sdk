@@ -36,11 +36,11 @@ public class GetInstancePoolInstanceResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned InstancePoolInstance instance. */
+    /** The returned {@code InstancePoolInstance} instance. */
     private com.oracle.bmc.core.model.InstancePoolInstance instancePoolInstance;
 
     /**
-     * The returned InstancePoolInstance instance.
+     * The returned {@code InstancePoolInstance} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetInstancePoolInstanceResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned InstancePoolInstance instance. */
+        /** The returned {@code InstancePoolInstance} instance. */
         private com.oracle.bmc.core.model.InstancePoolInstance instancePoolInstance;
 
         /**
-         * The returned InstancePoolInstance instance.
+         * The returned {@code InstancePoolInstance} instance.
          *
          * @param instancePoolInstance the value to set
          * @return this builder

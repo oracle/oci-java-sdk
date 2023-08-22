@@ -36,11 +36,11 @@ public class RoverNodeGenerateCertificateResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /** The returned GenerateCertificateResponse instance. */
+    /** The returned {@code GenerateCertificateResponse} instance. */
     private com.oracle.bmc.rover.model.GenerateCertificateResponse generateCertificateResponse;
 
     /**
-     * The returned GenerateCertificateResponse instance.
+     * The returned {@code GenerateCertificateResponse} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class RoverNodeGenerateCertificateResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned GenerateCertificateResponse instance. */
+        /** The returned {@code GenerateCertificateResponse} instance. */
         private com.oracle.bmc.rover.model.GenerateCertificateResponse generateCertificateResponse;
 
         /**
-         * The returned GenerateCertificateResponse instance.
+         * The returned {@code GenerateCertificateResponse} instance.
          *
          * @param generateCertificateResponse the value to set
          * @return this builder

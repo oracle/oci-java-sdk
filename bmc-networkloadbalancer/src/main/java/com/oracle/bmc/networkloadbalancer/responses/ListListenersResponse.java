@@ -42,11 +42,11 @@ public class ListListenersResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcNextPage;
     }
 
-    /** The returned ListenerCollection instance. */
+    /** The returned {@code ListenerCollection} instance. */
     private com.oracle.bmc.networkloadbalancer.model.ListenerCollection listenerCollection;
 
     /**
-     * The returned ListenerCollection instance.
+     * The returned {@code ListenerCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListListenersResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned ListenerCollection instance. */
+        /** The returned {@code ListenerCollection} instance. */
         private com.oracle.bmc.networkloadbalancer.model.ListenerCollection listenerCollection;
 
         /**
-         * The returned ListenerCollection instance.
+         * The returned {@code ListenerCollection} instance.
          *
          * @param listenerCollection the value to set
          * @return this builder

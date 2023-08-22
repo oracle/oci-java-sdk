@@ -36,11 +36,11 @@ public class UpdateHttpMonitorResponse extends com.oracle.bmc.responses.BmcRespo
         return etag;
     }
 
-    /** The returned HttpMonitor instance. */
+    /** The returned {@code HttpMonitor} instance. */
     private com.oracle.bmc.healthchecks.model.HttpMonitor httpMonitor;
 
     /**
-     * The returned HttpMonitor instance.
+     * The returned {@code HttpMonitor} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateHttpMonitorResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned HttpMonitor instance. */
+        /** The returned {@code HttpMonitor} instance. */
         private com.oracle.bmc.healthchecks.model.HttpMonitor httpMonitor;
 
         /**
-         * The returned HttpMonitor instance.
+         * The returned {@code HttpMonitor} instance.
          *
          * @param httpMonitor the value to set
          * @return this builder

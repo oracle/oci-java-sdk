@@ -60,12 +60,12 @@ public class ListDetectAnomalyJobsResponse extends com.oracle.bmc.responses.BmcR
         return opcNextPage;
     }
 
-    /** The returned DetectAnomalyJobCollection instance. */
+    /** The returned {@code DetectAnomalyJobCollection} instance. */
     private com.oracle.bmc.aianomalydetection.model.DetectAnomalyJobCollection
             detectAnomalyJobCollection;
 
     /**
-     * The returned DetectAnomalyJobCollection instance.
+     * The returned {@code DetectAnomalyJobCollection} instance.
      *
      * @return the value
      */
@@ -173,12 +173,12 @@ public class ListDetectAnomalyJobsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned DetectAnomalyJobCollection instance. */
+        /** The returned {@code DetectAnomalyJobCollection} instance. */
         private com.oracle.bmc.aianomalydetection.model.DetectAnomalyJobCollection
                 detectAnomalyJobCollection;
 
         /**
-         * The returned DetectAnomalyJobCollection instance.
+         * The returned {@code DetectAnomalyJobCollection} instance.
          *
          * @param detectAnomalyJobCollection the value to set
          * @return this builder

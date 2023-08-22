@@ -40,11 +40,11 @@ public class CreateConnectionValidationResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    /** The returned ConnectionValidation instance. */
+    /** The returned {@code ConnectionValidation} instance. */
     private com.oracle.bmc.dataintegration.model.ConnectionValidation connectionValidation;
 
     /**
-     * The returned ConnectionValidation instance.
+     * The returned {@code ConnectionValidation} instance.
      *
      * @return the value
      */
@@ -126,11 +126,11 @@ public class CreateConnectionValidationResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned ConnectionValidation instance. */
+        /** The returned {@code ConnectionValidation} instance. */
         private com.oracle.bmc.dataintegration.model.ConnectionValidation connectionValidation;
 
         /**
-         * The returned ConnectionValidation instance.
+         * The returned {@code ConnectionValidation} instance.
          *
          * @param connectionValidation the value to set
          * @return this builder

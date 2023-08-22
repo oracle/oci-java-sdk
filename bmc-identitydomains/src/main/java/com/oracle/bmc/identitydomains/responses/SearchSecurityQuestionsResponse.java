@@ -42,11 +42,11 @@ public class SearchSecurityQuestionsResponse extends com.oracle.bmc.responses.Bm
         return opcNextPage;
     }
 
-    /** The returned SecurityQuestions instance. */
+    /** The returned {@code SecurityQuestions} instance. */
     private com.oracle.bmc.identitydomains.model.SecurityQuestions securityQuestions;
 
     /**
-     * The returned SecurityQuestions instance.
+     * The returned {@code SecurityQuestions} instance.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class SearchSecurityQuestionsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned SecurityQuestions instance. */
+        /** The returned {@code SecurityQuestions} instance. */
         private com.oracle.bmc.identitydomains.model.SecurityQuestions securityQuestions;
 
         /**
-         * The returned SecurityQuestions instance.
+         * The returned {@code SecurityQuestions} instance.
          *
          * @param securityQuestions the value to set
          * @return this builder

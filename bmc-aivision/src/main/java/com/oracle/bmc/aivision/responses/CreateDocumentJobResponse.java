@@ -36,11 +36,11 @@ public class CreateDocumentJobResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned DocumentJob instance. */
+    /** The returned {@code DocumentJob} instance. */
     private com.oracle.bmc.aivision.model.DocumentJob documentJob;
 
     /**
-     * The returned DocumentJob instance.
+     * The returned {@code DocumentJob} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class CreateDocumentJobResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned DocumentJob instance. */
+        /** The returned {@code DocumentJob} instance. */
         private com.oracle.bmc.aivision.model.DocumentJob documentJob;
 
         /**
-         * The returned DocumentJob instance.
+         * The returned {@code DocumentJob} instance.
          *
          * @param documentJob the value to set
          * @return this builder

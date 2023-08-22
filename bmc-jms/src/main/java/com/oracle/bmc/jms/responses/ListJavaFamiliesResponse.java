@@ -44,11 +44,11 @@ public class ListJavaFamiliesResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /** The returned JavaFamilyCollection instance. */
+    /** The returned {@code JavaFamilyCollection} instance. */
     private com.oracle.bmc.jms.model.JavaFamilyCollection javaFamilyCollection;
 
     /**
-     * The returned JavaFamilyCollection instance.
+     * The returned {@code JavaFamilyCollection} instance.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListJavaFamiliesResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned JavaFamilyCollection instance. */
+        /** The returned {@code JavaFamilyCollection} instance. */
         private com.oracle.bmc.jms.model.JavaFamilyCollection javaFamilyCollection;
 
         /**
-         * The returned JavaFamilyCollection instance.
+         * The returned {@code JavaFamilyCollection} instance.
          *
          * @param javaFamilyCollection the value to set
          * @return this builder

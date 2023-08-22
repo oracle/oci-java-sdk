@@ -64,11 +64,11 @@ public class CreateVirtualServiceRouteTableResponse extends com.oracle.bmc.respo
         return location;
     }
 
-    /** The returned VirtualServiceRouteTable instance. */
+    /** The returned {@code VirtualServiceRouteTable} instance. */
     private com.oracle.bmc.servicemesh.model.VirtualServiceRouteTable virtualServiceRouteTable;
 
     /**
-     * The returned VirtualServiceRouteTable instance.
+     * The returned {@code VirtualServiceRouteTable} instance.
      *
      * @return the value
      */
@@ -184,11 +184,11 @@ public class CreateVirtualServiceRouteTableResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned VirtualServiceRouteTable instance. */
+        /** The returned {@code VirtualServiceRouteTable} instance. */
         private com.oracle.bmc.servicemesh.model.VirtualServiceRouteTable virtualServiceRouteTable;
 
         /**
-         * The returned VirtualServiceRouteTable instance.
+         * The returned {@code VirtualServiceRouteTable} instance.
          *
          * @param virtualServiceRouteTable the value to set
          * @return this builder

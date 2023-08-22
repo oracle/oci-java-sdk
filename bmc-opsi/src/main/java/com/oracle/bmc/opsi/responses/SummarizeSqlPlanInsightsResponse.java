@@ -42,12 +42,12 @@ public class SummarizeSqlPlanInsightsResponse extends com.oracle.bmc.responses.B
         return opcNextPage;
     }
 
-    /** The returned SqlPlanInsightAggregationCollection instance. */
+    /** The returned {@code SqlPlanInsightAggregationCollection} instance. */
     private com.oracle.bmc.opsi.model.SqlPlanInsightAggregationCollection
             sqlPlanInsightAggregationCollection;
 
     /**
-     * The returned SqlPlanInsightAggregationCollection instance.
+     * The returned {@code SqlPlanInsightAggregationCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class SummarizeSqlPlanInsightsResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned SqlPlanInsightAggregationCollection instance. */
+        /** The returned {@code SqlPlanInsightAggregationCollection} instance. */
         private com.oracle.bmc.opsi.model.SqlPlanInsightAggregationCollection
                 sqlPlanInsightAggregationCollection;
 
         /**
-         * The returned SqlPlanInsightAggregationCollection instance.
+         * The returned {@code SqlPlanInsightAggregationCollection} instance.
          *
          * @param sqlPlanInsightAggregationCollection the value to set
          * @return this builder

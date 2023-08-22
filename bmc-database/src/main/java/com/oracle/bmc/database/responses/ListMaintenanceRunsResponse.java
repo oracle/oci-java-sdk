@@ -44,11 +44,11 @@ public class ListMaintenanceRunsResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.database.model.MaintenanceRunSummary instances. */
+    /** A list of {@code com.oracle.bmc.database.model.MaintenanceRunSummary} instances. */
     private java.util.List<com.oracle.bmc.database.model.MaintenanceRunSummary> items;
 
     /**
-     * A list of com.oracle.bmc.database.model.MaintenanceRunSummary instances.
+     * A list of {@code com.oracle.bmc.database.model.MaintenanceRunSummary} instances.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListMaintenanceRunsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** A list of com.oracle.bmc.database.model.MaintenanceRunSummary instances. */
+        /** A list of {@code com.oracle.bmc.database.model.MaintenanceRunSummary} instances. */
         private java.util.List<com.oracle.bmc.database.model.MaintenanceRunSummary> items;
 
         /**
-         * A list of com.oracle.bmc.database.model.MaintenanceRunSummary instances.
+         * A list of {@code com.oracle.bmc.database.model.MaintenanceRunSummary} instances.
          *
          * @param items the value to set
          * @return this builder

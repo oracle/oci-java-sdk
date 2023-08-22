@@ -36,11 +36,11 @@ public class CreateSecurityQuestionResponse extends com.oracle.bmc.responses.Bmc
         return etag;
     }
 
-    /** The returned SecurityQuestion instance. */
+    /** The returned {@code SecurityQuestion} instance. */
     private com.oracle.bmc.identitydomains.model.SecurityQuestion securityQuestion;
 
     /**
-     * The returned SecurityQuestion instance.
+     * The returned {@code SecurityQuestion} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class CreateSecurityQuestionResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned SecurityQuestion instance. */
+        /** The returned {@code SecurityQuestion} instance. */
         private com.oracle.bmc.identitydomains.model.SecurityQuestion securityQuestion;
 
         /**
-         * The returned SecurityQuestion instance.
+         * The returned {@code SecurityQuestion} instance.
          *
          * @param securityQuestion the value to set
          * @return this builder

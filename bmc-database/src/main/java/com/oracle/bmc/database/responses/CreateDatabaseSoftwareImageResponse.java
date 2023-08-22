@@ -56,11 +56,11 @@ public class CreateDatabaseSoftwareImageResponse extends com.oracle.bmc.response
         return opcRequestId;
     }
 
-    /** The returned DatabaseSoftwareImage instance. */
+    /** The returned {@code DatabaseSoftwareImage} instance. */
     private com.oracle.bmc.database.model.DatabaseSoftwareImage databaseSoftwareImage;
 
     /**
-     * The returned DatabaseSoftwareImage instance.
+     * The returned {@code DatabaseSoftwareImage} instance.
      *
      * @return the value
      */
@@ -163,11 +163,11 @@ public class CreateDatabaseSoftwareImageResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned DatabaseSoftwareImage instance. */
+        /** The returned {@code DatabaseSoftwareImage} instance. */
         private com.oracle.bmc.database.model.DatabaseSoftwareImage databaseSoftwareImage;
 
         /**
-         * The returned DatabaseSoftwareImage instance.
+         * The returned {@code DatabaseSoftwareImage} instance.
          *
          * @param databaseSoftwareImage the value to set
          * @return this builder

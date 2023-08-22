@@ -36,11 +36,11 @@ public class UpsertFieldResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsField instance. */
+    /** The returned {@code LogAnalyticsField} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsField logAnalyticsField;
 
     /**
-     * The returned LogAnalyticsField instance.
+     * The returned {@code LogAnalyticsField} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpsertFieldResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned LogAnalyticsField instance. */
+        /** The returned {@code LogAnalyticsField} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsField logAnalyticsField;
 
         /**
-         * The returned LogAnalyticsField instance.
+         * The returned {@code LogAnalyticsField} instance.
          *
          * @param logAnalyticsField the value to set
          * @return this builder

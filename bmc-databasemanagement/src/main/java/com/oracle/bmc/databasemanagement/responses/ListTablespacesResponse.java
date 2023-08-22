@@ -42,11 +42,11 @@ public class ListTablespacesResponse extends com.oracle.bmc.responses.BmcRespons
         return opcNextPage;
     }
 
-    /** The returned TablespaceCollection instance. */
+    /** The returned {@code TablespaceCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.TablespaceCollection tablespaceCollection;
 
     /**
-     * The returned TablespaceCollection instance.
+     * The returned {@code TablespaceCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListTablespacesResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned TablespaceCollection instance. */
+        /** The returned {@code TablespaceCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.TablespaceCollection tablespaceCollection;
 
         /**
-         * The returned TablespaceCollection instance.
+         * The returned {@code TablespaceCollection} instance.
          *
          * @param tablespaceCollection the value to set
          * @return this builder

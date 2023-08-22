@@ -42,11 +42,11 @@ public class ListNodePoolsResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.containerengine.model.NodePoolSummary instances. */
+    /** A list of {@code com.oracle.bmc.containerengine.model.NodePoolSummary} instances. */
     private java.util.List<com.oracle.bmc.containerengine.model.NodePoolSummary> items;
 
     /**
-     * A list of com.oracle.bmc.containerengine.model.NodePoolSummary instances.
+     * A list of {@code com.oracle.bmc.containerengine.model.NodePoolSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListNodePoolsResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** A list of com.oracle.bmc.containerengine.model.NodePoolSummary instances. */
+        /** A list of {@code com.oracle.bmc.containerengine.model.NodePoolSummary} instances. */
         private java.util.List<com.oracle.bmc.containerengine.model.NodePoolSummary> items;
 
         /**
-         * A list of com.oracle.bmc.containerengine.model.NodePoolSummary instances.
+         * A list of {@code com.oracle.bmc.containerengine.model.NodePoolSummary} instances.
          *
          * @param items the value to set
          * @return this builder

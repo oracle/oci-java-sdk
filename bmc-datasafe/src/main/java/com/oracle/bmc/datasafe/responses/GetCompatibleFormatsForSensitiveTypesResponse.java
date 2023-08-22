@@ -63,12 +63,12 @@ public class GetCompatibleFormatsForSensitiveTypesResponse
         return opcPrevPage;
     }
 
-    /** The returned CompatibleFormatsForSensitiveTypes instance. */
+    /** The returned {@code CompatibleFormatsForSensitiveTypes} instance. */
     private com.oracle.bmc.datasafe.model.CompatibleFormatsForSensitiveTypes
             compatibleFormatsForSensitiveTypes;
 
     /**
-     * The returned CompatibleFormatsForSensitiveTypes instance.
+     * The returned {@code CompatibleFormatsForSensitiveTypes} instance.
      *
      * @return the value
      */
@@ -179,12 +179,12 @@ public class GetCompatibleFormatsForSensitiveTypesResponse
             return this;
         }
 
-        /** The returned CompatibleFormatsForSensitiveTypes instance. */
+        /** The returned {@code CompatibleFormatsForSensitiveTypes} instance. */
         private com.oracle.bmc.datasafe.model.CompatibleFormatsForSensitiveTypes
                 compatibleFormatsForSensitiveTypes;
 
         /**
-         * The returned CompatibleFormatsForSensitiveTypes instance.
+         * The returned {@code CompatibleFormatsForSensitiveTypes} instance.
          *
          * @param compatibleFormatsForSensitiveTypes the value to set
          * @return this builder

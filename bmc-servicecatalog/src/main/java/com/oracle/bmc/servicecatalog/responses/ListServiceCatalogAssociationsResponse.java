@@ -42,12 +42,12 @@ public class ListServiceCatalogAssociationsResponse extends com.oracle.bmc.respo
         return opcNextPage;
     }
 
-    /** The returned ServiceCatalogAssociationCollection instance. */
+    /** The returned {@code ServiceCatalogAssociationCollection} instance. */
     private com.oracle.bmc.servicecatalog.model.ServiceCatalogAssociationCollection
             serviceCatalogAssociationCollection;
 
     /**
-     * The returned ServiceCatalogAssociationCollection instance.
+     * The returned {@code ServiceCatalogAssociationCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListServiceCatalogAssociationsResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned ServiceCatalogAssociationCollection instance. */
+        /** The returned {@code ServiceCatalogAssociationCollection} instance. */
         private com.oracle.bmc.servicecatalog.model.ServiceCatalogAssociationCollection
                 serviceCatalogAssociationCollection;
 
         /**
-         * The returned ServiceCatalogAssociationCollection instance.
+         * The returned {@code ServiceCatalogAssociationCollection} instance.
          *
          * @param serviceCatalogAssociationCollection the value to set
          * @return this builder

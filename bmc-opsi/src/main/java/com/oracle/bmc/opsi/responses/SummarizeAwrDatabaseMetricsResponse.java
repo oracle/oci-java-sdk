@@ -42,11 +42,11 @@ public class SummarizeAwrDatabaseMetricsResponse extends com.oracle.bmc.response
         return opcNextPage;
     }
 
-    /** The returned AwrDatabaseMetricCollection instance. */
+    /** The returned {@code AwrDatabaseMetricCollection} instance. */
     private com.oracle.bmc.opsi.model.AwrDatabaseMetricCollection awrDatabaseMetricCollection;
 
     /**
-     * The returned AwrDatabaseMetricCollection instance.
+     * The returned {@code AwrDatabaseMetricCollection} instance.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class SummarizeAwrDatabaseMetricsResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned AwrDatabaseMetricCollection instance. */
+        /** The returned {@code AwrDatabaseMetricCollection} instance. */
         private com.oracle.bmc.opsi.model.AwrDatabaseMetricCollection awrDatabaseMetricCollection;
 
         /**
-         * The returned AwrDatabaseMetricCollection instance.
+         * The returned {@code AwrDatabaseMetricCollection} instance.
          *
          * @param awrDatabaseMetricCollection the value to set
          * @return this builder

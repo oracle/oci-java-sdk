@@ -60,11 +60,11 @@ public class ListConnectHarnessesResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.streaming.model.ConnectHarnessSummary instances. */
+    /** A list of {@code com.oracle.bmc.streaming.model.ConnectHarnessSummary} instances. */
     private java.util.List<com.oracle.bmc.streaming.model.ConnectHarnessSummary> items;
 
     /**
-     * A list of com.oracle.bmc.streaming.model.ConnectHarnessSummary instances.
+     * A list of {@code com.oracle.bmc.streaming.model.ConnectHarnessSummary} instances.
      *
      * @return the value
      */
@@ -170,11 +170,11 @@ public class ListConnectHarnessesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** A list of com.oracle.bmc.streaming.model.ConnectHarnessSummary instances. */
+        /** A list of {@code com.oracle.bmc.streaming.model.ConnectHarnessSummary} instances. */
         private java.util.List<com.oracle.bmc.streaming.model.ConnectHarnessSummary> items;
 
         /**
-         * A list of com.oracle.bmc.streaming.model.ConnectHarnessSummary instances.
+         * A list of {@code com.oracle.bmc.streaming.model.ConnectHarnessSummary} instances.
          *
          * @param items the value to set
          * @return this builder

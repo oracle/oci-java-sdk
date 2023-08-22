@@ -60,11 +60,11 @@ public class ListShapesResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcPrevPage;
     }
 
-    /** The returned ShapeCollection instance. */
+    /** The returned {@code ShapeCollection} instance. */
     private com.oracle.bmc.rover.model.ShapeCollection shapeCollection;
 
     /**
-     * The returned ShapeCollection instance.
+     * The returned {@code ShapeCollection} instance.
      *
      * @return the value
      */
@@ -170,11 +170,11 @@ public class ListShapesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned ShapeCollection instance. */
+        /** The returned {@code ShapeCollection} instance. */
         private com.oracle.bmc.rover.model.ShapeCollection shapeCollection;
 
         /**
-         * The returned ShapeCollection instance.
+         * The returned {@code ShapeCollection} instance.
          *
          * @param shapeCollection the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class GetResourceActionResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned ResourceAction instance. */
+    /** The returned {@code ResourceAction} instance. */
     private com.oracle.bmc.optimizer.model.ResourceAction resourceAction;
 
     /**
-     * The returned ResourceAction instance.
+     * The returned {@code ResourceAction} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetResourceActionResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned ResourceAction instance. */
+        /** The returned {@code ResourceAction} instance. */
         private com.oracle.bmc.optimizer.model.ResourceAction resourceAction;
 
         /**
-         * The returned ResourceAction instance.
+         * The returned {@code ResourceAction} instance.
          *
          * @param resourceAction the value to set
          * @return this builder

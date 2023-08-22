@@ -24,11 +24,11 @@ public class CreateTablespaceResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned Tablespace instance. */
+    /** The returned {@code Tablespace} instance. */
     private com.oracle.bmc.databasemanagement.model.Tablespace tablespace;
 
     /**
-     * The returned Tablespace instance.
+     * The returned {@code Tablespace} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class CreateTablespaceResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned Tablespace instance. */
+        /** The returned {@code Tablespace} instance. */
         private com.oracle.bmc.databasemanagement.model.Tablespace tablespace;
 
         /**
-         * The returned Tablespace instance.
+         * The returned {@code Tablespace} instance.
          *
          * @param tablespace the value to set
          * @return this builder

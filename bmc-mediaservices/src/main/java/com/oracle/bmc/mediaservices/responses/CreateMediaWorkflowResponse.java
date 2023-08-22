@@ -36,11 +36,11 @@ public class CreateMediaWorkflowResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned MediaWorkflow instance. */
+    /** The returned {@code MediaWorkflow} instance. */
     private com.oracle.bmc.mediaservices.model.MediaWorkflow mediaWorkflow;
 
     /**
-     * The returned MediaWorkflow instance.
+     * The returned {@code MediaWorkflow} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class CreateMediaWorkflowResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned MediaWorkflow instance. */
+        /** The returned {@code MediaWorkflow} instance. */
         private com.oracle.bmc.mediaservices.model.MediaWorkflow mediaWorkflow;
 
         /**
-         * The returned MediaWorkflow instance.
+         * The returned {@code MediaWorkflow} instance.
          *
          * @param mediaWorkflow the value to set
          * @return this builder

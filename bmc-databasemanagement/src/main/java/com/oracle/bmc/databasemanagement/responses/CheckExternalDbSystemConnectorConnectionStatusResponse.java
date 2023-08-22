@@ -37,12 +37,12 @@ public class CheckExternalDbSystemConnectorConnectionStatusResponse
         return contentLocation;
     }
 
-    /** The returned ExternalDbSystemConnector instance. */
+    /** The returned {@code ExternalDbSystemConnector} instance. */
     private com.oracle.bmc.databasemanagement.model.ExternalDbSystemConnector
             externalDbSystemConnector;
 
     /**
-     * The returned ExternalDbSystemConnector instance.
+     * The returned {@code ExternalDbSystemConnector} instance.
      *
      * @return the value
      */
@@ -122,12 +122,12 @@ public class CheckExternalDbSystemConnectorConnectionStatusResponse
             return this;
         }
 
-        /** The returned ExternalDbSystemConnector instance. */
+        /** The returned {@code ExternalDbSystemConnector} instance. */
         private com.oracle.bmc.databasemanagement.model.ExternalDbSystemConnector
                 externalDbSystemConnector;
 
         /**
-         * The returned ExternalDbSystemConnector instance.
+         * The returned {@code ExternalDbSystemConnector} instance.
          *
          * @param externalDbSystemConnector the value to set
          * @return this builder

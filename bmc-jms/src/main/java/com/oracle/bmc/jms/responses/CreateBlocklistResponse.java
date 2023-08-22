@@ -36,11 +36,11 @@ public class CreateBlocklistResponse extends com.oracle.bmc.responses.BmcRespons
         return etag;
     }
 
-    /** The returned Blocklist instance. */
+    /** The returned {@code Blocklist} instance. */
     private com.oracle.bmc.jms.model.Blocklist blocklist;
 
     /**
-     * The returned Blocklist instance.
+     * The returned {@code Blocklist} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class CreateBlocklistResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned Blocklist instance. */
+        /** The returned {@code Blocklist} instance. */
         private com.oracle.bmc.jms.model.Blocklist blocklist;
 
         /**
-         * The returned Blocklist instance.
+         * The returned {@code Blocklist} instance.
          *
          * @param blocklist the value to set
          * @return this builder

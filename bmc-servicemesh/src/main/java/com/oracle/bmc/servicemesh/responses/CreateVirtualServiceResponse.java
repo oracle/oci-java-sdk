@@ -64,11 +64,11 @@ public class CreateVirtualServiceResponse extends com.oracle.bmc.responses.BmcRe
         return location;
     }
 
-    /** The returned VirtualService instance. */
+    /** The returned {@code VirtualService} instance. */
     private com.oracle.bmc.servicemesh.model.VirtualService virtualService;
 
     /**
-     * The returned VirtualService instance.
+     * The returned {@code VirtualService} instance.
      *
      * @return the value
      */
@@ -183,11 +183,11 @@ public class CreateVirtualServiceResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned VirtualService instance. */
+        /** The returned {@code VirtualService} instance. */
         private com.oracle.bmc.servicemesh.model.VirtualService virtualService;
 
         /**
-         * The returned VirtualService instance.
+         * The returned {@code VirtualService} instance.
          *
          * @param virtualService the value to set
          * @return this builder

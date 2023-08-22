@@ -72,12 +72,12 @@ public class ListTaskSchedulesResponse extends com.oracle.bmc.responses.BmcRespo
         return opcTotalItems;
     }
 
-    /** The returned TaskScheduleSummaryCollection instance. */
+    /** The returned {@code TaskScheduleSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.TaskScheduleSummaryCollection
             taskScheduleSummaryCollection;
 
     /**
-     * The returned TaskScheduleSummaryCollection instance.
+     * The returned {@code TaskScheduleSummaryCollection} instance.
      *
      * @return the value
      */
@@ -202,12 +202,12 @@ public class ListTaskSchedulesResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned TaskScheduleSummaryCollection instance. */
+        /** The returned {@code TaskScheduleSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.TaskScheduleSummaryCollection
                 taskScheduleSummaryCollection;
 
         /**
-         * The returned TaskScheduleSummaryCollection instance.
+         * The returned {@code TaskScheduleSummaryCollection} instance.
          *
          * @param taskScheduleSummaryCollection the value to set
          * @return this builder

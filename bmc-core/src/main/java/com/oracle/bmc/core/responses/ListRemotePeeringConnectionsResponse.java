@@ -42,11 +42,11 @@ public class ListRemotePeeringConnectionsResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.RemotePeeringConnection instances. */
+    /** A list of {@code com.oracle.bmc.core.model.RemotePeeringConnection} instances. */
     private java.util.List<com.oracle.bmc.core.model.RemotePeeringConnection> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.RemotePeeringConnection instances.
+     * A list of {@code com.oracle.bmc.core.model.RemotePeeringConnection} instances.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListRemotePeeringConnectionsResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.RemotePeeringConnection instances. */
+        /** A list of {@code com.oracle.bmc.core.model.RemotePeeringConnection} instances. */
         private java.util.List<com.oracle.bmc.core.model.RemotePeeringConnection> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.RemotePeeringConnection instances.
+         * A list of {@code com.oracle.bmc.core.model.RemotePeeringConnection} instances.
          *
          * @param items the value to set
          * @return this builder

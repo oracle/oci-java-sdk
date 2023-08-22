@@ -42,11 +42,11 @@ public class ListFastConnectProviderServicesResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.FastConnectProviderService instances. */
+    /** A list of {@code com.oracle.bmc.core.model.FastConnectProviderService} instances. */
     private java.util.List<com.oracle.bmc.core.model.FastConnectProviderService> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.FastConnectProviderService instances.
+     * A list of {@code com.oracle.bmc.core.model.FastConnectProviderService} instances.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListFastConnectProviderServicesResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.FastConnectProviderService instances. */
+        /** A list of {@code com.oracle.bmc.core.model.FastConnectProviderService} instances. */
         private java.util.List<com.oracle.bmc.core.model.FastConnectProviderService> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.FastConnectProviderService instances.
+         * A list of {@code com.oracle.bmc.core.model.FastConnectProviderService} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListDashboardsResponse extends com.oracle.bmc.responses.BmcResponse
         return opcNextPage;
     }
 
-    /** The returned DashboardCollection instance. */
+    /** The returned {@code DashboardCollection} instance. */
     private com.oracle.bmc.dashboardservice.model.DashboardCollection dashboardCollection;
 
     /**
-     * The returned DashboardCollection instance.
+     * The returned {@code DashboardCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListDashboardsResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned DashboardCollection instance. */
+        /** The returned {@code DashboardCollection} instance. */
         private com.oracle.bmc.dashboardservice.model.DashboardCollection dashboardCollection;
 
         /**
-         * The returned DashboardCollection instance.
+         * The returned {@code DashboardCollection} instance.
          *
          * @param dashboardCollection the value to set
          * @return this builder

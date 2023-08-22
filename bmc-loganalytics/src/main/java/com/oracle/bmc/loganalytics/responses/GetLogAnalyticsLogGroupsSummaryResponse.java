@@ -24,11 +24,11 @@ public class GetLogAnalyticsLogGroupsSummaryResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** The returned LogGroupSummaryReport instance. */
+    /** The returned {@code LogGroupSummaryReport} instance. */
     private com.oracle.bmc.loganalytics.model.LogGroupSummaryReport logGroupSummaryReport;
 
     /**
-     * The returned LogGroupSummaryReport instance.
+     * The returned {@code LogGroupSummaryReport} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class GetLogAnalyticsLogGroupsSummaryResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned LogGroupSummaryReport instance. */
+        /** The returned {@code LogGroupSummaryReport} instance. */
         private com.oracle.bmc.loganalytics.model.LogGroupSummaryReport logGroupSummaryReport;
 
         /**
-         * The returned LogGroupSummaryReport instance.
+         * The returned {@code LogGroupSummaryReport} instance.
          *
          * @param logGroupSummaryReport the value to set
          * @return this builder

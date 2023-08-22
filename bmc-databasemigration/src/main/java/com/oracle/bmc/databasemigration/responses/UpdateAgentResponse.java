@@ -36,11 +36,11 @@ public class UpdateAgentResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned Agent instance. */
+    /** The returned {@code Agent} instance. */
     private com.oracle.bmc.databasemigration.model.Agent agent;
 
     /**
-     * The returned Agent instance.
+     * The returned {@code Agent} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateAgentResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Agent instance. */
+        /** The returned {@code Agent} instance. */
         private com.oracle.bmc.databasemigration.model.Agent agent;
 
         /**
-         * The returned Agent instance.
+         * The returned {@code Agent} instance.
          *
          * @param agent the value to set
          * @return this builder

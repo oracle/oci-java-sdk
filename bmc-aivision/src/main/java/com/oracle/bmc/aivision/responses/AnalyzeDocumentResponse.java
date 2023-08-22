@@ -36,11 +36,11 @@ public class AnalyzeDocumentResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned AnalyzeDocumentResult instance. */
+    /** The returned {@code AnalyzeDocumentResult} instance. */
     private com.oracle.bmc.aivision.model.AnalyzeDocumentResult analyzeDocumentResult;
 
     /**
-     * The returned AnalyzeDocumentResult instance.
+     * The returned {@code AnalyzeDocumentResult} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class AnalyzeDocumentResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned AnalyzeDocumentResult instance. */
+        /** The returned {@code AnalyzeDocumentResult} instance. */
         private com.oracle.bmc.aivision.model.AnalyzeDocumentResult analyzeDocumentResult;
 
         /**
-         * The returned AnalyzeDocumentResult instance.
+         * The returned {@code AnalyzeDocumentResult} instance.
          *
          * @param analyzeDocumentResult the value to set
          * @return this builder

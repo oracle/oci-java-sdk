@@ -36,11 +36,11 @@ public class GetSourceResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned Source instance. */
+    /** The returned {@code Source} instance. */
     private com.oracle.bmc.applicationmigration.model.Source source;
 
     /**
-     * The returned Source instance.
+     * The returned {@code Source} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetSourceResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Source instance. */
+        /** The returned {@code Source} instance. */
         private com.oracle.bmc.applicationmigration.model.Source source;
 
         /**
-         * The returned Source instance.
+         * The returned {@code Source} instance.
          *
          * @param source the value to set
          * @return this builder

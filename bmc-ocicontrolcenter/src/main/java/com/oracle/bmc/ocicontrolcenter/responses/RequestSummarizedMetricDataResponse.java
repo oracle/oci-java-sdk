@@ -42,12 +42,12 @@ public class RequestSummarizedMetricDataResponse extends com.oracle.bmc.response
         return opcNextPage;
     }
 
-    /** The returned SummarizedMetricDataCollection instance. */
+    /** The returned {@code SummarizedMetricDataCollection} instance. */
     private com.oracle.bmc.ocicontrolcenter.model.SummarizedMetricDataCollection
             summarizedMetricDataCollection;
 
     /**
-     * The returned SummarizedMetricDataCollection instance.
+     * The returned {@code SummarizedMetricDataCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class RequestSummarizedMetricDataResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned SummarizedMetricDataCollection instance. */
+        /** The returned {@code SummarizedMetricDataCollection} instance. */
         private com.oracle.bmc.ocicontrolcenter.model.SummarizedMetricDataCollection
                 summarizedMetricDataCollection;
 
         /**
-         * The returned SummarizedMetricDataCollection instance.
+         * The returned {@code SummarizedMetricDataCollection} instance.
          *
          * @param summarizedMetricDataCollection the value to set
          * @return this builder

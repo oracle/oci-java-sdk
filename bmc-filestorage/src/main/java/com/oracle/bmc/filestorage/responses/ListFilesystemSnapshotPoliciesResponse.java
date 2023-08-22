@@ -46,11 +46,13 @@ public class ListFilesystemSnapshotPoliciesResponse extends com.oracle.bmc.respo
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicySummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicySummary} instances.
+     */
     private java.util.List<com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicySummary> items;
 
     /**
-     * A list of com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicySummary instances.
+     * A list of {@code com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicySummary} instances.
      *
      * @return the value
      */
@@ -140,12 +142,16 @@ public class ListFilesystemSnapshotPoliciesResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** A list of com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicySummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicySummary}
+         * instances.
+         */
         private java.util.List<com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicySummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicySummary instances.
+         * A list of {@code com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicySummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

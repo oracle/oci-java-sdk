@@ -42,11 +42,11 @@ public class ListRouteTablesResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.RouteTable instances. */
+    /** A list of {@code com.oracle.bmc.core.model.RouteTable} instances. */
     private java.util.List<com.oracle.bmc.core.model.RouteTable> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.RouteTable instances.
+     * A list of {@code com.oracle.bmc.core.model.RouteTable} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListRouteTablesResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.RouteTable instances. */
+        /** A list of {@code com.oracle.bmc.core.model.RouteTable} instances. */
         private java.util.List<com.oracle.bmc.core.model.RouteTable> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.RouteTable instances.
+         * A list of {@code com.oracle.bmc.core.model.RouteTable} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -60,11 +60,11 @@ public class ListTopicsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.ons.model.NotificationTopicSummary instances. */
+    /** A list of {@code com.oracle.bmc.ons.model.NotificationTopicSummary} instances. */
     private java.util.List<com.oracle.bmc.ons.model.NotificationTopicSummary> items;
 
     /**
-     * A list of com.oracle.bmc.ons.model.NotificationTopicSummary instances.
+     * A list of {@code com.oracle.bmc.ons.model.NotificationTopicSummary} instances.
      *
      * @return the value
      */
@@ -170,11 +170,11 @@ public class ListTopicsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.ons.model.NotificationTopicSummary instances. */
+        /** A list of {@code com.oracle.bmc.ons.model.NotificationTopicSummary} instances. */
         private java.util.List<com.oracle.bmc.ons.model.NotificationTopicSummary> items;
 
         /**
-         * A list of com.oracle.bmc.ons.model.NotificationTopicSummary instances.
+         * A list of {@code com.oracle.bmc.ons.model.NotificationTopicSummary} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -24,11 +24,11 @@ public class GetAddressRuleResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned AddressRule instance. */
+    /** The returned {@code AddressRule} instance. */
     private com.oracle.bmc.ospgateway.model.AddressRule addressRule;
 
     /**
-     * The returned AddressRule instance.
+     * The returned {@code AddressRule} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetAddressRuleResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned AddressRule instance. */
+        /** The returned {@code AddressRule} instance. */
         private com.oracle.bmc.ospgateway.model.AddressRule addressRule;
 
         /**
-         * The returned AddressRule instance.
+         * The returned {@code AddressRule} instance.
          *
          * @param addressRule the value to set
          * @return this builder

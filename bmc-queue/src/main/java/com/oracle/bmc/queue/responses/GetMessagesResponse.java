@@ -24,11 +24,11 @@ public class GetMessagesResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned GetMessages instance. */
+    /** The returned {@code GetMessages} instance. */
     private com.oracle.bmc.queue.model.GetMessages getMessages;
 
     /**
-     * The returned GetMessages instance.
+     * The returned {@code GetMessages} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetMessagesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned GetMessages instance. */
+        /** The returned {@code GetMessages} instance. */
         private com.oracle.bmc.queue.model.GetMessages getMessages;
 
         /**
-         * The returned GetMessages instance.
+         * The returned {@code GetMessages} instance.
          *
          * @param getMessages the value to set
          * @return this builder

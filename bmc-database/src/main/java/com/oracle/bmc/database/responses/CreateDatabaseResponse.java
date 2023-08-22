@@ -56,11 +56,11 @@ public class CreateDatabaseResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned Database instance. */
+    /** The returned {@code Database} instance. */
     private com.oracle.bmc.database.model.Database database;
 
     /**
-     * The returned Database instance.
+     * The returned {@code Database} instance.
      *
      * @return the value
      */
@@ -162,11 +162,11 @@ public class CreateDatabaseResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned Database instance. */
+        /** The returned {@code Database} instance. */
         private com.oracle.bmc.database.model.Database database;
 
         /**
-         * The returned Database instance.
+         * The returned {@code Database} instance.
          *
          * @param database the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class UpdateRecipientInvitationResponse extends com.oracle.bmc.responses.
         return etag;
     }
 
-    /** The returned RecipientInvitation instance. */
+    /** The returned {@code RecipientInvitation} instance. */
     private com.oracle.bmc.tenantmanagercontrolplane.model.RecipientInvitation recipientInvitation;
 
     /**
-     * The returned RecipientInvitation instance.
+     * The returned {@code RecipientInvitation} instance.
      *
      * @return the value
      */
@@ -120,12 +120,12 @@ public class UpdateRecipientInvitationResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned RecipientInvitation instance. */
+        /** The returned {@code RecipientInvitation} instance. */
         private com.oracle.bmc.tenantmanagercontrolplane.model.RecipientInvitation
                 recipientInvitation;
 
         /**
-         * The returned RecipientInvitation instance.
+         * The returned {@code RecipientInvitation} instance.
          *
          * @param recipientInvitation the value to set
          * @return this builder

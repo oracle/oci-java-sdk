@@ -42,11 +42,11 @@ public class ListTransferJobsResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.dts.model.TransferJobSummary instances. */
+    /** A list of {@code com.oracle.bmc.dts.model.TransferJobSummary} instances. */
     private java.util.List<com.oracle.bmc.dts.model.TransferJobSummary> items;
 
     /**
-     * A list of com.oracle.bmc.dts.model.TransferJobSummary instances.
+     * A list of {@code com.oracle.bmc.dts.model.TransferJobSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListTransferJobsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** A list of com.oracle.bmc.dts.model.TransferJobSummary instances. */
+        /** A list of {@code com.oracle.bmc.dts.model.TransferJobSummary} instances. */
         private java.util.List<com.oracle.bmc.dts.model.TransferJobSummary> items;
 
         /**
-         * A list of com.oracle.bmc.dts.model.TransferJobSummary instances.
+         * A list of {@code com.oracle.bmc.dts.model.TransferJobSummary} instances.
          *
          * @param items the value to set
          * @return this builder

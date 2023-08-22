@@ -42,12 +42,12 @@ public class ListNetworkLoadBalancersResponse extends com.oracle.bmc.responses.B
         return opcNextPage;
     }
 
-    /** The returned NetworkLoadBalancerCollection instance. */
+    /** The returned {@code NetworkLoadBalancerCollection} instance. */
     private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerCollection
             networkLoadBalancerCollection;
 
     /**
-     * The returned NetworkLoadBalancerCollection instance.
+     * The returned {@code NetworkLoadBalancerCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListNetworkLoadBalancersResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned NetworkLoadBalancerCollection instance. */
+        /** The returned {@code NetworkLoadBalancerCollection} instance. */
         private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerCollection
                 networkLoadBalancerCollection;
 
         /**
-         * The returned NetworkLoadBalancerCollection instance.
+         * The returned {@code NetworkLoadBalancerCollection} instance.
          *
          * @param networkLoadBalancerCollection the value to set
          * @return this builder

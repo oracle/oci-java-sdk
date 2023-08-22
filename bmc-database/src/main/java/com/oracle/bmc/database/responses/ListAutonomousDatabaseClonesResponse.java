@@ -44,11 +44,11 @@ public class ListAutonomousDatabaseClonesResponse extends com.oracle.bmc.respons
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.database.model.AutonomousDatabaseSummary instances. */
+    /** A list of {@code com.oracle.bmc.database.model.AutonomousDatabaseSummary} instances. */
     private java.util.List<com.oracle.bmc.database.model.AutonomousDatabaseSummary> items;
 
     /**
-     * A list of com.oracle.bmc.database.model.AutonomousDatabaseSummary instances.
+     * A list of {@code com.oracle.bmc.database.model.AutonomousDatabaseSummary} instances.
      *
      * @return the value
      */
@@ -136,11 +136,11 @@ public class ListAutonomousDatabaseClonesResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** A list of com.oracle.bmc.database.model.AutonomousDatabaseSummary instances. */
+        /** A list of {@code com.oracle.bmc.database.model.AutonomousDatabaseSummary} instances. */
         private java.util.List<com.oracle.bmc.database.model.AutonomousDatabaseSummary> items;
 
         /**
-         * A list of com.oracle.bmc.database.model.AutonomousDatabaseSummary instances.
+         * A list of {@code com.oracle.bmc.database.model.AutonomousDatabaseSummary} instances.
          *
          * @param items the value to set
          * @return this builder

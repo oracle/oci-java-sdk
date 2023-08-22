@@ -68,11 +68,11 @@ public class CreateSessionResponse extends com.oracle.bmc.responses.BmcResponse 
         return etag;
     }
 
-    /** The returned Session instance. */
+    /** The returned {@code Session} instance. */
     private com.oracle.bmc.bastion.model.Session session;
 
     /**
-     * The returned Session instance.
+     * The returned {@code Session} instance.
      *
      * @return the value
      */
@@ -191,11 +191,11 @@ public class CreateSessionResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned Session instance. */
+        /** The returned {@code Session} instance. */
         private com.oracle.bmc.bastion.model.Session session;
 
         /**
-         * The returned Session instance.
+         * The returned {@code Session} instance.
          *
          * @param session the value to set
          * @return this builder

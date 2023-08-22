@@ -36,11 +36,11 @@ public class CreateInstanceConsoleConnectionResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** The returned InstanceConsoleConnection instance. */
+    /** The returned {@code InstanceConsoleConnection} instance. */
     private com.oracle.bmc.core.model.InstanceConsoleConnection instanceConsoleConnection;
 
     /**
-     * The returned InstanceConsoleConnection instance.
+     * The returned {@code InstanceConsoleConnection} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class CreateInstanceConsoleConnectionResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned InstanceConsoleConnection instance. */
+        /** The returned {@code InstanceConsoleConnection} instance. */
         private com.oracle.bmc.core.model.InstanceConsoleConnection instanceConsoleConnection;
 
         /**
-         * The returned InstanceConsoleConnection instance.
+         * The returned {@code InstanceConsoleConnection} instance.
          *
          * @param instanceConsoleConnection the value to set
          * @return this builder

@@ -24,12 +24,12 @@ public class ValidateLabelConditionResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned ValidateLabelConditionResult instance. */
+    /** The returned {@code ValidateLabelConditionResult} instance. */
     private com.oracle.bmc.loganalytics.model.ValidateLabelConditionResult
             validateLabelConditionResult;
 
     /**
-     * The returned ValidateLabelConditionResult instance.
+     * The returned {@code ValidateLabelConditionResult} instance.
      *
      * @return the value
      */
@@ -92,12 +92,12 @@ public class ValidateLabelConditionResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned ValidateLabelConditionResult instance. */
+        /** The returned {@code ValidateLabelConditionResult} instance. */
         private com.oracle.bmc.loganalytics.model.ValidateLabelConditionResult
                 validateLabelConditionResult;
 
         /**
-         * The returned ValidateLabelConditionResult instance.
+         * The returned {@code ValidateLabelConditionResult} instance.
          *
          * @param validateLabelConditionResult the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class GetExternalListenerResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned ExternalListener instance. */
+    /** The returned {@code ExternalListener} instance. */
     private com.oracle.bmc.databasemanagement.model.ExternalListener externalListener;
 
     /**
-     * The returned ExternalListener instance.
+     * The returned {@code ExternalListener} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetExternalListenerResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned ExternalListener instance. */
+        /** The returned {@code ExternalListener} instance. */
         private com.oracle.bmc.databasemanagement.model.ExternalListener externalListener;
 
         /**
-         * The returned ExternalListener instance.
+         * The returned {@code ExternalListener} instance.
          *
          * @param externalListener the value to set
          * @return this builder

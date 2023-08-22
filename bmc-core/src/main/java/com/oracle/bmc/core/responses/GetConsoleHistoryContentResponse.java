@@ -36,11 +36,11 @@ public class GetConsoleHistoryContentResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** The returned String instance. */
+    /** The returned {@code String} instance. */
     private String value;
 
     /**
-     * The returned String instance.
+     * The returned {@code String} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetConsoleHistoryContentResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned String instance. */
+        /** The returned {@code String} instance. */
         private String value;
 
         /**
-         * The returned String instance.
+         * The returned {@code String} instance.
          *
          * @param value the value to set
          * @return this builder

@@ -64,11 +64,11 @@ public class CreateApiResponse extends com.oracle.bmc.responses.BmcResponse {
         return location;
     }
 
-    /** The returned Api instance. */
+    /** The returned {@code Api} instance. */
     private com.oracle.bmc.apigateway.model.Api api;
 
     /**
-     * The returned Api instance.
+     * The returned {@code Api} instance.
      *
      * @return the value
      */
@@ -183,11 +183,11 @@ public class CreateApiResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Api instance. */
+        /** The returned {@code Api} instance. */
         private com.oracle.bmc.apigateway.model.Api api;
 
         /**
-         * The returned Api instance.
+         * The returned {@code Api} instance.
          *
          * @param api the value to set
          * @return this builder

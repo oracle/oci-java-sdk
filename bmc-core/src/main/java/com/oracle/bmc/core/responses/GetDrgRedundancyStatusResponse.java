@@ -24,11 +24,11 @@ public class GetDrgRedundancyStatusResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned DrgRedundancyStatus instance. */
+    /** The returned {@code DrgRedundancyStatus} instance. */
     private com.oracle.bmc.core.model.DrgRedundancyStatus drgRedundancyStatus;
 
     /**
-     * The returned DrgRedundancyStatus instance.
+     * The returned {@code DrgRedundancyStatus} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class GetDrgRedundancyStatusResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned DrgRedundancyStatus instance. */
+        /** The returned {@code DrgRedundancyStatus} instance. */
         private com.oracle.bmc.core.model.DrgRedundancyStatus drgRedundancyStatus;
 
         /**
-         * The returned DrgRedundancyStatus instance.
+         * The returned {@code DrgRedundancyStatus} instance.
          *
          * @param drgRedundancyStatus the value to set
          * @return this builder

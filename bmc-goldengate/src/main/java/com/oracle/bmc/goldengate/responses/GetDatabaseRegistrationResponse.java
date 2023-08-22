@@ -48,11 +48,11 @@ public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.Bm
         return sunset;
     }
 
-    /** The returned DatabaseRegistration instance. */
+    /** The returned {@code DatabaseRegistration} instance. */
     private com.oracle.bmc.goldengate.model.DatabaseRegistration databaseRegistration;
 
     /**
-     * The returned DatabaseRegistration instance.
+     * The returned {@code DatabaseRegistration} instance.
      *
      * @return the value
      */
@@ -147,11 +147,11 @@ public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned DatabaseRegistration instance. */
+        /** The returned {@code DatabaseRegistration} instance. */
         private com.oracle.bmc.goldengate.model.DatabaseRegistration databaseRegistration;
 
         /**
-         * The returned DatabaseRegistration instance.
+         * The returned {@code DatabaseRegistration} instance.
          *
          * @param databaseRegistration the value to set
          * @return this builder

@@ -44,12 +44,12 @@ public class ListStackAssociatedResourcesResponse extends com.oracle.bmc.respons
         return opcNextPage;
     }
 
-    /** The returned AssociatedResourcesCollection instance. */
+    /** The returned {@code AssociatedResourcesCollection} instance. */
     private com.oracle.bmc.resourcemanager.model.AssociatedResourcesCollection
             associatedResourcesCollection;
 
     /**
-     * The returned AssociatedResourcesCollection instance.
+     * The returned {@code AssociatedResourcesCollection} instance.
      *
      * @return the value
      */
@@ -137,12 +137,12 @@ public class ListStackAssociatedResourcesResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned AssociatedResourcesCollection instance. */
+        /** The returned {@code AssociatedResourcesCollection} instance. */
         private com.oracle.bmc.resourcemanager.model.AssociatedResourcesCollection
                 associatedResourcesCollection;
 
         /**
-         * The returned AssociatedResourcesCollection instance.
+         * The returned {@code AssociatedResourcesCollection} instance.
          *
          * @param associatedResourcesCollection the value to set
          * @return this builder

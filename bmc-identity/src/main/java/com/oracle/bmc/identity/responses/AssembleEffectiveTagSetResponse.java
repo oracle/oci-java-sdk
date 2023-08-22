@@ -42,11 +42,11 @@ public class AssembleEffectiveTagSetResponse extends com.oracle.bmc.responses.Bm
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.identity.model.TagDefaultSummary instances. */
+    /** A list of {@code com.oracle.bmc.identity.model.TagDefaultSummary} instances. */
     private java.util.List<com.oracle.bmc.identity.model.TagDefaultSummary> items;
 
     /**
-     * A list of com.oracle.bmc.identity.model.TagDefaultSummary instances.
+     * A list of {@code com.oracle.bmc.identity.model.TagDefaultSummary} instances.
      *
      * @return the value
      */
@@ -132,11 +132,11 @@ public class AssembleEffectiveTagSetResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** A list of com.oracle.bmc.identity.model.TagDefaultSummary instances. */
+        /** A list of {@code com.oracle.bmc.identity.model.TagDefaultSummary} instances. */
         private java.util.List<com.oracle.bmc.identity.model.TagDefaultSummary> items;
 
         /**
-         * A list of com.oracle.bmc.identity.model.TagDefaultSummary instances.
+         * A list of {@code com.oracle.bmc.identity.model.TagDefaultSummary} instances.
          *
          * @param items the value to set
          * @return this builder

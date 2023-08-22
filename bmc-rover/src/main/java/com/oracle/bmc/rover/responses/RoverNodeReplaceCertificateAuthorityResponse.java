@@ -37,12 +37,12 @@ public class RoverNodeReplaceCertificateAuthorityResponse
         return opcRequestId;
     }
 
-    /** The returned ReplaceCertificateAuthorityResponse instance. */
+    /** The returned {@code ReplaceCertificateAuthorityResponse} instance. */
     private com.oracle.bmc.rover.model.ReplaceCertificateAuthorityResponse
             replaceCertificateAuthorityResponse;
 
     /**
-     * The returned ReplaceCertificateAuthorityResponse instance.
+     * The returned {@code ReplaceCertificateAuthorityResponse} instance.
      *
      * @return the value
      */
@@ -122,12 +122,12 @@ public class RoverNodeReplaceCertificateAuthorityResponse
             return this;
         }
 
-        /** The returned ReplaceCertificateAuthorityResponse instance. */
+        /** The returned {@code ReplaceCertificateAuthorityResponse} instance. */
         private com.oracle.bmc.rover.model.ReplaceCertificateAuthorityResponse
                 replaceCertificateAuthorityResponse;
 
         /**
-         * The returned ReplaceCertificateAuthorityResponse instance.
+         * The returned {@code ReplaceCertificateAuthorityResponse} instance.
          *
          * @param replaceCertificateAuthorityResponse the value to set
          * @return this builder

@@ -42,12 +42,12 @@ public class ListSqlTuningAdvisorTaskFindingsResponse extends com.oracle.bmc.res
         return opcNextPage;
     }
 
-    /** The returned SqlTuningAdvisorTaskFindingCollection instance. */
+    /** The returned {@code SqlTuningAdvisorTaskFindingCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskFindingCollection
             sqlTuningAdvisorTaskFindingCollection;
 
     /**
-     * The returned SqlTuningAdvisorTaskFindingCollection instance.
+     * The returned {@code SqlTuningAdvisorTaskFindingCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListSqlTuningAdvisorTaskFindingsResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /** The returned SqlTuningAdvisorTaskFindingCollection instance. */
+        /** The returned {@code SqlTuningAdvisorTaskFindingCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskFindingCollection
                 sqlTuningAdvisorTaskFindingCollection;
 
         /**
-         * The returned SqlTuningAdvisorTaskFindingCollection instance.
+         * The returned {@code SqlTuningAdvisorTaskFindingCollection} instance.
          *
          * @param sqlTuningAdvisorTaskFindingCollection the value to set
          * @return this builder

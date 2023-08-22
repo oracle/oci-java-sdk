@@ -42,11 +42,13 @@ public class ListAutoScalingConfigurationsResponse extends com.oracle.bmc.respon
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.autoscaling.model.AutoScalingConfigurationSummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.autoscaling.model.AutoScalingConfigurationSummary} instances.
+     */
     private java.util.List<com.oracle.bmc.autoscaling.model.AutoScalingConfigurationSummary> items;
 
     /**
-     * A list of com.oracle.bmc.autoscaling.model.AutoScalingConfigurationSummary instances.
+     * A list of {@code com.oracle.bmc.autoscaling.model.AutoScalingConfigurationSummary} instances.
      *
      * @return the value
      */
@@ -132,12 +134,16 @@ public class ListAutoScalingConfigurationsResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** A list of com.oracle.bmc.autoscaling.model.AutoScalingConfigurationSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.autoscaling.model.AutoScalingConfigurationSummary}
+         * instances.
+         */
         private java.util.List<com.oracle.bmc.autoscaling.model.AutoScalingConfigurationSummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.autoscaling.model.AutoScalingConfigurationSummary instances.
+         * A list of {@code com.oracle.bmc.autoscaling.model.AutoScalingConfigurationSummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

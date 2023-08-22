@@ -36,11 +36,11 @@ public class GetCaBundleResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned CaBundle instance. */
+    /** The returned {@code CaBundle} instance. */
     private com.oracle.bmc.certificatesmanagement.model.CaBundle caBundle;
 
     /**
-     * The returned CaBundle instance.
+     * The returned {@code CaBundle} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetCaBundleResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned CaBundle instance. */
+        /** The returned {@code CaBundle} instance. */
         private com.oracle.bmc.certificatesmanagement.model.CaBundle caBundle;
 
         /**
-         * The returned CaBundle instance.
+         * The returned {@code CaBundle} instance.
          *
          * @param caBundle the value to set
          * @return this builder

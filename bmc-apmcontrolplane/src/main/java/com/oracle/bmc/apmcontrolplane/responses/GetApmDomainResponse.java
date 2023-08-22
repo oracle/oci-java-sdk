@@ -36,11 +36,11 @@ public class GetApmDomainResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned ApmDomain instance. */
+    /** The returned {@code ApmDomain} instance. */
     private com.oracle.bmc.apmcontrolplane.model.ApmDomain apmDomain;
 
     /**
-     * The returned ApmDomain instance.
+     * The returned {@code ApmDomain} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetApmDomainResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned ApmDomain instance. */
+        /** The returned {@code ApmDomain} instance. */
         private com.oracle.bmc.apmcontrolplane.model.ApmDomain apmDomain;
 
         /**
-         * The returned ApmDomain instance.
+         * The returned {@code ApmDomain} instance.
          *
          * @param apmDomain the value to set
          * @return this builder

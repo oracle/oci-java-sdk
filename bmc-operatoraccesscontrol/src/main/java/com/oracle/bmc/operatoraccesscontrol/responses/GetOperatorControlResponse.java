@@ -36,11 +36,11 @@ public class GetOperatorControlResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned OperatorControl instance. */
+    /** The returned {@code OperatorControl} instance. */
     private com.oracle.bmc.operatoraccesscontrol.model.OperatorControl operatorControl;
 
     /**
-     * The returned OperatorControl instance.
+     * The returned {@code OperatorControl} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetOperatorControlResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned OperatorControl instance. */
+        /** The returned {@code OperatorControl} instance. */
         private com.oracle.bmc.operatoraccesscontrol.model.OperatorControl operatorControl;
 
         /**
-         * The returned OperatorControl instance.
+         * The returned {@code OperatorControl} instance.
          *
          * @param operatorControl the value to set
          * @return this builder

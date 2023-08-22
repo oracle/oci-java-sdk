@@ -43,12 +43,12 @@ public class ListManagedInstanceGroupAvailableModulesResponse
         return opcNextPage;
     }
 
-    /** The returned ManagedInstanceGroupAvailableModuleCollection instance. */
+    /** The returned {@code ManagedInstanceGroupAvailableModuleCollection} instance. */
     private com.oracle.bmc.osmanagementhub.model.ManagedInstanceGroupAvailableModuleCollection
             managedInstanceGroupAvailableModuleCollection;
 
     /**
-     * The returned ManagedInstanceGroupAvailableModuleCollection instance.
+     * The returned {@code ManagedInstanceGroupAvailableModuleCollection} instance.
      *
      * @return the value
      */
@@ -135,12 +135,12 @@ public class ListManagedInstanceGroupAvailableModulesResponse
             return this;
         }
 
-        /** The returned ManagedInstanceGroupAvailableModuleCollection instance. */
+        /** The returned {@code ManagedInstanceGroupAvailableModuleCollection} instance. */
         private com.oracle.bmc.osmanagementhub.model.ManagedInstanceGroupAvailableModuleCollection
                 managedInstanceGroupAvailableModuleCollection;
 
         /**
-         * The returned ManagedInstanceGroupAvailableModuleCollection instance.
+         * The returned {@code ManagedInstanceGroupAvailableModuleCollection} instance.
          *
          * @param managedInstanceGroupAvailableModuleCollection the value to set
          * @return this builder

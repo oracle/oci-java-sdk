@@ -36,11 +36,11 @@ public class GetOsnResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Osn instance. */
+    /** The returned {@code Osn} instance. */
     private com.oracle.bmc.blockchain.model.Osn osn;
 
     /**
-     * The returned Osn instance.
+     * The returned {@code Osn} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetOsnResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Osn instance. */
+        /** The returned {@code Osn} instance. */
         private com.oracle.bmc.blockchain.model.Osn osn;
 
         /**
-         * The returned Osn instance.
+         * The returned {@code Osn} instance.
          *
          * @param osn the value to set
          * @return this builder

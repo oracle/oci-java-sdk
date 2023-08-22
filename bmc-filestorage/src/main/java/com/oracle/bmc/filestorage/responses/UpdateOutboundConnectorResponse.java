@@ -36,11 +36,11 @@ public class UpdateOutboundConnectorResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned OutboundConnector instance. */
+    /** The returned {@code OutboundConnector} instance. */
     private com.oracle.bmc.filestorage.model.OutboundConnector outboundConnector;
 
     /**
-     * The returned OutboundConnector instance.
+     * The returned {@code OutboundConnector} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class UpdateOutboundConnectorResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned OutboundConnector instance. */
+        /** The returned {@code OutboundConnector} instance. */
         private com.oracle.bmc.filestorage.model.OutboundConnector outboundConnector;
 
         /**
-         * The returned OutboundConnector instance.
+         * The returned {@code OutboundConnector} instance.
          *
          * @param outboundConnector the value to set
          * @return this builder

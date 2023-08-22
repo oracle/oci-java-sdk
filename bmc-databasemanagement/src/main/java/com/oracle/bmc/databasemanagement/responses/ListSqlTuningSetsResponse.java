@@ -42,11 +42,11 @@ public class ListSqlTuningSetsResponse extends com.oracle.bmc.responses.BmcRespo
         return opcNextPage;
     }
 
-    /** The returned SqlTuningSetCollection instance. */
+    /** The returned {@code SqlTuningSetCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.SqlTuningSetCollection sqlTuningSetCollection;
 
     /**
-     * The returned SqlTuningSetCollection instance.
+     * The returned {@code SqlTuningSetCollection} instance.
      *
      * @return the value
      */
@@ -130,12 +130,12 @@ public class ListSqlTuningSetsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned SqlTuningSetCollection instance. */
+        /** The returned {@code SqlTuningSetCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.SqlTuningSetCollection
                 sqlTuningSetCollection;
 
         /**
-         * The returned SqlTuningSetCollection instance.
+         * The returned {@code SqlTuningSetCollection} instance.
          *
          * @param sqlTuningSetCollection the value to set
          * @return this builder

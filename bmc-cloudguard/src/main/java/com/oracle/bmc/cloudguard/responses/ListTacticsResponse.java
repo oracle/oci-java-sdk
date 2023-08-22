@@ -42,11 +42,11 @@ public class ListTacticsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned TacticCollection instance. */
+    /** The returned {@code TacticCollection} instance. */
     private com.oracle.bmc.cloudguard.model.TacticCollection tacticCollection;
 
     /**
-     * The returned TacticCollection instance.
+     * The returned {@code TacticCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListTacticsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned TacticCollection instance. */
+        /** The returned {@code TacticCollection} instance. */
         private com.oracle.bmc.cloudguard.model.TacticCollection tacticCollection;
 
         /**
-         * The returned TacticCollection instance.
+         * The returned {@code TacticCollection} instance.
          *
          * @param tacticCollection the value to set
          * @return this builder

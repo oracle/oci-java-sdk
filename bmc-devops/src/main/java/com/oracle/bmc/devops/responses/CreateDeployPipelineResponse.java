@@ -64,11 +64,11 @@ public class CreateDeployPipelineResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned DeployPipeline instance. */
+    /** The returned {@code DeployPipeline} instance. */
     private com.oracle.bmc.devops.model.DeployPipeline deployPipeline;
 
     /**
-     * The returned DeployPipeline instance.
+     * The returned {@code DeployPipeline} instance.
      *
      * @return the value
      */
@@ -183,11 +183,11 @@ public class CreateDeployPipelineResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned DeployPipeline instance. */
+        /** The returned {@code DeployPipeline} instance. */
         private com.oracle.bmc.devops.model.DeployPipeline deployPipeline;
 
         /**
-         * The returned DeployPipeline instance.
+         * The returned {@code DeployPipeline} instance.
          *
          * @param deployPipeline the value to set
          * @return this builder

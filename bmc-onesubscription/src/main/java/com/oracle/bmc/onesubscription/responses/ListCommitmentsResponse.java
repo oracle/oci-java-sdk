@@ -42,11 +42,11 @@ public class ListCommitmentsResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.onesubscription.model.CommitmentSummary instances. */
+    /** A list of {@code com.oracle.bmc.onesubscription.model.CommitmentSummary} instances. */
     private java.util.List<com.oracle.bmc.onesubscription.model.CommitmentSummary> items;
 
     /**
-     * A list of com.oracle.bmc.onesubscription.model.CommitmentSummary instances.
+     * A list of {@code com.oracle.bmc.onesubscription.model.CommitmentSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListCommitmentsResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** A list of com.oracle.bmc.onesubscription.model.CommitmentSummary instances. */
+        /** A list of {@code com.oracle.bmc.onesubscription.model.CommitmentSummary} instances. */
         private java.util.List<com.oracle.bmc.onesubscription.model.CommitmentSummary> items;
 
         /**
-         * A list of com.oracle.bmc.onesubscription.model.CommitmentSummary instances.
+         * A list of {@code com.oracle.bmc.onesubscription.model.CommitmentSummary} instances.
          *
          * @param items the value to set
          * @return this builder

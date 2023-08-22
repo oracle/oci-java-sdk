@@ -54,12 +54,12 @@ public class ListOdaInstanceAttachmentsResponse extends com.oracle.bmc.responses
         return opcTotalItems;
     }
 
-    /** The returned OdaInstanceAttachmentCollection instance. */
+    /** The returned {@code OdaInstanceAttachmentCollection} instance. */
     private com.oracle.bmc.oda.model.OdaInstanceAttachmentCollection
             odaInstanceAttachmentCollection;
 
     /**
-     * The returned OdaInstanceAttachmentCollection instance.
+     * The returned {@code OdaInstanceAttachmentCollection} instance.
      *
      * @return the value
      */
@@ -162,12 +162,12 @@ public class ListOdaInstanceAttachmentsResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned OdaInstanceAttachmentCollection instance. */
+        /** The returned {@code OdaInstanceAttachmentCollection} instance. */
         private com.oracle.bmc.oda.model.OdaInstanceAttachmentCollection
                 odaInstanceAttachmentCollection;
 
         /**
-         * The returned OdaInstanceAttachmentCollection instance.
+         * The returned {@code OdaInstanceAttachmentCollection} instance.
          *
          * @param odaInstanceAttachmentCollection the value to set
          * @return this builder

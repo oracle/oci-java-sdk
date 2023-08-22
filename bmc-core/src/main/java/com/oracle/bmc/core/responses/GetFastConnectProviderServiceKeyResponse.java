@@ -24,11 +24,11 @@ public class GetFastConnectProviderServiceKeyResponse extends com.oracle.bmc.res
         return opcRequestId;
     }
 
-    /** The returned FastConnectProviderServiceKey instance. */
+    /** The returned {@code FastConnectProviderServiceKey} instance. */
     private com.oracle.bmc.core.model.FastConnectProviderServiceKey fastConnectProviderServiceKey;
 
     /**
-     * The returned FastConnectProviderServiceKey instance.
+     * The returned {@code FastConnectProviderServiceKey} instance.
      *
      * @return the value
      */
@@ -90,12 +90,12 @@ public class GetFastConnectProviderServiceKeyResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /** The returned FastConnectProviderServiceKey instance. */
+        /** The returned {@code FastConnectProviderServiceKey} instance. */
         private com.oracle.bmc.core.model.FastConnectProviderServiceKey
                 fastConnectProviderServiceKey;
 
         /**
-         * The returned FastConnectProviderServiceKey instance.
+         * The returned {@code FastConnectProviderServiceKey} instance.
          *
          * @param fastConnectProviderServiceKey the value to set
          * @return this builder

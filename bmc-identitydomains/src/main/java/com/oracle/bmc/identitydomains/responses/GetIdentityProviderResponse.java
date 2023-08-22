@@ -24,11 +24,11 @@ public class GetIdentityProviderResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned IdentityProvider instance. */
+    /** The returned {@code IdentityProvider} instance. */
     private com.oracle.bmc.identitydomains.model.IdentityProvider identityProvider;
 
     /**
-     * The returned IdentityProvider instance.
+     * The returned {@code IdentityProvider} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetIdentityProviderResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned IdentityProvider instance. */
+        /** The returned {@code IdentityProvider} instance. */
         private com.oracle.bmc.identitydomains.model.IdentityProvider identityProvider;
 
         /**
-         * The returned IdentityProvider instance.
+         * The returned {@code IdentityProvider} instance.
          *
          * @param identityProvider the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class UpdateAlertRuleResponse extends com.oracle.bmc.responses.BmcRespons
         return etag;
     }
 
-    /** The returned AlertRule instance. */
+    /** The returned {@code AlertRule} instance. */
     private com.oracle.bmc.budget.model.AlertRule alertRule;
 
     /**
-     * The returned AlertRule instance.
+     * The returned {@code AlertRule} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateAlertRuleResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned AlertRule instance. */
+        /** The returned {@code AlertRule} instance. */
         private com.oracle.bmc.budget.model.AlertRule alertRule;
 
         /**
-         * The returned AlertRule instance.
+         * The returned {@code AlertRule} instance.
          *
          * @param alertRule the value to set
          * @return this builder

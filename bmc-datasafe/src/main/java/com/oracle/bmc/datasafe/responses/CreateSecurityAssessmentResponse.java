@@ -70,11 +70,11 @@ public class CreateSecurityAssessmentResponse extends com.oracle.bmc.responses.B
         return location;
     }
 
-    /** The returned SecurityAssessment instance. */
+    /** The returned {@code SecurityAssessment} instance. */
     private com.oracle.bmc.datasafe.model.SecurityAssessment securityAssessment;
 
     /**
-     * The returned SecurityAssessment instance.
+     * The returned {@code SecurityAssessment} instance.
      *
      * @return the value
      */
@@ -196,11 +196,11 @@ public class CreateSecurityAssessmentResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned SecurityAssessment instance. */
+        /** The returned {@code SecurityAssessment} instance. */
         private com.oracle.bmc.datasafe.model.SecurityAssessment securityAssessment;
 
         /**
-         * The returned SecurityAssessment instance.
+         * The returned {@code SecurityAssessment} instance.
          *
          * @param securityAssessment the value to set
          * @return this builder

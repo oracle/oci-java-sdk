@@ -36,11 +36,11 @@ public class GetIntegrationInstanceResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned IntegrationInstance instance. */
+    /** The returned {@code IntegrationInstance} instance. */
     private com.oracle.bmc.integration.model.IntegrationInstance integrationInstance;
 
     /**
-     * The returned IntegrationInstance instance.
+     * The returned {@code IntegrationInstance} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetIntegrationInstanceResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned IntegrationInstance instance. */
+        /** The returned {@code IntegrationInstance} instance. */
         private com.oracle.bmc.integration.model.IntegrationInstance integrationInstance;
 
         /**
-         * The returned IntegrationInstance instance.
+         * The returned {@code IntegrationInstance} instance.
          *
          * @param integrationInstance the value to set
          * @return this builder

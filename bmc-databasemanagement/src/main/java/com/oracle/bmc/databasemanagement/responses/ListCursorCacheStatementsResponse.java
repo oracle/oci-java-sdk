@@ -42,12 +42,12 @@ public class ListCursorCacheStatementsResponse extends com.oracle.bmc.responses.
         return opcNextPage;
     }
 
-    /** The returned CursorCacheStatementCollection instance. */
+    /** The returned {@code CursorCacheStatementCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.CursorCacheStatementCollection
             cursorCacheStatementCollection;
 
     /**
-     * The returned CursorCacheStatementCollection instance.
+     * The returned {@code CursorCacheStatementCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListCursorCacheStatementsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned CursorCacheStatementCollection instance. */
+        /** The returned {@code CursorCacheStatementCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.CursorCacheStatementCollection
                 cursorCacheStatementCollection;
 
         /**
-         * The returned CursorCacheStatementCollection instance.
+         * The returned {@code CursorCacheStatementCollection} instance.
          *
          * @param cursorCacheStatementCollection the value to set
          * @return this builder

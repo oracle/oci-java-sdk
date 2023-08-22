@@ -24,11 +24,11 @@ public class GetReplicationProgressResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned ReplicationProgress instance. */
+    /** The returned {@code ReplicationProgress} instance. */
     private com.oracle.bmc.cloudmigrations.model.ReplicationProgress replicationProgress;
 
     /**
-     * The returned ReplicationProgress instance.
+     * The returned {@code ReplicationProgress} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class GetReplicationProgressResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned ReplicationProgress instance. */
+        /** The returned {@code ReplicationProgress} instance. */
         private com.oracle.bmc.cloudmigrations.model.ReplicationProgress replicationProgress;
 
         /**
-         * The returned ReplicationProgress instance.
+         * The returned {@code ReplicationProgress} instance.
          *
          * @param replicationProgress the value to set
          * @return this builder

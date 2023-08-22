@@ -42,12 +42,12 @@ public class ListServiceEnvironmentsResponse extends com.oracle.bmc.responses.Bm
         return opcNextPage;
     }
 
-    /** The returned ServiceEnvironmentCollection instance. */
+    /** The returned {@code ServiceEnvironmentCollection} instance. */
     private com.oracle.bmc.servicemanagerproxy.model.ServiceEnvironmentCollection
             serviceEnvironmentCollection;
 
     /**
-     * The returned ServiceEnvironmentCollection instance.
+     * The returned {@code ServiceEnvironmentCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListServiceEnvironmentsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned ServiceEnvironmentCollection instance. */
+        /** The returned {@code ServiceEnvironmentCollection} instance. */
         private com.oracle.bmc.servicemanagerproxy.model.ServiceEnvironmentCollection
                 serviceEnvironmentCollection;
 
         /**
-         * The returned ServiceEnvironmentCollection instance.
+         * The returned {@code ServiceEnvironmentCollection} instance.
          *
          * @param serviceEnvironmentCollection the value to set
          * @return this builder

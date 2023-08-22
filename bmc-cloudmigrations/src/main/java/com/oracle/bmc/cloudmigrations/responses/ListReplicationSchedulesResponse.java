@@ -42,12 +42,12 @@ public class ListReplicationSchedulesResponse extends com.oracle.bmc.responses.B
         return opcNextPage;
     }
 
-    /** The returned ReplicationScheduleCollection instance. */
+    /** The returned {@code ReplicationScheduleCollection} instance. */
     private com.oracle.bmc.cloudmigrations.model.ReplicationScheduleCollection
             replicationScheduleCollection;
 
     /**
-     * The returned ReplicationScheduleCollection instance.
+     * The returned {@code ReplicationScheduleCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListReplicationSchedulesResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned ReplicationScheduleCollection instance. */
+        /** The returned {@code ReplicationScheduleCollection} instance. */
         private com.oracle.bmc.cloudmigrations.model.ReplicationScheduleCollection
                 replicationScheduleCollection;
 
         /**
-         * The returned ReplicationScheduleCollection instance.
+         * The returned {@code ReplicationScheduleCollection} instance.
          *
          * @param replicationScheduleCollection the value to set
          * @return this builder

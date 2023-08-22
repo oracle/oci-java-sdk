@@ -44,12 +44,12 @@ public class ListCertificateAuthoritiesResponse extends com.oracle.bmc.responses
         return opcNextPage;
     }
 
-    /** The returned CertificateAuthorityCollection instance. */
+    /** The returned {@code CertificateAuthorityCollection} instance. */
     private com.oracle.bmc.certificatesmanagement.model.CertificateAuthorityCollection
             certificateAuthorityCollection;
 
     /**
-     * The returned CertificateAuthorityCollection instance.
+     * The returned {@code CertificateAuthorityCollection} instance.
      *
      * @return the value
      */
@@ -139,12 +139,12 @@ public class ListCertificateAuthoritiesResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned CertificateAuthorityCollection instance. */
+        /** The returned {@code CertificateAuthorityCollection} instance. */
         private com.oracle.bmc.certificatesmanagement.model.CertificateAuthorityCollection
                 certificateAuthorityCollection;
 
         /**
-         * The returned CertificateAuthorityCollection instance.
+         * The returned {@code CertificateAuthorityCollection} instance.
          *
          * @param certificateAuthorityCollection the value to set
          * @return this builder

@@ -72,12 +72,12 @@ public class ListConnectionsResponse extends com.oracle.bmc.responses.BmcRespons
         return opcTotalItems;
     }
 
-    /** The returned ConnectionSummaryCollection instance. */
+    /** The returned {@code ConnectionSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.ConnectionSummaryCollection
             connectionSummaryCollection;
 
     /**
-     * The returned ConnectionSummaryCollection instance.
+     * The returned {@code ConnectionSummaryCollection} instance.
      *
      * @return the value
      */
@@ -202,12 +202,12 @@ public class ListConnectionsResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned ConnectionSummaryCollection instance. */
+        /** The returned {@code ConnectionSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.ConnectionSummaryCollection
                 connectionSummaryCollection;
 
         /**
-         * The returned ConnectionSummaryCollection instance.
+         * The returned {@code ConnectionSummaryCollection} instance.
          *
          * @param connectionSummaryCollection the value to set
          * @return this builder

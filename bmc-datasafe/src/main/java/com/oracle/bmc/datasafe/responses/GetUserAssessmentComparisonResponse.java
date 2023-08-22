@@ -24,11 +24,11 @@ public class GetUserAssessmentComparisonResponse extends com.oracle.bmc.response
         return opcRequestId;
     }
 
-    /** The returned UserAssessmentComparison instance. */
+    /** The returned {@code UserAssessmentComparison} instance. */
     private com.oracle.bmc.datasafe.model.UserAssessmentComparison userAssessmentComparison;
 
     /**
-     * The returned UserAssessmentComparison instance.
+     * The returned {@code UserAssessmentComparison} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class GetUserAssessmentComparisonResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned UserAssessmentComparison instance. */
+        /** The returned {@code UserAssessmentComparison} instance. */
         private com.oracle.bmc.datasafe.model.UserAssessmentComparison userAssessmentComparison;
 
         /**
-         * The returned UserAssessmentComparison instance.
+         * The returned {@code UserAssessmentComparison} instance.
          *
          * @param userAssessmentComparison the value to set
          * @return this builder

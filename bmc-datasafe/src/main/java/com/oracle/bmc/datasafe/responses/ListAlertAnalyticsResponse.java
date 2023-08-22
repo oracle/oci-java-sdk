@@ -44,11 +44,11 @@ public class ListAlertAnalyticsResponse extends com.oracle.bmc.responses.BmcResp
         return opcNextPage;
     }
 
-    /** The returned AlertAnalyticsCollection instance. */
+    /** The returned {@code AlertAnalyticsCollection} instance. */
     private com.oracle.bmc.datasafe.model.AlertAnalyticsCollection alertAnalyticsCollection;
 
     /**
-     * The returned AlertAnalyticsCollection instance.
+     * The returned {@code AlertAnalyticsCollection} instance.
      *
      * @return the value
      */
@@ -133,11 +133,11 @@ public class ListAlertAnalyticsResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned AlertAnalyticsCollection instance. */
+        /** The returned {@code AlertAnalyticsCollection} instance. */
         private com.oracle.bmc.datasafe.model.AlertAnalyticsCollection alertAnalyticsCollection;
 
         /**
-         * The returned AlertAnalyticsCollection instance.
+         * The returned {@code AlertAnalyticsCollection} instance.
          *
          * @param alertAnalyticsCollection the value to set
          * @return this builder

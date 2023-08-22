@@ -54,11 +54,11 @@ public class ListQuickPicksResponse extends com.oracle.bmc.responses.BmcResponse
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.apmtraces.model.QuickPickSummary instances. */
+    /** A list of {@code com.oracle.bmc.apmtraces.model.QuickPickSummary} instances. */
     private java.util.List<com.oracle.bmc.apmtraces.model.QuickPickSummary> items;
 
     /**
-     * A list of com.oracle.bmc.apmtraces.model.QuickPickSummary instances.
+     * A list of {@code com.oracle.bmc.apmtraces.model.QuickPickSummary} instances.
      *
      * @return the value
      */
@@ -158,11 +158,11 @@ public class ListQuickPicksResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** A list of com.oracle.bmc.apmtraces.model.QuickPickSummary instances. */
+        /** A list of {@code com.oracle.bmc.apmtraces.model.QuickPickSummary} instances. */
         private java.util.List<com.oracle.bmc.apmtraces.model.QuickPickSummary> items;
 
         /**
-         * A list of com.oracle.bmc.apmtraces.model.QuickPickSummary instances.
+         * A list of {@code com.oracle.bmc.apmtraces.model.QuickPickSummary} instances.
          *
          * @param items the value to set
          * @return this builder

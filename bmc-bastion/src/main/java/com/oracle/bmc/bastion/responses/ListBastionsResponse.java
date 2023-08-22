@@ -42,11 +42,11 @@ public class ListBastionsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.bastion.model.BastionSummary instances. */
+    /** A list of {@code com.oracle.bmc.bastion.model.BastionSummary} instances. */
     private java.util.List<com.oracle.bmc.bastion.model.BastionSummary> items;
 
     /**
-     * A list of com.oracle.bmc.bastion.model.BastionSummary instances.
+     * A list of {@code com.oracle.bmc.bastion.model.BastionSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListBastionsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.bastion.model.BastionSummary instances. */
+        /** A list of {@code com.oracle.bmc.bastion.model.BastionSummary} instances. */
         private java.util.List<com.oracle.bmc.bastion.model.BastionSummary> items;
 
         /**
-         * A list of com.oracle.bmc.bastion.model.BastionSummary instances.
+         * A list of {@code com.oracle.bmc.bastion.model.BastionSummary} instances.
          *
          * @param items the value to set
          * @return this builder

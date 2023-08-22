@@ -25,11 +25,11 @@ public class GetPrivateApplicationPackageActionDownloadConfigResponse
         return opcRequestId;
     }
 
-    /** The returned java.io.InputStream instance. */
+    /** The returned {@code java.io.InputStream} instance. */
     private java.io.InputStream inputStream;
 
     /**
-     * The returned java.io.InputStream instance.
+     * The returned {@code java.io.InputStream} instance.
      *
      * @return the value
      */
@@ -90,11 +90,11 @@ public class GetPrivateApplicationPackageActionDownloadConfigResponse
             return this;
         }
 
-        /** The returned java.io.InputStream instance. */
+        /** The returned {@code java.io.InputStream} instance. */
         private java.io.InputStream inputStream;
 
         /**
-         * The returned java.io.InputStream instance.
+         * The returned {@code java.io.InputStream} instance.
          *
          * @param inputStream the value to set
          * @return this builder

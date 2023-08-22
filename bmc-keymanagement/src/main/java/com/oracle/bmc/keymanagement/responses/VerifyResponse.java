@@ -24,11 +24,11 @@ public class VerifyResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned VerifiedData instance. */
+    /** The returned {@code VerifiedData} instance. */
     private com.oracle.bmc.keymanagement.model.VerifiedData verifiedData;
 
     /**
-     * The returned VerifiedData instance.
+     * The returned {@code VerifiedData} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class VerifyResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned VerifiedData instance. */
+        /** The returned {@code VerifiedData} instance. */
         private com.oracle.bmc.keymanagement.model.VerifiedData verifiedData;
 
         /**
-         * The returned VerifiedData instance.
+         * The returned {@code VerifiedData} instance.
          *
          * @param verifiedData the value to set
          * @return this builder

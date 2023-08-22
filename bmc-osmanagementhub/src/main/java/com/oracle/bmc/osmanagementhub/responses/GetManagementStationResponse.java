@@ -52,11 +52,11 @@ public class GetManagementStationResponse extends com.oracle.bmc.responses.BmcRe
         return retryAfter;
     }
 
-    /** The returned ManagementStation instance. */
+    /** The returned {@code ManagementStation} instance. */
     private com.oracle.bmc.osmanagementhub.model.ManagementStation managementStation;
 
     /**
-     * The returned ManagementStation instance.
+     * The returned {@code ManagementStation} instance.
      *
      * @return the value
      */
@@ -154,11 +154,11 @@ public class GetManagementStationResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned ManagementStation instance. */
+        /** The returned {@code ManagementStation} instance. */
         private com.oracle.bmc.osmanagementhub.model.ManagementStation managementStation;
 
         /**
-         * The returned ManagementStation instance.
+         * The returned {@code ManagementStation} instance.
          *
          * @param managementStation the value to set
          * @return this builder

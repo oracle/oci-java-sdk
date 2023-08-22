@@ -40,11 +40,11 @@ public class UpdateFunctionLibraryResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned FunctionLibrary instance. */
+    /** The returned {@code FunctionLibrary} instance. */
     private com.oracle.bmc.dataintegration.model.FunctionLibrary functionLibrary;
 
     /**
-     * The returned FunctionLibrary instance.
+     * The returned {@code FunctionLibrary} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class UpdateFunctionLibraryResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned FunctionLibrary instance. */
+        /** The returned {@code FunctionLibrary} instance. */
         private com.oracle.bmc.dataintegration.model.FunctionLibrary functionLibrary;
 
         /**
-         * The returned FunctionLibrary instance.
+         * The returned {@code FunctionLibrary} instance.
          *
          * @param functionLibrary the value to set
          * @return this builder

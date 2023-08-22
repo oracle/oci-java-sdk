@@ -36,11 +36,11 @@ public class GetPreferredCredentialResponse extends com.oracle.bmc.responses.Bmc
         return etag;
     }
 
-    /** The returned PreferredCredential instance. */
+    /** The returned {@code PreferredCredential} instance. */
     private com.oracle.bmc.databasemanagement.model.PreferredCredential preferredCredential;
 
     /**
-     * The returned PreferredCredential instance.
+     * The returned {@code PreferredCredential} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetPreferredCredentialResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned PreferredCredential instance. */
+        /** The returned {@code PreferredCredential} instance. */
         private com.oracle.bmc.databasemanagement.model.PreferredCredential preferredCredential;
 
         /**
-         * The returned PreferredCredential instance.
+         * The returned {@code PreferredCredential} instance.
          *
          * @param preferredCredential the value to set
          * @return this builder

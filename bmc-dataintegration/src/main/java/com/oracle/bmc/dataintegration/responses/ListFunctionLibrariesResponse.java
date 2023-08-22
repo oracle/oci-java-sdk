@@ -72,12 +72,12 @@ public class ListFunctionLibrariesResponse extends com.oracle.bmc.responses.BmcR
         return opcTotalItems;
     }
 
-    /** The returned FunctionLibrarySummaryCollection instance. */
+    /** The returned {@code FunctionLibrarySummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.FunctionLibrarySummaryCollection
             functionLibrarySummaryCollection;
 
     /**
-     * The returned FunctionLibrarySummaryCollection instance.
+     * The returned {@code FunctionLibrarySummaryCollection} instance.
      *
      * @return the value
      */
@@ -202,12 +202,12 @@ public class ListFunctionLibrariesResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned FunctionLibrarySummaryCollection instance. */
+        /** The returned {@code FunctionLibrarySummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.FunctionLibrarySummaryCollection
                 functionLibrarySummaryCollection;
 
         /**
-         * The returned FunctionLibrarySummaryCollection instance.
+         * The returned {@code FunctionLibrarySummaryCollection} instance.
          *
          * @param functionLibrarySummaryCollection the value to set
          * @return this builder

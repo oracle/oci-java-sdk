@@ -56,11 +56,11 @@ public class CreateImportRequestResponse extends com.oracle.bmc.responses.BmcRes
         return opcWorkRequestId;
     }
 
-    /** The returned ImportRequest instance. */
+    /** The returned {@code ImportRequest} instance. */
     private com.oracle.bmc.dataintegration.model.ImportRequest importRequest;
 
     /**
-     * The returned ImportRequest instance.
+     * The returned {@code ImportRequest} instance.
      *
      * @return the value
      */
@@ -162,11 +162,11 @@ public class CreateImportRequestResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned ImportRequest instance. */
+        /** The returned {@code ImportRequest} instance. */
         private com.oracle.bmc.dataintegration.model.ImportRequest importRequest;
 
         /**
-         * The returned ImportRequest instance.
+         * The returned {@code ImportRequest} instance.
          *
          * @param importRequest the value to set
          * @return this builder

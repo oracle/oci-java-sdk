@@ -42,11 +42,11 @@ public class ListAdminUsersResponse extends com.oracle.bmc.responses.BmcResponse
         return opcNextPage;
     }
 
-    /** The returned AdminUserCollection instance. */
+    /** The returned {@code AdminUserCollection} instance. */
     private com.oracle.bmc.fusionapps.model.AdminUserCollection adminUserCollection;
 
     /**
-     * The returned AdminUserCollection instance.
+     * The returned {@code AdminUserCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListAdminUsersResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned AdminUserCollection instance. */
+        /** The returned {@code AdminUserCollection} instance. */
         private com.oracle.bmc.fusionapps.model.AdminUserCollection adminUserCollection;
 
         /**
-         * The returned AdminUserCollection instance.
+         * The returned {@code AdminUserCollection} instance.
          *
          * @param adminUserCollection the value to set
          * @return this builder

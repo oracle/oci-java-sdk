@@ -36,11 +36,11 @@ public class ConnectionDiagnosticsResponse extends com.oracle.bmc.responses.BmcR
         return etag;
     }
 
-    /** The returned DiagnosticsResult instance. */
+    /** The returned {@code DiagnosticsResult} instance. */
     private com.oracle.bmc.databasemigration.model.DiagnosticsResult diagnosticsResult;
 
     /**
-     * The returned DiagnosticsResult instance.
+     * The returned {@code DiagnosticsResult} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class ConnectionDiagnosticsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned DiagnosticsResult instance. */
+        /** The returned {@code DiagnosticsResult} instance. */
         private com.oracle.bmc.databasemigration.model.DiagnosticsResult diagnosticsResult;
 
         /**
-         * The returned DiagnosticsResult instance.
+         * The returned {@code DiagnosticsResult} instance.
          *
          * @param diagnosticsResult the value to set
          * @return this builder

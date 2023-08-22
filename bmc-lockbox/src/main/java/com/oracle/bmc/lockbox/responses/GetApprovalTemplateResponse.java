@@ -36,11 +36,11 @@ public class GetApprovalTemplateResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned ApprovalTemplate instance. */
+    /** The returned {@code ApprovalTemplate} instance. */
     private com.oracle.bmc.lockbox.model.ApprovalTemplate approvalTemplate;
 
     /**
-     * The returned ApprovalTemplate instance.
+     * The returned {@code ApprovalTemplate} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetApprovalTemplateResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned ApprovalTemplate instance. */
+        /** The returned {@code ApprovalTemplate} instance. */
         private com.oracle.bmc.lockbox.model.ApprovalTemplate approvalTemplate;
 
         /**
-         * The returned ApprovalTemplate instance.
+         * The returned {@code ApprovalTemplate} instance.
          *
          * @param approvalTemplate the value to set
          * @return this builder

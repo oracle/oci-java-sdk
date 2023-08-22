@@ -36,11 +36,11 @@ public class UpdateExportSetResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned ExportSet instance. */
+    /** The returned {@code ExportSet} instance. */
     private com.oracle.bmc.filestorage.model.ExportSet exportSet;
 
     /**
-     * The returned ExportSet instance.
+     * The returned {@code ExportSet} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateExportSetResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned ExportSet instance. */
+        /** The returned {@code ExportSet} instance. */
         private com.oracle.bmc.filestorage.model.ExportSet exportSet;
 
         /**
-         * The returned ExportSet instance.
+         * The returned {@code ExportSet} instance.
          *
          * @param exportSet the value to set
          * @return this builder

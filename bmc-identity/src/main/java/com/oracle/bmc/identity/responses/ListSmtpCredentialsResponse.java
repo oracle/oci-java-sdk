@@ -42,11 +42,11 @@ public class ListSmtpCredentialsResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.identity.model.SmtpCredentialSummary instances. */
+    /** A list of {@code com.oracle.bmc.identity.model.SmtpCredentialSummary} instances. */
     private java.util.List<com.oracle.bmc.identity.model.SmtpCredentialSummary> items;
 
     /**
-     * A list of com.oracle.bmc.identity.model.SmtpCredentialSummary instances.
+     * A list of {@code com.oracle.bmc.identity.model.SmtpCredentialSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListSmtpCredentialsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** A list of com.oracle.bmc.identity.model.SmtpCredentialSummary instances. */
+        /** A list of {@code com.oracle.bmc.identity.model.SmtpCredentialSummary} instances. */
         private java.util.List<com.oracle.bmc.identity.model.SmtpCredentialSummary> items;
 
         /**
-         * A list of com.oracle.bmc.identity.model.SmtpCredentialSummary instances.
+         * A list of {@code com.oracle.bmc.identity.model.SmtpCredentialSummary} instances.
          *
          * @param items the value to set
          * @return this builder

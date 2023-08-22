@@ -42,12 +42,12 @@ public class ListManagedInstancesResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** The returned ManagedInstanceCollection instance. */
+    /** The returned {@code ManagedInstanceCollection} instance. */
     private com.oracle.bmc.osmanagementhub.model.ManagedInstanceCollection
             managedInstanceCollection;
 
     /**
-     * The returned ManagedInstanceCollection instance.
+     * The returned {@code ManagedInstanceCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListManagedInstancesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned ManagedInstanceCollection instance. */
+        /** The returned {@code ManagedInstanceCollection} instance. */
         private com.oracle.bmc.osmanagementhub.model.ManagedInstanceCollection
                 managedInstanceCollection;
 
         /**
-         * The returned ManagedInstanceCollection instance.
+         * The returned {@code ManagedInstanceCollection} instance.
          *
          * @param managedInstanceCollection the value to set
          * @return this builder

@@ -64,12 +64,12 @@ public class ListLogAnalyticsLogGroupsResponse extends com.oracle.bmc.responses.
         return opcNextPage;
     }
 
-    /** The returned LogAnalyticsLogGroupSummaryCollection instance. */
+    /** The returned {@code LogAnalyticsLogGroupSummaryCollection} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsLogGroupSummaryCollection
             logAnalyticsLogGroupSummaryCollection;
 
     /**
-     * The returned LogAnalyticsLogGroupSummaryCollection instance.
+     * The returned {@code LogAnalyticsLogGroupSummaryCollection} instance.
      *
      * @return the value
      */
@@ -182,12 +182,12 @@ public class ListLogAnalyticsLogGroupsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned LogAnalyticsLogGroupSummaryCollection instance. */
+        /** The returned {@code LogAnalyticsLogGroupSummaryCollection} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsLogGroupSummaryCollection
                 logAnalyticsLogGroupSummaryCollection;
 
         /**
-         * The returned LogAnalyticsLogGroupSummaryCollection instance.
+         * The returned {@code LogAnalyticsLogGroupSummaryCollection} instance.
          *
          * @param logAnalyticsLogGroupSummaryCollection the value to set
          * @return this builder

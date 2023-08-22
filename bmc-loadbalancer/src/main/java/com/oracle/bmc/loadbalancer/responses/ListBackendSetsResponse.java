@@ -44,11 +44,11 @@ public class ListBackendSetsResponse extends com.oracle.bmc.responses.BmcRespons
         return eTag;
     }
 
-    /** A list of com.oracle.bmc.loadbalancer.model.BackendSet instances. */
+    /** A list of {@code com.oracle.bmc.loadbalancer.model.BackendSet} instances. */
     private java.util.List<com.oracle.bmc.loadbalancer.model.BackendSet> items;
 
     /**
-     * A list of com.oracle.bmc.loadbalancer.model.BackendSet instances.
+     * A list of {@code com.oracle.bmc.loadbalancer.model.BackendSet} instances.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListBackendSetsResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** A list of com.oracle.bmc.loadbalancer.model.BackendSet instances. */
+        /** A list of {@code com.oracle.bmc.loadbalancer.model.BackendSet} instances. */
         private java.util.List<com.oracle.bmc.loadbalancer.model.BackendSet> items;
 
         /**
-         * A list of com.oracle.bmc.loadbalancer.model.BackendSet instances.
+         * A list of {@code com.oracle.bmc.loadbalancer.model.BackendSet} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListSqlTextsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned SqlTextCollection instance. */
+    /** The returned {@code SqlTextCollection} instance. */
     private com.oracle.bmc.opsi.model.SqlTextCollection sqlTextCollection;
 
     /**
-     * The returned SqlTextCollection instance.
+     * The returned {@code SqlTextCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListSqlTextsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned SqlTextCollection instance. */
+        /** The returned {@code SqlTextCollection} instance. */
         private com.oracle.bmc.opsi.model.SqlTextCollection sqlTextCollection;
 
         /**
-         * The returned SqlTextCollection instance.
+         * The returned {@code SqlTextCollection} instance.
          *
          * @param sqlTextCollection the value to set
          * @return this builder

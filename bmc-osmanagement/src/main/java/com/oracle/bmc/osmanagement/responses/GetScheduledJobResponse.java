@@ -52,11 +52,11 @@ public class GetScheduledJobResponse extends com.oracle.bmc.responses.BmcRespons
         return retryAfter;
     }
 
-    /** The returned ScheduledJob instance. */
+    /** The returned {@code ScheduledJob} instance. */
     private com.oracle.bmc.osmanagement.model.ScheduledJob scheduledJob;
 
     /**
-     * The returned ScheduledJob instance.
+     * The returned {@code ScheduledJob} instance.
      *
      * @return the value
      */
@@ -154,11 +154,11 @@ public class GetScheduledJobResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned ScheduledJob instance. */
+        /** The returned {@code ScheduledJob} instance. */
         private com.oracle.bmc.osmanagement.model.ScheduledJob scheduledJob;
 
         /**
-         * The returned ScheduledJob instance.
+         * The returned {@code ScheduledJob} instance.
          *
          * @param scheduledJob the value to set
          * @return this builder

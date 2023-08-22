@@ -42,11 +42,11 @@ public class ListFsuJobsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned FsuJobCollection instance. */
+    /** The returned {@code FsuJobCollection} instance. */
     private com.oracle.bmc.fleetsoftwareupdate.model.FsuJobCollection fsuJobCollection;
 
     /**
-     * The returned FsuJobCollection instance.
+     * The returned {@code FsuJobCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListFsuJobsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned FsuJobCollection instance. */
+        /** The returned {@code FsuJobCollection} instance. */
         private com.oracle.bmc.fleetsoftwareupdate.model.FsuJobCollection fsuJobCollection;
 
         /**
-         * The returned FsuJobCollection instance.
+         * The returned {@code FsuJobCollection} instance.
          *
          * @param fsuJobCollection the value to set
          * @return this builder

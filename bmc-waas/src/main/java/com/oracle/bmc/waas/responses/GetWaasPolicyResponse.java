@@ -36,11 +36,11 @@ public class GetWaasPolicyResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** The returned WaasPolicy instance. */
+    /** The returned {@code WaasPolicy} instance. */
     private com.oracle.bmc.waas.model.WaasPolicy waasPolicy;
 
     /**
-     * The returned WaasPolicy instance.
+     * The returned {@code WaasPolicy} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetWaasPolicyResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned WaasPolicy instance. */
+        /** The returned {@code WaasPolicy} instance. */
         private com.oracle.bmc.waas.model.WaasPolicy waasPolicy;
 
         /**
-         * The returned WaasPolicy instance.
+         * The returned {@code WaasPolicy} instance.
          *
          * @param waasPolicy the value to set
          * @return this builder

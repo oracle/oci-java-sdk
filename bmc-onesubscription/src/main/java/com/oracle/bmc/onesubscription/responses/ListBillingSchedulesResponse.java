@@ -42,11 +42,11 @@ public class ListBillingSchedulesResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.onesubscription.model.BillingScheduleSummary instances. */
+    /** A list of {@code com.oracle.bmc.onesubscription.model.BillingScheduleSummary} instances. */
     private java.util.List<com.oracle.bmc.onesubscription.model.BillingScheduleSummary> items;
 
     /**
-     * A list of com.oracle.bmc.onesubscription.model.BillingScheduleSummary instances.
+     * A list of {@code com.oracle.bmc.onesubscription.model.BillingScheduleSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,13 @@ public class ListBillingSchedulesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** A list of com.oracle.bmc.onesubscription.model.BillingScheduleSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.onesubscription.model.BillingScheduleSummary} instances.
+         */
         private java.util.List<com.oracle.bmc.onesubscription.model.BillingScheduleSummary> items;
 
         /**
-         * A list of com.oracle.bmc.onesubscription.model.BillingScheduleSummary instances.
+         * A list of {@code com.oracle.bmc.onesubscription.model.BillingScheduleSummary} instances.
          *
          * @param items the value to set
          * @return this builder

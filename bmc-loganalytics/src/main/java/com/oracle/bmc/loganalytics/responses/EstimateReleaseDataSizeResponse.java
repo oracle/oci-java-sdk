@@ -24,12 +24,12 @@ public class EstimateReleaseDataSizeResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned EstimateReleaseDataSizeResult instance. */
+    /** The returned {@code EstimateReleaseDataSizeResult} instance. */
     private com.oracle.bmc.loganalytics.model.EstimateReleaseDataSizeResult
             estimateReleaseDataSizeResult;
 
     /**
-     * The returned EstimateReleaseDataSizeResult instance.
+     * The returned {@code EstimateReleaseDataSizeResult} instance.
      *
      * @return the value
      */
@@ -92,12 +92,12 @@ public class EstimateReleaseDataSizeResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned EstimateReleaseDataSizeResult instance. */
+        /** The returned {@code EstimateReleaseDataSizeResult} instance. */
         private com.oracle.bmc.loganalytics.model.EstimateReleaseDataSizeResult
                 estimateReleaseDataSizeResult;
 
         /**
-         * The returned EstimateReleaseDataSizeResult instance.
+         * The returned {@code EstimateReleaseDataSizeResult} instance.
          *
          * @param estimateReleaseDataSizeResult the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListApplicationsResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.functions.model.ApplicationSummary instances. */
+    /** A list of {@code com.oracle.bmc.functions.model.ApplicationSummary} instances. */
     private java.util.List<com.oracle.bmc.functions.model.ApplicationSummary> items;
 
     /**
-     * A list of com.oracle.bmc.functions.model.ApplicationSummary instances.
+     * A list of {@code com.oracle.bmc.functions.model.ApplicationSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListApplicationsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** A list of com.oracle.bmc.functions.model.ApplicationSummary instances. */
+        /** A list of {@code com.oracle.bmc.functions.model.ApplicationSummary} instances. */
         private java.util.List<com.oracle.bmc.functions.model.ApplicationSummary> items;
 
         /**
-         * A list of com.oracle.bmc.functions.model.ApplicationSummary instances.
+         * A list of {@code com.oracle.bmc.functions.model.ApplicationSummary} instances.
          *
          * @param items the value to set
          * @return this builder

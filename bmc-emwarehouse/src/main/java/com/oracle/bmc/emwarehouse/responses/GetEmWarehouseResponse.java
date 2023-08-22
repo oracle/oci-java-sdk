@@ -36,11 +36,11 @@ public class GetEmWarehouseResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned EmWarehouse instance. */
+    /** The returned {@code EmWarehouse} instance. */
     private com.oracle.bmc.emwarehouse.model.EmWarehouse emWarehouse;
 
     /**
-     * The returned EmWarehouse instance.
+     * The returned {@code EmWarehouse} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetEmWarehouseResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned EmWarehouse instance. */
+        /** The returned {@code EmWarehouse} instance. */
         private com.oracle.bmc.emwarehouse.model.EmWarehouse emWarehouse;
 
         /**
-         * The returned EmWarehouse instance.
+         * The returned {@code EmWarehouse} instance.
          *
          * @param emWarehouse the value to set
          * @return this builder

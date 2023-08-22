@@ -55,11 +55,11 @@ public class ListIPSecConnectionTunnelSecurityAssociationsResponse
         return opcTotalItems;
     }
 
-    /** A list of com.oracle.bmc.core.model.TunnelSecurityAssociationSummary instances. */
+    /** A list of {@code com.oracle.bmc.core.model.TunnelSecurityAssociationSummary} instances. */
     private java.util.List<com.oracle.bmc.core.model.TunnelSecurityAssociationSummary> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.TunnelSecurityAssociationSummary instances.
+     * A list of {@code com.oracle.bmc.core.model.TunnelSecurityAssociationSummary} instances.
      *
      * @return the value
      */
@@ -160,11 +160,13 @@ public class ListIPSecConnectionTunnelSecurityAssociationsResponse
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.TunnelSecurityAssociationSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.core.model.TunnelSecurityAssociationSummary} instances.
+         */
         private java.util.List<com.oracle.bmc.core.model.TunnelSecurityAssociationSummary> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.TunnelSecurityAssociationSummary instances.
+         * A list of {@code com.oracle.bmc.core.model.TunnelSecurityAssociationSummary} instances.
          *
          * @param items the value to set
          * @return this builder

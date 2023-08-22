@@ -24,11 +24,11 @@ public class GenerateDataEncryptionKeyResponse extends com.oracle.bmc.responses.
         return opcRequestId;
     }
 
-    /** The returned GeneratedKey instance. */
+    /** The returned {@code GeneratedKey} instance. */
     private com.oracle.bmc.keymanagement.model.GeneratedKey generatedKey;
 
     /**
-     * The returned GeneratedKey instance.
+     * The returned {@code GeneratedKey} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class GenerateDataEncryptionKeyResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned GeneratedKey instance. */
+        /** The returned {@code GeneratedKey} instance. */
         private com.oracle.bmc.keymanagement.model.GeneratedKey generatedKey;
 
         /**
-         * The returned GeneratedKey instance.
+         * The returned {@code GeneratedKey} instance.
          *
          * @param generatedKey the value to set
          * @return this builder

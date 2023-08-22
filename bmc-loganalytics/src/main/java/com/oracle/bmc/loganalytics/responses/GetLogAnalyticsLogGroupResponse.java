@@ -36,11 +36,11 @@ public class GetLogAnalyticsLogGroupResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsLogGroup instance. */
+    /** The returned {@code LogAnalyticsLogGroup} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsLogGroup logAnalyticsLogGroup;
 
     /**
-     * The returned LogAnalyticsLogGroup instance.
+     * The returned {@code LogAnalyticsLogGroup} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetLogAnalyticsLogGroupResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned LogAnalyticsLogGroup instance. */
+        /** The returned {@code LogAnalyticsLogGroup} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsLogGroup logAnalyticsLogGroup;
 
         /**
-         * The returned LogAnalyticsLogGroup instance.
+         * The returned {@code LogAnalyticsLogGroup} instance.
          *
          * @param logAnalyticsLogGroup the value to set
          * @return this builder

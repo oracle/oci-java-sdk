@@ -43,12 +43,12 @@ public class RequestSecurityScoreSummarizedTrendResponse
         return opcNextPage;
     }
 
-    /** The returned SecurityScoreTrendAggregationCollection instance. */
+    /** The returned {@code SecurityScoreTrendAggregationCollection} instance. */
     private com.oracle.bmc.cloudguard.model.SecurityScoreTrendAggregationCollection
             securityScoreTrendAggregationCollection;
 
     /**
-     * The returned SecurityScoreTrendAggregationCollection instance.
+     * The returned {@code SecurityScoreTrendAggregationCollection} instance.
      *
      * @return the value
      */
@@ -134,12 +134,12 @@ public class RequestSecurityScoreSummarizedTrendResponse
             return this;
         }
 
-        /** The returned SecurityScoreTrendAggregationCollection instance. */
+        /** The returned {@code SecurityScoreTrendAggregationCollection} instance. */
         private com.oracle.bmc.cloudguard.model.SecurityScoreTrendAggregationCollection
                 securityScoreTrendAggregationCollection;
 
         /**
-         * The returned SecurityScoreTrendAggregationCollection instance.
+         * The returned {@code SecurityScoreTrendAggregationCollection} instance.
          *
          * @param securityScoreTrendAggregationCollection the value to set
          * @return this builder

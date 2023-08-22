@@ -40,11 +40,11 @@ public class ListObjectsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned ListObjects instance. */
+    /** The returned {@code ListObjects} instance. */
     private com.oracle.bmc.objectstorage.model.ListObjects listObjects;
 
     /**
-     * The returned ListObjects instance.
+     * The returned {@code ListObjects} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class ListObjectsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned ListObjects instance. */
+        /** The returned {@code ListObjects} instance. */
         private com.oracle.bmc.objectstorage.model.ListObjects listObjects;
 
         /**
-         * The returned ListObjects instance.
+         * The returned {@code ListObjects} instance.
          *
          * @param listObjects the value to set
          * @return this builder

@@ -24,11 +24,11 @@ public class GetOAuth2ClientCredentialResponse extends com.oracle.bmc.responses.
         return opcRequestId;
     }
 
-    /** The returned OAuth2ClientCredential instance. */
+    /** The returned {@code OAuth2ClientCredential} instance. */
     private com.oracle.bmc.identitydomains.model.OAuth2ClientCredential oAuth2ClientCredential;
 
     /**
-     * The returned OAuth2ClientCredential instance.
+     * The returned {@code OAuth2ClientCredential} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class GetOAuth2ClientCredentialResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned OAuth2ClientCredential instance. */
+        /** The returned {@code OAuth2ClientCredential} instance. */
         private com.oracle.bmc.identitydomains.model.OAuth2ClientCredential oAuth2ClientCredential;
 
         /**
-         * The returned OAuth2ClientCredential instance.
+         * The returned {@code OAuth2ClientCredential} instance.
          *
          * @param oAuth2ClientCredential the value to set
          * @return this builder

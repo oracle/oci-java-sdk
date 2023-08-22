@@ -60,11 +60,11 @@ public class ListStatementsResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned StatementCollection instance. */
+    /** The returned {@code StatementCollection} instance. */
     private com.oracle.bmc.dataflow.model.StatementCollection statementCollection;
 
     /**
-     * The returned StatementCollection instance.
+     * The returned {@code StatementCollection} instance.
      *
      * @return the value
      */
@@ -170,11 +170,11 @@ public class ListStatementsResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned StatementCollection instance. */
+        /** The returned {@code StatementCollection} instance. */
         private com.oracle.bmc.dataflow.model.StatementCollection statementCollection;
 
         /**
-         * The returned StatementCollection instance.
+         * The returned {@code StatementCollection} instance.
          *
          * @param statementCollection the value to set
          * @return this builder

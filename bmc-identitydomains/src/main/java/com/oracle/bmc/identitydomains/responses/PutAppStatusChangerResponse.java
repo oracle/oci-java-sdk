@@ -36,11 +36,11 @@ public class PutAppStatusChangerResponse extends com.oracle.bmc.responses.BmcRes
         return etag;
     }
 
-    /** The returned AppStatusChanger instance. */
+    /** The returned {@code AppStatusChanger} instance. */
     private com.oracle.bmc.identitydomains.model.AppStatusChanger appStatusChanger;
 
     /**
-     * The returned AppStatusChanger instance.
+     * The returned {@code AppStatusChanger} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class PutAppStatusChangerResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned AppStatusChanger instance. */
+        /** The returned {@code AppStatusChanger} instance. */
         private com.oracle.bmc.identitydomains.model.AppStatusChanger appStatusChanger;
 
         /**
-         * The returned AppStatusChanger instance.
+         * The returned {@code AppStatusChanger} instance.
          *
          * @param appStatusChanger the value to set
          * @return this builder

@@ -43,12 +43,12 @@ public class SummarizeDatabaseInsightResourceUsageResponse
         return opcNextPage;
     }
 
-    /** The returned SummarizeDatabaseInsightResourceUsageAggregation instance. */
+    /** The returned {@code SummarizeDatabaseInsightResourceUsageAggregation} instance. */
     private com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceUsageAggregation
             summarizeDatabaseInsightResourceUsageAggregation;
 
     /**
-     * The returned SummarizeDatabaseInsightResourceUsageAggregation instance.
+     * The returned {@code SummarizeDatabaseInsightResourceUsageAggregation} instance.
      *
      * @return the value
      */
@@ -135,12 +135,12 @@ public class SummarizeDatabaseInsightResourceUsageResponse
             return this;
         }
 
-        /** The returned SummarizeDatabaseInsightResourceUsageAggregation instance. */
+        /** The returned {@code SummarizeDatabaseInsightResourceUsageAggregation} instance. */
         private com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceUsageAggregation
                 summarizeDatabaseInsightResourceUsageAggregation;
 
         /**
-         * The returned SummarizeDatabaseInsightResourceUsageAggregation instance.
+         * The returned {@code SummarizeDatabaseInsightResourceUsageAggregation} instance.
          *
          * @param summarizeDatabaseInsightResourceUsageAggregation the value to set
          * @return this builder

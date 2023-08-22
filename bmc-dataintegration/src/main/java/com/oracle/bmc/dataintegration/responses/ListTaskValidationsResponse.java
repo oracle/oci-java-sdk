@@ -72,12 +72,12 @@ public class ListTaskValidationsResponse extends com.oracle.bmc.responses.BmcRes
         return opcTotalItems;
     }
 
-    /** The returned TaskValidationSummaryCollection instance. */
+    /** The returned {@code TaskValidationSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.TaskValidationSummaryCollection
             taskValidationSummaryCollection;
 
     /**
-     * The returned TaskValidationSummaryCollection instance.
+     * The returned {@code TaskValidationSummaryCollection} instance.
      *
      * @return the value
      */
@@ -202,12 +202,12 @@ public class ListTaskValidationsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned TaskValidationSummaryCollection instance. */
+        /** The returned {@code TaskValidationSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.TaskValidationSummaryCollection
                 taskValidationSummaryCollection;
 
         /**
-         * The returned TaskValidationSummaryCollection instance.
+         * The returned {@code TaskValidationSummaryCollection} instance.
          *
          * @param taskValidationSummaryCollection the value to set
          * @return this builder

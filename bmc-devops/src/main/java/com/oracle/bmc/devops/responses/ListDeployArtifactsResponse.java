@@ -42,11 +42,11 @@ public class ListDeployArtifactsResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** The returned DeployArtifactCollection instance. */
+    /** The returned {@code DeployArtifactCollection} instance. */
     private com.oracle.bmc.devops.model.DeployArtifactCollection deployArtifactCollection;
 
     /**
-     * The returned DeployArtifactCollection instance.
+     * The returned {@code DeployArtifactCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListDeployArtifactsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned DeployArtifactCollection instance. */
+        /** The returned {@code DeployArtifactCollection} instance. */
         private com.oracle.bmc.devops.model.DeployArtifactCollection deployArtifactCollection;
 
         /**
-         * The returned DeployArtifactCollection instance.
+         * The returned {@code DeployArtifactCollection} instance.
          *
          * @param deployArtifactCollection the value to set
          * @return this builder

@@ -24,11 +24,11 @@ public class GetMyTrustedUserAgentResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned MyTrustedUserAgent instance. */
+    /** The returned {@code MyTrustedUserAgent} instance. */
     private com.oracle.bmc.identitydomains.model.MyTrustedUserAgent myTrustedUserAgent;
 
     /**
-     * The returned MyTrustedUserAgent instance.
+     * The returned {@code MyTrustedUserAgent} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetMyTrustedUserAgentResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned MyTrustedUserAgent instance. */
+        /** The returned {@code MyTrustedUserAgent} instance. */
         private com.oracle.bmc.identitydomains.model.MyTrustedUserAgent myTrustedUserAgent;
 
         /**
-         * The returned MyTrustedUserAgent instance.
+         * The returned {@code MyTrustedUserAgent} instance.
          *
          * @param myTrustedUserAgent the value to set
          * @return this builder

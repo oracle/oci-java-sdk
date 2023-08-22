@@ -42,12 +42,12 @@ public class ListExternalClustersResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** The returned ExternalClusterCollection instance. */
+    /** The returned {@code ExternalClusterCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.ExternalClusterCollection
             externalClusterCollection;
 
     /**
-     * The returned ExternalClusterCollection instance.
+     * The returned {@code ExternalClusterCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListExternalClustersResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned ExternalClusterCollection instance. */
+        /** The returned {@code ExternalClusterCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.ExternalClusterCollection
                 externalClusterCollection;
 
         /**
-         * The returned ExternalClusterCollection instance.
+         * The returned {@code ExternalClusterCollection} instance.
          *
          * @param externalClusterCollection the value to set
          * @return this builder

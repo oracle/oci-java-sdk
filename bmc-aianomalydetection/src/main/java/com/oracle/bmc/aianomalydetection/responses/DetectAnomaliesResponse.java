@@ -24,11 +24,11 @@ public class DetectAnomaliesResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned AnomalyDetectResult instance. */
+    /** The returned {@code AnomalyDetectResult} instance. */
     private com.oracle.bmc.aianomalydetection.model.AnomalyDetectResult anomalyDetectResult;
 
     /**
-     * The returned AnomalyDetectResult instance.
+     * The returned {@code AnomalyDetectResult} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class DetectAnomaliesResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned AnomalyDetectResult instance. */
+        /** The returned {@code AnomalyDetectResult} instance. */
         private com.oracle.bmc.aianomalydetection.model.AnomalyDetectResult anomalyDetectResult;
 
         /**
-         * The returned AnomalyDetectResult instance.
+         * The returned {@code AnomalyDetectResult} instance.
          *
          * @param anomalyDetectResult the value to set
          * @return this builder

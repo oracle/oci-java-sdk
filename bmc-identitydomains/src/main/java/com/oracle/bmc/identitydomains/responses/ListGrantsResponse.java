@@ -42,11 +42,11 @@ public class ListGrantsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned Grants instance. */
+    /** The returned {@code Grants} instance. */
     private com.oracle.bmc.identitydomains.model.Grants grants;
 
     /**
-     * The returned Grants instance.
+     * The returned {@code Grants} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListGrantsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Grants instance. */
+        /** The returned {@code Grants} instance. */
         private com.oracle.bmc.identitydomains.model.Grants grants;
 
         /**
-         * The returned Grants instance.
+         * The returned {@code Grants} instance.
          *
          * @param grants the value to set
          * @return this builder

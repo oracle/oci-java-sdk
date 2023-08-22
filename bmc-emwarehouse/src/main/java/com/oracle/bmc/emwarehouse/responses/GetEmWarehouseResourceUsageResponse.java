@@ -36,11 +36,11 @@ public class GetEmWarehouseResourceUsageResponse extends com.oracle.bmc.response
         return opcRequestId;
     }
 
-    /** The returned ResourceUsage instance. */
+    /** The returned {@code ResourceUsage} instance. */
     private com.oracle.bmc.emwarehouse.model.ResourceUsage resourceUsage;
 
     /**
-     * The returned ResourceUsage instance.
+     * The returned {@code ResourceUsage} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetEmWarehouseResourceUsageResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned ResourceUsage instance. */
+        /** The returned {@code ResourceUsage} instance. */
         private com.oracle.bmc.emwarehouse.model.ResourceUsage resourceUsage;
 
         /**
-         * The returned ResourceUsage instance.
+         * The returned {@code ResourceUsage} instance.
          *
          * @param resourceUsage the value to set
          * @return this builder

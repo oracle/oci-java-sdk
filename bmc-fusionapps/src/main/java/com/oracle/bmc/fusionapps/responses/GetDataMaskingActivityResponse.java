@@ -36,11 +36,11 @@ public class GetDataMaskingActivityResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned DataMaskingActivity instance. */
+    /** The returned {@code DataMaskingActivity} instance. */
     private com.oracle.bmc.fusionapps.model.DataMaskingActivity dataMaskingActivity;
 
     /**
-     * The returned DataMaskingActivity instance.
+     * The returned {@code DataMaskingActivity} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetDataMaskingActivityResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned DataMaskingActivity instance. */
+        /** The returned {@code DataMaskingActivity} instance. */
         private com.oracle.bmc.fusionapps.model.DataMaskingActivity dataMaskingActivity;
 
         /**
-         * The returned DataMaskingActivity instance.
+         * The returned {@code DataMaskingActivity} instance.
          *
          * @param dataMaskingActivity the value to set
          * @return this builder

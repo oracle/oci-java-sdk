@@ -42,11 +42,11 @@ public class GetAuditProfileResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned AuditProfile instance. */
+    /** The returned {@code AuditProfile} instance. */
     private com.oracle.bmc.datasafe.model.AuditProfile auditProfile;
 
     /**
-     * The returned AuditProfile instance.
+     * The returned {@code AuditProfile} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class GetAuditProfileResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned AuditProfile instance. */
+        /** The returned {@code AuditProfile} instance. */
         private com.oracle.bmc.datasafe.model.AuditProfile auditProfile;
 
         /**
-         * The returned AuditProfile instance.
+         * The returned {@code AuditProfile} instance.
          *
          * @param auditProfile the value to set
          * @return this builder

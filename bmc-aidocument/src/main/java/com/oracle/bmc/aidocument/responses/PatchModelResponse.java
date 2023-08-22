@@ -52,11 +52,11 @@ public class PatchModelResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned PatchResponseMessage instance. */
+    /** The returned {@code PatchResponseMessage} instance. */
     private com.oracle.bmc.aidocument.model.PatchResponseMessage patchResponseMessage;
 
     /**
-     * The returned PatchResponseMessage instance.
+     * The returned {@code PatchResponseMessage} instance.
      *
      * @return the value
      */
@@ -154,11 +154,11 @@ public class PatchModelResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned PatchResponseMessage instance. */
+        /** The returned {@code PatchResponseMessage} instance. */
         private com.oracle.bmc.aidocument.model.PatchResponseMessage patchResponseMessage;
 
         /**
-         * The returned PatchResponseMessage instance.
+         * The returned {@code PatchResponseMessage} instance.
          *
          * @param patchResponseMessage the value to set
          * @return this builder

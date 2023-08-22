@@ -24,11 +24,11 @@ public class GetNodePoolOptionsResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned NodePoolOptions instance. */
+    /** The returned {@code NodePoolOptions} instance. */
     private com.oracle.bmc.containerengine.model.NodePoolOptions nodePoolOptions;
 
     /**
-     * The returned NodePoolOptions instance.
+     * The returned {@code NodePoolOptions} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetNodePoolOptionsResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned NodePoolOptions instance. */
+        /** The returned {@code NodePoolOptions} instance. */
         private com.oracle.bmc.containerengine.model.NodePoolOptions nodePoolOptions;
 
         /**
-         * The returned NodePoolOptions instance.
+         * The returned {@code NodePoolOptions} instance.
          *
          * @param nodePoolOptions the value to set
          * @return this builder

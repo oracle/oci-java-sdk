@@ -80,11 +80,11 @@ public class ListAlertPolicyRulesResponse extends com.oracle.bmc.responses.BmcRe
         return opcPrevPage;
     }
 
-    /** The returned AlertPolicyRuleCollection instance. */
+    /** The returned {@code AlertPolicyRuleCollection} instance. */
     private com.oracle.bmc.datasafe.model.AlertPolicyRuleCollection alertPolicyRuleCollection;
 
     /**
-     * The returned AlertPolicyRuleCollection instance.
+     * The returned {@code AlertPolicyRuleCollection} instance.
      *
      * @return the value
      */
@@ -215,11 +215,11 @@ public class ListAlertPolicyRulesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned AlertPolicyRuleCollection instance. */
+        /** The returned {@code AlertPolicyRuleCollection} instance. */
         private com.oracle.bmc.datasafe.model.AlertPolicyRuleCollection alertPolicyRuleCollection;
 
         /**
-         * The returned AlertPolicyRuleCollection instance.
+         * The returned {@code AlertPolicyRuleCollection} instance.
          *
          * @param alertPolicyRuleCollection the value to set
          * @return this builder

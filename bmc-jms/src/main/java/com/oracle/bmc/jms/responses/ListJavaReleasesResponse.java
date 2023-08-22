@@ -44,11 +44,11 @@ public class ListJavaReleasesResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /** The returned JavaReleaseCollection instance. */
+    /** The returned {@code JavaReleaseCollection} instance. */
     private com.oracle.bmc.jms.model.JavaReleaseCollection javaReleaseCollection;
 
     /**
-     * The returned JavaReleaseCollection instance.
+     * The returned {@code JavaReleaseCollection} instance.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListJavaReleasesResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned JavaReleaseCollection instance. */
+        /** The returned {@code JavaReleaseCollection} instance. */
         private com.oracle.bmc.jms.model.JavaReleaseCollection javaReleaseCollection;
 
         /**
-         * The returned JavaReleaseCollection instance.
+         * The returned {@code JavaReleaseCollection} instance.
          *
          * @param javaReleaseCollection the value to set
          * @return this builder

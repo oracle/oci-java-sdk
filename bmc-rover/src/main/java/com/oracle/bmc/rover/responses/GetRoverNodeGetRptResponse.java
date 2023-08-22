@@ -36,11 +36,11 @@ public class GetRoverNodeGetRptResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned RoverNodeGetRpt instance. */
+    /** The returned {@code RoverNodeGetRpt} instance. */
     private com.oracle.bmc.rover.model.RoverNodeGetRpt roverNodeGetRpt;
 
     /**
-     * The returned RoverNodeGetRpt instance.
+     * The returned {@code RoverNodeGetRpt} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetRoverNodeGetRptResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned RoverNodeGetRpt instance. */
+        /** The returned {@code RoverNodeGetRpt} instance. */
         private com.oracle.bmc.rover.model.RoverNodeGetRpt roverNodeGetRpt;
 
         /**
-         * The returned RoverNodeGetRpt instance.
+         * The returned {@code RoverNodeGetRpt} instance.
          *
          * @param roverNodeGetRpt the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class GetPolicyConfigResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned PolicyConfig instance. */
+    /** The returned {@code PolicyConfig} instance. */
     private com.oracle.bmc.waas.model.PolicyConfig policyConfig;
 
     /**
-     * The returned PolicyConfig instance.
+     * The returned {@code PolicyConfig} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetPolicyConfigResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned PolicyConfig instance. */
+        /** The returned {@code PolicyConfig} instance. */
         private com.oracle.bmc.waas.model.PolicyConfig policyConfig;
 
         /**
-         * The returned PolicyConfig instance.
+         * The returned {@code PolicyConfig} instance.
          *
          * @param policyConfig the value to set
          * @return this builder

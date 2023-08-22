@@ -62,11 +62,11 @@ public class ListMaskingObjectsResponse extends com.oracle.bmc.responses.BmcResp
         return opcPrevPage;
     }
 
-    /** The returned MaskingObjectCollection instance. */
+    /** The returned {@code MaskingObjectCollection} instance. */
     private com.oracle.bmc.datasafe.model.MaskingObjectCollection maskingObjectCollection;
 
     /**
-     * The returned MaskingObjectCollection instance.
+     * The returned {@code MaskingObjectCollection} instance.
      *
      * @return the value
      */
@@ -174,11 +174,11 @@ public class ListMaskingObjectsResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned MaskingObjectCollection instance. */
+        /** The returned {@code MaskingObjectCollection} instance. */
         private com.oracle.bmc.datasafe.model.MaskingObjectCollection maskingObjectCollection;
 
         /**
-         * The returned MaskingObjectCollection instance.
+         * The returned {@code MaskingObjectCollection} instance.
          *
          * @param maskingObjectCollection the value to set
          * @return this builder

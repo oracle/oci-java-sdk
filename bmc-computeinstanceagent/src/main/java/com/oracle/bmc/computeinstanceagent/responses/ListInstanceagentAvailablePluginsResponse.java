@@ -43,11 +43,13 @@ public class ListInstanceagentAvailablePluginsResponse
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.computeinstanceagent.model.AvailablePluginSummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.computeinstanceagent.model.AvailablePluginSummary} instances.
+     */
     private java.util.List<com.oracle.bmc.computeinstanceagent.model.AvailablePluginSummary> items;
 
     /**
-     * A list of com.oracle.bmc.computeinstanceagent.model.AvailablePluginSummary instances.
+     * A list of {@code com.oracle.bmc.computeinstanceagent.model.AvailablePluginSummary} instances.
      *
      * @return the value
      */
@@ -133,12 +135,16 @@ public class ListInstanceagentAvailablePluginsResponse
             return this;
         }
 
-        /** A list of com.oracle.bmc.computeinstanceagent.model.AvailablePluginSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.computeinstanceagent.model.AvailablePluginSummary}
+         * instances.
+         */
         private java.util.List<com.oracle.bmc.computeinstanceagent.model.AvailablePluginSummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.computeinstanceagent.model.AvailablePluginSummary instances.
+         * A list of {@code com.oracle.bmc.computeinstanceagent.model.AvailablePluginSummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

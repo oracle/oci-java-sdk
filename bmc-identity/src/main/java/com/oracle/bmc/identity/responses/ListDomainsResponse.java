@@ -42,11 +42,11 @@ public class ListDomainsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.identity.model.DomainSummary instances. */
+    /** A list of {@code com.oracle.bmc.identity.model.DomainSummary} instances. */
     private java.util.List<com.oracle.bmc.identity.model.DomainSummary> items;
 
     /**
-     * A list of com.oracle.bmc.identity.model.DomainSummary instances.
+     * A list of {@code com.oracle.bmc.identity.model.DomainSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListDomainsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.identity.model.DomainSummary instances. */
+        /** A list of {@code com.oracle.bmc.identity.model.DomainSummary} instances. */
         private java.util.List<com.oracle.bmc.identity.model.DomainSummary> items;
 
         /**
-         * A list of com.oracle.bmc.identity.model.DomainSummary instances.
+         * A list of {@code com.oracle.bmc.identity.model.DomainSummary} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -24,11 +24,11 @@ public class GetIndicatorResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Indicator instance. */
+    /** The returned {@code Indicator} instance. */
     private com.oracle.bmc.threatintelligence.model.Indicator indicator;
 
     /**
-     * The returned Indicator instance.
+     * The returned {@code Indicator} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetIndicatorResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Indicator instance. */
+        /** The returned {@code Indicator} instance. */
         private com.oracle.bmc.threatintelligence.model.Indicator indicator;
 
         /**
-         * The returned Indicator instance.
+         * The returned {@code Indicator} instance.
          *
          * @param indicator the value to set
          * @return this builder

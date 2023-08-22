@@ -36,11 +36,11 @@ public class UpdateExternalPublicationResponse extends com.oracle.bmc.responses.
         return opcRequestId;
     }
 
-    /** The returned ExternalPublication instance. */
+    /** The returned {@code ExternalPublication} instance. */
     private com.oracle.bmc.dataintegration.model.ExternalPublication externalPublication;
 
     /**
-     * The returned ExternalPublication instance.
+     * The returned {@code ExternalPublication} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class UpdateExternalPublicationResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned ExternalPublication instance. */
+        /** The returned {@code ExternalPublication} instance. */
         private com.oracle.bmc.dataintegration.model.ExternalPublication externalPublication;
 
         /**
-         * The returned ExternalPublication instance.
+         * The returned {@code ExternalPublication} instance.
          *
          * @param externalPublication the value to set
          * @return this builder

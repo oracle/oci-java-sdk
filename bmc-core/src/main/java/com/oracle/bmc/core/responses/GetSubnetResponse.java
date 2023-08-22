@@ -36,11 +36,11 @@ public class GetSubnetResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Subnet instance. */
+    /** The returned {@code Subnet} instance. */
     private com.oracle.bmc.core.model.Subnet subnet;
 
     /**
-     * The returned Subnet instance.
+     * The returned {@code Subnet} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetSubnetResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Subnet instance. */
+        /** The returned {@code Subnet} instance. */
         private com.oracle.bmc.core.model.Subnet subnet;
 
         /**
-         * The returned Subnet instance.
+         * The returned {@code Subnet} instance.
          *
          * @param subnet the value to set
          * @return this builder

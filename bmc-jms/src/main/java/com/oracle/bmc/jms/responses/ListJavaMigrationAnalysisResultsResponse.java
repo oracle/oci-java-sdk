@@ -44,12 +44,12 @@ public class ListJavaMigrationAnalysisResultsResponse extends com.oracle.bmc.res
         return opcNextPage;
     }
 
-    /** The returned JavaMigrationAnalysisResultCollection instance. */
+    /** The returned {@code JavaMigrationAnalysisResultCollection} instance. */
     private com.oracle.bmc.jms.model.JavaMigrationAnalysisResultCollection
             javaMigrationAnalysisResultCollection;
 
     /**
-     * The returned JavaMigrationAnalysisResultCollection instance.
+     * The returned {@code JavaMigrationAnalysisResultCollection} instance.
      *
      * @return the value
      */
@@ -139,12 +139,12 @@ public class ListJavaMigrationAnalysisResultsResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /** The returned JavaMigrationAnalysisResultCollection instance. */
+        /** The returned {@code JavaMigrationAnalysisResultCollection} instance. */
         private com.oracle.bmc.jms.model.JavaMigrationAnalysisResultCollection
                 javaMigrationAnalysisResultCollection;
 
         /**
-         * The returned JavaMigrationAnalysisResultCollection instance.
+         * The returned {@code JavaMigrationAnalysisResultCollection} instance.
          *
          * @param javaMigrationAnalysisResultCollection the value to set
          * @return this builder

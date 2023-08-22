@@ -36,11 +36,11 @@ public class GetBdsMetastoreConfigurationResponse extends com.oracle.bmc.respons
         return etag;
     }
 
-    /** The returned BdsMetastoreConfiguration instance. */
+    /** The returned {@code BdsMetastoreConfiguration} instance. */
     private com.oracle.bmc.bds.model.BdsMetastoreConfiguration bdsMetastoreConfiguration;
 
     /**
-     * The returned BdsMetastoreConfiguration instance.
+     * The returned {@code BdsMetastoreConfiguration} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetBdsMetastoreConfigurationResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned BdsMetastoreConfiguration instance. */
+        /** The returned {@code BdsMetastoreConfiguration} instance. */
         private com.oracle.bmc.bds.model.BdsMetastoreConfiguration bdsMetastoreConfiguration;
 
         /**
-         * The returned BdsMetastoreConfiguration instance.
+         * The returned {@code BdsMetastoreConfiguration} instance.
          *
          * @param bdsMetastoreConfiguration the value to set
          * @return this builder

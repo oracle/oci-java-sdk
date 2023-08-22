@@ -36,11 +36,11 @@ public class GetIPSecConnectionDeviceConfigResponse extends com.oracle.bmc.respo
         return opcRequestId;
     }
 
-    /** The returned IPSecConnectionDeviceConfig instance. */
+    /** The returned {@code IPSecConnectionDeviceConfig} instance. */
     private com.oracle.bmc.core.model.IPSecConnectionDeviceConfig iPSecConnectionDeviceConfig;
 
     /**
-     * The returned IPSecConnectionDeviceConfig instance.
+     * The returned {@code IPSecConnectionDeviceConfig} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetIPSecConnectionDeviceConfigResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned IPSecConnectionDeviceConfig instance. */
+        /** The returned {@code IPSecConnectionDeviceConfig} instance. */
         private com.oracle.bmc.core.model.IPSecConnectionDeviceConfig iPSecConnectionDeviceConfig;
 
         /**
-         * The returned IPSecConnectionDeviceConfig instance.
+         * The returned {@code IPSecConnectionDeviceConfig} instance.
          *
          * @param iPSecConnectionDeviceConfig the value to set
          * @return this builder

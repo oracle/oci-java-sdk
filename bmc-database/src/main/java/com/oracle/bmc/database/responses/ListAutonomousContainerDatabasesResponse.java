@@ -44,11 +44,13 @@ public class ListAutonomousContainerDatabasesResponse extends com.oracle.bmc.res
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.database.model.AutonomousContainerDatabaseSummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.database.model.AutonomousContainerDatabaseSummary} instances.
+     */
     private java.util.List<com.oracle.bmc.database.model.AutonomousContainerDatabaseSummary> items;
 
     /**
-     * A list of com.oracle.bmc.database.model.AutonomousContainerDatabaseSummary instances.
+     * A list of {@code com.oracle.bmc.database.model.AutonomousContainerDatabaseSummary} instances.
      *
      * @return the value
      */
@@ -138,12 +140,16 @@ public class ListAutonomousContainerDatabasesResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /** A list of com.oracle.bmc.database.model.AutonomousContainerDatabaseSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.database.model.AutonomousContainerDatabaseSummary}
+         * instances.
+         */
         private java.util.List<com.oracle.bmc.database.model.AutonomousContainerDatabaseSummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.database.model.AutonomousContainerDatabaseSummary instances.
+         * A list of {@code com.oracle.bmc.database.model.AutonomousContainerDatabaseSummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

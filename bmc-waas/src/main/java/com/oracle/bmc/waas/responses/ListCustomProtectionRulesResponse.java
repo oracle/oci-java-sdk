@@ -42,11 +42,11 @@ public class ListCustomProtectionRulesResponse extends com.oracle.bmc.responses.
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.waas.model.CustomProtectionRuleSummary instances. */
+    /** A list of {@code com.oracle.bmc.waas.model.CustomProtectionRuleSummary} instances. */
     private java.util.List<com.oracle.bmc.waas.model.CustomProtectionRuleSummary> items;
 
     /**
-     * A list of com.oracle.bmc.waas.model.CustomProtectionRuleSummary instances.
+     * A list of {@code com.oracle.bmc.waas.model.CustomProtectionRuleSummary} instances.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListCustomProtectionRulesResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** A list of com.oracle.bmc.waas.model.CustomProtectionRuleSummary instances. */
+        /** A list of {@code com.oracle.bmc.waas.model.CustomProtectionRuleSummary} instances. */
         private java.util.List<com.oracle.bmc.waas.model.CustomProtectionRuleSummary> items;
 
         /**
-         * A list of com.oracle.bmc.waas.model.CustomProtectionRuleSummary instances.
+         * A list of {@code com.oracle.bmc.waas.model.CustomProtectionRuleSummary} instances.
          *
          * @param items the value to set
          * @return this builder

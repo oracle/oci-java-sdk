@@ -42,11 +42,11 @@ public class ListTargetsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned TargetCollection instance. */
+    /** The returned {@code TargetCollection} instance. */
     private com.oracle.bmc.cloudguard.model.TargetCollection targetCollection;
 
     /**
-     * The returned TargetCollection instance.
+     * The returned {@code TargetCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListTargetsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned TargetCollection instance. */
+        /** The returned {@code TargetCollection} instance. */
         private com.oracle.bmc.cloudguard.model.TargetCollection targetCollection;
 
         /**
-         * The returned TargetCollection instance.
+         * The returned {@code TargetCollection} instance.
          *
          * @param targetCollection the value to set
          * @return this builder

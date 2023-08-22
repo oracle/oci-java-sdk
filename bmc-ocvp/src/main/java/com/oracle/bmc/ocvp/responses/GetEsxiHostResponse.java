@@ -36,11 +36,11 @@ public class GetEsxiHostResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned EsxiHost instance. */
+    /** The returned {@code EsxiHost} instance. */
     private com.oracle.bmc.ocvp.model.EsxiHost esxiHost;
 
     /**
-     * The returned EsxiHost instance.
+     * The returned {@code EsxiHost} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetEsxiHostResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned EsxiHost instance. */
+        /** The returned {@code EsxiHost} instance. */
         private com.oracle.bmc.ocvp.model.EsxiHost esxiHost;
 
         /**
-         * The returned EsxiHost instance.
+         * The returned {@code EsxiHost} instance.
          *
          * @param esxiHost the value to set
          * @return this builder

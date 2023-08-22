@@ -24,11 +24,11 @@ public class FilterResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned FilterOutput instance. */
+    /** The returned {@code FilterOutput} instance. */
     private com.oracle.bmc.loganalytics.model.FilterOutput filterOutput;
 
     /**
-     * The returned FilterOutput instance.
+     * The returned {@code FilterOutput} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class FilterResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned FilterOutput instance. */
+        /** The returned {@code FilterOutput} instance. */
         private com.oracle.bmc.loganalytics.model.FilterOutput filterOutput;
 
         /**
-         * The returned FilterOutput instance.
+         * The returned {@code FilterOutput} instance.
          *
          * @param filterOutput the value to set
          * @return this builder

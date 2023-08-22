@@ -41,12 +41,12 @@ public class CreateExternalPublicationValidationResponse
         return opcRequestId;
     }
 
-    /** The returned ExternalPublicationValidation instance. */
+    /** The returned {@code ExternalPublicationValidation} instance. */
     private com.oracle.bmc.dataintegration.model.ExternalPublicationValidation
             externalPublicationValidation;
 
     /**
-     * The returned ExternalPublicationValidation instance.
+     * The returned {@code ExternalPublicationValidation} instance.
      *
      * @return the value
      */
@@ -130,12 +130,12 @@ public class CreateExternalPublicationValidationResponse
             return this;
         }
 
-        /** The returned ExternalPublicationValidation instance. */
+        /** The returned {@code ExternalPublicationValidation} instance. */
         private com.oracle.bmc.dataintegration.model.ExternalPublicationValidation
                 externalPublicationValidation;
 
         /**
-         * The returned ExternalPublicationValidation instance.
+         * The returned {@code ExternalPublicationValidation} instance.
          *
          * @param externalPublicationValidation the value to set
          * @return this builder

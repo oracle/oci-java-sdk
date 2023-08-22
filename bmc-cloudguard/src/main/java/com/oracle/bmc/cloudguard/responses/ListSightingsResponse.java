@@ -42,11 +42,11 @@ public class ListSightingsResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcNextPage;
     }
 
-    /** The returned SightingCollection instance. */
+    /** The returned {@code SightingCollection} instance. */
     private com.oracle.bmc.cloudguard.model.SightingCollection sightingCollection;
 
     /**
-     * The returned SightingCollection instance.
+     * The returned {@code SightingCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListSightingsResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned SightingCollection instance. */
+        /** The returned {@code SightingCollection} instance. */
         private com.oracle.bmc.cloudguard.model.SightingCollection sightingCollection;
 
         /**
-         * The returned SightingCollection instance.
+         * The returned {@code SightingCollection} instance.
          *
          * @param sightingCollection the value to set
          * @return this builder

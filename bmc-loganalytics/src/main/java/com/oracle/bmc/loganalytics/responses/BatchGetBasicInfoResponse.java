@@ -64,12 +64,12 @@ public class BatchGetBasicInfoResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsLabelCollection instance. */
+    /** The returned {@code LogAnalyticsLabelCollection} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsLabelCollection
             logAnalyticsLabelCollection;
 
     /**
-     * The returned LogAnalyticsLabelCollection instance.
+     * The returned {@code LogAnalyticsLabelCollection} instance.
      *
      * @return the value
      */
@@ -181,12 +181,12 @@ public class BatchGetBasicInfoResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned LogAnalyticsLabelCollection instance. */
+        /** The returned {@code LogAnalyticsLabelCollection} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsLabelCollection
                 logAnalyticsLabelCollection;
 
         /**
-         * The returned LogAnalyticsLabelCollection instance.
+         * The returned {@code LogAnalyticsLabelCollection} instance.
          *
          * @param logAnalyticsLabelCollection the value to set
          * @return this builder

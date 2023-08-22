@@ -42,12 +42,12 @@ public class SummarizeAwrSourcesSummariesResponse extends com.oracle.bmc.respons
         return opcNextPage;
     }
 
-    /** The returned SummarizeAwrSourcesSummariesCollection instance. */
+    /** The returned {@code SummarizeAwrSourcesSummariesCollection} instance. */
     private com.oracle.bmc.opsi.model.SummarizeAwrSourcesSummariesCollection
             summarizeAwrSourcesSummariesCollection;
 
     /**
-     * The returned SummarizeAwrSourcesSummariesCollection instance.
+     * The returned {@code SummarizeAwrSourcesSummariesCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class SummarizeAwrSourcesSummariesResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned SummarizeAwrSourcesSummariesCollection instance. */
+        /** The returned {@code SummarizeAwrSourcesSummariesCollection} instance. */
         private com.oracle.bmc.opsi.model.SummarizeAwrSourcesSummariesCollection
                 summarizeAwrSourcesSummariesCollection;
 
         /**
-         * The returned SummarizeAwrSourcesSummariesCollection instance.
+         * The returned {@code SummarizeAwrSourcesSummariesCollection} instance.
          *
          * @param summarizeAwrSourcesSummariesCollection the value to set
          * @return this builder

@@ -43,12 +43,12 @@ public class ListMediaAssetDistributionChannelAttachmentsResponse
         return opcNextPage;
     }
 
-    /** The returned MediaAssetDistributionChannelAttachmentCollection instance. */
+    /** The returned {@code MediaAssetDistributionChannelAttachmentCollection} instance. */
     private com.oracle.bmc.mediaservices.model.MediaAssetDistributionChannelAttachmentCollection
             mediaAssetDistributionChannelAttachmentCollection;
 
     /**
-     * The returned MediaAssetDistributionChannelAttachmentCollection instance.
+     * The returned {@code MediaAssetDistributionChannelAttachmentCollection} instance.
      *
      * @return the value
      */
@@ -135,12 +135,12 @@ public class ListMediaAssetDistributionChannelAttachmentsResponse
             return this;
         }
 
-        /** The returned MediaAssetDistributionChannelAttachmentCollection instance. */
+        /** The returned {@code MediaAssetDistributionChannelAttachmentCollection} instance. */
         private com.oracle.bmc.mediaservices.model.MediaAssetDistributionChannelAttachmentCollection
                 mediaAssetDistributionChannelAttachmentCollection;
 
         /**
-         * The returned MediaAssetDistributionChannelAttachmentCollection instance.
+         * The returned {@code MediaAssetDistributionChannelAttachmentCollection} instance.
          *
          * @param mediaAssetDistributionChannelAttachmentCollection the value to set
          * @return this builder

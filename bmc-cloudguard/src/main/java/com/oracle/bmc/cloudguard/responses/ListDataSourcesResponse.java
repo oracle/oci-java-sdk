@@ -42,11 +42,11 @@ public class ListDataSourcesResponse extends com.oracle.bmc.responses.BmcRespons
         return opcNextPage;
     }
 
-    /** The returned DataSourceCollection instance. */
+    /** The returned {@code DataSourceCollection} instance. */
     private com.oracle.bmc.cloudguard.model.DataSourceCollection dataSourceCollection;
 
     /**
-     * The returned DataSourceCollection instance.
+     * The returned {@code DataSourceCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListDataSourcesResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned DataSourceCollection instance. */
+        /** The returned {@code DataSourceCollection} instance. */
         private com.oracle.bmc.cloudguard.model.DataSourceCollection dataSourceCollection;
 
         /**
-         * The returned DataSourceCollection instance.
+         * The returned {@code DataSourceCollection} instance.
          *
          * @param dataSourceCollection the value to set
          * @return this builder

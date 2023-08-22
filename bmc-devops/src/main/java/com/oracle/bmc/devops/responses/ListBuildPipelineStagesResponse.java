@@ -42,11 +42,11 @@ public class ListBuildPipelineStagesResponse extends com.oracle.bmc.responses.Bm
         return opcNextPage;
     }
 
-    /** The returned BuildPipelineStageCollection instance. */
+    /** The returned {@code BuildPipelineStageCollection} instance. */
     private com.oracle.bmc.devops.model.BuildPipelineStageCollection buildPipelineStageCollection;
 
     /**
-     * The returned BuildPipelineStageCollection instance.
+     * The returned {@code BuildPipelineStageCollection} instance.
      *
      * @return the value
      */
@@ -131,12 +131,12 @@ public class ListBuildPipelineStagesResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned BuildPipelineStageCollection instance. */
+        /** The returned {@code BuildPipelineStageCollection} instance. */
         private com.oracle.bmc.devops.model.BuildPipelineStageCollection
                 buildPipelineStageCollection;
 
         /**
-         * The returned BuildPipelineStageCollection instance.
+         * The returned {@code BuildPipelineStageCollection} instance.
          *
          * @param buildPipelineStageCollection the value to set
          * @return this builder

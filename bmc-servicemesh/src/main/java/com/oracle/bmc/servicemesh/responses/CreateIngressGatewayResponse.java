@@ -64,11 +64,11 @@ public class CreateIngressGatewayResponse extends com.oracle.bmc.responses.BmcRe
         return location;
     }
 
-    /** The returned IngressGateway instance. */
+    /** The returned {@code IngressGateway} instance. */
     private com.oracle.bmc.servicemesh.model.IngressGateway ingressGateway;
 
     /**
-     * The returned IngressGateway instance.
+     * The returned {@code IngressGateway} instance.
      *
      * @return the value
      */
@@ -183,11 +183,11 @@ public class CreateIngressGatewayResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned IngressGateway instance. */
+        /** The returned {@code IngressGateway} instance. */
         private com.oracle.bmc.servicemesh.model.IngressGateway ingressGateway;
 
         /**
-         * The returned IngressGateway instance.
+         * The returned {@code IngressGateway} instance.
          *
          * @param ingressGateway the value to set
          * @return this builder

@@ -42,12 +42,12 @@ public class SummarizeSqlPlanBaselinesResponse extends com.oracle.bmc.responses.
         return opcNextPage;
     }
 
-    /** The returned SqlPlanBaselineAggregationCollection instance. */
+    /** The returned {@code SqlPlanBaselineAggregationCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.SqlPlanBaselineAggregationCollection
             sqlPlanBaselineAggregationCollection;
 
     /**
-     * The returned SqlPlanBaselineAggregationCollection instance.
+     * The returned {@code SqlPlanBaselineAggregationCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class SummarizeSqlPlanBaselinesResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned SqlPlanBaselineAggregationCollection instance. */
+        /** The returned {@code SqlPlanBaselineAggregationCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.SqlPlanBaselineAggregationCollection
                 sqlPlanBaselineAggregationCollection;
 
         /**
-         * The returned SqlPlanBaselineAggregationCollection instance.
+         * The returned {@code SqlPlanBaselineAggregationCollection} instance.
          *
          * @param sqlPlanBaselineAggregationCollection the value to set
          * @return this builder

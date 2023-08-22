@@ -16,11 +16,11 @@ public class ListTransferDevicesResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned MultipleTransferDevices instance. */
+    /** The returned {@code MultipleTransferDevices} instance. */
     private com.oracle.bmc.dts.model.MultipleTransferDevices multipleTransferDevices;
 
     /**
-     * The returned MultipleTransferDevices instance.
+     * The returned {@code MultipleTransferDevices} instance.
      *
      * @return the value
      */
@@ -74,11 +74,11 @@ public class ListTransferDevicesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned MultipleTransferDevices instance. */
+        /** The returned {@code MultipleTransferDevices} instance. */
         private com.oracle.bmc.dts.model.MultipleTransferDevices multipleTransferDevices;
 
         /**
-         * The returned MultipleTransferDevices instance.
+         * The returned {@code MultipleTransferDevices} instance.
          *
          * @param multipleTransferDevices the value to set
          * @return this builder

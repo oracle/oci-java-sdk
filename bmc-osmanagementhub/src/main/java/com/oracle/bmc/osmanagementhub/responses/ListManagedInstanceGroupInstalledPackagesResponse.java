@@ -43,12 +43,12 @@ public class ListManagedInstanceGroupInstalledPackagesResponse
         return opcNextPage;
     }
 
-    /** The returned ManagedInstanceGroupInstalledPackageCollection instance. */
+    /** The returned {@code ManagedInstanceGroupInstalledPackageCollection} instance. */
     private com.oracle.bmc.osmanagementhub.model.ManagedInstanceGroupInstalledPackageCollection
             managedInstanceGroupInstalledPackageCollection;
 
     /**
-     * The returned ManagedInstanceGroupInstalledPackageCollection instance.
+     * The returned {@code ManagedInstanceGroupInstalledPackageCollection} instance.
      *
      * @return the value
      */
@@ -135,12 +135,12 @@ public class ListManagedInstanceGroupInstalledPackagesResponse
             return this;
         }
 
-        /** The returned ManagedInstanceGroupInstalledPackageCollection instance. */
+        /** The returned {@code ManagedInstanceGroupInstalledPackageCollection} instance. */
         private com.oracle.bmc.osmanagementhub.model.ManagedInstanceGroupInstalledPackageCollection
                 managedInstanceGroupInstalledPackageCollection;
 
         /**
-         * The returned ManagedInstanceGroupInstalledPackageCollection instance.
+         * The returned {@code ManagedInstanceGroupInstalledPackageCollection} instance.
          *
          * @param managedInstanceGroupInstalledPackageCollection the value to set
          * @return this builder

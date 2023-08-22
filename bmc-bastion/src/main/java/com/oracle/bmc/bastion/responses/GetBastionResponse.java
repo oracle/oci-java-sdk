@@ -36,11 +36,11 @@ public class GetBastionResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Bastion instance. */
+    /** The returned {@code Bastion} instance. */
     private com.oracle.bmc.bastion.model.Bastion bastion;
 
     /**
-     * The returned Bastion instance.
+     * The returned {@code Bastion} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetBastionResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Bastion instance. */
+        /** The returned {@code Bastion} instance. */
         private com.oracle.bmc.bastion.model.Bastion bastion;
 
         /**
-         * The returned Bastion instance.
+         * The returned {@code Bastion} instance.
          *
          * @param bastion the value to set
          * @return this builder

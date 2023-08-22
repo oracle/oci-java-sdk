@@ -24,11 +24,11 @@ public class ImportDataAssetResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned ImportDataAssetJobResult instance. */
+    /** The returned {@code ImportDataAssetJobResult} instance. */
     private com.oracle.bmc.datacatalog.model.ImportDataAssetJobResult importDataAssetJobResult;
 
     /**
-     * The returned ImportDataAssetJobResult instance.
+     * The returned {@code ImportDataAssetJobResult} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class ImportDataAssetResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned ImportDataAssetJobResult instance. */
+        /** The returned {@code ImportDataAssetJobResult} instance. */
         private com.oracle.bmc.datacatalog.model.ImportDataAssetJobResult importDataAssetJobResult;
 
         /**
-         * The returned ImportDataAssetJobResult instance.
+         * The returned {@code ImportDataAssetJobResult} instance.
          *
          * @param importDataAssetJobResult the value to set
          * @return this builder

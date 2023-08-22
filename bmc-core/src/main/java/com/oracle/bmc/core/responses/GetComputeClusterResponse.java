@@ -36,11 +36,11 @@ public class GetComputeClusterResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned ComputeCluster instance. */
+    /** The returned {@code ComputeCluster} instance. */
     private com.oracle.bmc.core.model.ComputeCluster computeCluster;
 
     /**
-     * The returned ComputeCluster instance.
+     * The returned {@code ComputeCluster} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetComputeClusterResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned ComputeCluster instance. */
+        /** The returned {@code ComputeCluster} instance. */
         private com.oracle.bmc.core.model.ComputeCluster computeCluster;
 
         /**
-         * The returned ComputeCluster instance.
+         * The returned {@code ComputeCluster} instance.
          *
          * @param computeCluster the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class GetVolumeGroupReplicaResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned VolumeGroupReplica instance. */
+    /** The returned {@code VolumeGroupReplica} instance. */
     private com.oracle.bmc.core.model.VolumeGroupReplica volumeGroupReplica;
 
     /**
-     * The returned VolumeGroupReplica instance.
+     * The returned {@code VolumeGroupReplica} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetVolumeGroupReplicaResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned VolumeGroupReplica instance. */
+        /** The returned {@code VolumeGroupReplica} instance. */
         private com.oracle.bmc.core.model.VolumeGroupReplica volumeGroupReplica;
 
         /**
-         * The returned VolumeGroupReplica instance.
+         * The returned {@code VolumeGroupReplica} instance.
          *
          * @param volumeGroupReplica the value to set
          * @return this builder

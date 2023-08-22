@@ -42,11 +42,11 @@ public class GetCountStatisticResponse extends com.oracle.bmc.responses.BmcRespo
         return opcNextPage;
     }
 
-    /** The returned CountStatistic instance. */
+    /** The returned {@code CountStatistic} instance. */
     private com.oracle.bmc.dataintegration.model.CountStatistic countStatistic;
 
     /**
-     * The returned CountStatistic instance.
+     * The returned {@code CountStatistic} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class GetCountStatisticResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned CountStatistic instance. */
+        /** The returned {@code CountStatistic} instance. */
         private com.oracle.bmc.dataintegration.model.CountStatistic countStatistic;
 
         /**
-         * The returned CountStatistic instance.
+         * The returned {@code CountStatistic} instance.
          *
          * @param countStatistic the value to set
          * @return this builder

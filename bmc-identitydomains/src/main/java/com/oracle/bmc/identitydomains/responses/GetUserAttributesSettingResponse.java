@@ -24,11 +24,11 @@ public class GetUserAttributesSettingResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** The returned UserAttributesSetting instance. */
+    /** The returned {@code UserAttributesSetting} instance. */
     private com.oracle.bmc.identitydomains.model.UserAttributesSetting userAttributesSetting;
 
     /**
-     * The returned UserAttributesSetting instance.
+     * The returned {@code UserAttributesSetting} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class GetUserAttributesSettingResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned UserAttributesSetting instance. */
+        /** The returned {@code UserAttributesSetting} instance. */
         private com.oracle.bmc.identitydomains.model.UserAttributesSetting userAttributesSetting;
 
         /**
-         * The returned UserAttributesSetting instance.
+         * The returned {@code UserAttributesSetting} instance.
          *
          * @param userAttributesSetting the value to set
          * @return this builder

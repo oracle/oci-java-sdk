@@ -36,11 +36,11 @@ public class GetNetworkFirewallPolicyResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** The returned NetworkFirewallPolicy instance. */
+    /** The returned {@code NetworkFirewallPolicy} instance. */
     private com.oracle.bmc.networkfirewall.model.NetworkFirewallPolicy networkFirewallPolicy;
 
     /**
-     * The returned NetworkFirewallPolicy instance.
+     * The returned {@code NetworkFirewallPolicy} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetNetworkFirewallPolicyResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned NetworkFirewallPolicy instance. */
+        /** The returned {@code NetworkFirewallPolicy} instance. */
         private com.oracle.bmc.networkfirewall.model.NetworkFirewallPolicy networkFirewallPolicy;
 
         /**
-         * The returned NetworkFirewallPolicy instance.
+         * The returned {@code NetworkFirewallPolicy} instance.
          *
          * @param networkFirewallPolicy the value to set
          * @return this builder

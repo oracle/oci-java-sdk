@@ -24,11 +24,11 @@ public class GetPasswordPolicyResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned PasswordPolicy instance. */
+    /** The returned {@code PasswordPolicy} instance. */
     private com.oracle.bmc.identitydomains.model.PasswordPolicy passwordPolicy;
 
     /**
-     * The returned PasswordPolicy instance.
+     * The returned {@code PasswordPolicy} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetPasswordPolicyResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned PasswordPolicy instance. */
+        /** The returned {@code PasswordPolicy} instance. */
         private com.oracle.bmc.identitydomains.model.PasswordPolicy passwordPolicy;
 
         /**
-         * The returned PasswordPolicy instance.
+         * The returned {@code PasswordPolicy} instance.
          *
          * @param passwordPolicy the value to set
          * @return this builder

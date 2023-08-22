@@ -36,11 +36,11 @@ public class GetProtectionSettingsResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned ProtectionSettings instance. */
+    /** The returned {@code ProtectionSettings} instance. */
     private com.oracle.bmc.waas.model.ProtectionSettings protectionSettings;
 
     /**
-     * The returned ProtectionSettings instance.
+     * The returned {@code ProtectionSettings} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetProtectionSettingsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned ProtectionSettings instance. */
+        /** The returned {@code ProtectionSettings} instance. */
         private com.oracle.bmc.waas.model.ProtectionSettings protectionSettings;
 
         /**
-         * The returned ProtectionSettings instance.
+         * The returned {@code ProtectionSettings} instance.
          *
          * @param protectionSettings the value to set
          * @return this builder

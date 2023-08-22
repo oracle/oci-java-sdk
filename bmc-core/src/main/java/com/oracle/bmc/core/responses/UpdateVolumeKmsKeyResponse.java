@@ -36,11 +36,11 @@ public class UpdateVolumeKmsKeyResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned VolumeKmsKey instance. */
+    /** The returned {@code VolumeKmsKey} instance. */
     private com.oracle.bmc.core.model.VolumeKmsKey volumeKmsKey;
 
     /**
-     * The returned VolumeKmsKey instance.
+     * The returned {@code VolumeKmsKey} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateVolumeKmsKeyResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned VolumeKmsKey instance. */
+        /** The returned {@code VolumeKmsKey} instance. */
         private com.oracle.bmc.core.model.VolumeKmsKey volumeKmsKey;
 
         /**
-         * The returned VolumeKmsKey instance.
+         * The returned {@code VolumeKmsKey} instance.
          *
          * @param volumeKmsKey the value to set
          * @return this builder

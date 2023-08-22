@@ -36,11 +36,11 @@ public class GetCommitDiffResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** The returned DiffResponse instance. */
+    /** The returned {@code DiffResponse} instance. */
     private com.oracle.bmc.devops.model.DiffResponse diffResponse;
 
     /**
-     * The returned DiffResponse instance.
+     * The returned {@code DiffResponse} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetCommitDiffResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned DiffResponse instance. */
+        /** The returned {@code DiffResponse} instance. */
         private com.oracle.bmc.devops.model.DiffResponse diffResponse;
 
         /**
-         * The returned DiffResponse instance.
+         * The returned {@code DiffResponse} instance.
          *
          * @param diffResponse the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListMyUserDbCredentialsResponse extends com.oracle.bmc.responses.Bm
         return opcNextPage;
     }
 
-    /** The returned MyUserDbCredentials instance. */
+    /** The returned {@code MyUserDbCredentials} instance. */
     private com.oracle.bmc.identitydomains.model.MyUserDbCredentials myUserDbCredentials;
 
     /**
-     * The returned MyUserDbCredentials instance.
+     * The returned {@code MyUserDbCredentials} instance.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListMyUserDbCredentialsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned MyUserDbCredentials instance. */
+        /** The returned {@code MyUserDbCredentials} instance. */
         private com.oracle.bmc.identitydomains.model.MyUserDbCredentials myUserDbCredentials;
 
         /**
-         * The returned MyUserDbCredentials instance.
+         * The returned {@code MyUserDbCredentials} instance.
          *
          * @param myUserDbCredentials the value to set
          * @return this builder

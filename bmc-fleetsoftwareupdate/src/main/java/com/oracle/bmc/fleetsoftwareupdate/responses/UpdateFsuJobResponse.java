@@ -36,11 +36,11 @@ public class UpdateFsuJobResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned FsuJob instance. */
+    /** The returned {@code FsuJob} instance. */
     private com.oracle.bmc.fleetsoftwareupdate.model.FsuJob fsuJob;
 
     /**
-     * The returned FsuJob instance.
+     * The returned {@code FsuJob} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateFsuJobResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned FsuJob instance. */
+        /** The returned {@code FsuJob} instance. */
         private com.oracle.bmc.fleetsoftwareupdate.model.FsuJob fsuJob;
 
         /**
-         * The returned FsuJob instance.
+         * The returned {@code FsuJob} instance.
          *
          * @param fsuJob the value to set
          * @return this builder

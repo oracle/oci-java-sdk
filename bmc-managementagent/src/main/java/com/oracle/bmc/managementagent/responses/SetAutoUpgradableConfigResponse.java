@@ -24,11 +24,11 @@ public class SetAutoUpgradableConfigResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned AutoUpgradableConfig instance. */
+    /** The returned {@code AutoUpgradableConfig} instance. */
     private com.oracle.bmc.managementagent.model.AutoUpgradableConfig autoUpgradableConfig;
 
     /**
-     * The returned AutoUpgradableConfig instance.
+     * The returned {@code AutoUpgradableConfig} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class SetAutoUpgradableConfigResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned AutoUpgradableConfig instance. */
+        /** The returned {@code AutoUpgradableConfig} instance. */
         private com.oracle.bmc.managementagent.model.AutoUpgradableConfig autoUpgradableConfig;
 
         /**
-         * The returned AutoUpgradableConfig instance.
+         * The returned {@code AutoUpgradableConfig} instance.
          *
          * @param autoUpgradableConfig the value to set
          * @return this builder

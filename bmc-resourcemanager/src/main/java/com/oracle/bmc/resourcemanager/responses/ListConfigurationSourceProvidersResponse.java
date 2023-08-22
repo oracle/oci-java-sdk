@@ -44,12 +44,12 @@ public class ListConfigurationSourceProvidersResponse extends com.oracle.bmc.res
         return opcNextPage;
     }
 
-    /** The returned ConfigurationSourceProviderCollection instance. */
+    /** The returned {@code ConfigurationSourceProviderCollection} instance. */
     private com.oracle.bmc.resourcemanager.model.ConfigurationSourceProviderCollection
             configurationSourceProviderCollection;
 
     /**
-     * The returned ConfigurationSourceProviderCollection instance.
+     * The returned {@code ConfigurationSourceProviderCollection} instance.
      *
      * @return the value
      */
@@ -137,12 +137,12 @@ public class ListConfigurationSourceProvidersResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /** The returned ConfigurationSourceProviderCollection instance. */
+        /** The returned {@code ConfigurationSourceProviderCollection} instance. */
         private com.oracle.bmc.resourcemanager.model.ConfigurationSourceProviderCollection
                 configurationSourceProviderCollection;
 
         /**
-         * The returned ConfigurationSourceProviderCollection instance.
+         * The returned {@code ConfigurationSourceProviderCollection} instance.
          *
          * @param configurationSourceProviderCollection the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListOpaInstancesResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /** The returned OpaInstanceCollection instance. */
+    /** The returned {@code OpaInstanceCollection} instance. */
     private com.oracle.bmc.opa.model.OpaInstanceCollection opaInstanceCollection;
 
     /**
-     * The returned OpaInstanceCollection instance.
+     * The returned {@code OpaInstanceCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListOpaInstancesResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned OpaInstanceCollection instance. */
+        /** The returned {@code OpaInstanceCollection} instance. */
         private com.oracle.bmc.opa.model.OpaInstanceCollection opaInstanceCollection;
 
         /**
-         * The returned OpaInstanceCollection instance.
+         * The returned {@code OpaInstanceCollection} instance.
          *
          * @param opaInstanceCollection the value to set
          * @return this builder

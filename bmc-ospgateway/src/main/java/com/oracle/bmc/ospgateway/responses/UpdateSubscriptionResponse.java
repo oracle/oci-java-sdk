@@ -36,11 +36,11 @@ public class UpdateSubscriptionResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned Subscription instance. */
+    /** The returned {@code Subscription} instance. */
     private com.oracle.bmc.ospgateway.model.Subscription subscription;
 
     /**
-     * The returned Subscription instance.
+     * The returned {@code Subscription} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateSubscriptionResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned Subscription instance. */
+        /** The returned {@code Subscription} instance. */
         private com.oracle.bmc.ospgateway.model.Subscription subscription;
 
         /**
-         * The returned Subscription instance.
+         * The returned {@code Subscription} instance.
          *
          * @param subscription the value to set
          * @return this builder

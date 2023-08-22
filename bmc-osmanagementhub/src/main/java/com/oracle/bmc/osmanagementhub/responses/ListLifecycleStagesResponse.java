@@ -42,11 +42,11 @@ public class ListLifecycleStagesResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** The returned LifecycleStageCollection instance. */
+    /** The returned {@code LifecycleStageCollection} instance. */
     private com.oracle.bmc.osmanagementhub.model.LifecycleStageCollection lifecycleStageCollection;
 
     /**
-     * The returned LifecycleStageCollection instance.
+     * The returned {@code LifecycleStageCollection} instance.
      *
      * @return the value
      */
@@ -131,12 +131,12 @@ public class ListLifecycleStagesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned LifecycleStageCollection instance. */
+        /** The returned {@code LifecycleStageCollection} instance. */
         private com.oracle.bmc.osmanagementhub.model.LifecycleStageCollection
                 lifecycleStageCollection;
 
         /**
-         * The returned LifecycleStageCollection instance.
+         * The returned {@code LifecycleStageCollection} instance.
          *
          * @param lifecycleStageCollection the value to set
          * @return this builder

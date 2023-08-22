@@ -36,11 +36,11 @@ public class UpdateConnectHarnessResponse extends com.oracle.bmc.responses.BmcRe
         return etag;
     }
 
-    /** The returned ConnectHarness instance. */
+    /** The returned {@code ConnectHarness} instance. */
     private com.oracle.bmc.streaming.model.ConnectHarness connectHarness;
 
     /**
-     * The returned ConnectHarness instance.
+     * The returned {@code ConnectHarness} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateConnectHarnessResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned ConnectHarness instance. */
+        /** The returned {@code ConnectHarness} instance. */
         private com.oracle.bmc.streaming.model.ConnectHarness connectHarness;
 
         /**
-         * The returned ConnectHarness instance.
+         * The returned {@code ConnectHarness} instance.
          *
          * @param connectHarness the value to set
          * @return this builder

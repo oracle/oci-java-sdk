@@ -24,11 +24,11 @@ public class GetSchemaResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Schema instance. */
+    /** The returned {@code Schema} instance. */
     private com.oracle.bmc.dataintegration.model.Schema schema;
 
     /**
-     * The returned Schema instance.
+     * The returned {@code Schema} instance.
      *
      * @return the value
      */
@@ -83,11 +83,11 @@ public class GetSchemaResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Schema instance. */
+        /** The returned {@code Schema} instance. */
         private com.oracle.bmc.dataintegration.model.Schema schema;
 
         /**
-         * The returned Schema instance.
+         * The returned {@code Schema} instance.
          *
          * @param schema the value to set
          * @return this builder

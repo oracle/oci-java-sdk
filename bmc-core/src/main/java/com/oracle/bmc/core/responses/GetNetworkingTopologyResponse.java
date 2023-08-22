@@ -36,11 +36,11 @@ public class GetNetworkingTopologyResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned NetworkingTopology instance. */
+    /** The returned {@code NetworkingTopology} instance. */
     private com.oracle.bmc.core.model.NetworkingTopology networkingTopology;
 
     /**
-     * The returned NetworkingTopology instance.
+     * The returned {@code NetworkingTopology} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetNetworkingTopologyResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned NetworkingTopology instance. */
+        /** The returned {@code NetworkingTopology} instance. */
         private com.oracle.bmc.core.model.NetworkingTopology networkingTopology;
 
         /**
-         * The returned NetworkingTopology instance.
+         * The returned {@code NetworkingTopology} instance.
          *
          * @param networkingTopology the value to set
          * @return this builder

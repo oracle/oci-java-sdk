@@ -40,11 +40,11 @@ public class CreateTaskResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Task instance. */
+    /** The returned {@code Task} instance. */
     private com.oracle.bmc.dataintegration.model.Task task;
 
     /**
-     * The returned Task instance.
+     * The returned {@code Task} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class CreateTaskResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Task instance. */
+        /** The returned {@code Task} instance. */
         private com.oracle.bmc.dataintegration.model.Task task;
 
         /**
-         * The returned Task instance.
+         * The returned {@code Task} instance.
          *
          * @param task the value to set
          * @return this builder

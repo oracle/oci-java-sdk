@@ -43,7 +43,7 @@ public class ListAnnouncementsPreferencesResponse extends com.oracle.bmc.respons
     }
 
     /**
-     * A list of com.oracle.bmc.announcementsservice.model.AnnouncementsPreferencesSummary
+     * A list of {@code com.oracle.bmc.announcementsservice.model.AnnouncementsPreferencesSummary}
      * instances.
      */
     private java.util.List<
@@ -51,7 +51,7 @@ public class ListAnnouncementsPreferencesResponse extends com.oracle.bmc.respons
             items;
 
     /**
-     * A list of com.oracle.bmc.announcementsservice.model.AnnouncementsPreferencesSummary
+     * A list of {@code com.oracle.bmc.announcementsservice.model.AnnouncementsPreferencesSummary}
      * instances.
      *
      * @return the value
@@ -141,16 +141,16 @@ public class ListAnnouncementsPreferencesResponse extends com.oracle.bmc.respons
         }
 
         /**
-         * A list of com.oracle.bmc.announcementsservice.model.AnnouncementsPreferencesSummary
-         * instances.
+         * A list of {@code
+         * com.oracle.bmc.announcementsservice.model.AnnouncementsPreferencesSummary} instances.
          */
         private java.util.List<
                         com.oracle.bmc.announcementsservice.model.AnnouncementsPreferencesSummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.announcementsservice.model.AnnouncementsPreferencesSummary
-         * instances.
+         * A list of {@code
+         * com.oracle.bmc.announcementsservice.model.AnnouncementsPreferencesSummary} instances.
          *
          * @param items the value to set
          * @return this builder

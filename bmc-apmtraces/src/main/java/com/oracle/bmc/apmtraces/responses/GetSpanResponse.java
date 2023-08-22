@@ -24,11 +24,11 @@ public class GetSpanResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Span instance. */
+    /** The returned {@code Span} instance. */
     private com.oracle.bmc.apmtraces.model.Span span;
 
     /**
-     * The returned Span instance.
+     * The returned {@code Span} instance.
      *
      * @return the value
      */
@@ -83,11 +83,11 @@ public class GetSpanResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Span instance. */
+        /** The returned {@code Span} instance. */
         private com.oracle.bmc.apmtraces.model.Span span;
 
         /**
-         * The returned Span instance.
+         * The returned {@code Span} instance.
          *
          * @param span the value to set
          * @return this builder

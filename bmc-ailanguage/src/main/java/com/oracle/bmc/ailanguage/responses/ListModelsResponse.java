@@ -42,11 +42,11 @@ public class ListModelsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned ModelCollection instance. */
+    /** The returned {@code ModelCollection} instance. */
     private com.oracle.bmc.ailanguage.model.ModelCollection modelCollection;
 
     /**
-     * The returned ModelCollection instance.
+     * The returned {@code ModelCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListModelsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned ModelCollection instance. */
+        /** The returned {@code ModelCollection} instance. */
         private com.oracle.bmc.ailanguage.model.ModelCollection modelCollection;
 
         /**
-         * The returned ModelCollection instance.
+         * The returned {@code ModelCollection} instance.
          *
          * @param modelCollection the value to set
          * @return this builder

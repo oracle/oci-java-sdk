@@ -36,11 +36,11 @@ public class GetServiceConnectorResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned ServiceConnector instance. */
+    /** The returned {@code ServiceConnector} instance. */
     private com.oracle.bmc.sch.model.ServiceConnector serviceConnector;
 
     /**
-     * The returned ServiceConnector instance.
+     * The returned {@code ServiceConnector} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetServiceConnectorResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned ServiceConnector instance. */
+        /** The returned {@code ServiceConnector} instance. */
         private com.oracle.bmc.sch.model.ServiceConnector serviceConnector;
 
         /**
-         * The returned ServiceConnector instance.
+         * The returned {@code ServiceConnector} instance.
          *
          * @param serviceConnector the value to set
          * @return this builder

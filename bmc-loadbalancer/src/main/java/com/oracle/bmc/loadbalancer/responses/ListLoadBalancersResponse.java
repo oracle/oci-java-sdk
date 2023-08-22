@@ -42,11 +42,11 @@ public class ListLoadBalancersResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.loadbalancer.model.LoadBalancer instances. */
+    /** A list of {@code com.oracle.bmc.loadbalancer.model.LoadBalancer} instances. */
     private java.util.List<com.oracle.bmc.loadbalancer.model.LoadBalancer> items;
 
     /**
-     * A list of com.oracle.bmc.loadbalancer.model.LoadBalancer instances.
+     * A list of {@code com.oracle.bmc.loadbalancer.model.LoadBalancer} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListLoadBalancersResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** A list of com.oracle.bmc.loadbalancer.model.LoadBalancer instances. */
+        /** A list of {@code com.oracle.bmc.loadbalancer.model.LoadBalancer} instances. */
         private java.util.List<com.oracle.bmc.loadbalancer.model.LoadBalancer> items;
 
         /**
-         * A list of com.oracle.bmc.loadbalancer.model.LoadBalancer instances.
+         * A list of {@code com.oracle.bmc.loadbalancer.model.LoadBalancer} instances.
          *
          * @param items the value to set
          * @return this builder

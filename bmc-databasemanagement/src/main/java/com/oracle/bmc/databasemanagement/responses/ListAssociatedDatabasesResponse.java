@@ -42,12 +42,12 @@ public class ListAssociatedDatabasesResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned AssociatedDatabaseCollection instance. */
+    /** The returned {@code AssociatedDatabaseCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.AssociatedDatabaseCollection
             associatedDatabaseCollection;
 
     /**
-     * The returned AssociatedDatabaseCollection instance.
+     * The returned {@code AssociatedDatabaseCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListAssociatedDatabasesResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned AssociatedDatabaseCollection instance. */
+        /** The returned {@code AssociatedDatabaseCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.AssociatedDatabaseCollection
                 associatedDatabaseCollection;
 
         /**
-         * The returned AssociatedDatabaseCollection instance.
+         * The returned {@code AssociatedDatabaseCollection} instance.
          *
          * @param associatedDatabaseCollection the value to set
          * @return this builder

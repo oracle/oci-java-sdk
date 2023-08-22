@@ -40,11 +40,11 @@ public class UpdateModelVersionSetResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned ModelVersionSet instance. */
+    /** The returned {@code ModelVersionSet} instance. */
     private com.oracle.bmc.datascience.model.ModelVersionSet modelVersionSet;
 
     /**
-     * The returned ModelVersionSet instance.
+     * The returned {@code ModelVersionSet} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class UpdateModelVersionSetResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned ModelVersionSet instance. */
+        /** The returned {@code ModelVersionSet} instance. */
         private com.oracle.bmc.datascience.model.ModelVersionSet modelVersionSet;
 
         /**
-         * The returned ModelVersionSet instance.
+         * The returned {@code ModelVersionSet} instance.
          *
          * @param modelVersionSet the value to set
          * @return this builder

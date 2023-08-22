@@ -42,11 +42,11 @@ public class ListVirtualNodesResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.containerengine.model.VirtualNodeSummary instances. */
+    /** A list of {@code com.oracle.bmc.containerengine.model.VirtualNodeSummary} instances. */
     private java.util.List<com.oracle.bmc.containerengine.model.VirtualNodeSummary> items;
 
     /**
-     * A list of com.oracle.bmc.containerengine.model.VirtualNodeSummary instances.
+     * A list of {@code com.oracle.bmc.containerengine.model.VirtualNodeSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListVirtualNodesResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** A list of com.oracle.bmc.containerengine.model.VirtualNodeSummary instances. */
+        /** A list of {@code com.oracle.bmc.containerengine.model.VirtualNodeSummary} instances. */
         private java.util.List<com.oracle.bmc.containerengine.model.VirtualNodeSummary> items;
 
         /**
-         * A list of com.oracle.bmc.containerengine.model.VirtualNodeSummary instances.
+         * A list of {@code com.oracle.bmc.containerengine.model.VirtualNodeSummary} instances.
          *
          * @param items the value to set
          * @return this builder

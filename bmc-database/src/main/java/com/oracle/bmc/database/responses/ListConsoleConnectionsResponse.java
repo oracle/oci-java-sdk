@@ -44,11 +44,11 @@ public class ListConsoleConnectionsResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.database.model.ConsoleConnectionSummary instances. */
+    /** A list of {@code com.oracle.bmc.database.model.ConsoleConnectionSummary} instances. */
     private java.util.List<com.oracle.bmc.database.model.ConsoleConnectionSummary> items;
 
     /**
-     * A list of com.oracle.bmc.database.model.ConsoleConnectionSummary instances.
+     * A list of {@code com.oracle.bmc.database.model.ConsoleConnectionSummary} instances.
      *
      * @return the value
      */
@@ -136,11 +136,11 @@ public class ListConsoleConnectionsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** A list of com.oracle.bmc.database.model.ConsoleConnectionSummary instances. */
+        /** A list of {@code com.oracle.bmc.database.model.ConsoleConnectionSummary} instances. */
         private java.util.List<com.oracle.bmc.database.model.ConsoleConnectionSummary> items;
 
         /**
-         * A list of com.oracle.bmc.database.model.ConsoleConnectionSummary instances.
+         * A list of {@code com.oracle.bmc.database.model.ConsoleConnectionSummary} instances.
          *
          * @param items the value to set
          * @return this builder

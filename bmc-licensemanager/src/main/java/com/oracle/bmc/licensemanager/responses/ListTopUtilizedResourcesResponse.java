@@ -42,12 +42,12 @@ public class ListTopUtilizedResourcesResponse extends com.oracle.bmc.responses.B
         return opcNextPage;
     }
 
-    /** The returned TopUtilizedResourceCollection instance. */
+    /** The returned {@code TopUtilizedResourceCollection} instance. */
     private com.oracle.bmc.licensemanager.model.TopUtilizedResourceCollection
             topUtilizedResourceCollection;
 
     /**
-     * The returned TopUtilizedResourceCollection instance.
+     * The returned {@code TopUtilizedResourceCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListTopUtilizedResourcesResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned TopUtilizedResourceCollection instance. */
+        /** The returned {@code TopUtilizedResourceCollection} instance. */
         private com.oracle.bmc.licensemanager.model.TopUtilizedResourceCollection
                 topUtilizedResourceCollection;
 
         /**
-         * The returned TopUtilizedResourceCollection instance.
+         * The returned {@code TopUtilizedResourceCollection} instance.
          *
          * @param topUtilizedResourceCollection the value to set
          * @return this builder

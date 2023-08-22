@@ -62,11 +62,11 @@ public class ListRoutingPoliciesResponse extends com.oracle.bmc.responses.BmcRes
         return eTag;
     }
 
-    /** A list of com.oracle.bmc.loadbalancer.model.RoutingPolicy instances. */
+    /** A list of {@code com.oracle.bmc.loadbalancer.model.RoutingPolicy} instances. */
     private java.util.List<com.oracle.bmc.loadbalancer.model.RoutingPolicy> items;
 
     /**
-     * A list of com.oracle.bmc.loadbalancer.model.RoutingPolicy instances.
+     * A list of {@code com.oracle.bmc.loadbalancer.model.RoutingPolicy} instances.
      *
      * @return the value
      */
@@ -176,11 +176,11 @@ public class ListRoutingPoliciesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** A list of com.oracle.bmc.loadbalancer.model.RoutingPolicy instances. */
+        /** A list of {@code com.oracle.bmc.loadbalancer.model.RoutingPolicy} instances. */
         private java.util.List<com.oracle.bmc.loadbalancer.model.RoutingPolicy> items;
 
         /**
-         * A list of com.oracle.bmc.loadbalancer.model.RoutingPolicy instances.
+         * A list of {@code com.oracle.bmc.loadbalancer.model.RoutingPolicy} instances.
          *
          * @param items the value to set
          * @return this builder

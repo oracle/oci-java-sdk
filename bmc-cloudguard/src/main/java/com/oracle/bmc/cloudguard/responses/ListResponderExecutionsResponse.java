@@ -42,12 +42,12 @@ public class ListResponderExecutionsResponse extends com.oracle.bmc.responses.Bm
         return opcNextPage;
     }
 
-    /** The returned ResponderExecutionCollection instance. */
+    /** The returned {@code ResponderExecutionCollection} instance. */
     private com.oracle.bmc.cloudguard.model.ResponderExecutionCollection
             responderExecutionCollection;
 
     /**
-     * The returned ResponderExecutionCollection instance.
+     * The returned {@code ResponderExecutionCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListResponderExecutionsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned ResponderExecutionCollection instance. */
+        /** The returned {@code ResponderExecutionCollection} instance. */
         private com.oracle.bmc.cloudguard.model.ResponderExecutionCollection
                 responderExecutionCollection;
 
         /**
-         * The returned ResponderExecutionCollection instance.
+         * The returned {@code ResponderExecutionCollection} instance.
          *
          * @param responderExecutionCollection the value to set
          * @return this builder

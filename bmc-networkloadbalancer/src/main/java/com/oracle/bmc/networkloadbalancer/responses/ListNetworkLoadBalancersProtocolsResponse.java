@@ -43,12 +43,12 @@ public class ListNetworkLoadBalancersProtocolsResponse
         return opcRequestId;
     }
 
-    /** The returned NetworkLoadBalancersProtocolCollection instance. */
+    /** The returned {@code NetworkLoadBalancersProtocolCollection} instance. */
     private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancersProtocolCollection
             networkLoadBalancersProtocolCollection;
 
     /**
-     * The returned NetworkLoadBalancersProtocolCollection instance.
+     * The returned {@code NetworkLoadBalancersProtocolCollection} instance.
      *
      * @return the value
      */
@@ -134,12 +134,12 @@ public class ListNetworkLoadBalancersProtocolsResponse
             return this;
         }
 
-        /** The returned NetworkLoadBalancersProtocolCollection instance. */
+        /** The returned {@code NetworkLoadBalancersProtocolCollection} instance. */
         private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancersProtocolCollection
                 networkLoadBalancersProtocolCollection;
 
         /**
-         * The returned NetworkLoadBalancersProtocolCollection instance.
+         * The returned {@code NetworkLoadBalancersProtocolCollection} instance.
          *
          * @param networkLoadBalancersProtocolCollection the value to set
          * @return this builder

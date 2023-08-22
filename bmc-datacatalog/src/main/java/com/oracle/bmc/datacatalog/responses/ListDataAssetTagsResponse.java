@@ -42,11 +42,11 @@ public class ListDataAssetTagsResponse extends com.oracle.bmc.responses.BmcRespo
         return opcNextPage;
     }
 
-    /** The returned DataAssetTagCollection instance. */
+    /** The returned {@code DataAssetTagCollection} instance. */
     private com.oracle.bmc.datacatalog.model.DataAssetTagCollection dataAssetTagCollection;
 
     /**
-     * The returned DataAssetTagCollection instance.
+     * The returned {@code DataAssetTagCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListDataAssetTagsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned DataAssetTagCollection instance. */
+        /** The returned {@code DataAssetTagCollection} instance. */
         private com.oracle.bmc.datacatalog.model.DataAssetTagCollection dataAssetTagCollection;
 
         /**
-         * The returned DataAssetTagCollection instance.
+         * The returned {@code DataAssetTagCollection} instance.
          *
          * @param dataAssetTagCollection the value to set
          * @return this builder

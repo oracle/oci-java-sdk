@@ -42,11 +42,11 @@ public class ListWebAppAccelerationsResponse extends com.oracle.bmc.responses.Bm
         return opcNextPage;
     }
 
-    /** The returned WebAppAccelerationCollection instance. */
+    /** The returned {@code WebAppAccelerationCollection} instance. */
     private com.oracle.bmc.waa.model.WebAppAccelerationCollection webAppAccelerationCollection;
 
     /**
-     * The returned WebAppAccelerationCollection instance.
+     * The returned {@code WebAppAccelerationCollection} instance.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListWebAppAccelerationsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned WebAppAccelerationCollection instance. */
+        /** The returned {@code WebAppAccelerationCollection} instance. */
         private com.oracle.bmc.waa.model.WebAppAccelerationCollection webAppAccelerationCollection;
 
         /**
-         * The returned WebAppAccelerationCollection instance.
+         * The returned {@code WebAppAccelerationCollection} instance.
          *
          * @param webAppAccelerationCollection the value to set
          * @return this builder

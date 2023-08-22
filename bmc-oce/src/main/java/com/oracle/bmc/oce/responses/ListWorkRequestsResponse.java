@@ -42,11 +42,11 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.oce.model.WorkRequest instances. */
+    /** A list of {@code com.oracle.bmc.oce.model.WorkRequest} instances. */
     private java.util.List<com.oracle.bmc.oce.model.WorkRequest> items;
 
     /**
-     * A list of com.oracle.bmc.oce.model.WorkRequest instances.
+     * A list of {@code com.oracle.bmc.oce.model.WorkRequest} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** A list of com.oracle.bmc.oce.model.WorkRequest instances. */
+        /** A list of {@code com.oracle.bmc.oce.model.WorkRequest} instances. */
         private java.util.List<com.oracle.bmc.oce.model.WorkRequest> items;
 
         /**
-         * A list of com.oracle.bmc.oce.model.WorkRequest instances.
+         * A list of {@code com.oracle.bmc.oce.model.WorkRequest} instances.
          *
          * @param items the value to set
          * @return this builder

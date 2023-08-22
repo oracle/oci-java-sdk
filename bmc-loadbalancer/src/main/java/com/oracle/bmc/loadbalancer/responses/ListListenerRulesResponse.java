@@ -44,11 +44,11 @@ public class ListListenerRulesResponse extends com.oracle.bmc.responses.BmcRespo
         return eTag;
     }
 
-    /** A list of com.oracle.bmc.loadbalancer.model.ListenerRuleSummary instances. */
+    /** A list of {@code com.oracle.bmc.loadbalancer.model.ListenerRuleSummary} instances. */
     private java.util.List<com.oracle.bmc.loadbalancer.model.ListenerRuleSummary> items;
 
     /**
-     * A list of com.oracle.bmc.loadbalancer.model.ListenerRuleSummary instances.
+     * A list of {@code com.oracle.bmc.loadbalancer.model.ListenerRuleSummary} instances.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListListenerRulesResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** A list of com.oracle.bmc.loadbalancer.model.ListenerRuleSummary instances. */
+        /** A list of {@code com.oracle.bmc.loadbalancer.model.ListenerRuleSummary} instances. */
         private java.util.List<com.oracle.bmc.loadbalancer.model.ListenerRuleSummary> items;
 
         /**
-         * A list of com.oracle.bmc.loadbalancer.model.ListenerRuleSummary instances.
+         * A list of {@code com.oracle.bmc.loadbalancer.model.ListenerRuleSummary} instances.
          *
          * @param items the value to set
          * @return this builder

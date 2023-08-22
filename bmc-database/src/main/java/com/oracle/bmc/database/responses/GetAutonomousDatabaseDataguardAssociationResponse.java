@@ -37,12 +37,12 @@ public class GetAutonomousDatabaseDataguardAssociationResponse
         return opcRequestId;
     }
 
-    /** The returned AutonomousDatabaseDataguardAssociation instance. */
+    /** The returned {@code AutonomousDatabaseDataguardAssociation} instance. */
     private com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation
             autonomousDatabaseDataguardAssociation;
 
     /**
-     * The returned AutonomousDatabaseDataguardAssociation instance.
+     * The returned {@code AutonomousDatabaseDataguardAssociation} instance.
      *
      * @return the value
      */
@@ -122,12 +122,12 @@ public class GetAutonomousDatabaseDataguardAssociationResponse
             return this;
         }
 
-        /** The returned AutonomousDatabaseDataguardAssociation instance. */
+        /** The returned {@code AutonomousDatabaseDataguardAssociation} instance. */
         private com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation
                 autonomousDatabaseDataguardAssociation;
 
         /**
-         * The returned AutonomousDatabaseDataguardAssociation instance.
+         * The returned {@code AutonomousDatabaseDataguardAssociation} instance.
          *
          * @param autonomousDatabaseDataguardAssociation the value to set
          * @return this builder

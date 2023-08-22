@@ -36,11 +36,11 @@ public class GetDatabaseToolsConnectionResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    /** The returned DatabaseToolsConnection instance. */
+    /** The returned {@code DatabaseToolsConnection} instance. */
     private com.oracle.bmc.databasetools.model.DatabaseToolsConnection databaseToolsConnection;
 
     /**
-     * The returned DatabaseToolsConnection instance.
+     * The returned {@code DatabaseToolsConnection} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetDatabaseToolsConnectionResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned DatabaseToolsConnection instance. */
+        /** The returned {@code DatabaseToolsConnection} instance. */
         private com.oracle.bmc.databasetools.model.DatabaseToolsConnection databaseToolsConnection;
 
         /**
-         * The returned DatabaseToolsConnection instance.
+         * The returned {@code DatabaseToolsConnection} instance.
          *
          * @param databaseToolsConnection the value to set
          * @return this builder

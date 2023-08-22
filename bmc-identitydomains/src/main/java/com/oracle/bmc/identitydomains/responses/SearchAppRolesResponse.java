@@ -42,11 +42,11 @@ public class SearchAppRolesResponse extends com.oracle.bmc.responses.BmcResponse
         return opcNextPage;
     }
 
-    /** The returned AppRoles instance. */
+    /** The returned {@code AppRoles} instance. */
     private com.oracle.bmc.identitydomains.model.AppRoles appRoles;
 
     /**
-     * The returned AppRoles instance.
+     * The returned {@code AppRoles} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class SearchAppRolesResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned AppRoles instance. */
+        /** The returned {@code AppRoles} instance. */
         private com.oracle.bmc.identitydomains.model.AppRoles appRoles;
 
         /**
-         * The returned AppRoles instance.
+         * The returned {@code AppRoles} instance.
          *
          * @param appRoles the value to set
          * @return this builder

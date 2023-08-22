@@ -42,12 +42,12 @@ public class ListRuntimePipelinesResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** The returned RuntimePipelineSummaryCollection instance. */
+    /** The returned {@code RuntimePipelineSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.RuntimePipelineSummaryCollection
             runtimePipelineSummaryCollection;
 
     /**
-     * The returned RuntimePipelineSummaryCollection instance.
+     * The returned {@code RuntimePipelineSummaryCollection} instance.
      *
      * @return the value
      */
@@ -134,12 +134,12 @@ public class ListRuntimePipelinesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned RuntimePipelineSummaryCollection instance. */
+        /** The returned {@code RuntimePipelineSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.RuntimePipelineSummaryCollection
                 runtimePipelineSummaryCollection;
 
         /**
-         * The returned RuntimePipelineSummaryCollection instance.
+         * The returned {@code RuntimePipelineSummaryCollection} instance.
          *
          * @param runtimePipelineSummaryCollection the value to set
          * @return this builder

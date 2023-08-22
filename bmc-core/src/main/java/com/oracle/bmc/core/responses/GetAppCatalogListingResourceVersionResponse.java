@@ -37,12 +37,12 @@ public class GetAppCatalogListingResourceVersionResponse
         return opcRequestId;
     }
 
-    /** The returned AppCatalogListingResourceVersion instance. */
+    /** The returned {@code AppCatalogListingResourceVersion} instance. */
     private com.oracle.bmc.core.model.AppCatalogListingResourceVersion
             appCatalogListingResourceVersion;
 
     /**
-     * The returned AppCatalogListingResourceVersion instance.
+     * The returned {@code AppCatalogListingResourceVersion} instance.
      *
      * @return the value
      */
@@ -122,12 +122,12 @@ public class GetAppCatalogListingResourceVersionResponse
             return this;
         }
 
-        /** The returned AppCatalogListingResourceVersion instance. */
+        /** The returned {@code AppCatalogListingResourceVersion} instance. */
         private com.oracle.bmc.core.model.AppCatalogListingResourceVersion
                 appCatalogListingResourceVersion;
 
         /**
-         * The returned AppCatalogListingResourceVersion instance.
+         * The returned {@code AppCatalogListingResourceVersion} instance.
          *
          * @param appCatalogListingResourceVersion the value to set
          * @return this builder

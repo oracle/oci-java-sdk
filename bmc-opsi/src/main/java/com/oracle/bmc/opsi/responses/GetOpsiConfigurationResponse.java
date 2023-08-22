@@ -36,11 +36,11 @@ public class GetOpsiConfigurationResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned OpsiConfiguration instance. */
+    /** The returned {@code OpsiConfiguration} instance. */
     private com.oracle.bmc.opsi.model.OpsiConfiguration opsiConfiguration;
 
     /**
-     * The returned OpsiConfiguration instance.
+     * The returned {@code OpsiConfiguration} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetOpsiConfigurationResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned OpsiConfiguration instance. */
+        /** The returned {@code OpsiConfiguration} instance. */
         private com.oracle.bmc.opsi.model.OpsiConfiguration opsiConfiguration;
 
         /**
-         * The returned OpsiConfiguration instance.
+         * The returned {@code OpsiConfiguration} instance.
          *
          * @param opsiConfiguration the value to set
          * @return this builder

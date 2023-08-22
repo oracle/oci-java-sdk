@@ -68,11 +68,11 @@ public class CreateFsuCollectionResponse extends com.oracle.bmc.responses.BmcRes
         return location;
     }
 
-    /** The returned FsuCollection instance. */
+    /** The returned {@code FsuCollection} instance. */
     private com.oracle.bmc.fleetsoftwareupdate.model.FsuCollection fsuCollection;
 
     /**
-     * The returned FsuCollection instance.
+     * The returned {@code FsuCollection} instance.
      *
      * @return the value
      */
@@ -191,11 +191,11 @@ public class CreateFsuCollectionResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned FsuCollection instance. */
+        /** The returned {@code FsuCollection} instance. */
         private com.oracle.bmc.fleetsoftwareupdate.model.FsuCollection fsuCollection;
 
         /**
-         * The returned FsuCollection instance.
+         * The returned {@code FsuCollection} instance.
          *
          * @param fsuCollection the value to set
          * @return this builder

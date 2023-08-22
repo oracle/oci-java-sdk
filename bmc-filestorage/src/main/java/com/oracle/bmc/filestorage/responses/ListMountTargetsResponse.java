@@ -46,11 +46,11 @@ public class ListMountTargetsResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.filestorage.model.MountTargetSummary instances. */
+    /** A list of {@code com.oracle.bmc.filestorage.model.MountTargetSummary} instances. */
     private java.util.List<com.oracle.bmc.filestorage.model.MountTargetSummary> items;
 
     /**
-     * A list of com.oracle.bmc.filestorage.model.MountTargetSummary instances.
+     * A list of {@code com.oracle.bmc.filestorage.model.MountTargetSummary} instances.
      *
      * @return the value
      */
@@ -137,11 +137,11 @@ public class ListMountTargetsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** A list of com.oracle.bmc.filestorage.model.MountTargetSummary instances. */
+        /** A list of {@code com.oracle.bmc.filestorage.model.MountTargetSummary} instances. */
         private java.util.List<com.oracle.bmc.filestorage.model.MountTargetSummary> items;
 
         /**
-         * A list of com.oracle.bmc.filestorage.model.MountTargetSummary instances.
+         * A list of {@code com.oracle.bmc.filestorage.model.MountTargetSummary} instances.
          *
          * @param items the value to set
          * @return this builder

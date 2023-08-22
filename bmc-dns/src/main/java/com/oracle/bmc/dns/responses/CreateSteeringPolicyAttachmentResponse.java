@@ -52,11 +52,11 @@ public class CreateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
         return opcRequestId;
     }
 
-    /** The returned SteeringPolicyAttachment instance. */
+    /** The returned {@code SteeringPolicyAttachment} instance. */
     private com.oracle.bmc.dns.model.SteeringPolicyAttachment steeringPolicyAttachment;
 
     /**
-     * The returned SteeringPolicyAttachment instance.
+     * The returned {@code SteeringPolicyAttachment} instance.
      *
      * @return the value
      */
@@ -157,11 +157,11 @@ public class CreateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned SteeringPolicyAttachment instance. */
+        /** The returned {@code SteeringPolicyAttachment} instance. */
         private com.oracle.bmc.dns.model.SteeringPolicyAttachment steeringPolicyAttachment;
 
         /**
-         * The returned SteeringPolicyAttachment instance.
+         * The returned {@code SteeringPolicyAttachment} instance.
          *
          * @param steeringPolicyAttachment the value to set
          * @return this builder

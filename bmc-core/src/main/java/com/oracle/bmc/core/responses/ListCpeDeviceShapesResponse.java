@@ -42,11 +42,11 @@ public class ListCpeDeviceShapesResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.CpeDeviceShapeSummary instances. */
+    /** A list of {@code com.oracle.bmc.core.model.CpeDeviceShapeSummary} instances. */
     private java.util.List<com.oracle.bmc.core.model.CpeDeviceShapeSummary> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.CpeDeviceShapeSummary instances.
+     * A list of {@code com.oracle.bmc.core.model.CpeDeviceShapeSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListCpeDeviceShapesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.CpeDeviceShapeSummary instances. */
+        /** A list of {@code com.oracle.bmc.core.model.CpeDeviceShapeSummary} instances. */
         private java.util.List<com.oracle.bmc.core.model.CpeDeviceShapeSummary> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.CpeDeviceShapeSummary instances.
+         * A list of {@code com.oracle.bmc.core.model.CpeDeviceShapeSummary} instances.
          *
          * @param items the value to set
          * @return this builder

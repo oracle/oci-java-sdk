@@ -54,12 +54,12 @@ public class SearchMonitoredResourceMembersResponse extends com.oracle.bmc.respo
         return opcTotalItems;
     }
 
-    /** The returned MonitoredResourceMembersCollection instance. */
+    /** The returned {@code MonitoredResourceMembersCollection} instance. */
     private com.oracle.bmc.stackmonitoring.model.MonitoredResourceMembersCollection
             monitoredResourceMembersCollection;
 
     /**
-     * The returned MonitoredResourceMembersCollection instance.
+     * The returned {@code MonitoredResourceMembersCollection} instance.
      *
      * @return the value
      */
@@ -162,12 +162,12 @@ public class SearchMonitoredResourceMembersResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned MonitoredResourceMembersCollection instance. */
+        /** The returned {@code MonitoredResourceMembersCollection} instance. */
         private com.oracle.bmc.stackmonitoring.model.MonitoredResourceMembersCollection
                 monitoredResourceMembersCollection;
 
         /**
-         * The returned MonitoredResourceMembersCollection instance.
+         * The returned {@code MonitoredResourceMembersCollection} instance.
          *
          * @param monitoredResourceMembersCollection the value to set
          * @return this builder

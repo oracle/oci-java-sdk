@@ -42,11 +42,11 @@ public class ListSupportedSkusResponse extends com.oracle.bmc.responses.BmcRespo
         return opcNextPage;
     }
 
-    /** The returned SupportedSkuSummaryCollection instance. */
+    /** The returned {@code SupportedSkuSummaryCollection} instance. */
     private com.oracle.bmc.ocvp.model.SupportedSkuSummaryCollection supportedSkuSummaryCollection;
 
     /**
-     * The returned SupportedSkuSummaryCollection instance.
+     * The returned {@code SupportedSkuSummaryCollection} instance.
      *
      * @return the value
      */
@@ -130,12 +130,12 @@ public class ListSupportedSkusResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned SupportedSkuSummaryCollection instance. */
+        /** The returned {@code SupportedSkuSummaryCollection} instance. */
         private com.oracle.bmc.ocvp.model.SupportedSkuSummaryCollection
                 supportedSkuSummaryCollection;
 
         /**
-         * The returned SupportedSkuSummaryCollection instance.
+         * The returned {@code SupportedSkuSummaryCollection} instance.
          *
          * @param supportedSkuSummaryCollection the value to set
          * @return this builder

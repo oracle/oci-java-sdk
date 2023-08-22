@@ -24,11 +24,11 @@ public class GetLookupSummaryResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned LookupSummaryReport instance. */
+    /** The returned {@code LookupSummaryReport} instance. */
     private com.oracle.bmc.loganalytics.model.LookupSummaryReport lookupSummaryReport;
 
     /**
-     * The returned LookupSummaryReport instance.
+     * The returned {@code LookupSummaryReport} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetLookupSummaryResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned LookupSummaryReport instance. */
+        /** The returned {@code LookupSummaryReport} instance. */
         private com.oracle.bmc.loganalytics.model.LookupSummaryReport lookupSummaryReport;
 
         /**
-         * The returned LookupSummaryReport instance.
+         * The returned {@code LookupSummaryReport} instance.
          *
          * @param lookupSummaryReport the value to set
          * @return this builder

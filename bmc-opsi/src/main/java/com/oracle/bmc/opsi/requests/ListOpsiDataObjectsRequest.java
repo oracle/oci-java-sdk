@@ -86,6 +86,7 @@ public class ListOpsiDataObjectsRequest extends com.oracle.bmc.requests.BmcReque
     public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         DisplayName("displayName"),
         DataObjectType("dataObjectType"),
+        Name("name"),
         ;
 
         private final String value;
@@ -119,6 +120,32 @@ public class ListOpsiDataObjectsRequest extends com.oracle.bmc.requests.BmcReque
     /** OPSI data object list sort options. */
     public SortBy getSortBy() {
         return sortBy;
+    }
+    /**
+     * A filter to return only data objects that belongs to the group of the given group name. By
+     * default, no filtering will be applied on group name.
+     */
+    private String groupName;
+
+    /**
+     * A filter to return only data objects that belongs to the group of the given group name. By
+     * default, no filtering will be applied on group name.
+     */
+    public String getGroupName() {
+        return groupName;
+    }
+    /**
+     * A filter to return only data objects that match the entire data object name. By default, no
+     * filtering will be applied on data object name.
+     */
+    private String name;
+
+    /**
+     * A filter to return only data objects that match the entire data object name. By default, no
+     * filtering will be applied on data object name.
+     */
+    public String getName() {
+        return name;
     }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -268,6 +295,42 @@ public class ListOpsiDataObjectsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
+         * A filter to return only data objects that belongs to the group of the given group name.
+         * By default, no filtering will be applied on group name.
+         */
+        private String groupName = null;
+
+        /**
+         * A filter to return only data objects that belongs to the group of the given group name.
+         * By default, no filtering will be applied on group name.
+         *
+         * @param groupName the value to set
+         * @return this builder instance
+         */
+        public Builder groupName(String groupName) {
+            this.groupName = groupName;
+            return this;
+        }
+
+        /**
+         * A filter to return only data objects that match the entire data object name. By default,
+         * no filtering will be applied on data object name.
+         */
+        private String name = null;
+
+        /**
+         * A filter to return only data objects that match the entire data object name. By default,
+         * no filtering will be applied on data object name.
+         *
+         * @param name the value to set
+         * @return this builder instance
+         */
+        public Builder name(String name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          */
@@ -322,6 +385,8 @@ public class ListOpsiDataObjectsRequest extends com.oracle.bmc.requests.BmcReque
             page(o.getPage());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
+            groupName(o.getGroupName());
+            name(o.getName());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -364,10 +429,12 @@ public class ListOpsiDataObjectsRequest extends com.oracle.bmc.requests.BmcReque
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
+            request.groupName = groupName;
+            request.name = name;
             request.opcRequestId = opcRequestId;
             return request;
             // new ListOpsiDataObjectsRequest(compartmentId, dataObjectType, displayName, limit,
-            // page, sortOrder, sortBy, opcRequestId);
+            // page, sortOrder, sortBy, groupName, name, opcRequestId);
         }
     }
 
@@ -385,6 +452,8 @@ public class ListOpsiDataObjectsRequest extends com.oracle.bmc.requests.BmcReque
                 .page(page)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
+                .groupName(groupName)
+                .name(name)
                 .opcRequestId(opcRequestId);
     }
 
@@ -409,6 +478,8 @@ public class ListOpsiDataObjectsRequest extends com.oracle.bmc.requests.BmcReque
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",groupName=").append(String.valueOf(this.groupName));
+        sb.append(",name=").append(String.valueOf(this.name));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -432,6 +503,8 @@ public class ListOpsiDataObjectsRequest extends com.oracle.bmc.requests.BmcReque
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.groupName, other.groupName)
+                && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -450,6 +523,8 @@ public class ListOpsiDataObjectsRequest extends com.oracle.bmc.requests.BmcReque
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.groupName == null ? 43 : this.groupName.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

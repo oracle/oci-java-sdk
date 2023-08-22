@@ -60,11 +60,11 @@ public class ListProjectsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.datascience.model.ProjectSummary instances. */
+    /** A list of {@code com.oracle.bmc.datascience.model.ProjectSummary} instances. */
     private java.util.List<com.oracle.bmc.datascience.model.ProjectSummary> items;
 
     /**
-     * A list of com.oracle.bmc.datascience.model.ProjectSummary instances.
+     * A list of {@code com.oracle.bmc.datascience.model.ProjectSummary} instances.
      *
      * @return the value
      */
@@ -170,11 +170,11 @@ public class ListProjectsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.datascience.model.ProjectSummary instances. */
+        /** A list of {@code com.oracle.bmc.datascience.model.ProjectSummary} instances. */
         private java.util.List<com.oracle.bmc.datascience.model.ProjectSummary> items;
 
         /**
-         * A list of com.oracle.bmc.datascience.model.ProjectSummary instances.
+         * A list of {@code com.oracle.bmc.datascience.model.ProjectSummary} instances.
          *
          * @param items the value to set
          * @return this builder

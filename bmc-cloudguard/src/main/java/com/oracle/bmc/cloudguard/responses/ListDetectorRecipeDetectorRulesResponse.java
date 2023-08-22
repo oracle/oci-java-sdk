@@ -42,12 +42,12 @@ public class ListDetectorRecipeDetectorRulesResponse extends com.oracle.bmc.resp
         return opcNextPage;
     }
 
-    /** The returned DetectorRecipeDetectorRuleCollection instance. */
+    /** The returned {@code DetectorRecipeDetectorRuleCollection} instance. */
     private com.oracle.bmc.cloudguard.model.DetectorRecipeDetectorRuleCollection
             detectorRecipeDetectorRuleCollection;
 
     /**
-     * The returned DetectorRecipeDetectorRuleCollection instance.
+     * The returned {@code DetectorRecipeDetectorRuleCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListDetectorRecipeDetectorRulesResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned DetectorRecipeDetectorRuleCollection instance. */
+        /** The returned {@code DetectorRecipeDetectorRuleCollection} instance. */
         private com.oracle.bmc.cloudguard.model.DetectorRecipeDetectorRuleCollection
                 detectorRecipeDetectorRuleCollection;
 
         /**
-         * The returned DetectorRecipeDetectorRuleCollection instance.
+         * The returned {@code DetectorRecipeDetectorRuleCollection} instance.
          *
          * @param detectorRecipeDetectorRuleCollection the value to set
          * @return this builder

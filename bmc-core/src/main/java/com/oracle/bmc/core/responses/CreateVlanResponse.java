@@ -36,11 +36,11 @@ public class CreateVlanResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Vlan instance. */
+    /** The returned {@code Vlan} instance. */
     private com.oracle.bmc.core.model.Vlan vlan;
 
     /**
-     * The returned Vlan instance.
+     * The returned {@code Vlan} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class CreateVlanResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Vlan instance. */
+        /** The returned {@code Vlan} instance. */
         private com.oracle.bmc.core.model.Vlan vlan;
 
         /**
-         * The returned Vlan instance.
+         * The returned {@code Vlan} instance.
          *
          * @param vlan the value to set
          * @return this builder

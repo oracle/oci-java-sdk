@@ -43,13 +43,15 @@ public class ListOrganizationSubscriptionsResponse extends com.oracle.bmc.respon
     }
 
     /**
-     * A list of com.oracle.bmc.osuborganizationsubscription.model.SubscriptionSummary instances.
+     * A list of {@code com.oracle.bmc.osuborganizationsubscription.model.SubscriptionSummary}
+     * instances.
      */
     private java.util.List<com.oracle.bmc.osuborganizationsubscription.model.SubscriptionSummary>
             items;
 
     /**
-     * A list of com.oracle.bmc.osuborganizationsubscription.model.SubscriptionSummary instances.
+     * A list of {@code com.oracle.bmc.osuborganizationsubscription.model.SubscriptionSummary}
+     * instances.
      *
      * @return the value
      */
@@ -136,7 +138,7 @@ public class ListOrganizationSubscriptionsResponse extends com.oracle.bmc.respon
         }
 
         /**
-         * A list of com.oracle.bmc.osuborganizationsubscription.model.SubscriptionSummary
+         * A list of {@code com.oracle.bmc.osuborganizationsubscription.model.SubscriptionSummary}
          * instances.
          */
         private java.util.List<
@@ -144,7 +146,7 @@ public class ListOrganizationSubscriptionsResponse extends com.oracle.bmc.respon
                 items;
 
         /**
-         * A list of com.oracle.bmc.osuborganizationsubscription.model.SubscriptionSummary
+         * A list of {@code com.oracle.bmc.osuborganizationsubscription.model.SubscriptionSummary}
          * instances.
          *
          * @param items the value to set

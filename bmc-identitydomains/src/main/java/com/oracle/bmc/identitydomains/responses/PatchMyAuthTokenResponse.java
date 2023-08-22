@@ -36,11 +36,11 @@ public class PatchMyAuthTokenResponse extends com.oracle.bmc.responses.BmcRespon
         return etag;
     }
 
-    /** The returned MyAuthToken instance. */
+    /** The returned {@code MyAuthToken} instance. */
     private com.oracle.bmc.identitydomains.model.MyAuthToken myAuthToken;
 
     /**
-     * The returned MyAuthToken instance.
+     * The returned {@code MyAuthToken} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class PatchMyAuthTokenResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned MyAuthToken instance. */
+        /** The returned {@code MyAuthToken} instance. */
         private com.oracle.bmc.identitydomains.model.MyAuthToken myAuthToken;
 
         /**
-         * The returned MyAuthToken instance.
+         * The returned {@code MyAuthToken} instance.
          *
          * @param myAuthToken the value to set
          * @return this builder

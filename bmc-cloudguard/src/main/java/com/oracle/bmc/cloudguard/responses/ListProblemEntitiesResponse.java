@@ -42,11 +42,11 @@ public class ListProblemEntitiesResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** The returned ProblemEntityCollection instance. */
+    /** The returned {@code ProblemEntityCollection} instance. */
     private com.oracle.bmc.cloudguard.model.ProblemEntityCollection problemEntityCollection;
 
     /**
-     * The returned ProblemEntityCollection instance.
+     * The returned {@code ProblemEntityCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListProblemEntitiesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned ProblemEntityCollection instance. */
+        /** The returned {@code ProblemEntityCollection} instance. */
         private com.oracle.bmc.cloudguard.model.ProblemEntityCollection problemEntityCollection;
 
         /**
-         * The returned ProblemEntityCollection instance.
+         * The returned {@code ProblemEntityCollection} instance.
          *
          * @param problemEntityCollection the value to set
          * @return this builder

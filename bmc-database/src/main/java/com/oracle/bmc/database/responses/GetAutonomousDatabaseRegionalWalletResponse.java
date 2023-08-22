@@ -25,11 +25,11 @@ public class GetAutonomousDatabaseRegionalWalletResponse
         return opcRequestId;
     }
 
-    /** The returned AutonomousDatabaseWallet instance. */
+    /** The returned {@code AutonomousDatabaseWallet} instance. */
     private com.oracle.bmc.database.model.AutonomousDatabaseWallet autonomousDatabaseWallet;
 
     /**
-     * The returned AutonomousDatabaseWallet instance.
+     * The returned {@code AutonomousDatabaseWallet} instance.
      *
      * @return the value
      */
@@ -90,11 +90,11 @@ public class GetAutonomousDatabaseRegionalWalletResponse
             return this;
         }
 
-        /** The returned AutonomousDatabaseWallet instance. */
+        /** The returned {@code AutonomousDatabaseWallet} instance. */
         private com.oracle.bmc.database.model.AutonomousDatabaseWallet autonomousDatabaseWallet;
 
         /**
-         * The returned AutonomousDatabaseWallet instance.
+         * The returned {@code AutonomousDatabaseWallet} instance.
          *
          * @param autonomousDatabaseWallet the value to set
          * @return this builder

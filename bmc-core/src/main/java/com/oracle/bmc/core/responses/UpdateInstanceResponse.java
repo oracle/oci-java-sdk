@@ -56,11 +56,11 @@ public class UpdateInstanceResponse extends com.oracle.bmc.responses.BmcResponse
         return opcWorkRequestId;
     }
 
-    /** The returned Instance instance. */
+    /** The returned {@code Instance} instance. */
     private com.oracle.bmc.core.model.Instance instance;
 
     /**
-     * The returned Instance instance.
+     * The returned {@code Instance} instance.
      *
      * @return the value
      */
@@ -162,11 +162,11 @@ public class UpdateInstanceResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned Instance instance. */
+        /** The returned {@code Instance} instance. */
         private com.oracle.bmc.core.model.Instance instance;
 
         /**
-         * The returned Instance instance.
+         * The returned {@code Instance} instance.
          *
          * @param instance the value to set
          * @return this builder

@@ -24,11 +24,11 @@ public class GetExadataInfrastructureOcpusResponse extends com.oracle.bmc.respon
         return opcRequestId;
     }
 
-    /** The returned OCPUs instance. */
+    /** The returned {@code OCPUs} instance. */
     private com.oracle.bmc.database.model.OCPUs oCPUs;
 
     /**
-     * The returned OCPUs instance.
+     * The returned {@code OCPUs} instance.
      *
      * @return the value
      */
@@ -84,11 +84,11 @@ public class GetExadataInfrastructureOcpusResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned OCPUs instance. */
+        /** The returned {@code OCPUs} instance. */
         private com.oracle.bmc.database.model.OCPUs oCPUs;
 
         /**
-         * The returned OCPUs instance.
+         * The returned {@code OCPUs} instance.
          *
          * @param oCPUs the value to set
          * @return this builder

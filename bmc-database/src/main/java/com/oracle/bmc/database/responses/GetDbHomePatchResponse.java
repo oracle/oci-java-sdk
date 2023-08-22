@@ -24,11 +24,11 @@ public class GetDbHomePatchResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned Patch instance. */
+    /** The returned {@code Patch} instance. */
     private com.oracle.bmc.database.model.Patch patch;
 
     /**
-     * The returned Patch instance.
+     * The returned {@code Patch} instance.
      *
      * @return the value
      */
@@ -83,11 +83,11 @@ public class GetDbHomePatchResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned Patch instance. */
+        /** The returned {@code Patch} instance. */
         private com.oracle.bmc.database.model.Patch patch;
 
         /**
-         * The returned Patch instance.
+         * The returned {@code Patch} instance.
          *
          * @param patch the value to set
          * @return this builder

@@ -36,12 +36,12 @@ public class DetectLanguageSentimentsResponse extends com.oracle.bmc.responses.B
         return sunset;
     }
 
-    /** The returned DetectLanguageSentimentsResult instance. */
+    /** The returned {@code DetectLanguageSentimentsResult} instance. */
     private com.oracle.bmc.ailanguage.model.DetectLanguageSentimentsResult
             detectLanguageSentimentsResult;
 
     /**
-     * The returned DetectLanguageSentimentsResult instance.
+     * The returned {@code DetectLanguageSentimentsResult} instance.
      *
      * @return the value
      */
@@ -121,12 +121,12 @@ public class DetectLanguageSentimentsResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned DetectLanguageSentimentsResult instance. */
+        /** The returned {@code DetectLanguageSentimentsResult} instance. */
         private com.oracle.bmc.ailanguage.model.DetectLanguageSentimentsResult
                 detectLanguageSentimentsResult;
 
         /**
-         * The returned DetectLanguageSentimentsResult instance.
+         * The returned {@code DetectLanguageSentimentsResult} instance.
          *
          * @param detectLanguageSentimentsResult the value to set
          * @return this builder

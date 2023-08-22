@@ -44,12 +44,12 @@ public class SummarizeJavaServerInstanceUsageResponse extends com.oracle.bmc.res
         return opcNextPage;
     }
 
-    /** The returned JavaServerInstanceUsageCollection instance. */
+    /** The returned {@code JavaServerInstanceUsageCollection} instance. */
     private com.oracle.bmc.jms.model.JavaServerInstanceUsageCollection
             javaServerInstanceUsageCollection;
 
     /**
-     * The returned JavaServerInstanceUsageCollection instance.
+     * The returned {@code JavaServerInstanceUsageCollection} instance.
      *
      * @return the value
      */
@@ -139,12 +139,12 @@ public class SummarizeJavaServerInstanceUsageResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /** The returned JavaServerInstanceUsageCollection instance. */
+        /** The returned {@code JavaServerInstanceUsageCollection} instance. */
         private com.oracle.bmc.jms.model.JavaServerInstanceUsageCollection
                 javaServerInstanceUsageCollection;
 
         /**
-         * The returned JavaServerInstanceUsageCollection instance.
+         * The returned {@code JavaServerInstanceUsageCollection} instance.
          *
          * @param javaServerInstanceUsageCollection the value to set
          * @return this builder

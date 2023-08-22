@@ -42,11 +42,11 @@ public class ListAvailabilityDomainsResponse extends com.oracle.bmc.responses.Bm
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.identity.model.AvailabilityDomain instances. */
+    /** A list of {@code com.oracle.bmc.identity.model.AvailabilityDomain} instances. */
     private java.util.List<com.oracle.bmc.identity.model.AvailabilityDomain> items;
 
     /**
-     * A list of com.oracle.bmc.identity.model.AvailabilityDomain instances.
+     * A list of {@code com.oracle.bmc.identity.model.AvailabilityDomain} instances.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListAvailabilityDomainsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** A list of com.oracle.bmc.identity.model.AvailabilityDomain instances. */
+        /** A list of {@code com.oracle.bmc.identity.model.AvailabilityDomain} instances. */
         private java.util.List<com.oracle.bmc.identity.model.AvailabilityDomain> items;
 
         /**
-         * A list of com.oracle.bmc.identity.model.AvailabilityDomain instances.
+         * A list of {@code com.oracle.bmc.identity.model.AvailabilityDomain} instances.
          *
          * @param items the value to set
          * @return this builder

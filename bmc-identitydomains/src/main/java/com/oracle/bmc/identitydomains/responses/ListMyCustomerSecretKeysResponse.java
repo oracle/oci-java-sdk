@@ -42,11 +42,11 @@ public class ListMyCustomerSecretKeysResponse extends com.oracle.bmc.responses.B
         return opcNextPage;
     }
 
-    /** The returned MyCustomerSecretKeys instance. */
+    /** The returned {@code MyCustomerSecretKeys} instance. */
     private com.oracle.bmc.identitydomains.model.MyCustomerSecretKeys myCustomerSecretKeys;
 
     /**
-     * The returned MyCustomerSecretKeys instance.
+     * The returned {@code MyCustomerSecretKeys} instance.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListMyCustomerSecretKeysResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned MyCustomerSecretKeys instance. */
+        /** The returned {@code MyCustomerSecretKeys} instance. */
         private com.oracle.bmc.identitydomains.model.MyCustomerSecretKeys myCustomerSecretKeys;
 
         /**
-         * The returned MyCustomerSecretKeys instance.
+         * The returned {@code MyCustomerSecretKeys} instance.
          *
          * @param myCustomerSecretKeys the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class GetApiDeploymentSpecificationResponse extends com.oracle.bmc.respon
         return opcRequestId;
     }
 
-    /** The returned ApiSpecification instance. */
+    /** The returned {@code ApiSpecification} instance. */
     private com.oracle.bmc.apigateway.model.ApiSpecification apiSpecification;
 
     /**
-     * The returned ApiSpecification instance.
+     * The returned {@code ApiSpecification} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetApiDeploymentSpecificationResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned ApiSpecification instance. */
+        /** The returned {@code ApiSpecification} instance. */
         private com.oracle.bmc.apigateway.model.ApiSpecification apiSpecification;
 
         /**
-         * The returned ApiSpecification instance.
+         * The returned {@code ApiSpecification} instance.
          *
          * @param apiSpecification the value to set
          * @return this builder

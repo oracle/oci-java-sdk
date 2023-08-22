@@ -43,11 +43,11 @@ public class ListAvailableUpdatesForManagedInstanceResponse
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.osmanagement.model.AvailableUpdateSummary instances. */
+    /** A list of {@code com.oracle.bmc.osmanagement.model.AvailableUpdateSummary} instances. */
     private java.util.List<com.oracle.bmc.osmanagement.model.AvailableUpdateSummary> items;
 
     /**
-     * A list of com.oracle.bmc.osmanagement.model.AvailableUpdateSummary instances.
+     * A list of {@code com.oracle.bmc.osmanagement.model.AvailableUpdateSummary} instances.
      *
      * @return the value
      */
@@ -131,11 +131,11 @@ public class ListAvailableUpdatesForManagedInstanceResponse
             return this;
         }
 
-        /** A list of com.oracle.bmc.osmanagement.model.AvailableUpdateSummary instances. */
+        /** A list of {@code com.oracle.bmc.osmanagement.model.AvailableUpdateSummary} instances. */
         private java.util.List<com.oracle.bmc.osmanagement.model.AvailableUpdateSummary> items;
 
         /**
-         * A list of com.oracle.bmc.osmanagement.model.AvailableUpdateSummary instances.
+         * A list of {@code com.oracle.bmc.osmanagement.model.AvailableUpdateSummary} instances.
          *
          * @param items the value to set
          * @return this builder

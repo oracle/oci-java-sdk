@@ -24,12 +24,12 @@ public class GetLogAnalyticsEntitiesSummaryResponse extends com.oracle.bmc.respo
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsEntitySummaryReport instance. */
+    /** The returned {@code LogAnalyticsEntitySummaryReport} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsEntitySummaryReport
             logAnalyticsEntitySummaryReport;
 
     /**
-     * The returned LogAnalyticsEntitySummaryReport instance.
+     * The returned {@code LogAnalyticsEntitySummaryReport} instance.
      *
      * @return the value
      */
@@ -92,12 +92,12 @@ public class GetLogAnalyticsEntitiesSummaryResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned LogAnalyticsEntitySummaryReport instance. */
+        /** The returned {@code LogAnalyticsEntitySummaryReport} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsEntitySummaryReport
                 logAnalyticsEntitySummaryReport;
 
         /**
-         * The returned LogAnalyticsEntitySummaryReport instance.
+         * The returned {@code LogAnalyticsEntitySummaryReport} instance.
          *
          * @param logAnalyticsEntitySummaryReport the value to set
          * @return this builder

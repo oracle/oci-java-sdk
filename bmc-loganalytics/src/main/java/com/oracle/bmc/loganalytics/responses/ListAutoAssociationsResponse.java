@@ -64,11 +64,11 @@ public class ListAutoAssociationsResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned AutoAssociationCollection instance. */
+    /** The returned {@code AutoAssociationCollection} instance. */
     private com.oracle.bmc.loganalytics.model.AutoAssociationCollection autoAssociationCollection;
 
     /**
-     * The returned AutoAssociationCollection instance.
+     * The returned {@code AutoAssociationCollection} instance.
      *
      * @return the value
      */
@@ -179,12 +179,12 @@ public class ListAutoAssociationsResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned AutoAssociationCollection instance. */
+        /** The returned {@code AutoAssociationCollection} instance. */
         private com.oracle.bmc.loganalytics.model.AutoAssociationCollection
                 autoAssociationCollection;
 
         /**
-         * The returned AutoAssociationCollection instance.
+         * The returned {@code AutoAssociationCollection} instance.
          *
          * @param autoAssociationCollection the value to set
          * @return this builder

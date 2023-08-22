@@ -62,11 +62,11 @@ public class ListAuditTrailAnalyticsResponse extends com.oracle.bmc.responses.Bm
         return opcPrevPage;
     }
 
-    /** The returned AuditTrailAnalyticCollection instance. */
+    /** The returned {@code AuditTrailAnalyticCollection} instance. */
     private com.oracle.bmc.datasafe.model.AuditTrailAnalyticCollection auditTrailAnalyticCollection;
 
     /**
-     * The returned AuditTrailAnalyticCollection instance.
+     * The returned {@code AuditTrailAnalyticCollection} instance.
      *
      * @return the value
      */
@@ -177,12 +177,12 @@ public class ListAuditTrailAnalyticsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned AuditTrailAnalyticCollection instance. */
+        /** The returned {@code AuditTrailAnalyticCollection} instance. */
         private com.oracle.bmc.datasafe.model.AuditTrailAnalyticCollection
                 auditTrailAnalyticCollection;
 
         /**
-         * The returned AuditTrailAnalyticCollection instance.
+         * The returned {@code AuditTrailAnalyticCollection} instance.
          *
          * @param auditTrailAnalyticCollection the value to set
          * @return this builder

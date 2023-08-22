@@ -36,11 +36,11 @@ public class GetComputeImageCapabilitySchemaResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** The returned ComputeImageCapabilitySchema instance. */
+    /** The returned {@code ComputeImageCapabilitySchema} instance. */
     private com.oracle.bmc.core.model.ComputeImageCapabilitySchema computeImageCapabilitySchema;
 
     /**
-     * The returned ComputeImageCapabilitySchema instance.
+     * The returned {@code ComputeImageCapabilitySchema} instance.
      *
      * @return the value
      */
@@ -119,11 +119,11 @@ public class GetComputeImageCapabilitySchemaResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned ComputeImageCapabilitySchema instance. */
+        /** The returned {@code ComputeImageCapabilitySchema} instance. */
         private com.oracle.bmc.core.model.ComputeImageCapabilitySchema computeImageCapabilitySchema;
 
         /**
-         * The returned ComputeImageCapabilitySchema instance.
+         * The returned {@code ComputeImageCapabilitySchema} instance.
          *
          * @param computeImageCapabilitySchema the value to set
          * @return this builder

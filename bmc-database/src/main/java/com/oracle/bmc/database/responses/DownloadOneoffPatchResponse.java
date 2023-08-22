@@ -36,11 +36,11 @@ public class DownloadOneoffPatchResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned DownloadOneoffPatch instance. */
+    /** The returned {@code DownloadOneoffPatch} instance. */
     private com.oracle.bmc.database.model.DownloadOneoffPatch downloadOneoffPatch;
 
     /**
-     * The returned DownloadOneoffPatch instance.
+     * The returned {@code DownloadOneoffPatch} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class DownloadOneoffPatchResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned DownloadOneoffPatch instance. */
+        /** The returned {@code DownloadOneoffPatch} instance. */
         private com.oracle.bmc.database.model.DownloadOneoffPatch downloadOneoffPatch;
 
         /**
-         * The returned DownloadOneoffPatch instance.
+         * The returned {@code DownloadOneoffPatch} instance.
          *
          * @param downloadOneoffPatch the value to set
          * @return this builder

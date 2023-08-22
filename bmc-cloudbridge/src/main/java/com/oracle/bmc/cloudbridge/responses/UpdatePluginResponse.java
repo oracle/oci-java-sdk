@@ -36,11 +36,11 @@ public class UpdatePluginResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Plugin instance. */
+    /** The returned {@code Plugin} instance. */
     private com.oracle.bmc.cloudbridge.model.Plugin plugin;
 
     /**
-     * The returned Plugin instance.
+     * The returned {@code Plugin} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdatePluginResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Plugin instance. */
+        /** The returned {@code Plugin} instance. */
         private com.oracle.bmc.cloudbridge.model.Plugin plugin;
 
         /**
-         * The returned Plugin instance.
+         * The returned {@code Plugin} instance.
          *
          * @param plugin the value to set
          * @return this builder

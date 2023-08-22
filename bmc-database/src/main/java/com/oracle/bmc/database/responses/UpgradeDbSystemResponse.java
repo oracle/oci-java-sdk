@@ -56,11 +56,11 @@ public class UpgradeDbSystemResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned DbSystem instance. */
+    /** The returned {@code DbSystem} instance. */
     private com.oracle.bmc.database.model.DbSystem dbSystem;
 
     /**
-     * The returned DbSystem instance.
+     * The returned {@code DbSystem} instance.
      *
      * @return the value
      */
@@ -162,11 +162,11 @@ public class UpgradeDbSystemResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned DbSystem instance. */
+        /** The returned {@code DbSystem} instance. */
         private com.oracle.bmc.database.model.DbSystem dbSystem;
 
         /**
-         * The returned DbSystem instance.
+         * The returned {@code DbSystem} instance.
          *
          * @param dbSystem the value to set
          * @return this builder

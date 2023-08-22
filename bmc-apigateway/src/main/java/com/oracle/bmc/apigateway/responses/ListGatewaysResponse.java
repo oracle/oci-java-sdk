@@ -60,11 +60,11 @@ public class ListGatewaysResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcPrevPage;
     }
 
-    /** The returned GatewayCollection instance. */
+    /** The returned {@code GatewayCollection} instance. */
     private com.oracle.bmc.apigateway.model.GatewayCollection gatewayCollection;
 
     /**
-     * The returned GatewayCollection instance.
+     * The returned {@code GatewayCollection} instance.
      *
      * @return the value
      */
@@ -170,11 +170,11 @@ public class ListGatewaysResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned GatewayCollection instance. */
+        /** The returned {@code GatewayCollection} instance. */
         private com.oracle.bmc.apigateway.model.GatewayCollection gatewayCollection;
 
         /**
-         * The returned GatewayCollection instance.
+         * The returned {@code GatewayCollection} instance.
          *
          * @param gatewayCollection the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListAuthorsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned RepositoryAuthorCollection instance. */
+    /** The returned {@code RepositoryAuthorCollection} instance. */
     private com.oracle.bmc.devops.model.RepositoryAuthorCollection repositoryAuthorCollection;
 
     /**
-     * The returned RepositoryAuthorCollection instance.
+     * The returned {@code RepositoryAuthorCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListAuthorsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned RepositoryAuthorCollection instance. */
+        /** The returned {@code RepositoryAuthorCollection} instance. */
         private com.oracle.bmc.devops.model.RepositoryAuthorCollection repositoryAuthorCollection;
 
         /**
-         * The returned RepositoryAuthorCollection instance.
+         * The returned {@code RepositoryAuthorCollection} instance.
          *
          * @param repositoryAuthorCollection the value to set
          * @return this builder

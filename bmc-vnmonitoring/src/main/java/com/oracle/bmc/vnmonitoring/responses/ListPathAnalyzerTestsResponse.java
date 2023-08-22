@@ -42,11 +42,11 @@ public class ListPathAnalyzerTestsResponse extends com.oracle.bmc.responses.BmcR
         return opcNextPage;
     }
 
-    /** The returned PathAnalyzerTestCollection instance. */
+    /** The returned {@code PathAnalyzerTestCollection} instance. */
     private com.oracle.bmc.vnmonitoring.model.PathAnalyzerTestCollection pathAnalyzerTestCollection;
 
     /**
-     * The returned PathAnalyzerTestCollection instance.
+     * The returned {@code PathAnalyzerTestCollection} instance.
      *
      * @return the value
      */
@@ -131,12 +131,12 @@ public class ListPathAnalyzerTestsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned PathAnalyzerTestCollection instance. */
+        /** The returned {@code PathAnalyzerTestCollection} instance. */
         private com.oracle.bmc.vnmonitoring.model.PathAnalyzerTestCollection
                 pathAnalyzerTestCollection;
 
         /**
-         * The returned PathAnalyzerTestCollection instance.
+         * The returned {@code PathAnalyzerTestCollection} instance.
          *
          * @param pathAnalyzerTestCollection the value to set
          * @return this builder

@@ -60,11 +60,11 @@ public class ListPoolsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned PoolCollection instance. */
+    /** The returned {@code PoolCollection} instance. */
     private com.oracle.bmc.dataflow.model.PoolCollection poolCollection;
 
     /**
-     * The returned PoolCollection instance.
+     * The returned {@code PoolCollection} instance.
      *
      * @return the value
      */
@@ -170,11 +170,11 @@ public class ListPoolsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned PoolCollection instance. */
+        /** The returned {@code PoolCollection} instance. */
         private com.oracle.bmc.dataflow.model.PoolCollection poolCollection;
 
         /**
-         * The returned PoolCollection instance.
+         * The returned {@code PoolCollection} instance.
          *
          * @param poolCollection the value to set
          * @return this builder

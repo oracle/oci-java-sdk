@@ -42,11 +42,11 @@ public class ListAttentionLogsResponse extends com.oracle.bmc.responses.BmcRespo
         return opcNextPage;
     }
 
-    /** The returned AttentionLogCollection instance. */
+    /** The returned {@code AttentionLogCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.AttentionLogCollection attentionLogCollection;
 
     /**
-     * The returned AttentionLogCollection instance.
+     * The returned {@code AttentionLogCollection} instance.
      *
      * @return the value
      */
@@ -130,12 +130,12 @@ public class ListAttentionLogsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned AttentionLogCollection instance. */
+        /** The returned {@code AttentionLogCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.AttentionLogCollection
                 attentionLogCollection;
 
         /**
-         * The returned AttentionLogCollection instance.
+         * The returned {@code AttentionLogCollection} instance.
          *
          * @param attentionLogCollection the value to set
          * @return this builder

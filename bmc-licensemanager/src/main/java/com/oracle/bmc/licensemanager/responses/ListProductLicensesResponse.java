@@ -42,11 +42,11 @@ public class ListProductLicensesResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** The returned ProductLicenseCollection instance. */
+    /** The returned {@code ProductLicenseCollection} instance. */
     private com.oracle.bmc.licensemanager.model.ProductLicenseCollection productLicenseCollection;
 
     /**
-     * The returned ProductLicenseCollection instance.
+     * The returned {@code ProductLicenseCollection} instance.
      *
      * @return the value
      */
@@ -130,12 +130,12 @@ public class ListProductLicensesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned ProductLicenseCollection instance. */
+        /** The returned {@code ProductLicenseCollection} instance. */
         private com.oracle.bmc.licensemanager.model.ProductLicenseCollection
                 productLicenseCollection;
 
         /**
-         * The returned ProductLicenseCollection instance.
+         * The returned {@code ProductLicenseCollection} instance.
          *
          * @param productLicenseCollection the value to set
          * @return this builder

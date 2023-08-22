@@ -36,11 +36,11 @@ public class CreateOnDemandPingProbeResponse extends com.oracle.bmc.responses.Bm
         return location;
     }
 
-    /** The returned PingProbe instance. */
+    /** The returned {@code PingProbe} instance. */
     private com.oracle.bmc.healthchecks.model.PingProbe pingProbe;
 
     /**
-     * The returned PingProbe instance.
+     * The returned {@code PingProbe} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class CreateOnDemandPingProbeResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned PingProbe instance. */
+        /** The returned {@code PingProbe} instance. */
         private com.oracle.bmc.healthchecks.model.PingProbe pingProbe;
 
         /**
-         * The returned PingProbe instance.
+         * The returned {@code PingProbe} instance.
          *
          * @param pingProbe the value to set
          * @return this builder

@@ -60,11 +60,11 @@ public class ListHistoriesResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcPrevPage;
     }
 
-    /** The returned HistoryCollection instance. */
+    /** The returned {@code HistoryCollection} instance. */
     private com.oracle.bmc.optimizer.model.HistoryCollection historyCollection;
 
     /**
-     * The returned HistoryCollection instance.
+     * The returned {@code HistoryCollection} instance.
      *
      * @return the value
      */
@@ -170,11 +170,11 @@ public class ListHistoriesResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned HistoryCollection instance. */
+        /** The returned {@code HistoryCollection} instance. */
         private com.oracle.bmc.optimizer.model.HistoryCollection historyCollection;
 
         /**
-         * The returned HistoryCollection instance.
+         * The returned {@code HistoryCollection} instance.
          *
          * @param historyCollection the value to set
          * @return this builder

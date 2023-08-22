@@ -64,11 +64,11 @@ public class CreateSubscriberResponse extends com.oracle.bmc.responses.BmcRespon
         return location;
     }
 
-    /** The returned Subscriber instance. */
+    /** The returned {@code Subscriber} instance. */
     private com.oracle.bmc.apigateway.model.Subscriber subscriber;
 
     /**
-     * The returned Subscriber instance.
+     * The returned {@code Subscriber} instance.
      *
      * @return the value
      */
@@ -183,11 +183,11 @@ public class CreateSubscriberResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned Subscriber instance. */
+        /** The returned {@code Subscriber} instance. */
         private com.oracle.bmc.apigateway.model.Subscriber subscriber;
 
         /**
-         * The returned Subscriber instance.
+         * The returned {@code Subscriber} instance.
          *
          * @param subscriber the value to set
          * @return this builder

@@ -24,12 +24,12 @@ public class ListCertificateBundleVersionsResponse extends com.oracle.bmc.respon
         return opcRequestId;
     }
 
-    /** The returned CertificateBundleVersionCollection instance. */
+    /** The returned {@code CertificateBundleVersionCollection} instance. */
     private com.oracle.bmc.certificates.model.CertificateBundleVersionCollection
             certificateBundleVersionCollection;
 
     /**
-     * The returned CertificateBundleVersionCollection instance.
+     * The returned {@code CertificateBundleVersionCollection} instance.
      *
      * @return the value
      */
@@ -92,12 +92,12 @@ public class ListCertificateBundleVersionsResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned CertificateBundleVersionCollection instance. */
+        /** The returned {@code CertificateBundleVersionCollection} instance. */
         private com.oracle.bmc.certificates.model.CertificateBundleVersionCollection
                 certificateBundleVersionCollection;
 
         /**
-         * The returned CertificateBundleVersionCollection instance.
+         * The returned {@code CertificateBundleVersionCollection} instance.
          *
          * @param certificateBundleVersionCollection the value to set
          * @return this builder

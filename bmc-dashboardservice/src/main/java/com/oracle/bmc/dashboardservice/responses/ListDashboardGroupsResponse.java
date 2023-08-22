@@ -42,11 +42,11 @@ public class ListDashboardGroupsResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** The returned DashboardGroupCollection instance. */
+    /** The returned {@code DashboardGroupCollection} instance. */
     private com.oracle.bmc.dashboardservice.model.DashboardGroupCollection dashboardGroupCollection;
 
     /**
-     * The returned DashboardGroupCollection instance.
+     * The returned {@code DashboardGroupCollection} instance.
      *
      * @return the value
      */
@@ -131,12 +131,12 @@ public class ListDashboardGroupsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned DashboardGroupCollection instance. */
+        /** The returned {@code DashboardGroupCollection} instance. */
         private com.oracle.bmc.dashboardservice.model.DashboardGroupCollection
                 dashboardGroupCollection;
 
         /**
-         * The returned DashboardGroupCollection instance.
+         * The returned {@code DashboardGroupCollection} instance.
          *
          * @param dashboardGroupCollection the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class CreateRecordResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Record instance. */
+    /** The returned {@code Record} instance. */
     private com.oracle.bmc.datalabelingservicedataplane.model.Record record;
 
     /**
-     * The returned Record instance.
+     * The returned {@code Record} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class CreateRecordResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Record instance. */
+        /** The returned {@code Record} instance. */
         private com.oracle.bmc.datalabelingservicedataplane.model.Record record;
 
         /**
-         * The returned Record instance.
+         * The returned {@code Record} instance.
          *
          * @param record the value to set
          * @return this builder

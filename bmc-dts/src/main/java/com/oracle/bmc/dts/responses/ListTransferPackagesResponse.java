@@ -16,11 +16,11 @@ public class ListTransferPackagesResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned MultipleTransferPackages instance. */
+    /** The returned {@code MultipleTransferPackages} instance. */
     private com.oracle.bmc.dts.model.MultipleTransferPackages multipleTransferPackages;
 
     /**
-     * The returned MultipleTransferPackages instance.
+     * The returned {@code MultipleTransferPackages} instance.
      *
      * @return the value
      */
@@ -74,11 +74,11 @@ public class ListTransferPackagesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned MultipleTransferPackages instance. */
+        /** The returned {@code MultipleTransferPackages} instance. */
         private com.oracle.bmc.dts.model.MultipleTransferPackages multipleTransferPackages;
 
         /**
-         * The returned MultipleTransferPackages instance.
+         * The returned {@code MultipleTransferPackages} instance.
          *
          * @param multipleTransferPackages the value to set
          * @return this builder

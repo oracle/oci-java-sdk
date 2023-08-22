@@ -24,11 +24,11 @@ public class AddTagNamespaceLockResponse extends com.oracle.bmc.responses.BmcRes
         return etag;
     }
 
-    /** The returned TagNamespace instance. */
+    /** The returned {@code TagNamespace} instance. */
     private com.oracle.bmc.identity.model.TagNamespace tagNamespace;
 
     /**
-     * The returned TagNamespace instance.
+     * The returned {@code TagNamespace} instance.
      *
      * @return the value
      */
@@ -97,11 +97,11 @@ public class AddTagNamespaceLockResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned TagNamespace instance. */
+        /** The returned {@code TagNamespace} instance. */
         private com.oracle.bmc.identity.model.TagNamespace tagNamespace;
 
         /**
-         * The returned TagNamespace instance.
+         * The returned {@code TagNamespace} instance.
          *
          * @param tagNamespace the value to set
          * @return this builder

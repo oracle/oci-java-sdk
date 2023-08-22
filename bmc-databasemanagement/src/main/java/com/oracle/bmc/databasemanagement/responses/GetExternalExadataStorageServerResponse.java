@@ -36,12 +36,12 @@ public class GetExternalExadataStorageServerResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** The returned ExternalExadataStorageServer instance. */
+    /** The returned {@code ExternalExadataStorageServer} instance. */
     private com.oracle.bmc.databasemanagement.model.ExternalExadataStorageServer
             externalExadataStorageServer;
 
     /**
-     * The returned ExternalExadataStorageServer instance.
+     * The returned {@code ExternalExadataStorageServer} instance.
      *
      * @return the value
      */
@@ -121,12 +121,12 @@ public class GetExternalExadataStorageServerResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned ExternalExadataStorageServer instance. */
+        /** The returned {@code ExternalExadataStorageServer} instance. */
         private com.oracle.bmc.databasemanagement.model.ExternalExadataStorageServer
                 externalExadataStorageServer;
 
         /**
-         * The returned ExternalExadataStorageServer instance.
+         * The returned {@code ExternalExadataStorageServer} instance.
          *
          * @param externalExadataStorageServer the value to set
          * @return this builder

@@ -62,11 +62,11 @@ public class ListSensitiveColumnsResponse extends com.oracle.bmc.responses.BmcRe
         return opcPrevPage;
     }
 
-    /** The returned SensitiveColumnCollection instance. */
+    /** The returned {@code SensitiveColumnCollection} instance. */
     private com.oracle.bmc.datasafe.model.SensitiveColumnCollection sensitiveColumnCollection;
 
     /**
-     * The returned SensitiveColumnCollection instance.
+     * The returned {@code SensitiveColumnCollection} instance.
      *
      * @return the value
      */
@@ -174,11 +174,11 @@ public class ListSensitiveColumnsResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned SensitiveColumnCollection instance. */
+        /** The returned {@code SensitiveColumnCollection} instance. */
         private com.oracle.bmc.datasafe.model.SensitiveColumnCollection sensitiveColumnCollection;
 
         /**
-         * The returned SensitiveColumnCollection instance.
+         * The returned {@code SensitiveColumnCollection} instance.
          *
          * @param sensitiveColumnCollection the value to set
          * @return this builder

@@ -64,12 +64,12 @@ public class ListResourceCategoriesResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsResourceCategoryCollection instance. */
+    /** The returned {@code LogAnalyticsResourceCategoryCollection} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsResourceCategoryCollection
             logAnalyticsResourceCategoryCollection;
 
     /**
-     * The returned LogAnalyticsResourceCategoryCollection instance.
+     * The returned {@code LogAnalyticsResourceCategoryCollection} instance.
      *
      * @return the value
      */
@@ -182,12 +182,12 @@ public class ListResourceCategoriesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned LogAnalyticsResourceCategoryCollection instance. */
+        /** The returned {@code LogAnalyticsResourceCategoryCollection} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsResourceCategoryCollection
                 logAnalyticsResourceCategoryCollection;
 
         /**
-         * The returned LogAnalyticsResourceCategoryCollection instance.
+         * The returned {@code LogAnalyticsResourceCategoryCollection} instance.
          *
          * @param logAnalyticsResourceCategoryCollection the value to set
          * @return this builder

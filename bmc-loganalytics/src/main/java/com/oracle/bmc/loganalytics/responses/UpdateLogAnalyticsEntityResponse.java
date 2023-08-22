@@ -36,11 +36,11 @@ public class UpdateLogAnalyticsEntityResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsEntity instance. */
+    /** The returned {@code LogAnalyticsEntity} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsEntity logAnalyticsEntity;
 
     /**
-     * The returned LogAnalyticsEntity instance.
+     * The returned {@code LogAnalyticsEntity} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class UpdateLogAnalyticsEntityResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned LogAnalyticsEntity instance. */
+        /** The returned {@code LogAnalyticsEntity} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsEntity logAnalyticsEntity;
 
         /**
-         * The returned LogAnalyticsEntity instance.
+         * The returned {@code LogAnalyticsEntity} instance.
          *
          * @param logAnalyticsEntity the value to set
          * @return this builder

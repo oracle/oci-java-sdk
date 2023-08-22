@@ -36,11 +36,11 @@ public class GetVirtualNodeResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned VirtualNode instance. */
+    /** The returned {@code VirtualNode} instance. */
     private com.oracle.bmc.containerengine.model.VirtualNode virtualNode;
 
     /**
-     * The returned VirtualNode instance.
+     * The returned {@code VirtualNode} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetVirtualNodeResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned VirtualNode instance. */
+        /** The returned {@code VirtualNode} instance. */
         private com.oracle.bmc.containerengine.model.VirtualNode virtualNode;
 
         /**
-         * The returned VirtualNode instance.
+         * The returned {@code VirtualNode} instance.
          *
          * @param virtualNode the value to set
          * @return this builder

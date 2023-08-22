@@ -36,11 +36,11 @@ public class CreateSecurityRecipeResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned SecurityRecipe instance. */
+    /** The returned {@code SecurityRecipe} instance. */
     private com.oracle.bmc.cloudguard.model.SecurityRecipe securityRecipe;
 
     /**
-     * The returned SecurityRecipe instance.
+     * The returned {@code SecurityRecipe} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class CreateSecurityRecipeResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned SecurityRecipe instance. */
+        /** The returned {@code SecurityRecipe} instance. */
         private com.oracle.bmc.cloudguard.model.SecurityRecipe securityRecipe;
 
         /**
-         * The returned SecurityRecipe instance.
+         * The returned {@code SecurityRecipe} instance.
          *
          * @param securityRecipe the value to set
          * @return this builder

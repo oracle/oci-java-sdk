@@ -36,11 +36,11 @@ public class UpdateVirtualCircuitResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned VirtualCircuit instance. */
+    /** The returned {@code VirtualCircuit} instance. */
     private com.oracle.bmc.core.model.VirtualCircuit virtualCircuit;
 
     /**
-     * The returned VirtualCircuit instance.
+     * The returned {@code VirtualCircuit} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateVirtualCircuitResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned VirtualCircuit instance. */
+        /** The returned {@code VirtualCircuit} instance. */
         private com.oracle.bmc.core.model.VirtualCircuit virtualCircuit;
 
         /**
-         * The returned VirtualCircuit instance.
+         * The returned {@code VirtualCircuit} instance.
          *
          * @param virtualCircuit the value to set
          * @return this builder

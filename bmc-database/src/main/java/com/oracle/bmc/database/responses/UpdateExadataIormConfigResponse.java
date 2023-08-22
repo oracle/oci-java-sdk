@@ -56,11 +56,11 @@ public class UpdateExadataIormConfigResponse extends com.oracle.bmc.responses.Bm
         return etag;
     }
 
-    /** The returned ExadataIormConfig instance. */
+    /** The returned {@code ExadataIormConfig} instance. */
     private com.oracle.bmc.database.model.ExadataIormConfig exadataIormConfig;
 
     /**
-     * The returned ExadataIormConfig instance.
+     * The returned {@code ExadataIormConfig} instance.
      *
      * @return the value
      */
@@ -163,11 +163,11 @@ public class UpdateExadataIormConfigResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned ExadataIormConfig instance. */
+        /** The returned {@code ExadataIormConfig} instance. */
         private com.oracle.bmc.database.model.ExadataIormConfig exadataIormConfig;
 
         /**
-         * The returned ExadataIormConfig instance.
+         * The returned {@code ExadataIormConfig} instance.
          *
          * @param exadataIormConfig the value to set
          * @return this builder

@@ -42,12 +42,12 @@ public class ListAnnotationsResponse extends com.oracle.bmc.responses.BmcRespons
         return opcNextPage;
     }
 
-    /** The returned AnnotationCollection instance. */
+    /** The returned {@code AnnotationCollection} instance. */
     private com.oracle.bmc.datalabelingservicedataplane.model.AnnotationCollection
             annotationCollection;
 
     /**
-     * The returned AnnotationCollection instance.
+     * The returned {@code AnnotationCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListAnnotationsResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned AnnotationCollection instance. */
+        /** The returned {@code AnnotationCollection} instance. */
         private com.oracle.bmc.datalabelingservicedataplane.model.AnnotationCollection
                 annotationCollection;
 
         /**
-         * The returned AnnotationCollection instance.
+         * The returned {@code AnnotationCollection} instance.
          *
          * @param annotationCollection the value to set
          * @return this builder

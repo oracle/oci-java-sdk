@@ -42,11 +42,11 @@ public class ListVolumeBackupPoliciesResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.VolumeBackupPolicy instances. */
+    /** A list of {@code com.oracle.bmc.core.model.VolumeBackupPolicy} instances. */
     private java.util.List<com.oracle.bmc.core.model.VolumeBackupPolicy> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.VolumeBackupPolicy instances.
+     * A list of {@code com.oracle.bmc.core.model.VolumeBackupPolicy} instances.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListVolumeBackupPoliciesResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.VolumeBackupPolicy instances. */
+        /** A list of {@code com.oracle.bmc.core.model.VolumeBackupPolicy} instances. */
         private java.util.List<com.oracle.bmc.core.model.VolumeBackupPolicy> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.VolumeBackupPolicy instances.
+         * A list of {@code com.oracle.bmc.core.model.VolumeBackupPolicy} instances.
          *
          * @param items the value to set
          * @return this builder

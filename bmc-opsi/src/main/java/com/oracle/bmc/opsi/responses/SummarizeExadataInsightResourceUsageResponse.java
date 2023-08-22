@@ -43,12 +43,12 @@ public class SummarizeExadataInsightResourceUsageResponse
         return opcNextPage;
     }
 
-    /** The returned SummarizeExadataInsightResourceUsageCollection instance. */
+    /** The returned {@code SummarizeExadataInsightResourceUsageCollection} instance. */
     private com.oracle.bmc.opsi.model.SummarizeExadataInsightResourceUsageCollection
             summarizeExadataInsightResourceUsageCollection;
 
     /**
-     * The returned SummarizeExadataInsightResourceUsageCollection instance.
+     * The returned {@code SummarizeExadataInsightResourceUsageCollection} instance.
      *
      * @return the value
      */
@@ -135,12 +135,12 @@ public class SummarizeExadataInsightResourceUsageResponse
             return this;
         }
 
-        /** The returned SummarizeExadataInsightResourceUsageCollection instance. */
+        /** The returned {@code SummarizeExadataInsightResourceUsageCollection} instance. */
         private com.oracle.bmc.opsi.model.SummarizeExadataInsightResourceUsageCollection
                 summarizeExadataInsightResourceUsageCollection;
 
         /**
-         * The returned SummarizeExadataInsightResourceUsageCollection instance.
+         * The returned {@code SummarizeExadataInsightResourceUsageCollection} instance.
          *
          * @param summarizeExadataInsightResourceUsageCollection the value to set
          * @return this builder

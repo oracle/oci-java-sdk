@@ -43,13 +43,13 @@ public class ListOptimizerStatisticsCollectionAggregationsResponse
         return opcNextPage;
     }
 
-    /** The returned OptimizerStatisticsCollectionAggregationsCollection instance. */
+    /** The returned {@code OptimizerStatisticsCollectionAggregationsCollection} instance. */
     private com.oracle.bmc.databasemanagement.model
                     .OptimizerStatisticsCollectionAggregationsCollection
             optimizerStatisticsCollectionAggregationsCollection;
 
     /**
-     * The returned OptimizerStatisticsCollectionAggregationsCollection instance.
+     * The returned {@code OptimizerStatisticsCollectionAggregationsCollection} instance.
      *
      * @return the value
      */
@@ -138,13 +138,13 @@ public class ListOptimizerStatisticsCollectionAggregationsResponse
             return this;
         }
 
-        /** The returned OptimizerStatisticsCollectionAggregationsCollection instance. */
+        /** The returned {@code OptimizerStatisticsCollectionAggregationsCollection} instance. */
         private com.oracle.bmc.databasemanagement.model
                         .OptimizerStatisticsCollectionAggregationsCollection
                 optimizerStatisticsCollectionAggregationsCollection;
 
         /**
-         * The returned OptimizerStatisticsCollectionAggregationsCollection instance.
+         * The returned {@code OptimizerStatisticsCollectionAggregationsCollection} instance.
          *
          * @param optimizerStatisticsCollectionAggregationsCollection the value to set
          * @return this builder

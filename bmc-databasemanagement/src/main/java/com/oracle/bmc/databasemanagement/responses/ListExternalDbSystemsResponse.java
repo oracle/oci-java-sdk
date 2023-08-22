@@ -42,12 +42,12 @@ public class ListExternalDbSystemsResponse extends com.oracle.bmc.responses.BmcR
         return opcNextPage;
     }
 
-    /** The returned ExternalDbSystemCollection instance. */
+    /** The returned {@code ExternalDbSystemCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.ExternalDbSystemCollection
             externalDbSystemCollection;
 
     /**
-     * The returned ExternalDbSystemCollection instance.
+     * The returned {@code ExternalDbSystemCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListExternalDbSystemsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned ExternalDbSystemCollection instance. */
+        /** The returned {@code ExternalDbSystemCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.ExternalDbSystemCollection
                 externalDbSystemCollection;
 
         /**
-         * The returned ExternalDbSystemCollection instance.
+         * The returned {@code ExternalDbSystemCollection} instance.
          *
          * @param externalDbSystemCollection the value to set
          * @return this builder

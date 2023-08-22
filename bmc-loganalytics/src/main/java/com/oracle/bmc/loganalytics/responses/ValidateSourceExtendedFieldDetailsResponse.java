@@ -25,12 +25,12 @@ public class ValidateSourceExtendedFieldDetailsResponse
         return opcRequestId;
     }
 
-    /** The returned ExtendedFieldsValidationResult instance. */
+    /** The returned {@code ExtendedFieldsValidationResult} instance. */
     private com.oracle.bmc.loganalytics.model.ExtendedFieldsValidationResult
             extendedFieldsValidationResult;
 
     /**
-     * The returned ExtendedFieldsValidationResult instance.
+     * The returned {@code ExtendedFieldsValidationResult} instance.
      *
      * @return the value
      */
@@ -93,12 +93,12 @@ public class ValidateSourceExtendedFieldDetailsResponse
             return this;
         }
 
-        /** The returned ExtendedFieldsValidationResult instance. */
+        /** The returned {@code ExtendedFieldsValidationResult} instance. */
         private com.oracle.bmc.loganalytics.model.ExtendedFieldsValidationResult
                 extendedFieldsValidationResult;
 
         /**
-         * The returned ExtendedFieldsValidationResult instance.
+         * The returned {@code ExtendedFieldsValidationResult} instance.
          *
          * @param extendedFieldsValidationResult the value to set
          * @return this builder

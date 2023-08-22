@@ -36,11 +36,11 @@ public class RetrieveBundleStatusRoverNodeResponse extends com.oracle.bmc.respon
         return opcRequestId;
     }
 
-    /** The returned RoverBundleStatus instance. */
+    /** The returned {@code RoverBundleStatus} instance. */
     private com.oracle.bmc.rover.model.RoverBundleStatus roverBundleStatus;
 
     /**
-     * The returned RoverBundleStatus instance.
+     * The returned {@code RoverBundleStatus} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class RetrieveBundleStatusRoverNodeResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned RoverBundleStatus instance. */
+        /** The returned {@code RoverBundleStatus} instance. */
         private com.oracle.bmc.rover.model.RoverBundleStatus roverBundleStatus;
 
         /**
-         * The returned RoverBundleStatus instance.
+         * The returned {@code RoverBundleStatus} instance.
          *
          * @param roverBundleStatus the value to set
          * @return this builder

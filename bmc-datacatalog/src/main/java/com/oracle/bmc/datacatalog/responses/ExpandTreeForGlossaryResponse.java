@@ -40,11 +40,11 @@ public class ExpandTreeForGlossaryResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.datacatalog.model.GlossaryTreeElement instances. */
+    /** A list of {@code com.oracle.bmc.datacatalog.model.GlossaryTreeElement} instances. */
     private java.util.List<com.oracle.bmc.datacatalog.model.GlossaryTreeElement> items;
 
     /**
-     * A list of com.oracle.bmc.datacatalog.model.GlossaryTreeElement instances.
+     * A list of {@code com.oracle.bmc.datacatalog.model.GlossaryTreeElement} instances.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class ExpandTreeForGlossaryResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** A list of com.oracle.bmc.datacatalog.model.GlossaryTreeElement instances. */
+        /** A list of {@code com.oracle.bmc.datacatalog.model.GlossaryTreeElement} instances. */
         private java.util.List<com.oracle.bmc.datacatalog.model.GlossaryTreeElement> items;
 
         /**
-         * A list of com.oracle.bmc.datacatalog.model.GlossaryTreeElement instances.
+         * A list of {@code com.oracle.bmc.datacatalog.model.GlossaryTreeElement} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListWorkspacesResponse extends com.oracle.bmc.responses.BmcResponse
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.dataintegration.model.WorkspaceSummary instances. */
+    /** A list of {@code com.oracle.bmc.dataintegration.model.WorkspaceSummary} instances. */
     private java.util.List<com.oracle.bmc.dataintegration.model.WorkspaceSummary> items;
 
     /**
-     * A list of com.oracle.bmc.dataintegration.model.WorkspaceSummary instances.
+     * A list of {@code com.oracle.bmc.dataintegration.model.WorkspaceSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListWorkspacesResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** A list of com.oracle.bmc.dataintegration.model.WorkspaceSummary instances. */
+        /** A list of {@code com.oracle.bmc.dataintegration.model.WorkspaceSummary} instances. */
         private java.util.List<com.oracle.bmc.dataintegration.model.WorkspaceSummary> items;
 
         /**
-         * A list of com.oracle.bmc.dataintegration.model.WorkspaceSummary instances.
+         * A list of {@code com.oracle.bmc.dataintegration.model.WorkspaceSummary} instances.
          *
          * @param items the value to set
          * @return this builder

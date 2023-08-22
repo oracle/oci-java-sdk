@@ -42,11 +42,11 @@ public class ListBuildRunsResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcNextPage;
     }
 
-    /** The returned BuildRunSummaryCollection instance. */
+    /** The returned {@code BuildRunSummaryCollection} instance. */
     private com.oracle.bmc.devops.model.BuildRunSummaryCollection buildRunSummaryCollection;
 
     /**
-     * The returned BuildRunSummaryCollection instance.
+     * The returned {@code BuildRunSummaryCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListBuildRunsResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned BuildRunSummaryCollection instance. */
+        /** The returned {@code BuildRunSummaryCollection} instance. */
         private com.oracle.bmc.devops.model.BuildRunSummaryCollection buildRunSummaryCollection;
 
         /**
-         * The returned BuildRunSummaryCollection instance.
+         * The returned {@code BuildRunSummaryCollection} instance.
          *
          * @param buildRunSummaryCollection the value to set
          * @return this builder

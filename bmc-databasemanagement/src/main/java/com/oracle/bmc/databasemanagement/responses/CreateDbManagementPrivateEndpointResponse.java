@@ -65,12 +65,12 @@ public class CreateDbManagementPrivateEndpointResponse
         return location;
     }
 
-    /** The returned DbManagementPrivateEndpoint instance. */
+    /** The returned {@code DbManagementPrivateEndpoint} instance. */
     private com.oracle.bmc.databasemanagement.model.DbManagementPrivateEndpoint
             dbManagementPrivateEndpoint;
 
     /**
-     * The returned DbManagementPrivateEndpoint instance.
+     * The returned {@code DbManagementPrivateEndpoint} instance.
      *
      * @return the value
      */
@@ -188,12 +188,12 @@ public class CreateDbManagementPrivateEndpointResponse
             return this;
         }
 
-        /** The returned DbManagementPrivateEndpoint instance. */
+        /** The returned {@code DbManagementPrivateEndpoint} instance. */
         private com.oracle.bmc.databasemanagement.model.DbManagementPrivateEndpoint
                 dbManagementPrivateEndpoint;
 
         /**
-         * The returned DbManagementPrivateEndpoint instance.
+         * The returned {@code DbManagementPrivateEndpoint} instance.
          *
          * @param dbManagementPrivateEndpoint the value to set
          * @return this builder

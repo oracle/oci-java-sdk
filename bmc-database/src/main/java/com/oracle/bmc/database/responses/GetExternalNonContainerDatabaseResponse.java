@@ -36,11 +36,11 @@ public class GetExternalNonContainerDatabaseResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** The returned ExternalNonContainerDatabase instance. */
+    /** The returned {@code ExternalNonContainerDatabase} instance. */
     private com.oracle.bmc.database.model.ExternalNonContainerDatabase externalNonContainerDatabase;
 
     /**
-     * The returned ExternalNonContainerDatabase instance.
+     * The returned {@code ExternalNonContainerDatabase} instance.
      *
      * @return the value
      */
@@ -120,12 +120,12 @@ public class GetExternalNonContainerDatabaseResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned ExternalNonContainerDatabase instance. */
+        /** The returned {@code ExternalNonContainerDatabase} instance. */
         private com.oracle.bmc.database.model.ExternalNonContainerDatabase
                 externalNonContainerDatabase;
 
         /**
-         * The returned ExternalNonContainerDatabase instance.
+         * The returned {@code ExternalNonContainerDatabase} instance.
          *
          * @param externalNonContainerDatabase the value to set
          * @return this builder

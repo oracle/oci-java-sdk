@@ -40,11 +40,11 @@ public class UpdateTaskRunResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** The returned TaskRunDetails instance. */
+    /** The returned {@code TaskRunDetails} instance. */
     private com.oracle.bmc.dataintegration.model.TaskRunDetails taskRunDetails;
 
     /**
-     * The returned TaskRunDetails instance.
+     * The returned {@code TaskRunDetails} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class UpdateTaskRunResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned TaskRunDetails instance. */
+        /** The returned {@code TaskRunDetails} instance. */
         private com.oracle.bmc.dataintegration.model.TaskRunDetails taskRunDetails;
 
         /**
-         * The returned TaskRunDetails instance.
+         * The returned {@code TaskRunDetails} instance.
          *
          * @param taskRunDetails the value to set
          * @return this builder

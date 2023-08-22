@@ -24,11 +24,11 @@ public class RecommendationsResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned RecommendationCollection instance. */
+    /** The returned {@code RecommendationCollection} instance. */
     private com.oracle.bmc.datacatalog.model.RecommendationCollection recommendationCollection;
 
     /**
-     * The returned RecommendationCollection instance.
+     * The returned {@code RecommendationCollection} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class RecommendationsResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned RecommendationCollection instance. */
+        /** The returned {@code RecommendationCollection} instance. */
         private com.oracle.bmc.datacatalog.model.RecommendationCollection recommendationCollection;
 
         /**
-         * The returned RecommendationCollection instance.
+         * The returned {@code RecommendationCollection} instance.
          *
          * @param recommendationCollection the value to set
          * @return this builder

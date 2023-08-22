@@ -42,11 +42,11 @@ public class SearchAuthTokensResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /** The returned AuthTokens instance. */
+    /** The returned {@code AuthTokens} instance. */
     private com.oracle.bmc.identitydomains.model.AuthTokens authTokens;
 
     /**
-     * The returned AuthTokens instance.
+     * The returned {@code AuthTokens} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class SearchAuthTokensResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned AuthTokens instance. */
+        /** The returned {@code AuthTokens} instance. */
         private com.oracle.bmc.identitydomains.model.AuthTokens authTokens;
 
         /**
-         * The returned AuthTokens instance.
+         * The returned {@code AuthTokens} instance.
          *
          * @param authTokens the value to set
          * @return this builder

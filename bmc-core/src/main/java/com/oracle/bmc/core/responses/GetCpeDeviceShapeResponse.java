@@ -24,11 +24,11 @@ public class GetCpeDeviceShapeResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned CpeDeviceShapeDetail instance. */
+    /** The returned {@code CpeDeviceShapeDetail} instance. */
     private com.oracle.bmc.core.model.CpeDeviceShapeDetail cpeDeviceShapeDetail;
 
     /**
-     * The returned CpeDeviceShapeDetail instance.
+     * The returned {@code CpeDeviceShapeDetail} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetCpeDeviceShapeResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned CpeDeviceShapeDetail instance. */
+        /** The returned {@code CpeDeviceShapeDetail} instance. */
         private com.oracle.bmc.core.model.CpeDeviceShapeDetail cpeDeviceShapeDetail;
 
         /**
-         * The returned CpeDeviceShapeDetail instance.
+         * The returned {@code CpeDeviceShapeDetail} instance.
          *
          * @param cpeDeviceShapeDetail the value to set
          * @return this builder

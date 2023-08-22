@@ -42,11 +42,11 @@ public class ListMeshesResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned MeshCollection instance. */
+    /** The returned {@code MeshCollection} instance. */
     private com.oracle.bmc.servicemesh.model.MeshCollection meshCollection;
 
     /**
-     * The returned MeshCollection instance.
+     * The returned {@code MeshCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListMeshesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned MeshCollection instance. */
+        /** The returned {@code MeshCollection} instance. */
         private com.oracle.bmc.servicemesh.model.MeshCollection meshCollection;
 
         /**
-         * The returned MeshCollection instance.
+         * The returned {@code MeshCollection} instance.
          *
          * @param meshCollection the value to set
          * @return this builder

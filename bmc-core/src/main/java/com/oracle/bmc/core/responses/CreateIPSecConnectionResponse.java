@@ -36,11 +36,11 @@ public class CreateIPSecConnectionResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned IPSecConnection instance. */
+    /** The returned {@code IPSecConnection} instance. */
     private com.oracle.bmc.core.model.IPSecConnection iPSecConnection;
 
     /**
-     * The returned IPSecConnection instance.
+     * The returned {@code IPSecConnection} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class CreateIPSecConnectionResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned IPSecConnection instance. */
+        /** The returned {@code IPSecConnection} instance. */
         private com.oracle.bmc.core.model.IPSecConnection iPSecConnection;
 
         /**
-         * The returned IPSecConnection instance.
+         * The returned {@code IPSecConnection} instance.
          *
          * @param iPSecConnection the value to set
          * @return this builder

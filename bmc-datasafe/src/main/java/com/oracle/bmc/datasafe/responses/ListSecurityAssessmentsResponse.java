@@ -62,11 +62,11 @@ public class ListSecurityAssessmentsResponse extends com.oracle.bmc.responses.Bm
         return opcPrevPage;
     }
 
-    /** A list of com.oracle.bmc.datasafe.model.SecurityAssessmentSummary instances. */
+    /** A list of {@code com.oracle.bmc.datasafe.model.SecurityAssessmentSummary} instances. */
     private java.util.List<com.oracle.bmc.datasafe.model.SecurityAssessmentSummary> items;
 
     /**
-     * A list of com.oracle.bmc.datasafe.model.SecurityAssessmentSummary instances.
+     * A list of {@code com.oracle.bmc.datasafe.model.SecurityAssessmentSummary} instances.
      *
      * @return the value
      */
@@ -175,11 +175,11 @@ public class ListSecurityAssessmentsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** A list of com.oracle.bmc.datasafe.model.SecurityAssessmentSummary instances. */
+        /** A list of {@code com.oracle.bmc.datasafe.model.SecurityAssessmentSummary} instances. */
         private java.util.List<com.oracle.bmc.datasafe.model.SecurityAssessmentSummary> items;
 
         /**
-         * A list of com.oracle.bmc.datasafe.model.SecurityAssessmentSummary instances.
+         * A list of {@code com.oracle.bmc.datasafe.model.SecurityAssessmentSummary} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -24,11 +24,11 @@ public class GetVmClusterUpdateResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned VmClusterUpdate instance. */
+    /** The returned {@code VmClusterUpdate} instance. */
     private com.oracle.bmc.database.model.VmClusterUpdate vmClusterUpdate;
 
     /**
-     * The returned VmClusterUpdate instance.
+     * The returned {@code VmClusterUpdate} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetVmClusterUpdateResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned VmClusterUpdate instance. */
+        /** The returned {@code VmClusterUpdate} instance. */
         private com.oracle.bmc.database.model.VmClusterUpdate vmClusterUpdate;
 
         /**
-         * The returned VmClusterUpdate instance.
+         * The returned {@code VmClusterUpdate} instance.
          *
          * @param vmClusterUpdate the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class SearchGroupsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned Groups instance. */
+    /** The returned {@code Groups} instance. */
     private com.oracle.bmc.identitydomains.model.Groups groups;
 
     /**
-     * The returned Groups instance.
+     * The returned {@code Groups} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class SearchGroupsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Groups instance. */
+        /** The returned {@code Groups} instance. */
         private com.oracle.bmc.identitydomains.model.Groups groups;
 
         /**
-         * The returned Groups instance.
+         * The returned {@code Groups} instance.
          *
          * @param groups the value to set
          * @return this builder

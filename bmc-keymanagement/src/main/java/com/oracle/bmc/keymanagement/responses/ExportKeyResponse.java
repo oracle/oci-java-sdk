@@ -24,11 +24,11 @@ public class ExportKeyResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned ExportedKeyData instance. */
+    /** The returned {@code ExportedKeyData} instance. */
     private com.oracle.bmc.keymanagement.model.ExportedKeyData exportedKeyData;
 
     /**
-     * The returned ExportedKeyData instance.
+     * The returned {@code ExportedKeyData} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class ExportKeyResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned ExportedKeyData instance. */
+        /** The returned {@code ExportedKeyData} instance. */
         private com.oracle.bmc.keymanagement.model.ExportedKeyData exportedKeyData;
 
         /**
-         * The returned ExportedKeyData instance.
+         * The returned {@code ExportedKeyData} instance.
          *
          * @param exportedKeyData the value to set
          * @return this builder

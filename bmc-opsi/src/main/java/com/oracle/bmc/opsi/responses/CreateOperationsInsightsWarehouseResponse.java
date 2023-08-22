@@ -77,11 +77,11 @@ public class CreateOperationsInsightsWarehouseResponse
         return etag;
     }
 
-    /** The returned OperationsInsightsWarehouse instance. */
+    /** The returned {@code OperationsInsightsWarehouse} instance. */
     private com.oracle.bmc.opsi.model.OperationsInsightsWarehouse operationsInsightsWarehouse;
 
     /**
-     * The returned OperationsInsightsWarehouse instance.
+     * The returned {@code OperationsInsightsWarehouse} instance.
      *
      * @return the value
      */
@@ -214,11 +214,11 @@ public class CreateOperationsInsightsWarehouseResponse
             return this;
         }
 
-        /** The returned OperationsInsightsWarehouse instance. */
+        /** The returned {@code OperationsInsightsWarehouse} instance. */
         private com.oracle.bmc.opsi.model.OperationsInsightsWarehouse operationsInsightsWarehouse;
 
         /**
-         * The returned OperationsInsightsWarehouse instance.
+         * The returned {@code OperationsInsightsWarehouse} instance.
          *
          * @param operationsInsightsWarehouse the value to set
          * @return this builder

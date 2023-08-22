@@ -42,11 +42,11 @@ public class ListSubscriptionsResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.ons.model.SubscriptionSummary instances. */
+    /** A list of {@code com.oracle.bmc.ons.model.SubscriptionSummary} instances. */
     private java.util.List<com.oracle.bmc.ons.model.SubscriptionSummary> items;
 
     /**
-     * A list of com.oracle.bmc.ons.model.SubscriptionSummary instances.
+     * A list of {@code com.oracle.bmc.ons.model.SubscriptionSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListSubscriptionsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** A list of com.oracle.bmc.ons.model.SubscriptionSummary instances. */
+        /** A list of {@code com.oracle.bmc.ons.model.SubscriptionSummary} instances. */
         private java.util.List<com.oracle.bmc.ons.model.SubscriptionSummary> items;
 
         /**
-         * A list of com.oracle.bmc.ons.model.SubscriptionSummary instances.
+         * A list of {@code com.oracle.bmc.ons.model.SubscriptionSummary} instances.
          *
          * @param items the value to set
          * @return this builder

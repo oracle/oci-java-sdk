@@ -36,11 +36,11 @@ public class GetVmClusterNetworkResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned VmClusterNetwork instance. */
+    /** The returned {@code VmClusterNetwork} instance. */
     private com.oracle.bmc.database.model.VmClusterNetwork vmClusterNetwork;
 
     /**
-     * The returned VmClusterNetwork instance.
+     * The returned {@code VmClusterNetwork} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetVmClusterNetworkResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned VmClusterNetwork instance. */
+        /** The returned {@code VmClusterNetwork} instance. */
         private com.oracle.bmc.database.model.VmClusterNetwork vmClusterNetwork;
 
         /**
-         * The returned VmClusterNetwork instance.
+         * The returned {@code VmClusterNetwork} instance.
          *
          * @param vmClusterNetwork the value to set
          * @return this builder

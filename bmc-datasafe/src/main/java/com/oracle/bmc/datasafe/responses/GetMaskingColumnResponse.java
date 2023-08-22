@@ -42,11 +42,11 @@ public class GetMaskingColumnResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned MaskingColumn instance. */
+    /** The returned {@code MaskingColumn} instance. */
     private com.oracle.bmc.datasafe.model.MaskingColumn maskingColumn;
 
     /**
-     * The returned MaskingColumn instance.
+     * The returned {@code MaskingColumn} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class GetMaskingColumnResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned MaskingColumn instance. */
+        /** The returned {@code MaskingColumn} instance. */
         private com.oracle.bmc.datasafe.model.MaskingColumn maskingColumn;
 
         /**
-         * The returned MaskingColumn instance.
+         * The returned {@code MaskingColumn} instance.
          *
          * @param maskingColumn the value to set
          * @return this builder

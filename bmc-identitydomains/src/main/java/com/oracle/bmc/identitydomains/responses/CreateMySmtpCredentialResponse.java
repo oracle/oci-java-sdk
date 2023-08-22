@@ -36,11 +36,11 @@ public class CreateMySmtpCredentialResponse extends com.oracle.bmc.responses.Bmc
         return etag;
     }
 
-    /** The returned MySmtpCredential instance. */
+    /** The returned {@code MySmtpCredential} instance. */
     private com.oracle.bmc.identitydomains.model.MySmtpCredential mySmtpCredential;
 
     /**
-     * The returned MySmtpCredential instance.
+     * The returned {@code MySmtpCredential} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class CreateMySmtpCredentialResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned MySmtpCredential instance. */
+        /** The returned {@code MySmtpCredential} instance. */
         private com.oracle.bmc.identitydomains.model.MySmtpCredential mySmtpCredential;
 
         /**
-         * The returned MySmtpCredential instance.
+         * The returned {@code MySmtpCredential} instance.
          *
          * @param mySmtpCredential the value to set
          * @return this builder

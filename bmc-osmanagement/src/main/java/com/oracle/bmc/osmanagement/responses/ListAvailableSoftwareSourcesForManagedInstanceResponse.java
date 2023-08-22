@@ -43,11 +43,13 @@ public class ListAvailableSoftwareSourcesForManagedInstanceResponse
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.osmanagement.model.AvailableSoftwareSourceSummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.osmanagement.model.AvailableSoftwareSourceSummary} instances.
+     */
     private java.util.List<com.oracle.bmc.osmanagement.model.AvailableSoftwareSourceSummary> items;
 
     /**
-     * A list of com.oracle.bmc.osmanagement.model.AvailableSoftwareSourceSummary instances.
+     * A list of {@code com.oracle.bmc.osmanagement.model.AvailableSoftwareSourceSummary} instances.
      *
      * @return the value
      */
@@ -133,12 +135,16 @@ public class ListAvailableSoftwareSourcesForManagedInstanceResponse
             return this;
         }
 
-        /** A list of com.oracle.bmc.osmanagement.model.AvailableSoftwareSourceSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.osmanagement.model.AvailableSoftwareSourceSummary}
+         * instances.
+         */
         private java.util.List<com.oracle.bmc.osmanagement.model.AvailableSoftwareSourceSummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.osmanagement.model.AvailableSoftwareSourceSummary instances.
+         * A list of {@code com.oracle.bmc.osmanagement.model.AvailableSoftwareSourceSummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

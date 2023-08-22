@@ -42,12 +42,12 @@ public class ListExcludedObjectsResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** The returned ExcludedObjectSummaryCollection instance. */
+    /** The returned {@code ExcludedObjectSummaryCollection} instance. */
     private com.oracle.bmc.databasemigration.model.ExcludedObjectSummaryCollection
             excludedObjectSummaryCollection;
 
     /**
-     * The returned ExcludedObjectSummaryCollection instance.
+     * The returned {@code ExcludedObjectSummaryCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListExcludedObjectsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned ExcludedObjectSummaryCollection instance. */
+        /** The returned {@code ExcludedObjectSummaryCollection} instance. */
         private com.oracle.bmc.databasemigration.model.ExcludedObjectSummaryCollection
                 excludedObjectSummaryCollection;
 
         /**
-         * The returned ExcludedObjectSummaryCollection instance.
+         * The returned {@code ExcludedObjectSummaryCollection} instance.
          *
          * @param excludedObjectSummaryCollection the value to set
          * @return this builder

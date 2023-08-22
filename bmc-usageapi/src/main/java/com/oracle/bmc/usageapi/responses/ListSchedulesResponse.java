@@ -42,11 +42,11 @@ public class ListSchedulesResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcNextPage;
     }
 
-    /** The returned ScheduleCollection instance. */
+    /** The returned {@code ScheduleCollection} instance. */
     private com.oracle.bmc.usageapi.model.ScheduleCollection scheduleCollection;
 
     /**
-     * The returned ScheduleCollection instance.
+     * The returned {@code ScheduleCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListSchedulesResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned ScheduleCollection instance. */
+        /** The returned {@code ScheduleCollection} instance. */
         private com.oracle.bmc.usageapi.model.ScheduleCollection scheduleCollection;
 
         /**
-         * The returned ScheduleCollection instance.
+         * The returned {@code ScheduleCollection} instance.
          *
          * @param scheduleCollection the value to set
          * @return this builder

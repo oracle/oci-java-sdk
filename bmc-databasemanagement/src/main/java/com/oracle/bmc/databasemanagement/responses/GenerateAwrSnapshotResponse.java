@@ -24,11 +24,11 @@ public class GenerateAwrSnapshotResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned SnapshotDetails instance. */
+    /** The returned {@code SnapshotDetails} instance. */
     private com.oracle.bmc.databasemanagement.model.SnapshotDetails snapshotDetails;
 
     /**
-     * The returned SnapshotDetails instance.
+     * The returned {@code SnapshotDetails} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GenerateAwrSnapshotResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned SnapshotDetails instance. */
+        /** The returned {@code SnapshotDetails} instance. */
         private com.oracle.bmc.databasemanagement.model.SnapshotDetails snapshotDetails;
 
         /**
-         * The returned SnapshotDetails instance.
+         * The returned {@code SnapshotDetails} instance.
          *
          * @param snapshotDetails the value to set
          * @return this builder

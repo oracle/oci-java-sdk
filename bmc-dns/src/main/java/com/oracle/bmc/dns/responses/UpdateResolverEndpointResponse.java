@@ -56,11 +56,11 @@ public class UpdateResolverEndpointResponse extends com.oracle.bmc.responses.Bmc
         return opcWorkRequestId;
     }
 
-    /** The returned ResolverEndpoint instance. */
+    /** The returned {@code ResolverEndpoint} instance. */
     private com.oracle.bmc.dns.model.ResolverEndpoint resolverEndpoint;
 
     /**
-     * The returned ResolverEndpoint instance.
+     * The returned {@code ResolverEndpoint} instance.
      *
      * @return the value
      */
@@ -165,11 +165,11 @@ public class UpdateResolverEndpointResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned ResolverEndpoint instance. */
+        /** The returned {@code ResolverEndpoint} instance. */
         private com.oracle.bmc.dns.model.ResolverEndpoint resolverEndpoint;
 
         /**
-         * The returned ResolverEndpoint instance.
+         * The returned {@code ResolverEndpoint} instance.
          *
          * @param resolverEndpoint the value to set
          * @return this builder

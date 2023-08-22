@@ -42,11 +42,11 @@ public class GetTargetAlertPolicyAssociationResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** The returned TargetAlertPolicyAssociation instance. */
+    /** The returned {@code TargetAlertPolicyAssociation} instance. */
     private com.oracle.bmc.datasafe.model.TargetAlertPolicyAssociation targetAlertPolicyAssociation;
 
     /**
-     * The returned TargetAlertPolicyAssociation instance.
+     * The returned {@code TargetAlertPolicyAssociation} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class GetTargetAlertPolicyAssociationResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned TargetAlertPolicyAssociation instance. */
+        /** The returned {@code TargetAlertPolicyAssociation} instance. */
         private com.oracle.bmc.datasafe.model.TargetAlertPolicyAssociation
                 targetAlertPolicyAssociation;
 
         /**
-         * The returned TargetAlertPolicyAssociation instance.
+         * The returned {@code TargetAlertPolicyAssociation} instance.
          *
          * @param targetAlertPolicyAssociation the value to set
          * @return this builder

@@ -44,11 +44,13 @@ public class ListExternalDatabaseConnectorsResponse extends com.oracle.bmc.respo
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.database.model.ExternalDatabaseConnectorSummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.database.model.ExternalDatabaseConnectorSummary} instances.
+     */
     private java.util.List<com.oracle.bmc.database.model.ExternalDatabaseConnectorSummary> items;
 
     /**
-     * A list of com.oracle.bmc.database.model.ExternalDatabaseConnectorSummary instances.
+     * A list of {@code com.oracle.bmc.database.model.ExternalDatabaseConnectorSummary} instances.
      *
      * @return the value
      */
@@ -137,12 +139,16 @@ public class ListExternalDatabaseConnectorsResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** A list of com.oracle.bmc.database.model.ExternalDatabaseConnectorSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.database.model.ExternalDatabaseConnectorSummary}
+         * instances.
+         */
         private java.util.List<com.oracle.bmc.database.model.ExternalDatabaseConnectorSummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.database.model.ExternalDatabaseConnectorSummary instances.
+         * A list of {@code com.oracle.bmc.database.model.ExternalDatabaseConnectorSummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

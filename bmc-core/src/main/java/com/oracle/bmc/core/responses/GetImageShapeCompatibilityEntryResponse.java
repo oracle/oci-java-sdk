@@ -24,11 +24,11 @@ public class GetImageShapeCompatibilityEntryResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** The returned ImageShapeCompatibilityEntry instance. */
+    /** The returned {@code ImageShapeCompatibilityEntry} instance. */
     private com.oracle.bmc.core.model.ImageShapeCompatibilityEntry imageShapeCompatibilityEntry;
 
     /**
-     * The returned ImageShapeCompatibilityEntry instance.
+     * The returned {@code ImageShapeCompatibilityEntry} instance.
      *
      * @return the value
      */
@@ -90,11 +90,11 @@ public class GetImageShapeCompatibilityEntryResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned ImageShapeCompatibilityEntry instance. */
+        /** The returned {@code ImageShapeCompatibilityEntry} instance. */
         private com.oracle.bmc.core.model.ImageShapeCompatibilityEntry imageShapeCompatibilityEntry;
 
         /**
-         * The returned ImageShapeCompatibilityEntry instance.
+         * The returned {@code ImageShapeCompatibilityEntry} instance.
          *
          * @param imageShapeCompatibilityEntry the value to set
          * @return this builder

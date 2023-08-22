@@ -54,11 +54,11 @@ public class ListOdaInstancesResponse extends com.oracle.bmc.responses.BmcRespon
         return opcTotalItems;
     }
 
-    /** A list of com.oracle.bmc.oda.model.OdaInstanceSummary instances. */
+    /** A list of {@code com.oracle.bmc.oda.model.OdaInstanceSummary} instances. */
     private java.util.List<com.oracle.bmc.oda.model.OdaInstanceSummary> items;
 
     /**
-     * A list of com.oracle.bmc.oda.model.OdaInstanceSummary instances.
+     * A list of {@code com.oracle.bmc.oda.model.OdaInstanceSummary} instances.
      *
      * @return the value
      */
@@ -158,11 +158,11 @@ public class ListOdaInstancesResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** A list of com.oracle.bmc.oda.model.OdaInstanceSummary instances. */
+        /** A list of {@code com.oracle.bmc.oda.model.OdaInstanceSummary} instances. */
         private java.util.List<com.oracle.bmc.oda.model.OdaInstanceSummary> items;
 
         /**
-         * A list of com.oracle.bmc.oda.model.OdaInstanceSummary instances.
+         * A list of {@code com.oracle.bmc.oda.model.OdaInstanceSummary} instances.
          *
          * @param items the value to set
          * @return this builder

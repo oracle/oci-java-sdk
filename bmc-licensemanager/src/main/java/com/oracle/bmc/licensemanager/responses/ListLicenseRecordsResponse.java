@@ -42,11 +42,11 @@ public class ListLicenseRecordsResponse extends com.oracle.bmc.responses.BmcResp
         return opcNextPage;
     }
 
-    /** The returned LicenseRecordCollection instance. */
+    /** The returned {@code LicenseRecordCollection} instance. */
     private com.oracle.bmc.licensemanager.model.LicenseRecordCollection licenseRecordCollection;
 
     /**
-     * The returned LicenseRecordCollection instance.
+     * The returned {@code LicenseRecordCollection} instance.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListLicenseRecordsResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned LicenseRecordCollection instance. */
+        /** The returned {@code LicenseRecordCollection} instance. */
         private com.oracle.bmc.licensemanager.model.LicenseRecordCollection licenseRecordCollection;
 
         /**
-         * The returned LicenseRecordCollection instance.
+         * The returned {@code LicenseRecordCollection} instance.
          *
          * @param licenseRecordCollection the value to set
          * @return this builder

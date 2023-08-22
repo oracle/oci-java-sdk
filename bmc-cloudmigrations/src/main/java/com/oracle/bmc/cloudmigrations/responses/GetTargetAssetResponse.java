@@ -36,11 +36,11 @@ public class GetTargetAssetResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned TargetAsset instance. */
+    /** The returned {@code TargetAsset} instance. */
     private com.oracle.bmc.cloudmigrations.model.TargetAsset targetAsset;
 
     /**
-     * The returned TargetAsset instance.
+     * The returned {@code TargetAsset} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetTargetAssetResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned TargetAsset instance. */
+        /** The returned {@code TargetAsset} instance. */
         private com.oracle.bmc.cloudmigrations.model.TargetAsset targetAsset;
 
         /**
-         * The returned TargetAsset instance.
+         * The returned {@code TargetAsset} instance.
          *
          * @param targetAsset the value to set
          * @return this builder

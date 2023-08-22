@@ -56,11 +56,11 @@ public class StartPluggableDatabaseResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned PluggableDatabase instance. */
+    /** The returned {@code PluggableDatabase} instance. */
     private com.oracle.bmc.database.model.PluggableDatabase pluggableDatabase;
 
     /**
-     * The returned PluggableDatabase instance.
+     * The returned {@code PluggableDatabase} instance.
      *
      * @return the value
      */
@@ -163,11 +163,11 @@ public class StartPluggableDatabaseResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned PluggableDatabase instance. */
+        /** The returned {@code PluggableDatabase} instance. */
         private com.oracle.bmc.database.model.PluggableDatabase pluggableDatabase;
 
         /**
-         * The returned PluggableDatabase instance.
+         * The returned {@code PluggableDatabase} instance.
          *
          * @param pluggableDatabase the value to set
          * @return this builder

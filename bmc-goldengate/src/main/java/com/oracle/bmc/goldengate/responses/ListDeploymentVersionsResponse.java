@@ -40,11 +40,11 @@ public class ListDeploymentVersionsResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** The returned DeploymentVersionCollection instance. */
+    /** The returned {@code DeploymentVersionCollection} instance. */
     private com.oracle.bmc.goldengate.model.DeploymentVersionCollection deploymentVersionCollection;
 
     /**
-     * The returned DeploymentVersionCollection instance.
+     * The returned {@code DeploymentVersionCollection} instance.
      *
      * @return the value
      */
@@ -128,12 +128,12 @@ public class ListDeploymentVersionsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned DeploymentVersionCollection instance. */
+        /** The returned {@code DeploymentVersionCollection} instance. */
         private com.oracle.bmc.goldengate.model.DeploymentVersionCollection
                 deploymentVersionCollection;
 
         /**
-         * The returned DeploymentVersionCollection instance.
+         * The returned {@code DeploymentVersionCollection} instance.
          *
          * @param deploymentVersionCollection the value to set
          * @return this builder

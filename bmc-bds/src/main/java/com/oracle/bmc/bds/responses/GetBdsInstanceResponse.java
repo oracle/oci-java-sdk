@@ -36,11 +36,11 @@ public class GetBdsInstanceResponse extends com.oracle.bmc.responses.BmcResponse
         return etag;
     }
 
-    /** The returned BdsInstance instance. */
+    /** The returned {@code BdsInstance} instance. */
     private com.oracle.bmc.bds.model.BdsInstance bdsInstance;
 
     /**
-     * The returned BdsInstance instance.
+     * The returned {@code BdsInstance} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetBdsInstanceResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned BdsInstance instance. */
+        /** The returned {@code BdsInstance} instance. */
         private com.oracle.bmc.bds.model.BdsInstance bdsInstance;
 
         /**
-         * The returned BdsInstance instance.
+         * The returned {@code BdsInstance} instance.
          *
          * @param bdsInstance the value to set
          * @return this builder

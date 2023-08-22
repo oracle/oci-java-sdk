@@ -36,11 +36,11 @@ public class GenerateSessionTokenResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned SessionToken instance. */
+    /** The returned {@code SessionToken} instance. */
     private com.oracle.bmc.mediaservices.model.SessionToken sessionToken;
 
     /**
-     * The returned SessionToken instance.
+     * The returned {@code SessionToken} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GenerateSessionTokenResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned SessionToken instance. */
+        /** The returned {@code SessionToken} instance. */
         private com.oracle.bmc.mediaservices.model.SessionToken sessionToken;
 
         /**
-         * The returned SessionToken instance.
+         * The returned {@code SessionToken} instance.
          *
          * @param sessionToken the value to set
          * @return this builder

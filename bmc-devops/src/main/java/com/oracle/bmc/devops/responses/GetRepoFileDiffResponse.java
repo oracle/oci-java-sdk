@@ -36,11 +36,11 @@ public class GetRepoFileDiffResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned FileDiffResponse instance. */
+    /** The returned {@code FileDiffResponse} instance. */
     private com.oracle.bmc.devops.model.FileDiffResponse fileDiffResponse;
 
     /**
-     * The returned FileDiffResponse instance.
+     * The returned {@code FileDiffResponse} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetRepoFileDiffResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned FileDiffResponse instance. */
+        /** The returned {@code FileDiffResponse} instance. */
         private com.oracle.bmc.devops.model.FileDiffResponse fileDiffResponse;
 
         /**
-         * The returned FileDiffResponse instance.
+         * The returned {@code FileDiffResponse} instance.
          *
          * @param fileDiffResponse the value to set
          * @return this builder

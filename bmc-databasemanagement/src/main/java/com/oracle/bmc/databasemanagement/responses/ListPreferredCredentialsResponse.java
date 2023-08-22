@@ -42,12 +42,12 @@ public class ListPreferredCredentialsResponse extends com.oracle.bmc.responses.B
         return opcNextPage;
     }
 
-    /** The returned PreferredCredentialCollection instance. */
+    /** The returned {@code PreferredCredentialCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.PreferredCredentialCollection
             preferredCredentialCollection;
 
     /**
-     * The returned PreferredCredentialCollection instance.
+     * The returned {@code PreferredCredentialCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListPreferredCredentialsResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned PreferredCredentialCollection instance. */
+        /** The returned {@code PreferredCredentialCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.PreferredCredentialCollection
                 preferredCredentialCollection;
 
         /**
-         * The returned PreferredCredentialCollection instance.
+         * The returned {@code PreferredCredentialCollection} instance.
          *
          * @param preferredCredentialCollection the value to set
          * @return this builder

@@ -64,11 +64,11 @@ public class CreateCertificateResponse extends com.oracle.bmc.responses.BmcRespo
         return location;
     }
 
-    /** The returned Certificate instance. */
+    /** The returned {@code Certificate} instance. */
     private com.oracle.bmc.apigateway.model.Certificate certificate;
 
     /**
-     * The returned Certificate instance.
+     * The returned {@code Certificate} instance.
      *
      * @return the value
      */
@@ -183,11 +183,11 @@ public class CreateCertificateResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned Certificate instance. */
+        /** The returned {@code Certificate} instance. */
         private com.oracle.bmc.apigateway.model.Certificate certificate;
 
         /**
-         * The returned Certificate instance.
+         * The returned {@code Certificate} instance.
          *
          * @param certificate the value to set
          * @return this builder

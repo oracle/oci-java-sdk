@@ -40,11 +40,11 @@ public class GetDataFlowValidationResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned DataFlowValidation instance. */
+    /** The returned {@code DataFlowValidation} instance. */
     private com.oracle.bmc.dataintegration.model.DataFlowValidation dataFlowValidation;
 
     /**
-     * The returned DataFlowValidation instance.
+     * The returned {@code DataFlowValidation} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetDataFlowValidationResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned DataFlowValidation instance. */
+        /** The returned {@code DataFlowValidation} instance. */
         private com.oracle.bmc.dataintegration.model.DataFlowValidation dataFlowValidation;
 
         /**
-         * The returned DataFlowValidation instance.
+         * The returned {@code DataFlowValidation} instance.
          *
          * @param dataFlowValidation the value to set
          * @return this builder

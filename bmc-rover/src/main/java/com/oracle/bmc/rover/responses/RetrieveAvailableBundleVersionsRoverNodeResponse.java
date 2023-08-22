@@ -37,11 +37,11 @@ public class RetrieveAvailableBundleVersionsRoverNodeResponse
         return opcRequestId;
     }
 
-    /** The returned RoverBundleVersion instance. */
+    /** The returned {@code RoverBundleVersion} instance. */
     private com.oracle.bmc.rover.model.RoverBundleVersion roverBundleVersion;
 
     /**
-     * The returned RoverBundleVersion instance.
+     * The returned {@code RoverBundleVersion} instance.
      *
      * @return the value
      */
@@ -119,11 +119,11 @@ public class RetrieveAvailableBundleVersionsRoverNodeResponse
             return this;
         }
 
-        /** The returned RoverBundleVersion instance. */
+        /** The returned {@code RoverBundleVersion} instance. */
         private com.oracle.bmc.rover.model.RoverBundleVersion roverBundleVersion;
 
         /**
-         * The returned RoverBundleVersion instance.
+         * The returned {@code RoverBundleVersion} instance.
          *
          * @param roverBundleVersion the value to set
          * @return this builder

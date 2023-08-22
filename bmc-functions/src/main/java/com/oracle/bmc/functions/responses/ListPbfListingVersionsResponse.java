@@ -42,12 +42,12 @@ public class ListPbfListingVersionsResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** The returned PbfListingVersionsCollection instance. */
+    /** The returned {@code PbfListingVersionsCollection} instance. */
     private com.oracle.bmc.functions.model.PbfListingVersionsCollection
             pbfListingVersionsCollection;
 
     /**
-     * The returned PbfListingVersionsCollection instance.
+     * The returned {@code PbfListingVersionsCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListPbfListingVersionsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned PbfListingVersionsCollection instance. */
+        /** The returned {@code PbfListingVersionsCollection} instance. */
         private com.oracle.bmc.functions.model.PbfListingVersionsCollection
                 pbfListingVersionsCollection;
 
         /**
-         * The returned PbfListingVersionsCollection instance.
+         * The returned {@code PbfListingVersionsCollection} instance.
          *
          * @param pbfListingVersionsCollection the value to set
          * @return this builder

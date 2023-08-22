@@ -62,11 +62,11 @@ public class ListColumnsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcPrevPage;
     }
 
-    /** A list of com.oracle.bmc.datasafe.model.ColumnSummary instances. */
+    /** A list of {@code com.oracle.bmc.datasafe.model.ColumnSummary} instances. */
     private java.util.List<com.oracle.bmc.datasafe.model.ColumnSummary> items;
 
     /**
-     * A list of com.oracle.bmc.datasafe.model.ColumnSummary instances.
+     * A list of {@code com.oracle.bmc.datasafe.model.ColumnSummary} instances.
      *
      * @return the value
      */
@@ -174,11 +174,11 @@ public class ListColumnsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.datasafe.model.ColumnSummary instances. */
+        /** A list of {@code com.oracle.bmc.datasafe.model.ColumnSummary} instances. */
         private java.util.List<com.oracle.bmc.datasafe.model.ColumnSummary> items;
 
         /**
-         * A list of com.oracle.bmc.datasafe.model.ColumnSummary instances.
+         * A list of {@code com.oracle.bmc.datasafe.model.ColumnSummary} instances.
          *
          * @param items the value to set
          * @return this builder

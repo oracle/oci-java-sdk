@@ -42,11 +42,11 @@ public class ListOpensearchClustersResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** The returned OpensearchClusterCollection instance. */
+    /** The returned {@code OpensearchClusterCollection} instance. */
     private com.oracle.bmc.opensearch.model.OpensearchClusterCollection opensearchClusterCollection;
 
     /**
-     * The returned OpensearchClusterCollection instance.
+     * The returned {@code OpensearchClusterCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListOpensearchClustersResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned OpensearchClusterCollection instance. */
+        /** The returned {@code OpensearchClusterCollection} instance. */
         private com.oracle.bmc.opensearch.model.OpensearchClusterCollection
                 opensearchClusterCollection;
 
         /**
-         * The returned OpensearchClusterCollection instance.
+         * The returned {@code OpensearchClusterCollection} instance.
          *
          * @param opensearchClusterCollection the value to set
          * @return this builder

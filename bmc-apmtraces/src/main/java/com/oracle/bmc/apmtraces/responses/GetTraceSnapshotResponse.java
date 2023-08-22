@@ -24,11 +24,11 @@ public class GetTraceSnapshotResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned TraceSnapshot instance. */
+    /** The returned {@code TraceSnapshot} instance. */
     private com.oracle.bmc.apmtraces.model.TraceSnapshot traceSnapshot;
 
     /**
-     * The returned TraceSnapshot instance.
+     * The returned {@code TraceSnapshot} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetTraceSnapshotResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned TraceSnapshot instance. */
+        /** The returned {@code TraceSnapshot} instance. */
         private com.oracle.bmc.apmtraces.model.TraceSnapshot traceSnapshot;
 
         /**
-         * The returned TraceSnapshot instance.
+         * The returned {@code TraceSnapshot} instance.
          *
          * @param traceSnapshot the value to set
          * @return this builder

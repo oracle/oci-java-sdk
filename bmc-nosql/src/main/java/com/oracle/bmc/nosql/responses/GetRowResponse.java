@@ -36,11 +36,11 @@ public class GetRowResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Row instance. */
+    /** The returned {@code Row} instance. */
     private com.oracle.bmc.nosql.model.Row row;
 
     /**
-     * The returned Row instance.
+     * The returned {@code Row} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetRowResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Row instance. */
+        /** The returned {@code Row} instance. */
         private com.oracle.bmc.nosql.model.Row row;
 
         /**
-         * The returned Row instance.
+         * The returned {@code Row} instance.
          *
          * @param row the value to set
          * @return this builder

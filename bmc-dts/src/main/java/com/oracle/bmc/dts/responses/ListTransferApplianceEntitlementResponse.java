@@ -16,11 +16,11 @@ public class ListTransferApplianceEntitlementResponse extends com.oracle.bmc.res
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.dts.model.TransferApplianceEntitlementSummary instances. */
+    /** A list of {@code com.oracle.bmc.dts.model.TransferApplianceEntitlementSummary} instances. */
     private java.util.List<com.oracle.bmc.dts.model.TransferApplianceEntitlementSummary> items;
 
     /**
-     * A list of com.oracle.bmc.dts.model.TransferApplianceEntitlementSummary instances.
+     * A list of {@code com.oracle.bmc.dts.model.TransferApplianceEntitlementSummary} instances.
      *
      * @return the value
      */
@@ -70,11 +70,13 @@ public class ListTransferApplianceEntitlementResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /** A list of com.oracle.bmc.dts.model.TransferApplianceEntitlementSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.dts.model.TransferApplianceEntitlementSummary} instances.
+         */
         private java.util.List<com.oracle.bmc.dts.model.TransferApplianceEntitlementSummary> items;
 
         /**
-         * A list of com.oracle.bmc.dts.model.TransferApplianceEntitlementSummary instances.
+         * A list of {@code com.oracle.bmc.dts.model.TransferApplianceEntitlementSummary} instances.
          *
          * @param items the value to set
          * @return this builder

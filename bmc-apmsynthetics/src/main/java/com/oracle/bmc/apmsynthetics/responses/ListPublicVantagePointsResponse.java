@@ -42,12 +42,12 @@ public class ListPublicVantagePointsResponse extends com.oracle.bmc.responses.Bm
         return opcNextPage;
     }
 
-    /** The returned PublicVantagePointCollection instance. */
+    /** The returned {@code PublicVantagePointCollection} instance. */
     private com.oracle.bmc.apmsynthetics.model.PublicVantagePointCollection
             publicVantagePointCollection;
 
     /**
-     * The returned PublicVantagePointCollection instance.
+     * The returned {@code PublicVantagePointCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListPublicVantagePointsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned PublicVantagePointCollection instance. */
+        /** The returned {@code PublicVantagePointCollection} instance. */
         private com.oracle.bmc.apmsynthetics.model.PublicVantagePointCollection
                 publicVantagePointCollection;
 
         /**
-         * The returned PublicVantagePointCollection instance.
+         * The returned {@code PublicVantagePointCollection} instance.
          *
          * @param publicVantagePointCollection the value to set
          * @return this builder

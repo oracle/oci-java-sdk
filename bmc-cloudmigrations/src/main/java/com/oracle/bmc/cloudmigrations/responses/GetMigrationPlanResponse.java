@@ -36,11 +36,11 @@ public class GetMigrationPlanResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned MigrationPlan instance. */
+    /** The returned {@code MigrationPlan} instance. */
     private com.oracle.bmc.cloudmigrations.model.MigrationPlan migrationPlan;
 
     /**
-     * The returned MigrationPlan instance.
+     * The returned {@code MigrationPlan} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetMigrationPlanResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned MigrationPlan instance. */
+        /** The returned {@code MigrationPlan} instance. */
         private com.oracle.bmc.cloudmigrations.model.MigrationPlan migrationPlan;
 
         /**
-         * The returned MigrationPlan instance.
+         * The returned {@code MigrationPlan} instance.
          *
          * @param migrationPlan the value to set
          * @return this builder

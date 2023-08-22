@@ -42,12 +42,12 @@ public class ListEnforcedGovernanceRulesResponse extends com.oracle.bmc.response
         return opcNextPage;
     }
 
-    /** The returned EnforcedGovernanceRuleCollection instance. */
+    /** The returned {@code EnforcedGovernanceRuleCollection} instance. */
     private com.oracle.bmc.governancerulescontrolplane.model.EnforcedGovernanceRuleCollection
             enforcedGovernanceRuleCollection;
 
     /**
-     * The returned EnforcedGovernanceRuleCollection instance.
+     * The returned {@code EnforcedGovernanceRuleCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListEnforcedGovernanceRulesResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned EnforcedGovernanceRuleCollection instance. */
+        /** The returned {@code EnforcedGovernanceRuleCollection} instance. */
         private com.oracle.bmc.governancerulescontrolplane.model.EnforcedGovernanceRuleCollection
                 enforcedGovernanceRuleCollection;
 
         /**
-         * The returned EnforcedGovernanceRuleCollection instance.
+         * The returned {@code EnforcedGovernanceRuleCollection} instance.
          *
          * @param enforcedGovernanceRuleCollection the value to set
          * @return this builder

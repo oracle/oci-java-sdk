@@ -24,11 +24,11 @@ public class ExtractStructuredLogFieldPathsResponse extends com.oracle.bmc.respo
         return opcRequestId;
     }
 
-    /** The returned ExtractLogFieldResults instance. */
+    /** The returned {@code ExtractLogFieldResults} instance. */
     private com.oracle.bmc.loganalytics.model.ExtractLogFieldResults extractLogFieldResults;
 
     /**
-     * The returned ExtractLogFieldResults instance.
+     * The returned {@code ExtractLogFieldResults} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class ExtractStructuredLogFieldPathsResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned ExtractLogFieldResults instance. */
+        /** The returned {@code ExtractLogFieldResults} instance. */
         private com.oracle.bmc.loganalytics.model.ExtractLogFieldResults extractLogFieldResults;
 
         /**
-         * The returned ExtractLogFieldResults instance.
+         * The returned {@code ExtractLogFieldResults} instance.
          *
          * @param extractLogFieldResults the value to set
          * @return this builder

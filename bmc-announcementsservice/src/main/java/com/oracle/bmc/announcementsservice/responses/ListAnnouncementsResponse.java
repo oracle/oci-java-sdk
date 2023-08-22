@@ -58,12 +58,12 @@ public class ListAnnouncementsResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned AnnouncementsCollection instance. */
+    /** The returned {@code AnnouncementsCollection} instance. */
     private com.oracle.bmc.announcementsservice.model.AnnouncementsCollection
             announcementsCollection;
 
     /**
-     * The returned AnnouncementsCollection instance.
+     * The returned {@code AnnouncementsCollection} instance.
      *
      * @return the value
      */
@@ -169,12 +169,12 @@ public class ListAnnouncementsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned AnnouncementsCollection instance. */
+        /** The returned {@code AnnouncementsCollection} instance. */
         private com.oracle.bmc.announcementsservice.model.AnnouncementsCollection
                 announcementsCollection;
 
         /**
-         * The returned AnnouncementsCollection instance.
+         * The returned {@code AnnouncementsCollection} instance.
          *
          * @param announcementsCollection the value to set
          * @return this builder

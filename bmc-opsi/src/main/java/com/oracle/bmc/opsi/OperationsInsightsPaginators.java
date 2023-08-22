@@ -3479,6 +3479,128 @@ public class OperationsInsightsPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listWarehouseDataObjects operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListWarehouseDataObjectsResponse> listWarehouseDataObjectsResponseIterator(
+            final ListWarehouseDataObjectsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListWarehouseDataObjectsRequest.Builder,
+                ListWarehouseDataObjectsRequest,
+                ListWarehouseDataObjectsResponse>(
+                new java.util.function.Supplier<ListWarehouseDataObjectsRequest.Builder>() {
+                    @Override
+                    public ListWarehouseDataObjectsRequest.Builder get() {
+                        return ListWarehouseDataObjectsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListWarehouseDataObjectsResponse, String>() {
+                    @Override
+                    public String apply(ListWarehouseDataObjectsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWarehouseDataObjectsRequest.Builder>,
+                        ListWarehouseDataObjectsRequest>() {
+                    @Override
+                    public ListWarehouseDataObjectsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWarehouseDataObjectsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListWarehouseDataObjectsRequest, ListWarehouseDataObjectsResponse>() {
+                    @Override
+                    public ListWarehouseDataObjectsResponse apply(
+                            ListWarehouseDataObjectsRequest request) {
+                        return client.listWarehouseDataObjects(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.opsi.model.WarehouseDataObjectSummary} objects contained in responses from the
+     * listWarehouseDataObjects operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.opsi.model.WarehouseDataObjectSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.opsi.model.WarehouseDataObjectSummary>
+            listWarehouseDataObjectsRecordIterator(final ListWarehouseDataObjectsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListWarehouseDataObjectsRequest.Builder,
+                ListWarehouseDataObjectsRequest,
+                ListWarehouseDataObjectsResponse,
+                com.oracle.bmc.opsi.model.WarehouseDataObjectSummary>(
+                new java.util.function.Supplier<ListWarehouseDataObjectsRequest.Builder>() {
+                    @Override
+                    public ListWarehouseDataObjectsRequest.Builder get() {
+                        return ListWarehouseDataObjectsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListWarehouseDataObjectsResponse, String>() {
+                    @Override
+                    public String apply(ListWarehouseDataObjectsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWarehouseDataObjectsRequest.Builder>,
+                        ListWarehouseDataObjectsRequest>() {
+                    @Override
+                    public ListWarehouseDataObjectsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWarehouseDataObjectsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListWarehouseDataObjectsRequest, ListWarehouseDataObjectsResponse>() {
+                    @Override
+                    public ListWarehouseDataObjectsResponse apply(
+                            ListWarehouseDataObjectsRequest request) {
+                        return client.listWarehouseDataObjects(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListWarehouseDataObjectsResponse,
+                        java.util.List<com.oracle.bmc.opsi.model.WarehouseDataObjectSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.opsi.model.WarehouseDataObjectSummary>
+                            apply(ListWarehouseDataObjectsResponse response) {
+                        return response.getWarehouseDataObjectCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listWorkRequestErrors operation. This iterable will fetch more data from the server as
      * needed.
      *

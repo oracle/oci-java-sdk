@@ -64,12 +64,12 @@ public class ListIngestTimeRulesResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** The returned IngestTimeRuleSummaryCollection instance. */
+    /** The returned {@code IngestTimeRuleSummaryCollection} instance. */
     private com.oracle.bmc.loganalytics.model.IngestTimeRuleSummaryCollection
             ingestTimeRuleSummaryCollection;
 
     /**
-     * The returned IngestTimeRuleSummaryCollection instance.
+     * The returned {@code IngestTimeRuleSummaryCollection} instance.
      *
      * @return the value
      */
@@ -181,12 +181,12 @@ public class ListIngestTimeRulesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned IngestTimeRuleSummaryCollection instance. */
+        /** The returned {@code IngestTimeRuleSummaryCollection} instance. */
         private com.oracle.bmc.loganalytics.model.IngestTimeRuleSummaryCollection
                 ingestTimeRuleSummaryCollection;
 
         /**
-         * The returned IngestTimeRuleSummaryCollection instance.
+         * The returned {@code IngestTimeRuleSummaryCollection} instance.
          *
          * @param ingestTimeRuleSummaryCollection the value to set
          * @return this builder

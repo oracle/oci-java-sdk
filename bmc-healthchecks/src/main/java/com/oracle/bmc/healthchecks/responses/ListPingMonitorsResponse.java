@@ -42,11 +42,11 @@ public class ListPingMonitorsResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.healthchecks.model.PingMonitorSummary instances. */
+    /** A list of {@code com.oracle.bmc.healthchecks.model.PingMonitorSummary} instances. */
     private java.util.List<com.oracle.bmc.healthchecks.model.PingMonitorSummary> items;
 
     /**
-     * A list of com.oracle.bmc.healthchecks.model.PingMonitorSummary instances.
+     * A list of {@code com.oracle.bmc.healthchecks.model.PingMonitorSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListPingMonitorsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** A list of com.oracle.bmc.healthchecks.model.PingMonitorSummary instances. */
+        /** A list of {@code com.oracle.bmc.healthchecks.model.PingMonitorSummary} instances. */
         private java.util.List<com.oracle.bmc.healthchecks.model.PingMonitorSummary> items;
 
         /**
-         * A list of com.oracle.bmc.healthchecks.model.PingMonitorSummary instances.
+         * A list of {@code com.oracle.bmc.healthchecks.model.PingMonitorSummary} instances.
          *
          * @param items the value to set
          * @return this builder

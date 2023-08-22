@@ -42,11 +42,11 @@ public class ListScheduledJobsResponse extends com.oracle.bmc.responses.BmcRespo
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.osmanagement.model.ScheduledJobSummary instances. */
+    /** A list of {@code com.oracle.bmc.osmanagement.model.ScheduledJobSummary} instances. */
     private java.util.List<com.oracle.bmc.osmanagement.model.ScheduledJobSummary> items;
 
     /**
-     * A list of com.oracle.bmc.osmanagement.model.ScheduledJobSummary instances.
+     * A list of {@code com.oracle.bmc.osmanagement.model.ScheduledJobSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListScheduledJobsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** A list of com.oracle.bmc.osmanagement.model.ScheduledJobSummary instances. */
+        /** A list of {@code com.oracle.bmc.osmanagement.model.ScheduledJobSummary} instances. */
         private java.util.List<com.oracle.bmc.osmanagement.model.ScheduledJobSummary> items;
 
         /**
-         * A list of com.oracle.bmc.osmanagement.model.ScheduledJobSummary instances.
+         * A list of {@code com.oracle.bmc.osmanagement.model.ScheduledJobSummary} instances.
          *
          * @param items the value to set
          * @return this builder

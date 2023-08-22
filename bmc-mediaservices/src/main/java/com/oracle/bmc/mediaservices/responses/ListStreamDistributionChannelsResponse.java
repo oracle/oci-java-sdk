@@ -42,12 +42,12 @@ public class ListStreamDistributionChannelsResponse extends com.oracle.bmc.respo
         return opcNextPage;
     }
 
-    /** The returned StreamDistributionChannelCollection instance. */
+    /** The returned {@code StreamDistributionChannelCollection} instance. */
     private com.oracle.bmc.mediaservices.model.StreamDistributionChannelCollection
             streamDistributionChannelCollection;
 
     /**
-     * The returned StreamDistributionChannelCollection instance.
+     * The returned {@code StreamDistributionChannelCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListStreamDistributionChannelsResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned StreamDistributionChannelCollection instance. */
+        /** The returned {@code StreamDistributionChannelCollection} instance. */
         private com.oracle.bmc.mediaservices.model.StreamDistributionChannelCollection
                 streamDistributionChannelCollection;
 
         /**
-         * The returned StreamDistributionChannelCollection instance.
+         * The returned {@code StreamDistributionChannelCollection} instance.
          *
          * @param streamDistributionChannelCollection the value to set
          * @return this builder

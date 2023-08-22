@@ -36,11 +36,11 @@ public class GetDeviceFingerprintChallengeResponse extends com.oracle.bmc.respon
         return opcRequestId;
     }
 
-    /** The returned DeviceFingerprintChallenge instance. */
+    /** The returned {@code DeviceFingerprintChallenge} instance. */
     private com.oracle.bmc.waas.model.DeviceFingerprintChallenge deviceFingerprintChallenge;
 
     /**
-     * The returned DeviceFingerprintChallenge instance.
+     * The returned {@code DeviceFingerprintChallenge} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetDeviceFingerprintChallengeResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned DeviceFingerprintChallenge instance. */
+        /** The returned {@code DeviceFingerprintChallenge} instance. */
         private com.oracle.bmc.waas.model.DeviceFingerprintChallenge deviceFingerprintChallenge;
 
         /**
-         * The returned DeviceFingerprintChallenge instance.
+         * The returned {@code DeviceFingerprintChallenge} instance.
          *
          * @param deviceFingerprintChallenge the value to set
          * @return this builder

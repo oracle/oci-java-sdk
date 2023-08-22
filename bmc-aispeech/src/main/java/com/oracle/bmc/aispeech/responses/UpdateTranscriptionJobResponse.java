@@ -36,11 +36,11 @@ public class UpdateTranscriptionJobResponse extends com.oracle.bmc.responses.Bmc
         return etag;
     }
 
-    /** The returned TranscriptionJob instance. */
+    /** The returned {@code TranscriptionJob} instance. */
     private com.oracle.bmc.aispeech.model.TranscriptionJob transcriptionJob;
 
     /**
-     * The returned TranscriptionJob instance.
+     * The returned {@code TranscriptionJob} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class UpdateTranscriptionJobResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned TranscriptionJob instance. */
+        /** The returned {@code TranscriptionJob} instance. */
         private com.oracle.bmc.aispeech.model.TranscriptionJob transcriptionJob;
 
         /**
-         * The returned TranscriptionJob instance.
+         * The returned {@code TranscriptionJob} instance.
          *
          * @param transcriptionJob the value to set
          * @return this builder

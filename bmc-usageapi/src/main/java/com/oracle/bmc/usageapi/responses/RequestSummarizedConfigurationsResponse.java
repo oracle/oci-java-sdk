@@ -24,11 +24,11 @@ public class RequestSummarizedConfigurationsResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** The returned ConfigurationAggregation instance. */
+    /** The returned {@code ConfigurationAggregation} instance. */
     private com.oracle.bmc.usageapi.model.ConfigurationAggregation configurationAggregation;
 
     /**
-     * The returned ConfigurationAggregation instance.
+     * The returned {@code ConfigurationAggregation} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class RequestSummarizedConfigurationsResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned ConfigurationAggregation instance. */
+        /** The returned {@code ConfigurationAggregation} instance. */
         private com.oracle.bmc.usageapi.model.ConfigurationAggregation configurationAggregation;
 
         /**
-         * The returned ConfigurationAggregation instance.
+         * The returned {@code ConfigurationAggregation} instance.
          *
          * @param configurationAggregation the value to set
          * @return this builder

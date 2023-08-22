@@ -36,11 +36,11 @@ public class GetExternalDbNodeResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned ExternalDbNode instance. */
+    /** The returned {@code ExternalDbNode} instance. */
     private com.oracle.bmc.databasemanagement.model.ExternalDbNode externalDbNode;
 
     /**
-     * The returned ExternalDbNode instance.
+     * The returned {@code ExternalDbNode} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetExternalDbNodeResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned ExternalDbNode instance. */
+        /** The returned {@code ExternalDbNode} instance. */
         private com.oracle.bmc.databasemanagement.model.ExternalDbNode externalDbNode;
 
         /**
-         * The returned ExternalDbNode instance.
+         * The returned {@code ExternalDbNode} instance.
          *
          * @param externalDbNode the value to set
          * @return this builder

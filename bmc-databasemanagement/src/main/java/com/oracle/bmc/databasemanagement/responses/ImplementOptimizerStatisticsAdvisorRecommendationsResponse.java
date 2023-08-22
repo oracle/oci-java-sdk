@@ -25,11 +25,11 @@ public class ImplementOptimizerStatisticsAdvisorRecommendationsResponse
         return opcRequestId;
     }
 
-    /** The returned Job instance. */
+    /** The returned {@code Job} instance. */
     private com.oracle.bmc.databasemanagement.model.Job job;
 
     /**
-     * The returned Job instance.
+     * The returned {@code Job} instance.
      *
      * @return the value
      */
@@ -85,11 +85,11 @@ public class ImplementOptimizerStatisticsAdvisorRecommendationsResponse
             return this;
         }
 
-        /** The returned Job instance. */
+        /** The returned {@code Job} instance. */
         private com.oracle.bmc.databasemanagement.model.Job job;
 
         /**
-         * The returned Job instance.
+         * The returned {@code Job} instance.
          *
          * @param job the value to set
          * @return this builder

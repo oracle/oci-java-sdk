@@ -36,11 +36,11 @@ public class UpdatePrivateIpResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned PrivateIp instance. */
+    /** The returned {@code PrivateIp} instance. */
     private com.oracle.bmc.core.model.PrivateIp privateIp;
 
     /**
-     * The returned PrivateIp instance.
+     * The returned {@code PrivateIp} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdatePrivateIpResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned PrivateIp instance. */
+        /** The returned {@code PrivateIp} instance. */
         private com.oracle.bmc.core.model.PrivateIp privateIp;
 
         /**
-         * The returned PrivateIp instance.
+         * The returned {@code PrivateIp} instance.
          *
          * @param privateIp the value to set
          * @return this builder

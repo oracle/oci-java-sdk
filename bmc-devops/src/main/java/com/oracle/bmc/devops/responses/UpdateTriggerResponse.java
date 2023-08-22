@@ -64,11 +64,11 @@ public class UpdateTriggerResponse extends com.oracle.bmc.responses.BmcResponse 
         return location;
     }
 
-    /** The returned Trigger instance. */
+    /** The returned {@code Trigger} instance. */
     private com.oracle.bmc.devops.model.Trigger trigger;
 
     /**
-     * The returned Trigger instance.
+     * The returned {@code Trigger} instance.
      *
      * @return the value
      */
@@ -183,11 +183,11 @@ public class UpdateTriggerResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned Trigger instance. */
+        /** The returned {@code Trigger} instance. */
         private com.oracle.bmc.devops.model.Trigger trigger;
 
         /**
-         * The returned Trigger instance.
+         * The returned {@code Trigger} instance.
          *
          * @param trigger the value to set
          * @return this builder

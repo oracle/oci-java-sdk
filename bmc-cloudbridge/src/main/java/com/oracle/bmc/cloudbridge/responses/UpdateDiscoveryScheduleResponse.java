@@ -36,11 +36,11 @@ public class UpdateDiscoveryScheduleResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned DiscoverySchedule instance. */
+    /** The returned {@code DiscoverySchedule} instance. */
     private com.oracle.bmc.cloudbridge.model.DiscoverySchedule discoverySchedule;
 
     /**
-     * The returned DiscoverySchedule instance.
+     * The returned {@code DiscoverySchedule} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class UpdateDiscoveryScheduleResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned DiscoverySchedule instance. */
+        /** The returned {@code DiscoverySchedule} instance. */
         private com.oracle.bmc.cloudbridge.model.DiscoverySchedule discoverySchedule;
 
         /**
-         * The returned DiscoverySchedule instance.
+         * The returned {@code DiscoverySchedule} instance.
          *
          * @param discoverySchedule the value to set
          * @return this builder

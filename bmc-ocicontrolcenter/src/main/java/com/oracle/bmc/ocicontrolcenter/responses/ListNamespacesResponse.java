@@ -42,11 +42,11 @@ public class ListNamespacesResponse extends com.oracle.bmc.responses.BmcResponse
         return opcNextPage;
     }
 
-    /** The returned NamespaceCollection instance. */
+    /** The returned {@code NamespaceCollection} instance. */
     private com.oracle.bmc.ocicontrolcenter.model.NamespaceCollection namespaceCollection;
 
     /**
-     * The returned NamespaceCollection instance.
+     * The returned {@code NamespaceCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListNamespacesResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned NamespaceCollection instance. */
+        /** The returned {@code NamespaceCollection} instance. */
         private com.oracle.bmc.ocicontrolcenter.model.NamespaceCollection namespaceCollection;
 
         /**
-         * The returned NamespaceCollection instance.
+         * The returned {@code NamespaceCollection} instance.
          *
          * @param namespaceCollection the value to set
          * @return this builder

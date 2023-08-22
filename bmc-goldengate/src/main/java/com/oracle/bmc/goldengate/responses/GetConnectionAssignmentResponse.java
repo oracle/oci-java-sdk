@@ -36,11 +36,11 @@ public class GetConnectionAssignmentResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned ConnectionAssignment instance. */
+    /** The returned {@code ConnectionAssignment} instance. */
     private com.oracle.bmc.goldengate.model.ConnectionAssignment connectionAssignment;
 
     /**
-     * The returned ConnectionAssignment instance.
+     * The returned {@code ConnectionAssignment} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetConnectionAssignmentResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned ConnectionAssignment instance. */
+        /** The returned {@code ConnectionAssignment} instance. */
         private com.oracle.bmc.goldengate.model.ConnectionAssignment connectionAssignment;
 
         /**
-         * The returned ConnectionAssignment instance.
+         * The returned {@code ConnectionAssignment} instance.
          *
          * @param connectionAssignment the value to set
          * @return this builder

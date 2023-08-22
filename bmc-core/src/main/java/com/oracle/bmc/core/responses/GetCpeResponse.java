@@ -36,11 +36,11 @@ public class GetCpeResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Cpe instance. */
+    /** The returned {@code Cpe} instance. */
     private com.oracle.bmc.core.model.Cpe cpe;
 
     /**
-     * The returned Cpe instance.
+     * The returned {@code Cpe} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetCpeResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Cpe instance. */
+        /** The returned {@code Cpe} instance. */
         private com.oracle.bmc.core.model.Cpe cpe;
 
         /**
-         * The returned Cpe instance.
+         * The returned {@code Cpe} instance.
          *
          * @param cpe the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListMyAuthTokensResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /** The returned MyAuthTokens instance. */
+    /** The returned {@code MyAuthTokens} instance. */
     private com.oracle.bmc.identitydomains.model.MyAuthTokens myAuthTokens;
 
     /**
-     * The returned MyAuthTokens instance.
+     * The returned {@code MyAuthTokens} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListMyAuthTokensResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned MyAuthTokens instance. */
+        /** The returned {@code MyAuthTokens} instance. */
         private com.oracle.bmc.identitydomains.model.MyAuthTokens myAuthTokens;
 
         /**
-         * The returned MyAuthTokens instance.
+         * The returned {@code MyAuthTokens} instance.
          *
          * @param myAuthTokens the value to set
          * @return this builder

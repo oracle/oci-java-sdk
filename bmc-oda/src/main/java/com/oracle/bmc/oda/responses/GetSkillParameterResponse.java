@@ -40,11 +40,11 @@ public class GetSkillParameterResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned SkillParameter instance. */
+    /** The returned {@code SkillParameter} instance. */
     private com.oracle.bmc.oda.model.SkillParameter skillParameter;
 
     /**
-     * The returned SkillParameter instance.
+     * The returned {@code SkillParameter} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetSkillParameterResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned SkillParameter instance. */
+        /** The returned {@code SkillParameter} instance. */
         private com.oracle.bmc.oda.model.SkillParameter skillParameter;
 
         /**
-         * The returned SkillParameter instance.
+         * The returned {@code SkillParameter} instance.
          *
          * @param skillParameter the value to set
          * @return this builder

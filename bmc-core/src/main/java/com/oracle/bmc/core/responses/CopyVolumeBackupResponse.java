@@ -80,11 +80,11 @@ public class CopyVolumeBackupResponse extends com.oracle.bmc.responses.BmcRespon
         return contentLocation;
     }
 
-    /** The returned VolumeBackup instance. */
+    /** The returned {@code VolumeBackup} instance. */
     private com.oracle.bmc.core.model.VolumeBackup volumeBackup;
 
     /**
-     * The returned VolumeBackup instance.
+     * The returned {@code VolumeBackup} instance.
      *
      * @return the value
      */
@@ -220,11 +220,11 @@ public class CopyVolumeBackupResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned VolumeBackup instance. */
+        /** The returned {@code VolumeBackup} instance. */
         private com.oracle.bmc.core.model.VolumeBackup volumeBackup;
 
         /**
-         * The returned VolumeBackup instance.
+         * The returned {@code VolumeBackup} instance.
          *
          * @param volumeBackup the value to set
          * @return this builder

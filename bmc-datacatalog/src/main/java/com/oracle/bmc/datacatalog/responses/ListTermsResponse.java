@@ -42,11 +42,11 @@ public class ListTermsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned TermCollection instance. */
+    /** The returned {@code TermCollection} instance. */
     private com.oracle.bmc.datacatalog.model.TermCollection termCollection;
 
     /**
-     * The returned TermCollection instance.
+     * The returned {@code TermCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListTermsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned TermCollection instance. */
+        /** The returned {@code TermCollection} instance. */
         private com.oracle.bmc.datacatalog.model.TermCollection termCollection;
 
         /**
-         * The returned TermCollection instance.
+         * The returned {@code TermCollection} instance.
          *
          * @param termCollection the value to set
          * @return this builder

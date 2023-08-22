@@ -55,12 +55,12 @@ public class ListOdaPrivateEndpointAttachmentsResponse
         return opcTotalItems;
     }
 
-    /** The returned OdaPrivateEndpointAttachmentCollection instance. */
+    /** The returned {@code OdaPrivateEndpointAttachmentCollection} instance. */
     private com.oracle.bmc.oda.model.OdaPrivateEndpointAttachmentCollection
             odaPrivateEndpointAttachmentCollection;
 
     /**
-     * The returned OdaPrivateEndpointAttachmentCollection instance.
+     * The returned {@code OdaPrivateEndpointAttachmentCollection} instance.
      *
      * @return the value
      */
@@ -163,12 +163,12 @@ public class ListOdaPrivateEndpointAttachmentsResponse
             return this;
         }
 
-        /** The returned OdaPrivateEndpointAttachmentCollection instance. */
+        /** The returned {@code OdaPrivateEndpointAttachmentCollection} instance. */
         private com.oracle.bmc.oda.model.OdaPrivateEndpointAttachmentCollection
                 odaPrivateEndpointAttachmentCollection;
 
         /**
-         * The returned OdaPrivateEndpointAttachmentCollection instance.
+         * The returned {@code OdaPrivateEndpointAttachmentCollection} instance.
          *
          * @param odaPrivateEndpointAttachmentCollection the value to set
          * @return this builder

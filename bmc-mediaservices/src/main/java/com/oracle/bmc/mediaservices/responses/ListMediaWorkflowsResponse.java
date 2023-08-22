@@ -42,11 +42,11 @@ public class ListMediaWorkflowsResponse extends com.oracle.bmc.responses.BmcResp
         return opcNextPage;
     }
 
-    /** The returned MediaWorkflowCollection instance. */
+    /** The returned {@code MediaWorkflowCollection} instance. */
     private com.oracle.bmc.mediaservices.model.MediaWorkflowCollection mediaWorkflowCollection;
 
     /**
-     * The returned MediaWorkflowCollection instance.
+     * The returned {@code MediaWorkflowCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListMediaWorkflowsResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned MediaWorkflowCollection instance. */
+        /** The returned {@code MediaWorkflowCollection} instance. */
         private com.oracle.bmc.mediaservices.model.MediaWorkflowCollection mediaWorkflowCollection;
 
         /**
-         * The returned MediaWorkflowCollection instance.
+         * The returned {@code MediaWorkflowCollection} instance.
          *
          * @param mediaWorkflowCollection the value to set
          * @return this builder

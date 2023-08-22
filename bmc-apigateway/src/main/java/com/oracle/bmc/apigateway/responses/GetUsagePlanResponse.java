@@ -36,11 +36,11 @@ public class GetUsagePlanResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned UsagePlan instance. */
+    /** The returned {@code UsagePlan} instance. */
     private com.oracle.bmc.apigateway.model.UsagePlan usagePlan;
 
     /**
-     * The returned UsagePlan instance.
+     * The returned {@code UsagePlan} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetUsagePlanResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned UsagePlan instance. */
+        /** The returned {@code UsagePlan} instance. */
         private com.oracle.bmc.apigateway.model.UsagePlan usagePlan;
 
         /**
-         * The returned UsagePlan instance.
+         * The returned {@code UsagePlan} instance.
          *
          * @param usagePlan the value to set
          * @return this builder

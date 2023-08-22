@@ -36,11 +36,11 @@ public class GetRoverClusterCertificateResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    /** The returned RoverClusterCertificate instance. */
+    /** The returned {@code RoverClusterCertificate} instance. */
     private com.oracle.bmc.rover.model.RoverClusterCertificate roverClusterCertificate;
 
     /**
-     * The returned RoverClusterCertificate instance.
+     * The returned {@code RoverClusterCertificate} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetRoverClusterCertificateResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned RoverClusterCertificate instance. */
+        /** The returned {@code RoverClusterCertificate} instance. */
         private com.oracle.bmc.rover.model.RoverClusterCertificate roverClusterCertificate;
 
         /**
-         * The returned RoverClusterCertificate instance.
+         * The returned {@code RoverClusterCertificate} instance.
          *
          * @param roverClusterCertificate the value to set
          * @return this builder

@@ -44,11 +44,11 @@ public class GetRoutingPolicyResponse extends com.oracle.bmc.responses.BmcRespon
         return eTag;
     }
 
-    /** The returned RoutingPolicy instance. */
+    /** The returned {@code RoutingPolicy} instance. */
     private com.oracle.bmc.loadbalancer.model.RoutingPolicy routingPolicy;
 
     /**
-     * The returned RoutingPolicy instance.
+     * The returned {@code RoutingPolicy} instance.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class GetRoutingPolicyResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned RoutingPolicy instance. */
+        /** The returned {@code RoutingPolicy} instance. */
         private com.oracle.bmc.loadbalancer.model.RoutingPolicy routingPolicy;
 
         /**
-         * The returned RoutingPolicy instance.
+         * The returned {@code RoutingPolicy} instance.
          *
          * @param routingPolicy the value to set
          * @return this builder

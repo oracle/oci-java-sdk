@@ -36,11 +36,11 @@ public class CreateIngestTimeRuleResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned IngestTimeRule instance. */
+    /** The returned {@code IngestTimeRule} instance. */
     private com.oracle.bmc.loganalytics.model.IngestTimeRule ingestTimeRule;
 
     /**
-     * The returned IngestTimeRule instance.
+     * The returned {@code IngestTimeRule} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class CreateIngestTimeRuleResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned IngestTimeRule instance. */
+        /** The returned {@code IngestTimeRule} instance. */
         private com.oracle.bmc.loganalytics.model.IngestTimeRule ingestTimeRule;
 
         /**
-         * The returned IngestTimeRule instance.
+         * The returned {@code IngestTimeRule} instance.
          *
          * @param ingestTimeRule the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class SummarizeAddmDbSqlStatementsResponse extends com.oracle.bmc.respons
         return opcNextPage;
     }
 
-    /** The returned AddmDbSqlStatementCollection instance. */
+    /** The returned {@code AddmDbSqlStatementCollection} instance. */
     private com.oracle.bmc.opsi.model.AddmDbSqlStatementCollection addmDbSqlStatementCollection;
 
     /**
-     * The returned AddmDbSqlStatementCollection instance.
+     * The returned {@code AddmDbSqlStatementCollection} instance.
      *
      * @return the value
      */
@@ -131,11 +131,11 @@ public class SummarizeAddmDbSqlStatementsResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned AddmDbSqlStatementCollection instance. */
+        /** The returned {@code AddmDbSqlStatementCollection} instance. */
         private com.oracle.bmc.opsi.model.AddmDbSqlStatementCollection addmDbSqlStatementCollection;
 
         /**
-         * The returned AddmDbSqlStatementCollection instance.
+         * The returned {@code AddmDbSqlStatementCollection} instance.
          *
          * @param addmDbSqlStatementCollection the value to set
          * @return this builder

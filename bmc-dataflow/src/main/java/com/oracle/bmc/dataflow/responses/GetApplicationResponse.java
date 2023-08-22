@@ -40,11 +40,11 @@ public class GetApplicationResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned Application instance. */
+    /** The returned {@code Application} instance. */
     private com.oracle.bmc.dataflow.model.Application application;
 
     /**
-     * The returned Application instance.
+     * The returned {@code Application} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetApplicationResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned Application instance. */
+        /** The returned {@code Application} instance. */
         private com.oracle.bmc.dataflow.model.Application application;
 
         /**
-         * The returned Application instance.
+         * The returned {@code Application} instance.
          *
          * @param application the value to set
          * @return this builder

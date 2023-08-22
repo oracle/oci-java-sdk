@@ -36,11 +36,11 @@ public class GetSubscriptionResponse extends com.oracle.bmc.responses.BmcRespons
         return etag;
     }
 
-    /** The returned Subscription instance. */
+    /** The returned {@code Subscription} instance. */
     private com.oracle.bmc.ons.model.Subscription subscription;
 
     /**
-     * The returned Subscription instance.
+     * The returned {@code Subscription} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetSubscriptionResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned Subscription instance. */
+        /** The returned {@code Subscription} instance. */
         private com.oracle.bmc.ons.model.Subscription subscription;
 
         /**
-         * The returned Subscription instance.
+         * The returned {@code Subscription} instance.
          *
          * @param subscription the value to set
          * @return this builder

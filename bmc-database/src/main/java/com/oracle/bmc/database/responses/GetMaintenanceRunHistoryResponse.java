@@ -36,11 +36,11 @@ public class GetMaintenanceRunHistoryResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** The returned MaintenanceRunHistory instance. */
+    /** The returned {@code MaintenanceRunHistory} instance. */
     private com.oracle.bmc.database.model.MaintenanceRunHistory maintenanceRunHistory;
 
     /**
-     * The returned MaintenanceRunHistory instance.
+     * The returned {@code MaintenanceRunHistory} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetMaintenanceRunHistoryResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned MaintenanceRunHistory instance. */
+        /** The returned {@code MaintenanceRunHistory} instance. */
         private com.oracle.bmc.database.model.MaintenanceRunHistory maintenanceRunHistory;
 
         /**
-         * The returned MaintenanceRunHistory instance.
+         * The returned {@code MaintenanceRunHistory} instance.
          *
          * @param maintenanceRunHistory the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class CreateMyOAuth2ClientCredentialResponse extends com.oracle.bmc.respo
         return etag;
     }
 
-    /** The returned MyOAuth2ClientCredential instance. */
+    /** The returned {@code MyOAuth2ClientCredential} instance. */
     private com.oracle.bmc.identitydomains.model.MyOAuth2ClientCredential myOAuth2ClientCredential;
 
     /**
-     * The returned MyOAuth2ClientCredential instance.
+     * The returned {@code MyOAuth2ClientCredential} instance.
      *
      * @return the value
      */
@@ -120,12 +120,12 @@ public class CreateMyOAuth2ClientCredentialResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned MyOAuth2ClientCredential instance. */
+        /** The returned {@code MyOAuth2ClientCredential} instance. */
         private com.oracle.bmc.identitydomains.model.MyOAuth2ClientCredential
                 myOAuth2ClientCredential;
 
         /**
-         * The returned MyOAuth2ClientCredential instance.
+         * The returned {@code MyOAuth2ClientCredential} instance.
          *
          * @param myOAuth2ClientCredential the value to set
          * @return this builder

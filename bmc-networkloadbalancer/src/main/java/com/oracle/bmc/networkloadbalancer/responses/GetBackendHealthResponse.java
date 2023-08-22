@@ -24,11 +24,11 @@ public class GetBackendHealthResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned BackendHealth instance. */
+    /** The returned {@code BackendHealth} instance. */
     private com.oracle.bmc.networkloadbalancer.model.BackendHealth backendHealth;
 
     /**
-     * The returned BackendHealth instance.
+     * The returned {@code BackendHealth} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetBackendHealthResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned BackendHealth instance. */
+        /** The returned {@code BackendHealth} instance. */
         private com.oracle.bmc.networkloadbalancer.model.BackendHealth backendHealth;
 
         /**
-         * The returned BackendHealth instance.
+         * The returned {@code BackendHealth} instance.
          *
          * @param backendHealth the value to set
          * @return this builder

@@ -24,11 +24,11 @@ public class GetIncidentResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Incident instance. */
+    /** The returned {@code Incident} instance. */
     private com.oracle.bmc.cims.model.Incident incident;
 
     /**
-     * The returned Incident instance.
+     * The returned {@code Incident} instance.
      *
      * @return the value
      */
@@ -83,11 +83,11 @@ public class GetIncidentResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Incident instance. */
+        /** The returned {@code Incident} instance. */
         private com.oracle.bmc.cims.model.Incident incident;
 
         /**
-         * The returned Incident instance.
+         * The returned {@code Incident} instance.
          *
          * @param incident the value to set
          * @return this builder

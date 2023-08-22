@@ -37,12 +37,12 @@ public class GetIPSecConnectionTunnelSharedSecretResponse
         return opcRequestId;
     }
 
-    /** The returned IPSecConnectionTunnelSharedSecret instance. */
+    /** The returned {@code IPSecConnectionTunnelSharedSecret} instance. */
     private com.oracle.bmc.core.model.IPSecConnectionTunnelSharedSecret
             iPSecConnectionTunnelSharedSecret;
 
     /**
-     * The returned IPSecConnectionTunnelSharedSecret instance.
+     * The returned {@code IPSecConnectionTunnelSharedSecret} instance.
      *
      * @return the value
      */
@@ -122,12 +122,12 @@ public class GetIPSecConnectionTunnelSharedSecretResponse
             return this;
         }
 
-        /** The returned IPSecConnectionTunnelSharedSecret instance. */
+        /** The returned {@code IPSecConnectionTunnelSharedSecret} instance. */
         private com.oracle.bmc.core.model.IPSecConnectionTunnelSharedSecret
                 iPSecConnectionTunnelSharedSecret;
 
         /**
-         * The returned IPSecConnectionTunnelSharedSecret instance.
+         * The returned {@code IPSecConnectionTunnelSharedSecret} instance.
          *
          * @param iPSecConnectionTunnelSharedSecret the value to set
          * @return this builder

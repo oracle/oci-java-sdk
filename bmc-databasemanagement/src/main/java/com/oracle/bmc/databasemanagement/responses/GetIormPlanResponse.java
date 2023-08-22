@@ -24,11 +24,11 @@ public class GetIormPlanResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned IormPlan instance. */
+    /** The returned {@code IormPlan} instance. */
     private com.oracle.bmc.databasemanagement.model.IormPlan iormPlan;
 
     /**
-     * The returned IormPlan instance.
+     * The returned {@code IormPlan} instance.
      *
      * @return the value
      */
@@ -83,11 +83,11 @@ public class GetIormPlanResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned IormPlan instance. */
+        /** The returned {@code IormPlan} instance. */
         private com.oracle.bmc.databasemanagement.model.IormPlan iormPlan;
 
         /**
-         * The returned IormPlan instance.
+         * The returned {@code IormPlan} instance.
          *
          * @param iormPlan the value to set
          * @return this builder

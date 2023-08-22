@@ -42,12 +42,12 @@ public class ListPrivateApplicationPackagesResponse extends com.oracle.bmc.respo
         return opcNextPage;
     }
 
-    /** The returned PrivateApplicationPackageCollection instance. */
+    /** The returned {@code PrivateApplicationPackageCollection} instance. */
     private com.oracle.bmc.servicecatalog.model.PrivateApplicationPackageCollection
             privateApplicationPackageCollection;
 
     /**
-     * The returned PrivateApplicationPackageCollection instance.
+     * The returned {@code PrivateApplicationPackageCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListPrivateApplicationPackagesResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned PrivateApplicationPackageCollection instance. */
+        /** The returned {@code PrivateApplicationPackageCollection} instance. */
         private com.oracle.bmc.servicecatalog.model.PrivateApplicationPackageCollection
                 privateApplicationPackageCollection;
 
         /**
-         * The returned PrivateApplicationPackageCollection instance.
+         * The returned {@code PrivateApplicationPackageCollection} instance.
          *
          * @param privateApplicationPackageCollection the value to set
          * @return this builder

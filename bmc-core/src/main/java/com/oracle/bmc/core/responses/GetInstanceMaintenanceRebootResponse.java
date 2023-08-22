@@ -24,11 +24,11 @@ public class GetInstanceMaintenanceRebootResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /** The returned InstanceMaintenanceReboot instance. */
+    /** The returned {@code InstanceMaintenanceReboot} instance. */
     private com.oracle.bmc.core.model.InstanceMaintenanceReboot instanceMaintenanceReboot;
 
     /**
-     * The returned InstanceMaintenanceReboot instance.
+     * The returned {@code InstanceMaintenanceReboot} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class GetInstanceMaintenanceRebootResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned InstanceMaintenanceReboot instance. */
+        /** The returned {@code InstanceMaintenanceReboot} instance. */
         private com.oracle.bmc.core.model.InstanceMaintenanceReboot instanceMaintenanceReboot;
 
         /**
-         * The returned InstanceMaintenanceReboot instance.
+         * The returned {@code InstanceMaintenanceReboot} instance.
          *
          * @param instanceMaintenanceReboot the value to set
          * @return this builder

@@ -44,16 +44,16 @@ public class ListInstanceAgentCommandExecutionsResponse
     }
 
     /**
-     * A list of com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandExecutionSummary
-     * instances.
+     * A list of {@code
+     * com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandExecutionSummary} instances.
      */
     private java.util.List<
                     com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandExecutionSummary>
             items;
 
     /**
-     * A list of com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandExecutionSummary
-     * instances.
+     * A list of {@code
+     * com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandExecutionSummary} instances.
      *
      * @return the value
      */
@@ -143,7 +143,8 @@ public class ListInstanceAgentCommandExecutionsResponse
         }
 
         /**
-         * A list of com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandExecutionSummary
+         * A list of {@code
+         * com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandExecutionSummary}
          * instances.
          */
         private java.util.List<
@@ -152,7 +153,8 @@ public class ListInstanceAgentCommandExecutionsResponse
                 items;
 
         /**
-         * A list of com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandExecutionSummary
+         * A list of {@code
+         * com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandExecutionSummary}
          * instances.
          *
          * @param items the value to set

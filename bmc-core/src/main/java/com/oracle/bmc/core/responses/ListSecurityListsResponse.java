@@ -42,11 +42,11 @@ public class ListSecurityListsResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.SecurityList instances. */
+    /** A list of {@code com.oracle.bmc.core.model.SecurityList} instances. */
     private java.util.List<com.oracle.bmc.core.model.SecurityList> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.SecurityList instances.
+     * A list of {@code com.oracle.bmc.core.model.SecurityList} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListSecurityListsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.SecurityList instances. */
+        /** A list of {@code com.oracle.bmc.core.model.SecurityList} instances. */
         private java.util.List<com.oracle.bmc.core.model.SecurityList> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.SecurityList instances.
+         * A list of {@code com.oracle.bmc.core.model.SecurityList} instances.
          *
          * @param items the value to set
          * @return this builder

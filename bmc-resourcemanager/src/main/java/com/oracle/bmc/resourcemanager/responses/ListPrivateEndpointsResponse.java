@@ -44,12 +44,12 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** The returned PrivateEndpointCollection instance. */
+    /** The returned {@code PrivateEndpointCollection} instance. */
     private com.oracle.bmc.resourcemanager.model.PrivateEndpointCollection
             privateEndpointCollection;
 
     /**
-     * The returned PrivateEndpointCollection instance.
+     * The returned {@code PrivateEndpointCollection} instance.
      *
      * @return the value
      */
@@ -136,12 +136,12 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned PrivateEndpointCollection instance. */
+        /** The returned {@code PrivateEndpointCollection} instance. */
         private com.oracle.bmc.resourcemanager.model.PrivateEndpointCollection
                 privateEndpointCollection;
 
         /**
-         * The returned PrivateEndpointCollection instance.
+         * The returned {@code PrivateEndpointCollection} instance.
          *
          * @param privateEndpointCollection the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class CreateServiceCatalogResponse extends com.oracle.bmc.responses.BmcRe
         return etag;
     }
 
-    /** The returned ServiceCatalog instance. */
+    /** The returned {@code ServiceCatalog} instance. */
     private com.oracle.bmc.servicecatalog.model.ServiceCatalog serviceCatalog;
 
     /**
-     * The returned ServiceCatalog instance.
+     * The returned {@code ServiceCatalog} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class CreateServiceCatalogResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned ServiceCatalog instance. */
+        /** The returned {@code ServiceCatalog} instance. */
         private com.oracle.bmc.servicecatalog.model.ServiceCatalog serviceCatalog;
 
         /**
-         * The returned ServiceCatalog instance.
+         * The returned {@code ServiceCatalog} instance.
          *
          * @param serviceCatalog the value to set
          * @return this builder

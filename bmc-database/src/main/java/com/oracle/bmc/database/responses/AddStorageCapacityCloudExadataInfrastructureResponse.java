@@ -57,11 +57,11 @@ public class AddStorageCapacityCloudExadataInfrastructureResponse
         return opcRequestId;
     }
 
-    /** The returned CloudExadataInfrastructure instance. */
+    /** The returned {@code CloudExadataInfrastructure} instance. */
     private com.oracle.bmc.database.model.CloudExadataInfrastructure cloudExadataInfrastructure;
 
     /**
-     * The returned CloudExadataInfrastructure instance.
+     * The returned {@code CloudExadataInfrastructure} instance.
      *
      * @return the value
      */
@@ -165,11 +165,11 @@ public class AddStorageCapacityCloudExadataInfrastructureResponse
             return this;
         }
 
-        /** The returned CloudExadataInfrastructure instance. */
+        /** The returned {@code CloudExadataInfrastructure} instance. */
         private com.oracle.bmc.database.model.CloudExadataInfrastructure cloudExadataInfrastructure;
 
         /**
-         * The returned CloudExadataInfrastructure instance.
+         * The returned {@code CloudExadataInfrastructure} instance.
          *
          * @param cloudExadataInfrastructure the value to set
          * @return this builder

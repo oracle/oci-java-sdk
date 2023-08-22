@@ -40,11 +40,11 @@ public class GetAttributeResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Attribute instance. */
+    /** The returned {@code Attribute} instance. */
     private com.oracle.bmc.datacatalog.model.Attribute attribute;
 
     /**
-     * The returned Attribute instance.
+     * The returned {@code Attribute} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetAttributeResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Attribute instance. */
+        /** The returned {@code Attribute} instance. */
         private com.oracle.bmc.datacatalog.model.Attribute attribute;
 
         /**
-         * The returned Attribute instance.
+         * The returned {@code Attribute} instance.
          *
          * @param attribute the value to set
          * @return this builder

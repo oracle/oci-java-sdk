@@ -24,11 +24,11 @@ public class GetCommitmentResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** The returned Commitment instance. */
+    /** The returned {@code Commitment} instance. */
     private com.oracle.bmc.onesubscription.model.Commitment commitment;
 
     /**
-     * The returned Commitment instance.
+     * The returned {@code Commitment} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetCommitmentResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned Commitment instance. */
+        /** The returned {@code Commitment} instance. */
         private com.oracle.bmc.onesubscription.model.Commitment commitment;
 
         /**
-         * The returned Commitment instance.
+         * The returned {@code Commitment} instance.
          *
          * @param commitment the value to set
          * @return this builder

@@ -42,12 +42,12 @@ public class SummarizeSqlStatisticsTimeSeriesResponse extends com.oracle.bmc.res
         return opcNextPage;
     }
 
-    /** The returned SqlStatisticsTimeSeriesAggregationCollection instance. */
+    /** The returned {@code SqlStatisticsTimeSeriesAggregationCollection} instance. */
     private com.oracle.bmc.opsi.model.SqlStatisticsTimeSeriesAggregationCollection
             sqlStatisticsTimeSeriesAggregationCollection;
 
     /**
-     * The returned SqlStatisticsTimeSeriesAggregationCollection instance.
+     * The returned {@code SqlStatisticsTimeSeriesAggregationCollection} instance.
      *
      * @return the value
      */
@@ -134,12 +134,12 @@ public class SummarizeSqlStatisticsTimeSeriesResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /** The returned SqlStatisticsTimeSeriesAggregationCollection instance. */
+        /** The returned {@code SqlStatisticsTimeSeriesAggregationCollection} instance. */
         private com.oracle.bmc.opsi.model.SqlStatisticsTimeSeriesAggregationCollection
                 sqlStatisticsTimeSeriesAggregationCollection;
 
         /**
-         * The returned SqlStatisticsTimeSeriesAggregationCollection instance.
+         * The returned {@code SqlStatisticsTimeSeriesAggregationCollection} instance.
          *
          * @param sqlStatisticsTimeSeriesAggregationCollection the value to set
          * @return this builder

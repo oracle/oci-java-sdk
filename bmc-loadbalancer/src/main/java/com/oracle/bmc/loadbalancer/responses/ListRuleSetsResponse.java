@@ -44,11 +44,11 @@ public class ListRuleSetsResponse extends com.oracle.bmc.responses.BmcResponse {
         return eTag;
     }
 
-    /** A list of com.oracle.bmc.loadbalancer.model.RuleSet instances. */
+    /** A list of {@code com.oracle.bmc.loadbalancer.model.RuleSet} instances. */
     private java.util.List<com.oracle.bmc.loadbalancer.model.RuleSet> items;
 
     /**
-     * A list of com.oracle.bmc.loadbalancer.model.RuleSet instances.
+     * A list of {@code com.oracle.bmc.loadbalancer.model.RuleSet} instances.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListRuleSetsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.loadbalancer.model.RuleSet instances. */
+        /** A list of {@code com.oracle.bmc.loadbalancer.model.RuleSet} instances. */
         private java.util.List<com.oracle.bmc.loadbalancer.model.RuleSet> items;
 
         /**
-         * A list of com.oracle.bmc.loadbalancer.model.RuleSet instances.
+         * A list of {@code com.oracle.bmc.loadbalancer.model.RuleSet} instances.
          *
          * @param items the value to set
          * @return this builder

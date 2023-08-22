@@ -80,11 +80,11 @@ public class GetQueryResultResponse extends com.oracle.bmc.responses.BmcResponse
         return retryAfter;
     }
 
-    /** The returned QueryAggregation instance. */
+    /** The returned {@code QueryAggregation} instance. */
     private com.oracle.bmc.loganalytics.model.QueryAggregation queryAggregation;
 
     /**
-     * The returned QueryAggregation instance.
+     * The returned {@code QueryAggregation} instance.
      *
      * @return the value
      */
@@ -215,11 +215,11 @@ public class GetQueryResultResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned QueryAggregation instance. */
+        /** The returned {@code QueryAggregation} instance. */
         private com.oracle.bmc.loganalytics.model.QueryAggregation queryAggregation;
 
         /**
-         * The returned QueryAggregation instance.
+         * The returned {@code QueryAggregation} instance.
          *
          * @param queryAggregation the value to set
          * @return this builder

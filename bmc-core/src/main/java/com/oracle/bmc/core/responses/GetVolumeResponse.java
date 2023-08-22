@@ -36,11 +36,11 @@ public class GetVolumeResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Volume instance. */
+    /** The returned {@code Volume} instance. */
     private com.oracle.bmc.core.model.Volume volume;
 
     /**
-     * The returned Volume instance.
+     * The returned {@code Volume} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetVolumeResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Volume instance. */
+        /** The returned {@code Volume} instance. */
         private com.oracle.bmc.core.model.Volume volume;
 
         /**
-         * The returned Volume instance.
+         * The returned {@code Volume} instance.
          *
          * @param volume the value to set
          * @return this builder

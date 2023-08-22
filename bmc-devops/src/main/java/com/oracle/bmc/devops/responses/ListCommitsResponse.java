@@ -42,11 +42,11 @@ public class ListCommitsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned RepositoryCommitCollection instance. */
+    /** The returned {@code RepositoryCommitCollection} instance. */
     private com.oracle.bmc.devops.model.RepositoryCommitCollection repositoryCommitCollection;
 
     /**
-     * The returned RepositoryCommitCollection instance.
+     * The returned {@code RepositoryCommitCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListCommitsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned RepositoryCommitCollection instance. */
+        /** The returned {@code RepositoryCommitCollection} instance. */
         private com.oracle.bmc.devops.model.RepositoryCommitCollection repositoryCommitCollection;
 
         /**
-         * The returned RepositoryCommitCollection instance.
+         * The returned {@code RepositoryCommitCollection} instance.
          *
          * @param repositoryCommitCollection the value to set
          * @return this builder

@@ -42,12 +42,12 @@ public class ListExternalAsmInstancesResponse extends com.oracle.bmc.responses.B
         return opcNextPage;
     }
 
-    /** The returned ExternalAsmInstanceCollection instance. */
+    /** The returned {@code ExternalAsmInstanceCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.ExternalAsmInstanceCollection
             externalAsmInstanceCollection;
 
     /**
-     * The returned ExternalAsmInstanceCollection instance.
+     * The returned {@code ExternalAsmInstanceCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListExternalAsmInstancesResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned ExternalAsmInstanceCollection instance. */
+        /** The returned {@code ExternalAsmInstanceCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.ExternalAsmInstanceCollection
                 externalAsmInstanceCollection;
 
         /**
-         * The returned ExternalAsmInstanceCollection instance.
+         * The returned {@code ExternalAsmInstanceCollection} instance.
          *
          * @param externalAsmInstanceCollection the value to set
          * @return this builder

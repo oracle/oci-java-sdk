@@ -42,12 +42,12 @@ public class SummarizeAddmDbFindingsResponse extends com.oracle.bmc.responses.Bm
         return opcNextPage;
     }
 
-    /** The returned AddmDbFindingAggregationCollection instance. */
+    /** The returned {@code AddmDbFindingAggregationCollection} instance. */
     private com.oracle.bmc.opsi.model.AddmDbFindingAggregationCollection
             addmDbFindingAggregationCollection;
 
     /**
-     * The returned AddmDbFindingAggregationCollection instance.
+     * The returned {@code AddmDbFindingAggregationCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class SummarizeAddmDbFindingsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned AddmDbFindingAggregationCollection instance. */
+        /** The returned {@code AddmDbFindingAggregationCollection} instance. */
         private com.oracle.bmc.opsi.model.AddmDbFindingAggregationCollection
                 addmDbFindingAggregationCollection;
 
         /**
-         * The returned AddmDbFindingAggregationCollection instance.
+         * The returned {@code AddmDbFindingAggregationCollection} instance.
          *
          * @param addmDbFindingAggregationCollection the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListSecurityZonesResponse extends com.oracle.bmc.responses.BmcRespo
         return opcNextPage;
     }
 
-    /** The returned SecurityZoneCollection instance. */
+    /** The returned {@code SecurityZoneCollection} instance. */
     private com.oracle.bmc.cloudguard.model.SecurityZoneCollection securityZoneCollection;
 
     /**
-     * The returned SecurityZoneCollection instance.
+     * The returned {@code SecurityZoneCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListSecurityZonesResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned SecurityZoneCollection instance. */
+        /** The returned {@code SecurityZoneCollection} instance. */
         private com.oracle.bmc.cloudguard.model.SecurityZoneCollection securityZoneCollection;
 
         /**
-         * The returned SecurityZoneCollection instance.
+         * The returned {@code SecurityZoneCollection} instance.
          *
          * @param securityZoneCollection the value to set
          * @return this builder

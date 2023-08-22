@@ -42,11 +42,11 @@ public class ListInstanceConfigurationsResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.InstanceConfigurationSummary instances. */
+    /** A list of {@code com.oracle.bmc.core.model.InstanceConfigurationSummary} instances. */
     private java.util.List<com.oracle.bmc.core.model.InstanceConfigurationSummary> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.InstanceConfigurationSummary instances.
+     * A list of {@code com.oracle.bmc.core.model.InstanceConfigurationSummary} instances.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListInstanceConfigurationsResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.InstanceConfigurationSummary instances. */
+        /** A list of {@code com.oracle.bmc.core.model.InstanceConfigurationSummary} instances. */
         private java.util.List<com.oracle.bmc.core.model.InstanceConfigurationSummary> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.InstanceConfigurationSummary instances.
+         * A list of {@code com.oracle.bmc.core.model.InstanceConfigurationSummary} instances.
          *
          * @param items the value to set
          * @return this builder

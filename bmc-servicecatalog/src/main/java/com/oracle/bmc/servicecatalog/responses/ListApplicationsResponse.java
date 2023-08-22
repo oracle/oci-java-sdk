@@ -42,11 +42,11 @@ public class ListApplicationsResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /** The returned ApplicationCollection instance. */
+    /** The returned {@code ApplicationCollection} instance. */
     private com.oracle.bmc.servicecatalog.model.ApplicationCollection applicationCollection;
 
     /**
-     * The returned ApplicationCollection instance.
+     * The returned {@code ApplicationCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListApplicationsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned ApplicationCollection instance. */
+        /** The returned {@code ApplicationCollection} instance. */
         private com.oracle.bmc.servicecatalog.model.ApplicationCollection applicationCollection;
 
         /**
-         * The returned ApplicationCollection instance.
+         * The returned {@code ApplicationCollection} instance.
          *
          * @param applicationCollection the value to set
          * @return this builder

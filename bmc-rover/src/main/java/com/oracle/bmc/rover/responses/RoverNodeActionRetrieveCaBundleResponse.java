@@ -36,11 +36,11 @@ public class RoverNodeActionRetrieveCaBundleResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** The returned CaBundleResponse instance. */
+    /** The returned {@code CaBundleResponse} instance. */
     private com.oracle.bmc.rover.model.CaBundleResponse caBundleResponse;
 
     /**
-     * The returned CaBundleResponse instance.
+     * The returned {@code CaBundleResponse} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class RoverNodeActionRetrieveCaBundleResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned CaBundleResponse instance. */
+        /** The returned {@code CaBundleResponse} instance. */
         private com.oracle.bmc.rover.model.CaBundleResponse caBundleResponse;
 
         /**
-         * The returned CaBundleResponse instance.
+         * The returned {@code CaBundleResponse} instance.
          *
          * @param caBundleResponse the value to set
          * @return this builder

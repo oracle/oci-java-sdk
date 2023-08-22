@@ -42,11 +42,11 @@ public class ListWafBlockedRequestsResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.waas.model.WafBlockedRequest instances. */
+    /** A list of {@code com.oracle.bmc.waas.model.WafBlockedRequest} instances. */
     private java.util.List<com.oracle.bmc.waas.model.WafBlockedRequest> items;
 
     /**
-     * A list of com.oracle.bmc.waas.model.WafBlockedRequest instances.
+     * A list of {@code com.oracle.bmc.waas.model.WafBlockedRequest} instances.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListWafBlockedRequestsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** A list of com.oracle.bmc.waas.model.WafBlockedRequest instances. */
+        /** A list of {@code com.oracle.bmc.waas.model.WafBlockedRequest} instances. */
         private java.util.List<com.oracle.bmc.waas.model.WafBlockedRequest> items;
 
         /**
-         * A list of com.oracle.bmc.waas.model.WafBlockedRequest instances.
+         * A list of {@code com.oracle.bmc.waas.model.WafBlockedRequest} instances.
          *
          * @param items the value to set
          * @return this builder

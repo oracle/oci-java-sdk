@@ -72,12 +72,12 @@ public class ListDisApplicationsResponse extends com.oracle.bmc.responses.BmcRes
         return opcTotalItems;
     }
 
-    /** The returned DisApplicationSummaryCollection instance. */
+    /** The returned {@code DisApplicationSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.DisApplicationSummaryCollection
             disApplicationSummaryCollection;
 
     /**
-     * The returned DisApplicationSummaryCollection instance.
+     * The returned {@code DisApplicationSummaryCollection} instance.
      *
      * @return the value
      */
@@ -202,12 +202,12 @@ public class ListDisApplicationsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned DisApplicationSummaryCollection instance. */
+        /** The returned {@code DisApplicationSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.DisApplicationSummaryCollection
                 disApplicationSummaryCollection;
 
         /**
-         * The returned DisApplicationSummaryCollection instance.
+         * The returned {@code DisApplicationSummaryCollection} instance.
          *
          * @param disApplicationSummaryCollection the value to set
          * @return this builder

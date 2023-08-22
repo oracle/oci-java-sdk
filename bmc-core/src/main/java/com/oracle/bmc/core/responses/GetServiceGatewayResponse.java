@@ -36,11 +36,11 @@ public class GetServiceGatewayResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned ServiceGateway instance. */
+    /** The returned {@code ServiceGateway} instance. */
     private com.oracle.bmc.core.model.ServiceGateway serviceGateway;
 
     /**
-     * The returned ServiceGateway instance.
+     * The returned {@code ServiceGateway} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetServiceGatewayResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned ServiceGateway instance. */
+        /** The returned {@code ServiceGateway} instance. */
         private com.oracle.bmc.core.model.ServiceGateway serviceGateway;
 
         /**
-         * The returned ServiceGateway instance.
+         * The returned {@code ServiceGateway} instance.
          *
          * @param serviceGateway the value to set
          * @return this builder

@@ -62,12 +62,12 @@ public class ListCollectedAuditVolumesResponse extends com.oracle.bmc.responses.
         return opcPrevPage;
     }
 
-    /** The returned CollectedAuditVolumeCollection instance. */
+    /** The returned {@code CollectedAuditVolumeCollection} instance. */
     private com.oracle.bmc.datasafe.model.CollectedAuditVolumeCollection
             collectedAuditVolumeCollection;
 
     /**
-     * The returned CollectedAuditVolumeCollection instance.
+     * The returned {@code CollectedAuditVolumeCollection} instance.
      *
      * @return the value
      */
@@ -178,12 +178,12 @@ public class ListCollectedAuditVolumesResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned CollectedAuditVolumeCollection instance. */
+        /** The returned {@code CollectedAuditVolumeCollection} instance. */
         private com.oracle.bmc.datasafe.model.CollectedAuditVolumeCollection
                 collectedAuditVolumeCollection;
 
         /**
-         * The returned CollectedAuditVolumeCollection instance.
+         * The returned {@code CollectedAuditVolumeCollection} instance.
          *
          * @param collectedAuditVolumeCollection the value to set
          * @return this builder

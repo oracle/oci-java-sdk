@@ -42,11 +42,11 @@ public class ListCommitDiffsResponse extends com.oracle.bmc.responses.BmcRespons
         return opcNextPage;
     }
 
-    /** The returned DiffCollection instance. */
+    /** The returned {@code DiffCollection} instance. */
     private com.oracle.bmc.devops.model.DiffCollection diffCollection;
 
     /**
-     * The returned DiffCollection instance.
+     * The returned {@code DiffCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListCommitDiffsResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned DiffCollection instance. */
+        /** The returned {@code DiffCollection} instance. */
         private com.oracle.bmc.devops.model.DiffCollection diffCollection;
 
         /**
-         * The returned DiffCollection instance.
+         * The returned {@code DiffCollection} instance.
          *
          * @param diffCollection the value to set
          * @return this builder

@@ -40,11 +40,11 @@ public class CreateEntityTagResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned EntityTag instance. */
+    /** The returned {@code EntityTag} instance. */
     private com.oracle.bmc.datacatalog.model.EntityTag entityTag;
 
     /**
-     * The returned EntityTag instance.
+     * The returned {@code EntityTag} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class CreateEntityTagResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned EntityTag instance. */
+        /** The returned {@code EntityTag} instance. */
         private com.oracle.bmc.datacatalog.model.EntityTag entityTag;
 
         /**
-         * The returned EntityTag instance.
+         * The returned {@code EntityTag} instance.
          *
          * @param entityTag the value to set
          * @return this builder

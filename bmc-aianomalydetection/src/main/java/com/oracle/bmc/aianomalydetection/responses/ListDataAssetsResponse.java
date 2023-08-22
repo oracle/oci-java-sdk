@@ -42,11 +42,11 @@ public class ListDataAssetsResponse extends com.oracle.bmc.responses.BmcResponse
         return opcNextPage;
     }
 
-    /** The returned DataAssetCollection instance. */
+    /** The returned {@code DataAssetCollection} instance. */
     private com.oracle.bmc.aianomalydetection.model.DataAssetCollection dataAssetCollection;
 
     /**
-     * The returned DataAssetCollection instance.
+     * The returned {@code DataAssetCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListDataAssetsResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned DataAssetCollection instance. */
+        /** The returned {@code DataAssetCollection} instance. */
         private com.oracle.bmc.aianomalydetection.model.DataAssetCollection dataAssetCollection;
 
         /**
-         * The returned DataAssetCollection instance.
+         * The returned {@code DataAssetCollection} instance.
          *
          * @param dataAssetCollection the value to set
          * @return this builder

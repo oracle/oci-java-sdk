@@ -36,11 +36,11 @@ public class GetJavaMigrationAnalysisResultResponse extends com.oracle.bmc.respo
         return opcRequestId;
     }
 
-    /** The returned JavaMigrationAnalysisResult instance. */
+    /** The returned {@code JavaMigrationAnalysisResult} instance. */
     private com.oracle.bmc.jms.model.JavaMigrationAnalysisResult javaMigrationAnalysisResult;
 
     /**
-     * The returned JavaMigrationAnalysisResult instance.
+     * The returned {@code JavaMigrationAnalysisResult} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetJavaMigrationAnalysisResultResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned JavaMigrationAnalysisResult instance. */
+        /** The returned {@code JavaMigrationAnalysisResult} instance. */
         private com.oracle.bmc.jms.model.JavaMigrationAnalysisResult javaMigrationAnalysisResult;
 
         /**
-         * The returned JavaMigrationAnalysisResult instance.
+         * The returned {@code JavaMigrationAnalysisResult} instance.
          *
          * @param javaMigrationAnalysisResult the value to set
          * @return this builder

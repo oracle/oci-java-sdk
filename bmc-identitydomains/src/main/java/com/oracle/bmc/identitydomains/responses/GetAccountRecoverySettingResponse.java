@@ -24,11 +24,11 @@ public class GetAccountRecoverySettingResponse extends com.oracle.bmc.responses.
         return opcRequestId;
     }
 
-    /** The returned AccountRecoverySetting instance. */
+    /** The returned {@code AccountRecoverySetting} instance. */
     private com.oracle.bmc.identitydomains.model.AccountRecoverySetting accountRecoverySetting;
 
     /**
-     * The returned AccountRecoverySetting instance.
+     * The returned {@code AccountRecoverySetting} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class GetAccountRecoverySettingResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned AccountRecoverySetting instance. */
+        /** The returned {@code AccountRecoverySetting} instance. */
         private com.oracle.bmc.identitydomains.model.AccountRecoverySetting accountRecoverySetting;
 
         /**
-         * The returned AccountRecoverySetting instance.
+         * The returned {@code AccountRecoverySetting} instance.
          *
          * @param accountRecoverySetting the value to set
          * @return this builder

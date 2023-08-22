@@ -24,12 +24,12 @@ public class ListIndicatorCountsResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned IndicatorCountCollection instance. */
+    /** The returned {@code IndicatorCountCollection} instance. */
     private com.oracle.bmc.threatintelligence.model.IndicatorCountCollection
             indicatorCountCollection;
 
     /**
-     * The returned IndicatorCountCollection instance.
+     * The returned {@code IndicatorCountCollection} instance.
      *
      * @return the value
      */
@@ -91,12 +91,12 @@ public class ListIndicatorCountsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned IndicatorCountCollection instance. */
+        /** The returned {@code IndicatorCountCollection} instance. */
         private com.oracle.bmc.threatintelligence.model.IndicatorCountCollection
                 indicatorCountCollection;
 
         /**
-         * The returned IndicatorCountCollection instance.
+         * The returned {@code IndicatorCountCollection} instance.
          *
          * @param indicatorCountCollection the value to set
          * @return this builder

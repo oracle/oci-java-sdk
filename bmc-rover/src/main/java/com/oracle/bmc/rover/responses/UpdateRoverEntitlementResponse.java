@@ -36,11 +36,11 @@ public class UpdateRoverEntitlementResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned RoverEntitlement instance. */
+    /** The returned {@code RoverEntitlement} instance. */
     private com.oracle.bmc.rover.model.RoverEntitlement roverEntitlement;
 
     /**
-     * The returned RoverEntitlement instance.
+     * The returned {@code RoverEntitlement} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class UpdateRoverEntitlementResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned RoverEntitlement instance. */
+        /** The returned {@code RoverEntitlement} instance. */
         private com.oracle.bmc.rover.model.RoverEntitlement roverEntitlement;
 
         /**
-         * The returned RoverEntitlement instance.
+         * The returned {@code RoverEntitlement} instance.
          *
          * @param roverEntitlement the value to set
          * @return this builder

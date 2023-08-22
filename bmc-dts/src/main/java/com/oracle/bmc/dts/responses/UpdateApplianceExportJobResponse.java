@@ -24,11 +24,11 @@ public class UpdateApplianceExportJobResponse extends com.oracle.bmc.responses.B
         return etag;
     }
 
-    /** The returned ApplianceExportJob instance. */
+    /** The returned {@code ApplianceExportJob} instance. */
     private com.oracle.bmc.dts.model.ApplianceExportJob applianceExportJob;
 
     /**
-     * The returned ApplianceExportJob instance.
+     * The returned {@code ApplianceExportJob} instance.
      *
      * @return the value
      */
@@ -98,11 +98,11 @@ public class UpdateApplianceExportJobResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned ApplianceExportJob instance. */
+        /** The returned {@code ApplianceExportJob} instance. */
         private com.oracle.bmc.dts.model.ApplianceExportJob applianceExportJob;
 
         /**
-         * The returned ApplianceExportJob instance.
+         * The returned {@code ApplianceExportJob} instance.
          *
          * @param applianceExportJob the value to set
          * @return this builder

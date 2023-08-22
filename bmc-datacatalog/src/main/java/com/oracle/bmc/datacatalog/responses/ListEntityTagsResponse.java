@@ -42,11 +42,11 @@ public class ListEntityTagsResponse extends com.oracle.bmc.responses.BmcResponse
         return opcNextPage;
     }
 
-    /** The returned EntityTagCollection instance. */
+    /** The returned {@code EntityTagCollection} instance. */
     private com.oracle.bmc.datacatalog.model.EntityTagCollection entityTagCollection;
 
     /**
-     * The returned EntityTagCollection instance.
+     * The returned {@code EntityTagCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListEntityTagsResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned EntityTagCollection instance. */
+        /** The returned {@code EntityTagCollection} instance. */
         private com.oracle.bmc.datacatalog.model.EntityTagCollection entityTagCollection;
 
         /**
-         * The returned EntityTagCollection instance.
+         * The returned {@code EntityTagCollection} instance.
          *
          * @param entityTagCollection the value to set
          * @return this builder

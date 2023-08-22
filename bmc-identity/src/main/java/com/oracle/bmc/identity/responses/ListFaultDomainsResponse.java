@@ -24,11 +24,11 @@ public class ListFaultDomainsResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.identity.model.FaultDomain instances. */
+    /** A list of {@code com.oracle.bmc.identity.model.FaultDomain} instances. */
     private java.util.List<com.oracle.bmc.identity.model.FaultDomain> items;
 
     /**
-     * A list of com.oracle.bmc.identity.model.FaultDomain instances.
+     * A list of {@code com.oracle.bmc.identity.model.FaultDomain} instances.
      *
      * @return the value
      */
@@ -83,11 +83,11 @@ public class ListFaultDomainsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** A list of com.oracle.bmc.identity.model.FaultDomain instances. */
+        /** A list of {@code com.oracle.bmc.identity.model.FaultDomain} instances. */
         private java.util.List<com.oracle.bmc.identity.model.FaultDomain> items;
 
         /**
-         * A list of com.oracle.bmc.identity.model.FaultDomain instances.
+         * A list of {@code com.oracle.bmc.identity.model.FaultDomain} instances.
          *
          * @param items the value to set
          * @return this builder

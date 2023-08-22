@@ -40,11 +40,11 @@ public class GetAuthenticationProviderResponse extends com.oracle.bmc.responses.
         return opcRequestId;
     }
 
-    /** The returned AuthenticationProvider instance. */
+    /** The returned {@code AuthenticationProvider} instance. */
     private com.oracle.bmc.oda.model.AuthenticationProvider authenticationProvider;
 
     /**
-     * The returned AuthenticationProvider instance.
+     * The returned {@code AuthenticationProvider} instance.
      *
      * @return the value
      */
@@ -126,11 +126,11 @@ public class GetAuthenticationProviderResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned AuthenticationProvider instance. */
+        /** The returned {@code AuthenticationProvider} instance. */
         private com.oracle.bmc.oda.model.AuthenticationProvider authenticationProvider;
 
         /**
-         * The returned AuthenticationProvider instance.
+         * The returned {@code AuthenticationProvider} instance.
          *
          * @param authenticationProvider the value to set
          * @return this builder

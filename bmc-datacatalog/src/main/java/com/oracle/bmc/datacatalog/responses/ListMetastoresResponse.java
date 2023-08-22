@@ -42,11 +42,11 @@ public class ListMetastoresResponse extends com.oracle.bmc.responses.BmcResponse
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.datacatalog.model.MetastoreSummary instances. */
+    /** A list of {@code com.oracle.bmc.datacatalog.model.MetastoreSummary} instances. */
     private java.util.List<com.oracle.bmc.datacatalog.model.MetastoreSummary> items;
 
     /**
-     * A list of com.oracle.bmc.datacatalog.model.MetastoreSummary instances.
+     * A list of {@code com.oracle.bmc.datacatalog.model.MetastoreSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListMetastoresResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** A list of com.oracle.bmc.datacatalog.model.MetastoreSummary instances. */
+        /** A list of {@code com.oracle.bmc.datacatalog.model.MetastoreSummary} instances. */
         private java.util.List<com.oracle.bmc.datacatalog.model.MetastoreSummary> items;
 
         /**
-         * A list of com.oracle.bmc.datacatalog.model.MetastoreSummary instances.
+         * A list of {@code com.oracle.bmc.datacatalog.model.MetastoreSummary} instances.
          *
          * @param items the value to set
          * @return this builder

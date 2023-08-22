@@ -44,11 +44,13 @@ public class ListCloudAutonomousVmClustersResponse extends com.oracle.bmc.respon
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.database.model.CloudAutonomousVmClusterSummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.database.model.CloudAutonomousVmClusterSummary} instances.
+     */
     private java.util.List<com.oracle.bmc.database.model.CloudAutonomousVmClusterSummary> items;
 
     /**
-     * A list of com.oracle.bmc.database.model.CloudAutonomousVmClusterSummary instances.
+     * A list of {@code com.oracle.bmc.database.model.CloudAutonomousVmClusterSummary} instances.
      *
      * @return the value
      */
@@ -137,11 +139,15 @@ public class ListCloudAutonomousVmClustersResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** A list of com.oracle.bmc.database.model.CloudAutonomousVmClusterSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.database.model.CloudAutonomousVmClusterSummary}
+         * instances.
+         */
         private java.util.List<com.oracle.bmc.database.model.CloudAutonomousVmClusterSummary> items;
 
         /**
-         * A list of com.oracle.bmc.database.model.CloudAutonomousVmClusterSummary instances.
+         * A list of {@code com.oracle.bmc.database.model.CloudAutonomousVmClusterSummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

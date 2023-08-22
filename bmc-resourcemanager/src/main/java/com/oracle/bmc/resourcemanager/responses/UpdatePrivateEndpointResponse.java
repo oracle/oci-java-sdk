@@ -32,11 +32,11 @@ public class UpdatePrivateEndpointResponse extends com.oracle.bmc.responses.BmcR
         return etag;
     }
 
-    /** The returned PrivateEndpoint instance. */
+    /** The returned {@code PrivateEndpoint} instance. */
     private com.oracle.bmc.resourcemanager.model.PrivateEndpoint privateEndpoint;
 
     /**
-     * The returned PrivateEndpoint instance.
+     * The returned {@code PrivateEndpoint} instance.
      *
      * @return the value
      */
@@ -109,11 +109,11 @@ public class UpdatePrivateEndpointResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned PrivateEndpoint instance. */
+        /** The returned {@code PrivateEndpoint} instance. */
         private com.oracle.bmc.resourcemanager.model.PrivateEndpoint privateEndpoint;
 
         /**
-         * The returned PrivateEndpoint instance.
+         * The returned {@code PrivateEndpoint} instance.
          *
          * @param privateEndpoint the value to set
          * @return this builder

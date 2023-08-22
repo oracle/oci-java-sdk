@@ -24,11 +24,11 @@ public class ParseQueryResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned ParseQueryOutput instance. */
+    /** The returned {@code ParseQueryOutput} instance. */
     private com.oracle.bmc.loganalytics.model.ParseQueryOutput parseQueryOutput;
 
     /**
-     * The returned ParseQueryOutput instance.
+     * The returned {@code ParseQueryOutput} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class ParseQueryResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned ParseQueryOutput instance. */
+        /** The returned {@code ParseQueryOutput} instance. */
         private com.oracle.bmc.loganalytics.model.ParseQueryOutput parseQueryOutput;
 
         /**
-         * The returned ParseQueryOutput instance.
+         * The returned {@code ParseQueryOutput} instance.
          *
          * @param parseQueryOutput the value to set
          * @return this builder

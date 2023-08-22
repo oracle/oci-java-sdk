@@ -46,11 +46,11 @@ public class ListExportsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.filestorage.model.ExportSummary instances. */
+    /** A list of {@code com.oracle.bmc.filestorage.model.ExportSummary} instances. */
     private java.util.List<com.oracle.bmc.filestorage.model.ExportSummary> items;
 
     /**
-     * A list of com.oracle.bmc.filestorage.model.ExportSummary instances.
+     * A list of {@code com.oracle.bmc.filestorage.model.ExportSummary} instances.
      *
      * @return the value
      */
@@ -137,11 +137,11 @@ public class ListExportsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.filestorage.model.ExportSummary instances. */
+        /** A list of {@code com.oracle.bmc.filestorage.model.ExportSummary} instances. */
         private java.util.List<com.oracle.bmc.filestorage.model.ExportSummary> items;
 
         /**
-         * A list of com.oracle.bmc.filestorage.model.ExportSummary instances.
+         * A list of {@code com.oracle.bmc.filestorage.model.ExportSummary} instances.
          *
          * @param items the value to set
          * @return this builder

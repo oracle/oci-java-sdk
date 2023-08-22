@@ -64,11 +64,11 @@ public class CreateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
         return opcWorkRequestId;
     }
 
-    /** The returned Configuration instance. */
+    /** The returned {@code Configuration} instance. */
     private com.oracle.bmc.mysql.model.Configuration configuration;
 
     /**
-     * The returned Configuration instance.
+     * The returned {@code Configuration} instance.
      *
      * @return the value
      */
@@ -183,11 +183,11 @@ public class CreateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned Configuration instance. */
+        /** The returned {@code Configuration} instance. */
         private com.oracle.bmc.mysql.model.Configuration configuration;
 
         /**
-         * The returned Configuration instance.
+         * The returned {@code Configuration} instance.
          *
          * @param configuration the value to set
          * @return this builder

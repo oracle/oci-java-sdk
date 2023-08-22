@@ -42,11 +42,11 @@ public class ListProtectionCapabilitiesResponse extends com.oracle.bmc.responses
         return opcNextPage;
     }
 
-    /** The returned ProtectionCapabilityCollection instance. */
+    /** The returned {@code ProtectionCapabilityCollection} instance. */
     private com.oracle.bmc.waf.model.ProtectionCapabilityCollection protectionCapabilityCollection;
 
     /**
-     * The returned ProtectionCapabilityCollection instance.
+     * The returned {@code ProtectionCapabilityCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListProtectionCapabilitiesResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned ProtectionCapabilityCollection instance. */
+        /** The returned {@code ProtectionCapabilityCollection} instance. */
         private com.oracle.bmc.waf.model.ProtectionCapabilityCollection
                 protectionCapabilityCollection;
 
         /**
-         * The returned ProtectionCapabilityCollection instance.
+         * The returned {@code ProtectionCapabilityCollection} instance.
          *
          * @param protectionCapabilityCollection the value to set
          * @return this builder

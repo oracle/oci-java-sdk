@@ -36,11 +36,11 @@ public class UpdateAutoScalingConfigurationResponse extends com.oracle.bmc.respo
         return opcRequestId;
     }
 
-    /** The returned AutoScalingConfiguration instance. */
+    /** The returned {@code AutoScalingConfiguration} instance. */
     private com.oracle.bmc.autoscaling.model.AutoScalingConfiguration autoScalingConfiguration;
 
     /**
-     * The returned AutoScalingConfiguration instance.
+     * The returned {@code AutoScalingConfiguration} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class UpdateAutoScalingConfigurationResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned AutoScalingConfiguration instance. */
+        /** The returned {@code AutoScalingConfiguration} instance. */
         private com.oracle.bmc.autoscaling.model.AutoScalingConfiguration autoScalingConfiguration;
 
         /**
-         * The returned AutoScalingConfiguration instance.
+         * The returned {@code AutoScalingConfiguration} instance.
          *
          * @param autoScalingConfiguration the value to set
          * @return this builder

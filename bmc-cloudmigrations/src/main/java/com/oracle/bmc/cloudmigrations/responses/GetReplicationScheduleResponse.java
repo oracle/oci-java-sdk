@@ -36,11 +36,11 @@ public class GetReplicationScheduleResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned ReplicationSchedule instance. */
+    /** The returned {@code ReplicationSchedule} instance. */
     private com.oracle.bmc.cloudmigrations.model.ReplicationSchedule replicationSchedule;
 
     /**
-     * The returned ReplicationSchedule instance.
+     * The returned {@code ReplicationSchedule} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetReplicationScheduleResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned ReplicationSchedule instance. */
+        /** The returned {@code ReplicationSchedule} instance. */
         private com.oracle.bmc.cloudmigrations.model.ReplicationSchedule replicationSchedule;
 
         /**
-         * The returned ReplicationSchedule instance.
+         * The returned {@code ReplicationSchedule} instance.
          *
          * @param replicationSchedule the value to set
          * @return this builder

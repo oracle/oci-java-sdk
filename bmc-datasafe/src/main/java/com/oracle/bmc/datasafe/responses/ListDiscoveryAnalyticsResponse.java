@@ -62,11 +62,11 @@ public class ListDiscoveryAnalyticsResponse extends com.oracle.bmc.responses.Bmc
         return opcPrevPage;
     }
 
-    /** The returned DiscoveryAnalyticsCollection instance. */
+    /** The returned {@code DiscoveryAnalyticsCollection} instance. */
     private com.oracle.bmc.datasafe.model.DiscoveryAnalyticsCollection discoveryAnalyticsCollection;
 
     /**
-     * The returned DiscoveryAnalyticsCollection instance.
+     * The returned {@code DiscoveryAnalyticsCollection} instance.
      *
      * @return the value
      */
@@ -177,12 +177,12 @@ public class ListDiscoveryAnalyticsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned DiscoveryAnalyticsCollection instance. */
+        /** The returned {@code DiscoveryAnalyticsCollection} instance. */
         private com.oracle.bmc.datasafe.model.DiscoveryAnalyticsCollection
                 discoveryAnalyticsCollection;
 
         /**
-         * The returned DiscoveryAnalyticsCollection instance.
+         * The returned {@code DiscoveryAnalyticsCollection} instance.
          *
          * @param discoveryAnalyticsCollection the value to set
          * @return this builder

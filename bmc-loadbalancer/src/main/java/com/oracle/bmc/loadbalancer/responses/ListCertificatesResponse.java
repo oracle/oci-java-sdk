@@ -44,11 +44,11 @@ public class ListCertificatesResponse extends com.oracle.bmc.responses.BmcRespon
         return eTag;
     }
 
-    /** A list of com.oracle.bmc.loadbalancer.model.Certificate instances. */
+    /** A list of {@code com.oracle.bmc.loadbalancer.model.Certificate} instances. */
     private java.util.List<com.oracle.bmc.loadbalancer.model.Certificate> items;
 
     /**
-     * A list of com.oracle.bmc.loadbalancer.model.Certificate instances.
+     * A list of {@code com.oracle.bmc.loadbalancer.model.Certificate} instances.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListCertificatesResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** A list of com.oracle.bmc.loadbalancer.model.Certificate instances. */
+        /** A list of {@code com.oracle.bmc.loadbalancer.model.Certificate} instances. */
         private java.util.List<com.oracle.bmc.loadbalancer.model.Certificate> items;
 
         /**
-         * A list of com.oracle.bmc.loadbalancer.model.Certificate instances.
+         * A list of {@code com.oracle.bmc.loadbalancer.model.Certificate} instances.
          *
          * @param items the value to set
          * @return this builder

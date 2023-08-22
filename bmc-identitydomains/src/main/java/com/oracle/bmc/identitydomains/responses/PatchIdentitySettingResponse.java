@@ -36,11 +36,11 @@ public class PatchIdentitySettingResponse extends com.oracle.bmc.responses.BmcRe
         return etag;
     }
 
-    /** The returned IdentitySetting instance. */
+    /** The returned {@code IdentitySetting} instance. */
     private com.oracle.bmc.identitydomains.model.IdentitySetting identitySetting;
 
     /**
-     * The returned IdentitySetting instance.
+     * The returned {@code IdentitySetting} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class PatchIdentitySettingResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned IdentitySetting instance. */
+        /** The returned {@code IdentitySetting} instance. */
         private com.oracle.bmc.identitydomains.model.IdentitySetting identitySetting;
 
         /**
-         * The returned IdentitySetting instance.
+         * The returned {@code IdentitySetting} instance.
          *
          * @param identitySetting the value to set
          * @return this builder

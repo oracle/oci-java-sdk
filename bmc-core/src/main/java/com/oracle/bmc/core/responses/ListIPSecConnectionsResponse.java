@@ -42,11 +42,11 @@ public class ListIPSecConnectionsResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.IPSecConnection instances. */
+    /** A list of {@code com.oracle.bmc.core.model.IPSecConnection} instances. */
     private java.util.List<com.oracle.bmc.core.model.IPSecConnection> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.IPSecConnection instances.
+     * A list of {@code com.oracle.bmc.core.model.IPSecConnection} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListIPSecConnectionsResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.IPSecConnection instances. */
+        /** A list of {@code com.oracle.bmc.core.model.IPSecConnection} instances. */
         private java.util.List<com.oracle.bmc.core.model.IPSecConnection> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.IPSecConnection instances.
+         * A list of {@code com.oracle.bmc.core.model.IPSecConnection} instances.
          *
          * @param items the value to set
          * @return this builder

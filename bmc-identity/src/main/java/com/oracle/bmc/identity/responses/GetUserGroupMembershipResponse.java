@@ -36,11 +36,11 @@ public class GetUserGroupMembershipResponse extends com.oracle.bmc.responses.Bmc
         return etag;
     }
 
-    /** The returned UserGroupMembership instance. */
+    /** The returned {@code UserGroupMembership} instance. */
     private com.oracle.bmc.identity.model.UserGroupMembership userGroupMembership;
 
     /**
-     * The returned UserGroupMembership instance.
+     * The returned {@code UserGroupMembership} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetUserGroupMembershipResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned UserGroupMembership instance. */
+        /** The returned {@code UserGroupMembership} instance. */
         private com.oracle.bmc.identity.model.UserGroupMembership userGroupMembership;
 
         /**
-         * The returned UserGroupMembership instance.
+         * The returned {@code UserGroupMembership} instance.
          *
          * @param userGroupMembership the value to set
          * @return this builder

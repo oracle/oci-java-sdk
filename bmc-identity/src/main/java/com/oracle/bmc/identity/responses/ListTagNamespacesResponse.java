@@ -42,11 +42,11 @@ public class ListTagNamespacesResponse extends com.oracle.bmc.responses.BmcRespo
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.identity.model.TagNamespaceSummary instances. */
+    /** A list of {@code com.oracle.bmc.identity.model.TagNamespaceSummary} instances. */
     private java.util.List<com.oracle.bmc.identity.model.TagNamespaceSummary> items;
 
     /**
-     * A list of com.oracle.bmc.identity.model.TagNamespaceSummary instances.
+     * A list of {@code com.oracle.bmc.identity.model.TagNamespaceSummary} instances.
      *
      * @return the value
      */
@@ -131,11 +131,11 @@ public class ListTagNamespacesResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** A list of com.oracle.bmc.identity.model.TagNamespaceSummary instances. */
+        /** A list of {@code com.oracle.bmc.identity.model.TagNamespaceSummary} instances. */
         private java.util.List<com.oracle.bmc.identity.model.TagNamespaceSummary> items;
 
         /**
-         * A list of com.oracle.bmc.identity.model.TagNamespaceSummary instances.
+         * A list of {@code com.oracle.bmc.identity.model.TagNamespaceSummary} instances.
          *
          * @param items the value to set
          * @return this builder

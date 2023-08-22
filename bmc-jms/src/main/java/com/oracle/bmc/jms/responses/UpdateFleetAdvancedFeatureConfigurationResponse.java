@@ -37,12 +37,12 @@ public class UpdateFleetAdvancedFeatureConfigurationResponse
         return etag;
     }
 
-    /** The returned FleetAdvancedFeatureConfiguration instance. */
+    /** The returned {@code FleetAdvancedFeatureConfiguration} instance. */
     private com.oracle.bmc.jms.model.FleetAdvancedFeatureConfiguration
             fleetAdvancedFeatureConfiguration;
 
     /**
-     * The returned FleetAdvancedFeatureConfiguration instance.
+     * The returned {@code FleetAdvancedFeatureConfiguration} instance.
      *
      * @return the value
      */
@@ -122,12 +122,12 @@ public class UpdateFleetAdvancedFeatureConfigurationResponse
             return this;
         }
 
-        /** The returned FleetAdvancedFeatureConfiguration instance. */
+        /** The returned {@code FleetAdvancedFeatureConfiguration} instance. */
         private com.oracle.bmc.jms.model.FleetAdvancedFeatureConfiguration
                 fleetAdvancedFeatureConfiguration;
 
         /**
-         * The returned FleetAdvancedFeatureConfiguration instance.
+         * The returned {@code FleetAdvancedFeatureConfiguration} instance.
          *
          * @param fleetAdvancedFeatureConfiguration the value to set
          * @return this builder

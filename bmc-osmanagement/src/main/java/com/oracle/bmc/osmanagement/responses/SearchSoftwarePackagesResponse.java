@@ -42,11 +42,13 @@ public class SearchSoftwarePackagesResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.osmanagement.model.SoftwarePackageSearchSummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.osmanagement.model.SoftwarePackageSearchSummary} instances.
+     */
     private java.util.List<com.oracle.bmc.osmanagement.model.SoftwarePackageSearchSummary> items;
 
     /**
-     * A list of com.oracle.bmc.osmanagement.model.SoftwarePackageSearchSummary instances.
+     * A list of {@code com.oracle.bmc.osmanagement.model.SoftwarePackageSearchSummary} instances.
      *
      * @return the value
      */
@@ -131,12 +133,16 @@ public class SearchSoftwarePackagesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** A list of com.oracle.bmc.osmanagement.model.SoftwarePackageSearchSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.osmanagement.model.SoftwarePackageSearchSummary}
+         * instances.
+         */
         private java.util.List<com.oracle.bmc.osmanagement.model.SoftwarePackageSearchSummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.osmanagement.model.SoftwarePackageSearchSummary instances.
+         * A list of {@code com.oracle.bmc.osmanagement.model.SoftwarePackageSearchSummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

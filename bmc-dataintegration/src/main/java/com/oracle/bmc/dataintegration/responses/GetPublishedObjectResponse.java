@@ -40,11 +40,11 @@ public class GetPublishedObjectResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned PublishedObject instance. */
+    /** The returned {@code PublishedObject} instance. */
     private com.oracle.bmc.dataintegration.model.PublishedObject publishedObject;
 
     /**
-     * The returned PublishedObject instance.
+     * The returned {@code PublishedObject} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetPublishedObjectResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned PublishedObject instance. */
+        /** The returned {@code PublishedObject} instance. */
         private com.oracle.bmc.dataintegration.model.PublishedObject publishedObject;
 
         /**
-         * The returned PublishedObject instance.
+         * The returned {@code PublishedObject} instance.
          *
          * @param publishedObject the value to set
          * @return this builder

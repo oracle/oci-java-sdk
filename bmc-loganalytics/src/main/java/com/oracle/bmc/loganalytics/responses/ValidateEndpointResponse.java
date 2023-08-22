@@ -24,11 +24,11 @@ public class ValidateEndpointResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned ValidateEndpointResult instance. */
+    /** The returned {@code ValidateEndpointResult} instance. */
     private com.oracle.bmc.loganalytics.model.ValidateEndpointResult validateEndpointResult;
 
     /**
-     * The returned ValidateEndpointResult instance.
+     * The returned {@code ValidateEndpointResult} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class ValidateEndpointResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned ValidateEndpointResult instance. */
+        /** The returned {@code ValidateEndpointResult} instance. */
         private com.oracle.bmc.loganalytics.model.ValidateEndpointResult validateEndpointResult;
 
         /**
-         * The returned ValidateEndpointResult instance.
+         * The returned {@code ValidateEndpointResult} instance.
          *
          * @param validateEndpointResult the value to set
          * @return this builder

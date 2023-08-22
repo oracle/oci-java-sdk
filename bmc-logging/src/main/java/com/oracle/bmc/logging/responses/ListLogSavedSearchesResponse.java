@@ -60,12 +60,12 @@ public class ListLogSavedSearchesResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned LogSavedSearchSummaryCollection instance. */
+    /** The returned {@code LogSavedSearchSummaryCollection} instance. */
     private com.oracle.bmc.logging.model.LogSavedSearchSummaryCollection
             logSavedSearchSummaryCollection;
 
     /**
-     * The returned LogSavedSearchSummaryCollection instance.
+     * The returned {@code LogSavedSearchSummaryCollection} instance.
      *
      * @return the value
      */
@@ -173,12 +173,12 @@ public class ListLogSavedSearchesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned LogSavedSearchSummaryCollection instance. */
+        /** The returned {@code LogSavedSearchSummaryCollection} instance. */
         private com.oracle.bmc.logging.model.LogSavedSearchSummaryCollection
                 logSavedSearchSummaryCollection;
 
         /**
-         * The returned LogSavedSearchSummaryCollection instance.
+         * The returned {@code LogSavedSearchSummaryCollection} instance.
          *
          * @param logSavedSearchSummaryCollection the value to set
          * @return this builder

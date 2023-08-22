@@ -42,12 +42,12 @@ public class ListOrganizationsResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned OrganizationCollection instance. */
+    /** The returned {@code OrganizationCollection} instance. */
     private com.oracle.bmc.tenantmanagercontrolplane.model.OrganizationCollection
             organizationCollection;
 
     /**
-     * The returned OrganizationCollection instance.
+     * The returned {@code OrganizationCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListOrganizationsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned OrganizationCollection instance. */
+        /** The returned {@code OrganizationCollection} instance. */
         private com.oracle.bmc.tenantmanagercontrolplane.model.OrganizationCollection
                 organizationCollection;
 
         /**
-         * The returned OrganizationCollection instance.
+         * The returned {@code OrganizationCollection} instance.
          *
          * @param organizationCollection the value to set
          * @return this builder

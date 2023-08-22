@@ -36,11 +36,11 @@ public class GetByoipRangeResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** The returned ByoipRange instance. */
+    /** The returned {@code ByoipRange} instance. */
     private com.oracle.bmc.core.model.ByoipRange byoipRange;
 
     /**
-     * The returned ByoipRange instance.
+     * The returned {@code ByoipRange} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetByoipRangeResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned ByoipRange instance. */
+        /** The returned {@code ByoipRange} instance. */
         private com.oracle.bmc.core.model.ByoipRange byoipRange;
 
         /**
-         * The returned ByoipRange instance.
+         * The returned {@code ByoipRange} instance.
          *
          * @param byoipRange the value to set
          * @return this builder

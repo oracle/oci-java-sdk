@@ -42,11 +42,11 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /** The returned WorkRequestSummaryCollection instance. */
+    /** The returned {@code WorkRequestSummaryCollection} instance. */
     private com.oracle.bmc.opa.model.WorkRequestSummaryCollection workRequestSummaryCollection;
 
     /**
-     * The returned WorkRequestSummaryCollection instance.
+     * The returned {@code WorkRequestSummaryCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned WorkRequestSummaryCollection instance. */
+        /** The returned {@code WorkRequestSummaryCollection} instance. */
         private com.oracle.bmc.opa.model.WorkRequestSummaryCollection workRequestSummaryCollection;
 
         /**
-         * The returned WorkRequestSummaryCollection instance.
+         * The returned {@code WorkRequestSummaryCollection} instance.
          *
          * @param workRequestSummaryCollection the value to set
          * @return this builder

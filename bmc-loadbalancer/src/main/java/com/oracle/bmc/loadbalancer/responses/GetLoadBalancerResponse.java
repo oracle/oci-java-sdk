@@ -44,11 +44,11 @@ public class GetLoadBalancerResponse extends com.oracle.bmc.responses.BmcRespons
         return eTag;
     }
 
-    /** The returned LoadBalancer instance. */
+    /** The returned {@code LoadBalancer} instance. */
     private com.oracle.bmc.loadbalancer.model.LoadBalancer loadBalancer;
 
     /**
-     * The returned LoadBalancer instance.
+     * The returned {@code LoadBalancer} instance.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class GetLoadBalancerResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned LoadBalancer instance. */
+        /** The returned {@code LoadBalancer} instance. */
         private com.oracle.bmc.loadbalancer.model.LoadBalancer loadBalancer;
 
         /**
-         * The returned LoadBalancer instance.
+         * The returned {@code LoadBalancer} instance.
          *
          * @param loadBalancer the value to set
          * @return this builder

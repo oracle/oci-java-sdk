@@ -25,12 +25,12 @@ public class GetThirdPartyPaidListingEligibilityResponse
         return opcRequestId;
     }
 
-    /** The returned ThirdPartyPaidListingEligibility instance. */
+    /** The returned {@code ThirdPartyPaidListingEligibility} instance. */
     private com.oracle.bmc.marketplace.model.ThirdPartyPaidListingEligibility
             thirdPartyPaidListingEligibility;
 
     /**
-     * The returned ThirdPartyPaidListingEligibility instance.
+     * The returned {@code ThirdPartyPaidListingEligibility} instance.
      *
      * @return the value
      */
@@ -93,12 +93,12 @@ public class GetThirdPartyPaidListingEligibilityResponse
             return this;
         }
 
-        /** The returned ThirdPartyPaidListingEligibility instance. */
+        /** The returned {@code ThirdPartyPaidListingEligibility} instance. */
         private com.oracle.bmc.marketplace.model.ThirdPartyPaidListingEligibility
                 thirdPartyPaidListingEligibility;
 
         /**
-         * The returned ThirdPartyPaidListingEligibility instance.
+         * The returned {@code ThirdPartyPaidListingEligibility} instance.
          *
          * @param thirdPartyPaidListingEligibility the value to set
          * @return this builder

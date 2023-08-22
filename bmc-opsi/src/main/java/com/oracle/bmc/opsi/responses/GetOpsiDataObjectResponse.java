@@ -24,11 +24,11 @@ public class GetOpsiDataObjectResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned OpsiDataObject instance. */
+    /** The returned {@code OpsiDataObject} instance. */
     private com.oracle.bmc.opsi.model.OpsiDataObject opsiDataObject;
 
     /**
-     * The returned OpsiDataObject instance.
+     * The returned {@code OpsiDataObject} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetOpsiDataObjectResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned OpsiDataObject instance. */
+        /** The returned {@code OpsiDataObject} instance. */
         private com.oracle.bmc.opsi.model.OpsiDataObject opsiDataObject;
 
         /**
-         * The returned OpsiDataObject instance.
+         * The returned {@code OpsiDataObject} instance.
          *
          * @param opsiDataObject the value to set
          * @return this builder

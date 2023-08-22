@@ -42,11 +42,11 @@ public class GetSecurityAssessmentComparisonResponse extends com.oracle.bmc.resp
         return etag;
     }
 
-    /** The returned SecurityAssessmentComparison instance. */
+    /** The returned {@code SecurityAssessmentComparison} instance. */
     private com.oracle.bmc.datasafe.model.SecurityAssessmentComparison securityAssessmentComparison;
 
     /**
-     * The returned SecurityAssessmentComparison instance.
+     * The returned {@code SecurityAssessmentComparison} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class GetSecurityAssessmentComparisonResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned SecurityAssessmentComparison instance. */
+        /** The returned {@code SecurityAssessmentComparison} instance. */
         private com.oracle.bmc.datasafe.model.SecurityAssessmentComparison
                 securityAssessmentComparison;
 
         /**
-         * The returned SecurityAssessmentComparison instance.
+         * The returned {@code SecurityAssessmentComparison} instance.
          *
          * @param securityAssessmentComparison the value to set
          * @return this builder

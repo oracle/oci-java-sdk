@@ -36,11 +36,11 @@ public class GetDashboardGroupResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned DashboardGroup instance. */
+    /** The returned {@code DashboardGroup} instance. */
     private com.oracle.bmc.dashboardservice.model.DashboardGroup dashboardGroup;
 
     /**
-     * The returned DashboardGroup instance.
+     * The returned {@code DashboardGroup} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetDashboardGroupResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned DashboardGroup instance. */
+        /** The returned {@code DashboardGroup} instance. */
         private com.oracle.bmc.dashboardservice.model.DashboardGroup dashboardGroup;
 
         /**
-         * The returned DashboardGroup instance.
+         * The returned {@code DashboardGroup} instance.
          *
          * @param dashboardGroup the value to set
          * @return this builder

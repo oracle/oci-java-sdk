@@ -64,12 +64,12 @@ public class ListParserMetaPluginsResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsParserMetaPluginCollection instance. */
+    /** The returned {@code LogAnalyticsParserMetaPluginCollection} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsParserMetaPluginCollection
             logAnalyticsParserMetaPluginCollection;
 
     /**
-     * The returned LogAnalyticsParserMetaPluginCollection instance.
+     * The returned {@code LogAnalyticsParserMetaPluginCollection} instance.
      *
      * @return the value
      */
@@ -181,12 +181,12 @@ public class ListParserMetaPluginsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned LogAnalyticsParserMetaPluginCollection instance. */
+        /** The returned {@code LogAnalyticsParserMetaPluginCollection} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsParserMetaPluginCollection
                 logAnalyticsParserMetaPluginCollection;
 
         /**
-         * The returned LogAnalyticsParserMetaPluginCollection instance.
+         * The returned {@code LogAnalyticsParserMetaPluginCollection} instance.
          *
          * @param logAnalyticsParserMetaPluginCollection the value to set
          * @return this builder

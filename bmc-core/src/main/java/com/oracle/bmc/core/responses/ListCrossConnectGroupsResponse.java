@@ -42,11 +42,11 @@ public class ListCrossConnectGroupsResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.CrossConnectGroup instances. */
+    /** A list of {@code com.oracle.bmc.core.model.CrossConnectGroup} instances. */
     private java.util.List<com.oracle.bmc.core.model.CrossConnectGroup> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.CrossConnectGroup instances.
+     * A list of {@code com.oracle.bmc.core.model.CrossConnectGroup} instances.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListCrossConnectGroupsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.CrossConnectGroup instances. */
+        /** A list of {@code com.oracle.bmc.core.model.CrossConnectGroup} instances. */
         private java.util.List<com.oracle.bmc.core.model.CrossConnectGroup> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.CrossConnectGroup instances.
+         * A list of {@code com.oracle.bmc.core.model.CrossConnectGroup} instances.
          *
          * @param items the value to set
          * @return this builder

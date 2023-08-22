@@ -36,11 +36,11 @@ public class UpdateDrgRouteDistributionResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    /** The returned DrgRouteDistribution instance. */
+    /** The returned {@code DrgRouteDistribution} instance. */
     private com.oracle.bmc.core.model.DrgRouteDistribution drgRouteDistribution;
 
     /**
-     * The returned DrgRouteDistribution instance.
+     * The returned {@code DrgRouteDistribution} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class UpdateDrgRouteDistributionResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned DrgRouteDistribution instance. */
+        /** The returned {@code DrgRouteDistribution} instance. */
         private com.oracle.bmc.core.model.DrgRouteDistribution drgRouteDistribution;
 
         /**
-         * The returned DrgRouteDistribution instance.
+         * The returned {@code DrgRouteDistribution} instance.
          *
          * @param drgRouteDistribution the value to set
          * @return this builder

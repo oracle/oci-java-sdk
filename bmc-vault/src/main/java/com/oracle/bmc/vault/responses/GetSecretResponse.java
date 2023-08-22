@@ -36,11 +36,11 @@ public class GetSecretResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Secret instance. */
+    /** The returned {@code Secret} instance. */
     private com.oracle.bmc.vault.model.Secret secret;
 
     /**
-     * The returned Secret instance.
+     * The returned {@code Secret} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetSecretResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Secret instance. */
+        /** The returned {@code Secret} instance. */
         private com.oracle.bmc.vault.model.Secret secret;
 
         /**
-         * The returned Secret instance.
+         * The returned {@code Secret} instance.
          *
          * @param secret the value to set
          * @return this builder

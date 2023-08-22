@@ -24,11 +24,11 @@ public class DeleteRowResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned DeleteRowResult instance. */
+    /** The returned {@code DeleteRowResult} instance. */
     private com.oracle.bmc.nosql.model.DeleteRowResult deleteRowResult;
 
     /**
-     * The returned DeleteRowResult instance.
+     * The returned {@code DeleteRowResult} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class DeleteRowResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned DeleteRowResult instance. */
+        /** The returned {@code DeleteRowResult} instance. */
         private com.oracle.bmc.nosql.model.DeleteRowResult deleteRowResult;
 
         /**
-         * The returned DeleteRowResult instance.
+         * The returned {@code DeleteRowResult} instance.
          *
          * @param deleteRowResult the value to set
          * @return this builder

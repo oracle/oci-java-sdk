@@ -42,11 +42,11 @@ public class ListManagedListsResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /** The returned ManagedListCollection instance. */
+    /** The returned {@code ManagedListCollection} instance. */
     private com.oracle.bmc.cloudguard.model.ManagedListCollection managedListCollection;
 
     /**
-     * The returned ManagedListCollection instance.
+     * The returned {@code ManagedListCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListManagedListsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned ManagedListCollection instance. */
+        /** The returned {@code ManagedListCollection} instance. */
         private com.oracle.bmc.cloudguard.model.ManagedListCollection managedListCollection;
 
         /**
-         * The returned ManagedListCollection instance.
+         * The returned {@code ManagedListCollection} instance.
          *
          * @param managedListCollection the value to set
          * @return this builder

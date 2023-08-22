@@ -36,11 +36,11 @@ public class GetPeerResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Peer instance. */
+    /** The returned {@code Peer} instance. */
     private com.oracle.bmc.blockchain.model.Peer peer;
 
     /**
-     * The returned Peer instance.
+     * The returned {@code Peer} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetPeerResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Peer instance. */
+        /** The returned {@code Peer} instance. */
         private com.oracle.bmc.blockchain.model.Peer peer;
 
         /**
-         * The returned Peer instance.
+         * The returned {@code Peer} instance.
          *
          * @param peer the value to set
          * @return this builder

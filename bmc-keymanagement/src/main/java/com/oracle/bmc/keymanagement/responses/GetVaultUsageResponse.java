@@ -24,11 +24,11 @@ public class GetVaultUsageResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** The returned VaultUsage instance. */
+    /** The returned {@code VaultUsage} instance. */
     private com.oracle.bmc.keymanagement.model.VaultUsage vaultUsage;
 
     /**
-     * The returned VaultUsage instance.
+     * The returned {@code VaultUsage} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetVaultUsageResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned VaultUsage instance. */
+        /** The returned {@code VaultUsage} instance. */
         private com.oracle.bmc.keymanagement.model.VaultUsage vaultUsage;
 
         /**
-         * The returned VaultUsage instance.
+         * The returned {@code VaultUsage} instance.
          *
          * @param vaultUsage the value to set
          * @return this builder

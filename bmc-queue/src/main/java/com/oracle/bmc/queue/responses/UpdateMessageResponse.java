@@ -24,11 +24,11 @@ public class UpdateMessageResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** The returned UpdatedMessage instance. */
+    /** The returned {@code UpdatedMessage} instance. */
     private com.oracle.bmc.queue.model.UpdatedMessage updatedMessage;
 
     /**
-     * The returned UpdatedMessage instance.
+     * The returned {@code UpdatedMessage} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class UpdateMessageResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned UpdatedMessage instance. */
+        /** The returned {@code UpdatedMessage} instance. */
         private com.oracle.bmc.queue.model.UpdatedMessage updatedMessage;
 
         /**
-         * The returned UpdatedMessage instance.
+         * The returned {@code UpdatedMessage} instance.
          *
          * @param updatedMessage the value to set
          * @return this builder

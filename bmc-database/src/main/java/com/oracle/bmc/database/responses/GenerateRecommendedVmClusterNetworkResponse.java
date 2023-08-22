@@ -37,11 +37,11 @@ public class GenerateRecommendedVmClusterNetworkResponse
         return opcRequestId;
     }
 
-    /** The returned VmClusterNetworkDetails instance. */
+    /** The returned {@code VmClusterNetworkDetails} instance. */
     private com.oracle.bmc.database.model.VmClusterNetworkDetails vmClusterNetworkDetails;
 
     /**
-     * The returned VmClusterNetworkDetails instance.
+     * The returned {@code VmClusterNetworkDetails} instance.
      *
      * @return the value
      */
@@ -119,11 +119,11 @@ public class GenerateRecommendedVmClusterNetworkResponse
             return this;
         }
 
-        /** The returned VmClusterNetworkDetails instance. */
+        /** The returned {@code VmClusterNetworkDetails} instance. */
         private com.oracle.bmc.database.model.VmClusterNetworkDetails vmClusterNetworkDetails;
 
         /**
-         * The returned VmClusterNetworkDetails instance.
+         * The returned {@code VmClusterNetworkDetails} instance.
          *
          * @param vmClusterNetworkDetails the value to set
          * @return this builder

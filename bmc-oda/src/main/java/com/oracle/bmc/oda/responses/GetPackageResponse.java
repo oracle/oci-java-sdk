@@ -24,11 +24,11 @@ public class GetPackageResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned PackageItem instance. */
+    /** The returned {@code PackageItem} instance. */
     private com.oracle.bmc.oda.model.PackageItem packageItem;
 
     /**
-     * The returned PackageItem instance.
+     * The returned {@code PackageItem} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetPackageResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned PackageItem instance. */
+        /** The returned {@code PackageItem} instance. */
         private com.oracle.bmc.oda.model.PackageItem packageItem;
 
         /**
-         * The returned PackageItem instance.
+         * The returned {@code PackageItem} instance.
          *
          * @param packageItem the value to set
          * @return this builder

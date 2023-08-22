@@ -42,11 +42,11 @@ public class ListCpesResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.Cpe instances. */
+    /** A list of {@code com.oracle.bmc.core.model.Cpe} instances. */
     private java.util.List<com.oracle.bmc.core.model.Cpe> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.Cpe instances.
+     * A list of {@code com.oracle.bmc.core.model.Cpe} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListCpesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.Cpe instances. */
+        /** A list of {@code com.oracle.bmc.core.model.Cpe} instances. */
         private java.util.List<com.oracle.bmc.core.model.Cpe> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.Cpe instances.
+         * A list of {@code com.oracle.bmc.core.model.Cpe} instances.
          *
          * @param items the value to set
          * @return this builder

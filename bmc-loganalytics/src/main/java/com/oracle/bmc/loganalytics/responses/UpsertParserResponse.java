@@ -36,11 +36,11 @@ public class UpsertParserResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsParser instance. */
+    /** The returned {@code LogAnalyticsParser} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsParser logAnalyticsParser;
 
     /**
-     * The returned LogAnalyticsParser instance.
+     * The returned {@code LogAnalyticsParser} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpsertParserResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned LogAnalyticsParser instance. */
+        /** The returned {@code LogAnalyticsParser} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsParser logAnalyticsParser;
 
         /**
-         * The returned LogAnalyticsParser instance.
+         * The returned {@code LogAnalyticsParser} instance.
          *
          * @param logAnalyticsParser the value to set
          * @return this builder

@@ -1657,6 +1657,24 @@ public interface OperationsInsights extends AutoCloseable {
     ListSqlTextsResponse listSqlTexts(ListSqlTextsRequest request);
 
     /**
+     * Gets a list of Warehouse data objects (e.g: views, tables), based on the query parameters
+     * specified.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListWarehouseDataObjectsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListWarehouseDataObjects API.
+     */
+    ListWarehouseDataObjectsResponse listWarehouseDataObjects(
+            ListWarehouseDataObjectsRequest request);
+
+    /**
      * Return a (paginated) list of errors for a given work request.
      *
      * @param request The request object containing the details to send
@@ -1722,6 +1740,25 @@ public interface OperationsInsights extends AutoCloseable {
      *     QueryOpsiDataObjectData API.
      */
     QueryOpsiDataObjectDataResponse queryOpsiDataObjectData(QueryOpsiDataObjectDataRequest request);
+
+    /**
+     * Queries Warehouse data objects (e.g: views, tables) with the inputs provided and sends the
+     * result set back. Any data to which an OperationsInsightsWarehouseUser with a permission to
+     * the corresponding Warehouse can be queried.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/QueryWarehouseDataObjectDataExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     QueryWarehouseDataObjectData API.
+     */
+    QueryWarehouseDataObjectDataResponse queryWarehouseDataObjectData(
+            QueryWarehouseDataObjectDataRequest request);
 
     /**
      * Rotate the ADW wallet for Operations Insights Warehouse using which the Hub data is exposed.

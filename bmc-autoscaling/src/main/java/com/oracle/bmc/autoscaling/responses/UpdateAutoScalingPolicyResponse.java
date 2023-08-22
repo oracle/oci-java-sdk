@@ -36,11 +36,11 @@ public class UpdateAutoScalingPolicyResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned AutoScalingPolicy instance. */
+    /** The returned {@code AutoScalingPolicy} instance. */
     private com.oracle.bmc.autoscaling.model.AutoScalingPolicy autoScalingPolicy;
 
     /**
-     * The returned AutoScalingPolicy instance.
+     * The returned {@code AutoScalingPolicy} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class UpdateAutoScalingPolicyResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned AutoScalingPolicy instance. */
+        /** The returned {@code AutoScalingPolicy} instance. */
         private com.oracle.bmc.autoscaling.model.AutoScalingPolicy autoScalingPolicy;
 
         /**
-         * The returned AutoScalingPolicy instance.
+         * The returned {@code AutoScalingPolicy} instance.
          *
          * @param autoScalingPolicy the value to set
          * @return this builder

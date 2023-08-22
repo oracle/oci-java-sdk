@@ -36,11 +36,11 @@ public class CreateRoverNodeResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned RoverNode instance. */
+    /** The returned {@code RoverNode} instance. */
     private com.oracle.bmc.rover.model.RoverNode roverNode;
 
     /**
-     * The returned RoverNode instance.
+     * The returned {@code RoverNode} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class CreateRoverNodeResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned RoverNode instance. */
+        /** The returned {@code RoverNode} instance. */
         private com.oracle.bmc.rover.model.RoverNode roverNode;
 
         /**
-         * The returned RoverNode instance.
+         * The returned {@code RoverNode} instance.
          *
          * @param roverNode the value to set
          * @return this builder

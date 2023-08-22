@@ -44,11 +44,11 @@ public class GetBackendResponse extends com.oracle.bmc.responses.BmcResponse {
         return eTag;
     }
 
-    /** The returned Backend instance. */
+    /** The returned {@code Backend} instance. */
     private com.oracle.bmc.loadbalancer.model.Backend backend;
 
     /**
-     * The returned Backend instance.
+     * The returned {@code Backend} instance.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class GetBackendResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Backend instance. */
+        /** The returned {@code Backend} instance. */
         private com.oracle.bmc.loadbalancer.model.Backend backend;
 
         /**
-         * The returned Backend instance.
+         * The returned {@code Backend} instance.
          *
          * @param backend the value to set
          * @return this builder

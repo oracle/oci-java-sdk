@@ -42,11 +42,11 @@ public class ListAttributesResponse extends com.oracle.bmc.responses.BmcResponse
         return opcNextPage;
     }
 
-    /** The returned AttributeCollection instance. */
+    /** The returned {@code AttributeCollection} instance. */
     private com.oracle.bmc.datacatalog.model.AttributeCollection attributeCollection;
 
     /**
-     * The returned AttributeCollection instance.
+     * The returned {@code AttributeCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListAttributesResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned AttributeCollection instance. */
+        /** The returned {@code AttributeCollection} instance. */
         private com.oracle.bmc.datacatalog.model.AttributeCollection attributeCollection;
 
         /**
-         * The returned AttributeCollection instance.
+         * The returned {@code AttributeCollection} instance.
          *
          * @param attributeCollection the value to set
          * @return this builder

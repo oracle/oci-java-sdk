@@ -46,12 +46,16 @@ public class ListSourceApplicationsResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.applicationmigration.model.SourceApplicationSummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.applicationmigration.model.SourceApplicationSummary}
+     * instances.
+     */
     private java.util.List<com.oracle.bmc.applicationmigration.model.SourceApplicationSummary>
             items;
 
     /**
-     * A list of com.oracle.bmc.applicationmigration.model.SourceApplicationSummary instances.
+     * A list of {@code com.oracle.bmc.applicationmigration.model.SourceApplicationSummary}
+     * instances.
      *
      * @return the value
      */
@@ -142,13 +146,15 @@ public class ListSourceApplicationsResponse extends com.oracle.bmc.responses.Bmc
         }
 
         /**
-         * A list of com.oracle.bmc.applicationmigration.model.SourceApplicationSummary instances.
+         * A list of {@code com.oracle.bmc.applicationmigration.model.SourceApplicationSummary}
+         * instances.
          */
         private java.util.List<com.oracle.bmc.applicationmigration.model.SourceApplicationSummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.applicationmigration.model.SourceApplicationSummary instances.
+         * A list of {@code com.oracle.bmc.applicationmigration.model.SourceApplicationSummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

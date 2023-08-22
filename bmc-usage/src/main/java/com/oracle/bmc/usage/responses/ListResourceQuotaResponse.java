@@ -42,11 +42,11 @@ public class ListResourceQuotaResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned ResourceQuotumCollection instance. */
+    /** The returned {@code ResourceQuotumCollection} instance. */
     private com.oracle.bmc.usage.model.ResourceQuotumCollection resourceQuotumCollection;
 
     /**
-     * The returned ResourceQuotumCollection instance.
+     * The returned {@code ResourceQuotumCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListResourceQuotaResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned ResourceQuotumCollection instance. */
+        /** The returned {@code ResourceQuotumCollection} instance. */
         private com.oracle.bmc.usage.model.ResourceQuotumCollection resourceQuotumCollection;
 
         /**
-         * The returned ResourceQuotumCollection instance.
+         * The returned {@code ResourceQuotumCollection} instance.
          *
          * @param resourceQuotumCollection the value to set
          * @return this builder

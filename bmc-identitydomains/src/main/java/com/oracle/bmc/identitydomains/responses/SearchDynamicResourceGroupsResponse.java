@@ -42,11 +42,11 @@ public class SearchDynamicResourceGroupsResponse extends com.oracle.bmc.response
         return opcNextPage;
     }
 
-    /** The returned DynamicResourceGroups instance. */
+    /** The returned {@code DynamicResourceGroups} instance. */
     private com.oracle.bmc.identitydomains.model.DynamicResourceGroups dynamicResourceGroups;
 
     /**
-     * The returned DynamicResourceGroups instance.
+     * The returned {@code DynamicResourceGroups} instance.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class SearchDynamicResourceGroupsResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned DynamicResourceGroups instance. */
+        /** The returned {@code DynamicResourceGroups} instance. */
         private com.oracle.bmc.identitydomains.model.DynamicResourceGroups dynamicResourceGroups;
 
         /**
-         * The returned DynamicResourceGroups instance.
+         * The returned {@code DynamicResourceGroups} instance.
          *
          * @param dynamicResourceGroups the value to set
          * @return this builder

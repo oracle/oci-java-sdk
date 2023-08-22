@@ -36,11 +36,11 @@ public class GetDataMaskRuleResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned DataMaskRule instance. */
+    /** The returned {@code DataMaskRule} instance. */
     private com.oracle.bmc.cloudguard.model.DataMaskRule dataMaskRule;
 
     /**
-     * The returned DataMaskRule instance.
+     * The returned {@code DataMaskRule} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetDataMaskRuleResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned DataMaskRule instance. */
+        /** The returned {@code DataMaskRule} instance. */
         private com.oracle.bmc.cloudguard.model.DataMaskRule dataMaskRule;
 
         /**
-         * The returned DataMaskRule instance.
+         * The returned {@code DataMaskRule} instance.
          *
          * @param dataMaskRule the value to set
          * @return this builder

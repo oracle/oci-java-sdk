@@ -60,11 +60,11 @@ public class ListSubscribersResponse extends com.oracle.bmc.responses.BmcRespons
         return opcPrevPage;
     }
 
-    /** The returned SubscriberCollection instance. */
+    /** The returned {@code SubscriberCollection} instance. */
     private com.oracle.bmc.apigateway.model.SubscriberCollection subscriberCollection;
 
     /**
-     * The returned SubscriberCollection instance.
+     * The returned {@code SubscriberCollection} instance.
      *
      * @return the value
      */
@@ -170,11 +170,11 @@ public class ListSubscribersResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned SubscriberCollection instance. */
+        /** The returned {@code SubscriberCollection} instance. */
         private com.oracle.bmc.apigateway.model.SubscriberCollection subscriberCollection;
 
         /**
-         * The returned SubscriberCollection instance.
+         * The returned {@code SubscriberCollection} instance.
          *
          * @param subscriberCollection the value to set
          * @return this builder

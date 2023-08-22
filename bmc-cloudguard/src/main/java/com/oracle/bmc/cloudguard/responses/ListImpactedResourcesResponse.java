@@ -42,11 +42,11 @@ public class ListImpactedResourcesResponse extends com.oracle.bmc.responses.BmcR
         return opcNextPage;
     }
 
-    /** The returned ImpactedResourceCollection instance. */
+    /** The returned {@code ImpactedResourceCollection} instance. */
     private com.oracle.bmc.cloudguard.model.ImpactedResourceCollection impactedResourceCollection;
 
     /**
-     * The returned ImpactedResourceCollection instance.
+     * The returned {@code ImpactedResourceCollection} instance.
      *
      * @return the value
      */
@@ -130,12 +130,12 @@ public class ListImpactedResourcesResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned ImpactedResourceCollection instance. */
+        /** The returned {@code ImpactedResourceCollection} instance. */
         private com.oracle.bmc.cloudguard.model.ImpactedResourceCollection
                 impactedResourceCollection;
 
         /**
-         * The returned ImpactedResourceCollection instance.
+         * The returned {@code ImpactedResourceCollection} instance.
          *
          * @param impactedResourceCollection the value to set
          * @return this builder

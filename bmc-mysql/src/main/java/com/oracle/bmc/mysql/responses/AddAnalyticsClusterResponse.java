@@ -52,11 +52,11 @@ public class AddAnalyticsClusterResponse extends com.oracle.bmc.responses.BmcRes
         return opcWorkRequestId;
     }
 
-    /** The returned AnalyticsCluster instance. */
+    /** The returned {@code AnalyticsCluster} instance. */
     private com.oracle.bmc.mysql.model.AnalyticsCluster analyticsCluster;
 
     /**
-     * The returned AnalyticsCluster instance.
+     * The returned {@code AnalyticsCluster} instance.
      *
      * @return the value
      */
@@ -154,11 +154,11 @@ public class AddAnalyticsClusterResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned AnalyticsCluster instance. */
+        /** The returned {@code AnalyticsCluster} instance. */
         private com.oracle.bmc.mysql.model.AnalyticsCluster analyticsCluster;
 
         /**
-         * The returned AnalyticsCluster instance.
+         * The returned {@code AnalyticsCluster} instance.
          *
          * @param analyticsCluster the value to set
          * @return this builder

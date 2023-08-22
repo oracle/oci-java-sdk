@@ -42,12 +42,12 @@ public class ListWorkRequestResultsResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** The returned WorkRequestResultCollection instance. */
+    /** The returned {@code WorkRequestResultCollection} instance. */
     private com.oracle.bmc.vnmonitoring.model.WorkRequestResultCollection
             workRequestResultCollection;
 
     /**
-     * The returned WorkRequestResultCollection instance.
+     * The returned {@code WorkRequestResultCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListWorkRequestResultsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned WorkRequestResultCollection instance. */
+        /** The returned {@code WorkRequestResultCollection} instance. */
         private com.oracle.bmc.vnmonitoring.model.WorkRequestResultCollection
                 workRequestResultCollection;
 
         /**
-         * The returned WorkRequestResultCollection instance.
+         * The returned {@code WorkRequestResultCollection} instance.
          *
          * @param workRequestResultCollection the value to set
          * @return this builder

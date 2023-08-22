@@ -56,11 +56,11 @@ public class CreateClusterNetworkResponse extends com.oracle.bmc.responses.BmcRe
         return opcWorkRequestId;
     }
 
-    /** The returned ClusterNetwork instance. */
+    /** The returned {@code ClusterNetwork} instance. */
     private com.oracle.bmc.core.model.ClusterNetwork clusterNetwork;
 
     /**
-     * The returned ClusterNetwork instance.
+     * The returned {@code ClusterNetwork} instance.
      *
      * @return the value
      */
@@ -162,11 +162,11 @@ public class CreateClusterNetworkResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned ClusterNetwork instance. */
+        /** The returned {@code ClusterNetwork} instance. */
         private com.oracle.bmc.core.model.ClusterNetwork clusterNetwork;
 
         /**
-         * The returned ClusterNetwork instance.
+         * The returned {@code ClusterNetwork} instance.
          *
          * @param clusterNetwork the value to set
          * @return this builder

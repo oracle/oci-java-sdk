@@ -36,11 +36,11 @@ public class CopyVolumeGroupBackupResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned VolumeGroupBackup instance. */
+    /** The returned {@code VolumeGroupBackup} instance. */
     private com.oracle.bmc.core.model.VolumeGroupBackup volumeGroupBackup;
 
     /**
-     * The returned VolumeGroupBackup instance.
+     * The returned {@code VolumeGroupBackup} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class CopyVolumeGroupBackupResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned VolumeGroupBackup instance. */
+        /** The returned {@code VolumeGroupBackup} instance. */
         private com.oracle.bmc.core.model.VolumeGroupBackup volumeGroupBackup;
 
         /**
-         * The returned VolumeGroupBackup instance.
+         * The returned {@code VolumeGroupBackup} instance.
          *
          * @param volumeGroupBackup the value to set
          * @return this builder

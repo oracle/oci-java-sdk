@@ -42,11 +42,13 @@ public class ListManagementAgentImagesResponse extends com.oracle.bmc.responses.
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.managementagent.model.ManagementAgentImageSummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.managementagent.model.ManagementAgentImageSummary} instances.
+     */
     private java.util.List<com.oracle.bmc.managementagent.model.ManagementAgentImageSummary> items;
 
     /**
-     * A list of com.oracle.bmc.managementagent.model.ManagementAgentImageSummary instances.
+     * A list of {@code com.oracle.bmc.managementagent.model.ManagementAgentImageSummary} instances.
      *
      * @return the value
      */
@@ -132,12 +134,16 @@ public class ListManagementAgentImagesResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** A list of com.oracle.bmc.managementagent.model.ManagementAgentImageSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.managementagent.model.ManagementAgentImageSummary}
+         * instances.
+         */
         private java.util.List<com.oracle.bmc.managementagent.model.ManagementAgentImageSummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.managementagent.model.ManagementAgentImageSummary instances.
+         * A list of {@code com.oracle.bmc.managementagent.model.ManagementAgentImageSummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

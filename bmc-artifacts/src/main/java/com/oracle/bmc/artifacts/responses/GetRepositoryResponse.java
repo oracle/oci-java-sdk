@@ -36,11 +36,11 @@ public class GetRepositoryResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** The returned Repository instance. */
+    /** The returned {@code Repository} instance. */
     private com.oracle.bmc.artifacts.model.Repository repository;
 
     /**
-     * The returned Repository instance.
+     * The returned {@code Repository} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetRepositoryResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned Repository instance. */
+        /** The returned {@code Repository} instance. */
         private com.oracle.bmc.artifacts.model.Repository repository;
 
         /**
-         * The returned Repository instance.
+         * The returned {@code Repository} instance.
          *
          * @param repository the value to set
          * @return this builder

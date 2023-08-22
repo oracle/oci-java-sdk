@@ -42,11 +42,11 @@ public class ListAccountRecoverySettingsResponse extends com.oracle.bmc.response
         return opcNextPage;
     }
 
-    /** The returned AccountRecoverySettings instance. */
+    /** The returned {@code AccountRecoverySettings} instance. */
     private com.oracle.bmc.identitydomains.model.AccountRecoverySettings accountRecoverySettings;
 
     /**
-     * The returned AccountRecoverySettings instance.
+     * The returned {@code AccountRecoverySettings} instance.
      *
      * @return the value
      */
@@ -131,12 +131,12 @@ public class ListAccountRecoverySettingsResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned AccountRecoverySettings instance. */
+        /** The returned {@code AccountRecoverySettings} instance. */
         private com.oracle.bmc.identitydomains.model.AccountRecoverySettings
                 accountRecoverySettings;
 
         /**
-         * The returned AccountRecoverySettings instance.
+         * The returned {@code AccountRecoverySettings} instance.
          *
          * @param accountRecoverySettings the value to set
          * @return this builder

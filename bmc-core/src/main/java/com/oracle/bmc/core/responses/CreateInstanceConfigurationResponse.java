@@ -36,11 +36,11 @@ public class CreateInstanceConfigurationResponse extends com.oracle.bmc.response
         return opcRequestId;
     }
 
-    /** The returned InstanceConfiguration instance. */
+    /** The returned {@code InstanceConfiguration} instance. */
     private com.oracle.bmc.core.model.InstanceConfiguration instanceConfiguration;
 
     /**
-     * The returned InstanceConfiguration instance.
+     * The returned {@code InstanceConfiguration} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class CreateInstanceConfigurationResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned InstanceConfiguration instance. */
+        /** The returned {@code InstanceConfiguration} instance. */
         private com.oracle.bmc.core.model.InstanceConfiguration instanceConfiguration;
 
         /**
-         * The returned InstanceConfiguration instance.
+         * The returned {@code InstanceConfiguration} instance.
          *
          * @param instanceConfiguration the value to set
          * @return this builder

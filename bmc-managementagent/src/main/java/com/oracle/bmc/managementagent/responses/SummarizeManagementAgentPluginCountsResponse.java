@@ -43,12 +43,12 @@ public class SummarizeManagementAgentPluginCountsResponse
         return opcNextPage;
     }
 
-    /** The returned ManagementAgentPluginAggregationCollection instance. */
+    /** The returned {@code ManagementAgentPluginAggregationCollection} instance. */
     private com.oracle.bmc.managementagent.model.ManagementAgentPluginAggregationCollection
             managementAgentPluginAggregationCollection;
 
     /**
-     * The returned ManagementAgentPluginAggregationCollection instance.
+     * The returned {@code ManagementAgentPluginAggregationCollection} instance.
      *
      * @return the value
      */
@@ -135,12 +135,12 @@ public class SummarizeManagementAgentPluginCountsResponse
             return this;
         }
 
-        /** The returned ManagementAgentPluginAggregationCollection instance. */
+        /** The returned {@code ManagementAgentPluginAggregationCollection} instance. */
         private com.oracle.bmc.managementagent.model.ManagementAgentPluginAggregationCollection
                 managementAgentPluginAggregationCollection;
 
         /**
-         * The returned ManagementAgentPluginAggregationCollection instance.
+         * The returned {@code ManagementAgentPluginAggregationCollection} instance.
          *
          * @param managementAgentPluginAggregationCollection the value to set
          * @return this builder

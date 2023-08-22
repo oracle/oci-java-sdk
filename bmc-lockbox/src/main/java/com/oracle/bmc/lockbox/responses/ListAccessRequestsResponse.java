@@ -42,11 +42,11 @@ public class ListAccessRequestsResponse extends com.oracle.bmc.responses.BmcResp
         return opcNextPage;
     }
 
-    /** The returned AccessRequestCollection instance. */
+    /** The returned {@code AccessRequestCollection} instance. */
     private com.oracle.bmc.lockbox.model.AccessRequestCollection accessRequestCollection;
 
     /**
-     * The returned AccessRequestCollection instance.
+     * The returned {@code AccessRequestCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListAccessRequestsResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned AccessRequestCollection instance. */
+        /** The returned {@code AccessRequestCollection} instance. */
         private com.oracle.bmc.lockbox.model.AccessRequestCollection accessRequestCollection;
 
         /**
-         * The returned AccessRequestCollection instance.
+         * The returned {@code AccessRequestCollection} instance.
          *
          * @param accessRequestCollection the value to set
          * @return this builder

@@ -64,11 +64,11 @@ public class CreateGatewayResponse extends com.oracle.bmc.responses.BmcResponse 
         return location;
     }
 
-    /** The returned Gateway instance. */
+    /** The returned {@code Gateway} instance. */
     private com.oracle.bmc.apigateway.model.Gateway gateway;
 
     /**
-     * The returned Gateway instance.
+     * The returned {@code Gateway} instance.
      *
      * @return the value
      */
@@ -183,11 +183,11 @@ public class CreateGatewayResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned Gateway instance. */
+        /** The returned {@code Gateway} instance. */
         private com.oracle.bmc.apigateway.model.Gateway gateway;
 
         /**
-         * The returned Gateway instance.
+         * The returned {@code Gateway} instance.
          *
          * @param gateway the value to set
          * @return this builder

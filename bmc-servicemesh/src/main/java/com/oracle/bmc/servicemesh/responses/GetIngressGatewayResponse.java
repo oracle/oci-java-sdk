@@ -36,11 +36,11 @@ public class GetIngressGatewayResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned IngressGateway instance. */
+    /** The returned {@code IngressGateway} instance. */
     private com.oracle.bmc.servicemesh.model.IngressGateway ingressGateway;
 
     /**
-     * The returned IngressGateway instance.
+     * The returned {@code IngressGateway} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetIngressGatewayResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned IngressGateway instance. */
+        /** The returned {@code IngressGateway} instance. */
         private com.oracle.bmc.servicemesh.model.IngressGateway ingressGateway;
 
         /**
-         * The returned IngressGateway instance.
+         * The returned {@code IngressGateway} instance.
          *
          * @param ingressGateway the value to set
          * @return this builder

@@ -57,12 +57,12 @@ public class LaunchAutonomousExadataInfrastructureResponse
         return opcWorkRequestId;
     }
 
-    /** The returned AutonomousExadataInfrastructure instance. */
+    /** The returned {@code AutonomousExadataInfrastructure} instance. */
     private com.oracle.bmc.database.model.AutonomousExadataInfrastructure
             autonomousExadataInfrastructure;
 
     /**
-     * The returned AutonomousExadataInfrastructure instance.
+     * The returned {@code AutonomousExadataInfrastructure} instance.
      *
      * @return the value
      */
@@ -167,12 +167,12 @@ public class LaunchAutonomousExadataInfrastructureResponse
             return this;
         }
 
-        /** The returned AutonomousExadataInfrastructure instance. */
+        /** The returned {@code AutonomousExadataInfrastructure} instance. */
         private com.oracle.bmc.database.model.AutonomousExadataInfrastructure
                 autonomousExadataInfrastructure;
 
         /**
-         * The returned AutonomousExadataInfrastructure instance.
+         * The returned {@code AutonomousExadataInfrastructure} instance.
          *
          * @param autonomousExadataInfrastructure the value to set
          * @return this builder

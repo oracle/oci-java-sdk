@@ -42,11 +42,11 @@ public class ListJobExecutionsResponse extends com.oracle.bmc.responses.BmcRespo
         return opcNextPage;
     }
 
-    /** The returned JobExecutionCollection instance. */
+    /** The returned {@code JobExecutionCollection} instance. */
     private com.oracle.bmc.datacatalog.model.JobExecutionCollection jobExecutionCollection;
 
     /**
-     * The returned JobExecutionCollection instance.
+     * The returned {@code JobExecutionCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListJobExecutionsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned JobExecutionCollection instance. */
+        /** The returned {@code JobExecutionCollection} instance. */
         private com.oracle.bmc.datacatalog.model.JobExecutionCollection jobExecutionCollection;
 
         /**
-         * The returned JobExecutionCollection instance.
+         * The returned {@code JobExecutionCollection} instance.
          *
          * @param jobExecutionCollection the value to set
          * @return this builder

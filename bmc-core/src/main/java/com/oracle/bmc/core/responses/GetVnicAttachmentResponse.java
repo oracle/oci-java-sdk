@@ -36,11 +36,11 @@ public class GetVnicAttachmentResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned VnicAttachment instance. */
+    /** The returned {@code VnicAttachment} instance. */
     private com.oracle.bmc.core.model.VnicAttachment vnicAttachment;
 
     /**
-     * The returned VnicAttachment instance.
+     * The returned {@code VnicAttachment} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetVnicAttachmentResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned VnicAttachment instance. */
+        /** The returned {@code VnicAttachment} instance. */
         private com.oracle.bmc.core.model.VnicAttachment vnicAttachment;
 
         /**
-         * The returned VnicAttachment instance.
+         * The returned {@code VnicAttachment} instance.
          *
          * @param vnicAttachment the value to set
          * @return this builder

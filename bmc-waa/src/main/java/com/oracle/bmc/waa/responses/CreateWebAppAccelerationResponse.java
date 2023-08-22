@@ -76,11 +76,11 @@ public class CreateWebAppAccelerationResponse extends com.oracle.bmc.responses.B
         return contentLocation;
     }
 
-    /** The returned WebAppAcceleration instance. */
+    /** The returned {@code WebAppAcceleration} instance. */
     private com.oracle.bmc.waa.model.WebAppAcceleration webAppAcceleration;
 
     /**
-     * The returned WebAppAcceleration instance.
+     * The returned {@code WebAppAcceleration} instance.
      *
      * @return the value
      */
@@ -213,11 +213,11 @@ public class CreateWebAppAccelerationResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned WebAppAcceleration instance. */
+        /** The returned {@code WebAppAcceleration} instance. */
         private com.oracle.bmc.waa.model.WebAppAcceleration webAppAcceleration;
 
         /**
-         * The returned WebAppAcceleration instance.
+         * The returned {@code WebAppAcceleration} instance.
          *
          * @param webAppAcceleration the value to set
          * @return this builder

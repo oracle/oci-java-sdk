@@ -72,12 +72,12 @@ public class ListExternalPublicationsResponse extends com.oracle.bmc.responses.B
         return opcTotalItems;
     }
 
-    /** The returned ExternalPublicationSummaryCollection instance. */
+    /** The returned {@code ExternalPublicationSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.ExternalPublicationSummaryCollection
             externalPublicationSummaryCollection;
 
     /**
-     * The returned ExternalPublicationSummaryCollection instance.
+     * The returned {@code ExternalPublicationSummaryCollection} instance.
      *
      * @return the value
      */
@@ -203,12 +203,12 @@ public class ListExternalPublicationsResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned ExternalPublicationSummaryCollection instance. */
+        /** The returned {@code ExternalPublicationSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.ExternalPublicationSummaryCollection
                 externalPublicationSummaryCollection;
 
         /**
-         * The returned ExternalPublicationSummaryCollection instance.
+         * The returned {@code ExternalPublicationSummaryCollection} instance.
          *
          * @param externalPublicationSummaryCollection the value to set
          * @return this builder

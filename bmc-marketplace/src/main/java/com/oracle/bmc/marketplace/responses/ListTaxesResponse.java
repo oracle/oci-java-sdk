@@ -42,11 +42,11 @@ public class ListTaxesResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.marketplace.model.TaxSummary instances. */
+    /** A list of {@code com.oracle.bmc.marketplace.model.TaxSummary} instances. */
     private java.util.List<com.oracle.bmc.marketplace.model.TaxSummary> items;
 
     /**
-     * A list of com.oracle.bmc.marketplace.model.TaxSummary instances.
+     * A list of {@code com.oracle.bmc.marketplace.model.TaxSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListTaxesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.marketplace.model.TaxSummary instances. */
+        /** A list of {@code com.oracle.bmc.marketplace.model.TaxSummary} instances. */
         private java.util.List<com.oracle.bmc.marketplace.model.TaxSummary> items;
 
         /**
-         * A list of com.oracle.bmc.marketplace.model.TaxSummary instances.
+         * A list of {@code com.oracle.bmc.marketplace.model.TaxSummary} instances.
          *
          * @param items the value to set
          * @return this builder

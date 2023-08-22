@@ -42,12 +42,12 @@ public class ListOperatorActionsResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** The returned OperatorActionCollection instance. */
+    /** The returned {@code OperatorActionCollection} instance. */
     private com.oracle.bmc.operatoraccesscontrol.model.OperatorActionCollection
             operatorActionCollection;
 
     /**
-     * The returned OperatorActionCollection instance.
+     * The returned {@code OperatorActionCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListOperatorActionsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned OperatorActionCollection instance. */
+        /** The returned {@code OperatorActionCollection} instance. */
         private com.oracle.bmc.operatoraccesscontrol.model.OperatorActionCollection
                 operatorActionCollection;
 
         /**
-         * The returned OperatorActionCollection instance.
+         * The returned {@code OperatorActionCollection} instance.
          *
          * @param operatorActionCollection the value to set
          * @return this builder

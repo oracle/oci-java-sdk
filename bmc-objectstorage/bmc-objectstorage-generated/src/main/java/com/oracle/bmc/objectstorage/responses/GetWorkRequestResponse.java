@@ -56,11 +56,11 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
         return retryAfter;
     }
 
-    /** The returned WorkRequest instance. */
+    /** The returned {@code WorkRequest} instance. */
     private com.oracle.bmc.objectstorage.model.WorkRequest workRequest;
 
     /**
-     * The returned WorkRequest instance.
+     * The returned {@code WorkRequest} instance.
      *
      * @return the value
      */
@@ -162,11 +162,11 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned WorkRequest instance. */
+        /** The returned {@code WorkRequest} instance. */
         private com.oracle.bmc.objectstorage.model.WorkRequest workRequest;
 
         /**
-         * The returned WorkRequest instance.
+         * The returned {@code WorkRequest} instance.
          *
          * @param workRequest the value to set
          * @return this builder

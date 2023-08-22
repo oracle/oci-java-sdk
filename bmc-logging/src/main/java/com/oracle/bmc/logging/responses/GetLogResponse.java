@@ -36,11 +36,11 @@ public class GetLogResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned Log instance. */
+    /** The returned {@code Log} instance. */
     private com.oracle.bmc.logging.model.Log log;
 
     /**
-     * The returned Log instance.
+     * The returned {@code Log} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetLogResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Log instance. */
+        /** The returned {@code Log} instance. */
         private com.oracle.bmc.logging.model.Log log;
 
         /**
-         * The returned Log instance.
+         * The returned {@code Log} instance.
          *
          * @param log the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListBdsMetastoreConfigurationsResponse extends com.oracle.bmc.respo
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.bds.model.BdsMetastoreConfigurationSummary instances. */
+    /** A list of {@code com.oracle.bmc.bds.model.BdsMetastoreConfigurationSummary} instances. */
     private java.util.List<com.oracle.bmc.bds.model.BdsMetastoreConfigurationSummary> items;
 
     /**
-     * A list of com.oracle.bmc.bds.model.BdsMetastoreConfigurationSummary instances.
+     * A list of {@code com.oracle.bmc.bds.model.BdsMetastoreConfigurationSummary} instances.
      *
      * @return the value
      */
@@ -130,11 +130,13 @@ public class ListBdsMetastoreConfigurationsResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** A list of com.oracle.bmc.bds.model.BdsMetastoreConfigurationSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.bds.model.BdsMetastoreConfigurationSummary} instances.
+         */
         private java.util.List<com.oracle.bmc.bds.model.BdsMetastoreConfigurationSummary> items;
 
         /**
-         * A list of com.oracle.bmc.bds.model.BdsMetastoreConfigurationSummary instances.
+         * A list of {@code com.oracle.bmc.bds.model.BdsMetastoreConfigurationSummary} instances.
          *
          * @param items the value to set
          * @return this builder

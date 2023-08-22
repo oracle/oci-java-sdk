@@ -24,11 +24,11 @@ public class ListMessagesResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned DeploymentMessageCollection instance. */
+    /** The returned {@code DeploymentMessageCollection} instance. */
     private com.oracle.bmc.goldengate.model.DeploymentMessageCollection deploymentMessageCollection;
 
     /**
-     * The returned DeploymentMessageCollection instance.
+     * The returned {@code DeploymentMessageCollection} instance.
      *
      * @return the value
      */
@@ -90,12 +90,12 @@ public class ListMessagesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned DeploymentMessageCollection instance. */
+        /** The returned {@code DeploymentMessageCollection} instance. */
         private com.oracle.bmc.goldengate.model.DeploymentMessageCollection
                 deploymentMessageCollection;
 
         /**
-         * The returned DeploymentMessageCollection instance.
+         * The returned {@code DeploymentMessageCollection} instance.
          *
          * @param deploymentMessageCollection the value to set
          * @return this builder

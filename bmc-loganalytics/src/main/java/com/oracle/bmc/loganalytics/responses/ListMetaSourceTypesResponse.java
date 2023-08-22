@@ -64,12 +64,12 @@ public class ListMetaSourceTypesResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsMetaSourceTypeCollection instance. */
+    /** The returned {@code LogAnalyticsMetaSourceTypeCollection} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsMetaSourceTypeCollection
             logAnalyticsMetaSourceTypeCollection;
 
     /**
-     * The returned LogAnalyticsMetaSourceTypeCollection instance.
+     * The returned {@code LogAnalyticsMetaSourceTypeCollection} instance.
      *
      * @return the value
      */
@@ -181,12 +181,12 @@ public class ListMetaSourceTypesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned LogAnalyticsMetaSourceTypeCollection instance. */
+        /** The returned {@code LogAnalyticsMetaSourceTypeCollection} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsMetaSourceTypeCollection
                 logAnalyticsMetaSourceTypeCollection;
 
         /**
-         * The returned LogAnalyticsMetaSourceTypeCollection instance.
+         * The returned {@code LogAnalyticsMetaSourceTypeCollection} instance.
          *
          * @param logAnalyticsMetaSourceTypeCollection the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListAwrHubsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned AwrHubSummaryCollection instance. */
+    /** The returned {@code AwrHubSummaryCollection} instance. */
     private com.oracle.bmc.opsi.model.AwrHubSummaryCollection awrHubSummaryCollection;
 
     /**
-     * The returned AwrHubSummaryCollection instance.
+     * The returned {@code AwrHubSummaryCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListAwrHubsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned AwrHubSummaryCollection instance. */
+        /** The returned {@code AwrHubSummaryCollection} instance. */
         private com.oracle.bmc.opsi.model.AwrHubSummaryCollection awrHubSummaryCollection;
 
         /**
-         * The returned AwrHubSummaryCollection instance.
+         * The returned {@code AwrHubSummaryCollection} instance.
          *
          * @param awrHubSummaryCollection the value to set
          * @return this builder

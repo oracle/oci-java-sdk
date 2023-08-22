@@ -36,11 +36,11 @@ public class GetSddcResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Sddc instance. */
+    /** The returned {@code Sddc} instance. */
     private com.oracle.bmc.ocvp.model.Sddc sddc;
 
     /**
-     * The returned Sddc instance.
+     * The returned {@code Sddc} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetSddcResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Sddc instance. */
+        /** The returned {@code Sddc} instance. */
         private com.oracle.bmc.ocvp.model.Sddc sddc;
 
         /**
-         * The returned Sddc instance.
+         * The returned {@code Sddc} instance.
          *
          * @param sddc the value to set
          * @return this builder

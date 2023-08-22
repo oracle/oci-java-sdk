@@ -24,11 +24,11 @@ public class GetColumnNamesResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned ColumnNameCollection instance. */
+    /** The returned {@code ColumnNameCollection} instance. */
     private com.oracle.bmc.loganalytics.model.ColumnNameCollection columnNameCollection;
 
     /**
-     * The returned ColumnNameCollection instance.
+     * The returned {@code ColumnNameCollection} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetColumnNamesResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned ColumnNameCollection instance. */
+        /** The returned {@code ColumnNameCollection} instance. */
         private com.oracle.bmc.loganalytics.model.ColumnNameCollection columnNameCollection;
 
         /**
-         * The returned ColumnNameCollection instance.
+         * The returned {@code ColumnNameCollection} instance.
          *
          * @param columnNameCollection the value to set
          * @return this builder

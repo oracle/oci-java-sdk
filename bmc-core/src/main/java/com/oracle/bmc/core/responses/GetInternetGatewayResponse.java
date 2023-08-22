@@ -36,11 +36,11 @@ public class GetInternetGatewayResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned InternetGateway instance. */
+    /** The returned {@code InternetGateway} instance. */
     private com.oracle.bmc.core.model.InternetGateway internetGateway;
 
     /**
-     * The returned InternetGateway instance.
+     * The returned {@code InternetGateway} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetInternetGatewayResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned InternetGateway instance. */
+        /** The returned {@code InternetGateway} instance. */
         private com.oracle.bmc.core.model.InternetGateway internetGateway;
 
         /**
-         * The returned InternetGateway instance.
+         * The returned {@code InternetGateway} instance.
          *
          * @param internetGateway the value to set
          * @return this builder

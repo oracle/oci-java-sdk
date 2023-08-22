@@ -44,11 +44,11 @@ public class ListStacksResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.resourcemanager.model.StackSummary instances. */
+    /** A list of {@code com.oracle.bmc.resourcemanager.model.StackSummary} instances. */
     private java.util.List<com.oracle.bmc.resourcemanager.model.StackSummary> items;
 
     /**
-     * A list of com.oracle.bmc.resourcemanager.model.StackSummary instances.
+     * A list of {@code com.oracle.bmc.resourcemanager.model.StackSummary} instances.
      *
      * @return the value
      */
@@ -133,11 +133,11 @@ public class ListStacksResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.resourcemanager.model.StackSummary instances. */
+        /** A list of {@code com.oracle.bmc.resourcemanager.model.StackSummary} instances. */
         private java.util.List<com.oracle.bmc.resourcemanager.model.StackSummary> items;
 
         /**
-         * A list of com.oracle.bmc.resourcemanager.model.StackSummary instances.
+         * A list of {@code com.oracle.bmc.resourcemanager.model.StackSummary} instances.
          *
          * @param items the value to set
          * @return this builder

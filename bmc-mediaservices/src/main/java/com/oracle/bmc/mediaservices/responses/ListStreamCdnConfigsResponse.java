@@ -42,11 +42,11 @@ public class ListStreamCdnConfigsResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** The returned StreamCdnConfigCollection instance. */
+    /** The returned {@code StreamCdnConfigCollection} instance. */
     private com.oracle.bmc.mediaservices.model.StreamCdnConfigCollection streamCdnConfigCollection;
 
     /**
-     * The returned StreamCdnConfigCollection instance.
+     * The returned {@code StreamCdnConfigCollection} instance.
      *
      * @return the value
      */
@@ -131,12 +131,12 @@ public class ListStreamCdnConfigsResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned StreamCdnConfigCollection instance. */
+        /** The returned {@code StreamCdnConfigCollection} instance. */
         private com.oracle.bmc.mediaservices.model.StreamCdnConfigCollection
                 streamCdnConfigCollection;
 
         /**
-         * The returned StreamCdnConfigCollection instance.
+         * The returned {@code StreamCdnConfigCollection} instance.
          *
          * @param streamCdnConfigCollection the value to set
          * @return this builder

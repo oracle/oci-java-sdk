@@ -24,11 +24,11 @@ public class GetKmsiSettingResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned KmsiSetting instance. */
+    /** The returned {@code KmsiSetting} instance. */
     private com.oracle.bmc.identitydomains.model.KmsiSetting kmsiSetting;
 
     /**
-     * The returned KmsiSetting instance.
+     * The returned {@code KmsiSetting} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetKmsiSettingResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned KmsiSetting instance. */
+        /** The returned {@code KmsiSetting} instance. */
         private com.oracle.bmc.identitydomains.model.KmsiSetting kmsiSetting;
 
         /**
-         * The returned KmsiSetting instance.
+         * The returned {@code KmsiSetting} instance.
          *
          * @param kmsiSetting the value to set
          * @return this builder

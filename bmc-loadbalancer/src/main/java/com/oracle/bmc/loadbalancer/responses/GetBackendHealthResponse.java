@@ -44,11 +44,11 @@ public class GetBackendHealthResponse extends com.oracle.bmc.responses.BmcRespon
         return eTag;
     }
 
-    /** The returned BackendHealth instance. */
+    /** The returned {@code BackendHealth} instance. */
     private com.oracle.bmc.loadbalancer.model.BackendHealth backendHealth;
 
     /**
-     * The returned BackendHealth instance.
+     * The returned {@code BackendHealth} instance.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class GetBackendHealthResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned BackendHealth instance. */
+        /** The returned {@code BackendHealth} instance. */
         private com.oracle.bmc.loadbalancer.model.BackendHealth backendHealth;
 
         /**
-         * The returned BackendHealth instance.
+         * The returned {@code BackendHealth} instance.
          *
          * @param backendHealth the value to set
          * @return this builder

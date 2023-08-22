@@ -44,11 +44,11 @@ public class ListDataGuardAssociationsResponse extends com.oracle.bmc.responses.
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.database.model.DataGuardAssociationSummary instances. */
+    /** A list of {@code com.oracle.bmc.database.model.DataGuardAssociationSummary} instances. */
     private java.util.List<com.oracle.bmc.database.model.DataGuardAssociationSummary> items;
 
     /**
-     * A list of com.oracle.bmc.database.model.DataGuardAssociationSummary instances.
+     * A list of {@code com.oracle.bmc.database.model.DataGuardAssociationSummary} instances.
      *
      * @return the value
      */
@@ -136,11 +136,13 @@ public class ListDataGuardAssociationsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** A list of com.oracle.bmc.database.model.DataGuardAssociationSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.database.model.DataGuardAssociationSummary} instances.
+         */
         private java.util.List<com.oracle.bmc.database.model.DataGuardAssociationSummary> items;
 
         /**
-         * A list of com.oracle.bmc.database.model.DataGuardAssociationSummary instances.
+         * A list of {@code com.oracle.bmc.database.model.DataGuardAssociationSummary} instances.
          *
          * @param items the value to set
          * @return this builder

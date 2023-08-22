@@ -24,11 +24,11 @@ public class ListDataKeysResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.apmcontrolplane.model.DataKeySummary instances. */
+    /** A list of {@code com.oracle.bmc.apmcontrolplane.model.DataKeySummary} instances. */
     private java.util.List<com.oracle.bmc.apmcontrolplane.model.DataKeySummary> items;
 
     /**
-     * A list of com.oracle.bmc.apmcontrolplane.model.DataKeySummary instances.
+     * A list of {@code com.oracle.bmc.apmcontrolplane.model.DataKeySummary} instances.
      *
      * @return the value
      */
@@ -83,11 +83,11 @@ public class ListDataKeysResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.apmcontrolplane.model.DataKeySummary instances. */
+        /** A list of {@code com.oracle.bmc.apmcontrolplane.model.DataKeySummary} instances. */
         private java.util.List<com.oracle.bmc.apmcontrolplane.model.DataKeySummary> items;
 
         /**
-         * A list of com.oracle.bmc.apmcontrolplane.model.DataKeySummary instances.
+         * A list of {@code com.oracle.bmc.apmcontrolplane.model.DataKeySummary} instances.
          *
          * @param items the value to set
          * @return this builder

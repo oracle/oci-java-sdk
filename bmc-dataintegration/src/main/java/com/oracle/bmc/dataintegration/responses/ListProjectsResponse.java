@@ -72,11 +72,11 @@ public class ListProjectsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcTotalItems;
     }
 
-    /** The returned ProjectSummaryCollection instance. */
+    /** The returned {@code ProjectSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.ProjectSummaryCollection projectSummaryCollection;
 
     /**
-     * The returned ProjectSummaryCollection instance.
+     * The returned {@code ProjectSummaryCollection} instance.
      *
      * @return the value
      */
@@ -201,12 +201,12 @@ public class ListProjectsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned ProjectSummaryCollection instance. */
+        /** The returned {@code ProjectSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.ProjectSummaryCollection
                 projectSummaryCollection;
 
         /**
-         * The returned ProjectSummaryCollection instance.
+         * The returned {@code ProjectSummaryCollection} instance.
          *
          * @param projectSummaryCollection the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListMirrorsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned MirrorsCollection instance. */
+    /** The returned {@code MirrorsCollection} instance. */
     private com.oracle.bmc.osmanagementhub.model.MirrorsCollection mirrorsCollection;
 
     /**
-     * The returned MirrorsCollection instance.
+     * The returned {@code MirrorsCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListMirrorsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned MirrorsCollection instance. */
+        /** The returned {@code MirrorsCollection} instance. */
         private com.oracle.bmc.osmanagementhub.model.MirrorsCollection mirrorsCollection;
 
         /**
-         * The returned MirrorsCollection instance.
+         * The returned {@code MirrorsCollection} instance.
          *
          * @param mirrorsCollection the value to set
          * @return this builder

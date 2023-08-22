@@ -42,11 +42,11 @@ public class ListEtlRunsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /** The returned EtlRunCollection instance. */
+    /** The returned {@code EtlRunCollection} instance. */
     private com.oracle.bmc.emwarehouse.model.EtlRunCollection etlRunCollection;
 
     /**
-     * The returned EtlRunCollection instance.
+     * The returned {@code EtlRunCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListEtlRunsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned EtlRunCollection instance. */
+        /** The returned {@code EtlRunCollection} instance. */
         private com.oracle.bmc.emwarehouse.model.EtlRunCollection etlRunCollection;
 
         /**
-         * The returned EtlRunCollection instance.
+         * The returned {@code EtlRunCollection} instance.
          *
          * @param etlRunCollection the value to set
          * @return this builder

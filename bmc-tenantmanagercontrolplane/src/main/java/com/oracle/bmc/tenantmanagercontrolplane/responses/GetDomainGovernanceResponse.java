@@ -36,11 +36,11 @@ public class GetDomainGovernanceResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned DomainGovernance instance. */
+    /** The returned {@code DomainGovernance} instance. */
     private com.oracle.bmc.tenantmanagercontrolplane.model.DomainGovernance domainGovernance;
 
     /**
-     * The returned DomainGovernance instance.
+     * The returned {@code DomainGovernance} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetDomainGovernanceResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned DomainGovernance instance. */
+        /** The returned {@code DomainGovernance} instance. */
         private com.oracle.bmc.tenantmanagercontrolplane.model.DomainGovernance domainGovernance;
 
         /**
-         * The returned DomainGovernance instance.
+         * The returned {@code DomainGovernance} instance.
          *
          * @param domainGovernance the value to set
          * @return this builder

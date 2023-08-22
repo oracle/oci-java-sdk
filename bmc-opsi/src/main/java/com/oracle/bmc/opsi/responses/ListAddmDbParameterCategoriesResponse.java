@@ -42,12 +42,12 @@ public class ListAddmDbParameterCategoriesResponse extends com.oracle.bmc.respon
         return opcNextPage;
     }
 
-    /** The returned AddmDbParameterCategoryCollection instance. */
+    /** The returned {@code AddmDbParameterCategoryCollection} instance. */
     private com.oracle.bmc.opsi.model.AddmDbParameterCategoryCollection
             addmDbParameterCategoryCollection;
 
     /**
-     * The returned AddmDbParameterCategoryCollection instance.
+     * The returned {@code AddmDbParameterCategoryCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListAddmDbParameterCategoriesResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned AddmDbParameterCategoryCollection instance. */
+        /** The returned {@code AddmDbParameterCategoryCollection} instance. */
         private com.oracle.bmc.opsi.model.AddmDbParameterCategoryCollection
                 addmDbParameterCategoryCollection;
 
         /**
-         * The returned AddmDbParameterCategoryCollection instance.
+         * The returned {@code AddmDbParameterCategoryCollection} instance.
          *
          * @param addmDbParameterCategoryCollection the value to set
          * @return this builder

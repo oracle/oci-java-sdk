@@ -60,11 +60,11 @@ public class ListJobRunsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.datascience.model.JobRunSummary instances. */
+    /** A list of {@code com.oracle.bmc.datascience.model.JobRunSummary} instances. */
     private java.util.List<com.oracle.bmc.datascience.model.JobRunSummary> items;
 
     /**
-     * A list of com.oracle.bmc.datascience.model.JobRunSummary instances.
+     * A list of {@code com.oracle.bmc.datascience.model.JobRunSummary} instances.
      *
      * @return the value
      */
@@ -170,11 +170,11 @@ public class ListJobRunsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.datascience.model.JobRunSummary instances. */
+        /** A list of {@code com.oracle.bmc.datascience.model.JobRunSummary} instances. */
         private java.util.List<com.oracle.bmc.datascience.model.JobRunSummary> items;
 
         /**
-         * A list of com.oracle.bmc.datascience.model.JobRunSummary instances.
+         * A list of {@code com.oracle.bmc.datascience.model.JobRunSummary} instances.
          *
          * @param items the value to set
          * @return this builder

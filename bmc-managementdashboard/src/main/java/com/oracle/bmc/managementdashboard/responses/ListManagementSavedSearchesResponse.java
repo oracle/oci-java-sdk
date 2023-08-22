@@ -42,12 +42,12 @@ public class ListManagementSavedSearchesResponse extends com.oracle.bmc.response
         return opcNextPage;
     }
 
-    /** The returned ManagementSavedSearchCollection instance. */
+    /** The returned {@code ManagementSavedSearchCollection} instance. */
     private com.oracle.bmc.managementdashboard.model.ManagementSavedSearchCollection
             managementSavedSearchCollection;
 
     /**
-     * The returned ManagementSavedSearchCollection instance.
+     * The returned {@code ManagementSavedSearchCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListManagementSavedSearchesResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned ManagementSavedSearchCollection instance. */
+        /** The returned {@code ManagementSavedSearchCollection} instance. */
         private com.oracle.bmc.managementdashboard.model.ManagementSavedSearchCollection
                 managementSavedSearchCollection;
 
         /**
-         * The returned ManagementSavedSearchCollection instance.
+         * The returned {@code ManagementSavedSearchCollection} instance.
          *
          * @param managementSavedSearchCollection the value to set
          * @return this builder

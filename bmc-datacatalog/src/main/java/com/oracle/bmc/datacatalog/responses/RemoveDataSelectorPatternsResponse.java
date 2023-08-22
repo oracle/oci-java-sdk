@@ -40,11 +40,11 @@ public class RemoveDataSelectorPatternsResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    /** The returned DataAsset instance. */
+    /** The returned {@code DataAsset} instance. */
     private com.oracle.bmc.datacatalog.model.DataAsset dataAsset;
 
     /**
-     * The returned DataAsset instance.
+     * The returned {@code DataAsset} instance.
      *
      * @return the value
      */
@@ -126,11 +126,11 @@ public class RemoveDataSelectorPatternsResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned DataAsset instance. */
+        /** The returned {@code DataAsset} instance. */
         private com.oracle.bmc.datacatalog.model.DataAsset dataAsset;
 
         /**
-         * The returned DataAsset instance.
+         * The returned {@code DataAsset} instance.
          *
          * @param dataAsset the value to set
          * @return this builder

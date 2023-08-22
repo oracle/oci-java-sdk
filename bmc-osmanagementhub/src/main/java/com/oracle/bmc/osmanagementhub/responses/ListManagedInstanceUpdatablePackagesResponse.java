@@ -43,12 +43,12 @@ public class ListManagedInstanceUpdatablePackagesResponse
         return opcNextPage;
     }
 
-    /** The returned UpdatablePackageCollection instance. */
+    /** The returned {@code UpdatablePackageCollection} instance. */
     private com.oracle.bmc.osmanagementhub.model.UpdatablePackageCollection
             updatablePackageCollection;
 
     /**
-     * The returned UpdatablePackageCollection instance.
+     * The returned {@code UpdatablePackageCollection} instance.
      *
      * @return the value
      */
@@ -134,12 +134,12 @@ public class ListManagedInstanceUpdatablePackagesResponse
             return this;
         }
 
-        /** The returned UpdatablePackageCollection instance. */
+        /** The returned {@code UpdatablePackageCollection} instance. */
         private com.oracle.bmc.osmanagementhub.model.UpdatablePackageCollection
                 updatablePackageCollection;
 
         /**
-         * The returned UpdatablePackageCollection instance.
+         * The returned {@code UpdatablePackageCollection} instance.
          *
          * @param updatablePackageCollection the value to set
          * @return this builder

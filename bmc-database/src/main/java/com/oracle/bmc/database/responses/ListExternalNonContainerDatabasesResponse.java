@@ -45,11 +45,15 @@ public class ListExternalNonContainerDatabasesResponse
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.database.model.ExternalNonContainerDatabaseSummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.database.model.ExternalNonContainerDatabaseSummary}
+     * instances.
+     */
     private java.util.List<com.oracle.bmc.database.model.ExternalNonContainerDatabaseSummary> items;
 
     /**
-     * A list of com.oracle.bmc.database.model.ExternalNonContainerDatabaseSummary instances.
+     * A list of {@code com.oracle.bmc.database.model.ExternalNonContainerDatabaseSummary}
+     * instances.
      *
      * @return the value
      */
@@ -140,13 +144,15 @@ public class ListExternalNonContainerDatabasesResponse
         }
 
         /**
-         * A list of com.oracle.bmc.database.model.ExternalNonContainerDatabaseSummary instances.
+         * A list of {@code com.oracle.bmc.database.model.ExternalNonContainerDatabaseSummary}
+         * instances.
          */
         private java.util.List<com.oracle.bmc.database.model.ExternalNonContainerDatabaseSummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.database.model.ExternalNonContainerDatabaseSummary instances.
+         * A list of {@code com.oracle.bmc.database.model.ExternalNonContainerDatabaseSummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

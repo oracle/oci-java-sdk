@@ -42,12 +42,12 @@ public class ListIngressGatewayRouteTablesResponse extends com.oracle.bmc.respon
         return opcNextPage;
     }
 
-    /** The returned IngressGatewayRouteTableCollection instance. */
+    /** The returned {@code IngressGatewayRouteTableCollection} instance. */
     private com.oracle.bmc.servicemesh.model.IngressGatewayRouteTableCollection
             ingressGatewayRouteTableCollection;
 
     /**
-     * The returned IngressGatewayRouteTableCollection instance.
+     * The returned {@code IngressGatewayRouteTableCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListIngressGatewayRouteTablesResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned IngressGatewayRouteTableCollection instance. */
+        /** The returned {@code IngressGatewayRouteTableCollection} instance. */
         private com.oracle.bmc.servicemesh.model.IngressGatewayRouteTableCollection
                 ingressGatewayRouteTableCollection;
 
         /**
-         * The returned IngressGatewayRouteTableCollection instance.
+         * The returned {@code IngressGatewayRouteTableCollection} instance.
          *
          * @param ingressGatewayRouteTableCollection the value to set
          * @return this builder

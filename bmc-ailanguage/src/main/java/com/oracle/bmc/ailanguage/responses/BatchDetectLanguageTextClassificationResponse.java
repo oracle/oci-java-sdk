@@ -25,12 +25,12 @@ public class BatchDetectLanguageTextClassificationResponse
         return opcRequestId;
     }
 
-    /** The returned BatchDetectLanguageTextClassificationResult instance. */
+    /** The returned {@code BatchDetectLanguageTextClassificationResult} instance. */
     private com.oracle.bmc.ailanguage.model.BatchDetectLanguageTextClassificationResult
             batchDetectLanguageTextClassificationResult;
 
     /**
-     * The returned BatchDetectLanguageTextClassificationResult instance.
+     * The returned {@code BatchDetectLanguageTextClassificationResult} instance.
      *
      * @return the value
      */
@@ -94,12 +94,12 @@ public class BatchDetectLanguageTextClassificationResponse
             return this;
         }
 
-        /** The returned BatchDetectLanguageTextClassificationResult instance. */
+        /** The returned {@code BatchDetectLanguageTextClassificationResult} instance. */
         private com.oracle.bmc.ailanguage.model.BatchDetectLanguageTextClassificationResult
                 batchDetectLanguageTextClassificationResult;
 
         /**
-         * The returned BatchDetectLanguageTextClassificationResult instance.
+         * The returned {@code BatchDetectLanguageTextClassificationResult} instance.
          *
          * @param batchDetectLanguageTextClassificationResult the value to set
          * @return this builder

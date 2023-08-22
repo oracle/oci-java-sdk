@@ -40,11 +40,11 @@ public class CreateFolderResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Folder instance. */
+    /** The returned {@code Folder} instance. */
     private com.oracle.bmc.datacatalog.model.Folder folder;
 
     /**
-     * The returned Folder instance.
+     * The returned {@code Folder} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class CreateFolderResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Folder instance. */
+        /** The returned {@code Folder} instance. */
         private com.oracle.bmc.datacatalog.model.Folder folder;
 
         /**
-         * The returned Folder instance.
+         * The returned {@code Folder} instance.
          *
          * @param folder the value to set
          * @return this builder

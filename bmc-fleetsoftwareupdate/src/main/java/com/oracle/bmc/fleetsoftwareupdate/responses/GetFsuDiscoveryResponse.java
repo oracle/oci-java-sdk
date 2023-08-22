@@ -36,11 +36,11 @@ public class GetFsuDiscoveryResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned FsuDiscovery instance. */
+    /** The returned {@code FsuDiscovery} instance. */
     private com.oracle.bmc.fleetsoftwareupdate.model.FsuDiscovery fsuDiscovery;
 
     /**
-     * The returned FsuDiscovery instance.
+     * The returned {@code FsuDiscovery} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetFsuDiscoveryResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned FsuDiscovery instance. */
+        /** The returned {@code FsuDiscovery} instance. */
         private com.oracle.bmc.fleetsoftwareupdate.model.FsuDiscovery fsuDiscovery;
 
         /**
-         * The returned FsuDiscovery instance.
+         * The returned {@code FsuDiscovery} instance.
          *
          * @param fsuDiscovery the value to set
          * @return this builder

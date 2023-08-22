@@ -42,11 +42,11 @@ public class ListFolderTagsResponse extends com.oracle.bmc.responses.BmcResponse
         return opcNextPage;
     }
 
-    /** The returned FolderTagCollection instance. */
+    /** The returned {@code FolderTagCollection} instance. */
     private com.oracle.bmc.datacatalog.model.FolderTagCollection folderTagCollection;
 
     /**
-     * The returned FolderTagCollection instance.
+     * The returned {@code FolderTagCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListFolderTagsResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned FolderTagCollection instance. */
+        /** The returned {@code FolderTagCollection} instance. */
         private com.oracle.bmc.datacatalog.model.FolderTagCollection folderTagCollection;
 
         /**
-         * The returned FolderTagCollection instance.
+         * The returned {@code FolderTagCollection} instance.
          *
          * @param folderTagCollection the value to set
          * @return this builder

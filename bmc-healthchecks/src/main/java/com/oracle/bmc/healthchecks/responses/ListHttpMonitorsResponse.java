@@ -42,11 +42,11 @@ public class ListHttpMonitorsResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.healthchecks.model.HttpMonitorSummary instances. */
+    /** A list of {@code com.oracle.bmc.healthchecks.model.HttpMonitorSummary} instances. */
     private java.util.List<com.oracle.bmc.healthchecks.model.HttpMonitorSummary> items;
 
     /**
-     * A list of com.oracle.bmc.healthchecks.model.HttpMonitorSummary instances.
+     * A list of {@code com.oracle.bmc.healthchecks.model.HttpMonitorSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListHttpMonitorsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** A list of com.oracle.bmc.healthchecks.model.HttpMonitorSummary instances. */
+        /** A list of {@code com.oracle.bmc.healthchecks.model.HttpMonitorSummary} instances. */
         private java.util.List<com.oracle.bmc.healthchecks.model.HttpMonitorSummary> items;
 
         /**
-         * A list of com.oracle.bmc.healthchecks.model.HttpMonitorSummary instances.
+         * A list of {@code com.oracle.bmc.healthchecks.model.HttpMonitorSummary} instances.
          *
          * @param items the value to set
          * @return this builder

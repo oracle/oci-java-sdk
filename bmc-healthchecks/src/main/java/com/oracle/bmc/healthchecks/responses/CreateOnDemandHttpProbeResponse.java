@@ -36,11 +36,11 @@ public class CreateOnDemandHttpProbeResponse extends com.oracle.bmc.responses.Bm
         return location;
     }
 
-    /** The returned HttpProbe instance. */
+    /** The returned {@code HttpProbe} instance. */
     private com.oracle.bmc.healthchecks.model.HttpProbe httpProbe;
 
     /**
-     * The returned HttpProbe instance.
+     * The returned {@code HttpProbe} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class CreateOnDemandHttpProbeResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned HttpProbe instance. */
+        /** The returned {@code HttpProbe} instance. */
         private com.oracle.bmc.healthchecks.model.HttpProbe httpProbe;
 
         /**
-         * The returned HttpProbe instance.
+         * The returned {@code HttpProbe} instance.
          *
          * @param httpProbe the value to set
          * @return this builder

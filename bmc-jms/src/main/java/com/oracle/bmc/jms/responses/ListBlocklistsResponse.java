@@ -44,11 +44,11 @@ public class ListBlocklistsResponse extends com.oracle.bmc.responses.BmcResponse
         return opcNextPage;
     }
 
-    /** The returned BlocklistCollection instance. */
+    /** The returned {@code BlocklistCollection} instance. */
     private com.oracle.bmc.jms.model.BlocklistCollection blocklistCollection;
 
     /**
-     * The returned BlocklistCollection instance.
+     * The returned {@code BlocklistCollection} instance.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListBlocklistsResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned BlocklistCollection instance. */
+        /** The returned {@code BlocklistCollection} instance. */
         private com.oracle.bmc.jms.model.BlocklistCollection blocklistCollection;
 
         /**
-         * The returned BlocklistCollection instance.
+         * The returned {@code BlocklistCollection} instance.
          *
          * @param blocklistCollection the value to set
          * @return this builder

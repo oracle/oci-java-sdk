@@ -42,12 +42,12 @@ public class ListAvailableShapesResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** The returned AvailableShapesCollection instance. */
+    /** The returned {@code AvailableShapesCollection} instance. */
     private com.oracle.bmc.cloudmigrations.model.AvailableShapesCollection
             availableShapesCollection;
 
     /**
-     * The returned AvailableShapesCollection instance.
+     * The returned {@code AvailableShapesCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListAvailableShapesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned AvailableShapesCollection instance. */
+        /** The returned {@code AvailableShapesCollection} instance. */
         private com.oracle.bmc.cloudmigrations.model.AvailableShapesCollection
                 availableShapesCollection;
 
         /**
-         * The returned AvailableShapesCollection instance.
+         * The returned {@code AvailableShapesCollection} instance.
          *
          * @param availableShapesCollection the value to set
          * @return this builder

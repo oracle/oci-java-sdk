@@ -40,11 +40,11 @@ public class ListConnectionsResponse extends com.oracle.bmc.responses.BmcRespons
         return opcNextPage;
     }
 
-    /** The returned ConnectionCollection instance. */
+    /** The returned {@code ConnectionCollection} instance. */
     private com.oracle.bmc.goldengate.model.ConnectionCollection connectionCollection;
 
     /**
-     * The returned ConnectionCollection instance.
+     * The returned {@code ConnectionCollection} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class ListConnectionsResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned ConnectionCollection instance. */
+        /** The returned {@code ConnectionCollection} instance. */
         private com.oracle.bmc.goldengate.model.ConnectionCollection connectionCollection;
 
         /**
-         * The returned ConnectionCollection instance.
+         * The returned {@code ConnectionCollection} instance.
          *
          * @param connectionCollection the value to set
          * @return this builder

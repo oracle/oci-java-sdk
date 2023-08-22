@@ -54,11 +54,11 @@ public class ListAccessRulesResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.waas.model.AccessRule instances. */
+    /** A list of {@code com.oracle.bmc.waas.model.AccessRule} instances. */
     private java.util.List<com.oracle.bmc.waas.model.AccessRule> items;
 
     /**
-     * A list of com.oracle.bmc.waas.model.AccessRule instances.
+     * A list of {@code com.oracle.bmc.waas.model.AccessRule} instances.
      *
      * @return the value
      */
@@ -158,11 +158,11 @@ public class ListAccessRulesResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** A list of com.oracle.bmc.waas.model.AccessRule instances. */
+        /** A list of {@code com.oracle.bmc.waas.model.AccessRule} instances. */
         private java.util.List<com.oracle.bmc.waas.model.AccessRule> items;
 
         /**
-         * A list of com.oracle.bmc.waas.model.AccessRule instances.
+         * A list of {@code com.oracle.bmc.waas.model.AccessRule} instances.
          *
          * @param items the value to set
          * @return this builder

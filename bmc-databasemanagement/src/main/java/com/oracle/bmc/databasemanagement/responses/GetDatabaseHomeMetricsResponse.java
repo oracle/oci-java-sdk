@@ -24,11 +24,11 @@ public class GetDatabaseHomeMetricsResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned DatabaseHomeMetrics instance. */
+    /** The returned {@code DatabaseHomeMetrics} instance. */
     private com.oracle.bmc.databasemanagement.model.DatabaseHomeMetrics databaseHomeMetrics;
 
     /**
-     * The returned DatabaseHomeMetrics instance.
+     * The returned {@code DatabaseHomeMetrics} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class GetDatabaseHomeMetricsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned DatabaseHomeMetrics instance. */
+        /** The returned {@code DatabaseHomeMetrics} instance. */
         private com.oracle.bmc.databasemanagement.model.DatabaseHomeMetrics databaseHomeMetrics;
 
         /**
-         * The returned DatabaseHomeMetrics instance.
+         * The returned {@code DatabaseHomeMetrics} instance.
          *
          * @param databaseHomeMetrics the value to set
          * @return this builder

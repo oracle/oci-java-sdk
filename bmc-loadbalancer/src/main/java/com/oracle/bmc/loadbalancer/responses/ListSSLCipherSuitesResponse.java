@@ -44,11 +44,11 @@ public class ListSSLCipherSuitesResponse extends com.oracle.bmc.responses.BmcRes
         return eTag;
     }
 
-    /** A list of com.oracle.bmc.loadbalancer.model.SSLCipherSuite instances. */
+    /** A list of {@code com.oracle.bmc.loadbalancer.model.SSLCipherSuite} instances. */
     private java.util.List<com.oracle.bmc.loadbalancer.model.SSLCipherSuite> items;
 
     /**
-     * A list of com.oracle.bmc.loadbalancer.model.SSLCipherSuite instances.
+     * A list of {@code com.oracle.bmc.loadbalancer.model.SSLCipherSuite} instances.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListSSLCipherSuitesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** A list of com.oracle.bmc.loadbalancer.model.SSLCipherSuite instances. */
+        /** A list of {@code com.oracle.bmc.loadbalancer.model.SSLCipherSuite} instances. */
         private java.util.List<com.oracle.bmc.loadbalancer.model.SSLCipherSuite> items;
 
         /**
-         * A list of com.oracle.bmc.loadbalancer.model.SSLCipherSuite instances.
+         * A list of {@code com.oracle.bmc.loadbalancer.model.SSLCipherSuite} instances.
          *
          * @param items the value to set
          * @return this builder

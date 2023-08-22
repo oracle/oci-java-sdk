@@ -42,12 +42,12 @@ public class ListDataAccessContainersResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** The returned DataAccessContainerCollection instance. */
+    /** The returned {@code DataAccessContainerCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.DataAccessContainerCollection
             dataAccessContainerCollection;
 
     /**
-     * The returned DataAccessContainerCollection instance.
+     * The returned {@code DataAccessContainerCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListDataAccessContainersResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned DataAccessContainerCollection instance. */
+        /** The returned {@code DataAccessContainerCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.DataAccessContainerCollection
                 dataAccessContainerCollection;
 
         /**
-         * The returned DataAccessContainerCollection instance.
+         * The returned {@code DataAccessContainerCollection} instance.
          *
          * @param dataAccessContainerCollection the value to set
          * @return this builder

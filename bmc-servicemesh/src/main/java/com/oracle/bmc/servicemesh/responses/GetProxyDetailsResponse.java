@@ -24,11 +24,11 @@ public class GetProxyDetailsResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned ProxyDetails instance. */
+    /** The returned {@code ProxyDetails} instance. */
     private com.oracle.bmc.servicemesh.model.ProxyDetails proxyDetails;
 
     /**
-     * The returned ProxyDetails instance.
+     * The returned {@code ProxyDetails} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetProxyDetailsResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned ProxyDetails instance. */
+        /** The returned {@code ProxyDetails} instance. */
         private com.oracle.bmc.servicemesh.model.ProxyDetails proxyDetails;
 
         /**
-         * The returned ProxyDetails instance.
+         * The returned {@code ProxyDetails} instance.
          *
          * @param proxyDetails the value to set
          * @return this builder

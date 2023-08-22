@@ -70,11 +70,11 @@ public class CreateSensitiveTypeResponse extends com.oracle.bmc.responses.BmcRes
         return location;
     }
 
-    /** The returned SensitiveType instance. */
+    /** The returned {@code SensitiveType} instance. */
     private com.oracle.bmc.datasafe.model.SensitiveType sensitiveType;
 
     /**
-     * The returned SensitiveType instance.
+     * The returned {@code SensitiveType} instance.
      *
      * @return the value
      */
@@ -195,11 +195,11 @@ public class CreateSensitiveTypeResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned SensitiveType instance. */
+        /** The returned {@code SensitiveType} instance. */
         private com.oracle.bmc.datasafe.model.SensitiveType sensitiveType;
 
         /**
-         * The returned SensitiveType instance.
+         * The returned {@code SensitiveType} instance.
          *
          * @param sensitiveType the value to set
          * @return this builder

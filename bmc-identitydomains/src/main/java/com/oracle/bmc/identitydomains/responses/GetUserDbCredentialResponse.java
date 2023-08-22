@@ -24,11 +24,11 @@ public class GetUserDbCredentialResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned UserDbCredential instance. */
+    /** The returned {@code UserDbCredential} instance. */
     private com.oracle.bmc.identitydomains.model.UserDbCredential userDbCredential;
 
     /**
-     * The returned UserDbCredential instance.
+     * The returned {@code UserDbCredential} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetUserDbCredentialResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned UserDbCredential instance. */
+        /** The returned {@code UserDbCredential} instance. */
         private com.oracle.bmc.identitydomains.model.UserDbCredential userDbCredential;
 
         /**
-         * The returned UserDbCredential instance.
+         * The returned {@code UserDbCredential} instance.
          *
          * @param userDbCredential the value to set
          * @return this builder

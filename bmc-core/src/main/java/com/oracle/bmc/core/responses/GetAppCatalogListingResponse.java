@@ -36,11 +36,11 @@ public class GetAppCatalogListingResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned AppCatalogListing instance. */
+    /** The returned {@code AppCatalogListing} instance. */
     private com.oracle.bmc.core.model.AppCatalogListing appCatalogListing;
 
     /**
-     * The returned AppCatalogListing instance.
+     * The returned {@code AppCatalogListing} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetAppCatalogListingResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned AppCatalogListing instance. */
+        /** The returned {@code AppCatalogListing} instance. */
         private com.oracle.bmc.core.model.AppCatalogListing appCatalogListing;
 
         /**
-         * The returned AppCatalogListing instance.
+         * The returned {@code AppCatalogListing} instance.
          *
          * @param appCatalogListing the value to set
          * @return this builder

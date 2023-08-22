@@ -24,12 +24,12 @@ public class ListTerraformVersionsResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned TerraformVersionCollection instance. */
+    /** The returned {@code TerraformVersionCollection} instance. */
     private com.oracle.bmc.resourcemanager.model.TerraformVersionCollection
             terraformVersionCollection;
 
     /**
-     * The returned TerraformVersionCollection instance.
+     * The returned {@code TerraformVersionCollection} instance.
      *
      * @return the value
      */
@@ -91,12 +91,12 @@ public class ListTerraformVersionsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned TerraformVersionCollection instance. */
+        /** The returned {@code TerraformVersionCollection} instance. */
         private com.oracle.bmc.resourcemanager.model.TerraformVersionCollection
                 terraformVersionCollection;
 
         /**
-         * The returned TerraformVersionCollection instance.
+         * The returned {@code TerraformVersionCollection} instance.
          *
          * @param terraformVersionCollection the value to set
          * @return this builder

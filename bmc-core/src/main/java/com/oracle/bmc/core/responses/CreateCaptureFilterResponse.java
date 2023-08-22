@@ -36,11 +36,11 @@ public class CreateCaptureFilterResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned CaptureFilter instance. */
+    /** The returned {@code CaptureFilter} instance. */
     private com.oracle.bmc.core.model.CaptureFilter captureFilter;
 
     /**
-     * The returned CaptureFilter instance.
+     * The returned {@code CaptureFilter} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class CreateCaptureFilterResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned CaptureFilter instance. */
+        /** The returned {@code CaptureFilter} instance. */
         private com.oracle.bmc.core.model.CaptureFilter captureFilter;
 
         /**
-         * The returned CaptureFilter instance.
+         * The returned {@code CaptureFilter} instance.
          *
          * @param captureFilter the value to set
          * @return this builder

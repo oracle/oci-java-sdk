@@ -42,12 +42,12 @@ public class ListDedicatedVantagePointsResponse extends com.oracle.bmc.responses
         return opcNextPage;
     }
 
-    /** The returned DedicatedVantagePointCollection instance. */
+    /** The returned {@code DedicatedVantagePointCollection} instance. */
     private com.oracle.bmc.apmsynthetics.model.DedicatedVantagePointCollection
             dedicatedVantagePointCollection;
 
     /**
-     * The returned DedicatedVantagePointCollection instance.
+     * The returned {@code DedicatedVantagePointCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListDedicatedVantagePointsResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned DedicatedVantagePointCollection instance. */
+        /** The returned {@code DedicatedVantagePointCollection} instance. */
         private com.oracle.bmc.apmsynthetics.model.DedicatedVantagePointCollection
                 dedicatedVantagePointCollection;
 
         /**
-         * The returned DedicatedVantagePointCollection instance.
+         * The returned {@code DedicatedVantagePointCollection} instance.
          *
          * @param dedicatedVantagePointCollection the value to set
          * @return this builder

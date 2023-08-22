@@ -24,11 +24,11 @@ public class BulkUploadLicenseRecordsResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** The returned BulkUploadResponse instance. */
+    /** The returned {@code BulkUploadResponse} instance. */
     private com.oracle.bmc.licensemanager.model.BulkUploadResponse bulkUploadResponse;
 
     /**
-     * The returned BulkUploadResponse instance.
+     * The returned {@code BulkUploadResponse} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class BulkUploadLicenseRecordsResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned BulkUploadResponse instance. */
+        /** The returned {@code BulkUploadResponse} instance. */
         private com.oracle.bmc.licensemanager.model.BulkUploadResponse bulkUploadResponse;
 
         /**
-         * The returned BulkUploadResponse instance.
+         * The returned {@code BulkUploadResponse} instance.
          *
          * @param bulkUploadResponse the value to set
          * @return this builder

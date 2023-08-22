@@ -36,11 +36,11 @@ public class GetDetectorRecipeResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned DetectorRecipe instance. */
+    /** The returned {@code DetectorRecipe} instance. */
     private com.oracle.bmc.cloudguard.model.DetectorRecipe detectorRecipe;
 
     /**
-     * The returned DetectorRecipe instance.
+     * The returned {@code DetectorRecipe} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetDetectorRecipeResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned DetectorRecipe instance. */
+        /** The returned {@code DetectorRecipe} instance. */
         private com.oracle.bmc.cloudguard.model.DetectorRecipe detectorRecipe;
 
         /**
-         * The returned DetectorRecipe instance.
+         * The returned {@code DetectorRecipe} instance.
          *
          * @param detectorRecipe the value to set
          * @return this builder

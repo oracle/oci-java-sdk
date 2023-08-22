@@ -56,11 +56,11 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
         return opcPreviousPage;
     }
 
-    /** A list of com.oracle.bmc.integration.model.WorkRequestLogEntry instances. */
+    /** A list of {@code com.oracle.bmc.integration.model.WorkRequestLogEntry} instances. */
     private java.util.List<com.oracle.bmc.integration.model.WorkRequestLogEntry> items;
 
     /**
-     * A list of com.oracle.bmc.integration.model.WorkRequestLogEntry instances.
+     * A list of {@code com.oracle.bmc.integration.model.WorkRequestLogEntry} instances.
      *
      * @return the value
      */
@@ -162,11 +162,11 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** A list of com.oracle.bmc.integration.model.WorkRequestLogEntry instances. */
+        /** A list of {@code com.oracle.bmc.integration.model.WorkRequestLogEntry} instances. */
         private java.util.List<com.oracle.bmc.integration.model.WorkRequestLogEntry> items;
 
         /**
-         * A list of com.oracle.bmc.integration.model.WorkRequestLogEntry instances.
+         * A list of {@code com.oracle.bmc.integration.model.WorkRequestLogEntry} instances.
          *
          * @param items the value to set
          * @return this builder

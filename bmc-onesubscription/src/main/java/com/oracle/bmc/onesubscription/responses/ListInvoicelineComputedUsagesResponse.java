@@ -42,12 +42,16 @@ public class ListInvoicelineComputedUsagesResponse extends com.oracle.bmc.respon
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.onesubscription.model.InvoicelineComputedUsageSummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.onesubscription.model.InvoicelineComputedUsageSummary}
+     * instances.
+     */
     private java.util.List<com.oracle.bmc.onesubscription.model.InvoicelineComputedUsageSummary>
             items;
 
     /**
-     * A list of com.oracle.bmc.onesubscription.model.InvoicelineComputedUsageSummary instances.
+     * A list of {@code com.oracle.bmc.onesubscription.model.InvoicelineComputedUsageSummary}
+     * instances.
      *
      * @return the value
      */
@@ -134,13 +138,15 @@ public class ListInvoicelineComputedUsagesResponse extends com.oracle.bmc.respon
         }
 
         /**
-         * A list of com.oracle.bmc.onesubscription.model.InvoicelineComputedUsageSummary instances.
+         * A list of {@code com.oracle.bmc.onesubscription.model.InvoicelineComputedUsageSummary}
+         * instances.
          */
         private java.util.List<com.oracle.bmc.onesubscription.model.InvoicelineComputedUsageSummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.onesubscription.model.InvoicelineComputedUsageSummary instances.
+         * A list of {@code com.oracle.bmc.onesubscription.model.InvoicelineComputedUsageSummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

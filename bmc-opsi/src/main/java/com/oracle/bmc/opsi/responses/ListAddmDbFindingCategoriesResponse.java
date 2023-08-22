@@ -42,12 +42,12 @@ public class ListAddmDbFindingCategoriesResponse extends com.oracle.bmc.response
         return opcNextPage;
     }
 
-    /** The returned AddmDbFindingCategoryCollection instance. */
+    /** The returned {@code AddmDbFindingCategoryCollection} instance. */
     private com.oracle.bmc.opsi.model.AddmDbFindingCategoryCollection
             addmDbFindingCategoryCollection;
 
     /**
-     * The returned AddmDbFindingCategoryCollection instance.
+     * The returned {@code AddmDbFindingCategoryCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListAddmDbFindingCategoriesResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned AddmDbFindingCategoryCollection instance. */
+        /** The returned {@code AddmDbFindingCategoryCollection} instance. */
         private com.oracle.bmc.opsi.model.AddmDbFindingCategoryCollection
                 addmDbFindingCategoryCollection;
 
         /**
-         * The returned AddmDbFindingCategoryCollection instance.
+         * The returned {@code AddmDbFindingCategoryCollection} instance.
          *
          * @param addmDbFindingCategoryCollection the value to set
          * @return this builder

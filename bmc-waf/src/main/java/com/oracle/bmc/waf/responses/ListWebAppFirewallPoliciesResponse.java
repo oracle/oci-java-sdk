@@ -42,11 +42,11 @@ public class ListWebAppFirewallPoliciesResponse extends com.oracle.bmc.responses
         return opcNextPage;
     }
 
-    /** The returned WebAppFirewallPolicyCollection instance. */
+    /** The returned {@code WebAppFirewallPolicyCollection} instance. */
     private com.oracle.bmc.waf.model.WebAppFirewallPolicyCollection webAppFirewallPolicyCollection;
 
     /**
-     * The returned WebAppFirewallPolicyCollection instance.
+     * The returned {@code WebAppFirewallPolicyCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListWebAppFirewallPoliciesResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned WebAppFirewallPolicyCollection instance. */
+        /** The returned {@code WebAppFirewallPolicyCollection} instance. */
         private com.oracle.bmc.waf.model.WebAppFirewallPolicyCollection
                 webAppFirewallPolicyCollection;
 
         /**
-         * The returned WebAppFirewallPolicyCollection instance.
+         * The returned {@code WebAppFirewallPolicyCollection} instance.
          *
          * @param webAppFirewallPolicyCollection the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class GetSdmMaskingPolicyDifferenceResponse extends com.oracle.bmc.respon
         return opcRequestId;
     }
 
-    /** The returned SdmMaskingPolicyDifference instance. */
+    /** The returned {@code SdmMaskingPolicyDifference} instance. */
     private com.oracle.bmc.datasafe.model.SdmMaskingPolicyDifference sdmMaskingPolicyDifference;
 
     /**
-     * The returned SdmMaskingPolicyDifference instance.
+     * The returned {@code SdmMaskingPolicyDifference} instance.
      *
      * @return the value
      */
@@ -131,11 +131,11 @@ public class GetSdmMaskingPolicyDifferenceResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned SdmMaskingPolicyDifference instance. */
+        /** The returned {@code SdmMaskingPolicyDifference} instance. */
         private com.oracle.bmc.datasafe.model.SdmMaskingPolicyDifference sdmMaskingPolicyDifference;
 
         /**
-         * The returned SdmMaskingPolicyDifference instance.
+         * The returned {@code SdmMaskingPolicyDifference} instance.
          *
          * @param sdmMaskingPolicyDifference the value to set
          * @return this builder

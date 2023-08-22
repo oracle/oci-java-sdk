@@ -24,11 +24,11 @@ public class GetSoftwarePackageResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned SoftwarePackage instance. */
+    /** The returned {@code SoftwarePackage} instance. */
     private com.oracle.bmc.osmanagementhub.model.SoftwarePackage softwarePackage;
 
     /**
-     * The returned SoftwarePackage instance.
+     * The returned {@code SoftwarePackage} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetSoftwarePackageResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned SoftwarePackage instance. */
+        /** The returned {@code SoftwarePackage} instance. */
         private com.oracle.bmc.osmanagementhub.model.SoftwarePackage softwarePackage;
 
         /**
-         * The returned SoftwarePackage instance.
+         * The returned {@code SoftwarePackage} instance.
          *
          * @param softwarePackage the value to set
          * @return this builder

@@ -76,11 +76,11 @@ public class CreateExternalDbSystemResponse extends com.oracle.bmc.responses.Bmc
         return contentLocation;
     }
 
-    /** The returned ExternalDbSystem instance. */
+    /** The returned {@code ExternalDbSystem} instance. */
     private com.oracle.bmc.databasemanagement.model.ExternalDbSystem externalDbSystem;
 
     /**
-     * The returned ExternalDbSystem instance.
+     * The returned {@code ExternalDbSystem} instance.
      *
      * @return the value
      */
@@ -213,11 +213,11 @@ public class CreateExternalDbSystemResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned ExternalDbSystem instance. */
+        /** The returned {@code ExternalDbSystem} instance. */
         private com.oracle.bmc.databasemanagement.model.ExternalDbSystem externalDbSystem;
 
         /**
-         * The returned ExternalDbSystem instance.
+         * The returned {@code ExternalDbSystem} instance.
          *
          * @param externalDbSystem the value to set
          * @return this builder

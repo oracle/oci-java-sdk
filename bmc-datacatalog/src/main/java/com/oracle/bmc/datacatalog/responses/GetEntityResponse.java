@@ -40,11 +40,11 @@ public class GetEntityResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Entity instance. */
+    /** The returned {@code Entity} instance. */
     private com.oracle.bmc.datacatalog.model.Entity entity;
 
     /**
-     * The returned Entity instance.
+     * The returned {@code Entity} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetEntityResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Entity instance. */
+        /** The returned {@code Entity} instance. */
         private com.oracle.bmc.datacatalog.model.Entity entity;
 
         /**
-         * The returned Entity instance.
+         * The returned {@code Entity} instance.
          *
          * @param entity the value to set
          * @return this builder

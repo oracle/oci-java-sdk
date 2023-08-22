@@ -25,12 +25,12 @@ public class SummarizeHostInsightResourceUsageResponse
         return opcRequestId;
     }
 
-    /** The returned SummarizeHostInsightResourceUsageAggregation instance. */
+    /** The returned {@code SummarizeHostInsightResourceUsageAggregation} instance. */
     private com.oracle.bmc.opsi.model.SummarizeHostInsightResourceUsageAggregation
             summarizeHostInsightResourceUsageAggregation;
 
     /**
-     * The returned SummarizeHostInsightResourceUsageAggregation instance.
+     * The returned {@code SummarizeHostInsightResourceUsageAggregation} instance.
      *
      * @return the value
      */
@@ -94,12 +94,12 @@ public class SummarizeHostInsightResourceUsageResponse
             return this;
         }
 
-        /** The returned SummarizeHostInsightResourceUsageAggregation instance. */
+        /** The returned {@code SummarizeHostInsightResourceUsageAggregation} instance. */
         private com.oracle.bmc.opsi.model.SummarizeHostInsightResourceUsageAggregation
                 summarizeHostInsightResourceUsageAggregation;
 
         /**
-         * The returned SummarizeHostInsightResourceUsageAggregation instance.
+         * The returned {@code SummarizeHostInsightResourceUsageAggregation} instance.
          *
          * @param summarizeHostInsightResourceUsageAggregation the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class GetBulkUploadTemplateResponse extends com.oracle.bmc.responses.BmcR
         return opcNextPage;
     }
 
-    /** The returned BulkUploadTemplate instance. */
+    /** The returned {@code BulkUploadTemplate} instance. */
     private com.oracle.bmc.licensemanager.model.BulkUploadTemplate bulkUploadTemplate;
 
     /**
-     * The returned BulkUploadTemplate instance.
+     * The returned {@code BulkUploadTemplate} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class GetBulkUploadTemplateResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned BulkUploadTemplate instance. */
+        /** The returned {@code BulkUploadTemplate} instance. */
         private com.oracle.bmc.licensemanager.model.BulkUploadTemplate bulkUploadTemplate;
 
         /**
-         * The returned BulkUploadTemplate instance.
+         * The returned {@code BulkUploadTemplate} instance.
          *
          * @param bulkUploadTemplate the value to set
          * @return this builder

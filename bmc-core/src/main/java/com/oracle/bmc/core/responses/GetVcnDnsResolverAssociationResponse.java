@@ -36,11 +36,11 @@ public class GetVcnDnsResolverAssociationResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /** The returned VcnDnsResolverAssociation instance. */
+    /** The returned {@code VcnDnsResolverAssociation} instance. */
     private com.oracle.bmc.core.model.VcnDnsResolverAssociation vcnDnsResolverAssociation;
 
     /**
-     * The returned VcnDnsResolverAssociation instance.
+     * The returned {@code VcnDnsResolverAssociation} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetVcnDnsResolverAssociationResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned VcnDnsResolverAssociation instance. */
+        /** The returned {@code VcnDnsResolverAssociation} instance. */
         private com.oracle.bmc.core.model.VcnDnsResolverAssociation vcnDnsResolverAssociation;
 
         /**
-         * The returned VcnDnsResolverAssociation instance.
+         * The returned {@code VcnDnsResolverAssociation} instance.
          *
          * @param vcnDnsResolverAssociation the value to set
          * @return this builder

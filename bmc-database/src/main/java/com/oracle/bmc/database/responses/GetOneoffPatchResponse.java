@@ -36,11 +36,11 @@ public class GetOneoffPatchResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned OneoffPatch instance. */
+    /** The returned {@code OneoffPatch} instance. */
     private com.oracle.bmc.database.model.OneoffPatch oneoffPatch;
 
     /**
-     * The returned OneoffPatch instance.
+     * The returned {@code OneoffPatch} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetOneoffPatchResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned OneoffPatch instance. */
+        /** The returned {@code OneoffPatch} instance. */
         private com.oracle.bmc.database.model.OneoffPatch oneoffPatch;
 
         /**
-         * The returned OneoffPatch instance.
+         * The returned {@code OneoffPatch} instance.
          *
          * @param oneoffPatch the value to set
          * @return this builder

@@ -42,12 +42,12 @@ public class ListAuthenticationFactorSettingsResponse extends com.oracle.bmc.res
         return opcNextPage;
     }
 
-    /** The returned AuthenticationFactorSettings instance. */
+    /** The returned {@code AuthenticationFactorSettings} instance. */
     private com.oracle.bmc.identitydomains.model.AuthenticationFactorSettings
             authenticationFactorSettings;
 
     /**
-     * The returned AuthenticationFactorSettings instance.
+     * The returned {@code AuthenticationFactorSettings} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListAuthenticationFactorSettingsResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /** The returned AuthenticationFactorSettings instance. */
+        /** The returned {@code AuthenticationFactorSettings} instance. */
         private com.oracle.bmc.identitydomains.model.AuthenticationFactorSettings
                 authenticationFactorSettings;
 
         /**
-         * The returned AuthenticationFactorSettings instance.
+         * The returned {@code AuthenticationFactorSettings} instance.
          *
          * @param authenticationFactorSettings the value to set
          * @return this builder

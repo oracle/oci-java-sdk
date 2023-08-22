@@ -43,11 +43,13 @@ public class ListWindowsUpdatesInstalledOnManagedInstanceResponse
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.osmanagement.model.InstalledWindowsUpdateSummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.osmanagement.model.InstalledWindowsUpdateSummary} instances.
+     */
     private java.util.List<com.oracle.bmc.osmanagement.model.InstalledWindowsUpdateSummary> items;
 
     /**
-     * A list of com.oracle.bmc.osmanagement.model.InstalledWindowsUpdateSummary instances.
+     * A list of {@code com.oracle.bmc.osmanagement.model.InstalledWindowsUpdateSummary} instances.
      *
      * @return the value
      */
@@ -132,12 +134,16 @@ public class ListWindowsUpdatesInstalledOnManagedInstanceResponse
             return this;
         }
 
-        /** A list of com.oracle.bmc.osmanagement.model.InstalledWindowsUpdateSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.osmanagement.model.InstalledWindowsUpdateSummary}
+         * instances.
+         */
         private java.util.List<com.oracle.bmc.osmanagement.model.InstalledWindowsUpdateSummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.osmanagement.model.InstalledWindowsUpdateSummary instances.
+         * A list of {@code com.oracle.bmc.osmanagement.model.InstalledWindowsUpdateSummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

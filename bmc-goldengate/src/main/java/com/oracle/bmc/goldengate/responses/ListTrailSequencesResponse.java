@@ -40,11 +40,11 @@ public class ListTrailSequencesResponse extends com.oracle.bmc.responses.BmcResp
         return opcNextPage;
     }
 
-    /** The returned TrailSequenceCollection instance. */
+    /** The returned {@code TrailSequenceCollection} instance. */
     private com.oracle.bmc.goldengate.model.TrailSequenceCollection trailSequenceCollection;
 
     /**
-     * The returned TrailSequenceCollection instance.
+     * The returned {@code TrailSequenceCollection} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class ListTrailSequencesResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned TrailSequenceCollection instance. */
+        /** The returned {@code TrailSequenceCollection} instance. */
         private com.oracle.bmc.goldengate.model.TrailSequenceCollection trailSequenceCollection;
 
         /**
-         * The returned TrailSequenceCollection instance.
+         * The returned {@code TrailSequenceCollection} instance.
          *
          * @param trailSequenceCollection the value to set
          * @return this builder

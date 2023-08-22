@@ -64,12 +64,12 @@ public class ListOverlappingRecallsResponse extends com.oracle.bmc.responses.Bmc
         return opcPrevPage;
     }
 
-    /** The returned OverlappingRecallCollection instance. */
+    /** The returned {@code OverlappingRecallCollection} instance. */
     private com.oracle.bmc.loganalytics.model.OverlappingRecallCollection
             overlappingRecallCollection;
 
     /**
-     * The returned OverlappingRecallCollection instance.
+     * The returned {@code OverlappingRecallCollection} instance.
      *
      * @return the value
      */
@@ -182,12 +182,12 @@ public class ListOverlappingRecallsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned OverlappingRecallCollection instance. */
+        /** The returned {@code OverlappingRecallCollection} instance. */
         private com.oracle.bmc.loganalytics.model.OverlappingRecallCollection
                 overlappingRecallCollection;
 
         /**
-         * The returned OverlappingRecallCollection instance.
+         * The returned {@code OverlappingRecallCollection} instance.
          *
          * @param overlappingRecallCollection the value to set
          * @return this builder

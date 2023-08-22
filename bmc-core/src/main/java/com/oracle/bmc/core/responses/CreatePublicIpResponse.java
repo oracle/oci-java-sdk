@@ -36,11 +36,11 @@ public class CreatePublicIpResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned PublicIp instance. */
+    /** The returned {@code PublicIp} instance. */
     private com.oracle.bmc.core.model.PublicIp publicIp;
 
     /**
-     * The returned PublicIp instance.
+     * The returned {@code PublicIp} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class CreatePublicIpResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned PublicIp instance. */
+        /** The returned {@code PublicIp} instance. */
         private com.oracle.bmc.core.model.PublicIp publicIp;
 
         /**
-         * The returned PublicIp instance.
+         * The returned {@code PublicIp} instance.
          *
          * @param publicIp the value to set
          * @return this builder

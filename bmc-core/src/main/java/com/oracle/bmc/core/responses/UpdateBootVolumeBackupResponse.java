@@ -20,11 +20,11 @@ public class UpdateBootVolumeBackupResponse extends com.oracle.bmc.responses.Bmc
         return etag;
     }
 
-    /** The returned BootVolumeBackup instance. */
+    /** The returned {@code BootVolumeBackup} instance. */
     private com.oracle.bmc.core.model.BootVolumeBackup bootVolumeBackup;
 
     /**
-     * The returned BootVolumeBackup instance.
+     * The returned {@code BootVolumeBackup} instance.
      *
      * @return the value
      */
@@ -76,11 +76,11 @@ public class UpdateBootVolumeBackupResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned BootVolumeBackup instance. */
+        /** The returned {@code BootVolumeBackup} instance. */
         private com.oracle.bmc.core.model.BootVolumeBackup bootVolumeBackup;
 
         /**
-         * The returned BootVolumeBackup instance.
+         * The returned {@code BootVolumeBackup} instance.
          *
          * @param bootVolumeBackup the value to set
          * @return this builder

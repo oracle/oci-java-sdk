@@ -36,11 +36,11 @@ public class GetNetworkSecurityGroupResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned NetworkSecurityGroup instance. */
+    /** The returned {@code NetworkSecurityGroup} instance. */
     private com.oracle.bmc.core.model.NetworkSecurityGroup networkSecurityGroup;
 
     /**
-     * The returned NetworkSecurityGroup instance.
+     * The returned {@code NetworkSecurityGroup} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetNetworkSecurityGroupResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned NetworkSecurityGroup instance. */
+        /** The returned {@code NetworkSecurityGroup} instance. */
         private com.oracle.bmc.core.model.NetworkSecurityGroup networkSecurityGroup;
 
         /**
-         * The returned NetworkSecurityGroup instance.
+         * The returned {@code NetworkSecurityGroup} instance.
          *
          * @param networkSecurityGroup the value to set
          * @return this builder

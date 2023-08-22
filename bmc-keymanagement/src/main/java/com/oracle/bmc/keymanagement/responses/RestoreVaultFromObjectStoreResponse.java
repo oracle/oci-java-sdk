@@ -52,11 +52,11 @@ public class RestoreVaultFromObjectStoreResponse extends com.oracle.bmc.response
         return opcWorkRequestId;
     }
 
-    /** The returned Vault instance. */
+    /** The returned {@code Vault} instance. */
     private com.oracle.bmc.keymanagement.model.Vault vault;
 
     /**
-     * The returned Vault instance.
+     * The returned {@code Vault} instance.
      *
      * @return the value
      */
@@ -155,11 +155,11 @@ public class RestoreVaultFromObjectStoreResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned Vault instance. */
+        /** The returned {@code Vault} instance. */
         private com.oracle.bmc.keymanagement.model.Vault vault;
 
         /**
-         * The returned Vault instance.
+         * The returned {@code Vault} instance.
          *
          * @param vault the value to set
          * @return this builder

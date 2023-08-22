@@ -36,11 +36,11 @@ public class UpdateScriptResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Script instance. */
+    /** The returned {@code Script} instance. */
     private com.oracle.bmc.apmsynthetics.model.Script script;
 
     /**
-     * The returned Script instance.
+     * The returned {@code Script} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateScriptResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Script instance. */
+        /** The returned {@code Script} instance. */
         private com.oracle.bmc.apmsynthetics.model.Script script;
 
         /**
-         * The returned Script instance.
+         * The returned {@code Script} instance.
          *
          * @param script the value to set
          * @return this builder

@@ -24,11 +24,11 @@ public class GetCompositeStateResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned CompositeState instance. */
+    /** The returned {@code CompositeState} instance. */
     private com.oracle.bmc.dataintegration.model.CompositeState compositeState;
 
     /**
-     * The returned CompositeState instance.
+     * The returned {@code CompositeState} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetCompositeStateResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned CompositeState instance. */
+        /** The returned {@code CompositeState} instance. */
         private com.oracle.bmc.dataintegration.model.CompositeState compositeState;
 
         /**
-         * The returned CompositeState instance.
+         * The returned {@code CompositeState} instance.
          *
          * @param compositeState the value to set
          * @return this builder

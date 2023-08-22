@@ -42,12 +42,12 @@ public class ListAccessRequestHistoriesResponse extends com.oracle.bmc.responses
         return opcNextPage;
     }
 
-    /** The returned AccessRequestHistoryCollection instance. */
+    /** The returned {@code AccessRequestHistoryCollection} instance. */
     private com.oracle.bmc.operatoraccesscontrol.model.AccessRequestHistoryCollection
             accessRequestHistoryCollection;
 
     /**
-     * The returned AccessRequestHistoryCollection instance.
+     * The returned {@code AccessRequestHistoryCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListAccessRequestHistoriesResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned AccessRequestHistoryCollection instance. */
+        /** The returned {@code AccessRequestHistoryCollection} instance. */
         private com.oracle.bmc.operatoraccesscontrol.model.AccessRequestHistoryCollection
                 accessRequestHistoryCollection;
 
         /**
-         * The returned AccessRequestHistoryCollection instance.
+         * The returned {@code AccessRequestHistoryCollection} instance.
          *
          * @param accessRequestHistoryCollection the value to set
          * @return this builder

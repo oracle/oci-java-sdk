@@ -42,11 +42,11 @@ public class ListEvaluationResultsResponse extends com.oracle.bmc.responses.BmcR
         return opcNextPage;
     }
 
-    /** The returned EvaluationResultCollection instance. */
+    /** The returned {@code EvaluationResultCollection} instance. */
     private com.oracle.bmc.ailanguage.model.EvaluationResultCollection evaluationResultCollection;
 
     /**
-     * The returned EvaluationResultCollection instance.
+     * The returned {@code EvaluationResultCollection} instance.
      *
      * @return the value
      */
@@ -130,12 +130,12 @@ public class ListEvaluationResultsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned EvaluationResultCollection instance. */
+        /** The returned {@code EvaluationResultCollection} instance. */
         private com.oracle.bmc.ailanguage.model.EvaluationResultCollection
                 evaluationResultCollection;
 
         /**
-         * The returned EvaluationResultCollection instance.
+         * The returned {@code EvaluationResultCollection} instance.
          *
          * @param evaluationResultCollection the value to set
          * @return this builder

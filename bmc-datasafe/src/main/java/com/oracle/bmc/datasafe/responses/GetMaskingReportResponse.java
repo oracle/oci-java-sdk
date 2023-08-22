@@ -42,11 +42,11 @@ public class GetMaskingReportResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned MaskingReport instance. */
+    /** The returned {@code MaskingReport} instance. */
     private com.oracle.bmc.datasafe.model.MaskingReport maskingReport;
 
     /**
-     * The returned MaskingReport instance.
+     * The returned {@code MaskingReport} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class GetMaskingReportResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned MaskingReport instance. */
+        /** The returned {@code MaskingReport} instance. */
         private com.oracle.bmc.datasafe.model.MaskingReport maskingReport;
 
         /**
-         * The returned MaskingReport instance.
+         * The returned {@code MaskingReport} instance.
          *
          * @param maskingReport the value to set
          * @return this builder

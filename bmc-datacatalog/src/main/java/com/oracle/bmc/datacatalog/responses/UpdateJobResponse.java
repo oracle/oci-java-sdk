@@ -40,11 +40,11 @@ public class UpdateJobResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned Job instance. */
+    /** The returned {@code Job} instance. */
     private com.oracle.bmc.datacatalog.model.Job job;
 
     /**
-     * The returned Job instance.
+     * The returned {@code Job} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class UpdateJobResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Job instance. */
+        /** The returned {@code Job} instance. */
         private com.oracle.bmc.datacatalog.model.Job job;
 
         /**
-         * The returned Job instance.
+         * The returned {@code Job} instance.
          *
          * @param job the value to set
          * @return this builder

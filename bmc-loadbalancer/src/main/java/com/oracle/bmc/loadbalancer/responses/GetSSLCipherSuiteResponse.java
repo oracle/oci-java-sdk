@@ -44,11 +44,11 @@ public class GetSSLCipherSuiteResponse extends com.oracle.bmc.responses.BmcRespo
         return eTag;
     }
 
-    /** The returned SSLCipherSuite instance. */
+    /** The returned {@code SSLCipherSuite} instance. */
     private com.oracle.bmc.loadbalancer.model.SSLCipherSuite sSLCipherSuite;
 
     /**
-     * The returned SSLCipherSuite instance.
+     * The returned {@code SSLCipherSuite} instance.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class GetSSLCipherSuiteResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned SSLCipherSuite instance. */
+        /** The returned {@code SSLCipherSuite} instance. */
         private com.oracle.bmc.loadbalancer.model.SSLCipherSuite sSLCipherSuite;
 
         /**
-         * The returned SSLCipherSuite instance.
+         * The returned {@code SSLCipherSuite} instance.
          *
          * @param sSLCipherSuite the value to set
          * @return this builder

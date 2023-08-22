@@ -42,12 +42,12 @@ public class RequestSummarizedProblemsResponse extends com.oracle.bmc.responses.
         return opcNextPage;
     }
 
-    /** The returned ProblemAggregationCollection instance. */
+    /** The returned {@code ProblemAggregationCollection} instance. */
     private com.oracle.bmc.cloudguard.model.ProblemAggregationCollection
             problemAggregationCollection;
 
     /**
-     * The returned ProblemAggregationCollection instance.
+     * The returned {@code ProblemAggregationCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class RequestSummarizedProblemsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned ProblemAggregationCollection instance. */
+        /** The returned {@code ProblemAggregationCollection} instance. */
         private com.oracle.bmc.cloudguard.model.ProblemAggregationCollection
                 problemAggregationCollection;
 
         /**
-         * The returned ProblemAggregationCollection instance.
+         * The returned {@code ProblemAggregationCollection} instance.
          *
          * @param problemAggregationCollection the value to set
          * @return this builder

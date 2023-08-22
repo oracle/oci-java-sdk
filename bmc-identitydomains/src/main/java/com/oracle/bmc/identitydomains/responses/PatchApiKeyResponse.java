@@ -36,11 +36,11 @@ public class PatchApiKeyResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned ApiKey instance. */
+    /** The returned {@code ApiKey} instance. */
     private com.oracle.bmc.identitydomains.model.ApiKey apiKey;
 
     /**
-     * The returned ApiKey instance.
+     * The returned {@code ApiKey} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class PatchApiKeyResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned ApiKey instance. */
+        /** The returned {@code ApiKey} instance. */
         private com.oracle.bmc.identitydomains.model.ApiKey apiKey;
 
         /**
-         * The returned ApiKey instance.
+         * The returned {@code ApiKey} instance.
          *
          * @param apiKey the value to set
          * @return this builder

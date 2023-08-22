@@ -42,12 +42,12 @@ public class ListContainerInstanceShapesResponse extends com.oracle.bmc.response
         return opcNextPage;
     }
 
-    /** The returned ContainerInstanceShapeCollection instance. */
+    /** The returned {@code ContainerInstanceShapeCollection} instance. */
     private com.oracle.bmc.containerinstances.model.ContainerInstanceShapeCollection
             containerInstanceShapeCollection;
 
     /**
-     * The returned ContainerInstanceShapeCollection instance.
+     * The returned {@code ContainerInstanceShapeCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListContainerInstanceShapesResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned ContainerInstanceShapeCollection instance. */
+        /** The returned {@code ContainerInstanceShapeCollection} instance. */
         private com.oracle.bmc.containerinstances.model.ContainerInstanceShapeCollection
                 containerInstanceShapeCollection;
 
         /**
-         * The returned ContainerInstanceShapeCollection instance.
+         * The returned {@code ContainerInstanceShapeCollection} instance.
          *
          * @param containerInstanceShapeCollection the value to set
          * @return this builder

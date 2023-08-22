@@ -42,11 +42,11 @@ public class ListSubnetsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.Subnet instances. */
+    /** A list of {@code com.oracle.bmc.core.model.Subnet} instances. */
     private java.util.List<com.oracle.bmc.core.model.Subnet> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.Subnet instances.
+     * A list of {@code com.oracle.bmc.core.model.Subnet} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListSubnetsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.Subnet instances. */
+        /** A list of {@code com.oracle.bmc.core.model.Subnet} instances. */
         private java.util.List<com.oracle.bmc.core.model.Subnet> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.Subnet instances.
+         * A list of {@code com.oracle.bmc.core.model.Subnet} instances.
          *
          * @param items the value to set
          * @return this builder

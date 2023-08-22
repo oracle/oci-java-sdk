@@ -44,11 +44,11 @@ public class ListDbSystemShapesResponse extends com.oracle.bmc.responses.BmcResp
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.database.model.DbSystemShapeSummary instances. */
+    /** A list of {@code com.oracle.bmc.database.model.DbSystemShapeSummary} instances. */
     private java.util.List<com.oracle.bmc.database.model.DbSystemShapeSummary> items;
 
     /**
-     * A list of com.oracle.bmc.database.model.DbSystemShapeSummary instances.
+     * A list of {@code com.oracle.bmc.database.model.DbSystemShapeSummary} instances.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListDbSystemShapesResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** A list of com.oracle.bmc.database.model.DbSystemShapeSummary instances. */
+        /** A list of {@code com.oracle.bmc.database.model.DbSystemShapeSummary} instances. */
         private java.util.List<com.oracle.bmc.database.model.DbSystemShapeSummary> items;
 
         /**
-         * A list of com.oracle.bmc.database.model.DbSystemShapeSummary instances.
+         * A list of {@code com.oracle.bmc.database.model.DbSystemShapeSummary} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -42,12 +42,12 @@ public class ListObjectPrivilegesResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned ObjectPrivilegeCollection instance. */
+    /** The returned {@code ObjectPrivilegeCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.ObjectPrivilegeCollection
             objectPrivilegeCollection;
 
     /**
-     * The returned ObjectPrivilegeCollection instance.
+     * The returned {@code ObjectPrivilegeCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListObjectPrivilegesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned ObjectPrivilegeCollection instance. */
+        /** The returned {@code ObjectPrivilegeCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.ObjectPrivilegeCollection
                 objectPrivilegeCollection;
 
         /**
-         * The returned ObjectPrivilegeCollection instance.
+         * The returned {@code ObjectPrivilegeCollection} instance.
          *
          * @param objectPrivilegeCollection the value to set
          * @return this builder

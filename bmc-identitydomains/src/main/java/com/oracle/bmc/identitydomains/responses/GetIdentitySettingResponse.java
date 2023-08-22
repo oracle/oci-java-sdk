@@ -24,11 +24,11 @@ public class GetIdentitySettingResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned IdentitySetting instance. */
+    /** The returned {@code IdentitySetting} instance. */
     private com.oracle.bmc.identitydomains.model.IdentitySetting identitySetting;
 
     /**
-     * The returned IdentitySetting instance.
+     * The returned {@code IdentitySetting} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetIdentitySettingResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned IdentitySetting instance. */
+        /** The returned {@code IdentitySetting} instance. */
         private com.oracle.bmc.identitydomains.model.IdentitySetting identitySetting;
 
         /**
-         * The returned IdentitySetting instance.
+         * The returned {@code IdentitySetting} instance.
          *
          * @param identitySetting the value to set
          * @return this builder

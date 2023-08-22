@@ -42,12 +42,12 @@ public class ListMonitoredInstancesResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** The returned MonitoredInstanceCollection instance. */
+    /** The returned {@code MonitoredInstanceCollection} instance. */
     private com.oracle.bmc.appmgmtcontrol.model.MonitoredInstanceCollection
             monitoredInstanceCollection;
 
     /**
-     * The returned MonitoredInstanceCollection instance.
+     * The returned {@code MonitoredInstanceCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListMonitoredInstancesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned MonitoredInstanceCollection instance. */
+        /** The returned {@code MonitoredInstanceCollection} instance. */
         private com.oracle.bmc.appmgmtcontrol.model.MonitoredInstanceCollection
                 monitoredInstanceCollection;
 
         /**
-         * The returned MonitoredInstanceCollection instance.
+         * The returned {@code MonitoredInstanceCollection} instance.
          *
          * @param monitoredInstanceCollection the value to set
          * @return this builder

@@ -64,12 +64,12 @@ public class ListSourcePatternsResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsSourcePatternCollection instance. */
+    /** The returned {@code LogAnalyticsSourcePatternCollection} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsSourcePatternCollection
             logAnalyticsSourcePatternCollection;
 
     /**
-     * The returned LogAnalyticsSourcePatternCollection instance.
+     * The returned {@code LogAnalyticsSourcePatternCollection} instance.
      *
      * @return the value
      */
@@ -181,12 +181,12 @@ public class ListSourcePatternsResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned LogAnalyticsSourcePatternCollection instance. */
+        /** The returned {@code LogAnalyticsSourcePatternCollection} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsSourcePatternCollection
                 logAnalyticsSourcePatternCollection;
 
         /**
-         * The returned LogAnalyticsSourcePatternCollection instance.
+         * The returned {@code LogAnalyticsSourcePatternCollection} instance.
          *
          * @param logAnalyticsSourcePatternCollection the value to set
          * @return this builder

@@ -44,11 +44,11 @@ public class ListSecretBundleVersionsResponse extends com.oracle.bmc.responses.B
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.secrets.model.SecretBundleVersionSummary instances. */
+    /** A list of {@code com.oracle.bmc.secrets.model.SecretBundleVersionSummary} instances. */
     private java.util.List<com.oracle.bmc.secrets.model.SecretBundleVersionSummary> items;
 
     /**
-     * A list of com.oracle.bmc.secrets.model.SecretBundleVersionSummary instances.
+     * A list of {@code com.oracle.bmc.secrets.model.SecretBundleVersionSummary} instances.
      *
      * @return the value
      */
@@ -136,11 +136,11 @@ public class ListSecretBundleVersionsResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** A list of com.oracle.bmc.secrets.model.SecretBundleVersionSummary instances. */
+        /** A list of {@code com.oracle.bmc.secrets.model.SecretBundleVersionSummary} instances. */
         private java.util.List<com.oracle.bmc.secrets.model.SecretBundleVersionSummary> items;
 
         /**
-         * A list of com.oracle.bmc.secrets.model.SecretBundleVersionSummary instances.
+         * A list of {@code com.oracle.bmc.secrets.model.SecretBundleVersionSummary} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -24,11 +24,11 @@ public class GetManagedDatabaseResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned ManagedDatabase instance. */
+    /** The returned {@code ManagedDatabase} instance. */
     private com.oracle.bmc.databasemanagement.model.ManagedDatabase managedDatabase;
 
     /**
-     * The returned ManagedDatabase instance.
+     * The returned {@code ManagedDatabase} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetManagedDatabaseResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned ManagedDatabase instance. */
+        /** The returned {@code ManagedDatabase} instance. */
         private com.oracle.bmc.databasemanagement.model.ManagedDatabase managedDatabase;
 
         /**
-         * The returned ManagedDatabase instance.
+         * The returned {@code ManagedDatabase} instance.
          *
          * @param managedDatabase the value to set
          * @return this builder

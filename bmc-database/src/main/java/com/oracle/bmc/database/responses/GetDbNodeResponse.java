@@ -36,11 +36,11 @@ public class GetDbNodeResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned DbNode instance. */
+    /** The returned {@code DbNode} instance. */
     private com.oracle.bmc.database.model.DbNode dbNode;
 
     /**
-     * The returned DbNode instance.
+     * The returned {@code DbNode} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetDbNodeResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned DbNode instance. */
+        /** The returned {@code DbNode} instance. */
         private com.oracle.bmc.database.model.DbNode dbNode;
 
         /**
-         * The returned DbNode instance.
+         * The returned {@code DbNode} instance.
          *
          * @param dbNode the value to set
          * @return this builder

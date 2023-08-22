@@ -23,10 +23,12 @@ package com.oracle.bmc.opsi.model;
 public final class QueryDataObjectResultSetColumnMetadata
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"name", "dataTypeName"})
-    public QueryDataObjectResultSetColumnMetadata(String name, DataTypeName dataTypeName) {
+    @java.beans.ConstructorProperties({"name", "dataType", "dataTypeName"})
+    public QueryDataObjectResultSetColumnMetadata(
+            String name, String dataType, DataTypeName dataTypeName) {
         super();
         this.name = name;
+        this.dataType = dataType;
         this.dataTypeName = dataTypeName;
     }
 
@@ -45,6 +47,21 @@ public final class QueryDataObjectResultSetColumnMetadata
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
+            return this;
+        }
+        /** Type of the column in a data object query result. */
+        @com.fasterxml.jackson.annotation.JsonProperty("dataType")
+        private String dataType;
+
+        /**
+         * Type of the column in a data object query result.
+         *
+         * @param dataType the value to set
+         * @return this builder
+         */
+        public Builder dataType(String dataType) {
+            this.dataType = dataType;
+            this.__explicitlySet__.add("dataType");
             return this;
         }
         /** Type name of the column in a data object query result set. */
@@ -68,7 +85,8 @@ public final class QueryDataObjectResultSetColumnMetadata
 
         public QueryDataObjectResultSetColumnMetadata build() {
             QueryDataObjectResultSetColumnMetadata model =
-                    new QueryDataObjectResultSetColumnMetadata(this.name, this.dataTypeName);
+                    new QueryDataObjectResultSetColumnMetadata(
+                            this.name, this.dataType, this.dataTypeName);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -79,6 +97,9 @@ public final class QueryDataObjectResultSetColumnMetadata
         public Builder copy(QueryDataObjectResultSetColumnMetadata model) {
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("dataType")) {
+                this.dataType(model.getDataType());
             }
             if (model.wasPropertyExplicitlySet("dataTypeName")) {
                 this.dataTypeName(model.getDataTypeName());
@@ -109,11 +130,25 @@ public final class QueryDataObjectResultSetColumnMetadata
         return name;
     }
 
+    /** Type of the column in a data object query result. */
+    @com.fasterxml.jackson.annotation.JsonProperty("dataType")
+    private final String dataType;
+
+    /**
+     * Type of the column in a data object query result.
+     *
+     * @return the value
+     */
+    public String getDataType() {
+        return dataType;
+    }
+
     /** Type name of the column in a data object query result set. */
     public enum DataTypeName implements com.oracle.bmc.http.internal.BmcEnum {
         Number("NUMBER"),
         Timestamp("TIMESTAMP"),
         Varchar2("VARCHAR2"),
+        Other("OTHER"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -185,6 +220,7 @@ public final class QueryDataObjectResultSetColumnMetadata
         sb.append("QueryDataObjectResultSetColumnMetadata(");
         sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", dataType=").append(String.valueOf(this.dataType));
         sb.append(", dataTypeName=").append(String.valueOf(this.dataTypeName));
         sb.append(")");
         return sb.toString();
@@ -201,6 +237,7 @@ public final class QueryDataObjectResultSetColumnMetadata
 
         QueryDataObjectResultSetColumnMetadata other = (QueryDataObjectResultSetColumnMetadata) o;
         return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.dataType, other.dataType)
                 && java.util.Objects.equals(this.dataTypeName, other.dataTypeName)
                 && super.equals(other);
     }
@@ -210,6 +247,7 @@ public final class QueryDataObjectResultSetColumnMetadata
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.dataType == null ? 43 : this.dataType.hashCode());
         result = (result * PRIME) + (this.dataTypeName == null ? 43 : this.dataTypeName.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

@@ -24,11 +24,11 @@ public class GetJavaFamilyResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** The returned JavaFamily instance. */
+    /** The returned {@code JavaFamily} instance. */
     private com.oracle.bmc.jms.model.JavaFamily javaFamily;
 
     /**
-     * The returned JavaFamily instance.
+     * The returned {@code JavaFamily} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetJavaFamilyResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned JavaFamily instance. */
+        /** The returned {@code JavaFamily} instance. */
         private com.oracle.bmc.jms.model.JavaFamily javaFamily;
 
         /**
-         * The returned JavaFamily instance.
+         * The returned {@code JavaFamily} instance.
          *
          * @param javaFamily the value to set
          * @return this builder

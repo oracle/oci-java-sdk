@@ -70,11 +70,11 @@ public class PatchRRSetResponse extends com.oracle.bmc.responses.BmcResponse {
         return eTag;
     }
 
-    /** The returned RecordCollection instance. */
+    /** The returned {@code RecordCollection} instance. */
     private com.oracle.bmc.dns.model.RecordCollection recordCollection;
 
     /**
-     * The returned RecordCollection instance.
+     * The returned {@code RecordCollection} instance.
      *
      * @return the value
      */
@@ -197,11 +197,11 @@ public class PatchRRSetResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned RecordCollection instance. */
+        /** The returned {@code RecordCollection} instance. */
         private com.oracle.bmc.dns.model.RecordCollection recordCollection;
 
         /**
-         * The returned RecordCollection instance.
+         * The returned {@code RecordCollection} instance.
          *
          * @param recordCollection the value to set
          * @return this builder

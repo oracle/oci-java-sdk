@@ -43,12 +43,12 @@ public class ListAddmDbRecommendationCategoriesResponse
         return opcNextPage;
     }
 
-    /** The returned AddmDbRecommendationCategoryCollection instance. */
+    /** The returned {@code AddmDbRecommendationCategoryCollection} instance. */
     private com.oracle.bmc.opsi.model.AddmDbRecommendationCategoryCollection
             addmDbRecommendationCategoryCollection;
 
     /**
-     * The returned AddmDbRecommendationCategoryCollection instance.
+     * The returned {@code AddmDbRecommendationCategoryCollection} instance.
      *
      * @return the value
      */
@@ -134,12 +134,12 @@ public class ListAddmDbRecommendationCategoriesResponse
             return this;
         }
 
-        /** The returned AddmDbRecommendationCategoryCollection instance. */
+        /** The returned {@code AddmDbRecommendationCategoryCollection} instance. */
         private com.oracle.bmc.opsi.model.AddmDbRecommendationCategoryCollection
                 addmDbRecommendationCategoryCollection;
 
         /**
-         * The returned AddmDbRecommendationCategoryCollection instance.
+         * The returned {@code AddmDbRecommendationCategoryCollection} instance.
          *
          * @param addmDbRecommendationCategoryCollection the value to set
          * @return this builder

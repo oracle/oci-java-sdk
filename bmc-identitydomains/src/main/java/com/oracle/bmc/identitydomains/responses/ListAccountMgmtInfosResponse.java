@@ -42,11 +42,11 @@ public class ListAccountMgmtInfosResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** The returned AccountMgmtInfos instance. */
+    /** The returned {@code AccountMgmtInfos} instance. */
     private com.oracle.bmc.identitydomains.model.AccountMgmtInfos accountMgmtInfos;
 
     /**
-     * The returned AccountMgmtInfos instance.
+     * The returned {@code AccountMgmtInfos} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListAccountMgmtInfosResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned AccountMgmtInfos instance. */
+        /** The returned {@code AccountMgmtInfos} instance. */
         private com.oracle.bmc.identitydomains.model.AccountMgmtInfos accountMgmtInfos;
 
         /**
-         * The returned AccountMgmtInfos instance.
+         * The returned {@code AccountMgmtInfos} instance.
          *
          * @param accountMgmtInfos the value to set
          * @return this builder

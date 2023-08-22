@@ -76,11 +76,11 @@ public class CreateNetworkAddressListResponse extends com.oracle.bmc.responses.B
         return contentLocation;
     }
 
-    /** The returned NetworkAddressList instance. */
+    /** The returned {@code NetworkAddressList} instance. */
     private com.oracle.bmc.waf.model.NetworkAddressList networkAddressList;
 
     /**
-     * The returned NetworkAddressList instance.
+     * The returned {@code NetworkAddressList} instance.
      *
      * @return the value
      */
@@ -213,11 +213,11 @@ public class CreateNetworkAddressListResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned NetworkAddressList instance. */
+        /** The returned {@code NetworkAddressList} instance. */
         private com.oracle.bmc.waf.model.NetworkAddressList networkAddressList;
 
         /**
-         * The returned NetworkAddressList instance.
+         * The returned {@code NetworkAddressList} instance.
          *
          * @param networkAddressList the value to set
          * @return this builder

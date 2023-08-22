@@ -60,11 +60,11 @@ public class CreateProtectedDatabaseResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned ProtectedDatabase instance. */
+    /** The returned {@code ProtectedDatabase} instance. */
     private com.oracle.bmc.recovery.model.ProtectedDatabase protectedDatabase;
 
     /**
-     * The returned ProtectedDatabase instance.
+     * The returned {@code ProtectedDatabase} instance.
      *
      * @return the value
      */
@@ -176,11 +176,11 @@ public class CreateProtectedDatabaseResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned ProtectedDatabase instance. */
+        /** The returned {@code ProtectedDatabase} instance. */
         private com.oracle.bmc.recovery.model.ProtectedDatabase protectedDatabase;
 
         /**
-         * The returned ProtectedDatabase instance.
+         * The returned {@code ProtectedDatabase} instance.
          *
          * @param protectedDatabase the value to set
          * @return this builder

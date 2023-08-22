@@ -42,11 +42,11 @@ public class ListVirtualCircuitsResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.VirtualCircuit instances. */
+    /** A list of {@code com.oracle.bmc.core.model.VirtualCircuit} instances. */
     private java.util.List<com.oracle.bmc.core.model.VirtualCircuit> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.VirtualCircuit instances.
+     * A list of {@code com.oracle.bmc.core.model.VirtualCircuit} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListVirtualCircuitsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.VirtualCircuit instances. */
+        /** A list of {@code com.oracle.bmc.core.model.VirtualCircuit} instances. */
         private java.util.List<com.oracle.bmc.core.model.VirtualCircuit> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.VirtualCircuit instances.
+         * A list of {@code com.oracle.bmc.core.model.VirtualCircuit} instances.
          *
          * @param items the value to set
          * @return this builder

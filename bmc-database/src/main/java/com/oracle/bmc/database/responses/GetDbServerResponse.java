@@ -36,11 +36,11 @@ public class GetDbServerResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned DbServer instance. */
+    /** The returned {@code DbServer} instance. */
     private com.oracle.bmc.database.model.DbServer dbServer;
 
     /**
-     * The returned DbServer instance.
+     * The returned {@code DbServer} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetDbServerResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned DbServer instance. */
+        /** The returned {@code DbServer} instance. */
         private com.oracle.bmc.database.model.DbServer dbServer;
 
         /**
-         * The returned DbServer instance.
+         * The returned {@code DbServer} instance.
          *
          * @param dbServer the value to set
          * @return this builder

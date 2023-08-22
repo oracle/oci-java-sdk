@@ -54,11 +54,11 @@ public class ListSteeringPolicyAttachmentsResponse extends com.oracle.bmc.respon
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary instances. */
+    /** A list of {@code com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary} instances. */
     private java.util.List<com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary> items;
 
     /**
-     * A list of com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary instances.
+     * A list of {@code com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary} instances.
      *
      * @return the value
      */
@@ -159,11 +159,11 @@ public class ListSteeringPolicyAttachmentsResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** A list of com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary instances. */
+        /** A list of {@code com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary} instances. */
         private java.util.List<com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary> items;
 
         /**
-         * A list of com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary instances.
+         * A list of {@code com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary} instances.
          *
          * @param items the value to set
          * @return this builder

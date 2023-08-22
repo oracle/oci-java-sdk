@@ -64,12 +64,12 @@ public class GetPreferencesResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned LogAnalyticsPreferenceCollection instance. */
+    /** The returned {@code LogAnalyticsPreferenceCollection} instance. */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsPreferenceCollection
             logAnalyticsPreferenceCollection;
 
     /**
-     * The returned LogAnalyticsPreferenceCollection instance.
+     * The returned {@code LogAnalyticsPreferenceCollection} instance.
      *
      * @return the value
      */
@@ -181,12 +181,12 @@ public class GetPreferencesResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned LogAnalyticsPreferenceCollection instance. */
+        /** The returned {@code LogAnalyticsPreferenceCollection} instance. */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsPreferenceCollection
                 logAnalyticsPreferenceCollection;
 
         /**
-         * The returned LogAnalyticsPreferenceCollection instance.
+         * The returned {@code LogAnalyticsPreferenceCollection} instance.
          *
          * @param logAnalyticsPreferenceCollection the value to set
          * @return this builder

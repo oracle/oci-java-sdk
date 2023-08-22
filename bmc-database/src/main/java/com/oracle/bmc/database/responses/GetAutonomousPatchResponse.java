@@ -36,11 +36,11 @@ public class GetAutonomousPatchResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned AutonomousPatch instance. */
+    /** The returned {@code AutonomousPatch} instance. */
     private com.oracle.bmc.database.model.AutonomousPatch autonomousPatch;
 
     /**
-     * The returned AutonomousPatch instance.
+     * The returned {@code AutonomousPatch} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetAutonomousPatchResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned AutonomousPatch instance. */
+        /** The returned {@code AutonomousPatch} instance. */
         private com.oracle.bmc.database.model.AutonomousPatch autonomousPatch;
 
         /**
-         * The returned AutonomousPatch instance.
+         * The returned {@code AutonomousPatch} instance.
          *
          * @param autonomousPatch the value to set
          * @return this builder

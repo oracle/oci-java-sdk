@@ -24,11 +24,11 @@ public class ValidateUserResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned ValidationResponse instance. */
+    /** The returned {@code ValidationResponse} instance. */
     private com.oracle.bmc.cims.model.ValidationResponse validationResponse;
 
     /**
-     * The returned ValidationResponse instance.
+     * The returned {@code ValidationResponse} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class ValidateUserResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned ValidationResponse instance. */
+        /** The returned {@code ValidationResponse} instance. */
         private com.oracle.bmc.cims.model.ValidationResponse validationResponse;
 
         /**
-         * The returned ValidationResponse instance.
+         * The returned {@code ValidationResponse} instance.
          *
          * @param validationResponse the value to set
          * @return this builder

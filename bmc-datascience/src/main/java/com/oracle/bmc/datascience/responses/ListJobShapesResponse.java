@@ -60,11 +60,11 @@ public class ListJobShapesResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.datascience.model.JobShapeSummary instances. */
+    /** A list of {@code com.oracle.bmc.datascience.model.JobShapeSummary} instances. */
     private java.util.List<com.oracle.bmc.datascience.model.JobShapeSummary> items;
 
     /**
-     * A list of com.oracle.bmc.datascience.model.JobShapeSummary instances.
+     * A list of {@code com.oracle.bmc.datascience.model.JobShapeSummary} instances.
      *
      * @return the value
      */
@@ -170,11 +170,11 @@ public class ListJobShapesResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** A list of com.oracle.bmc.datascience.model.JobShapeSummary instances. */
+        /** A list of {@code com.oracle.bmc.datascience.model.JobShapeSummary} instances. */
         private java.util.List<com.oracle.bmc.datascience.model.JobShapeSummary> items;
 
         /**
-         * A list of com.oracle.bmc.datascience.model.JobShapeSummary instances.
+         * A list of {@code com.oracle.bmc.datascience.model.JobShapeSummary} instances.
          *
          * @param items the value to set
          * @return this builder

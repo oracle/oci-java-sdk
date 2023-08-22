@@ -43,12 +43,12 @@ public class ListLifecycleStageInstalledPackagesResponse
         return opcNextPage;
     }
 
-    /** The returned InstalledPackageCollection instance. */
+    /** The returned {@code InstalledPackageCollection} instance. */
     private com.oracle.bmc.osmanagementhub.model.InstalledPackageCollection
             installedPackageCollection;
 
     /**
-     * The returned InstalledPackageCollection instance.
+     * The returned {@code InstalledPackageCollection} instance.
      *
      * @return the value
      */
@@ -134,12 +134,12 @@ public class ListLifecycleStageInstalledPackagesResponse
             return this;
         }
 
-        /** The returned InstalledPackageCollection instance. */
+        /** The returned {@code InstalledPackageCollection} instance. */
         private com.oracle.bmc.osmanagementhub.model.InstalledPackageCollection
                 installedPackageCollection;
 
         /**
-         * The returned InstalledPackageCollection instance.
+         * The returned {@code InstalledPackageCollection} instance.
          *
          * @param installedPackageCollection the value to set
          * @return this builder

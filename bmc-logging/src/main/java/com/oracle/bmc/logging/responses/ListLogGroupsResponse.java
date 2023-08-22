@@ -60,11 +60,11 @@ public class ListLogGroupsResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.logging.model.LogGroupSummary instances. */
+    /** A list of {@code com.oracle.bmc.logging.model.LogGroupSummary} instances. */
     private java.util.List<com.oracle.bmc.logging.model.LogGroupSummary> items;
 
     /**
-     * A list of com.oracle.bmc.logging.model.LogGroupSummary instances.
+     * A list of {@code com.oracle.bmc.logging.model.LogGroupSummary} instances.
      *
      * @return the value
      */
@@ -170,11 +170,11 @@ public class ListLogGroupsResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** A list of com.oracle.bmc.logging.model.LogGroupSummary instances. */
+        /** A list of {@code com.oracle.bmc.logging.model.LogGroupSummary} instances. */
         private java.util.List<com.oracle.bmc.logging.model.LogGroupSummary> items;
 
         /**
-         * A list of com.oracle.bmc.logging.model.LogGroupSummary instances.
+         * A list of {@code com.oracle.bmc.logging.model.LogGroupSummary} instances.
          *
          * @param items the value to set
          * @return this builder

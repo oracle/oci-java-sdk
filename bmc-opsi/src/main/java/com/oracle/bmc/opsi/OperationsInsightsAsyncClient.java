@@ -3972,6 +3972,8 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("groupName", request.getGroupName())
+                .appendQueryParam("name", request.getName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -4147,6 +4149,55 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
     }
 
     @Override
+    public java.util.concurrent.Future<ListWarehouseDataObjectsResponse> listWarehouseDataObjects(
+            ListWarehouseDataObjectsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListWarehouseDataObjectsRequest, ListWarehouseDataObjectsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getWarehouseType().getValue(), "warehouseType must not be blank");
+
+        Validate.notBlank(request.getWarehouseId(), "warehouseId must not be blank");
+
+        return clientCall(request, ListWarehouseDataObjectsResponse::builder)
+                .logger(LOG, "listWarehouseDataObjects")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "ListWarehouseDataObjects",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiWarehouseDataObjects/ListWarehouseDataObjects")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWarehouseDataObjectsRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam(request.getWarehouseType().getValue())
+                .appendPathParam(request.getWarehouseId())
+                .appendPathParam("dataObjects")
+                .appendListQueryParam(
+                        "dataObjectType",
+                        request.getDataObjectType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("owner", request.getOwner())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "summaryField",
+                        request.getSummaryField(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.opsi.model.WarehouseDataObjectCollection.class,
+                        ListWarehouseDataObjectsResponse.Builder::warehouseDataObjectCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWarehouseDataObjectsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWarehouseDataObjectsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
             ListWorkRequestErrorsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -4296,6 +4347,52 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
                         "opc-request-id", QueryOpsiDataObjectDataResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", QueryOpsiDataObjectDataResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<QueryWarehouseDataObjectDataResponse>
+            queryWarehouseDataObjectData(
+                    QueryWarehouseDataObjectDataRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    QueryWarehouseDataObjectDataRequest,
+                                    QueryWarehouseDataObjectDataResponse>
+                            handler) {
+
+        Validate.notBlank(request.getWarehouseType().getValue(), "warehouseType must not be blank");
+
+        Validate.notBlank(request.getWarehouseId(), "warehouseId must not be blank");
+        Objects.requireNonNull(
+                request.getQueryWarehouseDataObjectDataDetails(),
+                "queryWarehouseDataObjectDataDetails is required");
+
+        return clientCall(request, QueryWarehouseDataObjectDataResponse::builder)
+                .logger(LOG, "queryWarehouseDataObjectData")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "QueryWarehouseDataObjectData",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiWarehouseDataObjects/QueryWarehouseDataObjectData")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(QueryWarehouseDataObjectDataRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam(request.getWarehouseType().getValue())
+                .appendPathParam(request.getWarehouseId())
+                .appendPathParam("actions")
+                .appendPathParam("queryData")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.opsi.model.QueryDataObjectResultSetRowsCollection.class,
+                        QueryWarehouseDataObjectDataResponse.Builder
+                                ::queryDataObjectResultSetRowsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        QueryWarehouseDataObjectDataResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", QueryWarehouseDataObjectDataResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 

@@ -36,11 +36,11 @@ public class GetDeploymentBackupResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned DeploymentBackup instance. */
+    /** The returned {@code DeploymentBackup} instance. */
     private com.oracle.bmc.goldengate.model.DeploymentBackup deploymentBackup;
 
     /**
-     * The returned DeploymentBackup instance.
+     * The returned {@code DeploymentBackup} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetDeploymentBackupResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned DeploymentBackup instance. */
+        /** The returned {@code DeploymentBackup} instance. */
         private com.oracle.bmc.goldengate.model.DeploymentBackup deploymentBackup;
 
         /**
-         * The returned DeploymentBackup instance.
+         * The returned {@code DeploymentBackup} instance.
          *
          * @param deploymentBackup the value to set
          * @return this builder

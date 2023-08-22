@@ -24,11 +24,11 @@ public class GetOperatorActionResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned OperatorAction instance. */
+    /** The returned {@code OperatorAction} instance. */
     private com.oracle.bmc.operatoraccesscontrol.model.OperatorAction operatorAction;
 
     /**
-     * The returned OperatorAction instance.
+     * The returned {@code OperatorAction} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetOperatorActionResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned OperatorAction instance. */
+        /** The returned {@code OperatorAction} instance. */
         private com.oracle.bmc.operatoraccesscontrol.model.OperatorAction operatorAction;
 
         /**
-         * The returned OperatorAction instance.
+         * The returned {@code OperatorAction} instance.
          *
          * @param operatorAction the value to set
          * @return this builder

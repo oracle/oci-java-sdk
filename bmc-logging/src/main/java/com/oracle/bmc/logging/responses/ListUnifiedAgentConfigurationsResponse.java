@@ -60,12 +60,12 @@ public class ListUnifiedAgentConfigurationsResponse extends com.oracle.bmc.respo
         return opcRequestId;
     }
 
-    /** The returned UnifiedAgentConfigurationCollection instance. */
+    /** The returned {@code UnifiedAgentConfigurationCollection} instance. */
     private com.oracle.bmc.logging.model.UnifiedAgentConfigurationCollection
             unifiedAgentConfigurationCollection;
 
     /**
-     * The returned UnifiedAgentConfigurationCollection instance.
+     * The returned {@code UnifiedAgentConfigurationCollection} instance.
      *
      * @return the value
      */
@@ -174,12 +174,12 @@ public class ListUnifiedAgentConfigurationsResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned UnifiedAgentConfigurationCollection instance. */
+        /** The returned {@code UnifiedAgentConfigurationCollection} instance. */
         private com.oracle.bmc.logging.model.UnifiedAgentConfigurationCollection
                 unifiedAgentConfigurationCollection;
 
         /**
-         * The returned UnifiedAgentConfigurationCollection instance.
+         * The returned {@code UnifiedAgentConfigurationCollection} instance.
          *
          * @param unifiedAgentConfigurationCollection the value to set
          * @return this builder

@@ -43,12 +43,12 @@ public class RequestSummarizedTrendResponderExecutionsResponse
         return opcNextPage;
     }
 
-    /** The returned ResponderExecutionTrendAggregationCollection instance. */
+    /** The returned {@code ResponderExecutionTrendAggregationCollection} instance. */
     private com.oracle.bmc.cloudguard.model.ResponderExecutionTrendAggregationCollection
             responderExecutionTrendAggregationCollection;
 
     /**
-     * The returned ResponderExecutionTrendAggregationCollection instance.
+     * The returned {@code ResponderExecutionTrendAggregationCollection} instance.
      *
      * @return the value
      */
@@ -135,12 +135,12 @@ public class RequestSummarizedTrendResponderExecutionsResponse
             return this;
         }
 
-        /** The returned ResponderExecutionTrendAggregationCollection instance. */
+        /** The returned {@code ResponderExecutionTrendAggregationCollection} instance. */
         private com.oracle.bmc.cloudguard.model.ResponderExecutionTrendAggregationCollection
                 responderExecutionTrendAggregationCollection;
 
         /**
-         * The returned ResponderExecutionTrendAggregationCollection instance.
+         * The returned {@code ResponderExecutionTrendAggregationCollection} instance.
          *
          * @param responderExecutionTrendAggregationCollection the value to set
          * @return this builder

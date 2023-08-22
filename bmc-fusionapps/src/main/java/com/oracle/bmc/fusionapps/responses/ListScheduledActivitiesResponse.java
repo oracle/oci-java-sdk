@@ -42,11 +42,11 @@ public class ListScheduledActivitiesResponse extends com.oracle.bmc.responses.Bm
         return opcNextPage;
     }
 
-    /** The returned ScheduledActivityCollection instance. */
+    /** The returned {@code ScheduledActivityCollection} instance. */
     private com.oracle.bmc.fusionapps.model.ScheduledActivityCollection scheduledActivityCollection;
 
     /**
-     * The returned ScheduledActivityCollection instance.
+     * The returned {@code ScheduledActivityCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListScheduledActivitiesResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned ScheduledActivityCollection instance. */
+        /** The returned {@code ScheduledActivityCollection} instance. */
         private com.oracle.bmc.fusionapps.model.ScheduledActivityCollection
                 scheduledActivityCollection;
 
         /**
-         * The returned ScheduledActivityCollection instance.
+         * The returned {@code ScheduledActivityCollection} instance.
          *
          * @param scheduledActivityCollection the value to set
          * @return this builder

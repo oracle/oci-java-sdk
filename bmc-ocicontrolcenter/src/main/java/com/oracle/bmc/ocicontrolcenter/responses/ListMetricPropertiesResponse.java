@@ -42,11 +42,11 @@ public class ListMetricPropertiesResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** The returned MetricPropertyCollection instance. */
+    /** The returned {@code MetricPropertyCollection} instance. */
     private com.oracle.bmc.ocicontrolcenter.model.MetricPropertyCollection metricPropertyCollection;
 
     /**
-     * The returned MetricPropertyCollection instance.
+     * The returned {@code MetricPropertyCollection} instance.
      *
      * @return the value
      */
@@ -131,12 +131,12 @@ public class ListMetricPropertiesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned MetricPropertyCollection instance. */
+        /** The returned {@code MetricPropertyCollection} instance. */
         private com.oracle.bmc.ocicontrolcenter.model.MetricPropertyCollection
                 metricPropertyCollection;
 
         /**
-         * The returned MetricPropertyCollection instance.
+         * The returned {@code MetricPropertyCollection} instance.
          *
          * @param metricPropertyCollection the value to set
          * @return this builder

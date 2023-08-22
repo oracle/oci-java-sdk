@@ -24,11 +24,11 @@ public class UpdateTransferJobResponse extends com.oracle.bmc.responses.BmcRespo
         return etag;
     }
 
-    /** The returned TransferJob instance. */
+    /** The returned {@code TransferJob} instance. */
     private com.oracle.bmc.dts.model.TransferJob transferJob;
 
     /**
-     * The returned TransferJob instance.
+     * The returned {@code TransferJob} instance.
      *
      * @return the value
      */
@@ -97,11 +97,11 @@ public class UpdateTransferJobResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned TransferJob instance. */
+        /** The returned {@code TransferJob} instance. */
         private com.oracle.bmc.dts.model.TransferJob transferJob;
 
         /**
-         * The returned TransferJob instance.
+         * The returned {@code TransferJob} instance.
          *
          * @param transferJob the value to set
          * @return this builder

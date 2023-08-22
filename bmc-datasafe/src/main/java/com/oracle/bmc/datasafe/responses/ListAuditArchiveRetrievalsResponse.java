@@ -62,12 +62,12 @@ public class ListAuditArchiveRetrievalsResponse extends com.oracle.bmc.responses
         return opcPrevPage;
     }
 
-    /** The returned AuditArchiveRetrievalCollection instance. */
+    /** The returned {@code AuditArchiveRetrievalCollection} instance. */
     private com.oracle.bmc.datasafe.model.AuditArchiveRetrievalCollection
             auditArchiveRetrievalCollection;
 
     /**
-     * The returned AuditArchiveRetrievalCollection instance.
+     * The returned {@code AuditArchiveRetrievalCollection} instance.
      *
      * @return the value
      */
@@ -178,12 +178,12 @@ public class ListAuditArchiveRetrievalsResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned AuditArchiveRetrievalCollection instance. */
+        /** The returned {@code AuditArchiveRetrievalCollection} instance. */
         private com.oracle.bmc.datasafe.model.AuditArchiveRetrievalCollection
                 auditArchiveRetrievalCollection;
 
         /**
-         * The returned AuditArchiveRetrievalCollection instance.
+         * The returned {@code AuditArchiveRetrievalCollection} instance.
          *
          * @param auditArchiveRetrievalCollection the value to set
          * @return this builder

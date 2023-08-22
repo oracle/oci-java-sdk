@@ -42,11 +42,11 @@ public class ListMfaTotpDevicesResponse extends com.oracle.bmc.responses.BmcResp
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.identity.model.MfaTotpDeviceSummary instances. */
+    /** A list of {@code com.oracle.bmc.identity.model.MfaTotpDeviceSummary} instances. */
     private java.util.List<com.oracle.bmc.identity.model.MfaTotpDeviceSummary> items;
 
     /**
-     * A list of com.oracle.bmc.identity.model.MfaTotpDeviceSummary instances.
+     * A list of {@code com.oracle.bmc.identity.model.MfaTotpDeviceSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListMfaTotpDevicesResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** A list of com.oracle.bmc.identity.model.MfaTotpDeviceSummary instances. */
+        /** A list of {@code com.oracle.bmc.identity.model.MfaTotpDeviceSummary} instances. */
         private java.util.List<com.oracle.bmc.identity.model.MfaTotpDeviceSummary> items;
 
         /**
-         * A list of com.oracle.bmc.identity.model.MfaTotpDeviceSummary instances.
+         * A list of {@code com.oracle.bmc.identity.model.MfaTotpDeviceSummary} instances.
          *
          * @param items the value to set
          * @return this builder

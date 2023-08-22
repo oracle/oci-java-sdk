@@ -43,12 +43,12 @@ public class RequestSummarizedActivityProblemsResponse
         return opcNextPage;
     }
 
-    /** The returned ActivityProblemAggregationCollection instance. */
+    /** The returned {@code ActivityProblemAggregationCollection} instance. */
     private com.oracle.bmc.cloudguard.model.ActivityProblemAggregationCollection
             activityProblemAggregationCollection;
 
     /**
-     * The returned ActivityProblemAggregationCollection instance.
+     * The returned {@code ActivityProblemAggregationCollection} instance.
      *
      * @return the value
      */
@@ -134,12 +134,12 @@ public class RequestSummarizedActivityProblemsResponse
             return this;
         }
 
-        /** The returned ActivityProblemAggregationCollection instance. */
+        /** The returned {@code ActivityProblemAggregationCollection} instance. */
         private com.oracle.bmc.cloudguard.model.ActivityProblemAggregationCollection
                 activityProblemAggregationCollection;
 
         /**
-         * The returned ActivityProblemAggregationCollection instance.
+         * The returned {@code ActivityProblemAggregationCollection} instance.
          *
          * @param activityProblemAggregationCollection the value to set
          * @return this builder

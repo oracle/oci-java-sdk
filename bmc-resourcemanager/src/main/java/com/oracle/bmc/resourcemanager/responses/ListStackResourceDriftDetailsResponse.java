@@ -44,12 +44,12 @@ public class ListStackResourceDriftDetailsResponse extends com.oracle.bmc.respon
         return opcNextPage;
     }
 
-    /** The returned StackResourceDriftCollection instance. */
+    /** The returned {@code StackResourceDriftCollection} instance. */
     private com.oracle.bmc.resourcemanager.model.StackResourceDriftCollection
             stackResourceDriftCollection;
 
     /**
-     * The returned StackResourceDriftCollection instance.
+     * The returned {@code StackResourceDriftCollection} instance.
      *
      * @return the value
      */
@@ -137,12 +137,12 @@ public class ListStackResourceDriftDetailsResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned StackResourceDriftCollection instance. */
+        /** The returned {@code StackResourceDriftCollection} instance. */
         private com.oracle.bmc.resourcemanager.model.StackResourceDriftCollection
                 stackResourceDriftCollection;
 
         /**
-         * The returned StackResourceDriftCollection instance.
+         * The returned {@code StackResourceDriftCollection} instance.
          *
          * @param stackResourceDriftCollection the value to set
          * @return this builder

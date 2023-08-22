@@ -36,11 +36,11 @@ public class GetConnectionResponse extends com.oracle.bmc.responses.BmcResponse 
         return etag;
     }
 
-    /** The returned Connection instance. */
+    /** The returned {@code Connection} instance. */
     private com.oracle.bmc.databasemigration.model.Connection connection;
 
     /**
-     * The returned Connection instance.
+     * The returned {@code Connection} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetConnectionResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned Connection instance. */
+        /** The returned {@code Connection} instance. */
         private com.oracle.bmc.databasemigration.model.Connection connection;
 
         /**
-         * The returned Connection instance.
+         * The returned {@code Connection} instance.
          *
          * @param connection the value to set
          * @return this builder

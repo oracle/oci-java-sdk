@@ -64,11 +64,11 @@ public class GetRecalledDataSizeResponse extends com.oracle.bmc.responses.BmcRes
         return opcPrevPage;
     }
 
-    /** The returned RecalledDataSize instance. */
+    /** The returned {@code RecalledDataSize} instance. */
     private com.oracle.bmc.loganalytics.model.RecalledDataSize recalledDataSize;
 
     /**
-     * The returned RecalledDataSize instance.
+     * The returned {@code RecalledDataSize} instance.
      *
      * @return the value
      */
@@ -178,11 +178,11 @@ public class GetRecalledDataSizeResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned RecalledDataSize instance. */
+        /** The returned {@code RecalledDataSize} instance. */
         private com.oracle.bmc.loganalytics.model.RecalledDataSize recalledDataSize;
 
         /**
-         * The returned RecalledDataSize instance.
+         * The returned {@code RecalledDataSize} instance.
          *
          * @param recalledDataSize the value to set
          * @return this builder

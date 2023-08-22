@@ -36,11 +36,11 @@ public class UpdateDomainGovernanceResponse extends com.oracle.bmc.responses.Bmc
         return etag;
     }
 
-    /** The returned DomainGovernance instance. */
+    /** The returned {@code DomainGovernance} instance. */
     private com.oracle.bmc.tenantmanagercontrolplane.model.DomainGovernance domainGovernance;
 
     /**
-     * The returned DomainGovernance instance.
+     * The returned {@code DomainGovernance} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class UpdateDomainGovernanceResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned DomainGovernance instance. */
+        /** The returned {@code DomainGovernance} instance. */
         private com.oracle.bmc.tenantmanagercontrolplane.model.DomainGovernance domainGovernance;
 
         /**
-         * The returned DomainGovernance instance.
+         * The returned {@code DomainGovernance} instance.
          *
          * @param domainGovernance the value to set
          * @return this builder

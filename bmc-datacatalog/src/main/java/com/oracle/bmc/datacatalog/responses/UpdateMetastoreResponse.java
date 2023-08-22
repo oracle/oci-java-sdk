@@ -40,11 +40,11 @@ public class UpdateMetastoreResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned Metastore instance. */
+    /** The returned {@code Metastore} instance. */
     private com.oracle.bmc.datacatalog.model.Metastore metastore;
 
     /**
-     * The returned Metastore instance.
+     * The returned {@code Metastore} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class UpdateMetastoreResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned Metastore instance. */
+        /** The returned {@code Metastore} instance. */
         private com.oracle.bmc.datacatalog.model.Metastore metastore;
 
         /**
-         * The returned Metastore instance.
+         * The returned {@code Metastore} instance.
          *
          * @param metastore the value to set
          * @return this builder

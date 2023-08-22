@@ -36,11 +36,11 @@ public class UpdateUserCapabilitiesResponse extends com.oracle.bmc.responses.Bmc
         return etag;
     }
 
-    /** The returned User instance. */
+    /** The returned {@code User} instance. */
     private com.oracle.bmc.identity.model.User user;
 
     /**
-     * The returned User instance.
+     * The returned {@code User} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class UpdateUserCapabilitiesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned User instance. */
+        /** The returned {@code User} instance. */
         private com.oracle.bmc.identity.model.User user;
 
         /**
-         * The returned User instance.
+         * The returned {@code User} instance.
          *
          * @param user the value to set
          * @return this builder

@@ -42,11 +42,11 @@ public class ListDrgAttachmentsResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.DrgAttachment instances. */
+    /** A list of {@code com.oracle.bmc.core.model.DrgAttachment} instances. */
     private java.util.List<com.oracle.bmc.core.model.DrgAttachment> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.DrgAttachment instances.
+     * A list of {@code com.oracle.bmc.core.model.DrgAttachment} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListDrgAttachmentsResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.DrgAttachment instances. */
+        /** A list of {@code com.oracle.bmc.core.model.DrgAttachment} instances. */
         private java.util.List<com.oracle.bmc.core.model.DrgAttachment> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.DrgAttachment instances.
+         * A list of {@code com.oracle.bmc.core.model.DrgAttachment} instances.
          *
          * @param items the value to set
          * @return this builder

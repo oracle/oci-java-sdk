@@ -36,11 +36,11 @@ public class GetAutonomousVmClusterResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned AutonomousVmCluster instance. */
+    /** The returned {@code AutonomousVmCluster} instance. */
     private com.oracle.bmc.database.model.AutonomousVmCluster autonomousVmCluster;
 
     /**
-     * The returned AutonomousVmCluster instance.
+     * The returned {@code AutonomousVmCluster} instance.
      *
      * @return the value
      */
@@ -118,11 +118,11 @@ public class GetAutonomousVmClusterResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned AutonomousVmCluster instance. */
+        /** The returned {@code AutonomousVmCluster} instance. */
         private com.oracle.bmc.database.model.AutonomousVmCluster autonomousVmCluster;
 
         /**
-         * The returned AutonomousVmCluster instance.
+         * The returned {@code AutonomousVmCluster} instance.
          *
          * @param autonomousVmCluster the value to set
          * @return this builder

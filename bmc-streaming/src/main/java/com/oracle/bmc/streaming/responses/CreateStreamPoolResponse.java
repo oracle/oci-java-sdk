@@ -36,11 +36,11 @@ public class CreateStreamPoolResponse extends com.oracle.bmc.responses.BmcRespon
         return etag;
     }
 
-    /** The returned StreamPool instance. */
+    /** The returned {@code StreamPool} instance. */
     private com.oracle.bmc.streaming.model.StreamPool streamPool;
 
     /**
-     * The returned StreamPool instance.
+     * The returned {@code StreamPool} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class CreateStreamPoolResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned StreamPool instance. */
+        /** The returned {@code StreamPool} instance. */
         private com.oracle.bmc.streaming.model.StreamPool streamPool;
 
         /**
-         * The returned StreamPool instance.
+         * The returned {@code StreamPool} instance.
          *
          * @param streamPool the value to set
          * @return this builder

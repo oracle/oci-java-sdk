@@ -76,11 +76,11 @@ public class CreateMigrationAssetResponse extends com.oracle.bmc.responses.BmcRe
         return contentLocation;
     }
 
-    /** The returned MigrationAsset instance. */
+    /** The returned {@code MigrationAsset} instance. */
     private com.oracle.bmc.cloudmigrations.model.MigrationAsset migrationAsset;
 
     /**
-     * The returned MigrationAsset instance.
+     * The returned {@code MigrationAsset} instance.
      *
      * @return the value
      */
@@ -212,11 +212,11 @@ public class CreateMigrationAssetResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned MigrationAsset instance. */
+        /** The returned {@code MigrationAsset} instance. */
         private com.oracle.bmc.cloudmigrations.model.MigrationAsset migrationAsset;
 
         /**
-         * The returned MigrationAsset instance.
+         * The returned {@code MigrationAsset} instance.
          *
          * @param migrationAsset the value to set
          * @return this builder

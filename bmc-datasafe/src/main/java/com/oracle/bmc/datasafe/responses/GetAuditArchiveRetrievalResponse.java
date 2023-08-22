@@ -42,11 +42,11 @@ public class GetAuditArchiveRetrievalResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** The returned AuditArchiveRetrieval instance. */
+    /** The returned {@code AuditArchiveRetrieval} instance. */
     private com.oracle.bmc.datasafe.model.AuditArchiveRetrieval auditArchiveRetrieval;
 
     /**
-     * The returned AuditArchiveRetrieval instance.
+     * The returned {@code AuditArchiveRetrieval} instance.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class GetAuditArchiveRetrievalResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned AuditArchiveRetrieval instance. */
+        /** The returned {@code AuditArchiveRetrieval} instance. */
         private com.oracle.bmc.datasafe.model.AuditArchiveRetrieval auditArchiveRetrieval;
 
         /**
-         * The returned AuditArchiveRetrieval instance.
+         * The returned {@code AuditArchiveRetrieval} instance.
          *
          * @param auditArchiveRetrieval the value to set
          * @return this builder

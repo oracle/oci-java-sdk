@@ -40,11 +40,11 @@ public class GetModuleStreamResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned ModuleStream instance. */
+    /** The returned {@code ModuleStream} instance. */
     private com.oracle.bmc.osmanagement.model.ModuleStream moduleStream;
 
     /**
-     * The returned ModuleStream instance.
+     * The returned {@code ModuleStream} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetModuleStreamResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned ModuleStream instance. */
+        /** The returned {@code ModuleStream} instance. */
         private com.oracle.bmc.osmanagement.model.ModuleStream moduleStream;
 
         /**
-         * The returned ModuleStream instance.
+         * The returned {@code ModuleStream} instance.
          *
          * @param moduleStream the value to set
          * @return this builder

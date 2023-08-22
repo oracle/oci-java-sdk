@@ -36,11 +36,11 @@ public class GenerateTotpSeedResponse extends com.oracle.bmc.responses.BmcRespon
         return etag;
     }
 
-    /** The returned MfaTotpDevice instance. */
+    /** The returned {@code MfaTotpDevice} instance. */
     private com.oracle.bmc.identity.model.MfaTotpDevice mfaTotpDevice;
 
     /**
-     * The returned MfaTotpDevice instance.
+     * The returned {@code MfaTotpDevice} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GenerateTotpSeedResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned MfaTotpDevice instance. */
+        /** The returned {@code MfaTotpDevice} instance. */
         private com.oracle.bmc.identity.model.MfaTotpDevice mfaTotpDevice;
 
         /**
-         * The returned MfaTotpDevice instance.
+         * The returned {@code MfaTotpDevice} instance.
          *
          * @param mfaTotpDevice the value to set
          * @return this builder

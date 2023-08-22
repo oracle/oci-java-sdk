@@ -42,11 +42,11 @@ public class GetSensitiveDataModelResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned SensitiveDataModel instance. */
+    /** The returned {@code SensitiveDataModel} instance. */
     private com.oracle.bmc.datasafe.model.SensitiveDataModel sensitiveDataModel;
 
     /**
-     * The returned SensitiveDataModel instance.
+     * The returned {@code SensitiveDataModel} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class GetSensitiveDataModelResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned SensitiveDataModel instance. */
+        /** The returned {@code SensitiveDataModel} instance. */
         private com.oracle.bmc.datasafe.model.SensitiveDataModel sensitiveDataModel;
 
         /**
-         * The returned SensitiveDataModel instance.
+         * The returned {@code SensitiveDataModel} instance.
          *
          * @param sensitiveDataModel the value to set
          * @return this builder

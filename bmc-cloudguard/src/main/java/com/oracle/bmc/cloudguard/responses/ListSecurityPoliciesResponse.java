@@ -42,11 +42,11 @@ public class ListSecurityPoliciesResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** The returned SecurityPolicyCollection instance. */
+    /** The returned {@code SecurityPolicyCollection} instance. */
     private com.oracle.bmc.cloudguard.model.SecurityPolicyCollection securityPolicyCollection;
 
     /**
-     * The returned SecurityPolicyCollection instance.
+     * The returned {@code SecurityPolicyCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListSecurityPoliciesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned SecurityPolicyCollection instance. */
+        /** The returned {@code SecurityPolicyCollection} instance. */
         private com.oracle.bmc.cloudguard.model.SecurityPolicyCollection securityPolicyCollection;
 
         /**
-         * The returned SecurityPolicyCollection instance.
+         * The returned {@code SecurityPolicyCollection} instance.
          *
          * @param securityPolicyCollection the value to set
          * @return this builder

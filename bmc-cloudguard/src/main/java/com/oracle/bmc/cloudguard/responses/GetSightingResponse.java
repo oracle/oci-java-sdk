@@ -36,11 +36,11 @@ public class GetSightingResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned Sighting instance. */
+    /** The returned {@code Sighting} instance. */
     private com.oracle.bmc.cloudguard.model.Sighting sighting;
 
     /**
-     * The returned Sighting instance.
+     * The returned {@code Sighting} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetSightingResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Sighting instance. */
+        /** The returned {@code Sighting} instance. */
         private com.oracle.bmc.cloudguard.model.Sighting sighting;
 
         /**
-         * The returned Sighting instance.
+         * The returned {@code Sighting} instance.
          *
          * @param sighting the value to set
          * @return this builder

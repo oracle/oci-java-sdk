@@ -42,11 +42,11 @@ public class SearchUserAttributesSettingsResponse extends com.oracle.bmc.respons
         return opcNextPage;
     }
 
-    /** The returned UserAttributesSettings instance. */
+    /** The returned {@code UserAttributesSettings} instance. */
     private com.oracle.bmc.identitydomains.model.UserAttributesSettings userAttributesSettings;
 
     /**
-     * The returned UserAttributesSettings instance.
+     * The returned {@code UserAttributesSettings} instance.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class SearchUserAttributesSettingsResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned UserAttributesSettings instance. */
+        /** The returned {@code UserAttributesSettings} instance. */
         private com.oracle.bmc.identitydomains.model.UserAttributesSettings userAttributesSettings;
 
         /**
-         * The returned UserAttributesSettings instance.
+         * The returned {@code UserAttributesSettings} instance.
          *
          * @param userAttributesSettings the value to set
          * @return this builder

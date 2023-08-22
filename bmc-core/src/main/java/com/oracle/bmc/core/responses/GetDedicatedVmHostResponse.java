@@ -36,11 +36,11 @@ public class GetDedicatedVmHostResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned DedicatedVmHost instance. */
+    /** The returned {@code DedicatedVmHost} instance. */
     private com.oracle.bmc.core.model.DedicatedVmHost dedicatedVmHost;
 
     /**
-     * The returned DedicatedVmHost instance.
+     * The returned {@code DedicatedVmHost} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetDedicatedVmHostResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned DedicatedVmHost instance. */
+        /** The returned {@code DedicatedVmHost} instance. */
         private com.oracle.bmc.core.model.DedicatedVmHost dedicatedVmHost;
 
         /**
-         * The returned DedicatedVmHost instance.
+         * The returned {@code DedicatedVmHost} instance.
          *
          * @param dedicatedVmHost the value to set
          * @return this builder

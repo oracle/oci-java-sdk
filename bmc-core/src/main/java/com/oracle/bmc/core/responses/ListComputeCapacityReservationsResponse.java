@@ -42,11 +42,11 @@ public class ListComputeCapacityReservationsResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.core.model.ComputeCapacityReservationSummary instances. */
+    /** A list of {@code com.oracle.bmc.core.model.ComputeCapacityReservationSummary} instances. */
     private java.util.List<com.oracle.bmc.core.model.ComputeCapacityReservationSummary> items;
 
     /**
-     * A list of com.oracle.bmc.core.model.ComputeCapacityReservationSummary instances.
+     * A list of {@code com.oracle.bmc.core.model.ComputeCapacityReservationSummary} instances.
      *
      * @return the value
      */
@@ -130,11 +130,13 @@ public class ListComputeCapacityReservationsResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** A list of com.oracle.bmc.core.model.ComputeCapacityReservationSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.core.model.ComputeCapacityReservationSummary} instances.
+         */
         private java.util.List<com.oracle.bmc.core.model.ComputeCapacityReservationSummary> items;
 
         /**
-         * A list of com.oracle.bmc.core.model.ComputeCapacityReservationSummary instances.
+         * A list of {@code com.oracle.bmc.core.model.ComputeCapacityReservationSummary} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -24,11 +24,11 @@ public class GetOpenAlertHistoryResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned OpenAlertHistory instance. */
+    /** The returned {@code OpenAlertHistory} instance. */
     private com.oracle.bmc.databasemanagement.model.OpenAlertHistory openAlertHistory;
 
     /**
-     * The returned OpenAlertHistory instance.
+     * The returned {@code OpenAlertHistory} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetOpenAlertHistoryResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned OpenAlertHistory instance. */
+        /** The returned {@code OpenAlertHistory} instance. */
         private com.oracle.bmc.databasemanagement.model.OpenAlertHistory openAlertHistory;
 
         /**
-         * The returned OpenAlertHistory instance.
+         * The returned {@code OpenAlertHistory} instance.
          *
          * @param openAlertHistory the value to set
          * @return this builder

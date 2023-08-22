@@ -42,11 +42,11 @@ public class SearchPasswordPoliciesResponse extends com.oracle.bmc.responses.Bmc
         return opcNextPage;
     }
 
-    /** The returned PasswordPolicies instance. */
+    /** The returned {@code PasswordPolicies} instance. */
     private com.oracle.bmc.identitydomains.model.PasswordPolicies passwordPolicies;
 
     /**
-     * The returned PasswordPolicies instance.
+     * The returned {@code PasswordPolicies} instance.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class SearchPasswordPoliciesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned PasswordPolicies instance. */
+        /** The returned {@code PasswordPolicies} instance. */
         private com.oracle.bmc.identitydomains.model.PasswordPolicies passwordPolicies;
 
         /**
-         * The returned PasswordPolicies instance.
+         * The returned {@code PasswordPolicies} instance.
          *
          * @param passwordPolicies the value to set
          * @return this builder

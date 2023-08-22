@@ -42,12 +42,12 @@ public class ListManagedDatabaseGroupsResponse extends com.oracle.bmc.responses.
         return opcNextPage;
     }
 
-    /** The returned ManagedDatabaseGroupCollection instance. */
+    /** The returned {@code ManagedDatabaseGroupCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroupCollection
             managedDatabaseGroupCollection;
 
     /**
-     * The returned ManagedDatabaseGroupCollection instance.
+     * The returned {@code ManagedDatabaseGroupCollection} instance.
      *
      * @return the value
      */
@@ -133,12 +133,12 @@ public class ListManagedDatabaseGroupsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned ManagedDatabaseGroupCollection instance. */
+        /** The returned {@code ManagedDatabaseGroupCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroupCollection
                 managedDatabaseGroupCollection;
 
         /**
-         * The returned ManagedDatabaseGroupCollection instance.
+         * The returned {@code ManagedDatabaseGroupCollection} instance.
          *
          * @param managedDatabaseGroupCollection the value to set
          * @return this builder

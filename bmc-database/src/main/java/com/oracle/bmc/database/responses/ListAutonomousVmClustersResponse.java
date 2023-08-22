@@ -44,11 +44,11 @@ public class ListAutonomousVmClustersResponse extends com.oracle.bmc.responses.B
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.database.model.AutonomousVmClusterSummary instances. */
+    /** A list of {@code com.oracle.bmc.database.model.AutonomousVmClusterSummary} instances. */
     private java.util.List<com.oracle.bmc.database.model.AutonomousVmClusterSummary> items;
 
     /**
-     * A list of com.oracle.bmc.database.model.AutonomousVmClusterSummary instances.
+     * A list of {@code com.oracle.bmc.database.model.AutonomousVmClusterSummary} instances.
      *
      * @return the value
      */
@@ -136,11 +136,11 @@ public class ListAutonomousVmClustersResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** A list of com.oracle.bmc.database.model.AutonomousVmClusterSummary instances. */
+        /** A list of {@code com.oracle.bmc.database.model.AutonomousVmClusterSummary} instances. */
         private java.util.List<com.oracle.bmc.database.model.AutonomousVmClusterSummary> items;
 
         /**
-         * A list of com.oracle.bmc.database.model.AutonomousVmClusterSummary instances.
+         * A list of {@code com.oracle.bmc.database.model.AutonomousVmClusterSummary} instances.
          *
          * @param items the value to set
          * @return this builder

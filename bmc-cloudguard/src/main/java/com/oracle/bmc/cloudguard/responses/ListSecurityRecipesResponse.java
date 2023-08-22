@@ -42,11 +42,11 @@ public class ListSecurityRecipesResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** The returned SecurityRecipeCollection instance. */
+    /** The returned {@code SecurityRecipeCollection} instance. */
     private com.oracle.bmc.cloudguard.model.SecurityRecipeCollection securityRecipeCollection;
 
     /**
-     * The returned SecurityRecipeCollection instance.
+     * The returned {@code SecurityRecipeCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListSecurityRecipesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned SecurityRecipeCollection instance. */
+        /** The returned {@code SecurityRecipeCollection} instance. */
         private com.oracle.bmc.cloudguard.model.SecurityRecipeCollection securityRecipeCollection;
 
         /**
-         * The returned SecurityRecipeCollection instance.
+         * The returned {@code SecurityRecipeCollection} instance.
          *
          * @param securityRecipeCollection the value to set
          * @return this builder

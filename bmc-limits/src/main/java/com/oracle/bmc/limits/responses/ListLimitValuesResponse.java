@@ -42,11 +42,11 @@ public class ListLimitValuesResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** A list of com.oracle.bmc.limits.model.LimitValueSummary instances. */
+    /** A list of {@code com.oracle.bmc.limits.model.LimitValueSummary} instances. */
     private java.util.List<com.oracle.bmc.limits.model.LimitValueSummary> items;
 
     /**
-     * A list of com.oracle.bmc.limits.model.LimitValueSummary instances.
+     * A list of {@code com.oracle.bmc.limits.model.LimitValueSummary} instances.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListLimitValuesResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** A list of com.oracle.bmc.limits.model.LimitValueSummary instances. */
+        /** A list of {@code com.oracle.bmc.limits.model.LimitValueSummary} instances. */
         private java.util.List<com.oracle.bmc.limits.model.LimitValueSummary> items;
 
         /**
-         * A list of com.oracle.bmc.limits.model.LimitValueSummary instances.
+         * A list of {@code com.oracle.bmc.limits.model.LimitValueSummary} instances.
          *
          * @param items the value to set
          * @return this builder

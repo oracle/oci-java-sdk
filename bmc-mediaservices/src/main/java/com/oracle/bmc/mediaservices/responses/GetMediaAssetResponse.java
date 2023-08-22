@@ -36,11 +36,11 @@ public class GetMediaAssetResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** The returned MediaAsset instance. */
+    /** The returned {@code MediaAsset} instance. */
     private com.oracle.bmc.mediaservices.model.MediaAsset mediaAsset;
 
     /**
-     * The returned MediaAsset instance.
+     * The returned {@code MediaAsset} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetMediaAssetResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned MediaAsset instance. */
+        /** The returned {@code MediaAsset} instance. */
         private com.oracle.bmc.mediaservices.model.MediaAsset mediaAsset;
 
         /**
-         * The returned MediaAsset instance.
+         * The returned {@code MediaAsset} instance.
          *
          * @param mediaAsset the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class GetReplicationTargetResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned ReplicationTarget instance. */
+    /** The returned {@code ReplicationTarget} instance. */
     private com.oracle.bmc.filestorage.model.ReplicationTarget replicationTarget;
 
     /**
-     * The returned ReplicationTarget instance.
+     * The returned {@code ReplicationTarget} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetReplicationTargetResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned ReplicationTarget instance. */
+        /** The returned {@code ReplicationTarget} instance. */
         private com.oracle.bmc.filestorage.model.ReplicationTarget replicationTarget;
 
         /**
-         * The returned ReplicationTarget instance.
+         * The returned {@code ReplicationTarget} instance.
          *
          * @param replicationTarget the value to set
          * @return this builder

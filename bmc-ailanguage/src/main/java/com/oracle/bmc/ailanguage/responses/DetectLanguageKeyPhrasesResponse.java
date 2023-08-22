@@ -36,12 +36,12 @@ public class DetectLanguageKeyPhrasesResponse extends com.oracle.bmc.responses.B
         return sunset;
     }
 
-    /** The returned DetectLanguageKeyPhrasesResult instance. */
+    /** The returned {@code DetectLanguageKeyPhrasesResult} instance. */
     private com.oracle.bmc.ailanguage.model.DetectLanguageKeyPhrasesResult
             detectLanguageKeyPhrasesResult;
 
     /**
-     * The returned DetectLanguageKeyPhrasesResult instance.
+     * The returned {@code DetectLanguageKeyPhrasesResult} instance.
      *
      * @return the value
      */
@@ -121,12 +121,12 @@ public class DetectLanguageKeyPhrasesResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned DetectLanguageKeyPhrasesResult instance. */
+        /** The returned {@code DetectLanguageKeyPhrasesResult} instance. */
         private com.oracle.bmc.ailanguage.model.DetectLanguageKeyPhrasesResult
                 detectLanguageKeyPhrasesResult;
 
         /**
-         * The returned DetectLanguageKeyPhrasesResult instance.
+         * The returned {@code DetectLanguageKeyPhrasesResult} instance.
          *
          * @param detectLanguageKeyPhrasesResult the value to set
          * @return this builder

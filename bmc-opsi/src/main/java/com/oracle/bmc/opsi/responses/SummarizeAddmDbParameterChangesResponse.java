@@ -42,12 +42,12 @@ public class SummarizeAddmDbParameterChangesResponse extends com.oracle.bmc.resp
         return opcNextPage;
     }
 
-    /** The returned AddmDbParameterChangeAggregationCollection instance. */
+    /** The returned {@code AddmDbParameterChangeAggregationCollection} instance. */
     private com.oracle.bmc.opsi.model.AddmDbParameterChangeAggregationCollection
             addmDbParameterChangeAggregationCollection;
 
     /**
-     * The returned AddmDbParameterChangeAggregationCollection instance.
+     * The returned {@code AddmDbParameterChangeAggregationCollection} instance.
      *
      * @return the value
      */
@@ -134,12 +134,12 @@ public class SummarizeAddmDbParameterChangesResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned AddmDbParameterChangeAggregationCollection instance. */
+        /** The returned {@code AddmDbParameterChangeAggregationCollection} instance. */
         private com.oracle.bmc.opsi.model.AddmDbParameterChangeAggregationCollection
                 addmDbParameterChangeAggregationCollection;
 
         /**
-         * The returned AddmDbParameterChangeAggregationCollection instance.
+         * The returned {@code AddmDbParameterChangeAggregationCollection} instance.
          *
          * @param addmDbParameterChangeAggregationCollection the value to set
          * @return this builder

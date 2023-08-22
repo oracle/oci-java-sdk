@@ -42,11 +42,11 @@ public class ListReportTypesResponse extends com.oracle.bmc.responses.BmcRespons
         return opcNextPage;
     }
 
-    /** The returned ReportTypeCollection instance. */
+    /** The returned {@code ReportTypeCollection} instance. */
     private com.oracle.bmc.marketplace.model.ReportTypeCollection reportTypeCollection;
 
     /**
-     * The returned ReportTypeCollection instance.
+     * The returned {@code ReportTypeCollection} instance.
      *
      * @return the value
      */
@@ -129,11 +129,11 @@ public class ListReportTypesResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned ReportTypeCollection instance. */
+        /** The returned {@code ReportTypeCollection} instance. */
         private com.oracle.bmc.marketplace.model.ReportTypeCollection reportTypeCollection;
 
         /**
-         * The returned ReportTypeCollection instance.
+         * The returned {@code ReportTypeCollection} instance.
          *
          * @param reportTypeCollection the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class UpdateManagedListResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned ManagedList instance. */
+    /** The returned {@code ManagedList} instance. */
     private com.oracle.bmc.cloudguard.model.ManagedList managedList;
 
     /**
-     * The returned ManagedList instance.
+     * The returned {@code ManagedList} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateManagedListResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned ManagedList instance. */
+        /** The returned {@code ManagedList} instance. */
         private com.oracle.bmc.cloudguard.model.ManagedList managedList;
 
         /**
-         * The returned ManagedList instance.
+         * The returned {@code ManagedList} instance.
          *
          * @param managedList the value to set
          * @return this builder

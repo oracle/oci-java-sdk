@@ -24,12 +24,12 @@ public class ListEncryptionKeyInfoResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned EncryptionKeyInfoCollection instance. */
+    /** The returned {@code EncryptionKeyInfoCollection} instance. */
     private com.oracle.bmc.loganalytics.model.EncryptionKeyInfoCollection
             encryptionKeyInfoCollection;
 
     /**
-     * The returned EncryptionKeyInfoCollection instance.
+     * The returned {@code EncryptionKeyInfoCollection} instance.
      *
      * @return the value
      */
@@ -91,12 +91,12 @@ public class ListEncryptionKeyInfoResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned EncryptionKeyInfoCollection instance. */
+        /** The returned {@code EncryptionKeyInfoCollection} instance. */
         private com.oracle.bmc.loganalytics.model.EncryptionKeyInfoCollection
                 encryptionKeyInfoCollection;
 
         /**
-         * The returned EncryptionKeyInfoCollection instance.
+         * The returned {@code EncryptionKeyInfoCollection} instance.
          *
          * @param encryptionKeyInfoCollection the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class GetAdvisorReportResponse extends com.oracle.bmc.responses.BmcRespon
         return etag;
     }
 
-    /** The returned AdvisorReport instance. */
+    /** The returned {@code AdvisorReport} instance. */
     private com.oracle.bmc.databasemigration.model.AdvisorReport advisorReport;
 
     /**
-     * The returned AdvisorReport instance.
+     * The returned {@code AdvisorReport} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetAdvisorReportResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned AdvisorReport instance. */
+        /** The returned {@code AdvisorReport} instance. */
         private com.oracle.bmc.databasemigration.model.AdvisorReport advisorReport;
 
         /**
-         * The returned AdvisorReport instance.
+         * The returned {@code AdvisorReport} instance.
          *
          * @param advisorReport the value to set
          * @return this builder

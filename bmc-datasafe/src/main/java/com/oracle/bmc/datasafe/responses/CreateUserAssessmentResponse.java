@@ -70,11 +70,11 @@ public class CreateUserAssessmentResponse extends com.oracle.bmc.responses.BmcRe
         return location;
     }
 
-    /** The returned UserAssessment instance. */
+    /** The returned {@code UserAssessment} instance. */
     private com.oracle.bmc.datasafe.model.UserAssessment userAssessment;
 
     /**
-     * The returned UserAssessment instance.
+     * The returned {@code UserAssessment} instance.
      *
      * @return the value
      */
@@ -195,11 +195,11 @@ public class CreateUserAssessmentResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned UserAssessment instance. */
+        /** The returned {@code UserAssessment} instance. */
         private com.oracle.bmc.datasafe.model.UserAssessment userAssessment;
 
         /**
-         * The returned UserAssessment instance.
+         * The returned {@code UserAssessment} instance.
          *
          * @param userAssessment the value to set
          * @return this builder

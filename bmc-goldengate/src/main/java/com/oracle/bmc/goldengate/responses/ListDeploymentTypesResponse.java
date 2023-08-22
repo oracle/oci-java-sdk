@@ -40,11 +40,11 @@ public class ListDeploymentTypesResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** The returned DeploymentTypeCollection instance. */
+    /** The returned {@code DeploymentTypeCollection} instance. */
     private com.oracle.bmc.goldengate.model.DeploymentTypeCollection deploymentTypeCollection;
 
     /**
-     * The returned DeploymentTypeCollection instance.
+     * The returned {@code DeploymentTypeCollection} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class ListDeploymentTypesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned DeploymentTypeCollection instance. */
+        /** The returned {@code DeploymentTypeCollection} instance. */
         private com.oracle.bmc.goldengate.model.DeploymentTypeCollection deploymentTypeCollection;
 
         /**
-         * The returned DeploymentTypeCollection instance.
+         * The returned {@code DeploymentTypeCollection} instance.
          *
          * @param deploymentTypeCollection the value to set
          * @return this builder

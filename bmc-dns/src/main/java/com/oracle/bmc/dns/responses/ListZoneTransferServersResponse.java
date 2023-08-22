@@ -42,11 +42,11 @@ public class ListZoneTransferServersResponse extends com.oracle.bmc.responses.Bm
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.dns.model.ZoneTransferServer instances. */
+    /** A list of {@code com.oracle.bmc.dns.model.ZoneTransferServer} instances. */
     private java.util.List<com.oracle.bmc.dns.model.ZoneTransferServer> items;
 
     /**
-     * A list of com.oracle.bmc.dns.model.ZoneTransferServer instances.
+     * A list of {@code com.oracle.bmc.dns.model.ZoneTransferServer} instances.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListZoneTransferServersResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** A list of com.oracle.bmc.dns.model.ZoneTransferServer instances. */
+        /** A list of {@code com.oracle.bmc.dns.model.ZoneTransferServer} instances. */
         private java.util.List<com.oracle.bmc.dns.model.ZoneTransferServer> items;
 
         /**
-         * A list of com.oracle.bmc.dns.model.ZoneTransferServer instances.
+         * A list of {@code com.oracle.bmc.dns.model.ZoneTransferServer} instances.
          *
          * @param items the value to set
          * @return this builder

@@ -24,11 +24,11 @@ public class SummarizeStatementResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned StatementSummary instance. */
+    /** The returned {@code StatementSummary} instance. */
     private com.oracle.bmc.nosql.model.StatementSummary statementSummary;
 
     /**
-     * The returned StatementSummary instance.
+     * The returned {@code StatementSummary} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class SummarizeStatementResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned StatementSummary instance. */
+        /** The returned {@code StatementSummary} instance. */
         private com.oracle.bmc.nosql.model.StatementSummary statementSummary;
 
         /**
-         * The returned StatementSummary instance.
+         * The returned {@code StatementSummary} instance.
          *
          * @param statementSummary the value to set
          * @return this builder

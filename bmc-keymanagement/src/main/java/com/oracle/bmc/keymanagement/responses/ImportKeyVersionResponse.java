@@ -36,11 +36,11 @@ public class ImportKeyVersionResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned KeyVersion instance. */
+    /** The returned {@code KeyVersion} instance. */
     private com.oracle.bmc.keymanagement.model.KeyVersion keyVersion;
 
     /**
-     * The returned KeyVersion instance.
+     * The returned {@code KeyVersion} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class ImportKeyVersionResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned KeyVersion instance. */
+        /** The returned {@code KeyVersion} instance. */
         private com.oracle.bmc.keymanagement.model.KeyVersion keyVersion;
 
         /**
-         * The returned KeyVersion instance.
+         * The returned {@code KeyVersion} instance.
          *
          * @param keyVersion the value to set
          * @return this builder

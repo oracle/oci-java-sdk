@@ -37,12 +37,12 @@ public class DiscoverExternalExadataInfrastructureResponse
         return opcRequestId;
     }
 
-    /** The returned ExternalExadataInfrastructureDiscovery instance. */
+    /** The returned {@code ExternalExadataInfrastructureDiscovery} instance. */
     private com.oracle.bmc.databasemanagement.model.ExternalExadataInfrastructureDiscovery
             externalExadataInfrastructureDiscovery;
 
     /**
-     * The returned ExternalExadataInfrastructureDiscovery instance.
+     * The returned {@code ExternalExadataInfrastructureDiscovery} instance.
      *
      * @return the value
      */
@@ -122,12 +122,12 @@ public class DiscoverExternalExadataInfrastructureResponse
             return this;
         }
 
-        /** The returned ExternalExadataInfrastructureDiscovery instance. */
+        /** The returned {@code ExternalExadataInfrastructureDiscovery} instance. */
         private com.oracle.bmc.databasemanagement.model.ExternalExadataInfrastructureDiscovery
                 externalExadataInfrastructureDiscovery;
 
         /**
-         * The returned ExternalExadataInfrastructureDiscovery instance.
+         * The returned {@code ExternalExadataInfrastructureDiscovery} instance.
          *
          * @param externalExadataInfrastructureDiscovery the value to set
          * @return this builder

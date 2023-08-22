@@ -43,12 +43,12 @@ public class ListSqlTuningAdvisorTaskRecommendationsResponse
         return opcNextPage;
     }
 
-    /** The returned SqlTuningAdvisorTaskRecommendationCollection instance. */
+    /** The returned {@code SqlTuningAdvisorTaskRecommendationCollection} instance. */
     private com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskRecommendationCollection
             sqlTuningAdvisorTaskRecommendationCollection;
 
     /**
-     * The returned SqlTuningAdvisorTaskRecommendationCollection instance.
+     * The returned {@code SqlTuningAdvisorTaskRecommendationCollection} instance.
      *
      * @return the value
      */
@@ -135,12 +135,12 @@ public class ListSqlTuningAdvisorTaskRecommendationsResponse
             return this;
         }
 
-        /** The returned SqlTuningAdvisorTaskRecommendationCollection instance. */
+        /** The returned {@code SqlTuningAdvisorTaskRecommendationCollection} instance. */
         private com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskRecommendationCollection
                 sqlTuningAdvisorTaskRecommendationCollection;
 
         /**
-         * The returned SqlTuningAdvisorTaskRecommendationCollection instance.
+         * The returned {@code SqlTuningAdvisorTaskRecommendationCollection} instance.
          *
          * @param sqlTuningAdvisorTaskRecommendationCollection the value to set
          * @return this builder

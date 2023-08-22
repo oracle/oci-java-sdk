@@ -60,11 +60,11 @@ public class ListServiceConnectorsResponse extends com.oracle.bmc.responses.BmcR
         return opcPrevPage;
     }
 
-    /** The returned ServiceConnectorCollection instance. */
+    /** The returned {@code ServiceConnectorCollection} instance. */
     private com.oracle.bmc.sch.model.ServiceConnectorCollection serviceConnectorCollection;
 
     /**
-     * The returned ServiceConnectorCollection instance.
+     * The returned {@code ServiceConnectorCollection} instance.
      *
      * @return the value
      */
@@ -170,11 +170,11 @@ public class ListServiceConnectorsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned ServiceConnectorCollection instance. */
+        /** The returned {@code ServiceConnectorCollection} instance. */
         private com.oracle.bmc.sch.model.ServiceConnectorCollection serviceConnectorCollection;
 
         /**
-         * The returned ServiceConnectorCollection instance.
+         * The returned {@code ServiceConnectorCollection} instance.
          *
          * @param serviceConnectorCollection the value to set
          * @return this builder

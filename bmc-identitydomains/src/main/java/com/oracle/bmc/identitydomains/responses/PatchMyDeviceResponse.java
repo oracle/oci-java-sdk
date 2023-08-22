@@ -36,11 +36,11 @@ public class PatchMyDeviceResponse extends com.oracle.bmc.responses.BmcResponse 
         return etag;
     }
 
-    /** The returned MyDevice instance. */
+    /** The returned {@code MyDevice} instance. */
     private com.oracle.bmc.identitydomains.model.MyDevice myDevice;
 
     /**
-     * The returned MyDevice instance.
+     * The returned {@code MyDevice} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class PatchMyDeviceResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned MyDevice instance. */
+        /** The returned {@code MyDevice} instance. */
         private com.oracle.bmc.identitydomains.model.MyDevice myDevice;
 
         /**
-         * The returned MyDevice instance.
+         * The returned {@code MyDevice} instance.
          *
          * @param myDevice the value to set
          * @return this builder

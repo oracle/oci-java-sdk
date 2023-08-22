@@ -36,11 +36,11 @@ public class GetFsuCycleResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned FsuCycle instance. */
+    /** The returned {@code FsuCycle} instance. */
     private com.oracle.bmc.fleetsoftwareupdate.model.FsuCycle fsuCycle;
 
     /**
-     * The returned FsuCycle instance.
+     * The returned {@code FsuCycle} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetFsuCycleResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned FsuCycle instance. */
+        /** The returned {@code FsuCycle} instance. */
         private com.oracle.bmc.fleetsoftwareupdate.model.FsuCycle fsuCycle;
 
         /**
-         * The returned FsuCycle instance.
+         * The returned {@code FsuCycle} instance.
          *
          * @param fsuCycle the value to set
          * @return this builder

@@ -36,11 +36,11 @@ public class GetRuntimePipelineResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned RuntimePipeline instance. */
+    /** The returned {@code RuntimePipeline} instance. */
     private com.oracle.bmc.dataintegration.model.RuntimePipeline runtimePipeline;
 
     /**
-     * The returned RuntimePipeline instance.
+     * The returned {@code RuntimePipeline} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class GetRuntimePipelineResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned RuntimePipeline instance. */
+        /** The returned {@code RuntimePipeline} instance. */
         private com.oracle.bmc.dataintegration.model.RuntimePipeline runtimePipeline;
 
         /**
-         * The returned RuntimePipeline instance.
+         * The returned {@code RuntimePipeline} instance.
          *
          * @param runtimePipeline the value to set
          * @return this builder

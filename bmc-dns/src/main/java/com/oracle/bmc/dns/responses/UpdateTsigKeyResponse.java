@@ -56,11 +56,11 @@ public class UpdateTsigKeyResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcWorkRequestId;
     }
 
-    /** The returned TsigKey instance. */
+    /** The returned {@code TsigKey} instance. */
     private com.oracle.bmc.dns.model.TsigKey tsigKey;
 
     /**
-     * The returned TsigKey instance.
+     * The returned {@code TsigKey} instance.
      *
      * @return the value
      */
@@ -164,11 +164,11 @@ public class UpdateTsigKeyResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned TsigKey instance. */
+        /** The returned {@code TsigKey} instance. */
         private com.oracle.bmc.dns.model.TsigKey tsigKey;
 
         /**
-         * The returned TsigKey instance.
+         * The returned {@code TsigKey} instance.
          *
          * @param tsigKey the value to set
          * @return this builder

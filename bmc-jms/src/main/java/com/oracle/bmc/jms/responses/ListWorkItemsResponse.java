@@ -44,11 +44,11 @@ public class ListWorkItemsResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** The returned WorkItemCollection instance. */
+    /** The returned {@code WorkItemCollection} instance. */
     private com.oracle.bmc.jms.model.WorkItemCollection workItemCollection;
 
     /**
-     * The returned WorkItemCollection instance.
+     * The returned {@code WorkItemCollection} instance.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListWorkItemsResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned WorkItemCollection instance. */
+        /** The returned {@code WorkItemCollection} instance. */
         private com.oracle.bmc.jms.model.WorkItemCollection workItemCollection;
 
         /**
-         * The returned WorkItemCollection instance.
+         * The returned {@code WorkItemCollection} instance.
          *
          * @param workItemCollection the value to set
          * @return this builder

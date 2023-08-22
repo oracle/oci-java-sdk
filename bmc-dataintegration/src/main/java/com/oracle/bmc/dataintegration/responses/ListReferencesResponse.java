@@ -88,12 +88,12 @@ public class ListReferencesResponse extends com.oracle.bmc.responses.BmcResponse
         return opcTotalItems;
     }
 
-    /** The returned ReferenceSummaryCollection instance. */
+    /** The returned {@code ReferenceSummaryCollection} instance. */
     private com.oracle.bmc.dataintegration.model.ReferenceSummaryCollection
             referenceSummaryCollection;
 
     /**
-     * The returned ReferenceSummaryCollection instance.
+     * The returned {@code ReferenceSummaryCollection} instance.
      *
      * @return the value
      */
@@ -239,12 +239,12 @@ public class ListReferencesResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned ReferenceSummaryCollection instance. */
+        /** The returned {@code ReferenceSummaryCollection} instance. */
         private com.oracle.bmc.dataintegration.model.ReferenceSummaryCollection
                 referenceSummaryCollection;
 
         /**
-         * The returned ReferenceSummaryCollection instance.
+         * The returned {@code ReferenceSummaryCollection} instance.
          *
          * @param referenceSummaryCollection the value to set
          * @return this builder

@@ -44,11 +44,11 @@ public class ListHostnamesResponse extends com.oracle.bmc.responses.BmcResponse 
         return eTag;
     }
 
-    /** A list of com.oracle.bmc.loadbalancer.model.Hostname instances. */
+    /** A list of {@code com.oracle.bmc.loadbalancer.model.Hostname} instances. */
     private java.util.List<com.oracle.bmc.loadbalancer.model.Hostname> items;
 
     /**
-     * A list of com.oracle.bmc.loadbalancer.model.Hostname instances.
+     * A list of {@code com.oracle.bmc.loadbalancer.model.Hostname} instances.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListHostnamesResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** A list of com.oracle.bmc.loadbalancer.model.Hostname instances. */
+        /** A list of {@code com.oracle.bmc.loadbalancer.model.Hostname} instances. */
         private java.util.List<com.oracle.bmc.loadbalancer.model.Hostname> items;
 
         /**
-         * A list of com.oracle.bmc.loadbalancer.model.Hostname instances.
+         * A list of {@code com.oracle.bmc.loadbalancer.model.Hostname} instances.
          *
          * @param items the value to set
          * @return this builder

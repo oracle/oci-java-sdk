@@ -44,11 +44,13 @@ public class ListAutonomousDbPreviewVersionsResponse extends com.oracle.bmc.resp
         return opcNextPage;
     }
 
-    /** A list of com.oracle.bmc.database.model.AutonomousDbPreviewVersionSummary instances. */
+    /**
+     * A list of {@code com.oracle.bmc.database.model.AutonomousDbPreviewVersionSummary} instances.
+     */
     private java.util.List<com.oracle.bmc.database.model.AutonomousDbPreviewVersionSummary> items;
 
     /**
-     * A list of com.oracle.bmc.database.model.AutonomousDbPreviewVersionSummary instances.
+     * A list of {@code com.oracle.bmc.database.model.AutonomousDbPreviewVersionSummary} instances.
      *
      * @return the value
      */
@@ -137,12 +139,16 @@ public class ListAutonomousDbPreviewVersionsResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** A list of com.oracle.bmc.database.model.AutonomousDbPreviewVersionSummary instances. */
+        /**
+         * A list of {@code com.oracle.bmc.database.model.AutonomousDbPreviewVersionSummary}
+         * instances.
+         */
         private java.util.List<com.oracle.bmc.database.model.AutonomousDbPreviewVersionSummary>
                 items;
 
         /**
-         * A list of com.oracle.bmc.database.model.AutonomousDbPreviewVersionSummary instances.
+         * A list of {@code com.oracle.bmc.database.model.AutonomousDbPreviewVersionSummary}
+         * instances.
          *
          * @param items the value to set
          * @return this builder

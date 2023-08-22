@@ -24,12 +24,12 @@ public class RetrieveSupportedPhasesResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned MigrationPhaseCollection instance. */
+    /** The returned {@code MigrationPhaseCollection} instance. */
     private com.oracle.bmc.databasemigration.model.MigrationPhaseCollection
             migrationPhaseCollection;
 
     /**
-     * The returned MigrationPhaseCollection instance.
+     * The returned {@code MigrationPhaseCollection} instance.
      *
      * @return the value
      */
@@ -92,12 +92,12 @@ public class RetrieveSupportedPhasesResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned MigrationPhaseCollection instance. */
+        /** The returned {@code MigrationPhaseCollection} instance. */
         private com.oracle.bmc.databasemigration.model.MigrationPhaseCollection
                 migrationPhaseCollection;
 
         /**
-         * The returned MigrationPhaseCollection instance.
+         * The returned {@code MigrationPhaseCollection} instance.
          *
          * @param migrationPhaseCollection the value to set
          * @return this builder

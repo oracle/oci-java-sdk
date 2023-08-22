@@ -24,11 +24,11 @@ public class GetSmtpCredentialResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned SmtpCredential instance. */
+    /** The returned {@code SmtpCredential} instance. */
     private com.oracle.bmc.identitydomains.model.SmtpCredential smtpCredential;
 
     /**
-     * The returned SmtpCredential instance.
+     * The returned {@code SmtpCredential} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetSmtpCredentialResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned SmtpCredential instance. */
+        /** The returned {@code SmtpCredential} instance. */
         private com.oracle.bmc.identitydomains.model.SmtpCredential smtpCredential;
 
         /**
-         * The returned SmtpCredential instance.
+         * The returned {@code SmtpCredential} instance.
          *
          * @param smtpCredential the value to set
          * @return this builder

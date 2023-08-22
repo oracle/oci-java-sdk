@@ -69,11 +69,11 @@ public class CreateOdaPrivateEndpointScanProxyResponse
         return opcRequestId;
     }
 
-    /** The returned OdaPrivateEndpointScanProxy instance. */
+    /** The returned {@code OdaPrivateEndpointScanProxy} instance. */
     private com.oracle.bmc.oda.model.OdaPrivateEndpointScanProxy odaPrivateEndpointScanProxy;
 
     /**
-     * The returned OdaPrivateEndpointScanProxy instance.
+     * The returned {@code OdaPrivateEndpointScanProxy} instance.
      *
      * @return the value
      */
@@ -193,11 +193,11 @@ public class CreateOdaPrivateEndpointScanProxyResponse
             return this;
         }
 
-        /** The returned OdaPrivateEndpointScanProxy instance. */
+        /** The returned {@code OdaPrivateEndpointScanProxy} instance. */
         private com.oracle.bmc.oda.model.OdaPrivateEndpointScanProxy odaPrivateEndpointScanProxy;
 
         /**
-         * The returned OdaPrivateEndpointScanProxy instance.
+         * The returned {@code OdaPrivateEndpointScanProxy} instance.
          *
          * @param odaPrivateEndpointScanProxy the value to set
          * @return this builder

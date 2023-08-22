@@ -36,11 +36,11 @@ public class CreateBootVolumeResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned BootVolume instance. */
+    /** The returned {@code BootVolume} instance. */
     private com.oracle.bmc.core.model.BootVolume bootVolume;
 
     /**
-     * The returned BootVolume instance.
+     * The returned {@code BootVolume} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class CreateBootVolumeResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned BootVolume instance. */
+        /** The returned {@code BootVolume} instance. */
         private com.oracle.bmc.core.model.BootVolume bootVolume;
 
         /**
-         * The returned BootVolume instance.
+         * The returned {@code BootVolume} instance.
          *
          * @param bootVolume the value to set
          * @return this builder

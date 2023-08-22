@@ -24,11 +24,11 @@ public class GetWindowsUpdateResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned WindowsUpdate instance. */
+    /** The returned {@code WindowsUpdate} instance. */
     private com.oracle.bmc.osmanagement.model.WindowsUpdate windowsUpdate;
 
     /**
-     * The returned WindowsUpdate instance.
+     * The returned {@code WindowsUpdate} instance.
      *
      * @return the value
      */
@@ -88,11 +88,11 @@ public class GetWindowsUpdateResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned WindowsUpdate instance. */
+        /** The returned {@code WindowsUpdate} instance. */
         private com.oracle.bmc.osmanagement.model.WindowsUpdate windowsUpdate;
 
         /**
-         * The returned WindowsUpdate instance.
+         * The returned {@code WindowsUpdate} instance.
          *
          * @param windowsUpdate the value to set
          * @return this builder

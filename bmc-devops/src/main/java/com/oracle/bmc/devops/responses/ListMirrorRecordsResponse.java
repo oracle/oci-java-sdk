@@ -42,12 +42,12 @@ public class ListMirrorRecordsResponse extends com.oracle.bmc.responses.BmcRespo
         return opcNextPage;
     }
 
-    /** The returned RepositoryMirrorRecordCollection instance. */
+    /** The returned {@code RepositoryMirrorRecordCollection} instance. */
     private com.oracle.bmc.devops.model.RepositoryMirrorRecordCollection
             repositoryMirrorRecordCollection;
 
     /**
-     * The returned RepositoryMirrorRecordCollection instance.
+     * The returned {@code RepositoryMirrorRecordCollection} instance.
      *
      * @return the value
      */
@@ -132,12 +132,12 @@ public class ListMirrorRecordsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned RepositoryMirrorRecordCollection instance. */
+        /** The returned {@code RepositoryMirrorRecordCollection} instance. */
         private com.oracle.bmc.devops.model.RepositoryMirrorRecordCollection
                 repositoryMirrorRecordCollection;
 
         /**
-         * The returned RepositoryMirrorRecordCollection instance.
+         * The returned {@code RepositoryMirrorRecordCollection} instance.
          *
          * @param repositoryMirrorRecordCollection the value to set
          * @return this builder

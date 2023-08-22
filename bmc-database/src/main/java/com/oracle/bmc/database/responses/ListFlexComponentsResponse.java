@@ -44,11 +44,11 @@ public class ListFlexComponentsResponse extends com.oracle.bmc.responses.BmcResp
         return opcNextPage;
     }
 
-    /** The returned FlexComponentCollection instance. */
+    /** The returned {@code FlexComponentCollection} instance. */
     private com.oracle.bmc.database.model.FlexComponentCollection flexComponentCollection;
 
     /**
-     * The returned FlexComponentCollection instance.
+     * The returned {@code FlexComponentCollection} instance.
      *
      * @return the value
      */
@@ -135,11 +135,11 @@ public class ListFlexComponentsResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned FlexComponentCollection instance. */
+        /** The returned {@code FlexComponentCollection} instance. */
         private com.oracle.bmc.database.model.FlexComponentCollection flexComponentCollection;
 
         /**
-         * The returned FlexComponentCollection instance.
+         * The returned {@code FlexComponentCollection} instance.
          *
          * @param flexComponentCollection the value to set
          * @return this builder

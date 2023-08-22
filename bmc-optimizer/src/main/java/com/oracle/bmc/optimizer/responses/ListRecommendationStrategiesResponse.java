@@ -60,12 +60,12 @@ public class ListRecommendationStrategiesResponse extends com.oracle.bmc.respons
         return opcPrevPage;
     }
 
-    /** The returned RecommendationStrategyCollection instance. */
+    /** The returned {@code RecommendationStrategyCollection} instance. */
     private com.oracle.bmc.optimizer.model.RecommendationStrategyCollection
             recommendationStrategyCollection;
 
     /**
-     * The returned RecommendationStrategyCollection instance.
+     * The returned {@code RecommendationStrategyCollection} instance.
      *
      * @return the value
      */
@@ -174,12 +174,12 @@ public class ListRecommendationStrategiesResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned RecommendationStrategyCollection instance. */
+        /** The returned {@code RecommendationStrategyCollection} instance. */
         private com.oracle.bmc.optimizer.model.RecommendationStrategyCollection
                 recommendationStrategyCollection;
 
         /**
-         * The returned RecommendationStrategyCollection instance.
+         * The returned {@code RecommendationStrategyCollection} instance.
          *
          * @param recommendationStrategyCollection the value to set
          * @return this builder

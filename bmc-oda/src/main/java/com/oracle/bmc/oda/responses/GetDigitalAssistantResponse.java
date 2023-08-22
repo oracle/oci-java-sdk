@@ -40,11 +40,11 @@ public class GetDigitalAssistantResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned DigitalAssistant instance. */
+    /** The returned {@code DigitalAssistant} instance. */
     private com.oracle.bmc.oda.model.DigitalAssistant digitalAssistant;
 
     /**
-     * The returned DigitalAssistant instance.
+     * The returned {@code DigitalAssistant} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetDigitalAssistantResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned DigitalAssistant instance. */
+        /** The returned {@code DigitalAssistant} instance. */
         private com.oracle.bmc.oda.model.DigitalAssistant digitalAssistant;
 
         /**
-         * The returned DigitalAssistant instance.
+         * The returned {@code DigitalAssistant} instance.
          *
          * @param digitalAssistant the value to set
          * @return this builder

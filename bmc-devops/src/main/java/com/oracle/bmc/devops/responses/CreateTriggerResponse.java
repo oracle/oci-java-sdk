@@ -64,11 +64,11 @@ public class CreateTriggerResponse extends com.oracle.bmc.responses.BmcResponse 
         return location;
     }
 
-    /** The returned TriggerCreateResult instance. */
+    /** The returned {@code TriggerCreateResult} instance. */
     private com.oracle.bmc.devops.model.TriggerCreateResult triggerCreateResult;
 
     /**
-     * The returned TriggerCreateResult instance.
+     * The returned {@code TriggerCreateResult} instance.
      *
      * @return the value
      */
@@ -183,11 +183,11 @@ public class CreateTriggerResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned TriggerCreateResult instance. */
+        /** The returned {@code TriggerCreateResult} instance. */
         private com.oracle.bmc.devops.model.TriggerCreateResult triggerCreateResult;
 
         /**
-         * The returned TriggerCreateResult instance.
+         * The returned {@code TriggerCreateResult} instance.
          *
          * @param triggerCreateResult the value to set
          * @return this builder

@@ -36,12 +36,12 @@ public class EstimatePurgeDataSizeResponse extends com.oracle.bmc.responses.BmcR
         return etag;
     }
 
-    /** The returned EstimatePurgeDataSizeResult instance. */
+    /** The returned {@code EstimatePurgeDataSizeResult} instance. */
     private com.oracle.bmc.loganalytics.model.EstimatePurgeDataSizeResult
             estimatePurgeDataSizeResult;
 
     /**
-     * The returned EstimatePurgeDataSizeResult instance.
+     * The returned {@code EstimatePurgeDataSizeResult} instance.
      *
      * @return the value
      */
@@ -120,12 +120,12 @@ public class EstimatePurgeDataSizeResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned EstimatePurgeDataSizeResult instance. */
+        /** The returned {@code EstimatePurgeDataSizeResult} instance. */
         private com.oracle.bmc.loganalytics.model.EstimatePurgeDataSizeResult
                 estimatePurgeDataSizeResult;
 
         /**
-         * The returned EstimatePurgeDataSizeResult instance.
+         * The returned {@code EstimatePurgeDataSizeResult} instance.
          *
          * @param estimatePurgeDataSizeResult the value to set
          * @return this builder

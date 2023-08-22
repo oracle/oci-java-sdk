@@ -76,11 +76,11 @@ public class CreateHostInsightResponse extends com.oracle.bmc.responses.BmcRespo
         return etag;
     }
 
-    /** The returned HostInsight instance. */
+    /** The returned {@code HostInsight} instance. */
     private com.oracle.bmc.opsi.model.HostInsight hostInsight;
 
     /**
-     * The returned HostInsight instance.
+     * The returned {@code HostInsight} instance.
      *
      * @return the value
      */
@@ -212,11 +212,11 @@ public class CreateHostInsightResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned HostInsight instance. */
+        /** The returned {@code HostInsight} instance. */
         private com.oracle.bmc.opsi.model.HostInsight hostInsight;
 
         /**
-         * The returned HostInsight instance.
+         * The returned {@code HostInsight} instance.
          *
          * @param hostInsight the value to set
          * @return this builder

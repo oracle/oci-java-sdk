@@ -32,11 +32,11 @@ public class GetStackResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned Stack instance. */
+    /** The returned {@code Stack} instance. */
     private com.oracle.bmc.resourcemanager.model.Stack stack;
 
     /**
-     * The returned Stack instance.
+     * The returned {@code Stack} instance.
      *
      * @return the value
      */
@@ -109,11 +109,11 @@ public class GetStackResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned Stack instance. */
+        /** The returned {@code Stack} instance. */
         private com.oracle.bmc.resourcemanager.model.Stack stack;
 
         /**
-         * The returned Stack instance.
+         * The returned {@code Stack} instance.
          *
          * @param stack the value to set
          * @return this builder

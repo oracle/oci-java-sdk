@@ -24,11 +24,11 @@ public class GetAllowedIkeIPSecParametersResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /** The returned AllowedIkeIPSecParameters instance. */
+    /** The returned {@code AllowedIkeIPSecParameters} instance. */
     private com.oracle.bmc.core.model.AllowedIkeIPSecParameters allowedIkeIPSecParameters;
 
     /**
-     * The returned AllowedIkeIPSecParameters instance.
+     * The returned {@code AllowedIkeIPSecParameters} instance.
      *
      * @return the value
      */
@@ -89,11 +89,11 @@ public class GetAllowedIkeIPSecParametersResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned AllowedIkeIPSecParameters instance. */
+        /** The returned {@code AllowedIkeIPSecParameters} instance. */
         private com.oracle.bmc.core.model.AllowedIkeIPSecParameters allowedIkeIPSecParameters;
 
         /**
-         * The returned AllowedIkeIPSecParameters instance.
+         * The returned {@code AllowedIkeIPSecParameters} instance.
          *
          * @param allowedIkeIPSecParameters the value to set
          * @return this builder

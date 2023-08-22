@@ -36,12 +36,12 @@ public class GetAssignedSubscriptionResponse extends com.oracle.bmc.responses.Bm
         return etag;
     }
 
-    /** The returned AssignedSubscription instance. */
+    /** The returned {@code AssignedSubscription} instance. */
     private com.oracle.bmc.tenantmanagercontrolplane.model.AssignedSubscription
             assignedSubscription;
 
     /**
-     * The returned AssignedSubscription instance.
+     * The returned {@code AssignedSubscription} instance.
      *
      * @return the value
      */
@@ -121,12 +121,12 @@ public class GetAssignedSubscriptionResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned AssignedSubscription instance. */
+        /** The returned {@code AssignedSubscription} instance. */
         private com.oracle.bmc.tenantmanagercontrolplane.model.AssignedSubscription
                 assignedSubscription;
 
         /**
-         * The returned AssignedSubscription instance.
+         * The returned {@code AssignedSubscription} instance.
          *
          * @param assignedSubscription the value to set
          * @return this builder

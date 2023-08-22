@@ -42,11 +42,11 @@ public class ListResourceProfilesResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** The returned ResourceProfileCollection instance. */
+    /** The returned {@code ResourceProfileCollection} instance. */
     private com.oracle.bmc.cloudguard.model.ResourceProfileCollection resourceProfileCollection;
 
     /**
-     * The returned ResourceProfileCollection instance.
+     * The returned {@code ResourceProfileCollection} instance.
      *
      * @return the value
      */
@@ -130,11 +130,11 @@ public class ListResourceProfilesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned ResourceProfileCollection instance. */
+        /** The returned {@code ResourceProfileCollection} instance. */
         private com.oracle.bmc.cloudguard.model.ResourceProfileCollection resourceProfileCollection;
 
         /**
-         * The returned ResourceProfileCollection instance.
+         * The returned {@code ResourceProfileCollection} instance.
          *
          * @param resourceProfileCollection the value to set
          * @return this builder

@@ -54,11 +54,11 @@ public class ListTranslatorsResponse extends com.oracle.bmc.responses.BmcRespons
         return opcTotalItems;
     }
 
-    /** The returned TranslatorCollection instance. */
+    /** The returned {@code TranslatorCollection} instance. */
     private com.oracle.bmc.oda.model.TranslatorCollection translatorCollection;
 
     /**
-     * The returned TranslatorCollection instance.
+     * The returned {@code TranslatorCollection} instance.
      *
      * @return the value
      */
@@ -158,11 +158,11 @@ public class ListTranslatorsResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned TranslatorCollection instance. */
+        /** The returned {@code TranslatorCollection} instance. */
         private com.oracle.bmc.oda.model.TranslatorCollection translatorCollection;
 
         /**
-         * The returned TranslatorCollection instance.
+         * The returned {@code TranslatorCollection} instance.
          *
          * @param translatorCollection the value to set
          * @return this builder

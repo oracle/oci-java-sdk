@@ -40,11 +40,11 @@ public class GetPrivateEndpointResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned PrivateEndpoint instance. */
+    /** The returned {@code PrivateEndpoint} instance. */
     private com.oracle.bmc.dataflow.model.PrivateEndpoint privateEndpoint;
 
     /**
-     * The returned PrivateEndpoint instance.
+     * The returned {@code PrivateEndpoint} instance.
      *
      * @return the value
      */
@@ -125,11 +125,11 @@ public class GetPrivateEndpointResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned PrivateEndpoint instance. */
+        /** The returned {@code PrivateEndpoint} instance. */
         private com.oracle.bmc.dataflow.model.PrivateEndpoint privateEndpoint;
 
         /**
-         * The returned PrivateEndpoint instance.
+         * The returned {@code PrivateEndpoint} instance.
          *
          * @param privateEndpoint the value to set
          * @return this builder

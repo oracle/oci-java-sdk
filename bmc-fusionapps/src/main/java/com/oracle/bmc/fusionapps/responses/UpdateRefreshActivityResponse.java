@@ -36,11 +36,11 @@ public class UpdateRefreshActivityResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned RefreshActivity instance. */
+    /** The returned {@code RefreshActivity} instance. */
     private com.oracle.bmc.fusionapps.model.RefreshActivity refreshActivity;
 
     /**
-     * The returned RefreshActivity instance.
+     * The returned {@code RefreshActivity} instance.
      *
      * @return the value
      */
@@ -117,11 +117,11 @@ public class UpdateRefreshActivityResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned RefreshActivity instance. */
+        /** The returned {@code RefreshActivity} instance. */
         private com.oracle.bmc.fusionapps.model.RefreshActivity refreshActivity;
 
         /**
-         * The returned RefreshActivity instance.
+         * The returned {@code RefreshActivity} instance.
          *
          * @param refreshActivity the value to set
          * @return this builder
