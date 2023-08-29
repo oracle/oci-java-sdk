@@ -2247,6 +2247,23 @@ public interface Database extends AutoCloseable {
                     GetAutonomousContainerDatabaseDataguardAssociationRequest request);
 
     /**
+     * Get resource usage details for the specified Autonomous Container Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousContainerDatabaseResourceUsageExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetAutonomousContainerDatabaseResourceUsage API.
+     */
+    GetAutonomousContainerDatabaseResourceUsageResponse getAutonomousContainerDatabaseResourceUsage(
+            GetAutonomousContainerDatabaseResourceUsageRequest request);
+
+    /**
      * Gets the details of the specified Autonomous Database.
      *
      * @param request The request object containing the details to send
@@ -2453,6 +2470,23 @@ public interface Database extends AutoCloseable {
      */
     GetCloudAutonomousVmClusterResponse getCloudAutonomousVmCluster(
             GetCloudAutonomousVmClusterRequest request);
+
+    /**
+     * Get the resource usage details for the specified Cloud Autonomous Exadata VM cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetCloudAutonomousVmClusterResourceUsageExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetCloudAutonomousVmClusterResourceUsage API.
+     */
+    GetCloudAutonomousVmClusterResourceUsageResponse getCloudAutonomousVmClusterResourceUsage(
+            GetCloudAutonomousVmClusterResourceUsageRequest request);
 
     /**
      * Gets information about the specified cloud Exadata infrastructure resource. Applies to
@@ -3567,6 +3601,25 @@ public interface Database extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBackups API.
      */
     ListBackupsResponse listBackups(ListBackupsRequest request);
+
+    /**
+     * Gets the list of resource usage details for all the Cloud Autonomous Container Database in
+     * the specified Cloud Autonomous Exadata VM cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListCloudAutonomousVmClusterAcdResourceUsageExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListCloudAutonomousVmClusterAcdResourceUsage API.
+     */
+    ListCloudAutonomousVmClusterAcdResourceUsageResponse
+            listCloudAutonomousVmClusterAcdResourceUsage(
+                    ListCloudAutonomousVmClusterAcdResourceUsageRequest request);
 
     /**
      * Lists Autonomous Exadata VM clusters in the Oracle cloud. For Exadata Cloud@Customer systems,

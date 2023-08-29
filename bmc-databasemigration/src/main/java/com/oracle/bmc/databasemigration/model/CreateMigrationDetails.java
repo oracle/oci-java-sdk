@@ -39,6 +39,7 @@ public final class CreateMigrationDetails
         "includeObjects",
         "csvText",
         "goldenGateDetails",
+        "goldenGateServiceDetails",
         "vaultDetails",
         "freeformTags",
         "definedTags"
@@ -59,6 +60,7 @@ public final class CreateMigrationDetails
             java.util.List<DatabaseObject> includeObjects,
             String csvText,
             CreateGoldenGateDetails goldenGateDetails,
+            CreateGoldenGateServiceDetails goldenGateServiceDetails,
             CreateVaultDetails vaultDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -78,6 +80,7 @@ public final class CreateMigrationDetails
         this.includeObjects = includeObjects;
         this.csvText = csvText;
         this.goldenGateDetails = goldenGateDetails;
+        this.goldenGateServiceDetails = goldenGateServiceDetails;
         this.vaultDetails = vaultDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -299,6 +302,16 @@ public final class CreateMigrationDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("goldenGateServiceDetails")
+        private CreateGoldenGateServiceDetails goldenGateServiceDetails;
+
+        public Builder goldenGateServiceDetails(
+                CreateGoldenGateServiceDetails goldenGateServiceDetails) {
+            this.goldenGateServiceDetails = goldenGateServiceDetails;
+            this.__explicitlySet__.add("goldenGateServiceDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vaultDetails")
         private CreateVaultDetails vaultDetails;
 
@@ -368,6 +381,7 @@ public final class CreateMigrationDetails
                             this.includeObjects,
                             this.csvText,
                             this.goldenGateDetails,
+                            this.goldenGateServiceDetails,
                             this.vaultDetails,
                             this.freeformTags,
                             this.definedTags);
@@ -424,6 +438,9 @@ public final class CreateMigrationDetails
             }
             if (model.wasPropertyExplicitlySet("goldenGateDetails")) {
                 this.goldenGateDetails(model.getGoldenGateDetails());
+            }
+            if (model.wasPropertyExplicitlySet("goldenGateServiceDetails")) {
+                this.goldenGateServiceDetails(model.getGoldenGateServiceDetails());
             }
             if (model.wasPropertyExplicitlySet("vaultDetails")) {
                 this.vaultDetails(model.getVaultDetails());
@@ -624,6 +641,13 @@ public final class CreateMigrationDetails
         return goldenGateDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("goldenGateServiceDetails")
+    private final CreateGoldenGateServiceDetails goldenGateServiceDetails;
+
+    public CreateGoldenGateServiceDetails getGoldenGateServiceDetails() {
+        return goldenGateServiceDetails;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("vaultDetails")
     private final CreateVaultDetails vaultDetails;
 
@@ -699,6 +723,8 @@ public final class CreateMigrationDetails
         sb.append(", includeObjects=").append(String.valueOf(this.includeObjects));
         sb.append(", csvText=").append(String.valueOf(this.csvText));
         sb.append(", goldenGateDetails=").append(String.valueOf(this.goldenGateDetails));
+        sb.append(", goldenGateServiceDetails=")
+                .append(String.valueOf(this.goldenGateServiceDetails));
         sb.append(", vaultDetails=").append(String.valueOf(this.vaultDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -736,6 +762,8 @@ public final class CreateMigrationDetails
                 && java.util.Objects.equals(this.includeObjects, other.includeObjects)
                 && java.util.Objects.equals(this.csvText, other.csvText)
                 && java.util.Objects.equals(this.goldenGateDetails, other.goldenGateDetails)
+                && java.util.Objects.equals(
+                        this.goldenGateServiceDetails, other.goldenGateServiceDetails)
                 && java.util.Objects.equals(this.vaultDetails, other.vaultDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -793,6 +821,11 @@ public final class CreateMigrationDetails
         result =
                 (result * PRIME)
                         + (this.goldenGateDetails == null ? 43 : this.goldenGateDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.goldenGateServiceDetails == null
+                                ? 43
+                                : this.goldenGateServiceDetails.hashCode());
         result = (result * PRIME) + (this.vaultDetails == null ? 43 : this.vaultDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

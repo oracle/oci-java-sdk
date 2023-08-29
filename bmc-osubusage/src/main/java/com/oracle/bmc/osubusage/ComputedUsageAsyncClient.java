@@ -63,6 +63,8 @@ public class ComputedUsageAsyncClient extends com.oracle.bmc.http.internal.BaseA
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, ComputedUsageAsyncClient> {
         private Builder(com.oracle.bmc.Service service) {
             super(service);
+            final String packageName = "osubusage";
+            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);

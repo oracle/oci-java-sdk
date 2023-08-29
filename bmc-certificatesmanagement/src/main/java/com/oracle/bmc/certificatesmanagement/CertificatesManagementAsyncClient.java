@@ -65,6 +65,8 @@ public class CertificatesManagementAsyncClient extends com.oracle.bmc.http.inter
                     Builder, CertificatesManagementAsyncClient> {
         private Builder(com.oracle.bmc.Service service) {
             super(service);
+            final String packageName = "certificatesmanagement";
+            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);

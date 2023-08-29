@@ -81,6 +81,8 @@ public class OperatorControlClient extends com.oracle.bmc.http.internal.BaseSync
 
         private Builder(com.oracle.bmc.Service service) {
             super(service);
+            final String packageName = "operatoraccesscontrol";
+            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);

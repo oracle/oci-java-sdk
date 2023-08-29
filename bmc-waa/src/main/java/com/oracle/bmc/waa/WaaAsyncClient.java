@@ -63,6 +63,8 @@ public class WaaAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, WaaAsyncClient> {
         private Builder(com.oracle.bmc.Service service) {
             super(service);
+            final String packageName = "waa";
+            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);

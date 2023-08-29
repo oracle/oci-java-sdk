@@ -97,6 +97,8 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         private Builder(com.oracle.bmc.Service service) {
             super(service);
+            final String packageName = "database";
+            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
@@ -4358,6 +4360,42 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public GetAutonomousContainerDatabaseResourceUsageResponse
+            getAutonomousContainerDatabaseResourceUsage(
+                    GetAutonomousContainerDatabaseResourceUsageRequest request) {
+
+        Validate.notBlank(
+                request.getAutonomousContainerDatabaseId(),
+                "autonomousContainerDatabaseId must not be blank");
+
+        return clientCall(request, GetAutonomousContainerDatabaseResourceUsageResponse::builder)
+                .logger(LOG, "getAutonomousContainerDatabaseResourceUsage")
+                .serviceDetails(
+                        "Database",
+                        "GetAutonomousContainerDatabaseResourceUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/GetAutonomousContainerDatabaseResourceUsage")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAutonomousContainerDatabaseResourceUsageRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousContainerDatabases")
+                .appendPathParam(request.getAutonomousContainerDatabaseId())
+                .appendPathParam("resourceUsage")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousContainerDatabaseResourceUsage
+                                .class,
+                        GetAutonomousContainerDatabaseResourceUsageResponse.Builder
+                                ::autonomousContainerDatabaseResourceUsage)
+                .handleResponseHeaderString(
+                        "etag", GetAutonomousContainerDatabaseResourceUsageResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetAutonomousContainerDatabaseResourceUsageResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetAutonomousDatabaseResponse getAutonomousDatabase(
             GetAutonomousDatabaseRequest request) {
 
@@ -4712,6 +4750,41 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "etag", GetCloudAutonomousVmClusterResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetCloudAutonomousVmClusterResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetCloudAutonomousVmClusterResourceUsageResponse
+            getCloudAutonomousVmClusterResourceUsage(
+                    GetCloudAutonomousVmClusterResourceUsageRequest request) {
+
+        Validate.notBlank(
+                request.getCloudAutonomousVmClusterId(),
+                "cloudAutonomousVmClusterId must not be blank");
+
+        return clientCall(request, GetCloudAutonomousVmClusterResourceUsageResponse::builder)
+                .logger(LOG, "getCloudAutonomousVmClusterResourceUsage")
+                .serviceDetails(
+                        "Database",
+                        "GetCloudAutonomousVmClusterResourceUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/GetCloudAutonomousVmClusterResourceUsage")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCloudAutonomousVmClusterResourceUsageRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cloudAutonomousVmClusters")
+                .appendPathParam(request.getCloudAutonomousVmClusterId())
+                .appendPathParam("resourceUsage")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.CloudAutonomousVmClusterResourceUsage.class,
+                        GetCloudAutonomousVmClusterResourceUsageResponse.Builder
+                                ::cloudAutonomousVmClusterResourceUsage)
+                .handleResponseHeaderString(
+                        "etag", GetCloudAutonomousVmClusterResourceUsageResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetCloudAutonomousVmClusterResourceUsageResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -6713,6 +6786,45 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListBackupsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListBackupsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListCloudAutonomousVmClusterAcdResourceUsageResponse
+            listCloudAutonomousVmClusterAcdResourceUsage(
+                    ListCloudAutonomousVmClusterAcdResourceUsageRequest request) {
+
+        Validate.notBlank(
+                request.getCloudAutonomousVmClusterId(),
+                "cloudAutonomousVmClusterId must not be blank");
+
+        return clientCall(request, ListCloudAutonomousVmClusterAcdResourceUsageResponse::builder)
+                .logger(LOG, "listCloudAutonomousVmClusterAcdResourceUsage")
+                .serviceDetails(
+                        "Database",
+                        "ListCloudAutonomousVmClusterAcdResourceUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/ListCloudAutonomousVmClusterAcdResourceUsage")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCloudAutonomousVmClusterAcdResourceUsageRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cloudAutonomousVmClusters")
+                .appendPathParam(request.getCloudAutonomousVmClusterId())
+                .appendPathParam("acdResourceUsage")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.AutonomousContainerDatabaseResourceUsage
+                                .class,
+                        ListCloudAutonomousVmClusterAcdResourceUsageResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListCloudAutonomousVmClusterAcdResourceUsageResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListCloudAutonomousVmClusterAcdResourceUsageResponse.Builder::opcNextPage)
                 .callSync();
     }
 

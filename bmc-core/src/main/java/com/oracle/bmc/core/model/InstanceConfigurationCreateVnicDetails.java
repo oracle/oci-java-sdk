@@ -27,11 +27,13 @@ public final class InstanceConfigurationCreateVnicDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "assignIpv6Ip",
         "assignPublicIp",
         "assignPrivateDnsRecord",
         "definedTags",
         "displayName",
         "freeformTags",
+        "ipv6AddressIpv6SubnetCidrPairDetails",
         "hostnameLabel",
         "nsgIds",
         "privateIp",
@@ -39,22 +41,27 @@ public final class InstanceConfigurationCreateVnicDetails
         "subnetId"
     })
     public InstanceConfigurationCreateVnicDetails(
+            Boolean assignIpv6Ip,
             Boolean assignPublicIp,
             Boolean assignPrivateDnsRecord,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             java.util.Map<String, String> freeformTags,
+            java.util.List<InstanceConfigurationIpv6AddressIpv6SubnetCidrPairDetails>
+                    ipv6AddressIpv6SubnetCidrPairDetails,
             String hostnameLabel,
             java.util.List<String> nsgIds,
             String privateIp,
             Boolean skipSourceDestCheck,
             String subnetId) {
         super();
+        this.assignIpv6Ip = assignIpv6Ip;
         this.assignPublicIp = assignPublicIp;
         this.assignPrivateDnsRecord = assignPrivateDnsRecord;
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
+        this.ipv6AddressIpv6SubnetCidrPairDetails = ipv6AddressIpv6SubnetCidrPairDetails;
         this.hostnameLabel = hostnameLabel;
         this.nsgIds = nsgIds;
         this.privateIp = privateIp;
@@ -64,6 +71,29 @@ public final class InstanceConfigurationCreateVnicDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled
+         * subnet. Default: False. When provided you may optionally provide an IPv6 prefix ({@code
+         * ipv6SubnetCidr}) of your choice to assign the IPv6 address from. If {@code
+         * ipv6SubnetCidr} is not provided then an IPv6 prefix is chosen for you.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("assignIpv6Ip")
+        private Boolean assignIpv6Ip;
+
+        /**
+         * Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled
+         * subnet. Default: False. When provided you may optionally provide an IPv6 prefix ({@code
+         * ipv6SubnetCidr}) of your choice to assign the IPv6 address from. If {@code
+         * ipv6SubnetCidr} is not provided then an IPv6 prefix is chosen for you.
+         *
+         * @param assignIpv6Ip the value to set
+         * @return this builder
+         */
+        public Builder assignIpv6Ip(Boolean assignIpv6Ip) {
+            this.assignIpv6Ip = assignIpv6Ip;
+            this.__explicitlySet__.add("assignIpv6Ip");
+            return this;
+        }
         /**
          * Whether the VNIC should be assigned a public IP address. See the {@code assignPublicIp}
          * attribute of {@link CreateVnicDetails} for more information.
@@ -173,6 +203,32 @@ public final class InstanceConfigurationCreateVnicDetails
             return this;
         }
         /**
+         * A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can
+         * provide only the prefix and OCI selects an available address from the range. You can
+         * optionally choose to leave the prefix range empty and instead provide the specific IPv6
+         * address that should be used from within that range.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6AddressIpv6SubnetCidrPairDetails")
+        private java.util.List<InstanceConfigurationIpv6AddressIpv6SubnetCidrPairDetails>
+                ipv6AddressIpv6SubnetCidrPairDetails;
+
+        /**
+         * A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can
+         * provide only the prefix and OCI selects an available address from the range. You can
+         * optionally choose to leave the prefix range empty and instead provide the specific IPv6
+         * address that should be used from within that range.
+         *
+         * @param ipv6AddressIpv6SubnetCidrPairDetails the value to set
+         * @return this builder
+         */
+        public Builder ipv6AddressIpv6SubnetCidrPairDetails(
+                java.util.List<InstanceConfigurationIpv6AddressIpv6SubnetCidrPairDetails>
+                        ipv6AddressIpv6SubnetCidrPairDetails) {
+            this.ipv6AddressIpv6SubnetCidrPairDetails = ipv6AddressIpv6SubnetCidrPairDetails;
+            this.__explicitlySet__.add("ipv6AddressIpv6SubnetCidrPairDetails");
+            return this;
+        }
+        /**
          * The hostname for the VNIC's primary private IP. See the {@code hostnameLabel} attribute
          * of {@link CreateVnicDetails} for more information.
          */
@@ -274,11 +330,13 @@ public final class InstanceConfigurationCreateVnicDetails
         public InstanceConfigurationCreateVnicDetails build() {
             InstanceConfigurationCreateVnicDetails model =
                     new InstanceConfigurationCreateVnicDetails(
+                            this.assignIpv6Ip,
                             this.assignPublicIp,
                             this.assignPrivateDnsRecord,
                             this.definedTags,
                             this.displayName,
                             this.freeformTags,
+                            this.ipv6AddressIpv6SubnetCidrPairDetails,
                             this.hostnameLabel,
                             this.nsgIds,
                             this.privateIp,
@@ -292,6 +350,9 @@ public final class InstanceConfigurationCreateVnicDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(InstanceConfigurationCreateVnicDetails model) {
+            if (model.wasPropertyExplicitlySet("assignIpv6Ip")) {
+                this.assignIpv6Ip(model.getAssignIpv6Ip());
+            }
             if (model.wasPropertyExplicitlySet("assignPublicIp")) {
                 this.assignPublicIp(model.getAssignPublicIp());
             }
@@ -306,6 +367,10 @@ public final class InstanceConfigurationCreateVnicDetails
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6AddressIpv6SubnetCidrPairDetails")) {
+                this.ipv6AddressIpv6SubnetCidrPairDetails(
+                        model.getIpv6AddressIpv6SubnetCidrPairDetails());
             }
             if (model.wasPropertyExplicitlySet("hostnameLabel")) {
                 this.hostnameLabel(model.getHostnameLabel());
@@ -333,6 +398,27 @@ public final class InstanceConfigurationCreateVnicDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled
+     * subnet. Default: False. When provided you may optionally provide an IPv6 prefix ({@code
+     * ipv6SubnetCidr}) of your choice to assign the IPv6 address from. If {@code ipv6SubnetCidr} is
+     * not provided then an IPv6 prefix is chosen for you.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("assignIpv6Ip")
+    private final Boolean assignIpv6Ip;
+
+    /**
+     * Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled
+     * subnet. Default: False. When provided you may optionally provide an IPv6 prefix ({@code
+     * ipv6SubnetCidr}) of your choice to assign the IPv6 address from. If {@code ipv6SubnetCidr} is
+     * not provided then an IPv6 prefix is chosen for you.
+     *
+     * @return the value
+     */
+    public Boolean getAssignIpv6Ip() {
+        return assignIpv6Ip;
     }
 
     /**
@@ -430,6 +516,29 @@ public final class InstanceConfigurationCreateVnicDetails
      */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
+    }
+
+    /**
+     * A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can
+     * provide only the prefix and OCI selects an available address from the range. You can
+     * optionally choose to leave the prefix range empty and instead provide the specific IPv6
+     * address that should be used from within that range.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6AddressIpv6SubnetCidrPairDetails")
+    private final java.util.List<InstanceConfigurationIpv6AddressIpv6SubnetCidrPairDetails>
+            ipv6AddressIpv6SubnetCidrPairDetails;
+
+    /**
+     * A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can
+     * provide only the prefix and OCI selects an available address from the range. You can
+     * optionally choose to leave the prefix range empty and instead provide the specific IPv6
+     * address that should be used from within that range.
+     *
+     * @return the value
+     */
+    public java.util.List<InstanceConfigurationIpv6AddressIpv6SubnetCidrPairDetails>
+            getIpv6AddressIpv6SubnetCidrPairDetails() {
+        return ipv6AddressIpv6SubnetCidrPairDetails;
     }
 
     /**
@@ -532,11 +641,14 @@ public final class InstanceConfigurationCreateVnicDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InstanceConfigurationCreateVnicDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("assignPublicIp=").append(String.valueOf(this.assignPublicIp));
+        sb.append("assignIpv6Ip=").append(String.valueOf(this.assignIpv6Ip));
+        sb.append(", assignPublicIp=").append(String.valueOf(this.assignPublicIp));
         sb.append(", assignPrivateDnsRecord=").append(String.valueOf(this.assignPrivateDnsRecord));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", ipv6AddressIpv6SubnetCidrPairDetails=")
+                .append(String.valueOf(this.ipv6AddressIpv6SubnetCidrPairDetails));
         sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
@@ -556,12 +668,16 @@ public final class InstanceConfigurationCreateVnicDetails
         }
 
         InstanceConfigurationCreateVnicDetails other = (InstanceConfigurationCreateVnicDetails) o;
-        return java.util.Objects.equals(this.assignPublicIp, other.assignPublicIp)
+        return java.util.Objects.equals(this.assignIpv6Ip, other.assignIpv6Ip)
+                && java.util.Objects.equals(this.assignPublicIp, other.assignPublicIp)
                 && java.util.Objects.equals(
                         this.assignPrivateDnsRecord, other.assignPrivateDnsRecord)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(
+                        this.ipv6AddressIpv6SubnetCidrPairDetails,
+                        other.ipv6AddressIpv6SubnetCidrPairDetails)
                 && java.util.Objects.equals(this.hostnameLabel, other.hostnameLabel)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
@@ -574,6 +690,7 @@ public final class InstanceConfigurationCreateVnicDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.assignIpv6Ip == null ? 43 : this.assignIpv6Ip.hashCode());
         result =
                 (result * PRIME)
                         + (this.assignPublicIp == null ? 43 : this.assignPublicIp.hashCode());
@@ -585,6 +702,11 @@ public final class InstanceConfigurationCreateVnicDetails
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ipv6AddressIpv6SubnetCidrPairDetails == null
+                                ? 43
+                                : this.ipv6AddressIpv6SubnetCidrPairDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.hostnameLabel == null ? 43 : this.hostnameLabel.hashCode());

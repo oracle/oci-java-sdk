@@ -64,22 +64,6 @@ public interface DbSystem extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * DEPRECATED -- please use HeatWave API instead. Adds an Analytics Cluster to the DB System.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/AddAnalyticsClusterExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddAnalyticsCluster
-     *     API.
-     */
-    AddAnalyticsClusterResponse addAnalyticsCluster(AddAnalyticsClusterRequest request);
-
-    /**
      * Adds a HeatWave cluster to the DB System.
      *
      * @param request The request object containing the details to send
@@ -109,23 +93,6 @@ public interface DbSystem extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDbSystem API.
      */
     CreateDbSystemResponse createDbSystem(CreateDbSystemRequest request);
-
-    /**
-     * DEPRECATED -- please use HeatWave API instead. Deletes the Analytics Cluster including
-     * terminating, detaching, removing, finalizing and otherwise deleting all related resources.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/DeleteAnalyticsClusterExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
-     *     DeleteAnalyticsCluster API.
-     */
-    DeleteAnalyticsClusterResponse deleteAnalyticsCluster(DeleteAnalyticsClusterRequest request);
 
     /**
      * Delete a DB System, including terminating, detaching, removing, finalizing and otherwise
@@ -161,24 +128,6 @@ public interface DbSystem extends AutoCloseable {
     DeleteHeatWaveClusterResponse deleteHeatWaveCluster(DeleteHeatWaveClusterRequest request);
 
     /**
-     * DEPRECATED -- please use HeatWave API instead. Sends a request to estimate the memory
-     * footprints of user tables when loaded to Analytics Cluster memory.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GenerateAnalyticsClusterMemoryEstimateExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
-     *     GenerateAnalyticsClusterMemoryEstimate API.
-     */
-    GenerateAnalyticsClusterMemoryEstimateResponse generateAnalyticsClusterMemoryEstimate(
-            GenerateAnalyticsClusterMemoryEstimateRequest request);
-
-    /**
      * Sends a request to estimate the memory footprints of user tables when loaded to HeatWave
      * cluster memory.
      *
@@ -195,40 +144,6 @@ public interface DbSystem extends AutoCloseable {
      */
     GenerateHeatWaveClusterMemoryEstimateResponse generateHeatWaveClusterMemoryEstimate(
             GenerateHeatWaveClusterMemoryEstimateRequest request);
-
-    /**
-     * DEPRECATED -- please use HeatWave API instead. Gets information about the Analytics Cluster.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetAnalyticsClusterExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAnalyticsCluster
-     *     API.
-     */
-    GetAnalyticsClusterResponse getAnalyticsCluster(GetAnalyticsClusterRequest request);
-
-    /**
-     * DEPRECATED -- please use HeatWave API instead. Gets the most recent Analytics Cluster memory
-     * estimate that can be used to determine a suitable Analytics Cluster size.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetAnalyticsClusterMemoryEstimateExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
-     *     GetAnalyticsClusterMemoryEstimate API.
-     */
-    GetAnalyticsClusterMemoryEstimateResponse getAnalyticsClusterMemoryEstimate(
-            GetAnalyticsClusterMemoryEstimateRequest request);
 
     /**
      * Get information about the specified DB System.
@@ -296,22 +211,6 @@ public interface DbSystem extends AutoCloseable {
     ListDbSystemsResponse listDbSystems(ListDbSystemsRequest request);
 
     /**
-     * DEPRECATED -- please use HeatWave API instead. Restarts the Analytics Cluster.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/RestartAnalyticsClusterExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
-     *     RestartAnalyticsCluster API.
-     */
-    RestartAnalyticsClusterResponse restartAnalyticsCluster(RestartAnalyticsClusterRequest request);
-
-    /**
      * Restarts the specified DB System.
      *
      * @param request The request object containing the details to send
@@ -342,22 +241,6 @@ public interface DbSystem extends AutoCloseable {
      *     RestartHeatWaveCluster API.
      */
     RestartHeatWaveClusterResponse restartHeatWaveCluster(RestartHeatWaveClusterRequest request);
-
-    /**
-     * DEPRECATED -- please use HeatWave API instead. Starts the Analytics Cluster.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/StartAnalyticsClusterExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
-     *     StartAnalyticsCluster API.
-     */
-    StartAnalyticsClusterResponse startAnalyticsCluster(StartAnalyticsClusterRequest request);
 
     /**
      * Start the specified DB System.
@@ -391,22 +274,6 @@ public interface DbSystem extends AutoCloseable {
     StartHeatWaveClusterResponse startHeatWaveCluster(StartHeatWaveClusterRequest request);
 
     /**
-     * DEPRECATED -- please use HeatWave API instead. Stops the Analytics Cluster.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/StopAnalyticsClusterExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
-     *     StopAnalyticsCluster API.
-     */
-    StopAnalyticsClusterResponse stopAnalyticsCluster(StopAnalyticsClusterRequest request);
-
-    /**
      * Stops the specified DB System.
      *
      * <p>A stopped DB System is not billed.
@@ -438,22 +305,6 @@ public interface DbSystem extends AutoCloseable {
      *     API.
      */
     StopHeatWaveClusterResponse stopHeatWaveCluster(StopHeatWaveClusterRequest request);
-
-    /**
-     * DEPRECATED -- please use HeatWave API instead. Updates the Analytics Cluster.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/UpdateAnalyticsClusterExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
-     *     UpdateAnalyticsCluster API.
-     */
-    UpdateAnalyticsClusterResponse updateAnalyticsCluster(UpdateAnalyticsClusterRequest request);
 
     /**
      * Update the configuration of a DB System.

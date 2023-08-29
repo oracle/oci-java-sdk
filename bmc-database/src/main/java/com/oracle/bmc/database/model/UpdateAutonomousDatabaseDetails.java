@@ -250,11 +250,9 @@ public final class UpdateAutonomousDatabaseDetails
         /**
          * The number of CPUs to be made available to the Autonomous Database.<br>
          * For Autonomous Databases on Dedicated Exadata Infrastructure: - The CPU type (OCPUs or
-         * ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See
-         * [Compute Models in Autonomous Database on Dedicated Exadata
-         * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
-         * for more details. - It is suggested to use 'computeCount' parameter if you want to use
-         * fractional value to provision less than 1 core.
+         * ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. - It is
+         * suggested to use 'computeCount' parameter if you want to use fractional value to
+         * provision less than 1 core.
          *
          * <p>*Note:** This parameter cannot be used with the {@code ocpuCount} or {@code
          * computeCount} parameter.
@@ -270,11 +268,9 @@ public final class UpdateAutonomousDatabaseDetails
         /**
          * The number of CPUs to be made available to the Autonomous Database.<br>
          * For Autonomous Databases on Dedicated Exadata Infrastructure: - The CPU type (OCPUs or
-         * ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See
-         * [Compute Models in Autonomous Database on Dedicated Exadata
-         * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
-         * for more details. - It is suggested to use 'computeCount' parameter if you want to use
-         * fractional value to provision less than 1 core.
+         * ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. - It is
+         * suggested to use 'computeCount' parameter if you want to use fractional value to
+         * provision less than 1 core.
          *
          * <p>*Note:** This parameter cannot be used with the {@code ocpuCount} or {@code
          * computeCount} parameter.
@@ -1825,11 +1821,9 @@ public final class UpdateAutonomousDatabaseDetails
     /**
      * The number of CPUs to be made available to the Autonomous Database.<br>
      * For Autonomous Databases on Dedicated Exadata Infrastructure: - The CPU type (OCPUs or ECPUs)
-     * is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute
-     * Models in Autonomous Database on Dedicated Exadata
-     * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
-     * for more details. - It is suggested to use 'computeCount' parameter if you want to use
-     * fractional value to provision less than 1 core.
+     * is determined by the parent Autonomous Exadata VM Cluster's compute model. - It is suggested
+     * to use 'computeCount' parameter if you want to use fractional value to provision less than 1
+     * core.
      *
      * <p>*Note:** This parameter cannot be used with the {@code ocpuCount} or {@code computeCount}
      * parameter.
@@ -1845,11 +1839,9 @@ public final class UpdateAutonomousDatabaseDetails
     /**
      * The number of CPUs to be made available to the Autonomous Database.<br>
      * For Autonomous Databases on Dedicated Exadata Infrastructure: - The CPU type (OCPUs or ECPUs)
-     * is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute
-     * Models in Autonomous Database on Dedicated Exadata
-     * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
-     * for more details. - It is suggested to use 'computeCount' parameter if you want to use
-     * fractional value to provision less than 1 core.
+     * is determined by the parent Autonomous Exadata VM Cluster's compute model. - It is suggested
+     * to use 'computeCount' parameter if you want to use fractional value to provision less than 1
+     * core.
      *
      * <p>*Note:** This parameter cannot be used with the {@code ocpuCount} or {@code computeCount}
      * parameter.

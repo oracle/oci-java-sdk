@@ -53,6 +53,7 @@ public final class VirtualCircuit
         "routingPolicy",
         "bgpAdminState",
         "isBfdEnabled",
+        "isTransportMode",
         "customerBgpAsn",
         "customerAsn",
         "definedTags",
@@ -85,6 +86,7 @@ public final class VirtualCircuit
             java.util.List<RoutingPolicy> routingPolicy,
             BgpAdminState bgpAdminState,
             Boolean isBfdEnabled,
+            Boolean isTransportMode,
             Integer customerBgpAsn,
             Long customerAsn,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -116,6 +118,7 @@ public final class VirtualCircuit
         this.routingPolicy = routingPolicy;
         this.bgpAdminState = bgpAdminState;
         this.isBfdEnabled = isBfdEnabled;
+        this.isTransportMode = isTransportMode;
         this.customerBgpAsn = customerBgpAsn;
         this.customerAsn = customerAsn;
         this.definedTags = definedTags;
@@ -313,6 +316,27 @@ public final class VirtualCircuit
         public Builder isBfdEnabled(Boolean isBfdEnabled) {
             this.isBfdEnabled = isBfdEnabled;
             this.__explicitlySet__.add("isBfdEnabled");
+            return this;
+        }
+        /**
+         * Set to {@code true} for the virtual circuit to carry only encrypted traffic, or set to
+         * {@code false} for the virtual circuit to carry unencrypted traffic. If this is not set,
+         * the default is {@code false}.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isTransportMode")
+        private Boolean isTransportMode;
+
+        /**
+         * Set to {@code true} for the virtual circuit to carry only encrypted traffic, or set to
+         * {@code false} for the virtual circuit to carry unencrypted traffic. If this is not set,
+         * the default is {@code false}.
+         *
+         * @param isTransportMode the value to set
+         * @return this builder
+         */
+        public Builder isTransportMode(Boolean isTransportMode) {
+            this.isTransportMode = isTransportMode;
+            this.__explicitlySet__.add("isTransportMode");
             return this;
         }
         /**
@@ -725,6 +749,7 @@ public final class VirtualCircuit
                             this.routingPolicy,
                             this.bgpAdminState,
                             this.isBfdEnabled,
+                            this.isTransportMode,
                             this.customerBgpAsn,
                             this.customerAsn,
                             this.definedTags,
@@ -780,6 +805,9 @@ public final class VirtualCircuit
             }
             if (model.wasPropertyExplicitlySet("isBfdEnabled")) {
                 this.isBfdEnabled(model.getIsBfdEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isTransportMode")) {
+                this.isTransportMode(model.getIsTransportMode());
             }
             if (model.wasPropertyExplicitlySet("customerBgpAsn")) {
                 this.customerBgpAsn(model.getCustomerBgpAsn());
@@ -1181,6 +1209,25 @@ public final class VirtualCircuit
      */
     public Boolean getIsBfdEnabled() {
         return isBfdEnabled;
+    }
+
+    /**
+     * Set to {@code true} for the virtual circuit to carry only encrypted traffic, or set to {@code
+     * false} for the virtual circuit to carry unencrypted traffic. If this is not set, the default
+     * is {@code false}.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isTransportMode")
+    private final Boolean isTransportMode;
+
+    /**
+     * Set to {@code true} for the virtual circuit to carry only encrypted traffic, or set to {@code
+     * false} for the virtual circuit to carry unencrypted traffic. If this is not set, the default
+     * is {@code false}.
+     *
+     * @return the value
+     */
+    public Boolean getIsTransportMode() {
+        return isTransportMode;
     }
 
     /**
@@ -1708,6 +1755,7 @@ public final class VirtualCircuit
         sb.append(", routingPolicy=").append(String.valueOf(this.routingPolicy));
         sb.append(", bgpAdminState=").append(String.valueOf(this.bgpAdminState));
         sb.append(", isBfdEnabled=").append(String.valueOf(this.isBfdEnabled));
+        sb.append(", isTransportMode=").append(String.valueOf(this.isTransportMode));
         sb.append(", customerBgpAsn=").append(String.valueOf(this.customerBgpAsn));
         sb.append(", customerAsn=").append(String.valueOf(this.customerAsn));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -1752,6 +1800,7 @@ public final class VirtualCircuit
                 && java.util.Objects.equals(this.routingPolicy, other.routingPolicy)
                 && java.util.Objects.equals(this.bgpAdminState, other.bgpAdminState)
                 && java.util.Objects.equals(this.isBfdEnabled, other.isBfdEnabled)
+                && java.util.Objects.equals(this.isTransportMode, other.isTransportMode)
                 && java.util.Objects.equals(this.customerBgpAsn, other.customerBgpAsn)
                 && java.util.Objects.equals(this.customerAsn, other.customerAsn)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -1812,6 +1861,9 @@ public final class VirtualCircuit
                 (result * PRIME)
                         + (this.bgpAdminState == null ? 43 : this.bgpAdminState.hashCode());
         result = (result * PRIME) + (this.isBfdEnabled == null ? 43 : this.isBfdEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isTransportMode == null ? 43 : this.isTransportMode.hashCode());
         result =
                 (result * PRIME)
                         + (this.customerBgpAsn == null ? 43 : this.customerBgpAsn.hashCode());

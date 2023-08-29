@@ -212,20 +212,12 @@ public final class CreateCloudAutonomousVmClusterDetails
             this.__explicitlySet__.add("cpuCoreCountPerNode");
             return this;
         }
-        /**
-         * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in
-         * Autonomous Database on Dedicated Exadata
-         * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
-         * for more details.
-         */
+        /** The amount of memory (in GBs) to be enabled per OCPU or ECPU. */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
         private Integer memoryPerOracleComputeUnitInGBs;
 
         /**
-         * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in
-         * Autonomous Database on Dedicated Exadata
-         * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
-         * for more details.
+         * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
          *
          * @param memoryPerOracleComputeUnitInGBs the value to set
          * @return this builder
@@ -269,20 +261,12 @@ public final class CreateCloudAutonomousVmClusterDetails
             this.__explicitlySet__.add("clusterTimeZone");
             return this;
         }
-        /**
-         * The compute model of the Cloud Autonomous VM Cluster. See [Compute Models in Autonomous
-         * Database on Dedicated Exadata
-         * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
-         * for more details.
-         */
+        /** The compute model of the Cloud Autonomous VM Cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
         private ComputeModel computeModel;
 
         /**
-         * The compute model of the Cloud Autonomous VM Cluster. See [Compute Models in Autonomous
-         * Database on Dedicated Exadata
-         * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
-         * for more details.
+         * The compute model of the Cloud Autonomous VM Cluster.
          *
          * @param computeModel the value to set
          * @return this builder
@@ -703,20 +687,12 @@ public final class CreateCloudAutonomousVmClusterDetails
         return cpuCoreCountPerNode;
     }
 
-    /**
-     * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in
-     * Autonomous Database on Dedicated Exadata
-     * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
-     * for more details.
-     */
+    /** The amount of memory (in GBs) to be enabled per OCPU or ECPU. */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
     private final Integer memoryPerOracleComputeUnitInGBs;
 
     /**
-     * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in
-     * Autonomous Database on Dedicated Exadata
-     * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
-     * for more details.
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      *
      * @return the value
      */
@@ -754,12 +730,7 @@ public final class CreateCloudAutonomousVmClusterDetails
         return clusterTimeZone;
     }
 
-    /**
-     * The compute model of the Cloud Autonomous VM Cluster. See [Compute Models in Autonomous
-     * Database on Dedicated Exadata
-     * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
-     * for more details.
-     */
+    /** The compute model of the Cloud Autonomous VM Cluster. */
     public enum ComputeModel implements com.oracle.bmc.http.internal.BmcEnum {
         Ecpu("ECPU"),
         Ocpu("OCPU"),
@@ -792,20 +763,12 @@ public final class CreateCloudAutonomousVmClusterDetails
             throw new IllegalArgumentException("Invalid ComputeModel: " + key);
         }
     };
-    /**
-     * The compute model of the Cloud Autonomous VM Cluster. See [Compute Models in Autonomous
-     * Database on Dedicated Exadata
-     * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
-     * for more details.
-     */
+    /** The compute model of the Cloud Autonomous VM Cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
     private final ComputeModel computeModel;
 
     /**
-     * The compute model of the Cloud Autonomous VM Cluster. See [Compute Models in Autonomous
-     * Database on Dedicated Exadata
-     * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
-     * for more details.
+     * The compute model of the Cloud Autonomous VM Cluster.
      *
      * @return the value
      */

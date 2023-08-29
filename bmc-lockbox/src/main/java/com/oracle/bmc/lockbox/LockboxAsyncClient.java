@@ -64,6 +64,8 @@ public class LockboxAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, LockboxAsyncClient> {
         private Builder(com.oracle.bmc.Service service) {
             super(service);
+            final String packageName = "lockbox";
+            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);

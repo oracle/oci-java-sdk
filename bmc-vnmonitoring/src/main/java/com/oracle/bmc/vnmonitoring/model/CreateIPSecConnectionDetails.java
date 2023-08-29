@@ -33,7 +33,8 @@ public final class CreateIPSecConnectionDetails
         "cpeLocalIdentifier",
         "cpeLocalIdentifierType",
         "staticRoutes",
-        "tunnelConfiguration"
+        "tunnelConfiguration",
+        "tunnelCount"
     })
     public CreateIPSecConnectionDetails(
             String compartmentId,
@@ -45,7 +46,8 @@ public final class CreateIPSecConnectionDetails
             String cpeLocalIdentifier,
             CpeLocalIdentifierType cpeLocalIdentifierType,
             java.util.List<String> staticRoutes,
-            java.util.List<CreateIPSecConnectionTunnelDetails> tunnelConfiguration) {
+            java.util.List<CreateIPSecConnectionTunnelDetails> tunnelConfiguration,
+            Integer tunnelCount) {
         super();
         this.compartmentId = compartmentId;
         this.cpeId = cpeId;
@@ -57,6 +59,7 @@ public final class CreateIPSecConnectionDetails
         this.cpeLocalIdentifierType = cpeLocalIdentifierType;
         this.staticRoutes = staticRoutes;
         this.tunnelConfiguration = tunnelConfiguration;
+        this.tunnelCount = tunnelCount;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -305,6 +308,27 @@ public final class CreateIPSecConnectionDetails
             this.__explicitlySet__.add("tunnelConfiguration");
             return this;
         }
+        /**
+         * The count of tunnels in the IPsec connection. This value should be equal to the number of
+         * {@code tunnelConfiguration} objects specified in the {@code CreateIPSecConnection}
+         * request.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("tunnelCount")
+        private Integer tunnelCount;
+
+        /**
+         * The count of tunnels in the IPsec connection. This value should be equal to the number of
+         * {@code tunnelConfiguration} objects specified in the {@code CreateIPSecConnection}
+         * request.
+         *
+         * @param tunnelCount the value to set
+         * @return this builder
+         */
+        public Builder tunnelCount(Integer tunnelCount) {
+            this.tunnelCount = tunnelCount;
+            this.__explicitlySet__.add("tunnelCount");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -321,7 +345,8 @@ public final class CreateIPSecConnectionDetails
                             this.cpeLocalIdentifier,
                             this.cpeLocalIdentifierType,
                             this.staticRoutes,
-                            this.tunnelConfiguration);
+                            this.tunnelConfiguration,
+                            this.tunnelCount);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -359,6 +384,9 @@ public final class CreateIPSecConnectionDetails
             }
             if (model.wasPropertyExplicitlySet("tunnelConfiguration")) {
                 this.tunnelConfiguration(model.getTunnelConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("tunnelCount")) {
+                this.tunnelCount(model.getTunnelCount());
             }
             return this;
         }
@@ -631,6 +659,23 @@ public final class CreateIPSecConnectionDetails
         return tunnelConfiguration;
     }
 
+    /**
+     * The count of tunnels in the IPsec connection. This value should be equal to the number of
+     * {@code tunnelConfiguration} objects specified in the {@code CreateIPSecConnection} request.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("tunnelCount")
+    private final Integer tunnelCount;
+
+    /**
+     * The count of tunnels in the IPsec connection. This value should be equal to the number of
+     * {@code tunnelConfiguration} objects specified in the {@code CreateIPSecConnection} request.
+     *
+     * @return the value
+     */
+    public Integer getTunnelCount() {
+        return tunnelCount;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -656,6 +701,7 @@ public final class CreateIPSecConnectionDetails
         sb.append(", cpeLocalIdentifierType=").append(String.valueOf(this.cpeLocalIdentifierType));
         sb.append(", staticRoutes=").append(String.valueOf(this.staticRoutes));
         sb.append(", tunnelConfiguration=").append(String.valueOf(this.tunnelConfiguration));
+        sb.append(", tunnelCount=").append(String.valueOf(this.tunnelCount));
         sb.append(")");
         return sb.toString();
     }
@@ -681,6 +727,7 @@ public final class CreateIPSecConnectionDetails
                         this.cpeLocalIdentifierType, other.cpeLocalIdentifierType)
                 && java.util.Objects.equals(this.staticRoutes, other.staticRoutes)
                 && java.util.Objects.equals(this.tunnelConfiguration, other.tunnelConfiguration)
+                && java.util.Objects.equals(this.tunnelCount, other.tunnelCount)
                 && super.equals(other);
     }
 
@@ -712,6 +759,7 @@ public final class CreateIPSecConnectionDetails
                         + (this.tunnelConfiguration == null
                                 ? 43
                                 : this.tunnelConfiguration.hashCode());
+        result = (result * PRIME) + (this.tunnelCount == null ? 43 : this.tunnelCount.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

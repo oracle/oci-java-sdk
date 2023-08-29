@@ -65,6 +65,8 @@ public class GovernanceRuleAsyncClient extends com.oracle.bmc.http.internal.Base
                     Builder, GovernanceRuleAsyncClient> {
         private Builder(com.oracle.bmc.Service service) {
             super(service);
+            final String packageName = "governancerulescontrolplane";
+            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);

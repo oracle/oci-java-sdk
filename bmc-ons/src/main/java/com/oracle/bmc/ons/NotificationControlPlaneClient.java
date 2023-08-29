@@ -58,6 +58,8 @@ public class NotificationControlPlaneClient extends com.oracle.bmc.http.internal
                     Builder, NotificationControlPlaneClient> {
         private Builder(com.oracle.bmc.Service service) {
             super(service);
+            final String packageName = "ons";
+            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);

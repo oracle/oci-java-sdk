@@ -4,6 +4,7 @@
  */
 package com.oracle.bmc.auth;
 
+import com.oracle.bmc.internal.Alloy;
 import com.oracle.bmc.InternalSdk;
 import com.oracle.bmc.Realm;
 import com.oracle.bmc.Region;
@@ -273,6 +274,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
                 region = Region.fromRegionCodeOrId(regionStr);
                 LOG.info("Using region {}", region.getRegionId());
             } catch (IllegalArgumentException e) {
+                Alloy.throwUnknownAlloyRegionIfAppropriate(region.getRegionId(), e);
                 LOG.warn(
                         "Region not supported by this version of the SDK, registering region '{}' under OC1",
                         regionStr,

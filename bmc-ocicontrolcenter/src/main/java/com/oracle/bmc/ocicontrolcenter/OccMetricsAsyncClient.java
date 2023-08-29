@@ -64,6 +64,8 @@ public class OccMetricsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, OccMetricsAsyncClient> {
         private Builder(com.oracle.bmc.Service service) {
             super(service);
+            final String packageName = "ocicontrolcenter";
+            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);

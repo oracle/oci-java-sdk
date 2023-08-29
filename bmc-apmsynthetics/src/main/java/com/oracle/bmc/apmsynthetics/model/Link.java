@@ -180,12 +180,12 @@ public final class Link extends com.oracle.bmc.http.client.internal.ExplicitlySe
             this.__explicitlySet__.add("maxDelayInMilliseconds");
             return this;
         }
-        /** List of all path ids of which this link is part of. */
+        /** List of all path IDs of which this link is part of. */
         @com.fasterxml.jackson.annotation.JsonProperty("paths")
         private java.util.List<String> paths;
 
         /**
-         * List of all path ids of which this link is part of.
+         * List of all path IDs of which this link is part of.
          *
          * @param paths the value to set
          * @return this builder
@@ -365,12 +365,12 @@ public final class Link extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return maxDelayInMilliseconds;
     }
 
-    /** List of all path ids of which this link is part of. */
+    /** List of all path IDs of which this link is part of. */
     @com.fasterxml.jackson.annotation.JsonProperty("paths")
     private final java.util.List<String> paths;
 
     /**
-     * List of all path ids of which this link is part of.
+     * List of all path IDs of which this link is part of.
      *
      * @return the value
      */

@@ -4841,6 +4841,139 @@ public class VirtualNetworkPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listVirtualCircuitAssociatedTunnels operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListVirtualCircuitAssociatedTunnelsResponse>
+            listVirtualCircuitAssociatedTunnelsResponseIterator(
+                    final ListVirtualCircuitAssociatedTunnelsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListVirtualCircuitAssociatedTunnelsRequest.Builder,
+                ListVirtualCircuitAssociatedTunnelsRequest,
+                ListVirtualCircuitAssociatedTunnelsResponse>(
+                new java.util.function.Supplier<
+                        ListVirtualCircuitAssociatedTunnelsRequest.Builder>() {
+                    @Override
+                    public ListVirtualCircuitAssociatedTunnelsRequest.Builder get() {
+                        return ListVirtualCircuitAssociatedTunnelsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListVirtualCircuitAssociatedTunnelsResponse, String>() {
+                    @Override
+                    public String apply(ListVirtualCircuitAssociatedTunnelsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVirtualCircuitAssociatedTunnelsRequest.Builder>,
+                        ListVirtualCircuitAssociatedTunnelsRequest>() {
+                    @Override
+                    public ListVirtualCircuitAssociatedTunnelsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVirtualCircuitAssociatedTunnelsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListVirtualCircuitAssociatedTunnelsRequest,
+                        ListVirtualCircuitAssociatedTunnelsResponse>() {
+                    @Override
+                    public ListVirtualCircuitAssociatedTunnelsResponse apply(
+                            ListVirtualCircuitAssociatedTunnelsRequest request) {
+                        return client.listVirtualCircuitAssociatedTunnels(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.core.model.VirtualCircuitAssociatedTunnelDetails} objects contained in
+     * responses from the listVirtualCircuitAssociatedTunnels operation. This iterable will fetch
+     * more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.core.model.VirtualCircuitAssociatedTunnelDetails} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.VirtualCircuitAssociatedTunnelDetails>
+            listVirtualCircuitAssociatedTunnelsRecordIterator(
+                    final ListVirtualCircuitAssociatedTunnelsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListVirtualCircuitAssociatedTunnelsRequest.Builder,
+                ListVirtualCircuitAssociatedTunnelsRequest,
+                ListVirtualCircuitAssociatedTunnelsResponse,
+                com.oracle.bmc.core.model.VirtualCircuitAssociatedTunnelDetails>(
+                new java.util.function.Supplier<
+                        ListVirtualCircuitAssociatedTunnelsRequest.Builder>() {
+                    @Override
+                    public ListVirtualCircuitAssociatedTunnelsRequest.Builder get() {
+                        return ListVirtualCircuitAssociatedTunnelsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListVirtualCircuitAssociatedTunnelsResponse, String>() {
+                    @Override
+                    public String apply(ListVirtualCircuitAssociatedTunnelsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVirtualCircuitAssociatedTunnelsRequest.Builder>,
+                        ListVirtualCircuitAssociatedTunnelsRequest>() {
+                    @Override
+                    public ListVirtualCircuitAssociatedTunnelsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVirtualCircuitAssociatedTunnelsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListVirtualCircuitAssociatedTunnelsRequest,
+                        ListVirtualCircuitAssociatedTunnelsResponse>() {
+                    @Override
+                    public ListVirtualCircuitAssociatedTunnelsResponse apply(
+                            ListVirtualCircuitAssociatedTunnelsRequest request) {
+                        return client.listVirtualCircuitAssociatedTunnels(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListVirtualCircuitAssociatedTunnelsResponse,
+                        java.util.List<
+                                com.oracle.bmc.core.model
+                                        .VirtualCircuitAssociatedTunnelDetails>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.core.model.VirtualCircuitAssociatedTunnelDetails>
+                            apply(ListVirtualCircuitAssociatedTunnelsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listVirtualCircuitBandwidthShapes operation. This iterable will fetch more data from the
      * server as needed.
      *

@@ -63,6 +63,8 @@ public class DbSystemAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, DbSystemAsyncClient> {
         private Builder(com.oracle.bmc.Service service) {
             super(service);
+            final String packageName = "mysql";
+            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
@@ -90,48 +92,6 @@ public class DbSystemAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     @Override
     public void setRegion(String regionId) {
         super.setRegion(regionId);
-    }
-
-    @Override
-    public java.util.concurrent.Future<AddAnalyticsClusterResponse> addAnalyticsCluster(
-            AddAnalyticsClusterRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            AddAnalyticsClusterRequest, AddAnalyticsClusterResponse>
-                    handler) {
-
-        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
-        Objects.requireNonNull(
-                request.getAddAnalyticsClusterDetails(), "addAnalyticsClusterDetails is required");
-
-        return clientCall(request, AddAnalyticsClusterResponse::builder)
-                .logger(LOG, "addAnalyticsCluster")
-                .serviceDetails(
-                        "DbSystem",
-                        "AddAnalyticsCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/AddAnalyticsCluster")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(AddAnalyticsClusterRequest::builder)
-                .basePath("/20190415")
-                .appendPathParam("dbSystems")
-                .appendPathParam(request.getDbSystemId())
-                .appendPathParam("analyticsCluster")
-                .appendPathParam("actions")
-                .appendPathParam("add")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mysql.model.AnalyticsCluster.class,
-                        AddAnalyticsClusterResponse.Builder::analyticsCluster)
-                .handleResponseHeaderString("etag", AddAnalyticsClusterResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", AddAnalyticsClusterResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        AddAnalyticsClusterResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
     }
 
     @Override
@@ -208,38 +168,6 @@ public class DbSystemAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteAnalyticsClusterResponse> deleteAnalyticsCluster(
-            DeleteAnalyticsClusterRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteAnalyticsClusterRequest, DeleteAnalyticsClusterResponse>
-                    handler) {
-
-        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
-
-        return clientCall(request, DeleteAnalyticsClusterResponse::builder)
-                .logger(LOG, "deleteAnalyticsCluster")
-                .serviceDetails(
-                        "DbSystem",
-                        "DeleteAnalyticsCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/DeleteAnalyticsCluster")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteAnalyticsClusterRequest::builder)
-                .basePath("/20190415")
-                .appendPathParam("dbSystems")
-                .appendPathParam(request.getDbSystemId())
-                .appendPathParam("analyticsCluster")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteAnalyticsClusterResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteAnalyticsClusterResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
     public java.util.concurrent.Future<DeleteDbSystemResponse> deleteDbSystem(
             DeleteDbSystemRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -302,47 +230,6 @@ public class DbSystemAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
-    public java.util.concurrent.Future<GenerateAnalyticsClusterMemoryEstimateResponse>
-            generateAnalyticsClusterMemoryEstimate(
-                    GenerateAnalyticsClusterMemoryEstimateRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    GenerateAnalyticsClusterMemoryEstimateRequest,
-                                    GenerateAnalyticsClusterMemoryEstimateResponse>
-                            handler) {
-
-        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
-
-        return clientCall(request, GenerateAnalyticsClusterMemoryEstimateResponse::builder)
-                .logger(LOG, "generateAnalyticsClusterMemoryEstimate")
-                .serviceDetails(
-                        "DbSystem",
-                        "GenerateAnalyticsClusterMemoryEstimate",
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsClusterMemoryEstimate/GenerateAnalyticsClusterMemoryEstimate")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(GenerateAnalyticsClusterMemoryEstimateRequest::builder)
-                .basePath("/20190415")
-                .appendPathParam("dbSystems")
-                .appendPathParam(request.getDbSystemId())
-                .appendPathParam("analyticsClusterMemoryEstimate")
-                .appendPathParam("actions")
-                .appendPathParam("generate")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleBody(
-                        com.oracle.bmc.mysql.model.AnalyticsClusterMemoryEstimate.class,
-                        GenerateAnalyticsClusterMemoryEstimateResponse.Builder
-                                ::analyticsClusterMemoryEstimate)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GenerateAnalyticsClusterMemoryEstimateResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        GenerateAnalyticsClusterMemoryEstimateResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
     public java.util.concurrent.Future<GenerateHeatWaveClusterMemoryEstimateResponse>
             generateHeatWaveClusterMemoryEstimate(
                     GenerateHeatWaveClusterMemoryEstimateRequest request,
@@ -380,74 +267,6 @@ public class DbSystemAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         GenerateHeatWaveClusterMemoryEstimateResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetAnalyticsClusterResponse> getAnalyticsCluster(
-            GetAnalyticsClusterRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetAnalyticsClusterRequest, GetAnalyticsClusterResponse>
-                    handler) {
-
-        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
-
-        return clientCall(request, GetAnalyticsClusterResponse::builder)
-                .logger(LOG, "getAnalyticsCluster")
-                .serviceDetails(
-                        "DbSystem",
-                        "GetAnalyticsCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/GetAnalyticsCluster")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetAnalyticsClusterRequest::builder)
-                .basePath("/20190415")
-                .appendPathParam("dbSystems")
-                .appendPathParam(request.getDbSystemId())
-                .appendPathParam("analyticsCluster")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-none-match", request.getIfNoneMatch())
-                .handleBody(
-                        com.oracle.bmc.mysql.model.AnalyticsCluster.class,
-                        GetAnalyticsClusterResponse.Builder::analyticsCluster)
-                .handleResponseHeaderString("etag", GetAnalyticsClusterResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetAnalyticsClusterResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetAnalyticsClusterMemoryEstimateResponse>
-            getAnalyticsClusterMemoryEstimate(
-                    GetAnalyticsClusterMemoryEstimateRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    GetAnalyticsClusterMemoryEstimateRequest,
-                                    GetAnalyticsClusterMemoryEstimateResponse>
-                            handler) {
-
-        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
-
-        return clientCall(request, GetAnalyticsClusterMemoryEstimateResponse::builder)
-                .logger(LOG, "getAnalyticsClusterMemoryEstimate")
-                .serviceDetails(
-                        "DbSystem",
-                        "GetAnalyticsClusterMemoryEstimate",
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsClusterMemoryEstimate/GetAnalyticsClusterMemoryEstimate")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetAnalyticsClusterMemoryEstimateRequest::builder)
-                .basePath("/20190415")
-                .appendPathParam("dbSystems")
-                .appendPathParam(request.getDbSystemId())
-                .appendPathParam("analyticsClusterMemoryEstimate")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.mysql.model.AnalyticsClusterMemoryEstimate.class,
-                        GetAnalyticsClusterMemoryEstimateResponse.Builder
-                                ::analyticsClusterMemoryEstimate)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetAnalyticsClusterMemoryEstimateResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -568,8 +387,6 @@ public class DbSystemAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .basePath("/20190415")
                 .appendPathParam("dbSystems")
                 .appendQueryParam(
-                        "isAnalyticsClusterAttached", request.getIsAnalyticsClusterAttached())
-                .appendQueryParam(
                         "isHeatWaveClusterAttached", request.getIsHeatWaveClusterAttached())
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("dbSystemId", request.getDbSystemId())
@@ -590,41 +407,6 @@ public class DbSystemAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         "opc-request-id", ListDbSystemsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDbSystemsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<RestartAnalyticsClusterResponse> restartAnalyticsCluster(
-            RestartAnalyticsClusterRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            RestartAnalyticsClusterRequest, RestartAnalyticsClusterResponse>
-                    handler) {
-
-        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
-
-        return clientCall(request, RestartAnalyticsClusterResponse::builder)
-                .logger(LOG, "restartAnalyticsCluster")
-                .serviceDetails(
-                        "DbSystem",
-                        "RestartAnalyticsCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/RestartAnalyticsCluster")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RestartAnalyticsClusterRequest::builder)
-                .basePath("/20190415")
-                .appendPathParam("dbSystems")
-                .appendPathParam(request.getDbSystemId())
-                .appendPathParam("analyticsCluster")
-                .appendPathParam("actions")
-                .appendPathParam("restart")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-request-id", RestartAnalyticsClusterResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        RestartAnalyticsClusterResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -700,41 +482,6 @@ public class DbSystemAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
-    public java.util.concurrent.Future<StartAnalyticsClusterResponse> startAnalyticsCluster(
-            StartAnalyticsClusterRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            StartAnalyticsClusterRequest, StartAnalyticsClusterResponse>
-                    handler) {
-
-        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
-
-        return clientCall(request, StartAnalyticsClusterResponse::builder)
-                .logger(LOG, "startAnalyticsCluster")
-                .serviceDetails(
-                        "DbSystem",
-                        "StartAnalyticsCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/StartAnalyticsCluster")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(StartAnalyticsClusterRequest::builder)
-                .basePath("/20190415")
-                .appendPathParam("dbSystems")
-                .appendPathParam(request.getDbSystemId())
-                .appendPathParam("analyticsCluster")
-                .appendPathParam("actions")
-                .appendPathParam("start")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-request-id", StartAnalyticsClusterResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        StartAnalyticsClusterResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
     public java.util.concurrent.Future<StartDbSystemResponse> startDbSystem(
             StartDbSystemRequest request,
             final com.oracle.bmc.responses.AsyncHandler<StartDbSystemRequest, StartDbSystemResponse>
@@ -798,41 +545,6 @@ public class DbSystemAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         StartHeatWaveClusterResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<StopAnalyticsClusterResponse> stopAnalyticsCluster(
-            StopAnalyticsClusterRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            StopAnalyticsClusterRequest, StopAnalyticsClusterResponse>
-                    handler) {
-
-        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
-
-        return clientCall(request, StopAnalyticsClusterResponse::builder)
-                .logger(LOG, "stopAnalyticsCluster")
-                .serviceDetails(
-                        "DbSystem",
-                        "StopAnalyticsCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/StopAnalyticsCluster")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(StopAnalyticsClusterRequest::builder)
-                .basePath("/20190415")
-                .appendPathParam("dbSystems")
-                .appendPathParam(request.getDbSystemId())
-                .appendPathParam("analyticsCluster")
-                .appendPathParam("actions")
-                .appendPathParam("stop")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-request-id", StopAnalyticsClusterResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        StopAnalyticsClusterResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -902,42 +614,6 @@ public class DbSystemAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         StopHeatWaveClusterResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateAnalyticsClusterResponse> updateAnalyticsCluster(
-            UpdateAnalyticsClusterRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateAnalyticsClusterRequest, UpdateAnalyticsClusterResponse>
-                    handler) {
-
-        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateAnalyticsClusterDetails(),
-                "updateAnalyticsClusterDetails is required");
-
-        return clientCall(request, UpdateAnalyticsClusterResponse::builder)
-                .logger(LOG, "updateAnalyticsCluster")
-                .serviceDetails(
-                        "DbSystem",
-                        "UpdateAnalyticsCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/UpdateAnalyticsCluster")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateAnalyticsClusterRequest::builder)
-                .basePath("/20190415")
-                .appendPathParam("dbSystems")
-                .appendPathParam(request.getDbSystemId())
-                .appendPathParam("analyticsCluster")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateAnalyticsClusterResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateAnalyticsClusterResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 

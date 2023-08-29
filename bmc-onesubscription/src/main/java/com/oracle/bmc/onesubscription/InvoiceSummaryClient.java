@@ -57,6 +57,8 @@ public class InvoiceSummaryClient extends com.oracle.bmc.http.internal.BaseSyncC
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, InvoiceSummaryClient> {
         private Builder(com.oracle.bmc.Service service) {
             super(service);
+            final String packageName = "onesubscription";
+            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);

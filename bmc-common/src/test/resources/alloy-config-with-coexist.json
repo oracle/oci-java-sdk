@@ -1,0 +1,31 @@
+{
+    "regions": [
+        {
+                "regionKey": "phx",
+                "realmDomainComponent": "foobar-oraclecloud.com",
+                "regionIdentifier": "us-phx-1",
+                "realmKey": "RTC"
+        },
+        {
+                "regionKey": "iad",
+                "realmDomainComponent": "oraclecloud.com",
+                "regionIdentifier": "us-ashburn-1",
+                "realmKey": "OC1"
+        },
+        { 
+                "regionKey" : "rkr",
+                "realmDomainComponent" : "oraclecloud.com",
+                "regionIdentifier" : "us-rkr-1",
+                "realmKey" : "RKC"
+        }
+    ],
+    "services": [
+        "identity",
+        "core",
+        "apigateway",
+        "objectstorage",
+        "testservice"
+    ],
+    "alloyProvider": "test",
+    "ociRegionCoexist": "True"
+}

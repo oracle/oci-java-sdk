@@ -26,6 +26,9 @@ package com.oracle.bmc.vnmonitoring.model;
             value = VcnDrgAttachmentNetworkDetails.class,
             name = "VCN"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = LoopBackDrgAttachmentNetworkDetails.class,
+            name = "LOOPBACK"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = IpsecTunnelDrgAttachmentNetworkDetails.class,
             name = "IPSEC_TUNNEL"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

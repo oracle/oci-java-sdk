@@ -80,6 +80,8 @@ public class OsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         private Builder(com.oracle.bmc.Service service) {
             super(service);
+            final String packageName = "osmanagement";
+            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);

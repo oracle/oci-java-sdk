@@ -185,7 +185,6 @@ public final class ShapeSummary extends com.oracle.bmc.http.client.internal.Expl
     /** */
     public enum IsSupportedFor implements com.oracle.bmc.http.internal.BmcEnum {
         Dbsystem("DBSYSTEM"),
-        Analyticscluster("ANALYTICSCLUSTER"),
         Heatwavecluster("HEATWAVECLUSTER"),
 
         /**

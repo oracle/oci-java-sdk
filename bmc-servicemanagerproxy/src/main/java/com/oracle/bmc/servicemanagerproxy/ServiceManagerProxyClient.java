@@ -58,6 +58,8 @@ public class ServiceManagerProxyClient extends com.oracle.bmc.http.internal.Base
                     Builder, ServiceManagerProxyClient> {
         private Builder(com.oracle.bmc.Service service) {
             super(service);
+            final String packageName = "servicemanagerproxy";
+            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);

@@ -2,12 +2,13 @@
  * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-package com.oracle.bmc.mysql.responses;
+package com.oracle.bmc.core.responses;
 
-import com.oracle.bmc.mysql.model.*;
+import com.oracle.bmc.core.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-public class AddAnalyticsClusterResponse extends com.oracle.bmc.responses.BmcResponse {
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+public class ListVirtualCircuitAssociatedTunnelsResponse
+        extends com.oracle.bmc.responses.BmcResponse {
     /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
@@ -37,31 +38,36 @@ public class AddAnalyticsClusterResponse extends com.oracle.bmc.responses.BmcRes
     }
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-     * status of the asynchronous operation.
+     * For list pagination. When this header appears in the response, additional pages of results
+     * remain. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
-    private String opcWorkRequestId;
+    private String opcNextPage;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-     * status of the asynchronous operation.
+     * For list pagination. When this header appears in the response, additional pages of results
+     * remain. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
-    public String getOpcWorkRequestId() {
-        return opcWorkRequestId;
+    public String getOpcNextPage() {
+        return opcNextPage;
     }
 
-    /** The returned {@code AnalyticsCluster} instance. */
-    private com.oracle.bmc.mysql.model.AnalyticsCluster analyticsCluster;
+    /**
+     * A list of {@code com.oracle.bmc.core.model.VirtualCircuitAssociatedTunnelDetails} instances.
+     */
+    private java.util.List<com.oracle.bmc.core.model.VirtualCircuitAssociatedTunnelDetails> items;
 
     /**
-     * The returned {@code AnalyticsCluster} instance.
+     * A list of {@code com.oracle.bmc.core.model.VirtualCircuitAssociatedTunnelDetails} instances.
      *
      * @return the value
      */
-    public com.oracle.bmc.mysql.model.AnalyticsCluster getAnalyticsCluster() {
-        return analyticsCluster;
+    public java.util.List<com.oracle.bmc.core.model.VirtualCircuitAssociatedTunnelDetails>
+            getItems() {
+        return items;
     }
 
     @java.beans.ConstructorProperties({
@@ -69,25 +75,26 @@ public class AddAnalyticsClusterResponse extends com.oracle.bmc.responses.BmcRes
         "headers",
         "etag",
         "opcRequestId",
-        "opcWorkRequestId",
-        "analyticsCluster"
+        "opcNextPage",
+        "items"
     })
-    private AddAnalyticsClusterResponse(
+    private ListVirtualCircuitAssociatedTunnelsResponse(
             int __httpStatusCode__,
             java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
-            String opcWorkRequestId,
-            com.oracle.bmc.mysql.model.AnalyticsCluster analyticsCluster) {
+            String opcNextPage,
+            java.util.List<com.oracle.bmc.core.model.VirtualCircuitAssociatedTunnelDetails> items) {
         super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
-        this.opcWorkRequestId = opcWorkRequestId;
-        this.analyticsCluster = analyticsCluster;
+        this.opcNextPage = opcNextPage;
+        this.items = items;
     }
 
     public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<AddAnalyticsClusterResponse> {
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    ListVirtualCircuitAssociatedTunnelsResponse> {
         private int __httpStatusCode__;
 
         @Override
@@ -137,35 +144,43 @@ public class AddAnalyticsClusterResponse extends com.oracle.bmc.responses.BmcRes
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-         * status of the asynchronous operation.
+         * For list pagination. When this header appears in the response, additional pages of
+         * results remain. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
-        private String opcWorkRequestId;
+        private String opcNextPage;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-         * status of the asynchronous operation.
+         * For list pagination. When this header appears in the response, additional pages of
+         * results remain. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
-         * @param opcWorkRequestId the value to set
+         * @param opcNextPage the value to set
          * @return this builder
          */
-        public Builder opcWorkRequestId(String opcWorkRequestId) {
-            this.opcWorkRequestId = opcWorkRequestId;
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
             return this;
         }
 
-        /** The returned {@code AnalyticsCluster} instance. */
-        private com.oracle.bmc.mysql.model.AnalyticsCluster analyticsCluster;
+        /**
+         * A list of {@code com.oracle.bmc.core.model.VirtualCircuitAssociatedTunnelDetails}
+         * instances.
+         */
+        private java.util.List<com.oracle.bmc.core.model.VirtualCircuitAssociatedTunnelDetails>
+                items;
 
         /**
-         * The returned {@code AnalyticsCluster} instance.
+         * A list of {@code com.oracle.bmc.core.model.VirtualCircuitAssociatedTunnelDetails}
+         * instances.
          *
-         * @param analyticsCluster the value to set
+         * @param items the value to set
          * @return this builder
          */
-        public Builder analyticsCluster(
-                com.oracle.bmc.mysql.model.AnalyticsCluster analyticsCluster) {
-            this.analyticsCluster = analyticsCluster;
+        public Builder items(
+                java.util.List<com.oracle.bmc.core.model.VirtualCircuitAssociatedTunnelDetails>
+                        items) {
+            this.items = items;
             return this;
         }
 
@@ -175,13 +190,13 @@ public class AddAnalyticsClusterResponse extends com.oracle.bmc.responses.BmcRes
          * @return this builder instance
          */
         @Override
-        public Builder copy(AddAnalyticsClusterResponse o) {
+        public Builder copy(ListVirtualCircuitAssociatedTunnelsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
-            opcWorkRequestId(o.getOpcWorkRequestId());
-            analyticsCluster(o.getAnalyticsCluster());
+            opcNextPage(o.getOpcNextPage());
+            items(o.getItems());
 
             return this;
         }
@@ -192,14 +207,9 @@ public class AddAnalyticsClusterResponse extends com.oracle.bmc.responses.BmcRes
          * @return the response object
          */
         @Override
-        public AddAnalyticsClusterResponse build() {
-            return new AddAnalyticsClusterResponse(
-                    __httpStatusCode__,
-                    headers,
-                    etag,
-                    opcRequestId,
-                    opcWorkRequestId,
-                    analyticsCluster);
+        public ListVirtualCircuitAssociatedTunnelsResponse build() {
+            return new ListVirtualCircuitAssociatedTunnelsResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, opcNextPage, items);
         }
     }
 
@@ -219,8 +229,8 @@ public class AddAnalyticsClusterResponse extends com.oracle.bmc.responses.BmcRes
         sb.append("super=").append(super.toString());
         sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
-        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
-        sb.append(",analyticsCluster=").append(String.valueOf(analyticsCluster));
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",items=").append(String.valueOf(items));
         sb.append(")");
         return sb.toString();
     }
@@ -230,16 +240,17 @@ public class AddAnalyticsClusterResponse extends com.oracle.bmc.responses.BmcRes
         if (this == o) {
             return true;
         }
-        if (!(o instanceof AddAnalyticsClusterResponse)) {
+        if (!(o instanceof ListVirtualCircuitAssociatedTunnelsResponse)) {
             return false;
         }
 
-        AddAnalyticsClusterResponse other = (AddAnalyticsClusterResponse) o;
+        ListVirtualCircuitAssociatedTunnelsResponse other =
+                (ListVirtualCircuitAssociatedTunnelsResponse) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
-                && java.util.Objects.equals(this.analyticsCluster, other.analyticsCluster);
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(this.items, other.items);
     }
 
     @Override
@@ -248,12 +259,8 @@ public class AddAnalyticsClusterResponse extends com.oracle.bmc.responses.BmcRes
         int result = super.hashCode();
         result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.analyticsCluster == null ? 43 : this.analyticsCluster.hashCode());
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
         return result;
     }
 }
