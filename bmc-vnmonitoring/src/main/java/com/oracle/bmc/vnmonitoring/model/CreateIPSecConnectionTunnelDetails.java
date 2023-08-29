@@ -34,6 +34,9 @@ public final class CreateIPSecConnectionTunnelDetails
         "phaseOneConfig",
         "phaseTwoConfig",
         "dpdConfig",
+        "oracleTunnelIp",
+        "associatedVirtualCircuits",
+        "drgRouteTableId",
         "encryptionDomainConfig"
     })
     public CreateIPSecConnectionTunnelDetails(
@@ -47,6 +50,9 @@ public final class CreateIPSecConnectionTunnelDetails
             PhaseOneConfigDetails phaseOneConfig,
             PhaseTwoConfigDetails phaseTwoConfig,
             DpdConfig dpdConfig,
+            String oracleTunnelIp,
+            java.util.List<String> associatedVirtualCircuits,
+            String drgRouteTableId,
             CreateIPSecTunnelEncryptionDomainDetails encryptionDomainConfig) {
         super();
         this.displayName = displayName;
@@ -59,6 +65,9 @@ public final class CreateIPSecConnectionTunnelDetails
         this.phaseOneConfig = phaseOneConfig;
         this.phaseTwoConfig = phaseTwoConfig;
         this.dpdConfig = dpdConfig;
+        this.oracleTunnelIp = oracleTunnelIp;
+        this.associatedVirtualCircuits = associatedVirtualCircuits;
+        this.drgRouteTableId = drgRouteTableId;
         this.encryptionDomainConfig = encryptionDomainConfig;
     }
 
@@ -232,6 +241,69 @@ public final class CreateIPSecConnectionTunnelDetails
             this.__explicitlySet__.add("dpdConfig");
             return this;
         }
+        /**
+         * The headend IP that you can choose on the Oracle side to terminate your private IPSec
+         * tunnel.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("oracleTunnelIp")
+        private String oracleTunnelIp;
+
+        /**
+         * The headend IP that you can choose on the Oracle side to terminate your private IPSec
+         * tunnel.
+         *
+         * @param oracleTunnelIp the value to set
+         * @return this builder
+         */
+        public Builder oracleTunnelIp(String oracleTunnelIp) {
+            this.oracleTunnelIp = oracleTunnelIp;
+            this.__explicitlySet__.add("oracleTunnelIp");
+            return this;
+        }
+        /**
+         * The list of virtual circuit
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over
+         * which your network can reach this tunnel.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("associatedVirtualCircuits")
+        private java.util.List<String> associatedVirtualCircuits;
+
+        /**
+         * The list of virtual circuit
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over
+         * which your network can reach this tunnel.
+         *
+         * @param associatedVirtualCircuits the value to set
+         * @return this builder
+         */
+        public Builder associatedVirtualCircuits(java.util.List<String> associatedVirtualCircuits) {
+            this.associatedVirtualCircuits = associatedVirtualCircuits;
+            this.__explicitlySet__.add("associatedVirtualCircuits");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the DRG route table assigned to this attachment.
+         *
+         * <p>The DRG route table manages traffic inside the DRG.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("drgRouteTableId")
+        private String drgRouteTableId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the DRG route table assigned to this attachment.
+         *
+         * <p>The DRG route table manages traffic inside the DRG.
+         *
+         * @param drgRouteTableId the value to set
+         * @return this builder
+         */
+        public Builder drgRouteTableId(String drgRouteTableId) {
+            this.drgRouteTableId = drgRouteTableId;
+            this.__explicitlySet__.add("drgRouteTableId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("encryptionDomainConfig")
         private CreateIPSecTunnelEncryptionDomainDetails encryptionDomainConfig;
@@ -259,6 +331,9 @@ public final class CreateIPSecConnectionTunnelDetails
                             this.phaseOneConfig,
                             this.phaseTwoConfig,
                             this.dpdConfig,
+                            this.oracleTunnelIp,
+                            this.associatedVirtualCircuits,
+                            this.drgRouteTableId,
                             this.encryptionDomainConfig);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -297,6 +372,15 @@ public final class CreateIPSecConnectionTunnelDetails
             }
             if (model.wasPropertyExplicitlySet("dpdConfig")) {
                 this.dpdConfig(model.getDpdConfig());
+            }
+            if (model.wasPropertyExplicitlySet("oracleTunnelIp")) {
+                this.oracleTunnelIp(model.getOracleTunnelIp());
+            }
+            if (model.wasPropertyExplicitlySet("associatedVirtualCircuits")) {
+                this.associatedVirtualCircuits(model.getAssociatedVirtualCircuits());
+            }
+            if (model.wasPropertyExplicitlySet("drgRouteTableId")) {
+                this.drgRouteTableId(model.getDrgRouteTableId());
             }
             if (model.wasPropertyExplicitlySet("encryptionDomainConfig")) {
                 this.encryptionDomainConfig(model.getEncryptionDomainConfig());
@@ -613,6 +697,61 @@ public final class CreateIPSecConnectionTunnelDetails
         return dpdConfig;
     }
 
+    /**
+     * The headend IP that you can choose on the Oracle side to terminate your private IPSec tunnel.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("oracleTunnelIp")
+    private final String oracleTunnelIp;
+
+    /**
+     * The headend IP that you can choose on the Oracle side to terminate your private IPSec tunnel.
+     *
+     * @return the value
+     */
+    public String getOracleTunnelIp() {
+        return oracleTunnelIp;
+    }
+
+    /**
+     * The list of virtual circuit
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over
+     * which your network can reach this tunnel.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("associatedVirtualCircuits")
+    private final java.util.List<String> associatedVirtualCircuits;
+
+    /**
+     * The list of virtual circuit
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over
+     * which your network can reach this tunnel.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getAssociatedVirtualCircuits() {
+        return associatedVirtualCircuits;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the DRG route table assigned to this attachment.
+     *
+     * <p>The DRG route table manages traffic inside the DRG.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("drgRouteTableId")
+    private final String drgRouteTableId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the DRG route table assigned to this attachment.
+     *
+     * <p>The DRG route table manages traffic inside the DRG.
+     *
+     * @return the value
+     */
+    public String getDrgRouteTableId() {
+        return drgRouteTableId;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionDomainConfig")
     private final CreateIPSecTunnelEncryptionDomainDetails encryptionDomainConfig;
 
@@ -645,6 +784,10 @@ public final class CreateIPSecConnectionTunnelDetails
         sb.append(", phaseOneConfig=").append(String.valueOf(this.phaseOneConfig));
         sb.append(", phaseTwoConfig=").append(String.valueOf(this.phaseTwoConfig));
         sb.append(", dpdConfig=").append(String.valueOf(this.dpdConfig));
+        sb.append(", oracleTunnelIp=").append(String.valueOf(this.oracleTunnelIp));
+        sb.append(", associatedVirtualCircuits=")
+                .append(String.valueOf(this.associatedVirtualCircuits));
+        sb.append(", drgRouteTableId=").append(String.valueOf(this.drgRouteTableId));
         sb.append(", encryptionDomainConfig=").append(String.valueOf(this.encryptionDomainConfig));
         sb.append(")");
         return sb.toString();
@@ -670,6 +813,10 @@ public final class CreateIPSecConnectionTunnelDetails
                 && java.util.Objects.equals(this.phaseOneConfig, other.phaseOneConfig)
                 && java.util.Objects.equals(this.phaseTwoConfig, other.phaseTwoConfig)
                 && java.util.Objects.equals(this.dpdConfig, other.dpdConfig)
+                && java.util.Objects.equals(this.oracleTunnelIp, other.oracleTunnelIp)
+                && java.util.Objects.equals(
+                        this.associatedVirtualCircuits, other.associatedVirtualCircuits)
+                && java.util.Objects.equals(this.drgRouteTableId, other.drgRouteTableId)
                 && java.util.Objects.equals(
                         this.encryptionDomainConfig, other.encryptionDomainConfig)
                 && super.equals(other);
@@ -701,6 +848,17 @@ public final class CreateIPSecConnectionTunnelDetails
                 (result * PRIME)
                         + (this.phaseTwoConfig == null ? 43 : this.phaseTwoConfig.hashCode());
         result = (result * PRIME) + (this.dpdConfig == null ? 43 : this.dpdConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.oracleTunnelIp == null ? 43 : this.oracleTunnelIp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.associatedVirtualCircuits == null
+                                ? 43
+                                : this.associatedVirtualCircuits.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.drgRouteTableId == null ? 43 : this.drgRouteTableId.hashCode());
         result =
                 (result * PRIME)
                         + (this.encryptionDomainConfig == null

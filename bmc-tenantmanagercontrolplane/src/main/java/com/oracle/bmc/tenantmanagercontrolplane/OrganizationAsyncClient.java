@@ -64,6 +64,8 @@ public class OrganizationAsyncClient extends com.oracle.bmc.http.internal.BaseAs
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, OrganizationAsyncClient> {
         private Builder(com.oracle.bmc.Service service) {
             super(service);
+            final String packageName = "tenantmanagercontrolplane";
+            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);

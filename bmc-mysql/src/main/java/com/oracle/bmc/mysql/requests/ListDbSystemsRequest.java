@@ -42,21 +42,6 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         return opcRequestId;
     }
     /**
-     * DEPRECATED -- please use HeatWave API instead. If true, return only DB Systems with an
-     * Analytics Cluster attached, if false return only DB Systems with no Analytics Cluster
-     * attached. If not present, return all DB Systems.
-     */
-    private Boolean isAnalyticsClusterAttached;
-
-    /**
-     * DEPRECATED -- please use HeatWave API instead. If true, return only DB Systems with an
-     * Analytics Cluster attached, if false return only DB Systems with no Analytics Cluster
-     * attached. If not present, return all DB Systems.
-     */
-    public Boolean getIsAnalyticsClusterAttached() {
-        return isAnalyticsClusterAttached;
-    }
-    /**
      * If true, return only DB Systems with a HeatWave cluster attached, if false return only DB
      * Systems with no HeatWave cluster attached. If not present, return all DB Systems.
      */
@@ -281,26 +266,6 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * DEPRECATED -- please use HeatWave API instead. If true, return only DB Systems with an
-         * Analytics Cluster attached, if false return only DB Systems with no Analytics Cluster
-         * attached. If not present, return all DB Systems.
-         */
-        private Boolean isAnalyticsClusterAttached = null;
-
-        /**
-         * DEPRECATED -- please use HeatWave API instead. If true, return only DB Systems with an
-         * Analytics Cluster attached, if false return only DB Systems with no Analytics Cluster
-         * attached. If not present, return all DB Systems.
-         *
-         * @param isAnalyticsClusterAttached the value to set
-         * @return this builder instance
-         */
-        public Builder isAnalyticsClusterAttached(Boolean isAnalyticsClusterAttached) {
-            this.isAnalyticsClusterAttached = isAnalyticsClusterAttached;
-            return this;
-        }
-
-        /**
          * If true, return only DB Systems with a HeatWave cluster attached, if false return only DB
          * Systems with no HeatWave cluster attached. If not present, return all DB Systems.
          */
@@ -501,7 +466,6 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         public Builder copy(ListDbSystemsRequest o) {
             compartmentId(o.getCompartmentId());
             opcRequestId(o.getOpcRequestId());
-            isAnalyticsClusterAttached(o.getIsAnalyticsClusterAttached());
             isHeatWaveClusterAttached(o.getIsHeatWaveClusterAttached());
             dbSystemId(o.getDbSystemId());
             displayName(o.getDisplayName());
@@ -548,7 +512,6 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             ListDbSystemsRequest request = new ListDbSystemsRequest();
             request.compartmentId = compartmentId;
             request.opcRequestId = opcRequestId;
-            request.isAnalyticsClusterAttached = isAnalyticsClusterAttached;
             request.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
             request.dbSystemId = dbSystemId;
             request.displayName = displayName;
@@ -560,9 +523,9 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.limit = limit;
             request.page = page;
             return request;
-            // new ListDbSystemsRequest(compartmentId, opcRequestId, isAnalyticsClusterAttached,
-            // isHeatWaveClusterAttached, dbSystemId, displayName, lifecycleState, configurationId,
-            // isUpToDate, sortBy, sortOrder, limit, page);
+            // new ListDbSystemsRequest(compartmentId, opcRequestId, isHeatWaveClusterAttached,
+            // dbSystemId, displayName, lifecycleState, configurationId, isUpToDate, sortBy,
+            // sortOrder, limit, page);
         }
     }
 
@@ -575,7 +538,6 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         return new Builder()
                 .compartmentId(compartmentId)
                 .opcRequestId(opcRequestId)
-                .isAnalyticsClusterAttached(isAnalyticsClusterAttached)
                 .isHeatWaveClusterAttached(isHeatWaveClusterAttached)
                 .dbSystemId(dbSystemId)
                 .displayName(displayName)
@@ -604,8 +566,6 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
-        sb.append(",isAnalyticsClusterAttached=")
-                .append(String.valueOf(this.isAnalyticsClusterAttached));
         sb.append(",isHeatWaveClusterAttached=")
                 .append(String.valueOf(this.isHeatWaveClusterAttached));
         sb.append(",dbSystemId=").append(String.valueOf(this.dbSystemId));
@@ -635,8 +595,6 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(
-                        this.isAnalyticsClusterAttached, other.isAnalyticsClusterAttached)
-                && java.util.Objects.equals(
                         this.isHeatWaveClusterAttached, other.isHeatWaveClusterAttached)
                 && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
@@ -657,11 +615,6 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.isAnalyticsClusterAttached == null
-                                ? 43
-                                : this.isAnalyticsClusterAttached.hashCode());
         result =
                 (result * PRIME)
                         + (this.isHeatWaveClusterAttached == null

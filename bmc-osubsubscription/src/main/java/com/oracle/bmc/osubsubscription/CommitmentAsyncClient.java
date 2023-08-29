@@ -63,6 +63,8 @@ public class CommitmentAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, CommitmentAsyncClient> {
         private Builder(com.oracle.bmc.Service service) {
             super(service);
+            final String packageName = "osubsubscription";
+            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);

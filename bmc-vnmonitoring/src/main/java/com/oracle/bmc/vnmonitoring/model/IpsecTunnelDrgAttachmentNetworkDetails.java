@@ -50,13 +50,33 @@ public final class IpsecTunnelDrgAttachmentNetworkDetails extends DrgAttachmentN
             this.__explicitlySet__.add("ipsecConnectionId");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the virtual circuit's DRG attachment.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("transportAttachmentId")
+        private String transportAttachmentId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the virtual circuit's DRG attachment.
+         *
+         * @param transportAttachmentId the value to set
+         * @return this builder
+         */
+        public Builder transportAttachmentId(String transportAttachmentId) {
+            this.transportAttachmentId = transportAttachmentId;
+            this.__explicitlySet__.add("transportAttachmentId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public IpsecTunnelDrgAttachmentNetworkDetails build() {
             IpsecTunnelDrgAttachmentNetworkDetails model =
-                    new IpsecTunnelDrgAttachmentNetworkDetails(this.id, this.ipsecConnectionId);
+                    new IpsecTunnelDrgAttachmentNetworkDetails(
+                            this.id, this.ipsecConnectionId, this.transportAttachmentId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -70,6 +90,9 @@ public final class IpsecTunnelDrgAttachmentNetworkDetails extends DrgAttachmentN
             }
             if (model.wasPropertyExplicitlySet("ipsecConnectionId")) {
                 this.ipsecConnectionId(model.getIpsecConnectionId());
+            }
+            if (model.wasPropertyExplicitlySet("transportAttachmentId")) {
+                this.transportAttachmentId(model.getTransportAttachmentId());
             }
             return this;
         }
@@ -85,9 +108,11 @@ public final class IpsecTunnelDrgAttachmentNetworkDetails extends DrgAttachmentN
     }
 
     @Deprecated
-    public IpsecTunnelDrgAttachmentNetworkDetails(String id, String ipsecConnectionId) {
+    public IpsecTunnelDrgAttachmentNetworkDetails(
+            String id, String ipsecConnectionId, String transportAttachmentId) {
         super(id);
         this.ipsecConnectionId = ipsecConnectionId;
+        this.transportAttachmentId = transportAttachmentId;
     }
 
     /** The IPSec connection that contains the attached IPSec tunnel. */
@@ -101,6 +126,23 @@ public final class IpsecTunnelDrgAttachmentNetworkDetails extends DrgAttachmentN
      */
     public String getIpsecConnectionId() {
         return ipsecConnectionId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the virtual circuit's DRG attachment.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("transportAttachmentId")
+    private final String transportAttachmentId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the virtual circuit's DRG attachment.
+     *
+     * @return the value
+     */
+    public String getTransportAttachmentId() {
+        return transportAttachmentId;
     }
 
     @Override
@@ -119,6 +161,7 @@ public final class IpsecTunnelDrgAttachmentNetworkDetails extends DrgAttachmentN
         sb.append("IpsecTunnelDrgAttachmentNetworkDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", ipsecConnectionId=").append(String.valueOf(this.ipsecConnectionId));
+        sb.append(", transportAttachmentId=").append(String.valueOf(this.transportAttachmentId));
         sb.append(")");
         return sb.toString();
     }
@@ -134,6 +177,7 @@ public final class IpsecTunnelDrgAttachmentNetworkDetails extends DrgAttachmentN
 
         IpsecTunnelDrgAttachmentNetworkDetails other = (IpsecTunnelDrgAttachmentNetworkDetails) o;
         return java.util.Objects.equals(this.ipsecConnectionId, other.ipsecConnectionId)
+                && java.util.Objects.equals(this.transportAttachmentId, other.transportAttachmentId)
                 && super.equals(other);
     }
 
@@ -144,6 +188,11 @@ public final class IpsecTunnelDrgAttachmentNetworkDetails extends DrgAttachmentN
         result =
                 (result * PRIME)
                         + (this.ipsecConnectionId == null ? 43 : this.ipsecConnectionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.transportAttachmentId == null
+                                ? 43
+                                : this.transportAttachmentId.hashCode());
         return result;
     }
 }

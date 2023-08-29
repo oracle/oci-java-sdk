@@ -3916,6 +3916,23 @@ public interface VirtualNetwork extends AutoCloseable {
     ListVcnsResponse listVcns(ListVcnsRequest request);
 
     /**
+     * Gets the specified virtual circuit's associatedTunnelsInfo.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVirtualCircuitAssociatedTunnelsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListVirtualCircuitAssociatedTunnels API.
+     */
+    ListVirtualCircuitAssociatedTunnelsResponse listVirtualCircuitAssociatedTunnels(
+            ListVirtualCircuitAssociatedTunnelsRequest request);
+
+    /**
      * The deprecated operation lists available bandwidth levels for virtual circuits. For the
      * compartment ID, provide the
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of your

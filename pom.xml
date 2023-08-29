@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>3.23.2</version>
+  <version>3.24.0</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -34,7 +34,7 @@
   </scm>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <jackson.version>2.13.1</jackson.version>
+    <jackson.version>2.15.2</jackson.version>
     <jackson.databind.version>2.13.4.2</jackson.databind.version>
     <jersey.version>2.35</jersey.version>
     <apache-httpcomponents.version>4.5.13</apache-httpcomponents.version>
@@ -48,7 +48,7 @@
     <!-- Update resilience4jVersion and io.vavr.version together -->
     <resilience4jVersion>1.7.1</resilience4jVersion>
     <io.vavr.version>0.10.4</io.vavr.version>
-    <maven-shade-plugin.version>3.1.1</maven-shade-plugin.version>
+    <maven-shade-plugin.version>3.5.0</maven-shade-plugin.version>
     <bouncycastle.version>1.74</bouncycastle.version>
     <mockito.version>1.10.19</mockito.version>
     <powermock.version>1.7.4</powermock.version>
@@ -455,12 +455,12 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-enforcer-plugin</artifactId>
-          <version>3.0.0-M3</version>
+          <version>3.3.0</version>
           <dependencies>
             <dependency>
               <groupId>org.codehaus.mojo</groupId>
               <artifactId>extra-enforcer-rules</artifactId>
-              <version>1.3</version>
+              <version>1.7.0</version>
             </dependency>
           </dependencies>
         </plugin>

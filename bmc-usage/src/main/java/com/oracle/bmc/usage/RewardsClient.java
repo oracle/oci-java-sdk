@@ -56,6 +56,8 @@ public class RewardsClient extends com.oracle.bmc.http.internal.BaseSyncClient i
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, RewardsClient> {
         private Builder(com.oracle.bmc.Service service) {
             super(service);
+            final String packageName = "usage";
+            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);

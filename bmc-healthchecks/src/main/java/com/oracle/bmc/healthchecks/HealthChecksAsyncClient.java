@@ -64,6 +64,8 @@ public class HealthChecksAsyncClient extends com.oracle.bmc.http.internal.BaseAs
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, HealthChecksAsyncClient> {
         private Builder(com.oracle.bmc.Service service) {
             super(service);
+            final String packageName = "healthchecks";
+            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);

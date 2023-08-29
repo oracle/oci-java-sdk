@@ -35,13 +35,34 @@ public final class VirtualCircuitDrgAttachmentNetworkDetails extends DrgAttachme
             this.__explicitlySet__.add("id");
             return this;
         }
+        /**
+         * Boolean flag that determines wether all traffic over the virtual circuits is encrypted.
+         *
+         * <p>Example: {@code true}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("transportOnlyMode")
+        private Boolean transportOnlyMode;
+
+        /**
+         * Boolean flag that determines wether all traffic over the virtual circuits is encrypted.
+         *
+         * <p>Example: {@code true}
+         *
+         * @param transportOnlyMode the value to set
+         * @return this builder
+         */
+        public Builder transportOnlyMode(Boolean transportOnlyMode) {
+            this.transportOnlyMode = transportOnlyMode;
+            this.__explicitlySet__.add("transportOnlyMode");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VirtualCircuitDrgAttachmentNetworkDetails build() {
             VirtualCircuitDrgAttachmentNetworkDetails model =
-                    new VirtualCircuitDrgAttachmentNetworkDetails(this.id);
+                    new VirtualCircuitDrgAttachmentNetworkDetails(this.id, this.transportOnlyMode);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -52,6 +73,9 @@ public final class VirtualCircuitDrgAttachmentNetworkDetails extends DrgAttachme
         public Builder copy(VirtualCircuitDrgAttachmentNetworkDetails model) {
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("transportOnlyMode")) {
+                this.transportOnlyMode(model.getTransportOnlyMode());
             }
             return this;
         }
@@ -67,8 +91,28 @@ public final class VirtualCircuitDrgAttachmentNetworkDetails extends DrgAttachme
     }
 
     @Deprecated
-    public VirtualCircuitDrgAttachmentNetworkDetails(String id) {
+    public VirtualCircuitDrgAttachmentNetworkDetails(String id, Boolean transportOnlyMode) {
         super(id);
+        this.transportOnlyMode = transportOnlyMode;
+    }
+
+    /**
+     * Boolean flag that determines wether all traffic over the virtual circuits is encrypted.
+     *
+     * <p>Example: {@code true}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("transportOnlyMode")
+    private final Boolean transportOnlyMode;
+
+    /**
+     * Boolean flag that determines wether all traffic over the virtual circuits is encrypted.
+     *
+     * <p>Example: {@code true}
+     *
+     * @return the value
+     */
+    public Boolean getTransportOnlyMode() {
+        return transportOnlyMode;
     }
 
     @Override
@@ -86,6 +130,7 @@ public final class VirtualCircuitDrgAttachmentNetworkDetails extends DrgAttachme
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("VirtualCircuitDrgAttachmentNetworkDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", transportOnlyMode=").append(String.valueOf(this.transportOnlyMode));
         sb.append(")");
         return sb.toString();
     }
@@ -101,13 +146,17 @@ public final class VirtualCircuitDrgAttachmentNetworkDetails extends DrgAttachme
 
         VirtualCircuitDrgAttachmentNetworkDetails other =
                 (VirtualCircuitDrgAttachmentNetworkDetails) o;
-        return super.equals(other);
+        return java.util.Objects.equals(this.transportOnlyMode, other.transportOnlyMode)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.transportOnlyMode == null ? 43 : this.transportOnlyMode.hashCode());
         return result;
     }
 }

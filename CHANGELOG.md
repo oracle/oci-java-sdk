@@ -3,6 +3,74 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.24.0 - 2023-08-29
+### Added 
+- Support for creating and updating network monitors in the Application Performance Monitoring Synthetics service
+- Support for integration of GoldenGate service for replication in the Database Migration Service
+- Support for displaying resource usage information on autonomous container database and cloud autonomous vm cluster get operations in the Database service
+- Support for FastConnect Media Access Control Security (MACSec) fail open option in the Network Monitoring service
+- Support for generic bare metal types and configuration maps in compute instance platform configuration in the Compute service
+- Support for encrypted FastConnect in the Network Monitoring service
+- Support for new parameters on customer premises equipment and virtual circuit create operations in the Network Monitoring service
+- Support for virtual circuit associated tunnels in the Network Monitoring service
+- Support for additional parameters on dynamic routing gateway create and update operations in the Network Monitoring service
+- Support for assigning an IPv6 address to a compute instance during instance launch or secondary VNIC attach in the Compute service      
+ 
+### Breaking Changes  
+- Method `public com.oracle.bmc.mysql.responses.AddAnalyticsClusterResponse addAnalyticsCluster(com.oracle.bmc.mysql.requests.AddAnalyticsClusterRequest)` has been removed from `com.oracle.bmc.mysql.DbSystem` in the MySQL Database service
+- Method `public com.oracle.bmc.mysql.responses.DeleteAnalyticsClusterResponse deleteAnalyticsCluster(com.oracle.bmc.mysql.requests.DeleteAnalyticsClusterRequest)` has been removed from `com.oracle.bmc.mysql.DbSystem` in the MySQL Database service
+- Method `public com.oracle.bmc.mysql.responses.GenerateAnalyticsClusterMemoryEstimateResponse generateAnalyticsClusterMemoryEstimate(com.oracle.bmc.mysql.requests.GenerateAnalyticsClusterMemoryEstimateRequest)` has been removed from `com.oracle.bmc.mysql.DbSystem` in the MySQL Database service
+- Method `public com.oracle.bmc.mysql.responses.GetAnalyticsClusterResponse getAnalyticsCluster(com.oracle.bmc.mysql.requests.GetAnalyticsClusterRequest)` has been removed from `com.oracle.bmc.mysql.DbSystem` in the MySQL Database service
+- Method `public com.oracle.bmc.mysql.responses.GetAnalyticsClusterMemoryEstimateResponse getAnalyticsClusterMemoryEstimate(com.oracle.bmc.mysql.requests.GetAnalyticsClusterMemoryEstimateRequest)` has been removed from `com.oracle.bmc.mysql.DbSystem` in the MySQL Database service
+- Method `public com.oracle.bmc.mysql.responses.RestartAnalyticsClusterResponse restartAnalyticsCluster(com.oracle.bmc.mysql.requests.RestartAnalyticsClusterRequest)` has been removed from `com.oracle.bmc.mysql.DbSystem` in the MySQL Database service
+- Method `public com.oracle.bmc.mysql.responses.StartAnalyticsClusterResponse startAnalyticsCluster(com.oracle.bmc.mysql.requests.StartAnalyticsClusterRequest)` has been removed from `com.oracle.bmc.mysql.DbSystem` in the MySQL Database service
+- Method `public com.oracle.bmc.mysql.responses.StopAnalyticsClusterResponse stopAnalyticsCluster(com.oracle.bmc.mysql.requests.StopAnalyticsClusterRequest)` has been removed from `com.oracle.bmc.mysql.DbSystem` in the MySQL Database service
+- Method `public com.oracle.bmc.mysql.responses.UpdateAnalyticsClusterResponse updateAnalyticsCluster(com.oracle.bmc.mysql.requests.UpdateAnalyticsClusterRequest)` has been removed from `com.oracle.bmc.mysql.DbSystem` in the MySQL Database service
+- Method `public com.oracle.bmc.waiter.Waiter forAnalyticsCluster(com.oracle.bmc.mysql.requests.GetAnalyticsClusterRequest, com.oracle.bmc.mysql.model.AnalyticsCluster$LifecycleState[])` has been removed from `com.oracle.bmc.mysql.DbSystemWaiters` in the MySQL Database service
+- Method `public com.oracle.bmc.waiter.Waiter forAnalyticsCluster(com.oracle.bmc.mysql.requests.GetAnalyticsClusterRequest, com.oracle.bmc.mysql.model.AnalyticsCluster$LifecycleState, com.oracle.bmc.waiter.TerminationStrategy, com.oracle.bmc.waiter.DelayStrategy)` has been removed from `com.oracle.bmc.mysql.DbSystemWaiters` in the MySQL Database service
+- Method `public com.oracle.bmc.waiter.Waiter forAnalyticsCluster(com.oracle.bmc.mysql.requests.GetAnalyticsClusterRequest, com.oracle.bmc.waiter.TerminationStrategy, com.oracle.bmc.waiter.DelayStrategy, com.oracle.bmc.mysql.model.AnalyticsCluster$LifecycleState[])` has been removed from `com.oracle.bmc.mysql.DbSystemWaiters` in the MySQL Database service
+- Class `com.oracle.bmc.mysql.model.AddAnalyticsClusterDetails` has been removed from the MySQL Database service
+- Class `com.oracle.bmc.mysql.model.AnalyticsCluster` has been removed from the MySQL Database service
+- Class `com.oracle.bmc.mysql.model.AnalyticsClusterMemoryEstimate` has been removed from the MySQL Database service
+- Class `com.oracle.bmc.mysql.model.AnalyticsClusterMemoryEstimateStatus` has been removed from the MySQL Database service
+- Class `com.oracle.bmc.mysql.model.AnalyticsClusterNode` has been removed from the MySQL Database service
+- Class `com.oracle.bmc.mysql.model.AnalyticsClusterSchemaMemoryEstimate` has been removed from the MySQL Database service
+- Class `com.oracle.bmc.mysql.model.AnalyticsClusterSummary` has been removed from the MySQL Database service
+- Class `com.oracle.bmc.mysql.model.AnalyticsClusterTableMemoryEstimate` has been removed from the MySQL Database service
+- Method `public com.oracle.bmc.mysql.model.AnalyticsClusterSummary getAnalyticsCluster()` has been removed from the model `com.oracle.bmc.mysql.model.DbSystem` in the MySQL Database service
+- Method `public java.lang.Boolean getIsAnalyticsClusterAttached()` has been removed from the model `com.oracle.bmc.mysql.model.DbSystem` in the MySQL Database service
+- Method `public com.oracle.bmc.mysql.model.AnalyticsClusterSummary getAnalyticsCluster()` has been removed from the model `com.oracle.bmc.mysql.model.DbSystemSummary` in the MySQL Database service
+- Method `public java.lang.Boolean getIsAnalyticsClusterAttached()` has been removed from the model `com.oracle.bmc.mysql.model.DbSystemSummary` in the MySQL Database service
+- Field `Analyticscluster` has been removed from the model `com.oracle.bmc.mysql.model.ShapeSummary$IsSupportedFor` in the MySQL Database service
+- Class `com.oracle.bmc.mysql.model.UpdateAnalyticsClusterDetails` has been removed from the MySQL Database service
+- Field `AddAnalyticsCluster` has been removed from the model `com.oracle.bmc.mysql.model.WorkRequestOperationType` in the MySQL Database service
+- Field `DeleteAnalyticsCluster` has been removed from the model `com.oracle.bmc.mysql.model.WorkRequestOperationType` in the MySQL Database service
+- Field `GenerateAnalyticsClusterMemoryEstimate` has been removed from the model `com.oracle.bmc.mysql.model.WorkRequestOperationType` in the MySQL Database service
+- Field `RestartAnalyticsCluster` has been removed from the model `com.oracle.bmc.mysql.model.WorkRequestOperationType` in the MySQL Database service
+- Field `StartAnalyticsCluster` has been removed from the model `com.oracle.bmc.mysql.model.WorkRequestOperationType` in the MySQL Database service
+- Field `StopAnalyticsCluster` has been removed from the model `com.oracle.bmc.mysql.model.WorkRequestOperationType` in the MySQL Database service
+- Field `UpdateAnalyticsCluster` has been removed from the model `com.oracle.bmc.mysql.model.WorkRequestOperationType` in the MySQL Database service
+- Class `com.oracle.bmc.mysql.requests.AddAnalyticsClusterRequest` has been removed from the MySQL Database service
+- Class `com.oracle.bmc.mysql.requests.DeleteAnalyticsClusterRequest` has been removed from the MySQL Database service
+- Class `com.oracle.bmc.mysql.requests.GenerateAnalyticsClusterMemoryEstimateRequest` has been removed from the MySQL Database service
+- Class `com.oracle.bmc.mysql.requests.GetAnalyticsClusterMemoryEstimateRequest` has been removed from the MySQL Database service
+- Class `com.oracle.bmc.mysql.requests.GetAnalyticsClusterRequest` has been removed from the MySQL Database service
+- Method `public java.lang.Boolean getIsAnalyticsClusterAttached()` has been removed from `com.oracle.bmc.mysql.requests.ListDbSystemsRequest` in the MySQL Database service
+- Field `Analyticscluster` has been removed from `com.oracle.bmc.mysql.requests.ListShapesRequest$IsSupportedFor` in the MySQL Database service
+- Class `com.oracle.bmc.mysql.requests.RestartAnalyticsClusterRequest` has been removed from the MySQL Database service
+- Class `com.oracle.bmc.mysql.requests.StartAnalyticsClusterRequest` has been removed from the MySQL Database service
+- Class `com.oracle.bmc.mysql.requests.StopAnalyticsClusterRequest` has been removed from the MySQL Database service
+- Class `com.oracle.bmc.mysql.requests.UpdateAnalyticsClusterRequest` has been removed from the MySQL Database service
+- Class `com.oracle.bmc.mysql.responses.AddAnalyticsClusterResponse` has been removed from the MySQL Database service
+- Class `com.oracle.bmc.mysql.responses.DeleteAnalyticsClusterResponse` has been removed from the MySQL Database service
+- Class `com.oracle.bmc.mysql.responses.GenerateAnalyticsClusterMemoryEstimateResponse` has been removed from the MySQL Database service
+- Class `com.oracle.bmc.mysql.responses.GetAnalyticsClusterMemoryEstimateResponse` has been removed from the MySQL Database service
+- Class `com.oracle.bmc.mysql.responses.GetAnalyticsClusterResponse` has been removed from the MySQL Database service
+- Class `com.oracle.bmc.mysql.responses.RestartAnalyticsClusterResponse` has been removed from the MySQL Database service
+- Class `com.oracle.bmc.mysql.responses.StartAnalyticsClusterResponse` has been removed from the MySQL Database service
+- Class `com.oracle.bmc.mysql.responses.StopAnalyticsClusterResponse` has been removed from the MySQL Database service
+- Class `com.oracle.bmc.mysql.responses.UpdateAnalyticsClusterResponse` has been removed from the MySQL Database service
+
 ## 3.23.2 - 2023-08-22
 ### Added
 - Support for Compute Cloud at Customer service

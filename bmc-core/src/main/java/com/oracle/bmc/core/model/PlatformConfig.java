@@ -44,6 +44,9 @@ package com.oracle.bmc.core.model;
             value = IntelVmPlatformConfig.class,
             name = "INTEL_VM"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = GenericBmPlatformConfig.class,
+            name = "GENERIC_BM"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = AmdMilanBmGpuPlatformConfig.class,
             name = "AMD_MILAN_BM_GPU")
 })
@@ -203,6 +206,7 @@ public class PlatformConfig extends com.oracle.bmc.http.client.internal.Explicit
         AmdMilanBmGpu("AMD_MILAN_BM_GPU"),
         AmdRomeBm("AMD_ROME_BM"),
         AmdRomeBmGpu("AMD_ROME_BM_GPU"),
+        GenericBm("GENERIC_BM"),
         IntelIcelakeBm("INTEL_ICELAKE_BM"),
         IntelSkylakeBm("INTEL_SKYLAKE_BM"),
         AmdVm("AMD_VM"),

@@ -33,7 +33,10 @@ package com.oracle.bmc.apmsynthetics.model;
             name = "REST_CONFIG"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = BrowserMonitorConfiguration.class,
-            name = "BROWSER_CONFIG")
+            name = "BROWSER_CONFIG"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = NetworkMonitorConfiguration.class,
+            name = "NETWORK_CONFIG")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -123,6 +126,7 @@ public class MonitorConfiguration
         ScriptedBrowserConfig("SCRIPTED_BROWSER_CONFIG"),
         RestConfig("REST_CONFIG"),
         ScriptedRestConfig("SCRIPTED_REST_CONFIG"),
+        NetworkConfig("NETWORK_CONFIG"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

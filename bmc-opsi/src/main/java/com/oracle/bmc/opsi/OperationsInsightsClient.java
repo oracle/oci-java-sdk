@@ -96,6 +96,8 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         private Builder(com.oracle.bmc.Service service) {
             super(service);
+            final String packageName = "opsi";
+            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);

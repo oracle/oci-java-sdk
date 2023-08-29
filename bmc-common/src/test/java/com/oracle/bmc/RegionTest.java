@@ -66,6 +66,7 @@ public class RegionTest {
                 "{ \"realmKey\" : \"UCX\",\"realmDomainComponent\" : \"oracle-foobar.com\",\"regionKey\" : \"ABV\",\"regionIdentifier\" : \"us-abv-1\"}";
         newEnvMap.put("OCI_REGION_METADATA", regionBlob);
         EnvironmentVariablesHelper.setEnvironmentVariable(newEnvMap);
+        Region.resetAlloyConfiguration();
     }
 
     @Before
@@ -526,6 +527,7 @@ public class RegionTest {
     }
 
     @Test
+    @Ignore("This test retries 8 times with execution time >5 minutes")
     public void testImdsRetriesWithDealyAndJitter() {
         try {
             Region.hasUsedInstanceMetadataService = false;

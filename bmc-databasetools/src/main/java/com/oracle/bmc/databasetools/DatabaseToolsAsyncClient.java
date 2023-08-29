@@ -63,6 +63,8 @@ public class DatabaseToolsAsyncClient extends com.oracle.bmc.http.internal.BaseA
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, DatabaseToolsAsyncClient> {
         private Builder(com.oracle.bmc.Service service) {
             super(service);
+            final String packageName = "databasetools";
+            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);

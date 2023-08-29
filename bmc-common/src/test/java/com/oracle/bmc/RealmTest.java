@@ -18,16 +18,31 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
+import java.util.Map;
 
+import com.oracle.bmc.helper.EnvironmentVariablesHelper;
 import com.oracle.bmc.model.RegionSchema;
 import com.oracle.bmc.model.internal.JsonConverter;
 import com.oracle.bmc.util.internal.NameUtils;
+import org.junit.Before;
 import org.junit.Test;
 
 public class RealmTest {
     private static final String NEW_SECOND_LEVEL_DOMAIN = "oracle-foo-cloud.com";
+
+    @Before
+    public void setup() throws Exception {
+
+        Map<String, String> newEnvMap = new HashMap<>();
+
+        String regionBlob =
+                "{ \"realmKey\" : \"UCX\",\"realmDomainComponent\" : \"oracle-foobar.com\",\"regionKey\" : \"ABV\",\"regionIdentifier\" : \"us-abv-1\"}";
+        newEnvMap.put("OCI_REGION_METADATA", regionBlob);
+        EnvironmentVariablesHelper.setEnvironmentVariable(newEnvMap);
+    }
 
     @Test
     public void testAllRealms() {

@@ -57,7 +57,8 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
         "publicIp",
         "skipSourceDestCheck",
         "subnetId",
-        "timeCreated"
+        "timeCreated",
+        "ipv6Addresses"
     })
     public Vnic(
             String availabilityDomain,
@@ -76,7 +77,8 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
             String publicIp,
             Boolean skipSourceDestCheck,
             String subnetId,
-            java.util.Date timeCreated) {
+            java.util.Date timeCreated,
+            java.util.List<String> ipv6Addresses) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
@@ -95,6 +97,7 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
         this.skipSourceDestCheck = skipSourceDestCheck;
         this.subnetId = subnetId;
         this.timeCreated = timeCreated;
+        this.ipv6Addresses = ipv6Addresses;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -497,6 +500,27 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
+        /**
+         * List of IPv6 addresses assigned to the VNIC.
+         *
+         * <p>Example: {@code 2001:DB8::}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6Addresses")
+        private java.util.List<String> ipv6Addresses;
+
+        /**
+         * List of IPv6 addresses assigned to the VNIC.
+         *
+         * <p>Example: {@code 2001:DB8::}
+         *
+         * @param ipv6Addresses the value to set
+         * @return this builder
+         */
+        public Builder ipv6Addresses(java.util.List<String> ipv6Addresses) {
+            this.ipv6Addresses = ipv6Addresses;
+            this.__explicitlySet__.add("ipv6Addresses");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -520,7 +544,8 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
                             this.publicIp,
                             this.skipSourceDestCheck,
                             this.subnetId,
-                            this.timeCreated);
+                            this.timeCreated,
+                            this.ipv6Addresses);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -579,6 +604,9 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6Addresses")) {
+                this.ipv6Addresses(model.getIpv6Addresses());
             }
             return this;
         }
@@ -1002,6 +1030,25 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return timeCreated;
     }
 
+    /**
+     * List of IPv6 addresses assigned to the VNIC.
+     *
+     * <p>Example: {@code 2001:DB8::}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6Addresses")
+    private final java.util.List<String> ipv6Addresses;
+
+    /**
+     * List of IPv6 addresses assigned to the VNIC.
+     *
+     * <p>Example: {@code 2001:DB8::}
+     *
+     * @return the value
+     */
+    public java.util.List<String> getIpv6Addresses() {
+        return ipv6Addresses;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1034,6 +1081,7 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
         sb.append(", skipSourceDestCheck=").append(String.valueOf(this.skipSourceDestCheck));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", ipv6Addresses=").append(String.valueOf(this.ipv6Addresses));
         sb.append(")");
         return sb.toString();
     }
@@ -1065,6 +1113,7 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
                 && java.util.Objects.equals(this.skipSourceDestCheck, other.skipSourceDestCheck)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.ipv6Addresses, other.ipv6Addresses)
                 && super.equals(other);
     }
 
@@ -1103,6 +1152,9 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
                                 : this.skipSourceDestCheck.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ipv6Addresses == null ? 43 : this.ipv6Addresses.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

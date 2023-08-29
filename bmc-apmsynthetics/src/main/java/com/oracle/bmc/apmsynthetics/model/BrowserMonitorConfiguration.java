@@ -63,12 +63,12 @@ public final class BrowserMonitorConfiguration extends MonitorConfiguration {
             this.__explicitlySet__.add("isCertificateValidationEnabled");
             return this;
         }
-        /** If disabled then auto snapshots are not collected. */
+        /** If disabled, auto snapshots are not collected. */
         @com.fasterxml.jackson.annotation.JsonProperty("isDefaultSnapshotEnabled")
         private Boolean isDefaultSnapshotEnabled;
 
         /**
-         * If disabled then auto snapshots are not collected.
+         * If disabled, auto snapshots are not collected.
          *
          * @param isDefaultSnapshotEnabled the value to set
          * @return this builder
@@ -211,12 +211,12 @@ public final class BrowserMonitorConfiguration extends MonitorConfiguration {
         return isCertificateValidationEnabled;
     }
 
-    /** If disabled then auto snapshots are not collected. */
+    /** If disabled, auto snapshots are not collected. */
     @com.fasterxml.jackson.annotation.JsonProperty("isDefaultSnapshotEnabled")
     private final Boolean isDefaultSnapshotEnabled;
 
     /**
-     * If disabled then auto snapshots are not collected.
+     * If disabled, auto snapshots are not collected.
      *
      * @return the value
      */

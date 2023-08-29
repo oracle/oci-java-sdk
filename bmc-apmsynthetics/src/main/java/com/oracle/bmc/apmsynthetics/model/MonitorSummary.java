@@ -290,7 +290,8 @@ public final class MonitorSummary
          * target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then
          * the monitor will run the selected script (specified by scriptId in monitor) against the
          * specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor
-         * type, then the monitor will run the selected script as it is.
+         * type, then the monitor will run the selected script as it is. For NETWORK monitor with
+         * TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
          */
         @com.fasterxml.jackson.annotation.JsonProperty("target")
         private String target;
@@ -300,7 +301,8 @@ public final class MonitorSummary
          * target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then
          * the monitor will run the selected script (specified by scriptId in monitor) against the
          * specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor
-         * type, then the monitor will run the selected script as it is.
+         * type, then the monitor will run the selected script as it is. For NETWORK monitor with
+         * TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
          *
          * @param target the value to set
          * @return this builder
@@ -732,7 +734,8 @@ public final class MonitorSummary
      * is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor
      * will run the selected script (specified by scriptId in monitor) against the specified target
      * endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor
-     * will run the selected script as it is.
+     * will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to
+     * be provided along with target. Example: 192.168.0.1:80
      */
     @com.fasterxml.jackson.annotation.JsonProperty("target")
     private final String target;
@@ -742,7 +745,8 @@ public final class MonitorSummary
      * is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor
      * will run the selected script (specified by scriptId in monitor) against the specified target
      * endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor
-     * will run the selected script as it is.
+     * will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to
+     * be provided along with target. Example: 192.168.0.1:80
      *
      * @return the value
      */

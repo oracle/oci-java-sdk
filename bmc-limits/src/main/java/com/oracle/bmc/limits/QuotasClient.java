@@ -79,6 +79,8 @@ public class QuotasClient extends com.oracle.bmc.http.internal.BaseSyncClient im
 
         private Builder(com.oracle.bmc.Service service) {
             super(service);
+            final String packageName = "limits";
+            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);

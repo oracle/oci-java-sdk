@@ -78,6 +78,8 @@ public class TransferApplianceEntitlementClient extends com.oracle.bmc.http.inte
 
         private Builder(com.oracle.bmc.Service service) {
             super(service);
+            final String packageName = "dts";
+            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);

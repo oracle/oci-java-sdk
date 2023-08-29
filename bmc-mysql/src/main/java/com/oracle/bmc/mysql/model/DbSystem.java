@@ -29,8 +29,6 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         "subnetId",
         "isHighlyAvailable",
         "currentPlacement",
-        "isAnalyticsClusterAttached",
-        "analyticsCluster",
         "isHeatWaveClusterAttached",
         "heatWaveCluster",
         "availabilityDomain",
@@ -66,8 +64,6 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             String subnetId,
             Boolean isHighlyAvailable,
             DbSystemPlacement currentPlacement,
-            Boolean isAnalyticsClusterAttached,
-            AnalyticsClusterSummary analyticsCluster,
             Boolean isHeatWaveClusterAttached,
             HeatWaveClusterSummary heatWaveCluster,
             String availabilityDomain,
@@ -102,8 +98,6 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         this.subnetId = subnetId;
         this.isHighlyAvailable = isHighlyAvailable;
         this.currentPlacement = currentPlacement;
-        this.isAnalyticsClusterAttached = isAnalyticsClusterAttached;
-        this.analyticsCluster = analyticsCluster;
         this.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
         this.heatWaveCluster = heatWaveCluster;
         this.availabilityDomain = availabilityDomain;
@@ -231,34 +225,6 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         public Builder currentPlacement(DbSystemPlacement currentPlacement) {
             this.currentPlacement = currentPlacement;
             this.__explicitlySet__.add("currentPlacement");
-            return this;
-        }
-        /**
-         * DEPRECATED -- please use {@code isHeatWaveClusterAttached} instead. If the DB System has
-         * an Analytics Cluster attached.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("isAnalyticsClusterAttached")
-        private Boolean isAnalyticsClusterAttached;
-
-        /**
-         * DEPRECATED -- please use {@code isHeatWaveClusterAttached} instead. If the DB System has
-         * an Analytics Cluster attached.
-         *
-         * @param isAnalyticsClusterAttached the value to set
-         * @return this builder
-         */
-        public Builder isAnalyticsClusterAttached(Boolean isAnalyticsClusterAttached) {
-            this.isAnalyticsClusterAttached = isAnalyticsClusterAttached;
-            this.__explicitlySet__.add("isAnalyticsClusterAttached");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("analyticsCluster")
-        private AnalyticsClusterSummary analyticsCluster;
-
-        public Builder analyticsCluster(AnalyticsClusterSummary analyticsCluster) {
-            this.analyticsCluster = analyticsCluster;
-            this.__explicitlySet__.add("analyticsCluster");
             return this;
         }
         /** If the DB System has a HeatWave Cluster attached. */
@@ -705,8 +671,6 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                             this.subnetId,
                             this.isHighlyAvailable,
                             this.currentPlacement,
-                            this.isAnalyticsClusterAttached,
-                            this.analyticsCluster,
                             this.isHeatWaveClusterAttached,
                             this.heatWaveCluster,
                             this.availabilityDomain,
@@ -761,12 +725,6 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("currentPlacement")) {
                 this.currentPlacement(model.getCurrentPlacement());
-            }
-            if (model.wasPropertyExplicitlySet("isAnalyticsClusterAttached")) {
-                this.isAnalyticsClusterAttached(model.getIsAnalyticsClusterAttached());
-            }
-            if (model.wasPropertyExplicitlySet("analyticsCluster")) {
-                this.analyticsCluster(model.getAnalyticsCluster());
             }
             if (model.wasPropertyExplicitlySet("isHeatWaveClusterAttached")) {
                 this.isHeatWaveClusterAttached(model.getIsHeatWaveClusterAttached());
@@ -942,30 +900,6 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
 
     public DbSystemPlacement getCurrentPlacement() {
         return currentPlacement;
-    }
-
-    /**
-     * DEPRECATED -- please use {@code isHeatWaveClusterAttached} instead. If the DB System has an
-     * Analytics Cluster attached.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("isAnalyticsClusterAttached")
-    private final Boolean isAnalyticsClusterAttached;
-
-    /**
-     * DEPRECATED -- please use {@code isHeatWaveClusterAttached} instead. If the DB System has an
-     * Analytics Cluster attached.
-     *
-     * @return the value
-     */
-    public Boolean getIsAnalyticsClusterAttached() {
-        return isAnalyticsClusterAttached;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonProperty("analyticsCluster")
-    private final AnalyticsClusterSummary analyticsCluster;
-
-    public AnalyticsClusterSummary getAnalyticsCluster() {
-        return analyticsCluster;
     }
 
     /** If the DB System has a HeatWave Cluster attached. */
@@ -1417,9 +1351,6 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", isHighlyAvailable=").append(String.valueOf(this.isHighlyAvailable));
         sb.append(", currentPlacement=").append(String.valueOf(this.currentPlacement));
-        sb.append(", isAnalyticsClusterAttached=")
-                .append(String.valueOf(this.isAnalyticsClusterAttached));
-        sb.append(", analyticsCluster=").append(String.valueOf(this.analyticsCluster));
         sb.append(", isHeatWaveClusterAttached=")
                 .append(String.valueOf(this.isHeatWaveClusterAttached));
         sb.append(", heatWaveCluster=").append(String.valueOf(this.heatWaveCluster));
@@ -1470,9 +1401,6 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.isHighlyAvailable, other.isHighlyAvailable)
                 && java.util.Objects.equals(this.currentPlacement, other.currentPlacement)
                 && java.util.Objects.equals(
-                        this.isAnalyticsClusterAttached, other.isAnalyticsClusterAttached)
-                && java.util.Objects.equals(this.analyticsCluster, other.analyticsCluster)
-                && java.util.Objects.equals(
                         this.isHeatWaveClusterAttached, other.isHeatWaveClusterAttached)
                 && java.util.Objects.equals(this.heatWaveCluster, other.heatWaveCluster)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
@@ -1520,14 +1448,6 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         result =
                 (result * PRIME)
                         + (this.currentPlacement == null ? 43 : this.currentPlacement.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.isAnalyticsClusterAttached == null
-                                ? 43
-                                : this.isAnalyticsClusterAttached.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.analyticsCluster == null ? 43 : this.analyticsCluster.hashCode());
         result =
                 (result * PRIME)
                         + (this.isHeatWaveClusterAttached == null

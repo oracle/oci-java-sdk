@@ -2,13 +2,25 @@
  * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-package com.oracle.bmc.mysql.responses;
+package com.oracle.bmc.database.responses;
 
-import com.oracle.bmc.mysql.model.*;
+import com.oracle.bmc.database.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-public class GetAnalyticsClusterMemoryEstimateResponse
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+public class GetAutonomousContainerDatabaseResourceUsageResponse
         extends com.oracle.bmc.responses.BmcResponse {
+    /** For optimistic concurrency control. See {@code if-match}. */
+    private String etag;
+
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
+    public String getEtag() {
+        return etag;
+    }
+
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -25,40 +37,43 @@ public class GetAnalyticsClusterMemoryEstimateResponse
         return opcRequestId;
     }
 
-    /** The returned {@code AnalyticsClusterMemoryEstimate} instance. */
-    private com.oracle.bmc.mysql.model.AnalyticsClusterMemoryEstimate
-            analyticsClusterMemoryEstimate;
+    /** The returned {@code AutonomousContainerDatabaseResourceUsage} instance. */
+    private com.oracle.bmc.database.model.AutonomousContainerDatabaseResourceUsage
+            autonomousContainerDatabaseResourceUsage;
 
     /**
-     * The returned {@code AnalyticsClusterMemoryEstimate} instance.
+     * The returned {@code AutonomousContainerDatabaseResourceUsage} instance.
      *
      * @return the value
      */
-    public com.oracle.bmc.mysql.model.AnalyticsClusterMemoryEstimate
-            getAnalyticsClusterMemoryEstimate() {
-        return analyticsClusterMemoryEstimate;
+    public com.oracle.bmc.database.model.AutonomousContainerDatabaseResourceUsage
+            getAutonomousContainerDatabaseResourceUsage() {
+        return autonomousContainerDatabaseResourceUsage;
     }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
         "headers",
+        "etag",
         "opcRequestId",
-        "analyticsClusterMemoryEstimate"
+        "autonomousContainerDatabaseResourceUsage"
     })
-    private GetAnalyticsClusterMemoryEstimateResponse(
+    private GetAutonomousContainerDatabaseResourceUsageResponse(
             int __httpStatusCode__,
             java.util.Map<String, java.util.List<String>> headers,
+            String etag,
             String opcRequestId,
-            com.oracle.bmc.mysql.model.AnalyticsClusterMemoryEstimate
-                    analyticsClusterMemoryEstimate) {
+            com.oracle.bmc.database.model.AutonomousContainerDatabaseResourceUsage
+                    autonomousContainerDatabaseResourceUsage) {
         super(__httpStatusCode__, headers);
+        this.etag = etag;
         this.opcRequestId = opcRequestId;
-        this.analyticsClusterMemoryEstimate = analyticsClusterMemoryEstimate;
+        this.autonomousContainerDatabaseResourceUsage = autonomousContainerDatabaseResourceUsage;
     }
 
     public static class Builder
             implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    GetAnalyticsClusterMemoryEstimateResponse> {
+                    GetAutonomousContainerDatabaseResourceUsageResponse> {
         private int __httpStatusCode__;
 
         @Override
@@ -72,6 +87,20 @@ public class GetAnalyticsClusterMemoryEstimateResponse
         @Override
         public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
+            return this;
+        }
+
+        /** For optimistic concurrency control. See {@code if-match}. */
+        private String etag;
+
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
+        public Builder etag(String etag) {
+            this.etag = etag;
             return this;
         }
 
@@ -93,20 +122,21 @@ public class GetAnalyticsClusterMemoryEstimateResponse
             return this;
         }
 
-        /** The returned {@code AnalyticsClusterMemoryEstimate} instance. */
-        private com.oracle.bmc.mysql.model.AnalyticsClusterMemoryEstimate
-                analyticsClusterMemoryEstimate;
+        /** The returned {@code AutonomousContainerDatabaseResourceUsage} instance. */
+        private com.oracle.bmc.database.model.AutonomousContainerDatabaseResourceUsage
+                autonomousContainerDatabaseResourceUsage;
 
         /**
-         * The returned {@code AnalyticsClusterMemoryEstimate} instance.
+         * The returned {@code AutonomousContainerDatabaseResourceUsage} instance.
          *
-         * @param analyticsClusterMemoryEstimate the value to set
+         * @param autonomousContainerDatabaseResourceUsage the value to set
          * @return this builder
          */
-        public Builder analyticsClusterMemoryEstimate(
-                com.oracle.bmc.mysql.model.AnalyticsClusterMemoryEstimate
-                        analyticsClusterMemoryEstimate) {
-            this.analyticsClusterMemoryEstimate = analyticsClusterMemoryEstimate;
+        public Builder autonomousContainerDatabaseResourceUsage(
+                com.oracle.bmc.database.model.AutonomousContainerDatabaseResourceUsage
+                        autonomousContainerDatabaseResourceUsage) {
+            this.autonomousContainerDatabaseResourceUsage =
+                    autonomousContainerDatabaseResourceUsage;
             return this;
         }
 
@@ -116,11 +146,13 @@ public class GetAnalyticsClusterMemoryEstimateResponse
          * @return this builder instance
          */
         @Override
-        public Builder copy(GetAnalyticsClusterMemoryEstimateResponse o) {
+        public Builder copy(GetAutonomousContainerDatabaseResourceUsageResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
+            etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
-            analyticsClusterMemoryEstimate(o.getAnalyticsClusterMemoryEstimate());
+            autonomousContainerDatabaseResourceUsage(
+                    o.getAutonomousContainerDatabaseResourceUsage());
 
             return this;
         }
@@ -131,9 +163,13 @@ public class GetAnalyticsClusterMemoryEstimateResponse
          * @return the response object
          */
         @Override
-        public GetAnalyticsClusterMemoryEstimateResponse build() {
-            return new GetAnalyticsClusterMemoryEstimateResponse(
-                    __httpStatusCode__, headers, opcRequestId, analyticsClusterMemoryEstimate);
+        public GetAutonomousContainerDatabaseResourceUsageResponse build() {
+            return new GetAutonomousContainerDatabaseResourceUsageResponse(
+                    __httpStatusCode__,
+                    headers,
+                    etag,
+                    opcRequestId,
+                    autonomousContainerDatabaseResourceUsage);
         }
     }
 
@@ -151,9 +187,10 @@ public class GetAnalyticsClusterMemoryEstimateResponse
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
+        sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
-        sb.append(",analyticsClusterMemoryEstimate=")
-                .append(String.valueOf(analyticsClusterMemoryEstimate));
+        sb.append(",autonomousContainerDatabaseResourceUsage=")
+                .append(String.valueOf(autonomousContainerDatabaseResourceUsage));
         sb.append(")");
         return sb.toString();
     }
@@ -163,28 +200,31 @@ public class GetAnalyticsClusterMemoryEstimateResponse
         if (this == o) {
             return true;
         }
-        if (!(o instanceof GetAnalyticsClusterMemoryEstimateResponse)) {
+        if (!(o instanceof GetAutonomousContainerDatabaseResourceUsageResponse)) {
             return false;
         }
 
-        GetAnalyticsClusterMemoryEstimateResponse other =
-                (GetAnalyticsClusterMemoryEstimateResponse) o;
+        GetAutonomousContainerDatabaseResourceUsageResponse other =
+                (GetAutonomousContainerDatabaseResourceUsageResponse) o;
         return super.equals(o)
+                && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(
-                        this.analyticsClusterMemoryEstimate, other.analyticsClusterMemoryEstimate);
+                        this.autonomousContainerDatabaseResourceUsage,
+                        other.autonomousContainerDatabaseResourceUsage);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result =
                 (result * PRIME)
-                        + (this.analyticsClusterMemoryEstimate == null
+                        + (this.autonomousContainerDatabaseResourceUsage == null
                                 ? 43
-                                : this.analyticsClusterMemoryEstimate.hashCode());
+                                : this.autonomousContainerDatabaseResourceUsage.hashCode());
         return result;
     }
 }

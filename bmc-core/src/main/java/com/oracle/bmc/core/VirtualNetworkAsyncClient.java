@@ -80,6 +80,8 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         private Builder(com.oracle.bmc.Service service) {
             super(service);
+            final String packageName = "core";
+            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
@@ -6249,6 +6251,46 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 .handleResponseHeaderString("opc-next-page", ListVcnsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListVcnsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVirtualCircuitAssociatedTunnelsResponse>
+            listVirtualCircuitAssociatedTunnels(
+                    ListVirtualCircuitAssociatedTunnelsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListVirtualCircuitAssociatedTunnelsRequest,
+                                    ListVirtualCircuitAssociatedTunnelsResponse>
+                            handler) {
+
+        Validate.notBlank(request.getVirtualCircuitId(), "virtualCircuitId must not be blank");
+
+        return clientCall(request, ListVirtualCircuitAssociatedTunnelsResponse::builder)
+                .logger(LOG, "listVirtualCircuitAssociatedTunnels")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "ListVirtualCircuitAssociatedTunnels",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitAssociatedTunnelDetails/ListVirtualCircuitAssociatedTunnels")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVirtualCircuitAssociatedTunnelsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("virtualCircuits")
+                .appendPathParam(request.getVirtualCircuitId())
+                .appendPathParam("associatedTunnels")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.VirtualCircuitAssociatedTunnelDetails.class,
+                        ListVirtualCircuitAssociatedTunnelsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "etag", ListVirtualCircuitAssociatedTunnelsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListVirtualCircuitAssociatedTunnelsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListVirtualCircuitAssociatedTunnelsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 

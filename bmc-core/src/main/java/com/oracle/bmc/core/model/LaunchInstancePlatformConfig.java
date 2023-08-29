@@ -59,6 +59,9 @@ package com.oracle.bmc.core.model;
             value = AmdMilanBmLaunchInstancePlatformConfig.class,
             name = "AMD_MILAN_BM"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = GenericBmLaunchInstancePlatformConfig.class,
+            name = "GENERIC_BM"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = AmdMilanBmGpuLaunchInstancePlatformConfig.class,
             name = "AMD_MILAN_BM_GPU")
 })
@@ -219,6 +222,7 @@ public class LaunchInstancePlatformConfig
         AmdMilanBmGpu("AMD_MILAN_BM_GPU"),
         AmdRomeBm("AMD_ROME_BM"),
         AmdRomeBmGpu("AMD_ROME_BM_GPU"),
+        GenericBm("GENERIC_BM"),
         IntelIcelakeBm("INTEL_ICELAKE_BM"),
         IntelSkylakeBm("INTEL_SKYLAKE_BM"),
         AmdVm("AMD_VM"),

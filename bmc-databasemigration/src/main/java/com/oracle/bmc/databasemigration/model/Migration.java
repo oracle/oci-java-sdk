@@ -39,6 +39,7 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
         "advisorSettings",
         "excludeObjects",
         "includeObjects",
+        "goldenGateServiceDetails",
         "goldenGateDetails",
         "vaultDetails",
         "timeCreated",
@@ -68,6 +69,7 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
             AdvisorSettings advisorSettings,
             java.util.List<DatabaseObject> excludeObjects,
             java.util.List<DatabaseObject> includeObjects,
+            GoldenGateServiceDetails goldenGateServiceDetails,
             GoldenGateDetails goldenGateDetails,
             VaultDetails vaultDetails,
             java.util.Date timeCreated,
@@ -96,6 +98,7 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
         this.advisorSettings = advisorSettings;
         this.excludeObjects = excludeObjects;
         this.includeObjects = includeObjects;
+        this.goldenGateServiceDetails = goldenGateServiceDetails;
         this.goldenGateDetails = goldenGateDetails;
         this.vaultDetails = vaultDetails;
         this.timeCreated = timeCreated;
@@ -358,6 +361,15 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("goldenGateServiceDetails")
+        private GoldenGateServiceDetails goldenGateServiceDetails;
+
+        public Builder goldenGateServiceDetails(GoldenGateServiceDetails goldenGateServiceDetails) {
+            this.goldenGateServiceDetails = goldenGateServiceDetails;
+            this.__explicitlySet__.add("goldenGateServiceDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("goldenGateDetails")
         private GoldenGateDetails goldenGateDetails;
 
@@ -532,6 +544,7 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
                             this.advisorSettings,
                             this.excludeObjects,
                             this.includeObjects,
+                            this.goldenGateServiceDetails,
                             this.goldenGateDetails,
                             this.vaultDetails,
                             this.timeCreated,
@@ -601,6 +614,9 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("includeObjects")) {
                 this.includeObjects(model.getIncludeObjects());
+            }
+            if (model.wasPropertyExplicitlySet("goldenGateServiceDetails")) {
+                this.goldenGateServiceDetails(model.getGoldenGateServiceDetails());
             }
             if (model.wasPropertyExplicitlySet("goldenGateDetails")) {
                 this.goldenGateDetails(model.getGoldenGateDetails());
@@ -854,6 +870,13 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
         return includeObjects;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("goldenGateServiceDetails")
+    private final GoldenGateServiceDetails goldenGateServiceDetails;
+
+    public GoldenGateServiceDetails getGoldenGateServiceDetails() {
+        return goldenGateServiceDetails;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("goldenGateDetails")
     private final GoldenGateDetails goldenGateDetails;
 
@@ -1020,6 +1043,8 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
         sb.append(", advisorSettings=").append(String.valueOf(this.advisorSettings));
         sb.append(", excludeObjects=").append(String.valueOf(this.excludeObjects));
         sb.append(", includeObjects=").append(String.valueOf(this.includeObjects));
+        sb.append(", goldenGateServiceDetails=")
+                .append(String.valueOf(this.goldenGateServiceDetails));
         sb.append(", goldenGateDetails=").append(String.valueOf(this.goldenGateDetails));
         sb.append(", vaultDetails=").append(String.valueOf(this.vaultDetails));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -1066,6 +1091,8 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
                 && java.util.Objects.equals(this.advisorSettings, other.advisorSettings)
                 && java.util.Objects.equals(this.excludeObjects, other.excludeObjects)
                 && java.util.Objects.equals(this.includeObjects, other.includeObjects)
+                && java.util.Objects.equals(
+                        this.goldenGateServiceDetails, other.goldenGateServiceDetails)
                 && java.util.Objects.equals(this.goldenGateDetails, other.goldenGateDetails)
                 && java.util.Objects.equals(this.vaultDetails, other.vaultDetails)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -1136,6 +1163,11 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
         result =
                 (result * PRIME)
                         + (this.includeObjects == null ? 43 : this.includeObjects.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.goldenGateServiceDetails == null
+                                ? 43
+                                : this.goldenGateServiceDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.goldenGateDetails == null ? 43 : this.goldenGateDetails.hashCode());

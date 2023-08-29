@@ -26,6 +26,7 @@ import com.oracle.bmc.http.client.HttpProvider;
 import com.oracle.bmc.http.client.StandardClientProperties;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.http.signing.SigningStrategy;
+import com.oracle.bmc.internal.Alloy;
 import com.oracle.bmc.internal.EndpointBuilder;
 import com.oracle.bmc.requests.BmcRequest;
 import com.oracle.bmc.responses.BmcResponse;
@@ -369,6 +370,13 @@ abstract class BaseClient implements AutoCloseable {
 
     protected void setRegion(com.oracle.bmc.Region region) {
         this.region = region;
+        if (Alloy.shouldUseOnlyAlloyRegions()) {
+            try {
+                Region.valueOf(region.getRegionId());
+            } catch (IllegalArgumentException e) {
+                Alloy.throwUnknownAlloyRegionIfAppropriate(region.getRegionId(), e);
+            }
+        }
         Optional<String> endpoint = region.getEndpoint(service);
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
@@ -384,6 +392,7 @@ abstract class BaseClient implements AutoCloseable {
             Region region = Region.fromRegionId(regionId);
             setRegion(region);
         } catch (IllegalArgumentException e) {
+            Alloy.throwUnknownAlloyRegionIfAppropriate(regionId, e);
             logger.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
             String endpoint = Region.formatDefaultRegionEndpoint(service, regionId);
             setEndpoint(endpoint);

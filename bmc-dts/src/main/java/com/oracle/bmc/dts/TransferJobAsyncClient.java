@@ -64,6 +64,8 @@ public class TransferJobAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, TransferJobAsyncClient> {
         private Builder(com.oracle.bmc.Service service) {
             super(service);
+            final String packageName = "dts";
+            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);

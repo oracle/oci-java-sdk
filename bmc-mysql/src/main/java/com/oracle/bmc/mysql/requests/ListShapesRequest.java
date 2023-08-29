@@ -47,7 +47,6 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     /** Return shapes that are supported by the service feature. */
     public enum IsSupportedFor implements com.oracle.bmc.http.internal.BmcEnum {
         Dbsystem("DBSYSTEM"),
-        Analyticscluster("ANALYTICSCLUSTER"),
         Heatwavecluster("HEATWAVECLUSTER"),
         ;
 

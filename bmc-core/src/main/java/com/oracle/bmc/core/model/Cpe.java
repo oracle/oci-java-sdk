@@ -39,7 +39,8 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
         "id",
         "ipAddress",
         "cpeDeviceShapeId",
-        "timeCreated"
+        "timeCreated",
+        "isPrivate"
     })
     public Cpe(
             String compartmentId,
@@ -49,7 +50,8 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
             String id,
             String ipAddress,
             String cpeDeviceShapeId,
-            java.util.Date timeCreated) {
+            java.util.Date timeCreated,
+            Boolean isPrivate) {
         super();
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
@@ -59,6 +61,7 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
         this.ipAddress = ipAddress;
         this.cpeDeviceShapeId = cpeDeviceShapeId;
         this.timeCreated = timeCreated;
+        this.isPrivate = isPrivate;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -256,6 +259,21 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
+        /** Indicates whether this CPE is of type {@code private} or not. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
+        private Boolean isPrivate;
+
+        /**
+         * Indicates whether this CPE is of type {@code private} or not.
+         *
+         * @param isPrivate the value to set
+         * @return this builder
+         */
+        public Builder isPrivate(Boolean isPrivate) {
+            this.isPrivate = isPrivate;
+            this.__explicitlySet__.add("isPrivate");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -270,7 +288,8 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
                             this.id,
                             this.ipAddress,
                             this.cpeDeviceShapeId,
-                            this.timeCreated);
+                            this.timeCreated,
+                            this.isPrivate);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -302,6 +321,9 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("isPrivate")) {
+                this.isPrivate(model.getIsPrivate());
             }
             return this;
         }
@@ -492,6 +514,19 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
         return timeCreated;
     }
 
+    /** Indicates whether this CPE is of type {@code private} or not. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
+    private final Boolean isPrivate;
+
+    /**
+     * Indicates whether this CPE is of type {@code private} or not.
+     *
+     * @return the value
+     */
+    public Boolean getIsPrivate() {
+        return isPrivate;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -515,6 +550,7 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
         sb.append(", cpeDeviceShapeId=").append(String.valueOf(this.cpeDeviceShapeId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", isPrivate=").append(String.valueOf(this.isPrivate));
         sb.append(")");
         return sb.toString();
     }
@@ -537,6 +573,7 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
                 && java.util.Objects.equals(this.cpeDeviceShapeId, other.cpeDeviceShapeId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.isPrivate, other.isPrivate)
                 && super.equals(other);
     }
 
@@ -556,6 +593,7 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
                 (result * PRIME)
                         + (this.cpeDeviceShapeId == null ? 43 : this.cpeDeviceShapeId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.isPrivate == null ? 43 : this.isPrivate.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

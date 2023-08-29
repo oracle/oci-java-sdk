@@ -35,6 +35,7 @@ public final class CreateConnectionDetails
         "tlsKeystore",
         "sshDetails",
         "adminCredentials",
+        "replicationCredentials",
         "privateEndpoint",
         "vaultDetails",
         "freeformTags",
@@ -53,6 +54,7 @@ public final class CreateConnectionDetails
             String tlsKeystore,
             CreateSshDetails sshDetails,
             CreateAdminCredentials adminCredentials,
+            CreateAdminCredentials replicationCredentials,
             CreatePrivateEndpoint privateEndpoint,
             CreateVaultDetails vaultDetails,
             java.util.Map<String, String> freeformTags,
@@ -70,6 +72,7 @@ public final class CreateConnectionDetails
         this.tlsKeystore = tlsKeystore;
         this.sshDetails = sshDetails;
         this.adminCredentials = adminCredentials;
+        this.replicationCredentials = replicationCredentials;
         this.privateEndpoint = privateEndpoint;
         this.vaultDetails = vaultDetails;
         this.freeformTags = freeformTags;
@@ -248,6 +251,15 @@ public final class CreateConnectionDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("replicationCredentials")
+        private CreateAdminCredentials replicationCredentials;
+
+        public Builder replicationCredentials(CreateAdminCredentials replicationCredentials) {
+            this.replicationCredentials = replicationCredentials;
+            this.__explicitlySet__.add("replicationCredentials");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpoint")
         private CreatePrivateEndpoint privateEndpoint;
 
@@ -339,6 +351,7 @@ public final class CreateConnectionDetails
                             this.tlsKeystore,
                             this.sshDetails,
                             this.adminCredentials,
+                            this.replicationCredentials,
                             this.privateEndpoint,
                             this.vaultDetails,
                             this.freeformTags,
@@ -384,6 +397,9 @@ public final class CreateConnectionDetails
             }
             if (model.wasPropertyExplicitlySet("adminCredentials")) {
                 this.adminCredentials(model.getAdminCredentials());
+            }
+            if (model.wasPropertyExplicitlySet("replicationCredentials")) {
+                this.replicationCredentials(model.getReplicationCredentials());
             }
             if (model.wasPropertyExplicitlySet("privateEndpoint")) {
                 this.privateEndpoint(model.getPrivateEndpoint());
@@ -554,6 +570,13 @@ public final class CreateConnectionDetails
         return adminCredentials;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationCredentials")
+    private final CreateAdminCredentials replicationCredentials;
+
+    public CreateAdminCredentials getReplicationCredentials() {
+        return replicationCredentials;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpoint")
     private final CreatePrivateEndpoint privateEndpoint;
 
@@ -641,6 +664,7 @@ public final class CreateConnectionDetails
         sb.append(", tlsKeystore=").append(String.valueOf(this.tlsKeystore));
         sb.append(", sshDetails=").append(String.valueOf(this.sshDetails));
         sb.append(", adminCredentials=").append(String.valueOf(this.adminCredentials));
+        sb.append(", replicationCredentials=").append(String.valueOf(this.replicationCredentials));
         sb.append(", privateEndpoint=").append(String.valueOf(this.privateEndpoint));
         sb.append(", vaultDetails=").append(String.valueOf(this.vaultDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -671,6 +695,8 @@ public final class CreateConnectionDetails
                 && java.util.Objects.equals(this.tlsKeystore, other.tlsKeystore)
                 && java.util.Objects.equals(this.sshDetails, other.sshDetails)
                 && java.util.Objects.equals(this.adminCredentials, other.adminCredentials)
+                && java.util.Objects.equals(
+                        this.replicationCredentials, other.replicationCredentials)
                 && java.util.Objects.equals(this.privateEndpoint, other.privateEndpoint)
                 && java.util.Objects.equals(this.vaultDetails, other.vaultDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -706,6 +732,11 @@ public final class CreateConnectionDetails
         result =
                 (result * PRIME)
                         + (this.adminCredentials == null ? 43 : this.adminCredentials.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicationCredentials == null
+                                ? 43
+                                : this.replicationCredentials.hashCode());
         result =
                 (result * PRIME)
                         + (this.privateEndpoint == null ? 43 : this.privateEndpoint.hashCode());

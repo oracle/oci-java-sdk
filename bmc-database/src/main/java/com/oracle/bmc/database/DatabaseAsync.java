@@ -2272,6 +2272,24 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Get resource usage details for the specified Autonomous Container Database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAutonomousContainerDatabaseResourceUsageResponse>
+            getAutonomousContainerDatabaseResourceUsage(
+                    GetAutonomousContainerDatabaseResourceUsageRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetAutonomousContainerDatabaseResourceUsageRequest,
+                                    GetAutonomousContainerDatabaseResourceUsageResponse>
+                            handler);
+
+    /**
      * Gets the details of the specified Autonomous Database.
      *
      * @param request The request object containing the details to send
@@ -2478,6 +2496,24 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetCloudAutonomousVmClusterRequest, GetCloudAutonomousVmClusterResponse>
                     handler);
+
+    /**
+     * Get the resource usage details for the specified Cloud Autonomous Exadata VM cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCloudAutonomousVmClusterResourceUsageResponse>
+            getCloudAutonomousVmClusterResourceUsage(
+                    GetCloudAutonomousVmClusterResourceUsageRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetCloudAutonomousVmClusterResourceUsageRequest,
+                                    GetCloudAutonomousVmClusterResourceUsageResponse>
+                            handler);
 
     /**
      * Gets information about the specified cloud Exadata infrastructure resource. Applies to
@@ -3598,6 +3634,25 @@ public interface DatabaseAsync extends AutoCloseable {
     java.util.concurrent.Future<ListBackupsResponse> listBackups(
             ListBackupsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListBackupsRequest, ListBackupsResponse> handler);
+
+    /**
+     * Gets the list of resource usage details for all the Cloud Autonomous Container Database in
+     * the specified Cloud Autonomous Exadata VM cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCloudAutonomousVmClusterAcdResourceUsageResponse>
+            listCloudAutonomousVmClusterAcdResourceUsage(
+                    ListCloudAutonomousVmClusterAcdResourceUsageRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListCloudAutonomousVmClusterAcdResourceUsageRequest,
+                                    ListCloudAutonomousVmClusterAcdResourceUsageResponse>
+                            handler);
 
     /**
      * Lists Autonomous Exadata VM clusters in the Oracle cloud. For Exadata Cloud@Customer systems,

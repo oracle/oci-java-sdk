@@ -343,20 +343,12 @@ public final class AutonomousVmClusterSummary
             this.__explicitlySet__.add("cpusEnabled");
             return this;
         }
-        /**
-         * The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous
-         * Database on Dedicated Exadata
-         * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
-         * for more details.
-         */
+        /** The compute model of the Autonomous VM Cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
         private ComputeModel computeModel;
 
         /**
-         * The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous
-         * Database on Dedicated Exadata
-         * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
-         * for more details.
+         * The compute model of the Autonomous VM Cluster.
          *
          * @param computeModel the value to set
          * @return this builder
@@ -411,20 +403,12 @@ public final class AutonomousVmClusterSummary
             this.__explicitlySet__.add("totalContainerDatabases");
             return this;
         }
-        /**
-         * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in
-         * Autonomous Database on Dedicated Exadata
-         * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
-         * for more details.
-         */
+        /** The amount of memory (in GBs) to be enabled per OCPU or ECPU. */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
         private Integer memoryPerOracleComputeUnitInGBs;
 
         /**
-         * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in
-         * Autonomous Database on Dedicated Exadata
-         * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
-         * for more details.
+         * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
          *
          * @param memoryPerOracleComputeUnitInGBs the value to set
          * @return this builder
@@ -698,10 +682,7 @@ public final class AutonomousVmClusterSummary
          * Database even after one of its Autonomous Database is terminated or scaled down. You can
          * release them to the available CPUs at its parent Autonomous VM Cluster level by
          * restarting the Autonomous Container Database. - The CPU type (OCPUs or ECPUs) is
-         * determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute
-         * Models in Autonomous Database on Dedicated Exadata
-         * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
-         * for more details.
+         * determined by the parent Autonomous Exadata VM Cluster's compute model.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
         private Integer reclaimableCpus;
@@ -712,10 +693,7 @@ public final class AutonomousVmClusterSummary
          * Database even after one of its Autonomous Database is terminated or scaled down. You can
          * release them to the available CPUs at its parent Autonomous VM Cluster level by
          * restarting the Autonomous Container Database. - The CPU type (OCPUs or ECPUs) is
-         * determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute
-         * Models in Autonomous Database on Dedicated Exadata
-         * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
-         * for more details.
+         * determined by the parent Autonomous Exadata VM Cluster's compute model.
          *
          * @param reclaimableCpus the value to set
          * @return this builder
@@ -1248,12 +1226,7 @@ public final class AutonomousVmClusterSummary
         return cpusEnabled;
     }
 
-    /**
-     * The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on
-     * Dedicated Exadata
-     * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
-     * for more details.
-     */
+    /** The compute model of the Autonomous VM Cluster. */
     public enum ComputeModel implements com.oracle.bmc.http.internal.BmcEnum {
         Ecpu("ECPU"),
         Ocpu("OCPU"),
@@ -1299,20 +1272,12 @@ public final class AutonomousVmClusterSummary
             return UnknownEnumValue;
         }
     };
-    /**
-     * The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on
-     * Dedicated Exadata
-     * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
-     * for more details.
-     */
+    /** The compute model of the Autonomous VM Cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
     private final ComputeModel computeModel;
 
     /**
-     * The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on
-     * Dedicated Exadata
-     * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
-     * for more details.
+     * The compute model of the Autonomous VM Cluster.
      *
      * @return the value
      */
@@ -1359,20 +1324,12 @@ public final class AutonomousVmClusterSummary
         return totalContainerDatabases;
     }
 
-    /**
-     * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in
-     * Autonomous Database on Dedicated Exadata
-     * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
-     * for more details.
-     */
+    /** The amount of memory (in GBs) to be enabled per OCPU or ECPU. */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
     private final Integer memoryPerOracleComputeUnitInGBs;
 
     /**
-     * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in
-     * Autonomous Database on Dedicated Exadata
-     * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
-     * for more details.
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      *
      * @return the value
      */
@@ -1660,10 +1617,7 @@ public final class AutonomousVmClusterSummary
      * even after one of its Autonomous Database is terminated or scaled down. You can release them
      * to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous
      * Container Database. - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous
-     * Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated
-     * Exadata
-     * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
-     * for more details.
+     * Exadata VM Cluster's compute model.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
     private final Integer reclaimableCpus;
@@ -1674,10 +1628,7 @@ public final class AutonomousVmClusterSummary
      * even after one of its Autonomous Database is terminated or scaled down. You can release them
      * to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous
      * Container Database. - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous
-     * Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated
-     * Exadata
-     * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
-     * for more details.
+     * Exadata VM Cluster's compute model.
      *
      * @return the value
      */

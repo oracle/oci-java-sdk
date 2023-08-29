@@ -36,6 +36,7 @@ public final class UpdateMigrationDetails
         "advisorSettings",
         "excludeObjects",
         "includeObjects",
+        "goldenGateServiceDetails",
         "goldenGateDetails",
         "vaultDetails",
         "freeformTags",
@@ -54,6 +55,7 @@ public final class UpdateMigrationDetails
             UpdateAdvisorSettings advisorSettings,
             java.util.List<DatabaseObject> excludeObjects,
             java.util.List<DatabaseObject> includeObjects,
+            UpdateGoldenGateServiceDetails goldenGateServiceDetails,
             UpdateGoldenGateDetails goldenGateDetails,
             UpdateVaultDetails vaultDetails,
             java.util.Map<String, String> freeformTags,
@@ -71,6 +73,7 @@ public final class UpdateMigrationDetails
         this.advisorSettings = advisorSettings;
         this.excludeObjects = excludeObjects;
         this.includeObjects = includeObjects;
+        this.goldenGateServiceDetails = goldenGateServiceDetails;
         this.goldenGateDetails = goldenGateDetails;
         this.vaultDetails = vaultDetails;
         this.freeformTags = freeformTags;
@@ -256,6 +259,16 @@ public final class UpdateMigrationDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("goldenGateServiceDetails")
+        private UpdateGoldenGateServiceDetails goldenGateServiceDetails;
+
+        public Builder goldenGateServiceDetails(
+                UpdateGoldenGateServiceDetails goldenGateServiceDetails) {
+            this.goldenGateServiceDetails = goldenGateServiceDetails;
+            this.__explicitlySet__.add("goldenGateServiceDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("goldenGateDetails")
         private UpdateGoldenGateDetails goldenGateDetails;
 
@@ -331,6 +344,7 @@ public final class UpdateMigrationDetails
                             this.advisorSettings,
                             this.excludeObjects,
                             this.includeObjects,
+                            this.goldenGateServiceDetails,
                             this.goldenGateDetails,
                             this.vaultDetails,
                             this.freeformTags,
@@ -379,6 +393,9 @@ public final class UpdateMigrationDetails
             }
             if (model.wasPropertyExplicitlySet("includeObjects")) {
                 this.includeObjects(model.getIncludeObjects());
+            }
+            if (model.wasPropertyExplicitlySet("goldenGateServiceDetails")) {
+                this.goldenGateServiceDetails(model.getGoldenGateServiceDetails());
             }
             if (model.wasPropertyExplicitlySet("goldenGateDetails")) {
                 this.goldenGateDetails(model.getGoldenGateDetails());
@@ -555,6 +572,13 @@ public final class UpdateMigrationDetails
         return includeObjects;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("goldenGateServiceDetails")
+    private final UpdateGoldenGateServiceDetails goldenGateServiceDetails;
+
+    public UpdateGoldenGateServiceDetails getGoldenGateServiceDetails() {
+        return goldenGateServiceDetails;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("goldenGateDetails")
     private final UpdateGoldenGateDetails goldenGateDetails;
 
@@ -634,6 +658,8 @@ public final class UpdateMigrationDetails
         sb.append(", advisorSettings=").append(String.valueOf(this.advisorSettings));
         sb.append(", excludeObjects=").append(String.valueOf(this.excludeObjects));
         sb.append(", includeObjects=").append(String.valueOf(this.includeObjects));
+        sb.append(", goldenGateServiceDetails=")
+                .append(String.valueOf(this.goldenGateServiceDetails));
         sb.append(", goldenGateDetails=").append(String.valueOf(this.goldenGateDetails));
         sb.append(", vaultDetails=").append(String.valueOf(this.vaultDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -669,6 +695,8 @@ public final class UpdateMigrationDetails
                 && java.util.Objects.equals(this.advisorSettings, other.advisorSettings)
                 && java.util.Objects.equals(this.excludeObjects, other.excludeObjects)
                 && java.util.Objects.equals(this.includeObjects, other.includeObjects)
+                && java.util.Objects.equals(
+                        this.goldenGateServiceDetails, other.goldenGateServiceDetails)
                 && java.util.Objects.equals(this.goldenGateDetails, other.goldenGateDetails)
                 && java.util.Objects.equals(this.vaultDetails, other.vaultDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -720,6 +748,11 @@ public final class UpdateMigrationDetails
         result =
                 (result * PRIME)
                         + (this.includeObjects == null ? 43 : this.includeObjects.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.goldenGateServiceDetails == null
+                                ? 43
+                                : this.goldenGateServiceDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.goldenGateDetails == null ? 43 : this.goldenGateDetails.hashCode());
