@@ -58,14 +58,14 @@ public final class UpdateMessagesResult
         }
         /**
          * The number of messages that failed to be updated in the queue because of a client failure
-         * such as an invalid receipt or invalid visibilityInSeconds.
+         * such as an invalid receipt or invalid {@code visibilityInSeconds}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("clientFailures")
         private Integer clientFailures;
 
         /**
          * The number of messages that failed to be updated in the queue because of a client failure
-         * such as an invalid receipt or invalid visibilityInSeconds.
+         * such as an invalid receipt or invalid {@code visibilityInSeconds}.
          *
          * @param clientFailures the value to set
          * @return this builder
@@ -155,14 +155,14 @@ public final class UpdateMessagesResult
 
     /**
      * The number of messages that failed to be updated in the queue because of a client failure
-     * such as an invalid receipt or invalid visibilityInSeconds.
+     * such as an invalid receipt or invalid {@code visibilityInSeconds}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("clientFailures")
     private final Integer clientFailures;
 
     /**
      * The number of messages that failed to be updated in the queue because of a client failure
-     * such as an invalid receipt or invalid visibilityInSeconds.
+     * such as an invalid receipt or invalid {@code visibilityInSeconds}.
      *
      * @return the value
      */

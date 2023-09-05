@@ -23,10 +23,11 @@ package com.oracle.bmc.queue.model;
 public final class PutMessagesDetailsEntry
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"content"})
-    public PutMessagesDetailsEntry(String content) {
+    @java.beans.ConstructorProperties({"content", "metadata"})
+    public PutMessagesDetailsEntry(String content, MessageMetadata metadata) {
         super();
         this.content = content;
+        this.metadata = metadata;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -47,11 +48,21 @@ public final class PutMessagesDetailsEntry
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+        private MessageMetadata metadata;
+
+        public Builder metadata(MessageMetadata metadata) {
+            this.metadata = metadata;
+            this.__explicitlySet__.add("metadata");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PutMessagesDetailsEntry build() {
-            PutMessagesDetailsEntry model = new PutMessagesDetailsEntry(this.content);
+            PutMessagesDetailsEntry model =
+                    new PutMessagesDetailsEntry(this.content, this.metadata);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -62,6 +73,9 @@ public final class PutMessagesDetailsEntry
         public Builder copy(PutMessagesDetailsEntry model) {
             if (model.wasPropertyExplicitlySet("content")) {
                 this.content(model.getContent());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
             }
             return this;
         }
@@ -89,6 +103,13 @@ public final class PutMessagesDetailsEntry
         return content;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+    private final MessageMetadata metadata;
+
+    public MessageMetadata getMetadata() {
+        return metadata;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -105,6 +126,7 @@ public final class PutMessagesDetailsEntry
         sb.append("PutMessagesDetailsEntry(");
         sb.append("super=").append(super.toString());
         sb.append("content=").append(String.valueOf(this.content));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(")");
         return sb.toString();
     }
@@ -119,7 +141,9 @@ public final class PutMessagesDetailsEntry
         }
 
         PutMessagesDetailsEntry other = (PutMessagesDetailsEntry) o;
-        return java.util.Objects.equals(this.content, other.content) && super.equals(other);
+        return java.util.Objects.equals(this.content, other.content)
+                && java.util.Objects.equals(this.metadata, other.metadata)
+                && super.equals(other);
     }
 
     @Override
@@ -127,6 +151,7 @@ public final class PutMessagesDetailsEntry
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.content == null ? 43 : this.content.hashCode());
+        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

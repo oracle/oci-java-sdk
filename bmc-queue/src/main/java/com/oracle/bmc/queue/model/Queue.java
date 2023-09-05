@@ -5,7 +5,7 @@
 package com.oracle.bmc.queue.model;
 
 /**
- * Description of Queue. <br>
+ * A detailed representation of a queue and its configuration. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -37,7 +37,8 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
         "customEncryptionKeyId",
         "freeformTags",
         "definedTags",
-        "systemTags"
+        "systemTags",
+        "channelConsumptionLimit"
     })
     public Queue(
             String id,
@@ -55,7 +56,8 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
             String customEncryptionKeyId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            Integer channelConsumptionLimit) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -73,16 +75,17 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.channelConsumptionLimit = channelConsumptionLimit;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier that is immutable on creation */
+        /** A unique identifier for the queue that is immutable on creation. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier that is immutable on creation
+         * A unique identifier for the queue that is immutable on creation.
          *
          * @param id the value to set
          * @return this builder
@@ -92,12 +95,16 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Queue Identifier, can be renamed */
+        /**
+         * A user-friendly name for the queue. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Queue Identifier, can be renamed
+         * A user-friendly name for the queue. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -107,12 +114,16 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Compartment Identifier */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment containing the queue.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment containing the queue.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -122,12 +133,20 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The time the the Queue was created. An RFC3339 formatted datetime string */
+        /**
+         * The time that the queue was created, expressed in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2018-04-20T00:00:07.405Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the the Queue was created. An RFC3339 formatted datetime string
+         * The time that the queue was created, expressed in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2018-04-20T00:00:07.405Z}
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -137,12 +156,20 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time the Queue was updated. An RFC3339 formatted datetime string */
+        /**
+         * The time that the queue was updated, expressed in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2018-04-20T00:00:07.405Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the Queue was updated. An RFC3339 formatted datetime string
+         * The time that the queue was updated, expressed in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2018-04-20T00:00:07.405Z}
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -152,12 +179,12 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the Queue. */
+        /** The current state of the queue. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the Queue.
+         * The current state of the queue.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -167,16 +194,12 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         */
+        /** Any additional details about the current state of the queue. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
+         * Any additional details about the current state of the queue.
          *
          * @param lifecycleDetails the value to set
          * @return this builder
@@ -216,12 +239,12 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("retentionInSeconds");
             return this;
         }
-        /** The default visibility of the messages consumed from the queue. */
+        /** The default visibility timeout of the messages consumed from the queue, in seconds. */
         @com.fasterxml.jackson.annotation.JsonProperty("visibilityInSeconds")
         private Integer visibilityInSeconds;
 
         /**
-         * The default visibility of the messages consumed from the queue.
+         * The default visibility timeout of the messages consumed from the queue, in seconds.
          *
          * @param visibilityInSeconds the value to set
          * @return this builder
@@ -265,12 +288,16 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("deadLetterQueueDeliveryCount");
             return this;
         }
-        /** Id of the custom master encryption key which will be used to encrypt messages content */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the custom encryption key to be used to encrypt messages content.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("customEncryptionKeyId")
         private String customEncryptionKeyId;
 
         /**
-         * Id of the custom master encryption key which will be used to encrypt messages content
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the custom encryption key to be used to encrypt messages content.
          *
          * @param customEncryptionKeyId the value to set
          * @return this builder
@@ -338,6 +365,31 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+        /**
+         * The percentage of allocated queue resources that can be consumed by a single channel. For
+         * example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is
+         * 0.1 (10%), that means data size of a single channel can't exceed 200Mb. Consumption limit
+         * of 100% (default) means that a single channel can consume up-to all allocated queue's
+         * resources.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("channelConsumptionLimit")
+        private Integer channelConsumptionLimit;
+
+        /**
+         * The percentage of allocated queue resources that can be consumed by a single channel. For
+         * example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is
+         * 0.1 (10%), that means data size of a single channel can't exceed 200Mb. Consumption limit
+         * of 100% (default) means that a single channel can consume up-to all allocated queue's
+         * resources.
+         *
+         * @param channelConsumptionLimit the value to set
+         * @return this builder
+         */
+        public Builder channelConsumptionLimit(Integer channelConsumptionLimit) {
+            this.channelConsumptionLimit = channelConsumptionLimit;
+            this.__explicitlySet__.add("channelConsumptionLimit");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -360,7 +412,8 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
                             this.customEncryptionKeyId,
                             this.freeformTags,
                             this.definedTags,
-                            this.systemTags);
+                            this.systemTags,
+                            this.channelConsumptionLimit);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -417,6 +470,9 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
             }
+            if (model.wasPropertyExplicitlySet("channelConsumptionLimit")) {
+                this.channelConsumptionLimit(model.getChannelConsumptionLimit());
+            }
             return this;
         }
     }
@@ -430,12 +486,12 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /** Unique identifier that is immutable on creation */
+    /** A unique identifier for the queue that is immutable on creation. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier that is immutable on creation
+     * A unique identifier for the queue that is immutable on creation.
      *
      * @return the value
      */
@@ -443,12 +499,16 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return id;
     }
 
-    /** Queue Identifier, can be renamed */
+    /**
+     * A user-friendly name for the queue. Does not have to be unique, and it's changeable. Avoid
+     * entering confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Queue Identifier, can be renamed
+     * A user-friendly name for the queue. Does not have to be unique, and it's changeable. Avoid
+     * entering confidential information.
      *
      * @return the value
      */
@@ -456,12 +516,16 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return displayName;
     }
 
-    /** Compartment Identifier */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment containing the queue.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment containing the queue.
      *
      * @return the value
      */
@@ -469,12 +533,20 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return compartmentId;
     }
 
-    /** The time the the Queue was created. An RFC3339 formatted datetime string */
+    /**
+     * The time that the queue was created, expressed in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2018-04-20T00:00:07.405Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the the Queue was created. An RFC3339 formatted datetime string
+     * The time that the queue was created, expressed in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2018-04-20T00:00:07.405Z}
      *
      * @return the value
      */
@@ -482,12 +554,20 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return timeCreated;
     }
 
-    /** The time the Queue was updated. An RFC3339 formatted datetime string */
+    /**
+     * The time that the queue was updated, expressed in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2018-04-20T00:00:07.405Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the Queue was updated. An RFC3339 formatted datetime string
+     * The time that the queue was updated, expressed in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2018-04-20T00:00:07.405Z}
      *
      * @return the value
      */
@@ -495,7 +575,7 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return timeUpdated;
     }
 
-    /** The current state of the Queue. */
+    /** The current state of the queue. */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Updating("UPDATING"),
@@ -545,12 +625,12 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return UnknownEnumValue;
         }
     };
-    /** The current state of the Queue. */
+    /** The current state of the queue. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the Queue.
+     * The current state of the queue.
      *
      * @return the value
      */
@@ -558,16 +638,12 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return lifecycleState;
     }
 
-    /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     */
+    /** Any additional details about the current state of the queue. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
+     * Any additional details about the current state of the queue.
      *
      * @return the value
      */
@@ -601,12 +677,12 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return retentionInSeconds;
     }
 
-    /** The default visibility of the messages consumed from the queue. */
+    /** The default visibility timeout of the messages consumed from the queue, in seconds. */
     @com.fasterxml.jackson.annotation.JsonProperty("visibilityInSeconds")
     private final Integer visibilityInSeconds;
 
     /**
-     * The default visibility of the messages consumed from the queue.
+     * The default visibility timeout of the messages consumed from the queue, in seconds.
      *
      * @return the value
      */
@@ -644,12 +720,16 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return deadLetterQueueDeliveryCount;
     }
 
-    /** Id of the custom master encryption key which will be used to encrypt messages content */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the custom encryption key to be used to encrypt messages content.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("customEncryptionKeyId")
     private final String customEncryptionKeyId;
 
     /**
-     * Id of the custom master encryption key which will be used to encrypt messages content
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the custom encryption key to be used to encrypt messages content.
      *
      * @return the value
      */
@@ -708,6 +788,27 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return systemTags;
     }
 
+    /**
+     * The percentage of allocated queue resources that can be consumed by a single channel. For
+     * example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1
+     * (10%), that means data size of a single channel can't exceed 200Mb. Consumption limit of 100%
+     * (default) means that a single channel can consume up-to all allocated queue's resources.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("channelConsumptionLimit")
+    private final Integer channelConsumptionLimit;
+
+    /**
+     * The percentage of allocated queue resources that can be consumed by a single channel. For
+     * example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1
+     * (10%), that means data size of a single channel can't exceed 200Mb. Consumption limit of 100%
+     * (default) means that a single channel can consume up-to all allocated queue's resources.
+     *
+     * @return the value
+     */
+    public Integer getChannelConsumptionLimit() {
+        return channelConsumptionLimit;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -740,6 +841,8 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", channelConsumptionLimit=")
+                .append(String.valueOf(this.channelConsumptionLimit));
         sb.append(")");
         return sb.toString();
     }
@@ -771,6 +874,8 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(
+                        this.channelConsumptionLimit, other.channelConsumptionLimit)
                 && super.equals(other);
     }
 
@@ -820,6 +925,11 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.channelConsumptionLimit == null
+                                ? 43
+                                : this.channelConsumptionLimit.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

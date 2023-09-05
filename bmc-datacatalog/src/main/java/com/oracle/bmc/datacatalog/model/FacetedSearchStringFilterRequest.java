@@ -32,12 +32,18 @@ public final class FacetedSearchStringFilterRequest
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** String/boolean/numerical field name that needs to filtered with */
+        /**
+         * String/boolean/numerical field name that needs to be filtered by. Acceptable field names:
+         * CatalogType, AttributeType, FolderType, DataAssetType, CreatedBy, UpdatedBy, Term, Tag,
+         * DataAssetName, LifeCycleState.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("field")
         private String field;
 
         /**
-         * String/boolean/numerical field name that needs to filtered with
+         * String/boolean/numerical field name that needs to be filtered by. Acceptable field names:
+         * CatalogType, AttributeType, FolderType, DataAssetType, CreatedBy, UpdatedBy, Term, Tag,
+         * DataAssetName, LifeCycleState.
          *
          * @param field the value to set
          * @return this builder
@@ -47,12 +53,20 @@ public final class FacetedSearchStringFilterRequest
             this.__explicitlySet__.add("field");
             return this;
         }
-        /** Array of values that the search results needs to be filtered by. */
+        /**
+         * Array of values that the search results needs to be filtered by. Acceptable values for
+         * field 'CatalogType': DataAsset, Folder, DataEntity, Attribute, Term, Category, Glossary,
+         * Pattern, Job, Schedule, CustomProperty. For other fields, acceptable values can be
+         * derived by inspecting the data object.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("values")
         private java.util.List<String> values;
 
         /**
-         * Array of values that the search results needs to be filtered by.
+         * Array of values that the search results needs to be filtered by. Acceptable values for
+         * field 'CatalogType': DataAsset, Folder, DataEntity, Attribute, Term, Category, Glossary,
+         * Pattern, Job, Schedule, CustomProperty. For other fields, acceptable values can be
+         * derived by inspecting the data object.
          *
          * @param values the value to set
          * @return this builder
@@ -96,12 +110,18 @@ public final class FacetedSearchStringFilterRequest
         return new Builder().copy(this);
     }
 
-    /** String/boolean/numerical field name that needs to filtered with */
+    /**
+     * String/boolean/numerical field name that needs to be filtered by. Acceptable field names:
+     * CatalogType, AttributeType, FolderType, DataAssetType, CreatedBy, UpdatedBy, Term, Tag,
+     * DataAssetName, LifeCycleState.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("field")
     private final String field;
 
     /**
-     * String/boolean/numerical field name that needs to filtered with
+     * String/boolean/numerical field name that needs to be filtered by. Acceptable field names:
+     * CatalogType, AttributeType, FolderType, DataAssetType, CreatedBy, UpdatedBy, Term, Tag,
+     * DataAssetName, LifeCycleState.
      *
      * @return the value
      */
@@ -109,12 +129,20 @@ public final class FacetedSearchStringFilterRequest
         return field;
     }
 
-    /** Array of values that the search results needs to be filtered by. */
+    /**
+     * Array of values that the search results needs to be filtered by. Acceptable values for field
+     * 'CatalogType': DataAsset, Folder, DataEntity, Attribute, Term, Category, Glossary, Pattern,
+     * Job, Schedule, CustomProperty. For other fields, acceptable values can be derived by
+     * inspecting the data object.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("values")
     private final java.util.List<String> values;
 
     /**
-     * Array of values that the search results needs to be filtered by.
+     * Array of values that the search results needs to be filtered by. Acceptable values for field
+     * 'CatalogType': DataAsset, Folder, DataEntity, Attribute, Term, Category, Glossary, Pattern,
+     * Job, Schedule, CustomProperty. For other fields, acceptable values can be derived by
+     * inspecting the data object.
      *
      * @return the value
      */

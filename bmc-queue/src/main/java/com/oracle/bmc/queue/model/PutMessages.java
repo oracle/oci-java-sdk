@@ -5,7 +5,7 @@
 package com.oracle.bmc.queue.model;
 
 /**
- * A list of the messages published in a queue. <br>
+ * A list of the messages published to a queue. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -29,12 +29,12 @@ public final class PutMessages extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The messages that have been published in a queue. */
+        /** The messages that have been published to a queue. */
         @com.fasterxml.jackson.annotation.JsonProperty("messages")
         private java.util.List<PutMessage> messages;
 
         /**
-         * The messages that have been published in a queue.
+         * The messages that have been published to a queue.
          *
          * @param messages the value to set
          * @return this builder
@@ -74,12 +74,12 @@ public final class PutMessages extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** The messages that have been published in a queue. */
+    /** The messages that have been published to a queue. */
     @com.fasterxml.jackson.annotation.JsonProperty("messages")
     private final java.util.List<PutMessage> messages;
 
     /**
-     * The messages that have been published in a queue.
+     * The messages that have been published to a queue.
      *
      * @return the value
      */

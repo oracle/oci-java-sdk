@@ -7,7 +7,10 @@ package com.oracle.bmc.queue;
 import com.oracle.bmc.queue.requests.*;
 import com.oracle.bmc.queue.responses.*;
 
-/** A description of the Queue API */
+/**
+ * Use the Queue API to produce and consume messages, create queues, and manage related items. For
+ * more information, see [Queue](https://docs.cloud.oracle.com/iaas/Content/queue/overview.htm).
+ */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 public interface QueueAsync extends AutoCloseable {
 
@@ -60,7 +63,11 @@ public interface QueueAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Deletes from the queue the message represented by the receipt.
+     * Deletes the message represented by the receipt from the queue. You must use the [messages
+     * endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
+     * to delete messages. The messages endpoint may be different for different queues. Use {@link
+     * #getQueue(GetQueueRequest, Consumer, Consumer) getQueue} to find the queue's
+     * `messagesEndpoint`.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -75,7 +82,11 @@ public interface QueueAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes multiple messages from the queue.
+     * Deletes multiple messages from the queue. You must use the [messages
+     * endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
+     * to delete messages. The messages endpoint may be different for different queues. Use {@link
+     * #getQueue(GetQueueRequest, Consumer, Consumer) getQueue} to find the queue's
+     * `messagesEndpoint`.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -90,7 +101,14 @@ public interface QueueAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Consumes message from the queue.
+     * Consumes messages from the queue. You must use the [messages
+     * endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
+     * to consume messages. The messages endpoint may be different for different queues. Use {@link
+     * #getQueue(GetQueueRequest, Consumer, Consumer) getQueue} to find the queue's
+     * `messagesEndpoint`. GetMessages accepts optional channelFilter query parameter that can
+     * filter source channels of the messages. When channelFilter is present, service will return
+     * available messages from the channel which ID exactly matched the filter. When filter is not
+     * specified, messages will be returned from a random non-empty channel within a queue.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -104,7 +122,11 @@ public interface QueueAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetMessagesRequest, GetMessagesResponse> handler);
 
     /**
-     * Gets the statistics for the queue and its dead letter queue.
+     * Gets the statistics for the queue and its dead letter queue. You must use the [messages
+     * endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
+     * to get a queue's statistics. The messages endpoint may be different for different queues. Use
+     * {@link #getQueue(GetQueueRequest, Consumer, Consumer) getQueue} to find the queue's
+     * `messagesEndpoint`.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -118,7 +140,30 @@ public interface QueueAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetStatsRequest, GetStatsResponse> handler);
 
     /**
-     * Puts messages in the queue
+     * Gets the list of IDs of non-empty channels. It will return an approximate list of IDs of
+     * non-empty channels. That information is based on the queue level statistics. API supports
+     * optional channelFilter parameter which will filter the returned results according to the
+     * specified filter. List of channel IDs is approximate, because statistics is refreshed once
+     * per-second, and that list represents a snapshot of the past information. API is paginated.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListChannelsResponse> listChannels(
+            ListChannelsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListChannelsRequest, ListChannelsResponse>
+                    handler);
+
+    /**
+     * Puts messages into the queue. You must use the [messages
+     * endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
+     * to produce messages. The messages endpoint may be different for different queues. Use {@link
+     * #getQueue(GetQueueRequest, Consumer, Consumer) getQueue} to find the queue's
+     * `messagesEndpoint`.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -132,7 +177,11 @@ public interface QueueAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<PutMessagesRequest, PutMessagesResponse> handler);
 
     /**
-     * Updates the visibility of the message represented by the receipt.
+     * Updates the visibility of the message represented by the receipt. You must use the [messages
+     * endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
+     * to update messages. The messages endpoint may be different for different queues. Use {@link
+     * #getQueue(GetQueueRequest, Consumer, Consumer) getQueue} to find the queue's
+     * `messagesEndpoint`.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -147,7 +196,11 @@ public interface QueueAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates multiple messages in the queue.
+     * Updates multiple messages in the queue. You must use the [messages
+     * endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
+     * to update messages. The messages endpoint may be different for different queues. Use {@link
+     * #getQueue(GetQueueRequest, Consumer, Consumer) getQueue} to find the queue's
+     * `messagesEndpoint`.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

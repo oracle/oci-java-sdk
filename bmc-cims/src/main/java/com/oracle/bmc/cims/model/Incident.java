@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details of about the incident object. <br>
+ * Details about the support ticket. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -119,12 +119,16 @@ public final class Incident extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("incidentType");
             return this;
         }
-        /** The kind of support ticket, such as a technical support request. */
+        /**
+         * The kind of support ticket, such as a technical support request or a limit increase
+         * request.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("problemType")
         private ProblemType problemType;
 
         /**
-         * The kind of support ticket, such as a technical support request.
+         * The kind of support ticket, such as a technical support request or a limit increase
+         * request.
          *
          * @param problemType the value to set
          * @return this builder
@@ -267,12 +271,14 @@ public final class Incident extends com.oracle.bmc.http.client.internal.Explicit
         return incidentType;
     }
 
-    /** The kind of support ticket, such as a technical support request. */
+    /**
+     * The kind of support ticket, such as a technical support request or a limit increase request.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("problemType")
     private final ProblemType problemType;
 
     /**
-     * The kind of support ticket, such as a technical support request.
+     * The kind of support ticket, such as a technical support request or a limit increase request.
      *
      * @return the value
      */

@@ -4,6 +4,7 @@
  */
 package com.oracle.bmc.cims.model;
 
+/** The list of timezones supported by the Support Management API. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 public enum TimeZone implements com.oracle.bmc.http.internal.BmcEnum {
     GreenwichMeanTime("GREENWICH_MEAN_TIME"),

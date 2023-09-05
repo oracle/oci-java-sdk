@@ -36,6 +36,7 @@ public final class AttributeSummary
         "isNullable",
         "uri",
         "lifecycleState",
+        "lifecycleDetails",
         "timeCreated",
         "externalDataType",
         "typeKey",
@@ -66,6 +67,7 @@ public final class AttributeSummary
             Boolean isNullable,
             String uri,
             LifecycleState lifecycleState,
+            String lifecycleDetails,
             java.util.Date timeCreated,
             String externalDataType,
             String typeKey,
@@ -95,6 +97,7 @@ public final class AttributeSummary
         this.isNullable = isNullable;
         this.uri = uri;
         this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
         this.timeCreated = timeCreated;
         this.externalDataType = externalDataType;
         this.typeKey = typeKey;
@@ -315,6 +318,25 @@ public final class AttributeSummary
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /**
+         * A message describing the current state in more detail. An object not in ACTIVE state may
+         * have functional limitations, see service documentation for details.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * A message describing the current state in more detail. An object not in ACTIVE state may
+         * have functional limitations, see service documentation for details.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         */
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
@@ -615,6 +637,7 @@ public final class AttributeSummary
                             this.isNullable,
                             this.uri,
                             this.lifecycleState,
+                            this.lifecycleDetails,
                             this.timeCreated,
                             this.externalDataType,
                             this.typeKey,
@@ -676,6 +699,9 @@ public final class AttributeSummary
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -910,6 +936,23 @@ public final class AttributeSummary
      */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
+    }
+
+    /**
+     * A message describing the current state in more detail. An object not in ACTIVE state may have
+     * functional limitations, see service documentation for details.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * A message describing the current state in more detail. An object not in ACTIVE state may have
+     * functional limitations, see service documentation for details.
+     *
+     * @return the value
+     */
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
     }
 
     /**
@@ -1183,6 +1226,7 @@ public final class AttributeSummary
         sb.append(", isNullable=").append(String.valueOf(this.isNullable));
         sb.append(", uri=").append(String.valueOf(this.uri));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", externalDataType=").append(String.valueOf(this.externalDataType));
         sb.append(", typeKey=").append(String.valueOf(this.typeKey));
@@ -1227,6 +1271,7 @@ public final class AttributeSummary
                 && java.util.Objects.equals(this.isNullable, other.isNullable)
                 && java.util.Objects.equals(this.uri, other.uri)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.externalDataType, other.externalDataType)
                 && java.util.Objects.equals(this.typeKey, other.typeKey)
@@ -1266,6 +1311,9 @@ public final class AttributeSummary
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result =
                 (result * PRIME)

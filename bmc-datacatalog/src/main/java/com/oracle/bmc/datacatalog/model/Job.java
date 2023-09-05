@@ -43,6 +43,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         "updatedById",
         "jobDefinitionName",
         "dataAssetKey",
+        "glossaryKey",
         "errorCode",
         "errorMessage",
         "uri"
@@ -69,6 +70,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
             String updatedById,
             String jobDefinitionName,
             String dataAssetKey,
+            String glossaryKey,
             String errorCode,
             String errorMessage,
             String uri) {
@@ -94,6 +96,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         this.updatedById = updatedById;
         this.jobDefinitionName = jobDefinitionName;
         this.dataAssetKey = dataAssetKey;
+        this.glossaryKey = glossaryKey;
         this.errorCode = errorCode;
         this.errorMessage = errorMessage;
         this.uri = uri;
@@ -236,7 +239,8 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         /**
          * Interval on which the job will be run. Value is specified as a cron-supported time
          * specification "nickname". The following subset of those is
-         * supported: @monthly, @weekly, @daily, @hourly.
+         * supported: @monthly, @weekly, @daily, @hourly. For metastore sync, an additional
+         * option @default is supported, which will schedule jobs at a more granular frequency.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("scheduleCronExpression")
         private String scheduleCronExpression;
@@ -244,7 +248,8 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         /**
          * Interval on which the job will be run. Value is specified as a cron-supported time
          * specification "nickname". The following subset of those is
-         * supported: @monthly, @weekly, @daily, @hourly.
+         * supported: @monthly, @weekly, @daily, @hourly. For metastore sync, an additional
+         * option @default is supported, which will schedule jobs at a more granular frequency.
          *
          * @param scheduleCronExpression the value to set
          * @return this builder
@@ -454,6 +459,21 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
             this.__explicitlySet__.add("dataAssetKey");
             return this;
         }
+        /** Unique key of the glossary to which this job applies. */
+        @com.fasterxml.jackson.annotation.JsonProperty("glossaryKey")
+        private String glossaryKey;
+
+        /**
+         * Unique key of the glossary to which this job applies.
+         *
+         * @param glossaryKey the value to set
+         * @return this builder
+         */
+        public Builder glossaryKey(String glossaryKey) {
+            this.glossaryKey = glossaryKey;
+            this.__explicitlySet__.add("glossaryKey");
+            return this;
+        }
         /**
          * Error code returned from the latest job execution for this job. Useful when the latest
          * Job execution is in FAILED state.
@@ -535,6 +555,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
                             this.updatedById,
                             this.jobDefinitionName,
                             this.dataAssetKey,
+                            this.glossaryKey,
                             this.errorCode,
                             this.errorMessage,
                             this.uri);
@@ -608,6 +629,9 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("dataAssetKey")) {
                 this.dataAssetKey(model.getDataAssetKey());
+            }
+            if (model.wasPropertyExplicitlySet("glossaryKey")) {
+                this.glossaryKey(model.getGlossaryKey());
             }
             if (model.wasPropertyExplicitlySet("errorCode")) {
                 this.errorCode(model.getErrorCode());
@@ -750,7 +774,8 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
     /**
      * Interval on which the job will be run. Value is specified as a cron-supported time
      * specification "nickname". The following subset of those is
-     * supported: @monthly, @weekly, @daily, @hourly.
+     * supported: @monthly, @weekly, @daily, @hourly. For metastore sync, an additional
+     * option @default is supported, which will schedule jobs at a more granular frequency.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleCronExpression")
     private final String scheduleCronExpression;
@@ -758,7 +783,8 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
     /**
      * Interval on which the job will be run. Value is specified as a cron-supported time
      * specification "nickname". The following subset of those is
-     * supported: @monthly, @weekly, @daily, @hourly.
+     * supported: @monthly, @weekly, @daily, @hourly. For metastore sync, an additional
+     * option @default is supported, which will schedule jobs at a more granular frequency.
      *
      * @return the value
      */
@@ -940,6 +966,19 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         return dataAssetKey;
     }
 
+    /** Unique key of the glossary to which this job applies. */
+    @com.fasterxml.jackson.annotation.JsonProperty("glossaryKey")
+    private final String glossaryKey;
+
+    /**
+     * Unique key of the glossary to which this job applies.
+     *
+     * @return the value
+     */
+    public String getGlossaryKey() {
+        return glossaryKey;
+    }
+
     /**
      * Error code returned from the latest job execution for this job. Useful when the latest Job
      * execution is in FAILED state.
@@ -1023,6 +1062,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         sb.append(", updatedById=").append(String.valueOf(this.updatedById));
         sb.append(", jobDefinitionName=").append(String.valueOf(this.jobDefinitionName));
         sb.append(", dataAssetKey=").append(String.valueOf(this.dataAssetKey));
+        sb.append(", glossaryKey=").append(String.valueOf(this.glossaryKey));
         sb.append(", errorCode=").append(String.valueOf(this.errorCode));
         sb.append(", errorMessage=").append(String.valueOf(this.errorMessage));
         sb.append(", uri=").append(String.valueOf(this.uri));
@@ -1062,6 +1102,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
                 && java.util.Objects.equals(this.updatedById, other.updatedById)
                 && java.util.Objects.equals(this.jobDefinitionName, other.jobDefinitionName)
                 && java.util.Objects.equals(this.dataAssetKey, other.dataAssetKey)
+                && java.util.Objects.equals(this.glossaryKey, other.glossaryKey)
                 && java.util.Objects.equals(this.errorCode, other.errorCode)
                 && java.util.Objects.equals(this.errorMessage, other.errorMessage)
                 && java.util.Objects.equals(this.uri, other.uri)
@@ -1117,6 +1158,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
                 (result * PRIME)
                         + (this.jobDefinitionName == null ? 43 : this.jobDefinitionName.hashCode());
         result = (result * PRIME) + (this.dataAssetKey == null ? 43 : this.dataAssetKey.hashCode());
+        result = (result * PRIME) + (this.glossaryKey == null ? 43 : this.glossaryKey.hashCode());
         result = (result * PRIME) + (this.errorCode == null ? 43 : this.errorCode.hashCode());
         result = (result * PRIME) + (this.errorMessage == null ? 43 : this.errorMessage.hashCode());
         result = (result * PRIME) + (this.uri == null ? 43 : this.uri.hashCode());

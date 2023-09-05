@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details about the subcategory associated with the support ticket. <br>
+ * Details about the service subcategory associated with the support ticket. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -30,12 +30,12 @@ public final class SubCategory extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier for the subcategory. */
+        /** Unique identifier for the service subcategory. */
         @com.fasterxml.jackson.annotation.JsonProperty("subCategoryKey")
         private String subCategoryKey;
 
         /**
-         * Unique identifier for the subcategory.
+         * Unique identifier for the service subcategory.
          *
          * @param subCategoryKey the value to set
          * @return this builder
@@ -46,15 +46,15 @@ public final class SubCategory extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The name of the subcategory. For example, {@code Backup Count} or {@code Custom Image
-         * Count}.
+         * The name of the service subcategory. For example, {@code Backup Count} or {@code Custom
+         * Image Count}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The name of the subcategory. For example, {@code Backup Count} or {@code Custom Image
-         * Count}.
+         * The name of the service subcategory. For example, {@code Backup Count} or {@code Custom
+         * Image Count}.
          *
          * @param name the value to set
          * @return this builder
@@ -97,12 +97,12 @@ public final class SubCategory extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** Unique identifier for the subcategory. */
+    /** Unique identifier for the service subcategory. */
     @com.fasterxml.jackson.annotation.JsonProperty("subCategoryKey")
     private final String subCategoryKey;
 
     /**
-     * Unique identifier for the subcategory.
+     * Unique identifier for the service subcategory.
      *
      * @return the value
      */
@@ -111,13 +111,15 @@ public final class SubCategory extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The name of the subcategory. For example, {@code Backup Count} or {@code Custom Image Count}.
+     * The name of the service subcategory. For example, {@code Backup Count} or {@code Custom Image
+     * Count}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The name of the subcategory. For example, {@code Backup Count} or {@code Custom Image Count}.
+     * The name of the service subcategory. For example, {@code Backup Count} or {@code Custom Image
+     * Count}.
      *
      * @return the value
      */

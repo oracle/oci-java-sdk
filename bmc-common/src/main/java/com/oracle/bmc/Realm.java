@@ -105,10 +105,13 @@ public final class Realm implements Serializable, Comparable<Realm> {
     public static Realm[] values() {
         readLock.lock();
         try {
-            if (Alloy.shouldUseOnlyAlloyRegions()) {
-                return ALLOY_REALMS.values().toArray(new Realm[ALLOY_REALMS.size()]);
+            if (Alloy.doesAlloyConfigExist()) {
+                if (Alloy.shouldUseOnlyAlloyRegions()) {
+                    return ALLOY_REALMS.values().toArray(new Realm[ALLOY_REALMS.size()]);
+                }
+                return ALL_REALMS.values().toArray(new Realm[ALL_REALMS.size()]);
             }
-            return ALL_REALMS.values().toArray(new Realm[ALL_REALMS.size()]);
+            return KNOWN_REALMS.values().toArray(new Realm[KNOWN_REALMS.size()]);
         } finally {
             readLock.unlock();
         }
@@ -238,7 +241,12 @@ public final class Realm implements Serializable, Comparable<Realm> {
 
         writeLock.lock();
         try {
-            ALL_REALMS.keySet().removeIf(ALLOY_REALMS::containsKey);
+            ALL_REALMS
+                    .keySet()
+                    .removeIf(
+                            key ->
+                                    (ALLOY_REALMS.containsKey(key)
+                                            && !KNOWN_REALMS.containsKey(key)));
             ALLOY_REALMS.clear();
         } finally {
             writeLock.unlock();

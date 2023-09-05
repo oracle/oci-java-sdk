@@ -5,7 +5,7 @@
 package com.oracle.bmc.queue.model;
 
 /**
- * A message that has been published in a queue. <br>
+ * A message that has been published to a queue. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -21,20 +21,21 @@ package com.oracle.bmc.queue.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class PutMessage extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"id"})
-    public PutMessage(Long id) {
+    @java.beans.ConstructorProperties({"id", "expireAfter"})
+    public PutMessage(Long id, java.util.Date expireAfter) {
         super();
         this.id = id;
+        this.expireAfter = expireAfter;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The id of the message */
+        /** The ID of the message. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private Long id;
 
         /**
-         * The id of the message
+         * The ID of the message.
          *
          * @param id the value to set
          * @return this builder
@@ -44,12 +45,35 @@ public final class PutMessage extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("id");
             return this;
         }
+        /**
+         * The time after which the message will be automatically deleted, expressed in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2018-04-20T00:00:07.405Z}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("expireAfter")
+        private java.util.Date expireAfter;
+
+        /**
+         * The time after which the message will be automatically deleted, expressed in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2018-04-20T00:00:07.405Z}
+         *
+         * @param expireAfter the value to set
+         * @return this builder
+         */
+        public Builder expireAfter(java.util.Date expireAfter) {
+            this.expireAfter = expireAfter;
+            this.__explicitlySet__.add("expireAfter");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PutMessage build() {
-            PutMessage model = new PutMessage(this.id);
+            PutMessage model = new PutMessage(this.id, this.expireAfter);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -60,6 +84,9 @@ public final class PutMessage extends com.oracle.bmc.http.client.internal.Explic
         public Builder copy(PutMessage model) {
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("expireAfter")) {
+                this.expireAfter(model.getExpireAfter());
             }
             return this;
         }
@@ -74,17 +101,38 @@ public final class PutMessage extends com.oracle.bmc.http.client.internal.Explic
         return new Builder().copy(this);
     }
 
-    /** The id of the message */
+    /** The ID of the message. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final Long id;
 
     /**
-     * The id of the message
+     * The ID of the message.
      *
      * @return the value
      */
     public Long getId() {
         return id;
+    }
+
+    /**
+     * The time after which the message will be automatically deleted, expressed in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2018-04-20T00:00:07.405Z}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("expireAfter")
+    private final java.util.Date expireAfter;
+
+    /**
+     * The time after which the message will be automatically deleted, expressed in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2018-04-20T00:00:07.405Z}
+     *
+     * @return the value
+     */
+    public java.util.Date getExpireAfter() {
+        return expireAfter;
     }
 
     @Override
@@ -103,6 +151,7 @@ public final class PutMessage extends com.oracle.bmc.http.client.internal.Explic
         sb.append("PutMessage(");
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", expireAfter=").append(String.valueOf(this.expireAfter));
         sb.append(")");
         return sb.toString();
     }
@@ -117,7 +166,9 @@ public final class PutMessage extends com.oracle.bmc.http.client.internal.Explic
         }
 
         PutMessage other = (PutMessage) o;
-        return java.util.Objects.equals(this.id, other.id) && super.equals(other);
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.expireAfter, other.expireAfter)
+                && super.equals(other);
     }
 
     @Override
@@ -125,6 +176,7 @@ public final class PutMessage extends com.oracle.bmc.http.client.internal.Explic
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.expireAfter == null ? 43 : this.expireAfter.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

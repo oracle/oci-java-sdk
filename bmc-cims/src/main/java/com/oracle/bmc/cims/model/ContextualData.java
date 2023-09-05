@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * <br>
+ * Information collected from user context during ticket creation. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -34,12 +34,12 @@ public final class ContextualData
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The unique client identifier */
+        /** The unique identifier for the client. */
         @com.fasterxml.jackson.annotation.JsonProperty("clientId")
         private String clientId;
 
         /**
-         * The unique client identifier
+         * The unique identifier for the client.
          *
          * @param clientId the value to set
          * @return this builder
@@ -49,12 +49,12 @@ public final class ContextualData
             this.__explicitlySet__.add("clientId");
             return this;
         }
-        /** The schema name */
+        /** The name assigned to the schema. */
         @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
         private String schemaName;
 
         /**
-         * The schema name
+         * The name assigned to the schema.
          *
          * @param schemaName the value to set
          * @return this builder
@@ -64,12 +64,12 @@ public final class ContextualData
             this.__explicitlySet__.add("schemaName");
             return this;
         }
-        /** The schema version */
+        /** The version of the schema. */
         @com.fasterxml.jackson.annotation.JsonProperty("schemaVersion")
         private String schemaVersion;
 
         /**
-         * The schema version
+         * The version of the schema.
          *
          * @param schemaVersion the value to set
          * @return this builder
@@ -79,12 +79,12 @@ public final class ContextualData
             this.__explicitlySet__.add("schemaVersion");
             return this;
         }
-        /** The context data payload */
+        /** The payload for the contextual data. */
         @com.fasterxml.jackson.annotation.JsonProperty("payload")
         private String payload;
 
         /**
-         * The context data payload
+         * The payload for the contextual data.
          *
          * @param payload the value to set
          * @return this builder
@@ -135,12 +135,12 @@ public final class ContextualData
         return new Builder().copy(this);
     }
 
-    /** The unique client identifier */
+    /** The unique identifier for the client. */
     @com.fasterxml.jackson.annotation.JsonProperty("clientId")
     private final String clientId;
 
     /**
-     * The unique client identifier
+     * The unique identifier for the client.
      *
      * @return the value
      */
@@ -148,12 +148,12 @@ public final class ContextualData
         return clientId;
     }
 
-    /** The schema name */
+    /** The name assigned to the schema. */
     @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
     private final String schemaName;
 
     /**
-     * The schema name
+     * The name assigned to the schema.
      *
      * @return the value
      */
@@ -161,12 +161,12 @@ public final class ContextualData
         return schemaName;
     }
 
-    /** The schema version */
+    /** The version of the schema. */
     @com.fasterxml.jackson.annotation.JsonProperty("schemaVersion")
     private final String schemaVersion;
 
     /**
-     * The schema version
+     * The version of the schema.
      *
      * @return the value
      */
@@ -174,12 +174,12 @@ public final class ContextualData
         return schemaVersion;
     }
 
-    /** The context data payload */
+    /** The payload for the contextual data. */
     @com.fasterxml.jackson.annotation.JsonProperty("payload")
     private final String payload;
 
     /**
-     * The context data payload
+     * The payload for the contextual data.
      *
      * @return the value
      */

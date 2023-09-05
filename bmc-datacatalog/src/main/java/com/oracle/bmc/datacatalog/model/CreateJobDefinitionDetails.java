@@ -32,6 +32,7 @@ public final class CreateJobDefinitionDetails
         "jobType",
         "isIncremental",
         "dataAssetKey",
+        "glossaryKey",
         "connectionKey",
         "isSampleDataExtracted",
         "sampleDataSizeInMBs",
@@ -43,6 +44,7 @@ public final class CreateJobDefinitionDetails
             JobType jobType,
             Boolean isIncremental,
             String dataAssetKey,
+            String glossaryKey,
             String connectionKey,
             Boolean isSampleDataExtracted,
             Integer sampleDataSizeInMBs,
@@ -53,6 +55,7 @@ public final class CreateJobDefinitionDetails
         this.jobType = jobType;
         this.isIncremental = isIncremental;
         this.dataAssetKey = dataAssetKey;
+        this.glossaryKey = glossaryKey;
         this.connectionKey = connectionKey;
         this.isSampleDataExtracted = isSampleDataExtracted;
         this.sampleDataSizeInMBs = sampleDataSizeInMBs;
@@ -138,6 +141,21 @@ public final class CreateJobDefinitionDetails
         public Builder dataAssetKey(String dataAssetKey) {
             this.dataAssetKey = dataAssetKey;
             this.__explicitlySet__.add("dataAssetKey");
+            return this;
+        }
+        /** Unique key of the glossary to which this job applies. */
+        @com.fasterxml.jackson.annotation.JsonProperty("glossaryKey")
+        private String glossaryKey;
+
+        /**
+         * Unique key of the glossary to which this job applies.
+         *
+         * @param glossaryKey the value to set
+         * @return this builder
+         */
+        public Builder glossaryKey(String glossaryKey) {
+            this.glossaryKey = glossaryKey;
+            this.__explicitlySet__.add("glossaryKey");
             return this;
         }
         /** The key of the connection resource to be used for the job. */
@@ -228,6 +246,7 @@ public final class CreateJobDefinitionDetails
                             this.jobType,
                             this.isIncremental,
                             this.dataAssetKey,
+                            this.glossaryKey,
                             this.connectionKey,
                             this.isSampleDataExtracted,
                             this.sampleDataSizeInMBs,
@@ -254,6 +273,9 @@ public final class CreateJobDefinitionDetails
             }
             if (model.wasPropertyExplicitlySet("dataAssetKey")) {
                 this.dataAssetKey(model.getDataAssetKey());
+            }
+            if (model.wasPropertyExplicitlySet("glossaryKey")) {
+                this.glossaryKey(model.getGlossaryKey());
             }
             if (model.wasPropertyExplicitlySet("connectionKey")) {
                 this.connectionKey(model.getConnectionKey());
@@ -349,6 +371,19 @@ public final class CreateJobDefinitionDetails
         return dataAssetKey;
     }
 
+    /** Unique key of the glossary to which this job applies. */
+    @com.fasterxml.jackson.annotation.JsonProperty("glossaryKey")
+    private final String glossaryKey;
+
+    /**
+     * Unique key of the glossary to which this job applies.
+     *
+     * @return the value
+     */
+    public String getGlossaryKey() {
+        return glossaryKey;
+    }
+
     /** The key of the connection resource to be used for the job. */
     @com.fasterxml.jackson.annotation.JsonProperty("connectionKey")
     private final String connectionKey;
@@ -435,6 +470,7 @@ public final class CreateJobDefinitionDetails
         sb.append(", jobType=").append(String.valueOf(this.jobType));
         sb.append(", isIncremental=").append(String.valueOf(this.isIncremental));
         sb.append(", dataAssetKey=").append(String.valueOf(this.dataAssetKey));
+        sb.append(", glossaryKey=").append(String.valueOf(this.glossaryKey));
         sb.append(", connectionKey=").append(String.valueOf(this.connectionKey));
         sb.append(", isSampleDataExtracted=").append(String.valueOf(this.isSampleDataExtracted));
         sb.append(", sampleDataSizeInMBs=").append(String.valueOf(this.sampleDataSizeInMBs));
@@ -458,6 +494,7 @@ public final class CreateJobDefinitionDetails
                 && java.util.Objects.equals(this.jobType, other.jobType)
                 && java.util.Objects.equals(this.isIncremental, other.isIncremental)
                 && java.util.Objects.equals(this.dataAssetKey, other.dataAssetKey)
+                && java.util.Objects.equals(this.glossaryKey, other.glossaryKey)
                 && java.util.Objects.equals(this.connectionKey, other.connectionKey)
                 && java.util.Objects.equals(this.isSampleDataExtracted, other.isSampleDataExtracted)
                 && java.util.Objects.equals(this.sampleDataSizeInMBs, other.sampleDataSizeInMBs)
@@ -476,6 +513,7 @@ public final class CreateJobDefinitionDetails
                 (result * PRIME)
                         + (this.isIncremental == null ? 43 : this.isIncremental.hashCode());
         result = (result * PRIME) + (this.dataAssetKey == null ? 43 : this.dataAssetKey.hashCode());
+        result = (result * PRIME) + (this.glossaryKey == null ? 43 : this.glossaryKey.hashCode());
         result =
                 (result * PRIME)
                         + (this.connectionKey == null ? 43 : this.connectionKey.hashCode());

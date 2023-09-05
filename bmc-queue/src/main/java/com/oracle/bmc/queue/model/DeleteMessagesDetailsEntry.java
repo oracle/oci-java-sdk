@@ -31,12 +31,12 @@ public final class DeleteMessagesDetailsEntry
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The receipt of the message to delete */
+        /** The receipt of the message to delete. */
         @com.fasterxml.jackson.annotation.JsonProperty("receipt")
         private String receipt;
 
         /**
-         * The receipt of the message to delete
+         * The receipt of the message to delete.
          *
          * @param receipt the value to set
          * @return this builder
@@ -76,12 +76,12 @@ public final class DeleteMessagesDetailsEntry
         return new Builder().copy(this);
     }
 
-    /** The receipt of the message to delete */
+    /** The receipt of the message to delete. */
     @com.fasterxml.jackson.annotation.JsonProperty("receipt")
     private final String receipt;
 
     /**
-     * The receipt of the message to delete
+     * The receipt of the message to delete.
      *
      * @return the value
      */

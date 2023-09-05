@@ -7,7 +7,7 @@ package com.oracle.bmc.cims.responses;
 import com.oracle.bmc.cims.model.*;
 
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-public class CreateUserResponse extends com.oracle.bmc.responses.BmcResponse {
+public class GetCsiNumberResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -24,31 +24,31 @@ public class CreateUserResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned {@code User} instance. */
-    private com.oracle.bmc.cims.model.User user;
+    /** The returned {@code String} instance. */
+    private String value;
 
     /**
-     * The returned {@code User} instance.
+     * The returned {@code String} instance.
      *
      * @return the value
      */
-    public com.oracle.bmc.cims.model.User getUser() {
-        return user;
+    public String getValue() {
+        return value;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId", "user"})
-    private CreateUserResponse(
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId", "value"})
+    private GetCsiNumberResponse(
             int __httpStatusCode__,
             java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
-            com.oracle.bmc.cims.model.User user) {
+            String value) {
         super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
-        this.user = user;
+        this.value = value;
     }
 
     public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateUserResponse> {
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetCsiNumberResponse> {
         private int __httpStatusCode__;
 
         @Override
@@ -83,17 +83,17 @@ public class CreateUserResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned {@code User} instance. */
-        private com.oracle.bmc.cims.model.User user;
+        /** The returned {@code String} instance. */
+        private String value;
 
         /**
-         * The returned {@code User} instance.
+         * The returned {@code String} instance.
          *
-         * @param user the value to set
+         * @param value the value to set
          * @return this builder
          */
-        public Builder user(com.oracle.bmc.cims.model.User user) {
-            this.user = user;
+        public Builder value(String value) {
+            this.value = value;
             return this;
         }
 
@@ -103,11 +103,11 @@ public class CreateUserResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return this builder instance
          */
         @Override
-        public Builder copy(CreateUserResponse o) {
+        public Builder copy(GetCsiNumberResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
-            user(o.getUser());
+            value(o.getValue());
 
             return this;
         }
@@ -118,8 +118,8 @@ public class CreateUserResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         @Override
-        public CreateUserResponse build() {
-            return new CreateUserResponse(__httpStatusCode__, headers, opcRequestId, user);
+        public GetCsiNumberResponse build() {
+            return new GetCsiNumberResponse(__httpStatusCode__, headers, opcRequestId, value);
         }
     }
 
@@ -138,7 +138,7 @@ public class CreateUserResponse extends com.oracle.bmc.responses.BmcResponse {
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
-        sb.append(",user=").append(String.valueOf(user));
+        sb.append(",value=").append(String.valueOf(value));
         sb.append(")");
         return sb.toString();
     }
@@ -148,14 +148,14 @@ public class CreateUserResponse extends com.oracle.bmc.responses.BmcResponse {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof CreateUserResponse)) {
+        if (!(o instanceof GetCsiNumberResponse)) {
             return false;
         }
 
-        CreateUserResponse other = (CreateUserResponse) o;
+        GetCsiNumberResponse other = (GetCsiNumberResponse) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.user, other.user);
+                && java.util.Objects.equals(this.value, other.value);
     }
 
     @Override
@@ -163,7 +163,7 @@ public class CreateUserResponse extends com.oracle.bmc.responses.BmcResponse {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
-        result = (result * PRIME) + (this.user == null ? 43 : this.user.hashCode());
+        result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
         return result;
     }
 }

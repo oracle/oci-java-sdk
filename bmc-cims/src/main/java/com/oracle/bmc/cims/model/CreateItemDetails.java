@@ -5,10 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details gathered during item creation.
- *
- * <p>*Caution:** Avoid using any confidential information when you supply string values using the
- * API. <br>
+ * Details gathered during ticket creation. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -30,7 +27,10 @@ package com.oracle.bmc.cims.model;
             name = "tech"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateLimitItemDetails.class,
-            name = "limit")
+            name = "limit"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateAccountItemDetails.class,
+            name = "account")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -70,12 +70,12 @@ public class CreateItemDetails extends com.oracle.bmc.http.client.internal.Expli
         return issueType;
     }
 
-    /** The display name of the item. */
+    /** The display name of the ticket. Avoid entering confidential information. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The display name of the item.
+     * The display name of the ticket. Avoid entering confidential information.
      *
      * @return the value
      */

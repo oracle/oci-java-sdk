@@ -21,11 +21,12 @@ package com.oracle.bmc.cims.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class IssueType extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"issueTypeKey", "label"})
-    public IssueType(String issueTypeKey, String label) {
+    @java.beans.ConstructorProperties({"issueTypeKey", "label", "name"})
+    public IssueType(String issueTypeKey, String label, String name) {
         super();
         this.issueTypeKey = issueTypeKey;
         this.label = label;
+        this.name = name;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -60,12 +61,27 @@ public final class IssueType extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("label");
             return this;
         }
+        /** The URL for the contextual documentation. */
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
+        private String name;
+
+        /**
+         * The URL for the contextual documentation.
+         *
+         * @param name the value to set
+         * @return this builder
+         */
+        public Builder name(String name) {
+            this.name = name;
+            this.__explicitlySet__.add("name");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public IssueType build() {
-            IssueType model = new IssueType(this.issueTypeKey, this.label);
+            IssueType model = new IssueType(this.issueTypeKey, this.label, this.name);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -79,6 +95,9 @@ public final class IssueType extends com.oracle.bmc.http.client.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("label")) {
                 this.label(model.getLabel());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
             }
             return this;
         }
@@ -119,6 +138,19 @@ public final class IssueType extends com.oracle.bmc.http.client.internal.Explici
         return label;
     }
 
+    /** The URL for the contextual documentation. */
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
+    private final String name;
+
+    /**
+     * The URL for the contextual documentation.
+     *
+     * @return the value
+     */
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -136,6 +168,7 @@ public final class IssueType extends com.oracle.bmc.http.client.internal.Explici
         sb.append("super=").append(super.toString());
         sb.append("issueTypeKey=").append(String.valueOf(this.issueTypeKey));
         sb.append(", label=").append(String.valueOf(this.label));
+        sb.append(", name=").append(String.valueOf(this.name));
         sb.append(")");
         return sb.toString();
     }
@@ -152,6 +185,7 @@ public final class IssueType extends com.oracle.bmc.http.client.internal.Explici
         IssueType other = (IssueType) o;
         return java.util.Objects.equals(this.issueTypeKey, other.issueTypeKey)
                 && java.util.Objects.equals(this.label, other.label)
+                && java.util.Objects.equals(this.name, other.name)
                 && super.equals(other);
     }
 
@@ -161,6 +195,7 @@ public final class IssueType extends com.oracle.bmc.http.client.internal.Explici
         int result = 1;
         result = (result * PRIME) + (this.issueTypeKey == null ? 43 : this.issueTypeKey.hashCode());
         result = (result * PRIME) + (this.label == null ? 43 : this.label.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

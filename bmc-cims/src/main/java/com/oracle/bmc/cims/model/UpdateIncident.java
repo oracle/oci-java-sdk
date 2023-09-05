@@ -22,10 +22,11 @@ package com.oracle.bmc.cims.model;
 public final class UpdateIncident
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"ticket"})
-    public UpdateIncident(UpdateTicketDetails ticket) {
+    @java.beans.ConstructorProperties({"ticket", "problemType"})
+    public UpdateIncident(UpdateTicketDetails ticket, ProblemType problemType) {
         super();
         this.ticket = ticket;
+        this.problemType = problemType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -39,12 +40,31 @@ public final class UpdateIncident
             this.__explicitlySet__.add("ticket");
             return this;
         }
+        /**
+         * The kind of support ticket, such as a technical support request or a limit increase
+         * request.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("problemType")
+        private ProblemType problemType;
+
+        /**
+         * The kind of support ticket, such as a technical support request or a limit increase
+         * request.
+         *
+         * @param problemType the value to set
+         * @return this builder
+         */
+        public Builder problemType(ProblemType problemType) {
+            this.problemType = problemType;
+            this.__explicitlySet__.add("problemType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateIncident build() {
-            UpdateIncident model = new UpdateIncident(this.ticket);
+            UpdateIncident model = new UpdateIncident(this.ticket, this.problemType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -55,6 +75,9 @@ public final class UpdateIncident
         public Builder copy(UpdateIncident model) {
             if (model.wasPropertyExplicitlySet("ticket")) {
                 this.ticket(model.getTicket());
+            }
+            if (model.wasPropertyExplicitlySet("problemType")) {
+                this.problemType(model.getProblemType());
             }
             return this;
         }
@@ -76,6 +99,21 @@ public final class UpdateIncident
         return ticket;
     }
 
+    /**
+     * The kind of support ticket, such as a technical support request or a limit increase request.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("problemType")
+    private final ProblemType problemType;
+
+    /**
+     * The kind of support ticket, such as a technical support request or a limit increase request.
+     *
+     * @return the value
+     */
+    public ProblemType getProblemType() {
+        return problemType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -92,6 +130,7 @@ public final class UpdateIncident
         sb.append("UpdateIncident(");
         sb.append("super=").append(super.toString());
         sb.append("ticket=").append(String.valueOf(this.ticket));
+        sb.append(", problemType=").append(String.valueOf(this.problemType));
         sb.append(")");
         return sb.toString();
     }
@@ -106,7 +145,9 @@ public final class UpdateIncident
         }
 
         UpdateIncident other = (UpdateIncident) o;
-        return java.util.Objects.equals(this.ticket, other.ticket) && super.equals(other);
+        return java.util.Objects.equals(this.ticket, other.ticket)
+                && java.util.Objects.equals(this.problemType, other.problemType)
+                && super.equals(other);
     }
 
     @Override
@@ -114,6 +155,7 @@ public final class UpdateIncident
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.ticket == null ? 43 : this.ticket.hashCode());
+        result = (result * PRIME) + (this.problemType == null ? 43 : this.problemType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

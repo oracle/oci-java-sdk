@@ -5,10 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details about the resource that the support ticket relates to.
- *
- * <p>*Caution:** Avoid using any confidential information when you supply string values using the
- * API. <br>
+ * Details about the resource that the support ticket relates to. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -26,13 +23,11 @@ package com.oracle.bmc.cims.model;
 public final class CreateResourceDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"item", "region", "availabilityDomain"})
-    public CreateResourceDetails(
-            CreateItemDetails item, Region region, AvailabilityDomain availabilityDomain) {
+    @java.beans.ConstructorProperties({"item", "region"})
+    public CreateResourceDetails(CreateItemDetails item, String region) {
         super();
         this.item = item;
         this.region = region;
-        this.availabilityDomain = availabilityDomain;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -48,7 +43,7 @@ public final class CreateResourceDetails
         }
         /** The list of available Oracle Cloud Infrastructure regions. */
         @com.fasterxml.jackson.annotation.JsonProperty("region")
-        private Region region;
+        private String region;
 
         /**
          * The list of available Oracle Cloud Infrastructure regions.
@@ -56,24 +51,9 @@ public final class CreateResourceDetails
          * @param region the value to set
          * @return this builder
          */
-        public Builder region(Region region) {
+        public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
-            return this;
-        }
-        /** The list of available Oracle Cloud Infrastructure availability domains. */
-        @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-        private AvailabilityDomain availabilityDomain;
-
-        /**
-         * The list of available Oracle Cloud Infrastructure availability domains.
-         *
-         * @param availabilityDomain the value to set
-         * @return this builder
-         */
-        public Builder availabilityDomain(AvailabilityDomain availabilityDomain) {
-            this.availabilityDomain = availabilityDomain;
-            this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
 
@@ -81,8 +61,7 @@ public final class CreateResourceDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateResourceDetails build() {
-            CreateResourceDetails model =
-                    new CreateResourceDetails(this.item, this.region, this.availabilityDomain);
+            CreateResourceDetails model = new CreateResourceDetails(this.item, this.region);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -96,9 +75,6 @@ public final class CreateResourceDetails
             }
             if (model.wasPropertyExplicitlySet("region")) {
                 this.region(model.getRegion());
-            }
-            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
-                this.availabilityDomain(model.getAvailabilityDomain());
             }
             return this;
         }
@@ -122,28 +98,15 @@ public final class CreateResourceDetails
 
     /** The list of available Oracle Cloud Infrastructure regions. */
     @com.fasterxml.jackson.annotation.JsonProperty("region")
-    private final Region region;
+    private final String region;
 
     /**
      * The list of available Oracle Cloud Infrastructure regions.
      *
      * @return the value
      */
-    public Region getRegion() {
+    public String getRegion() {
         return region;
-    }
-
-    /** The list of available Oracle Cloud Infrastructure availability domains. */
-    @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    private final AvailabilityDomain availabilityDomain;
-
-    /**
-     * The list of available Oracle Cloud Infrastructure availability domains.
-     *
-     * @return the value
-     */
-    public AvailabilityDomain getAvailabilityDomain() {
-        return availabilityDomain;
     }
 
     @Override
@@ -163,7 +126,6 @@ public final class CreateResourceDetails
         sb.append("super=").append(super.toString());
         sb.append("item=").append(String.valueOf(this.item));
         sb.append(", region=").append(String.valueOf(this.region));
-        sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(")");
         return sb.toString();
     }
@@ -180,7 +142,6 @@ public final class CreateResourceDetails
         CreateResourceDetails other = (CreateResourceDetails) o;
         return java.util.Objects.equals(this.item, other.item)
                 && java.util.Objects.equals(this.region, other.region)
-                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && super.equals(other);
     }
 
@@ -190,11 +151,6 @@ public final class CreateResourceDetails
         int result = 1;
         result = (result * PRIME) + (this.item == null ? 43 : this.item.hashCode());
         result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.availabilityDomain == null
-                                ? 43
-                                : this.availabilityDomain.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

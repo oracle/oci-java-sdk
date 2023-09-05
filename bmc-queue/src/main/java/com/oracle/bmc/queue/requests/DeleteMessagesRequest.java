@@ -15,10 +15,10 @@ public class DeleteMessagesRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.queue.model.DeleteMessagesDetails> {
 
-    /** unique Queue identifier */
+    /** The unique queue identifier. */
     private String queueId;
 
-    /** unique Queue identifier */
+    /** The unique queue identifier. */
     public String getQueueId() {
         return queueId;
     }
@@ -29,10 +29,16 @@ public class DeleteMessagesRequest
     public com.oracle.bmc.queue.model.DeleteMessagesDetails getDeleteMessagesDetails() {
         return deleteMessagesDetails;
     }
-    /** The client request ID for tracing. */
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -54,11 +60,11 @@ public class DeleteMessagesRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique Queue identifier */
+        /** The unique queue identifier. */
         private String queueId = null;
 
         /**
-         * unique Queue identifier
+         * The unique queue identifier.
          *
          * @param queueId the value to set
          * @return this builder instance
@@ -83,11 +89,15 @@ public class DeleteMessagesRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
