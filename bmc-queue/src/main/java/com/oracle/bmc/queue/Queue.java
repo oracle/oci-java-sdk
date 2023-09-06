@@ -8,9 +8,10 @@ import com.oracle.bmc.queue.requests.*;
 import com.oracle.bmc.queue.responses.*;
 
 /**
- * A description of the Queue API This service client uses
- * CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit
- * breaker configuration is defined by the user.
+ * Use the Queue API to produce and consume messages, create queues, and manage related items. For
+ * more information, see [Queue](https://docs.cloud.oracle.com/iaas/Content/queue/overview.htm).
+ * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
+ * default if no circuit breaker configuration is defined by the user.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 public interface Queue extends AutoCloseable {
@@ -64,7 +65,10 @@ public interface Queue extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Deletes from the queue the message represented by the receipt.
+     * Deletes the message represented by the receipt from the queue. You must use the [messages
+     * endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
+     * to delete messages. The messages endpoint may be different for different queues. Use {@link
+     * #getQueue(GetQueueRequest) getQueue} to find the queue's `messagesEndpoint`.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -79,7 +83,10 @@ public interface Queue extends AutoCloseable {
     DeleteMessageResponse deleteMessage(DeleteMessageRequest request);
 
     /**
-     * Deletes multiple messages from the queue.
+     * Deletes multiple messages from the queue. You must use the [messages
+     * endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
+     * to delete messages. The messages endpoint may be different for different queues. Use {@link
+     * #getQueue(GetQueueRequest) getQueue} to find the queue's `messagesEndpoint`.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -94,7 +101,14 @@ public interface Queue extends AutoCloseable {
     DeleteMessagesResponse deleteMessages(DeleteMessagesRequest request);
 
     /**
-     * Consumes message from the queue.
+     * Consumes messages from the queue. You must use the [messages
+     * endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
+     * to consume messages. The messages endpoint may be different for different queues. Use {@link
+     * #getQueue(GetQueueRequest) getQueue} to find the queue's `messagesEndpoint`. GetMessages
+     * accepts optional channelFilter query parameter that can filter source channels of the
+     * messages. When channelFilter is present, service will return available messages from the
+     * channel which ID exactly matched the filter. When filter is not specified, messages will be
+     * returned from a random non-empty channel within a queue.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -109,7 +123,10 @@ public interface Queue extends AutoCloseable {
     GetMessagesResponse getMessages(GetMessagesRequest request);
 
     /**
-     * Gets the statistics for the queue and its dead letter queue.
+     * Gets the statistics for the queue and its dead letter queue. You must use the [messages
+     * endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
+     * to get a queue's statistics. The messages endpoint may be different for different queues. Use
+     * {@link #getQueue(GetQueueRequest) getQueue} to find the queue's `messagesEndpoint`.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -124,7 +141,29 @@ public interface Queue extends AutoCloseable {
     GetStatsResponse getStats(GetStatsRequest request);
 
     /**
-     * Puts messages in the queue
+     * Gets the list of IDs of non-empty channels. It will return an approximate list of IDs of
+     * non-empty channels. That information is based on the queue level statistics. API supports
+     * optional channelFilter parameter which will filter the returned results according to the
+     * specified filter. List of channel IDs is approximate, because statistics is refreshed once
+     * per-second, and that list represents a snapshot of the past information. API is paginated.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/queue/ListChannelsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListChannels API.
+     */
+    ListChannelsResponse listChannels(ListChannelsRequest request);
+
+    /**
+     * Puts messages into the queue. You must use the [messages
+     * endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
+     * to produce messages. The messages endpoint may be different for different queues. Use {@link
+     * #getQueue(GetQueueRequest) getQueue} to find the queue's `messagesEndpoint`.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -139,7 +178,10 @@ public interface Queue extends AutoCloseable {
     PutMessagesResponse putMessages(PutMessagesRequest request);
 
     /**
-     * Updates the visibility of the message represented by the receipt.
+     * Updates the visibility of the message represented by the receipt. You must use the [messages
+     * endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
+     * to update messages. The messages endpoint may be different for different queues. Use {@link
+     * #getQueue(GetQueueRequest) getQueue} to find the queue's `messagesEndpoint`.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -154,7 +196,10 @@ public interface Queue extends AutoCloseable {
     UpdateMessageResponse updateMessage(UpdateMessageRequest request);
 
     /**
-     * Updates multiple messages in the queue.
+     * Updates multiple messages in the queue. You must use the [messages
+     * endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
+     * to update messages. The messages endpoint may be different for different queues. Use {@link
+     * #getQueue(GetQueueRequest) getQueue} to find the queue's `messagesEndpoint`.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

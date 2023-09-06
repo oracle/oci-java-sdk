@@ -5,7 +5,7 @@
 package com.oracle.bmc.queue.model;
 
 /**
- * Summary of the Queue. <br>
+ * Summary of the queue. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -62,12 +62,12 @@ public final class QueueSummary extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier that is immutable on creation */
+        /** A unique identifier for the queue that is immutable on creation. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier that is immutable on creation
+         * A unique identifier for the queue that is immutable on creation.
          *
          * @param id the value to set
          * @return this builder
@@ -77,12 +77,16 @@ public final class QueueSummary extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Queue Identifier, can be renamed */
+        /**
+         * A user-friendly name for the queue. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Queue Identifier, can be renamed
+         * A user-friendly name for the queue. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -92,12 +96,16 @@ public final class QueueSummary extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Compartment Identifier */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment containing the queue.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment containing the queue.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -107,12 +115,20 @@ public final class QueueSummary extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The time the the Queue was created. An RFC3339 formatted datetime string */
+        /**
+         * The time that the queue was created, expressed in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2018-04-20T00:00:07.405Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the the Queue was created. An RFC3339 formatted datetime string
+         * The time that the queue was created, expressed in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2018-04-20T00:00:07.405Z}
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -122,12 +138,20 @@ public final class QueueSummary extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time the Queue was updated. An RFC3339 formatted datetime string */
+        /**
+         * The time that the queue was updated, expressed in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2018-04-20T00:00:07.405Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the Queue was updated. An RFC3339 formatted datetime string
+         * The time that the queue was updated, expressed in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2018-04-20T00:00:07.405Z}
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -137,12 +161,12 @@ public final class QueueSummary extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the Queue. */
+        /** The current state of the queue. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private Queue.LifecycleState lifecycleState;
 
         /**
-         * The current state of the Queue.
+         * The current state of the queue.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -152,16 +176,12 @@ public final class QueueSummary extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         */
+        /** Any additional details about the current state of the queue. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
+         * Any additional details about the current state of the queue.
          *
          * @param lifecycleDetails the value to set
          * @return this builder
@@ -171,12 +191,12 @@ public final class QueueSummary extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** The endpoint to use to get or put messages in the queue. */
+        /** The endpoint to use to consume or publish messages in the queue. */
         @com.fasterxml.jackson.annotation.JsonProperty("messagesEndpoint")
         private String messagesEndpoint;
 
         /**
-         * The endpoint to use to get or put messages in the queue.
+         * The endpoint to use to consume or publish messages in the queue.
          *
          * @param messagesEndpoint the value to set
          * @return this builder
@@ -316,12 +336,12 @@ public final class QueueSummary extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** Unique identifier that is immutable on creation */
+    /** A unique identifier for the queue that is immutable on creation. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier that is immutable on creation
+     * A unique identifier for the queue that is immutable on creation.
      *
      * @return the value
      */
@@ -329,12 +349,16 @@ public final class QueueSummary extends com.oracle.bmc.http.client.internal.Expl
         return id;
     }
 
-    /** Queue Identifier, can be renamed */
+    /**
+     * A user-friendly name for the queue. Does not have to be unique, and it's changeable. Avoid
+     * entering confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Queue Identifier, can be renamed
+     * A user-friendly name for the queue. Does not have to be unique, and it's changeable. Avoid
+     * entering confidential information.
      *
      * @return the value
      */
@@ -342,12 +366,16 @@ public final class QueueSummary extends com.oracle.bmc.http.client.internal.Expl
         return displayName;
     }
 
-    /** Compartment Identifier */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment containing the queue.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment containing the queue.
      *
      * @return the value
      */
@@ -355,12 +383,20 @@ public final class QueueSummary extends com.oracle.bmc.http.client.internal.Expl
         return compartmentId;
     }
 
-    /** The time the the Queue was created. An RFC3339 formatted datetime string */
+    /**
+     * The time that the queue was created, expressed in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2018-04-20T00:00:07.405Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the the Queue was created. An RFC3339 formatted datetime string
+     * The time that the queue was created, expressed in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2018-04-20T00:00:07.405Z}
      *
      * @return the value
      */
@@ -368,12 +404,20 @@ public final class QueueSummary extends com.oracle.bmc.http.client.internal.Expl
         return timeCreated;
     }
 
-    /** The time the Queue was updated. An RFC3339 formatted datetime string */
+    /**
+     * The time that the queue was updated, expressed in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2018-04-20T00:00:07.405Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the Queue was updated. An RFC3339 formatted datetime string
+     * The time that the queue was updated, expressed in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2018-04-20T00:00:07.405Z}
      *
      * @return the value
      */
@@ -381,12 +425,12 @@ public final class QueueSummary extends com.oracle.bmc.http.client.internal.Expl
         return timeUpdated;
     }
 
-    /** The current state of the Queue. */
+    /** The current state of the queue. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Queue.LifecycleState lifecycleState;
 
     /**
-     * The current state of the Queue.
+     * The current state of the queue.
      *
      * @return the value
      */
@@ -394,16 +438,12 @@ public final class QueueSummary extends com.oracle.bmc.http.client.internal.Expl
         return lifecycleState;
     }
 
-    /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     */
+    /** Any additional details about the current state of the queue. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
+     * Any additional details about the current state of the queue.
      *
      * @return the value
      */
@@ -411,12 +451,12 @@ public final class QueueSummary extends com.oracle.bmc.http.client.internal.Expl
         return lifecycleDetails;
     }
 
-    /** The endpoint to use to get or put messages in the queue. */
+    /** The endpoint to use to consume or publish messages in the queue. */
     @com.fasterxml.jackson.annotation.JsonProperty("messagesEndpoint")
     private final String messagesEndpoint;
 
     /**
-     * The endpoint to use to get or put messages in the queue.
+     * The endpoint to use to consume or publish messages in the queue.
      *
      * @return the value
      */

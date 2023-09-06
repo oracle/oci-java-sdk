@@ -13,13 +13,6 @@ import com.oracle.bmc.cims.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The Customer Support Identifier associated with the support account. */
-    private String csi;
-
-    /** The Customer Support Identifier associated with the support account. */
-    public String getCsi() {
-        return csi;
-    }
     /** The OCID of the tenancy. */
     private String compartmentId;
 
@@ -27,18 +20,12 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
-     * Cloud Infrastructure account.
-     */
-    private String ocid;
+    /** The Customer Support Identifier (CSI) associated with the support account. */
+    private String csi;
 
-    /**
-     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
-     * Cloud Infrastructure account.
-     */
-    public String getOcid() {
-        return ocid;
+    /** The Customer Support Identifier (CSI) associated with the support account. */
+    public String getCsi() {
+        return csi;
     }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
@@ -104,6 +91,19 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
+     * Cloud Infrastructure account.
+     */
+    private String ocid;
+
+    /**
+     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
+     * Cloud Infrastructure account.
+     */
+    public String getOcid() {
+        return ocid;
+    }
     /** The region of the tenancy. */
     private String homeregion;
 
@@ -118,26 +118,40 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public String getProblemType() {
         return problemType;
     }
+    /** Token type that determine which cloud provider the request come from. */
+    private String bearertokentype;
+
+    /** Token type that determine which cloud provider the request come from. */
+    public String getBearertokentype() {
+        return bearertokentype;
+    }
+    /** Token that provided by multi cloud provider, which help to validate the email. */
+    private String bearertoken;
+
+    /** Token that provided by multi cloud provider, which help to validate the email. */
+    public String getBearertoken() {
+        return bearertoken;
+    }
+    /** IdToken that provided by multi cloud provider, which help to validate the email. */
+    private String idtoken;
+
+    /** IdToken that provided by multi cloud provider, which help to validate the email. */
+    public String getIdtoken() {
+        return idtoken;
+    }
+    /** The OCID of identity domain. */
+    private String domainid;
+
+    /** The OCID of identity domain. */
+    public String getDomainid() {
+        return domainid;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListIncidentsRequest, java.lang.Void> {
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
-
-        /** The Customer Support Identifier associated with the support account. */
-        private String csi = null;
-
-        /**
-         * The Customer Support Identifier associated with the support account.
-         *
-         * @param csi the value to set
-         * @return this builder instance
-         */
-        public Builder csi(String csi) {
-            this.csi = csi;
-            return this;
-        }
 
         /** The OCID of the tenancy. */
         private String compartmentId = null;
@@ -153,21 +167,17 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
-         * Cloud Infrastructure account.
-         */
-        private String ocid = null;
+        /** The Customer Support Identifier (CSI) associated with the support account. */
+        private String csi = null;
 
         /**
-         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
-         * Cloud Infrastructure account.
+         * The Customer Support Identifier (CSI) associated with the support account.
          *
-         * @param ocid the value to set
+         * @param csi the value to set
          * @return this builder instance
          */
-        public Builder ocid(String ocid) {
-            this.ocid = ocid;
+        public Builder csi(String csi) {
+            this.csi = csi;
             return this;
         }
 
@@ -271,6 +281,24 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
+         * Cloud Infrastructure account.
+         */
+        private String ocid = null;
+
+        /**
+         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
+         * Cloud Infrastructure account.
+         *
+         * @param ocid the value to set
+         * @return this builder instance
+         */
+        public Builder ocid(String ocid) {
+            this.ocid = ocid;
+            return this;
+        }
+
         /** The region of the tenancy. */
         private String homeregion = null;
 
@@ -296,6 +324,62 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
          */
         public Builder problemType(String problemType) {
             this.problemType = problemType;
+            return this;
+        }
+
+        /** Token type that determine which cloud provider the request come from. */
+        private String bearertokentype = null;
+
+        /**
+         * Token type that determine which cloud provider the request come from.
+         *
+         * @param bearertokentype the value to set
+         * @return this builder instance
+         */
+        public Builder bearertokentype(String bearertokentype) {
+            this.bearertokentype = bearertokentype;
+            return this;
+        }
+
+        /** Token that provided by multi cloud provider, which help to validate the email. */
+        private String bearertoken = null;
+
+        /**
+         * Token that provided by multi cloud provider, which help to validate the email.
+         *
+         * @param bearertoken the value to set
+         * @return this builder instance
+         */
+        public Builder bearertoken(String bearertoken) {
+            this.bearertoken = bearertoken;
+            return this;
+        }
+
+        /** IdToken that provided by multi cloud provider, which help to validate the email. */
+        private String idtoken = null;
+
+        /**
+         * IdToken that provided by multi cloud provider, which help to validate the email.
+         *
+         * @param idtoken the value to set
+         * @return this builder instance
+         */
+        public Builder idtoken(String idtoken) {
+            this.idtoken = idtoken;
+            return this;
+        }
+
+        /** The OCID of identity domain. */
+        private String domainid = null;
+
+        /**
+         * The OCID of identity domain.
+         *
+         * @param domainid the value to set
+         * @return this builder instance
+         */
+        public Builder domainid(String domainid) {
+            this.domainid = domainid;
             return this;
         }
 
@@ -329,17 +413,21 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
          * @return this builder instance
          */
         public Builder copy(ListIncidentsRequest o) {
-            csi(o.getCsi());
             compartmentId(o.getCompartmentId());
-            ocid(o.getOcid());
+            csi(o.getCsi());
             limit(o.getLimit());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             lifecycleState(o.getLifecycleState());
             page(o.getPage());
             opcRequestId(o.getOpcRequestId());
+            ocid(o.getOcid());
             homeregion(o.getHomeregion());
             problemType(o.getProblemType());
+            bearertokentype(o.getBearertokentype());
+            bearertoken(o.getBearertoken());
+            idtoken(o.getIdtoken());
+            domainid(o.getDomainid());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -374,20 +462,25 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
          */
         public ListIncidentsRequest buildWithoutInvocationCallback() {
             ListIncidentsRequest request = new ListIncidentsRequest();
-            request.csi = csi;
             request.compartmentId = compartmentId;
-            request.ocid = ocid;
+            request.csi = csi;
             request.limit = limit;
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             request.lifecycleState = lifecycleState;
             request.page = page;
             request.opcRequestId = opcRequestId;
+            request.ocid = ocid;
             request.homeregion = homeregion;
             request.problemType = problemType;
+            request.bearertokentype = bearertokentype;
+            request.bearertoken = bearertoken;
+            request.idtoken = idtoken;
+            request.domainid = domainid;
             return request;
-            // new ListIncidentsRequest(csi, compartmentId, ocid, limit, sortBy, sortOrder,
-            // lifecycleState, page, opcRequestId, homeregion, problemType);
+            // new ListIncidentsRequest(compartmentId, csi, limit, sortBy, sortOrder,
+            // lifecycleState, page, opcRequestId, ocid, homeregion, problemType, bearertokentype,
+            // bearertoken, idtoken, domainid);
         }
     }
 
@@ -398,17 +491,21 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     public Builder toBuilder() {
         return new Builder()
-                .csi(csi)
                 .compartmentId(compartmentId)
-                .ocid(ocid)
+                .csi(csi)
                 .limit(limit)
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
                 .lifecycleState(lifecycleState)
                 .page(page)
                 .opcRequestId(opcRequestId)
+                .ocid(ocid)
                 .homeregion(homeregion)
-                .problemType(problemType);
+                .problemType(problemType)
+                .bearertokentype(bearertokentype)
+                .bearertoken(bearertoken)
+                .idtoken(idtoken)
+                .domainid(domainid);
     }
 
     /**
@@ -425,17 +522,21 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
-        sb.append(",csi=").append(String.valueOf(this.csi));
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
-        sb.append(",ocid=").append(String.valueOf(this.ocid));
+        sb.append(",csi=").append(String.valueOf(this.csi));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ocid=").append(String.valueOf(this.ocid));
         sb.append(",homeregion=").append(String.valueOf(this.homeregion));
         sb.append(",problemType=").append(String.valueOf(this.problemType));
+        sb.append(",bearertokentype=").append(String.valueOf(this.bearertokentype));
+        sb.append(",bearertoken=").append(String.valueOf(this.bearertoken));
+        sb.append(",idtoken=").append(String.valueOf(this.idtoken));
+        sb.append(",domainid=").append(String.valueOf(this.domainid));
         sb.append(")");
         return sb.toString();
     }
@@ -451,28 +552,31 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         ListIncidentsRequest other = (ListIncidentsRequest) o;
         return super.equals(o)
-                && java.util.Objects.equals(this.csi, other.csi)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
-                && java.util.Objects.equals(this.ocid, other.ocid)
+                && java.util.Objects.equals(this.csi, other.csi)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ocid, other.ocid)
                 && java.util.Objects.equals(this.homeregion, other.homeregion)
-                && java.util.Objects.equals(this.problemType, other.problemType);
+                && java.util.Objects.equals(this.problemType, other.problemType)
+                && java.util.Objects.equals(this.bearertokentype, other.bearertokentype)
+                && java.util.Objects.equals(this.bearertoken, other.bearertoken)
+                && java.util.Objects.equals(this.idtoken, other.idtoken)
+                && java.util.Objects.equals(this.domainid, other.domainid);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
-        result = (result * PRIME) + (this.csi == null ? 43 : this.csi.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
-        result = (result * PRIME) + (this.ocid == null ? 43 : this.ocid.hashCode());
+        result = (result * PRIME) + (this.csi == null ? 43 : this.csi.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
@@ -481,8 +585,15 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ocid == null ? 43 : this.ocid.hashCode());
         result = (result * PRIME) + (this.homeregion == null ? 43 : this.homeregion.hashCode());
         result = (result * PRIME) + (this.problemType == null ? 43 : this.problemType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bearertokentype == null ? 43 : this.bearertokentype.hashCode());
+        result = (result * PRIME) + (this.bearertoken == null ? 43 : this.bearertoken.hashCode());
+        result = (result * PRIME) + (this.idtoken == null ? 43 : this.idtoken.hashCode());
+        result = (result * PRIME) + (this.domainid == null ? 43 : this.domainid.hashCode());
         return result;
     }
 }

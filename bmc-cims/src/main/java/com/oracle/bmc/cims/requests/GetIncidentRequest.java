@@ -20,10 +20,23 @@ public class GetIncidentRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public String getIncidentKey() {
         return incidentKey;
     }
-    /** The Customer Support Identifier associated with the support account. */
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     */
+    private String opcRequestId;
+
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     */
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+    /** The Customer Support Identifier (CSI) associated with the support account. */
     private String csi;
 
-    /** The Customer Support Identifier associated with the support account. */
+    /** The Customer Support Identifier (CSI) associated with the support account. */
     public String getCsi() {
         return csi;
     }
@@ -40,19 +53,6 @@ public class GetIncidentRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public String getOcid() {
         return ocid;
     }
-    /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
-     */
-    private String opcRequestId;
-
-    /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
-     */
-    public String getOpcRequestId() {
-        return opcRequestId;
-    }
     /** The region of the tenancy. */
     private String homeregion;
 
@@ -60,12 +60,47 @@ public class GetIncidentRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public String getHomeregion() {
         return homeregion;
     }
+    /** The OCID of the tenancy. */
+    private String compartmentId;
+
+    /** The OCID of the tenancy. */
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /** The kind of support request. */
-    private String problemType;
+    private String problemtype;
 
     /** The kind of support request. */
-    public String getProblemType() {
-        return problemType;
+    public String getProblemtype() {
+        return problemtype;
+    }
+    /** Token type that determine which cloud provider the request come from. */
+    private String bearertokentype;
+
+    /** Token type that determine which cloud provider the request come from. */
+    public String getBearertokentype() {
+        return bearertokentype;
+    }
+    /** Token that provided by multi cloud provider, which help to validate the email. */
+    private String bearertoken;
+
+    /** Token that provided by multi cloud provider, which help to validate the email. */
+    public String getBearertoken() {
+        return bearertoken;
+    }
+    /** IdToken that provided by multi cloud provider, which help to validate the email. */
+    private String idtoken;
+
+    /** IdToken that provided by multi cloud provider, which help to validate the email. */
+    public String getIdtoken() {
+        return idtoken;
+    }
+    /** The OCID of identity domain. */
+    private String domainid;
+
+    /** The OCID of identity domain. */
+    public String getDomainid() {
+        return domainid;
     }
 
     public static class Builder
@@ -88,11 +123,29 @@ public class GetIncidentRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The Customer Support Identifier associated with the support account. */
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         */
+        private String opcRequestId = null;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        /** The Customer Support Identifier (CSI) associated with the support account. */
         private String csi = null;
 
         /**
-         * The Customer Support Identifier associated with the support account.
+         * The Customer Support Identifier (CSI) associated with the support account.
          *
          * @param csi the value to set
          * @return this builder instance
@@ -120,24 +173,6 @@ public class GetIncidentRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         */
-        private String opcRequestId = null;
-
-        /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
-         * @param opcRequestId the value to set
-         * @return this builder instance
-         */
-        public Builder opcRequestId(String opcRequestId) {
-            this.opcRequestId = opcRequestId;
-            return this;
-        }
-
         /** The region of the tenancy. */
         private String homeregion = null;
 
@@ -152,17 +187,87 @@ public class GetIncidentRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /** The OCID of the tenancy. */
+        private String compartmentId = null;
+
+        /**
+         * The OCID of the tenancy.
+         *
+         * @param compartmentId the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
         /** The kind of support request. */
-        private String problemType = null;
+        private String problemtype = null;
 
         /**
          * The kind of support request.
          *
-         * @param problemType the value to set
+         * @param problemtype the value to set
          * @return this builder instance
          */
-        public Builder problemType(String problemType) {
-            this.problemType = problemType;
+        public Builder problemtype(String problemtype) {
+            this.problemtype = problemtype;
+            return this;
+        }
+
+        /** Token type that determine which cloud provider the request come from. */
+        private String bearertokentype = null;
+
+        /**
+         * Token type that determine which cloud provider the request come from.
+         *
+         * @param bearertokentype the value to set
+         * @return this builder instance
+         */
+        public Builder bearertokentype(String bearertokentype) {
+            this.bearertokentype = bearertokentype;
+            return this;
+        }
+
+        /** Token that provided by multi cloud provider, which help to validate the email. */
+        private String bearertoken = null;
+
+        /**
+         * Token that provided by multi cloud provider, which help to validate the email.
+         *
+         * @param bearertoken the value to set
+         * @return this builder instance
+         */
+        public Builder bearertoken(String bearertoken) {
+            this.bearertoken = bearertoken;
+            return this;
+        }
+
+        /** IdToken that provided by multi cloud provider, which help to validate the email. */
+        private String idtoken = null;
+
+        /**
+         * IdToken that provided by multi cloud provider, which help to validate the email.
+         *
+         * @param idtoken the value to set
+         * @return this builder instance
+         */
+        public Builder idtoken(String idtoken) {
+            this.idtoken = idtoken;
+            return this;
+        }
+
+        /** The OCID of identity domain. */
+        private String domainid = null;
+
+        /**
+         * The OCID of identity domain.
+         *
+         * @param domainid the value to set
+         * @return this builder instance
+         */
+        public Builder domainid(String domainid) {
+            this.domainid = domainid;
             return this;
         }
 
@@ -197,11 +302,16 @@ public class GetIncidentRequest extends com.oracle.bmc.requests.BmcRequest<java.
          */
         public Builder copy(GetIncidentRequest o) {
             incidentKey(o.getIncidentKey());
+            opcRequestId(o.getOpcRequestId());
             csi(o.getCsi());
             ocid(o.getOcid());
-            opcRequestId(o.getOpcRequestId());
             homeregion(o.getHomeregion());
-            problemType(o.getProblemType());
+            compartmentId(o.getCompartmentId());
+            problemtype(o.getProblemtype());
+            bearertokentype(o.getBearertokentype());
+            bearertoken(o.getBearertoken());
+            idtoken(o.getIdtoken());
+            domainid(o.getDomainid());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -237,14 +347,19 @@ public class GetIncidentRequest extends com.oracle.bmc.requests.BmcRequest<java.
         public GetIncidentRequest buildWithoutInvocationCallback() {
             GetIncidentRequest request = new GetIncidentRequest();
             request.incidentKey = incidentKey;
+            request.opcRequestId = opcRequestId;
             request.csi = csi;
             request.ocid = ocid;
-            request.opcRequestId = opcRequestId;
             request.homeregion = homeregion;
-            request.problemType = problemType;
+            request.compartmentId = compartmentId;
+            request.problemtype = problemtype;
+            request.bearertokentype = bearertokentype;
+            request.bearertoken = bearertoken;
+            request.idtoken = idtoken;
+            request.domainid = domainid;
             return request;
-            // new GetIncidentRequest(incidentKey, csi, ocid, opcRequestId, homeregion,
-            // problemType);
+            // new GetIncidentRequest(incidentKey, opcRequestId, csi, ocid, homeregion,
+            // compartmentId, problemtype, bearertokentype, bearertoken, idtoken, domainid);
         }
     }
 
@@ -256,11 +371,16 @@ public class GetIncidentRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public Builder toBuilder() {
         return new Builder()
                 .incidentKey(incidentKey)
+                .opcRequestId(opcRequestId)
                 .csi(csi)
                 .ocid(ocid)
-                .opcRequestId(opcRequestId)
                 .homeregion(homeregion)
-                .problemType(problemType);
+                .compartmentId(compartmentId)
+                .problemtype(problemtype)
+                .bearertokentype(bearertokentype)
+                .bearertoken(bearertoken)
+                .idtoken(idtoken)
+                .domainid(domainid);
     }
 
     /**
@@ -278,11 +398,16 @@ public class GetIncidentRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",incidentKey=").append(String.valueOf(this.incidentKey));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",csi=").append(String.valueOf(this.csi));
         sb.append(",ocid=").append(String.valueOf(this.ocid));
-        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",homeregion=").append(String.valueOf(this.homeregion));
-        sb.append(",problemType=").append(String.valueOf(this.problemType));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",problemtype=").append(String.valueOf(this.problemtype));
+        sb.append(",bearertokentype=").append(String.valueOf(this.bearertokentype));
+        sb.append(",bearertoken=").append(String.valueOf(this.bearertoken));
+        sb.append(",idtoken=").append(String.valueOf(this.idtoken));
+        sb.append(",domainid=").append(String.valueOf(this.domainid));
         sb.append(")");
         return sb.toString();
     }
@@ -299,11 +424,16 @@ public class GetIncidentRequest extends com.oracle.bmc.requests.BmcRequest<java.
         GetIncidentRequest other = (GetIncidentRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.incidentKey, other.incidentKey)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.csi, other.csi)
                 && java.util.Objects.equals(this.ocid, other.ocid)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.homeregion, other.homeregion)
-                && java.util.Objects.equals(this.problemType, other.problemType);
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.problemtype, other.problemtype)
+                && java.util.Objects.equals(this.bearertokentype, other.bearertokentype)
+                && java.util.Objects.equals(this.bearertoken, other.bearertoken)
+                && java.util.Objects.equals(this.idtoken, other.idtoken)
+                && java.util.Objects.equals(this.domainid, other.domainid);
     }
 
     @Override
@@ -311,11 +441,20 @@ public class GetIncidentRequest extends com.oracle.bmc.requests.BmcRequest<java.
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.incidentKey == null ? 43 : this.incidentKey.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.csi == null ? 43 : this.csi.hashCode());
         result = (result * PRIME) + (this.ocid == null ? 43 : this.ocid.hashCode());
-        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.homeregion == null ? 43 : this.homeregion.hashCode());
-        result = (result * PRIME) + (this.problemType == null ? 43 : this.problemType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.problemtype == null ? 43 : this.problemtype.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bearertokentype == null ? 43 : this.bearertokentype.hashCode());
+        result = (result * PRIME) + (this.bearertoken == null ? 43 : this.bearertoken.hashCode());
+        result = (result * PRIME) + (this.idtoken == null ? 43 : this.idtoken.hashCode());
+        result = (result * PRIME) + (this.domainid == null ? 43 : this.domainid.hashCode());
         return result;
     }
 }

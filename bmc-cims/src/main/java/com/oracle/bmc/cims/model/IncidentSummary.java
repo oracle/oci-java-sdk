@@ -117,12 +117,16 @@ public final class IncidentSummary
             this.__explicitlySet__.add("incidentType");
             return this;
         }
-        /** The kind of support ticket, such as a technical support request. */
+        /**
+         * The kind of support ticket, such as a technical support request or a limit increase
+         * request.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("problemType")
         private ProblemType problemType;
 
         /**
-         * The kind of support ticket, such as a technical support request.
+         * The kind of support ticket, such as a technical support request or a limit increase
+         * request.
          *
          * @param problemType the value to set
          * @return this builder
@@ -242,12 +246,14 @@ public final class IncidentSummary
         return incidentType;
     }
 
-    /** The kind of support ticket, such as a technical support request. */
+    /**
+     * The kind of support ticket, such as a technical support request or a limit increase request.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("problemType")
     private final ProblemType problemType;
 
     /**
-     * The kind of support ticket, such as a technical support request.
+     * The kind of support ticket, such as a technical support request or a limit increase request.
      *
      * @return the value
      */

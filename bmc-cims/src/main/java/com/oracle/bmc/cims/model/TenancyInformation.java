@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details about the customer's tenancy. <br>
+ * Details about the tenancy. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,12 +32,12 @@ public final class TenancyInformation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The Customer Support Identifier number associated with the tenancy. */
+        /** The Customer Support Identifier (CSI) number associated with the tenancy. */
         @com.fasterxml.jackson.annotation.JsonProperty("customerSupportKey")
         private String customerSupportKey;
 
         /**
-         * The Customer Support Identifier number associated with the tenancy.
+         * The Customer Support Identifier (CSI) number associated with the tenancy.
          *
          * @param customerSupportKey the value to set
          * @return this builder
@@ -96,12 +96,12 @@ public final class TenancyInformation
         return new Builder().copy(this);
     }
 
-    /** The Customer Support Identifier number associated with the tenancy. */
+    /** The Customer Support Identifier (CSI) number associated with the tenancy. */
     @com.fasterxml.jackson.annotation.JsonProperty("customerSupportKey")
     private final String customerSupportKey;
 
     /**
-     * The Customer Support Identifier number associated with the tenancy.
+     * The Customer Support Identifier (CSI) number associated with the tenancy.
      *
      * @return the value
      */

@@ -5,10 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details gathered during the creation of the support ticket.
- *
- * <p>*Caution:** Avoid using any confidential information when you supply string values using the
- * API. <br>
+ * Details gathered during the creation of the support ticket. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -75,12 +72,16 @@ public final class CreateIncident
             this.__explicitlySet__.add("ticket");
             return this;
         }
-        /** The Customer Support Identifier number for the support account. */
+        /**
+         * The Customer Support Identifier (CSI) number associated with the support account. The CSI
+         * is required for technical support tickets and optional for limits and billing tickets.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("csi")
         private String csi;
 
         /**
-         * The Customer Support Identifier number for the support account.
+         * The Customer Support Identifier (CSI) number associated with the support account. The CSI
+         * is required for technical support tickets and optional for limits and billing tickets.
          *
          * @param csi the value to set
          * @return this builder
@@ -90,12 +91,16 @@ public final class CreateIncident
             this.__explicitlySet__.add("csi");
             return this;
         }
-        /** The kind of support ticket, such as a technical issue request. */
+        /**
+         * The kind of support ticket, such as a technical support request or a limit increase
+         * request.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("problemType")
         private ProblemType problemType;
 
         /**
-         * The kind of support ticket, such as a technical issue request.
+         * The kind of support ticket, such as a technical support request or a limit increase
+         * request.
          *
          * @param problemType the value to set
          * @return this builder
@@ -211,12 +216,16 @@ public final class CreateIncident
         return ticket;
     }
 
-    /** The Customer Support Identifier number for the support account. */
+    /**
+     * The Customer Support Identifier (CSI) number associated with the support account. The CSI is
+     * required for technical support tickets and optional for limits and billing tickets.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("csi")
     private final String csi;
 
     /**
-     * The Customer Support Identifier number for the support account.
+     * The Customer Support Identifier (CSI) number associated with the support account. The CSI is
+     * required for technical support tickets and optional for limits and billing tickets.
      *
      * @return the value
      */
@@ -224,12 +233,14 @@ public final class CreateIncident
         return csi;
     }
 
-    /** The kind of support ticket, such as a technical issue request. */
+    /**
+     * The kind of support ticket, such as a technical support request or a limit increase request.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("problemType")
     private final ProblemType problemType;
 
     /**
-     * The kind of support ticket, such as a technical issue request.
+     * The kind of support ticket, such as a technical support request or a limit increase request.
      *
      * @return the value
      */

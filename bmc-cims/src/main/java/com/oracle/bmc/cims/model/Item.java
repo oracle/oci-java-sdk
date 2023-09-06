@@ -22,6 +22,9 @@ package com.oracle.bmc.cims.model;
         property = "type",
         defaultImpl = Item.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = AccountItem.class,
+            name = "account"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = LimitItem.class, name = "limit"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = TechSupportItem.class,
@@ -62,12 +65,12 @@ public class Item extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcMo
         return itemKey;
     }
 
-    /** The display name of the item. */
+    /** The display name of the item. Avoid entering confidential information. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The display name of the item.
+     * The display name of the item. Avoid entering confidential information.
      *
      * @return the value
      */

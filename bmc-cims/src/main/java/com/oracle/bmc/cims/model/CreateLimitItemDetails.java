@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Reserved for future use. <br>
+ * Details about the service limit increase request. Avoid entering confidential information. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -92,12 +92,12 @@ public final class CreateLimitItemDetails extends CreateItemDetails {
             this.__explicitlySet__.add("currentUsage");
             return this;
         }
-        /** Reserved for future use. */
+        /** The new service limit being requested. */
         @com.fasterxml.jackson.annotation.JsonProperty("requestedLimit")
         private Integer requestedLimit;
 
         /**
-         * Reserved for future use.
+         * The new service limit being requested.
          *
          * @param requestedLimit the value to set
          * @return this builder
@@ -225,12 +225,12 @@ public final class CreateLimitItemDetails extends CreateItemDetails {
         return currentUsage;
     }
 
-    /** Reserved for future use. */
+    /** The new service limit being requested. */
     @com.fasterxml.jackson.annotation.JsonProperty("requestedLimit")
     private final Integer requestedLimit;
 
     /**
-     * Reserved for future use.
+     * The new service limit being requested.
      *
      * @return the value
      */

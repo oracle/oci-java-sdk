@@ -7,10 +7,5 @@ package com.oracle.bmc.cims;
 import com.oracle.bmc.SdkClients;
 
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-@SdkClients({
-    IncidentAsyncClient.class,
-    IncidentClient.class,
-    UserAsyncClient.class,
-    UserClient.class
-})
+@SdkClients({IncidentAsyncClient.class, IncidentClient.class})
 public final class SdkClientsMetadata {}

@@ -207,6 +207,52 @@ public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     }
 
     @Override
+    public java.util.concurrent.Future<AsynchronousExportGlossaryResponse>
+            asynchronousExportGlossary(
+                    AsynchronousExportGlossaryRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AsynchronousExportGlossaryRequest,
+                                    AsynchronousExportGlossaryResponse>
+                            handler) {
+
+        Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
+
+        Validate.notBlank(request.getGlossaryKey(), "glossaryKey must not be blank");
+        Objects.requireNonNull(
+                request.getAsynchronousExportGlossaryDetails(),
+                "asynchronousExportGlossaryDetails is required");
+
+        return clientCall(request, AsynchronousExportGlossaryResponse::builder)
+                .logger(LOG, "asynchronousExportGlossary")
+                .serviceDetails(
+                        "DataCatalog",
+                        "AsynchronousExportGlossary",
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Glossary/AsynchronousExportGlossary")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AsynchronousExportGlossaryRequest::builder)
+                .basePath("/20190325")
+                .appendPathParam("catalogs")
+                .appendPathParam(request.getCatalogId())
+                .appendPathParam("glossaries")
+                .appendPathParam(request.getGlossaryKey())
+                .appendPathParam("actions")
+                .appendPathParam("asynchronousExport")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datacatalog.model.AsynchronousExportGlossaryResult.class,
+                        AsynchronousExportGlossaryResponse.Builder
+                                ::asynchronousExportGlossaryResult)
+                .handleResponseHeaderString(
+                        "etag", AsynchronousExportGlossaryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", AsynchronousExportGlossaryResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<AttachCatalogPrivateEndpointResponse>
             attachCatalogPrivateEndpoint(
                     AttachCatalogPrivateEndpointRequest request,
@@ -2033,6 +2079,54 @@ public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .handleResponseHeaderString("etag", ExportGlossaryResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", ExportGlossaryResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<FetchEntityLineageResponse> fetchEntityLineage(
+            FetchEntityLineageRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            FetchEntityLineageRequest, FetchEntityLineageResponse>
+                    handler) {
+
+        Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
+
+        Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
+
+        Validate.notBlank(request.getEntityKey(), "entityKey must not be blank");
+        Objects.requireNonNull(
+                request.getFetchEntityLineageDetails(), "fetchEntityLineageDetails is required");
+
+        return clientCall(request, FetchEntityLineageResponse::builder)
+                .logger(LOG, "fetchEntityLineage")
+                .serviceDetails(
+                        "DataCatalog",
+                        "FetchEntityLineage",
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Entity/FetchEntityLineage")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(FetchEntityLineageRequest::builder)
+                .basePath("/20190325")
+                .appendPathParam("catalogs")
+                .appendPathParam(request.getCatalogId())
+                .appendPathParam("dataAssets")
+                .appendPathParam(request.getDataAssetKey())
+                .appendPathParam("entities")
+                .appendPathParam(request.getEntityKey())
+                .appendPathParam("actions")
+                .appendPathParam("fetchLineage")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datacatalog.model.EntityLineage.class,
+                        FetchEntityLineageResponse.Builder::entityLineage)
+                .handleResponseHeaderString(
+                        "opc-request-id", FetchEntityLineageResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", FetchEntityLineageResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -3913,6 +4007,7 @@ public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                         "fields",
                         request.getFields(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("typeKey", request.getTypeKey())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendQueryParam("limit", request.getLimit())
@@ -4005,6 +4100,7 @@ public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .appendEnumQueryParam("jobType", request.getJobType())
                 .appendQueryParam("isIncremental", request.getIsIncremental())
                 .appendQueryParam("dataAssetKey", request.getDataAssetKey())
+                .appendQueryParam("glossaryKey", request.getGlossaryKey())
                 .appendQueryParam("connectionKey", request.getConnectionKey())
                 .appendQueryParam("timeCreated", request.getTimeCreated())
                 .appendQueryParam("timeUpdated", request.getTimeUpdated())
@@ -4237,6 +4333,7 @@ public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .appendEnumQueryParam("jobType", request.getJobType())
                 .appendQueryParam("jobDefinitionKey", request.getJobDefinitionKey())
                 .appendQueryParam("dataAssetKey", request.getDataAssetKey())
+                .appendQueryParam("glossaryKey", request.getGlossaryKey())
                 .appendQueryParam("scheduleCronExpression", request.getScheduleCronExpression())
                 .appendQueryParam("timeScheduleBegin", request.getTimeScheduleBegin())
                 .appendQueryParam("timeScheduleEnd", request.getTimeScheduleEnd())

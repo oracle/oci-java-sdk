@@ -70,14 +70,14 @@ public final class Stats extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return this;
         }
         /**
-         * The approximate size of the queue in bytes. Sum of the size of visible of in-flight
+         * The approximate size of the queue in bytes. Sum of the size of visible and in-flight
          * messages.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
         private Long sizeInBytes;
 
         /**
-         * The approximate size of the queue in bytes. Sum of the size of visible of in-flight
+         * The approximate size of the queue in bytes. Sum of the size of visible and in-flight
          * messages.
          *
          * @param sizeInBytes the value to set
@@ -157,13 +157,15 @@ public final class Stats extends com.oracle.bmc.http.client.internal.ExplicitlyS
     }
 
     /**
-     * The approximate size of the queue in bytes. Sum of the size of visible of in-flight messages.
+     * The approximate size of the queue in bytes. Sum of the size of visible and in-flight
+     * messages.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
     private final Long sizeInBytes;
 
     /**
-     * The approximate size of the queue in bytes. Sum of the size of visible of in-flight messages.
+     * The approximate size of the queue in bytes. Sum of the size of visible and in-flight
+     * messages.
      *
      * @return the value
      */

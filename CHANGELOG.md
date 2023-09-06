@@ -3,6 +3,30 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.25.0 - 2023-09-05
+### Added
+- Support for queue channels in the Queue Service
+- Support for entity lineage retrieval and asynchronous glossary export in the Data Catalog service
+- Support for filtering and sorting while listing work requests in the Container Instances service
+- Support for the ability to create support requests for various support ticket types (TECH, LIMIT, ACCOUNT) in the Customer Incident Management Service
+- Endpoint changed from https://incidentmanagement.{region}.{domainAndTopLevelDomain} to https://incidentmanagement.{region}.oci.{domainAndTopLevelDomain} (e.g. https://incidentmanagement.us-phoenix-1.oraclecloud.com to https://incidentmanagement.us-phoenix-1.oci.oraclecloud.com) in the Customer Incident Management Service
+ 
+### Breaking Changes
+- Class `com.oracle.bmc.cims.User` has been removed in the Customer Incident Management Service
+- Class `com.oracle.bmc.cims.UserClient` has been removed in the Customer Incident Management Service
+- Class `com.oracle.bmc.cims.model.AvailabilityDomain` has been removed in the Customer Incident Management Service
+- Method `public com.oracle.bmc.cims.model.AvailabilityDomain getAvailabilityDomain()` has been removed in the model `com.oracle.bmc.cims.model.CreateResourceDetails` in the Customer Incident Management Service
+- Return type of method `public com.oracle.bmc.cims.model.Region getRegion()` has been changed to `java.lang.String` in the model `com.oracle.bmc.cims.model.CreateResourceDetails` in the Customer Incident Management Service
+- Method `public java.lang.String getCountry()` has been removed in the model `com.oracle.bmc.cims.model.CreateUserDetails` in the Customer Incident Management Service
+- Class `com.oracle.bmc.cims.model.Region` has been removed in the Customer Incident Management Service
+- Method `public com.oracle.bmc.cims.model.AvailabilityDomain getAvailabilityDomain()` has been removed in the model `com.oracle.bmc.cims.model.Resource` in the Customer Incident Management Service
+- Return type of method `public com.oracle.bmc.cims.model.Region getRegion()` has been changed to `java.lang.String` in the model `com.oracle.bmc.cims.model.Resource` in the Customer Incident Management Service
+- Class `com.oracle.bmc.cims.requests.CreateUserRequest` has been removed in the Customer Incident Management Service
+- Method `public java.lang.String getProblemType()` has been removed in `com.oracle.bmc.cims.requests.GetIncidentRequest` in the Customer Incident Management Service
+- Method `public java.lang.String getSource()` has been removed in `com.oracle.bmc.cims.requests.GetStatusRequest` in the Customer Incident Management Service
+- Return type of method `public java.lang.String getProblemType()` has been changed to `com.oracle.bmc.cims.model.ProblemType` in `com.oracle.bmc.cims.requests.ValidateUserRequest` in the Customer Incident Management Service
+- Class `com.oracle.bmc.cims.responses.CreateUserResponse` has been removed in the Customer Incident Management Service
+
 ## 3.24.0 - 2023-08-29
 ### Added 
 - Support for creating and updating network monitors in the Application Performance Monitoring Synthetics service

@@ -10,10 +10,11 @@ import com.oracle.bmc.cims.responses.*;
 /**
  * Use the Support Management API to manage support requests. For more information, see [Getting
  * Help and Contacting
- * Support](https://docs.cloud.oracle.com/iaas/Content/GSG/Tasks/contactingsupport.htm). **Note**:
- * Before you can create service requests with this API, you need to have an Oracle Single Sign On
- * (SSO) account, and you need to register your Customer Support Identifier (CSI) with My Oracle
- * Support.
+ * Support](https://docs.cloud.oracle.com/iaas/Content/GSG/Tasks/contactingsupport.htm).
+ *
+ * <p>*Note**: Before you can create service requests with this API, you need to have an Oracle
+ * Single Sign On (SSO) account, and you need to register your Customer Support Identifier (CSI)
+ * with My Oracle Support.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 public interface IncidentAsync extends AutoCloseable {
@@ -67,7 +68,7 @@ public interface IncidentAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Enables the customer to create an support ticket.
+     * Operation to create a support ticket.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -82,7 +83,22 @@ public interface IncidentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the details of the support ticket.
+     * Fetches csi number of the user.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCsiNumberResponse> getCsiNumber(
+            GetCsiNumberRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetCsiNumberRequest, GetCsiNumberResponse>
+                    handler);
+
+    /**
+     * Gets details about the specified support ticket.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

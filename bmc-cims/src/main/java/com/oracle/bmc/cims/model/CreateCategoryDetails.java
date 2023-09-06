@@ -5,10 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details for creating the category of the support ticket.
- *
- * <p>*Caution:** Avoid using any confidential information when you supply string values using the
- * API. <br>
+ * Details for creating the category of the support ticket. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -34,12 +31,12 @@ public final class CreateCategoryDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier for the category. */
+        /** Unique identifier for the service category. */
         @com.fasterxml.jackson.annotation.JsonProperty("categoryKey")
         private String categoryKey;
 
         /**
-         * Unique identifier for the category.
+         * Unique identifier for the service category.
          *
          * @param categoryKey the value to set
          * @return this builder
@@ -79,12 +76,12 @@ public final class CreateCategoryDetails
         return new Builder().copy(this);
     }
 
-    /** Unique identifier for the category. */
+    /** Unique identifier for the service category. */
     @com.fasterxml.jackson.annotation.JsonProperty("categoryKey")
     private final String categoryKey;
 
     /**
-     * Unique identifier for the category.
+     * Unique identifier for the service category.
      *
      * @return the value
      */

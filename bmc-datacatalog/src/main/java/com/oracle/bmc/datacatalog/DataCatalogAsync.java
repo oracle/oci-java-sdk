@@ -96,6 +96,23 @@ public interface DataCatalogAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Exports the contents of a glossary in Excel format. Returns details about the job which
+     * actually performs the export.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AsynchronousExportGlossaryResponse> asynchronousExportGlossary(
+            AsynchronousExportGlossaryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AsynchronousExportGlossaryRequest, AsynchronousExportGlossaryResponse>
+                    handler);
+
+    /**
      * Attaches a private reverse connection endpoint resource to a data catalog resource. When
      * provided, 'If-Match' is checked against 'ETag' values of the resource.
      *
@@ -856,6 +873,22 @@ public interface DataCatalogAsync extends AutoCloseable {
     java.util.concurrent.Future<ExportGlossaryResponse> exportGlossary(
             ExportGlossaryRequest request,
             com.oracle.bmc.responses.AsyncHandler<ExportGlossaryRequest, ExportGlossaryResponse>
+                    handler);
+
+    /**
+     * Returns lineage for a given entity object.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<FetchEntityLineageResponse> fetchEntityLineage(
+            FetchEntityLineageRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            FetchEntityLineageRequest, FetchEntityLineageResponse>
                     handler);
 
     /**

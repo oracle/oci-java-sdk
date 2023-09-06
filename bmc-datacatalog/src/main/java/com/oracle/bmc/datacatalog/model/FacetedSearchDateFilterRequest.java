@@ -34,12 +34,16 @@ public final class FacetedSearchDateFilterRequest
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Date field name that needs to be filtered by. */
+        /**
+         * Date field name that needs to be filtered by. Acceptable fields include TimeCreated and
+         * TimeUpdated.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
         private String fieldName;
 
         /**
-         * Date field name that needs to be filtered by.
+         * Date field name that needs to be filtered by. Acceptable fields include TimeCreated and
+         * TimeUpdated.
          *
          * @param fieldName the value to set
          * @return this builder
@@ -125,12 +129,16 @@ public final class FacetedSearchDateFilterRequest
         return new Builder().copy(this);
     }
 
-    /** Date field name that needs to be filtered by. */
+    /**
+     * Date field name that needs to be filtered by. Acceptable fields include TimeCreated and
+     * TimeUpdated.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
     private final String fieldName;
 
     /**
-     * Date field name that needs to be filtered by.
+     * Date field name that needs to be filtered by. Acceptable fields include TimeCreated and
+     * TimeUpdated.
      *
      * @return the value
      */

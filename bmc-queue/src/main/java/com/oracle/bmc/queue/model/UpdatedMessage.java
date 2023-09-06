@@ -31,12 +31,12 @@ public final class UpdatedMessage
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The id of the message that's been updated. */
+        /** The ID of the message that's been updated. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private Long id;
 
         /**
-         * The id of the message that's been updated.
+         * The ID of the message that's been updated.
          *
          * @param id the value to set
          * @return this builder
@@ -47,15 +47,19 @@ public final class UpdatedMessage
             return this;
         }
         /**
-         * The time after which the message will be visible to other consumers. An RFC3339 formatted
-         * datetime string
+         * The time after which the message will be visible to other consumers, expressed in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2018-04-20T00:00:07.405Z}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("visibleAfter")
         private java.util.Date visibleAfter;
 
         /**
-         * The time after which the message will be visible to other consumers. An RFC3339 formatted
-         * datetime string
+         * The time after which the message will be visible to other consumers, expressed in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2018-04-20T00:00:07.405Z}
          *
          * @param visibleAfter the value to set
          * @return this builder
@@ -98,12 +102,12 @@ public final class UpdatedMessage
         return new Builder().copy(this);
     }
 
-    /** The id of the message that's been updated. */
+    /** The ID of the message that's been updated. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final Long id;
 
     /**
-     * The id of the message that's been updated.
+     * The ID of the message that's been updated.
      *
      * @return the value
      */
@@ -112,15 +116,19 @@ public final class UpdatedMessage
     }
 
     /**
-     * The time after which the message will be visible to other consumers. An RFC3339 formatted
-     * datetime string
+     * The time after which the message will be visible to other consumers, expressed in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2018-04-20T00:00:07.405Z}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("visibleAfter")
     private final java.util.Date visibleAfter;
 
     /**
-     * The time after which the message will be visible to other consumers. An RFC3339 formatted
-     * datetime string
+     * The time after which the message will be visible to other consumers, expressed in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2018-04-20T00:00:07.405Z}
      *
      * @return the value
      */

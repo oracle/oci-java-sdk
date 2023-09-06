@@ -5,10 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details relevant to the support ticket.
- *
- * <p>*Caution:** Avoid using any confidential information when you supply string values using the
- * API. <br>
+ * Details relevant to the support ticket. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -79,12 +76,12 @@ public final class CreateTicketDetails
             this.__explicitlySet__.add("resourceList");
             return this;
         }
-        /** The title of the support ticket. */
+        /** The title of the support ticket. Avoid entering confidential information. */
         @com.fasterxml.jackson.annotation.JsonProperty("title")
         private String title;
 
         /**
-         * The title of the support ticket.
+         * The title of the support ticket. Avoid entering confidential information.
          *
          * @param title the value to set
          * @return this builder
@@ -94,12 +91,12 @@ public final class CreateTicketDetails
             this.__explicitlySet__.add("title");
             return this;
         }
-        /** The description of the support ticket. */
+        /** The description of the support ticket. Avoid entering confidential information. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * The description of the support ticket.
+         * The description of the support ticket. Avoid entering confidential information.
          *
          * @param description the value to set
          * @return this builder
@@ -109,16 +106,10 @@ public final class CreateTicketDetails
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The context from where the ticket is getting created. */
+
         @com.fasterxml.jackson.annotation.JsonProperty("contextualData")
         private ContextualData contextualData;
 
-        /**
-         * The context from where the ticket is getting created.
-         *
-         * @param contextualData the value to set
-         * @return this builder
-         */
         public Builder contextualData(ContextualData contextualData) {
             this.contextualData = contextualData;
             this.__explicitlySet__.add("contextualData");
@@ -177,6 +168,7 @@ public final class CreateTicketDetails
         Highest("HIGHEST"),
         High("HIGH"),
         Medium("MEDIUM"),
+        Low("LOW"),
         ;
 
         private final String value;
@@ -232,12 +224,12 @@ public final class CreateTicketDetails
         return resourceList;
     }
 
-    /** The title of the support ticket. */
+    /** The title of the support ticket. Avoid entering confidential information. */
     @com.fasterxml.jackson.annotation.JsonProperty("title")
     private final String title;
 
     /**
-     * The title of the support ticket.
+     * The title of the support ticket. Avoid entering confidential information.
      *
      * @return the value
      */
@@ -245,12 +237,12 @@ public final class CreateTicketDetails
         return title;
     }
 
-    /** The description of the support ticket. */
+    /** The description of the support ticket. Avoid entering confidential information. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * The description of the support ticket.
+     * The description of the support ticket. Avoid entering confidential information.
      *
      * @return the value
      */
@@ -258,15 +250,9 @@ public final class CreateTicketDetails
         return description;
     }
 
-    /** The context from where the ticket is getting created. */
     @com.fasterxml.jackson.annotation.JsonProperty("contextualData")
     private final ContextualData contextualData;
 
-    /**
-     * The context from where the ticket is getting created.
-     *
-     * @return the value
-     */
     public ContextualData getContextualData() {
         return contextualData;
     }

@@ -32,12 +32,12 @@ public final class UpdateMessagesDetailsEntry
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The receipt of the message to update */
+        /** The receipt of the message to update. */
         @com.fasterxml.jackson.annotation.JsonProperty("receipt")
         private String receipt;
 
         /**
-         * The receipt of the message to update
+         * The receipt of the message to update.
          *
          * @param receipt the value to set
          * @return this builder
@@ -100,12 +100,12 @@ public final class UpdateMessagesDetailsEntry
         return new Builder().copy(this);
     }
 
-    /** The receipt of the message to update */
+    /** The receipt of the message to update. */
     @com.fasterxml.jackson.annotation.JsonProperty("receipt")
     private final String receipt;
 
     /**
-     * The receipt of the message to update
+     * The receipt of the message to update.
      *
      * @return the value
      */

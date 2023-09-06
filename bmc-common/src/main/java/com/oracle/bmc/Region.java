@@ -328,11 +328,14 @@ public final class Region implements Serializable, Comparable<Region> {
         registerAllRegions();
         readLock.lock();
         try {
-            // Recheck state because another thread might have acquired lock.
-            if (Alloy.shouldUseOnlyAlloyRegions()) {
-                return ALLOY_REGIONS.values().toArray(new Region[ALLOY_REGIONS.size()]);
+            if (Alloy.doesAlloyConfigExist()) {
+                // Recheck state because another thread might have acquired lock.
+                if (Alloy.shouldUseOnlyAlloyRegions()) {
+                    return ALLOY_REGIONS.values().toArray(new Region[ALLOY_REGIONS.size()]);
+                }
+                return ALL_REGIONS.values().toArray(new Region[ALL_REGIONS.size()]);
             }
-            return ALL_REGIONS.values().toArray(new Region[ALL_REGIONS.size()]);
+            return KNOWN_REGIONS.values().toArray(new Region[KNOWN_REGIONS.size()]);
         } finally {
             readLock.unlock();
         }
@@ -945,7 +948,12 @@ public final class Region implements Serializable, Comparable<Region> {
     static void resetAlloyConfiguration() {
         writeLock.lock();
         try {
-            ALL_REGIONS.keySet().removeIf(ALLOY_REGIONS::containsKey);
+            ALL_REGIONS
+                    .keySet()
+                    .removeIf(
+                            key ->
+                                    (ALLOY_REGIONS.containsKey(key)
+                                            && !KNOWN_REGIONS.containsKey(key)));
             ALLOY_REGIONS.clear();
             Realm.clearAlloyRealms();
             hasUsedAlloyConfigFile = false;

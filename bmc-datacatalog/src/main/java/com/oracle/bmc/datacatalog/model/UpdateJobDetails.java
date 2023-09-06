@@ -85,7 +85,8 @@ public final class UpdateJobDetails
         /**
          * Interval on which the job will be run. Value is specified as a cron-supported time
          * specification "nickname". The following subset of those is
-         * supported: @monthly, @weekly, @daily, @hourly.
+         * supported: @monthly, @weekly, @daily, @hourly. For metastore sync, an additional
+         * option @default is supported, which will schedule jobs at a more granular frequency.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("scheduleCronExpression")
         private String scheduleCronExpression;
@@ -93,7 +94,8 @@ public final class UpdateJobDetails
         /**
          * Interval on which the job will be run. Value is specified as a cron-supported time
          * specification "nickname". The following subset of those is
-         * supported: @monthly, @weekly, @daily, @hourly.
+         * supported: @monthly, @weekly, @daily, @hourly. For metastore sync, an additional
+         * option @default is supported, which will schedule jobs at a more granular frequency.
          *
          * @param scheduleCronExpression the value to set
          * @return this builder
@@ -241,7 +243,8 @@ public final class UpdateJobDetails
     /**
      * Interval on which the job will be run. Value is specified as a cron-supported time
      * specification "nickname". The following subset of those is
-     * supported: @monthly, @weekly, @daily, @hourly.
+     * supported: @monthly, @weekly, @daily, @hourly. For metastore sync, an additional
+     * option @default is supported, which will schedule jobs at a more granular frequency.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleCronExpression")
     private final String scheduleCronExpression;
@@ -249,7 +252,8 @@ public final class UpdateJobDetails
     /**
      * Interval on which the job will be run. Value is specified as a cron-supported time
      * specification "nickname". The following subset of those is
-     * supported: @monthly, @weekly, @daily, @hourly.
+     * supported: @monthly, @weekly, @daily, @hourly. For metastore sync, an additional
+     * option @default is supported, which will schedule jobs at a more granular frequency.
      *
      * @return the value
      */

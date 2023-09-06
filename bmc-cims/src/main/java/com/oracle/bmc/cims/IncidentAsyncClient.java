@@ -34,7 +34,7 @@ public class IncidentAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                     .serviceName("INCIDENT")
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
-                            "https://incidentmanagement.{region}.{secondLevelDomain}")
+                            "https://incidentmanagement.{region}.oci.{secondLevelDomain}")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -104,8 +104,6 @@ public class IncidentAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
         Objects.requireNonNull(
                 request.getCreateIncidentDetails(), "createIncidentDetails is required");
 
-        Objects.requireNonNull(request.getOcid(), "ocid is required");
-
         return clientCall(request, CreateIncidentResponse::builder)
                 .logger(LOG, "createIncident")
                 .serviceDetails(
@@ -121,6 +119,10 @@ public class IncidentAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("ocid", request.getOcid())
                 .appendHeader("homeregion", request.getHomeregion())
+                .appendHeader("bearertokentype", request.getBearertokentype())
+                .appendHeader("bearertoken", request.getBearertoken())
+                .appendHeader("idtoken", request.getIdtoken())
+                .appendHeader("domainid", request.getDomainid())
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.cims.model.Incident.class,
@@ -131,15 +133,46 @@ public class IncidentAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<GetCsiNumberResponse> getCsiNumber(
+            GetCsiNumberRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetCsiNumberRequest, GetCsiNumberResponse>
+                    handler) {
+        Objects.requireNonNull(request.getTenantId(), "tenantId is required");
+
+        Objects.requireNonNull(request.getRegion(), "region is required");
+
+        return clientCall(request, GetCsiNumberResponse::builder)
+                .logger(LOG, "getCsiNumber")
+                .serviceDetails("Incident", "GetCsiNumber", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCsiNumberRequest::builder)
+                .basePath("/20181231")
+                .appendPathParam("v2")
+                .appendPathParam("incidents")
+                .appendPathParam("getCsiNumber")
+                .appendQueryParam("tenantId", request.getTenantId())
+                .appendQueryParam("region", request.getRegion())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("ocid", request.getOcid())
+                .appendHeader("homeregion", request.getHomeregion())
+                .appendHeader("bearertokentype", request.getBearertokentype())
+                .appendHeader("bearertoken", request.getBearertoken())
+                .appendHeader("idtoken", request.getIdtoken())
+                .appendHeader("domainid", request.getDomainid())
+                .handleBody(String.class, GetCsiNumberResponse.Builder::value)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCsiNumberResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetIncidentResponse> getIncident(
             GetIncidentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetIncidentRequest, GetIncidentResponse>
                     handler) {
 
         Validate.notBlank(request.getIncidentKey(), "incidentKey must not be blank");
-        Objects.requireNonNull(request.getCsi(), "csi is required");
-
-        Objects.requireNonNull(request.getOcid(), "ocid is required");
 
         return clientCall(request, GetIncidentResponse::builder)
                 .logger(LOG, "getIncident")
@@ -153,12 +186,17 @@ public class IncidentAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendPathParam("v2")
                 .appendPathParam("incidents")
                 .appendPathParam(request.getIncidentKey())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("csi", request.getCsi())
                 .appendHeader("ocid", request.getOcid())
                 .appendHeader("homeregion", request.getHomeregion())
-                .appendHeader("problem-type", request.getProblemType())
+                .appendHeader("problemtype", request.getProblemtype())
+                .appendHeader("bearertokentype", request.getBearertokentype())
+                .appendHeader("bearertoken", request.getBearertoken())
+                .appendHeader("idtoken", request.getIdtoken())
+                .appendHeader("domainid", request.getDomainid())
                 .handleBody(
                         com.oracle.bmc.cims.model.Incident.class,
                         GetIncidentResponse.Builder::incident)
@@ -173,9 +211,6 @@ public class IncidentAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
             final com.oracle.bmc.responses.AsyncHandler<GetStatusRequest, GetStatusResponse>
                     handler) {
 
-        Validate.notBlank(request.getSource(), "source must not be blank");
-        Objects.requireNonNull(request.getOcid(), "ocid is required");
-
         return clientCall(request, GetStatusResponse::builder)
                 .logger(LOG, "getStatus")
                 .serviceDetails(
@@ -188,7 +223,6 @@ public class IncidentAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendPathParam("v2")
                 .appendPathParam("incidents")
                 .appendPathParam("status")
-                .appendPathParam(request.getSource())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("ocid", request.getOcid())
@@ -209,10 +243,6 @@ public class IncidentAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
         Objects.requireNonNull(request.getProblemType(), "problemType is required");
 
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        Objects.requireNonNull(request.getCsi(), "csi is required");
-
-        Objects.requireNonNull(request.getOcid(), "ocid is required");
 
         return clientCall(request, ListIncidentResourceTypesResponse::builder)
                 .logger(LOG, "listIncidentResourceTypes")
@@ -238,6 +268,7 @@ public class IncidentAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendHeader("csi", request.getCsi())
                 .appendHeader("ocid", request.getOcid())
                 .appendHeader("homeregion", request.getHomeregion())
+                .appendHeader("domainid", request.getDomainid())
                 .handleBodyList(
                         com.oracle.bmc.cims.model.IncidentResourceType.class,
                         ListIncidentResourceTypesResponse.Builder::items)
@@ -253,11 +284,7 @@ public class IncidentAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
             ListIncidentsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListIncidentsRequest, ListIncidentsResponse>
                     handler) {
-        Objects.requireNonNull(request.getCsi(), "csi is required");
-
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        Objects.requireNonNull(request.getOcid(), "ocid is required");
 
         return clientCall(request, ListIncidentsResponse::builder)
                 .logger(LOG, "listIncidents")
@@ -282,6 +309,10 @@ public class IncidentAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("ocid", request.getOcid())
                 .appendHeader("homeregion", request.getHomeregion())
+                .appendHeader("bearertokentype", request.getBearertokentype())
+                .appendHeader("bearertoken", request.getBearertoken())
+                .appendHeader("idtoken", request.getIdtoken())
+                .appendHeader("domainid", request.getDomainid())
                 .handleBodyList(
                         com.oracle.bmc.cims.model.IncidentSummary.class,
                         ListIncidentsResponse.Builder::items)
@@ -289,6 +320,9 @@ public class IncidentAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         "opc-request-id", ListIncidentsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListIncidentsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListIncidentsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString("as-of-time", ListIncidentsResponse.Builder::asOfTime)
                 .callAsync(handler);
     }
 
@@ -300,12 +334,8 @@ public class IncidentAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                     handler) {
 
         Validate.notBlank(request.getIncidentKey(), "incidentKey must not be blank");
-        Objects.requireNonNull(request.getCsi(), "csi is required");
-
         Objects.requireNonNull(
                 request.getUpdateIncidentDetails(), "updateIncidentDetails is required");
-
-        Objects.requireNonNull(request.getOcid(), "ocid is required");
 
         return clientCall(request, UpdateIncidentResponse::builder)
                 .logger(LOG, "updateIncident")
@@ -319,12 +349,17 @@ public class IncidentAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendPathParam("v2")
                 .appendPathParam("incidents")
                 .appendPathParam(request.getIncidentKey())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("csi", request.getCsi())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("ocid", request.getOcid())
                 .appendHeader("homeregion", request.getHomeregion())
+                .appendHeader("bearertokentype", request.getBearertokentype())
+                .appendHeader("bearertoken", request.getBearertoken())
+                .appendHeader("idtoken", request.getIdtoken())
+                .appendHeader("domainid", request.getDomainid())
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.cims.model.Incident.class,
@@ -339,9 +374,6 @@ public class IncidentAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
             ValidateUserRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ValidateUserRequest, ValidateUserResponse>
                     handler) {
-        Objects.requireNonNull(request.getCsi(), "csi is required");
-
-        Objects.requireNonNull(request.getOcid(), "ocid is required");
 
         return clientCall(request, ValidateUserResponse::builder)
                 .logger(LOG, "validateUser")
@@ -356,12 +388,16 @@ public class IncidentAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendPathParam("incidents")
                 .appendPathParam("user")
                 .appendPathParam("validate")
-                .appendQueryParam("problemType", request.getProblemType())
+                .appendEnumQueryParam("problemType", request.getProblemType())
                 .accept("application/json")
                 .appendHeader("csi", request.getCsi())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("ocid", request.getOcid())
                 .appendHeader("homeregion", request.getHomeregion())
+                .appendHeader("bearertokentype", request.getBearertokentype())
+                .appendHeader("bearertoken", request.getBearertoken())
+                .appendHeader("idtoken", request.getIdtoken())
+                .appendHeader("domainid", request.getDomainid())
                 .handleBody(
                         com.oracle.bmc.cims.model.ValidationResponse.class,
                         ValidateUserResponse.Builder::validationResponse)

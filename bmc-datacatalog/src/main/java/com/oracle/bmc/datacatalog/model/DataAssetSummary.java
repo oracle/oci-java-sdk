@@ -34,7 +34,8 @@ public final class DataAssetSummary
         "uri",
         "timeCreated",
         "typeKey",
-        "lifecycleState"
+        "lifecycleState",
+        "lifecycleDetails"
     })
     public DataAssetSummary(
             String key,
@@ -45,7 +46,8 @@ public final class DataAssetSummary
             String uri,
             java.util.Date timeCreated,
             String typeKey,
-            LifecycleState lifecycleState) {
+            LifecycleState lifecycleState,
+            String lifecycleDetails) {
         super();
         this.key = key;
         this.displayName = displayName;
@@ -56,6 +58,7 @@ public final class DataAssetSummary
         this.timeCreated = timeCreated;
         this.typeKey = typeKey;
         this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -207,6 +210,25 @@ public final class DataAssetSummary
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
+        /**
+         * A message describing the current state in more detail. An object not in ACTIVE state may
+         * have functional limitations, see service documentation for details.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * A message describing the current state in more detail. An object not in ACTIVE state may
+         * have functional limitations, see service documentation for details.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         */
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -222,7 +244,8 @@ public final class DataAssetSummary
                             this.uri,
                             this.timeCreated,
                             this.typeKey,
-                            this.lifecycleState);
+                            this.lifecycleState,
+                            this.lifecycleDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -257,6 +280,9 @@ public final class DataAssetSummary
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
             }
             return this;
         }
@@ -400,6 +426,23 @@ public final class DataAssetSummary
         return lifecycleState;
     }
 
+    /**
+     * A message describing the current state in more detail. An object not in ACTIVE state may have
+     * functional limitations, see service documentation for details.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * A message describing the current state in more detail. An object not in ACTIVE state may have
+     * functional limitations, see service documentation for details.
+     *
+     * @return the value
+     */
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -424,6 +467,7 @@ public final class DataAssetSummary
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", typeKey=").append(String.valueOf(this.typeKey));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -447,6 +491,7 @@ public final class DataAssetSummary
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.typeKey, other.typeKey)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && super.equals(other);
     }
 
@@ -465,6 +510,9 @@ public final class DataAssetSummary
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

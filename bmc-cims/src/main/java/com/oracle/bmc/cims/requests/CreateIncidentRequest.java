@@ -22,19 +22,6 @@ public class CreateIncidentRequest
         return createIncidentDetails;
     }
     /**
-     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
-     * Cloud Infrastructure account.
-     */
-    private String ocid;
-
-    /**
-     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
-     * Cloud Infrastructure account.
-     */
-    public String getOcid() {
-        return ocid;
-    }
-    /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
      */
@@ -47,12 +34,53 @@ public class CreateIncidentRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
+     * Cloud Infrastructure account.
+     */
+    private String ocid;
+
+    /**
+     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
+     * Cloud Infrastructure account.
+     */
+    public String getOcid() {
+        return ocid;
+    }
     /** The region of the tenancy. */
     private String homeregion;
 
     /** The region of the tenancy. */
     public String getHomeregion() {
         return homeregion;
+    }
+    /** Token type that determine which cloud provider the request come from. */
+    private String bearertokentype;
+
+    /** Token type that determine which cloud provider the request come from. */
+    public String getBearertokentype() {
+        return bearertokentype;
+    }
+    /** Token that provided by multi cloud provider, which help to validate the email. */
+    private String bearertoken;
+
+    /** Token that provided by multi cloud provider, which help to validate the email. */
+    public String getBearertoken() {
+        return bearertoken;
+    }
+    /** IdToken that provided by multi cloud provider, which help to validate the email. */
+    private String idtoken;
+
+    /** IdToken that provided by multi cloud provider, which help to validate the email. */
+    public String getIdtoken() {
+        return idtoken;
+    }
+    /** The OCID of identity domain. */
+    private String domainid;
+
+    /** The OCID of identity domain. */
+    public String getDomainid() {
+        return domainid;
     }
 
     /**
@@ -88,24 +116,6 @@ public class CreateIncidentRequest
         }
 
         /**
-         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
-         * Cloud Infrastructure account.
-         */
-        private String ocid = null;
-
-        /**
-         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
-         * Cloud Infrastructure account.
-         *
-         * @param ocid the value to set
-         * @return this builder instance
-         */
-        public Builder ocid(String ocid) {
-            this.ocid = ocid;
-            return this;
-        }
-
-        /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          */
@@ -123,6 +133,24 @@ public class CreateIncidentRequest
             return this;
         }
 
+        /**
+         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
+         * Cloud Infrastructure account.
+         */
+        private String ocid = null;
+
+        /**
+         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
+         * Cloud Infrastructure account.
+         *
+         * @param ocid the value to set
+         * @return this builder instance
+         */
+        public Builder ocid(String ocid) {
+            this.ocid = ocid;
+            return this;
+        }
+
         /** The region of the tenancy. */
         private String homeregion = null;
 
@@ -134,6 +162,62 @@ public class CreateIncidentRequest
          */
         public Builder homeregion(String homeregion) {
             this.homeregion = homeregion;
+            return this;
+        }
+
+        /** Token type that determine which cloud provider the request come from. */
+        private String bearertokentype = null;
+
+        /**
+         * Token type that determine which cloud provider the request come from.
+         *
+         * @param bearertokentype the value to set
+         * @return this builder instance
+         */
+        public Builder bearertokentype(String bearertokentype) {
+            this.bearertokentype = bearertokentype;
+            return this;
+        }
+
+        /** Token that provided by multi cloud provider, which help to validate the email. */
+        private String bearertoken = null;
+
+        /**
+         * Token that provided by multi cloud provider, which help to validate the email.
+         *
+         * @param bearertoken the value to set
+         * @return this builder instance
+         */
+        public Builder bearertoken(String bearertoken) {
+            this.bearertoken = bearertoken;
+            return this;
+        }
+
+        /** IdToken that provided by multi cloud provider, which help to validate the email. */
+        private String idtoken = null;
+
+        /**
+         * IdToken that provided by multi cloud provider, which help to validate the email.
+         *
+         * @param idtoken the value to set
+         * @return this builder instance
+         */
+        public Builder idtoken(String idtoken) {
+            this.idtoken = idtoken;
+            return this;
+        }
+
+        /** The OCID of identity domain. */
+        private String domainid = null;
+
+        /**
+         * The OCID of identity domain.
+         *
+         * @param domainid the value to set
+         * @return this builder instance
+         */
+        public Builder domainid(String domainid) {
+            this.domainid = domainid;
             return this;
         }
 
@@ -168,9 +252,13 @@ public class CreateIncidentRequest
          */
         public Builder copy(CreateIncidentRequest o) {
             createIncidentDetails(o.getCreateIncidentDetails());
-            ocid(o.getOcid());
             opcRequestId(o.getOpcRequestId());
+            ocid(o.getOcid());
             homeregion(o.getHomeregion());
+            bearertokentype(o.getBearertokentype());
+            bearertoken(o.getBearertoken());
+            idtoken(o.getIdtoken());
+            domainid(o.getDomainid());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -218,11 +306,16 @@ public class CreateIncidentRequest
         public CreateIncidentRequest buildWithoutInvocationCallback() {
             CreateIncidentRequest request = new CreateIncidentRequest();
             request.createIncidentDetails = createIncidentDetails;
-            request.ocid = ocid;
             request.opcRequestId = opcRequestId;
+            request.ocid = ocid;
             request.homeregion = homeregion;
+            request.bearertokentype = bearertokentype;
+            request.bearertoken = bearertoken;
+            request.idtoken = idtoken;
+            request.domainid = domainid;
             return request;
-            // new CreateIncidentRequest(createIncidentDetails, ocid, opcRequestId, homeregion);
+            // new CreateIncidentRequest(createIncidentDetails, opcRequestId, ocid, homeregion,
+            // bearertokentype, bearertoken, idtoken, domainid);
         }
     }
 
@@ -234,9 +327,13 @@ public class CreateIncidentRequest
     public Builder toBuilder() {
         return new Builder()
                 .createIncidentDetails(createIncidentDetails)
-                .ocid(ocid)
                 .opcRequestId(opcRequestId)
-                .homeregion(homeregion);
+                .ocid(ocid)
+                .homeregion(homeregion)
+                .bearertokentype(bearertokentype)
+                .bearertoken(bearertoken)
+                .idtoken(idtoken)
+                .domainid(domainid);
     }
 
     /**
@@ -254,9 +351,13 @@ public class CreateIncidentRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",createIncidentDetails=").append(String.valueOf(this.createIncidentDetails));
-        sb.append(",ocid=").append(String.valueOf(this.ocid));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ocid=").append(String.valueOf(this.ocid));
         sb.append(",homeregion=").append(String.valueOf(this.homeregion));
+        sb.append(",bearertokentype=").append(String.valueOf(this.bearertokentype));
+        sb.append(",bearertoken=").append(String.valueOf(this.bearertoken));
+        sb.append(",idtoken=").append(String.valueOf(this.idtoken));
+        sb.append(",domainid=").append(String.valueOf(this.domainid));
         sb.append(")");
         return sb.toString();
     }
@@ -273,9 +374,13 @@ public class CreateIncidentRequest
         CreateIncidentRequest other = (CreateIncidentRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.createIncidentDetails, other.createIncidentDetails)
-                && java.util.Objects.equals(this.ocid, other.ocid)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.homeregion, other.homeregion);
+                && java.util.Objects.equals(this.ocid, other.ocid)
+                && java.util.Objects.equals(this.homeregion, other.homeregion)
+                && java.util.Objects.equals(this.bearertokentype, other.bearertokentype)
+                && java.util.Objects.equals(this.bearertoken, other.bearertoken)
+                && java.util.Objects.equals(this.idtoken, other.idtoken)
+                && java.util.Objects.equals(this.domainid, other.domainid);
     }
 
     @Override
@@ -287,9 +392,15 @@ public class CreateIncidentRequest
                         + (this.createIncidentDetails == null
                                 ? 43
                                 : this.createIncidentDetails.hashCode());
-        result = (result * PRIME) + (this.ocid == null ? 43 : this.ocid.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ocid == null ? 43 : this.ocid.hashCode());
         result = (result * PRIME) + (this.homeregion == null ? 43 : this.homeregion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bearertokentype == null ? 43 : this.bearertokentype.hashCode());
+        result = (result * PRIME) + (this.bearertoken == null ? 43 : this.bearertoken.hashCode());
+        result = (result * PRIME) + (this.idtoken == null ? 43 : this.idtoken.hashCode());
+        result = (result * PRIME) + (this.domainid == null ? 43 : this.domainid.hashCode());
         return result;
     }
 }

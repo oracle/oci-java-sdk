@@ -183,6 +183,7 @@ public class QueueAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
                 .appendQueryParam("visibilityInSeconds", request.getVisibilityInSeconds())
                 .appendQueryParam("timeoutInSeconds", request.getTimeoutInSeconds())
                 .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("channelFilter", request.getChannelFilter())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -213,6 +214,7 @@ public class QueueAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
                 .appendPathParam("queues")
                 .appendPathParam(request.getQueueId())
                 .appendPathParam("stats")
+                .appendQueryParam("channelId", request.getChannelId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -220,6 +222,41 @@ public class QueueAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
                         GetStatsResponse.Builder::queueStats)
                 .handleResponseHeaderString(
                         "opc-request-id", GetStatsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListChannelsResponse> listChannels(
+            ListChannelsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListChannelsRequest, ListChannelsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getQueueId(), "queueId must not be blank");
+
+        return clientCall(request, ListChannelsResponse::builder)
+                .logger(LOG, "listChannels")
+                .serviceDetails(
+                        "Queue",
+                        "ListChannels",
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/ChannelCollection/ListChannels")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListChannelsRequest::builder)
+                .basePath("/20210201")
+                .appendPathParam("queues")
+                .appendPathParam(request.getQueueId())
+                .appendPathParam("channels")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("channelFilter", request.getChannelFilter())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.queue.model.ChannelCollection.class,
+                        ListChannelsResponse.Builder::channelCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListChannelsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListChannelsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 

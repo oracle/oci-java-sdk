@@ -4,13 +4,14 @@
  */
 package com.oracle.bmc.cims.model;
 
-/** The kind of support ticket, such as a technical support request. */
+/** The kind of support ticket, such as a technical support request or a limit increase request. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 public enum ProblemType implements com.oracle.bmc.http.internal.BmcEnum {
     Limit("LIMIT"),
     LegacyLimit("LEGACY_LIMIT"),
     Tech("TECH"),
     Account("ACCOUNT"),
+    Taxonomy("TAXONOMY"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

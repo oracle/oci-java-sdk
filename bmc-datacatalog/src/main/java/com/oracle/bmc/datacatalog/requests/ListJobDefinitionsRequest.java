@@ -89,6 +89,13 @@ public class ListJobDefinitionsRequest extends com.oracle.bmc.requests.BmcReques
     public String getDataAssetKey() {
         return dataAssetKey;
     }
+    /** Unique glossary key. */
+    private String glossaryKey;
+
+    /** Unique glossary key. */
+    public String getGlossaryKey() {
+        return glossaryKey;
+    }
     /** Unique connection key. */
     private String connectionKey;
 
@@ -455,6 +462,20 @@ public class ListJobDefinitionsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /** Unique glossary key. */
+        private String glossaryKey = null;
+
+        /**
+         * Unique glossary key.
+         *
+         * @param glossaryKey the value to set
+         * @return this builder instance
+         */
+        public Builder glossaryKey(String glossaryKey) {
+            this.glossaryKey = glossaryKey;
+            return this;
+        }
+
         /** Unique connection key. */
         private String connectionKey = null;
 
@@ -691,6 +712,7 @@ public class ListJobDefinitionsRequest extends com.oracle.bmc.requests.BmcReques
             jobType(o.getJobType());
             isIncremental(o.getIsIncremental());
             dataAssetKey(o.getDataAssetKey());
+            glossaryKey(o.getGlossaryKey());
             connectionKey(o.getConnectionKey());
             timeCreated(o.getTimeCreated());
             timeUpdated(o.getTimeUpdated());
@@ -745,6 +767,7 @@ public class ListJobDefinitionsRequest extends com.oracle.bmc.requests.BmcReques
             request.jobType = jobType;
             request.isIncremental = isIncremental;
             request.dataAssetKey = dataAssetKey;
+            request.glossaryKey = glossaryKey;
             request.connectionKey = connectionKey;
             request.timeCreated = timeCreated;
             request.timeUpdated = timeUpdated;
@@ -759,7 +782,7 @@ public class ListJobDefinitionsRequest extends com.oracle.bmc.requests.BmcReques
             request.opcRequestId = opcRequestId;
             return request;
             // new ListJobDefinitionsRequest(catalogId, displayName, displayNameContains,
-            // jobExecutionState, lifecycleState, jobType, isIncremental, dataAssetKey,
+            // jobExecutionState, lifecycleState, jobType, isIncremental, dataAssetKey, glossaryKey,
             // connectionKey, timeCreated, timeUpdated, createdById, updatedById,
             // sampleDataSizeInMBs, fields, sortBy, sortOrder, limit, page, opcRequestId);
         }
@@ -780,6 +803,7 @@ public class ListJobDefinitionsRequest extends com.oracle.bmc.requests.BmcReques
                 .jobType(jobType)
                 .isIncremental(isIncremental)
                 .dataAssetKey(dataAssetKey)
+                .glossaryKey(glossaryKey)
                 .connectionKey(connectionKey)
                 .timeCreated(timeCreated)
                 .timeUpdated(timeUpdated)
@@ -816,6 +840,7 @@ public class ListJobDefinitionsRequest extends com.oracle.bmc.requests.BmcReques
         sb.append(",jobType=").append(String.valueOf(this.jobType));
         sb.append(",isIncremental=").append(String.valueOf(this.isIncremental));
         sb.append(",dataAssetKey=").append(String.valueOf(this.dataAssetKey));
+        sb.append(",glossaryKey=").append(String.valueOf(this.glossaryKey));
         sb.append(",connectionKey=").append(String.valueOf(this.connectionKey));
         sb.append(",timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(",timeUpdated=").append(String.valueOf(this.timeUpdated));
@@ -851,6 +876,7 @@ public class ListJobDefinitionsRequest extends com.oracle.bmc.requests.BmcReques
                 && java.util.Objects.equals(this.jobType, other.jobType)
                 && java.util.Objects.equals(this.isIncremental, other.isIncremental)
                 && java.util.Objects.equals(this.dataAssetKey, other.dataAssetKey)
+                && java.util.Objects.equals(this.glossaryKey, other.glossaryKey)
                 && java.util.Objects.equals(this.connectionKey, other.connectionKey)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
@@ -887,6 +913,7 @@ public class ListJobDefinitionsRequest extends com.oracle.bmc.requests.BmcReques
                 (result * PRIME)
                         + (this.isIncremental == null ? 43 : this.isIncremental.hashCode());
         result = (result * PRIME) + (this.dataAssetKey == null ? 43 : this.dataAssetKey.hashCode());
+        result = (result * PRIME) + (this.glossaryKey == null ? 43 : this.glossaryKey.hashCode());
         result =
                 (result * PRIME)
                         + (this.connectionKey == null ? 43 : this.connectionKey.hashCode());

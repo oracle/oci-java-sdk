@@ -13,10 +13,10 @@ import com.oracle.bmc.queue.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 public class DeleteQueueRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** unique Queue identifier */
+    /** The unique queue identifier. */
     private String queueId;
 
-    /** unique Queue identifier */
+    /** The unique queue identifier. */
     public String getQueueId() {
         return queueId;
     }
@@ -37,10 +37,16 @@ public class DeleteQueueRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -51,11 +57,11 @@ public class DeleteQueueRequest extends com.oracle.bmc.requests.BmcRequest<java.
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique Queue identifier */
+        /** The unique queue identifier. */
         private String queueId = null;
 
         /**
-         * unique Queue identifier
+         * The unique queue identifier.
          *
          * @param queueId the value to set
          * @return this builder instance
@@ -87,11 +93,15 @@ public class DeleteQueueRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance

@@ -270,21 +270,24 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         return fields;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is
-     * descending. Default order for DISPLAYNAME is ascending. Default order for POSITION is
-     * ascending. If no value is specified POSITION is default.
+     * The field to sort by. Only one sort order may be provided. DISPLAYORBUSINESSNAME considers
+     * businessName of a given object if set, else its displayName is used. Default sort order for
+     * TIMECREATED is descending and default sort order for DISPLAYNAME, POSITION and
+     * DISPLAYORBUSINESSNAME is ascending. If no order is specified, POSITION is the default.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is
-     * descending. Default order for DISPLAYNAME is ascending. Default order for POSITION is
-     * ascending. If no value is specified POSITION is default.
+     * The field to sort by. Only one sort order may be provided. DISPLAYORBUSINESSNAME considers
+     * businessName of a given object if set, else its displayName is used. Default sort order for
+     * TIMECREATED is descending and default sort order for DISPLAYNAME, POSITION and
+     * DISPLAYORBUSINESSNAME is ascending. If no order is specified, POSITION is the default.
      */
     public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Timecreated("TIMECREATED"),
         Displayname("DISPLAYNAME"),
         Position("POSITION"),
+        Displayorbusinessname("DISPLAYORBUSINESSNAME"),
         ;
 
         private final String value;
@@ -316,9 +319,10 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is
-     * descending. Default order for DISPLAYNAME is ascending. Default order for POSITION is
-     * ascending. If no value is specified POSITION is default.
+     * The field to sort by. Only one sort order may be provided. DISPLAYORBUSINESSNAME considers
+     * businessName of a given object if set, else its displayName is used. Default sort order for
+     * TIMECREATED is descending and default sort order for DISPLAYNAME, POSITION and
+     * DISPLAYORBUSINESSNAME is ascending. If no order is specified, POSITION is the default.
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -758,16 +762,20 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED
-         * is descending. Default order for DISPLAYNAME is ascending. Default order for POSITION is
-         * ascending. If no value is specified POSITION is default.
+         * The field to sort by. Only one sort order may be provided. DISPLAYORBUSINESSNAME
+         * considers businessName of a given object if set, else its displayName is used. Default
+         * sort order for TIMECREATED is descending and default sort order for DISPLAYNAME, POSITION
+         * and DISPLAYORBUSINESSNAME is ascending. If no order is specified, POSITION is the
+         * default.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED
-         * is descending. Default order for DISPLAYNAME is ascending. Default order for POSITION is
-         * ascending. If no value is specified POSITION is default.
+         * The field to sort by. Only one sort order may be provided. DISPLAYORBUSINESSNAME
+         * considers businessName of a given object if set, else its displayName is used. Default
+         * sort order for TIMECREATED is descending and default sort order for DISPLAYNAME, POSITION
+         * and DISPLAYORBUSINESSNAME is ascending. If no order is specified, POSITION is the
+         * default.
          *
          * @param sortBy the value to set
          * @return this builder instance
