@@ -98,15 +98,14 @@ public final class UpdateCloudAutonomousVmClusterDetails
         /**
          * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
          * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
-         * equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included
-         * allows you to subscribe to new Oracle Database software licenses and the Database
-         * service. Note that when provisioning an Autonomous Database on [dedicated Exadata
+         * equivalent, highly automated Oracle services in the cloud. License Included allows you to
+         * subscribe to new Oracle Database software licenses and the Oracle Database service. Note
+         * that when provisioning an [Autonomous Database on dedicated Exadata
          * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html),
-         * this attribute must be null because the attribute is already set at the Autonomous
-         * Exadata Infrastructure level. When using [shared Exadata
-         * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if
-         * a value is not specified, the system will supply the value of {@code
-         * BRING_YOUR_OWN_LICENSE}.
+         * this attribute must be null. It is already set at the Autonomous Exadata Infrastructure
+         * level. When provisioning an [Autonomous Database Serverless]
+         * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a
+         * value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
          *
          * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
          * computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword,
@@ -119,15 +118,14 @@ public final class UpdateCloudAutonomousVmClusterDetails
         /**
          * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
          * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
-         * equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included
-         * allows you to subscribe to new Oracle Database software licenses and the Database
-         * service. Note that when provisioning an Autonomous Database on [dedicated Exadata
+         * equivalent, highly automated Oracle services in the cloud. License Included allows you to
+         * subscribe to new Oracle Database software licenses and the Oracle Database service. Note
+         * that when provisioning an [Autonomous Database on dedicated Exadata
          * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html),
-         * this attribute must be null because the attribute is already set at the Autonomous
-         * Exadata Infrastructure level. When using [shared Exadata
-         * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if
-         * a value is not specified, the system will supply the value of {@code
-         * BRING_YOUR_OWN_LICENSE}.
+         * this attribute must be null. It is already set at the Autonomous Exadata Infrastructure
+         * level. When provisioning an [Autonomous Database Serverless]
+         * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a
+         * value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
          *
          * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
          * computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword,
@@ -314,14 +312,14 @@ public final class UpdateCloudAutonomousVmClusterDetails
     /**
      * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
      * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
-     * equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included
-     * allows you to subscribe to new Oracle Database software licenses and the Database service.
-     * Note that when provisioning an Autonomous Database on [dedicated Exadata
+     * equivalent, highly automated Oracle services in the cloud. License Included allows you to
+     * subscribe to new Oracle Database software licenses and the Oracle Database service. Note that
+     * when provisioning an [Autonomous Database on dedicated Exadata
      * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this
-     * attribute must be null because the attribute is already set at the Autonomous Exadata
-     * Infrastructure level. When using [shared Exadata
-     * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a
-     * value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     * attribute must be null. It is already set at the Autonomous Exadata Infrastructure level.
+     * When provisioning an [Autonomous Database Serverless]
+     * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value
+     * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
      *
      * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
      * maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
@@ -363,14 +361,14 @@ public final class UpdateCloudAutonomousVmClusterDetails
     /**
      * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
      * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
-     * equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included
-     * allows you to subscribe to new Oracle Database software licenses and the Database service.
-     * Note that when provisioning an Autonomous Database on [dedicated Exadata
+     * equivalent, highly automated Oracle services in the cloud. License Included allows you to
+     * subscribe to new Oracle Database software licenses and the Oracle Database service. Note that
+     * when provisioning an [Autonomous Database on dedicated Exadata
      * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this
-     * attribute must be null because the attribute is already set at the Autonomous Exadata
-     * Infrastructure level. When using [shared Exadata
-     * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a
-     * value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     * attribute must be null. It is already set at the Autonomous Exadata Infrastructure level.
+     * When provisioning an [Autonomous Database Serverless]
+     * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value
+     * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
      *
      * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
      * maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
@@ -383,14 +381,14 @@ public final class UpdateCloudAutonomousVmClusterDetails
     /**
      * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
      * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
-     * equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included
-     * allows you to subscribe to new Oracle Database software licenses and the Database service.
-     * Note that when provisioning an Autonomous Database on [dedicated Exadata
+     * equivalent, highly automated Oracle services in the cloud. License Included allows you to
+     * subscribe to new Oracle Database software licenses and the Oracle Database service. Note that
+     * when provisioning an [Autonomous Database on dedicated Exadata
      * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this
-     * attribute must be null because the attribute is already set at the Autonomous Exadata
-     * Infrastructure level. When using [shared Exadata
-     * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a
-     * value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     * attribute must be null. It is already set at the Autonomous Exadata Infrastructure level.
+     * When provisioning an [Autonomous Database Serverless]
+     * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value
+     * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
      *
      * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
      * maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,

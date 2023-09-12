@@ -300,10 +300,11 @@ public final class UpdateAutonomousDatabaseDetails
         }
         /**
          * The compute amount available to the database. Minimum and maximum values depend on the
-         * compute model and whether the database is on Shared or Dedicated Exadata Infrastructure.
-         * For an Autonomous Database on Shared Exadata Infrastructure, the ECPU compute model
-         * requires values in multiples of two. Required when using the computeModel parameter. When
-         * using the cpuCoreCount parameter, computeCount must be null.
+         * compute model and whether the database is an Autonomous Database Serverless instance or
+         * an Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database
+         * Serverless instance, the ECPU compute model requires values in multiples of two. Required
+         * when using the computeModel parameter. When using the cpuCoreCount parameter,
+         * computeCount must be null.
          *
          * <p>This cannot be updated in parallel with any of the following: licenseModel,
          * databaseEdition, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel,
@@ -315,10 +316,11 @@ public final class UpdateAutonomousDatabaseDetails
 
         /**
          * The compute amount available to the database. Minimum and maximum values depend on the
-         * compute model and whether the database is on Shared or Dedicated Exadata Infrastructure.
-         * For an Autonomous Database on Shared Exadata Infrastructure, the ECPU compute model
-         * requires values in multiples of two. Required when using the computeModel parameter. When
-         * using the cpuCoreCount parameter, computeCount must be null.
+         * compute model and whether the database is an Autonomous Database Serverless instance or
+         * an Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database
+         * Serverless instance, the ECPU compute model requires values in multiples of two. Required
+         * when using the computeModel parameter. When using the cpuCoreCount parameter,
+         * computeCount must be null.
          *
          * <p>This cannot be updated in parallel with any of the following: licenseModel,
          * databaseEdition, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel,
@@ -336,9 +338,9 @@ public final class UpdateAutonomousDatabaseDetails
         /**
          * The number of OCPU cores to be made available to the Autonomous Database.
          *
-         * <p>For databases on dedicated Exadata infrastructure, you can specify a fractional value
-         * for this parameter. Fractional values are not supported for Autonomous Database on shared
-         * Exadata infrastructure.
+         * <p>For Autonomous Databases on Dedicated Exadata Infrastructure, you can specify a
+         * fractional value for this parameter. Fractional values are not supported for Autonomous
+         * Database Serverless instances.
          *
          * <p>To provision less than 1 core, enter a fractional value in an increment of 0.1. To
          * provision 1 or more cores, you must enter an integer between 1 and the maximum number of
@@ -346,7 +348,7 @@ public final class UpdateAutonomousDatabaseDetails
          * cores, but not 0.35 cores. Likewise, you can provision 2 cores or 3 cores, but not 2.5
          * cores. The maximum number of cores is determined by the infrastructure shape. See
          * [Characteristics of Infrastructure
-         * Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1)
+         * Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/index.html)
          * for shape details.
          *
          * <p>*Note:** This parameter cannot be used with the {@code cpuCoreCount} parameter.
@@ -357,9 +359,9 @@ public final class UpdateAutonomousDatabaseDetails
         /**
          * The number of OCPU cores to be made available to the Autonomous Database.
          *
-         * <p>For databases on dedicated Exadata infrastructure, you can specify a fractional value
-         * for this parameter. Fractional values are not supported for Autonomous Database on shared
-         * Exadata infrastructure.
+         * <p>For Autonomous Databases on Dedicated Exadata Infrastructure, you can specify a
+         * fractional value for this parameter. Fractional values are not supported for Autonomous
+         * Database Serverless instances.
          *
          * <p>To provision less than 1 core, enter a fractional value in an increment of 0.1. To
          * provision 1 or more cores, you must enter an integer between 1 and the maximum number of
@@ -367,7 +369,7 @@ public final class UpdateAutonomousDatabaseDetails
          * cores, but not 0.35 cores. Likewise, you can provision 2 cores or 3 cores, but not 2.5
          * cores. The maximum number of cores is determined by the infrastructure shape. See
          * [Characteristics of Infrastructure
-         * Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1)
+         * Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/index.html)
          * for shape details.
          *
          * <p>*Note:** This parameter cannot be used with the {@code cpuCoreCount} parameter.
@@ -520,6 +522,8 @@ public final class UpdateAutonomousDatabaseDetails
          * symbol (") or the username "admin", regardless of casing. It must be different from the
          * last four passwords and it must not be a password used within the last 24 hours.
          *
+         * <p>This cannot be used in conjunction with with OCI vault secrets (secretId).
+         *
          * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
          * whitelistedIps, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds,
          * dbVersion, isRefreshable, dbName, or isFreeTier.
@@ -532,6 +536,8 @@ public final class UpdateAutonomousDatabaseDetails
          * uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote
          * symbol (") or the username "admin", regardless of casing. It must be different from the
          * last four passwords and it must not be a password used within the last 24 hours.
+         *
+         * <p>This cannot be used in conjunction with with OCI vault secrets (secretId).
          *
          * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
          * whitelistedIps, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds,
@@ -546,10 +552,10 @@ public final class UpdateAutonomousDatabaseDetails
             return this;
         }
         /**
-         * New name for this Autonomous Database. For databases using dedicated Exadata
-         * infrastructure, the name must begin with an alphabetic character, and can contain a
+         * New name for this Autonomous Database. For Autonomous Databases on Dedicated Exadata
+         * Infrastructure, the name must begin with an alphabetic character, and can contain a
          * maximum of eight alphanumeric characters. Special characters are not permitted. For
-         * databases using shared Exadata infrastructure, the name must begin with an alphabetic
+         * Autonomous Database Serverless instances, the name must begin with an alphabetic
          * character, and can contain a maximum of 14 alphanumeric characters. Special characters
          * are not permitted. The database name must be unique in the tenancy.
          *
@@ -562,10 +568,10 @@ public final class UpdateAutonomousDatabaseDetails
         private String dbName;
 
         /**
-         * New name for this Autonomous Database. For databases using dedicated Exadata
-         * infrastructure, the name must begin with an alphabetic character, and can contain a
+         * New name for this Autonomous Database. For Autonomous Databases on Dedicated Exadata
+         * Infrastructure, the name must begin with an alphabetic character, and can contain a
          * maximum of eight alphanumeric characters. Special characters are not permitted. For
-         * databases using shared Exadata infrastructure, the name must begin with an alphabetic
+         * Autonomous Database Serverless instances, the name must begin with an alphabetic
          * character, and can contain a maximum of 14 alphanumeric characters. Special characters
          * are not permitted. The database name must be unique in the tenancy.
          *
@@ -669,15 +675,14 @@ public final class UpdateAutonomousDatabaseDetails
         /**
          * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
          * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
-         * equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included
-         * allows you to subscribe to new Oracle Database software licenses and the Database
-         * service. Note that when provisioning an Autonomous Database on [dedicated Exadata
+         * equivalent, highly automated Oracle services in the cloud. License Included allows you to
+         * subscribe to new Oracle Database software licenses and the Oracle Database service. Note
+         * that when provisioning an [Autonomous Database on dedicated Exadata
          * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html),
-         * this attribute must be null because the attribute is already set at the Autonomous
-         * Exadata Infrastructure level. When using [shared Exadata
-         * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if
-         * a value is not specified, the system will supply the value of {@code
-         * BRING_YOUR_OWN_LICENSE}.
+         * this attribute must be null. It is already set at the Autonomous Exadata Infrastructure
+         * level. When provisioning an [Autonomous Database Serverless]
+         * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a
+         * value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
          *
          * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
          * computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword,
@@ -690,15 +695,14 @@ public final class UpdateAutonomousDatabaseDetails
         /**
          * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
          * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
-         * equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included
-         * allows you to subscribe to new Oracle Database software licenses and the Database
-         * service. Note that when provisioning an Autonomous Database on [dedicated Exadata
+         * equivalent, highly automated Oracle services in the cloud. License Included allows you to
+         * subscribe to new Oracle Database software licenses and the Oracle Database service. Note
+         * that when provisioning an [Autonomous Database on dedicated Exadata
          * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html),
-         * this attribute must be null because the attribute is already set at the Autonomous
-         * Exadata Infrastructure level. When using [shared Exadata
-         * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if
-         * a value is not specified, the system will supply the value of {@code
-         * BRING_YOUR_OWN_LICENSE}.
+         * this attribute must be null. It is already set at the Autonomous Exadata Infrastructure
+         * level. When provisioning an [Autonomous Database Serverless]
+         * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a
+         * value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
          *
          * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
          * computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword,
@@ -753,18 +757,18 @@ public final class UpdateAutonomousDatabaseDetails
             return this;
         }
         /**
-         * The client IP access control list (ACL). This feature is available for autonomous
-         * databases on [shared Exadata
-         * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and
-         * on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL
-         * may access the Autonomous Database instance.
+         * The client IP access control list (ACL). This feature is available for [Autonomous
+         * Database Serverless]
+         * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata
+         * Cloud@Customer. Only clients connecting from an IP address included in the ACL may access
+         * the Autonomous Database instance.
          *
-         * <p>For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain
-         * Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between
-         * the VCN-specific subnets or IPs. Example: {@code
+         * <p>For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain
+         * routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Use
+         * a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: {@code
          * ["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]}
-         * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless
-         * Inter-Domain Routing) notations. Example: {@code ["1.1.1.1","1.1.1.0/24","1.1.2.25"]}
+         * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations. Example:
+         * {@code ["1.1.1.1","1.1.1.0/24","1.1.2.25"]}
          *
          * <p>For an update operation, if you want to delete all the IPs in the ACL, use an array
          * with a single empty string entry.
@@ -778,18 +782,18 @@ public final class UpdateAutonomousDatabaseDetails
         private java.util.List<String> whitelistedIps;
 
         /**
-         * The client IP access control list (ACL). This feature is available for autonomous
-         * databases on [shared Exadata
-         * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and
-         * on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL
-         * may access the Autonomous Database instance.
+         * The client IP access control list (ACL). This feature is available for [Autonomous
+         * Database Serverless]
+         * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata
+         * Cloud@Customer. Only clients connecting from an IP address included in the ACL may access
+         * the Autonomous Database instance.
          *
-         * <p>For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain
-         * Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between
-         * the VCN-specific subnets or IPs. Example: {@code
+         * <p>For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain
+         * routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Use
+         * a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: {@code
          * ["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]}
-         * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless
-         * Inter-Domain Routing) notations. Example: {@code ["1.1.1.1","1.1.1.0/24","1.1.2.25"]}
+         * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations. Example:
+         * {@code ["1.1.1.1","1.1.1.0/24","1.1.2.25"]}
          *
          * <p>For an update operation, if you want to delete all the IPs in the ACL, use an array
          * with a single empty string entry.
@@ -835,18 +839,18 @@ public final class UpdateAutonomousDatabaseDetails
             return this;
         }
         /**
-         * The client IP access control list (ACL). This feature is available for autonomous
-         * databases on [shared Exadata
-         * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and
-         * on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL
-         * may access the Autonomous Database instance.
+         * The client IP access control list (ACL). This feature is available for [Autonomous
+         * Database Serverless]
+         * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata
+         * Cloud@Customer. Only clients connecting from an IP address included in the ACL may access
+         * the Autonomous Database instance.
          *
-         * <p>For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain
-         * Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between
-         * the VCN-specific subnets or IPs. Example: {@code
+         * <p>For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain
+         * routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Use
+         * a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: {@code
          * ["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]}
-         * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless
-         * Inter-Domain Routing) notations. Example: {@code ["1.1.1.1","1.1.1.0/24","1.1.2.25"]}
+         * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations. Example:
+         * {@code ["1.1.1.1","1.1.1.0/24","1.1.2.25"]}
          *
          * <p>For an update operation, if you want to delete all the IPs in the ACL, use an array
          * with a single empty string entry.
@@ -860,18 +864,18 @@ public final class UpdateAutonomousDatabaseDetails
         private java.util.List<String> standbyWhitelistedIps;
 
         /**
-         * The client IP access control list (ACL). This feature is available for autonomous
-         * databases on [shared Exadata
-         * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and
-         * on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL
-         * may access the Autonomous Database instance.
+         * The client IP access control list (ACL). This feature is available for [Autonomous
+         * Database Serverless]
+         * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata
+         * Cloud@Customer. Only clients connecting from an IP address included in the ACL may access
+         * the Autonomous Database instance.
          *
-         * <p>For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain
-         * Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between
-         * the VCN-specific subnets or IPs. Example: {@code
+         * <p>For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain
+         * routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Use
+         * a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: {@code
          * ["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]}
-         * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless
-         * Inter-Domain Routing) notations. Example: {@code ["1.1.1.1","1.1.1.0/24","1.1.2.25"]}
+         * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations. Example:
+         * {@code ["1.1.1.1","1.1.1.0/24","1.1.2.25"]}
          *
          * <p>For an update operation, if you want to delete all the IPs in the ACL, use an array
          * with a single empty string entry.
@@ -892,10 +896,9 @@ public final class UpdateAutonomousDatabaseDetails
         /**
          * Indicates whether auto scaling is enabled for the Autonomous Database OCPU core count.
          * Setting to {@code TRUE} enables auto scaling. Setting to {@code FALSE} disables auto
-         * scaling. The default value is true. Auto scaling is available for databases on [shared
-         * Exadata
-         * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html)
-         * only.
+         * scaling. The default value is true. Auto scaling is only available for [Autonomous
+         * Database Serverless
+         * instances](https://docs.oracle.com/en/cloud/paas/autonomous-database/shared/index.html).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
         private Boolean isAutoScalingEnabled;
@@ -903,10 +906,9 @@ public final class UpdateAutonomousDatabaseDetails
         /**
          * Indicates whether auto scaling is enabled for the Autonomous Database OCPU core count.
          * Setting to {@code TRUE} enables auto scaling. Setting to {@code FALSE} disables auto
-         * scaling. The default value is true. Auto scaling is available for databases on [shared
-         * Exadata
-         * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html)
-         * only.
+         * scaling. The default value is true. Auto scaling is only available for [Autonomous
+         * Database Serverless
+         * instances](https://docs.oracle.com/en/cloud/paas/autonomous-database/shared/index.html).
          *
          * @param isAutoScalingEnabled the value to set
          * @return this builder
@@ -969,14 +971,13 @@ public final class UpdateAutonomousDatabaseDetails
          * infrastructure.
          *
          * <p>To create a local standby, set to {@code TRUE}. To delete a local standby, set to
-         * {@code FALSE}. For more information on using Autonomous Data Guard on shared Exadata
-         * infrastructure (local and cross-region) , see [About Standby
+         * {@code FALSE}. For more information on using Autonomous Data Guard on an Autonomous
+         * Database Serverless instance (local and cross-region) , see [About Standby
          * Databases](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-data-guard-about.html#GUID-045AD017-8120-4BDC-AF58-7430FFE28D2B)
          *
-         * <p>To enable cross-region Autonomous Data Guard on shared Exadata infrastructure, see
-         * {@link
-         * #createCrossRegionAutonomousDatabaseDataGuardDetails(CreateCrossRegionAutonomousDatabaseDataGuardDetailsRequest)
-         * createCrossRegionAutonomousDatabaseDataGuardDetails}.
+         * <p>To enable cross-region Autonomous Data Guard on an Autonomous Database Serverless
+         * instance, see [Enable Autonomous Data
+         * Guard](https://docs-uat.us.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-data-guard-update-type.html#GUID-967ED737-4A05-4D6E-A7CA-C3F21ACF9BF0).
          *
          * <p>This cannot be updated in parallel with any of the following: isMTLSRequired,
          * dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or
@@ -992,14 +993,13 @@ public final class UpdateAutonomousDatabaseDetails
          * infrastructure.
          *
          * <p>To create a local standby, set to {@code TRUE}. To delete a local standby, set to
-         * {@code FALSE}. For more information on using Autonomous Data Guard on shared Exadata
-         * infrastructure (local and cross-region) , see [About Standby
+         * {@code FALSE}. For more information on using Autonomous Data Guard on an Autonomous
+         * Database Serverless instance (local and cross-region) , see [About Standby
          * Databases](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-data-guard-about.html#GUID-045AD017-8120-4BDC-AF58-7430FFE28D2B)
          *
-         * <p>To enable cross-region Autonomous Data Guard on shared Exadata infrastructure, see
-         * {@link
-         * #createCrossRegionAutonomousDatabaseDataGuardDetails(CreateCrossRegionAutonomousDatabaseDataGuardDetailsRequest)
-         * createCrossRegionAutonomousDatabaseDataGuardDetails}.
+         * <p>To enable cross-region Autonomous Data Guard on an Autonomous Database Serverless
+         * instance, see [Enable Autonomous Data
+         * Guard](https://docs-uat.us.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-data-guard-update-type.html#GUID-967ED737-4A05-4D6E-A7CA-C3F21ACF9BF0).
          *
          * <p>This cannot be updated in parallel with any of the following: isMTLSRequired,
          * dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or
@@ -1020,14 +1020,13 @@ public final class UpdateAutonomousDatabaseDetails
          * Exadata Cloud@Customer infrastructure.
          *
          * <p>To create a local standby, set to {@code TRUE}. To delete a local standby, set to
-         * {@code FALSE}. For more information on using Autonomous Data Guard on shared Exadata
-         * infrastructure (local and cross-region) , see [About Standby
+         * {@code FALSE}. For more information on using Autonomous Data Guard on an Autonomous
+         * Database Serverless instance (local and cross-region) , see [About Standby
          * Databases](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-data-guard-about.html#GUID-045AD017-8120-4BDC-AF58-7430FFE28D2B)
          *
-         * <p>To enable cross-region Autonomous Data Guard on shared Exadata infrastructure, see
-         * {@link
-         * #createCrossRegionAutonomousDatabaseDataGuardDetails(CreateCrossRegionAutonomousDatabaseDataGuardDetailsRequest)
-         * createCrossRegionAutonomousDatabaseDataGuardDetails}.
+         * <p>To enable cross-region Autonomous Data Guard on an Autonomous Database Serverless
+         * instance, see [Enable Autonomous Data
+         * Guard](https://docs-uat.us.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-data-guard-update-type.html#GUID-967ED737-4A05-4D6E-A7CA-C3F21ACF9BF0).
          *
          * <p>To delete a cross-region standby database, provide the {@code peerDbId} for the
          * standby database in a remote region, and set {@code isDataGuardEnabled} to {@code FALSE}.
@@ -1042,14 +1041,13 @@ public final class UpdateAutonomousDatabaseDetails
          * Exadata Cloud@Customer infrastructure.
          *
          * <p>To create a local standby, set to {@code TRUE}. To delete a local standby, set to
-         * {@code FALSE}. For more information on using Autonomous Data Guard on shared Exadata
-         * infrastructure (local and cross-region) , see [About Standby
+         * {@code FALSE}. For more information on using Autonomous Data Guard on an Autonomous
+         * Database Serverless instance (local and cross-region) , see [About Standby
          * Databases](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-data-guard-about.html#GUID-045AD017-8120-4BDC-AF58-7430FFE28D2B)
          *
-         * <p>To enable cross-region Autonomous Data Guard on shared Exadata infrastructure, see
-         * {@link
-         * #createCrossRegionAutonomousDatabaseDataGuardDetails(CreateCrossRegionAutonomousDatabaseDataGuardDetailsRequest)
-         * createCrossRegionAutonomousDatabaseDataGuardDetails}.
+         * <p>To enable cross-region Autonomous Data Guard on an Autonomous Database Serverless
+         * instance, see [Enable Autonomous Data
+         * Guard](https://docs-uat.us.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-data-guard-update-type.html#GUID-967ED737-4A05-4D6E-A7CA-C3F21ACF9BF0).
          *
          * <p>To delete a cross-region standby database, provide the {@code peerDbId} for the
          * standby database in a remote region, and set {@code isDataGuardEnabled} to {@code FALSE}.
@@ -1312,15 +1310,14 @@ public final class UpdateAutonomousDatabaseDetails
          * change from true to false on July 1, 2023 in the following APIs: -
          * CreateAutonomousDatabase - GetAutonomousDatabase - UpdateAutonomousDatabase Details:
          * Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value
-         * was true. This applies to Autonomous Databases on shared Exadata infrastructure. Does
-         * this impact me? If you use or maintain custom scripts or Terraform scripts referencing
-         * the CreateAutonomousDatabase, GetAutonomousDatabase, or UpdateAutonomousDatabase APIs,
-         * you want to check, and possibly modify, the scripts for the changed default value of the
-         * attribute. Should you choose not to leave your scripts unchanged, the API calls
-         * containing this attribute will continue to work, but the default value will switch from
-         * true to false. How do I make this change? Using either OCI SDKs or command line tools,
-         * update your custom scripts to explicitly set the isMTLSConnectionRequired attribute to
-         * true.
+         * was true. This applies to Autonomous Database Serverless. Does this impact me? If you use
+         * or maintain custom scripts or Terraform scripts referencing the CreateAutonomousDatabase,
+         * GetAutonomousDatabase, or UpdateAutonomousDatabase APIs, you want to check, and possibly
+         * modify, the scripts for the changed default value of the attribute. Should you choose not
+         * to leave your scripts unchanged, the API calls containing this attribute will continue to
+         * work, but the default value will switch from true to false. How do I make this change?
+         * Using either OCI SDKs or command line tools, update your custom scripts to explicitly set
+         * the isMTLSConnectionRequired attribute to true.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isMtlsConnectionRequired")
         private Boolean isMtlsConnectionRequired;
@@ -1338,15 +1335,14 @@ public final class UpdateAutonomousDatabaseDetails
          * change from true to false on July 1, 2023 in the following APIs: -
          * CreateAutonomousDatabase - GetAutonomousDatabase - UpdateAutonomousDatabase Details:
          * Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value
-         * was true. This applies to Autonomous Databases on shared Exadata infrastructure. Does
-         * this impact me? If you use or maintain custom scripts or Terraform scripts referencing
-         * the CreateAutonomousDatabase, GetAutonomousDatabase, or UpdateAutonomousDatabase APIs,
-         * you want to check, and possibly modify, the scripts for the changed default value of the
-         * attribute. Should you choose not to leave your scripts unchanged, the API calls
-         * containing this attribute will continue to work, but the default value will switch from
-         * true to false. How do I make this change? Using either OCI SDKs or command line tools,
-         * update your custom scripts to explicitly set the isMTLSConnectionRequired attribute to
-         * true.
+         * was true. This applies to Autonomous Database Serverless. Does this impact me? If you use
+         * or maintain custom scripts or Terraform scripts referencing the CreateAutonomousDatabase,
+         * GetAutonomousDatabase, or UpdateAutonomousDatabase APIs, you want to check, and possibly
+         * modify, the scripts for the changed default value of the attribute. Should you choose not
+         * to leave your scripts unchanged, the API calls containing this attribute will continue to
+         * work, but the default value will switch from true to false. How do I make this change?
+         * Using either OCI SDKs or command line tools, update your custom scripts to explicitly set
+         * the isMTLSConnectionRequired attribute to true.
          *
          * @param isMtlsConnectionRequired the value to set
          * @return this builder
@@ -1476,12 +1472,16 @@ public final class UpdateAutonomousDatabaseDetails
             this.__explicitlySet__.add("dbToolsDetails");
             return this;
         }
-        /** The OCI vault secret [/Content/General/Concepts/identifiers.htm]OCID. */
+        /**
+         * The OCI vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used
+         * in conjunction with adminPassword.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("secretId")
         private String secretId;
 
         /**
-         * The OCI vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+         * The OCI vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used
+         * in conjunction with adminPassword.
          *
          * @param secretId the value to set
          * @return this builder
@@ -1866,10 +1866,11 @@ public final class UpdateAutonomousDatabaseDetails
 
     /**
      * The compute amount available to the database. Minimum and maximum values depend on the
-     * compute model and whether the database is on Shared or Dedicated Exadata Infrastructure. For
-     * an Autonomous Database on Shared Exadata Infrastructure, the ECPU compute model requires
-     * values in multiples of two. Required when using the computeModel parameter. When using the
-     * cpuCoreCount parameter, computeCount must be null.
+     * compute model and whether the database is an Autonomous Database Serverless instance or an
+     * Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database
+     * Serverless instance, the ECPU compute model requires values in multiples of two. Required
+     * when using the computeModel parameter. When using the cpuCoreCount parameter, computeCount
+     * must be null.
      *
      * <p>This cannot be updated in parallel with any of the following: licenseModel,
      * databaseEdition, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel,
@@ -1881,10 +1882,11 @@ public final class UpdateAutonomousDatabaseDetails
 
     /**
      * The compute amount available to the database. Minimum and maximum values depend on the
-     * compute model and whether the database is on Shared or Dedicated Exadata Infrastructure. For
-     * an Autonomous Database on Shared Exadata Infrastructure, the ECPU compute model requires
-     * values in multiples of two. Required when using the computeModel parameter. When using the
-     * cpuCoreCount parameter, computeCount must be null.
+     * compute model and whether the database is an Autonomous Database Serverless instance or an
+     * Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database
+     * Serverless instance, the ECPU compute model requires values in multiples of two. Required
+     * when using the computeModel parameter. When using the cpuCoreCount parameter, computeCount
+     * must be null.
      *
      * <p>This cannot be updated in parallel with any of the following: licenseModel,
      * databaseEdition, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel,
@@ -1900,9 +1902,9 @@ public final class UpdateAutonomousDatabaseDetails
     /**
      * The number of OCPU cores to be made available to the Autonomous Database.
      *
-     * <p>For databases on dedicated Exadata infrastructure, you can specify a fractional value for
-     * this parameter. Fractional values are not supported for Autonomous Database on shared Exadata
-     * infrastructure.
+     * <p>For Autonomous Databases on Dedicated Exadata Infrastructure, you can specify a fractional
+     * value for this parameter. Fractional values are not supported for Autonomous Database
+     * Serverless instances.
      *
      * <p>To provision less than 1 core, enter a fractional value in an increment of 0.1. To
      * provision 1 or more cores, you must enter an integer between 1 and the maximum number of
@@ -1910,7 +1912,7 @@ public final class UpdateAutonomousDatabaseDetails
      * but not 0.35 cores. Likewise, you can provision 2 cores or 3 cores, but not 2.5 cores. The
      * maximum number of cores is determined by the infrastructure shape. See [Characteristics of
      * Infrastructure
-     * Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1)
+     * Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/index.html)
      * for shape details.
      *
      * <p>*Note:** This parameter cannot be used with the {@code cpuCoreCount} parameter.
@@ -1921,9 +1923,9 @@ public final class UpdateAutonomousDatabaseDetails
     /**
      * The number of OCPU cores to be made available to the Autonomous Database.
      *
-     * <p>For databases on dedicated Exadata infrastructure, you can specify a fractional value for
-     * this parameter. Fractional values are not supported for Autonomous Database on shared Exadata
-     * infrastructure.
+     * <p>For Autonomous Databases on Dedicated Exadata Infrastructure, you can specify a fractional
+     * value for this parameter. Fractional values are not supported for Autonomous Database
+     * Serverless instances.
      *
      * <p>To provision less than 1 core, enter a fractional value in an increment of 0.1. To
      * provision 1 or more cores, you must enter an integer between 1 and the maximum number of
@@ -1931,7 +1933,7 @@ public final class UpdateAutonomousDatabaseDetails
      * but not 0.35 cores. Likewise, you can provision 2 cores or 3 cores, but not 2.5 cores. The
      * maximum number of cores is determined by the infrastructure shape. See [Characteristics of
      * Infrastructure
-     * Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1)
+     * Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/index.html)
      * for shape details.
      *
      * <p>*Note:** This parameter cannot be used with the {@code cpuCoreCount} parameter.
@@ -2066,6 +2068,8 @@ public final class UpdateAutonomousDatabaseDetails
      * (") or the username "admin", regardless of casing. It must be different from the last four
      * passwords and it must not be a password used within the last 24 hours.
      *
+     * <p>This cannot be used in conjunction with with OCI vault secrets (secretId).
+     *
      * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
      * whitelistedIps, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds,
      * dbVersion, isRefreshable, dbName, or isFreeTier.
@@ -2079,6 +2083,8 @@ public final class UpdateAutonomousDatabaseDetails
      * (") or the username "admin", regardless of casing. It must be different from the last four
      * passwords and it must not be a password used within the last 24 hours.
      *
+     * <p>This cannot be used in conjunction with with OCI vault secrets (secretId).
+     *
      * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
      * whitelistedIps, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds,
      * dbVersion, isRefreshable, dbName, or isFreeTier.
@@ -2090,12 +2096,12 @@ public final class UpdateAutonomousDatabaseDetails
     }
 
     /**
-     * New name for this Autonomous Database. For databases using dedicated Exadata infrastructure,
-     * the name must begin with an alphabetic character, and can contain a maximum of eight
-     * alphanumeric characters. Special characters are not permitted. For databases using shared
-     * Exadata infrastructure, the name must begin with an alphabetic character, and can contain a
-     * maximum of 14 alphanumeric characters. Special characters are not permitted. The database
-     * name must be unique in the tenancy.
+     * New name for this Autonomous Database. For Autonomous Databases on Dedicated Exadata
+     * Infrastructure, the name must begin with an alphabetic character, and can contain a maximum
+     * of eight alphanumeric characters. Special characters are not permitted. For Autonomous
+     * Database Serverless instances, the name must begin with an alphabetic character, and can
+     * contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The
+     * database name must be unique in the tenancy.
      *
      * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
      * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
@@ -2106,12 +2112,12 @@ public final class UpdateAutonomousDatabaseDetails
     private final String dbName;
 
     /**
-     * New name for this Autonomous Database. For databases using dedicated Exadata infrastructure,
-     * the name must begin with an alphabetic character, and can contain a maximum of eight
-     * alphanumeric characters. Special characters are not permitted. For databases using shared
-     * Exadata infrastructure, the name must begin with an alphabetic character, and can contain a
-     * maximum of 14 alphanumeric characters. Special characters are not permitted. The database
-     * name must be unique in the tenancy.
+     * New name for this Autonomous Database. For Autonomous Databases on Dedicated Exadata
+     * Infrastructure, the name must begin with an alphabetic character, and can contain a maximum
+     * of eight alphanumeric characters. Special characters are not permitted. For Autonomous
+     * Database Serverless instances, the name must begin with an alphabetic character, and can
+     * contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The
+     * database name must be unique in the tenancy.
      *
      * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
      * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
@@ -2248,14 +2254,14 @@ public final class UpdateAutonomousDatabaseDetails
     /**
      * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
      * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
-     * equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included
-     * allows you to subscribe to new Oracle Database software licenses and the Database service.
-     * Note that when provisioning an Autonomous Database on [dedicated Exadata
+     * equivalent, highly automated Oracle services in the cloud. License Included allows you to
+     * subscribe to new Oracle Database software licenses and the Oracle Database service. Note that
+     * when provisioning an [Autonomous Database on dedicated Exadata
      * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this
-     * attribute must be null because the attribute is already set at the Autonomous Exadata
-     * Infrastructure level. When using [shared Exadata
-     * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a
-     * value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     * attribute must be null. It is already set at the Autonomous Exadata Infrastructure level.
+     * When provisioning an [Autonomous Database Serverless]
+     * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value
+     * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
      *
      * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
      * maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
@@ -2297,14 +2303,14 @@ public final class UpdateAutonomousDatabaseDetails
     /**
      * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
      * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
-     * equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included
-     * allows you to subscribe to new Oracle Database software licenses and the Database service.
-     * Note that when provisioning an Autonomous Database on [dedicated Exadata
+     * equivalent, highly automated Oracle services in the cloud. License Included allows you to
+     * subscribe to new Oracle Database software licenses and the Oracle Database service. Note that
+     * when provisioning an [Autonomous Database on dedicated Exadata
      * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this
-     * attribute must be null because the attribute is already set at the Autonomous Exadata
-     * Infrastructure level. When using [shared Exadata
-     * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a
-     * value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     * attribute must be null. It is already set at the Autonomous Exadata Infrastructure level.
+     * When provisioning an [Autonomous Database Serverless]
+     * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value
+     * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
      *
      * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
      * maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
@@ -2317,14 +2323,14 @@ public final class UpdateAutonomousDatabaseDetails
     /**
      * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
      * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
-     * equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included
-     * allows you to subscribe to new Oracle Database software licenses and the Database service.
-     * Note that when provisioning an Autonomous Database on [dedicated Exadata
+     * equivalent, highly automated Oracle services in the cloud. License Included allows you to
+     * subscribe to new Oracle Database software licenses and the Oracle Database service. Note that
+     * when provisioning an [Autonomous Database on dedicated Exadata
      * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this
-     * attribute must be null because the attribute is already set at the Autonomous Exadata
-     * Infrastructure level. When using [shared Exadata
-     * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a
-     * value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     * attribute must be null. It is already set at the Autonomous Exadata Infrastructure level.
+     * When provisioning an [Autonomous Database Serverless]
+     * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value
+     * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
      *
      * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
      * maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
@@ -2373,18 +2379,17 @@ public final class UpdateAutonomousDatabaseDetails
     }
 
     /**
-     * The client IP access control list (ACL). This feature is available for autonomous databases
-     * on [shared Exadata
-     * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on
+     * The client IP access control list (ACL). This feature is available for [Autonomous Database
+     * Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on
      * Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may
      * access the Autonomous Database instance.
      *
-     * <p>For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain
-     * Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the
-     * VCN-specific subnets or IPs. Example: {@code
+     * <p>For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain
+     * routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Use a
+     * semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: {@code
      * ["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]}
-     * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain
-     * Routing) notations. Example: {@code ["1.1.1.1","1.1.1.0/24","1.1.2.25"]}
+     * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations. Example:
+     * {@code ["1.1.1.1","1.1.1.0/24","1.1.2.25"]}
      *
      * <p>For an update operation, if you want to delete all the IPs in the ACL, use an array with a
      * single empty string entry.
@@ -2398,18 +2403,17 @@ public final class UpdateAutonomousDatabaseDetails
     private final java.util.List<String> whitelistedIps;
 
     /**
-     * The client IP access control list (ACL). This feature is available for autonomous databases
-     * on [shared Exadata
-     * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on
+     * The client IP access control list (ACL). This feature is available for [Autonomous Database
+     * Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on
      * Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may
      * access the Autonomous Database instance.
      *
-     * <p>For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain
-     * Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the
-     * VCN-specific subnets or IPs. Example: {@code
+     * <p>For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain
+     * routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Use a
+     * semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: {@code
      * ["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]}
-     * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain
-     * Routing) notations. Example: {@code ["1.1.1.1","1.1.1.0/24","1.1.2.25"]}
+     * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations. Example:
+     * {@code ["1.1.1.1","1.1.1.0/24","1.1.2.25"]}
      *
      * <p>For an update operation, if you want to delete all the IPs in the ACL, use an array with a
      * single empty string entry.
@@ -2451,18 +2455,17 @@ public final class UpdateAutonomousDatabaseDetails
     }
 
     /**
-     * The client IP access control list (ACL). This feature is available for autonomous databases
-     * on [shared Exadata
-     * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on
+     * The client IP access control list (ACL). This feature is available for [Autonomous Database
+     * Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on
      * Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may
      * access the Autonomous Database instance.
      *
-     * <p>For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain
-     * Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the
-     * VCN-specific subnets or IPs. Example: {@code
+     * <p>For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain
+     * routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Use a
+     * semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: {@code
      * ["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]}
-     * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain
-     * Routing) notations. Example: {@code ["1.1.1.1","1.1.1.0/24","1.1.2.25"]}
+     * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations. Example:
+     * {@code ["1.1.1.1","1.1.1.0/24","1.1.2.25"]}
      *
      * <p>For an update operation, if you want to delete all the IPs in the ACL, use an array with a
      * single empty string entry.
@@ -2476,18 +2479,17 @@ public final class UpdateAutonomousDatabaseDetails
     private final java.util.List<String> standbyWhitelistedIps;
 
     /**
-     * The client IP access control list (ACL). This feature is available for autonomous databases
-     * on [shared Exadata
-     * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on
+     * The client IP access control list (ACL). This feature is available for [Autonomous Database
+     * Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on
      * Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may
      * access the Autonomous Database instance.
      *
-     * <p>For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain
-     * Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the
-     * VCN-specific subnets or IPs. Example: {@code
+     * <p>For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain
+     * routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Use a
+     * semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: {@code
      * ["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]}
-     * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain
-     * Routing) notations. Example: {@code ["1.1.1.1","1.1.1.0/24","1.1.2.25"]}
+     * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations. Example:
+     * {@code ["1.1.1.1","1.1.1.0/24","1.1.2.25"]}
      *
      * <p>For an update operation, if you want to delete all the IPs in the ACL, use an array with a
      * single empty string entry.
@@ -2506,8 +2508,8 @@ public final class UpdateAutonomousDatabaseDetails
     /**
      * Indicates whether auto scaling is enabled for the Autonomous Database OCPU core count.
      * Setting to {@code TRUE} enables auto scaling. Setting to {@code FALSE} disables auto scaling.
-     * The default value is true. Auto scaling is available for databases on [shared Exadata
-     * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) only.
+     * The default value is true. Auto scaling is only available for [Autonomous Database Serverless
+     * instances](https://docs.oracle.com/en/cloud/paas/autonomous-database/shared/index.html).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
     private final Boolean isAutoScalingEnabled;
@@ -2515,8 +2517,8 @@ public final class UpdateAutonomousDatabaseDetails
     /**
      * Indicates whether auto scaling is enabled for the Autonomous Database OCPU core count.
      * Setting to {@code TRUE} enables auto scaling. Setting to {@code FALSE} disables auto scaling.
-     * The default value is true. Auto scaling is available for databases on [shared Exadata
-     * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) only.
+     * The default value is true. Auto scaling is only available for [Autonomous Database Serverless
+     * instances](https://docs.oracle.com/en/cloud/paas/autonomous-database/shared/index.html).
      *
      * @return the value
      */
@@ -2608,13 +2610,13 @@ public final class UpdateAutonomousDatabaseDetails
      * Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      *
      * <p>To create a local standby, set to {@code TRUE}. To delete a local standby, set to {@code
-     * FALSE}. For more information on using Autonomous Data Guard on shared Exadata infrastructure
-     * (local and cross-region) , see [About Standby
+     * FALSE}. For more information on using Autonomous Data Guard on an Autonomous Database
+     * Serverless instance (local and cross-region) , see [About Standby
      * Databases](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-data-guard-about.html#GUID-045AD017-8120-4BDC-AF58-7430FFE28D2B)
      *
-     * <p>To enable cross-region Autonomous Data Guard on shared Exadata infrastructure, see {@link
-     * #createCrossRegionAutonomousDatabaseDataGuardDetails(CreateCrossRegionAutonomousDatabaseDataGuardDetailsRequest)
-     * createCrossRegionAutonomousDatabaseDataGuardDetails}.
+     * <p>To enable cross-region Autonomous Data Guard on an Autonomous Database Serverless
+     * instance, see [Enable Autonomous Data
+     * Guard](https://docs-uat.us.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-data-guard-update-type.html#GUID-967ED737-4A05-4D6E-A7CA-C3F21ACF9BF0).
      *
      * <p>This cannot be updated in parallel with any of the following: isMTLSRequired, dbWorkload,
      * dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
@@ -2628,13 +2630,13 @@ public final class UpdateAutonomousDatabaseDetails
      * Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      *
      * <p>To create a local standby, set to {@code TRUE}. To delete a local standby, set to {@code
-     * FALSE}. For more information on using Autonomous Data Guard on shared Exadata infrastructure
-     * (local and cross-region) , see [About Standby
+     * FALSE}. For more information on using Autonomous Data Guard on an Autonomous Database
+     * Serverless instance (local and cross-region) , see [About Standby
      * Databases](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-data-guard-about.html#GUID-045AD017-8120-4BDC-AF58-7430FFE28D2B)
      *
-     * <p>To enable cross-region Autonomous Data Guard on shared Exadata infrastructure, see {@link
-     * #createCrossRegionAutonomousDatabaseDataGuardDetails(CreateCrossRegionAutonomousDatabaseDataGuardDetailsRequest)
-     * createCrossRegionAutonomousDatabaseDataGuardDetails}.
+     * <p>To enable cross-region Autonomous Data Guard on an Autonomous Database Serverless
+     * instance, see [Enable Autonomous Data
+     * Guard](https://docs-uat.us.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-data-guard-update-type.html#GUID-967ED737-4A05-4D6E-A7CA-C3F21ACF9BF0).
      *
      * <p>This cannot be updated in parallel with any of the following: isMTLSRequired, dbWorkload,
      * dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
@@ -2652,13 +2654,13 @@ public final class UpdateAutonomousDatabaseDetails
      * infrastructure.
      *
      * <p>To create a local standby, set to {@code TRUE}. To delete a local standby, set to {@code
-     * FALSE}. For more information on using Autonomous Data Guard on shared Exadata infrastructure
-     * (local and cross-region) , see [About Standby
+     * FALSE}. For more information on using Autonomous Data Guard on an Autonomous Database
+     * Serverless instance (local and cross-region) , see [About Standby
      * Databases](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-data-guard-about.html#GUID-045AD017-8120-4BDC-AF58-7430FFE28D2B)
      *
-     * <p>To enable cross-region Autonomous Data Guard on shared Exadata infrastructure, see {@link
-     * #createCrossRegionAutonomousDatabaseDataGuardDetails(CreateCrossRegionAutonomousDatabaseDataGuardDetailsRequest)
-     * createCrossRegionAutonomousDatabaseDataGuardDetails}.
+     * <p>To enable cross-region Autonomous Data Guard on an Autonomous Database Serverless
+     * instance, see [Enable Autonomous Data
+     * Guard](https://docs-uat.us.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-data-guard-update-type.html#GUID-967ED737-4A05-4D6E-A7CA-C3F21ACF9BF0).
      *
      * <p>To delete a cross-region standby database, provide the {@code peerDbId} for the standby
      * database in a remote region, and set {@code isDataGuardEnabled} to {@code FALSE}.
@@ -2673,13 +2675,13 @@ public final class UpdateAutonomousDatabaseDetails
      * infrastructure.
      *
      * <p>To create a local standby, set to {@code TRUE}. To delete a local standby, set to {@code
-     * FALSE}. For more information on using Autonomous Data Guard on shared Exadata infrastructure
-     * (local and cross-region) , see [About Standby
+     * FALSE}. For more information on using Autonomous Data Guard on an Autonomous Database
+     * Serverless instance (local and cross-region) , see [About Standby
      * Databases](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-data-guard-about.html#GUID-045AD017-8120-4BDC-AF58-7430FFE28D2B)
      *
-     * <p>To enable cross-region Autonomous Data Guard on shared Exadata infrastructure, see {@link
-     * #createCrossRegionAutonomousDatabaseDataGuardDetails(CreateCrossRegionAutonomousDatabaseDataGuardDetailsRequest)
-     * createCrossRegionAutonomousDatabaseDataGuardDetails}.
+     * <p>To enable cross-region Autonomous Data Guard on an Autonomous Database Serverless
+     * instance, see [Enable Autonomous Data
+     * Guard](https://docs-uat.us.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-data-guard-update-type.html#GUID-967ED737-4A05-4D6E-A7CA-C3F21ACF9BF0).
      *
      * <p>To delete a cross-region standby database, provide the {@code peerDbId} for the standby
      * database in a remote region, and set {@code isDataGuardEnabled} to {@code FALSE}.
@@ -2991,14 +2993,14 @@ public final class UpdateAutonomousDatabaseDetails
      * from true to false on July 1, 2023 in the following APIs: - CreateAutonomousDatabase -
      * GetAutonomousDatabase - UpdateAutonomousDatabase Details: Prior to the July 1, 2023 change,
      * the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous
-     * Databases on shared Exadata infrastructure. Does this impact me? If you use or maintain
-     * custom scripts or Terraform scripts referencing the CreateAutonomousDatabase,
-     * GetAutonomousDatabase, or UpdateAutonomousDatabase APIs, you want to check, and possibly
-     * modify, the scripts for the changed default value of the attribute. Should you choose not to
-     * leave your scripts unchanged, the API calls containing this attribute will continue to work,
-     * but the default value will switch from true to false. How do I make this change? Using either
-     * OCI SDKs or command line tools, update your custom scripts to explicitly set the
-     * isMTLSConnectionRequired attribute to true.
+     * Database Serverless. Does this impact me? If you use or maintain custom scripts or Terraform
+     * scripts referencing the CreateAutonomousDatabase, GetAutonomousDatabase, or
+     * UpdateAutonomousDatabase APIs, you want to check, and possibly modify, the scripts for the
+     * changed default value of the attribute. Should you choose not to leave your scripts
+     * unchanged, the API calls containing this attribute will continue to work, but the default
+     * value will switch from true to false. How do I make this change? Using either OCI SDKs or
+     * command line tools, update your custom scripts to explicitly set the isMTLSConnectionRequired
+     * attribute to true.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isMtlsConnectionRequired")
     private final Boolean isMtlsConnectionRequired;
@@ -3016,14 +3018,14 @@ public final class UpdateAutonomousDatabaseDetails
      * from true to false on July 1, 2023 in the following APIs: - CreateAutonomousDatabase -
      * GetAutonomousDatabase - UpdateAutonomousDatabase Details: Prior to the July 1, 2023 change,
      * the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous
-     * Databases on shared Exadata infrastructure. Does this impact me? If you use or maintain
-     * custom scripts or Terraform scripts referencing the CreateAutonomousDatabase,
-     * GetAutonomousDatabase, or UpdateAutonomousDatabase APIs, you want to check, and possibly
-     * modify, the scripts for the changed default value of the attribute. Should you choose not to
-     * leave your scripts unchanged, the API calls containing this attribute will continue to work,
-     * but the default value will switch from true to false. How do I make this change? Using either
-     * OCI SDKs or command line tools, update your custom scripts to explicitly set the
-     * isMTLSConnectionRequired attribute to true.
+     * Database Serverless. Does this impact me? If you use or maintain custom scripts or Terraform
+     * scripts referencing the CreateAutonomousDatabase, GetAutonomousDatabase, or
+     * UpdateAutonomousDatabase APIs, you want to check, and possibly modify, the scripts for the
+     * changed default value of the attribute. Should you choose not to leave your scripts
+     * unchanged, the API calls containing this attribute will continue to work, but the default
+     * value will switch from true to false. How do I make this change? Using either OCI SDKs or
+     * command line tools, update your custom scripts to explicitly set the isMTLSConnectionRequired
+     * attribute to true.
      *
      * @return the value
      */
@@ -3140,12 +3142,16 @@ public final class UpdateAutonomousDatabaseDetails
         return dbToolsDetails;
     }
 
-    /** The OCI vault secret [/Content/General/Concepts/identifiers.htm]OCID. */
+    /**
+     * The OCI vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used in
+     * conjunction with adminPassword.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("secretId")
     private final String secretId;
 
     /**
-     * The OCI vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+     * The OCI vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used in
+     * conjunction with adminPassword.
      *
      * @return the value
      */

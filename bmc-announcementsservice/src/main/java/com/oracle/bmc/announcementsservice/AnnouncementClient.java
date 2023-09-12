@@ -176,6 +176,9 @@ public class AnnouncementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "excludeAnnouncementTypes",
                         request.getExcludeAnnouncementTypes(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam(
+                        "shouldShowOnlyLatestInChain", request.getShouldShowOnlyLatestInChain())
+                .appendQueryParam("chainId", request.getChainId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(

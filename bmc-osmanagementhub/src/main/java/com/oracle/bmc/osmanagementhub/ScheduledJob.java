@@ -11,8 +11,7 @@ import com.oracle.bmc.osmanagementhub.responses.*;
  * Use the OS Management Hub API to manage and monitor updates and patches for the operating system
  * environments in your private data centers through a single management console. For more
  * information, see [Overview of OS Management
- * Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm). Use the table of contents and
- * search tool to explore the OS Management Hub API.
+ * Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.

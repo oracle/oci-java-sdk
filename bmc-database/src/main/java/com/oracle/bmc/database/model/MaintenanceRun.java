@@ -175,15 +175,15 @@ public final class MaintenanceRun
             return this;
         }
         /**
-         * The current state of the maintenance run. For Autonomous Database on shared Exadata
-         * infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+         * The current state of the maintenance run. For Autonomous Database Serverless instances,
+         * valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the maintenance run. For Autonomous Database on shared Exadata
-         * infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+         * The current state of the maintenance run. For Autonomous Database Serverless instances,
+         * valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -765,8 +765,8 @@ public final class MaintenanceRun
     }
 
     /**
-     * The current state of the maintenance run. For Autonomous Database on shared Exadata
-     * infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+     * The current state of the maintenance run. For Autonomous Database Serverless instances, valid
+     * states are IN_PROGRESS, SUCCEEDED, and FAILED.
      */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Scheduled("SCHEDULED"),
@@ -821,15 +821,15 @@ public final class MaintenanceRun
         }
     };
     /**
-     * The current state of the maintenance run. For Autonomous Database on shared Exadata
-     * infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+     * The current state of the maintenance run. For Autonomous Database Serverless instances, valid
+     * states are IN_PROGRESS, SUCCEEDED, and FAILED.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the maintenance run. For Autonomous Database on shared Exadata
-     * infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+     * The current state of the maintenance run. For Autonomous Database Serverless instances, valid
+     * states are IN_PROGRESS, SUCCEEDED, and FAILED.
      *
      * @return the value
      */

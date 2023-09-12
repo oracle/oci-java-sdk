@@ -35,9 +35,8 @@ public final class GenerateAutonomousDatabaseWalletDetails
         /**
          * The type of wallet to generate.
          *
-         * <p>*Shared Exadata infrastructure usage:** * {@code SINGLE} - used to generate a wallet
-         * for a single database * {@code ALL} - used to generate wallet for all databases in the
-         * region
+         * <p>*Serverless instance usage:** * {@code SINGLE} - used to generate a wallet for a
+         * single database * {@code ALL} - used to generate wallet for all databases in the region
          *
          * <p>*Dedicated Exadata infrastructure usage:** Value must be {@code NULL} if attribute is
          * used.
@@ -48,9 +47,8 @@ public final class GenerateAutonomousDatabaseWalletDetails
         /**
          * The type of wallet to generate.
          *
-         * <p>*Shared Exadata infrastructure usage:** * {@code SINGLE} - used to generate a wallet
-         * for a single database * {@code ALL} - used to generate wallet for all databases in the
-         * region
+         * <p>*Serverless instance usage:** * {@code SINGLE} - used to generate a wallet for a
+         * single database * {@code ALL} - used to generate wallet for all databases in the region
          *
          * <p>*Dedicated Exadata infrastructure usage:** Value must be {@code NULL} if attribute is
          * used.
@@ -121,8 +119,8 @@ public final class GenerateAutonomousDatabaseWalletDetails
     /**
      * The type of wallet to generate.
      *
-     * <p>*Shared Exadata infrastructure usage:** * {@code SINGLE} - used to generate a wallet for a
-     * single database * {@code ALL} - used to generate wallet for all databases in the region
+     * <p>*Serverless instance usage:** * {@code SINGLE} - used to generate a wallet for a single
+     * database * {@code ALL} - used to generate wallet for all databases in the region
      *
      * <p>*Dedicated Exadata infrastructure usage:** Value must be {@code NULL} if attribute is
      * used.
@@ -162,8 +160,8 @@ public final class GenerateAutonomousDatabaseWalletDetails
     /**
      * The type of wallet to generate.
      *
-     * <p>*Shared Exadata infrastructure usage:** * {@code SINGLE} - used to generate a wallet for a
-     * single database * {@code ALL} - used to generate wallet for all databases in the region
+     * <p>*Serverless instance usage:** * {@code SINGLE} - used to generate a wallet for a single
+     * database * {@code ALL} - used to generate wallet for all databases in the region
      *
      * <p>*Dedicated Exadata infrastructure usage:** Value must be {@code NULL} if attribute is
      * used.
@@ -174,8 +172,8 @@ public final class GenerateAutonomousDatabaseWalletDetails
     /**
      * The type of wallet to generate.
      *
-     * <p>*Shared Exadata infrastructure usage:** * {@code SINGLE} - used to generate a wallet for a
-     * single database * {@code ALL} - used to generate wallet for all databases in the region
+     * <p>*Serverless instance usage:** * {@code SINGLE} - used to generate a wallet for a single
+     * database * {@code ALL} - used to generate wallet for all databases in the region
      *
      * <p>*Dedicated Exadata infrastructure usage:** Value must be {@code NULL} if attribute is
      * used.

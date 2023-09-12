@@ -28,15 +28,15 @@ public class ChangeDisasterRecoveryConfigurationRequest
         return autonomousDatabaseId;
     }
     /**
-     * Request to update the cross-region disaster recovery (DR) details of the standby Shared
-     * Autonomous Database.
+     * Request to update the cross-region disaster recovery (DR) details of the standby Autonomous
+     * Database Serverless database.
      */
     private com.oracle.bmc.database.model.ChangeDisasterRecoveryConfigurationDetails
             changeDisasterRecoveryConfigurationDetails;
 
     /**
-     * Request to update the cross-region disaster recovery (DR) details of the standby Shared
-     * Autonomous Database.
+     * Request to update the cross-region disaster recovery (DR) details of the standby Autonomous
+     * Database Serverless database.
      */
     public com.oracle.bmc.database.model.ChangeDisasterRecoveryConfigurationDetails
             getChangeDisasterRecoveryConfigurationDetails() {
@@ -104,15 +104,15 @@ public class ChangeDisasterRecoveryConfigurationRequest
         }
 
         /**
-         * Request to update the cross-region disaster recovery (DR) details of the standby Shared
-         * Autonomous Database.
+         * Request to update the cross-region disaster recovery (DR) details of the standby
+         * Autonomous Database Serverless database.
          */
         private com.oracle.bmc.database.model.ChangeDisasterRecoveryConfigurationDetails
                 changeDisasterRecoveryConfigurationDetails = null;
 
         /**
-         * Request to update the cross-region disaster recovery (DR) details of the standby Shared
-         * Autonomous Database.
+         * Request to update the cross-region disaster recovery (DR) details of the standby
+         * Autonomous Database Serverless database.
          *
          * @param changeDisasterRecoveryConfigurationDetails the value to set
          * @return this builder instance

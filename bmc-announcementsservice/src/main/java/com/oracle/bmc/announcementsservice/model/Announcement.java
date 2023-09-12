@@ -187,6 +187,15 @@ public final class Announcement extends BaseAnnouncement {
             this.__explicitlySet__.add("platformType");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("chainId")
+        private String chainId;
+
+        public Builder chainId(String chainId) {
+            this.chainId = chainId;
+            this.__explicitlySet__.add("chainId");
+            return this;
+        }
         /**
          * A detailed explanation of the event, expressed by using Markdown language. Avoid entering
          * confidential information.
@@ -267,6 +276,7 @@ public final class Announcement extends BaseAnnouncement {
                             this.timeUpdated,
                             this.environmentName,
                             this.platformType,
+                            this.chainId,
                             this.description,
                             this.additionalInformation,
                             this.affectedResources);
@@ -332,6 +342,9 @@ public final class Announcement extends BaseAnnouncement {
             if (model.wasPropertyExplicitlySet("platformType")) {
                 this.platformType(model.getPlatformType());
             }
+            if (model.wasPropertyExplicitlySet("chainId")) {
+                this.chainId(model.getChainId());
+            }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
             }
@@ -374,6 +387,7 @@ public final class Announcement extends BaseAnnouncement {
             java.util.Date timeUpdated,
             String environmentName,
             PlatformType platformType,
+            String chainId,
             String description,
             String additionalInformation,
             java.util.List<AffectedResource> affectedResources) {
@@ -395,7 +409,8 @@ public final class Announcement extends BaseAnnouncement {
                 timeCreated,
                 timeUpdated,
                 environmentName,
-                platformType);
+                platformType,
+                chainId);
         this.description = description;
         this.additionalInformation = additionalInformation;
         this.affectedResources = affectedResources;

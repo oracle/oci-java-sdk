@@ -136,6 +136,41 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeConfigCompartmentResponse> changeConfigCompartment(
+            ChangeConfigCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangeConfigCompartmentRequest, ChangeConfigCompartmentResponse>
+                    handler) {
+
+        Validate.notBlank(request.getConfigId(), "configId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeConfigCompartmentDetails(),
+                "changeConfigCompartmentDetails is required");
+
+        return clientCall(request, ChangeConfigCompartmentResponse::builder)
+                .logger(LOG, "changeConfigCompartment")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "ChangeConfigCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/Config/ChangeConfigCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeConfigCompartmentRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("configs")
+                .appendPathParam(request.getConfigId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeConfigCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeMonitoredResourceCompartmentResponse>
             changeMonitoredResourceCompartment(
                     ChangeMonitoredResourceCompartmentRequest request,
@@ -174,6 +209,36 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeMonitoredResourceCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConfigResponse> createConfig(
+            CreateConfigRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateConfigRequest, CreateConfigResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCreateConfigDetails(), "createConfigDetails is required");
+
+        return clientCall(request, CreateConfigResponse::builder)
+                .logger(LOG, "createConfig")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "CreateConfig",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/Config/CreateConfig")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateConfigRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("configs")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.Config.class,
+                        CreateConfigResponse.Builder::config)
+                .handleResponseHeaderString("etag", CreateConfigResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateConfigResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -251,6 +316,33 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
                         "content-location",
                         CreateMonitoredResourceResponse.Builder::contentLocation)
                 .handleResponseHeaderString("etag", CreateMonitoredResourceResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConfigResponse> deleteConfig(
+            DeleteConfigRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteConfigRequest, DeleteConfigResponse>
+                    handler) {
+
+        Validate.notBlank(request.getConfigId(), "configId must not be blank");
+
+        return clientCall(request, DeleteConfigResponse::builder)
+                .logger(LOG, "deleteConfig")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "DeleteConfig",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/Config/DeleteConfig")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteConfigRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("configs")
+                .appendPathParam(request.getConfigId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteConfigResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -386,6 +478,36 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<GetConfigResponse> getConfig(
+            GetConfigRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetConfigRequest, GetConfigResponse>
+                    handler) {
+
+        Validate.notBlank(request.getConfigId(), "configId must not be blank");
+
+        return clientCall(request, GetConfigResponse::builder)
+                .logger(LOG, "getConfig")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "GetConfig",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/Config/GetConfig")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetConfigRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("configs")
+                .appendPathParam(request.getConfigId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.Config.class,
+                        GetConfigResponse.Builder::config)
+                .handleResponseHeaderString("etag", GetConfigResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetConfigResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDiscoveryJobResponse> getDiscoveryJob(
             GetDiscoveryJobRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -477,6 +599,43 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConfigsResponse> listConfigs(
+            ListConfigsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListConfigsRequest, ListConfigsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListConfigsResponse::builder)
+                .logger(LOG, "listConfigs")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "ListConfigs",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/ConfigCollection/ListConfigs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListConfigsRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("configs")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("type", request.getType())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.ConfigCollection.class,
+                        ListConfigsResponse.Builder::configCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListConfigsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListConfigsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -902,6 +1061,39 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
                         UpdateAndPropagateTagsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateAndPropagateTagsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConfigResponse> updateConfig(
+            UpdateConfigRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateConfigRequest, UpdateConfigResponse>
+                    handler) {
+
+        Validate.notBlank(request.getConfigId(), "configId must not be blank");
+        Objects.requireNonNull(request.getUpdateConfigDetails(), "updateConfigDetails is required");
+
+        return clientCall(request, UpdateConfigResponse::builder)
+                .logger(LOG, "updateConfig")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "UpdateConfig",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/Config/UpdateConfig")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateConfigRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("configs")
+                .appendPathParam(request.getConfigId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.Config.class,
+                        UpdateConfigResponse.Builder::config)
+                .handleResponseHeaderString("etag", UpdateConfigResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateConfigResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

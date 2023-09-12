@@ -5,8 +5,8 @@
 package com.oracle.bmc.announcementsservice.model;
 
 /**
- * Criteria that the Announcements service uses to match announcements in order to provide only
- * desired, matching announcements. <br>
+ * Criteria that the Announcements service uses to match announcements so it can provide only
+ * desired announcements to subscribers. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +31,18 @@ public final class Filter extends com.oracle.bmc.http.client.internal.Explicitly
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The type of filter. */
+        /**
+         * The type of filter. You cannot combine the RESOURCE_ID filter with any other type of
+         * filter within a given filter group. For filter types that support multiple values,
+         * specify the values individually.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
-         * The type of filter.
+         * The type of filter. You cannot combine the RESOURCE_ID filter with any other type of
+         * filter within a given filter group. For filter types that support multiple values,
+         * specify the values individually.
          *
          * @param type the value to set
          * @return this builder
@@ -94,7 +100,11 @@ public final class Filter extends com.oracle.bmc.http.client.internal.Explicitly
         return new Builder().copy(this);
     }
 
-    /** The type of filter. */
+    /**
+     * The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter
+     * within a given filter group. For filter types that support multiple values, specify the
+     * values individually.
+     */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         CompartmentId("COMPARTMENT_ID"),
         PlatformType("PLATFORM_TYPE"),
@@ -142,12 +152,18 @@ public final class Filter extends com.oracle.bmc.http.client.internal.Explicitly
             return UnknownEnumValue;
         }
     };
-    /** The type of filter. */
+    /**
+     * The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter
+     * within a given filter group. For filter types that support multiple values, specify the
+     * values individually.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
-     * The type of filter.
+     * The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter
+     * within a given filter group. For filter types that support multiple values, specify the
+     * values individually.
      *
      * @return the value
      */

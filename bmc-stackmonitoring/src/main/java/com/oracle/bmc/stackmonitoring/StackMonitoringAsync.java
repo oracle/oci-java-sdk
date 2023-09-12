@@ -78,6 +78,33 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves the configuration item to another compartment. Basically, this will disable any
+     * configuration for this configuration type in thie compartment, and will enable it in the new
+     * one.
+     *
+     * <p>For example, if for a HOST resource type, the configuration with AUTO_PROMOTE in the
+     * configuration type and TRUE as value is moved, automatic discovery will not take place in
+     * this compartment any more, but in the new one.
+     *
+     * <p>So this operation will have the same effect as deleting the configuration item in the old
+     * compartment and recreating it in another compartment.
+     *
+     * <p>When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeConfigCompartmentResponse> changeConfigCompartment(
+            ChangeConfigCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeConfigCompartmentRequest, ChangeConfigCompartmentResponse>
+                    handler);
+
+    /**
      * Moves a monitored resource from one compartment to another. When provided, If-Match is
      * checked against ETag values of the resource.
      *
@@ -95,6 +122,26 @@ public interface StackMonitoringAsync extends AutoCloseable {
                                     ChangeMonitoredResourceCompartmentRequest,
                                     ChangeMonitoredResourceCompartmentResponse>
                             handler);
+
+    /**
+     * Creates a configuration item, for example to define whether resources of a specific type
+     * should be discovered automatically.
+     *
+     * <p>For example, when a new Management Agent gets registered in a certain compartment, this
+     * Management Agent can potentially get promoted to a HOST resource. The configuration item will
+     * determine if HOST resources in the selected compartment will be discovered automatically.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateConfigResponse> createConfig(
+            CreateConfigRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateConfigRequest, CreateConfigResponse>
+                    handler);
 
     /**
      * API to create discovery Job and submit discovery Details to agent.
@@ -128,6 +175,21 @@ public interface StackMonitoringAsync extends AutoCloseable {
             CreateMonitoredResourceRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateMonitoredResourceRequest, CreateMonitoredResourceResponse>
+                    handler);
+
+    /**
+     * Deletes a configuration identified by the id.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteConfigResponse> deleteConfig(
+            DeleteConfigRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteConfigRequest, DeleteConfigResponse>
                     handler);
 
     /**
@@ -202,6 +264,20 @@ public interface StackMonitoringAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Gets the details of a configuration.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetConfigResponse> getConfig(
+            GetConfigRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetConfigRequest, GetConfigResponse> handler);
+
+    /**
      * API to get the details of discovery Job by identifier.
      *
      * @param request The request object containing the details to send
@@ -247,6 +323,20 @@ public interface StackMonitoringAsync extends AutoCloseable {
             GetWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                     handler);
+
+    /**
+     * Get a list of configurations in a compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListConfigsResponse> listConfigs(
+            ListConfigsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListConfigsRequest, ListConfigsResponse> handler);
 
     /**
      * API to get all the logs of a Discovery Job.
@@ -415,6 +505,21 @@ public interface StackMonitoringAsync extends AutoCloseable {
             UpdateAndPropagateTagsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateAndPropagateTagsRequest, UpdateAndPropagateTagsResponse>
+                    handler);
+
+    /**
+     * Updates the configuration identified by the id given.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateConfigResponse> updateConfig(
+            UpdateConfigRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateConfigRequest, UpdateConfigResponse>
                     handler);
 
     /**

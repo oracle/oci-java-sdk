@@ -491,19 +491,19 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             return this;
         }
         /**
-         * Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous
-         * Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster
-         * recovery time objective (RTO) during failover or switchover. Backup-based DR type
-         * provides lower cost DR with a slower RTO during failover or switchover.
+         * Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database
+         * Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR
+         * with a faster recovery time objective (RTO) during failover or switchover. Backup-based
+         * DR type provides lower cost DR with a slower RTO during failover or switchover.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("remoteDisasterRecoveryType")
         private DisasterRecoveryConfiguration.DisasterRecoveryType remoteDisasterRecoveryType;
 
         /**
-         * Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous
-         * Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster
-         * recovery time objective (RTO) during failover or switchover. Backup-based DR type
-         * provides lower cost DR with a slower RTO during failover or switchover.
+         * Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database
+         * Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR
+         * with a faster recovery time objective (RTO) during failover or switchover. Backup-based
+         * DR type provides lower cost DR with a slower RTO during failover or switchover.
          *
          * @param remoteDisasterRecoveryType the value to set
          * @return this builder
@@ -857,19 +857,19 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
     }
 
     /**
-     * Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous
-     * Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster
-     * recovery time objective (RTO) during failover or switchover. Backup-based DR type provides
-     * lower cost DR with a slower RTO during failover or switchover.
+     * Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database
+     * Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a
+     * faster recovery time objective (RTO) during failover or switchover. Backup-based DR type
+     * provides lower cost DR with a slower RTO during failover or switchover.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("remoteDisasterRecoveryType")
     private final DisasterRecoveryConfiguration.DisasterRecoveryType remoteDisasterRecoveryType;
 
     /**
-     * Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous
-     * Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster
-     * recovery time objective (RTO) during failover or switchover. Backup-based DR type provides
-     * lower cost DR with a slower RTO during failover or switchover.
+     * Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database
+     * Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a
+     * faster recovery time objective (RTO) during failover or switchover. Backup-based DR type
+     * provides lower cost DR with a slower RTO during failover or switchover.
      *
      * @return the value
      */

@@ -82,6 +82,33 @@ public interface StackMonitoring extends AutoCloseable {
             AssociateMonitoredResourcesRequest request);
 
     /**
+     * Moves the configuration item to another compartment. Basically, this will disable any
+     * configuration for this configuration type in thie compartment, and will enable it in the new
+     * one.
+     *
+     * <p>For example, if for a HOST resource type, the configuration with AUTO_PROMOTE in the
+     * configuration type and TRUE as value is moved, automatic discovery will not take place in
+     * this compartment any more, but in the new one.
+     *
+     * <p>So this operation will have the same effect as deleting the configuration item in the old
+     * compartment and recreating it in another compartment.
+     *
+     * <p>When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/ChangeConfigCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeConfigCompartment API.
+     */
+    ChangeConfigCompartmentResponse changeConfigCompartment(ChangeConfigCompartmentRequest request);
+
+    /**
      * Moves a monitored resource from one compartment to another. When provided, If-Match is
      * checked against ETag values of the resource.
      *
@@ -98,6 +125,26 @@ public interface StackMonitoring extends AutoCloseable {
      */
     ChangeMonitoredResourceCompartmentResponse changeMonitoredResourceCompartment(
             ChangeMonitoredResourceCompartmentRequest request);
+
+    /**
+     * Creates a configuration item, for example to define whether resources of a specific type
+     * should be discovered automatically.
+     *
+     * <p>For example, when a new Management Agent gets registered in a certain compartment, this
+     * Management Agent can potentially get promoted to a HOST resource. The configuration item will
+     * determine if HOST resources in the selected compartment will be discovered automatically.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/CreateConfigExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateConfig API.
+     */
+    CreateConfigResponse createConfig(CreateConfigRequest request);
 
     /**
      * API to create discovery Job and submit discovery Details to agent.
@@ -132,6 +179,21 @@ public interface StackMonitoring extends AutoCloseable {
      *     CreateMonitoredResource API.
      */
     CreateMonitoredResourceResponse createMonitoredResource(CreateMonitoredResourceRequest request);
+
+    /**
+     * Deletes a configuration identified by the id.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/DeleteConfigExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteConfig API.
+     */
+    DeleteConfigResponse deleteConfig(DeleteConfigRequest request);
 
     /**
      * Deletes a DiscoveryJob by identifier
@@ -204,6 +266,21 @@ public interface StackMonitoring extends AutoCloseable {
             DisassociateMonitoredResourcesRequest request);
 
     /**
+     * Gets the details of a configuration.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/GetConfigExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConfig API.
+     */
+    GetConfigResponse getConfig(GetConfigRequest request);
+
+    /**
      * API to get the details of discovery Job by identifier.
      *
      * @param request The request object containing the details to send
@@ -250,6 +327,21 @@ public interface StackMonitoring extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
+
+    /**
+     * Get a list of configurations in a compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/ListConfigsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConfigs API.
+     */
+    ListConfigsResponse listConfigs(ListConfigsRequest request);
 
     /**
      * API to get all the logs of a Discovery Job.
@@ -420,6 +512,21 @@ public interface StackMonitoring extends AutoCloseable {
      *     UpdateAndPropagateTags API.
      */
     UpdateAndPropagateTagsResponse updateAndPropagateTags(UpdateAndPropagateTagsRequest request);
+
+    /**
+     * Updates the configuration identified by the id given.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/UpdateConfigExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConfig API.
+     */
+    UpdateConfigResponse updateConfig(UpdateConfigRequest request);
 
     /**
      * Update monitored resource by the given identifier

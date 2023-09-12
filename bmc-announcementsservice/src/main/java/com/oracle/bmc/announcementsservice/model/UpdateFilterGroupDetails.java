@@ -33,14 +33,16 @@ public final class UpdateFilterGroupDetails
     public static class Builder {
         /**
          * A list of filters against which the Announcements service will match announcements. You
-         * cannot have more than one of any given filter type within a filter group.
+         * cannot combine the RESOURCE_ID filter with any other type of filter within a given filter
+         * group. For filter types that support multiple values, specify the values individually.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("filters")
         private java.util.List<Filter> filters;
 
         /**
          * A list of filters against which the Announcements service will match announcements. You
-         * cannot have more than one of any given filter type within a filter group.
+         * cannot combine the RESOURCE_ID filter with any other type of filter within a given filter
+         * group. For filter types that support multiple values, specify the values individually.
          *
          * @param filters the value to set
          * @return this builder
@@ -82,14 +84,16 @@ public final class UpdateFilterGroupDetails
 
     /**
      * A list of filters against which the Announcements service will match announcements. You
-     * cannot have more than one of any given filter type within a filter group.
+     * cannot combine the RESOURCE_ID filter with any other type of filter within a given filter
+     * group. For filter types that support multiple values, specify the values individually.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("filters")
     private final java.util.List<Filter> filters;
 
     /**
      * A list of filters against which the Announcements service will match announcements. You
-     * cannot have more than one of any given filter type within a filter group.
+     * cannot combine the RESOURCE_ID filter with any other type of filter within a given filter
+     * group. For filter types that support multiple values, specify the values individually.
      *
      * @return the value
      */

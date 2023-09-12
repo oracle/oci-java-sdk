@@ -52,7 +52,8 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
         "timeCreated",
         "timeUpdated",
         "environmentName",
-        "platformType"
+        "platformType",
+        "chainId"
     })
     protected BaseAnnouncement(
             String id,
@@ -72,7 +73,8 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             String environmentName,
-            PlatformType platformType) {
+            PlatformType platformType,
+            String chainId) {
         super();
         this.id = id;
         this.referenceTicketNumber = referenceTicketNumber;
@@ -92,6 +94,7 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
         this.timeUpdated = timeUpdated;
         this.environmentName = environmentName;
         this.platformType = platformType;
+        this.chainId = chainId;
     }
 
     /** The OCID of the announcement. */
@@ -558,6 +561,23 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
         return platformType;
     }
 
+    /**
+     * The sequence of connected announcements, or announcement chain, that this announcement
+     * belongs to. Related announcements share the same chain ID.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("chainId")
+    private final String chainId;
+
+    /**
+     * The sequence of connected announcements, or announcement chain, that this announcement
+     * belongs to. Related announcements share the same chain ID.
+     *
+     * @return the value
+     */
+    public String getChainId() {
+        return chainId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -591,6 +611,7 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", environmentName=").append(String.valueOf(this.environmentName));
         sb.append(", platformType=").append(String.valueOf(this.platformType));
+        sb.append(", chainId=").append(String.valueOf(this.chainId));
         sb.append(")");
         return sb.toString();
     }
@@ -623,6 +644,7 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.environmentName, other.environmentName)
                 && java.util.Objects.equals(this.platformType, other.platformType)
+                && java.util.Objects.equals(this.chainId, other.chainId)
                 && super.equals(other);
     }
 
@@ -660,6 +682,7 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
                 (result * PRIME)
                         + (this.environmentName == null ? 43 : this.environmentName.hashCode());
         result = (result * PRIME) + (this.platformType == null ? 43 : this.platformType.hashCode());
+        result = (result * PRIME) + (this.chainId == null ? 43 : this.chainId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
