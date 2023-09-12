@@ -6350,6 +6350,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .basePath("/20160918")
                 .appendPathParam("autonomousDatabaseCharacterSets")
                 .appendQueryParam("isShared", request.getIsShared())
+                .appendQueryParam("isDedicated", request.getIsDedicated())
                 .appendEnumQueryParam("characterSetType", request.getCharacterSetType())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())

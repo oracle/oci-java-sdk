@@ -151,17 +151,17 @@ public class BaseAnnouncementsPreferences
     }
 
     /**
-     * The time zone that the user prefers for announcement time stamps. Specify the preference with
-     * a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example
-     * America/Los_Angeles.
+     * The time zone in which the user prefers to receive announcements. Specify the preference with
+     * a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example -
+     * America/Los_Angeles
      */
     @com.fasterxml.jackson.annotation.JsonProperty("preferredTimeZone")
     private final String preferredTimeZone;
 
     /**
-     * The time zone that the user prefers for announcement time stamps. Specify the preference with
-     * a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example
-     * America/Los_Angeles.
+     * The time zone in which the user prefers to receive announcements. Specify the preference with
+     * a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example -
+     * America/Los_Angeles
      *
      * @return the value
      */

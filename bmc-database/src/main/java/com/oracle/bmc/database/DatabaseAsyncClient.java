@@ -7085,6 +7085,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .basePath("/20160918")
                 .appendPathParam("autonomousDatabaseCharacterSets")
                 .appendQueryParam("isShared", request.getIsShared())
+                .appendQueryParam("isDedicated", request.getIsDedicated())
                 .appendEnumQueryParam("characterSetType", request.getCharacterSetType())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())

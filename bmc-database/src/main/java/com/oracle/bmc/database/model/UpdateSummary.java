@@ -95,12 +95,12 @@ public final class UpdateSummary extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The update action. */
+        /** The previous update action performed. */
         @com.fasterxml.jackson.annotation.JsonProperty("lastAction")
         private LastAction lastAction;
 
         /**
-         * The update action.
+         * The previous update action performed.
          *
          * @param lastAction the value to set
          * @return this builder
@@ -298,7 +298,7 @@ public final class UpdateSummary extends com.oracle.bmc.http.client.internal.Exp
         return description;
     }
 
-    /** The update action. */
+    /** The previous update action performed. */
     public enum LastAction implements com.oracle.bmc.http.internal.BmcEnum {
         RollingApply("ROLLING_APPLY"),
         NonRollingApply("NON_ROLLING_APPLY"),
@@ -346,12 +346,12 @@ public final class UpdateSummary extends com.oracle.bmc.http.client.internal.Exp
             return UnknownEnumValue;
         }
     };
-    /** The update action. */
+    /** The previous update action performed. */
     @com.fasterxml.jackson.annotation.JsonProperty("lastAction")
     private final LastAction lastAction;
 
     /**
-     * The update action.
+     * The previous update action performed.
      *
      * @return the value
      */
@@ -359,7 +359,7 @@ public final class UpdateSummary extends com.oracle.bmc.http.client.internal.Exp
         return lastAction;
     }
 
-    /** The update action. */
+    /** */
     public enum AvailableActions implements com.oracle.bmc.http.internal.BmcEnum {
         RollingApply("ROLLING_APPLY"),
         NonRollingApply("NON_ROLLING_APPLY"),

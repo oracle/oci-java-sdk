@@ -83,6 +83,39 @@ public interface SqlTuning extends AutoCloseable {
     CloneSqlTuningTaskResponse cloneSqlTuningTask(CloneSqlTuningTaskRequest request);
 
     /**
+     * Creates an empty Sql tuning set within the Managed Database specified by managedDatabaseId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/CreateSqlTuningSetExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSqlTuningSet
+     *     API.
+     */
+    CreateSqlTuningSetResponse createSqlTuningSet(CreateSqlTuningSetRequest request);
+
+    /**
+     * Drops the Sql tuning set specified by sqlTuningSet within the Managed Database specified by
+     * managedDatabaseId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DropSqlTuningSetExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DropSqlTuningSet
+     *     API.
+     */
+    DropSqlTuningSetResponse dropSqlTuningSet(DropSqlTuningSetRequest request);
+
+    /**
      * Drops a SQL tuning task and its related results from the database.
      *
      * @param request The request object containing the details to send
@@ -97,6 +130,41 @@ public interface SqlTuning extends AutoCloseable {
      *     API.
      */
     DropSqlTuningTaskResponse dropSqlTuningTask(DropSqlTuningTaskRequest request);
+
+    /**
+     * Deletes the Sqls in the specified Sql tuning set that matches the filter criteria provided in
+     * the basicFilter. If basicFilter criteria is not provided, then entire Sqls in the Sql tuning
+     * set is deleted.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DropSqlsInSqlTuningSetExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DropSqlsInSqlTuningSet API.
+     */
+    DropSqlsInSqlTuningSetResponse dropSqlsInSqlTuningSet(DropSqlsInSqlTuningSetRequest request);
+
+    /**
+     * Fetch the details of Sql statements in the Sql tuning set specified by name, owner and
+     * optional filter parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/FetchSqlTuningSetExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use FetchSqlTuningSet
+     *     API.
+     */
+    FetchSqlTuningSetResponse fetchSqlTuningSet(FetchSqlTuningSetRequest request);
 
     /**
      * Retrieves a comparison of the existing SQL execution plan and a new plan. A SQL tuning task
@@ -219,6 +287,40 @@ public interface SqlTuning extends AutoCloseable {
     ListSqlTuningSetsResponse listSqlTuningSets(ListSqlTuningSetsRequest request);
 
     /**
+     * Load Sql statements into the Sql tuning set specified by name and optional filter parameters
+     * within the Managed Database specified by managedDatabaseId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/LoadSqlTuningSetExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use LoadSqlTuningSet
+     *     API.
+     */
+    LoadSqlTuningSetResponse loadSqlTuningSet(LoadSqlTuningSetRequest request);
+
+    /**
+     * Saves the specified list of Sqls statements into another new Sql tuning set or loads into an
+     * existing Sql tuning set'.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SaveSqlTuningSetAsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use SaveSqlTuningSetAs
+     *     API.
+     */
+    SaveSqlTuningSetAsResponse saveSqlTuningSetAs(SaveSqlTuningSetAsRequest request);
+
+    /**
      * Starts a SQL tuning task for a given set of SQL statements from the active session history
      * top SQL statements.
      *
@@ -234,6 +336,22 @@ public interface SqlTuning extends AutoCloseable {
      *     API.
      */
     StartSqlTuningTaskResponse startSqlTuningTask(StartSqlTuningTaskRequest request);
+
+    /**
+     * Executes a SQL query to check whether user entered basic filter criteria is valid or not.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ValidateBasicFilterExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateBasicFilter
+     *     API.
+     */
+    ValidateBasicFilterResponse validateBasicFilter(ValidateBasicFilterRequest request);
 
     /**
      * Gets the pre-configured paginators available for list operations in this service which may

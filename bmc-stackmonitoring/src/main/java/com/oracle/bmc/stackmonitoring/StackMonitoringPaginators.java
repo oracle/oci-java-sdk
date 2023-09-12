@@ -42,6 +42,120 @@ public class StackMonitoringPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listConfigs
+     * operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListConfigsResponse> listConfigsResponseIterator(
+            final ListConfigsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListConfigsRequest.Builder, ListConfigsRequest, ListConfigsResponse>(
+                new java.util.function.Supplier<ListConfigsRequest.Builder>() {
+                    @Override
+                    public ListConfigsRequest.Builder get() {
+                        return ListConfigsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListConfigsResponse, String>() {
+                    @Override
+                    public String apply(ListConfigsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListConfigsRequest.Builder>,
+                        ListConfigsRequest>() {
+                    @Override
+                    public ListConfigsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListConfigsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListConfigsRequest, ListConfigsResponse>() {
+                    @Override
+                    public ListConfigsResponse apply(ListConfigsRequest request) {
+                        return client.listConfigs(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.stackmonitoring.model.ConfigSummary} objects contained in responses from the
+     * listConfigs operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.stackmonitoring.model.ConfigSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.stackmonitoring.model.ConfigSummary> listConfigsRecordIterator(
+            final ListConfigsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListConfigsRequest.Builder,
+                ListConfigsRequest,
+                ListConfigsResponse,
+                com.oracle.bmc.stackmonitoring.model.ConfigSummary>(
+                new java.util.function.Supplier<ListConfigsRequest.Builder>() {
+                    @Override
+                    public ListConfigsRequest.Builder get() {
+                        return ListConfigsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListConfigsResponse, String>() {
+                    @Override
+                    public String apply(ListConfigsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListConfigsRequest.Builder>,
+                        ListConfigsRequest>() {
+                    @Override
+                    public ListConfigsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListConfigsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListConfigsRequest, ListConfigsResponse>() {
+                    @Override
+                    public ListConfigsResponse apply(ListConfigsRequest request) {
+                        return client.listConfigs(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListConfigsResponse,
+                        java.util.List<com.oracle.bmc.stackmonitoring.model.ConfigSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.stackmonitoring.model.ConfigSummary> apply(
+                            ListConfigsResponse response) {
+                        return response.getConfigCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the
      * listDiscoveryJobLogs operation. This iterable will fetch more data from the server as needed.
      *

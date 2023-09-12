@@ -424,8 +424,8 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * This operation updates the cross-region disaster recovery (DR) details of the standby Shared
-     * Autonomous Database, and must be run on the standby side.
+     * This operation updates the cross-region disaster recovery (DR) details of the standby
+     * Autonomous Database Serverless database, and must be run on the standby side.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -3492,8 +3492,8 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Gets a list of supported Autonomous Database versions. Note that preview version software is
-     * only available for databases with [shared Exadata
-     * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
+     * only available for Autonomous Database Serverless
+     * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

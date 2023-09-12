@@ -12,6 +12,8 @@ import com.oracle.bmc.SdkClients;
     DbManagementClient.class,
     DiagnosabilityAsyncClient.class,
     DiagnosabilityClient.class,
+    PerfhubAsyncClient.class,
+    PerfhubClient.class,
     SqlTuningAsyncClient.class,
     SqlTuningClient.class
 })

@@ -5,8 +5,8 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details to update the cross-region Disaster Recovery (DR) details of the Standby Autonomous
- * Database on shared Exadata infrastructure. <br>
+ * Details to update the cross-region disaster recovery (DR) details of the standby Autonomous
+ * Database Serverless instance. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -42,19 +42,19 @@ public final class ChangeDisasterRecoveryConfigurationDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous
-         * Data Guard (ADG) DR type provides business critical DR with a faster recovery time
-         * objective (RTO) during failover or switchover. Backup-based DR type provides lower cost
-         * DR with a slower RTO during failover or switchover.
+         * Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance.
+         * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery
+         * time objective (RTO) during failover or switchover. Backup-based DR type provides lower
+         * cost DR with a slower RTO during failover or switchover.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("disasterRecoveryType")
         private DisasterRecoveryType disasterRecoveryType;
 
         /**
-         * Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous
-         * Data Guard (ADG) DR type provides business critical DR with a faster recovery time
-         * objective (RTO) during failover or switchover. Backup-based DR type provides lower cost
-         * DR with a slower RTO during failover or switchover.
+         * Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance.
+         * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery
+         * time objective (RTO) during failover or switchover. Backup-based DR type provides lower
+         * cost DR with a slower RTO during failover or switchover.
          *
          * @param disasterRecoveryType the value to set
          * @return this builder
@@ -148,10 +148,10 @@ public final class ChangeDisasterRecoveryConfigurationDetails
     }
 
     /**
-     * Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data
-     * Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO)
-     * during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO
-     * during failover or switchover.
+     * Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance.
+     * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time
+     * objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR
+     * with a slower RTO during failover or switchover.
      */
     public enum DisasterRecoveryType implements com.oracle.bmc.http.internal.BmcEnum {
         Adg("ADG"),
@@ -186,19 +186,19 @@ public final class ChangeDisasterRecoveryConfigurationDetails
         }
     };
     /**
-     * Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data
-     * Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO)
-     * during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO
-     * during failover or switchover.
+     * Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance.
+     * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time
+     * objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR
+     * with a slower RTO during failover or switchover.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("disasterRecoveryType")
     private final DisasterRecoveryType disasterRecoveryType;
 
     /**
-     * Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data
-     * Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO)
-     * during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO
-     * during failover or switchover.
+     * Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance.
+     * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time
+     * objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR
+     * with a slower RTO during failover or switchover.
      *
      * @return the value
      */

@@ -35,6 +35,7 @@ public final class ManagedInstanceGroup
         "archType",
         "vendorName",
         "softwareSourceIds",
+        "softwareSources",
         "managedInstanceIds",
         "managedInstanceCount",
         "pendingJobCount",
@@ -54,6 +55,7 @@ public final class ManagedInstanceGroup
             ArchType archType,
             VendorName vendorName,
             java.util.List<SoftwareSourceDetails> softwareSourceIds,
+            java.util.List<SoftwareSourceDetails> softwareSources,
             java.util.List<String> managedInstanceIds,
             Integer managedInstanceCount,
             Integer pendingJobCount,
@@ -72,6 +74,7 @@ public final class ManagedInstanceGroup
         this.archType = archType;
         this.vendorName = vendorName;
         this.softwareSourceIds = softwareSourceIds;
+        this.softwareSources = softwareSources;
         this.managedInstanceIds = managedInstanceIds;
         this.managedInstanceCount = managedInstanceCount;
         this.pendingJobCount = pendingJobCount;
@@ -257,6 +260,21 @@ public final class ManagedInstanceGroup
             this.__explicitlySet__.add("softwareSourceIds");
             return this;
         }
+        /** The list of software sources that the managed instance group will use. */
+        @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
+        private java.util.List<SoftwareSourceDetails> softwareSources;
+
+        /**
+         * The list of software sources that the managed instance group will use.
+         *
+         * @param softwareSources the value to set
+         * @return this builder
+         */
+        public Builder softwareSources(java.util.List<SoftwareSourceDetails> softwareSources) {
+            this.softwareSources = softwareSources;
+            this.__explicitlySet__.add("softwareSources");
+            return this;
+        }
         /** The list of managed instances OCIDs attached to the managed instance group. */
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceIds")
         private java.util.List<String> managedInstanceIds;
@@ -386,6 +404,7 @@ public final class ManagedInstanceGroup
                             this.archType,
                             this.vendorName,
                             this.softwareSourceIds,
+                            this.softwareSources,
                             this.managedInstanceIds,
                             this.managedInstanceCount,
                             this.pendingJobCount,
@@ -432,6 +451,9 @@ public final class ManagedInstanceGroup
             }
             if (model.wasPropertyExplicitlySet("softwareSourceIds")) {
                 this.softwareSourceIds(model.getSoftwareSourceIds());
+            }
+            if (model.wasPropertyExplicitlySet("softwareSources")) {
+                this.softwareSources(model.getSoftwareSources());
             }
             if (model.wasPropertyExplicitlySet("managedInstanceIds")) {
                 this.managedInstanceIds(model.getManagedInstanceIds());
@@ -663,6 +685,19 @@ public final class ManagedInstanceGroup
         return softwareSourceIds;
     }
 
+    /** The list of software sources that the managed instance group will use. */
+    @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
+    private final java.util.List<SoftwareSourceDetails> softwareSources;
+
+    /**
+     * The list of software sources that the managed instance group will use.
+     *
+     * @return the value
+     */
+    public java.util.List<SoftwareSourceDetails> getSoftwareSources() {
+        return softwareSources;
+    }
+
     /** The list of managed instances OCIDs attached to the managed instance group. */
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceIds")
     private final java.util.List<String> managedInstanceIds;
@@ -787,6 +822,7 @@ public final class ManagedInstanceGroup
         sb.append(", archType=").append(String.valueOf(this.archType));
         sb.append(", vendorName=").append(String.valueOf(this.vendorName));
         sb.append(", softwareSourceIds=").append(String.valueOf(this.softwareSourceIds));
+        sb.append(", softwareSources=").append(String.valueOf(this.softwareSources));
         sb.append(", managedInstanceIds=").append(String.valueOf(this.managedInstanceIds));
         sb.append(", managedInstanceCount=").append(String.valueOf(this.managedInstanceCount));
         sb.append(", pendingJobCount=").append(String.valueOf(this.pendingJobCount));
@@ -818,6 +854,7 @@ public final class ManagedInstanceGroup
                 && java.util.Objects.equals(this.archType, other.archType)
                 && java.util.Objects.equals(this.vendorName, other.vendorName)
                 && java.util.Objects.equals(this.softwareSourceIds, other.softwareSourceIds)
+                && java.util.Objects.equals(this.softwareSources, other.softwareSources)
                 && java.util.Objects.equals(this.managedInstanceIds, other.managedInstanceIds)
                 && java.util.Objects.equals(this.managedInstanceCount, other.managedInstanceCount)
                 && java.util.Objects.equals(this.pendingJobCount, other.pendingJobCount)
@@ -848,6 +885,9 @@ public final class ManagedInstanceGroup
         result =
                 (result * PRIME)
                         + (this.softwareSourceIds == null ? 43 : this.softwareSourceIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.softwareSources == null ? 43 : this.softwareSources.hashCode());
         result =
                 (result * PRIME)
                         + (this.managedInstanceIds == null

@@ -13,10 +13,10 @@ import com.oracle.bmc.aivision.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public class GetDocumentJobRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Document job id. */
+    /** The document job ID. */
     private String documentJobId;
 
-    /** Document job id. */
+    /** The document job ID. */
     public String getDocumentJobId() {
         return documentJobId;
     }
@@ -34,11 +34,11 @@ public class GetDocumentJobRequest extends com.oracle.bmc.requests.BmcRequest<ja
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Document job id. */
+        /** The document job ID. */
         private String documentJobId = null;
 
         /**
-         * Document job id.
+         * The document job ID.
          *
          * @param documentJobId the value to set
          * @return this builder instance

@@ -189,6 +189,15 @@ public final class AnnouncementSummary extends BaseAnnouncement {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("chainId")
+        private String chainId;
+
+        public Builder chainId(String chainId) {
+            this.chainId = chainId;
+            this.__explicitlySet__.add("chainId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -212,7 +221,8 @@ public final class AnnouncementSummary extends BaseAnnouncement {
                             this.timeCreated,
                             this.timeUpdated,
                             this.environmentName,
-                            this.platformType);
+                            this.platformType,
+                            this.chainId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -275,6 +285,9 @@ public final class AnnouncementSummary extends BaseAnnouncement {
             if (model.wasPropertyExplicitlySet("platformType")) {
                 this.platformType(model.getPlatformType());
             }
+            if (model.wasPropertyExplicitlySet("chainId")) {
+                this.chainId(model.getChainId());
+            }
             return this;
         }
     }
@@ -307,7 +320,8 @@ public final class AnnouncementSummary extends BaseAnnouncement {
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             String environmentName,
-            PlatformType platformType) {
+            PlatformType platformType,
+            String chainId) {
         super(
                 id,
                 referenceTicketNumber,
@@ -326,7 +340,8 @@ public final class AnnouncementSummary extends BaseAnnouncement {
                 timeCreated,
                 timeUpdated,
                 environmentName,
-                platformType);
+                platformType,
+                chainId);
     }
 
     @Override

@@ -16,14 +16,14 @@ public class UpdateAddressListRequest
                 com.oracle.bmc.waas.model.UpdateAddressListDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * address list. This number is generated when the address list is added to the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the address list.
+     * This number is generated when the address list is added to the compartment.
      */
     private String addressListId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * address list. This number is generated when the address list is added to the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the address list.
+     * This number is generated when the address list is added to the compartment.
      */
     public String getAddressListId() {
         return addressListId;
@@ -84,14 +84,14 @@ public class UpdateAddressListRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * address list. This number is generated when the address list is added to the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the address
+         * list. This number is generated when the address list is added to the compartment.
          */
         private String addressListId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * address list. This number is generated when the address list is added to the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the address
+         * list. This number is generated when the address list is added to the compartment.
          *
          * @param addressListId the value to set
          * @return this builder instance

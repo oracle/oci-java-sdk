@@ -160,19 +160,19 @@ public final class CreateAnnouncementSubscriptionDetails
             return this;
         }
         /**
-         * (For announcement subscriptions with Oracle Fusion Applications configured as the service
-         * only) The language in which the user prefers to receive emailed announcements. Specify
-         * the preference with a value that uses the language tag format (x-obmcs-human-language).
-         * For example fr-FR.
+         * (For announcement subscriptions with SaaS configured as the platform type or Oracle
+         * Fusion Applications as the service, or both, only) The language in which the user prefers
+         * to receive emailed announcements. Specify the preference with a value that uses the
+         * x-obmcs-human-language format. For example fr-FR.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("preferredLanguage")
         private String preferredLanguage;
 
         /**
-         * (For announcement subscriptions with Oracle Fusion Applications configured as the service
-         * only) The language in which the user prefers to receive emailed announcements. Specify
-         * the preference with a value that uses the language tag format (x-obmcs-human-language).
-         * For example fr-FR.
+         * (For announcement subscriptions with SaaS configured as the platform type or Oracle
+         * Fusion Applications as the service, or both, only) The language in which the user prefers
+         * to receive emailed announcements. Specify the preference with a value that uses the
+         * x-obmcs-human-language format. For example fr-FR.
          *
          * @param preferredLanguage the value to set
          * @return this builder
@@ -183,17 +183,17 @@ public final class CreateAnnouncementSubscriptionDetails
             return this;
         }
         /**
-         * The time zone that the user prefers for announcement time stamps. Specify the preference
+         * The time zone in which the user prefers to receive announcements. Specify the preference
          * with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For
-         * example America/Los_Angeles.
+         * example - America/Los_Angeles
          */
         @com.fasterxml.jackson.annotation.JsonProperty("preferredTimeZone")
         private String preferredTimeZone;
 
         /**
-         * The time zone that the user prefers for announcement time stamps. Specify the preference
+         * The time zone in which the user prefers to receive announcements. Specify the preference
          * with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For
-         * example America/Los_Angeles.
+         * example - America/Los_Angeles
          *
          * @param preferredTimeZone the value to set
          * @return this builder
@@ -394,19 +394,19 @@ public final class CreateAnnouncementSubscriptionDetails
     }
 
     /**
-     * (For announcement subscriptions with Oracle Fusion Applications configured as the service
-     * only) The language in which the user prefers to receive emailed announcements. Specify the
-     * preference with a value that uses the language tag format (x-obmcs-human-language). For
-     * example fr-FR.
+     * (For announcement subscriptions with SaaS configured as the platform type or Oracle Fusion
+     * Applications as the service, or both, only) The language in which the user prefers to receive
+     * emailed announcements. Specify the preference with a value that uses the
+     * x-obmcs-human-language format. For example fr-FR.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("preferredLanguage")
     private final String preferredLanguage;
 
     /**
-     * (For announcement subscriptions with Oracle Fusion Applications configured as the service
-     * only) The language in which the user prefers to receive emailed announcements. Specify the
-     * preference with a value that uses the language tag format (x-obmcs-human-language). For
-     * example fr-FR.
+     * (For announcement subscriptions with SaaS configured as the platform type or Oracle Fusion
+     * Applications as the service, or both, only) The language in which the user prefers to receive
+     * emailed announcements. Specify the preference with a value that uses the
+     * x-obmcs-human-language format. For example fr-FR.
      *
      * @return the value
      */
@@ -415,17 +415,17 @@ public final class CreateAnnouncementSubscriptionDetails
     }
 
     /**
-     * The time zone that the user prefers for announcement time stamps. Specify the preference with
-     * a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example
-     * America/Los_Angeles.
+     * The time zone in which the user prefers to receive announcements. Specify the preference with
+     * a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example -
+     * America/Los_Angeles
      */
     @com.fasterxml.jackson.annotation.JsonProperty("preferredTimeZone")
     private final String preferredTimeZone;
 
     /**
-     * The time zone that the user prefers for announcement time stamps. Specify the preference with
-     * a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example
-     * America/Los_Angeles.
+     * The time zone in which the user prefers to receive announcements. Specify the preference with
+     * a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example -
+     * America/Los_Angeles
      *
      * @return the value
      */

@@ -131,6 +131,80 @@ public class SqlTuningAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSqlTuningSetResponse> createSqlTuningSet(
+            CreateSqlTuningSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateSqlTuningSetRequest, CreateSqlTuningSetResponse>
+                    handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateSqlTuningSetDetails(), "createSqlTuningSetDetails is required");
+
+        return clientCall(request, CreateSqlTuningSetResponse::builder)
+                .logger(LOG, "createSqlTuningSet")
+                .serviceDetails(
+                        "SqlTuning",
+                        "CreateSqlTuningSet",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SqlTuningSet/CreateSqlTuningSet")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSqlTuningSetRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlTuningSets")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.SqlTuningSet.class,
+                        CreateSqlTuningSetResponse.Builder::sqlTuningSet)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateSqlTuningSetResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DropSqlTuningSetResponse> dropSqlTuningSet(
+            DropSqlTuningSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DropSqlTuningSetRequest, DropSqlTuningSetResponse>
+                    handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Objects.requireNonNull(
+                request.getDropSqlTuningSetDetails(), "dropSqlTuningSetDetails is required");
+
+        return clientCall(request, DropSqlTuningSetResponse::builder)
+                .logger(LOG, "dropSqlTuningSet")
+                .serviceDetails(
+                        "SqlTuning",
+                        "DropSqlTuningSet",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SqlTuningSet/DropSqlTuningSet")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DropSqlTuningSetRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlTuningSets")
+                .appendPathParam(request.getSqlTuningSetId())
+                .appendPathParam("actions")
+                .appendPathParam("dropSqlTuningSet")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.SqlTuningSetAdminActionStatus.class,
+                        DropSqlTuningSetResponse.Builder::sqlTuningSetAdminActionStatus)
+                .handleResponseHeaderString(
+                        "opc-request-id", DropSqlTuningSetResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DropSqlTuningTaskResponse> dropSqlTuningTask(
             DropSqlTuningTaskRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -160,6 +234,83 @@ public class SqlTuningAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", DropSqlTuningTaskResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DropSqlsInSqlTuningSetResponse> dropSqlsInSqlTuningSet(
+            DropSqlsInSqlTuningSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DropSqlsInSqlTuningSetRequest, DropSqlsInSqlTuningSetResponse>
+                    handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Objects.requireNonNull(
+                request.getDropSqlsInSqlTuningSetDetails(),
+                "dropSqlsInSqlTuningSetDetails is required");
+
+        return clientCall(request, DropSqlsInSqlTuningSetResponse::builder)
+                .logger(LOG, "dropSqlsInSqlTuningSet")
+                .serviceDetails(
+                        "SqlTuning",
+                        "DropSqlsInSqlTuningSet",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SqlTuningSet/DropSqlsInSqlTuningSet")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DropSqlsInSqlTuningSetRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlTuningSets")
+                .appendPathParam(request.getSqlTuningSetId())
+                .appendPathParam("actions")
+                .appendPathParam("dropSqlsInSqlTuningSet")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.SqlTuningSetAdminActionStatus.class,
+                        DropSqlsInSqlTuningSetResponse.Builder::sqlTuningSetAdminActionStatus)
+                .handleResponseHeaderString(
+                        "opc-request-id", DropSqlsInSqlTuningSetResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<FetchSqlTuningSetResponse> fetchSqlTuningSet(
+            FetchSqlTuningSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            FetchSqlTuningSetRequest, FetchSqlTuningSetResponse>
+                    handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Objects.requireNonNull(
+                request.getFetchSqlTuningSetDetails(), "fetchSqlTuningSetDetails is required");
+
+        return clientCall(request, FetchSqlTuningSetResponse::builder)
+                .logger(LOG, "fetchSqlTuningSet")
+                .serviceDetails(
+                        "SqlTuning",
+                        "FetchSqlTuningSet",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SqlTuningSet/FetchSqlTuningSet")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(FetchSqlTuningSetRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlTuningSets")
+                .appendPathParam(request.getSqlTuningSetId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.SqlTuningSet.class,
+                        FetchSqlTuningSetResponse.Builder::sqlTuningSet)
+                .handleResponseHeaderString(
+                        "opc-request-id", FetchSqlTuningSetResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -476,6 +627,84 @@ public class SqlTuningAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
     }
 
     @Override
+    public java.util.concurrent.Future<LoadSqlTuningSetResponse> loadSqlTuningSet(
+            LoadSqlTuningSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            LoadSqlTuningSetRequest, LoadSqlTuningSetResponse>
+                    handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Objects.requireNonNull(
+                request.getLoadSqlTuningSetDetails(), "loadSqlTuningSetDetails is required");
+
+        return clientCall(request, LoadSqlTuningSetResponse::builder)
+                .logger(LOG, "loadSqlTuningSet")
+                .serviceDetails(
+                        "SqlTuning",
+                        "LoadSqlTuningSet",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SqlTuningSet/LoadSqlTuningSet")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(LoadSqlTuningSetRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlTuningSets")
+                .appendPathParam(request.getSqlTuningSetId())
+                .appendPathParam("actions")
+                .appendPathParam("loadSqlTuningSet")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.SqlTuningSetAdminActionStatus.class,
+                        LoadSqlTuningSetResponse.Builder::sqlTuningSetAdminActionStatus)
+                .handleResponseHeaderString(
+                        "opc-request-id", LoadSqlTuningSetResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SaveSqlTuningSetAsResponse> saveSqlTuningSetAs(
+            SaveSqlTuningSetAsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SaveSqlTuningSetAsRequest, SaveSqlTuningSetAsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Objects.requireNonNull(
+                request.getSaveSqlTuningSetAsDetails(), "saveSqlTuningSetAsDetails is required");
+
+        return clientCall(request, SaveSqlTuningSetAsResponse::builder)
+                .logger(LOG, "saveSqlTuningSetAs")
+                .serviceDetails(
+                        "SqlTuning",
+                        "SaveSqlTuningSetAs",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SqlTuningSet/SaveSqlTuningSetAs")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SaveSqlTuningSetAsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlTuningSets")
+                .appendPathParam(request.getSqlTuningSetId())
+                .appendPathParam("actions")
+                .appendPathParam("saveAs")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.SqlTuningSetAdminActionStatus.class,
+                        SaveSqlTuningSetAsResponse.Builder::sqlTuningSetAdminActionStatus)
+                .handleResponseHeaderString(
+                        "opc-request-id", SaveSqlTuningSetAsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<StartSqlTuningTaskResponse> startSqlTuningTask(
             StartSqlTuningTaskRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -508,6 +737,45 @@ public class SqlTuningAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
                         StartSqlTuningTaskResponse.Builder::sqlTuningTaskReturn)
                 .handleResponseHeaderString(
                         "opc-request-id", StartSqlTuningTaskResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidateBasicFilterResponse> validateBasicFilter(
+            ValidateBasicFilterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ValidateBasicFilterRequest, ValidateBasicFilterResponse>
+                    handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Objects.requireNonNull(
+                request.getValidateBasicFilterDetails(), "validateBasicFilterDetails is required");
+
+        return clientCall(request, ValidateBasicFilterResponse::builder)
+                .logger(LOG, "validateBasicFilter")
+                .serviceDetails(
+                        "SqlTuning",
+                        "ValidateBasicFilter",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SqlTuningSet/ValidateBasicFilter")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ValidateBasicFilterRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlTuningSets")
+                .appendPathParam(request.getSqlTuningSetId())
+                .appendPathParam("actions")
+                .appendPathParam("validateBasicFilter")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.SqlTuningSetAdminActionStatus.class,
+                        ValidateBasicFilterResponse.Builder::sqlTuningSetAdminActionStatus)
+                .handleResponseHeaderString(
+                        "opc-request-id", ValidateBasicFilterResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
