@@ -5,7 +5,7 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- * <br>
+ * The details of the KeyVersion associated with the Key. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -33,7 +33,8 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
         "vaultId",
         "restoredFromKeyVersionId",
         "replicaDetails",
-        "isPrimary"
+        "isPrimary",
+        "externalKeyReferenceDetails"
     })
     public KeyVersion(
             String compartmentId,
@@ -47,7 +48,8 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
             String vaultId,
             String restoredFromKeyVersionId,
             KeyVersionReplicaDetails replicaDetails,
-            Boolean isPrimary) {
+            Boolean isPrimary,
+            ExternalKeyReferenceDetails externalKeyReferenceDetails) {
         super();
         this.compartmentId = compartmentId;
         this.id = id;
@@ -61,6 +63,7 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
         this.restoredFromKeyVersionId = restoredFromKeyVersionId;
         this.replicaDetails = replicaDetails;
         this.isPrimary = isPrimary;
+        this.externalKeyReferenceDetails = externalKeyReferenceDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -250,13 +253,33 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("replicaDetails");
             return this;
         }
-
+        /**
+         * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica
+         * Vault.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
         private Boolean isPrimary;
 
+        /**
+         * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica
+         * Vault.
+         *
+         * @param isPrimary the value to set
+         * @return this builder
+         */
         public Builder isPrimary(Boolean isPrimary) {
             this.isPrimary = isPrimary;
             this.__explicitlySet__.add("isPrimary");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("externalKeyReferenceDetails")
+        private ExternalKeyReferenceDetails externalKeyReferenceDetails;
+
+        public Builder externalKeyReferenceDetails(
+                ExternalKeyReferenceDetails externalKeyReferenceDetails) {
+            this.externalKeyReferenceDetails = externalKeyReferenceDetails;
+            this.__explicitlySet__.add("externalKeyReferenceDetails");
             return this;
         }
 
@@ -277,7 +300,8 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
                             this.vaultId,
                             this.restoredFromKeyVersionId,
                             this.replicaDetails,
-                            this.isPrimary);
+                            this.isPrimary,
+                            this.externalKeyReferenceDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -321,6 +345,9 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("isPrimary")) {
                 this.isPrimary(model.getIsPrimary());
+            }
+            if (model.wasPropertyExplicitlySet("externalKeyReferenceDetails")) {
+                this.externalKeyReferenceDetails(model.getExternalKeyReferenceDetails());
             }
             return this;
         }
@@ -605,11 +632,28 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
         return replicaDetails;
     }
 
+    /**
+     * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica
+     * Vault.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
     private final Boolean isPrimary;
 
+    /**
+     * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica
+     * Vault.
+     *
+     * @return the value
+     */
     public Boolean getIsPrimary() {
         return isPrimary;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("externalKeyReferenceDetails")
+    private final ExternalKeyReferenceDetails externalKeyReferenceDetails;
+
+    public ExternalKeyReferenceDetails getExternalKeyReferenceDetails() {
+        return externalKeyReferenceDetails;
     }
 
     @Override
@@ -640,6 +684,8 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
                 .append(String.valueOf(this.restoredFromKeyVersionId));
         sb.append(", replicaDetails=").append(String.valueOf(this.replicaDetails));
         sb.append(", isPrimary=").append(String.valueOf(this.isPrimary));
+        sb.append(", externalKeyReferenceDetails=")
+                .append(String.valueOf(this.externalKeyReferenceDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -667,6 +713,8 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
                         this.restoredFromKeyVersionId, other.restoredFromKeyVersionId)
                 && java.util.Objects.equals(this.replicaDetails, other.replicaDetails)
                 && java.util.Objects.equals(this.isPrimary, other.isPrimary)
+                && java.util.Objects.equals(
+                        this.externalKeyReferenceDetails, other.externalKeyReferenceDetails)
                 && super.equals(other);
     }
 
@@ -698,6 +746,11 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
                 (result * PRIME)
                         + (this.replicaDetails == null ? 43 : this.replicaDetails.hashCode());
         result = (result * PRIME) + (this.isPrimary == null ? 43 : this.isPrimary.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalKeyReferenceDetails == null
+                                ? 43
+                                : this.externalKeyReferenceDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

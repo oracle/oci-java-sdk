@@ -9,6 +9,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.ser.FilterProvider;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.oracle.bmc.http.client.InternalSdk;
 import com.oracle.bmc.http.client.Serializer;
 import com.oracle.bmc.serialization.jackson.internal.ExplicitlySetFilter;
@@ -42,6 +43,8 @@ public final class JacksonSerializer implements Serializer {
         DEFAULT_OBJECT_MAPPER.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
         // set explicit formatter that will serialize correctly
         DEFAULT_OBJECT_MAPPER.setDateFormat(new Rfc3339DateFormat());
+        // Register module to serialize Duration class
+        DEFAULT_OBJECT_MAPPER.registerModule(new JavaTimeModule());
 
         FilterProvider filters =
                 new SimpleFilterProvider()

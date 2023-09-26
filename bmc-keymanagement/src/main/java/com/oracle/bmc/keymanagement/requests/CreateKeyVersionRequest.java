@@ -11,7 +11,9 @@ import com.oracle.bmc.keymanagement.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateKeyVersionRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
-public class CreateKeyVersionRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
+public class CreateKeyVersionRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.keymanagement.model.ExternalKeyVersionReference> {
 
     /** The OCID of the key. */
     private String keyId;
@@ -52,10 +54,30 @@ public class CreateKeyVersionRequest extends com.oracle.bmc.requests.BmcRequest<
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
+    /** CreateKeyMetadataDetails */
+    private com.oracle.bmc.keymanagement.model.ExternalKeyVersionReference createKeyMetadataDetails;
+
+    /** CreateKeyMetadataDetails */
+    public com.oracle.bmc.keymanagement.model.ExternalKeyVersionReference
+            getCreateKeyMetadataDetails() {
+        return createKeyMetadataDetails;
+    }
+
+    /**
+     * Alternative accessor for the body parameter.
+     *
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public com.oracle.bmc.keymanagement.model.ExternalKeyVersionReference getBody$() {
+        return createKeyMetadataDetails;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateKeyVersionRequest, java.lang.Void> {
+                    CreateKeyVersionRequest,
+                    com.oracle.bmc.keymanagement.model.ExternalKeyVersionReference> {
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
@@ -115,6 +137,23 @@ public class CreateKeyVersionRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /** CreateKeyMetadataDetails */
+        private com.oracle.bmc.keymanagement.model.ExternalKeyVersionReference
+                createKeyMetadataDetails = null;
+
+        /**
+         * CreateKeyMetadataDetails
+         *
+         * @param createKeyMetadataDetails the value to set
+         * @return this builder instance
+         */
+        public Builder createKeyMetadataDetails(
+                com.oracle.bmc.keymanagement.model.ExternalKeyVersionReference
+                        createKeyMetadataDetails) {
+            this.createKeyMetadataDetails = createKeyMetadataDetails;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -148,6 +187,7 @@ public class CreateKeyVersionRequest extends com.oracle.bmc.requests.BmcRequest<
             keyId(o.getKeyId());
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
+            createKeyMetadataDetails(o.getCreateKeyMetadataDetails());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -172,6 +212,18 @@ public class CreateKeyVersionRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
+         * Alternative setter for the body parameter.
+         *
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(com.oracle.bmc.keymanagement.model.ExternalKeyVersionReference body) {
+            createKeyMetadataDetails(body);
+            return this;
+        }
+
+        /**
          * Build the instance of CreateKeyVersionRequest as configured by this builder
          *
          * <p>Note that this method does not take calls to {@link
@@ -185,8 +237,10 @@ public class CreateKeyVersionRequest extends com.oracle.bmc.requests.BmcRequest<
             request.keyId = keyId;
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
+            request.createKeyMetadataDetails = createKeyMetadataDetails;
             return request;
-            // new CreateKeyVersionRequest(keyId, opcRequestId, opcRetryToken);
+            // new CreateKeyVersionRequest(keyId, opcRequestId, opcRetryToken,
+            // createKeyMetadataDetails);
         }
     }
 
@@ -196,7 +250,11 @@ public class CreateKeyVersionRequest extends com.oracle.bmc.requests.BmcRequest<
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().keyId(keyId).opcRequestId(opcRequestId).opcRetryToken(opcRetryToken);
+        return new Builder()
+                .keyId(keyId)
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken)
+                .createKeyMetadataDetails(createKeyMetadataDetails);
     }
 
     /**
@@ -216,6 +274,8 @@ public class CreateKeyVersionRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append(",keyId=").append(String.valueOf(this.keyId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",createKeyMetadataDetails=")
+                .append(String.valueOf(this.createKeyMetadataDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -233,7 +293,9 @@ public class CreateKeyVersionRequest extends com.oracle.bmc.requests.BmcRequest<
         return super.equals(o)
                 && java.util.Objects.equals(this.keyId, other.keyId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(
+                        this.createKeyMetadataDetails, other.createKeyMetadataDetails);
     }
 
     @Override
@@ -245,6 +307,11 @@ public class CreateKeyVersionRequest extends com.oracle.bmc.requests.BmcRequest<
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.createKeyMetadataDetails == null
+                                ? 43
+                                : this.createKeyMetadataDetails.hashCode());
         return result;
     }
 }

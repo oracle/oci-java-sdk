@@ -51,7 +51,10 @@ public class KmsCryptoClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, DecryptResponse::builder)
                 .logger(LOG, "decrypt")
-                .serviceDetails("KmsCrypto", "Decrypt", "")
+                .serviceDetails(
+                        "KmsCrypto",
+                        "Decrypt",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/DecryptedData/Decrypt")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DecryptRequest::builder)
                 .basePath("/")
@@ -73,7 +76,10 @@ public class KmsCryptoClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, EncryptResponse::builder)
                 .logger(LOG, "encrypt")
-                .serviceDetails("KmsCrypto", "Encrypt", "")
+                .serviceDetails(
+                        "KmsCrypto",
+                        "Encrypt",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/EncryptedData/Encrypt")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(EncryptRequest::builder)
                 .basePath("/")
@@ -95,7 +101,10 @@ public class KmsCryptoClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, ExportKeyResponse::builder)
                 .logger(LOG, "exportKey")
-                .serviceDetails("KmsCrypto", "ExportKey", "")
+                .serviceDetails(
+                        "KmsCrypto",
+                        "ExportKey",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/ExportedKeyData/ExportKey")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ExportKeyRequest::builder)
                 .basePath("/")
@@ -118,7 +127,10 @@ public class KmsCryptoClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, GenerateDataEncryptionKeyResponse::builder)
                 .logger(LOG, "generateDataEncryptionKey")
-                .serviceDetails("KmsCrypto", "GenerateDataEncryptionKey", "")
+                .serviceDetails(
+                        "KmsCrypto",
+                        "GenerateDataEncryptionKey",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/GeneratedKey/GenerateDataEncryptionKey")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(GenerateDataEncryptionKeyRequest::builder)
                 .basePath("/")
@@ -141,7 +153,10 @@ public class KmsCryptoClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, SignResponse::builder)
                 .logger(LOG, "sign")
-                .serviceDetails("KmsCrypto", "Sign", "")
+                .serviceDetails(
+                        "KmsCrypto",
+                        "Sign",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/SignedData/Sign")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SignRequest::builder)
                 .basePath("/")
@@ -163,7 +178,10 @@ public class KmsCryptoClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, VerifyResponse::builder)
                 .logger(LOG, "verify")
-                .serviceDetails("KmsCrypto", "Verify", "")
+                .serviceDetails(
+                        "KmsCrypto",
+                        "Verify",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/VerifiedData/Verify")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(VerifyRequest::builder)
                 .basePath("/")

@@ -5,7 +5,7 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- * <br>
+ * The details of the Vault that you wish to backup. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -41,10 +41,20 @@ public final class BackupVaultDetails
             this.__explicitlySet__.add("backupLocation");
             return this;
         }
-
+        /**
+         * A Boolean value that indicates whether the Keys should be included during backing up the
+         * Vault.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isIncludeKeys")
         private Boolean isIncludeKeys;
 
+        /**
+         * A Boolean value that indicates whether the Keys should be included during backing up the
+         * Vault.
+         *
+         * @param isIncludeKeys the value to set
+         * @return this builder
+         */
         public Builder isIncludeKeys(Boolean isIncludeKeys) {
             this.isIncludeKeys = isIncludeKeys;
             this.__explicitlySet__.add("isIncludeKeys");
@@ -91,9 +101,19 @@ public final class BackupVaultDetails
         return backupLocation;
     }
 
+    /**
+     * A Boolean value that indicates whether the Keys should be included during backing up the
+     * Vault.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isIncludeKeys")
     private final Boolean isIncludeKeys;
 
+    /**
+     * A Boolean value that indicates whether the Keys should be included during backing up the
+     * Vault.
+     *
+     * @return the value
+     */
     public Boolean getIsIncludeKeys() {
         return isIncludeKeys;
     }

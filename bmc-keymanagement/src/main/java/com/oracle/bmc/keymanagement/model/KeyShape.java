@@ -31,12 +31,16 @@ public final class KeyShape extends com.oracle.bmc.http.client.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The algorithm used by a key's key versions to encrypt or decrypt. */
+        /**
+         * The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is
+         * supported for {@code External} keys.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
         private Algorithm algorithm;
 
         /**
-         * The algorithm used by a key's key versions to encrypt or decrypt.
+         * The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is
+         * supported for {@code External} keys.
          *
          * @param algorithm the value to set
          * @return this builder
@@ -116,7 +120,10 @@ public final class KeyShape extends com.oracle.bmc.http.client.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /** The algorithm used by a key's key versions to encrypt or decrypt. */
+    /**
+     * The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is
+     * supported for {@code External} keys.
+     */
     public enum Algorithm implements com.oracle.bmc.http.internal.BmcEnum {
         Aes("AES"),
         Rsa("RSA"),
@@ -163,12 +170,16 @@ public final class KeyShape extends com.oracle.bmc.http.client.internal.Explicit
             return UnknownEnumValue;
         }
     };
-    /** The algorithm used by a key's key versions to encrypt or decrypt. */
+    /**
+     * The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is
+     * supported for {@code External} keys.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
     private final Algorithm algorithm;
 
     /**
-     * The algorithm used by a key's key versions to encrypt or decrypt.
+     * The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is
+     * supported for {@code External} keys.
      *
      * @return the value
      */

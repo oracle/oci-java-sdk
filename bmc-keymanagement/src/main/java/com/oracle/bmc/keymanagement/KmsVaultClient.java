@@ -129,7 +129,10 @@ public class KmsVaultClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, BackupVaultResponse::builder)
                 .logger(LOG, "backupVault")
-                .serviceDetails("KmsVault", "BackupVault", "")
+                .serviceDetails(
+                        "KmsVault",
+                        "BackupVault",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Vault/BackupVault")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(BackupVaultRequest::builder)
                 .basePath("/")
@@ -161,7 +164,10 @@ public class KmsVaultClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, CancelVaultDeletionResponse::builder)
                 .logger(LOG, "cancelVaultDeletion")
-                .serviceDetails("KmsVault", "CancelVaultDeletion", "")
+                .serviceDetails(
+                        "KmsVault",
+                        "CancelVaultDeletion",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Vault/CancelVaultDeletion")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CancelVaultDeletionRequest::builder)
                 .basePath("/")
@@ -194,7 +200,10 @@ public class KmsVaultClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, ChangeVaultCompartmentResponse::builder)
                 .logger(LOG, "changeVaultCompartment")
-                .serviceDetails("KmsVault", "ChangeVaultCompartment", "")
+                .serviceDetails(
+                        "KmsVault",
+                        "ChangeVaultCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Vault/ChangeVaultCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeVaultCompartmentRequest::builder)
                 .basePath("/")
@@ -220,7 +229,10 @@ public class KmsVaultClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, CreateVaultResponse::builder)
                 .logger(LOG, "createVault")
-                .serviceDetails("KmsVault", "CreateVault", "")
+                .serviceDetails(
+                        "KmsVault",
+                        "CreateVault",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Vault/CreateVault")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateVaultRequest::builder)
                 .basePath("/")
@@ -248,7 +260,10 @@ public class KmsVaultClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, CreateVaultReplicaResponse::builder)
                 .logger(LOG, "createVaultReplica")
-                .serviceDetails("KmsVault", "CreateVaultReplica", "")
+                .serviceDetails(
+                        "KmsVault",
+                        "CreateVaultReplica",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Vault/CreateVaultReplica")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateVaultReplicaRequest::builder)
                 .basePath("/")
@@ -278,7 +293,10 @@ public class KmsVaultClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, DeleteVaultReplicaResponse::builder)
                 .logger(LOG, "deleteVaultReplica")
-                .serviceDetails("KmsVault", "DeleteVaultReplica", "")
+                .serviceDetails(
+                        "KmsVault",
+                        "DeleteVaultReplica",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Vault/DeleteVaultReplica")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DeleteVaultReplicaRequest::builder)
                 .basePath("/")
@@ -306,7 +324,10 @@ public class KmsVaultClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, GetVaultResponse::builder)
                 .logger(LOG, "getVault")
-                .serviceDetails("KmsVault", "GetVault", "")
+                .serviceDetails(
+                        "KmsVault",
+                        "GetVault",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Vault/GetVault")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetVaultRequest::builder)
                 .basePath("/")
@@ -331,7 +352,10 @@ public class KmsVaultClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, GetVaultUsageResponse::builder)
                 .logger(LOG, "getVaultUsage")
-                .serviceDetails("KmsVault", "GetVaultUsage", "")
+                .serviceDetails(
+                        "KmsVault",
+                        "GetVaultUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/VaultUsage/GetVaultUsage")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetVaultUsageRequest::builder)
                 .basePath("/")
@@ -356,7 +380,10 @@ public class KmsVaultClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, ListVaultReplicasResponse::builder)
                 .logger(LOG, "listVaultReplicas")
-                .serviceDetails("KmsVault", "ListVaultReplicas", "")
+                .serviceDetails(
+                        "KmsVault",
+                        "ListVaultReplicas",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Vault/ListVaultReplicas")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListVaultReplicasRequest::builder)
                 .basePath("/")
@@ -390,7 +417,10 @@ public class KmsVaultClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, ListVaultsResponse::builder)
                 .logger(LOG, "listVaults")
-                .serviceDetails("KmsVault", "ListVaults", "")
+                .serviceDetails(
+                        "KmsVault",
+                        "ListVaults",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/VaultSummary/ListVaults")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListVaultsRequest::builder)
                 .basePath("/")
@@ -423,7 +453,10 @@ public class KmsVaultClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, RestoreVaultFromFileResponse::builder)
                 .logger(LOG, "restoreVaultFromFile")
-                .serviceDetails("KmsVault", "RestoreVaultFromFile", "")
+                .serviceDetails(
+                        "KmsVault",
+                        "RestoreVaultFromFile",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Vault/RestoreVaultFromFile")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RestoreVaultFromFileRequest::builder)
                 .basePath("/")
@@ -461,7 +494,10 @@ public class KmsVaultClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, RestoreVaultFromObjectStoreResponse::builder)
                 .logger(LOG, "restoreVaultFromObjectStore")
-                .serviceDetails("KmsVault", "RestoreVaultFromObjectStore", "")
+                .serviceDetails(
+                        "KmsVault",
+                        "RestoreVaultFromObjectStore",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Vault/RestoreVaultFromObjectStore")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RestoreVaultFromObjectStoreRequest::builder)
                 .basePath("/")
@@ -499,7 +535,10 @@ public class KmsVaultClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, ScheduleVaultDeletionResponse::builder)
                 .logger(LOG, "scheduleVaultDeletion")
-                .serviceDetails("KmsVault", "ScheduleVaultDeletion", "")
+                .serviceDetails(
+                        "KmsVault",
+                        "ScheduleVaultDeletion",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Vault/ScheduleVaultDeletion")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ScheduleVaultDeletionRequest::builder)
                 .basePath("/")
@@ -530,7 +569,10 @@ public class KmsVaultClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, UpdateVaultResponse::builder)
                 .logger(LOG, "updateVault")
-                .serviceDetails("KmsVault", "UpdateVault", "")
+                .serviceDetails(
+                        "KmsVault",
+                        "UpdateVault",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Vault/UpdateVault")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateVaultRequest::builder)
                 .basePath("/")

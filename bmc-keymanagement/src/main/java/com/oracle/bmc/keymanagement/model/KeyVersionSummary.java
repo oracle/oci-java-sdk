@@ -5,7 +5,7 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- * <br>
+ * The details of the KeyVersion. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,7 +31,8 @@ public final class KeyVersionSummary
         "origin",
         "timeCreated",
         "timeOfDeletion",
-        "vaultId"
+        "vaultId",
+        "externalKeyReferenceDetails"
     })
     public KeyVersionSummary(
             String compartmentId,
@@ -41,7 +42,8 @@ public final class KeyVersionSummary
             Origin origin,
             java.util.Date timeCreated,
             java.util.Date timeOfDeletion,
-            String vaultId) {
+            String vaultId,
+            ExternalKeyReferenceDetails externalKeyReferenceDetails) {
         super();
         this.compartmentId = compartmentId;
         this.id = id;
@@ -51,6 +53,7 @@ public final class KeyVersionSummary
         this.timeCreated = timeCreated;
         this.timeOfDeletion = timeOfDeletion;
         this.vaultId = vaultId;
+        this.externalKeyReferenceDetails = externalKeyReferenceDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -202,6 +205,16 @@ public final class KeyVersionSummary
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("externalKeyReferenceDetails")
+        private ExternalKeyReferenceDetails externalKeyReferenceDetails;
+
+        public Builder externalKeyReferenceDetails(
+                ExternalKeyReferenceDetails externalKeyReferenceDetails) {
+            this.externalKeyReferenceDetails = externalKeyReferenceDetails;
+            this.__explicitlySet__.add("externalKeyReferenceDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -215,7 +228,8 @@ public final class KeyVersionSummary
                             this.origin,
                             this.timeCreated,
                             this.timeOfDeletion,
-                            this.vaultId);
+                            this.vaultId,
+                            this.externalKeyReferenceDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -247,6 +261,9 @@ public final class KeyVersionSummary
             }
             if (model.wasPropertyExplicitlySet("vaultId")) {
                 this.vaultId(model.getVaultId());
+            }
+            if (model.wasPropertyExplicitlySet("externalKeyReferenceDetails")) {
+                this.externalKeyReferenceDetails(model.getExternalKeyReferenceDetails());
             }
             return this;
         }
@@ -495,6 +512,13 @@ public final class KeyVersionSummary
         return vaultId;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("externalKeyReferenceDetails")
+    private final ExternalKeyReferenceDetails externalKeyReferenceDetails;
+
+    public ExternalKeyReferenceDetails getExternalKeyReferenceDetails() {
+        return externalKeyReferenceDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -518,6 +542,8 @@ public final class KeyVersionSummary
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeOfDeletion=").append(String.valueOf(this.timeOfDeletion));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
+        sb.append(", externalKeyReferenceDetails=")
+                .append(String.valueOf(this.externalKeyReferenceDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -540,6 +566,8 @@ public final class KeyVersionSummary
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeOfDeletion, other.timeOfDeletion)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
+                && java.util.Objects.equals(
+                        this.externalKeyReferenceDetails, other.externalKeyReferenceDetails)
                 && super.equals(other);
     }
 
@@ -561,6 +589,11 @@ public final class KeyVersionSummary
                 (result * PRIME)
                         + (this.timeOfDeletion == null ? 43 : this.timeOfDeletion.hashCode());
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalKeyReferenceDetails == null
+                                ? 43
+                                : this.externalKeyReferenceDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

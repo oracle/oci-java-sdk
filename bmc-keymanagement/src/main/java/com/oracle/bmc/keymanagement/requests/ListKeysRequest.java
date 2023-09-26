@@ -145,7 +145,10 @@ public class ListKeysRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      * HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server,
      * protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic
      * operations that use a key with a protection mode of {@code SOFTWARE} are performed on the
-     * server.
+     * server. A protection mode of {@code EXTERNAL} mean that the key persists on the customer's
+     * external key manager which is hosted externally outside of oracle. Oracle only hold a
+     * reference to that key. All cryptographic operations that use a key with a protection mode of
+     * {@code EXTERNAL} are performed by external key manager.
      */
     private ProtectionMode protectionMode;
 
@@ -156,11 +159,15 @@ public class ListKeysRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      * HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server,
      * protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic
      * operations that use a key with a protection mode of {@code SOFTWARE} are performed on the
-     * server.
+     * server. A protection mode of {@code EXTERNAL} mean that the key persists on the customer's
+     * external key manager which is hosted externally outside of oracle. Oracle only hold a
+     * reference to that key. All cryptographic operations that use a key with a protection mode of
+     * {@code EXTERNAL} are performed by external key manager.
      */
     public enum ProtectionMode implements com.oracle.bmc.http.internal.BmcEnum {
         Hsm("HSM"),
         Software("SOFTWARE"),
+        External("EXTERNAL"),
         ;
 
         private final String value;
@@ -198,7 +205,10 @@ public class ListKeysRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      * HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server,
      * protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic
      * operations that use a key with a protection mode of {@code SOFTWARE} are performed on the
-     * server.
+     * server. A protection mode of {@code EXTERNAL} mean that the key persists on the customer's
+     * external key manager which is hosted externally outside of oracle. Oracle only hold a
+     * reference to that key. All cryptographic operations that use a key with a protection mode of
+     * {@code EXTERNAL} are performed by external key manager.
      */
     public ProtectionMode getProtectionMode() {
         return protectionMode;
@@ -414,7 +424,11 @@ public class ListKeysRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
          * performed inside the HSM. A protection mode of {@code SOFTWARE} means that the key
          * persists on the server, protected by the vault's RSA wrapping key which persists on the
          * HSM. All cryptographic operations that use a key with a protection mode of {@code
-         * SOFTWARE} are performed on the server.
+         * SOFTWARE} are performed on the server. A protection mode of {@code EXTERNAL} mean that
+         * the key persists on the customer's external key manager which is hosted externally
+         * outside of oracle. Oracle only hold a reference to that key. All cryptographic operations
+         * that use a key with a protection mode of {@code EXTERNAL} are performed by external key
+         * manager.
          */
         private ProtectionMode protectionMode = null;
 
@@ -425,7 +439,11 @@ public class ListKeysRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
          * performed inside the HSM. A protection mode of {@code SOFTWARE} means that the key
          * persists on the server, protected by the vault's RSA wrapping key which persists on the
          * HSM. All cryptographic operations that use a key with a protection mode of {@code
-         * SOFTWARE} are performed on the server.
+         * SOFTWARE} are performed on the server. A protection mode of {@code EXTERNAL} mean that
+         * the key persists on the customer's external key manager which is hosted externally
+         * outside of oracle. Oracle only hold a reference to that key. All cryptographic operations
+         * that use a key with a protection mode of {@code EXTERNAL} are performed by external key
+         * manager.
          *
          * @param protectionMode the value to set
          * @return this builder instance

@@ -729,6 +729,7 @@ public final class UpdateExadataInfrastructureDetails
         X8("X8"),
         X8M("X8M"),
         X9M("X9M"),
+        X10M("X10M"),
         ;
 
         private final String value;

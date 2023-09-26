@@ -8,6 +8,8 @@ import com.oracle.bmc.SdkClients;
 
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @SdkClients({
+    EkmAsyncClient.class,
+    EkmClient.class,
     KmsCryptoAsyncClient.class,
     KmsCryptoClient.class,
     KmsManagementAsyncClient.class,
