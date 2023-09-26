@@ -77,7 +77,10 @@ public class KmsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, BackupKeyResponse::builder)
                 .logger(LOG, "backupKey")
-                .serviceDetails("KmsManagement", "BackupKey", "")
+                .serviceDetails(
+                        "KmsManagement",
+                        "BackupKey",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Key/BackupKey")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(BackupKeyRequest::builder)
                 .basePath("/")
@@ -109,7 +112,10 @@ public class KmsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, CancelKeyDeletionResponse::builder)
                 .logger(LOG, "cancelKeyDeletion")
-                .serviceDetails("KmsManagement", "CancelKeyDeletion", "")
+                .serviceDetails(
+                        "KmsManagement",
+                        "CancelKeyDeletion",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Key/CancelKeyDeletion")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CancelKeyDeletionRequest::builder)
                 .basePath("/")
@@ -141,7 +147,10 @@ public class KmsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, CancelKeyVersionDeletionResponse::builder)
                 .logger(LOG, "cancelKeyVersionDeletion")
-                .serviceDetails("KmsManagement", "CancelKeyVersionDeletion", "")
+                .serviceDetails(
+                        "KmsManagement",
+                        "CancelKeyVersionDeletion",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/KeyVersion/CancelKeyVersionDeletion")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CancelKeyVersionDeletionRequest::builder)
                 .basePath("/")
@@ -175,7 +184,10 @@ public class KmsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ChangeKeyCompartmentResponse::builder)
                 .logger(LOG, "changeKeyCompartment")
-                .serviceDetails("KmsManagement", "ChangeKeyCompartment", "")
+                .serviceDetails(
+                        "KmsManagement",
+                        "ChangeKeyCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Key/ChangeKeyCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeKeyCompartmentRequest::builder)
                 .basePath("/")
@@ -201,7 +213,10 @@ public class KmsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, CreateKeyResponse::builder)
                 .logger(LOG, "createKey")
-                .serviceDetails("KmsManagement", "CreateKey", "")
+                .serviceDetails(
+                        "KmsManagement",
+                        "CreateKey",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Key/CreateKey")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateKeyRequest::builder)
                 .basePath("/")
@@ -227,7 +242,10 @@ public class KmsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, CreateKeyVersionResponse::builder)
                 .logger(LOG, "createKeyVersion")
-                .serviceDetails("KmsManagement", "CreateKeyVersion", "")
+                .serviceDetails(
+                        "KmsManagement",
+                        "CreateKeyVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/KeyVersion/CreateKeyVersion")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateKeyVersionRequest::builder)
                 .basePath("/")
@@ -238,6 +256,7 @@ public class KmsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
                 .handleBody(
                         com.oracle.bmc.keymanagement.model.KeyVersion.class,
                         CreateKeyVersionResponse.Builder::keyVersion)
@@ -254,7 +273,10 @@ public class KmsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, DisableKeyResponse::builder)
                 .logger(LOG, "disableKey")
-                .serviceDetails("KmsManagement", "DisableKey", "")
+                .serviceDetails(
+                        "KmsManagement",
+                        "DisableKey",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Key/DisableKey")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DisableKeyRequest::builder)
                 .basePath("/")
@@ -283,7 +305,10 @@ public class KmsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, EnableKeyResponse::builder)
                 .logger(LOG, "enableKey")
-                .serviceDetails("KmsManagement", "EnableKey", "")
+                .serviceDetails(
+                        "KmsManagement",
+                        "EnableKey",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Key/EnableKey")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(EnableKeyRequest::builder)
                 .basePath("/")
@@ -312,7 +337,10 @@ public class KmsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, GetKeyResponse::builder)
                 .logger(LOG, "getKey")
-                .serviceDetails("KmsManagement", "GetKey", "")
+                .serviceDetails(
+                        "KmsManagement",
+                        "GetKey",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Key/GetKey")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetKeyRequest::builder)
                 .basePath("/")
@@ -337,7 +365,10 @@ public class KmsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, GetKeyVersionResponse::builder)
                 .logger(LOG, "getKeyVersion")
-                .serviceDetails("KmsManagement", "GetKeyVersion", "")
+                .serviceDetails(
+                        "KmsManagement",
+                        "GetKeyVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/KeyVersion/GetKeyVersion")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetKeyVersionRequest::builder)
                 .basePath("/")
@@ -364,7 +395,10 @@ public class KmsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, GetReplicationStatusResponse::builder)
                 .logger(LOG, "getReplicationStatus")
-                .serviceDetails("KmsManagement", "GetReplicationStatus", "")
+                .serviceDetails(
+                        "KmsManagement",
+                        "GetReplicationStatus",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/ReplicationStatusDetails/GetReplicationStatus")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetReplicationStatusRequest::builder)
                 .basePath("/")
@@ -388,7 +422,10 @@ public class KmsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, GetWrappingKeyResponse::builder)
                 .logger(LOG, "getWrappingKey")
-                .serviceDetails("KmsManagement", "GetWrappingKey", "")
+                .serviceDetails(
+                        "KmsManagement",
+                        "GetWrappingKey",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/WrappingKey/GetWrappingKey")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWrappingKeyRequest::builder)
                 .basePath("/")
@@ -411,7 +448,10 @@ public class KmsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ImportKeyResponse::builder)
                 .logger(LOG, "importKey")
-                .serviceDetails("KmsManagement", "ImportKey", "")
+                .serviceDetails(
+                        "KmsManagement",
+                        "ImportKey",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Key/ImportKey")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ImportKeyRequest::builder)
                 .basePath("/")
@@ -440,7 +480,10 @@ public class KmsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ImportKeyVersionResponse::builder)
                 .logger(LOG, "importKeyVersion")
-                .serviceDetails("KmsManagement", "ImportKeyVersion", "")
+                .serviceDetails(
+                        "KmsManagement",
+                        "ImportKeyVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/KeyVersion/ImportKeyVersion")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ImportKeyVersionRequest::builder)
                 .basePath("/")
@@ -469,7 +512,10 @@ public class KmsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ListKeyVersionsResponse::builder)
                 .logger(LOG, "listKeyVersions")
-                .serviceDetails("KmsManagement", "ListKeyVersions", "")
+                .serviceDetails(
+                        "KmsManagement",
+                        "ListKeyVersions",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/KeyVersionSummary/ListKeyVersions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListKeyVersionsRequest::builder)
                 .basePath("/")
@@ -499,7 +545,10 @@ public class KmsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ListKeysResponse::builder)
                 .logger(LOG, "listKeys")
-                .serviceDetails("KmsManagement", "ListKeys", "")
+                .serviceDetails(
+                        "KmsManagement",
+                        "ListKeys",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/KeySummary/ListKeys")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListKeysRequest::builder)
                 .basePath("/")
@@ -532,7 +581,10 @@ public class KmsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, RestoreKeyFromFileResponse::builder)
                 .logger(LOG, "restoreKeyFromFile")
-                .serviceDetails("KmsManagement", "RestoreKeyFromFile", "")
+                .serviceDetails(
+                        "KmsManagement",
+                        "RestoreKeyFromFile",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Key/RestoreKeyFromFile")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RestoreKeyFromFileRequest::builder)
                 .basePath("/")
@@ -567,7 +619,10 @@ public class KmsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, RestoreKeyFromObjectStoreResponse::builder)
                 .logger(LOG, "restoreKeyFromObjectStore")
-                .serviceDetails("KmsManagement", "RestoreKeyFromObjectStore", "")
+                .serviceDetails(
+                        "KmsManagement",
+                        "RestoreKeyFromObjectStore",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Key/RestoreKeyFromObjectStore")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RestoreKeyFromObjectStoreRequest::builder)
                 .basePath("/")
@@ -601,7 +656,10 @@ public class KmsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ScheduleKeyDeletionResponse::builder)
                 .logger(LOG, "scheduleKeyDeletion")
-                .serviceDetails("KmsManagement", "ScheduleKeyDeletion", "")
+                .serviceDetails(
+                        "KmsManagement",
+                        "ScheduleKeyDeletion",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Key/ScheduleKeyDeletion")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ScheduleKeyDeletionRequest::builder)
                 .basePath("/")
@@ -637,7 +695,10 @@ public class KmsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ScheduleKeyVersionDeletionResponse::builder)
                 .logger(LOG, "scheduleKeyVersionDeletion")
-                .serviceDetails("KmsManagement", "ScheduleKeyVersionDeletion", "")
+                .serviceDetails(
+                        "KmsManagement",
+                        "ScheduleKeyVersionDeletion",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/KeyVersion/ScheduleKeyVersionDeletion")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ScheduleKeyVersionDeletionRequest::builder)
                 .basePath("/")
@@ -671,7 +732,10 @@ public class KmsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, UpdateKeyResponse::builder)
                 .logger(LOG, "updateKey")
-                .serviceDetails("KmsManagement", "UpdateKey", "")
+                .serviceDetails(
+                        "KmsManagement",
+                        "UpdateKey",
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Key/UpdateKey")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateKeyRequest::builder)
                 .basePath("/")

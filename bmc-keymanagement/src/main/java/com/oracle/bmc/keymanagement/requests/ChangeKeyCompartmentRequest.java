@@ -22,10 +22,11 @@ public class ChangeKeyCompartmentRequest
     public String getKeyId() {
         return keyId;
     }
-
+    /** Details of change key compartment. */
     private com.oracle.bmc.keymanagement.model.ChangeKeyCompartmentDetails
             changeKeyCompartmentDetails;
 
+    /** Details of change key compartment. */
     public com.oracle.bmc.keymanagement.model.ChangeKeyCompartmentDetails
             getChangeKeyCompartmentDetails() {
         return changeKeyCompartmentDetails;
@@ -112,10 +113,13 @@ public class ChangeKeyCompartmentRequest
             return this;
         }
 
+        /** Details of change key compartment. */
         private com.oracle.bmc.keymanagement.model.ChangeKeyCompartmentDetails
                 changeKeyCompartmentDetails = null;
 
         /**
+         * Details of change key compartment.
+         *
          * @param changeKeyCompartmentDetails the value to set
          * @return this builder instance
          */

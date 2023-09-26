@@ -31,10 +31,16 @@ public final class ReplicationStatusDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-
+        /** Replica Details. */
         @com.fasterxml.jackson.annotation.JsonProperty("replicaDetails")
         private java.util.List<ReplicaDetails> replicaDetails;
 
+        /**
+         * Replica Details.
+         *
+         * @param replicaDetails the value to set
+         * @return this builder
+         */
         public Builder replicaDetails(java.util.List<ReplicaDetails> replicaDetails) {
             this.replicaDetails = replicaDetails;
             this.__explicitlySet__.add("replicaDetails");
@@ -70,9 +76,15 @@ public final class ReplicationStatusDetails
         return new Builder().copy(this);
     }
 
+    /** Replica Details. */
     @com.fasterxml.jackson.annotation.JsonProperty("replicaDetails")
     private final java.util.List<ReplicaDetails> replicaDetails;
 
+    /**
+     * Replica Details.
+     *
+     * @return the value
+     */
     public java.util.List<ReplicaDetails> getReplicaDetails() {
         return replicaDetails;
     }

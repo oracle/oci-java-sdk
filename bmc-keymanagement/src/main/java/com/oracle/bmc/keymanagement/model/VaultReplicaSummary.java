@@ -80,10 +80,16 @@ public final class VaultReplicaSummary
             this.__explicitlySet__.add("region");
             return this;
         }
-
+        /** Status of the Vault */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * Status of the Vault
+         *
+         * @param status the value to set
+         * @return this builder
+         */
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -169,7 +175,7 @@ public final class VaultReplicaSummary
         return region;
     }
 
-    /** */
+    /** Status of the Vault */
     public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Created("CREATED"),
@@ -216,10 +222,15 @@ public final class VaultReplicaSummary
             return UnknownEnumValue;
         }
     };
-
+    /** Status of the Vault */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * Status of the Vault
+     *
+     * @return the value
+     */
     public Status getStatus() {
         return status;
     }

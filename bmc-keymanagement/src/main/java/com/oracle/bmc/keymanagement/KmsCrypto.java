@@ -8,9 +8,9 @@ import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
 
 /**
- * API for managing and performing operations with keys and vaults. (For the API for managing
- * secrets, see the Vault Service Secret Management API. For the API for retrieving secrets, see the
- * Vault Service Secret Retrieval API.)
+ * Use the Key Management API to manage vaults and keys. For more information, see [Managing
+ * Vaults](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/managingvaults.htm) and
+ * [Managing Keys](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/managingkeys.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -70,7 +70,8 @@ public interface KmsCrypto extends AutoCloseable {
      * Exports a specific version of a master encryption key according to the details of the
      * request. For their protection, keys that you create and store on a hardware security module
      * (HSM) can never leave the HSM. You can only export keys stored on the server. For export, the
-     * key version is encrypted by an RSA public key that you provide.
+     * key version is encrypted by an RSA public key that you provide. This operation is not
+     * supported for keys having protection mode `EXTERNAL`.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -107,7 +108,8 @@ public interface KmsCrypto extends AutoCloseable {
      * you can use the
      * [Verify](https://docs.cloud.oracle.com/api/#/en/key/latest/VerifiedData/Verify) operation.
      * Or, if you want to validate the signature outside of the service, you can do so by using the
-     * public key of the same asymmetric key.
+     * public key of the same asymmetric key. This operation is not supported for keys having
+     * protection mode `EXTERNAL`.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -126,7 +128,8 @@ public interface KmsCrypto extends AutoCloseable {
      * [Sign](https://docs.cloud.oracle.com/api/#/en/key/latest/SignedData/Sign) operation by using
      * the public key of the same asymmetric key that was used to sign the data. If you want to
      * validate the digital signature outside of the service, you can do so by using the public key
-     * of the asymmetric key.
+     * of the asymmetric key. This operation is not supported for keys having protection mode
+     * `EXTERNAL`.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

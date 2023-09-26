@@ -23,10 +23,11 @@ public class ChangeVaultCompartmentRequest
     public String getVaultId() {
         return vaultId;
     }
-
+    /** ChangeVaultCompartmentDetails */
     private com.oracle.bmc.keymanagement.model.ChangeVaultCompartmentDetails
             changeVaultCompartmentDetails;
 
+    /** ChangeVaultCompartmentDetails */
     public com.oracle.bmc.keymanagement.model.ChangeVaultCompartmentDetails
             getChangeVaultCompartmentDetails() {
         return changeVaultCompartmentDetails;
@@ -113,10 +114,13 @@ public class ChangeVaultCompartmentRequest
             return this;
         }
 
+        /** ChangeVaultCompartmentDetails */
         private com.oracle.bmc.keymanagement.model.ChangeVaultCompartmentDetails
                 changeVaultCompartmentDetails = null;
 
         /**
+         * ChangeVaultCompartmentDetails
+         *
          * @param changeVaultCompartmentDetails the value to set
          * @return this builder instance
          */

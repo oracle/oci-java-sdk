@@ -8,9 +8,9 @@ import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
 
 /**
- * API for managing and performing operations with keys and vaults. (For the API for managing
- * secrets, see the Vault Service Secret Management API. For the API for retrieving secrets, see the
- * Vault Service Secret Retrieval API.)
+ * Use the Key Management API to manage vaults and keys. For more information, see [Managing
+ * Vaults](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/managingvaults.htm) and
+ * [Managing Keys](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/managingkeys.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public interface KmsVaultAsync extends AutoCloseable {

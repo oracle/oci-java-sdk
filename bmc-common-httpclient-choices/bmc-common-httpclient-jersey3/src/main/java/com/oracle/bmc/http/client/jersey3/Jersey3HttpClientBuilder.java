@@ -209,7 +209,8 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
                 properties.put(ClientProperties.PROXY_USERNAME, proxy.getUsername());
             }
             if (proxy.getPassword() != null) {
-                properties.put(ClientProperties.PROXY_PASSWORD, proxy.getPassword());
+                properties.put(
+                        ClientProperties.PROXY_PASSWORD, String.valueOf(proxy.getPassword()));
             }
         } else if (key == Jersey3ClientProperties.USE_APACHE_CONNECTOR) {
             useApacheConnector = (Boolean) value;

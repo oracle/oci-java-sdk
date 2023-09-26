@@ -5,7 +5,8 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- * <br>
+ * The logical entities that represent one or more key versions, each of which contains
+ * cryptographic material. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -36,7 +37,8 @@ public final class Key extends com.oracle.bmc.http.client.internal.ExplicitlySet
         "vaultId",
         "restoredFromKeyId",
         "replicaDetails",
-        "isPrimary"
+        "isPrimary",
+        "externalKeyReferenceDetails"
     })
     public Key(
             String compartmentId,
@@ -53,7 +55,8 @@ public final class Key extends com.oracle.bmc.http.client.internal.ExplicitlySet
             String vaultId,
             String restoredFromKeyId,
             KeyReplicaDetails replicaDetails,
-            Boolean isPrimary) {
+            Boolean isPrimary,
+            ExternalKeyReferenceDetails externalKeyReferenceDetails) {
         super();
         this.compartmentId = compartmentId;
         this.currentKeyVersion = currentKeyVersion;
@@ -70,6 +73,7 @@ public final class Key extends com.oracle.bmc.http.client.internal.ExplicitlySet
         this.restoredFromKeyId = restoredFromKeyId;
         this.replicaDetails = replicaDetails;
         this.isPrimary = isPrimary;
+        this.externalKeyReferenceDetails = externalKeyReferenceDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -211,7 +215,10 @@ public final class Key extends com.oracle.bmc.http.client.internal.ExplicitlySet
          * HSM. All cryptographic operations that use a key with a protection mode of {@code
          * SOFTWARE} are performed on the server. By default, a key's protection mode is set to
          * {@code HSM}. You can't change a key's protection mode after the key is created or
-         * imported.
+         * imported. A protection mode of {@code EXTERNAL} mean that the key persists on the
+         * customer's external key manager which is hosted externally outside of oracle. Oracle only
+         * hold a reference to that key. All cryptographic operations that use a key with a
+         * protection mode of {@code EXTERNAL} are performed by external key manager.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
         private ProtectionMode protectionMode;
@@ -225,7 +232,10 @@ public final class Key extends com.oracle.bmc.http.client.internal.ExplicitlySet
          * HSM. All cryptographic operations that use a key with a protection mode of {@code
          * SOFTWARE} are performed on the server. By default, a key's protection mode is set to
          * {@code HSM}. You can't change a key's protection mode after the key is created or
-         * imported.
+         * imported. A protection mode of {@code EXTERNAL} mean that the key persists on the
+         * customer's external key manager which is hosted externally outside of oracle. Oracle only
+         * hold a reference to that key. All cryptographic operations that use a key with a
+         * protection mode of {@code EXTERNAL} are performed by external key manager.
          *
          * @param protectionMode the value to set
          * @return this builder
@@ -339,13 +349,31 @@ public final class Key extends com.oracle.bmc.http.client.internal.ExplicitlySet
             this.__explicitlySet__.add("replicaDetails");
             return this;
         }
-
+        /**
+         * A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
         private Boolean isPrimary;
 
+        /**
+         * A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
+         *
+         * @param isPrimary the value to set
+         * @return this builder
+         */
         public Builder isPrimary(Boolean isPrimary) {
             this.isPrimary = isPrimary;
             this.__explicitlySet__.add("isPrimary");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("externalKeyReferenceDetails")
+        private ExternalKeyReferenceDetails externalKeyReferenceDetails;
+
+        public Builder externalKeyReferenceDetails(
+                ExternalKeyReferenceDetails externalKeyReferenceDetails) {
+            this.externalKeyReferenceDetails = externalKeyReferenceDetails;
+            this.__explicitlySet__.add("externalKeyReferenceDetails");
             return this;
         }
 
@@ -369,7 +397,8 @@ public final class Key extends com.oracle.bmc.http.client.internal.ExplicitlySet
                             this.vaultId,
                             this.restoredFromKeyId,
                             this.replicaDetails,
-                            this.isPrimary);
+                            this.isPrimary,
+                            this.externalKeyReferenceDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -422,6 +451,9 @@ public final class Key extends com.oracle.bmc.http.client.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("isPrimary")) {
                 this.isPrimary(model.getIsPrimary());
+            }
+            if (model.wasPropertyExplicitlySet("externalKeyReferenceDetails")) {
+                this.externalKeyReferenceDetails(model.getExternalKeyReferenceDetails());
             }
             return this;
         }
@@ -557,11 +589,16 @@ public final class Key extends com.oracle.bmc.http.client.internal.ExplicitlySet
      * protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic
      * operations that use a key with a protection mode of {@code SOFTWARE} are performed on the
      * server. By default, a key's protection mode is set to {@code HSM}. You can't change a key's
-     * protection mode after the key is created or imported.
+     * protection mode after the key is created or imported. A protection mode of {@code EXTERNAL}
+     * mean that the key persists on the customer's external key manager which is hosted externally
+     * outside of oracle. Oracle only hold a reference to that key. All cryptographic operations
+     * that use a key with a protection mode of {@code EXTERNAL} are performed by external key
+     * manager.
      */
     public enum ProtectionMode implements com.oracle.bmc.http.internal.BmcEnum {
         Hsm("HSM"),
         Software("SOFTWARE"),
+        External("EXTERNAL"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -612,7 +649,11 @@ public final class Key extends com.oracle.bmc.http.client.internal.ExplicitlySet
      * protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic
      * operations that use a key with a protection mode of {@code SOFTWARE} are performed on the
      * server. By default, a key's protection mode is set to {@code HSM}. You can't change a key's
-     * protection mode after the key is created or imported.
+     * protection mode after the key is created or imported. A protection mode of {@code EXTERNAL}
+     * mean that the key persists on the customer's external key manager which is hosted externally
+     * outside of oracle. Oracle only hold a reference to that key. All cryptographic operations
+     * that use a key with a protection mode of {@code EXTERNAL} are performed by external key
+     * manager.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
     private final ProtectionMode protectionMode;
@@ -625,7 +666,11 @@ public final class Key extends com.oracle.bmc.http.client.internal.ExplicitlySet
      * protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic
      * operations that use a key with a protection mode of {@code SOFTWARE} are performed on the
      * server. By default, a key's protection mode is set to {@code HSM}. You can't change a key's
-     * protection mode after the key is created or imported.
+     * protection mode after the key is created or imported. A protection mode of {@code EXTERNAL}
+     * mean that the key persists on the customer's external key manager which is hosted externally
+     * outside of oracle. Oracle only hold a reference to that key. All cryptographic operations
+     * that use a key with a protection mode of {@code EXTERNAL} are performed by external key
+     * manager.
      *
      * @return the value
      */
@@ -786,11 +831,24 @@ public final class Key extends com.oracle.bmc.http.client.internal.ExplicitlySet
         return replicaDetails;
     }
 
+    /** A Boolean value that indicates whether the Key belongs to primary Vault or replica vault. */
     @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
     private final Boolean isPrimary;
 
+    /**
+     * A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
+     *
+     * @return the value
+     */
     public Boolean getIsPrimary() {
         return isPrimary;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("externalKeyReferenceDetails")
+    private final ExternalKeyReferenceDetails externalKeyReferenceDetails;
+
+    public ExternalKeyReferenceDetails getExternalKeyReferenceDetails() {
+        return externalKeyReferenceDetails;
     }
 
     @Override
@@ -823,6 +881,8 @@ public final class Key extends com.oracle.bmc.http.client.internal.ExplicitlySet
         sb.append(", restoredFromKeyId=").append(String.valueOf(this.restoredFromKeyId));
         sb.append(", replicaDetails=").append(String.valueOf(this.replicaDetails));
         sb.append(", isPrimary=").append(String.valueOf(this.isPrimary));
+        sb.append(", externalKeyReferenceDetails=")
+                .append(String.valueOf(this.externalKeyReferenceDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -852,6 +912,8 @@ public final class Key extends com.oracle.bmc.http.client.internal.ExplicitlySet
                 && java.util.Objects.equals(this.restoredFromKeyId, other.restoredFromKeyId)
                 && java.util.Objects.equals(this.replicaDetails, other.replicaDetails)
                 && java.util.Objects.equals(this.isPrimary, other.isPrimary)
+                && java.util.Objects.equals(
+                        this.externalKeyReferenceDetails, other.externalKeyReferenceDetails)
                 && super.equals(other);
     }
 
@@ -888,6 +950,11 @@ public final class Key extends com.oracle.bmc.http.client.internal.ExplicitlySet
                 (result * PRIME)
                         + (this.replicaDetails == null ? 43 : this.replicaDetails.hashCode());
         result = (result * PRIME) + (this.isPrimary == null ? 43 : this.isPrimary.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalKeyReferenceDetails == null
+                                ? 43
+                                : this.externalKeyReferenceDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

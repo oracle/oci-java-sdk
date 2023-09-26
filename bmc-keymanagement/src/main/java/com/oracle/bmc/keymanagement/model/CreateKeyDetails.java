@@ -5,7 +5,7 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- * <br>
+ * The details of the key that you want to create. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -28,7 +28,8 @@ public final class CreateKeyDetails
         "displayName",
         "freeformTags",
         "keyShape",
-        "protectionMode"
+        "protectionMode",
+        "externalKeyReference"
     })
     public CreateKeyDetails(
             String compartmentId,
@@ -36,7 +37,8 @@ public final class CreateKeyDetails
             String displayName,
             java.util.Map<String, String> freeformTags,
             KeyShape keyShape,
-            ProtectionMode protectionMode) {
+            ProtectionMode protectionMode,
+            ExternalKeyReference externalKeyReference) {
         super();
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
@@ -44,6 +46,7 @@ public final class CreateKeyDetails
         this.freeformTags = freeformTags;
         this.keyShape = keyShape;
         this.protectionMode = protectionMode;
+        this.externalKeyReference = externalKeyReference;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -147,7 +150,10 @@ public final class CreateKeyDetails
          * HSM. All cryptographic operations that use a key with a protection mode of {@code
          * SOFTWARE} are performed on the server. By default, a key's protection mode is set to
          * {@code HSM}. You can't change a key's protection mode after the key is created or
-         * imported.
+         * imported. A protection mode of {@code EXTERNAL} mean that the key persists on the
+         * customer's external key manager which is hosted externally outside of oracle. Oracle only
+         * hold a reference to that key. All cryptographic operations that use a key with a
+         * protection mode of {@code EXTERNAL} are performed by external key manager.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
         private ProtectionMode protectionMode;
@@ -161,7 +167,10 @@ public final class CreateKeyDetails
          * HSM. All cryptographic operations that use a key with a protection mode of {@code
          * SOFTWARE} are performed on the server. By default, a key's protection mode is set to
          * {@code HSM}. You can't change a key's protection mode after the key is created or
-         * imported.
+         * imported. A protection mode of {@code EXTERNAL} mean that the key persists on the
+         * customer's external key manager which is hosted externally outside of oracle. Oracle only
+         * hold a reference to that key. All cryptographic operations that use a key with a
+         * protection mode of {@code EXTERNAL} are performed by external key manager.
          *
          * @param protectionMode the value to set
          * @return this builder
@@ -169,6 +178,15 @@ public final class CreateKeyDetails
         public Builder protectionMode(ProtectionMode protectionMode) {
             this.protectionMode = protectionMode;
             this.__explicitlySet__.add("protectionMode");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("externalKeyReference")
+        private ExternalKeyReference externalKeyReference;
+
+        public Builder externalKeyReference(ExternalKeyReference externalKeyReference) {
+            this.externalKeyReference = externalKeyReference;
+            this.__explicitlySet__.add("externalKeyReference");
             return this;
         }
 
@@ -183,7 +201,8 @@ public final class CreateKeyDetails
                             this.displayName,
                             this.freeformTags,
                             this.keyShape,
-                            this.protectionMode);
+                            this.protectionMode,
+                            this.externalKeyReference);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -209,6 +228,9 @@ public final class CreateKeyDetails
             }
             if (model.wasPropertyExplicitlySet("protectionMode")) {
                 this.protectionMode(model.getProtectionMode());
+            }
+            if (model.wasPropertyExplicitlySet("externalKeyReference")) {
+                this.externalKeyReference(model.getExternalKeyReference());
             }
             return this;
         }
@@ -310,11 +332,16 @@ public final class CreateKeyDetails
      * protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic
      * operations that use a key with a protection mode of {@code SOFTWARE} are performed on the
      * server. By default, a key's protection mode is set to {@code HSM}. You can't change a key's
-     * protection mode after the key is created or imported.
+     * protection mode after the key is created or imported. A protection mode of {@code EXTERNAL}
+     * mean that the key persists on the customer's external key manager which is hosted externally
+     * outside of oracle. Oracle only hold a reference to that key. All cryptographic operations
+     * that use a key with a protection mode of {@code EXTERNAL} are performed by external key
+     * manager.
      */
     public enum ProtectionMode implements com.oracle.bmc.http.internal.BmcEnum {
         Hsm("HSM"),
         Software("SOFTWARE"),
+        External("EXTERNAL"),
         ;
 
         private final String value;
@@ -352,7 +379,11 @@ public final class CreateKeyDetails
      * protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic
      * operations that use a key with a protection mode of {@code SOFTWARE} are performed on the
      * server. By default, a key's protection mode is set to {@code HSM}. You can't change a key's
-     * protection mode after the key is created or imported.
+     * protection mode after the key is created or imported. A protection mode of {@code EXTERNAL}
+     * mean that the key persists on the customer's external key manager which is hosted externally
+     * outside of oracle. Oracle only hold a reference to that key. All cryptographic operations
+     * that use a key with a protection mode of {@code EXTERNAL} are performed by external key
+     * manager.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
     private final ProtectionMode protectionMode;
@@ -365,12 +396,23 @@ public final class CreateKeyDetails
      * protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic
      * operations that use a key with a protection mode of {@code SOFTWARE} are performed on the
      * server. By default, a key's protection mode is set to {@code HSM}. You can't change a key's
-     * protection mode after the key is created or imported.
+     * protection mode after the key is created or imported. A protection mode of {@code EXTERNAL}
+     * mean that the key persists on the customer's external key manager which is hosted externally
+     * outside of oracle. Oracle only hold a reference to that key. All cryptographic operations
+     * that use a key with a protection mode of {@code EXTERNAL} are performed by external key
+     * manager.
      *
      * @return the value
      */
     public ProtectionMode getProtectionMode() {
         return protectionMode;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("externalKeyReference")
+    private final ExternalKeyReference externalKeyReference;
+
+    public ExternalKeyReference getExternalKeyReference() {
+        return externalKeyReference;
     }
 
     @Override
@@ -394,6 +436,7 @@ public final class CreateKeyDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", keyShape=").append(String.valueOf(this.keyShape));
         sb.append(", protectionMode=").append(String.valueOf(this.protectionMode));
+        sb.append(", externalKeyReference=").append(String.valueOf(this.externalKeyReference));
         sb.append(")");
         return sb.toString();
     }
@@ -414,6 +457,7 @@ public final class CreateKeyDetails
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.keyShape, other.keyShape)
                 && java.util.Objects.equals(this.protectionMode, other.protectionMode)
+                && java.util.Objects.equals(this.externalKeyReference, other.externalKeyReference)
                 && super.equals(other);
     }
 
@@ -431,6 +475,11 @@ public final class CreateKeyDetails
         result =
                 (result * PRIME)
                         + (this.protectionMode == null ? 43 : this.protectionMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalKeyReference == null
+                                ? 43
+                                : this.externalKeyReference.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

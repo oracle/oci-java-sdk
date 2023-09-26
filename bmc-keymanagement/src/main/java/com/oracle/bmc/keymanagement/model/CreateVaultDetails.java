@@ -5,7 +5,7 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- * <br>
+ * The details of the vault that you want to create. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -28,6 +28,7 @@ public final class CreateVaultDetails
         "definedTags",
         "displayName",
         "freeformTags",
+        "externalKeyManagerMetadata",
         "vaultType"
     })
     public CreateVaultDetails(
@@ -35,12 +36,14 @@ public final class CreateVaultDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             java.util.Map<String, String> freeformTags,
+            ExternalKeyManagerMetadata externalKeyManagerMetadata,
             VaultType vaultType) {
         super();
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
+        this.externalKeyManagerMetadata = externalKeyManagerMetadata;
         this.vaultType = vaultType;
     }
 
@@ -127,6 +130,16 @@ public final class CreateVaultDetails
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("externalKeyManagerMetadata")
+        private ExternalKeyManagerMetadata externalKeyManagerMetadata;
+
+        public Builder externalKeyManagerMetadata(
+                ExternalKeyManagerMetadata externalKeyManagerMetadata) {
+            this.externalKeyManagerMetadata = externalKeyManagerMetadata;
+            this.__explicitlySet__.add("externalKeyManagerMetadata");
+            return this;
+        }
         /**
          * The type of vault to create. Each type of vault stores the key with different degrees of
          * isolation and has different options and pricing.
@@ -157,6 +170,7 @@ public final class CreateVaultDetails
                             this.definedTags,
                             this.displayName,
                             this.freeformTags,
+                            this.externalKeyManagerMetadata,
                             this.vaultType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -177,6 +191,9 @@ public final class CreateVaultDetails
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("externalKeyManagerMetadata")) {
+                this.externalKeyManagerMetadata(model.getExternalKeyManagerMetadata());
             }
             if (model.wasPropertyExplicitlySet("vaultType")) {
                 this.vaultType(model.getVaultType());
@@ -266,6 +283,13 @@ public final class CreateVaultDetails
         return freeformTags;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("externalKeyManagerMetadata")
+    private final ExternalKeyManagerMetadata externalKeyManagerMetadata;
+
+    public ExternalKeyManagerMetadata getExternalKeyManagerMetadata() {
+        return externalKeyManagerMetadata;
+    }
+
     /**
      * The type of vault to create. Each type of vault stores the key with different degrees of
      * isolation and has different options and pricing.
@@ -273,6 +297,7 @@ public final class CreateVaultDetails
     public enum VaultType implements com.oracle.bmc.http.internal.BmcEnum {
         VirtualPrivate("VIRTUAL_PRIVATE"),
         Default("DEFAULT"),
+        External("EXTERNAL"),
         ;
 
         private final String value;
@@ -338,6 +363,8 @@ public final class CreateVaultDetails
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", externalKeyManagerMetadata=")
+                .append(String.valueOf(this.externalKeyManagerMetadata));
         sb.append(", vaultType=").append(String.valueOf(this.vaultType));
         sb.append(")");
         return sb.toString();
@@ -357,6 +384,8 @@ public final class CreateVaultDetails
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(
+                        this.externalKeyManagerMetadata, other.externalKeyManagerMetadata)
                 && java.util.Objects.equals(this.vaultType, other.vaultType)
                 && super.equals(other);
     }
@@ -371,6 +400,11 @@ public final class CreateVaultDetails
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalKeyManagerMetadata == null
+                                ? 43
+                                : this.externalKeyManagerMetadata.hashCode());
         result = (result * PRIME) + (this.vaultType == null ? 43 : this.vaultType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

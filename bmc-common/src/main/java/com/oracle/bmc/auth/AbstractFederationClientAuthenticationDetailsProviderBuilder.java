@@ -274,7 +274,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
                 region = Region.fromRegionCodeOrId(regionStr);
                 LOG.info("Using region {}", region.getRegionId());
             } catch (IllegalArgumentException e) {
-                Alloy.throwUnknownAlloyRegionIfAppropriate(region.getRegionId(), e);
+                Alloy.throwUnknownAlloyRegionIfAppropriate(regionStr, e);
                 LOG.warn(
                         "Region not supported by this version of the SDK, registering region '{}' under OC1",
                         regionStr,

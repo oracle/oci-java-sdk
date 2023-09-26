@@ -41,7 +41,8 @@ public final class CreateIntegrationInstanceDetails
         "consumptionModel",
         "isFileServerEnabled",
         "networkEndpointDetails",
-        "shape"
+        "shape",
+        "domainId"
     })
     public CreateIntegrationInstanceDetails(
             String displayName,
@@ -58,7 +59,8 @@ public final class CreateIntegrationInstanceDetails
             ConsumptionModel consumptionModel,
             Boolean isFileServerEnabled,
             NetworkEndpointDetails networkEndpointDetails,
-            Shape shape) {
+            Shape shape,
+            String domainId) {
         super();
         this.displayName = displayName;
         this.compartmentId = compartmentId;
@@ -75,6 +77,7 @@ public final class CreateIntegrationInstanceDetails
         this.isFileServerEnabled = isFileServerEnabled;
         this.networkEndpointDetails = networkEndpointDetails;
         this.shape = shape;
+        this.domainId = domainId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -318,6 +321,27 @@ public final class CreateIntegrationInstanceDetails
             this.__explicitlySet__.add("shape");
             return this;
         }
+        /**
+         * The OCID of the identity domain, that will be used to determine the corresponding Idcs
+         * Stripe and create an Idcs application within the stripe. This parameter is mutually
+         * exclusive with parameter: idcsAt, i.e only one of two parameters should be specified.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("domainId")
+        private String domainId;
+
+        /**
+         * The OCID of the identity domain, that will be used to determine the corresponding Idcs
+         * Stripe and create an Idcs application within the stripe. This parameter is mutually
+         * exclusive with parameter: idcsAt, i.e only one of two parameters should be specified.
+         *
+         * @param domainId the value to set
+         * @return this builder
+         */
+        public Builder domainId(String domainId) {
+            this.domainId = domainId;
+            this.__explicitlySet__.add("domainId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -339,7 +363,8 @@ public final class CreateIntegrationInstanceDetails
                             this.consumptionModel,
                             this.isFileServerEnabled,
                             this.networkEndpointDetails,
-                            this.shape);
+                            this.shape,
+                            this.domainId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -392,6 +417,9 @@ public final class CreateIntegrationInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("shape")) {
                 this.shape(model.getShape());
+            }
+            if (model.wasPropertyExplicitlySet("domainId")) {
+                this.domainId(model.getDomainId());
             }
             return this;
         }
@@ -721,6 +749,25 @@ public final class CreateIntegrationInstanceDetails
         return shape;
     }
 
+    /**
+     * The OCID of the identity domain, that will be used to determine the corresponding Idcs Stripe
+     * and create an Idcs application within the stripe. This parameter is mutually exclusive with
+     * parameter: idcsAt, i.e only one of two parameters should be specified.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("domainId")
+    private final String domainId;
+
+    /**
+     * The OCID of the identity domain, that will be used to determine the corresponding Idcs Stripe
+     * and create an Idcs application within the stripe. This parameter is mutually exclusive with
+     * parameter: idcsAt, i.e only one of two parameters should be specified.
+     *
+     * @return the value
+     */
+    public String getDomainId() {
+        return domainId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -753,6 +800,7 @@ public final class CreateIntegrationInstanceDetails
         sb.append(", isFileServerEnabled=").append(String.valueOf(this.isFileServerEnabled));
         sb.append(", networkEndpointDetails=").append(String.valueOf(this.networkEndpointDetails));
         sb.append(", shape=").append(String.valueOf(this.shape));
+        sb.append(", domainId=").append(String.valueOf(this.domainId));
         sb.append(")");
         return sb.toString();
     }
@@ -786,6 +834,7 @@ public final class CreateIntegrationInstanceDetails
                 && java.util.Objects.equals(
                         this.networkEndpointDetails, other.networkEndpointDetails)
                 && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.domainId, other.domainId)
                 && super.equals(other);
     }
 
@@ -834,6 +883,7 @@ public final class CreateIntegrationInstanceDetails
                                 ? 43
                                 : this.networkEndpointDetails.hashCode());
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result = (result * PRIME) + (this.domainId == null ? 43 : this.domainId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

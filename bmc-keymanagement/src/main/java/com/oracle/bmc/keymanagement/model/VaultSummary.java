@@ -5,7 +5,7 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- * <br>
+ * The details of the Vault. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,7 +31,8 @@ public final class VaultSummary extends com.oracle.bmc.http.client.internal.Expl
         "lifecycleState",
         "managementEndpoint",
         "timeCreated",
-        "vaultType"
+        "vaultType",
+        "externalKeyManagerMetadataSummary"
     })
     public VaultSummary(
             String compartmentId,
@@ -43,7 +44,8 @@ public final class VaultSummary extends com.oracle.bmc.http.client.internal.Expl
             LifecycleState lifecycleState,
             String managementEndpoint,
             java.util.Date timeCreated,
-            VaultType vaultType) {
+            VaultType vaultType,
+            ExternalKeyManagerMetadataSummary externalKeyManagerMetadataSummary) {
         super();
         this.compartmentId = compartmentId;
         this.cryptoEndpoint = cryptoEndpoint;
@@ -55,6 +57,7 @@ public final class VaultSummary extends com.oracle.bmc.http.client.internal.Expl
         this.managementEndpoint = managementEndpoint;
         this.timeCreated = timeCreated;
         this.vaultType = vaultType;
+        this.externalKeyManagerMetadataSummary = externalKeyManagerMetadataSummary;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -265,6 +268,16 @@ public final class VaultSummary extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("externalKeyManagerMetadataSummary")
+        private ExternalKeyManagerMetadataSummary externalKeyManagerMetadataSummary;
+
+        public Builder externalKeyManagerMetadataSummary(
+                ExternalKeyManagerMetadataSummary externalKeyManagerMetadataSummary) {
+            this.externalKeyManagerMetadataSummary = externalKeyManagerMetadataSummary;
+            this.__explicitlySet__.add("externalKeyManagerMetadataSummary");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -280,7 +293,8 @@ public final class VaultSummary extends com.oracle.bmc.http.client.internal.Expl
                             this.lifecycleState,
                             this.managementEndpoint,
                             this.timeCreated,
-                            this.vaultType);
+                            this.vaultType,
+                            this.externalKeyManagerMetadataSummary);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -318,6 +332,10 @@ public final class VaultSummary extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("vaultType")) {
                 this.vaultType(model.getVaultType());
+            }
+            if (model.wasPropertyExplicitlySet("externalKeyManagerMetadataSummary")) {
+                this.externalKeyManagerMetadataSummary(
+                        model.getExternalKeyManagerMetadataSummary());
             }
             return this;
         }
@@ -561,6 +579,7 @@ public final class VaultSummary extends com.oracle.bmc.http.client.internal.Expl
      */
     public enum VaultType implements com.oracle.bmc.http.internal.BmcEnum {
         VirtualPrivate("VIRTUAL_PRIVATE"),
+        External("EXTERNAL"),
         Default("DEFAULT"),
 
         /**
@@ -621,6 +640,13 @@ public final class VaultSummary extends com.oracle.bmc.http.client.internal.Expl
         return vaultType;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("externalKeyManagerMetadataSummary")
+    private final ExternalKeyManagerMetadataSummary externalKeyManagerMetadataSummary;
+
+    public ExternalKeyManagerMetadataSummary getExternalKeyManagerMetadataSummary() {
+        return externalKeyManagerMetadataSummary;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -646,6 +672,8 @@ public final class VaultSummary extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", managementEndpoint=").append(String.valueOf(this.managementEndpoint));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", vaultType=").append(String.valueOf(this.vaultType));
+        sb.append(", externalKeyManagerMetadataSummary=")
+                .append(String.valueOf(this.externalKeyManagerMetadataSummary));
         sb.append(")");
         return sb.toString();
     }
@@ -670,6 +698,9 @@ public final class VaultSummary extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.managementEndpoint, other.managementEndpoint)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.vaultType, other.vaultType)
+                && java.util.Objects.equals(
+                        this.externalKeyManagerMetadataSummary,
+                        other.externalKeyManagerMetadataSummary)
                 && super.equals(other);
     }
 
@@ -697,6 +728,11 @@ public final class VaultSummary extends com.oracle.bmc.http.client.internal.Expl
                                 : this.managementEndpoint.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.vaultType == null ? 43 : this.vaultType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalKeyManagerMetadataSummary == null
+                                ? 43
+                                : this.externalKeyManagerMetadataSummary.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
