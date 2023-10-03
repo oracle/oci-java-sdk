@@ -209,6 +209,8 @@ public class ReplicasAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("replicaId", request.getReplicaId())
+                .appendQueryParam("configurationId", request.getConfigurationId())
+                .appendQueryParam("isUpToDate", request.getIsUpToDate())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")

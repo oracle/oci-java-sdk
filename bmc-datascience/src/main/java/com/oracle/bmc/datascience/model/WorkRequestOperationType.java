@@ -27,6 +27,10 @@ public enum WorkRequestOperationType implements com.oracle.bmc.http.internal.Bmc
     PipelineRunCreate("PIPELINE_RUN_CREATE"),
     PipelineRunCancel("PIPELINE_RUN_CANCEL"),
     PipelineRunDelete("PIPELINE_RUN_DELETE"),
+    PrivateEndpointCreate("PRIVATE_ENDPOINT_CREATE"),
+    PrivateEndpointDelete("PRIVATE_ENDPOINT_DELETE"),
+    PrivateEndpointMove("PRIVATE_ENDPOINT_MOVE"),
+    PrivateEndpointUpdate("PRIVATE_ENDPOINT_UPDATE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

@@ -31,6 +31,7 @@ public final class CreateMigrationDetails
         "sourceDatabaseConnectionId",
         "sourceContainerDatabaseConnectionId",
         "targetDatabaseConnectionId",
+        "dataTransferMediumDetailsV2",
         "dataTransferMediumDetails",
         "dumpTransferDetails",
         "datapumpSettings",
@@ -52,6 +53,7 @@ public final class CreateMigrationDetails
             String sourceDatabaseConnectionId,
             String sourceContainerDatabaseConnectionId,
             String targetDatabaseConnectionId,
+            DataTransferMediumDetailsV2 dataTransferMediumDetailsV2,
             CreateDataTransferMediumDetails dataTransferMediumDetails,
             CreateDumpTransferDetails dumpTransferDetails,
             CreateDataPumpSettings datapumpSettings,
@@ -72,6 +74,7 @@ public final class CreateMigrationDetails
         this.sourceDatabaseConnectionId = sourceDatabaseConnectionId;
         this.sourceContainerDatabaseConnectionId = sourceContainerDatabaseConnectionId;
         this.targetDatabaseConnectionId = targetDatabaseConnectionId;
+        this.dataTransferMediumDetailsV2 = dataTransferMediumDetailsV2;
         this.dataTransferMediumDetails = dataTransferMediumDetails;
         this.dumpTransferDetails = dumpTransferDetails;
         this.datapumpSettings = datapumpSettings;
@@ -196,6 +199,16 @@ public final class CreateMigrationDetails
         public Builder targetDatabaseConnectionId(String targetDatabaseConnectionId) {
             this.targetDatabaseConnectionId = targetDatabaseConnectionId;
             this.__explicitlySet__.add("targetDatabaseConnectionId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataTransferMediumDetailsV2")
+        private DataTransferMediumDetailsV2 dataTransferMediumDetailsV2;
+
+        public Builder dataTransferMediumDetailsV2(
+                DataTransferMediumDetailsV2 dataTransferMediumDetailsV2) {
+            this.dataTransferMediumDetailsV2 = dataTransferMediumDetailsV2;
+            this.__explicitlySet__.add("dataTransferMediumDetailsV2");
             return this;
         }
 
@@ -373,6 +386,7 @@ public final class CreateMigrationDetails
                             this.sourceDatabaseConnectionId,
                             this.sourceContainerDatabaseConnectionId,
                             this.targetDatabaseConnectionId,
+                            this.dataTransferMediumDetailsV2,
                             this.dataTransferMediumDetails,
                             this.dumpTransferDetails,
                             this.datapumpSettings,
@@ -414,6 +428,9 @@ public final class CreateMigrationDetails
             }
             if (model.wasPropertyExplicitlySet("targetDatabaseConnectionId")) {
                 this.targetDatabaseConnectionId(model.getTargetDatabaseConnectionId());
+            }
+            if (model.wasPropertyExplicitlySet("dataTransferMediumDetailsV2")) {
+                this.dataTransferMediumDetailsV2(model.getDataTransferMediumDetailsV2());
             }
             if (model.wasPropertyExplicitlySet("dataTransferMediumDetails")) {
                 this.dataTransferMediumDetails(model.getDataTransferMediumDetails());
@@ -557,6 +574,13 @@ public final class CreateMigrationDetails
      */
     public String getTargetDatabaseConnectionId() {
         return targetDatabaseConnectionId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("dataTransferMediumDetailsV2")
+    private final DataTransferMediumDetailsV2 dataTransferMediumDetailsV2;
+
+    public DataTransferMediumDetailsV2 getDataTransferMediumDetailsV2() {
+        return dataTransferMediumDetailsV2;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dataTransferMediumDetails")
@@ -714,6 +738,8 @@ public final class CreateMigrationDetails
                 .append(String.valueOf(this.sourceContainerDatabaseConnectionId));
         sb.append(", targetDatabaseConnectionId=")
                 .append(String.valueOf(this.targetDatabaseConnectionId));
+        sb.append(", dataTransferMediumDetailsV2=")
+                .append(String.valueOf(this.dataTransferMediumDetailsV2));
         sb.append(", dataTransferMediumDetails=")
                 .append(String.valueOf(this.dataTransferMediumDetails));
         sb.append(", dumpTransferDetails=").append(String.valueOf(this.dumpTransferDetails));
@@ -753,6 +779,8 @@ public final class CreateMigrationDetails
                         other.sourceContainerDatabaseConnectionId)
                 && java.util.Objects.equals(
                         this.targetDatabaseConnectionId, other.targetDatabaseConnectionId)
+                && java.util.Objects.equals(
+                        this.dataTransferMediumDetailsV2, other.dataTransferMediumDetailsV2)
                 && java.util.Objects.equals(
                         this.dataTransferMediumDetails, other.dataTransferMediumDetails)
                 && java.util.Objects.equals(this.dumpTransferDetails, other.dumpTransferDetails)
@@ -795,6 +823,11 @@ public final class CreateMigrationDetails
                         + (this.targetDatabaseConnectionId == null
                                 ? 43
                                 : this.targetDatabaseConnectionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataTransferMediumDetailsV2 == null
+                                ? 43
+                                : this.dataTransferMediumDetailsV2.hashCode());
         result =
                 (result * PRIME)
                         + (this.dataTransferMediumDetails == null

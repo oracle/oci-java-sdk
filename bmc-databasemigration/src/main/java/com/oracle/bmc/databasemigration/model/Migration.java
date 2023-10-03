@@ -33,6 +33,7 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
         "sourceContainerDatabaseConnectionId",
         "targetDatabaseConnectionId",
         "executingJobId",
+        "dataTransferMediumDetailsV2",
         "dataTransferMediumDetails",
         "dumpTransferDetails",
         "datapumpSettings",
@@ -63,6 +64,7 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
             String sourceContainerDatabaseConnectionId,
             String targetDatabaseConnectionId,
             String executingJobId,
+            DataTransferMediumDetailsV2 dataTransferMediumDetailsV2,
             DataTransferMediumDetails dataTransferMediumDetails,
             DumpTransferDetails dumpTransferDetails,
             DataPumpSettings datapumpSettings,
@@ -92,6 +94,7 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
         this.sourceContainerDatabaseConnectionId = sourceContainerDatabaseConnectionId;
         this.targetDatabaseConnectionId = targetDatabaseConnectionId;
         this.executingJobId = executingJobId;
+        this.dataTransferMediumDetailsV2 = dataTransferMediumDetailsV2;
         this.dataTransferMediumDetails = dataTransferMediumDetails;
         this.dumpTransferDetails = dumpTransferDetails;
         this.datapumpSettings = datapumpSettings;
@@ -285,6 +288,16 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
         public Builder executingJobId(String executingJobId) {
             this.executingJobId = executingJobId;
             this.__explicitlySet__.add("executingJobId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataTransferMediumDetailsV2")
+        private DataTransferMediumDetailsV2 dataTransferMediumDetailsV2;
+
+        public Builder dataTransferMediumDetailsV2(
+                DataTransferMediumDetailsV2 dataTransferMediumDetailsV2) {
+            this.dataTransferMediumDetailsV2 = dataTransferMediumDetailsV2;
+            this.__explicitlySet__.add("dataTransferMediumDetailsV2");
             return this;
         }
 
@@ -538,6 +551,7 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
                             this.sourceContainerDatabaseConnectionId,
                             this.targetDatabaseConnectionId,
                             this.executingJobId,
+                            this.dataTransferMediumDetailsV2,
                             this.dataTransferMediumDetails,
                             this.dumpTransferDetails,
                             this.datapumpSettings,
@@ -596,6 +610,9 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("executingJobId")) {
                 this.executingJobId(model.getExecutingJobId());
+            }
+            if (model.wasPropertyExplicitlySet("dataTransferMediumDetailsV2")) {
+                this.dataTransferMediumDetailsV2(model.getDataTransferMediumDetailsV2());
             }
             if (model.wasPropertyExplicitlySet("dataTransferMediumDetails")) {
                 this.dataTransferMediumDetails(model.getDataTransferMediumDetails());
@@ -810,6 +827,13 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
      */
     public String getExecutingJobId() {
         return executingJobId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("dataTransferMediumDetailsV2")
+    private final DataTransferMediumDetailsV2 dataTransferMediumDetailsV2;
+
+    public DataTransferMediumDetailsV2 getDataTransferMediumDetailsV2() {
+        return dataTransferMediumDetailsV2;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dataTransferMediumDetails")
@@ -1036,6 +1060,8 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
         sb.append(", targetDatabaseConnectionId=")
                 .append(String.valueOf(this.targetDatabaseConnectionId));
         sb.append(", executingJobId=").append(String.valueOf(this.executingJobId));
+        sb.append(", dataTransferMediumDetailsV2=")
+                .append(String.valueOf(this.dataTransferMediumDetailsV2));
         sb.append(", dataTransferMediumDetails=")
                 .append(String.valueOf(this.dataTransferMediumDetails));
         sb.append(", dumpTransferDetails=").append(String.valueOf(this.dumpTransferDetails));
@@ -1084,6 +1110,8 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
                 && java.util.Objects.equals(
                         this.targetDatabaseConnectionId, other.targetDatabaseConnectionId)
                 && java.util.Objects.equals(this.executingJobId, other.executingJobId)
+                && java.util.Objects.equals(
+                        this.dataTransferMediumDetailsV2, other.dataTransferMediumDetailsV2)
                 && java.util.Objects.equals(
                         this.dataTransferMediumDetails, other.dataTransferMediumDetails)
                 && java.util.Objects.equals(this.dumpTransferDetails, other.dumpTransferDetails)
@@ -1141,6 +1169,11 @@ public final class Migration extends com.oracle.bmc.http.client.internal.Explici
         result =
                 (result * PRIME)
                         + (this.executingJobId == null ? 43 : this.executingJobId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataTransferMediumDetailsV2 == null
+                                ? 43
+                                : this.dataTransferMediumDetailsV2.hashCode());
         result =
                 (result * PRIME)
                         + (this.dataTransferMediumDetails == null

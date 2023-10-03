@@ -97,6 +97,8 @@ public class CreateAutonomousDatabaseBase
         "dbVersion",
         "customerContacts",
         "isMtlsConnectionRequired",
+        "resourcePoolLeaderId",
+        "resourcePoolSummary",
         "autonomousMaintenanceScheduleType",
         "scheduledOperations",
         "isAutoScalingForStorageEnabled",
@@ -145,6 +147,8 @@ public class CreateAutonomousDatabaseBase
             String dbVersion,
             java.util.List<CustomerContact> customerContacts,
             Boolean isMtlsConnectionRequired,
+            String resourcePoolLeaderId,
+            ResourcePoolSummary resourcePoolSummary,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
@@ -192,6 +196,8 @@ public class CreateAutonomousDatabaseBase
         this.dbVersion = dbVersion;
         this.customerContacts = customerContacts;
         this.isMtlsConnectionRequired = isMtlsConnectionRequired;
+        this.resourcePoolLeaderId = resourcePoolLeaderId;
+        this.resourcePoolSummary = resourcePoolSummary;
         this.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
         this.scheduledOperations = scheduledOperations;
         this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
@@ -1333,6 +1339,30 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
+     * The unique identifier for leader autonomous database OCID
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("resourcePoolLeaderId")
+    private final String resourcePoolLeaderId;
+
+    /**
+     * The unique identifier for leader autonomous database OCID
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
+     * @return the value
+     */
+    public String getResourcePoolLeaderId() {
+        return resourcePoolLeaderId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("resourcePoolSummary")
+    private final ResourcePoolSummary resourcePoolSummary;
+
+    public ResourcePoolSummary getResourcePoolSummary() {
+        return resourcePoolSummary;
+    }
+
+    /**
      * The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance
      * schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR
      * maintenance schedule follows the normal cycle
@@ -1578,6 +1608,8 @@ public class CreateAutonomousDatabaseBase
         sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
         sb.append(", isMtlsConnectionRequired=")
                 .append(String.valueOf(this.isMtlsConnectionRequired));
+        sb.append(", resourcePoolLeaderId=").append(String.valueOf(this.resourcePoolLeaderId));
+        sb.append(", resourcePoolSummary=").append(String.valueOf(this.resourcePoolSummary));
         sb.append(", autonomousMaintenanceScheduleType=")
                 .append(String.valueOf(this.autonomousMaintenanceScheduleType));
         sb.append(", scheduledOperations=").append(String.valueOf(this.scheduledOperations));
@@ -1648,6 +1680,8 @@ public class CreateAutonomousDatabaseBase
                 && java.util.Objects.equals(this.customerContacts, other.customerContacts)
                 && java.util.Objects.equals(
                         this.isMtlsConnectionRequired, other.isMtlsConnectionRequired)
+                && java.util.Objects.equals(this.resourcePoolLeaderId, other.resourcePoolLeaderId)
+                && java.util.Objects.equals(this.resourcePoolSummary, other.resourcePoolSummary)
                 && java.util.Objects.equals(
                         this.autonomousMaintenanceScheduleType,
                         other.autonomousMaintenanceScheduleType)
@@ -1772,6 +1806,16 @@ public class CreateAutonomousDatabaseBase
                         + (this.isMtlsConnectionRequired == null
                                 ? 43
                                 : this.isMtlsConnectionRequired.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourcePoolLeaderId == null
+                                ? 43
+                                : this.resourcePoolLeaderId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourcePoolSummary == null
+                                ? 43
+                                : this.resourcePoolSummary.hashCode());
         result =
                 (result * PRIME)
                         + (this.autonomousMaintenanceScheduleType == null

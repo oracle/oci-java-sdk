@@ -24,6 +24,42 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
+    /**
+     * Retrieves the next page of results. When this header appears in the response, additional
+     * pages of results remain. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
+    private String opcNextPage;
+
+    /**
+     * Retrieves the next page of results. When this header appears in the response, additional
+     * pages of results remain. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     * @return the value
+     */
+    public String getOpcNextPage() {
+        return opcNextPage;
+    }
+
+    /**
+     * Retrieves the previous page of results. When this header appears in the response, previous
+     * pages of results exist. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
+    private String opcPrevPage;
+
+    /**
+     * Retrieves the previous page of results. When this header appears in the response, previous
+     * pages of results exist. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     * @return the value
+     */
+    public String getOpcPrevPage() {
+        return opcPrevPage;
+    }
+
     /** A list of {@code com.oracle.bmc.datascience.model.WorkRequestLogEntry} instances. */
     private java.util.List<com.oracle.bmc.datascience.model.WorkRequestLogEntry> items;
 
@@ -36,14 +72,25 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
         return items;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId", "items"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "items"
+    })
     private ListWorkRequestLogsResponse(
             int __httpStatusCode__,
             java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
+            String opcNextPage,
+            String opcPrevPage,
             java.util.List<com.oracle.bmc.datascience.model.WorkRequestLogEntry> items) {
         super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
+        this.opcNextPage = opcNextPage;
+        this.opcPrevPage = opcPrevPage;
         this.items = items;
     }
 
@@ -83,6 +130,46 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
+        /**
+         * Retrieves the next page of results. When this header appears in the response, additional
+         * pages of results remain. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
+        private String opcNextPage;
+
+        /**
+         * Retrieves the next page of results. When this header appears in the response, additional
+         * pages of results remain. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
+        public Builder opcNextPage(String opcNextPage) {
+            this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        /**
+         * Retrieves the previous page of results. When this header appears in the response,
+         * previous pages of results exist. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
+        private String opcPrevPage;
+
+        /**
+         * Retrieves the previous page of results. When this header appears in the response,
+         * previous pages of results exist. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @param opcPrevPage the value to set
+         * @return this builder
+         */
+        public Builder opcPrevPage(String opcPrevPage) {
+            this.opcPrevPage = opcPrevPage;
+            return this;
+        }
+
         /** A list of {@code com.oracle.bmc.datascience.model.WorkRequestLogEntry} instances. */
         private java.util.List<com.oracle.bmc.datascience.model.WorkRequestLogEntry> items;
 
@@ -108,6 +195,8 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
+            opcNextPage(o.getOpcNextPage());
+            opcPrevPage(o.getOpcPrevPage());
             items(o.getItems());
 
             return this;
@@ -121,7 +210,7 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
         @Override
         public ListWorkRequestLogsResponse build() {
             return new ListWorkRequestLogsResponse(
-                    __httpStatusCode__, headers, opcRequestId, items);
+                    __httpStatusCode__, headers, opcRequestId, opcNextPage, opcPrevPage, items);
         }
     }
 
@@ -140,6 +229,8 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",opcPrevPage=").append(String.valueOf(opcPrevPage));
         sb.append(",items=").append(String.valueOf(items));
         sb.append(")");
         return sb.toString();
@@ -157,6 +248,8 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
         ListWorkRequestLogsResponse other = (ListWorkRequestLogsResponse) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(this.opcPrevPage, other.opcPrevPage)
                 && java.util.Objects.equals(this.items, other.items);
     }
 
@@ -165,6 +258,8 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result = (result * PRIME) + (this.opcPrevPage == null ? 43 : this.opcPrevPage.hashCode());
         result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
         return result;
     }

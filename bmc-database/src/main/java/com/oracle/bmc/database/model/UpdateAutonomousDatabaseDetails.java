@@ -68,6 +68,8 @@ public final class UpdateAutonomousDatabaseDetails
         "nsgIds",
         "customerContacts",
         "isMtlsConnectionRequired",
+        "resourcePoolLeaderId",
+        "resourcePoolSummary",
         "scheduledOperations",
         "isAutoScalingForStorageEnabled",
         "maxCpuCoreCount",
@@ -114,6 +116,8 @@ public final class UpdateAutonomousDatabaseDetails
             java.util.List<String> nsgIds,
             java.util.List<CustomerContact> customerContacts,
             Boolean isMtlsConnectionRequired,
+            String resourcePoolLeaderId,
+            ResourcePoolSummary resourcePoolSummary,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
             Integer maxCpuCoreCount,
@@ -159,6 +163,8 @@ public final class UpdateAutonomousDatabaseDetails
         this.nsgIds = nsgIds;
         this.customerContacts = customerContacts;
         this.isMtlsConnectionRequired = isMtlsConnectionRequired;
+        this.resourcePoolLeaderId = resourcePoolLeaderId;
+        this.resourcePoolSummary = resourcePoolSummary;
         this.scheduledOperations = scheduledOperations;
         this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
         this.maxCpuCoreCount = maxCpuCoreCount;
@@ -1353,6 +1359,34 @@ public final class UpdateAutonomousDatabaseDetails
             return this;
         }
         /**
+         * The unique identifier for leader autonomous database OCID
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("resourcePoolLeaderId")
+        private String resourcePoolLeaderId;
+
+        /**
+         * The unique identifier for leader autonomous database OCID
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
+         * @param resourcePoolLeaderId the value to set
+         * @return this builder
+         */
+        public Builder resourcePoolLeaderId(String resourcePoolLeaderId) {
+            this.resourcePoolLeaderId = resourcePoolLeaderId;
+            this.__explicitlySet__.add("resourcePoolLeaderId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("resourcePoolSummary")
+        private ResourcePoolSummary resourcePoolSummary;
+
+        public Builder resourcePoolSummary(ResourcePoolSummary resourcePoolSummary) {
+            this.resourcePoolSummary = resourcePoolSummary;
+            this.__explicitlySet__.add("resourcePoolSummary");
+            return this;
+        }
+        /**
          * The list of scheduled operations.
          *
          * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
@@ -1554,6 +1588,8 @@ public final class UpdateAutonomousDatabaseDetails
                             this.nsgIds,
                             this.customerContacts,
                             this.isMtlsConnectionRequired,
+                            this.resourcePoolLeaderId,
+                            this.resourcePoolSummary,
                             this.scheduledOperations,
                             this.isAutoScalingForStorageEnabled,
                             this.maxCpuCoreCount,
@@ -1680,6 +1716,12 @@ public final class UpdateAutonomousDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("isMtlsConnectionRequired")) {
                 this.isMtlsConnectionRequired(model.getIsMtlsConnectionRequired());
+            }
+            if (model.wasPropertyExplicitlySet("resourcePoolLeaderId")) {
+                this.resourcePoolLeaderId(model.getResourcePoolLeaderId());
+            }
+            if (model.wasPropertyExplicitlySet("resourcePoolSummary")) {
+                this.resourcePoolSummary(model.getResourcePoolSummary());
             }
             if (model.wasPropertyExplicitlySet("scheduledOperations")) {
                 this.scheduledOperations(model.getScheduledOperations());
@@ -3034,6 +3076,30 @@ public final class UpdateAutonomousDatabaseDetails
     }
 
     /**
+     * The unique identifier for leader autonomous database OCID
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("resourcePoolLeaderId")
+    private final String resourcePoolLeaderId;
+
+    /**
+     * The unique identifier for leader autonomous database OCID
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
+     * @return the value
+     */
+    public String getResourcePoolLeaderId() {
+        return resourcePoolLeaderId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("resourcePoolSummary")
+    private final ResourcePoolSummary resourcePoolSummary;
+
+    public ResourcePoolSummary getResourcePoolSummary() {
+        return resourcePoolSummary;
+    }
+
+    /**
      * The list of scheduled operations.
      *
      * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
@@ -3231,6 +3297,8 @@ public final class UpdateAutonomousDatabaseDetails
         sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
         sb.append(", isMtlsConnectionRequired=")
                 .append(String.valueOf(this.isMtlsConnectionRequired));
+        sb.append(", resourcePoolLeaderId=").append(String.valueOf(this.resourcePoolLeaderId));
+        sb.append(", resourcePoolSummary=").append(String.valueOf(this.resourcePoolSummary));
         sb.append(", scheduledOperations=").append(String.valueOf(this.scheduledOperations));
         sb.append(", isAutoScalingForStorageEnabled=")
                 .append(String.valueOf(this.isAutoScalingForStorageEnabled));
@@ -3298,6 +3366,8 @@ public final class UpdateAutonomousDatabaseDetails
                 && java.util.Objects.equals(this.customerContacts, other.customerContacts)
                 && java.util.Objects.equals(
                         this.isMtlsConnectionRequired, other.isMtlsConnectionRequired)
+                && java.util.Objects.equals(this.resourcePoolLeaderId, other.resourcePoolLeaderId)
+                && java.util.Objects.equals(this.resourcePoolSummary, other.resourcePoolSummary)
                 && java.util.Objects.equals(this.scheduledOperations, other.scheduledOperations)
                 && java.util.Objects.equals(
                         this.isAutoScalingForStorageEnabled, other.isAutoScalingForStorageEnabled)
@@ -3422,6 +3492,16 @@ public final class UpdateAutonomousDatabaseDetails
                         + (this.isMtlsConnectionRequired == null
                                 ? 43
                                 : this.isMtlsConnectionRequired.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourcePoolLeaderId == null
+                                ? 43
+                                : this.resourcePoolLeaderId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourcePoolSummary == null
+                                ? 43
+                                : this.resourcePoolSummary.hashCode());
         result =
                 (result * PRIME)
                         + (this.scheduledOperations == null

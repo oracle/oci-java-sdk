@@ -6508,6 +6508,8 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("isRefreshableClone", request.getIsRefreshableClone())
                 .appendQueryParam("isDataGuardEnabled", request.getIsDataGuardEnabled())
+                .appendQueryParam("isResourcePoolLeader", request.getIsResourcePoolLeader())
+                .appendQueryParam("resourcePoolLeaderId", request.getResourcePoolLeaderId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(
@@ -8788,6 +8790,38 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", ResizeVmClusterNetworkResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", ResizeVmClusterNetworkResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ResourcePoolShapesResponse resourcePoolShapes(ResourcePoolShapesRequest request) {
+
+        return clientCall(request, ResourcePoolShapesResponse::builder)
+                .logger(LOG, "resourcePoolShapes")
+                .serviceDetails(
+                        "Database",
+                        "ResourcePoolShapes",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ResourcePoolShapes")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ResourcePoolShapesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabases")
+                .appendPathParam("actions")
+                .appendPathParam("listResourcePoolShapes")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.ResourcePoolShapeCollection.class,
+                        ResourcePoolShapesResponse.Builder::resourcePoolShapeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ResourcePoolShapesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", ResourcePoolShapesResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-next-page", ResourcePoolShapesResponse.Builder::opcNextPage)
                 .callSync();
     }
 
