@@ -320,6 +320,47 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public ChangeDataSciencePrivateEndpointCompartmentResponse
+            changeDataSciencePrivateEndpointCompartment(
+                    ChangeDataSciencePrivateEndpointCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getDataSciencePrivateEndpointId(),
+                "dataSciencePrivateEndpointId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeDataSciencePrivateEndpointCompartmentDetails(),
+                "changeDataSciencePrivateEndpointCompartmentDetails is required");
+
+        return clientCall(request, ChangeDataSciencePrivateEndpointCompartmentResponse::builder)
+                .logger(LOG, "changeDataSciencePrivateEndpointCompartment")
+                .serviceDetails(
+                        "DataScience",
+                        "ChangeDataSciencePrivateEndpointCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/DataSciencePrivateEndpoint/ChangeDataSciencePrivateEndpointCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeDataSciencePrivateEndpointCompartmentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("dataSciencePrivateEndpoints")
+                .appendPathParam(request.getDataSciencePrivateEndpointId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeDataSciencePrivateEndpointCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeDataSciencePrivateEndpointCompartmentResponse.Builder
+                                ::opcWorkRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public ChangeJobCompartmentResponse changeJobCompartment(ChangeJobCompartmentRequest request) {
 
         Validate.notBlank(request.getJobId(), "jobId must not be blank");
@@ -606,6 +647,42 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeProjectCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateDataSciencePrivateEndpointResponse createDataSciencePrivateEndpoint(
+            CreateDataSciencePrivateEndpointRequest request) {
+        Objects.requireNonNull(
+                request.getCreateDataSciencePrivateEndpointDetails(),
+                "createDataSciencePrivateEndpointDetails is required");
+
+        return clientCall(request, CreateDataSciencePrivateEndpointResponse::builder)
+                .logger(LOG, "createDataSciencePrivateEndpoint")
+                .serviceDetails("DataScience", "CreateDataSciencePrivateEndpoint", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDataSciencePrivateEndpointRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("dataSciencePrivateEndpoints")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.DataSciencePrivateEndpoint.class,
+                        CreateDataSciencePrivateEndpointResponse.Builder
+                                ::dataSciencePrivateEndpoint)
+                .handleResponseHeaderString(
+                        "etag", CreateDataSciencePrivateEndpointResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateDataSciencePrivateEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateDataSciencePrivateEndpointResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "Location", CreateDataSciencePrivateEndpointResponse.Builder::location)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1111,6 +1188,37 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public DeleteDataSciencePrivateEndpointResponse deleteDataSciencePrivateEndpoint(
+            DeleteDataSciencePrivateEndpointRequest request) {
+
+        Validate.notBlank(
+                request.getDataSciencePrivateEndpointId(),
+                "dataSciencePrivateEndpointId must not be blank");
+
+        return clientCall(request, DeleteDataSciencePrivateEndpointResponse::builder)
+                .logger(LOG, "deleteDataSciencePrivateEndpoint")
+                .serviceDetails(
+                        "DataScience",
+                        "DeleteDataSciencePrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/DataSciencePrivateEndpoint/DeleteDataSciencePrivateEndpoint")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDataSciencePrivateEndpointRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("dataSciencePrivateEndpoints")
+                .appendPathParam(request.getDataSciencePrivateEndpointId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteDataSciencePrivateEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteDataSciencePrivateEndpointResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteJobResponse deleteJob(DeleteJobRequest request) {
 
         Validate.notBlank(request.getJobId(), "jobId must not be blank");
@@ -1387,6 +1495,39 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ExportModelArtifactResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetDataSciencePrivateEndpointResponse getDataSciencePrivateEndpoint(
+            GetDataSciencePrivateEndpointRequest request) {
+
+        Validate.notBlank(
+                request.getDataSciencePrivateEndpointId(),
+                "dataSciencePrivateEndpointId must not be blank");
+
+        return clientCall(request, GetDataSciencePrivateEndpointResponse::builder)
+                .logger(LOG, "getDataSciencePrivateEndpoint")
+                .serviceDetails(
+                        "DataScience",
+                        "GetDataSciencePrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/DataSciencePrivateEndpoint/GetDataSciencePrivateEndpoint")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDataSciencePrivateEndpointRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("dataSciencePrivateEndpoints")
+                .appendPathParam(request.getDataSciencePrivateEndpointId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datascience.model.DataSciencePrivateEndpoint.class,
+                        GetDataSciencePrivateEndpointResponse.Builder::dataSciencePrivateEndpoint)
+                .handleResponseHeaderString(
+                        "etag", GetDataSciencePrivateEndpointResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetDataSciencePrivateEndpointResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -1970,6 +2111,49 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public ListDataSciencePrivateEndpointsResponse listDataSciencePrivateEndpoints(
+            ListDataSciencePrivateEndpointsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListDataSciencePrivateEndpointsResponse::builder)
+                .logger(LOG, "listDataSciencePrivateEndpoints")
+                .serviceDetails(
+                        "DataScience",
+                        "ListDataSciencePrivateEndpoints",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/DataSciencePrivateEndpoint/ListDataSciencePrivateEndpoints")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDataSciencePrivateEndpointsRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("dataSciencePrivateEndpoints")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("createdBy", request.getCreatedBy())
+                .appendEnumQueryParam(
+                        "dataScienceResourceType", request.getDataScienceResourceType())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.datascience.model.DataSciencePrivateEndpointSummary.class,
+                        ListDataSciencePrivateEndpointsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-prev-page",
+                        ListDataSciencePrivateEndpointsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListDataSciencePrivateEndpointsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListDataSciencePrivateEndpointsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public ListFastLaunchJobConfigsResponse listFastLaunchJobConfigs(
             ListFastLaunchJobConfigsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
@@ -2468,6 +2652,8 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam("workRequests")
                 .appendPathParam(request.getWorkRequestId())
                 .appendPathParam("errors")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(
@@ -2475,6 +2661,10 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         ListWorkRequestErrorsResponse.Builder::items)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListWorkRequestErrorsResponse.Builder::opcPrevPage)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -2496,6 +2686,8 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam("workRequests")
                 .appendPathParam(request.getWorkRequestId())
                 .appendPathParam("logs")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(
@@ -2503,6 +2695,10 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         ListWorkRequestLogsResponse.Builder::items)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListWorkRequestLogsResponse.Builder::opcPrevPage)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -2541,6 +2737,47 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public UpdateDataSciencePrivateEndpointResponse updateDataSciencePrivateEndpoint(
+            UpdateDataSciencePrivateEndpointRequest request) {
+
+        Validate.notBlank(
+                request.getDataSciencePrivateEndpointId(),
+                "dataSciencePrivateEndpointId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDataSciencePrivateEndpointDetails(),
+                "updateDataSciencePrivateEndpointDetails is required");
+
+        return clientCall(request, UpdateDataSciencePrivateEndpointResponse::builder)
+                .logger(LOG, "updateDataSciencePrivateEndpoint")
+                .serviceDetails(
+                        "DataScience",
+                        "UpdateDataSciencePrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/DataSciencePrivateEndpoint/UpdateDataSciencePrivateEndpoint")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDataSciencePrivateEndpointRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("dataSciencePrivateEndpoints")
+                .appendPathParam(request.getDataSciencePrivateEndpointId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.DataSciencePrivateEndpoint.class,
+                        UpdateDataSciencePrivateEndpointResponse.Builder
+                                ::dataSciencePrivateEndpoint)
+                .handleResponseHeaderString(
+                        "etag", UpdateDataSciencePrivateEndpointResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateDataSciencePrivateEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateDataSciencePrivateEndpointResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 

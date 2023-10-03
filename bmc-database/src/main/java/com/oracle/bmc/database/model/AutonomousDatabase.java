@@ -116,6 +116,9 @@ public final class AutonomousDatabase
         "timeDataGuardRoleChanged",
         "peerDbIds",
         "isMtlsConnectionRequired",
+        "timeOfJoiningResourcePool",
+        "resourcePoolLeaderId",
+        "resourcePoolSummary",
         "isReconnectCloneEnabled",
         "timeUntilReconnectCloneEnabled",
         "autonomousMaintenanceScheduleType",
@@ -224,6 +227,9 @@ public final class AutonomousDatabase
             java.util.Date timeDataGuardRoleChanged,
             java.util.List<String> peerDbIds,
             Boolean isMtlsConnectionRequired,
+            java.util.Date timeOfJoiningResourcePool,
+            String resourcePoolLeaderId,
+            ResourcePoolSummary resourcePoolSummary,
             Boolean isReconnectCloneEnabled,
             java.util.Date timeUntilReconnectCloneEnabled,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
@@ -331,6 +337,9 @@ public final class AutonomousDatabase
         this.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
         this.peerDbIds = peerDbIds;
         this.isMtlsConnectionRequired = isMtlsConnectionRequired;
+        this.timeOfJoiningResourcePool = timeOfJoiningResourcePool;
+        this.resourcePoolLeaderId = resourcePoolLeaderId;
+        this.resourcePoolSummary = resourcePoolSummary;
         this.isReconnectCloneEnabled = isReconnectCloneEnabled;
         this.timeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;
         this.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
@@ -2317,6 +2326,49 @@ public final class AutonomousDatabase
             this.__explicitlySet__.add("isMtlsConnectionRequired");
             return this;
         }
+        /** The time the member joined the resource pool. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeOfJoiningResourcePool")
+        private java.util.Date timeOfJoiningResourcePool;
+
+        /**
+         * The time the member joined the resource pool.
+         *
+         * @param timeOfJoiningResourcePool the value to set
+         * @return this builder
+         */
+        public Builder timeOfJoiningResourcePool(java.util.Date timeOfJoiningResourcePool) {
+            this.timeOfJoiningResourcePool = timeOfJoiningResourcePool;
+            this.__explicitlySet__.add("timeOfJoiningResourcePool");
+            return this;
+        }
+        /**
+         * The unique identifier for leader autonomous database OCID
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("resourcePoolLeaderId")
+        private String resourcePoolLeaderId;
+
+        /**
+         * The unique identifier for leader autonomous database OCID
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
+         * @param resourcePoolLeaderId the value to set
+         * @return this builder
+         */
+        public Builder resourcePoolLeaderId(String resourcePoolLeaderId) {
+            this.resourcePoolLeaderId = resourcePoolLeaderId;
+            this.__explicitlySet__.add("resourcePoolLeaderId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("resourcePoolSummary")
+        private ResourcePoolSummary resourcePoolSummary;
+
+        public Builder resourcePoolSummary(ResourcePoolSummary resourcePoolSummary) {
+            this.resourcePoolSummary = resourcePoolSummary;
+            this.__explicitlySet__.add("resourcePoolSummary");
+            return this;
+        }
         /** Indicates if the refreshable clone can be reconnected to its source database. */
         @com.fasterxml.jackson.annotation.JsonProperty("isReconnectCloneEnabled")
         private Boolean isReconnectCloneEnabled;
@@ -2711,6 +2763,9 @@ public final class AutonomousDatabase
                             this.timeDataGuardRoleChanged,
                             this.peerDbIds,
                             this.isMtlsConnectionRequired,
+                            this.timeOfJoiningResourcePool,
+                            this.resourcePoolLeaderId,
+                            this.resourcePoolSummary,
                             this.isReconnectCloneEnabled,
                             this.timeUntilReconnectCloneEnabled,
                             this.autonomousMaintenanceScheduleType,
@@ -3011,6 +3066,15 @@ public final class AutonomousDatabase
             }
             if (model.wasPropertyExplicitlySet("isMtlsConnectionRequired")) {
                 this.isMtlsConnectionRequired(model.getIsMtlsConnectionRequired());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfJoiningResourcePool")) {
+                this.timeOfJoiningResourcePool(model.getTimeOfJoiningResourcePool());
+            }
+            if (model.wasPropertyExplicitlySet("resourcePoolLeaderId")) {
+                this.resourcePoolLeaderId(model.getResourcePoolLeaderId());
+            }
+            if (model.wasPropertyExplicitlySet("resourcePoolSummary")) {
+                this.resourcePoolSummary(model.getResourcePoolSummary());
             }
             if (model.wasPropertyExplicitlySet("isReconnectCloneEnabled")) {
                 this.isReconnectCloneEnabled(model.getIsReconnectCloneEnabled());
@@ -5554,6 +5618,43 @@ public final class AutonomousDatabase
         return isMtlsConnectionRequired;
     }
 
+    /** The time the member joined the resource pool. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeOfJoiningResourcePool")
+    private final java.util.Date timeOfJoiningResourcePool;
+
+    /**
+     * The time the member joined the resource pool.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeOfJoiningResourcePool() {
+        return timeOfJoiningResourcePool;
+    }
+
+    /**
+     * The unique identifier for leader autonomous database OCID
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("resourcePoolLeaderId")
+    private final String resourcePoolLeaderId;
+
+    /**
+     * The unique identifier for leader autonomous database OCID
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
+     * @return the value
+     */
+    public String getResourcePoolLeaderId() {
+        return resourcePoolLeaderId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("resourcePoolSummary")
+    private final ResourcePoolSummary resourcePoolSummary;
+
+    public ResourcePoolSummary getResourcePoolSummary() {
+        return resourcePoolSummary;
+    }
+
     /** Indicates if the refreshable clone can be reconnected to its source database. */
     @com.fasterxml.jackson.annotation.JsonProperty("isReconnectCloneEnabled")
     private final Boolean isReconnectCloneEnabled;
@@ -6090,6 +6191,10 @@ public final class AutonomousDatabase
         sb.append(", peerDbIds=").append(String.valueOf(this.peerDbIds));
         sb.append(", isMtlsConnectionRequired=")
                 .append(String.valueOf(this.isMtlsConnectionRequired));
+        sb.append(", timeOfJoiningResourcePool=")
+                .append(String.valueOf(this.timeOfJoiningResourcePool));
+        sb.append(", resourcePoolLeaderId=").append(String.valueOf(this.resourcePoolLeaderId));
+        sb.append(", resourcePoolSummary=").append(String.valueOf(this.resourcePoolSummary));
         sb.append(", isReconnectCloneEnabled=")
                 .append(String.valueOf(this.isReconnectCloneEnabled));
         sb.append(", timeUntilReconnectCloneEnabled=")
@@ -6248,6 +6353,10 @@ public final class AutonomousDatabase
                 && java.util.Objects.equals(this.peerDbIds, other.peerDbIds)
                 && java.util.Objects.equals(
                         this.isMtlsConnectionRequired, other.isMtlsConnectionRequired)
+                && java.util.Objects.equals(
+                        this.timeOfJoiningResourcePool, other.timeOfJoiningResourcePool)
+                && java.util.Objects.equals(this.resourcePoolLeaderId, other.resourcePoolLeaderId)
+                && java.util.Objects.equals(this.resourcePoolSummary, other.resourcePoolSummary)
                 && java.util.Objects.equals(
                         this.isReconnectCloneEnabled, other.isReconnectCloneEnabled)
                 && java.util.Objects.equals(
@@ -6577,6 +6686,21 @@ public final class AutonomousDatabase
                         + (this.isMtlsConnectionRequired == null
                                 ? 43
                                 : this.isMtlsConnectionRequired.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfJoiningResourcePool == null
+                                ? 43
+                                : this.timeOfJoiningResourcePool.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourcePoolLeaderId == null
+                                ? 43
+                                : this.resourcePoolLeaderId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourcePoolSummary == null
+                                ? 43
+                                : this.resourcePoolSummary.hashCode());
         result =
                 (result * PRIME)
                         + (this.isReconnectCloneEnabled == null

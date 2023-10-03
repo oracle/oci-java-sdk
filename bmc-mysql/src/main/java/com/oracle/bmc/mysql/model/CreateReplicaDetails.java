@@ -29,7 +29,8 @@ public final class CreateReplicaDetails
         "description",
         "freeformTags",
         "definedTags",
-        "isDeleteProtected"
+        "isDeleteProtected",
+        "replicaOverrides"
     })
     public CreateReplicaDetails(
             String dbSystemId,
@@ -37,7 +38,8 @@ public final class CreateReplicaDetails
             String description,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            Boolean isDeleteProtected) {
+            Boolean isDeleteProtected,
+            ReplicaOverrides replicaOverrides) {
         super();
         this.dbSystemId = dbSystemId;
         this.displayName = displayName;
@@ -45,6 +47,7 @@ public final class CreateReplicaDetails
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.isDeleteProtected = isDeleteProtected;
+        this.replicaOverrides = replicaOverrides;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -157,6 +160,15 @@ public final class CreateReplicaDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("replicaOverrides")
+        private ReplicaOverrides replicaOverrides;
+
+        public Builder replicaOverrides(ReplicaOverrides replicaOverrides) {
+            this.replicaOverrides = replicaOverrides;
+            this.__explicitlySet__.add("replicaOverrides");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -168,7 +180,8 @@ public final class CreateReplicaDetails
                             this.description,
                             this.freeformTags,
                             this.definedTags,
-                            this.isDeleteProtected);
+                            this.isDeleteProtected,
+                            this.replicaOverrides);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -194,6 +207,9 @@ public final class CreateReplicaDetails
             }
             if (model.wasPropertyExplicitlySet("isDeleteProtected")) {
                 this.isDeleteProtected(model.getIsDeleteProtected());
+            }
+            if (model.wasPropertyExplicitlySet("replicaOverrides")) {
+                this.replicaOverrides(model.getReplicaOverrides());
             }
             return this;
         }
@@ -302,6 +318,13 @@ public final class CreateReplicaDetails
         return isDeleteProtected;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("replicaOverrides")
+    private final ReplicaOverrides replicaOverrides;
+
+    public ReplicaOverrides getReplicaOverrides() {
+        return replicaOverrides;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -323,6 +346,7 @@ public final class CreateReplicaDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", isDeleteProtected=").append(String.valueOf(this.isDeleteProtected));
+        sb.append(", replicaOverrides=").append(String.valueOf(this.replicaOverrides));
         sb.append(")");
         return sb.toString();
     }
@@ -343,6 +367,7 @@ public final class CreateReplicaDetails
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.isDeleteProtected, other.isDeleteProtected)
+                && java.util.Objects.equals(this.replicaOverrides, other.replicaOverrides)
                 && super.equals(other);
     }
 
@@ -358,6 +383,9 @@ public final class CreateReplicaDetails
         result =
                 (result * PRIME)
                         + (this.isDeleteProtected == null ? 43 : this.isDeleteProtected.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicaOverrides == null ? 43 : this.replicaOverrides.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

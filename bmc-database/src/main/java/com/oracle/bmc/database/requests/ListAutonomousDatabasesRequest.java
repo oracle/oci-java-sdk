@@ -252,6 +252,32 @@ public class ListAutonomousDatabasesRequest
     public Boolean getIsDataGuardEnabled() {
         return isDataGuardEnabled;
     }
+    /**
+     * Filter if the resource is the resource pool leader. A value of {@code true} returns only
+     * resource pool leader.
+     */
+    private Boolean isResourcePoolLeader;
+
+    /**
+     * Filter if the resource is the resource pool leader. A value of {@code true} returns only
+     * resource pool leader.
+     */
+    public Boolean getIsResourcePoolLeader() {
+        return isResourcePoolLeader;
+    }
+    /**
+     * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * of the resourcepool Leader Autonomous Database.
+     */
+    private String resourcePoolLeaderId;
+
+    /**
+     * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * of the resourcepool Leader Autonomous Database.
+     */
+    public String getResourcePoolLeaderId() {
+        return resourcePoolLeaderId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -524,6 +550,44 @@ public class ListAutonomousDatabasesRequest
         }
 
         /**
+         * Filter if the resource is the resource pool leader. A value of {@code true} returns only
+         * resource pool leader.
+         */
+        private Boolean isResourcePoolLeader = null;
+
+        /**
+         * Filter if the resource is the resource pool leader. A value of {@code true} returns only
+         * resource pool leader.
+         *
+         * @param isResourcePoolLeader the value to set
+         * @return this builder instance
+         */
+        public Builder isResourcePoolLeader(Boolean isResourcePoolLeader) {
+            this.isResourcePoolLeader = isResourcePoolLeader;
+            return this;
+        }
+
+        /**
+         * The database
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * resourcepool Leader Autonomous Database.
+         */
+        private String resourcePoolLeaderId = null;
+
+        /**
+         * The database
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * resourcepool Leader Autonomous Database.
+         *
+         * @param resourcePoolLeaderId the value to set
+         * @return this builder instance
+         */
+        public Builder resourcePoolLeaderId(String resourcePoolLeaderId) {
+            this.resourcePoolLeaderId = resourcePoolLeaderId;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -568,6 +632,8 @@ public class ListAutonomousDatabasesRequest
             opcRequestId(o.getOpcRequestId());
             isRefreshableClone(o.getIsRefreshableClone());
             isDataGuardEnabled(o.getIsDataGuardEnabled());
+            isResourcePoolLeader(o.getIsResourcePoolLeader());
+            resourcePoolLeaderId(o.getResourcePoolLeaderId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -617,11 +683,13 @@ public class ListAutonomousDatabasesRequest
             request.opcRequestId = opcRequestId;
             request.isRefreshableClone = isRefreshableClone;
             request.isDataGuardEnabled = isDataGuardEnabled;
+            request.isResourcePoolLeader = isResourcePoolLeader;
+            request.resourcePoolLeaderId = resourcePoolLeaderId;
             return request;
             // new ListAutonomousDatabasesRequest(compartmentId, autonomousContainerDatabaseId,
             // limit, page, sortBy, sortOrder, infrastructureType, lifecycleState, dbWorkload,
             // dbVersion, isFreeTier, displayName, opcRequestId, isRefreshableClone,
-            // isDataGuardEnabled);
+            // isDataGuardEnabled, isResourcePoolLeader, resourcePoolLeaderId);
         }
     }
 
@@ -646,7 +714,9 @@ public class ListAutonomousDatabasesRequest
                 .displayName(displayName)
                 .opcRequestId(opcRequestId)
                 .isRefreshableClone(isRefreshableClone)
-                .isDataGuardEnabled(isDataGuardEnabled);
+                .isDataGuardEnabled(isDataGuardEnabled)
+                .isResourcePoolLeader(isResourcePoolLeader)
+                .resourcePoolLeaderId(resourcePoolLeaderId);
     }
 
     /**
@@ -679,6 +749,8 @@ public class ListAutonomousDatabasesRequest
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",isRefreshableClone=").append(String.valueOf(this.isRefreshableClone));
         sb.append(",isDataGuardEnabled=").append(String.valueOf(this.isDataGuardEnabled));
+        sb.append(",isResourcePoolLeader=").append(String.valueOf(this.isResourcePoolLeader));
+        sb.append(",resourcePoolLeaderId=").append(String.valueOf(this.resourcePoolLeaderId));
         sb.append(")");
         return sb.toString();
     }
@@ -709,7 +781,9 @@ public class ListAutonomousDatabasesRequest
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.isRefreshableClone, other.isRefreshableClone)
-                && java.util.Objects.equals(this.isDataGuardEnabled, other.isDataGuardEnabled);
+                && java.util.Objects.equals(this.isDataGuardEnabled, other.isDataGuardEnabled)
+                && java.util.Objects.equals(this.isResourcePoolLeader, other.isResourcePoolLeader)
+                && java.util.Objects.equals(this.resourcePoolLeaderId, other.resourcePoolLeaderId);
     }
 
     @Override
@@ -751,6 +825,16 @@ public class ListAutonomousDatabasesRequest
                         + (this.isDataGuardEnabled == null
                                 ? 43
                                 : this.isDataGuardEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isResourcePoolLeader == null
+                                ? 43
+                                : this.isResourcePoolLeader.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourcePoolLeaderId == null
+                                ? 43
+                                : this.resourcePoolLeaderId.hashCode());
         return result;
     }
 }

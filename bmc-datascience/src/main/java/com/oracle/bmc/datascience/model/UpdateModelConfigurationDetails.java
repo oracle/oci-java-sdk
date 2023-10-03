@@ -76,12 +76,12 @@ public final class UpdateModelConfigurationDetails
             this.__explicitlySet__.add("scalingPolicy");
             return this;
         }
-        /** The network bandwidth for the model. */
+        /** The minimum network bandwidth for the model deployment. */
         @com.fasterxml.jackson.annotation.JsonProperty("bandwidthMbps")
         private Integer bandwidthMbps;
 
         /**
-         * The network bandwidth for the model.
+         * The minimum network bandwidth for the model deployment.
          *
          * @param bandwidthMbps the value to set
          * @return this builder
@@ -162,12 +162,12 @@ public final class UpdateModelConfigurationDetails
         return scalingPolicy;
     }
 
-    /** The network bandwidth for the model. */
+    /** The minimum network bandwidth for the model deployment. */
     @com.fasterxml.jackson.annotation.JsonProperty("bandwidthMbps")
     private final Integer bandwidthMbps;
 
     /**
-     * The network bandwidth for the model.
+     * The minimum network bandwidth for the model deployment.
      *
      * @return the value
      */

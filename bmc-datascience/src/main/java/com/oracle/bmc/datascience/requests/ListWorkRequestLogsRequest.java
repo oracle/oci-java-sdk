@@ -39,6 +39,44 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * For list pagination. The maximum number of results per page, or items to return in a
+     * paginated "List" call. 1 is the minimum, 1000 is the maximum. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+     *
+     * <p>Example: {@code 500}
+     */
+    private Integer limit;
+
+    /**
+     * For list pagination. The maximum number of results per page, or items to return in a
+     * paginated "List" call. 1 is the minimum, 1000 is the maximum. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+     *
+     * <p>Example: {@code 500}
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous
+     * "List" call.
+     *
+     * <p>See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+     */
+    private String page;
+
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous
+     * "List" call.
+     *
+     * <p>See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+     */
+    public String getPage() {
+        return page;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -83,6 +121,54 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
+         * For list pagination. The maximum number of results per page, or items to return in a
+         * paginated "List" call. 1 is the minimum, 1000 is the maximum. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+         *
+         * <p>Example: {@code 500}
+         */
+        private Integer limit = null;
+
+        /**
+         * For list pagination. The maximum number of results per page, or items to return in a
+         * paginated "List" call. 1 is the minimum, 1000 is the maximum. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+         *
+         * <p>Example: {@code 500}
+         *
+         * @param limit the value to set
+         * @return this builder instance
+         */
+        public Builder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from the
+         * previous "List" call.
+         *
+         * <p>See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+         */
+        private String page = null;
+
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from the
+         * previous "List" call.
+         *
+         * <p>See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+         *
+         * @param page the value to set
+         * @return this builder instance
+         */
+        public Builder page(String page) {
+            this.page = page;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -114,6 +200,8 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
         public Builder copy(ListWorkRequestLogsRequest o) {
             workRequestId(o.getWorkRequestId());
             opcRequestId(o.getOpcRequestId());
+            limit(o.getLimit());
+            page(o.getPage());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -150,8 +238,10 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
             ListWorkRequestLogsRequest request = new ListWorkRequestLogsRequest();
             request.workRequestId = workRequestId;
             request.opcRequestId = opcRequestId;
+            request.limit = limit;
+            request.page = page;
             return request;
-            // new ListWorkRequestLogsRequest(workRequestId, opcRequestId);
+            // new ListWorkRequestLogsRequest(workRequestId, opcRequestId, limit, page);
         }
     }
 
@@ -161,7 +251,11 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().workRequestId(workRequestId).opcRequestId(opcRequestId);
+        return new Builder()
+                .workRequestId(workRequestId)
+                .opcRequestId(opcRequestId)
+                .limit(limit)
+                .page(page);
     }
 
     /**
@@ -180,6 +274,8 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
         sb.append("super=").append(super.toString());
         sb.append(",workRequestId=").append(String.valueOf(this.workRequestId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",page=").append(String.valueOf(this.page));
         sb.append(")");
         return sb.toString();
     }
@@ -196,7 +292,9 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
         ListWorkRequestLogsRequest other = (ListWorkRequestLogsRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.workRequestId, other.workRequestId)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.page, other.page);
     }
 
     @Override
@@ -207,6 +305,8 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
                 (result * PRIME)
                         + (this.workRequestId == null ? 43 : this.workRequestId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         return result;
     }
 }

@@ -158,6 +158,25 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves a private endpoint into a different compartment. When provided, If-Match is checked
+     * against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeDataSciencePrivateEndpointCompartmentResponse>
+            changeDataSciencePrivateEndpointCompartment(
+                    ChangeDataSciencePrivateEndpointCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeDataSciencePrivateEndpointCompartmentRequest,
+                                    ChangeDataSciencePrivateEndpointCompartmentResponse>
+                            handler);
+
+    /**
      * Changes a job's compartment
      *
      * @param request The request object containing the details to send
@@ -310,6 +329,24 @@ public interface DataScienceAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ChangeProjectCompartmentRequest, ChangeProjectCompartmentResponse>
                     handler);
+
+    /**
+     * Creates a Data Science private endpoint to be used by a Data Science resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateDataSciencePrivateEndpointResponse>
+            createDataSciencePrivateEndpoint(
+                    CreateDataSciencePrivateEndpointRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateDataSciencePrivateEndpointRequest,
+                                    CreateDataSciencePrivateEndpointResponse>
+                            handler);
 
     /**
      * Creates a job.
@@ -560,6 +597,24 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes a private endpoint using `privateEndpointId`.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDataSciencePrivateEndpointResponse>
+            deleteDataSciencePrivateEndpoint(
+                    DeleteDataSciencePrivateEndpointRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteDataSciencePrivateEndpointRequest,
+                                    DeleteDataSciencePrivateEndpointResponse>
+                            handler);
+
+    /**
      * Deletes a job.
      *
      * @param request The request object containing the details to send
@@ -713,6 +768,24 @@ public interface DataScienceAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ExportModelArtifactRequest, ExportModelArtifactResponse>
                     handler);
+
+    /**
+     * Retrieves an private endpoint using a `privateEndpointId`.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDataSciencePrivateEndpointResponse>
+            getDataSciencePrivateEndpoint(
+                    GetDataSciencePrivateEndpointRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetDataSciencePrivateEndpointRequest,
+                                    GetDataSciencePrivateEndpointResponse>
+                            handler);
 
     /**
      * Gets a job.
@@ -989,6 +1062,27 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists all Data Science private endpoints in the specified compartment. The query must include
+     * compartmentId. The query can also include one other parameter. If the query doesn't include
+     * compartmentId, or includes compartmentId with two or more other parameters, then an error is
+     * returned.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDataSciencePrivateEndpointsResponse>
+            listDataSciencePrivateEndpoints(
+                    ListDataSciencePrivateEndpointsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListDataSciencePrivateEndpointsRequest,
+                                    ListDataSciencePrivateEndpointsResponse>
+                            handler);
+
+    /**
      * List fast launch capable job configs in the specified compartment.
      *
      * @param request The request object containing the details to send
@@ -1235,6 +1329,26 @@ public interface DataScienceAsync extends AutoCloseable {
             ListWorkRequestsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                     handler);
+
+    /**
+     * Updates a private endpoint using a `privateEndpointId`. If changes to a private endpoint
+     * match a previously defined private endpoint, then a 409 status code is returned. This
+     * indicates that a conflict has been detected.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDataSciencePrivateEndpointResponse>
+            updateDataSciencePrivateEndpoint(
+                    UpdateDataSciencePrivateEndpointRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateDataSciencePrivateEndpointRequest,
+                                    UpdateDataSciencePrivateEndpointResponse>
+                            handler);
 
     /**
      * Updates a job.

@@ -23,12 +23,15 @@ package com.oracle.bmc.databasemigration.model;
 public final class UpdateDumpTransferDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"source", "target"})
+    @java.beans.ConstructorProperties({"source", "target", "sharedStorageMountTargetId"})
     public UpdateDumpTransferDetails(
-            UpdateHostDumpTransferDetails source, UpdateHostDumpTransferDetails target) {
+            UpdateHostDumpTransferDetails source,
+            UpdateHostDumpTransferDetails target,
+            String sharedStorageMountTargetId) {
         super();
         this.source = source;
         this.target = target;
+        this.sharedStorageMountTargetId = sharedStorageMountTargetId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -51,13 +54,29 @@ public final class UpdateDumpTransferDetails
             this.__explicitlySet__.add("target");
             return this;
         }
+        /** OCID of the shared storage mount target */
+        @com.fasterxml.jackson.annotation.JsonProperty("sharedStorageMountTargetId")
+        private String sharedStorageMountTargetId;
+
+        /**
+         * OCID of the shared storage mount target
+         *
+         * @param sharedStorageMountTargetId the value to set
+         * @return this builder
+         */
+        public Builder sharedStorageMountTargetId(String sharedStorageMountTargetId) {
+            this.sharedStorageMountTargetId = sharedStorageMountTargetId;
+            this.__explicitlySet__.add("sharedStorageMountTargetId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateDumpTransferDetails build() {
             UpdateDumpTransferDetails model =
-                    new UpdateDumpTransferDetails(this.source, this.target);
+                    new UpdateDumpTransferDetails(
+                            this.source, this.target, this.sharedStorageMountTargetId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -71,6 +90,9 @@ public final class UpdateDumpTransferDetails
             }
             if (model.wasPropertyExplicitlySet("target")) {
                 this.target(model.getTarget());
+            }
+            if (model.wasPropertyExplicitlySet("sharedStorageMountTargetId")) {
+                this.sharedStorageMountTargetId(model.getSharedStorageMountTargetId());
             }
             return this;
         }
@@ -99,6 +121,19 @@ public final class UpdateDumpTransferDetails
         return target;
     }
 
+    /** OCID of the shared storage mount target */
+    @com.fasterxml.jackson.annotation.JsonProperty("sharedStorageMountTargetId")
+    private final String sharedStorageMountTargetId;
+
+    /**
+     * OCID of the shared storage mount target
+     *
+     * @return the value
+     */
+    public String getSharedStorageMountTargetId() {
+        return sharedStorageMountTargetId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -116,6 +151,8 @@ public final class UpdateDumpTransferDetails
         sb.append("super=").append(super.toString());
         sb.append("source=").append(String.valueOf(this.source));
         sb.append(", target=").append(String.valueOf(this.target));
+        sb.append(", sharedStorageMountTargetId=")
+                .append(String.valueOf(this.sharedStorageMountTargetId));
         sb.append(")");
         return sb.toString();
     }
@@ -132,6 +169,8 @@ public final class UpdateDumpTransferDetails
         UpdateDumpTransferDetails other = (UpdateDumpTransferDetails) o;
         return java.util.Objects.equals(this.source, other.source)
                 && java.util.Objects.equals(this.target, other.target)
+                && java.util.Objects.equals(
+                        this.sharedStorageMountTargetId, other.sharedStorageMountTargetId)
                 && super.equals(other);
     }
 
@@ -141,6 +180,11 @@ public final class UpdateDumpTransferDetails
         int result = 1;
         result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
         result = (result * PRIME) + (this.target == null ? 43 : this.target.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sharedStorageMountTargetId == null
+                                ? 43
+                                : this.sharedStorageMountTargetId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
