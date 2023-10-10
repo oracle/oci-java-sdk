@@ -1877,6 +1877,142 @@ public class DatabasePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listAutonomousVmClusterAcdResourceUsage operation. This iterable will fetch more data from
+     * the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListAutonomousVmClusterAcdResourceUsageResponse>
+            listAutonomousVmClusterAcdResourceUsageResponseIterator(
+                    final ListAutonomousVmClusterAcdResourceUsageRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAutonomousVmClusterAcdResourceUsageRequest.Builder,
+                ListAutonomousVmClusterAcdResourceUsageRequest,
+                ListAutonomousVmClusterAcdResourceUsageResponse>(
+                new java.util.function.Supplier<
+                        ListAutonomousVmClusterAcdResourceUsageRequest.Builder>() {
+                    @Override
+                    public ListAutonomousVmClusterAcdResourceUsageRequest.Builder get() {
+                        return ListAutonomousVmClusterAcdResourceUsageRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousVmClusterAcdResourceUsageResponse, String>() {
+                    @Override
+                    public String apply(ListAutonomousVmClusterAcdResourceUsageResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAutonomousVmClusterAcdResourceUsageRequest.Builder>,
+                        ListAutonomousVmClusterAcdResourceUsageRequest>() {
+                    @Override
+                    public ListAutonomousVmClusterAcdResourceUsageRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAutonomousVmClusterAcdResourceUsageRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousVmClusterAcdResourceUsageRequest,
+                        ListAutonomousVmClusterAcdResourceUsageResponse>() {
+                    @Override
+                    public ListAutonomousVmClusterAcdResourceUsageResponse apply(
+                            ListAutonomousVmClusterAcdResourceUsageRequest request) {
+                        return client.listAutonomousVmClusterAcdResourceUsage(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.database.model.AutonomousContainerDatabaseResourceUsage} objects contained in
+     * responses from the listAutonomousVmClusterAcdResourceUsage operation. This iterable will
+     * fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.database.model.AutonomousContainerDatabaseResourceUsage} objects contained
+     *     in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.AutonomousContainerDatabaseResourceUsage>
+            listAutonomousVmClusterAcdResourceUsageRecordIterator(
+                    final ListAutonomousVmClusterAcdResourceUsageRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAutonomousVmClusterAcdResourceUsageRequest.Builder,
+                ListAutonomousVmClusterAcdResourceUsageRequest,
+                ListAutonomousVmClusterAcdResourceUsageResponse,
+                com.oracle.bmc.database.model.AutonomousContainerDatabaseResourceUsage>(
+                new java.util.function.Supplier<
+                        ListAutonomousVmClusterAcdResourceUsageRequest.Builder>() {
+                    @Override
+                    public ListAutonomousVmClusterAcdResourceUsageRequest.Builder get() {
+                        return ListAutonomousVmClusterAcdResourceUsageRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousVmClusterAcdResourceUsageResponse, String>() {
+                    @Override
+                    public String apply(ListAutonomousVmClusterAcdResourceUsageResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAutonomousVmClusterAcdResourceUsageRequest.Builder>,
+                        ListAutonomousVmClusterAcdResourceUsageRequest>() {
+                    @Override
+                    public ListAutonomousVmClusterAcdResourceUsageRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAutonomousVmClusterAcdResourceUsageRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousVmClusterAcdResourceUsageRequest,
+                        ListAutonomousVmClusterAcdResourceUsageResponse>() {
+                    @Override
+                    public ListAutonomousVmClusterAcdResourceUsageResponse apply(
+                            ListAutonomousVmClusterAcdResourceUsageRequest request) {
+                        return client.listAutonomousVmClusterAcdResourceUsage(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousVmClusterAcdResourceUsageResponse,
+                        java.util.List<
+                                com.oracle.bmc.database.model
+                                        .AutonomousContainerDatabaseResourceUsage>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.database.model
+                                            .AutonomousContainerDatabaseResourceUsage>
+                            apply(ListAutonomousVmClusterAcdResourceUsageResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listAutonomousVmClusters operation. This iterable will fetch more data from the server as
      * needed.
      *

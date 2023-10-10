@@ -671,6 +671,24 @@ public interface Database extends AutoCloseable {
     ConvertToPdbResponse convertToPdb(ConvertToPdbRequest request);
 
     /**
+     * Converts a Refreshable clone to Regular pluggable database (PDB). Pluggable Database will be
+     * in `READ_WRITE` openmode after conversion.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ConvertToRegularPluggableDatabaseExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ConvertToRegularPluggableDatabase API.
+     */
+    ConvertToRegularPluggableDatabaseResponse convertToRegularPluggableDatabase(
+            ConvertToRegularPluggableDatabaseRequest request);
+
+    /**
      * Creates a new application virtual IP (VIP) address in the specified cloud VM cluster based on
      * the request parameters you provide.
      *
@@ -1090,10 +1108,11 @@ public interface Database extends AutoCloseable {
     CreateOneoffPatchResponse createOneoffPatch(CreateOneoffPatchRequest request);
 
     /**
-     * Creates and starts a pluggable database in the specified container database. Use the {@link
-     * #startPluggableDatabase(StartPluggableDatabaseRequest) startPluggableDatabase} and {@link
-     * #stopPluggableDatabase(StopPluggableDatabaseRequest) stopPluggableDatabase} APIs to start and
-     * stop the pluggable database.
+     * Creates and starts a pluggable database in the specified container database. Pluggable
+     * Database can be created using different operations (e.g. LocalClone, RemoteClone, Relocate )
+     * with this API. Use the {@link #startPluggableDatabase(StartPluggableDatabaseRequest)
+     * startPluggableDatabase} and {@link #stopPluggableDatabase(StopPluggableDatabaseRequest)
+     * stopPluggableDatabase} APIs to start and stop the pluggable database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2422,6 +2441,23 @@ public interface Database extends AutoCloseable {
     GetAutonomousVmClusterResponse getAutonomousVmCluster(GetAutonomousVmClusterRequest request);
 
     /**
+     * Get the resource usage details for the specified Autonomous Exadata VM cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousVmClusterResourceUsageExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetAutonomousVmClusterResourceUsage API.
+     */
+    GetAutonomousVmClusterResourceUsageResponse getAutonomousVmClusterResourceUsage(
+            GetAutonomousVmClusterResourceUsageRequest request);
+
+    /**
      * Gets information about the specified backup.
      *
      * @param request The request object containing the details to send
@@ -3551,6 +3587,24 @@ public interface Database extends AutoCloseable {
             ListAutonomousVirtualMachinesRequest request);
 
     /**
+     * Gets the list of resource usage details for all the Autonomous Container Database in the
+     * specified Autonomous Exadata VM cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousVmClusterAcdResourceUsageExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListAutonomousVmClusterAcdResourceUsage API.
+     */
+    ListAutonomousVmClusterAcdResourceUsageResponse listAutonomousVmClusterAcdResourceUsage(
+            ListAutonomousVmClusterAcdResourceUsageRequest request);
+
+    /**
      * Gets a list of Exadata Cloud@Customer Autonomous VM clusters in the specified compartment. To
      * list Autonomous VM Clusters in the Oracle Cloud, see {@link
      * #listCloudAutonomousVmClusters(ListCloudAutonomousVmClustersRequest)
@@ -4363,8 +4417,10 @@ public interface Database extends AutoCloseable {
     ListVmClustersResponse listVmClusters(ListVmClustersRequest request);
 
     /**
-     * Clones and starts a pluggable database (PDB) in the same database (CDB) as the source PDB.
-     * The source PDB must be in the `READ_WRITE` openMode to perform the clone operation.
+     * **Deprecated.** Use {@link #createPluggableDatabase(CreatePluggableDatabaseRequest)
+     * createPluggableDatabase} for Pluggable Database LocalClone Operation. Clones and starts a
+     * pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be
+     * in the `READ_WRITE` openMode to perform the clone operation.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -4452,6 +4508,23 @@ public interface Database extends AutoCloseable {
             ModifyPluggableDatabaseManagementRequest request);
 
     /**
+     * Refreshes a pluggable database (PDB) Refreshable clone.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RefreshPluggableDatabaseExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RefreshPluggableDatabase API.
+     */
+    RefreshPluggableDatabaseResponse refreshPluggableDatabase(
+            RefreshPluggableDatabaseRequest request);
+
+    /**
      * Asynchronously registers this Autonomous Database with Data Safe.
      *
      * @param request The request object containing the details to send
@@ -4506,11 +4579,13 @@ public interface Database extends AutoCloseable {
             ReinstateDataGuardAssociationRequest request);
 
     /**
-     * Clones a pluggable database (PDB) to a different database from the source PDB. The cloned PDB
-     * will be started upon completion of the clone operation. The source PDB must be in the
-     * `READ_WRITE` openMode when performing the clone. For Exadata Cloud@Customer instances, the
-     * source pluggable database (PDB) must be on the same Exadata Infrastructure as the target
-     * container database (CDB) to create a remote clone.
+     * **Deprecated.** Use {@link #createPluggableDatabase(CreatePluggableDatabaseRequest)
+     * createPluggableDatabase} for Pluggable Database RemoteClone Operation. Clones a pluggable
+     * database (PDB) to a different database from the source PDB. The cloned PDB will be started
+     * upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode
+     * when performing the clone. For Exadata Cloud@Customer instances, the source pluggable
+     * database (PDB) must be on the same Exadata Infrastructure as the target container database
+     * (CDB) to create a remote clone.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

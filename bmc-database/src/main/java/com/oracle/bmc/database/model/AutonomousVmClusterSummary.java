@@ -45,6 +45,14 @@ public final class AutonomousVmClusterSummary
         "maintenanceWindow",
         "lastMaintenanceRunId",
         "nextMaintenanceRunId",
+        "cpuPercentage",
+        "autonomousDataStoragePercentage",
+        "provisionedCpus",
+        "totalAutonomousDataStorageInTBs",
+        "reservedCpus",
+        "provisionableAutonomousContainerDatabases",
+        "provisionedAutonomousContainerDatabases",
+        "nonProvisionableAutonomousContainerDatabases",
         "memorySizeInGBs",
         "dbNodeStorageSizeInGBs",
         "dataStorageSizeInTBs",
@@ -86,6 +94,14 @@ public final class AutonomousVmClusterSummary
             MaintenanceWindow maintenanceWindow,
             String lastMaintenanceRunId,
             String nextMaintenanceRunId,
+            Float cpuPercentage,
+            Float autonomousDataStoragePercentage,
+            Float provisionedCpus,
+            Float totalAutonomousDataStorageInTBs,
+            Float reservedCpus,
+            Integer provisionableAutonomousContainerDatabases,
+            Integer provisionedAutonomousContainerDatabases,
+            Integer nonProvisionableAutonomousContainerDatabases,
             Integer memorySizeInGBs,
             Integer dbNodeStorageSizeInGBs,
             Double dataStorageSizeInTBs,
@@ -126,6 +142,15 @@ public final class AutonomousVmClusterSummary
         this.maintenanceWindow = maintenanceWindow;
         this.lastMaintenanceRunId = lastMaintenanceRunId;
         this.nextMaintenanceRunId = nextMaintenanceRunId;
+        this.cpuPercentage = cpuPercentage;
+        this.autonomousDataStoragePercentage = autonomousDataStoragePercentage;
+        this.provisionedCpus = provisionedCpus;
+        this.totalAutonomousDataStorageInTBs = totalAutonomousDataStorageInTBs;
+        this.reservedCpus = reservedCpus;
+        this.provisionableAutonomousContainerDatabases = provisionableAutonomousContainerDatabases;
+        this.provisionedAutonomousContainerDatabases = provisionedAutonomousContainerDatabases;
+        this.nonProvisionableAutonomousContainerDatabases =
+                nonProvisionableAutonomousContainerDatabases;
         this.memorySizeInGBs = memorySizeInGBs;
         this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
         this.dataStorageSizeInTBs = dataStorageSizeInTBs;
@@ -495,6 +520,142 @@ public final class AutonomousVmClusterSummary
             this.__explicitlySet__.add("nextMaintenanceRunId");
             return this;
         }
+        /** The percentage of total number of CPUs used in an Autonomous VM Cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("cpuPercentage")
+        private Float cpuPercentage;
+
+        /**
+         * The percentage of total number of CPUs used in an Autonomous VM Cluster.
+         *
+         * @param cpuPercentage the value to set
+         * @return this builder
+         */
+        public Builder cpuPercentage(Float cpuPercentage) {
+            this.cpuPercentage = cpuPercentage;
+            this.__explicitlySet__.add("cpuPercentage");
+            return this;
+        }
+        /**
+         * The percentage of the data storage used for the Autonomous Databases in an Autonomous VM
+         * Cluster.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStoragePercentage")
+        private Float autonomousDataStoragePercentage;
+
+        /**
+         * The percentage of the data storage used for the Autonomous Databases in an Autonomous VM
+         * Cluster.
+         *
+         * @param autonomousDataStoragePercentage the value to set
+         * @return this builder
+         */
+        public Builder autonomousDataStoragePercentage(Float autonomousDataStoragePercentage) {
+            this.autonomousDataStoragePercentage = autonomousDataStoragePercentage;
+            this.__explicitlySet__.add("autonomousDataStoragePercentage");
+            return this;
+        }
+        /** The number of CPUs provisioned in an Autonomous VM Cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("provisionedCpus")
+        private Float provisionedCpus;
+
+        /**
+         * The number of CPUs provisioned in an Autonomous VM Cluster.
+         *
+         * @param provisionedCpus the value to set
+         * @return this builder
+         */
+        public Builder provisionedCpus(Float provisionedCpus) {
+            this.provisionedCpus = provisionedCpus;
+            this.__explicitlySet__.add("provisionedCpus");
+            return this;
+        }
+        /** The total data disk group size for Autonomous Databases, in TBs. */
+        @com.fasterxml.jackson.annotation.JsonProperty("totalAutonomousDataStorageInTBs")
+        private Float totalAutonomousDataStorageInTBs;
+
+        /**
+         * The total data disk group size for Autonomous Databases, in TBs.
+         *
+         * @param totalAutonomousDataStorageInTBs the value to set
+         * @return this builder
+         */
+        public Builder totalAutonomousDataStorageInTBs(Float totalAutonomousDataStorageInTBs) {
+            this.totalAutonomousDataStorageInTBs = totalAutonomousDataStorageInTBs;
+            this.__explicitlySet__.add("totalAutonomousDataStorageInTBs");
+            return this;
+        }
+        /** The number of CPUs reserved in an Autonomous VM Cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("reservedCpus")
+        private Float reservedCpus;
+
+        /**
+         * The number of CPUs reserved in an Autonomous VM Cluster.
+         *
+         * @param reservedCpus the value to set
+         * @return this builder
+         */
+        public Builder reservedCpus(Float reservedCpus) {
+            this.reservedCpus = reservedCpus;
+            this.__explicitlySet__.add("reservedCpus");
+            return this;
+        }
+        /**
+         * The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("provisionableAutonomousContainerDatabases")
+        private Integer provisionableAutonomousContainerDatabases;
+
+        /**
+         * The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+         *
+         * @param provisionableAutonomousContainerDatabases the value to set
+         * @return this builder
+         */
+        public Builder provisionableAutonomousContainerDatabases(
+                Integer provisionableAutonomousContainerDatabases) {
+            this.provisionableAutonomousContainerDatabases =
+                    provisionableAutonomousContainerDatabases;
+            this.__explicitlySet__.add("provisionableAutonomousContainerDatabases");
+            return this;
+        }
+        /** The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("provisionedAutonomousContainerDatabases")
+        private Integer provisionedAutonomousContainerDatabases;
+
+        /**
+         * The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+         *
+         * @param provisionedAutonomousContainerDatabases the value to set
+         * @return this builder
+         */
+        public Builder provisionedAutonomousContainerDatabases(
+                Integer provisionedAutonomousContainerDatabases) {
+            this.provisionedAutonomousContainerDatabases = provisionedAutonomousContainerDatabases;
+            this.__explicitlySet__.add("provisionedAutonomousContainerDatabases");
+            return this;
+        }
+        /**
+         * The number of non-provisionable Autonomous Container Databases in an Autonomous VM
+         * Cluster.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty(
+                "nonProvisionableAutonomousContainerDatabases")
+        private Integer nonProvisionableAutonomousContainerDatabases;
+
+        /**
+         * The number of non-provisionable Autonomous Container Databases in an Autonomous VM
+         * Cluster.
+         *
+         * @param nonProvisionableAutonomousContainerDatabases the value to set
+         * @return this builder
+         */
+        public Builder nonProvisionableAutonomousContainerDatabases(
+                Integer nonProvisionableAutonomousContainerDatabases) {
+            this.nonProvisionableAutonomousContainerDatabases =
+                    nonProvisionableAutonomousContainerDatabases;
+            this.__explicitlySet__.add("nonProvisionableAutonomousContainerDatabases");
+            return this;
+        }
         /** The memory allocated in GBs. */
         @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
         private Integer memorySizeInGBs;
@@ -846,6 +1007,14 @@ public final class AutonomousVmClusterSummary
                             this.maintenanceWindow,
                             this.lastMaintenanceRunId,
                             this.nextMaintenanceRunId,
+                            this.cpuPercentage,
+                            this.autonomousDataStoragePercentage,
+                            this.provisionedCpus,
+                            this.totalAutonomousDataStorageInTBs,
+                            this.reservedCpus,
+                            this.provisionableAutonomousContainerDatabases,
+                            this.provisionedAutonomousContainerDatabases,
+                            this.nonProvisionableAutonomousContainerDatabases,
                             this.memorySizeInGBs,
                             this.dbNodeStorageSizeInGBs,
                             this.dataStorageSizeInTBs,
@@ -934,6 +1103,33 @@ public final class AutonomousVmClusterSummary
             }
             if (model.wasPropertyExplicitlySet("nextMaintenanceRunId")) {
                 this.nextMaintenanceRunId(model.getNextMaintenanceRunId());
+            }
+            if (model.wasPropertyExplicitlySet("cpuPercentage")) {
+                this.cpuPercentage(model.getCpuPercentage());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousDataStoragePercentage")) {
+                this.autonomousDataStoragePercentage(model.getAutonomousDataStoragePercentage());
+            }
+            if (model.wasPropertyExplicitlySet("provisionedCpus")) {
+                this.provisionedCpus(model.getProvisionedCpus());
+            }
+            if (model.wasPropertyExplicitlySet("totalAutonomousDataStorageInTBs")) {
+                this.totalAutonomousDataStorageInTBs(model.getTotalAutonomousDataStorageInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("reservedCpus")) {
+                this.reservedCpus(model.getReservedCpus());
+            }
+            if (model.wasPropertyExplicitlySet("provisionableAutonomousContainerDatabases")) {
+                this.provisionableAutonomousContainerDatabases(
+                        model.getProvisionableAutonomousContainerDatabases());
+            }
+            if (model.wasPropertyExplicitlySet("provisionedAutonomousContainerDatabases")) {
+                this.provisionedAutonomousContainerDatabases(
+                        model.getProvisionedAutonomousContainerDatabases());
+            }
+            if (model.wasPropertyExplicitlySet("nonProvisionableAutonomousContainerDatabases")) {
+                this.nonProvisionableAutonomousContainerDatabases(
+                        model.getNonProvisionableAutonomousContainerDatabases());
             }
             if (model.wasPropertyExplicitlySet("memorySizeInGBs")) {
                 this.memorySizeInGBs(model.getMemorySizeInGBs());
@@ -1404,6 +1600,116 @@ public final class AutonomousVmClusterSummary
         return nextMaintenanceRunId;
     }
 
+    /** The percentage of total number of CPUs used in an Autonomous VM Cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("cpuPercentage")
+    private final Float cpuPercentage;
+
+    /**
+     * The percentage of total number of CPUs used in an Autonomous VM Cluster.
+     *
+     * @return the value
+     */
+    public Float getCpuPercentage() {
+        return cpuPercentage;
+    }
+
+    /**
+     * The percentage of the data storage used for the Autonomous Databases in an Autonomous VM
+     * Cluster.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStoragePercentage")
+    private final Float autonomousDataStoragePercentage;
+
+    /**
+     * The percentage of the data storage used for the Autonomous Databases in an Autonomous VM
+     * Cluster.
+     *
+     * @return the value
+     */
+    public Float getAutonomousDataStoragePercentage() {
+        return autonomousDataStoragePercentage;
+    }
+
+    /** The number of CPUs provisioned in an Autonomous VM Cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("provisionedCpus")
+    private final Float provisionedCpus;
+
+    /**
+     * The number of CPUs provisioned in an Autonomous VM Cluster.
+     *
+     * @return the value
+     */
+    public Float getProvisionedCpus() {
+        return provisionedCpus;
+    }
+
+    /** The total data disk group size for Autonomous Databases, in TBs. */
+    @com.fasterxml.jackson.annotation.JsonProperty("totalAutonomousDataStorageInTBs")
+    private final Float totalAutonomousDataStorageInTBs;
+
+    /**
+     * The total data disk group size for Autonomous Databases, in TBs.
+     *
+     * @return the value
+     */
+    public Float getTotalAutonomousDataStorageInTBs() {
+        return totalAutonomousDataStorageInTBs;
+    }
+
+    /** The number of CPUs reserved in an Autonomous VM Cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("reservedCpus")
+    private final Float reservedCpus;
+
+    /**
+     * The number of CPUs reserved in an Autonomous VM Cluster.
+     *
+     * @return the value
+     */
+    public Float getReservedCpus() {
+        return reservedCpus;
+    }
+
+    /** The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("provisionableAutonomousContainerDatabases")
+    private final Integer provisionableAutonomousContainerDatabases;
+
+    /**
+     * The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+     *
+     * @return the value
+     */
+    public Integer getProvisionableAutonomousContainerDatabases() {
+        return provisionableAutonomousContainerDatabases;
+    }
+
+    /** The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("provisionedAutonomousContainerDatabases")
+    private final Integer provisionedAutonomousContainerDatabases;
+
+    /**
+     * The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+     *
+     * @return the value
+     */
+    public Integer getProvisionedAutonomousContainerDatabases() {
+        return provisionedAutonomousContainerDatabases;
+    }
+
+    /**
+     * The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("nonProvisionableAutonomousContainerDatabases")
+    private final Integer nonProvisionableAutonomousContainerDatabases;
+
+    /**
+     * The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+     *
+     * @return the value
+     */
+    public Integer getNonProvisionableAutonomousContainerDatabases() {
+        return nonProvisionableAutonomousContainerDatabases;
+    }
+
     /** The memory allocated in GBs. */
     @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
     private final Integer memorySizeInGBs;
@@ -1775,6 +2081,19 @@ public final class AutonomousVmClusterSummary
         sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
         sb.append(", lastMaintenanceRunId=").append(String.valueOf(this.lastMaintenanceRunId));
         sb.append(", nextMaintenanceRunId=").append(String.valueOf(this.nextMaintenanceRunId));
+        sb.append(", cpuPercentage=").append(String.valueOf(this.cpuPercentage));
+        sb.append(", autonomousDataStoragePercentage=")
+                .append(String.valueOf(this.autonomousDataStoragePercentage));
+        sb.append(", provisionedCpus=").append(String.valueOf(this.provisionedCpus));
+        sb.append(", totalAutonomousDataStorageInTBs=")
+                .append(String.valueOf(this.totalAutonomousDataStorageInTBs));
+        sb.append(", reservedCpus=").append(String.valueOf(this.reservedCpus));
+        sb.append(", provisionableAutonomousContainerDatabases=")
+                .append(String.valueOf(this.provisionableAutonomousContainerDatabases));
+        sb.append(", provisionedAutonomousContainerDatabases=")
+                .append(String.valueOf(this.provisionedAutonomousContainerDatabases));
+        sb.append(", nonProvisionableAutonomousContainerDatabases=")
+                .append(String.valueOf(this.nonProvisionableAutonomousContainerDatabases));
         sb.append(", memorySizeInGBs=").append(String.valueOf(this.memorySizeInGBs));
         sb.append(", dbNodeStorageSizeInGBs=").append(String.valueOf(this.dbNodeStorageSizeInGBs));
         sb.append(", dataStorageSizeInTBs=").append(String.valueOf(this.dataStorageSizeInTBs));
@@ -1837,6 +2156,22 @@ public final class AutonomousVmClusterSummary
                 && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
                 && java.util.Objects.equals(this.lastMaintenanceRunId, other.lastMaintenanceRunId)
                 && java.util.Objects.equals(this.nextMaintenanceRunId, other.nextMaintenanceRunId)
+                && java.util.Objects.equals(this.cpuPercentage, other.cpuPercentage)
+                && java.util.Objects.equals(
+                        this.autonomousDataStoragePercentage, other.autonomousDataStoragePercentage)
+                && java.util.Objects.equals(this.provisionedCpus, other.provisionedCpus)
+                && java.util.Objects.equals(
+                        this.totalAutonomousDataStorageInTBs, other.totalAutonomousDataStorageInTBs)
+                && java.util.Objects.equals(this.reservedCpus, other.reservedCpus)
+                && java.util.Objects.equals(
+                        this.provisionableAutonomousContainerDatabases,
+                        other.provisionableAutonomousContainerDatabases)
+                && java.util.Objects.equals(
+                        this.provisionedAutonomousContainerDatabases,
+                        other.provisionedAutonomousContainerDatabases)
+                && java.util.Objects.equals(
+                        this.nonProvisionableAutonomousContainerDatabases,
+                        other.nonProvisionableAutonomousContainerDatabases)
                 && java.util.Objects.equals(this.memorySizeInGBs, other.memorySizeInGBs)
                 && java.util.Objects.equals(
                         this.dbNodeStorageSizeInGBs, other.dbNodeStorageSizeInGBs)
@@ -1938,6 +2273,38 @@ public final class AutonomousVmClusterSummary
                         + (this.nextMaintenanceRunId == null
                                 ? 43
                                 : this.nextMaintenanceRunId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpuPercentage == null ? 43 : this.cpuPercentage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousDataStoragePercentage == null
+                                ? 43
+                                : this.autonomousDataStoragePercentage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.provisionedCpus == null ? 43 : this.provisionedCpus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalAutonomousDataStorageInTBs == null
+                                ? 43
+                                : this.totalAutonomousDataStorageInTBs.hashCode());
+        result = (result * PRIME) + (this.reservedCpus == null ? 43 : this.reservedCpus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.provisionableAutonomousContainerDatabases == null
+                                ? 43
+                                : this.provisionableAutonomousContainerDatabases.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.provisionedAutonomousContainerDatabases == null
+                                ? 43
+                                : this.provisionedAutonomousContainerDatabases.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nonProvisionableAutonomousContainerDatabases == null
+                                ? 43
+                                : this.nonProvisionableAutonomousContainerDatabases.hashCode());
         result =
                 (result * PRIME)
                         + (this.memorySizeInGBs == null ? 43 : this.memorySizeInGBs.hashCode());

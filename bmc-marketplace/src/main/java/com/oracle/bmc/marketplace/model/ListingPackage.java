@@ -23,11 +23,17 @@ package com.oracle.bmc.marketplace.model;
         defaultImpl = ListingPackage.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ContainerListingPackage.class,
+            name = "CONTAINER"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = OrchestrationListingPackage.class,
             name = "ORCHESTRATION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ImageListingPackage.class,
-            name = "IMAGE")
+            name = "IMAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = KubernetesListingPackage.class,
+            name = "KUBERNETES")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

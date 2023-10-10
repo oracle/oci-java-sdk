@@ -1444,6 +1444,53 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ConvertToRegularPluggableDatabaseResponse>
+            convertToRegularPluggableDatabase(
+                    ConvertToRegularPluggableDatabaseRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ConvertToRegularPluggableDatabaseRequest,
+                                    ConvertToRegularPluggableDatabaseResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getConvertToRegularPluggableDatabaseDetails(),
+                "convertToRegularPluggableDatabaseDetails is required");
+
+        Validate.notBlank(
+                request.getPluggableDatabaseId(), "pluggableDatabaseId must not be blank");
+
+        return clientCall(request, ConvertToRegularPluggableDatabaseResponse::builder)
+                .logger(LOG, "convertToRegularPluggableDatabase")
+                .serviceDetails(
+                        "Database",
+                        "ConvertToRegularPluggableDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/ConvertToRegularPluggableDatabase")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ConvertToRegularPluggableDatabaseRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("pluggableDatabases")
+                .appendPathParam(request.getPluggableDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("convertToRegular")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.PluggableDatabase.class,
+                        ConvertToRegularPluggableDatabaseResponse.Builder::pluggableDatabase)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ConvertToRegularPluggableDatabaseResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "etag", ConvertToRegularPluggableDatabaseResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ConvertToRegularPluggableDatabaseResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateApplicationVipResponse> createApplicationVip(
             CreateApplicationVipRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -5179,6 +5226,44 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<GetAutonomousVmClusterResourceUsageResponse>
+            getAutonomousVmClusterResourceUsage(
+                    GetAutonomousVmClusterResourceUsageRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetAutonomousVmClusterResourceUsageRequest,
+                                    GetAutonomousVmClusterResourceUsageResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getAutonomousVmClusterId(), "autonomousVmClusterId must not be blank");
+
+        return clientCall(request, GetAutonomousVmClusterResourceUsageResponse::builder)
+                .logger(LOG, "getAutonomousVmClusterResourceUsage")
+                .serviceDetails(
+                        "Database",
+                        "GetAutonomousVmClusterResourceUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/GetAutonomousVmClusterResourceUsage")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAutonomousVmClusterResourceUsageRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousVmClusters")
+                .appendPathParam(request.getAutonomousVmClusterId())
+                .appendPathParam("resourceUsage")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousVmClusterResourceUsage.class,
+                        GetAutonomousVmClusterResourceUsageResponse.Builder
+                                ::autonomousVmClusterResourceUsage)
+                .handleResponseHeaderString(
+                        "etag", GetAutonomousVmClusterResourceUsageResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetAutonomousVmClusterResourceUsageResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetBackupResponse> getBackup(
             GetBackupRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetBackupRequest, GetBackupResponse>
@@ -7472,6 +7557,48 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ListAutonomousVmClusterAcdResourceUsageResponse>
+            listAutonomousVmClusterAcdResourceUsage(
+                    ListAutonomousVmClusterAcdResourceUsageRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAutonomousVmClusterAcdResourceUsageRequest,
+                                    ListAutonomousVmClusterAcdResourceUsageResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getAutonomousVmClusterId(), "autonomousVmClusterId must not be blank");
+
+        return clientCall(request, ListAutonomousVmClusterAcdResourceUsageResponse::builder)
+                .logger(LOG, "listAutonomousVmClusterAcdResourceUsage")
+                .serviceDetails(
+                        "Database",
+                        "ListAutonomousVmClusterAcdResourceUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/ListAutonomousVmClusterAcdResourceUsage")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAutonomousVmClusterAcdResourceUsageRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousVmClusters")
+                .appendPathParam(request.getAutonomousVmClusterId())
+                .appendPathParam("acdResourceUsage")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.AutonomousContainerDatabaseResourceUsage
+                                .class,
+                        ListAutonomousVmClusterAcdResourceUsageResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListAutonomousVmClusterAcdResourceUsageResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListAutonomousVmClusterAcdResourceUsageResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAutonomousVmClustersResponse> listAutonomousVmClusters(
             ListAutonomousVmClustersRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -9481,6 +9608,45 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ModifyPluggableDatabaseManagementResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RefreshPluggableDatabaseResponse> refreshPluggableDatabase(
+            RefreshPluggableDatabaseRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RefreshPluggableDatabaseRequest, RefreshPluggableDatabaseResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getPluggableDatabaseId(), "pluggableDatabaseId must not be blank");
+
+        return clientCall(request, RefreshPluggableDatabaseResponse::builder)
+                .logger(LOG, "refreshPluggableDatabase")
+                .serviceDetails(
+                        "Database",
+                        "RefreshPluggableDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/RefreshPluggableDatabase")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RefreshPluggableDatabaseRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("pluggableDatabases")
+                .appendPathParam(request.getPluggableDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("refresh")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.database.model.PluggableDatabase.class,
+                        RefreshPluggableDatabaseResponse.Builder::pluggableDatabase)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RefreshPluggableDatabaseResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", RefreshPluggableDatabaseResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RefreshPluggableDatabaseResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

@@ -35,7 +35,8 @@ public final class CaptureFilter extends com.oracle.bmc.http.client.internal.Exp
         "lifecycleState",
         "filterType",
         "timeCreated",
-        "vtapCaptureFilterRules"
+        "vtapCaptureFilterRules",
+        "flowLogCaptureFilterRules"
     })
     public CaptureFilter(
             String compartmentId,
@@ -46,7 +47,8 @@ public final class CaptureFilter extends com.oracle.bmc.http.client.internal.Exp
             LifecycleState lifecycleState,
             FilterType filterType,
             java.util.Date timeCreated,
-            java.util.List<VtapCaptureFilterRuleDetails> vtapCaptureFilterRules) {
+            java.util.List<VtapCaptureFilterRuleDetails> vtapCaptureFilterRules,
+            java.util.List<FlowLogCaptureFilterRuleDetails> flowLogCaptureFilterRules) {
         super();
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
@@ -57,6 +59,7 @@ public final class CaptureFilter extends com.oracle.bmc.http.client.internal.Exp
         this.filterType = filterType;
         this.timeCreated = timeCreated;
         this.vtapCaptureFilterRules = vtapCaptureFilterRules;
+        this.flowLogCaptureFilterRules = flowLogCaptureFilterRules;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -238,6 +241,22 @@ public final class CaptureFilter extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("vtapCaptureFilterRules");
             return this;
         }
+        /** The set of rules governing what traffic the VCN flow log collects. */
+        @com.fasterxml.jackson.annotation.JsonProperty("flowLogCaptureFilterRules")
+        private java.util.List<FlowLogCaptureFilterRuleDetails> flowLogCaptureFilterRules;
+
+        /**
+         * The set of rules governing what traffic the VCN flow log collects.
+         *
+         * @param flowLogCaptureFilterRules the value to set
+         * @return this builder
+         */
+        public Builder flowLogCaptureFilterRules(
+                java.util.List<FlowLogCaptureFilterRuleDetails> flowLogCaptureFilterRules) {
+            this.flowLogCaptureFilterRules = flowLogCaptureFilterRules;
+            this.__explicitlySet__.add("flowLogCaptureFilterRules");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -253,7 +272,8 @@ public final class CaptureFilter extends com.oracle.bmc.http.client.internal.Exp
                             this.lifecycleState,
                             this.filterType,
                             this.timeCreated,
-                            this.vtapCaptureFilterRules);
+                            this.vtapCaptureFilterRules,
+                            this.flowLogCaptureFilterRules);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -288,6 +308,9 @@ public final class CaptureFilter extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("vtapCaptureFilterRules")) {
                 this.vtapCaptureFilterRules(model.getVtapCaptureFilterRules());
+            }
+            if (model.wasPropertyExplicitlySet("flowLogCaptureFilterRules")) {
+                this.flowLogCaptureFilterRules(model.getFlowLogCaptureFilterRules());
             }
             return this;
         }
@@ -464,6 +487,7 @@ public final class CaptureFilter extends com.oracle.bmc.http.client.internal.Exp
     /** Indicates which service will use this capture filter */
     public enum FilterType implements com.oracle.bmc.http.internal.BmcEnum {
         Vtap("VTAP"),
+        Flowlog("FLOWLOG"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -553,6 +577,19 @@ public final class CaptureFilter extends com.oracle.bmc.http.client.internal.Exp
         return vtapCaptureFilterRules;
     }
 
+    /** The set of rules governing what traffic the VCN flow log collects. */
+    @com.fasterxml.jackson.annotation.JsonProperty("flowLogCaptureFilterRules")
+    private final java.util.List<FlowLogCaptureFilterRuleDetails> flowLogCaptureFilterRules;
+
+    /**
+     * The set of rules governing what traffic the VCN flow log collects.
+     *
+     * @return the value
+     */
+    public java.util.List<FlowLogCaptureFilterRuleDetails> getFlowLogCaptureFilterRules() {
+        return flowLogCaptureFilterRules;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -577,6 +614,8 @@ public final class CaptureFilter extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", filterType=").append(String.valueOf(this.filterType));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", vtapCaptureFilterRules=").append(String.valueOf(this.vtapCaptureFilterRules));
+        sb.append(", flowLogCaptureFilterRules=")
+                .append(String.valueOf(this.flowLogCaptureFilterRules));
         sb.append(")");
         return sb.toString();
     }
@@ -601,6 +640,8 @@ public final class CaptureFilter extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(
                         this.vtapCaptureFilterRules, other.vtapCaptureFilterRules)
+                && java.util.Objects.equals(
+                        this.flowLogCaptureFilterRules, other.flowLogCaptureFilterRules)
                 && super.equals(other);
     }
 
@@ -625,6 +666,11 @@ public final class CaptureFilter extends com.oracle.bmc.http.client.internal.Exp
                         + (this.vtapCaptureFilterRules == null
                                 ? 43
                                 : this.vtapCaptureFilterRules.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.flowLogCaptureFilterRules == null
+                                ? 43
+                                : this.flowLogCaptureFilterRules.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

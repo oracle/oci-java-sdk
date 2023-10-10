@@ -4392,6 +4392,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("filterType", request.getFilterType())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(

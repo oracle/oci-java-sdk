@@ -23,22 +23,38 @@ package com.oracle.bmc.database.model;
 public final class RestoreDatabaseDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"databaseSCN", "timestamp", "latest"})
-    public RestoreDatabaseDetails(String databaseSCN, java.util.Date timestamp, Boolean latest) {
+    @java.beans.ConstructorProperties({
+        "databaseSCN",
+        "timestamp",
+        "latest",
+        "pluggableDatabaseName"
+    })
+    public RestoreDatabaseDetails(
+            String databaseSCN,
+            java.util.Date timestamp,
+            Boolean latest,
+            String pluggableDatabaseName) {
         super();
         this.databaseSCN = databaseSCN;
         this.timestamp = timestamp;
         this.latest = latest;
+        this.pluggableDatabaseName = pluggableDatabaseName;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Restores using the backup with the System Change Number (SCN) specified. */
+        /**
+         * Restores using the backup with the System Change Number (SCN) specified. This field is
+         * applicable for both use cases - Restoring Container Database or Restoring specific
+         * Pluggable Database.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSCN")
         private String databaseSCN;
 
         /**
-         * Restores using the backup with the System Change Number (SCN) specified.
+         * Restores using the backup with the System Change Number (SCN) specified. This field is
+         * applicable for both use cases - Restoring Container Database or Restoring specific
+         * Pluggable Database.
          *
          * @param databaseSCN the value to set
          * @return this builder
@@ -78,13 +94,34 @@ public final class RestoreDatabaseDetails
             this.__explicitlySet__.add("latest");
             return this;
         }
+        /**
+         * Restores only the Pluggable Database (if specified) using the inputs provided in request.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("pluggableDatabaseName")
+        private String pluggableDatabaseName;
+
+        /**
+         * Restores only the Pluggable Database (if specified) using the inputs provided in request.
+         *
+         * @param pluggableDatabaseName the value to set
+         * @return this builder
+         */
+        public Builder pluggableDatabaseName(String pluggableDatabaseName) {
+            this.pluggableDatabaseName = pluggableDatabaseName;
+            this.__explicitlySet__.add("pluggableDatabaseName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RestoreDatabaseDetails build() {
             RestoreDatabaseDetails model =
-                    new RestoreDatabaseDetails(this.databaseSCN, this.timestamp, this.latest);
+                    new RestoreDatabaseDetails(
+                            this.databaseSCN,
+                            this.timestamp,
+                            this.latest,
+                            this.pluggableDatabaseName);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -102,6 +139,9 @@ public final class RestoreDatabaseDetails
             if (model.wasPropertyExplicitlySet("latest")) {
                 this.latest(model.getLatest());
             }
+            if (model.wasPropertyExplicitlySet("pluggableDatabaseName")) {
+                this.pluggableDatabaseName(model.getPluggableDatabaseName());
+            }
             return this;
         }
     }
@@ -115,12 +155,18 @@ public final class RestoreDatabaseDetails
         return new Builder().copy(this);
     }
 
-    /** Restores using the backup with the System Change Number (SCN) specified. */
+    /**
+     * Restores using the backup with the System Change Number (SCN) specified. This field is
+     * applicable for both use cases - Restoring Container Database or Restoring specific Pluggable
+     * Database.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSCN")
     private final String databaseSCN;
 
     /**
-     * Restores using the backup with the System Change Number (SCN) specified.
+     * Restores using the backup with the System Change Number (SCN) specified. This field is
+     * applicable for both use cases - Restoring Container Database or Restoring specific Pluggable
+     * Database.
      *
      * @return the value
      */
@@ -154,6 +200,19 @@ public final class RestoreDatabaseDetails
         return latest;
     }
 
+    /** Restores only the Pluggable Database (if specified) using the inputs provided in request. */
+    @com.fasterxml.jackson.annotation.JsonProperty("pluggableDatabaseName")
+    private final String pluggableDatabaseName;
+
+    /**
+     * Restores only the Pluggable Database (if specified) using the inputs provided in request.
+     *
+     * @return the value
+     */
+    public String getPluggableDatabaseName() {
+        return pluggableDatabaseName;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -172,6 +231,7 @@ public final class RestoreDatabaseDetails
         sb.append("databaseSCN=").append(String.valueOf(this.databaseSCN));
         sb.append(", timestamp=").append(String.valueOf(this.timestamp));
         sb.append(", latest=").append(String.valueOf(this.latest));
+        sb.append(", pluggableDatabaseName=").append(String.valueOf(this.pluggableDatabaseName));
         sb.append(")");
         return sb.toString();
     }
@@ -189,6 +249,7 @@ public final class RestoreDatabaseDetails
         return java.util.Objects.equals(this.databaseSCN, other.databaseSCN)
                 && java.util.Objects.equals(this.timestamp, other.timestamp)
                 && java.util.Objects.equals(this.latest, other.latest)
+                && java.util.Objects.equals(this.pluggableDatabaseName, other.pluggableDatabaseName)
                 && super.equals(other);
     }
 
@@ -199,6 +260,11 @@ public final class RestoreDatabaseDetails
         result = (result * PRIME) + (this.databaseSCN == null ? 43 : this.databaseSCN.hashCode());
         result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
         result = (result * PRIME) + (this.latest == null ? 43 : this.latest.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pluggableDatabaseName == null
+                                ? 43
+                                : this.pluggableDatabaseName.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

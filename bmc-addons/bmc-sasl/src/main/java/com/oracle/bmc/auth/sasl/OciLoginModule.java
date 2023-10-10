@@ -10,7 +10,7 @@ import javax.security.auth.Subject;
 import javax.security.auth.callback.CallbackHandler;
 import javax.security.auth.spi.LoginModule;
 
-abstract class OciLoginModule implements LoginModule {
+public abstract class OciLoginModule implements LoginModule {
 
     private static final String INTENT_CONFIG = "intent";
 

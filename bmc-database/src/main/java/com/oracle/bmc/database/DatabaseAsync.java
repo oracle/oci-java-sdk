@@ -680,6 +680,25 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Converts a Refreshable clone to Regular pluggable database (PDB). Pluggable Database will be
+     * in `READ_WRITE` openmode after conversion.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ConvertToRegularPluggableDatabaseResponse>
+            convertToRegularPluggableDatabase(
+                    ConvertToRegularPluggableDatabaseRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ConvertToRegularPluggableDatabaseRequest,
+                                    ConvertToRegularPluggableDatabaseResponse>
+                            handler);
+
+    /**
      * Creates a new application virtual IP (VIP) address in the specified cloud VM cluster based on
      * the request parameters you provide.
      *
@@ -1102,10 +1121,12 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates and starts a pluggable database in the specified container database. Use the {@link
-     * #startPluggableDatabase(StartPluggableDatabaseRequest, Consumer, Consumer)
-     * startPluggableDatabase} and {@link #stopPluggableDatabase(StopPluggableDatabaseRequest,
-     * Consumer, Consumer) stopPluggableDatabase} APIs to start and stop the pluggable database.
+     * Creates and starts a pluggable database in the specified container database. Pluggable
+     * Database can be created using different operations (e.g. LocalClone, RemoteClone, Relocate )
+     * with this API. Use the {@link #startPluggableDatabase(StartPluggableDatabaseRequest,
+     * Consumer, Consumer) startPluggableDatabase} and {@link
+     * #stopPluggableDatabase(StopPluggableDatabaseRequest, Consumer, Consumer)
+     * stopPluggableDatabase} APIs to start and stop the pluggable database.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2449,6 +2470,24 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Get the resource usage details for the specified Autonomous Exadata VM cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAutonomousVmClusterResourceUsageResponse>
+            getAutonomousVmClusterResourceUsage(
+                    GetAutonomousVmClusterResourceUsageRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetAutonomousVmClusterResourceUsageRequest,
+                                    GetAutonomousVmClusterResourceUsageResponse>
+                            handler);
+
+    /**
      * Gets information about the specified backup.
      *
      * @param request The request object containing the details to send
@@ -3586,6 +3625,25 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Gets the list of resource usage details for all the Autonomous Container Database in the
+     * specified Autonomous Exadata VM cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAutonomousVmClusterAcdResourceUsageResponse>
+            listAutonomousVmClusterAcdResourceUsage(
+                    ListAutonomousVmClusterAcdResourceUsageRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListAutonomousVmClusterAcdResourceUsageRequest,
+                                    ListAutonomousVmClusterAcdResourceUsageResponse>
+                            handler);
+
+    /**
      * Gets a list of Exadata Cloud@Customer Autonomous VM clusters in the specified compartment. To
      * list Autonomous VM Clusters in the Oracle Cloud, see {@link
      * #listCloudAutonomousVmClusters(ListCloudAutonomousVmClustersRequest, Consumer, Consumer)
@@ -4407,8 +4465,10 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Clones and starts a pluggable database (PDB) in the same database (CDB) as the source PDB.
-     * The source PDB must be in the `READ_WRITE` openMode to perform the clone operation.
+     * **Deprecated.** Use {@link #createPluggableDatabase(CreatePluggableDatabaseRequest, Consumer,
+     * Consumer) createPluggableDatabase} for Pluggable Database LocalClone Operation. Clones and
+     * starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source
+     * PDB must be in the `READ_WRITE` openMode to perform the clone operation.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -4495,6 +4555,22 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Refreshes a pluggable database (PDB) Refreshable clone.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RefreshPluggableDatabaseResponse> refreshPluggableDatabase(
+            RefreshPluggableDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RefreshPluggableDatabaseRequest, RefreshPluggableDatabaseResponse>
+                    handler);
+
+    /**
      * Asynchronously registers this Autonomous Database with Data Safe.
      *
      * @param request The request object containing the details to send
@@ -4551,11 +4627,13 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Clones a pluggable database (PDB) to a different database from the source PDB. The cloned PDB
-     * will be started upon completion of the clone operation. The source PDB must be in the
-     * `READ_WRITE` openMode when performing the clone. For Exadata Cloud@Customer instances, the
-     * source pluggable database (PDB) must be on the same Exadata Infrastructure as the target
-     * container database (CDB) to create a remote clone.
+     * **Deprecated.** Use {@link #createPluggableDatabase(CreatePluggableDatabaseRequest, Consumer,
+     * Consumer) createPluggableDatabase} for Pluggable Database RemoteClone Operation. Clones a
+     * pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be
+     * started upon completion of the clone operation. The source PDB must be in the `READ_WRITE`
+     * openMode when performing the clone. For Exadata Cloud@Customer instances, the source
+     * pluggable database (PDB) must be on the same Exadata Infrastructure as the target container
+     * database (CDB) to create a remote clone.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
