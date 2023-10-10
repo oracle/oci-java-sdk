@@ -29,7 +29,8 @@ public final class CreateCaptureFilterDetails
         "displayName",
         "freeformTags",
         "filterType",
-        "vtapCaptureFilterRules"
+        "vtapCaptureFilterRules",
+        "flowLogCaptureFilterRules"
     })
     public CreateCaptureFilterDetails(
             String compartmentId,
@@ -37,7 +38,8 @@ public final class CreateCaptureFilterDetails
             String displayName,
             java.util.Map<String, String> freeformTags,
             FilterType filterType,
-            java.util.List<VtapCaptureFilterRuleDetails> vtapCaptureFilterRules) {
+            java.util.List<VtapCaptureFilterRuleDetails> vtapCaptureFilterRules,
+            java.util.List<FlowLogCaptureFilterRuleDetails> flowLogCaptureFilterRules) {
         super();
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
@@ -45,6 +47,7 @@ public final class CreateCaptureFilterDetails
         this.freeformTags = freeformTags;
         this.filterType = filterType;
         this.vtapCaptureFilterRules = vtapCaptureFilterRules;
+        this.flowLogCaptureFilterRules = flowLogCaptureFilterRules;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -157,6 +160,26 @@ public final class CreateCaptureFilterDetails
             this.__explicitlySet__.add("vtapCaptureFilterRules");
             return this;
         }
+        /**
+         * The set of rules governing what traffic the Flow Log collects when creating a flow log
+         * capture filter.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("flowLogCaptureFilterRules")
+        private java.util.List<FlowLogCaptureFilterRuleDetails> flowLogCaptureFilterRules;
+
+        /**
+         * The set of rules governing what traffic the Flow Log collects when creating a flow log
+         * capture filter.
+         *
+         * @param flowLogCaptureFilterRules the value to set
+         * @return this builder
+         */
+        public Builder flowLogCaptureFilterRules(
+                java.util.List<FlowLogCaptureFilterRuleDetails> flowLogCaptureFilterRules) {
+            this.flowLogCaptureFilterRules = flowLogCaptureFilterRules;
+            this.__explicitlySet__.add("flowLogCaptureFilterRules");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -169,7 +192,8 @@ public final class CreateCaptureFilterDetails
                             this.displayName,
                             this.freeformTags,
                             this.filterType,
-                            this.vtapCaptureFilterRules);
+                            this.vtapCaptureFilterRules,
+                            this.flowLogCaptureFilterRules);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -195,6 +219,9 @@ public final class CreateCaptureFilterDetails
             }
             if (model.wasPropertyExplicitlySet("vtapCaptureFilterRules")) {
                 this.vtapCaptureFilterRules(model.getVtapCaptureFilterRules());
+            }
+            if (model.wasPropertyExplicitlySet("flowLogCaptureFilterRules")) {
+                this.flowLogCaptureFilterRules(model.getFlowLogCaptureFilterRules());
             }
             return this;
         }
@@ -280,6 +307,7 @@ public final class CreateCaptureFilterDetails
     /** Indicates which service will use this capture filter */
     public enum FilterType implements com.oracle.bmc.http.internal.BmcEnum {
         Vtap("VTAP"),
+        Flowlog("FLOWLOG"),
         ;
 
         private final String value;
@@ -335,6 +363,23 @@ public final class CreateCaptureFilterDetails
         return vtapCaptureFilterRules;
     }
 
+    /**
+     * The set of rules governing what traffic the Flow Log collects when creating a flow log
+     * capture filter.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("flowLogCaptureFilterRules")
+    private final java.util.List<FlowLogCaptureFilterRuleDetails> flowLogCaptureFilterRules;
+
+    /**
+     * The set of rules governing what traffic the Flow Log collects when creating a flow log
+     * capture filter.
+     *
+     * @return the value
+     */
+    public java.util.List<FlowLogCaptureFilterRuleDetails> getFlowLogCaptureFilterRules() {
+        return flowLogCaptureFilterRules;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -356,6 +401,8 @@ public final class CreateCaptureFilterDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", filterType=").append(String.valueOf(this.filterType));
         sb.append(", vtapCaptureFilterRules=").append(String.valueOf(this.vtapCaptureFilterRules));
+        sb.append(", flowLogCaptureFilterRules=")
+                .append(String.valueOf(this.flowLogCaptureFilterRules));
         sb.append(")");
         return sb.toString();
     }
@@ -377,6 +424,8 @@ public final class CreateCaptureFilterDetails
                 && java.util.Objects.equals(this.filterType, other.filterType)
                 && java.util.Objects.equals(
                         this.vtapCaptureFilterRules, other.vtapCaptureFilterRules)
+                && java.util.Objects.equals(
+                        this.flowLogCaptureFilterRules, other.flowLogCaptureFilterRules)
                 && super.equals(other);
     }
 
@@ -396,6 +445,11 @@ public final class CreateCaptureFilterDetails
                         + (this.vtapCaptureFilterRules == null
                                 ? 43
                                 : this.vtapCaptureFilterRules.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.flowLogCaptureFilterRules == null
+                                ? 43
+                                : this.flowLogCaptureFilterRules.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

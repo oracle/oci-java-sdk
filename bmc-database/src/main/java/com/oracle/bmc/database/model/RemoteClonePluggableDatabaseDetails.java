@@ -5,8 +5,10 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Parameters for cloning a pluggable database (PDB) in a remote database (CDB). A remote CDB is one
- * that does not contain the source PDB.
+ * **Deprecated.** Use {@link #createPluggableDatabaseDetails(CreatePluggableDatabaseDetailsRequest)
+ * createPluggableDatabaseDetails} for Pluggable Database RemoteClone Operation. Parameters for
+ * cloning a pluggable database (PDB) in a remote database (CDB). A remote CDB is one that does not
+ * contain the source PDB.
  *
  * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
  * supply string values using the API. <br>

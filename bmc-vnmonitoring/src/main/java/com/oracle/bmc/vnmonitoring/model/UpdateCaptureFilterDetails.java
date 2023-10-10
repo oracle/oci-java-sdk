@@ -28,17 +28,20 @@ public final class UpdateCaptureFilterDetails
         "definedTags",
         "displayName",
         "vtapCaptureFilterRules",
+        "flowLogCaptureFilterRules",
         "freeformTags"
     })
     public UpdateCaptureFilterDetails(
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             java.util.List<VtapCaptureFilterRuleDetails> vtapCaptureFilterRules,
+            java.util.List<FlowLogCaptureFilterRuleDetails> flowLogCaptureFilterRules,
             java.util.Map<String, String> freeformTags) {
         super();
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.vtapCaptureFilterRules = vtapCaptureFilterRules;
+        this.flowLogCaptureFilterRules = flowLogCaptureFilterRules;
         this.freeformTags = freeformTags;
     }
 
@@ -100,6 +103,26 @@ public final class UpdateCaptureFilterDetails
             return this;
         }
         /**
+         * The set of rules governing what traffic the Flow Log collects when creating a flow log
+         * capture filter.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("flowLogCaptureFilterRules")
+        private java.util.List<FlowLogCaptureFilterRuleDetails> flowLogCaptureFilterRules;
+
+        /**
+         * The set of rules governing what traffic the Flow Log collects when creating a flow log
+         * capture filter.
+         *
+         * @param flowLogCaptureFilterRules the value to set
+         * @return this builder
+         */
+        public Builder flowLogCaptureFilterRules(
+                java.util.List<FlowLogCaptureFilterRuleDetails> flowLogCaptureFilterRules) {
+            this.flowLogCaptureFilterRules = flowLogCaptureFilterRules;
+            this.__explicitlySet__.add("flowLogCaptureFilterRules");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          */
@@ -128,6 +151,7 @@ public final class UpdateCaptureFilterDetails
                             this.definedTags,
                             this.displayName,
                             this.vtapCaptureFilterRules,
+                            this.flowLogCaptureFilterRules,
                             this.freeformTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -145,6 +169,9 @@ public final class UpdateCaptureFilterDetails
             }
             if (model.wasPropertyExplicitlySet("vtapCaptureFilterRules")) {
                 this.vtapCaptureFilterRules(model.getVtapCaptureFilterRules());
+            }
+            if (model.wasPropertyExplicitlySet("flowLogCaptureFilterRules")) {
+                this.flowLogCaptureFilterRules(model.getFlowLogCaptureFilterRules());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -210,6 +237,23 @@ public final class UpdateCaptureFilterDetails
     }
 
     /**
+     * The set of rules governing what traffic the Flow Log collects when creating a flow log
+     * capture filter.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("flowLogCaptureFilterRules")
+    private final java.util.List<FlowLogCaptureFilterRuleDetails> flowLogCaptureFilterRules;
+
+    /**
+     * The set of rules governing what traffic the Flow Log collects when creating a flow log
+     * capture filter.
+     *
+     * @return the value
+     */
+    public java.util.List<FlowLogCaptureFilterRuleDetails> getFlowLogCaptureFilterRules() {
+        return flowLogCaptureFilterRules;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      */
@@ -244,6 +288,8 @@ public final class UpdateCaptureFilterDetails
         sb.append("definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", vtapCaptureFilterRules=").append(String.valueOf(this.vtapCaptureFilterRules));
+        sb.append(", flowLogCaptureFilterRules=")
+                .append(String.valueOf(this.flowLogCaptureFilterRules));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(")");
         return sb.toString();
@@ -263,6 +309,8 @@ public final class UpdateCaptureFilterDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(
                         this.vtapCaptureFilterRules, other.vtapCaptureFilterRules)
+                && java.util.Objects.equals(
+                        this.flowLogCaptureFilterRules, other.flowLogCaptureFilterRules)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && super.equals(other);
     }
@@ -278,6 +326,11 @@ public final class UpdateCaptureFilterDetails
                         + (this.vtapCaptureFilterRules == null
                                 ? 43
                                 : this.vtapCaptureFilterRules.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.flowLogCaptureFilterRules == null
+                                ? 43
+                                : this.flowLogCaptureFilterRules.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

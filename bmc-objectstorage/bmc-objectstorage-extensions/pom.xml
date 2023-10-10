@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk-objectstorage-parent</artifactId>
-    <version>3.25.3</version>
+    <version>3.25.4</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -18,17 +18,17 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>3.25.3</version>
+      <version>3.25.4</version>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common-httpclient</artifactId>
-      <version>3.25.3</version>
+      <version>3.25.4</version>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-objectstorage-generated</artifactId>
-      <version>3.25.3</version>
+      <version>3.25.4</version>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
@@ -74,7 +74,7 @@
     </dependency>
     <dependency>
       <groupId>org.powermock</groupId>
-      <artifactId>powermock-api-mockito</artifactId>
+      <artifactId>powermock-api-mockito2</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>

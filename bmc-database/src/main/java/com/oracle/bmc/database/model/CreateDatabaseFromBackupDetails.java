@@ -29,7 +29,8 @@ public final class CreateDatabaseFromBackupDetails
         "adminPassword",
         "dbUniqueName",
         "dbName",
-        "sidPrefix"
+        "sidPrefix",
+        "pluggableDatabases"
     })
     public CreateDatabaseFromBackupDetails(
             String backupId,
@@ -37,7 +38,8 @@ public final class CreateDatabaseFromBackupDetails
             String adminPassword,
             String dbUniqueName,
             String dbName,
-            String sidPrefix) {
+            String sidPrefix,
+            java.util.List<String> pluggableDatabases) {
         super();
         this.backupId = backupId;
         this.backupTDEPassword = backupTDEPassword;
@@ -45,6 +47,7 @@ public final class CreateDatabaseFromBackupDetails
         this.dbUniqueName = dbUniqueName;
         this.dbName = dbName;
         this.sidPrefix = sidPrefix;
+        this.pluggableDatabases = pluggableDatabases;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -155,6 +158,21 @@ public final class CreateDatabaseFromBackupDetails
             this.__explicitlySet__.add("sidPrefix");
             return this;
         }
+        /** The list of pluggable databases that needs to be restored into new database. */
+        @com.fasterxml.jackson.annotation.JsonProperty("pluggableDatabases")
+        private java.util.List<String> pluggableDatabases;
+
+        /**
+         * The list of pluggable databases that needs to be restored into new database.
+         *
+         * @param pluggableDatabases the value to set
+         * @return this builder
+         */
+        public Builder pluggableDatabases(java.util.List<String> pluggableDatabases) {
+            this.pluggableDatabases = pluggableDatabases;
+            this.__explicitlySet__.add("pluggableDatabases");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -167,7 +185,8 @@ public final class CreateDatabaseFromBackupDetails
                             this.adminPassword,
                             this.dbUniqueName,
                             this.dbName,
-                            this.sidPrefix);
+                            this.sidPrefix,
+                            this.pluggableDatabases);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -193,6 +212,9 @@ public final class CreateDatabaseFromBackupDetails
             }
             if (model.wasPropertyExplicitlySet("sidPrefix")) {
                 this.sidPrefix(model.getSidPrefix());
+            }
+            if (model.wasPropertyExplicitlySet("pluggableDatabases")) {
+                this.pluggableDatabases(model.getPluggableDatabases());
             }
             return this;
         }
@@ -299,6 +321,19 @@ public final class CreateDatabaseFromBackupDetails
         return sidPrefix;
     }
 
+    /** The list of pluggable databases that needs to be restored into new database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("pluggableDatabases")
+    private final java.util.List<String> pluggableDatabases;
+
+    /**
+     * The list of pluggable databases that needs to be restored into new database.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getPluggableDatabases() {
+        return pluggableDatabases;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -320,6 +355,7 @@ public final class CreateDatabaseFromBackupDetails
         sb.append(", dbUniqueName=").append(String.valueOf(this.dbUniqueName));
         sb.append(", dbName=").append(String.valueOf(this.dbName));
         sb.append(", sidPrefix=").append(String.valueOf(this.sidPrefix));
+        sb.append(", pluggableDatabases=").append(String.valueOf(this.pluggableDatabases));
         sb.append(")");
         return sb.toString();
     }
@@ -340,6 +376,7 @@ public final class CreateDatabaseFromBackupDetails
                 && java.util.Objects.equals(this.dbUniqueName, other.dbUniqueName)
                 && java.util.Objects.equals(this.dbName, other.dbName)
                 && java.util.Objects.equals(this.sidPrefix, other.sidPrefix)
+                && java.util.Objects.equals(this.pluggableDatabases, other.pluggableDatabases)
                 && super.equals(other);
     }
 
@@ -357,6 +394,11 @@ public final class CreateDatabaseFromBackupDetails
         result = (result * PRIME) + (this.dbUniqueName == null ? 43 : this.dbUniqueName.hashCode());
         result = (result * PRIME) + (this.dbName == null ? 43 : this.dbName.hashCode());
         result = (result * PRIME) + (this.sidPrefix == null ? 43 : this.sidPrefix.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pluggableDatabases == null
+                                ? 43
+                                : this.pluggableDatabases.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
