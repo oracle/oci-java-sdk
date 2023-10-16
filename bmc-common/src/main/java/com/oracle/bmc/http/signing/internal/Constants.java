@@ -21,6 +21,7 @@ public class Constants {
     // Signing
     static final String REQUEST_TARGET = "(request-target)";
     static final String DATE = "date";
+    static final String X_DATE = "x-date";
     static final String CONTENT_LENGTH = "content-length";
     static final String CONTENT_TYPE = "content-type";
     static final String X_CONTENT_SHA256 = "x-content-sha256";
