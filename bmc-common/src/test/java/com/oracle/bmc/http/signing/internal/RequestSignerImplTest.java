@@ -415,6 +415,32 @@ public class RequestSignerImplTest {
                 SigningStrategy.EXCLUDE_BODY);
     }
 
+    @Test
+    public void calculateMissingHeaders_whenGetRequestWithXDateHeader()
+            throws IOException {
+        final URI uri = URI.create("https://identity.us-phoenix-1.oraclecloud.com/20160918/users");
+        final Map<String, List<String>> temp = new HashMap<>();
+        temp.put("x-date",Collections.singletonList("Wed, 11 Oct 2023 12:23:17 GMT"));
+        final Map<String, List<String>> existingHeaders = Collections.unmodifiableMap(temp);
+        SigningStrategy signingStrategy = SigningStrategy.STANDARD;
+        final RequestSignerImpl.SigningConfiguration signingConfiguration =
+                new RequestSignerImpl.SigningConfiguration(
+                        signingStrategy.getHeadersToSign(),
+                        signingStrategy.getOptionalHeadersToSign(),
+                        signingStrategy.isSkipContentHeadersForStreamingPutRequests());
+        final Map<String, String> missingHeaders =
+                RequestSignerImpl.calculateMissingHeaders(
+                        "get",
+                        uri,
+                        existingHeaders,
+                        null,
+                        Constants.ALL_HEADERS_LIST,
+                        signingConfiguration);
+        assertNotNull(missingHeaders);
+        assertEquals(1, missingHeaders.size());
+        assertFalse(missingHeaders.containsKey("date"));
+    }
+
     private void calculateAndVerifyMissingHeaders(
             final String httpMethod,
             final String contentType,

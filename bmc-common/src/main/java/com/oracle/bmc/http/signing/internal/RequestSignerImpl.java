@@ -317,7 +317,8 @@ public class RequestSignerImpl implements RequestSigner {
         // all of the required headers that are currently missing
         Map<String, String> missingHeaders = new HashMap<>();
 
-        if (isRequiredHeaderMissing(Constants.DATE, requiredHeaders, existingHeaders)) {
+        if (isRequiredHeaderMissing(Constants.DATE, requiredHeaders, existingHeaders) &&
+            !existingHeaders.containsKey(Constants.X_DATE)) {
             missingHeaders.put(Constants.DATE, createFormatter().format(new Date()));
         }
 
