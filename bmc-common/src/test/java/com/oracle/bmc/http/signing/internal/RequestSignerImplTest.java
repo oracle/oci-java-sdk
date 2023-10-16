@@ -244,6 +244,86 @@ public class RequestSignerImplTest {
         }
     }
 
+    // Reload the classes so PowerMockito can inject the static mocks.
+    @PrepareForTest({LoggerFactory.class, Serializer.class, RequestSignerImpl.class})
+    @Test
+    public void signRequest_WhenXDateHeaderSkipDateHeaderFromSignature()
+            throws IllegalAccessException, NoSuchFieldException {
+        final Map<String, List<String>> headers = new HashMap<>();
+        headers.put(Constants.X_DATE,Collections.singletonList("Wed, 11 Oct 2023 12:23:17 GMT"));
+        headers.put(Constants.DATE,Collections.singletonList("Wed, 11 Oct 2023 12:23:17 GMT"));
+
+        URI uri = URI.create("https://test.us-phoenix-1.oraclecloud.com/20181016/paths");
+        String keyId = "keyId";
+
+        KeySupplier<RSAPrivateKey> keySupplier =
+                (KeySupplier<RSAPrivateKey>) mock(KeySupplier.class);
+
+        RSAPrivateKey privateKey = mock(RSAPrivateKey.class);
+        when(keySupplier.supplyKey(keyId)).thenReturn(Optional.of(privateKey));
+
+        SignatureSigner signer = mock(SignatureSigner.class);
+
+        Field signerField = RequestSignerImpl.class.getDeclaredField("SIGNER");
+        boolean wasAccessible = signerField.isAccessible();
+        signerField.setAccessible(true);
+        signerField.set(null, signer);
+        if (!wasAccessible) {
+            signerField.setAccessible(false);
+        }
+
+        byte[] signature = new byte[] {1, 2, 3, 4, 5};
+        when(signer.sign(any(RSAPrivateKey.class), any(byte[].class), any(String.class)))
+                .thenReturn(signature);
+
+        RequestSignerImpl.SigningConfiguration signingConfiguration =
+                new RequestSignerImpl.SigningConfiguration(
+                        SigningStrategy.STANDARD.getHeadersToSign(),
+                        SigningStrategy.STANDARD.getOptionalHeadersToSign(),
+                        SigningStrategy.STANDARD.isSkipContentHeadersForStreamingPutRequests());
+        String verb = "get";
+        Map<String, String> authHeaders =
+                RequestSignerImpl.signRequest(
+                        Algorithm.RSAPSS256,
+                        uri,
+                        verb,
+                        headers,
+                        null,
+                        SignedRequestVersion.getLatestVersion().getVersionName(),
+                        keyId,
+                        keySupplier,
+                        signingConfiguration);
+
+        String authorization = authHeaders.get(Constants.AUTHORIZATION_HEADER);
+
+        Pattern headersPattern = Pattern.compile("headers=\"([^\"]*)\"");
+        Matcher matcher = headersPattern.matcher(authorization);
+        assertTrue(matcher.find());
+        Set<String> authorizationHeaders =
+                Collections.unmodifiableSet(
+                        new HashSet<>(Arrays.asList(matcher.group(1).split(" "))));
+        SigningStrategy.STANDARD.getHeadersToSign().get(verb)
+                .stream()
+                .filter(requiredHeader -> !Constants.DATE.equals(requiredHeader))
+                .forEach(requiredHeader -> {
+                    assertTrue(authorizationHeaders.contains(requiredHeader));
+                    if (requiredHeader.equals(Constants.REQUEST_TARGET)) {
+                        // this is only signed, not passed as header
+                        assertFalse(authHeaders.containsKey(requiredHeader));
+                    } else {
+                        assertTrue(authHeaders.containsKey(requiredHeader));
+                        if (headers.containsKey(requiredHeader)) {
+                            // if it exists, it should have the same value
+                            assertEquals(
+                                    headers.get(requiredHeader).get(0), authHeaders.get(requiredHeader));
+                        }
+                    }
+                });
+        assertTrue(authorizationHeaders.contains(Constants.X_DATE));
+        assertFalse(authorizationHeaders.contains(Constants.DATE));
+
+    }
+
     @Test
     public void calculateMissingHeaders_postStringContentAsJson() throws IOException {
         calculateAndVerifyMissingHeaders(
@@ -413,32 +493,6 @@ public class RequestSignerImplTest {
                 new ByteArrayInputStream(BYTE_BUFFER),
                 BYTE_BUFFER.length,
                 SigningStrategy.EXCLUDE_BODY);
-    }
-
-    @Test
-    public void calculateMissingHeaders_whenGetRequestWithXDateHeader()
-            throws IOException {
-        final URI uri = URI.create("https://identity.us-phoenix-1.oraclecloud.com/20160918/users");
-        final Map<String, List<String>> temp = new HashMap<>();
-        temp.put("x-date",Collections.singletonList("Wed, 11 Oct 2023 12:23:17 GMT"));
-        final Map<String, List<String>> existingHeaders = Collections.unmodifiableMap(temp);
-        SigningStrategy signingStrategy = SigningStrategy.STANDARD;
-        final RequestSignerImpl.SigningConfiguration signingConfiguration =
-                new RequestSignerImpl.SigningConfiguration(
-                        signingStrategy.getHeadersToSign(),
-                        signingStrategy.getOptionalHeadersToSign(),
-                        signingStrategy.isSkipContentHeadersForStreamingPutRequests());
-        final Map<String, String> missingHeaders =
-                RequestSignerImpl.calculateMissingHeaders(
-                        "get",
-                        uri,
-                        existingHeaders,
-                        null,
-                        Constants.ALL_HEADERS_LIST,
-                        signingConfiguration);
-        assertNotNull(missingHeaders);
-        assertEquals(1, missingHeaders.size());
-        assertFalse(missingHeaders.containsKey("date"));
     }
 
     private void calculateAndVerifyMissingHeaders(
