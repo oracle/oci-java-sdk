@@ -75,7 +75,7 @@ public class Constants {
     public static final List<String> OPTIONAL_HEADERS_NAMES =
             Collections.unmodifiableList(
                     Arrays.asList(
-                            OPC_OBO_TOKEN, CROSS_TENANCY_REQUEST_HEADER_NAME, X_SUBSCRIPTION));
+                            OPC_OBO_TOKEN, CROSS_TENANCY_REQUEST_HEADER_NAME, X_SUBSCRIPTION, X_DATE));
 
     public static final Map<String, List<String>> OPTIONAL_SIGNING_HEADERS_MAP =
             createHeadersToSignForVerbMap(

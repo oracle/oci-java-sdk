@@ -163,6 +163,11 @@ public class RequestSignerImpl implements RequestSigner {
             for (String optionalHeaderName : optionalHeaders) {
                 if (headers.get(optionalHeaderName) != null) {
                     requiredHeaders.add(optionalHeaderName);
+                    //If X-Date is present Date header is skipped
+                    if (Constants.X_DATE.equals(optionalHeaderName)) {
+                        requiredHeaders.remove(Constants.DATE);
+                    }
+
                 }
             }
 
@@ -317,8 +322,7 @@ public class RequestSignerImpl implements RequestSigner {
         // all of the required headers that are currently missing
         Map<String, String> missingHeaders = new HashMap<>();
 
-        if (isRequiredHeaderMissing(Constants.DATE, requiredHeaders, existingHeaders) &&
-            !existingHeaders.containsKey(Constants.X_DATE)) {
+        if (isRequiredHeaderMissing(Constants.DATE, requiredHeaders, existingHeaders)) {
             missingHeaders.put(Constants.DATE, createFormatter().format(new Date()));
         }
 
