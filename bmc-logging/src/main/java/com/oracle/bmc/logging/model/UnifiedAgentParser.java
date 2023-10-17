@@ -5,7 +5,7 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * source parser object. <br>
+ * Source parser object. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -97,15 +97,15 @@ public class UnifiedAgentParser extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * Specify time field for the event time. If the event doesn't have this field, the current time
-     * is used.
+     * Specifies the time field for the event time. If the event doesn't have this field, the
+     * current time is used.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("fieldTimeKey")
     private final String fieldTimeKey;
 
     /**
-     * Specify time field for the event time. If the event doesn't have this field, the current time
-     * is used.
+     * Specifies the time field for the event time. If the event doesn't have this field, the
+     * current time is used.
      *
      * @return the value
      */
@@ -152,12 +152,12 @@ public class UnifiedAgentParser extends com.oracle.bmc.http.client.internal.Expl
         return nullValuePattern;
     }
 
-    /** If true, an empty string field is replaced with nil. */
+    /** If true, an empty string field is replaced with a null value. */
     @com.fasterxml.jackson.annotation.JsonProperty("isNullEmptyString")
     private final Boolean isNullEmptyString;
 
     /**
-     * If true, an empty string field is replaced with nil.
+     * If true, an empty string field is replaced with a null value.
      *
      * @return the value
      */
@@ -166,13 +166,15 @@ public class UnifiedAgentParser extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
+     * If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is
+     * specified.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isEstimateCurrentEvent")
     private final Boolean isEstimateCurrentEvent;
 
     /**
-     * If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
+     * If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is
+     * specified.
      *
      * @return the value
      */
@@ -180,12 +182,12 @@ public class UnifiedAgentParser extends com.oracle.bmc.http.client.internal.Expl
         return isEstimateCurrentEvent;
     }
 
-    /** If true, keep time field in the record. */
+    /** If true, keep the time field in the record. */
     @com.fasterxml.jackson.annotation.JsonProperty("isKeepTimeKey")
     private final Boolean isKeepTimeKey;
 
     /**
-     * If true, keep time field in the record.
+     * If true, keep the time field in the record.
      *
      * @return the value
      */

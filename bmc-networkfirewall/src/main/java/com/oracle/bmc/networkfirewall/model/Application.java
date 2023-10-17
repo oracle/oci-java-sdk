@@ -16,7 +16,7 @@ package com.oracle.bmc.networkfirewall.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
         use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
         include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -26,19 +26,45 @@ package com.oracle.bmc.networkfirewall.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = IcmpApplication.class,
             name = "ICMP"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UdpApplication.class, name = "UDP"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = TcpApplication.class, name = "TCP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = Icmp6Application.class,
-            name = "ICMP6")
+            name = "ICMP_V6")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public class Application extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({})
-    protected Application() {
+    @java.beans.ConstructorProperties({"name", "parentResourceId"})
+    protected Application(String name, String parentResourceId) {
         super();
+        this.name = name;
+        this.parentResourceId = parentResourceId;
+    }
+
+    /** Name of the application. */
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
+    private final String name;
+
+    /**
+     * Name of the application.
+     *
+     * @return the value
+     */
+    public String getName() {
+        return name;
+    }
+
+    /** OCID of the Network Firewall Policy this application belongs to. */
+    @com.fasterxml.jackson.annotation.JsonProperty("parentResourceId")
+    private final String parentResourceId;
+
+    /**
+     * OCID of the Network Firewall Policy this application belongs to.
+     *
+     * @return the value
+     */
+    public String getParentResourceId() {
+        return parentResourceId;
     }
 
     @Override
@@ -56,6 +82,8 @@ public class Application extends com.oracle.bmc.http.client.internal.ExplicitlyS
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Application(");
         sb.append("super=").append(super.toString());
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", parentResourceId=").append(String.valueOf(this.parentResourceId));
         sb.append(")");
         return sb.toString();
     }
@@ -70,13 +98,19 @@ public class Application extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
 
         Application other = (Application) o;
-        return super.equals(other);
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.parentResourceId, other.parentResourceId)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentResourceId == null ? 43 : this.parentResourceId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

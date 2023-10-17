@@ -6,7 +6,7 @@ package com.oracle.bmc.networkfirewall.responses;
 
 import com.oracle.bmc.networkfirewall.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 public class ChangeNetworkFirewallPolicyCompartmentResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**

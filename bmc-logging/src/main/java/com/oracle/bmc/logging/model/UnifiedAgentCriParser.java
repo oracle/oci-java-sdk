@@ -89,12 +89,12 @@ public final class UnifiedAgentCriParser extends UnifiedAgentParser {
             this.__explicitlySet__.add("timeoutInMilliseconds");
             return this;
         }
-        /** If you don't need stream/logtag fields, set this to false. */
+        /** If you don't need stream or logtag fields, set this to false. */
         @com.fasterxml.jackson.annotation.JsonProperty("isMergeCriFields")
         private Boolean isMergeCriFields;
 
         /**
-         * If you don't need stream/logtag fields, set this to false.
+         * If you don't need stream or logtag fields, set this to false.
          *
          * @param isMergeCriFields the value to set
          * @return this builder
@@ -105,15 +105,15 @@ public final class UnifiedAgentCriParser extends UnifiedAgentParser {
             return this;
         }
         /**
-         * Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey,
-         * timeFormat, and isKeepTimeKey.
+         * Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and
+         * isKeepTimeKey.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nestedParser")
         private UnifiedJSONParser nestedParser;
 
         /**
-         * Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey,
-         * timeFormat, and isKeepTimeKey.
+         * Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and
+         * isKeepTimeKey.
          *
          * @param nestedParser the value to set
          * @return this builder
@@ -210,12 +210,12 @@ public final class UnifiedAgentCriParser extends UnifiedAgentParser {
         this.nestedParser = nestedParser;
     }
 
-    /** If you don't need stream/logtag fields, set this to false. */
+    /** If you don't need stream or logtag fields, set this to false. */
     @com.fasterxml.jackson.annotation.JsonProperty("isMergeCriFields")
     private final Boolean isMergeCriFields;
 
     /**
-     * If you don't need stream/logtag fields, set this to false.
+     * If you don't need stream or logtag fields, set this to false.
      *
      * @return the value
      */
@@ -224,15 +224,15 @@ public final class UnifiedAgentCriParser extends UnifiedAgentParser {
     }
 
     /**
-     * Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat,
-     * and isKeepTimeKey.
+     * Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and
+     * isKeepTimeKey.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nestedParser")
     private final UnifiedJSONParser nestedParser;
 
     /**
-     * Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat,
-     * and isKeepTimeKey.
+     * Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and
+     * isKeepTimeKey.
      *
      * @return the value
      */

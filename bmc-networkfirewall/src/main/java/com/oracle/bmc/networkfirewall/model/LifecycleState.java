@@ -5,7 +5,7 @@
 package com.oracle.bmc.networkfirewall.model;
 
 /** Possible lifecycle states. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Updating("UPDATING"),
@@ -13,6 +13,9 @@ public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Deleting("DELETING"),
     Deleted("DELETED"),
     Failed("FAILED"),
+    NeedsAttention("NEEDS_ATTENTION"),
+    Attaching("ATTACHING"),
+    Detaching("DETACHING"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

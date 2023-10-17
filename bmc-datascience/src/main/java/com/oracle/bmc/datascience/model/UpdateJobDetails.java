@@ -26,6 +26,7 @@ public final class UpdateJobDetails
         "displayName",
         "description",
         "jobInfrastructureConfigurationDetails",
+        "jobStorageMountConfigurationDetailsList",
         "freeformTags",
         "definedTags"
     })
@@ -33,12 +34,15 @@ public final class UpdateJobDetails
             String displayName,
             String description,
             JobInfrastructureConfigurationDetails jobInfrastructureConfigurationDetails,
+            java.util.List<StorageMountConfigurationDetails>
+                    jobStorageMountConfigurationDetailsList,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.description = description;
         this.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
+        this.jobStorageMountConfigurationDetailsList = jobStorageMountConfigurationDetailsList;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -83,6 +87,24 @@ public final class UpdateJobDetails
                 JobInfrastructureConfigurationDetails jobInfrastructureConfigurationDetails) {
             this.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
             this.__explicitlySet__.add("jobInfrastructureConfigurationDetails");
+            return this;
+        }
+        /** Collection of JobStorageMountConfigurationDetails. */
+        @com.fasterxml.jackson.annotation.JsonProperty("jobStorageMountConfigurationDetailsList")
+        private java.util.List<StorageMountConfigurationDetails>
+                jobStorageMountConfigurationDetailsList;
+
+        /**
+         * Collection of JobStorageMountConfigurationDetails.
+         *
+         * @param jobStorageMountConfigurationDetailsList the value to set
+         * @return this builder
+         */
+        public Builder jobStorageMountConfigurationDetailsList(
+                java.util.List<StorageMountConfigurationDetails>
+                        jobStorageMountConfigurationDetailsList) {
+            this.jobStorageMountConfigurationDetailsList = jobStorageMountConfigurationDetailsList;
+            this.__explicitlySet__.add("jobStorageMountConfigurationDetailsList");
             return this;
         }
         /**
@@ -140,6 +162,7 @@ public final class UpdateJobDetails
                             this.displayName,
                             this.description,
                             this.jobInfrastructureConfigurationDetails,
+                            this.jobStorageMountConfigurationDetailsList,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -159,6 +182,10 @@ public final class UpdateJobDetails
             if (model.wasPropertyExplicitlySet("jobInfrastructureConfigurationDetails")) {
                 this.jobInfrastructureConfigurationDetails(
                         model.getJobInfrastructureConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("jobStorageMountConfigurationDetailsList")) {
+                this.jobStorageMountConfigurationDetailsList(
+                        model.getJobStorageMountConfigurationDetailsList());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -210,6 +237,21 @@ public final class UpdateJobDetails
 
     public JobInfrastructureConfigurationDetails getJobInfrastructureConfigurationDetails() {
         return jobInfrastructureConfigurationDetails;
+    }
+
+    /** Collection of JobStorageMountConfigurationDetails. */
+    @com.fasterxml.jackson.annotation.JsonProperty("jobStorageMountConfigurationDetailsList")
+    private final java.util.List<StorageMountConfigurationDetails>
+            jobStorageMountConfigurationDetailsList;
+
+    /**
+     * Collection of JobStorageMountConfigurationDetails.
+     *
+     * @return the value
+     */
+    public java.util.List<StorageMountConfigurationDetails>
+            getJobStorageMountConfigurationDetailsList() {
+        return jobStorageMountConfigurationDetailsList;
     }
 
     /**
@@ -271,6 +313,8 @@ public final class UpdateJobDetails
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", jobInfrastructureConfigurationDetails=")
                 .append(String.valueOf(this.jobInfrastructureConfigurationDetails));
+        sb.append(", jobStorageMountConfigurationDetailsList=")
+                .append(String.valueOf(this.jobStorageMountConfigurationDetailsList));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -292,6 +336,9 @@ public final class UpdateJobDetails
                 && java.util.Objects.equals(
                         this.jobInfrastructureConfigurationDetails,
                         other.jobInfrastructureConfigurationDetails)
+                && java.util.Objects.equals(
+                        this.jobStorageMountConfigurationDetailsList,
+                        other.jobStorageMountConfigurationDetailsList)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -308,6 +355,11 @@ public final class UpdateJobDetails
                         + (this.jobInfrastructureConfigurationDetails == null
                                 ? 43
                                 : this.jobInfrastructureConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jobStorageMountConfigurationDetailsList == null
+                                ? 43
+                                : this.jobStorageMountConfigurationDetailsList.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

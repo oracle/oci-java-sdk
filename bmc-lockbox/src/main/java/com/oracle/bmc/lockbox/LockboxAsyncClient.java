@@ -44,7 +44,20 @@ public class LockboxAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {
+        this(builder, authenticationDetailsProvider, true);
+    }
+
+    LockboxAsyncClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            boolean isStreamWarningEnabled) {
         super(builder, authenticationDetailsProvider);
+
+        if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
+                            "LockboxAsyncClient", "exportAccessRequests"));
+        }
     }
 
     /**
@@ -62,6 +75,8 @@ public class LockboxAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, LockboxAsyncClient> {
+        private boolean isStreamWarningEnabled = true;
+
         private Builder(com.oracle.bmc.Service service) {
             super(service);
             final String packageName = "lockbox";
@@ -69,6 +84,17 @@ public class LockboxAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Enable/disable the stream warnings for the client
+         *
+         * @param isStreamWarningEnabled executorService
+         * @return this builder
+         */
+        public Builder isStreamWarningEnabled(boolean isStreamWarningEnabled) {
+            this.isStreamWarningEnabled = isStreamWarningEnabled;
+            return this;
         }
 
         /**
@@ -81,7 +107,8 @@ public class LockboxAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
-            return new LockboxAsyncClient(this, authenticationDetailsProvider);
+            return new LockboxAsyncClient(
+                    this, authenticationDetailsProvider, isStreamWarningEnabled);
         }
     }
 
@@ -357,6 +384,49 @@ public class LockboxAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
     }
 
     @Override
+    public java.util.concurrent.Future<ExportAccessRequestsResponse> exportAccessRequests(
+            ExportAccessRequestsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ExportAccessRequestsRequest, ExportAccessRequestsResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getExportAccessRequestsDetails(),
+                "exportAccessRequestsDetails is required");
+
+        return clientCall(request, ExportAccessRequestsResponse::builder)
+                .logger(LOG, "exportAccessRequests")
+                .serviceDetails(
+                        "Lockbox",
+                        "ExportAccessRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/managed-access/20220126/AccessRequestCollection/ExportAccessRequests")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ExportAccessRequestsRequest::builder)
+                .basePath("/20220126")
+                .appendPathParam("accessRequests")
+                .appendPathParam("actions")
+                .appendPathParam("export")
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("lockboxPartner", request.getLockboxPartner())
+                .appendQueryParam("partnerId", request.getPartnerId())
+                .appendQueryParam("requestorId", request.getRequestorId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("text/csv")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        java.io.InputStream.class,
+                        ExportAccessRequestsResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "opc-request-id", ExportAccessRequestsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAccessMaterialsResponse> getAccessMaterials(
             GetAccessMaterialsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -571,11 +641,14 @@ public class LockboxAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendEnumQueryParam("lockboxPartner", request.getLockboxPartner())
+                .appendQueryParam("partnerId", request.getPartnerId())
                 .appendQueryParam("requestorId", request.getRequestorId())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("timeCreatedAfter", request.getTimeCreatedAfter())
+                .appendQueryParam("timeCreatedBefore", request.getTimeCreatedBefore())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -647,6 +720,7 @@ public class LockboxAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 .appendQueryParam("id", request.getId())
                 .appendQueryParam("resourceId", request.getResourceId())
                 .appendEnumQueryParam("lockboxPartner", request.getLockboxPartner())
+                .appendQueryParam("partnerId", request.getPartnerId())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())

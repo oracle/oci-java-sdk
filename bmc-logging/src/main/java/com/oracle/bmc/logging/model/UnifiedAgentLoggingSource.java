@@ -40,12 +40,12 @@ public class UnifiedAgentLoggingSource
         this.name = name;
     }
 
-    /** unique name for the source */
+    /** Unique name for the source. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * unique name for the source
+     * Unique name for the source.
      *
      * @return the value
      */

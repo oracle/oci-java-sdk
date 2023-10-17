@@ -6,7 +6,7 @@ package com.oracle.bmc.networkfirewall.responses;
 
 import com.oracle.bmc.networkfirewall.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -25,16 +25,16 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the next batch of items.
+     * For list pagination. When this header appears in the response, additional pages of results
+     * remain. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the next batch of items.
+     * For list pagination. When this header appears in the response, additional pages of results
+     * remain. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -43,16 +43,16 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the previous batch of items.
+     * For list pagination. When this header appears in the response, previous pages of results
+     * exist. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcPrevPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the previous batch of items.
+     * For list pagination. When this header appears in the response, previous pages of results
+     * exist. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -134,16 +134,16 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For list pagination. When this header appears in the response, additional pages of
+         * results remain. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For list pagination. When this header appears in the response, additional pages of
+         * results remain. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -154,16 +154,16 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the previous batch of items.
+         * For list pagination. When this header appears in the response, previous pages of results
+         * exist. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcPrevPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the previous batch of items.
+         * For list pagination. When this header appears in the response, previous pages of results
+         * exist. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcPrevPage the value to set
          * @return this builder

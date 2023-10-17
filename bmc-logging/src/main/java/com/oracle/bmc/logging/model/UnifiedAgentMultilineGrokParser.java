@@ -89,12 +89,12 @@ public final class UnifiedAgentMultilineGrokParser extends UnifiedAgentParser {
             this.__explicitlySet__.add("timeoutInMilliseconds");
             return this;
         }
-        /** grok name key. */
+        /** Grok name key. */
         @com.fasterxml.jackson.annotation.JsonProperty("grokNameKey")
         private String grokNameKey;
 
         /**
-         * grok name key.
+         * Grok name key.
          *
          * @param grokNameKey the value to set
          * @return this builder
@@ -104,12 +104,12 @@ public final class UnifiedAgentMultilineGrokParser extends UnifiedAgentParser {
             this.__explicitlySet__.add("grokNameKey");
             return this;
         }
-        /** grok failure key. */
+        /** Grok failure key. */
         @com.fasterxml.jackson.annotation.JsonProperty("grokFailureKey")
         private String grokFailureKey;
 
         /**
-         * grok failure key.
+         * Grok failure key.
          *
          * @param grokFailureKey the value to set
          * @return this builder
@@ -134,12 +134,12 @@ public final class UnifiedAgentMultilineGrokParser extends UnifiedAgentParser {
             this.__explicitlySet__.add("multiLineStartRegexp");
             return this;
         }
-        /** grok pattern object. */
+        /** Grok pattern object. */
         @com.fasterxml.jackson.annotation.JsonProperty("patterns")
         private java.util.List<GrokPattern> patterns;
 
         /**
-         * grok pattern object.
+         * Grok pattern object.
          *
          * @param patterns the value to set
          * @return this builder
@@ -248,12 +248,12 @@ public final class UnifiedAgentMultilineGrokParser extends UnifiedAgentParser {
         this.patterns = patterns;
     }
 
-    /** grok name key. */
+    /** Grok name key. */
     @com.fasterxml.jackson.annotation.JsonProperty("grokNameKey")
     private final String grokNameKey;
 
     /**
-     * grok name key.
+     * Grok name key.
      *
      * @return the value
      */
@@ -261,12 +261,12 @@ public final class UnifiedAgentMultilineGrokParser extends UnifiedAgentParser {
         return grokNameKey;
     }
 
-    /** grok failure key. */
+    /** Grok failure key. */
     @com.fasterxml.jackson.annotation.JsonProperty("grokFailureKey")
     private final String grokFailureKey;
 
     /**
-     * grok failure key.
+     * Grok failure key.
      *
      * @return the value
      */
@@ -287,12 +287,12 @@ public final class UnifiedAgentMultilineGrokParser extends UnifiedAgentParser {
         return multiLineStartRegexp;
     }
 
-    /** grok pattern object. */
+    /** Grok pattern object. */
     @com.fasterxml.jackson.annotation.JsonProperty("patterns")
     private final java.util.List<GrokPattern> patterns;
 
     /**
-     * grok pattern object.
+     * Grok pattern object.
      *
      * @return the value
      */

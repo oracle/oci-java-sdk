@@ -15,7 +15,7 @@ package com.oracle.bmc.networkfirewall.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = VaultMappedSecret.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
@@ -27,12 +27,30 @@ package com.oracle.bmc.networkfirewall.model;
 public final class VaultMappedSecret extends MappedSecret {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("type")
-        private Type type;
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
+        private String name;
 
-        public Builder type(Type type) {
+        public Builder name(String name) {
+            this.name = name;
+            this.__explicitlySet__.add("name");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("type")
+        private InspectionType type;
+
+        public Builder type(InspectionType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("parentResourceId")
+        private String parentResourceId;
+
+        public Builder parentResourceId(String parentResourceId) {
+            this.parentResourceId = parentResourceId;
+            this.__explicitlySet__.add("parentResourceId");
             return this;
         }
         /** OCID for the Vault Secret to be used. */
@@ -71,7 +89,12 @@ public final class VaultMappedSecret extends MappedSecret {
 
         public VaultMappedSecret build() {
             VaultMappedSecret model =
-                    new VaultMappedSecret(this.type, this.vaultSecretId, this.versionNumber);
+                    new VaultMappedSecret(
+                            this.name,
+                            this.type,
+                            this.parentResourceId,
+                            this.vaultSecretId,
+                            this.versionNumber);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -80,8 +103,14 @@ public final class VaultMappedSecret extends MappedSecret {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(VaultMappedSecret model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
             if (model.wasPropertyExplicitlySet("type")) {
                 this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("parentResourceId")) {
+                this.parentResourceId(model.getParentResourceId());
             }
             if (model.wasPropertyExplicitlySet("vaultSecretId")) {
                 this.vaultSecretId(model.getVaultSecretId());
@@ -103,8 +132,13 @@ public final class VaultMappedSecret extends MappedSecret {
     }
 
     @Deprecated
-    public VaultMappedSecret(Type type, String vaultSecretId, Integer versionNumber) {
-        super(type);
+    public VaultMappedSecret(
+            String name,
+            InspectionType type,
+            String parentResourceId,
+            String vaultSecretId,
+            Integer versionNumber) {
+        super(name, type, parentResourceId);
         this.vaultSecretId = vaultSecretId;
         this.versionNumber = versionNumber;
     }

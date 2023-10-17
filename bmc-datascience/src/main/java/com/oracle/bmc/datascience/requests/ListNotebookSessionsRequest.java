@@ -96,19 +96,19 @@ public class ListNotebookSessionsRequest
     }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. 1 is the minimum, 1000 is the maximum. See [List
+     * paginated "List" call. 1 is the minimum, 100 is the maximum. See [List
      * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      *
-     * <p>Example: {@code 500}
+     * <p>Example: {@code 50}
      */
     private Integer limit;
 
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. 1 is the minimum, 1000 is the maximum. See [List
+     * paginated "List" call. 1 is the minimum, 100 is the maximum. See [List
      * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      *
-     * <p>Example: {@code 500}
+     * <p>Example: {@code 50}
      */
     public Integer getLimit() {
         return limit;
@@ -365,19 +365,19 @@ public class ListNotebookSessionsRequest
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. 1 is the minimum, 1000 is the maximum. See [List
+         * paginated "List" call. 1 is the minimum, 100 is the maximum. See [List
          * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
          *
-         * <p>Example: {@code 500}
+         * <p>Example: {@code 50}
          */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. 1 is the minimum, 1000 is the maximum. See [List
+         * paginated "List" call. 1 is the minimum, 100 is the maximum. See [List
          * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
          *
-         * <p>Example: {@code 500}
+         * <p>Example: {@code 50}
          *
          * @param limit the value to set
          * @return this builder instance

@@ -89,12 +89,12 @@ public final class UnifiedAgentTsvParser extends UnifiedAgentParser {
             this.__explicitlySet__.add("timeoutInMilliseconds");
             return this;
         }
-        /** tsv delimiter. */
+        /** TSV delimiter. */
         @com.fasterxml.jackson.annotation.JsonProperty("delimiter")
         private String delimiter;
 
         /**
-         * tsv delimiter.
+         * TSV delimiter.
          *
          * @param delimiter the value to set
          * @return this builder
@@ -104,12 +104,12 @@ public final class UnifiedAgentTsvParser extends UnifiedAgentParser {
             this.__explicitlySet__.add("delimiter");
             return this;
         }
-        /** tsv keys. */
+        /** TSV keys. */
         @com.fasterxml.jackson.annotation.JsonProperty("keys")
         private java.util.List<String> keys;
 
         /**
-         * tsv keys.
+         * TSV keys.
          *
          * @param keys the value to set
          * @return this builder
@@ -206,12 +206,12 @@ public final class UnifiedAgentTsvParser extends UnifiedAgentParser {
         this.keys = keys;
     }
 
-    /** tsv delimiter. */
+    /** TSV delimiter. */
     @com.fasterxml.jackson.annotation.JsonProperty("delimiter")
     private final String delimiter;
 
     /**
-     * tsv delimiter.
+     * TSV delimiter.
      *
      * @return the value
      */
@@ -219,12 +219,12 @@ public final class UnifiedAgentTsvParser extends UnifiedAgentParser {
         return delimiter;
     }
 
-    /** tsv keys. */
+    /** TSV keys. */
     @com.fasterxml.jackson.annotation.JsonProperty("keys")
     private final java.util.List<String> keys;
 
     /**
-     * tsv keys.
+     * TSV keys.
      *
      * @return the value
      */

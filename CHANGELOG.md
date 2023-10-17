@@ -3,6 +3,61 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.26.0 - 2023-10-17
+### Added
+- Support for the Caching Service
+- Support for the Marketplace Publisher service
+- Support for higher limits for network firewalls in the Network Firewall service
+- Support for exporting access request reports in the Lockbox service
+- Support for storage mounts for jobs and notebooks in the Data Science service
+- Support for unified agent operational metrics for the service configurations in the Logging Management service
+
+### Breaking Changes
+- Method `public java.util.Map getApplicationLists()` has been removed from model `com.oracle.bmc.networkfirewall.model.CreateNetworkFirewallPolicyDetails` in the Network Firewall service
+- Method `public java.util.Map getDecryptionProfiles()` has been removed from model `com.oracle.bmc.networkfirewall.model.CreateNetworkFirewallPolicyDetails` in the Network Firewall service
+- Method `public java.util.List getDecryptionRules()` has been removed from model `com.oracle.bmc.networkfirewall.model.CreateNetworkFirewallPolicyDetails` in the Network Firewall service
+- Method `public java.util.Map getIpAddressLists()` has been removed from model `com.oracle.bmc.networkfirewall.model.CreateNetworkFirewallPolicyDetails` in the Network Firewall service
+- Method `public java.util.Map getMappedSecrets()` has been removed from model `com.oracle.bmc.networkfirewall.model.CreateNetworkFirewallPolicyDetails` in the Network Firewall service
+- Method `public java.util.List getSecurityRules()` has been removed from model `com.oracle.bmc.networkfirewall.model.CreateNetworkFirewallPolicyDetails` in the Network Firewall service
+- Method `public java.util.Map getUrlLists()` has been removed from model `com.oracle.bmc.networkfirewall.model.CreateNetworkFirewallPolicyDetails` in the Network Firewall service
+- Method `public java.util.List getDestinations()` has been removed from model `com.oracle.bmc.networkfirewall.model.DecryptionRuleMatchCriteria` in the Network Firewall service
+- Method `public java.util.List getSources()` has been removed   from model `com.oracle.bmc.networkfirewall.model.DecryptionRuleMatchCriteria` in the Network Firewall service
+- Method `public java.util.Map getApplicationLists()` has been removed from model `com.oracle.bmc.networkfirewall.model.NetworkFirewallPolicy` in the Network Firewall service
+- Method `public java.util.Map getDecryptionProfiles()` has been removed from model `com.oracle.bmc.networkfirewall.model.NetworkFirewallPolicy` in the Network Firewall service
+- Method `public java.util.List getDecryptionRules()` has been removed from model `com.oracle.bmc.networkfirewall.model.NetworkFirewallPolicy` in the Network Firewall service
+- Method `public java.util.Map getIpAddressLists()` has been removed from model `com.oracle.bmc.networkfirewall.model.NetworkFirewallPolicy` in the Network Firewall service
+- Method `public java.lang.Boolean getIsFirewallAttached()` has been removed from model `com.oracle.bmc.networkfirewall.model.NetworkFirewallPolicy` in the Network Firewall service
+- Method `public java.util.Map getMappedSecrets()` has been removed from model `com.oracle.bmc.networkfirewall.model.NetworkFirewallPolicy` in the Network Firewall service
+- Method `public java.util.List getSecurityRules()` has been removed from model `com.oracle.bmc.networkfirewall.model.NetworkFirewallPolicy` in the Network Firewall service
+- Method `public java.util.Map getUrlLists()` has been removed from model `com.oracle.bmc.networkfirewall.model.NetworkFirewallPolicy` in the Network Firewall service
+- Method `public java.util.List getApplications()` has been removed from model `com.oracle.bmc.networkfirewall.model.SecurityRuleMatchCriteria` in the Network Firewall service
+- Method `public java.util.List getDestinations()` has been removed from model `com.oracle.bmc.networkfirewall.model.SecurityRuleMatchCriteria` in the Network Firewall service
+- Method `public java.util.List getSources()` has been removed from model `com.oracle.bmc.networkfirewall.model.SecurityRuleMatchCriteria` in the Network Firewall service
+- Method `public java.util.List getUrls()` has been removed from model `com.oracle.bmc.networkfirewall.model.SecurityRuleMatchCriteria` in the Network Firewall service
+- Method `public java.util.Map getApplicationLists()` has been removed from model `com.oracle.bmc.networkfirewall.model.UpdateNetworkFirewallPolicyDetails` in the Network Firewall service
+- Method `public java.util.Map getDecryptionProfiles()` has been removed from model `com.oracle.bmc.networkfirewall.model.UpdateNetworkFirewallPolicyDetails` in the Network Firewall service
+- Method `public java.util.List getDecryptionRules()` has been removed from model `com.oracle.bmc.networkfirewall.model.UpdateNetworkFirewallPolicyDetails` in the Network Firewall service
+- Method `public java.util.Map getIpAddressLists()` has been removed from model `com.oracle.bmc.networkfirewall.model.UpdateNetworkFirewallPolicyDetails` in the Network Firewall service
+- Method `public java.util.Map getMappedSecrets()` has been removed from model `com.oracle.bmc.networkfirewall.model.UpdateNetworkFirewallPolicyDetails` in the Network Firewall service
+- Method `public java.util.List getSecurityRules()` has been removed from model `com.oracle.bmc.networkfirewall.model.UpdateNetworkFirewallPolicyDetails` in the Network Firewall service
+- Method `public java.util.Map getUrlLists()` has been removed from model `com.oracle.bmc.networkfirewall.model.UpdateNetworkFirewallPolicyDetails` in the Network Firewall service
+- Class `com.oracle.bmc.networkfirewall.model.DecryptionProfile$Type` has been removed in the Network Firewall service
+- Class `com.oracle.bmc.networkfirewall.model.DecryptionRule$Action` has been removed in the Network Firewall service
+- Class `com.oracle.bmc.networkfirewall.model.MappedSecret$Type `  has been removed in the Network Firewall service
+- Class `com.oracle.bmc.networkfirewall.model.SecurityRule$Action` has been removed in the Network Firewall service
+- Class `com.oracle.bmc.networkfirewall.model.SecurityRule$Inspection` has been removed in the Network Firewall service
+- Class `com.oracle.bmc.networkfirewall.model.TcpApplication` has been removed in the Network Firewall service
+- Class `com.oracle.bmc.networkfirewall.model.UdpApplication` has been removed in the Network Firewall service
+- Return type of method `public com.oracle.bmc.networkfirewall.model.DecryptionRule$Action getAction()` has been changed to `com.oracle.bmc.networkfirewall.model.DecryptionActionType` in the model `com.oracle.bmc.networkfirewall.model.DecryptionRule` in the Network Firewall service
+- Return type of method `public com.oracle.bmc.networkfirewall.model.MappedSecret$Type getType()` has been changed to `com.oracle.bmc.networkfirewall.model.InspectionType` in the model `com.oracle.bmc.networkfirewall.model.MappedSecre` in the Network Firewall service
+- Return type of method `public com.oracle.bmc.networkfirewall.model.SecurityRule$Action getAction()` has been changed to `com.oracle.bmc.networkfirewall.model.TrafficActionType` in the model `com.oracle.bmc.networkfirewall.model.SecurityRule`
+- Return type of method `public com.oracle.bmc.networkfirewall.model.SecurityRule$Inspection getInspection()` has been changed to `com.oracle.bmc.networkfirewall.model.TrafficInspectionType` in the model `com.oracle.bmc.networkfirewall.model.SecurityRule`
+- Method `public java.lang.String getDisplayName()` has been removed in the model `com.oracle.bmc.logging.model.Parameter` in the Logging Management service
+- Method `public java.lang.String getRqsType()` has been removed in the model `com.oracle.bmc.logging.model.Parameter` in the Logging Management service
+- Method `public java.lang.String getServiceStage()` has been removed in the model `com.oracle.bmc.logging.requests.ListServicesRequest` in the Logging Management service
+- Removed field `EnumString` in `com.oracle.bmc.logging.model.Parameter$Type` in the Logging Management service
+- Removed field `RqsFilter` in `com.oracle.bmc.logging.model.Parameter$Type` in the Logging Management service
+
 ## 3.25.4 - 2023-10-10
 ### Added
 - Support for creating flow log type capture filters in Virtual Cloud Network service

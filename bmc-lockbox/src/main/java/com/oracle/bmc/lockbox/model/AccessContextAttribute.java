@@ -24,12 +24,14 @@ package com.oracle.bmc.lockbox.model;
 public final class AccessContextAttribute
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"name", "description", "defaultValue"})
-    public AccessContextAttribute(String name, String description, String defaultValue) {
+    @java.beans.ConstructorProperties({"name", "description", "defaultValue", "values"})
+    public AccessContextAttribute(
+            String name, String description, String defaultValue, java.util.List<String> values) {
         super();
         this.name = name;
         this.description = description;
         this.defaultValue = defaultValue;
+        this.values = values;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -79,13 +81,29 @@ public final class AccessContextAttribute
             this.__explicitlySet__.add("defaultValue");
             return this;
         }
+        /** List of context attribute values. */
+        @com.fasterxml.jackson.annotation.JsonProperty("values")
+        private java.util.List<String> values;
+
+        /**
+         * List of context attribute values.
+         *
+         * @param values the value to set
+         * @return this builder
+         */
+        public Builder values(java.util.List<String> values) {
+            this.values = values;
+            this.__explicitlySet__.add("values");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AccessContextAttribute build() {
             AccessContextAttribute model =
-                    new AccessContextAttribute(this.name, this.description, this.defaultValue);
+                    new AccessContextAttribute(
+                            this.name, this.description, this.defaultValue, this.values);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -102,6 +120,9 @@ public final class AccessContextAttribute
             }
             if (model.wasPropertyExplicitlySet("defaultValue")) {
                 this.defaultValue(model.getDefaultValue());
+            }
+            if (model.wasPropertyExplicitlySet("values")) {
+                this.values(model.getValues());
             }
             return this;
         }
@@ -155,6 +176,19 @@ public final class AccessContextAttribute
         return defaultValue;
     }
 
+    /** List of context attribute values. */
+    @com.fasterxml.jackson.annotation.JsonProperty("values")
+    private final java.util.List<String> values;
+
+    /**
+     * List of context attribute values.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getValues() {
+        return values;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -173,6 +207,7 @@ public final class AccessContextAttribute
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", defaultValue=").append(String.valueOf(this.defaultValue));
+        sb.append(", values=").append(String.valueOf(this.values));
         sb.append(")");
         return sb.toString();
     }
@@ -190,6 +225,7 @@ public final class AccessContextAttribute
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.defaultValue, other.defaultValue)
+                && java.util.Objects.equals(this.values, other.values)
                 && super.equals(other);
     }
 
@@ -200,6 +236,7 @@ public final class AccessContextAttribute
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.defaultValue == null ? 43 : this.defaultValue.hashCode());
+        result = (result * PRIME) + (this.values == null ? 43 : this.values.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
