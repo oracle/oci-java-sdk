@@ -32,6 +32,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         "jobConfigurationDetails",
         "jobInfrastructureConfigurationDetails",
         "jobLogConfigurationDetails",
+        "jobStorageMountConfigurationDetailsList",
         "lifecycleState",
         "lifecycleDetails",
         "freeformTags",
@@ -48,6 +49,8 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
             JobConfigurationDetails jobConfigurationDetails,
             JobInfrastructureConfigurationDetails jobInfrastructureConfigurationDetails,
             JobLogConfigurationDetails jobLogConfigurationDetails,
+            java.util.List<StorageMountConfigurationDetails>
+                    jobStorageMountConfigurationDetailsList,
             JobLifecycleState lifecycleState,
             String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
@@ -63,6 +66,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         this.jobConfigurationDetails = jobConfigurationDetails;
         this.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
         this.jobLogConfigurationDetails = jobLogConfigurationDetails;
+        this.jobStorageMountConfigurationDetailsList = jobStorageMountConfigurationDetailsList;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.freeformTags = freeformTags;
@@ -225,6 +229,24 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
             this.__explicitlySet__.add("jobLogConfigurationDetails");
             return this;
         }
+        /** Collection of JobStorageMountConfigurationDetails. */
+        @com.fasterxml.jackson.annotation.JsonProperty("jobStorageMountConfigurationDetailsList")
+        private java.util.List<StorageMountConfigurationDetails>
+                jobStorageMountConfigurationDetailsList;
+
+        /**
+         * Collection of JobStorageMountConfigurationDetails.
+         *
+         * @param jobStorageMountConfigurationDetailsList the value to set
+         * @return this builder
+         */
+        public Builder jobStorageMountConfigurationDetailsList(
+                java.util.List<StorageMountConfigurationDetails>
+                        jobStorageMountConfigurationDetailsList) {
+            this.jobStorageMountConfigurationDetailsList = jobStorageMountConfigurationDetailsList;
+            this.__explicitlySet__.add("jobStorageMountConfigurationDetailsList");
+            return this;
+        }
         /** The state of the job. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private JobLifecycleState lifecycleState;
@@ -317,6 +339,7 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
                             this.jobConfigurationDetails,
                             this.jobInfrastructureConfigurationDetails,
                             this.jobLogConfigurationDetails,
+                            this.jobStorageMountConfigurationDetailsList,
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.freeformTags,
@@ -359,6 +382,10 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("jobLogConfigurationDetails")) {
                 this.jobLogConfigurationDetails(model.getJobLogConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("jobStorageMountConfigurationDetailsList")) {
+                this.jobStorageMountConfigurationDetailsList(
+                        model.getJobStorageMountConfigurationDetailsList());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -517,6 +544,21 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         return jobLogConfigurationDetails;
     }
 
+    /** Collection of JobStorageMountConfigurationDetails. */
+    @com.fasterxml.jackson.annotation.JsonProperty("jobStorageMountConfigurationDetailsList")
+    private final java.util.List<StorageMountConfigurationDetails>
+            jobStorageMountConfigurationDetailsList;
+
+    /**
+     * Collection of JobStorageMountConfigurationDetails.
+     *
+     * @return the value
+     */
+    public java.util.List<StorageMountConfigurationDetails>
+            getJobStorageMountConfigurationDetailsList() {
+        return jobStorageMountConfigurationDetailsList;
+    }
+
     /** The state of the job. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final JobLifecycleState lifecycleState;
@@ -611,6 +653,8 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
                 .append(String.valueOf(this.jobInfrastructureConfigurationDetails));
         sb.append(", jobLogConfigurationDetails=")
                 .append(String.valueOf(this.jobLogConfigurationDetails));
+        sb.append(", jobStorageMountConfigurationDetailsList=")
+                .append(String.valueOf(this.jobStorageMountConfigurationDetailsList));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -643,6 +687,9 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
                         other.jobInfrastructureConfigurationDetails)
                 && java.util.Objects.equals(
                         this.jobLogConfigurationDetails, other.jobLogConfigurationDetails)
+                && java.util.Objects.equals(
+                        this.jobStorageMountConfigurationDetailsList,
+                        other.jobStorageMountConfigurationDetailsList)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -678,6 +725,11 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
                         + (this.jobLogConfigurationDetails == null
                                 ? 43
                                 : this.jobLogConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jobStorageMountConfigurationDetailsList == null
+                                ? 43
+                                : this.jobStorageMountConfigurationDetailsList.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

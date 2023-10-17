@@ -9,8 +9,7 @@ import com.oracle.bmc.logging.responses.*;
 
 /**
  * Use the Logging Management API to create, read, list, update, move and delete log groups, log
- * objects, log saved searches, agent configurations, log data models, continuous queries, and
- * managed continuous queries.
+ * objects, log saved searches, and agent configurations.
  *
  * <p>For more information, see [Logging
  * Overview](https://docs.cloud.oracle.com/iaas/Content/Logging/Concepts/loggingoverview.htm).

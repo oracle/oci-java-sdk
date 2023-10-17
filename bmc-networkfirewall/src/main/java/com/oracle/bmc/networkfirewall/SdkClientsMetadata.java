@@ -6,6 +6,6 @@ package com.oracle.bmc.networkfirewall;
 
 import com.oracle.bmc.SdkClients;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 @SdkClients({NetworkFirewallAsyncClient.class, NetworkFirewallClient.class})
 public final class SdkClientsMetadata {}

@@ -15,7 +15,7 @@ package com.oracle.bmc.networkfirewall.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IcmpApplication.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
         use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
@@ -26,6 +26,23 @@ package com.oracle.bmc.networkfirewall.model;
 public final class IcmpApplication extends Application {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
+        private String name;
+
+        public Builder name(String name) {
+            this.name = name;
+            this.__explicitlySet__.add("name");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("parentResourceId")
+        private String parentResourceId;
+
+        public Builder parentResourceId(String parentResourceId) {
+            this.parentResourceId = parentResourceId;
+            this.__explicitlySet__.add("parentResourceId");
+            return this;
+        }
         /**
          * The value of the ICMP message Type field as defined by [RFC
          * 792](https://www.rfc-editor.org/rfc/rfc792.html).
@@ -69,7 +86,9 @@ public final class IcmpApplication extends Application {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public IcmpApplication build() {
-            IcmpApplication model = new IcmpApplication(this.icmpType, this.icmpCode);
+            IcmpApplication model =
+                    new IcmpApplication(
+                            this.name, this.parentResourceId, this.icmpType, this.icmpCode);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -78,6 +97,12 @@ public final class IcmpApplication extends Application {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(IcmpApplication model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("parentResourceId")) {
+                this.parentResourceId(model.getParentResourceId());
+            }
             if (model.wasPropertyExplicitlySet("icmpType")) {
                 this.icmpType(model.getIcmpType());
             }
@@ -98,8 +123,9 @@ public final class IcmpApplication extends Application {
     }
 
     @Deprecated
-    public IcmpApplication(Integer icmpType, Integer icmpCode) {
-        super();
+    public IcmpApplication(
+            String name, String parentResourceId, Integer icmpType, Integer icmpCode) {
+        super(name, parentResourceId);
         this.icmpType = icmpType;
         this.icmpCode = icmpCode;
     }

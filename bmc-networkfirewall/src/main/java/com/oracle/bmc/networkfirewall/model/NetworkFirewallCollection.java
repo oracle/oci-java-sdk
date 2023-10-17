@@ -15,7 +15,7 @@ package com.oracle.bmc.networkfirewall.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = NetworkFirewallCollection.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(

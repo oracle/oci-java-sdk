@@ -30,6 +30,7 @@ public final class CreateJobDetails
         "jobConfigurationDetails",
         "jobInfrastructureConfigurationDetails",
         "jobLogConfigurationDetails",
+        "jobStorageMountConfigurationDetailsList",
         "freeformTags",
         "definedTags"
     })
@@ -41,6 +42,8 @@ public final class CreateJobDetails
             JobConfigurationDetails jobConfigurationDetails,
             JobInfrastructureConfigurationDetails jobInfrastructureConfigurationDetails,
             JobLogConfigurationDetails jobLogConfigurationDetails,
+            java.util.List<StorageMountConfigurationDetails>
+                    jobStorageMountConfigurationDetailsList,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -51,6 +54,7 @@ public final class CreateJobDetails
         this.jobConfigurationDetails = jobConfigurationDetails;
         this.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
         this.jobLogConfigurationDetails = jobLogConfigurationDetails;
+        this.jobStorageMountConfigurationDetailsList = jobStorageMountConfigurationDetailsList;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -154,6 +158,24 @@ public final class CreateJobDetails
             this.__explicitlySet__.add("jobLogConfigurationDetails");
             return this;
         }
+        /** Collection of JobStorageMountConfigurationDetails. */
+        @com.fasterxml.jackson.annotation.JsonProperty("jobStorageMountConfigurationDetailsList")
+        private java.util.List<StorageMountConfigurationDetails>
+                jobStorageMountConfigurationDetailsList;
+
+        /**
+         * Collection of JobStorageMountConfigurationDetails.
+         *
+         * @param jobStorageMountConfigurationDetailsList the value to set
+         * @return this builder
+         */
+        public Builder jobStorageMountConfigurationDetailsList(
+                java.util.List<StorageMountConfigurationDetails>
+                        jobStorageMountConfigurationDetailsList) {
+            this.jobStorageMountConfigurationDetailsList = jobStorageMountConfigurationDetailsList;
+            this.__explicitlySet__.add("jobStorageMountConfigurationDetailsList");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. See [Resource
@@ -213,6 +235,7 @@ public final class CreateJobDetails
                             this.jobConfigurationDetails,
                             this.jobInfrastructureConfigurationDetails,
                             this.jobLogConfigurationDetails,
+                            this.jobStorageMountConfigurationDetailsList,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -244,6 +267,10 @@ public final class CreateJobDetails
             }
             if (model.wasPropertyExplicitlySet("jobLogConfigurationDetails")) {
                 this.jobLogConfigurationDetails(model.getJobLogConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("jobStorageMountConfigurationDetailsList")) {
+                this.jobStorageMountConfigurationDetailsList(
+                        model.getJobStorageMountConfigurationDetailsList());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -345,6 +372,21 @@ public final class CreateJobDetails
         return jobLogConfigurationDetails;
     }
 
+    /** Collection of JobStorageMountConfigurationDetails. */
+    @com.fasterxml.jackson.annotation.JsonProperty("jobStorageMountConfigurationDetailsList")
+    private final java.util.List<StorageMountConfigurationDetails>
+            jobStorageMountConfigurationDetailsList;
+
+    /**
+     * Collection of JobStorageMountConfigurationDetails.
+     *
+     * @return the value
+     */
+    public java.util.List<StorageMountConfigurationDetails>
+            getJobStorageMountConfigurationDetailsList() {
+        return jobStorageMountConfigurationDetailsList;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. See [Resource
@@ -410,6 +452,8 @@ public final class CreateJobDetails
                 .append(String.valueOf(this.jobInfrastructureConfigurationDetails));
         sb.append(", jobLogConfigurationDetails=")
                 .append(String.valueOf(this.jobLogConfigurationDetails));
+        sb.append(", jobStorageMountConfigurationDetailsList=")
+                .append(String.valueOf(this.jobStorageMountConfigurationDetailsList));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -437,6 +481,9 @@ public final class CreateJobDetails
                         other.jobInfrastructureConfigurationDetails)
                 && java.util.Objects.equals(
                         this.jobLogConfigurationDetails, other.jobLogConfigurationDetails)
+                && java.util.Objects.equals(
+                        this.jobStorageMountConfigurationDetailsList,
+                        other.jobStorageMountConfigurationDetailsList)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -467,6 +514,11 @@ public final class CreateJobDetails
                         + (this.jobLogConfigurationDetails == null
                                 ? 43
                                 : this.jobLogConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jobStorageMountConfigurationDetailsList == null
+                                ? 43
+                                : this.jobStorageMountConfigurationDetailsList.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

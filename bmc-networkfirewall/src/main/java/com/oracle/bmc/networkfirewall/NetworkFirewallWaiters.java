@@ -14,7 +14,7 @@ import com.oracle.bmc.networkfirewall.responses.*;
  * <p>The default configuration used is defined by {@link
  * com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 public class NetworkFirewallWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final NetworkFirewall client;

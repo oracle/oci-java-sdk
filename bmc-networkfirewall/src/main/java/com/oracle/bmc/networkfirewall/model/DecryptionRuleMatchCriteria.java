@@ -15,7 +15,7 @@ package com.oracle.bmc.networkfirewall.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = DecryptionRuleMatchCriteria.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -23,48 +23,48 @@ package com.oracle.bmc.networkfirewall.model;
 public final class DecryptionRuleMatchCriteria
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"sources", "destinations"})
+    @java.beans.ConstructorProperties({"sourceAddress", "destinationAddress"})
     public DecryptionRuleMatchCriteria(
-            java.util.List<String> sources, java.util.List<String> destinations) {
+            java.util.List<String> sourceAddress, java.util.List<String> destinationAddress) {
         super();
-        this.sources = sources;
-        this.destinations = destinations;
+        this.sourceAddress = sourceAddress;
+        this.destinationAddress = destinationAddress;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /** An array of IP address list names to be evaluated against the traffic source address. */
-        @com.fasterxml.jackson.annotation.JsonProperty("sources")
-        private java.util.List<String> sources;
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceAddress")
+        private java.util.List<String> sourceAddress;
 
         /**
          * An array of IP address list names to be evaluated against the traffic source address.
          *
-         * @param sources the value to set
+         * @param sourceAddress the value to set
          * @return this builder
          */
-        public Builder sources(java.util.List<String> sources) {
-            this.sources = sources;
-            this.__explicitlySet__.add("sources");
+        public Builder sourceAddress(java.util.List<String> sourceAddress) {
+            this.sourceAddress = sourceAddress;
+            this.__explicitlySet__.add("sourceAddress");
             return this;
         }
         /**
          * An array of IP address list names to be evaluated against the traffic destination
          * address.
          */
-        @com.fasterxml.jackson.annotation.JsonProperty("destinations")
-        private java.util.List<String> destinations;
+        @com.fasterxml.jackson.annotation.JsonProperty("destinationAddress")
+        private java.util.List<String> destinationAddress;
 
         /**
          * An array of IP address list names to be evaluated against the traffic destination
          * address.
          *
-         * @param destinations the value to set
+         * @param destinationAddress the value to set
          * @return this builder
          */
-        public Builder destinations(java.util.List<String> destinations) {
-            this.destinations = destinations;
-            this.__explicitlySet__.add("destinations");
+        public Builder destinationAddress(java.util.List<String> destinationAddress) {
+            this.destinationAddress = destinationAddress;
+            this.__explicitlySet__.add("destinationAddress");
             return this;
         }
 
@@ -73,7 +73,7 @@ public final class DecryptionRuleMatchCriteria
 
         public DecryptionRuleMatchCriteria build() {
             DecryptionRuleMatchCriteria model =
-                    new DecryptionRuleMatchCriteria(this.sources, this.destinations);
+                    new DecryptionRuleMatchCriteria(this.sourceAddress, this.destinationAddress);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -82,11 +82,11 @@ public final class DecryptionRuleMatchCriteria
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DecryptionRuleMatchCriteria model) {
-            if (model.wasPropertyExplicitlySet("sources")) {
-                this.sources(model.getSources());
+            if (model.wasPropertyExplicitlySet("sourceAddress")) {
+                this.sourceAddress(model.getSourceAddress());
             }
-            if (model.wasPropertyExplicitlySet("destinations")) {
-                this.destinations(model.getDestinations());
+            if (model.wasPropertyExplicitlySet("destinationAddress")) {
+                this.destinationAddress(model.getDestinationAddress());
             }
             return this;
         }
@@ -102,31 +102,31 @@ public final class DecryptionRuleMatchCriteria
     }
 
     /** An array of IP address list names to be evaluated against the traffic source address. */
-    @com.fasterxml.jackson.annotation.JsonProperty("sources")
-    private final java.util.List<String> sources;
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceAddress")
+    private final java.util.List<String> sourceAddress;
 
     /**
      * An array of IP address list names to be evaluated against the traffic source address.
      *
      * @return the value
      */
-    public java.util.List<String> getSources() {
-        return sources;
+    public java.util.List<String> getSourceAddress() {
+        return sourceAddress;
     }
 
     /**
      * An array of IP address list names to be evaluated against the traffic destination address.
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("destinations")
-    private final java.util.List<String> destinations;
+    @com.fasterxml.jackson.annotation.JsonProperty("destinationAddress")
+    private final java.util.List<String> destinationAddress;
 
     /**
      * An array of IP address list names to be evaluated against the traffic destination address.
      *
      * @return the value
      */
-    public java.util.List<String> getDestinations() {
-        return destinations;
+    public java.util.List<String> getDestinationAddress() {
+        return destinationAddress;
     }
 
     @Override
@@ -144,8 +144,8 @@ public final class DecryptionRuleMatchCriteria
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DecryptionRuleMatchCriteria(");
         sb.append("super=").append(super.toString());
-        sb.append("sources=").append(String.valueOf(this.sources));
-        sb.append(", destinations=").append(String.valueOf(this.destinations));
+        sb.append("sourceAddress=").append(String.valueOf(this.sourceAddress));
+        sb.append(", destinationAddress=").append(String.valueOf(this.destinationAddress));
         sb.append(")");
         return sb.toString();
     }
@@ -160,8 +160,8 @@ public final class DecryptionRuleMatchCriteria
         }
 
         DecryptionRuleMatchCriteria other = (DecryptionRuleMatchCriteria) o;
-        return java.util.Objects.equals(this.sources, other.sources)
-                && java.util.Objects.equals(this.destinations, other.destinations)
+        return java.util.Objects.equals(this.sourceAddress, other.sourceAddress)
+                && java.util.Objects.equals(this.destinationAddress, other.destinationAddress)
                 && super.equals(other);
     }
 
@@ -169,8 +169,14 @@ public final class DecryptionRuleMatchCriteria
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
-        result = (result * PRIME) + (this.sources == null ? 43 : this.sources.hashCode());
-        result = (result * PRIME) + (this.destinations == null ? 43 : this.destinations.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceAddress == null ? 43 : this.sourceAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationAddress == null
+                                ? 43
+                                : this.destinationAddress.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -10,7 +10,7 @@ import com.oracle.bmc.lockbox.responses.*;
 /**
  * Use the Managed Access API to approve access requests, create and manage templates, and manage
  * resource approval settings. For more information, see [Managed Access
- * Overview](https://docs.oracle.com/en-us/iaas/managed-access/overview.htm).
+ * Overview](https://docs.oracle.com/iaas/Content/managed-access/home.htm).
  *
  * <p>Use the table of contents and search tool to explore the Managed Access API.
  *
@@ -197,6 +197,23 @@ public interface Lockbox extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteLockbox API.
      */
     DeleteLockboxResponse deleteLockbox(DeleteLockboxRequest request);
+
+    /**
+     * Exports a list of AccessRequestSummary objects within a compartment and during a specified
+     * time range in text format. You can filter the results by problem severity.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ExportAccessRequestsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ExportAccessRequests API.
+     */
+    ExportAccessRequestsResponse exportAccessRequests(ExportAccessRequestsRequest request);
 
     /**
      * Retrieves the access credential/material associated with the access request.

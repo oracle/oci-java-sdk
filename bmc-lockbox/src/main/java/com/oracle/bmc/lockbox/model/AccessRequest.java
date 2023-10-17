@@ -35,7 +35,10 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
         "activityLogs",
         "timeCreated",
         "timeUpdated",
-        "timeExpired"
+        "timeExpired",
+        "timeReminded",
+        "reminderCount",
+        "requestorLocation"
     })
     public AccessRequest(
             String id,
@@ -50,7 +53,10 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
             java.util.List<ActivityLog> activityLogs,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
-            java.util.Date timeExpired) {
+            java.util.Date timeExpired,
+            java.util.Date timeReminded,
+            Integer reminderCount,
+            String requestorLocation) {
         super();
         this.id = id;
         this.lockboxId = lockboxId;
@@ -65,6 +71,9 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.timeExpired = timeExpired;
+        this.timeReminded = timeReminded;
+        this.reminderCount = reminderCount;
+        this.requestorLocation = requestorLocation;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -286,6 +295,59 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("timeExpired");
             return this;
         }
+        /**
+         * The time the access request was last reminded. Format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeReminded")
+        private java.util.Date timeReminded;
+
+        /**
+         * The time the access request was last reminded. Format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
+         *
+         * @param timeReminded the value to set
+         * @return this builder
+         */
+        public Builder timeReminded(java.util.Date timeReminded) {
+            this.timeReminded = timeReminded;
+            this.__explicitlySet__.add("timeReminded");
+            return this;
+        }
+        /** The count of times the access request was reminded. */
+        @com.fasterxml.jackson.annotation.JsonProperty("reminderCount")
+        private Integer reminderCount;
+
+        /**
+         * The count of times the access request was reminded.
+         *
+         * @param reminderCount the value to set
+         * @return this builder
+         */
+        public Builder reminderCount(Integer reminderCount) {
+            this.reminderCount = reminderCount;
+            this.__explicitlySet__.add("reminderCount");
+            return this;
+        }
+        /**
+         * The location of the requestor. Format with be two letters indicatiog operator's country
+         * code defined by https://jira-sd.mc1.oracleiaas.com/browse/SSD-17880 Example: {@code US}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("requestorLocation")
+        private String requestorLocation;
+
+        /**
+         * The location of the requestor. Format with be two letters indicatiog operator's country
+         * code defined by https://jira-sd.mc1.oracleiaas.com/browse/SSD-17880 Example: {@code US}
+         *
+         * @param requestorLocation the value to set
+         * @return this builder
+         */
+        public Builder requestorLocation(String requestorLocation) {
+            this.requestorLocation = requestorLocation;
+            this.__explicitlySet__.add("requestorLocation");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -305,7 +367,10 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
                             this.activityLogs,
                             this.timeCreated,
                             this.timeUpdated,
-                            this.timeExpired);
+                            this.timeExpired,
+                            this.timeReminded,
+                            this.reminderCount,
+                            this.requestorLocation);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -352,6 +417,15 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("timeExpired")) {
                 this.timeExpired(model.getTimeExpired());
+            }
+            if (model.wasPropertyExplicitlySet("timeReminded")) {
+                this.timeReminded(model.getTimeReminded());
+            }
+            if (model.wasPropertyExplicitlySet("reminderCount")) {
+                this.reminderCount(model.getReminderCount());
+            }
+            if (model.wasPropertyExplicitlySet("requestorLocation")) {
+                this.requestorLocation(model.getRequestorLocation());
             }
             return this;
         }
@@ -656,6 +730,53 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
         return timeExpired;
     }
 
+    /**
+     * The time the access request was last reminded. Format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeReminded")
+    private final java.util.Date timeReminded;
+
+    /**
+     * The time the access request was last reminded. Format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeReminded() {
+        return timeReminded;
+    }
+
+    /** The count of times the access request was reminded. */
+    @com.fasterxml.jackson.annotation.JsonProperty("reminderCount")
+    private final Integer reminderCount;
+
+    /**
+     * The count of times the access request was reminded.
+     *
+     * @return the value
+     */
+    public Integer getReminderCount() {
+        return reminderCount;
+    }
+
+    /**
+     * The location of the requestor. Format with be two letters indicatiog operator's country code
+     * defined by https://jira-sd.mc1.oracleiaas.com/browse/SSD-17880 Example: {@code US}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("requestorLocation")
+    private final String requestorLocation;
+
+    /**
+     * The location of the requestor. Format with be two letters indicatiog operator's country code
+     * defined by https://jira-sd.mc1.oracleiaas.com/browse/SSD-17880 Example: {@code US}
+     *
+     * @return the value
+     */
+    public String getRequestorLocation() {
+        return requestorLocation;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -684,6 +805,9 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", timeExpired=").append(String.valueOf(this.timeExpired));
+        sb.append(", timeReminded=").append(String.valueOf(this.timeReminded));
+        sb.append(", reminderCount=").append(String.valueOf(this.reminderCount));
+        sb.append(", requestorLocation=").append(String.valueOf(this.requestorLocation));
         sb.append(")");
         return sb.toString();
     }
@@ -711,6 +835,9 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.timeExpired, other.timeExpired)
+                && java.util.Objects.equals(this.timeReminded, other.timeReminded)
+                && java.util.Objects.equals(this.reminderCount, other.reminderCount)
+                && java.util.Objects.equals(this.requestorLocation, other.requestorLocation)
                 && super.equals(other);
     }
 
@@ -739,6 +866,13 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.timeExpired == null ? 43 : this.timeExpired.hashCode());
+        result = (result * PRIME) + (this.timeReminded == null ? 43 : this.timeReminded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.reminderCount == null ? 43 : this.reminderCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.requestorLocation == null ? 43 : this.requestorLocation.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

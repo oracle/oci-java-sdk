@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk-jersey3-examples</artifactId>
-  <version>3.25.4</version>
+  <version>3.26.0</version>
   <name>Oracle Cloud Infrastructure SDK - Examples using Jersey 3 HTTP client</name>
   <description>This project contains the examples on how to use the SDK used for Oracle Cloud Infrastructure with the Jersey 3 HTTP client</description>
   <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
@@ -49,7 +49,7 @@
           <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-enforcer-rules</artifactId>
-            <version>3.25.4</version>
+            <version>3.26.0</version>
             <optional>false</optional>
           </dependency>
         </dependencies>
@@ -66,6 +66,17 @@
               </rules>
             </configuration>
           </execution>
+          <execution>
+            <id>enforce-transport-layer-rule</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <noMultipleTransportLayersRule implementation="com.oracle.bmc.enforcer.rule.NoMultipleTransportLayersRule" />
+              </rules>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
     </plugins>
@@ -75,14 +86,14 @@
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-bom</artifactId>
-        <version>3.25.4</version>
+        <version>3.26.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-common-httpclient-jersey3</artifactId>
-        <version>3.25.4</version>
+        <version>3.26.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -94,7 +105,7 @@
            choose the httpclient to use. -->
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common-httpclient-jersey3</artifactId>
-    </dependency>    
+    </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-addons-apache-configurator-jersey3</artifactId>

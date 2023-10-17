@@ -31,20 +31,25 @@ public final class UpdateNotebookSessionDetails
         "notebookSessionConfigurationDetails",
         "freeformTags",
         "definedTags",
-        "notebookSessionRuntimeConfigDetails"
+        "notebookSessionRuntimeConfigDetails",
+        "notebookSessionStorageMountConfigurationDetailsList"
     })
     public UpdateNotebookSessionDetails(
             String displayName,
             NotebookSessionConfigurationDetails notebookSessionConfigurationDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            NotebookSessionRuntimeConfigDetails notebookSessionRuntimeConfigDetails) {
+            NotebookSessionRuntimeConfigDetails notebookSessionRuntimeConfigDetails,
+            java.util.List<StorageMountConfigurationDetails>
+                    notebookSessionStorageMountConfigurationDetailsList) {
         super();
         this.displayName = displayName;
         this.notebookSessionConfigurationDetails = notebookSessionConfigurationDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.notebookSessionRuntimeConfigDetails = notebookSessionRuntimeConfigDetails;
+        this.notebookSessionStorageMountConfigurationDetailsList =
+                notebookSessionStorageMountConfigurationDetailsList;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -133,6 +138,26 @@ public final class UpdateNotebookSessionDetails
             this.__explicitlySet__.add("notebookSessionRuntimeConfigDetails");
             return this;
         }
+        /** Collection of NotebookSessionStorageMountConfigurationDetails. */
+        @com.fasterxml.jackson.annotation.JsonProperty(
+                "notebookSessionStorageMountConfigurationDetailsList")
+        private java.util.List<StorageMountConfigurationDetails>
+                notebookSessionStorageMountConfigurationDetailsList;
+
+        /**
+         * Collection of NotebookSessionStorageMountConfigurationDetails.
+         *
+         * @param notebookSessionStorageMountConfigurationDetailsList the value to set
+         * @return this builder
+         */
+        public Builder notebookSessionStorageMountConfigurationDetailsList(
+                java.util.List<StorageMountConfigurationDetails>
+                        notebookSessionStorageMountConfigurationDetailsList) {
+            this.notebookSessionStorageMountConfigurationDetailsList =
+                    notebookSessionStorageMountConfigurationDetailsList;
+            this.__explicitlySet__.add("notebookSessionStorageMountConfigurationDetailsList");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -144,7 +169,8 @@ public final class UpdateNotebookSessionDetails
                             this.notebookSessionConfigurationDetails,
                             this.freeformTags,
                             this.definedTags,
-                            this.notebookSessionRuntimeConfigDetails);
+                            this.notebookSessionRuntimeConfigDetails,
+                            this.notebookSessionStorageMountConfigurationDetailsList);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -169,6 +195,11 @@ public final class UpdateNotebookSessionDetails
             if (model.wasPropertyExplicitlySet("notebookSessionRuntimeConfigDetails")) {
                 this.notebookSessionRuntimeConfigDetails(
                         model.getNotebookSessionRuntimeConfigDetails());
+            }
+            if (model.wasPropertyExplicitlySet(
+                    "notebookSessionStorageMountConfigurationDetailsList")) {
+                this.notebookSessionStorageMountConfigurationDetailsList(
+                        model.getNotebookSessionStorageMountConfigurationDetailsList());
             }
             return this;
         }
@@ -254,6 +285,22 @@ public final class UpdateNotebookSessionDetails
         return notebookSessionRuntimeConfigDetails;
     }
 
+    /** Collection of NotebookSessionStorageMountConfigurationDetails. */
+    @com.fasterxml.jackson.annotation.JsonProperty(
+            "notebookSessionStorageMountConfigurationDetailsList")
+    private final java.util.List<StorageMountConfigurationDetails>
+            notebookSessionStorageMountConfigurationDetailsList;
+
+    /**
+     * Collection of NotebookSessionStorageMountConfigurationDetails.
+     *
+     * @return the value
+     */
+    public java.util.List<StorageMountConfigurationDetails>
+            getNotebookSessionStorageMountConfigurationDetailsList() {
+        return notebookSessionStorageMountConfigurationDetailsList;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -276,6 +323,8 @@ public final class UpdateNotebookSessionDetails
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", notebookSessionRuntimeConfigDetails=")
                 .append(String.valueOf(this.notebookSessionRuntimeConfigDetails));
+        sb.append(", notebookSessionStorageMountConfigurationDetailsList=")
+                .append(String.valueOf(this.notebookSessionStorageMountConfigurationDetailsList));
         sb.append(")");
         return sb.toString();
     }
@@ -299,6 +348,9 @@ public final class UpdateNotebookSessionDetails
                 && java.util.Objects.equals(
                         this.notebookSessionRuntimeConfigDetails,
                         other.notebookSessionRuntimeConfigDetails)
+                && java.util.Objects.equals(
+                        this.notebookSessionStorageMountConfigurationDetailsList,
+                        other.notebookSessionStorageMountConfigurationDetailsList)
                 && super.equals(other);
     }
 
@@ -319,6 +371,12 @@ public final class UpdateNotebookSessionDetails
                         + (this.notebookSessionRuntimeConfigDetails == null
                                 ? 43
                                 : this.notebookSessionRuntimeConfigDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.notebookSessionStorageMountConfigurationDetailsList == null
+                                ? 43
+                                : this.notebookSessionStorageMountConfigurationDetailsList
+                                        .hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

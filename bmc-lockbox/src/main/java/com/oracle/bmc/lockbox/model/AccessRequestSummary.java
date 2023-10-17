@@ -29,6 +29,7 @@ public final class AccessRequestSummary
         "displayName",
         "description",
         "requestorId",
+        "requestorLocation",
         "lifecycleState",
         "accessDuration",
         "timeCreated",
@@ -41,6 +42,7 @@ public final class AccessRequestSummary
             String displayName,
             String description,
             String requestorId,
+            String requestorLocation,
             AccessRequest.LifecycleState lifecycleState,
             String accessDuration,
             java.util.Date timeCreated,
@@ -52,6 +54,7 @@ public final class AccessRequestSummary
         this.displayName = displayName;
         this.description = description;
         this.requestorId = requestorId;
+        this.requestorLocation = requestorLocation;
         this.lifecycleState = lifecycleState;
         this.accessDuration = accessDuration;
         this.timeCreated = timeCreated;
@@ -142,6 +145,25 @@ public final class AccessRequestSummary
         public Builder requestorId(String requestorId) {
             this.requestorId = requestorId;
             this.__explicitlySet__.add("requestorId");
+            return this;
+        }
+        /**
+         * The two-char country code of the requestor while creating the access request Example:
+         * {@code US}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("requestorLocation")
+        private String requestorLocation;
+
+        /**
+         * The two-char country code of the requestor while creating the access request Example:
+         * {@code US}
+         *
+         * @param requestorLocation the value to set
+         * @return this builder
+         */
+        public Builder requestorLocation(String requestorLocation) {
+            this.requestorLocation = requestorLocation;
+            this.__explicitlySet__.add("requestorLocation");
             return this;
         }
         /** The current state of the access request. */
@@ -243,6 +265,7 @@ public final class AccessRequestSummary
                             this.displayName,
                             this.description,
                             this.requestorId,
+                            this.requestorLocation,
                             this.lifecycleState,
                             this.accessDuration,
                             this.timeCreated,
@@ -270,6 +293,9 @@ public final class AccessRequestSummary
             }
             if (model.wasPropertyExplicitlySet("requestorId")) {
                 this.requestorId(model.getRequestorId());
+            }
+            if (model.wasPropertyExplicitlySet("requestorLocation")) {
+                this.requestorLocation(model.getRequestorLocation());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -370,6 +396,23 @@ public final class AccessRequestSummary
         return requestorId;
     }
 
+    /**
+     * The two-char country code of the requestor while creating the access request Example: {@code
+     * US}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("requestorLocation")
+    private final String requestorLocation;
+
+    /**
+     * The two-char country code of the requestor while creating the access request Example: {@code
+     * US}
+     *
+     * @return the value
+     */
+    public String getRequestorLocation() {
+        return requestorLocation;
+    }
+
     /** The current state of the access request. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final AccessRequest.LifecycleState lifecycleState;
@@ -467,6 +510,7 @@ public final class AccessRequestSummary
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", requestorId=").append(String.valueOf(this.requestorId));
+        sb.append(", requestorLocation=").append(String.valueOf(this.requestorLocation));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", accessDuration=").append(String.valueOf(this.accessDuration));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -491,6 +535,7 @@ public final class AccessRequestSummary
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.requestorId, other.requestorId)
+                && java.util.Objects.equals(this.requestorLocation, other.requestorLocation)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.accessDuration, other.accessDuration)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -508,6 +553,9 @@ public final class AccessRequestSummary
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.requestorId == null ? 43 : this.requestorId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.requestorLocation == null ? 43 : this.requestorLocation.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

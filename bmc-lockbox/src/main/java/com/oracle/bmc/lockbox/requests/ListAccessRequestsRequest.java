@@ -59,6 +59,13 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
     public com.oracle.bmc.lockbox.model.LockboxPartner getLockboxPartner() {
         return lockboxPartner;
     }
+    /** The ID of the partner. */
+    private String partnerId;
+
+    /** The ID of the partner. */
+    public String getPartnerId() {
+        return partnerId;
+    }
     /** The unique identifier (OCID) of the requestor in which to list resources. */
     private String requestorId;
 
@@ -143,6 +150,32 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
      */
     public SortBy getSortBy() {
         return sortBy;
+    }
+    /**
+     * Date and time on or after which Access Requests were created, as described in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339)
+     */
+    private java.util.Date timeCreatedAfter;
+
+    /**
+     * Date and time on or after which Access Requests were created, as described in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339)
+     */
+    public java.util.Date getTimeCreatedAfter() {
+        return timeCreatedAfter;
+    }
+    /**
+     * Date and time on or before which Access requests were created, as described in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339)
+     */
+    private java.util.Date timeCreatedBefore;
+
+    /**
+     * Date and time on or before which Access requests were created, as described in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339)
+     */
+    public java.util.Date getTimeCreatedBefore() {
+        return timeCreatedBefore;
     }
 
     public static class Builder
@@ -242,6 +275,20 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /** The ID of the partner. */
+        private String partnerId = null;
+
+        /**
+         * The ID of the partner.
+         *
+         * @param partnerId the value to set
+         * @return this builder instance
+         */
+        public Builder partnerId(String partnerId) {
+            this.partnerId = partnerId;
+            return this;
+        }
+
         /** The unique identifier (OCID) of the requestor in which to list resources. */
         private String requestorId = null;
 
@@ -321,6 +368,42 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
+         * Date and time on or after which Access Requests were created, as described in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339)
+         */
+        private java.util.Date timeCreatedAfter = null;
+
+        /**
+         * Date and time on or after which Access Requests were created, as described in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339)
+         *
+         * @param timeCreatedAfter the value to set
+         * @return this builder instance
+         */
+        public Builder timeCreatedAfter(java.util.Date timeCreatedAfter) {
+            this.timeCreatedAfter = timeCreatedAfter;
+            return this;
+        }
+
+        /**
+         * Date and time on or before which Access requests were created, as described in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339)
+         */
+        private java.util.Date timeCreatedBefore = null;
+
+        /**
+         * Date and time on or before which Access requests were created, as described in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339)
+         *
+         * @param timeCreatedBefore the value to set
+         * @return this builder instance
+         */
+        public Builder timeCreatedBefore(java.util.Date timeCreatedBefore) {
+            this.timeCreatedBefore = timeCreatedBefore;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -356,11 +439,14 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
             displayName(o.getDisplayName());
             lifecycleState(o.getLifecycleState());
             lockboxPartner(o.getLockboxPartner());
+            partnerId(o.getPartnerId());
             requestorId(o.getRequestorId());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
+            timeCreatedAfter(o.getTimeCreatedAfter());
+            timeCreatedBefore(o.getTimeCreatedBefore());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -401,14 +487,18 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
             request.displayName = displayName;
             request.lifecycleState = lifecycleState;
             request.lockboxPartner = lockboxPartner;
+            request.partnerId = partnerId;
             request.requestorId = requestorId;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
+            request.timeCreatedAfter = timeCreatedAfter;
+            request.timeCreatedBefore = timeCreatedBefore;
             return request;
             // new ListAccessRequestsRequest(opcRequestId, lockboxId, id, displayName,
-            // lifecycleState, lockboxPartner, requestorId, limit, page, sortOrder, sortBy);
+            // lifecycleState, lockboxPartner, partnerId, requestorId, limit, page, sortOrder,
+            // sortBy, timeCreatedAfter, timeCreatedBefore);
         }
     }
 
@@ -425,11 +515,14 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
                 .displayName(displayName)
                 .lifecycleState(lifecycleState)
                 .lockboxPartner(lockboxPartner)
+                .partnerId(partnerId)
                 .requestorId(requestorId)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
-                .sortBy(sortBy);
+                .sortBy(sortBy)
+                .timeCreatedAfter(timeCreatedAfter)
+                .timeCreatedBefore(timeCreatedBefore);
     }
 
     /**
@@ -452,11 +545,14 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",lockboxPartner=").append(String.valueOf(this.lockboxPartner));
+        sb.append(",partnerId=").append(String.valueOf(this.partnerId));
         sb.append(",requestorId=").append(String.valueOf(this.requestorId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",timeCreatedAfter=").append(String.valueOf(this.timeCreatedAfter));
+        sb.append(",timeCreatedBefore=").append(String.valueOf(this.timeCreatedBefore));
         sb.append(")");
         return sb.toString();
     }
@@ -478,11 +574,14 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lockboxPartner, other.lockboxPartner)
+                && java.util.Objects.equals(this.partnerId, other.partnerId)
                 && java.util.Objects.equals(this.requestorId, other.requestorId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
-                && java.util.Objects.equals(this.sortBy, other.sortBy);
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.timeCreatedAfter, other.timeCreatedAfter)
+                && java.util.Objects.equals(this.timeCreatedBefore, other.timeCreatedBefore);
     }
 
     @Override
@@ -499,11 +598,18 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
         result =
                 (result * PRIME)
                         + (this.lockboxPartner == null ? 43 : this.lockboxPartner.hashCode());
+        result = (result * PRIME) + (this.partnerId == null ? 43 : this.partnerId.hashCode());
         result = (result * PRIME) + (this.requestorId == null ? 43 : this.requestorId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCreatedAfter == null ? 43 : this.timeCreatedAfter.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCreatedBefore == null ? 43 : this.timeCreatedBefore.hashCode());
         return result;
     }
 }
