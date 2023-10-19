@@ -19,7 +19,7 @@ class BouncyCastleHelper {
         try {
             final Class<?> bouncyCastleProviderClass = getBouncyCastleProviderClass();
             bouncyCastleProvider = (Provider) bouncyCastleProviderClass.newInstance();
-            LOG.info("Instantiated provider: " + bouncyCastleProviderClass.getName());
+            LOG.info("Instantiated provider: {}" ,bouncyCastleProviderClass.getName());
         } catch (InstantiationException | IllegalAccessException ex) {
             LOG.error("Failed to instantiate any BouncyCastle provider", ex);
             throw new BouncyCastleHelperException(

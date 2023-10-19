@@ -5,7 +5,6 @@
 package com.oracle.bmc.http;
 
 import com.oracle.bmc.http.client.HttpClientBuilder;
-import org.slf4j.Logger;
 
 /**
  * DefaultConnectorConfigurator represents the basic behavior of the transport layer.

@@ -47,12 +47,12 @@ public class Range {
         if (endByte != null) {
             return String.format(END_ONLY_HEADER_VALUE_FORMAT, endByte);
         }
-        LOG.error("Must provide start/end byte for range request: " + this);
+        LOG.error("Must provide start/end byte for range request: {}", this);
         return "";
     }
 
     /**
-     * Parse the "content-range" header per https://tools.ietf.org/html/rfc7233#section-4.2.
+     * Parse the "content-range" header per <a href="https://tools.ietf.org/html/rfc7233#section-4.2">...</a>.
      *
      * <p>Note, this is only for successful responses (206). It does not handle 416 (range not
      * satisfiable).
