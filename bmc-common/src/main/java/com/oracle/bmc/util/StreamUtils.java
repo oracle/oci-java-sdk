@@ -5,7 +5,6 @@
 package com.oracle.bmc.util;
 
 import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import com.oracle.bmc.io.internal.WrappedByteArrayInputStream;
 import com.oracle.bmc.io.internal.WrappedFileInputStream;

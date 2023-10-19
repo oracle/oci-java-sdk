@@ -19,8 +19,6 @@ import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
-import jakarta.annotation.Nonnull;
-import jakarta.annotation.Nullable;
 
 import com.oracle.bmc.util.internal.StringUtils;
 import static com.oracle.bmc.util.internal.FileUtils.expandUserHome;
