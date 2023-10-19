@@ -4,16 +4,9 @@
  */
 package com.oracle.bmc.auth;
 
-import com.oracle.bmc.auth.internal.JwtClaimsSet;
-import org.slf4j.Logger;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.text.ParseException;
-import java.time.Duration;
-import java.time.Instant;
-import java.util.Date;
 
 /**
  * Implementation of {@link ServiceAccountTokenSupplier} that allows to pass in a token path to read
