@@ -6,7 +6,6 @@ package com.oracle.bmc.model;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 import java.util.Set;
 
 public class RegionAlloySchema {
