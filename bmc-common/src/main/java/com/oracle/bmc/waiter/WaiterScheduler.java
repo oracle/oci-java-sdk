@@ -21,12 +21,9 @@ public interface WaiterScheduler {
      * positive.
      */
     WaiterScheduler UNSUPPORTED =
-            new WaiterScheduler() {
-                @Override
-                public Future<?> schedule(Runnable command, long time, TimeUnit unit) {
-                    throw new UnsupportedOperationException(
-                            "Delays not supported for async waiter (no scheduler given)");
-                }
+            (command, time, unit) -> {
+                throw new UnsupportedOperationException(
+                        "Delays not supported for async waiter (no scheduler given)");
             };
     /**
      * Scheduler implementation that blocks in the {@link #schedule} method for the given time to

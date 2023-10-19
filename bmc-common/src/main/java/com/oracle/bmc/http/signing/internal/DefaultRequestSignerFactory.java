@@ -22,7 +22,7 @@ import com.oracle.bmc.http.signing.SigningStrategy;
 
 /**
  * Factory class to create RequestSigner instances. Takes care of setting up the appropriate
- * suppliers based on the cacheability of the credentials (indicated by {@link AuthCachingPolicy}.
+ * suppliers based on the cacheability of the credentials (indicated by {@link AuthCachingPolicy}).
  * By default, all credentials are cacheable.
  *
  * <p>This factory supports authentication providers that inherit from {@link
@@ -65,22 +65,12 @@ public class DefaultRequestSignerFactory implements RequestSignerFactory {
 
         // if keyId caching is disabled, fetch the ID on every request
         if (!cacheKeyId) {
-            return new Supplier<String>() {
-                @Override
-                public String get() {
-                    return authenticationDetailsProvider.getKeyId();
-                }
-            };
+            return authenticationDetailsProvider::getKeyId;
         }
 
         // else fetch it now and return a fixed supplier
         final String keyId = authenticationDetailsProvider.getKeyId();
-        return new Supplier<String>() {
-            @Override
-            public String get() {
-                return keyId;
-            }
-        };
+        return () -> keyId;
     }
 
     public static KeySupplier<RSAPrivateKey> createKeySupplier(
@@ -93,15 +83,10 @@ public class DefaultRequestSignerFactory implements RequestSignerFactory {
 
         // if private key caching is disabled, parse the stream on every request
         if (!cachePrivateKey) {
-            return new KeySupplier<RSAPrivateKey>() {
-                @Override
-                public Optional<RSAPrivateKey> supplyKey(String keyId) {
-                    return new PEMFileRSAPrivateKeySupplier(
-                                    authenticationDetailsProvider.getPrivateKey(),
-                                    authenticationDetailsProvider.getPassphraseCharacters())
-                            .supplyKey(keyId);
-                }
-            };
+            return keyId -> new PEMFileRSAPrivateKeySupplier(
+                            authenticationDetailsProvider.getPrivateKey(),
+                            authenticationDetailsProvider.getPassphraseCharacters())
+                    .supplyKey(keyId);
         }
 
         // else parse once now and return a fixed supplier
