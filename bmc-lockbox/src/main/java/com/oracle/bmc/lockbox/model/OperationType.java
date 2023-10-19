@@ -18,6 +18,9 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     MoveApprovalTemplate("MOVE_APPROVAL_TEMPLATE"),
     UpdateApprovalTemplate("UPDATE_APPROVAL_TEMPLATE"),
     DeleteApprovalTemplate("DELETE_APPROVAL_TEMPLATE"),
+    CreatePartner("CREATE_PARTNER"),
+    RemindAccessRequest("REMIND_ACCESS_REQUEST"),
+    CreateAccesscontextattribute("CREATE_ACCESSCONTEXTATTRIBUTE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

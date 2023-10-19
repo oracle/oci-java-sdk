@@ -27,6 +27,7 @@ public final class LockboxSummary
         "displayName",
         "lockboxPartner",
         "compartmentId",
+        "partnerId",
         "partnerCompartmentId",
         "resourceId",
         "approvalTemplateId",
@@ -44,6 +45,7 @@ public final class LockboxSummary
             String displayName,
             LockboxPartner lockboxPartner,
             String compartmentId,
+            String partnerId,
             String partnerCompartmentId,
             String resourceId,
             String approvalTemplateId,
@@ -60,6 +62,7 @@ public final class LockboxSummary
         this.displayName = displayName;
         this.lockboxPartner = lockboxPartner;
         this.compartmentId = compartmentId;
+        this.partnerId = partnerId;
         this.partnerCompartmentId = partnerCompartmentId;
         this.resourceId = resourceId;
         this.approvalTemplateId = approvalTemplateId;
@@ -133,6 +136,23 @@ public final class LockboxSummary
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * The unique identifier (OCID) of partner resource using this lockbox to lock a resource
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("partnerId")
+        private String partnerId;
+
+        /**
+         * The unique identifier (OCID) of partner resource using this lockbox to lock a resource
+         *
+         * @param partnerId the value to set
+         * @return this builder
+         */
+        public Builder partnerId(String partnerId) {
+            this.partnerId = partnerId;
+            this.__explicitlySet__.add("partnerId");
             return this;
         }
         /** Compartment Identifier */
@@ -328,6 +348,7 @@ public final class LockboxSummary
                             this.displayName,
                             this.lockboxPartner,
                             this.compartmentId,
+                            this.partnerId,
                             this.partnerCompartmentId,
                             this.resourceId,
                             this.approvalTemplateId,
@@ -358,6 +379,9 @@ public final class LockboxSummary
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("partnerId")) {
+                this.partnerId(model.getPartnerId());
             }
             if (model.wasPropertyExplicitlySet("partnerCompartmentId")) {
                 this.partnerCompartmentId(model.getPartnerCompartmentId());
@@ -455,6 +479,19 @@ public final class LockboxSummary
      */
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /** The unique identifier (OCID) of partner resource using this lockbox to lock a resource */
+    @com.fasterxml.jackson.annotation.JsonProperty("partnerId")
+    private final String partnerId;
+
+    /**
+     * The unique identifier (OCID) of partner resource using this lockbox to lock a resource
+     *
+     * @return the value
+     */
+    public String getPartnerId() {
+        return partnerId;
     }
 
     /** Compartment Identifier */
@@ -635,6 +672,7 @@ public final class LockboxSummary
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", lockboxPartner=").append(String.valueOf(this.lockboxPartner));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", partnerId=").append(String.valueOf(this.partnerId));
         sb.append(", partnerCompartmentId=").append(String.valueOf(this.partnerCompartmentId));
         sb.append(", resourceId=").append(String.valueOf(this.resourceId));
         sb.append(", approvalTemplateId=").append(String.valueOf(this.approvalTemplateId));
@@ -664,6 +702,7 @@ public final class LockboxSummary
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.lockboxPartner, other.lockboxPartner)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.partnerId, other.partnerId)
                 && java.util.Objects.equals(this.partnerCompartmentId, other.partnerCompartmentId)
                 && java.util.Objects.equals(this.resourceId, other.resourceId)
                 && java.util.Objects.equals(this.approvalTemplateId, other.approvalTemplateId)
@@ -690,6 +729,7 @@ public final class LockboxSummary
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.partnerId == null ? 43 : this.partnerId.hashCode());
         result =
                 (result * PRIME)
                         + (this.partnerCompartmentId == null

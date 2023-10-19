@@ -25,6 +25,6 @@ public class StringPrivateKeySupplier implements Supplier<InputStream> {
     }
 
     public String toString() {
-        return "StringPrivateKeySupplier(privateKey=" + this.privateKey + ")";
+        return "StringPrivateKeySupplier(privateKey=<redacted>)";
     }
 }

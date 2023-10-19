@@ -8,45 +8,14 @@ package com.oracle.bmc.networkfirewall.model;
  * Pattern describing an http/https URL or set thereof as a concatenation of optional host component
  * and optional path component.
  *
- * <p>Key points: 1. Use the specific URLs or construct the URL patterns you want to match using
- * wildcard {@code *} and token characters {@code ./}. 2. In the host component and path component
- * don't enter consecutive wildcard {@code *} for example: {@code example.*.*.com}. 3. To match the
- * exact domain and its subdirectories add a trailing slash {@code /} to your entry. 4. The firewall
- * interprets entries that do not end in a {@code /} or {@code *} with an implicit asterisk {@code
- * *} to their end, which further increases the potential matches. 5. The Use of multiple wildcards
- * in a single pattern can impact the performance of the firewall.
+ * <p>{@code *.example.com} will match http://example.com/ and https://foo.example.com/foo?bar.
  *
- * <p>Domain/subdomains match examples: 1. {@code *.example.com.*} will match {@code
- * sub1.sub2.example.com.info.us} and {@code sub1.example.com.us} and {@code
- * sub1.example.com/subdirectory} but not match {@code sub1.example.com}. 2. {@code *.example.com}
- * will match {@code sub1.example.com} and {@code sub1.sub2.example.com} and {@code
- * sub1.example.com.au} but not match {@code example.com}. 3. {@code *.example.com/} will match
- * {@code sub1.sub2.example.com} and {@code sub1.example.com} but not match {@code
- * sub1.example.com.au}. 4. {@code example.com} will match {@code example.com} and {@code
- * example.com.au} and {@code example.com.info.us} and {@code example.com/subdirectory}. 5. {@code
- * example.com/} will match {@code example.com} and {@code example.com/foo} but not {@code
- * example.com.info.us}. 6. {@code example.*.com} will match {@code example.sub1.com} and {@code
- * example.sub1.sub2.com} and {@code example.sub1.com.au} and {@code example.sub1.com/subdirecroty}.
- * 7. {@code example.*.com/} will match {@code example.sub1.com} and {@code example.sub1.sub2.com}
- * and {@code example.sub1.com/subdirecroty} but not match {@code example.sub1.com.au}. 8. {@code
- * example.com.*} will match {@code example.com.us} and {@code example.com.info.us} and {@code
- * example.com.us/subdirectory} but not match {@code sub1.example.com}.
+ * <p>{@code www.example.com/foo*} will match https://www.example.com/foo and
+ * http://www.exampe.com/foobar and https://www.example.com/foo/bar?baz, but not
+ * http://sub.www.example.com/foo or https://www.example.com/FOO.
  *
- * <p>Subdirectory or path match examples: 1. {@code example.com/*} will match {@code
- * example.com/foo} and {@code example.com/bar} and any {@code example.com/subdirectory}. 2. {@code
- * example.com/foo} will match {@code example.com/foo}. 3. {@code www.example.com/foo/*} will match
- * {@code www.exampe.com/foo/subdiectory}, but not match {@code www.example.com/FOO} or {@code
- * www.example.com/bar/subdirectory}. 4. {@code *.example.com/foo/*} will match {@code
- * sub2.sub.example.com/foo/subdirectory} but not match {@code sub1.example.com/FOO} or {@code
- * sub1.example.com/bar/subdirectory}.
- *
- * <p>Other examples containing IP addresses in urls: 1. 103.12.14.122/ will match 103.12.14.122 and
- * 103.12.14.122/subdirectory. 2. 103.12.14.122:8081/ will match 103.12.14.122:8081 and
- * 103.12.14.122:8081/subdirectory. 3. 2607:9d80:4680:3f01:0000:0000:00d0:00c0/ will match
- * 2607:9d80:4680:3f01:0000:0000:00d0:00c0 and 2607:9d80:4680:3f01:0000:0000:00d0:00c0/subdirecroty.
- * 4. [2607:9d80:4680:3f01:0000:0000:00d0:00c0]:8081/ will match
- * [2607:9d80:4680:3f01:0000:0000:00d0:00c0]:8081 and
- * [2607:9d80:4680:3f01:0000:0000:00d0:00c0]:8081/subdirecroty. <br>
+ * <p>{@code *.example.com/foo*} will match http://example.com/foo and
+ * https://sub2.sub.example.com/foo/bar?baz, but not http://example.com/FOO. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -56,7 +25,7 @@ package com.oracle.bmc.networkfirewall.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SimpleUrlPattern.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
         use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,

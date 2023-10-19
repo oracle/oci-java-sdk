@@ -5,7 +5,7 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * grok pattern object. <br>
+ * Grok pattern object. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -44,12 +44,12 @@ public final class GrokPattern extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The grok pattern. */
+        /** The Grok pattern. */
         @com.fasterxml.jackson.annotation.JsonProperty("pattern")
         private String pattern;
 
         /**
-         * The grok pattern.
+         * The Grok pattern.
          *
          * @param pattern the value to set
          * @return this builder
@@ -59,12 +59,12 @@ public final class GrokPattern extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("pattern");
             return this;
         }
-        /** The name key to tag this grok pattern. */
+        /** The name key to tag this Grok pattern. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The name key to tag this grok pattern.
+         * The name key to tag this Grok pattern.
          *
          * @param name the value to set
          * @return this builder
@@ -179,12 +179,12 @@ public final class GrokPattern extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** The grok pattern. */
+    /** The Grok pattern. */
     @com.fasterxml.jackson.annotation.JsonProperty("pattern")
     private final String pattern;
 
     /**
-     * The grok pattern.
+     * The Grok pattern.
      *
      * @return the value
      */
@@ -192,12 +192,12 @@ public final class GrokPattern extends com.oracle.bmc.http.client.internal.Expli
         return pattern;
     }
 
-    /** The name key to tag this grok pattern. */
+    /** The name key to tag this Grok pattern. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The name key to tag this grok pattern.
+     * The name key to tag this Grok pattern.
      *
      * @return the value
      */

@@ -55,6 +55,13 @@ public class ListLockboxesRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public com.oracle.bmc.lockbox.model.LockboxPartner getLockboxPartner() {
         return lockboxPartner;
     }
+    /** The ID of the partner. */
+    private String partnerId;
+
+    /** The ID of the partner. */
+    public String getPartnerId() {
+        return partnerId;
+    }
     /** The maximum number of items to return. */
     private Integer limit;
 
@@ -234,6 +241,20 @@ public class ListLockboxesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /** The ID of the partner. */
+        private String partnerId = null;
+
+        /**
+         * The ID of the partner.
+         *
+         * @param partnerId the value to set
+         * @return this builder instance
+         */
+        public Builder partnerId(String partnerId) {
+            this.partnerId = partnerId;
+            return this;
+        }
+
         /** The maximum number of items to return. */
         private Integer limit = null;
 
@@ -348,6 +369,7 @@ public class ListLockboxesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             id(o.getId());
             resourceId(o.getResourceId());
             lockboxPartner(o.getLockboxPartner());
+            partnerId(o.getPartnerId());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
@@ -393,6 +415,7 @@ public class ListLockboxesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.id = id;
             request.resourceId = resourceId;
             request.lockboxPartner = lockboxPartner;
+            request.partnerId = partnerId;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
@@ -400,7 +423,7 @@ public class ListLockboxesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.opcRequestId = opcRequestId;
             return request;
             // new ListLockboxesRequest(compartmentId, lifecycleState, displayName, id, resourceId,
-            // lockboxPartner, limit, page, sortOrder, sortBy, opcRequestId);
+            // lockboxPartner, partnerId, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -417,6 +440,7 @@ public class ListLockboxesRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 .id(id)
                 .resourceId(resourceId)
                 .lockboxPartner(lockboxPartner)
+                .partnerId(partnerId)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
@@ -444,6 +468,7 @@ public class ListLockboxesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         sb.append(",id=").append(String.valueOf(this.id));
         sb.append(",resourceId=").append(String.valueOf(this.resourceId));
         sb.append(",lockboxPartner=").append(String.valueOf(this.lockboxPartner));
+        sb.append(",partnerId=").append(String.valueOf(this.partnerId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -470,6 +495,7 @@ public class ListLockboxesRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.resourceId, other.resourceId)
                 && java.util.Objects.equals(this.lockboxPartner, other.lockboxPartner)
+                && java.util.Objects.equals(this.partnerId, other.partnerId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -493,6 +519,7 @@ public class ListLockboxesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         result =
                 (result * PRIME)
                         + (this.lockboxPartner == null ? 43 : this.lockboxPartner.hashCode());
+        result = (result * PRIME) + (this.partnerId == null ? 43 : this.partnerId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());

@@ -15,7 +15,7 @@ package com.oracle.bmc.networkfirewall.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = SslInboundInspectionProfile.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
@@ -27,6 +27,23 @@ package com.oracle.bmc.networkfirewall.model;
 public final class SslInboundInspectionProfile extends DecryptionProfile {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
+        private String name;
+
+        public Builder name(String name) {
+            this.name = name;
+            this.__explicitlySet__.add("name");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("parentResourceId")
+        private String parentResourceId;
+
+        public Builder parentResourceId(String parentResourceId) {
+            this.parentResourceId = parentResourceId;
+            this.__explicitlySet__.add("parentResourceId");
+            return this;
+        }
         /** Whether to block sessions if SSL version is not supported. */
         @com.fasterxml.jackson.annotation.JsonProperty("isUnsupportedVersionBlocked")
         private Boolean isUnsupportedVersionBlocked;
@@ -81,6 +98,8 @@ public final class SslInboundInspectionProfile extends DecryptionProfile {
         public SslInboundInspectionProfile build() {
             SslInboundInspectionProfile model =
                     new SslInboundInspectionProfile(
+                            this.name,
+                            this.parentResourceId,
                             this.isUnsupportedVersionBlocked,
                             this.isUnsupportedCipherBlocked,
                             this.isOutOfCapacityBlocked);
@@ -92,6 +111,12 @@ public final class SslInboundInspectionProfile extends DecryptionProfile {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(SslInboundInspectionProfile model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("parentResourceId")) {
+                this.parentResourceId(model.getParentResourceId());
+            }
             if (model.wasPropertyExplicitlySet("isUnsupportedVersionBlocked")) {
                 this.isUnsupportedVersionBlocked(model.getIsUnsupportedVersionBlocked());
             }
@@ -116,10 +141,12 @@ public final class SslInboundInspectionProfile extends DecryptionProfile {
 
     @Deprecated
     public SslInboundInspectionProfile(
+            String name,
+            String parentResourceId,
             Boolean isUnsupportedVersionBlocked,
             Boolean isUnsupportedCipherBlocked,
             Boolean isOutOfCapacityBlocked) {
-        super();
+        super(name, parentResourceId);
         this.isUnsupportedVersionBlocked = isUnsupportedVersionBlocked;
         this.isUnsupportedCipherBlocked = isUnsupportedCipherBlocked;
         this.isOutOfCapacityBlocked = isOutOfCapacityBlocked;

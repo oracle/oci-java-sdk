@@ -15,7 +15,7 @@ package com.oracle.bmc.networkfirewall.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
         use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
         include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -30,10 +30,25 @@ package com.oracle.bmc.networkfirewall.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public class MappedSecret extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"type"})
-    protected MappedSecret(Type type) {
+    @java.beans.ConstructorProperties({"name", "type", "parentResourceId"})
+    protected MappedSecret(String name, InspectionType type, String parentResourceId) {
         super();
+        this.name = name;
         this.type = type;
+        this.parentResourceId = parentResourceId;
+    }
+
+    /** Name of the secret. */
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
+    private final String name;
+
+    /**
+     * Name of the secret.
+     *
+     * @return the value
+     */
+    public String getName() {
+        return name;
     }
 
     /**
@@ -42,57 +57,8 @@ public class MappedSecret extends com.oracle.bmc.http.client.internal.Explicitly
      * <p>{@code SSL_INBOUND_INSPECTION}: For Inbound inspection of SSL traffic. * {@code
      * SSL_FORWARD_PROXY}: For forward proxy certificates for SSL inspection.
      */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
-        SslInboundInspection("SSL_INBOUND_INSPECTION"),
-        SslForwardProxy("SSL_FORWARD_PROXY"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
-
-        private final String value;
-        private static java.util.Map<String, Type> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (Type v : Type.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        Type(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static Type create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'Type', returning UnknownEnumValue", key);
-            return UnknownEnumValue;
-        }
-    };
-    /**
-     * Type of the secrets mapped based on the policy.
-     *
-     * <p>{@code SSL_INBOUND_INSPECTION}: For Inbound inspection of SSL traffic. * {@code
-     * SSL_FORWARD_PROXY}: For forward proxy certificates for SSL inspection.
-     */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    private final Type type;
+    private final InspectionType type;
 
     /**
      * Type of the secrets mapped based on the policy.
@@ -102,8 +68,21 @@ public class MappedSecret extends com.oracle.bmc.http.client.internal.Explicitly
      *
      * @return the value
      */
-    public Type getType() {
+    public InspectionType getType() {
         return type;
+    }
+
+    /** OCID of the Network Firewall Policy this Mapped Secret belongs to. */
+    @com.fasterxml.jackson.annotation.JsonProperty("parentResourceId")
+    private final String parentResourceId;
+
+    /**
+     * OCID of the Network Firewall Policy this Mapped Secret belongs to.
+     *
+     * @return the value
+     */
+    public String getParentResourceId() {
+        return parentResourceId;
     }
 
     @Override
@@ -121,7 +100,9 @@ public class MappedSecret extends com.oracle.bmc.http.client.internal.Explicitly
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MappedSecret(");
         sb.append("super=").append(super.toString());
-        sb.append("type=").append(String.valueOf(this.type));
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", parentResourceId=").append(String.valueOf(this.parentResourceId));
         sb.append(")");
         return sb.toString();
     }
@@ -136,14 +117,21 @@ public class MappedSecret extends com.oracle.bmc.http.client.internal.Explicitly
         }
 
         MappedSecret other = (MappedSecret) o;
-        return java.util.Objects.equals(this.type, other.type) && super.equals(other);
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.parentResourceId, other.parentResourceId)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentResourceId == null ? 43 : this.parentResourceId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

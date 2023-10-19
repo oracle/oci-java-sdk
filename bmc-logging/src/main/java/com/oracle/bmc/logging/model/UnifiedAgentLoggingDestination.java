@@ -23,10 +23,12 @@ package com.oracle.bmc.logging.model;
 public final class UnifiedAgentLoggingDestination
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"logObjectId"})
-    public UnifiedAgentLoggingDestination(String logObjectId) {
+    @java.beans.ConstructorProperties({"logObjectId", "operationalMetricsConfiguration"})
+    public UnifiedAgentLoggingDestination(
+            String logObjectId, OperationalMetricsConfiguration operationalMetricsConfiguration) {
         super();
         this.logObjectId = logObjectId;
+        this.operationalMetricsConfiguration = operationalMetricsConfiguration;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -47,12 +49,23 @@ public final class UnifiedAgentLoggingDestination
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("operationalMetricsConfiguration")
+        private OperationalMetricsConfiguration operationalMetricsConfiguration;
+
+        public Builder operationalMetricsConfiguration(
+                OperationalMetricsConfiguration operationalMetricsConfiguration) {
+            this.operationalMetricsConfiguration = operationalMetricsConfiguration;
+            this.__explicitlySet__.add("operationalMetricsConfiguration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UnifiedAgentLoggingDestination build() {
             UnifiedAgentLoggingDestination model =
-                    new UnifiedAgentLoggingDestination(this.logObjectId);
+                    new UnifiedAgentLoggingDestination(
+                            this.logObjectId, this.operationalMetricsConfiguration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -63,6 +76,9 @@ public final class UnifiedAgentLoggingDestination
         public Builder copy(UnifiedAgentLoggingDestination model) {
             if (model.wasPropertyExplicitlySet("logObjectId")) {
                 this.logObjectId(model.getLogObjectId());
+            }
+            if (model.wasPropertyExplicitlySet("operationalMetricsConfiguration")) {
+                this.operationalMetricsConfiguration(model.getOperationalMetricsConfiguration());
             }
             return this;
         }
@@ -90,6 +106,13 @@ public final class UnifiedAgentLoggingDestination
         return logObjectId;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("operationalMetricsConfiguration")
+    private final OperationalMetricsConfiguration operationalMetricsConfiguration;
+
+    public OperationalMetricsConfiguration getOperationalMetricsConfiguration() {
+        return operationalMetricsConfiguration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -106,6 +129,8 @@ public final class UnifiedAgentLoggingDestination
         sb.append("UnifiedAgentLoggingDestination(");
         sb.append("super=").append(super.toString());
         sb.append("logObjectId=").append(String.valueOf(this.logObjectId));
+        sb.append(", operationalMetricsConfiguration=")
+                .append(String.valueOf(this.operationalMetricsConfiguration));
         sb.append(")");
         return sb.toString();
     }
@@ -120,7 +145,10 @@ public final class UnifiedAgentLoggingDestination
         }
 
         UnifiedAgentLoggingDestination other = (UnifiedAgentLoggingDestination) o;
-        return java.util.Objects.equals(this.logObjectId, other.logObjectId) && super.equals(other);
+        return java.util.Objects.equals(this.logObjectId, other.logObjectId)
+                && java.util.Objects.equals(
+                        this.operationalMetricsConfiguration, other.operationalMetricsConfiguration)
+                && super.equals(other);
     }
 
     @Override
@@ -128,6 +156,11 @@ public final class UnifiedAgentLoggingDestination
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.logObjectId == null ? 43 : this.logObjectId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operationalMetricsConfiguration == null
+                                ? 43
+                                : this.operationalMetricsConfiguration.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

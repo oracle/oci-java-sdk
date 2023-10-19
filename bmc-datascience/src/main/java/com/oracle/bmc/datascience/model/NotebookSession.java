@@ -32,6 +32,7 @@ public final class NotebookSession
         "notebookSessionConfigurationDetails",
         "notebookSessionConfigDetails",
         "notebookSessionRuntimeConfigDetails",
+        "notebookSessionStorageMountConfigurationDetailsList",
         "notebookSessionUrl",
         "lifecycleState",
         "lifecycleDetails",
@@ -48,6 +49,8 @@ public final class NotebookSession
             NotebookSessionConfigurationDetails notebookSessionConfigurationDetails,
             NotebookSessionConfigDetails notebookSessionConfigDetails,
             NotebookSessionRuntimeConfigDetails notebookSessionRuntimeConfigDetails,
+            java.util.List<StorageMountConfigurationDetails>
+                    notebookSessionStorageMountConfigurationDetailsList,
             String notebookSessionUrl,
             NotebookSessionLifecycleState lifecycleState,
             String lifecycleDetails,
@@ -63,6 +66,8 @@ public final class NotebookSession
         this.notebookSessionConfigurationDetails = notebookSessionConfigurationDetails;
         this.notebookSessionConfigDetails = notebookSessionConfigDetails;
         this.notebookSessionRuntimeConfigDetails = notebookSessionRuntimeConfigDetails;
+        this.notebookSessionStorageMountConfigurationDetailsList =
+                notebookSessionStorageMountConfigurationDetailsList;
         this.notebookSessionUrl = notebookSessionUrl;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
@@ -216,6 +221,26 @@ public final class NotebookSession
             this.__explicitlySet__.add("notebookSessionRuntimeConfigDetails");
             return this;
         }
+        /** Collection of NotebookSessionStorageMountConfigurationDetails. */
+        @com.fasterxml.jackson.annotation.JsonProperty(
+                "notebookSessionStorageMountConfigurationDetailsList")
+        private java.util.List<StorageMountConfigurationDetails>
+                notebookSessionStorageMountConfigurationDetailsList;
+
+        /**
+         * Collection of NotebookSessionStorageMountConfigurationDetails.
+         *
+         * @param notebookSessionStorageMountConfigurationDetailsList the value to set
+         * @return this builder
+         */
+        public Builder notebookSessionStorageMountConfigurationDetailsList(
+                java.util.List<StorageMountConfigurationDetails>
+                        notebookSessionStorageMountConfigurationDetailsList) {
+            this.notebookSessionStorageMountConfigurationDetailsList =
+                    notebookSessionStorageMountConfigurationDetailsList;
+            this.__explicitlySet__.add("notebookSessionStorageMountConfigurationDetailsList");
+            return this;
+        }
         /** The URL to interact with the notebook session. */
         @com.fasterxml.jackson.annotation.JsonProperty("notebookSessionUrl")
         private String notebookSessionUrl;
@@ -322,6 +347,7 @@ public final class NotebookSession
                             this.notebookSessionConfigurationDetails,
                             this.notebookSessionConfigDetails,
                             this.notebookSessionRuntimeConfigDetails,
+                            this.notebookSessionStorageMountConfigurationDetailsList,
                             this.notebookSessionUrl,
                             this.lifecycleState,
                             this.lifecycleDetails,
@@ -363,6 +389,11 @@ public final class NotebookSession
             if (model.wasPropertyExplicitlySet("notebookSessionRuntimeConfigDetails")) {
                 this.notebookSessionRuntimeConfigDetails(
                         model.getNotebookSessionRuntimeConfigDetails());
+            }
+            if (model.wasPropertyExplicitlySet(
+                    "notebookSessionStorageMountConfigurationDetailsList")) {
+                this.notebookSessionStorageMountConfigurationDetailsList(
+                        model.getNotebookSessionStorageMountConfigurationDetailsList());
             }
             if (model.wasPropertyExplicitlySet("notebookSessionUrl")) {
                 this.notebookSessionUrl(model.getNotebookSessionUrl());
@@ -515,6 +546,22 @@ public final class NotebookSession
         return notebookSessionRuntimeConfigDetails;
     }
 
+    /** Collection of NotebookSessionStorageMountConfigurationDetails. */
+    @com.fasterxml.jackson.annotation.JsonProperty(
+            "notebookSessionStorageMountConfigurationDetailsList")
+    private final java.util.List<StorageMountConfigurationDetails>
+            notebookSessionStorageMountConfigurationDetailsList;
+
+    /**
+     * Collection of NotebookSessionStorageMountConfigurationDetails.
+     *
+     * @return the value
+     */
+    public java.util.List<StorageMountConfigurationDetails>
+            getNotebookSessionStorageMountConfigurationDetailsList() {
+        return notebookSessionStorageMountConfigurationDetailsList;
+    }
+
     /** The URL to interact with the notebook session. */
     @com.fasterxml.jackson.annotation.JsonProperty("notebookSessionUrl")
     private final String notebookSessionUrl;
@@ -621,6 +668,8 @@ public final class NotebookSession
                 .append(String.valueOf(this.notebookSessionConfigDetails));
         sb.append(", notebookSessionRuntimeConfigDetails=")
                 .append(String.valueOf(this.notebookSessionRuntimeConfigDetails));
+        sb.append(", notebookSessionStorageMountConfigurationDetailsList=")
+                .append(String.valueOf(this.notebookSessionStorageMountConfigurationDetailsList));
         sb.append(", notebookSessionUrl=").append(String.valueOf(this.notebookSessionUrl));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
@@ -654,6 +703,9 @@ public final class NotebookSession
                 && java.util.Objects.equals(
                         this.notebookSessionRuntimeConfigDetails,
                         other.notebookSessionRuntimeConfigDetails)
+                && java.util.Objects.equals(
+                        this.notebookSessionStorageMountConfigurationDetailsList,
+                        other.notebookSessionStorageMountConfigurationDetailsList)
                 && java.util.Objects.equals(this.notebookSessionUrl, other.notebookSessionUrl)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
@@ -689,6 +741,12 @@ public final class NotebookSession
                         + (this.notebookSessionRuntimeConfigDetails == null
                                 ? 43
                                 : this.notebookSessionRuntimeConfigDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.notebookSessionStorageMountConfigurationDetailsList == null
+                                ? 43
+                                : this.notebookSessionStorageMountConfigurationDetailsList
+                                        .hashCode());
         result =
                 (result * PRIME)
                         + (this.notebookSessionUrl == null

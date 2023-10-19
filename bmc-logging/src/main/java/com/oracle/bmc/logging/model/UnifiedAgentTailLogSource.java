@@ -35,12 +35,12 @@ public final class UnifiedAgentTailLogSource extends UnifiedAgentLoggingSource {
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Absolute paths for log source files. Wildcard can be used. */
+        /** Absolute paths for log source files. Wildcards can be used. */
         @com.fasterxml.jackson.annotation.JsonProperty("paths")
         private java.util.List<String> paths;
 
         /**
-         * Absolute paths for log source files. Wildcard can be used.
+         * Absolute paths for log source files. Wildcards can be used.
          *
          * @param paths the value to set
          * @return this builder
@@ -104,12 +104,12 @@ public final class UnifiedAgentTailLogSource extends UnifiedAgentLoggingSource {
         this.parser = parser;
     }
 
-    /** Absolute paths for log source files. Wildcard can be used. */
+    /** Absolute paths for log source files. Wildcards can be used. */
     @com.fasterxml.jackson.annotation.JsonProperty("paths")
     private final java.util.List<String> paths;
 
     /**
-     * Absolute paths for log source files. Wildcard can be used.
+     * Absolute paths for log source files. Wildcards can be used.
      *
      * @return the value
      */

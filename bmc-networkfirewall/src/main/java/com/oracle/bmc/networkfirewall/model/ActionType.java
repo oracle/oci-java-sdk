@@ -5,7 +5,7 @@
 package com.oracle.bmc.networkfirewall.model;
 
 /** Possible types of actions. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 public enum ActionType implements com.oracle.bmc.http.internal.BmcEnum {
     Created("CREATED"),
     Updated("UPDATED"),

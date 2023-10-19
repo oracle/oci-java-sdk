@@ -89,12 +89,12 @@ public final class UnifiedJSONParser extends UnifiedAgentParser {
             this.__explicitlySet__.add("timeoutInMilliseconds");
             return this;
         }
-        /** Time type of JSON parser. */
+        /** JSON parser time type. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeType")
         private TimeType timeType;
 
         /**
-         * Time type of JSON parser.
+         * JSON parser time type.
          *
          * @param timeType the value to set
          * @return this builder
@@ -206,7 +206,7 @@ public final class UnifiedJSONParser extends UnifiedAgentParser {
         this.timeFormat = timeFormat;
     }
 
-    /** Time type of JSON parser. */
+    /** JSON parser time type. */
     public enum TimeType implements com.oracle.bmc.http.internal.BmcEnum {
         Float("FLOAT"),
         Unixtime("UNIXTIME"),
@@ -253,12 +253,12 @@ public final class UnifiedJSONParser extends UnifiedAgentParser {
             return UnknownEnumValue;
         }
     };
-    /** Time type of JSON parser. */
+    /** JSON parser time type. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeType")
     private final TimeType timeType;
 
     /**
-     * Time type of JSON parser.
+     * JSON parser time type.
      *
      * @return the value
      */

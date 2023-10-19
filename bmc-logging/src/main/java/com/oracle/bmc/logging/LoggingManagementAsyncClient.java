@@ -838,7 +838,6 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
                 .appendPathParam("v2")
                 .appendPathParam("registry")
                 .appendPathParam("services")
-                .appendQueryParam("serviceStage", request.getServiceStage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(
