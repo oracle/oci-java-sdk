@@ -4,11 +4,10 @@
  */
 package com.oracle.bmc.auth;
 
-import java.io.BufferedReader;
+
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.StandardCharsets;
@@ -20,7 +19,6 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.stream.Collectors;
 import jakarta.annotation.Nonnull;
 import javax.security.auth.Refreshable;
 
