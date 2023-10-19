@@ -172,16 +172,11 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
                 };
 
         Supplier<String> keyIdSupplier =
-                new Supplier<String>() {
-                    @Override
-                    public String get() {
-                        return keyIdForX509Request(
-                                tenancyId,
-                                leafCertificateSupplier
-                                        .getCertificateAndKeyPair()
-                                        .getCertificate());
-                    }
-                };
+                () -> keyIdForX509Request(
+                        tenancyId,
+                        leafCertificateSupplier
+                                .getCertificateAndKeyPair()
+                                .getCertificate());
 
         this.httpClient =
                 HttpProvider.getDefault()

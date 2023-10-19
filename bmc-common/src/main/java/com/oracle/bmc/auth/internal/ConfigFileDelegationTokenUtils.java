@@ -49,7 +49,7 @@ public class ConfigFileDelegationTokenUtils {
                 Files.lines(
                         Paths.get(FileUtils.expandUserHome(delegationTokenFilePath)),
                         StandardCharsets.UTF_8)) {
-            stream.forEach(s -> tokenBuilder.append(s));
+            stream.forEach(tokenBuilder::append);
         } catch (IOException e) {
             LOG.warn("Exception in reading or parsing delegation token file", e);
         }
