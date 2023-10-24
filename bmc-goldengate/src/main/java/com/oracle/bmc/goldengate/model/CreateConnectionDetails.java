@@ -35,6 +35,12 @@ package com.oracle.bmc.goldengate.model;
             value = CreateJavaMessageServiceConnectionDetails.class,
             name = "JAVA_MESSAGE_SERVICE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateGoogleBigQueryConnectionDetails.class,
+            name = "GOOGLE_BIGQUERY"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateAmazonKinesisConnectionDetails.class,
+            name = "AMAZON_KINESIS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateSnowflakeConnectionDetails.class,
             name = "SNOWFLAKE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -53,11 +59,23 @@ package com.oracle.bmc.goldengate.model;
             value = CreateOciObjectStorageConnectionDetails.class,
             name = "OCI_OBJECT_STORAGE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateElasticsearchConnectionDetails.class,
+            name = "ELASTICSEARCH"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateAzureSynapseConnectionDetails.class,
             name = "AZURE_SYNAPSE_ANALYTICS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateRedisConnectionDetails.class,
+            name = "REDIS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateMysqlConnectionDetails.class,
             name = "MYSQL"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateGenericConnectionDetails.class,
+            name = "GENERIC"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateGoogleCloudStorageConnectionDetails.class,
+            name = "GOOGLE_CLOUD_STORAGE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateKafkaConnectionDetails.class,
             name = "KAFKA"),
@@ -67,6 +85,9 @@ package com.oracle.bmc.goldengate.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateGoldenGateConnectionDetails.class,
             name = "GOLDENGATE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateAmazonRedshiftConnectionDetails.class,
+            name = "AMAZON_REDSHIFT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateOracleNosqlConnectionDetails.class,
             name = "ORACLE_NOSQL")
@@ -84,8 +105,8 @@ public class CreateConnectionDetails
         "definedTags",
         "vaultId",
         "keyId",
-        "subnetId",
-        "nsgIds"
+        "nsgIds",
+        "subnetId"
     })
     protected CreateConnectionDetails(
             String displayName,
@@ -95,8 +116,8 @@ public class CreateConnectionDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String vaultId,
             String keyId,
-            String subnetId,
-            java.util.List<String> nsgIds) {
+            java.util.List<String> nsgIds,
+            String subnetId) {
         super();
         this.displayName = displayName;
         this.description = description;
@@ -105,8 +126,8 @@ public class CreateConnectionDetails
         this.definedTags = definedTags;
         this.vaultId = vaultId;
         this.keyId = keyId;
-        this.subnetId = subnetId;
         this.nsgIds = nsgIds;
+        this.subnetId = subnetId;
     }
 
     /** An object's Display Name. */
@@ -229,23 +250,6 @@ public class CreateConnectionDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * subnet being referenced.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    private final String subnetId;
-
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * subnet being referenced.
-     *
-     * @return the value
-     */
-    public String getSubnetId() {
-        return subnetId;
-    }
-
-    /**
      * An array of Network Security Group OCIDs used to define network access for either Deployments
      * or Connections.
      */
@@ -260,6 +264,23 @@ public class CreateConnectionDetails
      */
     public java.util.List<String> getNsgIds() {
         return nsgIds;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * subnet being referenced.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+    private final String subnetId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * subnet being referenced.
+     *
+     * @return the value
+     */
+    public String getSubnetId() {
+        return subnetId;
     }
 
     @Override
@@ -284,8 +305,8 @@ public class CreateConnectionDetails
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", keyId=").append(String.valueOf(this.keyId));
-        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(")");
         return sb.toString();
     }
@@ -307,8 +328,8 @@ public class CreateConnectionDetails
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(this.keyId, other.keyId)
-                && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && super.equals(other);
     }
 
@@ -325,8 +346,8 @@ public class CreateConnectionDetails
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
         result = (result * PRIME) + (this.keyId == null ? 43 : this.keyId.hashCode());
-        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

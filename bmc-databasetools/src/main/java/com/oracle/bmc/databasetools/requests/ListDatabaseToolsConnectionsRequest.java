@@ -49,6 +49,26 @@ public class ListDatabaseToolsConnectionsRequest
     public java.util.List<com.oracle.bmc.databasetools.model.ConnectionType> getType() {
         return type;
     }
+    /** A filter to return only resources with one of the specified runtimeSupport values. */
+    private java.util.List<com.oracle.bmc.databasetools.model.RuntimeSupport> runtimeSupport;
+
+    /** A filter to return only resources with one of the specified runtimeSupport values. */
+    public java.util.List<com.oracle.bmc.databasetools.model.RuntimeSupport> getRuntimeSupport() {
+        return runtimeSupport;
+    }
+    /**
+     * A filter to return only resources associated to the related resource identifier OCID passed
+     * in the query string.
+     */
+    private String relatedResourceIdentifier;
+
+    /**
+     * A filter to return only resources associated to the related resource identifier OCID passed
+     * in the query string.
+     */
+    public String getRelatedResourceIdentifier() {
+        return relatedResourceIdentifier;
+    }
     /** The maximum number of items to return. */
     private Integer limit;
 
@@ -215,6 +235,51 @@ public class ListDatabaseToolsConnectionsRequest
             return this.type(java.util.Arrays.asList(singularValue));
         }
 
+        /** A filter to return only resources with one of the specified runtimeSupport values. */
+        private java.util.List<com.oracle.bmc.databasetools.model.RuntimeSupport> runtimeSupport =
+                null;
+
+        /**
+         * A filter to return only resources with one of the specified runtimeSupport values.
+         *
+         * @param runtimeSupport the value to set
+         * @return this builder instance
+         */
+        public Builder runtimeSupport(
+                java.util.List<com.oracle.bmc.databasetools.model.RuntimeSupport> runtimeSupport) {
+            this.runtimeSupport = runtimeSupport;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return only resources with one of the specified
+         * runtimeSupport values.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder runtimeSupport(RuntimeSupport singularValue) {
+            return this.runtimeSupport(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
+         * A filter to return only resources associated to the related resource identifier OCID
+         * passed in the query string.
+         */
+        private String relatedResourceIdentifier = null;
+
+        /**
+         * A filter to return only resources associated to the related resource identifier OCID
+         * passed in the query string.
+         *
+         * @param relatedResourceIdentifier the value to set
+         * @return this builder instance
+         */
+        public Builder relatedResourceIdentifier(String relatedResourceIdentifier) {
+            this.relatedResourceIdentifier = relatedResourceIdentifier;
+            return this;
+        }
+
         /** The maximum number of items to return. */
         private Integer limit = null;
 
@@ -329,6 +394,8 @@ public class ListDatabaseToolsConnectionsRequest
             lifecycleState(o.getLifecycleState());
             displayName(o.getDisplayName());
             type(o.getType());
+            runtimeSupport(o.getRuntimeSupport());
+            relatedResourceIdentifier(o.getRelatedResourceIdentifier());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
@@ -372,6 +439,8 @@ public class ListDatabaseToolsConnectionsRequest
             request.lifecycleState = lifecycleState;
             request.displayName = displayName;
             request.type = type;
+            request.runtimeSupport = runtimeSupport;
+            request.relatedResourceIdentifier = relatedResourceIdentifier;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
@@ -379,7 +448,8 @@ public class ListDatabaseToolsConnectionsRequest
             request.opcRequestId = opcRequestId;
             return request;
             // new ListDatabaseToolsConnectionsRequest(compartmentId, lifecycleState, displayName,
-            // type, limit, page, sortOrder, sortBy, opcRequestId);
+            // type, runtimeSupport, relatedResourceIdentifier, limit, page, sortOrder, sortBy,
+            // opcRequestId);
         }
     }
 
@@ -394,6 +464,8 @@ public class ListDatabaseToolsConnectionsRequest
                 .lifecycleState(lifecycleState)
                 .displayName(displayName)
                 .type(type)
+                .runtimeSupport(runtimeSupport)
+                .relatedResourceIdentifier(relatedResourceIdentifier)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
@@ -419,6 +491,9 @@ public class ListDatabaseToolsConnectionsRequest
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",type=").append(String.valueOf(this.type));
+        sb.append(",runtimeSupport=").append(String.valueOf(this.runtimeSupport));
+        sb.append(",relatedResourceIdentifier=")
+                .append(String.valueOf(this.relatedResourceIdentifier));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -443,6 +518,9 @@ public class ListDatabaseToolsConnectionsRequest
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.runtimeSupport, other.runtimeSupport)
+                && java.util.Objects.equals(
+                        this.relatedResourceIdentifier, other.relatedResourceIdentifier)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -462,6 +540,14 @@ public class ListDatabaseToolsConnectionsRequest
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.runtimeSupport == null ? 43 : this.runtimeSupport.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.relatedResourceIdentifier == null
+                                ? 43
+                                : this.relatedResourceIdentifier.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());

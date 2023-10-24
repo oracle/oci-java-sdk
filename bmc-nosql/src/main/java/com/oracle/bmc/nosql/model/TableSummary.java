@@ -32,6 +32,8 @@ public final class TableSummary extends com.oracle.bmc.http.client.internal.Expl
         "lifecycleDetails",
         "isAutoReclaimable",
         "timeOfExpiration",
+        "schemaState",
+        "isMultiRegion",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -47,6 +49,8 @@ public final class TableSummary extends com.oracle.bmc.http.client.internal.Expl
             String lifecycleDetails,
             Boolean isAutoReclaimable,
             java.util.Date timeOfExpiration,
+            SchemaState schemaState,
+            Boolean isMultiRegion,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -61,6 +65,8 @@ public final class TableSummary extends com.oracle.bmc.http.client.internal.Expl
         this.lifecycleDetails = lifecycleDetails;
         this.isAutoReclaimable = isAutoReclaimable;
         this.timeOfExpiration = timeOfExpiration;
+        this.schemaState = schemaState;
+        this.isMultiRegion = isMultiRegion;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -219,6 +225,42 @@ public final class TableSummary extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
+         * The current state of this table's schema. Available states are MUTABLE - The schema can
+         * be changed. The table is not eligible for replication. FROZEN - The schema is immutable.
+         * The table is eligible for replication.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("schemaState")
+        private SchemaState schemaState;
+
+        /**
+         * The current state of this table's schema. Available states are MUTABLE - The schema can
+         * be changed. The table is not eligible for replication. FROZEN - The schema is immutable.
+         * The table is eligible for replication.
+         *
+         * @param schemaState the value to set
+         * @return this builder
+         */
+        public Builder schemaState(SchemaState schemaState) {
+            this.schemaState = schemaState;
+            this.__explicitlySet__.add("schemaState");
+            return this;
+        }
+        /** True if this table is currently a member of a replication set. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isMultiRegion")
+        private Boolean isMultiRegion;
+
+        /**
+         * True if this table is currently a member of a replication set.
+         *
+         * @param isMultiRegion the value to set
+         * @return this builder
+         */
+        public Builder isMultiRegion(Boolean isMultiRegion) {
+            this.isMultiRegion = isMultiRegion;
+            this.__explicitlySet__.add("isMultiRegion");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          */
@@ -295,6 +337,8 @@ public final class TableSummary extends com.oracle.bmc.http.client.internal.Expl
                             this.lifecycleDetails,
                             this.isAutoReclaimable,
                             this.timeOfExpiration,
+                            this.schemaState,
+                            this.isMultiRegion,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -335,6 +379,12 @@ public final class TableSummary extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("timeOfExpiration")) {
                 this.timeOfExpiration(model.getTimeOfExpiration());
+            }
+            if (model.wasPropertyExplicitlySet("schemaState")) {
+                this.schemaState(model.getSchemaState());
+            }
+            if (model.wasPropertyExplicitlySet("isMultiRegion")) {
+                this.isMultiRegion(model.getIsMultiRegion());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -487,6 +537,88 @@ public final class TableSummary extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
+     * The current state of this table's schema. Available states are MUTABLE - The schema can be
+     * changed. The table is not eligible for replication. FROZEN - The schema is immutable. The
+     * table is eligible for replication.
+     */
+    public enum SchemaState implements com.oracle.bmc.http.internal.BmcEnum {
+        Mutable("MUTABLE"),
+        Frozen("FROZEN"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(SchemaState.class);
+
+        private final String value;
+        private static java.util.Map<String, SchemaState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SchemaState v : SchemaState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        SchemaState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SchemaState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'SchemaState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The current state of this table's schema. Available states are MUTABLE - The schema can be
+     * changed. The table is not eligible for replication. FROZEN - The schema is immutable. The
+     * table is eligible for replication.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("schemaState")
+    private final SchemaState schemaState;
+
+    /**
+     * The current state of this table's schema. Available states are MUTABLE - The schema can be
+     * changed. The table is not eligible for replication. FROZEN - The schema is immutable. The
+     * table is eligible for replication.
+     *
+     * @return the value
+     */
+    public SchemaState getSchemaState() {
+        return schemaState;
+    }
+
+    /** True if this table is currently a member of a replication set. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isMultiRegion")
+    private final Boolean isMultiRegion;
+
+    /**
+     * True if this table is currently a member of a replication set.
+     *
+     * @return the value
+     */
+    public Boolean getIsMultiRegion() {
+        return isMultiRegion;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      */
@@ -564,6 +696,8 @@ public final class TableSummary extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", isAutoReclaimable=").append(String.valueOf(this.isAutoReclaimable));
         sb.append(", timeOfExpiration=").append(String.valueOf(this.timeOfExpiration));
+        sb.append(", schemaState=").append(String.valueOf(this.schemaState));
+        sb.append(", isMultiRegion=").append(String.valueOf(this.isMultiRegion));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -591,6 +725,8 @@ public final class TableSummary extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.isAutoReclaimable, other.isAutoReclaimable)
                 && java.util.Objects.equals(this.timeOfExpiration, other.timeOfExpiration)
+                && java.util.Objects.equals(this.schemaState, other.schemaState)
+                && java.util.Objects.equals(this.isMultiRegion, other.isMultiRegion)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -621,6 +757,10 @@ public final class TableSummary extends com.oracle.bmc.http.client.internal.Expl
         result =
                 (result * PRIME)
                         + (this.timeOfExpiration == null ? 43 : this.timeOfExpiration.hashCode());
+        result = (result * PRIME) + (this.schemaState == null ? 43 : this.schemaState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMultiRegion == null ? 43 : this.isMultiRegion.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

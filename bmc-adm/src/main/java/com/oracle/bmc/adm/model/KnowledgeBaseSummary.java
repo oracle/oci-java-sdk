@@ -5,7 +5,7 @@
 package com.oracle.bmc.adm.model;
 
 /**
- * The summary of a Knowledge Base. <br>
+ * The summary of a knowledge base. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -61,7 +61,7 @@ public final class KnowledgeBaseSummary
         /**
          * The Oracle Cloud Identifier
          * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
-         * Knowledge Base.
+         * knowledge base.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -69,7 +69,7 @@ public final class KnowledgeBaseSummary
         /**
          * The Oracle Cloud Identifier
          * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
-         * Knowledge Base.
+         * knowledge base.
          *
          * @param id the value to set
          * @return this builder
@@ -79,12 +79,12 @@ public final class KnowledgeBaseSummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The name of the Knowledge Base. */
+        /** The name of the knowledge base. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The name of the Knowledge Base.
+         * The name of the knowledge base.
          *
          * @param displayName the value to set
          * @return this builder
@@ -95,14 +95,14 @@ public final class KnowledgeBaseSummary
             return this;
         }
         /**
-         * The creation date and time of the Knowledge Base (formatted according to
+         * The creation date and time of the knowledge base (formatted according to
          * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The creation date and time of the Knowledge Base (formatted according to
+         * The creation date and time of the knowledge base (formatted according to
          * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          *
          * @param timeCreated the value to set
@@ -114,14 +114,14 @@ public final class KnowledgeBaseSummary
             return this;
         }
         /**
-         * The date and time the Knowledge Base was last updated (formatted according to
+         * The date and time the knowledge base was last updated (formatted according to
          * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the Knowledge Base was last updated (formatted according to
+         * The date and time the knowledge base was last updated (formatted according to
          * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          *
          * @param timeUpdated the value to set
@@ -133,17 +133,17 @@ public final class KnowledgeBaseSummary
             return this;
         }
         /**
-         * The Oracle Cloud Identifier
+         * The compartment Oracle Cloud Identifier
          * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
-         * Knowledge Base's compartment.
+         * knowledge base.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The Oracle Cloud Identifier
+         * The compartment Oracle Cloud Identifier
          * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
-         * Knowledge Base's compartment.
+         * knowledge base.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -153,12 +153,12 @@ public final class KnowledgeBaseSummary
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The current lifecycle state of the Knowledge Base. */
+        /** The current lifecycle state of the knowledge base. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private KnowledgeBase.LifecycleState lifecycleState;
 
         /**
-         * The current lifecycle state of the Knowledge Base.
+         * The current lifecycle state of the knowledge base.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -293,7 +293,7 @@ public final class KnowledgeBaseSummary
     /**
      * The Oracle Cloud Identifier
      * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
-     * Knowledge Base.
+     * knowledge base.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
@@ -301,7 +301,7 @@ public final class KnowledgeBaseSummary
     /**
      * The Oracle Cloud Identifier
      * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
-     * Knowledge Base.
+     * knowledge base.
      *
      * @return the value
      */
@@ -309,12 +309,12 @@ public final class KnowledgeBaseSummary
         return id;
     }
 
-    /** The name of the Knowledge Base. */
+    /** The name of the knowledge base. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The name of the Knowledge Base.
+     * The name of the knowledge base.
      *
      * @return the value
      */
@@ -323,14 +323,14 @@ public final class KnowledgeBaseSummary
     }
 
     /**
-     * The creation date and time of the Knowledge Base (formatted according to
+     * The creation date and time of the knowledge base (formatted according to
      * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The creation date and time of the Knowledge Base (formatted according to
+     * The creation date and time of the knowledge base (formatted according to
      * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      *
      * @return the value
@@ -340,14 +340,14 @@ public final class KnowledgeBaseSummary
     }
 
     /**
-     * The date and time the Knowledge Base was last updated (formatted according to
+     * The date and time the knowledge base was last updated (formatted according to
      * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the Knowledge Base was last updated (formatted according to
+     * The date and time the knowledge base was last updated (formatted according to
      * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      *
      * @return the value
@@ -357,17 +357,17 @@ public final class KnowledgeBaseSummary
     }
 
     /**
-     * The Oracle Cloud Identifier
+     * The compartment Oracle Cloud Identifier
      * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
-     * Knowledge Base's compartment.
+     * knowledge base.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The Oracle Cloud Identifier
+     * The compartment Oracle Cloud Identifier
      * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
-     * Knowledge Base's compartment.
+     * knowledge base.
      *
      * @return the value
      */
@@ -375,12 +375,12 @@ public final class KnowledgeBaseSummary
         return compartmentId;
     }
 
-    /** The current lifecycle state of the Knowledge Base. */
+    /** The current lifecycle state of the knowledge base. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final KnowledgeBase.LifecycleState lifecycleState;
 
     /**
-     * The current lifecycle state of the Knowledge Base.
+     * The current lifecycle state of the knowledge base.
      *
      * @return the value
      */

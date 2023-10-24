@@ -101,7 +101,7 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
         /**
          * A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
          *
-         * <p>This name is sent as the title for notifications related to this alarm.
+         * <p>This value determines the title of each alarm notification.
          *
          * <p>Example: {@code High CPU Utilization}
          */
@@ -111,7 +111,7 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
         /**
          * A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
          *
-         * <p>This name is sent as the title for notifications related to this alarm.
+         * <p>This value determines the title of each alarm notification.
          *
          * <p>Example: {@code High CPU Utilization}
          *
@@ -190,7 +190,9 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
          * metric, statistic, interval, and trigger rule (threshold or absence). Supported values
          * for interval depend on the specified time range. More interval values are supported for
          * smaller time ranges. Supported grouping functions: {@code grouping()}, {@code groupBy()}.
-         * For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL)
+         * For information about writing MQL expressions, see [Editing the MQL Expression for a
+         * Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm).
+         * For details about MQL, see [Monitoring Query Language (MQL)
          * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
          * available dimensions, review the metric definition for the supported service. See
          * [Supported
@@ -224,7 +226,9 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
          * metric, statistic, interval, and trigger rule (threshold or absence). Supported values
          * for interval depend on the specified time range. More interval values are supported for
          * smaller time ranges. Supported grouping functions: {@code grouping()}, {@code groupBy()}.
-         * For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL)
+         * For information about writing MQL expressions, see [Editing the MQL Expression for a
+         * Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm).
+         * For details about MQL, see [Monitoring Query Language (MQL)
          * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
          * available dimensions, review the metric definition for the supported service. See
          * [Supported
@@ -277,23 +281,19 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * A list of destinations to which the notifications for this alarm will be delivered. Each
-         * destination is represented by an
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * related to the supported destination service. For example, a destination using the
-         * Notifications service is represented by a topic OCID. Supported destination services:
-         * Notifications Service. Limit: One destination per supported destination service.
+         * A list of destinations for alarm notifications. Each destination is represented by the
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * related resource, such as a {@link NotificationTopic}. Supported destination services:
+         * Notifications , Streaming. Limit: One destination per supported destination service.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("destinations")
         private java.util.List<String> destinations;
 
         /**
-         * A list of destinations to which the notifications for this alarm will be delivered. Each
-         * destination is represented by an
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * related to the supported destination service. For example, a destination using the
-         * Notifications service is represented by a topic OCID. Supported destination services:
-         * Notifications Service. Limit: One destination per supported destination service.
+         * A list of destinations for alarm notifications. Each destination is represented by the
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * related resource, such as a {@link NotificationTopic}. Supported destination services:
+         * Notifications , Streaming. Limit: One destination per supported destination service.
          *
          * @param destinations the value to set
          * @return this builder
@@ -499,7 +499,7 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
     /**
      * A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
      *
-     * <p>This name is sent as the title for notifications related to this alarm.
+     * <p>This value determines the title of each alarm notification.
      *
      * <p>Example: {@code High CPU Utilization}
      */
@@ -509,7 +509,7 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
     /**
      * A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
      *
-     * <p>This name is sent as the title for notifications related to this alarm.
+     * <p>This value determines the title of each alarm notification.
      *
      * <p>Example: {@code High CPU Utilization}
      *
@@ -579,8 +579,10 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
      * trigger rule condition has been met. The query must specify a metric, statistic, interval,
      * and trigger rule (threshold or absence). Supported values for interval depend on the
      * specified time range. More interval values are supported for smaller time ranges. Supported
-     * grouping functions: {@code grouping()}, {@code groupBy()}. For details about Monitoring Query
-     * Language (MQL), see [Monitoring Query Language (MQL)
+     * grouping functions: {@code grouping()}, {@code groupBy()}. For information about writing MQL
+     * expressions, see [Editing the MQL Expression for a
+     * Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For
+     * details about MQL, see [Monitoring Query Language (MQL)
      * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
      * available dimensions, review the metric definition for the supported service. See [Supported
      * Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
@@ -612,8 +614,10 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
      * trigger rule condition has been met. The query must specify a metric, statistic, interval,
      * and trigger rule (threshold or absence). Supported values for interval depend on the
      * specified time range. More interval values are supported for smaller time ranges. Supported
-     * grouping functions: {@code grouping()}, {@code groupBy()}. For details about Monitoring Query
-     * Language (MQL), see [Monitoring Query Language (MQL)
+     * grouping functions: {@code grouping()}, {@code groupBy()}. For information about writing MQL
+     * expressions, see [Editing the MQL Expression for a
+     * Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For
+     * details about MQL, see [Monitoring Query Language (MQL)
      * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
      * available dimensions, review the metric definition for the supported service. See [Supported
      * Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
@@ -713,23 +717,19 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * A list of destinations to which the notifications for this alarm will be delivered. Each
-     * destination is represented by an
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) related
-     * to the supported destination service. For example, a destination using the Notifications
-     * service is represented by a topic OCID. Supported destination services: Notifications
-     * Service. Limit: One destination per supported destination service.
+     * A list of destinations for alarm notifications. Each destination is represented by the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+     * related resource, such as a {@link NotificationTopic}. Supported destination services:
+     * Notifications , Streaming. Limit: One destination per supported destination service.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("destinations")
     private final java.util.List<String> destinations;
 
     /**
-     * A list of destinations to which the notifications for this alarm will be delivered. Each
-     * destination is represented by an
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) related
-     * to the supported destination service. For example, a destination using the Notifications
-     * service is represented by a topic OCID. Supported destination services: Notifications
-     * Service. Limit: One destination per supported destination service.
+     * A list of destinations for alarm notifications. Each destination is represented by the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+     * related resource, such as a {@link NotificationTopic}. Supported destination services:
+     * Notifications , Streaming. Limit: One destination per supported destination service.
      *
      * @return the value
      */

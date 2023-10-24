@@ -23,6 +23,13 @@ public enum ConnectionType implements com.oracle.bmc.http.internal.BmcEnum {
     Hdfs("HDFS"),
     OracleNosql("ORACLE_NOSQL"),
     Mongodb("MONGODB"),
+    AmazonKinesis("AMAZON_KINESIS"),
+    AmazonRedshift("AMAZON_REDSHIFT"),
+    Redis("REDIS"),
+    Elasticsearch("ELASTICSEARCH"),
+    Generic("GENERIC"),
+    GoogleCloudStorage("GOOGLE_CLOUD_STORAGE"),
+    GoogleBigquery("GOOGLE_BIGQUERY"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

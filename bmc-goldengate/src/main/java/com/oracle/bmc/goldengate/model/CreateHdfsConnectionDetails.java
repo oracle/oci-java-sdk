@@ -91,21 +91,21 @@ public final class CreateHdfsConnectionDetails extends CreateConnectionDetails {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-        private String subnetId;
-
-        public Builder subnetId(String subnetId) {
-            this.subnetId = subnetId;
-            this.__explicitlySet__.add("subnetId");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
             return this;
         }
         /** The Hadoop Distributed File System technology type. */
@@ -156,8 +156,8 @@ public final class CreateHdfsConnectionDetails extends CreateConnectionDetails {
                             this.definedTags,
                             this.vaultId,
                             this.keyId,
-                            this.subnetId,
                             this.nsgIds,
+                            this.subnetId,
                             this.technologyType,
                             this.coreSiteXml);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -189,11 +189,11 @@ public final class CreateHdfsConnectionDetails extends CreateConnectionDetails {
             if (model.wasPropertyExplicitlySet("keyId")) {
                 this.keyId(model.getKeyId());
             }
-            if (model.wasPropertyExplicitlySet("subnetId")) {
-                this.subnetId(model.getSubnetId());
-            }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
             }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
@@ -223,8 +223,8 @@ public final class CreateHdfsConnectionDetails extends CreateConnectionDetails {
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String vaultId,
             String keyId,
-            String subnetId,
             java.util.List<String> nsgIds,
+            String subnetId,
             HdfsConnection.TechnologyType technologyType,
             String coreSiteXml) {
         super(
@@ -235,8 +235,8 @@ public final class CreateHdfsConnectionDetails extends CreateConnectionDetails {
                 definedTags,
                 vaultId,
                 keyId,
-                subnetId,
-                nsgIds);
+                nsgIds,
+                subnetId);
         this.technologyType = technologyType;
         this.coreSiteXml = coreSiteXml;
     }

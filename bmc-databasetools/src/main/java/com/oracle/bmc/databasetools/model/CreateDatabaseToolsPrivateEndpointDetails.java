@@ -27,6 +27,7 @@ public final class CreateDatabaseToolsPrivateEndpointDetails
         "compartmentId",
         "definedTags",
         "freeformTags",
+        "locks",
         "displayName",
         "description",
         "endpointServiceId",
@@ -38,6 +39,7 @@ public final class CreateDatabaseToolsPrivateEndpointDetails
             String compartmentId,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
+            java.util.List<ResourceLock> locks,
             String displayName,
             String description,
             String endpointServiceId,
@@ -48,6 +50,7 @@ public final class CreateDatabaseToolsPrivateEndpointDetails
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
+        this.locks = locks;
         this.displayName = displayName;
         this.description = description;
         this.endpointServiceId = endpointServiceId;
@@ -114,6 +117,21 @@ public final class CreateDatabaseToolsPrivateEndpointDetails
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
             return this;
         }
         /**
@@ -238,6 +256,7 @@ public final class CreateDatabaseToolsPrivateEndpointDetails
                             this.compartmentId,
                             this.definedTags,
                             this.freeformTags,
+                            this.locks,
                             this.displayName,
                             this.description,
                             this.endpointServiceId,
@@ -260,6 +279,9 @@ public final class CreateDatabaseToolsPrivateEndpointDetails
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
@@ -341,6 +363,19 @@ public final class CreateDatabaseToolsPrivateEndpointDetails
      */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
+    }
+
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
     }
 
     /**
@@ -459,6 +494,7 @@ public final class CreateDatabaseToolsPrivateEndpointDetails
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", endpointServiceId=").append(String.valueOf(this.endpointServiceId));
@@ -483,6 +519,7 @@ public final class CreateDatabaseToolsPrivateEndpointDetails
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.endpointServiceId, other.endpointServiceId)
@@ -501,6 +538,7 @@ public final class CreateDatabaseToolsPrivateEndpointDetails
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result =

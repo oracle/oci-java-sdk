@@ -2313,6 +2313,39 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<CreateMaintenanceRunResponse> createMaintenanceRun(
+            CreateMaintenanceRunRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateMaintenanceRunRequest, CreateMaintenanceRunResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateMaintenanceRunDetails(),
+                "createMaintenanceRunDetails is required");
+
+        return clientCall(request, CreateMaintenanceRunResponse::builder)
+                .logger(LOG, "createMaintenanceRun")
+                .serviceDetails(
+                        "Database",
+                        "CreateMaintenanceRun",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/MaintenanceRun/CreateMaintenanceRun")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateMaintenanceRunRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("maintenanceRuns")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.MaintenanceRun.class,
+                        CreateMaintenanceRunResponse.Builder::maintenanceRun)
+                .handleResponseHeaderString("etag", CreateMaintenanceRunResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateMaintenanceRunResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateOneoffPatchResponse> createOneoffPatch(
             CreateOneoffPatchRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -8005,6 +8038,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("autonomousPatchType", request.getAutonomousPatchType())
                 .accept("application/json")
                 .handleBodyList(
                         com.oracle.bmc.database.model.AutonomousPatchSummary.class,

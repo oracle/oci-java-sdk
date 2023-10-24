@@ -34,7 +34,8 @@ public final class TableUsageSummary
         "readThrottleCount",
         "writeThrottleCount",
         "storageThrottleCount",
-        "maxShardSizeUsageInPercent"
+        "maxShardSizeUsageInPercent",
+        "timeStarted"
     })
     public TableUsageSummary(
             Integer secondsInPeriod,
@@ -44,7 +45,8 @@ public final class TableUsageSummary
             Integer readThrottleCount,
             Integer writeThrottleCount,
             Integer storageThrottleCount,
-            Integer maxShardSizeUsageInPercent) {
+            Integer maxShardSizeUsageInPercent,
+            java.util.Date timeStarted) {
         super();
         this.secondsInPeriod = secondsInPeriod;
         this.readUnits = readUnits;
@@ -54,6 +56,7 @@ public final class TableUsageSummary
         this.writeThrottleCount = writeThrottleCount;
         this.storageThrottleCount = storageThrottleCount;
         this.maxShardSizeUsageInPercent = maxShardSizeUsageInPercent;
+        this.timeStarted = timeStarted;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -180,6 +183,21 @@ public final class TableUsageSummary
             this.__explicitlySet__.add("maxShardSizeUsageInPercent");
             return this;
         }
+        /** The time stamp of this usage record. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
+        private java.util.Date timeStarted;
+
+        /**
+         * The time stamp of this usage record.
+         *
+         * @param timeStarted the value to set
+         * @return this builder
+         */
+        public Builder timeStarted(java.util.Date timeStarted) {
+            this.timeStarted = timeStarted;
+            this.__explicitlySet__.add("timeStarted");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -194,7 +212,8 @@ public final class TableUsageSummary
                             this.readThrottleCount,
                             this.writeThrottleCount,
                             this.storageThrottleCount,
-                            this.maxShardSizeUsageInPercent);
+                            this.maxShardSizeUsageInPercent,
+                            this.timeStarted);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -226,6 +245,9 @@ public final class TableUsageSummary
             }
             if (model.wasPropertyExplicitlySet("maxShardSizeUsageInPercent")) {
                 this.maxShardSizeUsageInPercent(model.getMaxShardSizeUsageInPercent());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
             }
             return this;
         }
@@ -344,6 +366,19 @@ public final class TableUsageSummary
         return maxShardSizeUsageInPercent;
     }
 
+    /** The time stamp of this usage record. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
+    private final java.util.Date timeStarted;
+
+    /**
+     * The time stamp of this usage record.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -368,6 +403,7 @@ public final class TableUsageSummary
         sb.append(", storageThrottleCount=").append(String.valueOf(this.storageThrottleCount));
         sb.append(", maxShardSizeUsageInPercent=")
                 .append(String.valueOf(this.maxShardSizeUsageInPercent));
+        sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
         sb.append(")");
         return sb.toString();
     }
@@ -391,6 +427,7 @@ public final class TableUsageSummary
                 && java.util.Objects.equals(this.storageThrottleCount, other.storageThrottleCount)
                 && java.util.Objects.equals(
                         this.maxShardSizeUsageInPercent, other.maxShardSizeUsageInPercent)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
                 && super.equals(other);
     }
 
@@ -422,6 +459,7 @@ public final class TableUsageSummary
                         + (this.maxShardSizeUsageInPercent == null
                                 ? 43
                                 : this.maxShardSizeUsageInPercent.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -65,6 +65,24 @@ public final class CreateDatabaseToolsConnectionOracleDatabaseDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("runtimeSupport")
+        private RuntimeSupport runtimeSupport;
+
+        public Builder runtimeSupport(RuntimeSupport runtimeSupport) {
+            this.runtimeSupport = runtimeSupport;
+            this.__explicitlySet__.add("runtimeSupport");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("relatedResource")
         private CreateDatabaseToolsRelatedResourceDetails relatedResource;
 
@@ -172,6 +190,16 @@ public final class CreateDatabaseToolsConnectionOracleDatabaseDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("proxyClient")
+        private DatabaseToolsConnectionOracleDatabaseProxyClientDetails proxyClient;
+
+        public Builder proxyClient(
+                DatabaseToolsConnectionOracleDatabaseProxyClientDetails proxyClient) {
+            this.proxyClient = proxyClient;
+            this.__explicitlySet__.add("proxyClient");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -182,13 +210,16 @@ public final class CreateDatabaseToolsConnectionOracleDatabaseDetails
                             this.compartmentId,
                             this.definedTags,
                             this.freeformTags,
+                            this.locks,
+                            this.runtimeSupport,
                             this.relatedResource,
                             this.connectionString,
                             this.userName,
                             this.userPassword,
                             this.advancedProperties,
                             this.keyStores,
-                            this.privateEndpointId);
+                            this.privateEndpointId,
+                            this.proxyClient);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -208,6 +239,12 @@ public final class CreateDatabaseToolsConnectionOracleDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
+            if (model.wasPropertyExplicitlySet("runtimeSupport")) {
+                this.runtimeSupport(model.getRuntimeSupport());
             }
             if (model.wasPropertyExplicitlySet("relatedResource")) {
                 this.relatedResource(model.getRelatedResource());
@@ -230,6 +267,9 @@ public final class CreateDatabaseToolsConnectionOracleDatabaseDetails
             if (model.wasPropertyExplicitlySet("privateEndpointId")) {
                 this.privateEndpointId(model.getPrivateEndpointId());
             }
+            if (model.wasPropertyExplicitlySet("proxyClient")) {
+                this.proxyClient(model.getProxyClient());
+            }
             return this;
         }
     }
@@ -249,14 +289,17 @@ public final class CreateDatabaseToolsConnectionOracleDatabaseDetails
             String compartmentId,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
+            java.util.List<ResourceLock> locks,
+            RuntimeSupport runtimeSupport,
             CreateDatabaseToolsRelatedResourceDetails relatedResource,
             String connectionString,
             String userName,
             DatabaseToolsUserPasswordDetails userPassword,
             java.util.Map<String, String> advancedProperties,
             java.util.List<DatabaseToolsKeyStoreDetails> keyStores,
-            String privateEndpointId) {
-        super(displayName, compartmentId, definedTags, freeformTags);
+            String privateEndpointId,
+            DatabaseToolsConnectionOracleDatabaseProxyClientDetails proxyClient) {
+        super(displayName, compartmentId, definedTags, freeformTags, locks, runtimeSupport);
         this.relatedResource = relatedResource;
         this.connectionString = connectionString;
         this.userName = userName;
@@ -264,6 +307,7 @@ public final class CreateDatabaseToolsConnectionOracleDatabaseDetails
         this.advancedProperties = advancedProperties;
         this.keyStores = keyStores;
         this.privateEndpointId = privateEndpointId;
+        this.proxyClient = proxyClient;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("relatedResource")
@@ -359,6 +403,13 @@ public final class CreateDatabaseToolsConnectionOracleDatabaseDetails
         return privateEndpointId;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("proxyClient")
+    private final DatabaseToolsConnectionOracleDatabaseProxyClientDetails proxyClient;
+
+    public DatabaseToolsConnectionOracleDatabaseProxyClientDetails getProxyClient() {
+        return proxyClient;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -381,6 +432,7 @@ public final class CreateDatabaseToolsConnectionOracleDatabaseDetails
         sb.append(", advancedProperties=").append(String.valueOf(this.advancedProperties));
         sb.append(", keyStores=").append(String.valueOf(this.keyStores));
         sb.append(", privateEndpointId=").append(String.valueOf(this.privateEndpointId));
+        sb.append(", proxyClient=").append(String.valueOf(this.proxyClient));
         sb.append(")");
         return sb.toString();
     }
@@ -403,6 +455,7 @@ public final class CreateDatabaseToolsConnectionOracleDatabaseDetails
                 && java.util.Objects.equals(this.advancedProperties, other.advancedProperties)
                 && java.util.Objects.equals(this.keyStores, other.keyStores)
                 && java.util.Objects.equals(this.privateEndpointId, other.privateEndpointId)
+                && java.util.Objects.equals(this.proxyClient, other.proxyClient)
                 && super.equals(other);
     }
 
@@ -427,6 +480,7 @@ public final class CreateDatabaseToolsConnectionOracleDatabaseDetails
         result =
                 (result * PRIME)
                         + (this.privateEndpointId == null ? 43 : this.privateEndpointId.hashCode());
+        result = (result * PRIME) + (this.proxyClient == null ? 43 : this.proxyClient.hashCode());
         return result;
     }
 }

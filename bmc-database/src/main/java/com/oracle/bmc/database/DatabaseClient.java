@@ -2111,6 +2111,35 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public CreateMaintenanceRunResponse createMaintenanceRun(CreateMaintenanceRunRequest request) {
+        Objects.requireNonNull(
+                request.getCreateMaintenanceRunDetails(),
+                "createMaintenanceRunDetails is required");
+
+        return clientCall(request, CreateMaintenanceRunResponse::builder)
+                .logger(LOG, "createMaintenanceRun")
+                .serviceDetails(
+                        "Database",
+                        "CreateMaintenanceRun",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/MaintenanceRun/CreateMaintenanceRun")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateMaintenanceRunRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("maintenanceRuns")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.MaintenanceRun.class,
+                        CreateMaintenanceRunResponse.Builder::maintenanceRun)
+                .handleResponseHeaderString("etag", CreateMaintenanceRunResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateMaintenanceRunResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateOneoffPatchResponse createOneoffPatch(CreateOneoffPatchRequest request) {
         Objects.requireNonNull(
                 request.getCreateOneoffPatchDetails(), "createOneoffPatchDetails is required");
@@ -7173,6 +7202,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("autonomousPatchType", request.getAutonomousPatchType())
                 .accept("application/json")
                 .handleBodyList(
                         com.oracle.bmc.database.model.AutonomousPatchSummary.class,

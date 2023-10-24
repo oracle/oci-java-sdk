@@ -91,21 +91,21 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-        private String subnetId;
-
-        public Builder subnetId(String subnetId) {
-            this.subnetId = subnetId;
-            this.__explicitlySet__.add("subnetId");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
             return this;
         }
         /** The Kafka (e.g. Confluent) Schema Registry technology type. */
@@ -312,8 +312,8 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
                             this.definedTags,
                             this.vaultId,
                             this.keyId,
-                            this.subnetId,
                             this.nsgIds,
+                            this.subnetId,
                             this.technologyType,
                             this.url,
                             this.authenticationType,
@@ -354,11 +354,11 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
             if (model.wasPropertyExplicitlySet("keyId")) {
                 this.keyId(model.getKeyId());
             }
-            if (model.wasPropertyExplicitlySet("subnetId")) {
-                this.subnetId(model.getSubnetId());
-            }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
             }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
@@ -415,8 +415,8 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String vaultId,
             String keyId,
-            String subnetId,
             java.util.List<String> nsgIds,
+            String subnetId,
             KafkaSchemaRegistryConnection.TechnologyType technologyType,
             String url,
             KafkaSchemaRegistryConnection.AuthenticationType authenticationType,
@@ -436,8 +436,8 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
                 definedTags,
                 vaultId,
                 keyId,
-                subnetId,
-                nsgIds);
+                nsgIds,
+                subnetId);
         this.technologyType = technologyType;
         this.url = url;
         this.authenticationType = authenticationType;

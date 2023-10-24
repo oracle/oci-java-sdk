@@ -5,7 +5,7 @@
 package com.oracle.bmc.adm.model;
 
 /**
- * Details for moving a Knowledge Base. <br>
+ * Details for moving a knowledge base. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,15 +32,17 @@ public final class ChangeKnowledgeBaseCompartmentDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * compartment to which the resource must be moved.
+         * The compartment Oracle Cloud Identifier
+         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) to which
+         * the resource must be moved.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * compartment to which the resource must be moved.
+         * The compartment Oracle Cloud Identifier
+         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) to which
+         * the resource must be moved.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -82,15 +84,17 @@ public final class ChangeKnowledgeBaseCompartmentDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * compartment to which the resource must be moved.
+     * The compartment Oracle Cloud Identifier
+     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) to which the
+     * resource must be moved.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * compartment to which the resource must be moved.
+     * The compartment Oracle Cloud Identifier
+     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) to which the
+     * resource must be moved.
      *
      * @return the value
      */

@@ -65,6 +65,24 @@ public final class CreateDatabaseToolsConnectionMySqlDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("runtimeSupport")
+        private RuntimeSupport runtimeSupport;
+
+        public Builder runtimeSupport(RuntimeSupport runtimeSupport) {
+            this.runtimeSupport = runtimeSupport;
+            this.__explicitlySet__.add("runtimeSupport");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("relatedResource")
         private CreateDatabaseToolsRelatedResourceMySqlDetails relatedResource;
 
@@ -177,6 +195,8 @@ public final class CreateDatabaseToolsConnectionMySqlDetails
                             this.compartmentId,
                             this.definedTags,
                             this.freeformTags,
+                            this.locks,
+                            this.runtimeSupport,
                             this.relatedResource,
                             this.connectionString,
                             this.userName,
@@ -203,6 +223,12 @@ public final class CreateDatabaseToolsConnectionMySqlDetails
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
+            if (model.wasPropertyExplicitlySet("runtimeSupport")) {
+                this.runtimeSupport(model.getRuntimeSupport());
             }
             if (model.wasPropertyExplicitlySet("relatedResource")) {
                 this.relatedResource(model.getRelatedResource());
@@ -244,6 +270,8 @@ public final class CreateDatabaseToolsConnectionMySqlDetails
             String compartmentId,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
+            java.util.List<ResourceLock> locks,
+            RuntimeSupport runtimeSupport,
             CreateDatabaseToolsRelatedResourceMySqlDetails relatedResource,
             String connectionString,
             String userName,
@@ -251,7 +279,7 @@ public final class CreateDatabaseToolsConnectionMySqlDetails
             java.util.Map<String, String> advancedProperties,
             java.util.List<DatabaseToolsKeyStoreMySqlDetails> keyStores,
             String privateEndpointId) {
-        super(displayName, compartmentId, definedTags, freeformTags);
+        super(displayName, compartmentId, definedTags, freeformTags, locks, runtimeSupport);
         this.relatedResource = relatedResource;
         this.connectionString = connectionString;
         this.userName = userName;

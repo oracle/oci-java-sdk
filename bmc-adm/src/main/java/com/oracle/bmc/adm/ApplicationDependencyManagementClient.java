@@ -126,6 +126,70 @@ public class ApplicationDependencyManagementClient
     }
 
     @Override
+    public ActivateRemediationRecipeResponse activateRemediationRecipe(
+            ActivateRemediationRecipeRequest request) {
+
+        Validate.notBlank(
+                request.getRemediationRecipeId(), "remediationRecipeId must not be blank");
+
+        return clientCall(request, ActivateRemediationRecipeResponse::builder)
+                .logger(LOG, "activateRemediationRecipe")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "ActivateRemediationRecipe",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipe/ActivateRemediationRecipe")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ActivateRemediationRecipeRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRecipes")
+                .appendPathParam(request.getRemediationRecipeId())
+                .appendPathParam("actions")
+                .appendPathParam("activate")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ActivateRemediationRecipeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ActivateRemediationRecipeResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public CancelRemediationRunResponse cancelRemediationRun(CancelRemediationRunRequest request) {
+
+        Validate.notBlank(request.getRemediationRunId(), "remediationRunId must not be blank");
+
+        return clientCall(request, CancelRemediationRunResponse::builder)
+                .logger(LOG, "cancelRemediationRun")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "CancelRemediationRun",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRun/CancelRemediationRun")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CancelRemediationRunRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRuns")
+                .appendPathParam(request.getRemediationRunId())
+                .appendPathParam("actions")
+                .appendPathParam("cancel")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.adm.model.RemediationRun.class,
+                        CancelRemediationRunResponse.Builder::remediationRun)
+                .handleResponseHeaderString(
+                        "opc-request-id", CancelRemediationRunResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CancelRemediationRunResponse.Builder::etag)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request) {
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
@@ -183,6 +247,78 @@ public class ApplicationDependencyManagementClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeKnowledgeBaseCompartmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ChangeRemediationRecipeCompartmentResponse changeRemediationRecipeCompartment(
+            ChangeRemediationRecipeCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getRemediationRecipeId(), "remediationRecipeId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeRemediationRecipeCompartmentDetails(),
+                "changeRemediationRecipeCompartmentDetails is required");
+
+        return clientCall(request, ChangeRemediationRecipeCompartmentResponse::builder)
+                .logger(LOG, "changeRemediationRecipeCompartment")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "ChangeRemediationRecipeCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipe/ChangeRemediationRecipeCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeRemediationRecipeCompartmentRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRecipes")
+                .appendPathParam(request.getRemediationRecipeId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeRemediationRecipeCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeRemediationRecipeCompartmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ChangeRemediationRunCompartmentResponse changeRemediationRunCompartment(
+            ChangeRemediationRunCompartmentRequest request) {
+
+        Validate.notBlank(request.getRemediationRunId(), "remediationRunId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeRemediationRunCompartmentDetails(),
+                "changeRemediationRunCompartmentDetails is required");
+
+        return clientCall(request, ChangeRemediationRunCompartmentResponse::builder)
+                .logger(LOG, "changeRemediationRunCompartment")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "ChangeRemediationRunCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRun/ChangeRemediationRunCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeRemediationRunCompartmentRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRuns")
+                .appendPathParam(request.getRemediationRunId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeRemediationRunCompartmentResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -251,6 +387,66 @@ public class ApplicationDependencyManagementClient
     }
 
     @Override
+    public CreateRemediationRecipeResponse createRemediationRecipe(
+            CreateRemediationRecipeRequest request) {
+        Objects.requireNonNull(
+                request.getCreateRemediationRecipeDetails(),
+                "createRemediationRecipeDetails is required");
+
+        return clientCall(request, CreateRemediationRecipeResponse::builder)
+                .logger(LOG, "createRemediationRecipe")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "CreateRemediationRecipe",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipe/CreateRemediationRecipe")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateRemediationRecipeRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRecipes")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateRemediationRecipeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateRemediationRecipeResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public CreateRemediationRunResponse createRemediationRun(CreateRemediationRunRequest request) {
+        Objects.requireNonNull(
+                request.getCreateRemediationRunDetails(),
+                "createRemediationRunDetails is required");
+
+        return clientCall(request, CreateRemediationRunResponse::builder)
+                .logger(LOG, "createRemediationRun")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "CreateRemediationRun",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRun/CreateRemediationRun")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateRemediationRunRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRuns")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.adm.model.RemediationRun.class,
+                        CreateRemediationRunResponse.Builder::remediationRun)
+                .handleResponseHeaderString("etag", CreateRemediationRunResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateRemediationRunResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public CreateVulnerabilityAuditResponse createVulnerabilityAudit(
             CreateVulnerabilityAuditRequest request) {
         Objects.requireNonNull(
@@ -286,6 +482,38 @@ public class ApplicationDependencyManagementClient
     }
 
     @Override
+    public DeactivateRemediationRecipeResponse deactivateRemediationRecipe(
+            DeactivateRemediationRecipeRequest request) {
+
+        Validate.notBlank(
+                request.getRemediationRecipeId(), "remediationRecipeId must not be blank");
+
+        return clientCall(request, DeactivateRemediationRecipeResponse::builder)
+                .logger(LOG, "deactivateRemediationRecipe")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "DeactivateRemediationRecipe",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipe/DeactivateRemediationRecipe")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DeactivateRemediationRecipeRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRecipes")
+                .appendPathParam(request.getRemediationRecipeId())
+                .appendPathParam("actions")
+                .appendPathParam("deactivate")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeactivateRemediationRecipeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeactivateRemediationRecipeResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public DeleteKnowledgeBaseResponse deleteKnowledgeBase(DeleteKnowledgeBaseRequest request) {
 
         Validate.notBlank(request.getKnowledgeBaseId(), "knowledgeBaseId must not be blank");
@@ -309,6 +537,61 @@ public class ApplicationDependencyManagementClient
                         DeleteKnowledgeBaseResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteKnowledgeBaseResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public DeleteRemediationRecipeResponse deleteRemediationRecipe(
+            DeleteRemediationRecipeRequest request) {
+
+        Validate.notBlank(
+                request.getRemediationRecipeId(), "remediationRecipeId must not be blank");
+
+        return clientCall(request, DeleteRemediationRecipeResponse::builder)
+                .logger(LOG, "deleteRemediationRecipe")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "DeleteRemediationRecipe",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipe/DeleteRemediationRecipe")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteRemediationRecipeRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRecipes")
+                .appendPathParam(request.getRemediationRecipeId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteRemediationRecipeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteRemediationRecipeResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public DeleteRemediationRunResponse deleteRemediationRun(DeleteRemediationRunRequest request) {
+
+        Validate.notBlank(request.getRemediationRunId(), "remediationRunId must not be blank");
+
+        return clientCall(request, DeleteRemediationRunResponse::builder)
+                .logger(LOG, "deleteRemediationRun")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "DeleteRemediationRun",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRun/DeleteRemediationRun")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteRemediationRunRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRuns")
+                .appendPathParam(request.getRemediationRunId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteRemediationRunResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -369,6 +652,94 @@ public class ApplicationDependencyManagementClient
     }
 
     @Override
+    public GetRemediationRecipeResponse getRemediationRecipe(GetRemediationRecipeRequest request) {
+
+        Validate.notBlank(
+                request.getRemediationRecipeId(), "remediationRecipeId must not be blank");
+
+        return clientCall(request, GetRemediationRecipeResponse::builder)
+                .logger(LOG, "getRemediationRecipe")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "GetRemediationRecipe",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipe/GetRemediationRecipe")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetRemediationRecipeRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRecipes")
+                .appendPathParam(request.getRemediationRecipeId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.adm.model.RemediationRecipe.class,
+                        GetRemediationRecipeResponse.Builder::remediationRecipe)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetRemediationRecipeResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetRemediationRecipeResponse.Builder::etag)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetRemediationRunResponse getRemediationRun(GetRemediationRunRequest request) {
+
+        Validate.notBlank(request.getRemediationRunId(), "remediationRunId must not be blank");
+
+        return clientCall(request, GetRemediationRunResponse::builder)
+                .logger(LOG, "getRemediationRun")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "GetRemediationRun",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRun/GetRemediationRun")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetRemediationRunRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRuns")
+                .appendPathParam(request.getRemediationRunId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.adm.model.RemediationRun.class,
+                        GetRemediationRunResponse.Builder::remediationRun)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetRemediationRunResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetRemediationRunResponse.Builder::etag)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetStageResponse getStage(GetStageRequest request) {
+
+        Validate.notBlank(request.getRemediationRunId(), "remediationRunId must not be blank");
+
+        Validate.notBlank(request.getStageType().getValue(), "stageType must not be blank");
+
+        return clientCall(request, GetStageResponse::builder)
+                .logger(LOG, "getStage")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "GetStage",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRunStage/GetStage")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetStageRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRuns")
+                .appendPathParam(request.getRemediationRunId())
+                .appendPathParam("stages")
+                .appendPathParam(request.getStageType().getValue())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.adm.model.RemediationRunStage.class,
+                        GetStageResponse.Builder::remediationRunStage)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetStageResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public GetVulnerabilityAuditResponse getVulnerabilityAudit(
             GetVulnerabilityAuditRequest request) {
 
@@ -424,6 +795,47 @@ public class ApplicationDependencyManagementClient
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListApplicationDependencyRecommendationsResponse
+            listApplicationDependencyRecommendations(
+                    ListApplicationDependencyRecommendationsRequest request) {
+
+        Validate.notBlank(request.getRemediationRunId(), "remediationRunId must not be blank");
+
+        return clientCall(request, ListApplicationDependencyRecommendationsResponse::builder)
+                .logger(LOG, "listApplicationDependencyRecommendations")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "ListApplicationDependencyRecommendations",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/ApplicationDependencyRecommendationCollection/ListApplicationDependencyRecommendations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListApplicationDependencyRecommendationsRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRuns")
+                .appendPathParam(request.getRemediationRunId())
+                .appendPathParam("applicationDependencyRecommendations")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("gav", request.getGav())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.adm.model.ApplicationDependencyRecommendationCollection
+                                .class,
+                        ListApplicationDependencyRecommendationsResponse.Builder
+                                ::applicationDependencyRecommendationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListApplicationDependencyRecommendationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListApplicationDependencyRecommendationsResponse.Builder::opcNextPage)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -504,6 +916,112 @@ public class ApplicationDependencyManagementClient
                         "opc-request-id", ListKnowledgeBasesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListKnowledgeBasesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListRemediationRecipesResponse listRemediationRecipes(
+            ListRemediationRecipesRequest request) {
+
+        return clientCall(request, ListRemediationRecipesResponse::builder)
+                .logger(LOG, "listRemediationRecipes")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "ListRemediationRecipes",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipeCollection/ListRemediationRecipes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRemediationRecipesRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRecipes")
+                .appendQueryParam("id", request.getId())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.adm.model.RemediationRecipeCollection.class,
+                        ListRemediationRecipesResponse.Builder::remediationRecipeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListRemediationRecipesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListRemediationRecipesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListRemediationRunsResponse listRemediationRuns(ListRemediationRunsRequest request) {
+
+        return clientCall(request, ListRemediationRunsResponse::builder)
+                .logger(LOG, "listRemediationRuns")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "ListRemediationRuns",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRunCollection/ListRemediationRuns")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRemediationRunsRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRuns")
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("remediationRecipeId", request.getRemediationRecipeId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.adm.model.RemediationRunCollection.class,
+                        ListRemediationRunsResponse.Builder::remediationRunCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListRemediationRunsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListRemediationRunsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListStagesResponse listStages(ListStagesRequest request) {
+
+        Validate.notBlank(request.getRemediationRunId(), "remediationRunId must not be blank");
+
+        return clientCall(request, ListStagesResponse::builder)
+                .logger(LOG, "listStages")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "ListStages",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRunStageCollection/ListStages")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListStagesRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRuns")
+                .appendPathParam(request.getRemediationRunId())
+                .appendPathParam("stages")
+                .appendEnumQueryParam("type", request.getType())
+                .appendEnumQueryParam("status", request.getStatus())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.adm.model.RemediationRunStageCollection.class,
+                        ListStagesResponse.Builder::remediationRunStageCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListStagesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListStagesResponse.Builder::opcNextPage)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -675,6 +1193,73 @@ public class ApplicationDependencyManagementClient
                         UpdateKnowledgeBaseResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateKnowledgeBaseResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public UpdateRemediationRecipeResponse updateRemediationRecipe(
+            UpdateRemediationRecipeRequest request) {
+
+        Validate.notBlank(
+                request.getRemediationRecipeId(), "remediationRecipeId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateRemediationRecipeDetails(),
+                "updateRemediationRecipeDetails is required");
+
+        return clientCall(request, UpdateRemediationRecipeResponse::builder)
+                .logger(LOG, "updateRemediationRecipe")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "UpdateRemediationRecipe",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipe/UpdateRemediationRecipe")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateRemediationRecipeRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRecipes")
+                .appendPathParam(request.getRemediationRecipeId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateRemediationRecipeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateRemediationRecipeResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public UpdateRemediationRunResponse updateRemediationRun(UpdateRemediationRunRequest request) {
+
+        Validate.notBlank(request.getRemediationRunId(), "remediationRunId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateRemediationRunDetails(),
+                "updateRemediationRunDetails is required");
+
+        return clientCall(request, UpdateRemediationRunResponse::builder)
+                .logger(LOG, "updateRemediationRun")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "UpdateRemediationRun",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRun/UpdateRemediationRun")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateRemediationRunRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRuns")
+                .appendPathParam(request.getRemediationRunId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.adm.model.RemediationRun.class,
+                        UpdateRemediationRunResponse.Builder::remediationRun)
+                .handleResponseHeaderString("etag", UpdateRemediationRunResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateRemediationRunResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }

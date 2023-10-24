@@ -84,15 +84,15 @@ public final class AlarmDimensionStatesCollection
             return this;
         }
         /**
-         * When set to {@code true}, splits notifications per metric stream. When set to {@code
-         * false}, groups notifications across metric streams. Example: {@code true}
+         * When set to {@code true}, splits alarm notifications per metric stream. When set to
+         * {@code false}, groups alarm notifications across metric streams.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isNotificationsPerMetricDimensionEnabled")
         private Boolean isNotificationsPerMetricDimensionEnabled;
 
         /**
-         * When set to {@code true}, splits notifications per metric stream. When set to {@code
-         * false}, groups notifications across metric streams. Example: {@code true}
+         * When set to {@code true}, splits alarm notifications per metric stream. When set to
+         * {@code false}, groups alarm notifications across metric streams.
          *
          * @param isNotificationsPerMetricDimensionEnabled the value to set
          * @return this builder
@@ -201,15 +201,15 @@ public final class AlarmDimensionStatesCollection
     }
 
     /**
-     * When set to {@code true}, splits notifications per metric stream. When set to {@code false},
-     * groups notifications across metric streams. Example: {@code true}
+     * When set to {@code true}, splits alarm notifications per metric stream. When set to {@code
+     * false}, groups alarm notifications across metric streams.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isNotificationsPerMetricDimensionEnabled")
     private final Boolean isNotificationsPerMetricDimensionEnabled;
 
     /**
-     * When set to {@code true}, splits notifications per metric stream. When set to {@code false},
-     * groups notifications across metric streams. Example: {@code true}
+     * When set to {@code true}, splits alarm notifications per metric stream. When set to {@code
+     * false}, groups alarm notifications across metric streams.
      *
      * @return the value
      */

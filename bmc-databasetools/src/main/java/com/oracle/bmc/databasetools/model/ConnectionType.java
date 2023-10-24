@@ -9,6 +9,8 @@ package com.oracle.bmc.databasetools.model;
 public enum ConnectionType implements com.oracle.bmc.http.internal.BmcEnum {
     OracleDatabase("ORACLE_DATABASE"),
     Mysql("MYSQL"),
+    Postgresql("POSTGRESQL"),
+    GenericJdbc("GENERIC_JDBC"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

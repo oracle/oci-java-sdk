@@ -13,10 +13,16 @@ import com.oracle.bmc.adm.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
 public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** A filter to return only resources that belong to the specified compartment identifier. */
+    /**
+     * A filter to return only resources that belong to the specified compartment identifier.
+     * Required only if the id query param is not specified.
+     */
     private String compartmentId;
 
-    /** A filter to return only resources that belong to the specified compartment identifier. */
+    /**
+     * A filter to return only resources that belong to the specified compartment identifier.
+     * Required only if the id query param is not specified.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -141,11 +147,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * A filter to return only resources that belong to the specified compartment identifier.
+         * Required only if the id query param is not specified.
          */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that belong to the specified compartment identifier.
+         * Required only if the id query param is not specified.
          *
          * @param compartmentId the value to set
          * @return this builder instance

@@ -5,7 +5,7 @@
 package com.oracle.bmc.adm.model;
 
 /**
- * Details to update an existing Knowledge Base. <br>
+ * Details to update an existing knowledge base. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -36,12 +36,12 @@ public final class UpdateKnowledgeBaseDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the Knowledge Base. */
+        /** The name of the knowledge base. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The name of the Knowledge Base.
+         * The name of the knowledge base.
          *
          * @param displayName the value to set
          * @return this builder
@@ -128,12 +128,12 @@ public final class UpdateKnowledgeBaseDetails
         return new Builder().copy(this);
     }
 
-    /** The name of the Knowledge Base. */
+    /** The name of the knowledge base. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The name of the Knowledge Base.
+     * The name of the knowledge base.
      *
      * @return the value
      */

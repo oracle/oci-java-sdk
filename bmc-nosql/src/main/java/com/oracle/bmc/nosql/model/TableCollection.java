@@ -27,20 +27,23 @@ public final class TableCollection
         "maxAutoReclaimableTables",
         "autoReclaimableTables",
         "onDemandCapacityTables",
-        "maxOnDemandCapacityTables"
+        "maxOnDemandCapacityTables",
+        "availableReplicationRegions"
     })
     public TableCollection(
             java.util.List<TableSummary> items,
             Integer maxAutoReclaimableTables,
             Integer autoReclaimableTables,
             Integer onDemandCapacityTables,
-            Integer maxOnDemandCapacityTables) {
+            Integer maxOnDemandCapacityTables,
+            java.util.List<String> availableReplicationRegions) {
         super();
         this.items = items;
         this.maxAutoReclaimableTables = maxAutoReclaimableTables;
         this.autoReclaimableTables = autoReclaimableTables;
         this.onDemandCapacityTables = onDemandCapacityTables;
         this.maxOnDemandCapacityTables = maxOnDemandCapacityTables;
+        this.availableReplicationRegions = availableReplicationRegions;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -120,6 +123,22 @@ public final class TableCollection
             this.__explicitlySet__.add("maxOnDemandCapacityTables");
             return this;
         }
+        /** An array of regions that are available for replication. */
+        @com.fasterxml.jackson.annotation.JsonProperty("availableReplicationRegions")
+        private java.util.List<String> availableReplicationRegions;
+
+        /**
+         * An array of regions that are available for replication.
+         *
+         * @param availableReplicationRegions the value to set
+         * @return this builder
+         */
+        public Builder availableReplicationRegions(
+                java.util.List<String> availableReplicationRegions) {
+            this.availableReplicationRegions = availableReplicationRegions;
+            this.__explicitlySet__.add("availableReplicationRegions");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -131,7 +150,8 @@ public final class TableCollection
                             this.maxAutoReclaimableTables,
                             this.autoReclaimableTables,
                             this.onDemandCapacityTables,
-                            this.maxOnDemandCapacityTables);
+                            this.maxOnDemandCapacityTables,
+                            this.availableReplicationRegions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -154,6 +174,9 @@ public final class TableCollection
             }
             if (model.wasPropertyExplicitlySet("maxOnDemandCapacityTables")) {
                 this.maxOnDemandCapacityTables(model.getMaxOnDemandCapacityTables());
+            }
+            if (model.wasPropertyExplicitlySet("availableReplicationRegions")) {
+                this.availableReplicationRegions(model.getAvailableReplicationRegions());
             }
             return this;
         }
@@ -233,6 +256,19 @@ public final class TableCollection
         return maxOnDemandCapacityTables;
     }
 
+    /** An array of regions that are available for replication. */
+    @com.fasterxml.jackson.annotation.JsonProperty("availableReplicationRegions")
+    private final java.util.List<String> availableReplicationRegions;
+
+    /**
+     * An array of regions that are available for replication.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getAvailableReplicationRegions() {
+        return availableReplicationRegions;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -255,6 +291,8 @@ public final class TableCollection
         sb.append(", onDemandCapacityTables=").append(String.valueOf(this.onDemandCapacityTables));
         sb.append(", maxOnDemandCapacityTables=")
                 .append(String.valueOf(this.maxOnDemandCapacityTables));
+        sb.append(", availableReplicationRegions=")
+                .append(String.valueOf(this.availableReplicationRegions));
         sb.append(")");
         return sb.toString();
     }
@@ -277,6 +315,8 @@ public final class TableCollection
                         this.onDemandCapacityTables, other.onDemandCapacityTables)
                 && java.util.Objects.equals(
                         this.maxOnDemandCapacityTables, other.maxOnDemandCapacityTables)
+                && java.util.Objects.equals(
+                        this.availableReplicationRegions, other.availableReplicationRegions)
                 && super.equals(other);
     }
 
@@ -305,6 +345,11 @@ public final class TableCollection
                         + (this.maxOnDemandCapacityTables == null
                                 ? 43
                                 : this.maxOnDemandCapacityTables.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableReplicationRegions == null
+                                ? 43
+                                : this.availableReplicationRegions.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

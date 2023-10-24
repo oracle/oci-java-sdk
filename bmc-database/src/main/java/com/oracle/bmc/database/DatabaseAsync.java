@@ -1105,6 +1105,25 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a maintenance run with one of the following: The latest available release update
+     * patch (RUP) for the Autonomous Container Database. The latest available RUP and DST time zone
+     * (TZ) file updates for the Autonomous Container Database. Creates a maintenance run to update
+     * the DST TZ file for the Autonomous Container Database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateMaintenanceRunResponse> createMaintenanceRun(
+            CreateMaintenanceRunRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateMaintenanceRunRequest, CreateMaintenanceRunResponse>
+                    handler);
+
+    /**
      * Creates one-off patch for specified database version to download.
      *
      * @param request The request object containing the details to send

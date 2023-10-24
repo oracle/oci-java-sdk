@@ -153,7 +153,8 @@ public final class ListMetricsDetails
         /**
          * Group metrics by these fields in the response. For example, to list all metric namespaces
          * available in a compartment, groupBy the "namespace" field. Supported fields: namespace,
-         * name, resourceGroup.
+         * name, resourceGroup. If {@code groupBy} is used, then {@code dimensionFilters} is
+         * ignored.
          *
          * <p>Example - group by namespace: {@code [ "namespace" ]}
          */
@@ -163,7 +164,8 @@ public final class ListMetricsDetails
         /**
          * Group metrics by these fields in the response. For example, to list all metric namespaces
          * available in a compartment, groupBy the "namespace" field. Supported fields: namespace,
-         * name, resourceGroup.
+         * name, resourceGroup. If {@code groupBy} is used, then {@code dimensionFilters} is
+         * ignored.
          *
          * <p>Example - group by namespace: {@code [ "namespace" ]}
          *
@@ -366,7 +368,7 @@ public final class ListMetricsDetails
     /**
      * Group metrics by these fields in the response. For example, to list all metric namespaces
      * available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name,
-     * resourceGroup.
+     * resourceGroup. If {@code groupBy} is used, then {@code dimensionFilters} is ignored.
      *
      * <p>Example - group by namespace: {@code [ "namespace" ]}
      */
@@ -376,7 +378,7 @@ public final class ListMetricsDetails
     /**
      * Group metrics by these fields in the response. For example, to list all metric namespaces
      * available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name,
-     * resourceGroup.
+     * resourceGroup. If {@code groupBy} is used, then {@code dimensionFilters} is ignored.
      *
      * <p>Example - group by namespace: {@code [ "namespace" ]}
      *

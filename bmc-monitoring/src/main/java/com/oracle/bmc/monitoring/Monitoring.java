@@ -11,8 +11,8 @@ import com.oracle.bmc.monitoring.responses.*;
  * Use the Monitoring API to manage metric queries and alarms for assessing the health, capacity,
  * and performance of your cloud resources. Endpoints vary by operation. For PostMetric, use the
  * {@code telemetry-ingestion} endpoints; for all other operations, use the {@code telemetry}
- * endpoints. For information about monitoring, see [Monitoring
- * Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm).
+ * endpoints. For more information, see [the Monitoring
+ * documentation](https://docs.cloud.oracle.com/iaas/Content/Monitoring/home.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -69,10 +69,9 @@ public interface Monitoring extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Moves an alarm into a different compartment within the same tenancy.
-     *
-     * <p>For information about moving resources between compartments, see [Moving Resources Between
-     * Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Moves an alarm into a different compartment within the same tenancy. For more information,
+     * see [Moving an
+     * Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/change-compartment-alarm.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -88,9 +87,10 @@ public interface Monitoring extends AutoCloseable {
     ChangeAlarmCompartmentResponse changeAlarmCompartment(ChangeAlarmCompartmentRequest request);
 
     /**
-     * Creates a new alarm in the specified compartment. For important limits information, see
-     * [Limits on
-     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * Creates a new alarm in the specified compartment. For more information, see [Creating an
+     * Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm.htm). For
+     * important limits information, see [Limits on
+     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      *
      * <p>This call is subject to a Monitoring limit that applies to the total number of requests
      * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
@@ -110,8 +110,10 @@ public interface Monitoring extends AutoCloseable {
     CreateAlarmResponse createAlarm(CreateAlarmRequest request);
 
     /**
-     * Deletes the specified alarm. For important limits information, see [Limits on
-     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * Deletes the specified alarm. For more information, see [Deleting an
+     * Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/delete-alarm.htm). For
+     * important limits information, see [Limits on
+     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      *
      * <p>This call is subject to a Monitoring limit that applies to the total number of requests
      * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
@@ -131,8 +133,10 @@ public interface Monitoring extends AutoCloseable {
     DeleteAlarmResponse deleteAlarm(DeleteAlarmRequest request);
 
     /**
-     * Gets the specified alarm. For important limits information, see [Limits on
-     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * Gets the specified alarm. For more information, see [Getting an
+     * Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm.htm). For
+     * important limits information, see [Limits on
+     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      *
      * <p>This call is subject to a Monitoring limit that applies to the total number of requests
      * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
@@ -152,8 +156,10 @@ public interface Monitoring extends AutoCloseable {
     GetAlarmResponse getAlarm(GetAlarmRequest request);
 
     /**
-     * Get the history of the specified alarm. For important limits information, see [Limits on
-     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * Get the history of the specified alarm. For more information, see [Getting History of an
+     * Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-history.htm).
+     * For important limits information, see [Limits on
+     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      *
      * <p>This call is subject to a Monitoring limit that applies to the total number of requests
      * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
@@ -174,9 +180,10 @@ public interface Monitoring extends AutoCloseable {
     GetAlarmHistoryResponse getAlarmHistory(GetAlarmHistoryRequest request);
 
     /**
-     * Lists the alarms for the specified compartment. For important limits information, see [Limits
-     * on
-     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * Lists the alarms for the specified compartment. For more information, see [Listing
+     * Alarms](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm.htm). For
+     * important limits information, see [Limits on
+     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      *
      * <p>This call is subject to a Monitoring limit that applies to the total number of requests
      * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
@@ -198,10 +205,11 @@ public interface Monitoring extends AutoCloseable {
     /**
      * List the status of each alarm in the specified compartment. Status is collective, across all
      * metric streams in the alarm. To list alarm status for each metric stream, use {@link
-     * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}. The alarm
-     * attribute `isNotificationsPerMetricDimensionEnabled` must be set to `true`. For important
-     * limits information, see [Limits on
-     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}. For more
+     * information, see [Listing Alarm
+     * Statuses](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
+     * For important limits information, see [Limits on
+     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      *
      * <p>This call is subject to a Monitoring limit that applies to the total number of requests
      * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
@@ -210,9 +218,9 @@ public interface Monitoring extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/ListAlarmsStatusExample.java.html"
@@ -223,10 +231,12 @@ public interface Monitoring extends AutoCloseable {
 
     /**
      * Returns metric definitions that match the criteria specified in the request. Compartment OCID
-     * required. For information about metrics, see [Metrics
+     * required. For more information, see [Listing Metric
+     * Definitions](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-metric.htm).
+     * For information about metrics, see [Metrics
      * Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
      * For important limits information, see [Limits on
-     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      *
      * <p>Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      *
@@ -243,11 +253,20 @@ public interface Monitoring extends AutoCloseable {
     ListMetricsResponse listMetrics(ListMetricsRequest request);
 
     /**
-     * Publishes raw metric data points to the Monitoring service. For more information about
-     * publishing metrics, see [Publishing Custom
-     * Metrics](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/publishingcustommetrics.htm).
+     * Publishes raw metric data points to the Monitoring service. For a data point to be posted,
+     * its timestamp must be near current time (less than two hours in the past and less than 10
+     * minutes in the future).
+     *
+     * <p>For more information about publishing metrics, see [Publishing Custom
+     * Metrics](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/publishingcustommetrics.htm)
+     * and [Custom Metrics
+     * Walkthrough](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/custom-metrics-walkthrough.htm).
+     * For information about developing a metric-posting client, see [Developer
+     * Guide](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/devtoolslanding.htm). For an
+     * example client, see
+     * [MonitoringMetricPostExample.java](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/MonitoringMetricPostExample.java).
      * For important limits information, see [Limits on
-     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      *
      * <p>Per-call limits information follows.
      *
@@ -260,8 +279,9 @@ public interface Monitoring extends AutoCloseable {
      * dimension values. For more information about metric-related concepts, see [Monitoring
      * Concepts](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#concepts).
      *
-     * <p>The endpoints for this operation differ from other Monitoring operations. Replace the
-     * string `telemetry` with `telemetry-ingestion` in the endpoint, as in the following example:
+     * <p>*Note:** The endpoints for this operation differ from other Monitoring operations. Replace
+     * the string `telemetry` with `telemetry-ingestion` in the endpoint, as in the following
+     * example:
      *
      * <p>https://telemetry-ingestion.eu-frankfurt-1.oraclecloud.com
      *
@@ -278,9 +298,11 @@ public interface Monitoring extends AutoCloseable {
     PostMetricDataResponse postMetricData(PostMetricDataRequest request);
 
     /**
-     * Removes any existing suppression for the specified alarm. For important limits information,
-     * see [Limits on
-     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * Removes any existing suppression for the specified alarm. For more information, see [Removing
+     * Suppression from an
+     * Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/remove-alarm-suppression.htm).
+     * For important limits information, see [Limits on
+     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      *
      * <p>This call is subject to a Monitoring limit that applies to the total number of requests
      * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
@@ -303,13 +325,11 @@ public interface Monitoring extends AutoCloseable {
     /**
      * Lists the current alarm status of each metric stream, where status is derived from the metric
      * stream's last associated transition. Optionally filter by status value and one or more
-     * dimension key-value pairs. This operation is only valid for alarms that have notifications
-     * per dimension enabled (`isNotificationsPerMetricDimensionEnabled=true`). If
-     * `isNotificationsPerMetricDimensionEnabled` for the alarm is false or null, then no results
-     * are returned.
+     * dimension key-value pairs. For more information, see [Listing Metric Stream Status in an
+     * Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status-metric-stream.htm).
      *
      * <p>For important limits information, see [Limits on
-     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      *
      * <p>This call is subject to a Monitoring limit that applies to the total number of requests
      * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
@@ -331,10 +351,12 @@ public interface Monitoring extends AutoCloseable {
 
     /**
      * Returns aggregated data that match the criteria specified in the request. Compartment OCID
-     * required. For information on metric queries, see [Building Metric
-     * Queries](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/buildingqueries.htm).
-     * For important limits information, see [Limits on
-     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * required. For more information, see [Querying Metric
+     * Data](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-landing.htm)
+     * and [Creating a
+     * Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric.htm). For
+     * important limits information, see [Limits on
+     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      *
      * <p>Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      *
@@ -352,8 +374,10 @@ public interface Monitoring extends AutoCloseable {
     SummarizeMetricsDataResponse summarizeMetricsData(SummarizeMetricsDataRequest request);
 
     /**
-     * Updates the specified alarm. For important limits information, see [Limits on
-     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * Updates the specified alarm. For more information, see [Updating an
+     * Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm.htm). For
+     * important limits information, see [Limits on
+     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      *
      * <p>This call is subject to a Monitoring limit that applies to the total number of requests
      * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid

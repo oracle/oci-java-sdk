@@ -38,7 +38,8 @@ public final class AutonomousPatchSummary
         "version",
         "patchModel",
         "quarter",
-        "year"
+        "year",
+        "autonomousPatchType"
     })
     public AutonomousPatchSummary(
             String id,
@@ -50,7 +51,8 @@ public final class AutonomousPatchSummary
             String version,
             PatchModel patchModel,
             String quarter,
-            String year) {
+            String year,
+            AutonomousPatchType autonomousPatchType) {
         super();
         this.id = id;
         this.description = description;
@@ -62,6 +64,7 @@ public final class AutonomousPatchSummary
         this.patchModel = patchModel;
         this.quarter = quarter;
         this.year = year;
+        this.autonomousPatchType = autonomousPatchType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -230,6 +233,21 @@ public final class AutonomousPatchSummary
             this.__explicitlySet__.add("year");
             return this;
         }
+        /** Maintenance run type, either "QUARTERLY" or "TIMEZONE". */
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousPatchType")
+        private AutonomousPatchType autonomousPatchType;
+
+        /**
+         * Maintenance run type, either "QUARTERLY" or "TIMEZONE".
+         *
+         * @param autonomousPatchType the value to set
+         * @return this builder
+         */
+        public Builder autonomousPatchType(AutonomousPatchType autonomousPatchType) {
+            this.autonomousPatchType = autonomousPatchType;
+            this.__explicitlySet__.add("autonomousPatchType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -246,7 +264,8 @@ public final class AutonomousPatchSummary
                             this.version,
                             this.patchModel,
                             this.quarter,
-                            this.year);
+                            this.year,
+                            this.autonomousPatchType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -284,6 +303,9 @@ public final class AutonomousPatchSummary
             }
             if (model.wasPropertyExplicitlySet("year")) {
                 this.year(model.getYear());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousPatchType")) {
+                this.autonomousPatchType(model.getAutonomousPatchType());
             }
             return this;
         }
@@ -540,6 +562,65 @@ public final class AutonomousPatchSummary
         return year;
     }
 
+    /** Maintenance run type, either "QUARTERLY" or "TIMEZONE". */
+    public enum AutonomousPatchType implements com.oracle.bmc.http.internal.BmcEnum {
+        Quarterly("QUARTERLY"),
+        Timezone("TIMEZONE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AutonomousPatchType.class);
+
+        private final String value;
+        private static java.util.Map<String, AutonomousPatchType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AutonomousPatchType v : AutonomousPatchType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        AutonomousPatchType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AutonomousPatchType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'AutonomousPatchType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Maintenance run type, either "QUARTERLY" or "TIMEZONE". */
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousPatchType")
+    private final AutonomousPatchType autonomousPatchType;
+
+    /**
+     * Maintenance run type, either "QUARTERLY" or "TIMEZONE".
+     *
+     * @return the value
+     */
+    public AutonomousPatchType getAutonomousPatchType() {
+        return autonomousPatchType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -565,6 +646,7 @@ public final class AutonomousPatchSummary
         sb.append(", patchModel=").append(String.valueOf(this.patchModel));
         sb.append(", quarter=").append(String.valueOf(this.quarter));
         sb.append(", year=").append(String.valueOf(this.year));
+        sb.append(", autonomousPatchType=").append(String.valueOf(this.autonomousPatchType));
         sb.append(")");
         return sb.toString();
     }
@@ -589,6 +671,7 @@ public final class AutonomousPatchSummary
                 && java.util.Objects.equals(this.patchModel, other.patchModel)
                 && java.util.Objects.equals(this.quarter, other.quarter)
                 && java.util.Objects.equals(this.year, other.year)
+                && java.util.Objects.equals(this.autonomousPatchType, other.autonomousPatchType)
                 && super.equals(other);
     }
 
@@ -610,6 +693,11 @@ public final class AutonomousPatchSummary
         result = (result * PRIME) + (this.patchModel == null ? 43 : this.patchModel.hashCode());
         result = (result * PRIME) + (this.quarter == null ? 43 : this.quarter.hashCode());
         result = (result * PRIME) + (this.year == null ? 43 : this.year.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousPatchType == null
+                                ? 43
+                                : this.autonomousPatchType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

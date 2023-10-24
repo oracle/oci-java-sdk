@@ -163,6 +163,16 @@ public final class UpdateDatabaseToolsConnectionOracleDatabaseDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("proxyClient")
+        private DatabaseToolsConnectionOracleDatabaseProxyClientDetails proxyClient;
+
+        public Builder proxyClient(
+                DatabaseToolsConnectionOracleDatabaseProxyClientDetails proxyClient) {
+            this.proxyClient = proxyClient;
+            this.__explicitlySet__.add("proxyClient");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -178,7 +188,8 @@ public final class UpdateDatabaseToolsConnectionOracleDatabaseDetails
                             this.userPassword,
                             this.advancedProperties,
                             this.keyStores,
-                            this.privateEndpointId);
+                            this.privateEndpointId,
+                            this.proxyClient);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -217,6 +228,9 @@ public final class UpdateDatabaseToolsConnectionOracleDatabaseDetails
             if (model.wasPropertyExplicitlySet("privateEndpointId")) {
                 this.privateEndpointId(model.getPrivateEndpointId());
             }
+            if (model.wasPropertyExplicitlySet("proxyClient")) {
+                this.proxyClient(model.getProxyClient());
+            }
             return this;
         }
     }
@@ -241,7 +255,8 @@ public final class UpdateDatabaseToolsConnectionOracleDatabaseDetails
             DatabaseToolsUserPasswordDetails userPassword,
             java.util.Map<String, String> advancedProperties,
             java.util.List<DatabaseToolsKeyStoreDetails> keyStores,
-            String privateEndpointId) {
+            String privateEndpointId,
+            DatabaseToolsConnectionOracleDatabaseProxyClientDetails proxyClient) {
         super(displayName, definedTags, freeformTags);
         this.relatedResource = relatedResource;
         this.connectionString = connectionString;
@@ -250,6 +265,7 @@ public final class UpdateDatabaseToolsConnectionOracleDatabaseDetails
         this.advancedProperties = advancedProperties;
         this.keyStores = keyStores;
         this.privateEndpointId = privateEndpointId;
+        this.proxyClient = proxyClient;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("relatedResource")
@@ -345,6 +361,13 @@ public final class UpdateDatabaseToolsConnectionOracleDatabaseDetails
         return privateEndpointId;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("proxyClient")
+    private final DatabaseToolsConnectionOracleDatabaseProxyClientDetails proxyClient;
+
+    public DatabaseToolsConnectionOracleDatabaseProxyClientDetails getProxyClient() {
+        return proxyClient;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -367,6 +390,7 @@ public final class UpdateDatabaseToolsConnectionOracleDatabaseDetails
         sb.append(", advancedProperties=").append(String.valueOf(this.advancedProperties));
         sb.append(", keyStores=").append(String.valueOf(this.keyStores));
         sb.append(", privateEndpointId=").append(String.valueOf(this.privateEndpointId));
+        sb.append(", proxyClient=").append(String.valueOf(this.proxyClient));
         sb.append(")");
         return sb.toString();
     }
@@ -389,6 +413,7 @@ public final class UpdateDatabaseToolsConnectionOracleDatabaseDetails
                 && java.util.Objects.equals(this.advancedProperties, other.advancedProperties)
                 && java.util.Objects.equals(this.keyStores, other.keyStores)
                 && java.util.Objects.equals(this.privateEndpointId, other.privateEndpointId)
+                && java.util.Objects.equals(this.proxyClient, other.proxyClient)
                 && super.equals(other);
     }
 
@@ -413,6 +438,7 @@ public final class UpdateDatabaseToolsConnectionOracleDatabaseDetails
         result =
                 (result * PRIME)
                         + (this.privateEndpointId == null ? 43 : this.privateEndpointId.hashCode());
+        result = (result * PRIME) + (this.proxyClient == null ? 43 : this.proxyClient.hashCode());
         return result;
     }
 }

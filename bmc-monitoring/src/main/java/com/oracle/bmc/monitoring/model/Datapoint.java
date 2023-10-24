@@ -32,7 +32,9 @@ public final class Datapoint extends com.oracle.bmc.http.client.internal.Explici
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Timestamp for this metric value. Format defined by RFC3339.
+         * Timestamp for this metric value. Format defined by RFC3339. For a data point to be
+         * posted, its timestamp must be near current time (less than two hours in the past and less
+         * than 10 minutes in the future).
          *
          * <p>Example: {@code 2019-02-01T01:02:29.600Z}
          */
@@ -40,7 +42,9 @@ public final class Datapoint extends com.oracle.bmc.http.client.internal.Explici
         private java.util.Date timestamp;
 
         /**
-         * Timestamp for this metric value. Format defined by RFC3339.
+         * Timestamp for this metric value. Format defined by RFC3339. For a data point to be
+         * posted, its timestamp must be near current time (less than two hours in the past and less
+         * than 10 minutes in the future).
          *
          * <p>Example: {@code 2019-02-01T01:02:29.600Z}
          *
@@ -131,7 +135,9 @@ public final class Datapoint extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * Timestamp for this metric value. Format defined by RFC3339.
+     * Timestamp for this metric value. Format defined by RFC3339. For a data point to be posted,
+     * its timestamp must be near current time (less than two hours in the past and less than 10
+     * minutes in the future).
      *
      * <p>Example: {@code 2019-02-01T01:02:29.600Z}
      */
@@ -139,7 +145,9 @@ public final class Datapoint extends com.oracle.bmc.http.client.internal.Explici
     private final java.util.Date timestamp;
 
     /**
-     * Timestamp for this metric value. Format defined by RFC3339.
+     * Timestamp for this metric value. Format defined by RFC3339. For a data point to be posted,
+     * its timestamp must be near current time (less than two hours in the past and less than 10
+     * minutes in the future).
      *
      * <p>Example: {@code 2019-02-01T01:02:29.600Z}
      *

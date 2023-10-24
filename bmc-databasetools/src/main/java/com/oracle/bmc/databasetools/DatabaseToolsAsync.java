@@ -63,6 +63,42 @@ public interface DatabaseToolsAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Adds a lock to a DatabaseToolsConnection resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddDatabaseToolsConnectionLockResponse>
+            addDatabaseToolsConnectionLock(
+                    AddDatabaseToolsConnectionLockRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    AddDatabaseToolsConnectionLockRequest,
+                                    AddDatabaseToolsConnectionLockResponse>
+                            handler);
+
+    /**
+     * Adds a lock to a DatabaseToolsPrivateEndpoint resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddDatabaseToolsPrivateEndpointLockResponse>
+            addDatabaseToolsPrivateEndpointLock(
+                    AddDatabaseToolsPrivateEndpointLockRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    AddDatabaseToolsPrivateEndpointLockRequest,
+                                    AddDatabaseToolsPrivateEndpointLockResponse>
+                            handler);
+
+    /**
      * Moves the specified Database Tools connection to a different compartment in the same tenancy.
      * For information about moving resources between compartments, see [Moving Resources to a
      * Different
@@ -341,6 +377,42 @@ public interface DatabaseToolsAsync extends AutoCloseable {
             ListWorkRequestsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                     handler);
+
+    /**
+     * Removes a lock from a DatabaseToolsConnection resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveDatabaseToolsConnectionLockResponse>
+            removeDatabaseToolsConnectionLock(
+                    RemoveDatabaseToolsConnectionLockRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveDatabaseToolsConnectionLockRequest,
+                                    RemoveDatabaseToolsConnectionLockResponse>
+                            handler);
+
+    /**
+     * Removes a lock from a DatabaseToolsPrivateEndpoint resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveDatabaseToolsPrivateEndpointLockResponse>
+            removeDatabaseToolsPrivateEndpointLock(
+                    RemoveDatabaseToolsPrivateEndpointLockRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveDatabaseToolsPrivateEndpointLockRequest,
+                                    RemoveDatabaseToolsPrivateEndpointLockResponse>
+                            handler);
 
     /**
      * Updates the specified Database Tools connection.

@@ -318,6 +318,10 @@ public class MonitoringAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("resourceId", request.getResourceId())
+                .appendQueryParam("serviceName", request.getServiceName())
+                .appendQueryParam("entityId", request.getEntityId())
+                .appendEnumQueryParam("status", request.getStatus())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(

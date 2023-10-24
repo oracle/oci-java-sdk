@@ -5,7 +5,7 @@
 package com.oracle.bmc.adm.model;
 
 /**
- * Collection of Knowledge Base summaries. <br>
+ * Collection of knowledge base summaries. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +31,12 @@ public final class KnowledgeBaseCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of Knowledge Base summaries. */
+        /** List of knowledge base summaries. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<KnowledgeBaseSummary> items;
 
         /**
-         * List of Knowledge Base summaries.
+         * List of knowledge base summaries.
          *
          * @param items the value to set
          * @return this builder
@@ -76,12 +76,12 @@ public final class KnowledgeBaseCollection
         return new Builder().copy(this);
     }
 
-    /** List of Knowledge Base summaries. */
+    /** List of knowledge base summaries. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<KnowledgeBaseSummary> items;
 
     /**
-     * List of Knowledge Base summaries.
+     * List of knowledge base summaries.
      *
      * @return the value
      */

@@ -145,15 +145,6 @@ public final class SnowflakeConnection extends Connection {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-        private String subnetId;
-
-        public Builder subnetId(String subnetId) {
-            this.subnetId = subnetId;
-            this.__explicitlySet__.add("subnetId");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("ingressIps")
         private java.util.List<IngressIpDetails> ingressIps;
 
@@ -169,6 +160,15 @@ public final class SnowflakeConnection extends Connection {
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
             return this;
         }
         /** The Snowflake technology type. */
@@ -259,9 +259,9 @@ public final class SnowflakeConnection extends Connection {
                             this.timeUpdated,
                             this.vaultId,
                             this.keyId,
-                            this.subnetId,
                             this.ingressIps,
                             this.nsgIds,
+                            this.subnetId,
                             this.technologyType,
                             this.connectionUrl,
                             this.authenticationType,
@@ -313,14 +313,14 @@ public final class SnowflakeConnection extends Connection {
             if (model.wasPropertyExplicitlySet("keyId")) {
                 this.keyId(model.getKeyId());
             }
-            if (model.wasPropertyExplicitlySet("subnetId")) {
-                this.subnetId(model.getSubnetId());
-            }
             if (model.wasPropertyExplicitlySet("ingressIps")) {
                 this.ingressIps(model.getIngressIps());
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
             }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
@@ -362,9 +362,9 @@ public final class SnowflakeConnection extends Connection {
             java.util.Date timeUpdated,
             String vaultId,
             String keyId,
-            String subnetId,
             java.util.List<IngressIpDetails> ingressIps,
             java.util.List<String> nsgIds,
+            String subnetId,
             TechnologyType technologyType,
             String connectionUrl,
             AuthenticationType authenticationType,
@@ -383,9 +383,9 @@ public final class SnowflakeConnection extends Connection {
                 timeUpdated,
                 vaultId,
                 keyId,
-                subnetId,
                 ingressIps,
-                nsgIds);
+                nsgIds,
+                subnetId);
         this.technologyType = technologyType;
         this.connectionUrl = connectionUrl;
         this.authenticationType = authenticationType;

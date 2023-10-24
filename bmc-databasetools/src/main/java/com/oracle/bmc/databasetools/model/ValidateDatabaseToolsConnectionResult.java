@@ -27,7 +27,10 @@ package com.oracle.bmc.databasetools.model;
             name = "ORACLE_DATABASE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ValidateDatabaseToolsConnectionMySqlResult.class,
-            name = "MYSQL")
+            name = "MYSQL"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ValidateDatabaseToolsConnectionPostgresqlResult.class,
+            name = "POSTGRESQL")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

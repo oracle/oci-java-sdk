@@ -44,6 +44,12 @@ package com.oracle.bmc.goldengate.model;
             value = SnowflakeConnectionSummary.class,
             name = "SNOWFLAKE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = AmazonKinesisConnectionSummary.class,
+            name = "AMAZON_KINESIS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = RedisConnectionSummary.class,
+            name = "REDIS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = OciObjectStorageConnectionSummary.class,
             name = "OCI_OBJECT_STORAGE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -56,6 +62,9 @@ package com.oracle.bmc.goldengate.model;
             value = MongoDbConnectionSummary.class,
             name = "MONGODB"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = GoogleBigQueryConnectionSummary.class,
+            name = "GOOGLE_BIGQUERY"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = AmazonS3ConnectionSummary.class,
             name = "AMAZON_S3"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -65,11 +74,23 @@ package com.oracle.bmc.goldengate.model;
             value = MysqlConnectionSummary.class,
             name = "MYSQL"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = GenericConnectionSummary.class,
+            name = "GENERIC"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = KafkaConnectionSummary.class,
             name = "KAFKA"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ElasticsearchConnectionSummary.class,
+            name = "ELASTICSEARCH"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = AmazonRedshiftConnectionSummary.class,
+            name = "AMAZON_REDSHIFT"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = HdfsConnectionSummary.class,
-            name = "HDFS")
+            name = "HDFS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = GoogleCloudStorageConnectionSummary.class,
+            name = "GOOGLE_CLOUD_STORAGE")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -89,9 +110,9 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
         "timeUpdated",
         "vaultId",
         "keyId",
-        "subnetId",
         "ingressIps",
-        "nsgIds"
+        "nsgIds",
+        "subnetId"
     })
     protected ConnectionSummary(
             String id,
@@ -107,9 +128,9 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
             java.util.Date timeUpdated,
             String vaultId,
             String keyId,
-            String subnetId,
             java.util.List<IngressIpDetails> ingressIps,
-            java.util.List<String> nsgIds) {
+            java.util.List<String> nsgIds,
+            String subnetId) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -124,9 +145,9 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
         this.timeUpdated = timeUpdated;
         this.vaultId = vaultId;
         this.keyId = keyId;
-        this.subnetId = subnetId;
         this.ingressIps = ingressIps;
         this.nsgIds = nsgIds;
+        this.subnetId = subnetId;
     }
 
     /**
@@ -355,23 +376,6 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * subnet being referenced.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    private final String subnetId;
-
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * subnet being referenced.
-     *
-     * @return the value
-     */
-    public String getSubnetId() {
-        return subnetId;
-    }
-
-    /**
      * List of ingress IP addresses from where the GoldenGate deployment connects to this
      * connection's privateIp. Customers may optionally set up ingress security rules to restrict
      * traffic from these IP addresses.
@@ -407,6 +411,23 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
         return nsgIds;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * subnet being referenced.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+    private final String subnetId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * subnet being referenced.
+     *
+     * @return the value
+     */
+    public String getSubnetId() {
+        return subnetId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -435,9 +456,9 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", keyId=").append(String.valueOf(this.keyId));
-        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", ingressIps=").append(String.valueOf(this.ingressIps));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(")");
         return sb.toString();
     }
@@ -465,9 +486,9 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(this.keyId, other.keyId)
-                && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.ingressIps, other.ingressIps)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && super.equals(other);
     }
 
@@ -494,9 +515,9 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
         result = (result * PRIME) + (this.keyId == null ? 43 : this.keyId.hashCode());
-        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.ingressIps == null ? 43 : this.ingressIps.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
