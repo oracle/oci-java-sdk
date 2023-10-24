@@ -226,6 +226,116 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
     public SortOrder getSortOrder() {
         return sortOrder;
     }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+     * resource that is monitored by the metric that you are searching for.
+     *
+     * <p>Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
+     */
+    private String resourceId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+     * resource that is monitored by the metric that you are searching for.
+     *
+     * <p>Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
+     */
+    public String getResourceId() {
+        return resourceId;
+    }
+    /**
+     * A filter to return only resources that match the given service name exactly. Use this filter
+     * to list all alarms containing metric streams that match the *exact* service-name dimension.
+     *
+     * <p>Example: {@code logging-analytics}
+     */
+    private String serviceName;
+
+    /**
+     * A filter to return only resources that match the given service name exactly. Use this filter
+     * to list all alarms containing metric streams that match the *exact* service-name dimension.
+     *
+     * <p>Example: {@code logging-analytics}
+     */
+    public String getServiceName() {
+        return serviceName;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the entity monitored by the metric that you are searching for.
+     *
+     * <p>Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
+     */
+    private String entityId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the entity monitored by the metric that you are searching for.
+     *
+     * <p>Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
+     */
+    public String getEntityId() {
+        return entityId;
+    }
+    /**
+     * The status of the metric stream to use for alarm filtering. For example, set {@code
+     * StatusQueryParam} to "FIRING" to filter results to metric streams of the alarm with that
+     * status. Default behaviour is to return alarms irrespective of metric streams' status.
+     *
+     * <p>Example: {@code FIRING}
+     */
+    private Status status;
+
+    /**
+     * The status of the metric stream to use for alarm filtering. For example, set {@code
+     * StatusQueryParam} to "FIRING" to filter results to metric streams of the alarm with that
+     * status. Default behaviour is to return alarms irrespective of metric streams' status.
+     *
+     * <p>Example: {@code FIRING}
+     */
+    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+        Firing("FIRING"),
+        Ok("OK"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Status> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Status v : Status.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Status(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Status create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid Status: " + key);
+        }
+    };
+
+    /**
+     * The status of the metric stream to use for alarm filtering. For example, set {@code
+     * StatusQueryParam} to "FIRING" to filter results to metric streams of the alarm with that
+     * status. Default behaviour is to return alarms irrespective of metric streams' status.
+     *
+     * <p>Example: {@code FIRING}
+     */
+    public Status getStatus() {
+        return status;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -412,6 +522,98 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of a resource that is monitored by the metric that you are searching for.
+         *
+         * <p>Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
+         */
+        private String resourceId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of a resource that is monitored by the metric that you are searching for.
+         *
+         * <p>Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
+         *
+         * @param resourceId the value to set
+         * @return this builder instance
+         */
+        public Builder resourceId(String resourceId) {
+            this.resourceId = resourceId;
+            return this;
+        }
+
+        /**
+         * A filter to return only resources that match the given service name exactly. Use this
+         * filter to list all alarms containing metric streams that match the *exact* service-name
+         * dimension.
+         *
+         * <p>Example: {@code logging-analytics}
+         */
+        private String serviceName = null;
+
+        /**
+         * A filter to return only resources that match the given service name exactly. Use this
+         * filter to list all alarms containing metric streams that match the *exact* service-name
+         * dimension.
+         *
+         * <p>Example: {@code logging-analytics}
+         *
+         * @param serviceName the value to set
+         * @return this builder instance
+         */
+        public Builder serviceName(String serviceName) {
+            this.serviceName = serviceName;
+            return this;
+        }
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the entity monitored by the metric that you are searching for.
+         *
+         * <p>Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
+         */
+        private String entityId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the entity monitored by the metric that you are searching for.
+         *
+         * <p>Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
+         *
+         * @param entityId the value to set
+         * @return this builder instance
+         */
+        public Builder entityId(String entityId) {
+            this.entityId = entityId;
+            return this;
+        }
+
+        /**
+         * The status of the metric stream to use for alarm filtering. For example, set {@code
+         * StatusQueryParam} to "FIRING" to filter results to metric streams of the alarm with that
+         * status. Default behaviour is to return alarms irrespective of metric streams' status.
+         *
+         * <p>Example: {@code FIRING}
+         */
+        private Status status = null;
+
+        /**
+         * The status of the metric stream to use for alarm filtering. For example, set {@code
+         * StatusQueryParam} to "FIRING" to filter results to metric streams of the alarm with that
+         * status. Default behaviour is to return alarms irrespective of metric streams' status.
+         *
+         * <p>Example: {@code FIRING}
+         *
+         * @param status the value to set
+         * @return this builder instance
+         */
+        public Builder status(Status status) {
+            this.status = status;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -449,6 +651,10 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
             displayName(o.getDisplayName());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
+            resourceId(o.getResourceId());
+            serviceName(o.getServiceName());
+            entityId(o.getEntityId());
+            status(o.getStatus());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -491,9 +697,14 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
             request.displayName = displayName;
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
+            request.resourceId = resourceId;
+            request.serviceName = serviceName;
+            request.entityId = entityId;
+            request.status = status;
             return request;
             // new ListAlarmsStatusRequest(compartmentId, opcRequestId, compartmentIdInSubtree,
-            // page, limit, displayName, sortBy, sortOrder);
+            // page, limit, displayName, sortBy, sortOrder, resourceId, serviceName, entityId,
+            // status);
         }
     }
 
@@ -511,7 +722,11 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
                 .limit(limit)
                 .displayName(displayName)
                 .sortBy(sortBy)
-                .sortOrder(sortOrder);
+                .sortOrder(sortOrder)
+                .resourceId(resourceId)
+                .serviceName(serviceName)
+                .entityId(entityId)
+                .status(status);
     }
 
     /**
@@ -536,6 +751,10 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",resourceId=").append(String.valueOf(this.resourceId));
+        sb.append(",serviceName=").append(String.valueOf(this.serviceName));
+        sb.append(",entityId=").append(String.valueOf(this.entityId));
+        sb.append(",status=").append(String.valueOf(this.status));
         sb.append(")");
         return sb.toString();
     }
@@ -559,7 +778,11 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
-                && java.util.Objects.equals(this.sortOrder, other.sortOrder);
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.resourceId, other.resourceId)
+                && java.util.Objects.equals(this.serviceName, other.serviceName)
+                && java.util.Objects.equals(this.entityId, other.entityId)
+                && java.util.Objects.equals(this.status, other.status);
     }
 
     @Override
@@ -580,6 +803,10 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
+        result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
+        result = (result * PRIME) + (this.entityId == null ? 43 : this.entityId.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         return result;
     }
 }

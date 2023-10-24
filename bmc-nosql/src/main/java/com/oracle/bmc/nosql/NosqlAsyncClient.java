@@ -165,6 +165,40 @@ public class NosqlAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
     }
 
     @Override
+    public java.util.concurrent.Future<CreateReplicaResponse> createReplica(
+            CreateReplicaRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateReplicaRequest, CreateReplicaResponse>
+                    handler) {
+
+        Validate.notBlank(request.getTableNameOrId(), "tableNameOrId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateReplicaDetails(), "createReplicaDetails is required");
+
+        return clientCall(request, CreateReplicaResponse::builder)
+                .logger(LOG, "createReplica")
+                .serviceDetails(
+                        "Nosql",
+                        "CreateReplica",
+                        "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/CreateReplica")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateReplicaRequest::builder)
+                .basePath("/20190828")
+                .appendPathParam("tables")
+                .appendPathParam(request.getTableNameOrId())
+                .appendPathParam("replicas")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateReplicaResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateReplicaResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTableResponse> createTable(
             CreateTableRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateTableRequest, CreateTableResponse>
@@ -224,6 +258,40 @@ public class NosqlAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
                         "opc-work-request-id", DeleteIndexResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteIndexResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteReplicaResponse> deleteReplica(
+            DeleteReplicaRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteReplicaRequest, DeleteReplicaResponse>
+                    handler) {
+
+        Validate.notBlank(request.getTableNameOrId(), "tableNameOrId must not be blank");
+
+        Validate.notBlank(request.getRegion(), "region must not be blank");
+
+        return clientCall(request, DeleteReplicaResponse::builder)
+                .logger(LOG, "deleteReplica")
+                .serviceDetails(
+                        "Nosql",
+                        "DeleteReplica",
+                        "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/DeleteReplica")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteReplicaRequest::builder)
+                .basePath("/20190828")
+                .appendPathParam("tables")
+                .appendPathParam(request.getTableNameOrId())
+                .appendPathParam("replicas")
+                .appendPathParam(request.getRegion())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteReplicaResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteReplicaResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

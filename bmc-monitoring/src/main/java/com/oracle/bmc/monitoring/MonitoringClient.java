@@ -323,6 +323,10 @@ public class MonitoringClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("resourceId", request.getResourceId())
+                .appendQueryParam("serviceName", request.getServiceName())
+                .appendQueryParam("entityId", request.getEntityId())
+                .appendEnumQueryParam("status", request.getStatus())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(
@@ -332,6 +336,7 @@ public class MonitoringClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-next-page", ListAlarmsStatusResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListAlarmsStatusResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 

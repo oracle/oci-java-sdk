@@ -94,6 +94,21 @@ public interface NosqlAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateIndexRequest, CreateIndexResponse> handler);
 
     /**
+     * Add a replica for this table
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateReplicaResponse> createReplica(
+            CreateReplicaRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateReplicaRequest, CreateReplicaResponse>
+                    handler);
+
+    /**
      * Create a new table.
      *
      * @param request The request object containing the details to send
@@ -120,6 +135,21 @@ public interface NosqlAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteIndexResponse> deleteIndex(
             DeleteIndexRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteIndexRequest, DeleteIndexResponse> handler);
+
+    /**
+     * Delete the specified replica table in the remote region.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteReplicaResponse> deleteReplica(
+            DeleteReplicaRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteReplicaRequest, DeleteReplicaResponse>
+                    handler);
 
     /**
      * Delete a single row from the table, by primary key.

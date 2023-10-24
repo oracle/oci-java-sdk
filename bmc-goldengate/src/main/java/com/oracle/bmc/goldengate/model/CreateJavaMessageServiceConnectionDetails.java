@@ -91,21 +91,21 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-        private String subnetId;
-
-        public Builder subnetId(String subnetId) {
-            this.subnetId = subnetId;
-            this.__explicitlySet__.add("subnetId");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
             return this;
         }
         /** The Java Message Service technology type. */
@@ -298,6 +298,125 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             return this;
         }
         /**
+         * Security protocol for Java Message Service. If not provided, default is PLAIN. Optional
+         * until 2024-06-27, in the release after it will be made required.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
+        private JavaMessageServiceConnection.SecurityProtocol securityProtocol;
+
+        /**
+         * Security protocol for Java Message Service. If not provided, default is PLAIN. Optional
+         * until 2024-06-27, in the release after it will be made required.
+         *
+         * @param securityProtocol the value to set
+         * @return this builder
+         */
+        public Builder securityProtocol(
+                JavaMessageServiceConnection.SecurityProtocol securityProtocol) {
+            this.securityProtocol = securityProtocol;
+            this.__explicitlySet__.add("securityProtocol");
+            return this;
+        }
+        /**
+         * Authentication type for Java Message Service. If not provided, default is NONE. Optional
+         * until 2024-06-27, in the release after it will be made required.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
+        private JavaMessageServiceConnection.AuthenticationType authenticationType;
+
+        /**
+         * Authentication type for Java Message Service. If not provided, default is NONE. Optional
+         * until 2024-06-27, in the release after it will be made required.
+         *
+         * @param authenticationType the value to set
+         * @return this builder
+         */
+        public Builder authenticationType(
+                JavaMessageServiceConnection.AuthenticationType authenticationType) {
+            this.authenticationType = authenticationType;
+            this.__explicitlySet__.add("authenticationType");
+            return this;
+        }
+        /** The base64 encoded content of the TrustStore file. */
+        @com.fasterxml.jackson.annotation.JsonProperty("trustStore")
+        private String trustStore;
+
+        /**
+         * The base64 encoded content of the TrustStore file.
+         *
+         * @param trustStore the value to set
+         * @return this builder
+         */
+        public Builder trustStore(String trustStore) {
+            this.trustStore = trustStore;
+            this.__explicitlySet__.add("trustStore");
+            return this;
+        }
+        /** The TrustStore password. */
+        @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
+        private String trustStorePassword;
+
+        /**
+         * The TrustStore password.
+         *
+         * @param trustStorePassword the value to set
+         * @return this builder
+         */
+        public Builder trustStorePassword(String trustStorePassword) {
+            this.trustStorePassword = trustStorePassword;
+            this.__explicitlySet__.add("trustStorePassword");
+            return this;
+        }
+        /** The base64 encoded content of the KeyStore file. */
+        @com.fasterxml.jackson.annotation.JsonProperty("keyStore")
+        private String keyStore;
+
+        /**
+         * The base64 encoded content of the KeyStore file.
+         *
+         * @param keyStore the value to set
+         * @return this builder
+         */
+        public Builder keyStore(String keyStore) {
+            this.keyStore = keyStore;
+            this.__explicitlySet__.add("keyStore");
+            return this;
+        }
+        /** The KeyStore password. */
+        @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
+        private String keyStorePassword;
+
+        /**
+         * The KeyStore password.
+         *
+         * @param keyStorePassword the value to set
+         * @return this builder
+         */
+        public Builder keyStorePassword(String keyStorePassword) {
+            this.keyStorePassword = keyStorePassword;
+            this.__explicitlySet__.add("keyStorePassword");
+            return this;
+        }
+        /**
+         * The password for the cert inside of the KeyStore. In case it differs from the KeyStore
+         * password, it should be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPassword")
+        private String sslKeyPassword;
+
+        /**
+         * The password for the cert inside of the KeyStore. In case it differs from the KeyStore
+         * password, it should be provided.
+         *
+         * @param sslKeyPassword the value to set
+         * @return this builder
+         */
+        public Builder sslKeyPassword(String sslKeyPassword) {
+            this.sslKeyPassword = sslKeyPassword;
+            this.__explicitlySet__.add("sslKeyPassword");
+            return this;
+        }
+        /**
          * The private IP address of the connection's endpoint in the customer's VCN, typically a
          * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
          * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
@@ -338,8 +457,8 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
                             this.definedTags,
                             this.vaultId,
                             this.keyId,
-                            this.subnetId,
                             this.nsgIds,
+                            this.subnetId,
                             this.technologyType,
                             this.shouldUseJndi,
                             this.jndiConnectionFactory,
@@ -351,6 +470,13 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
                             this.connectionFactory,
                             this.username,
                             this.password,
+                            this.securityProtocol,
+                            this.authenticationType,
+                            this.trustStore,
+                            this.trustStorePassword,
+                            this.keyStore,
+                            this.keyStorePassword,
+                            this.sslKeyPassword,
                             this.privateIp);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -381,11 +507,11 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             if (model.wasPropertyExplicitlySet("keyId")) {
                 this.keyId(model.getKeyId());
             }
-            if (model.wasPropertyExplicitlySet("subnetId")) {
-                this.subnetId(model.getSubnetId());
-            }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
             }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
@@ -420,6 +546,27 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             if (model.wasPropertyExplicitlySet("password")) {
                 this.password(model.getPassword());
             }
+            if (model.wasPropertyExplicitlySet("securityProtocol")) {
+                this.securityProtocol(model.getSecurityProtocol());
+            }
+            if (model.wasPropertyExplicitlySet("authenticationType")) {
+                this.authenticationType(model.getAuthenticationType());
+            }
+            if (model.wasPropertyExplicitlySet("trustStore")) {
+                this.trustStore(model.getTrustStore());
+            }
+            if (model.wasPropertyExplicitlySet("trustStorePassword")) {
+                this.trustStorePassword(model.getTrustStorePassword());
+            }
+            if (model.wasPropertyExplicitlySet("keyStore")) {
+                this.keyStore(model.getKeyStore());
+            }
+            if (model.wasPropertyExplicitlySet("keyStorePassword")) {
+                this.keyStorePassword(model.getKeyStorePassword());
+            }
+            if (model.wasPropertyExplicitlySet("sslKeyPassword")) {
+                this.sslKeyPassword(model.getSslKeyPassword());
+            }
             if (model.wasPropertyExplicitlySet("privateIp")) {
                 this.privateIp(model.getPrivateIp());
             }
@@ -445,8 +592,8 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String vaultId,
             String keyId,
-            String subnetId,
             java.util.List<String> nsgIds,
+            String subnetId,
             JavaMessageServiceConnection.TechnologyType technologyType,
             Boolean shouldUseJndi,
             String jndiConnectionFactory,
@@ -458,6 +605,13 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             String connectionFactory,
             String username,
             String password,
+            JavaMessageServiceConnection.SecurityProtocol securityProtocol,
+            JavaMessageServiceConnection.AuthenticationType authenticationType,
+            String trustStore,
+            String trustStorePassword,
+            String keyStore,
+            String keyStorePassword,
+            String sslKeyPassword,
             String privateIp) {
         super(
                 displayName,
@@ -467,8 +621,8 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
                 definedTags,
                 vaultId,
                 keyId,
-                subnetId,
-                nsgIds);
+                nsgIds,
+                subnetId);
         this.technologyType = technologyType;
         this.shouldUseJndi = shouldUseJndi;
         this.jndiConnectionFactory = jndiConnectionFactory;
@@ -480,6 +634,13 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
         this.connectionFactory = connectionFactory;
         this.username = username;
         this.password = password;
+        this.securityProtocol = securityProtocol;
+        this.authenticationType = authenticationType;
+        this.trustStore = trustStore;
+        this.trustStorePassword = trustStorePassword;
+        this.keyStore = keyStore;
+        this.keyStorePassword = keyStorePassword;
+        this.sslKeyPassword = sslKeyPassword;
         this.privateIp = privateIp;
     }
 
@@ -649,6 +810,109 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
     }
 
     /**
+     * Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until
+     * 2024-06-27, in the release after it will be made required.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
+    private final JavaMessageServiceConnection.SecurityProtocol securityProtocol;
+
+    /**
+     * Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until
+     * 2024-06-27, in the release after it will be made required.
+     *
+     * @return the value
+     */
+    public JavaMessageServiceConnection.SecurityProtocol getSecurityProtocol() {
+        return securityProtocol;
+    }
+
+    /**
+     * Authentication type for Java Message Service. If not provided, default is NONE. Optional
+     * until 2024-06-27, in the release after it will be made required.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
+    private final JavaMessageServiceConnection.AuthenticationType authenticationType;
+
+    /**
+     * Authentication type for Java Message Service. If not provided, default is NONE. Optional
+     * until 2024-06-27, in the release after it will be made required.
+     *
+     * @return the value
+     */
+    public JavaMessageServiceConnection.AuthenticationType getAuthenticationType() {
+        return authenticationType;
+    }
+
+    /** The base64 encoded content of the TrustStore file. */
+    @com.fasterxml.jackson.annotation.JsonProperty("trustStore")
+    private final String trustStore;
+
+    /**
+     * The base64 encoded content of the TrustStore file.
+     *
+     * @return the value
+     */
+    public String getTrustStore() {
+        return trustStore;
+    }
+
+    /** The TrustStore password. */
+    @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
+    private final String trustStorePassword;
+
+    /**
+     * The TrustStore password.
+     *
+     * @return the value
+     */
+    public String getTrustStorePassword() {
+        return trustStorePassword;
+    }
+
+    /** The base64 encoded content of the KeyStore file. */
+    @com.fasterxml.jackson.annotation.JsonProperty("keyStore")
+    private final String keyStore;
+
+    /**
+     * The base64 encoded content of the KeyStore file.
+     *
+     * @return the value
+     */
+    public String getKeyStore() {
+        return keyStore;
+    }
+
+    /** The KeyStore password. */
+    @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
+    private final String keyStorePassword;
+
+    /**
+     * The KeyStore password.
+     *
+     * @return the value
+     */
+    public String getKeyStorePassword() {
+        return keyStorePassword;
+    }
+
+    /**
+     * The password for the cert inside of the KeyStore. In case it differs from the KeyStore
+     * password, it should be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPassword")
+    private final String sslKeyPassword;
+
+    /**
+     * The password for the cert inside of the KeyStore. In case it differs from the KeyStore
+     * password, it should be provided.
+     *
+     * @return the value
+     */
+    public String getSslKeyPassword() {
+        return sslKeyPassword;
+    }
+
+    /**
      * The private IP address of the connection's endpoint in the customer's VCN, typically a
      * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
      * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
@@ -700,6 +964,13 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
         sb.append(", connectionFactory=").append(String.valueOf(this.connectionFactory));
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", password=").append("<redacted>");
+        sb.append(", securityProtocol=").append(String.valueOf(this.securityProtocol));
+        sb.append(", authenticationType=").append(String.valueOf(this.authenticationType));
+        sb.append(", trustStore=").append(String.valueOf(this.trustStore));
+        sb.append(", trustStorePassword=").append("<redacted>");
+        sb.append(", keyStore=").append(String.valueOf(this.keyStore));
+        sb.append(", keyStorePassword=").append("<redacted>");
+        sb.append(", sslKeyPassword=").append("<redacted>");
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
         sb.append(")");
         return sb.toString();
@@ -729,6 +1000,13 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
                 && java.util.Objects.equals(this.connectionFactory, other.connectionFactory)
                 && java.util.Objects.equals(this.username, other.username)
                 && java.util.Objects.equals(this.password, other.password)
+                && java.util.Objects.equals(this.securityProtocol, other.securityProtocol)
+                && java.util.Objects.equals(this.authenticationType, other.authenticationType)
+                && java.util.Objects.equals(this.trustStore, other.trustStore)
+                && java.util.Objects.equals(this.trustStorePassword, other.trustStorePassword)
+                && java.util.Objects.equals(this.keyStore, other.keyStore)
+                && java.util.Objects.equals(this.keyStorePassword, other.keyStorePassword)
+                && java.util.Objects.equals(this.sslKeyPassword, other.sslKeyPassword)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
                 && super.equals(other);
     }
@@ -774,6 +1052,27 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
                         + (this.connectionFactory == null ? 43 : this.connectionFactory.hashCode());
         result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
         result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityProtocol == null ? 43 : this.securityProtocol.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.authenticationType == null
+                                ? 43
+                                : this.authenticationType.hashCode());
+        result = (result * PRIME) + (this.trustStore == null ? 43 : this.trustStore.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.trustStorePassword == null
+                                ? 43
+                                : this.trustStorePassword.hashCode());
+        result = (result * PRIME) + (this.keyStore == null ? 43 : this.keyStore.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.keyStorePassword == null ? 43 : this.keyStorePassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sslKeyPassword == null ? 43 : this.sslKeyPassword.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
         return result;
     }

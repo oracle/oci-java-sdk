@@ -31,6 +31,9 @@ public class CreateDatabaseToolsPrivateEndpointRequest
      * hours, but can be invalidated before then due to conflicting operations. For example, if a
      * resource has been deleted and purged from the system, then a retry of the original creation
      * request might be rejected.
+     *
+     * <p>Accepted characters: ASCII alphanumerics plus underscore (U+005F LOW LINE "_") and dash
+     * (U+002D HYPHEN-MINUS "-")
      */
     private String opcRetryToken;
 
@@ -40,6 +43,9 @@ public class CreateDatabaseToolsPrivateEndpointRequest
      * hours, but can be invalidated before then due to conflicting operations. For example, if a
      * resource has been deleted and purged from the system, then a retry of the original creation
      * request might be rejected.
+     *
+     * <p>Accepted characters: ASCII alphanumerics plus underscore (U+005F LOW LINE "_") and dash
+     * (U+002D HYPHEN-MINUS "-")
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -94,6 +100,9 @@ public class CreateDatabaseToolsPrivateEndpointRequest
          * 24 hours, but can be invalidated before then due to conflicting operations. For example,
          * if a resource has been deleted and purged from the system, then a retry of the original
          * creation request might be rejected.
+         *
+         * <p>Accepted characters: ASCII alphanumerics plus underscore (U+005F LOW LINE "_") and
+         * dash (U+002D HYPHEN-MINUS "-")
          */
         private String opcRetryToken = null;
 
@@ -103,6 +112,9 @@ public class CreateDatabaseToolsPrivateEndpointRequest
          * 24 hours, but can be invalidated before then due to conflicting operations. For example,
          * if a resource has been deleted and purged from the system, then a retry of the original
          * creation request might be rejected.
+         *
+         * <p>Accepted characters: ASCII alphanumerics plus underscore (U+005F LOW LINE "_") and
+         * dash (U+002D HYPHEN-MINUS "-")
          *
          * @param opcRetryToken the value to set
          * @return this builder instance

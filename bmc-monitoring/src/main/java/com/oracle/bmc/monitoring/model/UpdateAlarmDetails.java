@@ -92,7 +92,7 @@ public final class UpdateAlarmDetails
          * A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
          * Avoid entering confidential information.
          *
-         * <p>This name is sent as the title for notifications related to this alarm.
+         * <p>This value determines the title of each alarm notification.
          *
          * <p>Example: {@code High CPU Utilization}
          */
@@ -103,7 +103,7 @@ public final class UpdateAlarmDetails
          * A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
          * Avoid entering confidential information.
          *
-         * <p>This name is sent as the title for notifications related to this alarm.
+         * <p>This value determines the title of each alarm notification.
          *
          * <p>Example: {@code High CPU Utilization}
          *
@@ -244,8 +244,10 @@ public final class UpdateAlarmDetails
          * metric, statistic, interval, and trigger rule (threshold or absence). Supported values
          * for interval depend on the specified time range. More interval values are supported for
          * smaller time ranges. You can optionally specify dimensions and grouping functions.
-         * Supported grouping functions: {@code grouping()}, {@code groupBy()}. For details about
-         * Monitoring Query Language (MQL), see [Monitoring Query Language (MQL)
+         * Supported grouping functions: {@code grouping()}, {@code groupBy()}. For information
+         * about writing MQL expressions, see [Editing the MQL Expression for a
+         * Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm).
+         * For details about MQL, see [Monitoring Query Language (MQL)
          * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
          * available dimensions, review the metric definition for the supported service. See
          * [Supported
@@ -279,8 +281,10 @@ public final class UpdateAlarmDetails
          * metric, statistic, interval, and trigger rule (threshold or absence). Supported values
          * for interval depend on the specified time range. More interval values are supported for
          * smaller time ranges. You can optionally specify dimensions and grouping functions.
-         * Supported grouping functions: {@code grouping()}, {@code groupBy()}. For details about
-         * Monitoring Query Language (MQL), see [Monitoring Query Language (MQL)
+         * Supported grouping functions: {@code grouping()}, {@code groupBy()}. For information
+         * about writing MQL expressions, see [Editing the MQL Expression for a
+         * Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm).
+         * For details about MQL, see [Monitoring Query Language (MQL)
          * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
          * available dimensions, review the metric definition for the supported service. See
          * [Supported
@@ -397,9 +401,9 @@ public final class UpdateAlarmDetails
             return this;
         }
         /**
-         * The human-readable content of the notification delivered. Oracle recommends providing
-         * guidance to operators for resolving the alarm condition. Consider adding links to
-         * standard runbook practices. Avoid entering confidential information.
+         * The human-readable content of the delivered alarm notification. Oracle recommends
+         * providing guidance to operators for resolving the alarm condition. Consider adding links
+         * to standard runbook practices. Avoid entering confidential information.
          *
          * <p>Example: {@code High CPU usage alert. Follow runbook instructions for resolution.}
          */
@@ -407,9 +411,9 @@ public final class UpdateAlarmDetails
         private String body;
 
         /**
-         * The human-readable content of the notification delivered. Oracle recommends providing
-         * guidance to operators for resolving the alarm condition. Consider adding links to
-         * standard runbook practices. Avoid entering confidential information.
+         * The human-readable content of the delivered alarm notification. Oracle recommends
+         * providing guidance to operators for resolving the alarm condition. Consider adding links
+         * to standard runbook practices. Avoid entering confidential information.
          *
          * <p>Example: {@code High CPU usage alert. Follow runbook instructions for resolution.}
          *
@@ -422,15 +426,15 @@ public final class UpdateAlarmDetails
             return this;
         }
         /**
-         * When set to {@code true}, splits notifications per metric stream. When set to {@code
-         * false}, groups notifications across metric streams. Example: {@code true}
+         * When set to {@code true}, splits alarm notifications per metric stream. When set to
+         * {@code false}, groups alarm notifications across metric streams.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isNotificationsPerMetricDimensionEnabled")
         private Boolean isNotificationsPerMetricDimensionEnabled;
 
         /**
-         * When set to {@code true}, splits notifications per metric stream. When set to {@code
-         * false}, groups notifications across metric streams. Example: {@code true}
+         * When set to {@code true}, splits alarm notifications per metric stream. When set to
+         * {@code false}, groups alarm notifications across metric streams.
          *
          * @param isNotificationsPerMetricDimensionEnabled the value to set
          * @return this builder
@@ -443,21 +447,25 @@ public final class UpdateAlarmDetails
             return this;
         }
         /**
-         * The format to use for notification messages sent from this alarm. The formats are: *
-         * {@code RAW} - Raw JSON blob. Default value. * {@code PRETTY_JSON}: JSON with new lines
-         * and indents. * {@code ONS_OPTIMIZED}: Simplified, user-friendly layout. Applies only to
-         * messages sent through the Notifications service to the following subscription types:
-         * Email.
+         * The format to use for alarm notifications. The formats are: * {@code RAW} - Raw JSON
+         * blob. Default value. When the {@code destinations} attribute specifies {@code Streaming},
+         * all alarm notifications use this format. * {@code PRETTY_JSON}: JSON with new lines and
+         * indents. Available when the {@code destinations} attribute specifies {@code
+         * Notifications} only. * {@code ONS_OPTIMIZED}: Simplified, user-friendly layout. Available
+         * when the {@code destinations} attribute specifies {@code Notifications} only. Applies to
+         * Email subscription types only.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("messageFormat")
         private MessageFormat messageFormat;
 
         /**
-         * The format to use for notification messages sent from this alarm. The formats are: *
-         * {@code RAW} - Raw JSON blob. Default value. * {@code PRETTY_JSON}: JSON with new lines
-         * and indents. * {@code ONS_OPTIMIZED}: Simplified, user-friendly layout. Applies only to
-         * messages sent through the Notifications service to the following subscription types:
-         * Email.
+         * The format to use for alarm notifications. The formats are: * {@code RAW} - Raw JSON
+         * blob. Default value. When the {@code destinations} attribute specifies {@code Streaming},
+         * all alarm notifications use this format. * {@code PRETTY_JSON}: JSON with new lines and
+         * indents. Available when the {@code destinations} attribute specifies {@code
+         * Notifications} only. * {@code ONS_OPTIMIZED}: Simplified, user-friendly layout. Available
+         * when the {@code destinations} attribute specifies {@code Notifications} only. Applies to
+         * Email subscription types only.
          *
          * @param messageFormat the value to set
          * @return this builder
@@ -468,23 +476,19 @@ public final class UpdateAlarmDetails
             return this;
         }
         /**
-         * A list of destinations to which the notifications for this alarm will be delivered. Each
-         * destination is represented by an
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * related to the supported destination service. For example, a destination using the
-         * Notifications service is represented by a topic OCID. Supported destination services:
-         * Notifications Service. Limit: One destination per supported destination service.
+         * A list of destinations for alarm notifications. Each destination is represented by the
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * related resource, such as a {@link NotificationTopic}. Supported destination services:
+         * Notifications , Streaming. Limit: One destination per supported destination service.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("destinations")
         private java.util.List<String> destinations;
 
         /**
-         * A list of destinations to which the notifications for this alarm will be delivered. Each
-         * destination is represented by an
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * related to the supported destination service. For example, a destination using the
-         * Notifications service is represented by a topic OCID. Supported destination services:
-         * Notifications Service. Limit: One destination per supported destination service.
+         * A list of destinations for alarm notifications. Each destination is represented by the
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * related resource, such as a {@link NotificationTopic}. Supported destination services:
+         * Notifications , Streaming. Limit: One destination per supported destination service.
          *
          * @param destinations the value to set
          * @return this builder
@@ -495,7 +499,7 @@ public final class UpdateAlarmDetails
             return this;
         }
         /**
-         * The frequency at which notifications are re-submitted, if the alarm keeps firing without
+         * The frequency for re-submitting alarm notifications, if the alarm keeps firing without
          * interruption. Format defined by ISO 8601. For example, {@code PT4H} indicates four hours.
          * Minimum: PT1M. Maximum: P30D.
          *
@@ -507,7 +511,7 @@ public final class UpdateAlarmDetails
         private String repeatNotificationDuration;
 
         /**
-         * The frequency at which notifications are re-submitted, if the alarm keeps firing without
+         * The frequency for re-submitting alarm notifications, if the alarm keeps firing without
          * interruption. Format defined by ISO 8601. For example, {@code PT4H} indicates four hours.
          * Minimum: PT1M. Maximum: P30D.
          *
@@ -707,7 +711,7 @@ public final class UpdateAlarmDetails
      * A user-friendly name for the alarm. It does not have to be unique, and it's changeable. Avoid
      * entering confidential information.
      *
-     * <p>This name is sent as the title for notifications related to this alarm.
+     * <p>This value determines the title of each alarm notification.
      *
      * <p>Example: {@code High CPU Utilization}
      */
@@ -718,7 +722,7 @@ public final class UpdateAlarmDetails
      * A user-friendly name for the alarm. It does not have to be unique, and it's changeable. Avoid
      * entering confidential information.
      *
-     * <p>This name is sent as the title for notifications related to this alarm.
+     * <p>This value determines the title of each alarm notification.
      *
      * <p>Example: {@code High CPU Utilization}
      *
@@ -843,8 +847,10 @@ public final class UpdateAlarmDetails
      * and trigger rule (threshold or absence). Supported values for interval depend on the
      * specified time range. More interval values are supported for smaller time ranges. You can
      * optionally specify dimensions and grouping functions. Supported grouping functions: {@code
-     * grouping()}, {@code groupBy()}. For details about Monitoring Query Language (MQL), see
-     * [Monitoring Query Language (MQL)
+     * grouping()}, {@code groupBy()}. For information about writing MQL expressions, see [Editing
+     * the MQL Expression for a
+     * Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For
+     * details about MQL, see [Monitoring Query Language (MQL)
      * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
      * available dimensions, review the metric definition for the supported service. See [Supported
      * Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
@@ -877,8 +883,10 @@ public final class UpdateAlarmDetails
      * and trigger rule (threshold or absence). Supported values for interval depend on the
      * specified time range. More interval values are supported for smaller time ranges. You can
      * optionally specify dimensions and grouping functions. Supported grouping functions: {@code
-     * grouping()}, {@code groupBy()}. For details about Monitoring Query Language (MQL), see
-     * [Monitoring Query Language (MQL)
+     * grouping()}, {@code groupBy()}. For information about writing MQL expressions, see [Editing
+     * the MQL Expression for a
+     * Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For
+     * details about MQL, see [Monitoring Query Language (MQL)
      * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
      * available dimensions, review the metric definition for the supported service. See [Supported
      * Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
@@ -984,7 +992,7 @@ public final class UpdateAlarmDetails
     }
 
     /**
-     * The human-readable content of the notification delivered. Oracle recommends providing
+     * The human-readable content of the delivered alarm notification. Oracle recommends providing
      * guidance to operators for resolving the alarm condition. Consider adding links to standard
      * runbook practices. Avoid entering confidential information.
      *
@@ -994,7 +1002,7 @@ public final class UpdateAlarmDetails
     private final String body;
 
     /**
-     * The human-readable content of the notification delivered. Oracle recommends providing
+     * The human-readable content of the delivered alarm notification. Oracle recommends providing
      * guidance to operators for resolving the alarm condition. Consider adding links to standard
      * runbook practices. Avoid entering confidential information.
      *
@@ -1007,15 +1015,15 @@ public final class UpdateAlarmDetails
     }
 
     /**
-     * When set to {@code true}, splits notifications per metric stream. When set to {@code false},
-     * groups notifications across metric streams. Example: {@code true}
+     * When set to {@code true}, splits alarm notifications per metric stream. When set to {@code
+     * false}, groups alarm notifications across metric streams.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isNotificationsPerMetricDimensionEnabled")
     private final Boolean isNotificationsPerMetricDimensionEnabled;
 
     /**
-     * When set to {@code true}, splits notifications per metric stream. When set to {@code false},
-     * groups notifications across metric streams. Example: {@code true}
+     * When set to {@code true}, splits alarm notifications per metric stream. When set to {@code
+     * false}, groups alarm notifications across metric streams.
      *
      * @return the value
      */
@@ -1024,10 +1032,13 @@ public final class UpdateAlarmDetails
     }
 
     /**
-     * The format to use for notification messages sent from this alarm. The formats are: * {@code
-     * RAW} - Raw JSON blob. Default value. * {@code PRETTY_JSON}: JSON with new lines and indents.
-     * * {@code ONS_OPTIMIZED}: Simplified, user-friendly layout. Applies only to messages sent
-     * through the Notifications service to the following subscription types: Email.
+     * The format to use for alarm notifications. The formats are: * {@code RAW} - Raw JSON blob.
+     * Default value. When the {@code destinations} attribute specifies {@code Streaming}, all alarm
+     * notifications use this format. * {@code PRETTY_JSON}: JSON with new lines and indents.
+     * Available when the {@code destinations} attribute specifies {@code Notifications} only. *
+     * {@code ONS_OPTIMIZED}: Simplified, user-friendly layout. Available when the {@code
+     * destinations} attribute specifies {@code Notifications} only. Applies to Email subscription
+     * types only.
      */
     public enum MessageFormat implements com.oracle.bmc.http.internal.BmcEnum {
         Raw("RAW"),
@@ -1063,19 +1074,25 @@ public final class UpdateAlarmDetails
         }
     };
     /**
-     * The format to use for notification messages sent from this alarm. The formats are: * {@code
-     * RAW} - Raw JSON blob. Default value. * {@code PRETTY_JSON}: JSON with new lines and indents.
-     * * {@code ONS_OPTIMIZED}: Simplified, user-friendly layout. Applies only to messages sent
-     * through the Notifications service to the following subscription types: Email.
+     * The format to use for alarm notifications. The formats are: * {@code RAW} - Raw JSON blob.
+     * Default value. When the {@code destinations} attribute specifies {@code Streaming}, all alarm
+     * notifications use this format. * {@code PRETTY_JSON}: JSON with new lines and indents.
+     * Available when the {@code destinations} attribute specifies {@code Notifications} only. *
+     * {@code ONS_OPTIMIZED}: Simplified, user-friendly layout. Available when the {@code
+     * destinations} attribute specifies {@code Notifications} only. Applies to Email subscription
+     * types only.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("messageFormat")
     private final MessageFormat messageFormat;
 
     /**
-     * The format to use for notification messages sent from this alarm. The formats are: * {@code
-     * RAW} - Raw JSON blob. Default value. * {@code PRETTY_JSON}: JSON with new lines and indents.
-     * * {@code ONS_OPTIMIZED}: Simplified, user-friendly layout. Applies only to messages sent
-     * through the Notifications service to the following subscription types: Email.
+     * The format to use for alarm notifications. The formats are: * {@code RAW} - Raw JSON blob.
+     * Default value. When the {@code destinations} attribute specifies {@code Streaming}, all alarm
+     * notifications use this format. * {@code PRETTY_JSON}: JSON with new lines and indents.
+     * Available when the {@code destinations} attribute specifies {@code Notifications} only. *
+     * {@code ONS_OPTIMIZED}: Simplified, user-friendly layout. Available when the {@code
+     * destinations} attribute specifies {@code Notifications} only. Applies to Email subscription
+     * types only.
      *
      * @return the value
      */
@@ -1084,23 +1101,19 @@ public final class UpdateAlarmDetails
     }
 
     /**
-     * A list of destinations to which the notifications for this alarm will be delivered. Each
-     * destination is represented by an
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) related
-     * to the supported destination service. For example, a destination using the Notifications
-     * service is represented by a topic OCID. Supported destination services: Notifications
-     * Service. Limit: One destination per supported destination service.
+     * A list of destinations for alarm notifications. Each destination is represented by the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+     * related resource, such as a {@link NotificationTopic}. Supported destination services:
+     * Notifications , Streaming. Limit: One destination per supported destination service.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("destinations")
     private final java.util.List<String> destinations;
 
     /**
-     * A list of destinations to which the notifications for this alarm will be delivered. Each
-     * destination is represented by an
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) related
-     * to the supported destination service. For example, a destination using the Notifications
-     * service is represented by a topic OCID. Supported destination services: Notifications
-     * Service. Limit: One destination per supported destination service.
+     * A list of destinations for alarm notifications. Each destination is represented by the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+     * related resource, such as a {@link NotificationTopic}. Supported destination services:
+     * Notifications , Streaming. Limit: One destination per supported destination service.
      *
      * @return the value
      */
@@ -1109,7 +1122,7 @@ public final class UpdateAlarmDetails
     }
 
     /**
-     * The frequency at which notifications are re-submitted, if the alarm keeps firing without
+     * The frequency for re-submitting alarm notifications, if the alarm keeps firing without
      * interruption. Format defined by ISO 8601. For example, {@code PT4H} indicates four hours.
      * Minimum: PT1M. Maximum: P30D.
      *
@@ -1121,7 +1134,7 @@ public final class UpdateAlarmDetails
     private final String repeatNotificationDuration;
 
     /**
-     * The frequency at which notifications are re-submitted, if the alarm keeps firing without
+     * The frequency for re-submitting alarm notifications, if the alarm keeps firing without
      * interruption. Format defined by ISO 8601. For example, {@code PT4H} indicates four hours.
      * Minimum: PT1M. Maximum: P30D.
      *

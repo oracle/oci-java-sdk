@@ -98,6 +98,21 @@ public interface Nosql extends AutoCloseable {
     CreateIndexResponse createIndex(CreateIndexRequest request);
 
     /**
+     * Add a replica for this table
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/nosql/CreateReplicaExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateReplica API.
+     */
+    CreateReplicaResponse createReplica(CreateReplicaRequest request);
+
+    /**
      * Create a new table.
      *
      * @param request The request object containing the details to send
@@ -126,6 +141,21 @@ public interface Nosql extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteIndex API.
      */
     DeleteIndexResponse deleteIndex(DeleteIndexRequest request);
+
+    /**
+     * Delete the specified replica table in the remote region.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/nosql/DeleteReplicaExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteReplica API.
+     */
+    DeleteReplicaResponse deleteReplica(DeleteReplicaRequest request);
 
     /**
      * Delete a single row from the table, by primary key.

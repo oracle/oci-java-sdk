@@ -98,6 +98,75 @@ public class ApplicationDependencyManagementAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<ActivateRemediationRecipeResponse> activateRemediationRecipe(
+            ActivateRemediationRecipeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ActivateRemediationRecipeRequest, ActivateRemediationRecipeResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getRemediationRecipeId(), "remediationRecipeId must not be blank");
+
+        return clientCall(request, ActivateRemediationRecipeResponse::builder)
+                .logger(LOG, "activateRemediationRecipe")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "ActivateRemediationRecipe",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipe/ActivateRemediationRecipe")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ActivateRemediationRecipeRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRecipes")
+                .appendPathParam(request.getRemediationRecipeId())
+                .appendPathParam("actions")
+                .appendPathParam("activate")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ActivateRemediationRecipeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ActivateRemediationRecipeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelRemediationRunResponse> cancelRemediationRun(
+            CancelRemediationRunRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CancelRemediationRunRequest, CancelRemediationRunResponse>
+                    handler) {
+
+        Validate.notBlank(request.getRemediationRunId(), "remediationRunId must not be blank");
+
+        return clientCall(request, CancelRemediationRunResponse::builder)
+                .logger(LOG, "cancelRemediationRun")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "CancelRemediationRun",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRun/CancelRemediationRun")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CancelRemediationRunRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRuns")
+                .appendPathParam(request.getRemediationRunId())
+                .appendPathParam("actions")
+                .appendPathParam("cancel")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.adm.model.RemediationRun.class,
+                        CancelRemediationRunResponse.Builder::remediationRun)
+                .handleResponseHeaderString(
+                        "opc-request-id", CancelRemediationRunResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CancelRemediationRunResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelWorkRequestResponse> cancelWorkRequest(
             CancelWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -163,6 +232,86 @@ public class ApplicationDependencyManagementAsyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeKnowledgeBaseCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeRemediationRecipeCompartmentResponse>
+            changeRemediationRecipeCompartment(
+                    ChangeRemediationRecipeCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeRemediationRecipeCompartmentRequest,
+                                    ChangeRemediationRecipeCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getRemediationRecipeId(), "remediationRecipeId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeRemediationRecipeCompartmentDetails(),
+                "changeRemediationRecipeCompartmentDetails is required");
+
+        return clientCall(request, ChangeRemediationRecipeCompartmentResponse::builder)
+                .logger(LOG, "changeRemediationRecipeCompartment")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "ChangeRemediationRecipeCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipe/ChangeRemediationRecipeCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeRemediationRecipeCompartmentRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRecipes")
+                .appendPathParam(request.getRemediationRecipeId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeRemediationRecipeCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeRemediationRecipeCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeRemediationRunCompartmentResponse>
+            changeRemediationRunCompartment(
+                    ChangeRemediationRunCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeRemediationRunCompartmentRequest,
+                                    ChangeRemediationRunCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(request.getRemediationRunId(), "remediationRunId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeRemediationRunCompartmentDetails(),
+                "changeRemediationRunCompartmentDetails is required");
+
+        return clientCall(request, ChangeRemediationRunCompartmentResponse::builder)
+                .logger(LOG, "changeRemediationRunCompartment")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "ChangeRemediationRunCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRun/ChangeRemediationRunCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeRemediationRunCompartmentRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRuns")
+                .appendPathParam(request.getRemediationRunId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeRemediationRunCompartmentResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -237,6 +386,71 @@ public class ApplicationDependencyManagementAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<CreateRemediationRecipeResponse> createRemediationRecipe(
+            CreateRemediationRecipeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateRemediationRecipeRequest, CreateRemediationRecipeResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateRemediationRecipeDetails(),
+                "createRemediationRecipeDetails is required");
+
+        return clientCall(request, CreateRemediationRecipeResponse::builder)
+                .logger(LOG, "createRemediationRecipe")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "CreateRemediationRecipe",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipe/CreateRemediationRecipe")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateRemediationRecipeRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRecipes")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateRemediationRecipeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateRemediationRecipeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRemediationRunResponse> createRemediationRun(
+            CreateRemediationRunRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateRemediationRunRequest, CreateRemediationRunResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateRemediationRunDetails(),
+                "createRemediationRunDetails is required");
+
+        return clientCall(request, CreateRemediationRunResponse::builder)
+                .logger(LOG, "createRemediationRun")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "CreateRemediationRun",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRun/CreateRemediationRun")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateRemediationRunRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRuns")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.adm.model.RemediationRun.class,
+                        CreateRemediationRunResponse.Builder::remediationRun)
+                .handleResponseHeaderString("etag", CreateRemediationRunResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateRemediationRunResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateVulnerabilityAuditResponse> createVulnerabilityAudit(
             CreateVulnerabilityAuditRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -274,6 +488,42 @@ public class ApplicationDependencyManagementAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<DeactivateRemediationRecipeResponse>
+            deactivateRemediationRecipe(
+                    DeactivateRemediationRecipeRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeactivateRemediationRecipeRequest,
+                                    DeactivateRemediationRecipeResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getRemediationRecipeId(), "remediationRecipeId must not be blank");
+
+        return clientCall(request, DeactivateRemediationRecipeResponse::builder)
+                .logger(LOG, "deactivateRemediationRecipe")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "DeactivateRemediationRecipe",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipe/DeactivateRemediationRecipe")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DeactivateRemediationRecipeRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRecipes")
+                .appendPathParam(request.getRemediationRecipeId())
+                .appendPathParam("actions")
+                .appendPathParam("deactivate")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeactivateRemediationRecipeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeactivateRemediationRecipeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteKnowledgeBaseResponse> deleteKnowledgeBase(
             DeleteKnowledgeBaseRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -301,6 +551,66 @@ public class ApplicationDependencyManagementAsyncClient
                         DeleteKnowledgeBaseResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteKnowledgeBaseResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRemediationRecipeResponse> deleteRemediationRecipe(
+            DeleteRemediationRecipeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteRemediationRecipeRequest, DeleteRemediationRecipeResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getRemediationRecipeId(), "remediationRecipeId must not be blank");
+
+        return clientCall(request, DeleteRemediationRecipeResponse::builder)
+                .logger(LOG, "deleteRemediationRecipe")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "DeleteRemediationRecipe",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipe/DeleteRemediationRecipe")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteRemediationRecipeRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRecipes")
+                .appendPathParam(request.getRemediationRecipeId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteRemediationRecipeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteRemediationRecipeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRemediationRunResponse> deleteRemediationRun(
+            DeleteRemediationRunRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteRemediationRunRequest, DeleteRemediationRunResponse>
+                    handler) {
+
+        Validate.notBlank(request.getRemediationRunId(), "remediationRunId must not be blank");
+
+        return clientCall(request, DeleteRemediationRunResponse::builder)
+                .logger(LOG, "deleteRemediationRun")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "DeleteRemediationRun",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRun/DeleteRemediationRun")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteRemediationRunRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRuns")
+                .appendPathParam(request.getRemediationRunId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteRemediationRunResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -361,6 +671,102 @@ public class ApplicationDependencyManagementAsyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", GetKnowledgeBaseResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetKnowledgeBaseResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRemediationRecipeResponse> getRemediationRecipe(
+            GetRemediationRecipeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetRemediationRecipeRequest, GetRemediationRecipeResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getRemediationRecipeId(), "remediationRecipeId must not be blank");
+
+        return clientCall(request, GetRemediationRecipeResponse::builder)
+                .logger(LOG, "getRemediationRecipe")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "GetRemediationRecipe",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipe/GetRemediationRecipe")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetRemediationRecipeRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRecipes")
+                .appendPathParam(request.getRemediationRecipeId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.adm.model.RemediationRecipe.class,
+                        GetRemediationRecipeResponse.Builder::remediationRecipe)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetRemediationRecipeResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetRemediationRecipeResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRemediationRunResponse> getRemediationRun(
+            GetRemediationRunRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetRemediationRunRequest, GetRemediationRunResponse>
+                    handler) {
+
+        Validate.notBlank(request.getRemediationRunId(), "remediationRunId must not be blank");
+
+        return clientCall(request, GetRemediationRunResponse::builder)
+                .logger(LOG, "getRemediationRun")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "GetRemediationRun",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRun/GetRemediationRun")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetRemediationRunRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRuns")
+                .appendPathParam(request.getRemediationRunId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.adm.model.RemediationRun.class,
+                        GetRemediationRunResponse.Builder::remediationRun)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetRemediationRunResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetRemediationRunResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetStageResponse> getStage(
+            GetStageRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetStageRequest, GetStageResponse>
+                    handler) {
+
+        Validate.notBlank(request.getRemediationRunId(), "remediationRunId must not be blank");
+
+        Validate.notBlank(request.getStageType().getValue(), "stageType must not be blank");
+
+        return clientCall(request, GetStageResponse::builder)
+                .logger(LOG, "getStage")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "GetStage",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRunStage/GetStage")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetStageRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRuns")
+                .appendPathParam(request.getRemediationRunId())
+                .appendPathParam("stages")
+                .appendPathParam(request.getStageType().getValue())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.adm.model.RemediationRunStage.class,
+                        GetStageResponse.Builder::remediationRunStage)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetStageResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -426,6 +832,50 @@ public class ApplicationDependencyManagementAsyncClient
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationDependencyRecommendationsResponse>
+            listApplicationDependencyRecommendations(
+                    ListApplicationDependencyRecommendationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListApplicationDependencyRecommendationsRequest,
+                                    ListApplicationDependencyRecommendationsResponse>
+                            handler) {
+
+        Validate.notBlank(request.getRemediationRunId(), "remediationRunId must not be blank");
+
+        return clientCall(request, ListApplicationDependencyRecommendationsResponse::builder)
+                .logger(LOG, "listApplicationDependencyRecommendations")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "ListApplicationDependencyRecommendations",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/ApplicationDependencyRecommendationCollection/ListApplicationDependencyRecommendations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListApplicationDependencyRecommendationsRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRuns")
+                .appendPathParam(request.getRemediationRunId())
+                .appendPathParam("applicationDependencyRecommendations")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("gav", request.getGav())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.adm.model.ApplicationDependencyRecommendationCollection
+                                .class,
+                        ListApplicationDependencyRecommendationsResponse.Builder
+                                ::applicationDependencyRecommendationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListApplicationDependencyRecommendationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListApplicationDependencyRecommendationsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -512,6 +962,119 @@ public class ApplicationDependencyManagementAsyncClient
                         "opc-request-id", ListKnowledgeBasesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListKnowledgeBasesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRemediationRecipesResponse> listRemediationRecipes(
+            ListRemediationRecipesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListRemediationRecipesRequest, ListRemediationRecipesResponse>
+                    handler) {
+
+        return clientCall(request, ListRemediationRecipesResponse::builder)
+                .logger(LOG, "listRemediationRecipes")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "ListRemediationRecipes",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipeCollection/ListRemediationRecipes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRemediationRecipesRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRecipes")
+                .appendQueryParam("id", request.getId())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.adm.model.RemediationRecipeCollection.class,
+                        ListRemediationRecipesResponse.Builder::remediationRecipeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListRemediationRecipesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListRemediationRecipesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRemediationRunsResponse> listRemediationRuns(
+            ListRemediationRunsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListRemediationRunsRequest, ListRemediationRunsResponse>
+                    handler) {
+
+        return clientCall(request, ListRemediationRunsResponse::builder)
+                .logger(LOG, "listRemediationRuns")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "ListRemediationRuns",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRunCollection/ListRemediationRuns")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRemediationRunsRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRuns")
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("remediationRecipeId", request.getRemediationRecipeId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.adm.model.RemediationRunCollection.class,
+                        ListRemediationRunsResponse.Builder::remediationRunCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListRemediationRunsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListRemediationRunsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStagesResponse> listStages(
+            ListStagesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListStagesRequest, ListStagesResponse>
+                    handler) {
+
+        Validate.notBlank(request.getRemediationRunId(), "remediationRunId must not be blank");
+
+        return clientCall(request, ListStagesResponse::builder)
+                .logger(LOG, "listStages")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "ListStages",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRunStageCollection/ListStages")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListStagesRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRuns")
+                .appendPathParam(request.getRemediationRunId())
+                .appendPathParam("stages")
+                .appendEnumQueryParam("type", request.getType())
+                .appendEnumQueryParam("status", request.getStatus())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.adm.model.RemediationRunStageCollection.class,
+                        ListStagesResponse.Builder::remediationRunStageCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListStagesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListStagesResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -696,6 +1259,78 @@ public class ApplicationDependencyManagementAsyncClient
                         UpdateKnowledgeBaseResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateKnowledgeBaseResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRemediationRecipeResponse> updateRemediationRecipe(
+            UpdateRemediationRecipeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateRemediationRecipeRequest, UpdateRemediationRecipeResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getRemediationRecipeId(), "remediationRecipeId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateRemediationRecipeDetails(),
+                "updateRemediationRecipeDetails is required");
+
+        return clientCall(request, UpdateRemediationRecipeResponse::builder)
+                .logger(LOG, "updateRemediationRecipe")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "UpdateRemediationRecipe",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipe/UpdateRemediationRecipe")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateRemediationRecipeRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRecipes")
+                .appendPathParam(request.getRemediationRecipeId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateRemediationRecipeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateRemediationRecipeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRemediationRunResponse> updateRemediationRun(
+            UpdateRemediationRunRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateRemediationRunRequest, UpdateRemediationRunResponse>
+                    handler) {
+
+        Validate.notBlank(request.getRemediationRunId(), "remediationRunId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateRemediationRunDetails(),
+                "updateRemediationRunDetails is required");
+
+        return clientCall(request, UpdateRemediationRunResponse::builder)
+                .logger(LOG, "updateRemediationRun")
+                .serviceDetails(
+                        "ApplicationDependencyManagement",
+                        "UpdateRemediationRun",
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRun/UpdateRemediationRun")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateRemediationRunRequest::builder)
+                .basePath("/20220421")
+                .appendPathParam("remediationRuns")
+                .appendPathParam(request.getRemediationRunId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.adm.model.RemediationRun.class,
+                        UpdateRemediationRunResponse.Builder::remediationRun)
+                .handleResponseHeaderString("etag", UpdateRemediationRunResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateRemediationRunResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

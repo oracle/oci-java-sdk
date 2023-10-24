@@ -23,6 +23,9 @@ package com.oracle.bmc.databasetools.model;
         defaultImpl = ValidateDatabaseToolsConnectionDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ValidateDatabaseToolsConnectionPostgresqlDetails.class,
+            name = "POSTGRESQL"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ValidateDatabaseToolsConnectionOracleDatabaseDetails.class,
             name = "ORACLE_DATABASE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

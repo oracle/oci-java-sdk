@@ -34,6 +34,10 @@ public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlyS
         "lifecycleDetails",
         "schema",
         "ddlStatement",
+        "schemaState",
+        "isMultiRegion",
+        "localReplicaInitializationInPercent",
+        "replicas",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -51,6 +55,10 @@ public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlyS
             String lifecycleDetails,
             Schema schema,
             String ddlStatement,
+            SchemaState schemaState,
+            Boolean isMultiRegion,
+            Integer localReplicaInitializationInPercent,
+            java.util.List<Replica> replicas,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -67,6 +75,10 @@ public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlyS
         this.lifecycleDetails = lifecycleDetails;
         this.schema = schema;
         this.ddlStatement = ddlStatement;
+        this.schemaState = schemaState;
+        this.isMultiRegion = isMultiRegion;
+        this.localReplicaInitializationInPercent = localReplicaInitializationInPercent;
+        this.replicas = replicas;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -249,6 +261,79 @@ public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return this;
         }
         /**
+         * The current state of this table's schema. Available states are MUTABLE - The schema can
+         * be changed. The table is not eligible for replication. FROZEN - The schema is immutable.
+         * The table is eligible for replication.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("schemaState")
+        private SchemaState schemaState;
+
+        /**
+         * The current state of this table's schema. Available states are MUTABLE - The schema can
+         * be changed. The table is not eligible for replication. FROZEN - The schema is immutable.
+         * The table is eligible for replication.
+         *
+         * @param schemaState the value to set
+         * @return this builder
+         */
+        public Builder schemaState(SchemaState schemaState) {
+            this.schemaState = schemaState;
+            this.__explicitlySet__.add("schemaState");
+            return this;
+        }
+        /** True if this table is currently a member of a replication set. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isMultiRegion")
+        private Boolean isMultiRegion;
+
+        /**
+         * True if this table is currently a member of a replication set.
+         *
+         * @param isMultiRegion the value to set
+         * @return this builder
+         */
+        public Builder isMultiRegion(Boolean isMultiRegion) {
+            this.isMultiRegion = isMultiRegion;
+            this.__explicitlySet__.add("isMultiRegion");
+            return this;
+        }
+        /**
+         * If this table is in a replication set, this value represents the progress of the
+         * initialization of the replica's data. A value of 100 indicates that initialization has
+         * completed.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("localReplicaInitializationInPercent")
+        private Integer localReplicaInitializationInPercent;
+
+        /**
+         * If this table is in a replication set, this value represents the progress of the
+         * initialization of the replica's data. A value of 100 indicates that initialization has
+         * completed.
+         *
+         * @param localReplicaInitializationInPercent the value to set
+         * @return this builder
+         */
+        public Builder localReplicaInitializationInPercent(
+                Integer localReplicaInitializationInPercent) {
+            this.localReplicaInitializationInPercent = localReplicaInitializationInPercent;
+            this.__explicitlySet__.add("localReplicaInitializationInPercent");
+            return this;
+        }
+        /** An array of Replica listing this table's replicas, if any */
+        @com.fasterxml.jackson.annotation.JsonProperty("replicas")
+        private java.util.List<Replica> replicas;
+
+        /**
+         * An array of Replica listing this table's replicas, if any
+         *
+         * @param replicas the value to set
+         * @return this builder
+         */
+        public Builder replicas(java.util.List<Replica> replicas) {
+            this.replicas = replicas;
+            this.__explicitlySet__.add("replicas");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          */
@@ -327,6 +412,10 @@ public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlyS
                             this.lifecycleDetails,
                             this.schema,
                             this.ddlStatement,
+                            this.schemaState,
+                            this.isMultiRegion,
+                            this.localReplicaInitializationInPercent,
+                            this.replicas,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -373,6 +462,19 @@ public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("ddlStatement")) {
                 this.ddlStatement(model.getDdlStatement());
+            }
+            if (model.wasPropertyExplicitlySet("schemaState")) {
+                this.schemaState(model.getSchemaState());
+            }
+            if (model.wasPropertyExplicitlySet("isMultiRegion")) {
+                this.isMultiRegion(model.getIsMultiRegion());
+            }
+            if (model.wasPropertyExplicitlySet("localReplicaInitializationInPercent")) {
+                this.localReplicaInitializationInPercent(
+                        model.getLocalReplicaInitializationInPercent());
+            }
+            if (model.wasPropertyExplicitlySet("replicas")) {
+                this.replicas(model.getReplicas());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -596,6 +698,120 @@ public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlyS
     }
 
     /**
+     * The current state of this table's schema. Available states are MUTABLE - The schema can be
+     * changed. The table is not eligible for replication. FROZEN - The schema is immutable. The
+     * table is eligible for replication.
+     */
+    public enum SchemaState implements com.oracle.bmc.http.internal.BmcEnum {
+        Mutable("MUTABLE"),
+        Frozen("FROZEN"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(SchemaState.class);
+
+        private final String value;
+        private static java.util.Map<String, SchemaState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SchemaState v : SchemaState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        SchemaState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SchemaState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'SchemaState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The current state of this table's schema. Available states are MUTABLE - The schema can be
+     * changed. The table is not eligible for replication. FROZEN - The schema is immutable. The
+     * table is eligible for replication.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("schemaState")
+    private final SchemaState schemaState;
+
+    /**
+     * The current state of this table's schema. Available states are MUTABLE - The schema can be
+     * changed. The table is not eligible for replication. FROZEN - The schema is immutable. The
+     * table is eligible for replication.
+     *
+     * @return the value
+     */
+    public SchemaState getSchemaState() {
+        return schemaState;
+    }
+
+    /** True if this table is currently a member of a replication set. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isMultiRegion")
+    private final Boolean isMultiRegion;
+
+    /**
+     * True if this table is currently a member of a replication set.
+     *
+     * @return the value
+     */
+    public Boolean getIsMultiRegion() {
+        return isMultiRegion;
+    }
+
+    /**
+     * If this table is in a replication set, this value represents the progress of the
+     * initialization of the replica's data. A value of 100 indicates that initialization has
+     * completed.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("localReplicaInitializationInPercent")
+    private final Integer localReplicaInitializationInPercent;
+
+    /**
+     * If this table is in a replication set, this value represents the progress of the
+     * initialization of the replica's data. A value of 100 indicates that initialization has
+     * completed.
+     *
+     * @return the value
+     */
+    public Integer getLocalReplicaInitializationInPercent() {
+        return localReplicaInitializationInPercent;
+    }
+
+    /** An array of Replica listing this table's replicas, if any */
+    @com.fasterxml.jackson.annotation.JsonProperty("replicas")
+    private final java.util.List<Replica> replicas;
+
+    /**
+     * An array of Replica listing this table's replicas, if any
+     *
+     * @return the value
+     */
+    public java.util.List<Replica> getReplicas() {
+        return replicas;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      */
@@ -675,6 +891,11 @@ public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlyS
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", schema=").append(String.valueOf(this.schema));
         sb.append(", ddlStatement=").append(String.valueOf(this.ddlStatement));
+        sb.append(", schemaState=").append(String.valueOf(this.schemaState));
+        sb.append(", isMultiRegion=").append(String.valueOf(this.isMultiRegion));
+        sb.append(", localReplicaInitializationInPercent=")
+                .append(String.valueOf(this.localReplicaInitializationInPercent));
+        sb.append(", replicas=").append(String.valueOf(this.replicas));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -704,6 +925,12 @@ public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlyS
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.schema, other.schema)
                 && java.util.Objects.equals(this.ddlStatement, other.ddlStatement)
+                && java.util.Objects.equals(this.schemaState, other.schemaState)
+                && java.util.Objects.equals(this.isMultiRegion, other.isMultiRegion)
+                && java.util.Objects.equals(
+                        this.localReplicaInitializationInPercent,
+                        other.localReplicaInitializationInPercent)
+                && java.util.Objects.equals(this.replicas, other.replicas)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -736,6 +963,16 @@ public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlyS
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.schema == null ? 43 : this.schema.hashCode());
         result = (result * PRIME) + (this.ddlStatement == null ? 43 : this.ddlStatement.hashCode());
+        result = (result * PRIME) + (this.schemaState == null ? 43 : this.schemaState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMultiRegion == null ? 43 : this.isMultiRegion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.localReplicaInitializationInPercent == null
+                                ? 43
+                                : this.localReplicaInitializationInPercent.hashCode());
+        result = (result * PRIME) + (this.replicas == null ? 43 : this.replicas.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

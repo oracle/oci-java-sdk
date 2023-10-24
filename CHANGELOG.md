@@ -3,6 +3,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.27.0 - 2023-10-24
+### Added
+- Support for optional parameters for autonomous container database create and update operations in the Database service
+- Support for maintenance runs for autonomous container database resources in the Database service
+- Support for runtime unsupported connections for Oracle Database and MySQL database types in the Database Tools service
+- Support for PostgreSQL, Generic JDBC connections with runtime unsupported in the Database Tools service
+- Support for resource locking in the Database Tools service
+- Support for proxy sessions for Oracle database connections in the Database Tools service
+- Support for global active tables in the NoSQL Database service
+- Support for application dependency management (ADM) remediation features in the Application Dependency Management service
+- Support for additional connections types for Amazon Kinesis, Amazon Redshift, Elasticsearch, Generic, Google BigQuery, Google Cloud Storage and Redis Database resources in the Golden Gate service
+- Support for optional parameters for the list alarms status operation in the Monitoring Service
+ 
+### Breaking Changes
+- Support for retries by default on operations of the Database Tools service
+- Support for retries by default on operations of the Monitoring service
+- Method `public java.lang.String getOpcRetryToken()` has been removed from models `com.oracle.bmc.databasetools.requests.ChangeDatabaseToolsConnectionCompartmentRequest` and `com.oracle.bmc.databasetools.requests.ChangeDatabaseToolsPrivateEndpointCompartmentRequest` in the Database Tools service
+
 ## 3.26.0 - 2023-10-17
 ### Added
 - Support for the Caching Service

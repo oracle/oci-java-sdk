@@ -95,6 +95,93 @@ public class DatabaseToolsAsyncClient extends com.oracle.bmc.http.internal.BaseA
     }
 
     @Override
+    public java.util.concurrent.Future<AddDatabaseToolsConnectionLockResponse>
+            addDatabaseToolsConnectionLock(
+                    AddDatabaseToolsConnectionLockRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AddDatabaseToolsConnectionLockRequest,
+                                    AddDatabaseToolsConnectionLockResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsConnectionId(),
+                "databaseToolsConnectionId must not be blank");
+        Objects.requireNonNull(
+                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
+
+        return clientCall(request, AddDatabaseToolsConnectionLockResponse::builder)
+                .logger(LOG, "addDatabaseToolsConnectionLock")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "AddDatabaseToolsConnectionLock",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/AddDatabaseToolsConnectionLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddDatabaseToolsConnectionLockRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsConnections")
+                .appendPathParam(request.getDatabaseToolsConnectionId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasetools.model.DatabaseToolsConnection.class,
+                        AddDatabaseToolsConnectionLockResponse.Builder::databaseToolsConnection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AddDatabaseToolsConnectionLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", AddDatabaseToolsConnectionLockResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddDatabaseToolsPrivateEndpointLockResponse>
+            addDatabaseToolsPrivateEndpointLock(
+                    AddDatabaseToolsPrivateEndpointLockRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AddDatabaseToolsPrivateEndpointLockRequest,
+                                    AddDatabaseToolsPrivateEndpointLockResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsPrivateEndpointId(),
+                "databaseToolsPrivateEndpointId must not be blank");
+        Objects.requireNonNull(
+                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
+
+        return clientCall(request, AddDatabaseToolsPrivateEndpointLockResponse::builder)
+                .logger(LOG, "addDatabaseToolsPrivateEndpointLock")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "AddDatabaseToolsPrivateEndpointLock",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/AddDatabaseToolsPrivateEndpointLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddDatabaseToolsPrivateEndpointLockRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsPrivateEndpoints")
+                .appendPathParam(request.getDatabaseToolsPrivateEndpointId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasetools.model.DatabaseToolsPrivateEndpoint.class,
+                        AddDatabaseToolsPrivateEndpointLockResponse.Builder
+                                ::databaseToolsPrivateEndpoint)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AddDatabaseToolsPrivateEndpointLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", AddDatabaseToolsPrivateEndpointLockResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeDatabaseToolsConnectionCompartmentResponse>
             changeDatabaseToolsConnectionCompartment(
                     ChangeDatabaseToolsConnectionCompartmentRequest request,
@@ -123,10 +210,10 @@ public class DatabaseToolsAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .appendPathParam(request.getDatabaseToolsConnectionId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -166,10 +253,10 @@ public class DatabaseToolsAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .appendPathParam(request.getDatabaseToolsPrivateEndpointId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -284,6 +371,7 @@ public class DatabaseToolsAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .basePath("/20201005")
                 .appendPathParam("databaseToolsConnections")
                 .appendPathParam(request.getDatabaseToolsConnectionId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -320,6 +408,7 @@ public class DatabaseToolsAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .basePath("/20201005")
                 .appendPathParam("databaseToolsPrivateEndpoints")
                 .appendPathParam(request.getDatabaseToolsPrivateEndpointId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -503,6 +592,12 @@ public class DatabaseToolsAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "type",
                         request.getType(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "runtimeSupport",
+                        request.getRuntimeSupport(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam(
+                        "relatedResourceIdentifier", request.getRelatedResourceIdentifier())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
@@ -721,6 +816,93 @@ public class DatabaseToolsAsyncClient extends com.oracle.bmc.http.internal.BaseA
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveDatabaseToolsConnectionLockResponse>
+            removeDatabaseToolsConnectionLock(
+                    RemoveDatabaseToolsConnectionLockRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveDatabaseToolsConnectionLockRequest,
+                                    RemoveDatabaseToolsConnectionLockResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsConnectionId(),
+                "databaseToolsConnectionId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
+
+        return clientCall(request, RemoveDatabaseToolsConnectionLockResponse::builder)
+                .logger(LOG, "removeDatabaseToolsConnectionLock")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "RemoveDatabaseToolsConnectionLock",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/RemoveDatabaseToolsConnectionLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveDatabaseToolsConnectionLockRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsConnections")
+                .appendPathParam(request.getDatabaseToolsConnectionId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasetools.model.DatabaseToolsConnection.class,
+                        RemoveDatabaseToolsConnectionLockResponse.Builder::databaseToolsConnection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveDatabaseToolsConnectionLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", RemoveDatabaseToolsConnectionLockResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveDatabaseToolsPrivateEndpointLockResponse>
+            removeDatabaseToolsPrivateEndpointLock(
+                    RemoveDatabaseToolsPrivateEndpointLockRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveDatabaseToolsPrivateEndpointLockRequest,
+                                    RemoveDatabaseToolsPrivateEndpointLockResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getDatabaseToolsPrivateEndpointId(),
+                "databaseToolsPrivateEndpointId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
+
+        return clientCall(request, RemoveDatabaseToolsPrivateEndpointLockResponse::builder)
+                .logger(LOG, "removeDatabaseToolsPrivateEndpointLock")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "RemoveDatabaseToolsPrivateEndpointLock",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/RemoveDatabaseToolsPrivateEndpointLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveDatabaseToolsPrivateEndpointLockRequest::builder)
+                .basePath("/20201005")
+                .appendPathParam("databaseToolsPrivateEndpoints")
+                .appendPathParam(request.getDatabaseToolsPrivateEndpointId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasetools.model.DatabaseToolsPrivateEndpoint.class,
+                        RemoveDatabaseToolsPrivateEndpointLockResponse.Builder
+                                ::databaseToolsPrivateEndpoint)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveDatabaseToolsPrivateEndpointLockResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", RemoveDatabaseToolsPrivateEndpointLockResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateDatabaseToolsConnectionResponse>
             updateDatabaseToolsConnection(
                     UpdateDatabaseToolsConnectionRequest request,
@@ -747,6 +929,7 @@ public class DatabaseToolsAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .basePath("/20201005")
                 .appendPathParam("databaseToolsConnections")
                 .appendPathParam(request.getDatabaseToolsConnectionId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -787,6 +970,7 @@ public class DatabaseToolsAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .basePath("/20201005")
                 .appendPathParam("databaseToolsPrivateEndpoints")
                 .appendPathParam(request.getDatabaseToolsPrivateEndpointId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())

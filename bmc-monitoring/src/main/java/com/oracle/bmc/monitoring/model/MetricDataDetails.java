@@ -216,12 +216,16 @@ public final class MetricDataDetails
         }
         /**
          * A list of metric values with timestamps. At least one data point is required per call.
+         * For a data point to be posted, its timestamp must be near current time (less than two
+         * hours in the past and less than 10 minutes in the future).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("datapoints")
         private java.util.List<Datapoint> datapoints;
 
         /**
          * A list of metric values with timestamps. At least one data point is required per call.
+         * For a data point to be posted, its timestamp must be near current time (less than two
+         * hours in the past and less than 10 minutes in the future).
          *
          * @param datapoints the value to set
          * @return this builder
@@ -437,12 +441,18 @@ public final class MetricDataDetails
         return metadata;
     }
 
-    /** A list of metric values with timestamps. At least one data point is required per call. */
+    /**
+     * A list of metric values with timestamps. At least one data point is required per call. For a
+     * data point to be posted, its timestamp must be near current time (less than two hours in the
+     * past and less than 10 minutes in the future).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("datapoints")
     private final java.util.List<Datapoint> datapoints;
 
     /**
-     * A list of metric values with timestamps. At least one data point is required per call.
+     * A list of metric values with timestamps. At least one data point is required per call. For a
+     * data point to be posted, its timestamp must be near current time (less than two hours in the
+     * past and less than 10 minutes in the future).
      *
      * @return the value
      */

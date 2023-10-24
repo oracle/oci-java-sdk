@@ -66,6 +66,39 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Activates the specified Remediation Recipe.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ActivateRemediationRecipeExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ActivateRemediationRecipe API.
+     */
+    ActivateRemediationRecipeResponse activateRemediationRecipe(
+            ActivateRemediationRecipeRequest request);
+
+    /**
+     * Cancels the specified remediation run.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/CancelRemediationRunExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CancelRemediationRun API.
+     */
+    CancelRemediationRunResponse cancelRemediationRun(CancelRemediationRunRequest request);
+
+    /**
      * Cancel work request with the given ID.
      *
      * @param request The request object containing the details to send
@@ -97,6 +130,40 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      */
     ChangeKnowledgeBaseCompartmentResponse changeKnowledgeBaseCompartment(
             ChangeKnowledgeBaseCompartmentRequest request);
+
+    /**
+     * Moves a Remediation Recipe from one compartment to another.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ChangeRemediationRecipeCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeRemediationRecipeCompartment API.
+     */
+    ChangeRemediationRecipeCompartmentResponse changeRemediationRecipeCompartment(
+            ChangeRemediationRecipeCompartmentRequest request);
+
+    /**
+     * Moves a remediation run from one compartment to another.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ChangeRemediationRunCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeRemediationRunCompartment API.
+     */
+    ChangeRemediationRunCompartmentResponse changeRemediationRunCompartment(
+            ChangeRemediationRunCompartmentRequest request);
 
     /**
      * Moves a Vulnerability Audit from one compartment to another.
@@ -132,6 +199,38 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
     CreateKnowledgeBaseResponse createKnowledgeBase(CreateKnowledgeBaseRequest request);
 
     /**
+     * Creates a new Remediation Recipe.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/CreateRemediationRecipeExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateRemediationRecipe API.
+     */
+    CreateRemediationRecipeResponse createRemediationRecipe(CreateRemediationRecipeRequest request);
+
+    /**
+     * Creates a new remediation run.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/CreateRemediationRunExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateRemediationRun API.
+     */
+    CreateRemediationRunResponse createRemediationRun(CreateRemediationRunRequest request);
+
+    /**
      * Creates a new Vulnerability Audit by providing a tree of Application Dependencies.
      *
      * @param request The request object containing the details to send
@@ -149,6 +248,23 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
             CreateVulnerabilityAuditRequest request);
 
     /**
+     * Deactivates the specified Remediation Recipe.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/DeactivateRemediationRecipeExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeactivateRemediationRecipe API.
+     */
+    DeactivateRemediationRecipeResponse deactivateRemediationRecipe(
+            DeactivateRemediationRecipeRequest request);
+
+    /**
      * Deletes the specified Knowledge Base.
      *
      * @param request The request object containing the details to send
@@ -163,6 +279,38 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      *     API.
      */
     DeleteKnowledgeBaseResponse deleteKnowledgeBase(DeleteKnowledgeBaseRequest request);
+
+    /**
+     * Deletes the specified Remediation Recipe.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/DeleteRemediationRecipeExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteRemediationRecipe API.
+     */
+    DeleteRemediationRecipeResponse deleteRemediationRecipe(DeleteRemediationRecipeRequest request);
+
+    /**
+     * Deletes the specified remediation run.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/DeleteRemediationRunExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteRemediationRun API.
+     */
+    DeleteRemediationRunResponse deleteRemediationRun(DeleteRemediationRunRequest request);
 
     /**
      * Deletes the specified Vulnerability Audit.
@@ -198,6 +346,53 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
     GetKnowledgeBaseResponse getKnowledgeBase(GetKnowledgeBaseRequest request);
 
     /**
+     * Returns the details of the specified RemediationRecipe.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/GetRemediationRecipeExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetRemediationRecipe API.
+     */
+    GetRemediationRecipeResponse getRemediationRecipe(GetRemediationRecipeRequest request);
+
+    /**
+     * Returns the details of the specified remediation run.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/GetRemediationRunExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRemediationRun
+     *     API.
+     */
+    GetRemediationRunResponse getRemediationRun(GetRemediationRunRequest request);
+
+    /**
+     * Returns the details of the specified Remediation Run Stage.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/GetStageExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStage API.
+     */
+    GetStageResponse getStage(GetStageRequest request);
+
+    /**
      * Returns the details of the specified Vulnerability Audit.
      *
      * @param request The request object containing the details to send
@@ -227,6 +422,23 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
+
+    /**
+     * Returns a list of application dependency with their associated recommendations.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListApplicationDependencyRecommendationsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListApplicationDependencyRecommendations API.
+     */
+    ListApplicationDependencyRecommendationsResponse listApplicationDependencyRecommendations(
+            ListApplicationDependencyRecommendationsRequest request);
 
     /**
      * Returns a list of Application Dependencies with their associated vulnerabilities.
@@ -261,6 +473,56 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      *     API.
      */
     ListKnowledgeBasesResponse listKnowledgeBases(ListKnowledgeBasesRequest request);
+
+    /**
+     * Returns a list of Remediation Recipes based on the specified query parameters. The query
+     * parameters `compartmentId` or `id` must be provided.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListRemediationRecipesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListRemediationRecipes API.
+     */
+    ListRemediationRecipesResponse listRemediationRecipes(ListRemediationRecipesRequest request);
+
+    /**
+     * Returns a list of remediation runs contained by a compartment. The query parameter
+     * `compartmentId` is required unless the query parameter `id` is specified.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListRemediationRunsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRemediationRuns
+     *     API.
+     */
+    ListRemediationRunsResponse listRemediationRuns(ListRemediationRunsRequest request);
+
+    /**
+     * Returns a list of Remediation Run Stages based on the specified query parameters and
+     * Remediation Run identifier.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListStagesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListStages API.
+     */
+    ListStagesResponse listStages(ListStagesRequest request);
 
     /**
      * Returns a list of Vulnerability Audits based on the specified query parameters. At least one
@@ -342,6 +604,38 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      *     API.
      */
     UpdateKnowledgeBaseResponse updateKnowledgeBase(UpdateKnowledgeBaseRequest request);
+
+    /**
+     * Updates one or more attributes of the specified Remediation Recipe.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/UpdateRemediationRecipeExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateRemediationRecipe API.
+     */
+    UpdateRemediationRecipeResponse updateRemediationRecipe(UpdateRemediationRecipeRequest request);
+
+    /**
+     * Updates by identifier one or more attributes of the specified remediation run.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/UpdateRemediationRunExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateRemediationRun API.
+     */
+    UpdateRemediationRunResponse updateRemediationRun(UpdateRemediationRunRequest request);
 
     /**
      * Updates one or more attributes of the specified Vulnerability Audit.

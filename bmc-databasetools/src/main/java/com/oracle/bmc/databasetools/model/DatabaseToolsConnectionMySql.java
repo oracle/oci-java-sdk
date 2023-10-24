@@ -118,6 +118,24 @@ public final class DatabaseToolsConnectionMySql extends DatabaseToolsConnection 
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("runtimeSupport")
+        private RuntimeSupport runtimeSupport;
+
+        public Builder runtimeSupport(RuntimeSupport runtimeSupport) {
+            this.runtimeSupport = runtimeSupport;
+            this.__explicitlySet__.add("runtimeSupport");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("relatedResource")
         private DatabaseToolsRelatedResourceMySql relatedResource;
 
@@ -235,6 +253,8 @@ public final class DatabaseToolsConnectionMySql extends DatabaseToolsConnection 
                             this.definedTags,
                             this.freeformTags,
                             this.systemTags,
+                            this.locks,
+                            this.runtimeSupport,
                             this.relatedResource,
                             this.connectionString,
                             this.userName,
@@ -279,6 +299,12 @@ public final class DatabaseToolsConnectionMySql extends DatabaseToolsConnection 
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
+            if (model.wasPropertyExplicitlySet("runtimeSupport")) {
+                this.runtimeSupport(model.getRuntimeSupport());
             }
             if (model.wasPropertyExplicitlySet("relatedResource")) {
                 this.relatedResource(model.getRelatedResource());
@@ -326,6 +352,8 @@ public final class DatabaseToolsConnectionMySql extends DatabaseToolsConnection 
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            java.util.List<ResourceLock> locks,
+            RuntimeSupport runtimeSupport,
             DatabaseToolsRelatedResourceMySql relatedResource,
             String connectionString,
             String userName,
@@ -343,7 +371,9 @@ public final class DatabaseToolsConnectionMySql extends DatabaseToolsConnection 
                 timeUpdated,
                 definedTags,
                 freeformTags,
-                systemTags);
+                systemTags,
+                locks,
+                runtimeSupport);
         this.relatedResource = relatedResource;
         this.connectionString = connectionString;
         this.userName = userName;

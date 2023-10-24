@@ -23,6 +23,12 @@ package com.oracle.bmc.databasetools.model;
         defaultImpl = CreateDatabaseToolsConnectionDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateDatabaseToolsConnectionGenericJdbcDetails.class,
+            name = "GENERIC_JDBC"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateDatabaseToolsConnectionPostgresqlDetails.class,
+            name = "POSTGRESQL"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateDatabaseToolsConnectionMySqlDetails.class,
             name = "MYSQL"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -38,18 +44,24 @@ public class CreateDatabaseToolsConnectionDetails
         "displayName",
         "compartmentId",
         "definedTags",
-        "freeformTags"
+        "freeformTags",
+        "locks",
+        "runtimeSupport"
     })
     protected CreateDatabaseToolsConnectionDetails(
             String displayName,
             String compartmentId,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, String> freeformTags) {
+            java.util.Map<String, String> freeformTags,
+            java.util.List<ResourceLock> locks,
+            RuntimeSupport runtimeSupport) {
         super();
         this.displayName = displayName;
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
+        this.locks = locks;
+        this.runtimeSupport = runtimeSupport;
     }
 
     /**
@@ -120,6 +132,32 @@ public class CreateDatabaseToolsConnectionDetails
         return freeformTags;
     }
 
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
+    /** Specifies whether this connection is supported by the Database Tools Runtime. */
+    @com.fasterxml.jackson.annotation.JsonProperty("runtimeSupport")
+    private final RuntimeSupport runtimeSupport;
+
+    /**
+     * Specifies whether this connection is supported by the Database Tools Runtime.
+     *
+     * @return the value
+     */
+    public RuntimeSupport getRuntimeSupport() {
+        return runtimeSupport;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -139,6 +177,8 @@ public class CreateDatabaseToolsConnectionDetails
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", locks=").append(String.valueOf(this.locks));
+        sb.append(", runtimeSupport=").append(String.valueOf(this.runtimeSupport));
         sb.append(")");
         return sb.toString();
     }
@@ -157,6 +197,8 @@ public class CreateDatabaseToolsConnectionDetails
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.locks, other.locks)
+                && java.util.Objects.equals(this.runtimeSupport, other.runtimeSupport)
                 && super.equals(other);
     }
 
@@ -170,6 +212,10 @@ public class CreateDatabaseToolsConnectionDetails
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.runtimeSupport == null ? 43 : this.runtimeSupport.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

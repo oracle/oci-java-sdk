@@ -145,15 +145,6 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-        private String subnetId;
-
-        public Builder subnetId(String subnetId) {
-            this.subnetId = subnetId;
-            this.__explicitlySet__.add("subnetId");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("ingressIps")
         private java.util.List<IngressIpDetails> ingressIps;
 
@@ -169,6 +160,15 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
             return this;
         }
         /** The Java Message Service technology type. */
@@ -312,6 +312,46 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
             return this;
         }
         /**
+         * Security protocol for Java Message Service. If not provided, default is PLAIN. Optional
+         * until 2024-06-27, in the release after it will be made required.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
+        private JavaMessageServiceConnection.SecurityProtocol securityProtocol;
+
+        /**
+         * Security protocol for Java Message Service. If not provided, default is PLAIN. Optional
+         * until 2024-06-27, in the release after it will be made required.
+         *
+         * @param securityProtocol the value to set
+         * @return this builder
+         */
+        public Builder securityProtocol(
+                JavaMessageServiceConnection.SecurityProtocol securityProtocol) {
+            this.securityProtocol = securityProtocol;
+            this.__explicitlySet__.add("securityProtocol");
+            return this;
+        }
+        /**
+         * Authentication type for Java Message Service. If not provided, default is NONE. Optional
+         * until 2024-06-27, in the release after it will be made required.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
+        private JavaMessageServiceConnection.AuthenticationType authenticationType;
+
+        /**
+         * Authentication type for Java Message Service. If not provided, default is NONE. Optional
+         * until 2024-06-27, in the release after it will be made required.
+         *
+         * @param authenticationType the value to set
+         * @return this builder
+         */
+        public Builder authenticationType(
+                JavaMessageServiceConnection.AuthenticationType authenticationType) {
+            this.authenticationType = authenticationType;
+            this.__explicitlySet__.add("authenticationType");
+            return this;
+        }
+        /**
          * The username Oracle GoldenGate uses to connect to the Java Message Service. This username
          * must already exist and be available by the Java Message Service to be connected to.
          */
@@ -377,9 +417,9 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
                             this.timeUpdated,
                             this.vaultId,
                             this.keyId,
-                            this.subnetId,
                             this.ingressIps,
                             this.nsgIds,
+                            this.subnetId,
                             this.technologyType,
                             this.shouldUseJndi,
                             this.jndiConnectionFactory,
@@ -388,6 +428,8 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
                             this.jndiSecurityPrincipal,
                             this.connectionUrl,
                             this.connectionFactory,
+                            this.securityProtocol,
+                            this.authenticationType,
                             this.username,
                             this.privateIp);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -437,14 +479,14 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
             if (model.wasPropertyExplicitlySet("keyId")) {
                 this.keyId(model.getKeyId());
             }
-            if (model.wasPropertyExplicitlySet("subnetId")) {
-                this.subnetId(model.getSubnetId());
-            }
             if (model.wasPropertyExplicitlySet("ingressIps")) {
                 this.ingressIps(model.getIngressIps());
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
             }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
@@ -469,6 +511,12 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
             }
             if (model.wasPropertyExplicitlySet("connectionFactory")) {
                 this.connectionFactory(model.getConnectionFactory());
+            }
+            if (model.wasPropertyExplicitlySet("securityProtocol")) {
+                this.securityProtocol(model.getSecurityProtocol());
+            }
+            if (model.wasPropertyExplicitlySet("authenticationType")) {
+                this.authenticationType(model.getAuthenticationType());
             }
             if (model.wasPropertyExplicitlySet("username")) {
                 this.username(model.getUsername());
@@ -504,9 +552,9 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
             java.util.Date timeUpdated,
             String vaultId,
             String keyId,
-            String subnetId,
             java.util.List<IngressIpDetails> ingressIps,
             java.util.List<String> nsgIds,
+            String subnetId,
             JavaMessageServiceConnection.TechnologyType technologyType,
             Boolean shouldUseJndi,
             String jndiConnectionFactory,
@@ -515,6 +563,8 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
             String jndiSecurityPrincipal,
             String connectionUrl,
             String connectionFactory,
+            JavaMessageServiceConnection.SecurityProtocol securityProtocol,
+            JavaMessageServiceConnection.AuthenticationType authenticationType,
             String username,
             String privateIp) {
         super(
@@ -531,9 +581,9 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
                 timeUpdated,
                 vaultId,
                 keyId,
-                subnetId,
                 ingressIps,
-                nsgIds);
+                nsgIds,
+                subnetId);
         this.technologyType = technologyType;
         this.shouldUseJndi = shouldUseJndi;
         this.jndiConnectionFactory = jndiConnectionFactory;
@@ -542,6 +592,8 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
         this.jndiSecurityPrincipal = jndiSecurityPrincipal;
         this.connectionUrl = connectionUrl;
         this.connectionFactory = connectionFactory;
+        this.securityProtocol = securityProtocol;
+        this.authenticationType = authenticationType;
         this.username = username;
         this.privateIp = privateIp;
     }
@@ -669,6 +721,40 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
     }
 
     /**
+     * Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until
+     * 2024-06-27, in the release after it will be made required.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
+    private final JavaMessageServiceConnection.SecurityProtocol securityProtocol;
+
+    /**
+     * Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until
+     * 2024-06-27, in the release after it will be made required.
+     *
+     * @return the value
+     */
+    public JavaMessageServiceConnection.SecurityProtocol getSecurityProtocol() {
+        return securityProtocol;
+    }
+
+    /**
+     * Authentication type for Java Message Service. If not provided, default is NONE. Optional
+     * until 2024-06-27, in the release after it will be made required.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
+    private final JavaMessageServiceConnection.AuthenticationType authenticationType;
+
+    /**
+     * Authentication type for Java Message Service. If not provided, default is NONE. Optional
+     * until 2024-06-27, in the release after it will be made required.
+     *
+     * @return the value
+     */
+    public JavaMessageServiceConnection.AuthenticationType getAuthenticationType() {
+        return authenticationType;
+    }
+
+    /**
      * The username Oracle GoldenGate uses to connect to the Java Message Service. This username
      * must already exist and be available by the Java Message Service to be connected to.
      */
@@ -734,6 +820,8 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
         sb.append(", jndiSecurityPrincipal=").append(String.valueOf(this.jndiSecurityPrincipal));
         sb.append(", connectionUrl=").append(String.valueOf(this.connectionUrl));
         sb.append(", connectionFactory=").append(String.valueOf(this.connectionFactory));
+        sb.append(", securityProtocol=").append(String.valueOf(this.securityProtocol));
+        sb.append(", authenticationType=").append(String.valueOf(this.authenticationType));
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
         sb.append(")");
@@ -759,6 +847,8 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
                 && java.util.Objects.equals(this.jndiSecurityPrincipal, other.jndiSecurityPrincipal)
                 && java.util.Objects.equals(this.connectionUrl, other.connectionUrl)
                 && java.util.Objects.equals(this.connectionFactory, other.connectionFactory)
+                && java.util.Objects.equals(this.securityProtocol, other.securityProtocol)
+                && java.util.Objects.equals(this.authenticationType, other.authenticationType)
                 && java.util.Objects.equals(this.username, other.username)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
                 && super.equals(other);
@@ -798,6 +888,14 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
         result =
                 (result * PRIME)
                         + (this.connectionFactory == null ? 43 : this.connectionFactory.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityProtocol == null ? 43 : this.securityProtocol.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.authenticationType == null
+                                ? 43
+                                : this.authenticationType.hashCode());
         result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
         return result;

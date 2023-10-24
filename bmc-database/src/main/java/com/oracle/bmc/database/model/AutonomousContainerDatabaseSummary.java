@@ -52,6 +52,8 @@ public final class AutonomousContainerDatabaseSummary
         "maintenanceWindow",
         "standbyMaintenanceBufferInDays",
         "versionPreference",
+        "isDstFileUpdateEnabled",
+        "dstFileVersion",
         "freeformTags",
         "definedTags",
         "role",
@@ -96,6 +98,8 @@ public final class AutonomousContainerDatabaseSummary
             MaintenanceWindow maintenanceWindow,
             Integer standbyMaintenanceBufferInDays,
             VersionPreference versionPreference,
+            Boolean isDstFileUpdateEnabled,
+            String dstFileVersion,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             Role role,
@@ -139,6 +143,8 @@ public final class AutonomousContainerDatabaseSummary
         this.maintenanceWindow = maintenanceWindow;
         this.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
         this.versionPreference = versionPreference;
+        this.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
+        this.dstFileVersion = dstFileVersion;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.role = role;
@@ -591,6 +597,42 @@ public final class AutonomousContainerDatabaseSummary
             return this;
         }
         /**
+         * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous
+         * Container Database. If enabled along with Release Update, patching will be done in a
+         * Non-Rolling manner.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isDstFileUpdateEnabled")
+        private Boolean isDstFileUpdateEnabled;
+
+        /**
+         * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous
+         * Container Database. If enabled along with Release Update, patching will be done in a
+         * Non-Rolling manner.
+         *
+         * @param isDstFileUpdateEnabled the value to set
+         * @return this builder
+         */
+        public Builder isDstFileUpdateEnabled(Boolean isDstFileUpdateEnabled) {
+            this.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
+            this.__explicitlySet__.add("isDstFileUpdateEnabled");
+            return this;
+        }
+        /** DST Time Zone File version of the Autonomous Container Database. */
+        @com.fasterxml.jackson.annotation.JsonProperty("dstFileVersion")
+        private String dstFileVersion;
+
+        /**
+         * DST Time Zone File version of the Autonomous Container Database.
+         *
+         * @param dstFileVersion the value to set
+         * @return this builder
+         */
+        public Builder dstFileVersion(String dstFileVersion) {
+            this.dstFileVersion = dstFileVersion;
+            this.__explicitlySet__.add("dstFileVersion");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
          * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -937,6 +979,8 @@ public final class AutonomousContainerDatabaseSummary
                             this.maintenanceWindow,
                             this.standbyMaintenanceBufferInDays,
                             this.versionPreference,
+                            this.isDstFileUpdateEnabled,
+                            this.dstFileVersion,
                             this.freeformTags,
                             this.definedTags,
                             this.role,
@@ -1037,6 +1081,12 @@ public final class AutonomousContainerDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("versionPreference")) {
                 this.versionPreference(model.getVersionPreference());
+            }
+            if (model.wasPropertyExplicitlySet("isDstFileUpdateEnabled")) {
+                this.isDstFileUpdateEnabled(model.getIsDstFileUpdateEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("dstFileVersion")) {
+                this.dstFileVersion(model.getDstFileVersion());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -1723,6 +1773,38 @@ public final class AutonomousContainerDatabaseSummary
     }
 
     /**
+     * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container
+     * Database. If enabled along with Release Update, patching will be done in a Non-Rolling
+     * manner.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isDstFileUpdateEnabled")
+    private final Boolean isDstFileUpdateEnabled;
+
+    /**
+     * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container
+     * Database. If enabled along with Release Update, patching will be done in a Non-Rolling
+     * manner.
+     *
+     * @return the value
+     */
+    public Boolean getIsDstFileUpdateEnabled() {
+        return isDstFileUpdateEnabled;
+    }
+
+    /** DST Time Zone File version of the Autonomous Container Database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("dstFileVersion")
+    private final String dstFileVersion;
+
+    /**
+     * DST Time Zone File version of the Autonomous Container Database.
+     *
+     * @return the value
+     */
+    public String getDstFileVersion() {
+        return dstFileVersion;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
      * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -2138,6 +2220,8 @@ public final class AutonomousContainerDatabaseSummary
         sb.append(", standbyMaintenanceBufferInDays=")
                 .append(String.valueOf(this.standbyMaintenanceBufferInDays));
         sb.append(", versionPreference=").append(String.valueOf(this.versionPreference));
+        sb.append(", isDstFileUpdateEnabled=").append(String.valueOf(this.isDstFileUpdateEnabled));
+        sb.append(", dstFileVersion=").append(String.valueOf(this.dstFileVersion));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", role=").append(String.valueOf(this.role));
@@ -2202,6 +2286,9 @@ public final class AutonomousContainerDatabaseSummary
                 && java.util.Objects.equals(
                         this.standbyMaintenanceBufferInDays, other.standbyMaintenanceBufferInDays)
                 && java.util.Objects.equals(this.versionPreference, other.versionPreference)
+                && java.util.Objects.equals(
+                        this.isDstFileUpdateEnabled, other.isDstFileUpdateEnabled)
+                && java.util.Objects.equals(this.dstFileVersion, other.dstFileVersion)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.role, other.role)
@@ -2304,6 +2391,14 @@ public final class AutonomousContainerDatabaseSummary
         result =
                 (result * PRIME)
                         + (this.versionPreference == null ? 43 : this.versionPreference.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDstFileUpdateEnabled == null
+                                ? 43
+                                : this.isDstFileUpdateEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dstFileVersion == null ? 43 : this.dstFileVersion.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.role == null ? 43 : this.role.hashCode());

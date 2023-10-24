@@ -91,21 +91,21 @@ public final class CreateOracleNosqlConnectionDetails extends CreateConnectionDe
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-        private String subnetId;
-
-        public Builder subnetId(String subnetId) {
-            this.subnetId = subnetId;
-            this.__explicitlySet__.add("subnetId");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
             return this;
         }
         /** The Oracle NoSQL technology type. */
@@ -247,8 +247,8 @@ public final class CreateOracleNosqlConnectionDetails extends CreateConnectionDe
                             this.definedTags,
                             this.vaultId,
                             this.keyId,
-                            this.subnetId,
                             this.nsgIds,
+                            this.subnetId,
                             this.technologyType,
                             this.tenancyId,
                             this.region,
@@ -285,11 +285,11 @@ public final class CreateOracleNosqlConnectionDetails extends CreateConnectionDe
             if (model.wasPropertyExplicitlySet("keyId")) {
                 this.keyId(model.getKeyId());
             }
-            if (model.wasPropertyExplicitlySet("subnetId")) {
-                this.subnetId(model.getSubnetId());
-            }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
             }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
@@ -334,8 +334,8 @@ public final class CreateOracleNosqlConnectionDetails extends CreateConnectionDe
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String vaultId,
             String keyId,
-            String subnetId,
             java.util.List<String> nsgIds,
+            String subnetId,
             OracleNosqlConnection.TechnologyType technologyType,
             String tenancyId,
             String region,
@@ -351,8 +351,8 @@ public final class CreateOracleNosqlConnectionDetails extends CreateConnectionDe
                 definedTags,
                 vaultId,
                 keyId,
-                subnetId,
-                nsgIds);
+                nsgIds,
+                subnetId);
         this.technologyType = technologyType;
         this.tenancyId = tenancyId;
         this.region = region;

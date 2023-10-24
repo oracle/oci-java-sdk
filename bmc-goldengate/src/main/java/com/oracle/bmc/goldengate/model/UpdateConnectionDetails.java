@@ -23,17 +23,35 @@ package com.oracle.bmc.goldengate.model;
         defaultImpl = UpdateConnectionDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateElasticsearchConnectionDetails.class,
+            name = "ELASTICSEARCH"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateGoogleBigQueryConnectionDetails.class,
+            name = "GOOGLE_BIGQUERY"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateOracleConnectionDetails.class,
             name = "ORACLE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateAmazonRedshiftConnectionDetails.class,
+            name = "AMAZON_REDSHIFT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateOciObjectStorageConnectionDetails.class,
             name = "OCI_OBJECT_STORAGE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateRedisConnectionDetails.class,
+            name = "REDIS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateMongoDbConnectionDetails.class,
             name = "MONGODB"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateGoogleCloudStorageConnectionDetails.class,
+            name = "GOOGLE_CLOUD_STORAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateAzureDataLakeStorageConnectionDetails.class,
             name = "AZURE_DATA_LAKE_STORAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateAmazonKinesisConnectionDetails.class,
+            name = "AMAZON_KINESIS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateJavaMessageServiceConnectionDetails.class,
             name = "JAVA_MESSAGE_SERVICE"),
@@ -67,6 +85,9 @@ package com.oracle.bmc.goldengate.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateKafkaConnectionDetails.class,
             name = "KAFKA"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateGenericConnectionDetails.class,
+            name = "GENERIC"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateAzureSynapseConnectionDetails.class,
             name = "AZURE_SYNAPSE_ANALYTICS")

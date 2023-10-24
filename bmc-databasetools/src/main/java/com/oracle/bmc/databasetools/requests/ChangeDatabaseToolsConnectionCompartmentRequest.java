@@ -63,24 +63,12 @@ public class ChangeDatabaseToolsConnectionCompartmentRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
-     */
-    private String opcRetryToken;
+    /** Whether to override locks (if any exist). */
+    private Boolean isLockOverride;
 
-    /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
-     */
-    public String getOpcRetryToken() {
-        return opcRetryToken;
+    /** Whether to override locks (if any exist). */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
     }
 
     /**
@@ -175,27 +163,17 @@ public class ChangeDatabaseToolsConnectionCompartmentRequest
             return this;
         }
 
-        /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
-         */
-        private String opcRetryToken = null;
+        /** Whether to override locks (if any exist). */
+        private Boolean isLockOverride = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * Whether to override locks (if any exist).
          *
-         * @param opcRetryToken the value to set
+         * @param isLockOverride the value to set
          * @return this builder instance
          */
-        public Builder opcRetryToken(String opcRetryToken) {
-            this.opcRetryToken = opcRetryToken;
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
             return this;
         }
 
@@ -234,7 +212,7 @@ public class ChangeDatabaseToolsConnectionCompartmentRequest
                     o.getChangeDatabaseToolsConnectionCompartmentDetails());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
-            opcRetryToken(o.getOpcRetryToken());
+            isLockOverride(o.getIsLockOverride());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -292,11 +270,11 @@ public class ChangeDatabaseToolsConnectionCompartmentRequest
                     changeDatabaseToolsConnectionCompartmentDetails;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
-            request.opcRetryToken = opcRetryToken;
+            request.isLockOverride = isLockOverride;
             return request;
             // new ChangeDatabaseToolsConnectionCompartmentRequest(databaseToolsConnectionId,
             // changeDatabaseToolsConnectionCompartmentDetails, ifMatch, opcRequestId,
-            // opcRetryToken);
+            // isLockOverride);
         }
     }
 
@@ -312,7 +290,7 @@ public class ChangeDatabaseToolsConnectionCompartmentRequest
                         changeDatabaseToolsConnectionCompartmentDetails)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId)
-                .opcRetryToken(opcRetryToken);
+                .isLockOverride(isLockOverride);
     }
 
     /**
@@ -335,7 +313,7 @@ public class ChangeDatabaseToolsConnectionCompartmentRequest
                 .append(String.valueOf(this.changeDatabaseToolsConnectionCompartmentDetails));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
-        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(")");
         return sb.toString();
     }
@@ -359,7 +337,7 @@ public class ChangeDatabaseToolsConnectionCompartmentRequest
                         other.changeDatabaseToolsConnectionCompartmentDetails)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride);
     }
 
     @Override
@@ -380,7 +358,7 @@ public class ChangeDatabaseToolsConnectionCompartmentRequest
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result =
                 (result * PRIME)
-                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         return result;
     }
 }

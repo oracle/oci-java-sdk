@@ -13,10 +13,16 @@ import com.oracle.bmc.adm.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
 public class ListKnowledgeBasesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** A filter to return only resources that match the specified identifier. */
+    /**
+     * A filter to return only resources that match the specified identifier. Required only if the
+     * compartmentId query parameter is not specified.
+     */
     private String id;
 
-    /** A filter to return only resources that match the specified identifier. */
+    /**
+     * A filter to return only resources that match the specified identifier. Required only if the
+     * compartmentId query parameter is not specified.
+     */
     public String getId() {
         return id;
     }
@@ -119,10 +125,16 @@ public class ListKnowledgeBasesRequest extends com.oracle.bmc.requests.BmcReques
     public String getPage() {
         return page;
     }
-    /** A filter to return only resources that belong to the specified compartment identifier. */
+    /**
+     * A filter to return only resources that belong to the specified compartment identifier.
+     * Required only if the id query param is not specified.
+     */
     private String compartmentId;
 
-    /** A filter to return only resources that belong to the specified compartment identifier. */
+    /**
+     * A filter to return only resources that belong to the specified compartment identifier.
+     * Required only if the id query param is not specified.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -140,11 +152,15 @@ public class ListKnowledgeBasesRequest extends com.oracle.bmc.requests.BmcReques
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** A filter to return only resources that match the specified identifier. */
+        /**
+         * A filter to return only resources that match the specified identifier. Required only if
+         * the compartmentId query parameter is not specified.
+         */
         private String id = null;
 
         /**
-         * A filter to return only resources that match the specified identifier.
+         * A filter to return only resources that match the specified identifier. Required only if
+         * the compartmentId query parameter is not specified.
          *
          * @param id the value to set
          * @return this builder instance
@@ -255,11 +271,13 @@ public class ListKnowledgeBasesRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * A filter to return only resources that belong to the specified compartment identifier.
+         * Required only if the id query param is not specified.
          */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that belong to the specified compartment identifier.
+         * Required only if the id query param is not specified.
          *
          * @param compartmentId the value to set
          * @return this builder instance

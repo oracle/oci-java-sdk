@@ -36,14 +36,14 @@ public final class AlarmHistoryCollection
     public static class Builder {
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the alarm for which to retrieve history.
+         * of the alarm to retrieve history for.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("alarmId")
         private String alarmId;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the alarm for which to retrieve history.
+         * of the alarm to retrieve history for.
          *
          * @param alarmId the value to set
          * @return this builder
@@ -128,14 +128,14 @@ public final class AlarmHistoryCollection
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the alarm for which to retrieve history.
+     * the alarm to retrieve history for.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("alarmId")
     private final String alarmId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the alarm for which to retrieve history.
+     * the alarm to retrieve history for.
      *
      * @return the value
      */

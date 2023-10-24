@@ -91,21 +91,21 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-        private String subnetId;
-
-        public Builder subnetId(String subnetId) {
-            this.subnetId = subnetId;
-            this.__explicitlySet__.add("subnetId");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
             return this;
         }
         /** The Snowflake technology type. */
@@ -236,8 +236,8 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
                             this.definedTags,
                             this.vaultId,
                             this.keyId,
-                            this.subnetId,
                             this.nsgIds,
+                            this.subnetId,
                             this.technologyType,
                             this.connectionUrl,
                             this.authenticationType,
@@ -274,11 +274,11 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
             if (model.wasPropertyExplicitlySet("keyId")) {
                 this.keyId(model.getKeyId());
             }
-            if (model.wasPropertyExplicitlySet("subnetId")) {
-                this.subnetId(model.getSubnetId());
-            }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
             }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
@@ -323,8 +323,8 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String vaultId,
             String keyId,
-            String subnetId,
             java.util.List<String> nsgIds,
+            String subnetId,
             SnowflakeConnection.TechnologyType technologyType,
             String connectionUrl,
             SnowflakeConnection.AuthenticationType authenticationType,
@@ -340,8 +340,8 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
                 definedTags,
                 vaultId,
                 keyId,
-                subnetId,
-                nsgIds);
+                nsgIds,
+                subnetId);
         this.technologyType = technologyType;
         this.connectionUrl = connectionUrl;
         this.authenticationType = authenticationType;
