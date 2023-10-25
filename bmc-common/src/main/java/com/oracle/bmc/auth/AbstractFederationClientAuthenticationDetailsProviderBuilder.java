@@ -265,7 +265,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
         if (federationEndpoint == null) {
 
             executeInstanceFallback();
-            String regionStr = fetchRegion(resp -> resp.textBody());
+            String regionStr = fetchRegion(HttpResponse::textBody);
             LOG.info("Looking up region for {}", regionStr);
 
             try {

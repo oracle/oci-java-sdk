@@ -76,8 +76,8 @@ public class ConfigFileAuthenticationDetailsProvider
                     new ConfigFileInstancePrincipalAuthenticationDetailsProvider(configFile);
         } else if (RESOURCE_PRINCIPAL_AUTHENTICATION_TYPE_VALUE.equals(authentication_type)) {
             LOG.debug(
-                    "Authentication type in config file: "
-                            + configFile.get(AUTHENTICATION_TYPE_KEY));
+                    "Authentication type in config file: {}"
+                            ,configFile.get(AUTHENTICATION_TYPE_KEY));
             this.delegate =
                     new ConfigFileResourcePrincipalAuthenticationDetailsProvider(configFile);
         } else {
@@ -99,7 +99,7 @@ public class ConfigFileAuthenticationDetailsProvider
         // if regionId is not defined in config file check env variable
         if (StringUtils.isBlank(regionId)) {
             regionId = System.getenv(OCI_REGION_ENV_VAR_NAME);
-            LOG.info("regionId from OCI_REGION env variable: " + regionId);
+            LOG.info("regionId from OCI_REGION env variable: {}", regionId);
         }
 
         if (regionId != null) {

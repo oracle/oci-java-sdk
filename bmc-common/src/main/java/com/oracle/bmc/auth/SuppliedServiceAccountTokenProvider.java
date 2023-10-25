@@ -4,12 +4,6 @@
  */
 package com.oracle.bmc.auth;
 
-import com.oracle.bmc.auth.internal.JwtClaimsSet;
-
-import java.text.ParseException;
-import java.time.Instant;
-import java.util.Date;
-
 /**
  * Implementation of {@link ServiceAccountTokenSupplier} that allows to pass in a token to be used
  * as a kubernetes service account token.

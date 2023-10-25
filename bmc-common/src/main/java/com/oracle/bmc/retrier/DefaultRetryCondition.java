@@ -17,7 +17,7 @@ import jakarta.annotation.Nonnull;
 
 /**
  * Class that represents the conditions documented in
- * https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm for which the operation
+ * <a href="https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm">...</a> for which the operation
  * may be retried.
  */
 public class DefaultRetryCondition implements RetryCondition {

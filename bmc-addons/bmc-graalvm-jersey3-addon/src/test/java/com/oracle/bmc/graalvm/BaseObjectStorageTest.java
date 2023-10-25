@@ -220,9 +220,7 @@ public abstract class BaseObjectStorageTest extends BaseTest {
         assertTrue(
                 StringUtils.isNotBlank(bucketFromResponse.getEtag()), "Etag should not be blank");
         assertTrue(bucketFromResponse.getFreeformTags().isEmpty(), "FreeformTags should be empty");
-        assertTrue(
-                initialMetadata.equals(bucketFromResponse.getMetadata()),
-                "Metadata should be equal");
+        assertEquals(initialMetadata, bucketFromResponse.getMetadata(), "Metadata should be equal");
         assertEquals(namespace, bucketFromResponse.getNamespace(), "Namespace should be equal");
         assertEquals(
                 Bucket.PublicAccessType.valueOf(pat.name()),

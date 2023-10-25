@@ -5,7 +5,6 @@
 package com.oracle.bmc.auth.internal;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.oracle.bmc.requests.BmcRequest;
 
 /** Class is immutable. @Immutable */
 @JsonInclude(JsonInclude.Include.NON_NULL)

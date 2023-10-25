@@ -30,11 +30,10 @@ import com.oracle.bmc.internal.Alloy;
 import com.oracle.bmc.internal.EndpointBuilder;
 import com.oracle.bmc.requests.BmcRequest;
 import com.oracle.bmc.responses.BmcResponse;
-import com.oracle.bmc.util.internal.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.net.URI;
+
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.EnumMap;

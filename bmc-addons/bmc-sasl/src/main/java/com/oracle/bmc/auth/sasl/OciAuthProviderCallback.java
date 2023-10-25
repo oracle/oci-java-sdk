@@ -5,12 +5,8 @@
 package com.oracle.bmc.auth.sasl;
 
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
-import java.io.IOException;
-import javax.security.auth.Subject;
 import javax.security.auth.callback.Callback;
 import javax.security.auth.callback.CallbackHandler;
-import javax.security.auth.callback.NameCallback;
-import javax.security.auth.callback.UnsupportedCallbackException;
 
 /**
  * Callback to handle in the SASL callback handler used when creating a {@link

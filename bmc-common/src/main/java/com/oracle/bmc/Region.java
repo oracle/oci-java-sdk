@@ -814,7 +814,7 @@ public final class Region implements Serializable, Comparable<Region> {
             try {
                 OCI_SDK_ENABLED_SERVICES_SET.addAll(
                         regionAlloySchema.getServices().stream()
-                                .map(str -> str.toLowerCase())
+                                .map(String::toLowerCase)
                                 .map(str -> str.replaceAll("[^a-z]", ""))
                                 .collect(Collectors.toSet()));
             } finally {

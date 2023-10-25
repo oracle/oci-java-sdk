@@ -17,10 +17,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.function.Function;
 
-import com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider;
-import com.oracle.bmc.model.BmcException;
-import com.oracle.bmc.requests.BmcRequest;
-import com.oracle.bmc.responses.AsyncHandler;
 
 /**
  * Combined future and callbacks for asynchronous requests intended to work with some authenticated
