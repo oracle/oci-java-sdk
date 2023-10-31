@@ -94,14 +94,14 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
         return sortOrder;
     }
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for
-     * timeCreated is descending. The default order for other fields is ascending.
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+     * order for timeCreated is descending. The default order for other fields is ascending.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for
-     * timeCreated is descending. The default order for other fields is ascending.
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+     * order for timeCreated is descending. The default order for other fields is ascending.
      */
     public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         TimeCreated("timeCreated"),
@@ -139,8 +139,8 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
     };
 
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for
-     * timeCreated is descending. The default order for other fields is ascending.
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+     * order for timeCreated is descending. The default order for other fields is ascending.
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -466,14 +466,14 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * The field to sort by. You can specify only one sort order (sortOrder). The default order
-         * for timeCreated is descending. The default order for other fields is ascending.
+         * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+         * order for timeCreated is descending. The default order for other fields is ascending.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can specify only one sort order (sortOrder). The default order
-         * for timeCreated is descending. The default order for other fields is ascending.
+         * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+         * order for timeCreated is descending. The default order for other fields is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance

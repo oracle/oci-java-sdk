@@ -754,6 +754,7 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("role", request.getRole())
+                .appendEnumQueryParam("lifecycleSubState", request.getLifecycleSubState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(

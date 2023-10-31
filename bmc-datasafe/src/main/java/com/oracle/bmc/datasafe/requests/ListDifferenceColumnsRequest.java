@@ -125,16 +125,16 @@ public class ListDifferenceColumnsRequest
         return sortOrder;
     }
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for
-     * schemaName is descending. The default order for differenceType, schemaName, objectName,
-     * columnName and plannedAction is ascending.
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+     * order for schemaName is descending. The default order for differenceType, schemaName,
+     * objectName, columnName and plannedAction is ascending.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for
-     * schemaName is descending. The default order for differenceType, schemaName, objectName,
-     * columnName and plannedAction is ascending.
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+     * order for schemaName is descending. The default order for differenceType, schemaName,
+     * objectName, columnName and plannedAction is ascending.
      */
     public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         DifferenceType("differenceType"),
@@ -173,9 +173,9 @@ public class ListDifferenceColumnsRequest
     };
 
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for
-     * schemaName is descending. The default order for differenceType, schemaName, objectName,
-     * columnName and plannedAction is ascending.
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+     * order for schemaName is descending. The default order for differenceType, schemaName,
+     * objectName, columnName and plannedAction is ascending.
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -386,15 +386,15 @@ public class ListDifferenceColumnsRequest
         }
 
         /**
-         * The field to sort by. You can specify only one sort order (sortOrder). The default order
-         * for schemaName is descending. The default order for differenceType, schemaName,
+         * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+         * order for schemaName is descending. The default order for differenceType, schemaName,
          * objectName, columnName and plannedAction is ascending.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can specify only one sort order (sortOrder). The default order
-         * for schemaName is descending. The default order for differenceType, schemaName,
+         * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+         * order for schemaName is descending. The default order for differenceType, schemaName,
          * objectName, columnName and plannedAction is ascending.
          *
          * @param sortBy the value to set

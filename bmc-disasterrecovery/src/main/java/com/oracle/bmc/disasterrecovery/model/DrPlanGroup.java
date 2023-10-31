@@ -5,7 +5,7 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Details of a plan group in a DR Plan. <br>
+ * Details of a group in a DR plan. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -34,17 +34,17 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The unique id of this group. Must not be modified by user.
+         * The unique id of the group. Must not be modified by user.
          *
-         * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
+         * <p>Example: {@code sgid1.group..uniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The unique id of this group. Must not be modified by user.
+         * The unique id of the group. Must not be modified by user.
          *
-         * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
+         * <p>Example: {@code sgid1.group..uniqueID}
          *
          * @param id the value to set
          * @return this builder
@@ -54,12 +54,18 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The plan group type. */
+        /**
+         * The group type.
+         *
+         * <p>Example: {@code BUILT_IN}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private DrPlanGroupType type;
 
         /**
-         * The plan group type.
+         * The group type.
+         *
+         * <p>Example: {@code BUILT_IN}
          *
          * @param type the value to set
          * @return this builder
@@ -70,7 +76,7 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The display name of this DR Plan Group.
+         * The display name of the group.
          *
          * <p>Example: {@code DATABASE_SWITCHOVER}
          */
@@ -78,7 +84,7 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
         private String displayName;
 
         /**
-         * The display name of this DR Plan Group.
+         * The display name of the group.
          *
          * <p>Example: {@code DATABASE_SWITCHOVER}
          *
@@ -90,12 +96,12 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The list of steps in this plan group. */
+        /** The list of steps in the group. */
         @com.fasterxml.jackson.annotation.JsonProperty("steps")
         private java.util.List<DrPlanStep> steps;
 
         /**
-         * The list of steps in this plan group.
+         * The list of steps in the group.
          *
          * @param steps the value to set
          * @return this builder
@@ -145,17 +151,17 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The unique id of this group. Must not be modified by user.
+     * The unique id of the group. Must not be modified by user.
      *
-     * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
+     * <p>Example: {@code sgid1.group..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The unique id of this group. Must not be modified by user.
+     * The unique id of the group. Must not be modified by user.
      *
-     * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
+     * <p>Example: {@code sgid1.group..uniqueID}
      *
      * @return the value
      */
@@ -163,12 +169,18 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
         return id;
     }
 
-    /** The plan group type. */
+    /**
+     * The group type.
+     *
+     * <p>Example: {@code BUILT_IN}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final DrPlanGroupType type;
 
     /**
-     * The plan group type.
+     * The group type.
+     *
+     * <p>Example: {@code BUILT_IN}
      *
      * @return the value
      */
@@ -177,7 +189,7 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The display name of this DR Plan Group.
+     * The display name of the group.
      *
      * <p>Example: {@code DATABASE_SWITCHOVER}
      */
@@ -185,7 +197,7 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
     private final String displayName;
 
     /**
-     * The display name of this DR Plan Group.
+     * The display name of the group.
      *
      * <p>Example: {@code DATABASE_SWITCHOVER}
      *
@@ -195,12 +207,12 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
         return displayName;
     }
 
-    /** The list of steps in this plan group. */
+    /** The list of steps in the group. */
     @com.fasterxml.jackson.annotation.JsonProperty("steps")
     private final java.util.List<DrPlanStep> steps;
 
     /**
-     * The list of steps in this plan group.
+     * The list of steps in the group.
      *
      * @return the value
      */

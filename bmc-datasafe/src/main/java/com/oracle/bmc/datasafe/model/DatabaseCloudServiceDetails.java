@@ -5,8 +5,7 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The details of the Oracle Database Cloud Service to be registered as a target database in Data
- * Safe. <br>
+ * The details of the cloud database to be registered as a target database in Data Safe. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -51,12 +50,12 @@ public final class DatabaseCloudServiceDetails extends DatabaseDetails {
             this.__explicitlySet__.add("vmClusterId");
             return this;
         }
-        /** The OCID of the cloud database system registered as a target database in Data Safe. */
+        /** The OCID of the cloud database registered as a target database in Data Safe. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
         /**
-         * The OCID of the cloud database system registered as a target database in Data Safe.
+         * The OCID of the cloud database registered as a target database in Data Safe.
          *
          * @param dbSystemId the value to set
          * @return this builder
@@ -171,12 +170,12 @@ public final class DatabaseCloudServiceDetails extends DatabaseDetails {
         return vmClusterId;
     }
 
-    /** The OCID of the cloud database system registered as a target database in Data Safe. */
+    /** The OCID of the cloud database registered as a target database in Data Safe. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     private final String dbSystemId;
 
     /**
-     * The OCID of the cloud database system registered as a target database in Data Safe.
+     * The OCID of the cloud database registered as a target database in Data Safe.
      *
      * @return the value
      */

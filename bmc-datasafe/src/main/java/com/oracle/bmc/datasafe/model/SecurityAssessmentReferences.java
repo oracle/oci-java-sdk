@@ -4,7 +4,11 @@
  */
 package com.oracle.bmc.datasafe.model;
 
-/** The filtering capability to list findings by the refernce label. */
+/**
+ * A filter to return only findings that match the specified reference. Currently supported values
+ * are STIG, CIS, and GDPR. Here STIG refers to DISA STIG, CIS refers to CIS Benchmark, and GDPR
+ * refers to EU GDPR.
+ */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public enum SecurityAssessmentReferences implements com.oracle.bmc.http.internal.BmcEnum {
     Stig("STIG"),

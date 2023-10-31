@@ -33,6 +33,7 @@ public final class AssociatedResourcesSummary
         "externalId",
         "managementAgentId",
         "lifecycleState",
+        "license",
         "associatedResources"
     })
     public AssociatedResourcesSummary(
@@ -45,6 +46,7 @@ public final class AssociatedResourcesSummary
             String externalId,
             String managementAgentId,
             ResourceLifecycleState lifecycleState,
+            LicenseType license,
             java.util.List<AssociatedMonitoredResource> associatedResources) {
         super();
         this.id = id;
@@ -56,6 +58,7 @@ public final class AssociatedResourcesSummary
         this.externalId = externalId;
         this.managementAgentId = managementAgentId;
         this.lifecycleState = lifecycleState;
+        this.license = license;
         this.associatedResources = associatedResources;
     }
 
@@ -218,6 +221,21 @@ public final class AssociatedResourcesSummary
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
+        /** License edition of the monitored resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("license")
+        private LicenseType license;
+
+        /**
+         * License edition of the monitored resource.
+         *
+         * @param license the value to set
+         * @return this builder
+         */
+        public Builder license(LicenseType license) {
+            this.license = license;
+            this.__explicitlySet__.add("license");
+            return this;
+        }
         /** List of associated monitored resources. */
         @com.fasterxml.jackson.annotation.JsonProperty("associatedResources")
         private java.util.List<AssociatedMonitoredResource> associatedResources;
@@ -250,6 +268,7 @@ public final class AssociatedResourcesSummary
                             this.externalId,
                             this.managementAgentId,
                             this.lifecycleState,
+                            this.license,
                             this.associatedResources);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -285,6 +304,9 @@ public final class AssociatedResourcesSummary
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("license")) {
+                this.license(model.getLicense());
             }
             if (model.wasPropertyExplicitlySet("associatedResources")) {
                 this.associatedResources(model.getAssociatedResources());
@@ -439,6 +461,19 @@ public final class AssociatedResourcesSummary
         return lifecycleState;
     }
 
+    /** License edition of the monitored resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("license")
+    private final LicenseType license;
+
+    /**
+     * License edition of the monitored resource.
+     *
+     * @return the value
+     */
+    public LicenseType getLicense() {
+        return license;
+    }
+
     /** List of associated monitored resources. */
     @com.fasterxml.jackson.annotation.JsonProperty("associatedResources")
     private final java.util.List<AssociatedMonitoredResource> associatedResources;
@@ -476,6 +511,7 @@ public final class AssociatedResourcesSummary
         sb.append(", externalId=").append(String.valueOf(this.externalId));
         sb.append(", managementAgentId=").append(String.valueOf(this.managementAgentId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", license=").append(String.valueOf(this.license));
         sb.append(", associatedResources=").append(String.valueOf(this.associatedResources));
         sb.append(")");
         return sb.toString();
@@ -500,6 +536,7 @@ public final class AssociatedResourcesSummary
                 && java.util.Objects.equals(this.externalId, other.externalId)
                 && java.util.Objects.equals(this.managementAgentId, other.managementAgentId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.license, other.license)
                 && java.util.Objects.equals(this.associatedResources, other.associatedResources)
                 && super.equals(other);
     }
@@ -523,6 +560,7 @@ public final class AssociatedResourcesSummary
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.license == null ? 43 : this.license.hashCode());
         result =
                 (result * PRIME)
                         + (this.associatedResources == null

@@ -5,9 +5,14 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.27.0</version>
+    <version>3.28.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
+
+  <properties>
+    <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+    <graalvm.version>21.3.1</graalvm.version>
+  </properties>
 
   <artifactId>oci-java-sdk-common-httpclient-choices</artifactId>
   <packaging>pom</packaging>

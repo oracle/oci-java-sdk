@@ -16,11 +16,11 @@ public class CreateDrPlanExecutionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.disasterrecovery.model.CreateDrPlanExecutionDetails> {
 
-    /** Details for the new DR Plan Execution. */
+    /** Details for creating the DR plan execution. */
     private com.oracle.bmc.disasterrecovery.model.CreateDrPlanExecutionDetails
             createDrPlanExecutionDetails;
 
-    /** Details for the new DR Plan Execution. */
+    /** Details for creating the DR plan execution. */
     public com.oracle.bmc.disasterrecovery.model.CreateDrPlanExecutionDetails
             getCreateDrPlanExecutionDetails() {
         return createDrPlanExecutionDetails;
@@ -70,12 +70,12 @@ public class CreateDrPlanExecutionRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the new DR Plan Execution. */
+        /** Details for creating the DR plan execution. */
         private com.oracle.bmc.disasterrecovery.model.CreateDrPlanExecutionDetails
                 createDrPlanExecutionDetails = null;
 
         /**
-         * Details for the new DR Plan Execution.
+         * Details for creating the DR plan execution.
          *
          * @param createDrPlanExecutionDetails the value to set
          * @return this builder instance

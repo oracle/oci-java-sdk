@@ -30,7 +30,7 @@ public final class InvokeFunctionStep extends DrPlanUserDefinedStep {
         /**
          * The OCID of function to be invoked.
          *
-         * <p>Example: {@code ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.fnfunc.oc1..uniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("functionId")
         private String functionId;
@@ -38,7 +38,7 @@ public final class InvokeFunctionStep extends DrPlanUserDefinedStep {
         /**
          * The OCID of function to be invoked.
          *
-         * <p>Example: {@code ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.fnfunc.oc1..uniqueID}
          *
          * @param functionId the value to set
          * @return this builder
@@ -138,7 +138,7 @@ public final class InvokeFunctionStep extends DrPlanUserDefinedStep {
     /**
      * The OCID of function to be invoked.
      *
-     * <p>Example: {@code ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.fnfunc.oc1..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("functionId")
     private final String functionId;
@@ -146,7 +146,7 @@ public final class InvokeFunctionStep extends DrPlanUserDefinedStep {
     /**
      * The OCID of function to be invoked.
      *
-     * <p>Example: {@code ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.fnfunc.oc1..uniqueID}
      *
      * @return the value
      */

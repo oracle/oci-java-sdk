@@ -108,14 +108,14 @@ public class ListMaskingReportsRequest extends com.oracle.bmc.requests.BmcReques
         return sortOrder;
     }
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for
-     * timeMaskingFinished is descending.
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+     * order for timeMaskingFinished is descending.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for
-     * timeMaskingFinished is descending.
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+     * order for timeMaskingFinished is descending.
      */
     public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         TimeMaskingFinished("timeMaskingFinished"),
@@ -150,8 +150,8 @@ public class ListMaskingReportsRequest extends com.oracle.bmc.requests.BmcReques
     };
 
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for
-     * timeMaskingFinished is descending.
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+     * order for timeMaskingFinished is descending.
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -340,14 +340,14 @@ public class ListMaskingReportsRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * The field to sort by. You can specify only one sort order (sortOrder). The default order
-         * for timeMaskingFinished is descending.
+         * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+         * order for timeMaskingFinished is descending.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can specify only one sort order (sortOrder). The default order
-         * for timeMaskingFinished is descending.
+         * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+         * order for timeMaskingFinished is descending.
          *
          * @param sortBy the value to set
          * @return this builder instance

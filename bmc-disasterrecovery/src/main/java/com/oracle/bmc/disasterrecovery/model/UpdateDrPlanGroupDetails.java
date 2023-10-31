@@ -5,7 +5,7 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The details for updating a DR Plan group. <br>
+ * The details for updating a group in a DR plan. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -39,17 +39,17 @@ public final class UpdateDrPlanGroupDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The unique id of this group. Must not be modified by user.
+         * The unique id of the group. Must not be modified by user.
          *
-         * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
+         * <p>Example: {@code sgid1.group..uniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The unique id of this group. Must not be modified by user.
+         * The unique id of the group. Must not be modified by user.
          *
-         * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
+         * <p>Example: {@code sgid1.group..uniqueID}
          *
          * @param id the value to set
          * @return this builder
@@ -60,7 +60,7 @@ public final class UpdateDrPlanGroupDetails
             return this;
         }
         /**
-         * The display name of this group.
+         * The display name of the group.
          *
          * <p>Example: {@code My_GROUP_3 - EBS Start}
          */
@@ -68,7 +68,7 @@ public final class UpdateDrPlanGroupDetails
         private String displayName;
 
         /**
-         * The display name of this group.
+         * The display name of the group.
          *
          * <p>Example: {@code My_GROUP_3 - EBS Start}
          *
@@ -80,12 +80,18 @@ public final class UpdateDrPlanGroupDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The group type. */
+        /**
+         * The group type.
+         *
+         * <p>Example: {@code BUILT_IN}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private DrPlanGroupType type;
 
         /**
          * The group type.
+         *
+         * <p>Example: {@code BUILT_IN}
          *
          * @param type the value to set
          * @return this builder
@@ -151,17 +157,17 @@ public final class UpdateDrPlanGroupDetails
     }
 
     /**
-     * The unique id of this group. Must not be modified by user.
+     * The unique id of the group. Must not be modified by user.
      *
-     * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
+     * <p>Example: {@code sgid1.group..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The unique id of this group. Must not be modified by user.
+     * The unique id of the group. Must not be modified by user.
      *
-     * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
+     * <p>Example: {@code sgid1.group..uniqueID}
      *
      * @return the value
      */
@@ -170,7 +176,7 @@ public final class UpdateDrPlanGroupDetails
     }
 
     /**
-     * The display name of this group.
+     * The display name of the group.
      *
      * <p>Example: {@code My_GROUP_3 - EBS Start}
      */
@@ -178,7 +184,7 @@ public final class UpdateDrPlanGroupDetails
     private final String displayName;
 
     /**
-     * The display name of this group.
+     * The display name of the group.
      *
      * <p>Example: {@code My_GROUP_3 - EBS Start}
      *
@@ -188,12 +194,18 @@ public final class UpdateDrPlanGroupDetails
         return displayName;
     }
 
-    /** The group type. */
+    /**
+     * The group type.
+     *
+     * <p>Example: {@code BUILT_IN}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final DrPlanGroupType type;
 
     /**
      * The group type.
+     *
+     * <p>Example: {@code BUILT_IN}
      *
      * @return the value
      */

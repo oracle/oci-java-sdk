@@ -43,7 +43,8 @@ public final class DbSystemSummary
         "definedTags",
         "backupPolicy",
         "shapeName",
-        "crashRecovery"
+        "crashRecovery",
+        "databaseManagement"
     })
     public DbSystemSummary(
             String id,
@@ -66,7 +67,8 @@ public final class DbSystemSummary
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             BackupPolicy backupPolicy,
             String shapeName,
-            CrashRecoveryStatus crashRecovery) {
+            CrashRecoveryStatus crashRecovery,
+            DatabaseManagementStatus databaseManagement) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -89,6 +91,7 @@ public final class DbSystemSummary
         this.backupPolicy = backupPolicy;
         this.shapeName = shapeName;
         this.crashRecovery = crashRecovery;
+        this.databaseManagement = databaseManagement;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -441,6 +444,21 @@ public final class DbSystemSummary
             this.__explicitlySet__.add("crashRecovery");
             return this;
         }
+        /** Whether to enable monitoring via the Database Management service. */
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseManagement")
+        private DatabaseManagementStatus databaseManagement;
+
+        /**
+         * Whether to enable monitoring via the Database Management service.
+         *
+         * @param databaseManagement the value to set
+         * @return this builder
+         */
+        public Builder databaseManagement(DatabaseManagementStatus databaseManagement) {
+            this.databaseManagement = databaseManagement;
+            this.__explicitlySet__.add("databaseManagement");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -468,7 +486,8 @@ public final class DbSystemSummary
                             this.definedTags,
                             this.backupPolicy,
                             this.shapeName,
-                            this.crashRecovery);
+                            this.crashRecovery,
+                            this.databaseManagement);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -539,6 +558,9 @@ public final class DbSystemSummary
             }
             if (model.wasPropertyExplicitlySet("crashRecovery")) {
                 this.crashRecovery(model.getCrashRecovery());
+            }
+            if (model.wasPropertyExplicitlySet("databaseManagement")) {
+                this.databaseManagement(model.getDatabaseManagement());
             }
             return this;
         }
@@ -858,6 +880,19 @@ public final class DbSystemSummary
         return crashRecovery;
     }
 
+    /** Whether to enable monitoring via the Database Management service. */
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseManagement")
+    private final DatabaseManagementStatus databaseManagement;
+
+    /**
+     * Whether to enable monitoring via the Database Management service.
+     *
+     * @return the value
+     */
+    public DatabaseManagementStatus getDatabaseManagement() {
+        return databaseManagement;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -895,6 +930,7 @@ public final class DbSystemSummary
         sb.append(", backupPolicy=").append(String.valueOf(this.backupPolicy));
         sb.append(", shapeName=").append(String.valueOf(this.shapeName));
         sb.append(", crashRecovery=").append(String.valueOf(this.crashRecovery));
+        sb.append(", databaseManagement=").append(String.valueOf(this.databaseManagement));
         sb.append(")");
         return sb.toString();
     }
@@ -931,6 +967,7 @@ public final class DbSystemSummary
                 && java.util.Objects.equals(this.backupPolicy, other.backupPolicy)
                 && java.util.Objects.equals(this.shapeName, other.shapeName)
                 && java.util.Objects.equals(this.crashRecovery, other.crashRecovery)
+                && java.util.Objects.equals(this.databaseManagement, other.databaseManagement)
                 && super.equals(other);
     }
 
@@ -981,6 +1018,11 @@ public final class DbSystemSummary
         result =
                 (result * PRIME)
                         + (this.crashRecovery == null ? 43 : this.crashRecovery.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseManagement == null
+                                ? 43
+                                : this.databaseManagement.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

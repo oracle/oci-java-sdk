@@ -16,16 +16,16 @@ public class DeleteDrProtectionGroupRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the DR Protection Group.
+     * The OCID of the DR protection group.
      *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      */
     private String drProtectionGroupId;
 
     /**
-     * The OCID of the DR Protection Group.
+     * The OCID of the DR protection group.
      *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      */
     public String getDrProtectionGroupId() {
         return drProtectionGroupId;
@@ -62,16 +62,16 @@ public class DeleteDrProtectionGroupRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The OCID of the DR Protection Group.
+         * The OCID of the DR protection group.
          *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          */
         private String drProtectionGroupId = null;
 
         /**
-         * The OCID of the DR Protection Group.
+         * The OCID of the DR protection group.
          *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
          * @param drProtectionGroupId the value to set
          * @return this builder instance

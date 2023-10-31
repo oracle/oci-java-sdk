@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.27.0</version>
+    <version>3.28.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -17,8 +17,6 @@
 
   <modules>
     <module>bmc-apache-connector-provider</module>
-    <module>bmc-graalvm-addon</module>
-    <module>bmc-graalvm-jersey3-addon</module>
     <module>bmc-resteasy-client-configurator</module>
     <module>bmc-sasl</module>
     <module>bmc-apache-configurator-jersey-addon</module>

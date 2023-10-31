@@ -24,7 +24,13 @@ package com.oracle.bmc.stackmonitoring.model;
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = AutoPromoteConfigSummary.class,
-            name = "AUTO_PROMOTE")
+            name = "AUTO_PROMOTE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = LicenseAutoAssignConfigSummary.class,
+            name = "LICENSE_AUTO_ASSIGN"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = LicenseEnterpriseExtensibilityConfigSummary.class,
+            name = "LICENSE_ENTERPRISE_EXTENSIBILITY")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

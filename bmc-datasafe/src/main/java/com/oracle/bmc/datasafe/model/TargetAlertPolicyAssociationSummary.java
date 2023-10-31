@@ -142,12 +142,12 @@ public final class TargetAlertPolicyAssociationSummary
             this.__explicitlySet__.add("targetId");
             return this;
         }
-        /** Indicates if the target-alert policy association is enabled or disabled. */
+        /** Indicates if the target-alert policy association is enabled or disabled by user. */
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
-         * Indicates if the target-alert policy association is enabled or disabled.
+         * Indicates if the target-alert policy association is enabled or disabled by user.
          *
          * @param isEnabled the value to set
          * @return this builder
@@ -417,12 +417,12 @@ public final class TargetAlertPolicyAssociationSummary
         return targetId;
     }
 
-    /** Indicates if the target-alert policy association is enabled or disabled. */
+    /** Indicates if the target-alert policy association is enabled or disabled by user. */
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
-     * Indicates if the target-alert policy association is enabled or disabled.
+     * Indicates if the target-alert policy association is enabled or disabled by user.
      *
      * @return the value
      */

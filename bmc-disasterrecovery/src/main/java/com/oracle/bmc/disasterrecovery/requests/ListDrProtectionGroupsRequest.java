@@ -18,52 +18,52 @@ public class ListDrProtectionGroupsRequest
     /**
      * The ID (OCID) of the compartment in which to list resources.
      *
-     * <p>Example: {@code ocid1.compartment.oc1..exampleocid1}
+     * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
      */
     private String compartmentId;
 
     /**
      * The ID (OCID) of the compartment in which to list resources.
      *
-     * <p>Example: {@code ocid1.compartment.oc1..exampleocid1}
+     * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filter to return only DR Protection Groups that match the given lifecycleState. */
+    /** A filter to return only DR protection groups that match the given lifecycle state. */
     private com.oracle.bmc.disasterrecovery.model.DrProtectionGroupLifecycleState lifecycleState;
 
-    /** A filter to return only DR Protection Groups that match the given lifecycleState. */
+    /** A filter to return only DR protection groups that match the given lifecycle state. */
     public com.oracle.bmc.disasterrecovery.model.DrProtectionGroupLifecycleState
             getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * The OCID of the DR Protection Group. Optional query param.
+     * The OCID of the DR protection group. Optional query param.
      *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      */
     private String drProtectionGroupId;
 
     /**
-     * The OCID of the DR Protection Group. Optional query param.
+     * The OCID of the DR protection group. Optional query param.
      *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      */
     public String getDrProtectionGroupId() {
         return drProtectionGroupId;
     }
     /**
-     * A filter to return only resources that match the entire display name given.
+     * A filter to return only resources that match the given display name.
      *
-     * <p>Example: {@code MY UNIQUE DISPLAY NAME}
+     * <p>Example: {@code MyResourceDisplayName}
      */
     private String displayName;
 
     /**
-     * A filter to return only resources that match the entire display name given.
+     * A filter to return only resources that match the given display name.
      *
-     * <p>Example: {@code MY UNIQUE DISPLAY NAME}
+     * <p>Example: {@code MyResourceDisplayName}
      */
     public String getDisplayName() {
         return displayName;
@@ -122,7 +122,7 @@ public class ListDrProtectionGroupsRequest
      * descending. Default order for displayName is ascending. If no value is specified timeCreated
      * is default.
      *
-     * <p>Example: {@code displayName}
+     * <p>Example: {@code MyResourceDisplayName}
      */
     private SortBy sortBy;
 
@@ -131,7 +131,7 @@ public class ListDrProtectionGroupsRequest
      * descending. Default order for displayName is ascending. If no value is specified timeCreated
      * is default.
      *
-     * <p>Example: {@code displayName}
+     * <p>Example: {@code MyResourceDisplayName}
      */
     public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         TimeCreated("timeCreated"),
@@ -171,7 +171,7 @@ public class ListDrProtectionGroupsRequest
      * descending. Default order for displayName is ascending. If no value is specified timeCreated
      * is default.
      *
-     * <p>Example: {@code displayName}
+     * <p>Example: {@code MyResourceDisplayName}
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -183,12 +183,21 @@ public class ListDrProtectionGroupsRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The DR Protection Group Role. */
+    /** The DR protection group Role. */
     private com.oracle.bmc.disasterrecovery.model.DrProtectionGroupRole role;
 
-    /** The DR Protection Group Role. */
+    /** The DR protection group Role. */
     public com.oracle.bmc.disasterrecovery.model.DrProtectionGroupRole getRole() {
         return role;
+    }
+    /** A filter to return only DR protection groups that match the given lifecycle sub-state. */
+    private com.oracle.bmc.disasterrecovery.model.DrProtectionGroupLifecycleSubState
+            lifecycleSubState;
+
+    /** A filter to return only DR protection groups that match the given lifecycle sub-state. */
+    public com.oracle.bmc.disasterrecovery.model.DrProtectionGroupLifecycleSubState
+            getLifecycleSubState() {
+        return lifecycleSubState;
     }
 
     public static class Builder
@@ -200,14 +209,14 @@ public class ListDrProtectionGroupsRequest
         /**
          * The ID (OCID) of the compartment in which to list resources.
          *
-         * <p>Example: {@code ocid1.compartment.oc1..exampleocid1}
+         * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
          */
         private String compartmentId = null;
 
         /**
          * The ID (OCID) of the compartment in which to list resources.
          *
-         * <p>Example: {@code ocid1.compartment.oc1..exampleocid1}
+         * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -217,12 +226,12 @@ public class ListDrProtectionGroupsRequest
             return this;
         }
 
-        /** A filter to return only DR Protection Groups that match the given lifecycleState. */
+        /** A filter to return only DR protection groups that match the given lifecycle state. */
         private com.oracle.bmc.disasterrecovery.model.DrProtectionGroupLifecycleState
                 lifecycleState = null;
 
         /**
-         * A filter to return only DR Protection Groups that match the given lifecycleState.
+         * A filter to return only DR protection groups that match the given lifecycle state.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -235,16 +244,16 @@ public class ListDrProtectionGroupsRequest
         }
 
         /**
-         * The OCID of the DR Protection Group. Optional query param.
+         * The OCID of the DR protection group. Optional query param.
          *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          */
         private String drProtectionGroupId = null;
 
         /**
-         * The OCID of the DR Protection Group. Optional query param.
+         * The OCID of the DR protection group. Optional query param.
          *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
          * @param drProtectionGroupId the value to set
          * @return this builder instance
@@ -255,16 +264,16 @@ public class ListDrProtectionGroupsRequest
         }
 
         /**
-         * A filter to return only resources that match the entire display name given.
+         * A filter to return only resources that match the given display name.
          *
-         * <p>Example: {@code MY UNIQUE DISPLAY NAME}
+         * <p>Example: {@code MyResourceDisplayName}
          */
         private String displayName = null;
 
         /**
-         * A filter to return only resources that match the entire display name given.
+         * A filter to return only resources that match the given display name.
          *
-         * <p>Example: {@code MY UNIQUE DISPLAY NAME}
+         * <p>Example: {@code MyResourceDisplayName}
          *
          * @param displayName the value to set
          * @return this builder instance
@@ -345,7 +354,7 @@ public class ListDrProtectionGroupsRequest
          * is descending. Default order for displayName is ascending. If no value is specified
          * timeCreated is default.
          *
-         * <p>Example: {@code displayName}
+         * <p>Example: {@code MyResourceDisplayName}
          */
         private SortBy sortBy = null;
 
@@ -354,7 +363,7 @@ public class ListDrProtectionGroupsRequest
          * is descending. Default order for displayName is ascending. If no value is specified
          * timeCreated is default.
          *
-         * <p>Example: {@code displayName}
+         * <p>Example: {@code MyResourceDisplayName}
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -378,17 +387,36 @@ public class ListDrProtectionGroupsRequest
             return this;
         }
 
-        /** The DR Protection Group Role. */
+        /** The DR protection group Role. */
         private com.oracle.bmc.disasterrecovery.model.DrProtectionGroupRole role = null;
 
         /**
-         * The DR Protection Group Role.
+         * The DR protection group Role.
          *
          * @param role the value to set
          * @return this builder instance
          */
         public Builder role(com.oracle.bmc.disasterrecovery.model.DrProtectionGroupRole role) {
             this.role = role;
+            return this;
+        }
+
+        /**
+         * A filter to return only DR protection groups that match the given lifecycle sub-state.
+         */
+        private com.oracle.bmc.disasterrecovery.model.DrProtectionGroupLifecycleSubState
+                lifecycleSubState = null;
+
+        /**
+         * A filter to return only DR protection groups that match the given lifecycle sub-state.
+         *
+         * @param lifecycleSubState the value to set
+         * @return this builder instance
+         */
+        public Builder lifecycleSubState(
+                com.oracle.bmc.disasterrecovery.model.DrProtectionGroupLifecycleSubState
+                        lifecycleSubState) {
+            this.lifecycleSubState = lifecycleSubState;
             return this;
         }
 
@@ -432,6 +460,7 @@ public class ListDrProtectionGroupsRequest
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
             role(o.getRole());
+            lifecycleSubState(o.getLifecycleSubState());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -476,9 +505,10 @@ public class ListDrProtectionGroupsRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             request.role = role;
+            request.lifecycleSubState = lifecycleSubState;
             return request;
             // new ListDrProtectionGroupsRequest(compartmentId, lifecycleState, drProtectionGroupId,
-            // displayName, limit, page, sortOrder, sortBy, opcRequestId, role);
+            // displayName, limit, page, sortOrder, sortBy, opcRequestId, role, lifecycleSubState);
         }
     }
 
@@ -498,7 +528,8 @@ public class ListDrProtectionGroupsRequest
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
                 .opcRequestId(opcRequestId)
-                .role(role);
+                .role(role)
+                .lifecycleSubState(lifecycleSubState);
     }
 
     /**
@@ -525,6 +556,7 @@ public class ListDrProtectionGroupsRequest
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",role=").append(String.valueOf(this.role));
+        sb.append(",lifecycleSubState=").append(String.valueOf(this.lifecycleSubState));
         sb.append(")");
         return sb.toString();
     }
@@ -549,7 +581,8 @@ public class ListDrProtectionGroupsRequest
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.role, other.role);
+                && java.util.Objects.equals(this.role, other.role)
+                && java.util.Objects.equals(this.lifecycleSubState, other.lifecycleSubState);
     }
 
     @Override
@@ -574,6 +607,9 @@ public class ListDrProtectionGroupsRequest
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.role == null ? 43 : this.role.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleSubState == null ? 43 : this.lifecycleSubState.hashCode());
         return result;
     }
 }

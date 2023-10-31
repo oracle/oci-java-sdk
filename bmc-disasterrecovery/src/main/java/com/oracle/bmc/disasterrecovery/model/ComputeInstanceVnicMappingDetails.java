@@ -5,7 +5,7 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * A compute instance's source and destination VNIC mapping. <br>
+ * Deprecated. Source VNIC to destination subnet mapping for a compute instance. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -49,7 +49,7 @@ public final class ComputeInstanceVnicMappingDetails
         /**
          * The OCID of the VNIC.
          *
-         * <p>Example: {@code ocid1.vnic.oc1.phx.&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.vnic.oc1..uniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceVnicId")
         private String sourceVnicId;
@@ -57,7 +57,7 @@ public final class ComputeInstanceVnicMappingDetails
         /**
          * The OCID of the VNIC.
          *
-         * <p>Example: {@code ocid1.vnic.oc1.phx.&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.vnic.oc1..uniqueID}
          *
          * @param sourceVnicId the value to set
          * @return this builder
@@ -68,17 +68,17 @@ public final class ComputeInstanceVnicMappingDetails
             return this;
         }
         /**
-         * The OCID of the destination (remote) subnet to which this VNIC should connect.
+         * The OCID of the destination subnet to which this source VNIC should connect.
          *
-         * <p>Example: {@code ocid1.subnet.oc1.iad.&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.subnet.oc1..uniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("destinationSubnetId")
         private String destinationSubnetId;
 
         /**
-         * The OCID of the destination (remote) subnet to which this VNIC should connect.
+         * The OCID of the destination subnet to which this source VNIC should connect.
          *
-         * <p>Example: {@code ocid1.subnet.oc1.iad.&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.subnet.oc1..uniqueID}
          *
          * @param destinationSubnetId the value to set
          * @return this builder
@@ -89,8 +89,8 @@ public final class ComputeInstanceVnicMappingDetails
             return this;
         }
         /**
-         * The primary private IP address to assign. This address must belong to the destination
-         * subnet.
+         * The primary private IP address to be assigned to the VNIC in the destination region. This
+         * address must belong to the destination subnet.
          *
          * <p>Example: {@code 10.0.3.3}
          */
@@ -98,8 +98,8 @@ public final class ComputeInstanceVnicMappingDetails
         private String destinationPrimaryPrivateIpAddress;
 
         /**
-         * The primary private IP address to assign. This address must belong to the destination
-         * subnet.
+         * The primary private IP address to be assigned to the VNIC in the destination region. This
+         * address must belong to the destination subnet.
          *
          * <p>Example: {@code 10.0.3.3}
          *
@@ -113,21 +113,23 @@ public final class ComputeInstanceVnicMappingDetails
             return this;
         }
         /**
-         * The hostname to assign for this primary private IP. The value is the hostname portion of
-         * the private IP's fully qualified domain name (FQDN) (for example, bminstance1 in FQDN
-         * bminstance1.subnet123.vcn1.oraclevcn.com).
+         * The hostname label to be assigned in the destination subnet for the primary private IP of
+         * the source VNIC. This label is the hostname portion of the private IP's fully qualified
+         * domain name (FQDN) (for example, 'myhost1' in the FQDN
+         * 'myhost1.subnet123.vcn1.oraclevcn.com').
          *
-         * <p>Example: {@code bminstance1}
+         * <p>Example: {@code myhost1}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("destinationPrimaryPrivateIpHostnameLabel")
         private String destinationPrimaryPrivateIpHostnameLabel;
 
         /**
-         * The hostname to assign for this primary private IP. The value is the hostname portion of
-         * the private IP's fully qualified domain name (FQDN) (for example, bminstance1 in FQDN
-         * bminstance1.subnet123.vcn1.oraclevcn.com).
+         * The hostname label to be assigned in the destination subnet for the primary private IP of
+         * the source VNIC. This label is the hostname portion of the private IP's fully qualified
+         * domain name (FQDN) (for example, 'myhost1' in the FQDN
+         * 'myhost1.subnet123.vcn1.oraclevcn.com').
          *
-         * <p>Example: {@code bminstance1}
+         * <p>Example: {@code myhost1}
          *
          * @param destinationPrimaryPrivateIpHostnameLabel the value to set
          * @return this builder
@@ -140,21 +142,21 @@ public final class ComputeInstanceVnicMappingDetails
             return this;
         }
         /**
-         * A list of network security group (NSG) IDs in the destination region which this VNIC
-         * should use.
+         * A list of OCIDs of network security groups (NSG) in the destination region which should
+         * be assigned to the source VNIC.
          *
-         * <p>Example: {@code [ ocid1.networksecuritygroup.oc1.iad.&lt;unique_id&gt;,
-         * ocid1.networksecuritygroup.oc1.iad.&lt;unique_id&gt; ]}
+         * <p>Example: {@code [ ocid1.networksecuritygroup.oc1..uniqueID,
+         * ocid1.networksecuritygroup.oc1..uniqueID ]}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("destinationNsgIdList")
         private java.util.List<String> destinationNsgIdList;
 
         /**
-         * A list of network security group (NSG) IDs in the destination region which this VNIC
-         * should use.
+         * A list of OCIDs of network security groups (NSG) in the destination region which should
+         * be assigned to the source VNIC.
          *
-         * <p>Example: {@code [ ocid1.networksecuritygroup.oc1.iad.&lt;unique_id&gt;,
-         * ocid1.networksecuritygroup.oc1.iad.&lt;unique_id&gt; ]}
+         * <p>Example: {@code [ ocid1.networksecuritygroup.oc1..uniqueID,
+         * ocid1.networksecuritygroup.oc1..uniqueID ]}
          *
          * @param destinationNsgIdList the value to set
          * @return this builder
@@ -217,7 +219,7 @@ public final class ComputeInstanceVnicMappingDetails
     /**
      * The OCID of the VNIC.
      *
-     * <p>Example: {@code ocid1.vnic.oc1.phx.&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.vnic.oc1..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceVnicId")
     private final String sourceVnicId;
@@ -225,7 +227,7 @@ public final class ComputeInstanceVnicMappingDetails
     /**
      * The OCID of the VNIC.
      *
-     * <p>Example: {@code ocid1.vnic.oc1.phx.&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.vnic.oc1..uniqueID}
      *
      * @return the value
      */
@@ -234,17 +236,17 @@ public final class ComputeInstanceVnicMappingDetails
     }
 
     /**
-     * The OCID of the destination (remote) subnet to which this VNIC should connect.
+     * The OCID of the destination subnet to which this source VNIC should connect.
      *
-     * <p>Example: {@code ocid1.subnet.oc1.iad.&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.subnet.oc1..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("destinationSubnetId")
     private final String destinationSubnetId;
 
     /**
-     * The OCID of the destination (remote) subnet to which this VNIC should connect.
+     * The OCID of the destination subnet to which this source VNIC should connect.
      *
-     * <p>Example: {@code ocid1.subnet.oc1.iad.&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.subnet.oc1..uniqueID}
      *
      * @return the value
      */
@@ -253,7 +255,8 @@ public final class ComputeInstanceVnicMappingDetails
     }
 
     /**
-     * The primary private IP address to assign. This address must belong to the destination subnet.
+     * The primary private IP address to be assigned to the VNIC in the destination region. This
+     * address must belong to the destination subnet.
      *
      * <p>Example: {@code 10.0.3.3}
      */
@@ -261,7 +264,8 @@ public final class ComputeInstanceVnicMappingDetails
     private final String destinationPrimaryPrivateIpAddress;
 
     /**
-     * The primary private IP address to assign. This address must belong to the destination subnet.
+     * The primary private IP address to be assigned to the VNIC in the destination region. This
+     * address must belong to the destination subnet.
      *
      * <p>Example: {@code 10.0.3.3}
      *
@@ -272,21 +276,21 @@ public final class ComputeInstanceVnicMappingDetails
     }
 
     /**
-     * The hostname to assign for this primary private IP. The value is the hostname portion of the
-     * private IP's fully qualified domain name (FQDN) (for example, bminstance1 in FQDN
-     * bminstance1.subnet123.vcn1.oraclevcn.com).
+     * The hostname label to be assigned in the destination subnet for the primary private IP of the
+     * source VNIC. This label is the hostname portion of the private IP's fully qualified domain
+     * name (FQDN) (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').
      *
-     * <p>Example: {@code bminstance1}
+     * <p>Example: {@code myhost1}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("destinationPrimaryPrivateIpHostnameLabel")
     private final String destinationPrimaryPrivateIpHostnameLabel;
 
     /**
-     * The hostname to assign for this primary private IP. The value is the hostname portion of the
-     * private IP's fully qualified domain name (FQDN) (for example, bminstance1 in FQDN
-     * bminstance1.subnet123.vcn1.oraclevcn.com).
+     * The hostname label to be assigned in the destination subnet for the primary private IP of the
+     * source VNIC. This label is the hostname portion of the private IP's fully qualified domain
+     * name (FQDN) (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').
      *
-     * <p>Example: {@code bminstance1}
+     * <p>Example: {@code myhost1}
      *
      * @return the value
      */
@@ -295,21 +299,21 @@ public final class ComputeInstanceVnicMappingDetails
     }
 
     /**
-     * A list of network security group (NSG) IDs in the destination region which this VNIC should
-     * use.
+     * A list of OCIDs of network security groups (NSG) in the destination region which should be
+     * assigned to the source VNIC.
      *
-     * <p>Example: {@code [ ocid1.networksecuritygroup.oc1.iad.&lt;unique_id&gt;,
-     * ocid1.networksecuritygroup.oc1.iad.&lt;unique_id&gt; ]}
+     * <p>Example: {@code [ ocid1.networksecuritygroup.oc1..uniqueID,
+     * ocid1.networksecuritygroup.oc1..uniqueID ]}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("destinationNsgIdList")
     private final java.util.List<String> destinationNsgIdList;
 
     /**
-     * A list of network security group (NSG) IDs in the destination region which this VNIC should
-     * use.
+     * A list of OCIDs of network security groups (NSG) in the destination region which should be
+     * assigned to the source VNIC.
      *
-     * <p>Example: {@code [ ocid1.networksecuritygroup.oc1.iad.&lt;unique_id&gt;,
-     * ocid1.networksecuritygroup.oc1.iad.&lt;unique_id&gt; ]}
+     * <p>Example: {@code [ ocid1.networksecuritygroup.oc1..uniqueID,
+     * ocid1.networksecuritygroup.oc1..uniqueID ]}
      *
      * @return the value
      */

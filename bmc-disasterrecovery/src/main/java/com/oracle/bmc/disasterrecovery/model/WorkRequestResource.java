@@ -82,7 +82,7 @@ public final class WorkRequestResource
         /**
          * The identifier (OCID) of the resource the work request affects.
          *
-         * <p>Example: {@code ocid1.drplanexecution.oc1.iad.&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.drplanexecution.oc1..uniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
@@ -90,7 +90,7 @@ public final class WorkRequestResource
         /**
          * The identifier (OCID) of the resource the work request affects.
          *
-         * <p>Example: {@code ocid1.drplanexecution.oc1.iad.&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.drplanexecution.oc1..uniqueID}
          *
          * @param identifier the value to set
          * @return this builder
@@ -199,7 +199,7 @@ public final class WorkRequestResource
     /**
      * The identifier (OCID) of the resource the work request affects.
      *
-     * <p>Example: {@code ocid1.drplanexecution.oc1.iad.&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.drplanexecution.oc1..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
@@ -207,7 +207,7 @@ public final class WorkRequestResource
     /**
      * The identifier (OCID) of the resource the work request affects.
      *
-     * <p>Example: {@code ocid1.drplanexecution.oc1.iad.&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.drplanexecution.oc1..uniqueID}
      *
      * @return the value
      */

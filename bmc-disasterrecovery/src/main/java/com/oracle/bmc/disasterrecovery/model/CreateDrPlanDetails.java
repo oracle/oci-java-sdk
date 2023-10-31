@@ -5,7 +5,7 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The details for creating a DR Plan. <br>
+ * The details for creating a DR plan. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -47,7 +47,7 @@ public final class CreateDrPlanDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The display name of the DR Plan being created.
+         * The display name of the DR plan being created.
          *
          * <p>Example: {@code EBS Switchover PHX to IAD}
          */
@@ -55,7 +55,7 @@ public final class CreateDrPlanDetails
         private String displayName;
 
         /**
-         * The display name of the DR Plan being created.
+         * The display name of the DR plan being created.
          *
          * <p>Example: {@code EBS Switchover PHX to IAD}
          *
@@ -67,12 +67,12 @@ public final class CreateDrPlanDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The type of DR Plan to be created. */
+        /** The type of DR plan to be created. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private DrPlanType type;
 
         /**
-         * The type of DR Plan to be created.
+         * The type of DR plan to be created.
          *
          * @param type the value to set
          * @return this builder
@@ -83,17 +83,17 @@ public final class CreateDrPlanDetails
             return this;
         }
         /**
-         * The OCID of the DR Protection Group to which this DR Plan belongs.
+         * The OCID of the DR protection group to which this DR plan belongs.
          *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("drProtectionGroupId")
         private String drProtectionGroupId;
 
         /**
-         * The OCID of the DR Protection Group to which this DR Plan belongs.
+         * The OCID of the DR protection group to which this DR plan belongs.
          *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
          * @param drProtectionGroupId the value to set
          * @return this builder
@@ -105,14 +105,18 @@ public final class CreateDrPlanDetails
         }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"Department": "Finance"}}
+         * for cross-compatibility only.
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"Department": "Finance"}}
+         * for cross-compatibility only.
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
@@ -124,14 +128,16 @@ public final class CreateDrPlanDetails
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
@@ -191,7 +197,7 @@ public final class CreateDrPlanDetails
     }
 
     /**
-     * The display name of the DR Plan being created.
+     * The display name of the DR plan being created.
      *
      * <p>Example: {@code EBS Switchover PHX to IAD}
      */
@@ -199,7 +205,7 @@ public final class CreateDrPlanDetails
     private final String displayName;
 
     /**
-     * The display name of the DR Plan being created.
+     * The display name of the DR plan being created.
      *
      * <p>Example: {@code EBS Switchover PHX to IAD}
      *
@@ -209,12 +215,12 @@ public final class CreateDrPlanDetails
         return displayName;
     }
 
-    /** The type of DR Plan to be created. */
+    /** The type of DR plan to be created. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final DrPlanType type;
 
     /**
-     * The type of DR Plan to be created.
+     * The type of DR plan to be created.
      *
      * @return the value
      */
@@ -223,17 +229,17 @@ public final class CreateDrPlanDetails
     }
 
     /**
-     * The OCID of the DR Protection Group to which this DR Plan belongs.
+     * The OCID of the DR protection group to which this DR plan belongs.
      *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("drProtectionGroupId")
     private final String drProtectionGroupId;
 
     /**
-     * The OCID of the DR Protection Group to which this DR Plan belongs.
+     * The OCID of the DR protection group to which this DR plan belongs.
      *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      *
      * @return the value
      */
@@ -243,14 +249,18 @@ public final class CreateDrPlanDetails
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"Department": "Finance"}}
+     * cross-compatibility only.
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"Department": "Finance"}}
+     * cross-compatibility only.
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      *
      * @return the value
      */
@@ -259,15 +269,17 @@ public final class CreateDrPlanDetails
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     *
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     *
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
      */

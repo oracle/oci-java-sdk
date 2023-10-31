@@ -14,16 +14,16 @@ import com.oracle.bmc.disasterrecovery.model.*;
 public class GetDrPlanExecutionRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the DR Plan Execution.
+     * The OCID of the DR plan execution.
      *
-     * <p>Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+     * <p>Example: {@code ocid1.drplanexecution.oc1..uniqueID}
      */
     private String drPlanExecutionId;
 
     /**
-     * The OCID of the DR Plan Execution.
+     * The OCID of the DR plan execution.
      *
-     * <p>Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+     * <p>Example: {@code ocid1.drplanexecution.oc1..uniqueID}
      */
     public String getDrPlanExecutionId() {
         return drPlanExecutionId;
@@ -43,16 +43,16 @@ public class GetDrPlanExecutionRequest extends com.oracle.bmc.requests.BmcReques
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The OCID of the DR Plan Execution.
+         * The OCID of the DR plan execution.
          *
-         * <p>Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+         * <p>Example: {@code ocid1.drplanexecution.oc1..uniqueID}
          */
         private String drPlanExecutionId = null;
 
         /**
-         * The OCID of the DR Plan Execution.
+         * The OCID of the DR plan execution.
          *
-         * <p>Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+         * <p>Example: {@code ocid1.drplanexecution.oc1..uniqueID}
          *
          * @param drPlanExecutionId the value to set
          * @return this builder instance

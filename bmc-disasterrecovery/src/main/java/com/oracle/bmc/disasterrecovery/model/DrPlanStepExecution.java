@@ -5,7 +5,7 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Summary information about a step execution. <br>
+ * The details of a step execution in a DR plan execution. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -62,17 +62,17 @@ public final class DrPlanStepExecution
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The unique id of this step. Must not be modified by user.
+         * The unique id of the step. Must not be modified by user.
          *
-         * <p>Example: {@code sgid1.step..&lt;unique_id&gt;}
+         * <p>Example: {@code sgid1.step..uniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("stepId")
         private String stepId;
 
         /**
-         * The unique id of this step. Must not be modified by user.
+         * The unique id of the step. Must not be modified by user.
          *
-         * <p>Example: {@code sgid1.step..&lt;unique_id&gt;}
+         * <p>Example: {@code sgid1.step..uniqueID}
          *
          * @param stepId the value to set
          * @return this builder
@@ -82,12 +82,12 @@ public final class DrPlanStepExecution
             this.__explicitlySet__.add("stepId");
             return this;
         }
-        /** The plan step type. */
+        /** The step type. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private DrPlanStepType type;
 
         /**
-         * The plan step type.
+         * The step type.
          *
          * @param type the value to set
          * @return this builder
@@ -100,7 +100,7 @@ public final class DrPlanStepExecution
         /**
          * The unique id of the group to which this step belongs. Must not be modified by user.
          *
-         * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
+         * <p>Example: {@code sgid1.group..uniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("groupId")
         private String groupId;
@@ -108,7 +108,7 @@ public final class DrPlanStepExecution
         /**
          * The unique id of the group to which this step belongs. Must not be modified by user.
          *
-         * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
+         * <p>Example: {@code sgid1.group..uniqueID}
          *
          * @param groupId the value to set
          * @return this builder
@@ -119,7 +119,7 @@ public final class DrPlanStepExecution
             return this;
         }
         /**
-         * The display name of the step.
+         * The display name of the step execution.
          *
          * <p>Example: {@code DATABASE_SWITCHOVER}
          */
@@ -127,7 +127,7 @@ public final class DrPlanStepExecution
         private String displayName;
 
         /**
-         * The display name of the step.
+         * The display name of the step execution.
          *
          * <p>Example: {@code DATABASE_SWITCHOVER}
          *
@@ -164,7 +164,7 @@ public final class DrPlanStepExecution
             return this;
         }
         /**
-         * Additional details about the step execution status.
+         * Additional details on the step execution status.
          *
          * <p>Example: {@code This step failed to complete due to a timeout}
          */
@@ -172,7 +172,7 @@ public final class DrPlanStepExecution
         private String statusDetails;
 
         /**
-         * Additional details about the step execution status.
+         * Additional details on the step execution status.
          *
          * <p>Example: {@code This step failed to complete due to a timeout}
          *
@@ -185,7 +185,7 @@ public final class DrPlanStepExecution
             return this;
         }
         /**
-         * The time at which step execution began. An RFC3339 formatted datetime string.
+         * The time when step execution began. An RFC3339 formatted datetime string.
          *
          * <p>Example: {@code 2019-03-29T09:36:42Z}
          */
@@ -193,7 +193,7 @@ public final class DrPlanStepExecution
         private java.util.Date timeStarted;
 
         /**
-         * The time at which step execution began. An RFC3339 formatted datetime string.
+         * The time when step execution began. An RFC3339 formatted datetime string.
          *
          * <p>Example: {@code 2019-03-29T09:36:42Z}
          *
@@ -206,7 +206,7 @@ public final class DrPlanStepExecution
             return this;
         }
         /**
-         * The time at which step execution ended. An RFC3339 formatted datetime string.
+         * The time when execution ended. An RFC3339 formatted datetime string.
          *
          * <p>Example: {@code 2019-03-29T09:36:42Z}
          */
@@ -214,7 +214,7 @@ public final class DrPlanStepExecution
         private java.util.Date timeEnded;
 
         /**
-         * The time at which step execution ended. An RFC3339 formatted datetime string.
+         * The time when execution ended. An RFC3339 formatted datetime string.
          *
          * <p>Example: {@code 2019-03-29T09:36:42Z}
          *
@@ -227,7 +227,7 @@ public final class DrPlanStepExecution
             return this;
         }
         /**
-         * The total duration in seconds taken to complete step execution.
+         * The total duration in seconds taken to complete the step execution.
          *
          * <p>Example: {@code 35}
          */
@@ -235,7 +235,7 @@ public final class DrPlanStepExecution
         private Integer executionDurationInSec;
 
         /**
-         * The total duration in seconds taken to complete step execution.
+         * The total duration in seconds taken to complete the step execution.
          *
          * <p>Example: {@code 35}
          *
@@ -316,17 +316,17 @@ public final class DrPlanStepExecution
     }
 
     /**
-     * The unique id of this step. Must not be modified by user.
+     * The unique id of the step. Must not be modified by user.
      *
-     * <p>Example: {@code sgid1.step..&lt;unique_id&gt;}
+     * <p>Example: {@code sgid1.step..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("stepId")
     private final String stepId;
 
     /**
-     * The unique id of this step. Must not be modified by user.
+     * The unique id of the step. Must not be modified by user.
      *
-     * <p>Example: {@code sgid1.step..&lt;unique_id&gt;}
+     * <p>Example: {@code sgid1.step..uniqueID}
      *
      * @return the value
      */
@@ -334,12 +334,12 @@ public final class DrPlanStepExecution
         return stepId;
     }
 
-    /** The plan step type. */
+    /** The step type. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final DrPlanStepType type;
 
     /**
-     * The plan step type.
+     * The step type.
      *
      * @return the value
      */
@@ -350,7 +350,7 @@ public final class DrPlanStepExecution
     /**
      * The unique id of the group to which this step belongs. Must not be modified by user.
      *
-     * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
+     * <p>Example: {@code sgid1.group..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("groupId")
     private final String groupId;
@@ -358,7 +358,7 @@ public final class DrPlanStepExecution
     /**
      * The unique id of the group to which this step belongs. Must not be modified by user.
      *
-     * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
+     * <p>Example: {@code sgid1.group..uniqueID}
      *
      * @return the value
      */
@@ -367,7 +367,7 @@ public final class DrPlanStepExecution
     }
 
     /**
-     * The display name of the step.
+     * The display name of the step execution.
      *
      * <p>Example: {@code DATABASE_SWITCHOVER}
      */
@@ -375,7 +375,7 @@ public final class DrPlanStepExecution
     private final String displayName;
 
     /**
-     * The display name of the step.
+     * The display name of the step execution.
      *
      * <p>Example: {@code DATABASE_SWITCHOVER}
      *
@@ -406,7 +406,7 @@ public final class DrPlanStepExecution
     }
 
     /**
-     * Additional details about the step execution status.
+     * Additional details on the step execution status.
      *
      * <p>Example: {@code This step failed to complete due to a timeout}
      */
@@ -414,7 +414,7 @@ public final class DrPlanStepExecution
     private final String statusDetails;
 
     /**
-     * Additional details about the step execution status.
+     * Additional details on the step execution status.
      *
      * <p>Example: {@code This step failed to complete due to a timeout}
      *
@@ -425,7 +425,7 @@ public final class DrPlanStepExecution
     }
 
     /**
-     * The time at which step execution began. An RFC3339 formatted datetime string.
+     * The time when step execution began. An RFC3339 formatted datetime string.
      *
      * <p>Example: {@code 2019-03-29T09:36:42Z}
      */
@@ -433,7 +433,7 @@ public final class DrPlanStepExecution
     private final java.util.Date timeStarted;
 
     /**
-     * The time at which step execution began. An RFC3339 formatted datetime string.
+     * The time when step execution began. An RFC3339 formatted datetime string.
      *
      * <p>Example: {@code 2019-03-29T09:36:42Z}
      *
@@ -444,7 +444,7 @@ public final class DrPlanStepExecution
     }
 
     /**
-     * The time at which step execution ended. An RFC3339 formatted datetime string.
+     * The time when execution ended. An RFC3339 formatted datetime string.
      *
      * <p>Example: {@code 2019-03-29T09:36:42Z}
      */
@@ -452,7 +452,7 @@ public final class DrPlanStepExecution
     private final java.util.Date timeEnded;
 
     /**
-     * The time at which step execution ended. An RFC3339 formatted datetime string.
+     * The time when execution ended. An RFC3339 formatted datetime string.
      *
      * <p>Example: {@code 2019-03-29T09:36:42Z}
      *
@@ -463,7 +463,7 @@ public final class DrPlanStepExecution
     }
 
     /**
-     * The total duration in seconds taken to complete step execution.
+     * The total duration in seconds taken to complete the step execution.
      *
      * <p>Example: {@code 35}
      */
@@ -471,7 +471,7 @@ public final class DrPlanStepExecution
     private final Integer executionDurationInSec;
 
     /**
-     * The total duration in seconds taken to complete step execution.
+     * The total duration in seconds taken to complete the step execution.
      *
      * <p>Example: {@code 35}
      *

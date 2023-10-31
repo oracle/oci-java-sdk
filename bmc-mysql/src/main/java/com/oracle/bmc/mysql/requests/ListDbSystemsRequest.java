@@ -99,6 +99,47 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public Boolean getIsUpToDate() {
         return isUpToDate;
     }
+    /** Filter DB Systems by their Database Management configuration. */
+    private java.util.List<DatabaseManagement> databaseManagement;
+
+    /** Filter DB Systems by their Database Management configuration. */
+    public enum DatabaseManagement implements com.oracle.bmc.http.internal.BmcEnum {
+        Enabled("ENABLED"),
+        Disabled("DISABLED"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, DatabaseManagement> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DatabaseManagement v : DatabaseManagement.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        DatabaseManagement(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DatabaseManagement create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid DatabaseManagement: " + key);
+        }
+    };
+
+    /** Filter DB Systems by their Database Management configuration. */
+    public java.util.List<DatabaseManagement> getDatabaseManagement() {
+        return databaseManagement;
+    }
     /**
      * The field to sort by. Only one sort order may be provided. Time fields are default ordered as
      * descending. Display name is default ordered as ascending.
@@ -362,6 +403,30 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /** Filter DB Systems by their Database Management configuration. */
+        private java.util.List<DatabaseManagement> databaseManagement = null;
+
+        /**
+         * Filter DB Systems by their Database Management configuration.
+         *
+         * @param databaseManagement the value to set
+         * @return this builder instance
+         */
+        public Builder databaseManagement(java.util.List<DatabaseManagement> databaseManagement) {
+            this.databaseManagement = databaseManagement;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter DB Systems by their Database Management configuration.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder databaseManagement(DatabaseManagement singularValue) {
+            return this.databaseManagement(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * The field to sort by. Only one sort order may be provided. Time fields are default
          * ordered as descending. Display name is default ordered as ascending.
@@ -472,6 +537,7 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             lifecycleState(o.getLifecycleState());
             configurationId(o.getConfigurationId());
             isUpToDate(o.getIsUpToDate());
+            databaseManagement(o.getDatabaseManagement());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             limit(o.getLimit());
@@ -518,14 +584,15 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.lifecycleState = lifecycleState;
             request.configurationId = configurationId;
             request.isUpToDate = isUpToDate;
+            request.databaseManagement = databaseManagement;
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             request.limit = limit;
             request.page = page;
             return request;
             // new ListDbSystemsRequest(compartmentId, opcRequestId, isHeatWaveClusterAttached,
-            // dbSystemId, displayName, lifecycleState, configurationId, isUpToDate, sortBy,
-            // sortOrder, limit, page);
+            // dbSystemId, displayName, lifecycleState, configurationId, isUpToDate,
+            // databaseManagement, sortBy, sortOrder, limit, page);
         }
     }
 
@@ -544,6 +611,7 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 .lifecycleState(lifecycleState)
                 .configurationId(configurationId)
                 .isUpToDate(isUpToDate)
+                .databaseManagement(databaseManagement)
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
                 .limit(limit)
@@ -573,6 +641,7 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",configurationId=").append(String.valueOf(this.configurationId));
         sb.append(",isUpToDate=").append(String.valueOf(this.isUpToDate));
+        sb.append(",databaseManagement=").append(String.valueOf(this.databaseManagement));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -601,6 +670,7 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.configurationId, other.configurationId)
                 && java.util.Objects.equals(this.isUpToDate, other.isUpToDate)
+                && java.util.Objects.equals(this.databaseManagement, other.databaseManagement)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.limit, other.limit)
@@ -629,6 +699,11 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 (result * PRIME)
                         + (this.configurationId == null ? 43 : this.configurationId.hashCode());
         result = (result * PRIME) + (this.isUpToDate == null ? 43 : this.isUpToDate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseManagement == null
+                                ? 43
+                                : this.databaseManagement.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());

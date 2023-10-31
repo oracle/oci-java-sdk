@@ -87,17 +87,17 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The ID (OCID) of the work request.
+         * The OCID of the work request.
          *
-         * <p>Example: {@code ocid1.workrequest.oc1.phx.&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.drworkrequest.oc1..uniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The ID (OCID) of the work request.
+         * The OCID of the work request.
          *
-         * <p>Example: {@code ocid1.workrequest.oc1.phx.&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.drworkrequest.oc1..uniqueID}
          *
          * @param id the value to set
          * @return this builder
@@ -114,7 +114,7 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
          * it is up to the service team to pick the primary resource whose compartment should be
          * used
          *
-         * <p>Example: {@code ocid1.compartment.oc1..&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -126,7 +126,7 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
          * it is up to the service team to pick the primary resource whose compartment should be
          * used
          *
-         * <p>Example: {@code ocid1.compartment.oc1..&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -326,17 +326,17 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The ID (OCID) of the work request.
+     * The OCID of the work request.
      *
-     * <p>Example: {@code ocid1.workrequest.oc1.phx.&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.drworkrequest.oc1..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The ID (OCID) of the work request.
+     * The OCID of the work request.
      *
-     * <p>Example: {@code ocid1.workrequest.oc1.phx.&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.drworkrequest.oc1..uniqueID}
      *
      * @return the value
      */
@@ -350,7 +350,7 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
      * multiple resources, and those resources are not in the same compartment, it is up to the
      * service team to pick the primary resource whose compartment should be used
      *
-     * <p>Example: {@code ocid1.compartment.oc1..&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
@@ -361,7 +361,7 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
      * multiple resources, and those resources are not in the same compartment, it is up to the
      * service team to pick the primary resource whose compartment should be used
      *
-     * <p>Example: {@code ocid1.compartment.oc1..&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
      *
      * @return the value
      */

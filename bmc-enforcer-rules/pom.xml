@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk</artifactId>
-        <version>3.27.0</version>
+        <version>3.28.0</version>
     </parent>
 
     <artifactId>oci-java-sdk-enforcer-rules</artifactId>
@@ -15,30 +15,52 @@
     <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
 
     <properties>
-        <maven.version>3.6.1</maven.version>
+        <maven.version>3.9.5</maven.version>
+        <maven.enforcer.version>3.4.1</maven.enforcer.version>
+        <!-- see https://maven.apache.org/enforcer/enforcer-api/writing-a-custom-rule.html -->
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
 
     <dependencies>
+        <!-- see https://maven.apache.org/enforcer/enforcer-api/writing-a-custom-rule.html -->
         <dependency>
             <groupId>org.apache.maven.enforcer</groupId>
             <artifactId>enforcer-api</artifactId>
-            <version>3.1.0</version>
+            <version>${maven.enforcer.version}</version>
+            <optional>true</optional>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.maven.enforcer</groupId>
             <artifactId>enforcer-rules</artifactId>
-            <version>3.1.0</version>
+            <version>${maven.enforcer.version}</version>
+            <optional>true</optional>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-core</artifactId>
             <version>${maven.version}</version>
+            <optional>true</optional>
+            <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.maven</groupId>
-            <artifactId>maven-plugin-api</artifactId>
-            <version>${maven.version}</version>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

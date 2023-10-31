@@ -54,7 +54,8 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         "freeformTags",
         "definedTags",
         "crashRecovery",
-        "pointInTimeRecoveryDetails"
+        "pointInTimeRecoveryDetails",
+        "databaseManagement"
     })
     public DbSystem(
             String id,
@@ -89,7 +90,8 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             CrashRecoveryStatus crashRecovery,
-            PointInTimeRecoveryDetails pointInTimeRecoveryDetails) {
+            PointInTimeRecoveryDetails pointInTimeRecoveryDetails,
+            DatabaseManagementStatus databaseManagement) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -124,6 +126,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         this.definedTags = definedTags;
         this.crashRecovery = crashRecovery;
         this.pointInTimeRecoveryDetails = pointInTimeRecoveryDetails;
+        this.databaseManagement = databaseManagement;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -657,6 +660,21 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("pointInTimeRecoveryDetails");
             return this;
         }
+        /** Whether to enable monitoring via the Database Management service. */
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseManagement")
+        private DatabaseManagementStatus databaseManagement;
+
+        /**
+         * Whether to enable monitoring via the Database Management service.
+         *
+         * @param databaseManagement the value to set
+         * @return this builder
+         */
+        public Builder databaseManagement(DatabaseManagementStatus databaseManagement) {
+            this.databaseManagement = databaseManagement;
+            this.__explicitlySet__.add("databaseManagement");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -696,7 +714,8 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                             this.freeformTags,
                             this.definedTags,
                             this.crashRecovery,
-                            this.pointInTimeRecoveryDetails);
+                            this.pointInTimeRecoveryDetails,
+                            this.databaseManagement);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -803,6 +822,9 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("pointInTimeRecoveryDetails")) {
                 this.pointInTimeRecoveryDetails(model.getPointInTimeRecoveryDetails());
+            }
+            if (model.wasPropertyExplicitlySet("databaseManagement")) {
+                this.databaseManagement(model.getDatabaseManagement());
             }
             return this;
         }
@@ -1329,6 +1351,19 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         return pointInTimeRecoveryDetails;
     }
 
+    /** Whether to enable monitoring via the Database Management service. */
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseManagement")
+    private final DatabaseManagementStatus databaseManagement;
+
+    /**
+     * Whether to enable monitoring via the Database Management service.
+     *
+     * @return the value
+     */
+    public DatabaseManagementStatus getDatabaseManagement() {
+        return databaseManagement;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1379,6 +1414,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", crashRecovery=").append(String.valueOf(this.crashRecovery));
         sb.append(", pointInTimeRecoveryDetails=")
                 .append(String.valueOf(this.pointInTimeRecoveryDetails));
+        sb.append(", databaseManagement=").append(String.valueOf(this.databaseManagement));
         sb.append(")");
         return sb.toString();
     }
@@ -1428,6 +1464,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.crashRecovery, other.crashRecovery)
                 && java.util.Objects.equals(
                         this.pointInTimeRecoveryDetails, other.pointInTimeRecoveryDetails)
+                && java.util.Objects.equals(this.databaseManagement, other.databaseManagement)
                 && super.equals(other);
     }
 
@@ -1504,6 +1541,11 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                         + (this.pointInTimeRecoveryDetails == null
                                 ? 43
                                 : this.pointInTimeRecoveryDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseManagement == null
+                                ? 43
+                                : this.databaseManagement.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -16,26 +16,26 @@ public class IgnoreDrPlanExecutionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.disasterrecovery.model.IgnoreDrPlanExecutionDetails> {
 
-    /** Details of the failed group or step to ignore. */
+    /** Details for ignoring the failed group or step and resuming execution. */
     private com.oracle.bmc.disasterrecovery.model.IgnoreDrPlanExecutionDetails
             ignoreDrPlanExecutionDetails;
 
-    /** Details of the failed group or step to ignore. */
+    /** Details for ignoring the failed group or step and resuming execution. */
     public com.oracle.bmc.disasterrecovery.model.IgnoreDrPlanExecutionDetails
             getIgnoreDrPlanExecutionDetails() {
         return ignoreDrPlanExecutionDetails;
     }
     /**
-     * The OCID of the DR Plan Execution.
+     * The OCID of the DR plan execution.
      *
-     * <p>Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+     * <p>Example: {@code ocid1.drplanexecution.oc1..uniqueID}
      */
     private String drPlanExecutionId;
 
     /**
-     * The OCID of the DR Plan Execution.
+     * The OCID of the DR plan execution.
      *
-     * <p>Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+     * <p>Example: {@code ocid1.drplanexecution.oc1..uniqueID}
      */
     public String getDrPlanExecutionId() {
         return drPlanExecutionId;
@@ -102,12 +102,12 @@ public class IgnoreDrPlanExecutionRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details of the failed group or step to ignore. */
+        /** Details for ignoring the failed group or step and resuming execution. */
         private com.oracle.bmc.disasterrecovery.model.IgnoreDrPlanExecutionDetails
                 ignoreDrPlanExecutionDetails = null;
 
         /**
-         * Details of the failed group or step to ignore.
+         * Details for ignoring the failed group or step and resuming execution.
          *
          * @param ignoreDrPlanExecutionDetails the value to set
          * @return this builder instance
@@ -120,16 +120,16 @@ public class IgnoreDrPlanExecutionRequest
         }
 
         /**
-         * The OCID of the DR Plan Execution.
+         * The OCID of the DR plan execution.
          *
-         * <p>Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+         * <p>Example: {@code ocid1.drplanexecution.oc1..uniqueID}
          */
         private String drPlanExecutionId = null;
 
         /**
-         * The OCID of the DR Plan Execution.
+         * The OCID of the DR plan execution.
          *
-         * <p>Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+         * <p>Example: {@code ocid1.drplanexecution.oc1..uniqueID}
          *
          * @param drPlanExecutionId the value to set
          * @return this builder instance

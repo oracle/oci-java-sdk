@@ -26,6 +26,7 @@ public final class DiscoveryDetails
         "agentId",
         "resourceType",
         "resourceName",
+        "license",
         "properties",
         "credentials",
         "tags"
@@ -34,6 +35,7 @@ public final class DiscoveryDetails
             String agentId,
             ResourceType resourceType,
             String resourceName,
+            LicenseType license,
             PropertyDetails properties,
             CredentialCollection credentials,
             PropertyDetails tags) {
@@ -41,6 +43,7 @@ public final class DiscoveryDetails
         this.agentId = agentId;
         this.resourceType = resourceType;
         this.resourceName = resourceName;
+        this.license = license;
         this.properties = properties;
         this.credentials = credentials;
         this.tags = tags;
@@ -93,6 +96,21 @@ public final class DiscoveryDetails
             this.__explicitlySet__.add("resourceName");
             return this;
         }
+        /** License edition of the monitored resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("license")
+        private LicenseType license;
+
+        /**
+         * License edition of the monitored resource.
+         *
+         * @param license the value to set
+         * @return this builder
+         */
+        public Builder license(LicenseType license) {
+            this.license = license;
+            this.__explicitlySet__.add("license");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private PropertyDetails properties;
@@ -130,6 +148,7 @@ public final class DiscoveryDetails
                             this.agentId,
                             this.resourceType,
                             this.resourceName,
+                            this.license,
                             this.properties,
                             this.credentials,
                             this.tags);
@@ -149,6 +168,9 @@ public final class DiscoveryDetails
             }
             if (model.wasPropertyExplicitlySet("resourceName")) {
                 this.resourceName(model.getResourceName());
+            }
+            if (model.wasPropertyExplicitlySet("license")) {
+                this.license(model.getLicense());
             }
             if (model.wasPropertyExplicitlySet("properties")) {
                 this.properties(model.getProperties());
@@ -266,6 +288,19 @@ public final class DiscoveryDetails
         return resourceName;
     }
 
+    /** License edition of the monitored resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("license")
+    private final LicenseType license;
+
+    /**
+     * License edition of the monitored resource.
+     *
+     * @return the value
+     */
+    public LicenseType getLicense() {
+        return license;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final PropertyDetails properties;
 
@@ -305,6 +340,7 @@ public final class DiscoveryDetails
         sb.append("agentId=").append(String.valueOf(this.agentId));
         sb.append(", resourceType=").append(String.valueOf(this.resourceType));
         sb.append(", resourceName=").append(String.valueOf(this.resourceName));
+        sb.append(", license=").append(String.valueOf(this.license));
         sb.append(", properties=").append(String.valueOf(this.properties));
         sb.append(", credentials=").append(String.valueOf(this.credentials));
         sb.append(", tags=").append(String.valueOf(this.tags));
@@ -325,6 +361,7 @@ public final class DiscoveryDetails
         return java.util.Objects.equals(this.agentId, other.agentId)
                 && java.util.Objects.equals(this.resourceType, other.resourceType)
                 && java.util.Objects.equals(this.resourceName, other.resourceName)
+                && java.util.Objects.equals(this.license, other.license)
                 && java.util.Objects.equals(this.properties, other.properties)
                 && java.util.Objects.equals(this.credentials, other.credentials)
                 && java.util.Objects.equals(this.tags, other.tags)
@@ -338,6 +375,7 @@ public final class DiscoveryDetails
         result = (result * PRIME) + (this.agentId == null ? 43 : this.agentId.hashCode());
         result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
         result = (result * PRIME) + (this.resourceName == null ? 43 : this.resourceName.hashCode());
+        result = (result * PRIME) + (this.license == null ? 43 : this.license.hashCode());
         result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
         result = (result * PRIME) + (this.credentials == null ? 43 : this.credentials.hashCode());
         result = (result * PRIME) + (this.tags == null ? 43 : this.tags.hashCode());

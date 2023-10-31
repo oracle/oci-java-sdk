@@ -1,0 +1,123 @@
+[
+  {
+    "name":"sun.misc.Unsafe",
+    "allDeclaredFields":true,
+    "methods":[
+      {"name":"copyMemory","parameterTypes":["java.lang.Object","long","java.lang.Object","long","long"] },
+      {"name":"getAndAddLong","parameterTypes":["java.lang.Object","long","long"] },
+      {"name":"getAndSetObject","parameterTypes":["java.lang.Object","long","java.lang.Object"] }
+    ]
+  },
+  {
+    "name":"sun.nio.ch.SelectorImpl",
+    "fields":[
+      {"name":"publicSelectedKeys", "allowUnsafeAccess":true},
+      {"name":"selectedKeys", "allowUnsafeAccess":true}
+    ]
+  },
+  {
+    "name":"java.net.InetAddress[]"
+  },
+  {
+    "name":"javax.xml.transform.Source"
+  },
+  {
+    "name":"javax.xml.transform.dom.DOMSource"
+  },
+  {
+    "name":"javax.xml.transform.sax.SAXSource"
+  },
+  {
+    "name":"javax.xml.transform.stream.StreamSource"
+  },
+  {
+    "name": "com.oracle.bmc.http.client.jersey.internal.DaemonClientAsyncExecutorProvider",
+    "allDeclaredFields": true,
+    "allDeclaredConstructors": true,
+    "queryAllDeclaredMethods": true
+  },
+  {
+    "name":"com.oracle.bmc.http.client.io.DuplicatableInputStream",
+    "allDeclaredClasses":true,
+    "queryAllPublicMethods":true
+  },
+  {
+    "name": "java.awt.image.RenderedImage"
+  },
+  {
+    "name":"java.io.Closeable",
+    "allDeclaredClasses":true,
+    "queryAllPublicMethods":true
+  },
+  {
+    "name":"java.io.InputStream",
+    "allDeclaredClasses":true,
+    "queryAllDeclaredMethods":true,
+    "queryAllPublicMethods":true
+  },
+  {
+    "name":"java.io.Serializable",
+    "allDeclaredClasses":true,
+    "queryAllPublicMethods":true
+  },
+  {
+    "name":"java.lang.AutoCloseable",
+    "allDeclaredClasses":true,
+    "queryAllPublicMethods":true
+  },
+  {
+    "name":"java.lang.Comparable",
+    "allDeclaredClasses":true,
+    "queryAllPublicMethods":true
+  },
+  {
+    "name":"java.lang.Enum",
+    "allDeclaredClasses":true,
+    "queryAllDeclaredMethods":true,
+    "queryAllPublicMethods":true
+  },
+  {
+    "name":"java.lang.Object",
+    "allDeclaredFields":true,
+    "queryAllDeclaredMethods":true
+  },
+  {
+    "name":"java.util.concurrent.atomic.AtomicBoolean",
+    "fields":[{"name":"value"}]
+  },
+  {
+    "name":"java.util.concurrent.atomic.AtomicReference",
+    "fields":[{"name":"value"}]
+  },
+  {
+    "name":"java.util.HashSet",
+    "methods":[{"name":"<init>","parameterTypes":[] }]
+  },
+  {
+    "name": "javax.activation.DataSource"
+  },
+  {
+    "name": "javax.inject.Named",
+    "queryAllDeclaredMethods": true,
+    "methods": [
+      { "name": "value", "parameterTypes": [] }
+    ]
+  },
+  {
+    "name": "javax.inject.Singleton",
+    "queryAllDeclaredMethods": true
+  },
+  {
+    "name": "javax.naming.InitialContext",
+    "methods": [
+      { "name": "<init>", "parameterTypes": [] },
+      { "name": "lookup", "parameterTypes": ["java.lang.String"] }
+    ]
+  },
+  {
+    "name":"com.oracle.bmc.model.BmcException",
+    "allDeclaredFields":true,
+    "allDeclaredMethods":true,
+    "allDeclaredConstructors":true
+  }
+]

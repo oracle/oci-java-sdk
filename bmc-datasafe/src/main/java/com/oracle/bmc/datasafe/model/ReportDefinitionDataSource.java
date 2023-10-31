@@ -11,6 +11,8 @@ package com.oracle.bmc.datasafe.model;
 public enum ReportDefinitionDataSource implements com.oracle.bmc.http.internal.BmcEnum {
     Events("EVENTS"),
     Alerts("ALERTS"),
+    Violations("VIOLATIONS"),
+    AllowedSql("ALLOWED_SQL"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

@@ -5,7 +5,7 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The details for creating a DR Plan Execution. <br>
+ * The details for creating a DR plan execution. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -47,7 +47,7 @@ public final class CreateDrPlanExecutionDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The display name of the DR Plan Execution.
+         * The display name of the DR plan execution.
          *
          * <p>Example: {@code Execution - EBS Switchover PHX to IAD}
          */
@@ -55,7 +55,7 @@ public final class CreateDrPlanExecutionDetails
         private String displayName;
 
         /**
-         * The display name of the DR Plan Execution.
+         * The display name of the DR plan execution.
          *
          * <p>Example: {@code Execution - EBS Switchover PHX to IAD}
          *
@@ -68,17 +68,17 @@ public final class CreateDrPlanExecutionDetails
             return this;
         }
         /**
-         * The OCID of the DR Plan.
+         * The OCID of the DR plan.
          *
-         * <p>Example: {@code ocid1.drplan.oc1.iad.&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.drplan.oc1..uniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("planId")
         private String planId;
 
         /**
-         * The OCID of the DR Plan.
+         * The OCID of the DR plan.
          *
-         * <p>Example: {@code ocid1.drplan.oc1.iad.&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.drplan.oc1..uniqueID}
          *
          * @param planId the value to set
          * @return this builder
@@ -99,14 +99,18 @@ public final class CreateDrPlanExecutionDetails
         }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"Department": "Finance"}}
+         * for cross-compatibility only.
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"Department": "Finance"}}
+         * for cross-compatibility only.
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
@@ -118,14 +122,16 @@ public final class CreateDrPlanExecutionDetails
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
@@ -185,7 +191,7 @@ public final class CreateDrPlanExecutionDetails
     }
 
     /**
-     * The display name of the DR Plan Execution.
+     * The display name of the DR plan execution.
      *
      * <p>Example: {@code Execution - EBS Switchover PHX to IAD}
      */
@@ -193,7 +199,7 @@ public final class CreateDrPlanExecutionDetails
     private final String displayName;
 
     /**
-     * The display name of the DR Plan Execution.
+     * The display name of the DR plan execution.
      *
      * <p>Example: {@code Execution - EBS Switchover PHX to IAD}
      *
@@ -204,17 +210,17 @@ public final class CreateDrPlanExecutionDetails
     }
 
     /**
-     * The OCID of the DR Plan.
+     * The OCID of the DR plan.
      *
-     * <p>Example: {@code ocid1.drplan.oc1.iad.&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.drplan.oc1..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("planId")
     private final String planId;
 
     /**
-     * The OCID of the DR Plan.
+     * The OCID of the DR plan.
      *
-     * <p>Example: {@code ocid1.drplan.oc1.iad.&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.drplan.oc1..uniqueID}
      *
      * @return the value
      */
@@ -231,14 +237,18 @@ public final class CreateDrPlanExecutionDetails
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"Department": "Finance"}}
+     * cross-compatibility only.
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"Department": "Finance"}}
+     * cross-compatibility only.
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      *
      * @return the value
      */
@@ -247,15 +257,17 @@ public final class CreateDrPlanExecutionDetails
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     *
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     *
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
      */

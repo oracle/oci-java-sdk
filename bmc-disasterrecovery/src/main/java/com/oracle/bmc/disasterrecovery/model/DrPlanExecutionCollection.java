@@ -5,8 +5,7 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Results of a DR Plan Execution search. Contains both DR Plan Execution summary items and other
- * information, such as metadata. <br>
+ * A list of DR plan execution summaries. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,12 +31,12 @@ public final class DrPlanExecutionCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A list of all DR Plan Execution summary objects. */
+        /** A list of DR plan execution summaries. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DrPlanExecutionSummary> items;
 
         /**
-         * A list of all DR Plan Execution summary objects.
+         * A list of DR plan execution summaries.
          *
          * @param items the value to set
          * @return this builder
@@ -77,12 +76,12 @@ public final class DrPlanExecutionCollection
         return new Builder().copy(this);
     }
 
-    /** A list of all DR Plan Execution summary objects. */
+    /** A list of DR plan execution summaries. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DrPlanExecutionSummary> items;
 
     /**
-     * A list of all DR Plan Execution summary objects.
+     * A list of DR plan execution summaries.
      *
      * @return the value
      */

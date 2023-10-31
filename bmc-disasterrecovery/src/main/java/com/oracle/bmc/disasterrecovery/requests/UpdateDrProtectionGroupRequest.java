@@ -16,26 +16,26 @@ public class UpdateDrProtectionGroupRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.disasterrecovery.model.UpdateDrProtectionGroupDetails> {
 
-    /** Details of DR Protection Group to update. */
+    /** Details for updating the the DR protection group. */
     private com.oracle.bmc.disasterrecovery.model.UpdateDrProtectionGroupDetails
             updateDrProtectionGroupDetails;
 
-    /** Details of DR Protection Group to update. */
+    /** Details for updating the the DR protection group. */
     public com.oracle.bmc.disasterrecovery.model.UpdateDrProtectionGroupDetails
             getUpdateDrProtectionGroupDetails() {
         return updateDrProtectionGroupDetails;
     }
     /**
-     * The OCID of the DR Protection Group.
+     * The OCID of the DR protection group.
      *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      */
     private String drProtectionGroupId;
 
     /**
-     * The OCID of the DR Protection Group.
+     * The OCID of the DR protection group.
      *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      */
     public String getDrProtectionGroupId() {
         return drProtectionGroupId;
@@ -83,12 +83,12 @@ public class UpdateDrProtectionGroupRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details of DR Protection Group to update. */
+        /** Details for updating the the DR protection group. */
         private com.oracle.bmc.disasterrecovery.model.UpdateDrProtectionGroupDetails
                 updateDrProtectionGroupDetails = null;
 
         /**
-         * Details of DR Protection Group to update.
+         * Details for updating the the DR protection group.
          *
          * @param updateDrProtectionGroupDetails the value to set
          * @return this builder instance
@@ -101,16 +101,16 @@ public class UpdateDrProtectionGroupRequest
         }
 
         /**
-         * The OCID of the DR Protection Group.
+         * The OCID of the DR protection group.
          *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          */
         private String drProtectionGroupId = null;
 
         /**
-         * The OCID of the DR Protection Group.
+         * The OCID of the DR protection group.
          *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
          * @param drProtectionGroupId the value to set
          * @return this builder instance

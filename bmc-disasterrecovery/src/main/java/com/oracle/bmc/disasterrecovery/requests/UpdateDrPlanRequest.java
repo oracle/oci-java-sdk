@@ -15,24 +15,24 @@ public class UpdateDrPlanRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.disasterrecovery.model.UpdateDrPlanDetails> {
 
-    /** Details of DR Plan to update. */
+    /** Details for updating the DR plan. */
     private com.oracle.bmc.disasterrecovery.model.UpdateDrPlanDetails updateDrPlanDetails;
 
-    /** Details of DR Plan to update. */
+    /** Details for updating the DR plan. */
     public com.oracle.bmc.disasterrecovery.model.UpdateDrPlanDetails getUpdateDrPlanDetails() {
         return updateDrPlanDetails;
     }
     /**
-     * The OCID of the DR Plan.
+     * The OCID of the DR plan.
      *
-     * <p>Example: {@code ocid1.drplan.oc1.iad.exampleocid}
+     * <p>Example: {@code ocid1.drplan.oc1..uniqueID}
      */
     private String drPlanId;
 
     /**
-     * The OCID of the DR Plan.
+     * The OCID of the DR plan.
      *
-     * <p>Example: {@code ocid1.drplan.oc1.iad.exampleocid}
+     * <p>Example: {@code ocid1.drplan.oc1..uniqueID}
      */
     public String getDrPlanId() {
         return drPlanId;
@@ -80,12 +80,12 @@ public class UpdateDrPlanRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details of DR Plan to update. */
+        /** Details for updating the DR plan. */
         private com.oracle.bmc.disasterrecovery.model.UpdateDrPlanDetails updateDrPlanDetails =
                 null;
 
         /**
-         * Details of DR Plan to update.
+         * Details for updating the DR plan.
          *
          * @param updateDrPlanDetails the value to set
          * @return this builder instance
@@ -97,16 +97,16 @@ public class UpdateDrPlanRequest
         }
 
         /**
-         * The OCID of the DR Plan.
+         * The OCID of the DR plan.
          *
-         * <p>Example: {@code ocid1.drplan.oc1.iad.exampleocid}
+         * <p>Example: {@code ocid1.drplan.oc1..uniqueID}
          */
         private String drPlanId = null;
 
         /**
-         * The OCID of the DR Plan.
+         * The OCID of the DR plan.
          *
-         * <p>Example: {@code ocid1.drplan.oc1.iad.exampleocid}
+         * <p>Example: {@code ocid1.drplan.oc1..uniqueID}
          *
          * @param drPlanId the value to set
          * @return this builder instance

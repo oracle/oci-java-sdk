@@ -5,9 +5,10 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Group types in a DR Plan. - USER_DEFINED - DR Plan group whose contents are defined by the user.
- * - BUILT_IN - DR Plan group whose contents are pre-defined by the service. - BUILT_IN_PRECHECK -
- * DR Plan precheck group whose contents are pre-defined by the service.
+ * The types of groups in a DR plan. - USER_DEFINED - DR plan group whose contents are defined by
+ * the user. - BUILT_IN - DR plan group whose contents are pre-defined by the service. These groups
+ * cannot be modified by the user. - BUILT_IN_PRECHECK - DR plan precheck group whose contents are
+ * pre-defined by the service. These groups cannot be modified by the user.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public enum DrPlanGroupType implements com.oracle.bmc.http.internal.BmcEnum {

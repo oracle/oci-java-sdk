@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.disasterrecovery.model;
 
-/** Operation types for resources. */
+/** The types of operations that can be performed on Full Stack DR resources. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreateDrProtectionGroup("CREATE_DR_PROTECTION_GROUP"),

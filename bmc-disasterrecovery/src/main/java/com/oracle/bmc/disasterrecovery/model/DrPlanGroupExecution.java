@@ -5,7 +5,7 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Summary information about a group execution in a DR Plan Execution. <br>
+ * The details of a group execution in a DR plan execution. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -61,7 +61,7 @@ public final class DrPlanGroupExecution
         /**
          * The unique id of the group. Must not be modified by user.
          *
-         * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
+         * <p>Example: {@code sgid1.group..uniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("groupId")
         private String groupId;
@@ -69,7 +69,7 @@ public final class DrPlanGroupExecution
         /**
          * The unique id of the group. Must not be modified by user.
          *
-         * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
+         * <p>Example: {@code sgid1.group..uniqueID}
          *
          * @param groupId the value to set
          * @return this builder
@@ -79,12 +79,18 @@ public final class DrPlanGroupExecution
             this.__explicitlySet__.add("groupId");
             return this;
         }
-        /** The plan group type. */
+        /**
+         * The group type.
+         *
+         * <p>Example: {@code BUILT_IN}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private DrPlanGroupType type;
 
         /**
-         * The plan group type.
+         * The group type.
+         *
+         * <p>Example: {@code BUILT_IN}
          *
          * @param type the value to set
          * @return this builder
@@ -95,7 +101,7 @@ public final class DrPlanGroupExecution
             return this;
         }
         /**
-         * The display name of group that was executed.
+         * The display name of the group execution.
          *
          * <p>Example: {@code DATABASE_SWITCHOVER}
          */
@@ -103,7 +109,7 @@ public final class DrPlanGroupExecution
         private String displayName;
 
         /**
-         * The display name of group that was executed.
+         * The display name of the group execution.
          *
          * <p>Example: {@code DATABASE_SWITCHOVER}
          *
@@ -131,17 +137,17 @@ public final class DrPlanGroupExecution
             return this;
         }
         /**
-         * Additional details about the group execution status.
+         * Additional details on the group execution status.
          *
-         * <p>Example: {@code A total of three steps failed in the group}
+         * <p>Example: {@code A total of [3] steps failed in the group}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("statusDetails")
         private String statusDetails;
 
         /**
-         * Additional details about the group execution status.
+         * Additional details on the group execution status.
          *
-         * <p>Example: {@code A total of three steps failed in the group}
+         * <p>Example: {@code A total of [3] steps failed in the group}
          *
          * @param statusDetails the value to set
          * @return this builder
@@ -152,7 +158,7 @@ public final class DrPlanGroupExecution
             return this;
         }
         /**
-         * The time at which group execution began. An RFC3339 formatted datetime string.
+         * The time when group execution began. An RFC3339 formatted datetime string.
          *
          * <p>Example: {@code 2019-03-29T09:36:42Z}
          */
@@ -160,7 +166,7 @@ public final class DrPlanGroupExecution
         private java.util.Date timeStarted;
 
         /**
-         * The time at which group execution began. An RFC3339 formatted datetime string.
+         * The time when group execution began. An RFC3339 formatted datetime string.
          *
          * <p>Example: {@code 2019-03-29T09:36:42Z}
          *
@@ -173,7 +179,7 @@ public final class DrPlanGroupExecution
             return this;
         }
         /**
-         * The time at which group execution ended. An RFC3339 formatted datetime string.
+         * The time when group execution ended. An RFC3339 formatted datetime string.
          *
          * <p>Example: {@code 2019-03-29T09:36:42Z}
          */
@@ -181,7 +187,7 @@ public final class DrPlanGroupExecution
         private java.util.Date timeEnded;
 
         /**
-         * The time at which group execution ended. An RFC3339 formatted datetime string.
+         * The time when group execution ended. An RFC3339 formatted datetime string.
          *
          * <p>Example: {@code 2019-03-29T09:36:42Z}
          *
@@ -214,12 +220,12 @@ public final class DrPlanGroupExecution
             this.__explicitlySet__.add("executionDurationInSec");
             return this;
         }
-        /** A list of details of each step executed in this group. */
+        /** A list of step executions in the group. */
         @com.fasterxml.jackson.annotation.JsonProperty("stepExecutions")
         private java.util.List<DrPlanStepExecution> stepExecutions;
 
         /**
-         * A list of details of each step executed in this group.
+         * A list of step executions in the group.
          *
          * @param stepExecutions the value to set
          * @return this builder
@@ -296,7 +302,7 @@ public final class DrPlanGroupExecution
     /**
      * The unique id of the group. Must not be modified by user.
      *
-     * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
+     * <p>Example: {@code sgid1.group..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("groupId")
     private final String groupId;
@@ -304,7 +310,7 @@ public final class DrPlanGroupExecution
     /**
      * The unique id of the group. Must not be modified by user.
      *
-     * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
+     * <p>Example: {@code sgid1.group..uniqueID}
      *
      * @return the value
      */
@@ -312,12 +318,18 @@ public final class DrPlanGroupExecution
         return groupId;
     }
 
-    /** The plan group type. */
+    /**
+     * The group type.
+     *
+     * <p>Example: {@code BUILT_IN}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final DrPlanGroupType type;
 
     /**
-     * The plan group type.
+     * The group type.
+     *
+     * <p>Example: {@code BUILT_IN}
      *
      * @return the value
      */
@@ -326,7 +338,7 @@ public final class DrPlanGroupExecution
     }
 
     /**
-     * The display name of group that was executed.
+     * The display name of the group execution.
      *
      * <p>Example: {@code DATABASE_SWITCHOVER}
      */
@@ -334,7 +346,7 @@ public final class DrPlanGroupExecution
     private final String displayName;
 
     /**
-     * The display name of group that was executed.
+     * The display name of the group execution.
      *
      * <p>Example: {@code DATABASE_SWITCHOVER}
      *
@@ -358,17 +370,17 @@ public final class DrPlanGroupExecution
     }
 
     /**
-     * Additional details about the group execution status.
+     * Additional details on the group execution status.
      *
-     * <p>Example: {@code A total of three steps failed in the group}
+     * <p>Example: {@code A total of [3] steps failed in the group}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("statusDetails")
     private final String statusDetails;
 
     /**
-     * Additional details about the group execution status.
+     * Additional details on the group execution status.
      *
-     * <p>Example: {@code A total of three steps failed in the group}
+     * <p>Example: {@code A total of [3] steps failed in the group}
      *
      * @return the value
      */
@@ -377,7 +389,7 @@ public final class DrPlanGroupExecution
     }
 
     /**
-     * The time at which group execution began. An RFC3339 formatted datetime string.
+     * The time when group execution began. An RFC3339 formatted datetime string.
      *
      * <p>Example: {@code 2019-03-29T09:36:42Z}
      */
@@ -385,7 +397,7 @@ public final class DrPlanGroupExecution
     private final java.util.Date timeStarted;
 
     /**
-     * The time at which group execution began. An RFC3339 formatted datetime string.
+     * The time when group execution began. An RFC3339 formatted datetime string.
      *
      * <p>Example: {@code 2019-03-29T09:36:42Z}
      *
@@ -396,7 +408,7 @@ public final class DrPlanGroupExecution
     }
 
     /**
-     * The time at which group execution ended. An RFC3339 formatted datetime string.
+     * The time when group execution ended. An RFC3339 formatted datetime string.
      *
      * <p>Example: {@code 2019-03-29T09:36:42Z}
      */
@@ -404,7 +416,7 @@ public final class DrPlanGroupExecution
     private final java.util.Date timeEnded;
 
     /**
-     * The time at which group execution ended. An RFC3339 formatted datetime string.
+     * The time when group execution ended. An RFC3339 formatted datetime string.
      *
      * <p>Example: {@code 2019-03-29T09:36:42Z}
      *
@@ -433,12 +445,12 @@ public final class DrPlanGroupExecution
         return executionDurationInSec;
     }
 
-    /** A list of details of each step executed in this group. */
+    /** A list of step executions in the group. */
     @com.fasterxml.jackson.annotation.JsonProperty("stepExecutions")
     private final java.util.List<DrPlanStepExecution> stepExecutions;
 
     /**
-     * A list of details of each step executed in this group.
+     * A list of step executions in the group.
      *
      * @return the value
      */

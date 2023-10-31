@@ -313,6 +313,7 @@ public class ListProfileSummariesRequest
         UserCount("userCount"),
         SessionsPerUser("sessionsPerUser"),
         InactiveAccountTime("inactiveAccountTime"),
+        PasswordLockTime("passwordLockTime"),
         FailedLoginAttempts("failedLoginAttempts"),
         ;
 

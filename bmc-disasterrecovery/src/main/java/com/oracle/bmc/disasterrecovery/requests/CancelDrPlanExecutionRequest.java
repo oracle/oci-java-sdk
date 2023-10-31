@@ -16,26 +16,26 @@ public class CancelDrPlanExecutionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.disasterrecovery.model.CancelDrPlanExecutionDetails> {
 
-    /** Details for canceling a DR Plan Execution. */
+    /** Details for canceling the DR plan execution. */
     private com.oracle.bmc.disasterrecovery.model.CancelDrPlanExecutionDetails
             cancelDrPlanExecutionDetails;
 
-    /** Details for canceling a DR Plan Execution. */
+    /** Details for canceling the DR plan execution. */
     public com.oracle.bmc.disasterrecovery.model.CancelDrPlanExecutionDetails
             getCancelDrPlanExecutionDetails() {
         return cancelDrPlanExecutionDetails;
     }
     /**
-     * The OCID of the DR Plan Execution.
+     * The OCID of the DR plan execution.
      *
-     * <p>Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+     * <p>Example: {@code ocid1.drplanexecution.oc1..uniqueID}
      */
     private String drPlanExecutionId;
 
     /**
-     * The OCID of the DR Plan Execution.
+     * The OCID of the DR plan execution.
      *
-     * <p>Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+     * <p>Example: {@code ocid1.drplanexecution.oc1..uniqueID}
      */
     public String getDrPlanExecutionId() {
         return drPlanExecutionId;
@@ -102,12 +102,12 @@ public class CancelDrPlanExecutionRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for canceling a DR Plan Execution. */
+        /** Details for canceling the DR plan execution. */
         private com.oracle.bmc.disasterrecovery.model.CancelDrPlanExecutionDetails
                 cancelDrPlanExecutionDetails = null;
 
         /**
-         * Details for canceling a DR Plan Execution.
+         * Details for canceling the DR plan execution.
          *
          * @param cancelDrPlanExecutionDetails the value to set
          * @return this builder instance
@@ -120,16 +120,16 @@ public class CancelDrPlanExecutionRequest
         }
 
         /**
-         * The OCID of the DR Plan Execution.
+         * The OCID of the DR plan execution.
          *
-         * <p>Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+         * <p>Example: {@code ocid1.drplanexecution.oc1..uniqueID}
          */
         private String drPlanExecutionId = null;
 
         /**
-         * The OCID of the DR Plan Execution.
+         * The OCID of the DR plan execution.
          *
-         * <p>Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+         * <p>Example: {@code ocid1.drplanexecution.oc1..uniqueID}
          *
          * @param drPlanExecutionId the value to set
          * @return this builder instance

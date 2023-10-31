@@ -16,26 +16,26 @@ public class DisassociateDrProtectionGroupRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.disasterrecovery.model.DisassociateDrProtectionGroupDetails> {
 
-    /** Details for removing an association between two DR Protection Groups. */
+    /** Details for deleting the association between two DR protection groups. */
     private com.oracle.bmc.disasterrecovery.model.DisassociateDrProtectionGroupDetails
             disassociateDrProtectionGroupDetails;
 
-    /** Details for removing an association between two DR Protection Groups. */
+    /** Details for deleting the association between two DR protection groups. */
     public com.oracle.bmc.disasterrecovery.model.DisassociateDrProtectionGroupDetails
             getDisassociateDrProtectionGroupDetails() {
         return disassociateDrProtectionGroupDetails;
     }
     /**
-     * The OCID of the DR Protection Group.
+     * The OCID of the DR protection group.
      *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      */
     private String drProtectionGroupId;
 
     /**
-     * The OCID of the DR Protection Group.
+     * The OCID of the DR protection group.
      *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      */
     public String getDrProtectionGroupId() {
         return drProtectionGroupId;
@@ -102,12 +102,12 @@ public class DisassociateDrProtectionGroupRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for removing an association between two DR Protection Groups. */
+        /** Details for deleting the association between two DR protection groups. */
         private com.oracle.bmc.disasterrecovery.model.DisassociateDrProtectionGroupDetails
                 disassociateDrProtectionGroupDetails = null;
 
         /**
-         * Details for removing an association between two DR Protection Groups.
+         * Details for deleting the association between two DR protection groups.
          *
          * @param disassociateDrProtectionGroupDetails the value to set
          * @return this builder instance
@@ -120,16 +120,16 @@ public class DisassociateDrProtectionGroupRequest
         }
 
         /**
-         * The OCID of the DR Protection Group.
+         * The OCID of the DR protection group.
          *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          */
         private String drProtectionGroupId = null;
 
         /**
-         * The OCID of the DR Protection Group.
+         * The OCID of the DR protection group.
          *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
          * @param drProtectionGroupId the value to set
          * @return this builder instance

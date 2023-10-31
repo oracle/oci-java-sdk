@@ -244,19 +244,19 @@ public final class CreateDiscoveryJobDetails
             return this;
         }
         /**
-         * Indicates if all the schemas should be scanned by the discovery job. If it's set to true,
-         * the schemasForDiscovery attribute is ignored and all schemas are used for data discovery.
-         * If both attributes are not provided, the configuration from the sensitive data model is
-         * used.
+         * Indicates if all the schemas should be scanned by the discovery job. If it is set to
+         * true, sensitive data is discovered in all schemas (except for schemas maintained by
+         * Oracle). If both attributes are not provided, the configuration from the sensitive data
+         * model is used.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isIncludeAllSchemas")
         private Boolean isIncludeAllSchemas;
 
         /**
-         * Indicates if all the schemas should be scanned by the discovery job. If it's set to true,
-         * the schemasForDiscovery attribute is ignored and all schemas are used for data discovery.
-         * If both attributes are not provided, the configuration from the sensitive data model is
-         * used.
+         * Indicates if all the schemas should be scanned by the discovery job. If it is set to
+         * true, sensitive data is discovered in all schemas (except for schemas maintained by
+         * Oracle). If both attributes are not provided, the configuration from the sensitive data
+         * model is used.
          *
          * @param isIncludeAllSchemas the value to set
          * @return this builder
@@ -574,17 +574,17 @@ public final class CreateDiscoveryJobDetails
     }
 
     /**
-     * Indicates if all the schemas should be scanned by the discovery job. If it's set to true, the
-     * schemasForDiscovery attribute is ignored and all schemas are used for data discovery. If both
-     * attributes are not provided, the configuration from the sensitive data model is used.
+     * Indicates if all the schemas should be scanned by the discovery job. If it is set to true,
+     * sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If
+     * both attributes are not provided, the configuration from the sensitive data model is used.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isIncludeAllSchemas")
     private final Boolean isIncludeAllSchemas;
 
     /**
-     * Indicates if all the schemas should be scanned by the discovery job. If it's set to true, the
-     * schemasForDiscovery attribute is ignored and all schemas are used for data discovery. If both
-     * attributes are not provided, the configuration from the sensitive data model is used.
+     * Indicates if all the schemas should be scanned by the discovery job. If it is set to true,
+     * sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If
+     * both attributes are not provided, the configuration from the sensitive data model is used.
      *
      * @return the value
      */

@@ -28,7 +28,6 @@ import com.oracle.bmc.retrier.Retriers;
 import com.oracle.bmc.retrier.RetryConfiguration;
 import com.oracle.bmc.retrier.TokenRefreshRetrier;
 import com.oracle.bmc.util.internal.CollectionFormatType;
-import com.oracle.bmc.util.internal.ReflectionUtils;
 import com.oracle.bmc.util.internal.StringUtils;
 import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
 import com.oracle.bmc.waiter.TerminationStrategy;
@@ -479,10 +478,10 @@ public final class ClientCall<
                     continue;
                 }
 
-                if (v instanceof Enum) {
-                    final Object rawValue = ReflectionUtils.invokeGetter(v, "getValue");
+                if (v instanceof BmcEnum) {
+                    final String rawValue = ((BmcEnum) v).getValue();
                     if (rawValue != null) {
-                        valuesToUse.add((String) rawValue);
+                        valuesToUse.add(rawValue);
                     } else {
                         throw new IllegalArgumentException(
                                 String.format(
@@ -931,6 +930,7 @@ public final class ClientCall<
         }
         firstAttempt = false;
 
+        String requestId = generateRequestId();
         if (sendRetryToken) {
             RetryTokenUtils.addRetryToken(httpRequest);
         }
@@ -948,7 +948,6 @@ public final class ClientCall<
                         .getOrDefault(OPC_REQUEST_ID_HEADER, Collections.emptyList());
         if (present.isEmpty()) {
             // only add if the customer has not added it themselves.
-            String requestId = generateRequestId();
             logger.debug("Generated request ID: {} for URI {}", requestId, httpRequest.uri());
             transientRequest.header(BmcException.OPC_REQUEST_ID_HEADER, requestId);
         } else {
@@ -958,7 +957,17 @@ public final class ClientCall<
         if (circuitBreaker == null) {
             CompletionStage<HttpResponse> upstream;
             try {
-                upstream = transientRequest.execute();
+                upstream =
+                        transientRequest
+                                .execute()
+                                .handle(
+                                        (r, t) -> {
+                                            if (isProcessingException(t)) {
+                                                throw new BmcException(
+                                                        true, t.getMessage(), t, requestId);
+                                            }
+                                            return r;
+                                        });
             } catch (Exception e) {
                 return failedFuture(e);
             }
@@ -978,7 +987,23 @@ public final class ClientCall<
             long start = circuitBreaker.getCurrentTimestamp();
             CompletionStage<HttpResponse> upstream;
             try {
-                upstream = transientRequest.execute();
+                upstream =
+                        transientRequest
+                                .execute()
+                                .handle(
+                                        (r, t) -> {
+                                            if (isProcessingException(t)) {
+                                                addToHistory(t);
+                                                circuitBreaker.onError(
+                                                        circuitBreaker.getCurrentTimestamp()
+                                                                - start,
+                                                        circuitBreaker.getTimestampUnit(),
+                                                        t);
+                                                throw new BmcException(
+                                                        true, t.getMessage(), t, requestId);
+                                            }
+                                            return r;
+                                        });
             } catch (Exception e) {
                 addToHistory(e);
                 circuitBreaker.onError(
@@ -1024,6 +1049,16 @@ public final class ClientCall<
                         }
                     });
         }
+    }
+
+    private boolean isProcessingException(Throwable throwable) {
+        while (throwable != null) {
+            if (httpClient.isProcessingException((Exception) throwable)) {
+                return true;
+            }
+            throwable = throwable.getCause();
+        }
+        return false;
     }
 
     private void addToHistory(Throwable throwable) {

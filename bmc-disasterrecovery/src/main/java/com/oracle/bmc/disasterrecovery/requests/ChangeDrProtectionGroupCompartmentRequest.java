@@ -16,26 +16,26 @@ public class ChangeDrProtectionGroupCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.disasterrecovery.model.ChangeDrProtectionGroupCompartmentDetails> {
 
-    /** Details of DR Protection Group compartment to change. */
+    /** Details for changing the DR protection group compartment. */
     private com.oracle.bmc.disasterrecovery.model.ChangeDrProtectionGroupCompartmentDetails
             changeDrProtectionGroupCompartmentDetails;
 
-    /** Details of DR Protection Group compartment to change. */
+    /** Details for changing the DR protection group compartment. */
     public com.oracle.bmc.disasterrecovery.model.ChangeDrProtectionGroupCompartmentDetails
             getChangeDrProtectionGroupCompartmentDetails() {
         return changeDrProtectionGroupCompartmentDetails;
     }
     /**
-     * The OCID of the DR Protection Group.
+     * The OCID of the DR protection group.
      *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      */
     private String drProtectionGroupId;
 
     /**
-     * The OCID of the DR Protection Group.
+     * The OCID of the DR protection group.
      *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      */
     public String getDrProtectionGroupId() {
         return drProtectionGroupId;
@@ -104,12 +104,12 @@ public class ChangeDrProtectionGroupCompartmentRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details of DR Protection Group compartment to change. */
+        /** Details for changing the DR protection group compartment. */
         private com.oracle.bmc.disasterrecovery.model.ChangeDrProtectionGroupCompartmentDetails
                 changeDrProtectionGroupCompartmentDetails = null;
 
         /**
-         * Details of DR Protection Group compartment to change.
+         * Details for changing the DR protection group compartment.
          *
          * @param changeDrProtectionGroupCompartmentDetails the value to set
          * @return this builder instance
@@ -123,16 +123,16 @@ public class ChangeDrProtectionGroupCompartmentRequest
         }
 
         /**
-         * The OCID of the DR Protection Group.
+         * The OCID of the DR protection group.
          *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          */
         private String drProtectionGroupId = null;
 
         /**
-         * The OCID of the DR Protection Group.
+         * The OCID of the DR protection group.
          *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
          * @param drProtectionGroupId the value to set
          * @return this builder instance

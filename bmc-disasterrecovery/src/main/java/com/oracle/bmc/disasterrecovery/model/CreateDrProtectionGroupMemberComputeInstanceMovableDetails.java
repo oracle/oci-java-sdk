@@ -5,7 +5,7 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Create properties for a Movable Compute Instance member. <br>
+ * Create properties for a movable compute instance member. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -37,9 +37,9 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
             return this;
         }
         /**
-         * A flag indicating if this compute instance should be moved to the same fault domain.
-         * Compute instance launch will fail if this flag is set to true and capacity is not
-         * available in that specific fault domain in the destination region.
+         * A flag indicating if the compute instance should be moved to the same fault domain in the
+         * destination region. The compute instance launch will fail if this flag is set to true and
+         * capacity is not available in the specified fault domain in the destination region.
          *
          * <p>Example: {@code false}
          */
@@ -47,9 +47,9 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
         private Boolean isRetainFaultDomain;
 
         /**
-         * A flag indicating if this compute instance should be moved to the same fault domain.
-         * Compute instance launch will fail if this flag is set to true and capacity is not
-         * available in that specific fault domain in the destination region.
+         * A flag indicating if the compute instance should be moved to the same fault domain in the
+         * destination region. The compute instance launch will fail if this flag is set to true and
+         * capacity is not available in the specified fault domain in the destination region.
          *
          * <p>Example: {@code false}
          *
@@ -62,19 +62,19 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
             return this;
         }
         /**
-         * The OCID of the capacity reservation in the destination region using which this compute
-         * instance should be launched.
+         * The OCID of a capacity reservation in the destination region which will be used to launch
+         * the compute instance.
          *
-         * <p>Example: {@code ocid1.capacityreservation.oc1..&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.capacityreservation.oc1..uniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("destinationCapacityReservationId")
         private String destinationCapacityReservationId;
 
         /**
-         * The OCID of the capacity reservation in the destination region using which this compute
-         * instance should be launched.
+         * The OCID of a capacity reservation in the destination region which will be used to launch
+         * the compute instance.
          *
-         * <p>Example: {@code ocid1.capacityreservation.oc1..&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.capacityreservation.oc1..uniqueID}
          *
          * @param destinationCapacityReservationId the value to set
          * @return this builder
@@ -84,12 +84,12 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
             this.__explicitlySet__.add("destinationCapacityReservationId");
             return this;
         }
-        /** A list of Compute Instance VNIC mappings. */
+        /** A list of compute instance VNIC mappings. */
         @com.fasterxml.jackson.annotation.JsonProperty("vnicMappings")
         private java.util.List<ComputeInstanceMovableVnicMappingDetails> vnicMappings;
 
         /**
-         * A list of Compute Instance VNIC mappings.
+         * A list of compute instance VNIC mappings.
          *
          * @param vnicMappings the value to set
          * @return this builder
@@ -101,17 +101,19 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
             return this;
         }
         /**
-         * The OCID of the compartment for this compute instance in the destination region.
+         * The OCID of a compartment in the destination region in which the compute instance should
+         * be launched.
          *
-         * <p>Example: {@code ocid1.compartment.oc1..&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("destinationCompartmentId")
         private String destinationCompartmentId;
 
         /**
-         * The OCID of the compartment for this compute instance in the destination region.
+         * The OCID of a compartment in the destination region in which the compute instance should
+         * be launched.
          *
-         * <p>Example: {@code ocid1.compartment.oc1..&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
          *
          * @param destinationCompartmentId the value to set
          * @return this builder
@@ -122,19 +124,19 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
             return this;
         }
         /**
-         * The OCID of the dedicated VM Host in the destination region where this compute instance
-         * should be launched
+         * The OCID of a dedicated VM host in the destination region where the compute instance
+         * should be launched.
          *
-         * <p>Example: {@code ocid1.dedicatedvmhost.oc1..&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.dedicatedvmhost.oc1..uniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("destinationDedicatedVmHostId")
         private String destinationDedicatedVmHostId;
 
         /**
-         * The OCID of the dedicated VM Host in the destination region where this compute instance
-         * should be launched
+         * The OCID of a dedicated VM host in the destination region where the compute instance
+         * should be launched.
          *
-         * <p>Example: {@code ocid1.dedicatedvmhost.oc1..&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.dedicatedvmhost.oc1..uniqueID}
          *
          * @param destinationDedicatedVmHostId the value to set
          * @return this builder
@@ -142,6 +144,24 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
         public Builder destinationDedicatedVmHostId(String destinationDedicatedVmHostId) {
             this.destinationDedicatedVmHostId = destinationDedicatedVmHostId;
             this.__explicitlySet__.add("destinationDedicatedVmHostId");
+            return this;
+        }
+        /** A list of operations performed on file systems used by the compute instance. */
+        @com.fasterxml.jackson.annotation.JsonProperty("fileSystemOperations")
+        private java.util.List<CreateComputeInstanceMovableFileSystemOperationDetails>
+                fileSystemOperations;
+
+        /**
+         * A list of operations performed on file systems used by the compute instance.
+         *
+         * @param fileSystemOperations the value to set
+         * @return this builder
+         */
+        public Builder fileSystemOperations(
+                java.util.List<CreateComputeInstanceMovableFileSystemOperationDetails>
+                        fileSystemOperations) {
+            this.fileSystemOperations = fileSystemOperations;
+            this.__explicitlySet__.add("fileSystemOperations");
             return this;
         }
 
@@ -156,7 +176,8 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
                             this.destinationCapacityReservationId,
                             this.vnicMappings,
                             this.destinationCompartmentId,
-                            this.destinationDedicatedVmHostId);
+                            this.destinationDedicatedVmHostId,
+                            this.fileSystemOperations);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -183,6 +204,9 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
             if (model.wasPropertyExplicitlySet("destinationDedicatedVmHostId")) {
                 this.destinationDedicatedVmHostId(model.getDestinationDedicatedVmHostId());
             }
+            if (model.wasPropertyExplicitlySet("fileSystemOperations")) {
+                this.fileSystemOperations(model.getFileSystemOperations());
+            }
             return this;
         }
     }
@@ -203,19 +227,22 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
             String destinationCapacityReservationId,
             java.util.List<ComputeInstanceMovableVnicMappingDetails> vnicMappings,
             String destinationCompartmentId,
-            String destinationDedicatedVmHostId) {
+            String destinationDedicatedVmHostId,
+            java.util.List<CreateComputeInstanceMovableFileSystemOperationDetails>
+                    fileSystemOperations) {
         super(memberId);
         this.isRetainFaultDomain = isRetainFaultDomain;
         this.destinationCapacityReservationId = destinationCapacityReservationId;
         this.vnicMappings = vnicMappings;
         this.destinationCompartmentId = destinationCompartmentId;
         this.destinationDedicatedVmHostId = destinationDedicatedVmHostId;
+        this.fileSystemOperations = fileSystemOperations;
     }
 
     /**
-     * A flag indicating if this compute instance should be moved to the same fault domain. Compute
-     * instance launch will fail if this flag is set to true and capacity is not available in that
-     * specific fault domain in the destination region.
+     * A flag indicating if the compute instance should be moved to the same fault domain in the
+     * destination region. The compute instance launch will fail if this flag is set to true and
+     * capacity is not available in the specified fault domain in the destination region.
      *
      * <p>Example: {@code false}
      */
@@ -223,9 +250,9 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
     private final Boolean isRetainFaultDomain;
 
     /**
-     * A flag indicating if this compute instance should be moved to the same fault domain. Compute
-     * instance launch will fail if this flag is set to true and capacity is not available in that
-     * specific fault domain in the destination region.
+     * A flag indicating if the compute instance should be moved to the same fault domain in the
+     * destination region. The compute instance launch will fail if this flag is set to true and
+     * capacity is not available in the specified fault domain in the destination region.
      *
      * <p>Example: {@code false}
      *
@@ -236,19 +263,19 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
     }
 
     /**
-     * The OCID of the capacity reservation in the destination region using which this compute
-     * instance should be launched.
+     * The OCID of a capacity reservation in the destination region which will be used to launch the
+     * compute instance.
      *
-     * <p>Example: {@code ocid1.capacityreservation.oc1..&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.capacityreservation.oc1..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("destinationCapacityReservationId")
     private final String destinationCapacityReservationId;
 
     /**
-     * The OCID of the capacity reservation in the destination region using which this compute
-     * instance should be launched.
+     * The OCID of a capacity reservation in the destination region which will be used to launch the
+     * compute instance.
      *
-     * <p>Example: {@code ocid1.capacityreservation.oc1..&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.capacityreservation.oc1..uniqueID}
      *
      * @return the value
      */
@@ -256,12 +283,12 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
         return destinationCapacityReservationId;
     }
 
-    /** A list of Compute Instance VNIC mappings. */
+    /** A list of compute instance VNIC mappings. */
     @com.fasterxml.jackson.annotation.JsonProperty("vnicMappings")
     private final java.util.List<ComputeInstanceMovableVnicMappingDetails> vnicMappings;
 
     /**
-     * A list of Compute Instance VNIC mappings.
+     * A list of compute instance VNIC mappings.
      *
      * @return the value
      */
@@ -270,17 +297,19 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
     }
 
     /**
-     * The OCID of the compartment for this compute instance in the destination region.
+     * The OCID of a compartment in the destination region in which the compute instance should be
+     * launched.
      *
-     * <p>Example: {@code ocid1.compartment.oc1..&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("destinationCompartmentId")
     private final String destinationCompartmentId;
 
     /**
-     * The OCID of the compartment for this compute instance in the destination region.
+     * The OCID of a compartment in the destination region in which the compute instance should be
+     * launched.
      *
-     * <p>Example: {@code ocid1.compartment.oc1..&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
      *
      * @return the value
      */
@@ -289,24 +318,39 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
     }
 
     /**
-     * The OCID of the dedicated VM Host in the destination region where this compute instance
-     * should be launched
+     * The OCID of a dedicated VM host in the destination region where the compute instance should
+     * be launched.
      *
-     * <p>Example: {@code ocid1.dedicatedvmhost.oc1..&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.dedicatedvmhost.oc1..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("destinationDedicatedVmHostId")
     private final String destinationDedicatedVmHostId;
 
     /**
-     * The OCID of the dedicated VM Host in the destination region where this compute instance
-     * should be launched
+     * The OCID of a dedicated VM host in the destination region where the compute instance should
+     * be launched.
      *
-     * <p>Example: {@code ocid1.dedicatedvmhost.oc1..&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.dedicatedvmhost.oc1..uniqueID}
      *
      * @return the value
      */
     public String getDestinationDedicatedVmHostId() {
         return destinationDedicatedVmHostId;
+    }
+
+    /** A list of operations performed on file systems used by the compute instance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("fileSystemOperations")
+    private final java.util.List<CreateComputeInstanceMovableFileSystemOperationDetails>
+            fileSystemOperations;
+
+    /**
+     * A list of operations performed on file systems used by the compute instance.
+     *
+     * @return the value
+     */
+    public java.util.List<CreateComputeInstanceMovableFileSystemOperationDetails>
+            getFileSystemOperations() {
+        return fileSystemOperations;
     }
 
     @Override
@@ -332,6 +376,7 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
                 .append(String.valueOf(this.destinationCompartmentId));
         sb.append(", destinationDedicatedVmHostId=")
                 .append(String.valueOf(this.destinationDedicatedVmHostId));
+        sb.append(", fileSystemOperations=").append(String.valueOf(this.fileSystemOperations));
         sb.append(")");
         return sb.toString();
     }
@@ -356,6 +401,7 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
                         this.destinationCompartmentId, other.destinationCompartmentId)
                 && java.util.Objects.equals(
                         this.destinationDedicatedVmHostId, other.destinationDedicatedVmHostId)
+                && java.util.Objects.equals(this.fileSystemOperations, other.fileSystemOperations)
                 && super.equals(other);
     }
 
@@ -384,6 +430,11 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
                         + (this.destinationDedicatedVmHostId == null
                                 ? 43
                                 : this.destinationDedicatedVmHostId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fileSystemOperations == null
+                                ? 43
+                                : this.fileSystemOperations.hashCode());
         return result;
     }
 }

@@ -5,7 +5,7 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * A list of DR Protection Groups. <br>
+ * A list of DR protection group summaries. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +31,12 @@ public final class DrProtectionGroupCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A list of DR Protection Group summary objects. */
+        /** A list of DR protection group summaries. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DrProtectionGroupSummary> items;
 
         /**
-         * A list of DR Protection Group summary objects.
+         * A list of DR protection group summaries.
          *
          * @param items the value to set
          * @return this builder
@@ -76,12 +76,12 @@ public final class DrProtectionGroupCollection
         return new Builder().copy(this);
     }
 
-    /** A list of DR Protection Group summary objects. */
+    /** A list of DR protection group summaries. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DrProtectionGroupSummary> items;
 
     /**
-     * A list of DR Protection Group summary objects.
+     * A list of DR protection group summaries.
      *
      * @return the value
      */

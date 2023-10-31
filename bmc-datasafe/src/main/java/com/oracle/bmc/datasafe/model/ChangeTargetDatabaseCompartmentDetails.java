@@ -31,14 +31,12 @@ public final class ChangeTargetDatabaseCompartmentDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the new compartment to where you want to move the Data Safe target database.
-         */
+        /** The OCID of the compartment you want to move the Data Safe target database to. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the new compartment to where you want to move the Data Safe target database.
+         * The OCID of the compartment you want to move the Data Safe target database to.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -79,12 +77,12 @@ public final class ChangeTargetDatabaseCompartmentDetails
         return new Builder().copy(this);
     }
 
-    /** The OCID of the new compartment to where you want to move the Data Safe target database. */
+    /** The OCID of the compartment you want to move the Data Safe target database to. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the new compartment to where you want to move the Data Safe target database.
+     * The OCID of the compartment you want to move the Data Safe target database to.
      *
      * @return the value
      */
