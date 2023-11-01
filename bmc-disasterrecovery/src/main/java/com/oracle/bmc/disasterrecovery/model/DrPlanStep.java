@@ -5,7 +5,7 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Details of a step in a DR Plan. <br>
+ * Details of a step in a DR plan. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -57,17 +57,17 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The unique id of this step. Must not be modified by the user.
+         * The unique id of the step. Must not be modified by the user.
          *
-         * <p>Example: {@code sgid1.step..&lt;unique_id&gt;}
+         * <p>Example: {@code sgid1.step..uniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The unique id of this step. Must not be modified by the user.
+         * The unique id of the step. Must not be modified by the user.
          *
-         * <p>Example: {@code sgid1.step..&lt;unique_id&gt;}
+         * <p>Example: {@code sgid1.step..uniqueID}
          *
          * @param id the value to set
          * @return this builder
@@ -80,7 +80,7 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
         /**
          * The unique id of the group to which this step belongs. Must not be modified by user.
          *
-         * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
+         * <p>Example: {@code sgid1.group..uniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("groupId")
         private String groupId;
@@ -88,7 +88,7 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
         /**
          * The unique id of the group to which this step belongs. Must not be modified by user.
          *
-         * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
+         * <p>Example: {@code sgid1.group..uniqueID}
          *
          * @param groupId the value to set
          * @return this builder
@@ -101,7 +101,7 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
         /**
          * The OCID of the member associated with this step.
          *
-         * <p>Example: {@code ocid1.database.oc1.phx.&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.database.oc1..uniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("memberId")
         private String memberId;
@@ -109,7 +109,7 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
         /**
          * The OCID of the member associated with this step.
          *
-         * <p>Example: {@code ocid1.database.oc1.phx.&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.database.oc1..uniqueID}
          *
          * @param memberId the value to set
          * @return this builder
@@ -135,7 +135,7 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
             return this;
         }
         /**
-         * The display name of this DR Plan Group.
+         * The display name of the group.
          *
          * <p>Example: {@code DATABASE_SWITCHOVER}
          */
@@ -143,7 +143,7 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
         private String displayName;
 
         /**
-         * The display name of this DR Plan Group.
+         * The display name of the group.
          *
          * <p>Example: {@code DATABASE_SWITCHOVER}
          *
@@ -286,17 +286,17 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The unique id of this step. Must not be modified by the user.
+     * The unique id of the step. Must not be modified by the user.
      *
-     * <p>Example: {@code sgid1.step..&lt;unique_id&gt;}
+     * <p>Example: {@code sgid1.step..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The unique id of this step. Must not be modified by the user.
+     * The unique id of the step. Must not be modified by the user.
      *
-     * <p>Example: {@code sgid1.step..&lt;unique_id&gt;}
+     * <p>Example: {@code sgid1.step..uniqueID}
      *
      * @return the value
      */
@@ -307,7 +307,7 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
     /**
      * The unique id of the group to which this step belongs. Must not be modified by user.
      *
-     * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
+     * <p>Example: {@code sgid1.group..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("groupId")
     private final String groupId;
@@ -315,7 +315,7 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
     /**
      * The unique id of the group to which this step belongs. Must not be modified by user.
      *
-     * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
+     * <p>Example: {@code sgid1.group..uniqueID}
      *
      * @return the value
      */
@@ -326,7 +326,7 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
     /**
      * The OCID of the member associated with this step.
      *
-     * <p>Example: {@code ocid1.database.oc1.phx.&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.database.oc1..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("memberId")
     private final String memberId;
@@ -334,7 +334,7 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
     /**
      * The OCID of the member associated with this step.
      *
-     * <p>Example: {@code ocid1.database.oc1.phx.&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.database.oc1..uniqueID}
      *
      * @return the value
      */
@@ -356,7 +356,7 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The display name of this DR Plan Group.
+     * The display name of the group.
      *
      * <p>Example: {@code DATABASE_SWITCHOVER}
      */
@@ -364,7 +364,7 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
     private final String displayName;
 
     /**
-     * The display name of this DR Plan Group.
+     * The display name of the group.
      *
      * <p>Example: {@code DATABASE_SWITCHOVER}
      *

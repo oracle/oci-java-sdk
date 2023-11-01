@@ -117,12 +117,12 @@ public final class UserSummary extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("userCategory");
             return this;
         }
-        /** The user account status. */
+        /** The status of the user account. */
         @com.fasterxml.jackson.annotation.JsonProperty("accountStatus")
         private AccountStatus accountStatus;
 
         /**
-         * The user account status.
+         * The status of the user account.
          *
          * @param accountStatus the value to set
          * @return this builder
@@ -148,14 +148,14 @@ public final class UserSummary extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The date and time when the user last logged in, in the format defined by
+         * The date and time the user last logged in, in the format defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastLogin")
         private java.util.Date timeLastLogin;
 
         /**
-         * The date and time when the user last logged in, in the format defined by
+         * The date and time the user last logged in, in the format defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
          * @param timeLastLogin the value to set
@@ -167,14 +167,14 @@ public final class UserSummary extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The date and time when the user was created in the database, in the format defined by
+         * The date and time the user was created in the database, in the format defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUserCreated")
         private java.util.Date timeUserCreated;
 
         /**
-         * The date and time when the user was created in the database, in the format defined by
+         * The date and time the user was created in the database, in the format defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
          * @param timeUserCreated the value to set
@@ -216,14 +216,14 @@ public final class UserSummary extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The date and time when the user password was last changed, in the format defined by
+         * The date and time the user password was last changed, in the format defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timePasswordChanged")
         private java.util.Date timePasswordChanged;
 
         /**
-         * The date and time when the user password was last changed, in the format defined by
+         * The date and time the user password was last changed, in the format defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
          * @param timePasswordChanged the value to set
@@ -445,7 +445,7 @@ public final class UserSummary extends com.oracle.bmc.http.client.internal.Expli
         return userCategory;
     }
 
-    /** The user account status. */
+    /** The status of the user account. */
     public enum AccountStatus implements com.oracle.bmc.http.internal.BmcEnum {
         Open("OPEN"),
         Locked("LOCKED"),
@@ -494,12 +494,12 @@ public final class UserSummary extends com.oracle.bmc.http.client.internal.Expli
             return UnknownEnumValue;
         }
     };
-    /** The user account status. */
+    /** The status of the user account. */
     @com.fasterxml.jackson.annotation.JsonProperty("accountStatus")
     private final AccountStatus accountStatus;
 
     /**
-     * The user account status.
+     * The status of the user account.
      *
      * @return the value
      */
@@ -521,14 +521,14 @@ public final class UserSummary extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The date and time when the user last logged in, in the format defined by
+     * The date and time the user last logged in, in the format defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastLogin")
     private final java.util.Date timeLastLogin;
 
     /**
-     * The date and time when the user last logged in, in the format defined by
+     * The date and time the user last logged in, in the format defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
@@ -538,14 +538,14 @@ public final class UserSummary extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The date and time when the user was created in the database, in the format defined by
+     * The date and time the user was created in the database, in the format defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUserCreated")
     private final java.util.Date timeUserCreated;
 
     /**
-     * The date and time when the user was created in the database, in the format defined by
+     * The date and time the user was created in the database, in the format defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
@@ -627,14 +627,14 @@ public final class UserSummary extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The date and time when the user password was last changed, in the format defined by
+     * The date and time the user password was last changed, in the format defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timePasswordChanged")
     private final java.util.Date timePasswordChanged;
 
     /**
-     * The date and time when the user password was last changed, in the format defined by
+     * The date and time the user password was last changed, in the format defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value

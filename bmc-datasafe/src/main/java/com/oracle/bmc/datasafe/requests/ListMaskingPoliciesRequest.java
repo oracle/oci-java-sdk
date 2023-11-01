@@ -115,16 +115,16 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
         return sortOrder;
     }
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for
-     * timeCreated is descending. The default order for displayName is ascending. The displayName
-     * sort order is case sensitive.
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+     * order for timeCreated is descending. The default order for displayName is ascending. The
+     * displayName sort order is case sensitive.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for
-     * timeCreated is descending. The default order for displayName is ascending. The displayName
-     * sort order is case sensitive.
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+     * order for timeCreated is descending. The default order for displayName is ascending. The
+     * displayName sort order is case sensitive.
      */
     public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         DisplayName("displayName"),
@@ -160,9 +160,9 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
     };
 
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for
-     * timeCreated is descending. The default order for displayName is ascending. The displayName
-     * sort order is case sensitive.
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+     * order for timeCreated is descending. The default order for displayName is ascending. The
+     * displayName sort order is case sensitive.
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -422,15 +422,15 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * The field to sort by. You can specify only one sort order (sortOrder). The default order
-         * for timeCreated is descending. The default order for displayName is ascending. The
+         * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+         * order for timeCreated is descending. The default order for displayName is ascending. The
          * displayName sort order is case sensitive.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can specify only one sort order (sortOrder). The default order
-         * for timeCreated is descending. The default order for displayName is ascending. The
+         * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+         * order for timeCreated is descending. The default order for displayName is ascending. The
          * displayName sort order is case sensitive.
          *
          * @param sortBy the value to set

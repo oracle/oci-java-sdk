@@ -35,7 +35,7 @@ public final class WorkRequestLogEntry
         /**
          * A human-readable log message.
          *
-         * <p>Example: {@code DR Plan Execution is in progress}
+         * <p>Example: {@code DR plan execution is in progress}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
@@ -43,7 +43,7 @@ public final class WorkRequestLogEntry
         /**
          * A human-readable log message.
          *
-         * <p>Example: {@code DR Plan Execution is in progress}
+         * <p>Example: {@code DR plan execution is in progress}
          *
          * @param message the value to set
          * @return this builder
@@ -110,7 +110,7 @@ public final class WorkRequestLogEntry
     /**
      * A human-readable log message.
      *
-     * <p>Example: {@code DR Plan Execution is in progress}
+     * <p>Example: {@code DR plan execution is in progress}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
@@ -118,7 +118,7 @@ public final class WorkRequestLogEntry
     /**
      * A human-readable log message.
      *
-     * <p>Example: {@code DR Plan Execution is in progress}
+     * <p>Example: {@code DR plan execution is in progress}
      *
      * @return the value
      */

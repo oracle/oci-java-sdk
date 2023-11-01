@@ -108,15 +108,15 @@ public final class UpdateMaskingColumnDetails
             return this;
         }
         /**
-         * Indicates if data masking is enabled for the masking column. Set it to false if you don't
-         * want to mask the column.
+         * Indicates whether data masking is enabled for the masking column. Set it to false if you
+         * don't want to mask the column.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isMaskingEnabled")
         private Boolean isMaskingEnabled;
 
         /**
-         * Indicates if data masking is enabled for the masking column. Set it to false if you don't
-         * want to mask the column.
+         * Indicates whether data masking is enabled for the masking column. Set it to false if you
+         * don't want to mask the column.
          *
          * @param isMaskingEnabled the value to set
          * @return this builder
@@ -261,15 +261,15 @@ public final class UpdateMaskingColumnDetails
     }
 
     /**
-     * Indicates if data masking is enabled for the masking column. Set it to false if you don't
-     * want to mask the column.
+     * Indicates whether data masking is enabled for the masking column. Set it to false if you
+     * don't want to mask the column.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isMaskingEnabled")
     private final Boolean isMaskingEnabled;
 
     /**
-     * Indicates if data masking is enabled for the masking column. Set it to false if you don't
-     * want to mask the column.
+     * Indicates whether data masking is enabled for the masking column. Set it to false if you
+     * don't want to mask the column.
      *
      * @return the value
      */

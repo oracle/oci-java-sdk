@@ -36,7 +36,7 @@ public final class RetryDrPlanExecutionDetails
          * The unique id of the group to retry as a whole, or the group containing the step being
          * retried.
          *
-         * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
+         * <p>Example: {@code sgid1.group..uniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("groupId")
         private String groupId;
@@ -45,7 +45,7 @@ public final class RetryDrPlanExecutionDetails
          * The unique id of the group to retry as a whole, or the group containing the step being
          * retried.
          *
-         * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
+         * <p>Example: {@code sgid1.group..uniqueID}
          *
          * @param groupId the value to set
          * @return this builder
@@ -58,7 +58,7 @@ public final class RetryDrPlanExecutionDetails
         /**
          * The unique id of the step to retry (optional). Only needed when retrying a step.
          *
-         * <p>Example: {@code sgid1.step..&lt;unique_id&gt;}
+         * <p>Example: {@code sgid1.step..uniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("stepId")
         private String stepId;
@@ -66,7 +66,7 @@ public final class RetryDrPlanExecutionDetails
         /**
          * The unique id of the step to retry (optional). Only needed when retrying a step.
          *
-         * <p>Example: {@code sgid1.step..&lt;unique_id&gt;}
+         * <p>Example: {@code sgid1.step..uniqueID}
          *
          * @param stepId the value to set
          * @return this builder
@@ -114,7 +114,7 @@ public final class RetryDrPlanExecutionDetails
      * The unique id of the group to retry as a whole, or the group containing the step being
      * retried.
      *
-     * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
+     * <p>Example: {@code sgid1.group..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("groupId")
     private final String groupId;
@@ -123,7 +123,7 @@ public final class RetryDrPlanExecutionDetails
      * The unique id of the group to retry as a whole, or the group containing the step being
      * retried.
      *
-     * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
+     * <p>Example: {@code sgid1.group..uniqueID}
      *
      * @return the value
      */
@@ -134,7 +134,7 @@ public final class RetryDrPlanExecutionDetails
     /**
      * The unique id of the step to retry (optional). Only needed when retrying a step.
      *
-     * <p>Example: {@code sgid1.step..&lt;unique_id&gt;}
+     * <p>Example: {@code sgid1.step..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("stepId")
     private final String stepId;
@@ -142,7 +142,7 @@ public final class RetryDrPlanExecutionDetails
     /**
      * The unique id of the step to retry (optional). Only needed when retrying a step.
      *
-     * <p>Example: {@code sgid1.step..&lt;unique_id&gt;}
+     * <p>Example: {@code sgid1.step..uniqueID}
      *
      * @return the value
      */

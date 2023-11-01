@@ -14,16 +14,16 @@ import com.oracle.bmc.disasterrecovery.model.*;
 public class DeleteDrPlanRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the DR Plan.
+     * The OCID of the DR plan.
      *
-     * <p>Example: {@code ocid1.drplan.oc1.iad.exampleocid}
+     * <p>Example: {@code ocid1.drplan.oc1..uniqueID}
      */
     private String drPlanId;
 
     /**
-     * The OCID of the DR Plan.
+     * The OCID of the DR plan.
      *
-     * <p>Example: {@code ocid1.drplan.oc1.iad.exampleocid}
+     * <p>Example: {@code ocid1.drplan.oc1..uniqueID}
      */
     public String getDrPlanId() {
         return drPlanId;
@@ -60,16 +60,16 @@ public class DeleteDrPlanRequest extends com.oracle.bmc.requests.BmcRequest<java
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The OCID of the DR Plan.
+         * The OCID of the DR plan.
          *
-         * <p>Example: {@code ocid1.drplan.oc1.iad.exampleocid}
+         * <p>Example: {@code ocid1.drplan.oc1..uniqueID}
          */
         private String drPlanId = null;
 
         /**
-         * The OCID of the DR Plan.
+         * The OCID of the DR plan.
          *
-         * <p>Example: {@code ocid1.drplan.oc1.iad.exampleocid}
+         * <p>Example: {@code ocid1.drplan.oc1..uniqueID}
          *
          * @param drPlanId the value to set
          * @return this builder instance

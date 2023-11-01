@@ -39,6 +39,7 @@ public final class MonitoredResource
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
+        "license",
         "properties",
         "databaseConnectionDetails",
         "credentials",
@@ -61,6 +62,7 @@ public final class MonitoredResource
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             ResourceLifecycleState lifecycleState,
+            LicenseType license,
             java.util.List<MonitoredResourceProperty> properties,
             ConnectionDetails databaseConnectionDetails,
             MonitoredResourceCredential credentials,
@@ -82,6 +84,7 @@ public final class MonitoredResource
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
+        this.license = license;
         this.properties = properties;
         this.databaseConnectionDetails = databaseConnectionDetails;
         this.credentials = credentials;
@@ -322,6 +325,21 @@ public final class MonitoredResource
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
+        /** License edition of the monitored resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("license")
+        private LicenseType license;
+
+        /**
+         * License edition of the monitored resource.
+         *
+         * @param license the value to set
+         * @return this builder
+         */
+        public Builder license(LicenseType license) {
+            this.license = license;
+            this.__explicitlySet__.add("license");
+            return this;
+        }
         /** List of monitored resource properties. */
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.List<MonitoredResourceProperty> properties;
@@ -442,6 +460,7 @@ public final class MonitoredResource
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
+                            this.license,
                             this.properties,
                             this.databaseConnectionDetails,
                             this.credentials,
@@ -495,6 +514,9 @@ public final class MonitoredResource
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("license")) {
+                this.license(model.getLicense());
             }
             if (model.wasPropertyExplicitlySet("properties")) {
                 this.properties(model.getProperties());
@@ -733,6 +755,19 @@ public final class MonitoredResource
         return lifecycleState;
     }
 
+    /** License edition of the monitored resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("license")
+    private final LicenseType license;
+
+    /**
+     * License edition of the monitored resource.
+     *
+     * @return the value
+     */
+    public LicenseType getLicense() {
+        return license;
+    }
+
     /** List of monitored resource properties. */
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.List<MonitoredResourceProperty> properties;
@@ -846,6 +881,7 @@ public final class MonitoredResource
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", license=").append(String.valueOf(this.license));
         sb.append(", properties=").append(String.valueOf(this.properties));
         sb.append(", databaseConnectionDetails=")
                 .append(String.valueOf(this.databaseConnectionDetails));
@@ -881,6 +917,7 @@ public final class MonitoredResource
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.license, other.license)
                 && java.util.Objects.equals(this.properties, other.properties)
                 && java.util.Objects.equals(
                         this.databaseConnectionDetails, other.databaseConnectionDetails)
@@ -917,6 +954,7 @@ public final class MonitoredResource
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.license == null ? 43 : this.license.hashCode());
         result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
         result =
                 (result * PRIME)

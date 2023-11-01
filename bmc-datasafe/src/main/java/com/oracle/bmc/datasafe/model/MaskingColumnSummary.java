@@ -302,12 +302,12 @@ public final class MaskingColumnSummary
             this.__explicitlySet__.add("sensitiveTypeId");
             return this;
         }
-        /** Indicates if data masking is enabled for the masking column. */
+        /** Indicates whether data masking is enabled for the masking column. */
         @com.fasterxml.jackson.annotation.JsonProperty("isMaskingEnabled")
         private Boolean isMaskingEnabled;
 
         /**
-         * Indicates if data masking is enabled for the masking column.
+         * Indicates whether data masking is enabled for the masking column.
          *
          * @param isMaskingEnabled the value to set
          * @return this builder
@@ -634,12 +634,12 @@ public final class MaskingColumnSummary
         return sensitiveTypeId;
     }
 
-    /** Indicates if data masking is enabled for the masking column. */
+    /** Indicates whether data masking is enabled for the masking column. */
     @com.fasterxml.jackson.annotation.JsonProperty("isMaskingEnabled")
     private final Boolean isMaskingEnabled;
 
     /**
-     * Indicates if data masking is enabled for the masking column.
+     * Indicates whether data masking is enabled for the masking column.
      *
      * @return the value
      */

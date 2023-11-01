@@ -35,6 +35,14 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {
+        this(builder, authenticationDetailsProvider, executorService, true);
+    }
+
+    StackMonitoringClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            java.util.concurrent.ExecutorService executorService,
+            boolean isStreamWarningEnabled) {
         super(
                 builder,
                 authenticationDetailsProvider,
@@ -60,6 +68,11 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
         this.waiters = new StackMonitoringWaiters(executorService, this);
 
         this.paginators = new StackMonitoringPaginators(this);
+        if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
+                            "StackMonitoringClient", "exportMetricExtension"));
+        }
     }
 
     /**
@@ -77,6 +90,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, StackMonitoringClient> {
+        private boolean isStreamWarningEnabled = true;
         private java.util.concurrent.ExecutorService executorService;
 
         private Builder(com.oracle.bmc.Service service) {
@@ -100,6 +114,17 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
         }
 
         /**
+         * Enable/disable the stream warnings for the client
+         *
+         * @param isStreamWarningEnabled executorService
+         * @return this builder
+         */
+        public Builder isStreamWarningEnabled(boolean isStreamWarningEnabled) {
+            this.isStreamWarningEnabled = isStreamWarningEnabled;
+            return this;
+        }
+
+        /**
          * Build the client.
          *
          * @param authenticationDetailsProvider authentication details provider
@@ -109,7 +134,8 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
-            return new StackMonitoringClient(this, authenticationDetailsProvider, executorService);
+            return new StackMonitoringClient(
+                    this, authenticationDetailsProvider, executorService, isStreamWarningEnabled);
         }
     }
 
@@ -191,6 +217,39 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public ChangeMetricExtensionCompartmentResponse changeMetricExtensionCompartment(
+            ChangeMetricExtensionCompartmentRequest request) {
+
+        Validate.notBlank(request.getMetricExtensionId(), "metricExtensionId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeMetricExtensionCompartmentDetails(),
+                "changeMetricExtensionCompartmentDetails is required");
+
+        return clientCall(request, ChangeMetricExtensionCompartmentResponse::builder)
+                .logger(LOG, "changeMetricExtensionCompartment")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "ChangeMetricExtensionCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MetricExtension/ChangeMetricExtensionCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeMetricExtensionCompartmentRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("metricExtensions")
+                .appendPathParam(request.getMetricExtensionId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeMetricExtensionCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeMonitoredResourceCompartmentResponse changeMonitoredResourceCompartment(
             ChangeMonitoredResourceCompartmentRequest request) {
 
@@ -224,6 +283,74 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeMonitoredResourceCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeMonitoredResourceTaskCompartmentResponse changeMonitoredResourceTaskCompartment(
+            ChangeMonitoredResourceTaskCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getMonitoredResourceTaskId(), "monitoredResourceTaskId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeMonitoredResourceTaskCompartmentDetails(),
+                "changeMonitoredResourceTaskCompartmentDetails is required");
+
+        return clientCall(request, ChangeMonitoredResourceTaskCompartmentResponse::builder)
+                .logger(LOG, "changeMonitoredResourceTaskCompartment")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "ChangeMonitoredResourceTaskCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/monitoredResourceTask/ChangeMonitoredResourceTaskCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeMonitoredResourceTaskCompartmentRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("monitoredResourceTasks")
+                .appendPathParam(request.getMonitoredResourceTaskId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeMonitoredResourceTaskCompartmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public CreateBaselineableMetricResponse createBaselineableMetric(
+            CreateBaselineableMetricRequest request) {
+        Objects.requireNonNull(
+                request.getCreateBaselineableMetricDetails(),
+                "createBaselineableMetricDetails is required");
+
+        return clientCall(request, CreateBaselineableMetricResponse::builder)
+                .logger(LOG, "createBaselineableMetric")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "CreateBaselineableMetric",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/CreateBaselineableMetricDetails/CreateBaselineableMetric")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateBaselineableMetricRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("baselineableMetrics")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.BaselineableMetric.class,
+                        CreateBaselineableMetricResponse.Builder::baselineableMetric)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateBaselineableMetricResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateBaselineableMetricResponse.Builder::etag)
+                .handleResponseHeaderInteger(
+                        "retry-after", CreateBaselineableMetricResponse.Builder::retryAfter)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -284,6 +411,38 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public CreateMetricExtensionResponse createMetricExtension(
+            CreateMetricExtensionRequest request) {
+        Objects.requireNonNull(
+                request.getCreateMetricExtensionDetails(),
+                "createMetricExtensionDetails is required");
+
+        return clientCall(request, CreateMetricExtensionResponse::builder)
+                .logger(LOG, "createMetricExtension")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "CreateMetricExtension",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MetricExtension/CreateMetricExtension")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateMetricExtensionRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("metricExtensions")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.MetricExtension.class,
+                        CreateMetricExtensionResponse.Builder::metricExtension)
+                .handleResponseHeaderString("etag", CreateMetricExtensionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateMetricExtensionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "content-location", CreateMetricExtensionResponse.Builder::contentLocation)
+                .callSync();
+    }
+
+    @Override
     public CreateMonitoredResourceResponse createMonitoredResource(
             CreateMonitoredResourceRequest request) {
         Objects.requireNonNull(
@@ -322,6 +481,102 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                         "content-location",
                         CreateMonitoredResourceResponse.Builder::contentLocation)
                 .handleResponseHeaderString("etag", CreateMonitoredResourceResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public CreateMonitoredResourceTaskResponse createMonitoredResourceTask(
+            CreateMonitoredResourceTaskRequest request) {
+        Objects.requireNonNull(
+                request.getCreateMonitoredResourceTaskDetails(),
+                "createMonitoredResourceTaskDetails is required");
+
+        return clientCall(request, CreateMonitoredResourceTaskResponse::builder)
+                .logger(LOG, "createMonitoredResourceTask")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "CreateMonitoredResourceTask",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResourceTask/CreateMonitoredResourceTask")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateMonitoredResourceTaskRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("monitoredResourceTasks")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.MonitoredResourceTask.class,
+                        CreateMonitoredResourceTaskResponse.Builder::monitoredResourceTask)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateMonitoredResourceTaskResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateMonitoredResourceTaskResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateMonitoredResourceTaskResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public CreateMonitoredResourceTypeResponse createMonitoredResourceType(
+            CreateMonitoredResourceTypeRequest request) {
+        Objects.requireNonNull(
+                request.getCreateMonitoredResourceTypeDetails(),
+                "createMonitoredResourceTypeDetails is required");
+
+        return clientCall(request, CreateMonitoredResourceTypeResponse::builder)
+                .logger(LOG, "createMonitoredResourceType")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "CreateMonitoredResourceType",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResourceType/CreateMonitoredResourceType")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateMonitoredResourceTypeRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("monitoredResourceTypes")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.MonitoredResourceType.class,
+                        CreateMonitoredResourceTypeResponse.Builder::monitoredResourceType)
+                .handleResponseHeaderString(
+                        "etag", CreateMonitoredResourceTypeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateMonitoredResourceTypeResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public DeleteBaselineableMetricResponse deleteBaselineableMetric(
+            DeleteBaselineableMetricRequest request) {
+
+        Validate.notBlank(
+                request.getBaselineableMetricId(), "baselineableMetricId must not be blank");
+
+        return clientCall(request, DeleteBaselineableMetricResponse::builder)
+                .logger(LOG, "deleteBaselineableMetric")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "DeleteBaselineableMetric",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/BaselineableMetric/DeleteBaselineableMetric")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteBaselineableMetricRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("baselineableMetrics")
+                .appendPathParam(request.getBaselineableMetricId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteBaselineableMetricResponse.Builder::opcRequestId)
+                .handleResponseHeaderInteger(
+                        "retry-after", DeleteBaselineableMetricResponse.Builder::retryAfter)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -376,6 +631,31 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public DeleteMetricExtensionResponse deleteMetricExtension(
+            DeleteMetricExtensionRequest request) {
+
+        Validate.notBlank(request.getMetricExtensionId(), "metricExtensionId must not be blank");
+
+        return clientCall(request, DeleteMetricExtensionResponse::builder)
+                .logger(LOG, "deleteMetricExtension")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "DeleteMetricExtension",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MetricExtension/DeleteMetricExtension")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteMetricExtensionRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("metricExtensions")
+                .appendPathParam(request.getMetricExtensionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteMetricExtensionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteMonitoredResourceResponse deleteMonitoredResource(
             DeleteMonitoredResourceRequest request) {
 
@@ -402,6 +682,32 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                         DeleteMonitoredResourceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteMonitoredResourceResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteMonitoredResourceTypeResponse deleteMonitoredResourceType(
+            DeleteMonitoredResourceTypeRequest request) {
+
+        Validate.notBlank(
+                request.getMonitoredResourceTypeId(), "monitoredResourceTypeId must not be blank");
+
+        return clientCall(request, DeleteMonitoredResourceTypeResponse::builder)
+                .logger(LOG, "deleteMonitoredResourceType")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "DeleteMonitoredResourceType",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResourceType/DeleteMonitoredResourceType")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteMonitoredResourceTypeRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("monitoredResourceTypes")
+                .appendPathParam(request.getMonitoredResourceTypeId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteMonitoredResourceTypeResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -438,6 +744,41 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public DisableMetricExtensionResponse disableMetricExtension(
+            DisableMetricExtensionRequest request) {
+
+        Validate.notBlank(request.getMetricExtensionId(), "metricExtensionId must not be blank");
+        Objects.requireNonNull(
+                request.getDisableMetricExtensionDetails(),
+                "disableMetricExtensionDetails is required");
+
+        return clientCall(request, DisableMetricExtensionResponse::builder)
+                .logger(LOG, "disableMetricExtension")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "DisableMetricExtension",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MetricExtension/DisableMetricExtension")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableMetricExtensionRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("metricExtensions")
+                .appendPathParam(request.getMetricExtensionId())
+                .appendPathParam("actions")
+                .appendPathParam("disable")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisableMetricExtensionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DisableMetricExtensionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DisassociateMonitoredResourcesResponse disassociateMonitoredResources(
             DisassociateMonitoredResourcesRequest request) {
         Objects.requireNonNull(
@@ -464,6 +805,146 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DisassociateMonitoredResourcesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public EnableMetricExtensionResponse enableMetricExtension(
+            EnableMetricExtensionRequest request) {
+
+        Validate.notBlank(request.getMetricExtensionId(), "metricExtensionId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableMetricExtensionDetails(),
+                "enableMetricExtensionDetails is required");
+
+        return clientCall(request, EnableMetricExtensionResponse::builder)
+                .logger(LOG, "enableMetricExtension")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "EnableMetricExtension",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MetricExtension/EnableMetricExtension")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableMetricExtensionRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("metricExtensions")
+                .appendPathParam(request.getMetricExtensionId())
+                .appendPathParam("actions")
+                .appendPathParam("enable")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        EnableMetricExtensionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", EnableMetricExtensionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public EvaluateBaselineableMetricResponse evaluateBaselineableMetric(
+            EvaluateBaselineableMetricRequest request) {
+        Objects.requireNonNull(
+                request.getEvaluateBaselineableMetricDetails(),
+                "evaluateBaselineableMetricDetails is required");
+
+        Validate.notBlank(
+                request.getBaselineableMetricId(), "baselineableMetricId must not be blank");
+
+        return clientCall(request, EvaluateBaselineableMetricResponse::builder)
+                .logger(LOG, "evaluateBaselineableMetric")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "EvaluateBaselineableMetric",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/EvaluateBaselineableMetricResult/EvaluateBaselineableMetric")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EvaluateBaselineableMetricRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("baselineableMetrics")
+                .appendPathParam(request.getBaselineableMetricId())
+                .appendPathParam("actions")
+                .appendPathParam("evaluate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.EvaluateBaselineableMetricResult.class,
+                        EvaluateBaselineableMetricResponse.Builder
+                                ::evaluateBaselineableMetricResult)
+                .handleResponseHeaderString(
+                        "opc-request-id", EvaluateBaselineableMetricResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", EvaluateBaselineableMetricResponse.Builder::etag)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ExportMetricExtensionResponse exportMetricExtension(
+            ExportMetricExtensionRequest request) {
+
+        Validate.notBlank(request.getMetricExtensionId(), "metricExtensionId must not be blank");
+
+        return clientCall(request, ExportMetricExtensionResponse::builder)
+                .logger(LOG, "exportMetricExtension")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "ExportMetricExtension",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MetricExtension/ExportMetricExtension")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ExportMetricExtensionRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("metricExtensions")
+                .appendPathParam(request.getMetricExtensionId())
+                .appendPathParam("actions")
+                .appendPathParam("export")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        java.io.InputStream.class,
+                        ExportMetricExtensionResponse.Builder::inputStream)
+                .handleResponseHeaderString("etag", ExportMetricExtensionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ExportMetricExtensionResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetBaselineableMetricResponse getBaselineableMetric(
+            GetBaselineableMetricRequest request) {
+
+        Validate.notBlank(
+                request.getBaselineableMetricId(), "baselineableMetricId must not be blank");
+
+        return clientCall(request, GetBaselineableMetricResponse::builder)
+                .logger(LOG, "getBaselineableMetric")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "GetBaselineableMetric",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/BaselineableMetric/GetBaselineableMetric")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetBaselineableMetricRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("baselineableMetrics")
+                .appendPathParam(request.getBaselineableMetricId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.BaselineableMetric.class,
+                        GetBaselineableMetricResponse.Builder::baselineableMetric)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetBaselineableMetricResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetBaselineableMetricResponse.Builder::etag)
+                .handleResponseHeaderInteger(
+                        "retry-after", GetBaselineableMetricResponse.Builder::retryAfter)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -524,6 +1005,34 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public GetMetricExtensionResponse getMetricExtension(GetMetricExtensionRequest request) {
+
+        Validate.notBlank(request.getMetricExtensionId(), "metricExtensionId must not be blank");
+
+        return clientCall(request, GetMetricExtensionResponse::builder)
+                .logger(LOG, "getMetricExtension")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "GetMetricExtension",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MetricExtension/GetMetricExtension")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMetricExtensionRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("metricExtensions")
+                .appendPathParam(request.getMetricExtensionId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.MetricExtension.class,
+                        GetMetricExtensionResponse.Builder::metricExtension)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMetricExtensionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetMetricExtensionResponse.Builder::etag)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public GetMonitoredResourceResponse getMonitoredResource(GetMonitoredResourceRequest request) {
 
         Validate.notBlank(
@@ -553,6 +1062,66 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public GetMonitoredResourceTaskResponse getMonitoredResourceTask(
+            GetMonitoredResourceTaskRequest request) {
+
+        Validate.notBlank(
+                request.getMonitoredResourceTaskId(), "monitoredResourceTaskId must not be blank");
+
+        return clientCall(request, GetMonitoredResourceTaskResponse::builder)
+                .logger(LOG, "getMonitoredResourceTask")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "GetMonitoredResourceTask",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResourceTask/GetMonitoredResourceTask")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMonitoredResourceTaskRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("monitoredResourceTasks")
+                .appendPathParam(request.getMonitoredResourceTaskId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.MonitoredResourceTask.class,
+                        GetMonitoredResourceTaskResponse.Builder::monitoredResourceTask)
+                .handleResponseHeaderString("etag", GetMonitoredResourceTaskResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMonitoredResourceTaskResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetMonitoredResourceTypeResponse getMonitoredResourceType(
+            GetMonitoredResourceTypeRequest request) {
+
+        Validate.notBlank(
+                request.getMonitoredResourceTypeId(), "monitoredResourceTypeId must not be blank");
+
+        return clientCall(request, GetMonitoredResourceTypeResponse::builder)
+                .logger(LOG, "getMonitoredResourceType")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "GetMonitoredResourceType",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResourceType/GetMonitoredResourceType")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMonitoredResourceTypeRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("monitoredResourceTypes")
+                .appendPathParam(request.getMonitoredResourceTypeId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.MonitoredResourceType.class,
+                        GetMonitoredResourceTypeResponse.Builder::monitoredResourceType)
+                .handleResponseHeaderString("etag", GetMonitoredResourceTypeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMonitoredResourceTypeResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
@@ -577,6 +1146,46 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListBaselineableMetricsResponse listBaselineableMetrics(
+            ListBaselineableMetricsRequest request) {
+
+        return clientCall(request, ListBaselineableMetricsResponse::builder)
+                .logger(LOG, "listBaselineableMetrics")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "ListBaselineableMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/BaselineableMetricSummary/ListBaselineableMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListBaselineableMetricsRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("baselineableMetrics")
+                .appendQueryParam("resourceGroup", request.getResourceGroup())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("metricNamespace", request.getMetricNamespace())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("baselineableMetricId", request.getBaselineableMetricId())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.BaselineableMetricSummaryCollection
+                                .class,
+                        ListBaselineableMetricsResponse.Builder
+                                ::baselineableMetricSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListBaselineableMetricsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListBaselineableMetricsResponse.Builder::opcNextPage)
+                .handleResponseHeaderInteger(
+                        "retry-after", ListBaselineableMetricsResponse.Builder::retryAfter)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -685,6 +1294,167 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public ListMetricExtensionsResponse listMetricExtensions(ListMetricExtensionsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListMetricExtensionsResponse::builder)
+                .logger(LOG, "listMetricExtensions")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "ListMetricExtensions",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MetricExtension/ListMetricExtensions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMetricExtensionsRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("metricExtensions")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("resourceType", request.getResourceType())
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("status", request.getStatus())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("enabledOnResourceId", request.getEnabledOnResourceId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.MetricExtensionCollection.class,
+                        ListMetricExtensionsResponse.Builder::metricExtensionCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMetricExtensionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMetricExtensionsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListMonitoredResourceTasksResponse listMonitoredResourceTasks(
+            ListMonitoredResourceTasksRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListMonitoredResourceTasksResponse::builder)
+                .logger(LOG, "listMonitoredResourceTasks")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "ListMonitoredResourceTasks",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResourceTask/ListMonitoredResourceTasks")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMonitoredResourceTasksRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("monitoredResourceTasks")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("status", request.getStatus())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.MonitoredResourceTasksCollection.class,
+                        ListMonitoredResourceTasksResponse.Builder
+                                ::monitoredResourceTasksCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMonitoredResourceTasksResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMonitoredResourceTasksResponse.Builder::opcNextPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items",
+                        ListMonitoredResourceTasksResponse.Builder::opcTotalItems)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListMonitoredResourceTypesResponse listMonitoredResourceTypes(
+            ListMonitoredResourceTypesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListMonitoredResourceTypesResponse::builder)
+                .logger(LOG, "listMonitoredResourceTypes")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "ListMonitoredResourceTypes",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResourceType/ListMonitoredResourceTypes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMonitoredResourceTypesRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("monitoredResourceTypes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("status", request.getStatus())
+                .appendQueryParam("isExcludeSystemTypes", request.getIsExcludeSystemTypes())
+                .appendQueryParam("metricNamespace", request.getMetricNamespace())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "excludeFields",
+                        request.getExcludeFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.MonitoredResourceTypesCollection.class,
+                        ListMonitoredResourceTypesResponse.Builder
+                                ::monitoredResourceTypesCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMonitoredResourceTypesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMonitoredResourceTypesResponse.Builder::opcNextPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items",
+                        ListMonitoredResourceTypesResponse.Builder::opcTotalItems)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListMonitoredResourcesResponse listMonitoredResources(
+            ListMonitoredResourcesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListMonitoredResourcesResponse::builder)
+                .logger(LOG, "listMonitoredResources")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "ListMonitoredResources",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/ListMonitoredResources")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMonitoredResourcesRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("monitoredResources")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("workRequestId", request.getWorkRequestId())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.MonitoredResourceCollection.class,
+                        ListMonitoredResourcesResponse.Builder::monitoredResourceCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMonitoredResourcesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMonitoredResourcesResponse.Builder::opcNextPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListMonitoredResourcesResponse.Builder::opcTotalItems)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public ListWorkRequestErrorsResponse listWorkRequestErrors(
             ListWorkRequestErrorsRequest request) {
 
@@ -784,6 +1554,118 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ManageLicenseResponse manageLicense(ManageLicenseRequest request) {
+
+        Validate.notBlank(
+                request.getMonitoredResourceId(), "monitoredResourceId must not be blank");
+        Objects.requireNonNull(
+                request.getManageLicenseDetails(), "manageLicenseDetails is required");
+
+        return clientCall(request, ManageLicenseResponse::builder)
+                .logger(LOG, "manageLicense")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "ManageLicense",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/ManageLicense")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ManageLicenseRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("monitoredResources")
+                .appendPathParam(request.getMonitoredResourceId())
+                .appendPathParam("actions")
+                .appendPathParam("manageLicense")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ManageLicenseResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public PublishMetricExtensionResponse publishMetricExtension(
+            PublishMetricExtensionRequest request) {
+
+        Validate.notBlank(request.getMetricExtensionId(), "metricExtensionId must not be blank");
+
+        return clientCall(request, PublishMetricExtensionResponse::builder)
+                .logger(LOG, "publishMetricExtension")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "PublishMetricExtension",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MetricExtension/PublishMetricExtension")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(PublishMetricExtensionRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("metricExtensions")
+                .appendPathParam(request.getMetricExtensionId())
+                .appendPathParam("actions")
+                .appendPathParam("publish")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.MetricExtension.class,
+                        PublishMetricExtensionResponse.Builder::metricExtension)
+                .handleResponseHeaderString(
+                        "opc-request-id", PublishMetricExtensionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PublishMetricExtensionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "content-location", PublishMetricExtensionResponse.Builder::contentLocation)
+                .callSync();
+    }
+
+    @Override
+    public RequestMonitoredResourcesSummarizedCountResponse
+            requestMonitoredResourcesSummarizedCount(
+                    RequestMonitoredResourcesSummarizedCountRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, RequestMonitoredResourcesSummarizedCountResponse::builder)
+                .logger(LOG, "requestMonitoredResourcesSummarizedCount")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "RequestMonitoredResourcesSummarizedCount",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/RequestMonitoredResourcesSummarizedCount")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RequestMonitoredResourcesSummarizedCountRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("monitoredResources")
+                .appendPathParam("actions")
+                .appendPathParam("summarizeCount")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("groupBy", request.getGroupBy())
+                .appendEnumQueryParam("license", request.getLicense())
+                .appendQueryParam("resourceType", request.getResourceType())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model
+                                .MonitoredResourcesCountAggregationCollection.class,
+                        RequestMonitoredResourcesSummarizedCountResponse.Builder
+                                ::monitoredResourcesCountAggregationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RequestMonitoredResourcesSummarizedCountResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        RequestMonitoredResourcesSummarizedCountResponse.Builder::opcNextPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items",
+                        RequestMonitoredResourcesSummarizedCountResponse.Builder::opcTotalItems)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -977,6 +1859,43 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public TestMetricExtensionResponse testMetricExtension(TestMetricExtensionRequest request) {
+
+        Validate.notBlank(request.getMetricExtensionId(), "metricExtensionId must not be blank");
+        Objects.requireNonNull(
+                request.getTestMetricExtensionDetails(), "testMetricExtensionDetails is required");
+
+        return clientCall(request, TestMetricExtensionResponse::builder)
+                .logger(LOG, "testMetricExtension")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "TestMetricExtension",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MetricExtension/TestMetricExtension")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(TestMetricExtensionRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("metricExtensions")
+                .appendPathParam(request.getMetricExtensionId())
+                .appendPathParam("actions")
+                .appendPathParam("test")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.TestMetricExtensionData.class,
+                        TestMetricExtensionResponse.Builder::testMetricExtensionData)
+                .handleResponseHeaderString("etag", TestMetricExtensionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        TestMetricExtensionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", TestMetricExtensionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public UpdateAndPropagateTagsResponse updateAndPropagateTags(
             UpdateAndPropagateTagsRequest request) {
 
@@ -1014,6 +1933,43 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public UpdateBaselineableMetricResponse updateBaselineableMetric(
+            UpdateBaselineableMetricRequest request) {
+        Objects.requireNonNull(
+                request.getUpdateBaselineableMetricDetails(),
+                "updateBaselineableMetricDetails is required");
+
+        Validate.notBlank(
+                request.getBaselineableMetricId(), "baselineableMetricId must not be blank");
+
+        return clientCall(request, UpdateBaselineableMetricResponse::builder)
+                .logger(LOG, "updateBaselineableMetric")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "UpdateBaselineableMetric",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/UpdateBaselineableMetricDetails/UpdateBaselineableMetric")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateBaselineableMetricRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("baselineableMetrics")
+                .appendPathParam(request.getBaselineableMetricId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.BaselineableMetric.class,
+                        UpdateBaselineableMetricResponse.Builder::baselineableMetric)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateBaselineableMetricResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateBaselineableMetricResponse.Builder::etag)
+                .handleResponseHeaderInteger(
+                        "retry-after", UpdateBaselineableMetricResponse.Builder::retryAfter)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public UpdateConfigResponse updateConfig(UpdateConfigRequest request) {
 
         Validate.notBlank(request.getConfigId(), "configId must not be blank");
@@ -1041,6 +1997,41 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateConfigResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public UpdateMetricExtensionResponse updateMetricExtension(
+            UpdateMetricExtensionRequest request) {
+
+        Validate.notBlank(request.getMetricExtensionId(), "metricExtensionId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateMetricExtensionDetails(),
+                "updateMetricExtensionDetails is required");
+
+        return clientCall(request, UpdateMetricExtensionResponse::builder)
+                .logger(LOG, "updateMetricExtension")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "UpdateMetricExtension",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MetricExtension/UpdateMetricExtension")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMetricExtensionRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("metricExtensions")
+                .appendPathParam(request.getMetricExtensionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.MetricExtension.class,
+                        UpdateMetricExtensionResponse.Builder::metricExtension)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateMetricExtensionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateMetricExtensionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "content-location", UpdateMetricExtensionResponse.Builder::contentLocation)
                 .callSync();
     }
 
@@ -1074,6 +2065,76 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                         UpdateMonitoredResourceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateMonitoredResourceResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateMonitoredResourceTaskResponse updateMonitoredResourceTask(
+            UpdateMonitoredResourceTaskRequest request) {
+
+        Validate.notBlank(
+                request.getMonitoredResourceTaskId(), "monitoredResourceTaskId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateMonitoredResourceTaskDetails(),
+                "updateMonitoredResourceTaskDetails is required");
+
+        return clientCall(request, UpdateMonitoredResourceTaskResponse::builder)
+                .logger(LOG, "updateMonitoredResourceTask")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "UpdateMonitoredResourceTask",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResourceTask/UpdateMonitoredResourceTask")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMonitoredResourceTaskRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("monitoredResourceTasks")
+                .appendPathParam(request.getMonitoredResourceTaskId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.MonitoredResourceTask.class,
+                        UpdateMonitoredResourceTaskResponse.Builder::monitoredResourceTask)
+                .handleResponseHeaderString(
+                        "etag", UpdateMonitoredResourceTaskResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateMonitoredResourceTaskResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateMonitoredResourceTypeResponse updateMonitoredResourceType(
+            UpdateMonitoredResourceTypeRequest request) {
+
+        Validate.notBlank(
+                request.getMonitoredResourceTypeId(), "monitoredResourceTypeId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateMonitoredResourceTypeDetails(),
+                "updateMonitoredResourceTypeDetails is required");
+
+        return clientCall(request, UpdateMonitoredResourceTypeResponse::builder)
+                .logger(LOG, "updateMonitoredResourceType")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "UpdateMonitoredResourceType",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResourceType/UpdateMonitoredResourceType")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMonitoredResourceTypeRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("monitoredResourceTypes")
+                .appendPathParam(request.getMonitoredResourceTypeId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.MonitoredResourceType.class,
+                        UpdateMonitoredResourceTypeResponse.Builder::monitoredResourceType)
+                .handleResponseHeaderString(
+                        "etag", UpdateMonitoredResourceTypeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateMonitoredResourceTypeResponse.Builder::opcRequestId)
                 .callSync();
     }
 

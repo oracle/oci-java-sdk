@@ -16,11 +16,11 @@ public class CreateDrProtectionGroupRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.disasterrecovery.model.CreateDrProtectionGroupDetails> {
 
-    /** Details for the new DR Protection Group. */
+    /** Details for creating the DR protection group. */
     private com.oracle.bmc.disasterrecovery.model.CreateDrProtectionGroupDetails
             createDrProtectionGroupDetails;
 
-    /** Details for the new DR Protection Group. */
+    /** Details for creating the DR protection group. */
     public com.oracle.bmc.disasterrecovery.model.CreateDrProtectionGroupDetails
             getCreateDrProtectionGroupDetails() {
         return createDrProtectionGroupDetails;
@@ -70,12 +70,12 @@ public class CreateDrProtectionGroupRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the new DR Protection Group. */
+        /** Details for creating the DR protection group. */
         private com.oracle.bmc.disasterrecovery.model.CreateDrProtectionGroupDetails
                 createDrProtectionGroupDetails = null;
 
         /**
-         * Details for the new DR Protection Group.
+         * Details for creating the DR protection group.
          *
          * @param createDrProtectionGroupDetails the value to set
          * @return this builder instance

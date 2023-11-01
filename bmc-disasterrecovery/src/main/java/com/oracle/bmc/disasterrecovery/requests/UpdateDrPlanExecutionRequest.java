@@ -16,26 +16,26 @@ public class UpdateDrPlanExecutionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.disasterrecovery.model.UpdateDrPlanExecutionDetails> {
 
-    /** Details of DR Plan Execution to update. */
+    /** Details for updating the DR plan execution. */
     private com.oracle.bmc.disasterrecovery.model.UpdateDrPlanExecutionDetails
             updateDrPlanExecutionDetails;
 
-    /** Details of DR Plan Execution to update. */
+    /** Details for updating the DR plan execution. */
     public com.oracle.bmc.disasterrecovery.model.UpdateDrPlanExecutionDetails
             getUpdateDrPlanExecutionDetails() {
         return updateDrPlanExecutionDetails;
     }
     /**
-     * The OCID of the DR Plan Execution.
+     * The OCID of the DR plan execution.
      *
-     * <p>Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+     * <p>Example: {@code ocid1.drplanexecution.oc1..uniqueID}
      */
     private String drPlanExecutionId;
 
     /**
-     * The OCID of the DR Plan Execution.
+     * The OCID of the DR plan execution.
      *
-     * <p>Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+     * <p>Example: {@code ocid1.drplanexecution.oc1..uniqueID}
      */
     public String getDrPlanExecutionId() {
         return drPlanExecutionId;
@@ -83,12 +83,12 @@ public class UpdateDrPlanExecutionRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details of DR Plan Execution to update. */
+        /** Details for updating the DR plan execution. */
         private com.oracle.bmc.disasterrecovery.model.UpdateDrPlanExecutionDetails
                 updateDrPlanExecutionDetails = null;
 
         /**
-         * Details of DR Plan Execution to update.
+         * Details for updating the DR plan execution.
          *
          * @param updateDrPlanExecutionDetails the value to set
          * @return this builder instance
@@ -101,16 +101,16 @@ public class UpdateDrPlanExecutionRequest
         }
 
         /**
-         * The OCID of the DR Plan Execution.
+         * The OCID of the DR plan execution.
          *
-         * <p>Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+         * <p>Example: {@code ocid1.drplanexecution.oc1..uniqueID}
          */
         private String drPlanExecutionId = null;
 
         /**
-         * The OCID of the DR Plan Execution.
+         * The OCID of the DR plan execution.
          *
-         * <p>Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+         * <p>Example: {@code ocid1.drplanexecution.oc1..uniqueID}
          *
          * @param drPlanExecutionId the value to set
          * @return this builder instance

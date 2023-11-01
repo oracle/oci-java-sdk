@@ -1,0 +1,52 @@
+[
+  {
+    "name":"com.fasterxml.jackson.databind.JsonDeserializer[]"
+  },
+  {
+    "name":"com.fasterxml.jackson.databind.JsonSerializer[]"
+  },
+  {
+    "name":"com.fasterxml.jackson.databind.KeyDeserializer[]"
+  },
+  {
+    "name":"com.fasterxml.jackson.databind.Module[]"
+  },
+  {
+    "name":"com.fasterxml.jackson.databind.deser.BeanDeserializerModifier[]"
+  },
+  {
+    "name":"com.fasterxml.jackson.databind.deser.Deserializers[]"
+  },
+  {
+    "name":"com.fasterxml.jackson.databind.deser.KeyDeserializers[]"
+  },
+  {
+    "name":"com.fasterxml.jackson.databind.deser.ValueInstantiators[]"
+  },
+  {
+    "name":"com.fasterxml.jackson.databind.ext.Java7HandlersImpl",
+    "methods":[{"name":"<init>","parameterTypes":[] }]
+  },
+  {
+    "name":"com.fasterxml.jackson.databind.ext.Java7SupportImpl",
+    "methods":[{"name":"<init>","parameterTypes":[] }]
+  },
+  {
+    "name":"com.fasterxml.jackson.databind.ser.BeanSerializerModifier[]"
+  },
+  {
+    "name":"com.fasterxml.jackson.databind.ser.Serializers[]"
+  },
+  {
+    "name":"com.fasterxml.jackson.module.jaxb.JaxbAnnotationIntrospector",
+    "methods":[{"name":"<init>","parameterTypes":[] }]
+  },
+  {
+    "name":"com.fasterxml.jackson.module.jaxb.deser.DataHandlerJsonDeserializer",
+    "methods":[{"name":"<init>","parameterTypes":[] }]
+  },
+  {
+    "name":"com.fasterxml.jackson.module.jaxb.ser.DataHandlerJsonSerializer",
+    "methods":[{"name":"<init>","parameterTypes":[] }]
+  }
+]

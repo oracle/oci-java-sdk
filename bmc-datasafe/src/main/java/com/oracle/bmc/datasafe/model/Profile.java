@@ -174,12 +174,12 @@ public final class Profile extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("profileName");
             return this;
         }
-        /** The number of users having a given profile. */
+        /** The number of users that have a given profile. */
         @com.fasterxml.jackson.annotation.JsonProperty("userCount")
         private Integer userCount;
 
         /**
-         * The number of users having a given profile.
+         * The number of users that have a given profile.
          *
          * @param userCount the value to set
          * @return this builder
@@ -764,12 +764,12 @@ public final class Profile extends com.oracle.bmc.http.client.internal.Explicitl
         return profileName;
     }
 
-    /** The number of users having a given profile. */
+    /** The number of users that have a given profile. */
     @com.fasterxml.jackson.annotation.JsonProperty("userCount")
     private final Integer userCount;
 
     /**
-     * The number of users having a given profile.
+     * The number of users that have a given profile.
      *
      * @return the value
      */

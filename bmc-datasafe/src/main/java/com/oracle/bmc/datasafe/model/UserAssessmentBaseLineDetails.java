@@ -5,7 +5,7 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The details reqired to set baseline assessment. <br>
+ * The details required to set the baseline for the assessment. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +31,16 @@ public final class UserAssessmentBaseLineDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The list of user assessment OCIDs that need to be updated while setting the baseline. */
+        /**
+         * The list of OCIDs for the user assessments that need to be updated while setting the
+         * baseline.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("assessmentIds")
         private java.util.List<String> assessmentIds;
 
         /**
-         * The list of user assessment OCIDs that need to be updated while setting the baseline.
+         * The list of OCIDs for the user assessments that need to be updated while setting the
+         * baseline.
          *
          * @param assessmentIds the value to set
          * @return this builder
@@ -77,12 +81,16 @@ public final class UserAssessmentBaseLineDetails
         return new Builder().copy(this);
     }
 
-    /** The list of user assessment OCIDs that need to be updated while setting the baseline. */
+    /**
+     * The list of OCIDs for the user assessments that need to be updated while setting the
+     * baseline.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("assessmentIds")
     private final java.util.List<String> assessmentIds;
 
     /**
-     * The list of user assessment OCIDs that need to be updated while setting the baseline.
+     * The list of OCIDs for the user assessments that need to be updated while setting the
+     * baseline.
      *
      * @return the value
      */

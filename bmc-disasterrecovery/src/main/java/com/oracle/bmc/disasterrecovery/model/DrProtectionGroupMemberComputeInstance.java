@@ -5,7 +5,7 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Properties for a Compute Instance member of a DR Protection Group. <br>
+ * Deprecated. Properties for a compute instance member of a DR protection group. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -36,7 +36,7 @@ public final class DrProtectionGroupMemberComputeInstance extends DrProtectionGr
             return this;
         }
         /**
-         * A flag indicating if this compute instance should be moved during DR operations.
+         * A flag indicating if the compute instance should be moved during DR operations.
          *
          * <p>Example: {@code false}
          */
@@ -44,7 +44,7 @@ public final class DrProtectionGroupMemberComputeInstance extends DrProtectionGr
         private Boolean isMovable;
 
         /**
-         * A flag indicating if this compute instance should be moved during DR operations.
+         * A flag indicating if the compute instance should be moved during DR operations.
          *
          * <p>Example: {@code false}
          *
@@ -72,17 +72,19 @@ public final class DrProtectionGroupMemberComputeInstance extends DrProtectionGr
             return this;
         }
         /**
-         * The OCID of the compartment for this compute instance in the destination region.
+         * The OCID of a compartment in the destination region in which the compute instance should
+         * be launched.
          *
-         * <p>Example: {@code ocid1.compartment.oc1..exampleocid}
+         * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("destinationCompartmentId")
         private String destinationCompartmentId;
 
         /**
-         * The OCID of the compartment for this compute instance in the destination region.
+         * The OCID of a compartment in the destination region in which the compute instance should
+         * be launched.
          *
-         * <p>Example: {@code ocid1.compartment.oc1..exampleocid}
+         * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
          *
          * @param destinationCompartmentId the value to set
          * @return this builder
@@ -93,17 +95,19 @@ public final class DrProtectionGroupMemberComputeInstance extends DrProtectionGr
             return this;
         }
         /**
-         * The OCID of the dedicated VM Host for this compute instance in the destination region.
+         * The OCID of a dedicated VM host in the destination region where the compute instance
+         * should be launched.
          *
-         * <p>Example: {@code ocid1.dedicatedvmhost.oc1.iad.exampleocid}
+         * <p>Example: {@code ocid1.dedicatedvmhost.oc1..uniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("destinationDedicatedVmHostId")
         private String destinationDedicatedVmHostId;
 
         /**
-         * The OCID of the dedicated VM Host for this compute instance in the destination region.
+         * The OCID of a dedicated VM host in the destination region where the compute instance
+         * should be launched.
          *
-         * <p>Example: {@code ocid1.dedicatedvmhost.oc1.iad.exampleocid}
+         * <p>Example: {@code ocid1.dedicatedvmhost.oc1..uniqueID}
          *
          * @param destinationDedicatedVmHostId the value to set
          * @return this builder
@@ -176,7 +180,7 @@ public final class DrProtectionGroupMemberComputeInstance extends DrProtectionGr
     }
 
     /**
-     * A flag indicating if this compute instance should be moved during DR operations.
+     * A flag indicating if the compute instance should be moved during DR operations.
      *
      * <p>Example: {@code false}
      */
@@ -184,7 +188,7 @@ public final class DrProtectionGroupMemberComputeInstance extends DrProtectionGr
     private final Boolean isMovable;
 
     /**
-     * A flag indicating if this compute instance should be moved during DR operations.
+     * A flag indicating if the compute instance should be moved during DR operations.
      *
      * <p>Example: {@code false}
      *
@@ -208,17 +212,19 @@ public final class DrProtectionGroupMemberComputeInstance extends DrProtectionGr
     }
 
     /**
-     * The OCID of the compartment for this compute instance in the destination region.
+     * The OCID of a compartment in the destination region in which the compute instance should be
+     * launched.
      *
-     * <p>Example: {@code ocid1.compartment.oc1..exampleocid}
+     * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("destinationCompartmentId")
     private final String destinationCompartmentId;
 
     /**
-     * The OCID of the compartment for this compute instance in the destination region.
+     * The OCID of a compartment in the destination region in which the compute instance should be
+     * launched.
      *
-     * <p>Example: {@code ocid1.compartment.oc1..exampleocid}
+     * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
      *
      * @return the value
      */
@@ -227,17 +233,19 @@ public final class DrProtectionGroupMemberComputeInstance extends DrProtectionGr
     }
 
     /**
-     * The OCID of the dedicated VM Host for this compute instance in the destination region.
+     * The OCID of a dedicated VM host in the destination region where the compute instance should
+     * be launched.
      *
-     * <p>Example: {@code ocid1.dedicatedvmhost.oc1.iad.exampleocid}
+     * <p>Example: {@code ocid1.dedicatedvmhost.oc1..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("destinationDedicatedVmHostId")
     private final String destinationDedicatedVmHostId;
 
     /**
-     * The OCID of the dedicated VM Host for this compute instance in the destination region.
+     * The OCID of a dedicated VM host in the destination region where the compute instance should
+     * be launched.
      *
-     * <p>Example: {@code ocid1.dedicatedvmhost.oc1.iad.exampleocid}
+     * <p>Example: {@code ocid1.dedicatedvmhost.oc1..uniqueID}
      *
      * @return the value
      */

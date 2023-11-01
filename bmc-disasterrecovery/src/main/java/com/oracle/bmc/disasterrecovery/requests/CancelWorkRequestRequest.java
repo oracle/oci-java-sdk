@@ -16,14 +16,14 @@ public class CancelWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest
     /**
      * The ID (OCID) of the asynchronous request.
      *
-     * <p>Example: {@code ocid1.workrequest.oc1.phx.exampleocid}
+     * <p>Example: {@code ocid1.workrequest.oc1..uniqueID}
      */
     private String workRequestId;
 
     /**
      * The ID (OCID) of the asynchronous request.
      *
-     * <p>Example: {@code ocid1.workrequest.oc1.phx.exampleocid}
+     * <p>Example: {@code ocid1.workrequest.oc1..uniqueID}
      */
     public String getWorkRequestId() {
         return workRequestId;
@@ -62,14 +62,14 @@ public class CancelWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * The ID (OCID) of the asynchronous request.
          *
-         * <p>Example: {@code ocid1.workrequest.oc1.phx.exampleocid}
+         * <p>Example: {@code ocid1.workrequest.oc1..uniqueID}
          */
         private String workRequestId = null;
 
         /**
          * The ID (OCID) of the asynchronous request.
          *
-         * <p>Example: {@code ocid1.workrequest.oc1.phx.exampleocid}
+         * <p>Example: {@code ocid1.workrequest.oc1..uniqueID}
          *
          * @param workRequestId the value to set
          * @return this builder instance

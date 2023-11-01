@@ -15,26 +15,26 @@ public class RetryDrPlanExecutionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.disasterrecovery.model.RetryDrPlanExecutionDetails> {
 
-    /** Details of the failed group or step to retry. */
+    /** Details for retrying execution of the failed group or step. */
     private com.oracle.bmc.disasterrecovery.model.RetryDrPlanExecutionDetails
             retryDrPlanExecutionDetails;
 
-    /** Details of the failed group or step to retry. */
+    /** Details for retrying execution of the failed group or step. */
     public com.oracle.bmc.disasterrecovery.model.RetryDrPlanExecutionDetails
             getRetryDrPlanExecutionDetails() {
         return retryDrPlanExecutionDetails;
     }
     /**
-     * The OCID of the DR Plan Execution.
+     * The OCID of the DR plan execution.
      *
-     * <p>Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+     * <p>Example: {@code ocid1.drplanexecution.oc1..uniqueID}
      */
     private String drPlanExecutionId;
 
     /**
-     * The OCID of the DR Plan Execution.
+     * The OCID of the DR plan execution.
      *
-     * <p>Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+     * <p>Example: {@code ocid1.drplanexecution.oc1..uniqueID}
      */
     public String getDrPlanExecutionId() {
         return drPlanExecutionId;
@@ -101,12 +101,12 @@ public class RetryDrPlanExecutionRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details of the failed group or step to retry. */
+        /** Details for retrying execution of the failed group or step. */
         private com.oracle.bmc.disasterrecovery.model.RetryDrPlanExecutionDetails
                 retryDrPlanExecutionDetails = null;
 
         /**
-         * Details of the failed group or step to retry.
+         * Details for retrying execution of the failed group or step.
          *
          * @param retryDrPlanExecutionDetails the value to set
          * @return this builder instance
@@ -119,16 +119,16 @@ public class RetryDrPlanExecutionRequest
         }
 
         /**
-         * The OCID of the DR Plan Execution.
+         * The OCID of the DR plan execution.
          *
-         * <p>Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+         * <p>Example: {@code ocid1.drplanexecution.oc1..uniqueID}
          */
         private String drPlanExecutionId = null;
 
         /**
-         * The OCID of the DR Plan Execution.
+         * The OCID of the DR plan execution.
          *
-         * <p>Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+         * <p>Example: {@code ocid1.drplanexecution.oc1..uniqueID}
          *
          * @param drPlanExecutionId the value to set
          * @return this builder instance

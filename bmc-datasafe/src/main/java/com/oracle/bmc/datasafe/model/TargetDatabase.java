@@ -174,12 +174,12 @@ public final class TargetDatabase
             this.__explicitlySet__.add("connectionOption");
             return this;
         }
-        /** The OCIDs of associated resources like Database, Data Safe private endpoint etc. */
+        /** The OCIDs of associated resources like database, Data Safe private endpoint etc. */
         @com.fasterxml.jackson.annotation.JsonProperty("associatedResourceIds")
         private java.util.List<String> associatedResourceIds;
 
         /**
-         * The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+         * The OCIDs of associated resources like database, Data Safe private endpoint etc.
          *
          * @param associatedResourceIds the value to set
          * @return this builder
@@ -219,12 +219,12 @@ public final class TargetDatabase
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** The date and time of target database registration and creation in Data Safe. */
+        /** The date and time of the target database registration and creation in Data Safe. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time of target database registration and creation in Data Safe.
+         * The date and time of the target database registration and creation in Data Safe.
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -493,12 +493,12 @@ public final class TargetDatabase
         return connectionOption;
     }
 
-    /** The OCIDs of associated resources like Database, Data Safe private endpoint etc. */
+    /** The OCIDs of associated resources like database, Data Safe private endpoint etc. */
     @com.fasterxml.jackson.annotation.JsonProperty("associatedResourceIds")
     private final java.util.List<String> associatedResourceIds;
 
     /**
-     * The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     * The OCIDs of associated resources like database, Data Safe private endpoint etc.
      *
      * @return the value
      */
@@ -532,12 +532,12 @@ public final class TargetDatabase
         return lifecycleDetails;
     }
 
-    /** The date and time of target database registration and creation in Data Safe. */
+    /** The date and time of the target database registration and creation in Data Safe. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time of target database registration and creation in Data Safe.
+     * The date and time of the target database registration and creation in Data Safe.
      *
      * @return the value
      */

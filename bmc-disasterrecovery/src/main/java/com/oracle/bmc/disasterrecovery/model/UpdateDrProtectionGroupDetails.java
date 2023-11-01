@@ -5,7 +5,7 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The details for updating a DR Protection Group. <br>
+ * The details for updating a DR protection group. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -47,17 +47,17 @@ public final class UpdateDrProtectionGroupDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The display name of the DR Protection Group.
+         * The display name of the DR protection group.
          *
-         * <p>Example: {@code EBS PHX DRPG}
+         * <p>Example: {@code EBS PHX Group}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The display name of the DR Protection Group.
+         * The display name of the DR protection group.
          *
-         * <p>Example: {@code EBS PHX DRPG}
+         * <p>Example: {@code EBS PHX Group}
          *
          * @param displayName the value to set
          * @return this builder
@@ -76,12 +76,18 @@ public final class UpdateDrProtectionGroupDetails
             this.__explicitlySet__.add("logLocation");
             return this;
         }
-        /** A list of DR Protection Group members. */
+        /**
+         * A list of DR protection group members. When updating members, this list must contain all
+         * members being retained, including added and updated members. The list must not contain
+         * deleted members.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("members")
         private java.util.List<UpdateDrProtectionGroupMemberDetails> members;
 
         /**
-         * A list of DR Protection Group members.
+         * A list of DR protection group members. When updating members, this list must contain all
+         * members being retained, including added and updated members. The list must not contain
+         * deleted members.
          *
          * @param members the value to set
          * @return this builder
@@ -93,14 +99,18 @@ public final class UpdateDrProtectionGroupDetails
         }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"Department": "Finance"}}
+         * for cross-compatibility only.
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"Department": "Finance"}}
+         * for cross-compatibility only.
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
@@ -112,14 +122,16 @@ public final class UpdateDrProtectionGroupDetails
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
@@ -179,17 +191,17 @@ public final class UpdateDrProtectionGroupDetails
     }
 
     /**
-     * The display name of the DR Protection Group.
+     * The display name of the DR protection group.
      *
-     * <p>Example: {@code EBS PHX DRPG}
+     * <p>Example: {@code EBS PHX Group}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The display name of the DR Protection Group.
+     * The display name of the DR protection group.
      *
-     * <p>Example: {@code EBS PHX DRPG}
+     * <p>Example: {@code EBS PHX Group}
      *
      * @return the value
      */
@@ -204,12 +216,18 @@ public final class UpdateDrProtectionGroupDetails
         return logLocation;
     }
 
-    /** A list of DR Protection Group members. */
+    /**
+     * A list of DR protection group members. When updating members, this list must contain all
+     * members being retained, including added and updated members. The list must not contain
+     * deleted members.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("members")
     private final java.util.List<UpdateDrProtectionGroupMemberDetails> members;
 
     /**
-     * A list of DR Protection Group members.
+     * A list of DR protection group members. When updating members, this list must contain all
+     * members being retained, including added and updated members. The list must not contain
+     * deleted members.
      *
      * @return the value
      */
@@ -219,14 +237,18 @@ public final class UpdateDrProtectionGroupDetails
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"Department": "Finance"}}
+     * cross-compatibility only.
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"Department": "Finance"}}
+     * cross-compatibility only.
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      *
      * @return the value
      */
@@ -235,15 +257,17 @@ public final class UpdateDrProtectionGroupDetails
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     *
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     *
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
      */

@@ -5,7 +5,7 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Information about updating an Object Storage log location for a DR Protection Group. <br>
+ * The details for updating an object storage log location for a DR protection group. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -33,7 +33,7 @@ public final class UpdateObjectStorageLogLocationDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The namespace in Object Storage (Note - this is usually the tenancy name).
+         * The namespace in object storage (Note - this is usually the tenancy name).
          *
          * <p>Example: {@code myocitenancy}
          */
@@ -41,7 +41,7 @@ public final class UpdateObjectStorageLogLocationDetails
         private String namespace;
 
         /**
-         * The namespace in Object Storage (Note - this is usually the tenancy name).
+         * The namespace in object storage (Note - this is usually the tenancy name).
          *
          * <p>Example: {@code myocitenancy}
          *
@@ -54,7 +54,7 @@ public final class UpdateObjectStorageLogLocationDetails
             return this;
         }
         /**
-         * The bucket name inside the Object Storage namespace.
+         * The bucket name inside the object storage namespace.
          *
          * <p>Example: {@code operation_logs}
          */
@@ -62,7 +62,7 @@ public final class UpdateObjectStorageLogLocationDetails
         private String bucket;
 
         /**
-         * The bucket name inside the Object Storage namespace.
+         * The bucket name inside the object storage namespace.
          *
          * <p>Example: {@code operation_logs}
          *
@@ -109,7 +109,7 @@ public final class UpdateObjectStorageLogLocationDetails
     }
 
     /**
-     * The namespace in Object Storage (Note - this is usually the tenancy name).
+     * The namespace in object storage (Note - this is usually the tenancy name).
      *
      * <p>Example: {@code myocitenancy}
      */
@@ -117,7 +117,7 @@ public final class UpdateObjectStorageLogLocationDetails
     private final String namespace;
 
     /**
-     * The namespace in Object Storage (Note - this is usually the tenancy name).
+     * The namespace in object storage (Note - this is usually the tenancy name).
      *
      * <p>Example: {@code myocitenancy}
      *
@@ -128,7 +128,7 @@ public final class UpdateObjectStorageLogLocationDetails
     }
 
     /**
-     * The bucket name inside the Object Storage namespace.
+     * The bucket name inside the object storage namespace.
      *
      * <p>Example: {@code operation_logs}
      */
@@ -136,7 +136,7 @@ public final class UpdateObjectStorageLogLocationDetails
     private final String bucket;
 
     /**
-     * The bucket name inside the Object Storage namespace.
+     * The bucket name inside the object storage namespace.
      *
      * <p>Example: {@code operation_logs}
      *

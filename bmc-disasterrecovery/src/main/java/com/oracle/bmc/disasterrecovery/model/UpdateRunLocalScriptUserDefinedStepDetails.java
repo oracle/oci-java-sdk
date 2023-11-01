@@ -29,17 +29,29 @@ public final class UpdateRunLocalScriptUserDefinedStepDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The OCID of the instance where this script or command should be executed.
+         * The OCID of the instance on which this script or command should be executed.
          *
-         * <p>Example: {@code ocid1.instance.oc1.phx.&lt;unique_id&gt;}
+         * <p>*For moving instances:** *runOnInstanceId* must be the OCID of the instance in the
+         * region where the instance is currently present.
+         *
+         * <p>*For non-moving instances:** *runOnInstanceId* must be the OCID of the non-moving
+         * instance.
+         *
+         * <p>Example: {@code ocid1.instance.oc1..uniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("runOnInstanceId")
         private String runOnInstanceId;
 
         /**
-         * The OCID of the instance where this script or command should be executed.
+         * The OCID of the instance on which this script or command should be executed.
          *
-         * <p>Example: {@code ocid1.instance.oc1.phx.&lt;unique_id&gt;}
+         * <p>*For moving instances:** *runOnInstanceId* must be the OCID of the instance in the
+         * region where the instance is currently present.
+         *
+         * <p>*For non-moving instances:** *runOnInstanceId* must be the OCID of the non-moving
+         * instance.
+         *
+         * <p>Example: {@code ocid1.instance.oc1..uniqueID}
          *
          * @param runOnInstanceId the value to set
          * @return this builder
@@ -139,17 +151,29 @@ public final class UpdateRunLocalScriptUserDefinedStepDetails
     }
 
     /**
-     * The OCID of the instance where this script or command should be executed.
+     * The OCID of the instance on which this script or command should be executed.
      *
-     * <p>Example: {@code ocid1.instance.oc1.phx.&lt;unique_id&gt;}
+     * <p>*For moving instances:** *runOnInstanceId* must be the OCID of the instance in the region
+     * where the instance is currently present.
+     *
+     * <p>*For non-moving instances:** *runOnInstanceId* must be the OCID of the non-moving
+     * instance.
+     *
+     * <p>Example: {@code ocid1.instance.oc1..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("runOnInstanceId")
     private final String runOnInstanceId;
 
     /**
-     * The OCID of the instance where this script or command should be executed.
+     * The OCID of the instance on which this script or command should be executed.
      *
-     * <p>Example: {@code ocid1.instance.oc1.phx.&lt;unique_id&gt;}
+     * <p>*For moving instances:** *runOnInstanceId* must be the OCID of the instance in the region
+     * where the instance is currently present.
+     *
+     * <p>*For non-moving instances:** *runOnInstanceId* must be the OCID of the non-moving
+     * instance.
+     *
+     * <p>Example: {@code ocid1.instance.oc1..uniqueID}
      *
      * @return the value
      */

@@ -33,6 +33,7 @@ public final class MonitoredResourceMemberSummary
         "compartmentId",
         "parentId",
         "lifecycleState",
+        "license",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -47,6 +48,7 @@ public final class MonitoredResourceMemberSummary
             String compartmentId,
             String parentId,
             ResourceLifecycleState lifecycleState,
+            LicenseType license,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -60,6 +62,7 @@ public final class MonitoredResourceMemberSummary
         this.compartmentId = compartmentId;
         this.parentId = parentId;
         this.lifecycleState = lifecycleState;
+        this.license = license;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -224,6 +227,21 @@ public final class MonitoredResourceMemberSummary
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
+        /** License edition of the monitored resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("license")
+        private LicenseType license;
+
+        /**
+         * License edition of the monitored resource.
+         *
+         * @param license the value to set
+         * @return this builder
+         */
+        public Builder license(LicenseType license) {
+            this.license = license;
+            this.__explicitlySet__.add("license");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -298,6 +316,7 @@ public final class MonitoredResourceMemberSummary
                             this.compartmentId,
                             this.parentId,
                             this.lifecycleState,
+                            this.license,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -335,6 +354,9 @@ public final class MonitoredResourceMemberSummary
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("license")) {
+                this.license(model.getLicense());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -495,6 +517,19 @@ public final class MonitoredResourceMemberSummary
         return lifecycleState;
     }
 
+    /** License edition of the monitored resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("license")
+    private final LicenseType license;
+
+    /**
+     * License edition of the monitored resource.
+     *
+     * @return the value
+     */
+    public LicenseType getLicense() {
+        return license;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -570,6 +605,7 @@ public final class MonitoredResourceMemberSummary
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", parentId=").append(String.valueOf(this.parentId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", license=").append(String.valueOf(this.license));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -596,6 +632,7 @@ public final class MonitoredResourceMemberSummary
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.parentId, other.parentId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.license, other.license)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -623,6 +660,7 @@ public final class MonitoredResourceMemberSummary
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.license == null ? 43 : this.license.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

@@ -5,7 +5,7 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Update properties for a Non-Movable Compute Instance member. <br>
+ * Update properties for a non-movable compute instance member. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -36,6 +36,63 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails
             this.__explicitlySet__.add("memberId");
             return this;
         }
+        /**
+         * A flag indicating whether the non-movable compute instance should be started and stopped
+         * during DR operations. *Prechecks cannot be executed on stopped instances that are
+         * configured to be started.*
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isStartStopEnabled")
+        private Boolean isStartStopEnabled;
+
+        /**
+         * A flag indicating whether the non-movable compute instance should be started and stopped
+         * during DR operations. *Prechecks cannot be executed on stopped instances that are
+         * configured to be started.*
+         *
+         * @param isStartStopEnabled the value to set
+         * @return this builder
+         */
+        public Builder isStartStopEnabled(Boolean isStartStopEnabled) {
+            this.isStartStopEnabled = isStartStopEnabled;
+            this.__explicitlySet__.add("isStartStopEnabled");
+            return this;
+        }
+        /** A list of operations performed on file systems used by the compute instance. */
+        @com.fasterxml.jackson.annotation.JsonProperty("fileSystemOperations")
+        private java.util.List<UpdateComputeInstanceNonMovableFileSystemOperationDetails>
+                fileSystemOperations;
+
+        /**
+         * A list of operations performed on file systems used by the compute instance.
+         *
+         * @param fileSystemOperations the value to set
+         * @return this builder
+         */
+        public Builder fileSystemOperations(
+                java.util.List<UpdateComputeInstanceNonMovableFileSystemOperationDetails>
+                        fileSystemOperations) {
+            this.fileSystemOperations = fileSystemOperations;
+            this.__explicitlySet__.add("fileSystemOperations");
+            return this;
+        }
+        /** A list of operations performed on block volumes used by the compute instance. */
+        @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeOperations")
+        private java.util.List<UpdateComputeInstanceNonMovableBlockVolumeOperationDetails>
+                blockVolumeOperations;
+
+        /**
+         * A list of operations performed on block volumes used by the compute instance.
+         *
+         * @param blockVolumeOperations the value to set
+         * @return this builder
+         */
+        public Builder blockVolumeOperations(
+                java.util.List<UpdateComputeInstanceNonMovableBlockVolumeOperationDetails>
+                        blockVolumeOperations) {
+            this.blockVolumeOperations = blockVolumeOperations;
+            this.__explicitlySet__.add("blockVolumeOperations");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -43,7 +100,10 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails
         public UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails build() {
             UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails model =
                     new UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails(
-                            this.memberId);
+                            this.memberId,
+                            this.isStartStopEnabled,
+                            this.fileSystemOperations,
+                            this.blockVolumeOperations);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -54,6 +114,15 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails
         public Builder copy(UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails model) {
             if (model.wasPropertyExplicitlySet("memberId")) {
                 this.memberId(model.getMemberId());
+            }
+            if (model.wasPropertyExplicitlySet("isStartStopEnabled")) {
+                this.isStartStopEnabled(model.getIsStartStopEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("fileSystemOperations")) {
+                this.fileSystemOperations(model.getFileSystemOperations());
+            }
+            if (model.wasPropertyExplicitlySet("blockVolumeOperations")) {
+                this.blockVolumeOperations(model.getBlockVolumeOperations());
             }
             return this;
         }
@@ -69,8 +138,66 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails
     }
 
     @Deprecated
-    public UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails(String memberId) {
+    public UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails(
+            String memberId,
+            Boolean isStartStopEnabled,
+            java.util.List<UpdateComputeInstanceNonMovableFileSystemOperationDetails>
+                    fileSystemOperations,
+            java.util.List<UpdateComputeInstanceNonMovableBlockVolumeOperationDetails>
+                    blockVolumeOperations) {
         super(memberId);
+        this.isStartStopEnabled = isStartStopEnabled;
+        this.fileSystemOperations = fileSystemOperations;
+        this.blockVolumeOperations = blockVolumeOperations;
+    }
+
+    /**
+     * A flag indicating whether the non-movable compute instance should be started and stopped
+     * during DR operations. *Prechecks cannot be executed on stopped instances that are configured
+     * to be started.*
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isStartStopEnabled")
+    private final Boolean isStartStopEnabled;
+
+    /**
+     * A flag indicating whether the non-movable compute instance should be started and stopped
+     * during DR operations. *Prechecks cannot be executed on stopped instances that are configured
+     * to be started.*
+     *
+     * @return the value
+     */
+    public Boolean getIsStartStopEnabled() {
+        return isStartStopEnabled;
+    }
+
+    /** A list of operations performed on file systems used by the compute instance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("fileSystemOperations")
+    private final java.util.List<UpdateComputeInstanceNonMovableFileSystemOperationDetails>
+            fileSystemOperations;
+
+    /**
+     * A list of operations performed on file systems used by the compute instance.
+     *
+     * @return the value
+     */
+    public java.util.List<UpdateComputeInstanceNonMovableFileSystemOperationDetails>
+            getFileSystemOperations() {
+        return fileSystemOperations;
+    }
+
+    /** A list of operations performed on block volumes used by the compute instance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeOperations")
+    private final java.util.List<UpdateComputeInstanceNonMovableBlockVolumeOperationDetails>
+            blockVolumeOperations;
+
+    /**
+     * A list of operations performed on block volumes used by the compute instance.
+     *
+     * @return the value
+     */
+    public java.util.List<UpdateComputeInstanceNonMovableBlockVolumeOperationDetails>
+            getBlockVolumeOperations() {
+        return blockVolumeOperations;
     }
 
     @Override
@@ -88,6 +215,9 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", isStartStopEnabled=").append(String.valueOf(this.isStartStopEnabled));
+        sb.append(", fileSystemOperations=").append(String.valueOf(this.fileSystemOperations));
+        sb.append(", blockVolumeOperations=").append(String.valueOf(this.blockVolumeOperations));
         sb.append(")");
         return sb.toString();
     }
@@ -103,13 +233,31 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails
 
         UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails other =
                 (UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails) o;
-        return super.equals(other);
+        return java.util.Objects.equals(this.isStartStopEnabled, other.isStartStopEnabled)
+                && java.util.Objects.equals(this.fileSystemOperations, other.fileSystemOperations)
+                && java.util.Objects.equals(this.blockVolumeOperations, other.blockVolumeOperations)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.isStartStopEnabled == null
+                                ? 43
+                                : this.isStartStopEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fileSystemOperations == null
+                                ? 43
+                                : this.fileSystemOperations.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.blockVolumeOperations == null
+                                ? 43
+                                : this.blockVolumeOperations.hashCode());
         return result;
     }
 }

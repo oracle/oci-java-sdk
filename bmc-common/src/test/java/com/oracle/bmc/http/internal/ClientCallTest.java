@@ -10,6 +10,9 @@ import com.oracle.bmc.http.client.HttpResponse;
 import com.oracle.bmc.http.client.Serializer;
 import com.oracle.bmc.http.client.Method;
 import com.oracle.bmc.model.BmcException;
+import com.oracle.bmc.retrier.RetryConfiguration;
+import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
+
 import org.junit.Test;
 import org.junit.Before;
 import org.slf4j.Logger;
@@ -24,6 +27,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletionException;
 import java.util.concurrent.ExecutionException;
 import java.util.function.Supplier;
 
@@ -36,6 +40,7 @@ import static org.junit.Assert.fail;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -726,6 +731,38 @@ public class ClientCallTest {
             assertEquals(contentType, headers.get(CONTENT_TYPE));
             assertEquals(contentLength, headers.get(CONTENT_LENGTH));
             assertEquals(contentEncoding, headers.get(CONTENT_ENCODING));
+        }
+
+        @Test
+        public void test_retriesOnTimeout() {
+            int NUM_RETRIES = 3;
+            RetryConfiguration retryConfiguration =
+                    RetryConfiguration.builder()
+                            .terminationStrategy(new MaxAttemptsTerminationStrategy(NUM_RETRIES))
+                            .build();
+            CompletionException completionException =
+                    new CompletionException(new RuntimeException("Timeout Exception"));
+            CompletableFuture<HttpResponse> future = new CompletableFuture<>();
+            future.completeExceptionally(completionException);
+            when(mockClient.isProcessingException(any())).thenReturn(true);
+            when(mockRequest.execute()).thenReturn(future);
+            try {
+                TestResponse resResp =
+                        ClientCall.builder(mockClient, new TestRequest(), responseBuilder)
+                                .retryConfiguration(retryConfiguration)
+                                .logger(mockLogger, "mockLogger")
+                                .method(Method.GET)
+                                .callSync();
+                fail("Expected to throw");
+            } catch (BmcException e) {
+                // Expected
+                verify(mockClient, times(NUM_RETRIES)).isProcessingException(completionException);
+                assertEquals(e.getCause(), completionException);
+                // (status code, service code, timeout)
+                assertTrue(e.getMessage().contains("(-1, null, true)"));
+                assertTrue(e.getMessage().contains("Timeout Exception"));
+                assert (e.isTimeout());
+            }
         }
     }
 }

@@ -4,32 +4,32 @@
  */
 package com.oracle.bmc.enforcer.rule;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+
+import javax.inject.Inject;
+import javax.inject.Named;
+
 import org.apache.maven.artifact.Artifact;
-import org.apache.maven.artifact.resolver.filter.ArtifactFilter;
+import org.apache.maven.enforcer.rule.api.AbstractEnforcerRule;
 import org.apache.maven.enforcer.rule.api.EnforcerRuleException;
-import org.apache.maven.enforcer.rule.api.EnforcerRuleHelper;
 import org.apache.maven.execution.MavenSession;
-import org.apache.maven.plugin.logging.Log;
-import org.apache.maven.plugins.enforcer.AbstractNonCacheableEnforcerRule;
-import org.apache.maven.plugins.enforcer.utils.ArtifactUtils;
 import org.apache.maven.project.DefaultProjectBuildingRequest;
 import org.apache.maven.project.MavenProject;
 import org.apache.maven.project.ProjectBuildingRequest;
-import org.apache.maven.shared.dependency.graph.DependencyGraphBuilder;
-import org.apache.maven.shared.dependency.graph.DependencyGraphBuilderException;
-import org.apache.maven.shared.dependency.graph.DependencyNode;
-import org.codehaus.plexus.component.configurator.expression.ExpressionEvaluationException;
-import org.codehaus.plexus.component.repository.exception.ComponentLookupException;
 
 /** Enforcer to ensure there are no mixed OCI Java SDK versions. */
-public class NoMixedOciJavaSdkVersionsRule extends AbstractNonCacheableEnforcerRule {
+@Named("noMixedOciJavaSdkVersionsRule")
+@SuppressWarnings("unused")
+public class NoMixedOciJavaSdkVersionsRule extends AbstractEnforcerRule {
 
     public static final String BANNED_GROUP_ID = "com.oracle.oci.sdk";
     public static final String BANNED_ARTIFACT_ID_PREFIX = "oci-java-sdk";
@@ -44,50 +44,34 @@ public class NoMixedOciJavaSdkVersionsRule extends AbstractNonCacheableEnforcerR
      * For example, to allow "com.oracle.oci.sdk:oci-java-sdk-core", allow
      * "com.oracle.oci.sdk:oci-java-sdk-core"
      *
-     * @see {@link #setAllowedDependencies(List)} (List)}
+     * @see {@link #setAllowedDependencies(List)}
      * @see {@link #getAllowedDependencies()} ()}
      */
-    private List<String> allowedDependencies = null;
+    @Inject private List<String> allowedDependencies;
 
-    private boolean searchTransitive = true;
+    @Inject private MavenProject project;
 
-    private transient DependencyGraphBuilder graphBuilder;
+    @Inject private MavenSession session;
 
     @Override
-    public void execute(EnforcerRuleHelper helper) throws EnforcerRuleException {
-        MavenProject project;
-        try {
-            project = (MavenProject) helper.evaluate("${project}");
-        } catch (ExpressionEvaluationException eee) {
-            throw new EnforcerRuleException("Unable to retrieve the MavenProject: ", eee);
-        }
-
-        MavenSession session;
-        try {
-            session = (MavenSession) helper.evaluate("${session}");
-        } catch (ExpressionEvaluationException eee) {
-            throw new EnforcerRuleException("Unable to retrieve the MavenSession: ", eee);
-        }
-
-        try {
-            this.graphBuilder = helper.getComponent(DependencyGraphBuilder.class);
-        } catch (ComponentLookupException cle) {
-            throw new EnforcerRuleException("Unable to lookup DependencyGraphBuilder: ", cle);
-        }
+    public void execute() throws EnforcerRuleException {
+        Objects.requireNonNull(
+                project,
+                "'project' was expected to be injected. Are you using maven enforcer v >= 3.4.0?");
+        Objects.requireNonNull(
+                session,
+                "'session' was expected to be injected. Are you using maven enforcer v >= 3.4.0?");
+        Objects.requireNonNull(
+                allowedDependencies,
+                "'allowedDependencies' was expected to be injected. Are you using maven v >= 3.8.1?");
 
         ProjectBuildingRequest buildingRequest =
                 new DefaultProjectBuildingRequest(session.getProjectBuildingRequest());
         buildingRequest.setProject(project);
-        Set<Artifact> dependencies = this.getDependenciesToCheck(helper, buildingRequest);
-        Map<String, Set<Artifact>> versions = this.checkDependencies(dependencies, helper.getLog());
+        Set<Artifact> dependencies = getDependenciesToCheck();
+        Map<String, Set<Artifact>> versions = checkDependencies(dependencies);
         if (versions.size() > 1) {
-            String message = this.getMessage();
             StringBuilder buf = new StringBuilder();
-
-            if (message != null) {
-                buf.append(message).append(System.lineSeparator());
-            }
-
             buf.append("Multiple different versions of ")
                     .append(BANNED_GROUP_ID)
                     .append(":")
@@ -113,20 +97,19 @@ public class NoMixedOciJavaSdkVersionsRule extends AbstractNonCacheableEnforcerR
         }
     }
 
-    protected Map<String, Set<Artifact>> checkDependencies(Set<Artifact> dependencies, Log log)
-            throws EnforcerRuleException {
+    protected Map<String, Set<Artifact>> checkDependencies(Set<Artifact> dependencies) {
         Map<String, Set<Artifact>> versions = new HashMap<>();
 
         for (Artifact dependency : dependencies) {
-            log.debug("Checking dependency " + dependency.getId());
+            getLog().debug("Checking dependency " + dependency.getId());
             if (!BANNED_GROUP_ID.equals(dependency.getGroupId())) {
-                log.debug("Ignoring, not groupId " + BANNED_GROUP_ID);
+                getLog().debug("Ignoring, not groupId " + BANNED_GROUP_ID);
                 continue;
             }
 
             if (dependency.getArtifactId() == null
                     || !dependency.getArtifactId().startsWith(BANNED_ARTIFACT_ID_PREFIX)) {
-                log.debug("Ignoring, artifactId not prefixed by " + BANNED_ARTIFACT_ID_PREFIX);
+                getLog().debug("Ignoring, artifactId not prefixed by " + BANNED_ARTIFACT_ID_PREFIX);
                 continue;
             }
 
@@ -136,52 +119,53 @@ public class NoMixedOciJavaSdkVersionsRule extends AbstractNonCacheableEnforcerR
                     artifactSet = new HashSet<>();
                     versions.put(dependency.getVersion(), artifactSet);
                 }
-                log.debug("Recording version " + dependency.getVersion());
+                getLog().debug("Recording version " + dependency.getVersion());
                 artifactSet.add(dependency);
             }
         }
 
-        // anything specifically allowedDependencies should be removed from the ban list.
-        Set<Artifact> ignored = ArtifactUtils.checkDependencies(dependencies, allowedDependencies);
-
-        if (ignored != null) {
-            log.debug(
-                    "Dependencies to ignore found: "
-                            + ignored.stream()
-                                    .map(a -> a.getId())
-                                    .collect(Collectors.joining(", ")));
+        // anything specifically allowedDependencies should be removed from the ban list
+        List<Artifact> ignored = ignoredDependencies(dependencies, allowedDependencies);
+        if (!ignored.isEmpty()) {
+            getLog().debug(
+                            "Dependencies to ignore found: "
+                                    + ignored.stream()
+                                            .map(Artifact::getId)
+                                            .collect(Collectors.joining(", ")));
             Iterator<String> versionsIt = versions.keySet().iterator();
             while (versionsIt.hasNext()) {
                 String version = versionsIt.next();
-                log.debug("Checking version" + version);
+                getLog().debug("Checking version" + version);
                 Set<Artifact> artifactSet = versions.get(version);
                 if (artifactSet != null) {
-                    log.debug(
-                            "Artifacts in version "
-                                    + version
-                                    + " before: "
-                                    + artifactSet.stream()
-                                            .map(a -> a.getId())
-                                            .collect(Collectors.joining(", ")));
+                    getLog().debug(
+                                    "Artifacts in version "
+                                            + version
+                                            + " before: "
+                                            + artifactSet.stream()
+                                                    .map(Artifact::getId)
+                                                    .collect(Collectors.joining(", ")));
                     artifactSet.removeAll(ignored);
-                    log.debug(
-                            "Artifacts in version "
-                                    + version
-                                    + " after: "
-                                    + artifactSet.stream()
-                                            .map(a -> a.getId())
-                                            .collect(Collectors.joining(", ")));
+                    getLog().debug(
+                                    "Artifacts in version "
+                                            + version
+                                            + " after: "
+                                            + artifactSet.stream()
+                                                    .map(Artifact::getId)
+                                                    .collect(Collectors.joining(", ")));
                 }
                 if (artifactSet == null || artifactSet.isEmpty()) {
-                    log.debug("Version " + version + " is now empty, removing");
+                    getLog().debug("Version " + version + " is now empty, removing");
                     versionsIt.remove();
-                    ;
                 }
             }
         }
 
-        log.debug(
-                "Different versions found: " + versions.keySet().size() + ": " + versions.keySet());
+        getLog().debug(
+                        "Different versions found: "
+                                + versions.keySet().size()
+                                + ": "
+                                + versions.keySet());
 
         return versions;
     }
@@ -194,33 +178,40 @@ public class NoMixedOciJavaSdkVersionsRule extends AbstractNonCacheableEnforcerR
         this.allowedDependencies = allowed;
     }
 
-    private Set<Artifact> getDependenciesToCheck(
-            EnforcerRuleHelper helper, ProjectBuildingRequest buildingRequest) {
-        String cacheKey = buildingRequest.getProject().getId() + "_" + this.searchTransitive;
-        return (Set) helper.getCache(cacheKey, () -> this.getDependenciesToCheck(buildingRequest));
+    private Set<Artifact> getDependenciesToCheck() {
+        // this will be transitive in nature
+        return project.getArtifacts().stream()
+                .filter(
+                        a ->
+                                a.getScope().equalsIgnoreCase("compile")
+                                        || a.getScope().equalsIgnoreCase("runtime"))
+                .filter(a -> !a.isOptional())
+                .collect(Collectors.toSet());
     }
 
-    protected Set<Artifact> getDependenciesToCheck(ProjectBuildingRequest buildingRequest) {
-        Object dependencies = null;
+    static List<Artifact> ignoredDependencies(
+            Collection<Artifact> dependencies, List<String> allowedDependencies) {
+        Set<Pattern> filteredOut =
+                allowedDependencies.stream()
+                        .filter(s -> !s.isEmpty())
+                        .map(Pattern::compile)
+                        .collect(Collectors.toSet());
+        return dependencies.stream()
+                .filter(dep -> filteredOut(dep, filteredOut))
+                .collect(Collectors.toList());
+    }
 
-        try {
-            DependencyNode node =
-                    this.graphBuilder.buildDependencyGraph(buildingRequest, (ArtifactFilter) null);
-            if (this.searchTransitive) {
-                dependencies = ArtifactUtils.getAllDescendants(node);
-            } else if (node.getChildren() != null) {
-                dependencies = new HashSet();
-                Iterator it = node.getChildren().iterator();
-
-                while (it.hasNext()) {
-                    DependencyNode depNode = (DependencyNode) it.next();
-                    ((Set) dependencies).add(depNode.getArtifact());
-                }
+    private static boolean filteredOut(Artifact dep, Set<Pattern> filteredOut) {
+        String simpleGav = toSimpleGav(dep);
+        for (Pattern pattern : filteredOut) {
+            if (pattern.matcher(simpleGav).matches()) {
+                return true;
             }
-
-            return (Set) dependencies;
-        } catch (DependencyGraphBuilderException var6) {
-            throw new RuntimeException(var6);
         }
+        return false;
+    }
+
+    static String toSimpleGav(Artifact gav) {
+        return gav.getGroupId() + ":" + gav.getArtifactId() + ":" + gav.getVersion();
     }
 }

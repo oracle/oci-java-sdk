@@ -417,17 +417,17 @@ public final class DiscoveryJobResult
             return this;
         }
         /**
-         * Indicates if the discovery result has been processed. You can update this attribute using
-         * the PatchDiscoveryJobResults operation to track whether the discovery result has already
-         * been processed and applied to the sensitive data model.
+         * Indicates whether the discovery result has been processed. You can update this attribute
+         * using the PatchDiscoveryJobResults operation to track whether the discovery result has
+         * already been processed and applied to the sensitive data model.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isResultApplied")
         private Boolean isResultApplied;
 
         /**
-         * Indicates if the discovery result has been processed. You can update this attribute using
-         * the PatchDiscoveryJobResults operation to track whether the discovery result has already
-         * been processed and applied to the sensitive data model.
+         * Indicates whether the discovery result has been processed. You can update this attribute
+         * using the PatchDiscoveryJobResults operation to track whether the discovery result has
+         * already been processed and applied to the sensitive data model.
          *
          * @param isResultApplied the value to set
          * @return this builder
@@ -1062,17 +1062,17 @@ public final class DiscoveryJobResult
     }
 
     /**
-     * Indicates if the discovery result has been processed. You can update this attribute using the
-     * PatchDiscoveryJobResults operation to track whether the discovery result has already been
-     * processed and applied to the sensitive data model.
+     * Indicates whether the discovery result has been processed. You can update this attribute
+     * using the PatchDiscoveryJobResults operation to track whether the discovery result has
+     * already been processed and applied to the sensitive data model.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isResultApplied")
     private final Boolean isResultApplied;
 
     /**
-     * Indicates if the discovery result has been processed. You can update this attribute using the
-     * PatchDiscoveryJobResults operation to track whether the discovery result has already been
-     * processed and applied to the sensitive data model.
+     * Indicates whether the discovery result has been processed. You can update this attribute
+     * using the PatchDiscoveryJobResults operation to track whether the discovery result has
+     * already been processed and applied to the sensitive data model.
      *
      * @return the value
      */

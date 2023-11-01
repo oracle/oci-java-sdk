@@ -348,16 +348,16 @@ public final class DiscoveryJob extends com.oracle.bmc.http.client.internal.Expl
         }
         /**
          * Indicates if all the schemas in the associated target database are used for data
-         * discovery. If it's set to true, the schemasForDiscovery attribute is ignored and all
-         * schemas are used.
+         * discovery. If it is set to true, sensitive data is discovered in all schemas (except for
+         * schemas maintained by Oracle).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isIncludeAllSchemas")
         private Boolean isIncludeAllSchemas;
 
         /**
          * Indicates if all the schemas in the associated target database are used for data
-         * discovery. If it's set to true, the schemasForDiscovery attribute is ignored and all
-         * schemas are used.
+         * discovery. If it is set to true, sensitive data is discovered in all schemas (except for
+         * schemas maintained by Oracle).
          *
          * @param isIncludeAllSchemas the value to set
          * @return this builder
@@ -949,14 +949,16 @@ public final class DiscoveryJob extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Indicates if all the schemas in the associated target database are used for data discovery.
-     * If it's set to true, the schemasForDiscovery attribute is ignored and all schemas are used.
+     * If it is set to true, sensitive data is discovered in all schemas (except for schemas
+     * maintained by Oracle).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isIncludeAllSchemas")
     private final Boolean isIncludeAllSchemas;
 
     /**
      * Indicates if all the schemas in the associated target database are used for data discovery.
-     * If it's set to true, the schemasForDiscovery attribute is ignored and all schemas are used.
+     * If it is set to true, sensitive data is discovered in all schemas (except for schemas
+     * maintained by Oracle).
      *
      * @return the value
      */

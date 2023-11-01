@@ -5,7 +5,7 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Details of a role fetched from the database. <br>
+ * The details of a role fetched from the database. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -50,12 +50,12 @@ public final class RoleSummary extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of the role. */
+        /** The name of the role. */
         @com.fasterxml.jackson.annotation.JsonProperty("roleName")
         private String roleName;
 
         /**
-         * Name of the role.
+         * The name of the role.
          *
          * @param roleName the value to set
          * @return this builder
@@ -211,12 +211,12 @@ public final class RoleSummary extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** Name of the role. */
+    /** The name of the role. */
     @com.fasterxml.jackson.annotation.JsonProperty("roleName")
     private final String roleName;
 
     /**
-     * Name of the role.
+     * The name of the role.
      *
      * @return the value
      */

@@ -52,6 +52,12 @@ There is no HTTP client library configured by default. The OCI Java SDK offers t
 - The serializer is now pluggable and determined by the `HttpProvider`. For the Jersey 2 and Jersey 3 HTTP clients, Jackson continues to be used as the serializer
 - As part of the pluggable Serializer changes, when using the Jersey and Jersey 3 HTTP clients, the underlying Jackson `ObjectMapper` can now be obtained using `com.oracle.bmc.serialization.jackson.JacksonSerializer.getDefaultObjectMapper()`. The `com.oracle.bmc.http.client.Serialization.getObjectMapper()` method does not exist anymore.
 
+### GraalVM Native Image Build
+
+OCI Java SDK Jersey HTTP client and Jersey 3 Http client are both ready for GraalVM Native Image. 
+See [bmc-examples/native-gradle-example](bmc-examples/native-gradle-example) and [bmc-examples/native-maven-example](bmc-examples/native-maven-example)
+for configuration details for building Native Image executables.
+
 ### Invocation callbacks
 Instead of using `com.oracle.bmc.util.internal.Consumer<Invocation.Builder>` to register invocation callbacks, use `com.oracle.bmc.http.client.RequestInterceptor` instead, to decouple the implementation from the choice of the HTTP client.
 

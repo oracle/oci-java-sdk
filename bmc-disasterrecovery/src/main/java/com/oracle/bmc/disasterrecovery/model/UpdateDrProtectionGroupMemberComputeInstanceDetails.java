@@ -5,7 +5,7 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Update properties for a Compute Instance member. <br>
+ * Deprecated. Update properties for a compute instance member. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -37,7 +37,7 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceDetails
             return this;
         }
         /**
-         * A flag indicating if this compute instance should be moved during DR operations.
+         * A flag indicating if the compute instance should be moved during DR operations.
          *
          * <p>Example: {@code false}
          */
@@ -45,7 +45,7 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceDetails
         private Boolean isMovable;
 
         /**
-         * A flag indicating if this compute instance should be moved during DR operations.
+         * A flag indicating if the compute instance should be moved during DR operations.
          *
          * <p>Example: {@code false}
          *
@@ -57,12 +57,12 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceDetails
             this.__explicitlySet__.add("isMovable");
             return this;
         }
-        /** A list of Compute Instance VNIC mappings. */
+        /** A list of compute instance VNIC mappings. */
         @com.fasterxml.jackson.annotation.JsonProperty("vnicMapping")
         private java.util.List<ComputeInstanceVnicMappingDetails> vnicMapping;
 
         /**
-         * A list of Compute Instance VNIC mappings.
+         * A list of compute instance VNIC mappings.
          *
          * @param vnicMapping the value to set
          * @return this builder
@@ -73,17 +73,19 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceDetails
             return this;
         }
         /**
-         * The OCID of the compartment for this compute instance in the destination region.
+         * The OCID of a compartment in the destination region in which the compute instance should
+         * be launched.
          *
-         * <p>Example: {@code ocid1.compartment.oc1..&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("destinationCompartmentId")
         private String destinationCompartmentId;
 
         /**
-         * The OCID of the compartment for this compute instance in the destination region.
+         * The OCID of a compartment in the destination region in which the compute instance should
+         * be launched.
          *
-         * <p>Example: {@code ocid1.compartment.oc1..&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
          *
          * @param destinationCompartmentId the value to set
          * @return this builder
@@ -94,19 +96,19 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceDetails
             return this;
         }
         /**
-         * The OCID of the dedicated VM Host in the destination region where this compute instance
-         * should be launched
+         * The OCID of a dedicated VM host in the destination region on which the compute instance
+         * should be launched.
          *
-         * <p>Example: {@code ocid1.dedicatedvmhost.oc1.iad.&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.dedicatedvmhost.oc1..uniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("destinationDedicatedVmHostId")
         private String destinationDedicatedVmHostId;
 
         /**
-         * The OCID of the dedicated VM Host in the destination region where this compute instance
-         * should be launched
+         * The OCID of a dedicated VM host in the destination region on which the compute instance
+         * should be launched.
          *
-         * <p>Example: {@code ocid1.dedicatedvmhost.oc1.iad.&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.dedicatedvmhost.oc1..uniqueID}
          *
          * @param destinationDedicatedVmHostId the value to set
          * @return this builder
@@ -179,7 +181,7 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceDetails
     }
 
     /**
-     * A flag indicating if this compute instance should be moved during DR operations.
+     * A flag indicating if the compute instance should be moved during DR operations.
      *
      * <p>Example: {@code false}
      */
@@ -187,7 +189,7 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceDetails
     private final Boolean isMovable;
 
     /**
-     * A flag indicating if this compute instance should be moved during DR operations.
+     * A flag indicating if the compute instance should be moved during DR operations.
      *
      * <p>Example: {@code false}
      *
@@ -197,12 +199,12 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceDetails
         return isMovable;
     }
 
-    /** A list of Compute Instance VNIC mappings. */
+    /** A list of compute instance VNIC mappings. */
     @com.fasterxml.jackson.annotation.JsonProperty("vnicMapping")
     private final java.util.List<ComputeInstanceVnicMappingDetails> vnicMapping;
 
     /**
-     * A list of Compute Instance VNIC mappings.
+     * A list of compute instance VNIC mappings.
      *
      * @return the value
      */
@@ -211,17 +213,19 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceDetails
     }
 
     /**
-     * The OCID of the compartment for this compute instance in the destination region.
+     * The OCID of a compartment in the destination region in which the compute instance should be
+     * launched.
      *
-     * <p>Example: {@code ocid1.compartment.oc1..&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("destinationCompartmentId")
     private final String destinationCompartmentId;
 
     /**
-     * The OCID of the compartment for this compute instance in the destination region.
+     * The OCID of a compartment in the destination region in which the compute instance should be
+     * launched.
      *
-     * <p>Example: {@code ocid1.compartment.oc1..&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
      *
      * @return the value
      */
@@ -230,19 +234,19 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceDetails
     }
 
     /**
-     * The OCID of the dedicated VM Host in the destination region where this compute instance
-     * should be launched
+     * The OCID of a dedicated VM host in the destination region on which the compute instance
+     * should be launched.
      *
-     * <p>Example: {@code ocid1.dedicatedvmhost.oc1.iad.&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.dedicatedvmhost.oc1..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("destinationDedicatedVmHostId")
     private final String destinationDedicatedVmHostId;
 
     /**
-     * The OCID of the dedicated VM Host in the destination region where this compute instance
-     * should be launched
+     * The OCID of a dedicated VM host in the destination region on which the compute instance
+     * should be launched.
      *
-     * <p>Example: {@code ocid1.dedicatedvmhost.oc1.iad.&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.dedicatedvmhost.oc1..uniqueID}
      *
      * @return the value
      */

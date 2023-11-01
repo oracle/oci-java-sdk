@@ -1,0 +1,35 @@
+[
+  {
+    "name":"org.glassfish.jersey.jackson.JacksonFeature",
+    "allDeclaredFields":true,
+    "allDeclaredMethods":true,
+    "allDeclaredConstructors":true
+  },
+  {
+    "name":"org.glassfish.jersey.jackson.internal.DefaultJacksonJaxbJsonProvider",
+    "allDeclaredFields":true,
+    "allDeclaredMethods":true,
+    "allDeclaredConstructors":true
+  },
+  {
+    "name":"org.glassfish.jersey.jackson.internal.JacksonAutoDiscoverable",
+    "allDeclaredFields":true,
+    "allDeclaredMethods":true,
+    "allDeclaredConstructors":true
+  },
+  {
+    "name":"org.glassfish.jersey.jackson.internal.jackson.jaxrs.base.ProviderBase",
+    "allDeclaredFields":true,
+    "allDeclaredMethods":true
+  },
+  {
+    "name":"org.glassfish.jersey.jackson.internal.jackson.jaxrs.json.JacksonJaxbJsonProvider",
+    "allDeclaredFields":true,
+    "allDeclaredMethods":true
+  },
+  {
+    "name":"org.glassfish.jersey.jackson.internal.jackson.jaxrs.json.JacksonJsonProvider",
+    "allDeclaredFields":true,
+    "allDeclaredMethods":true
+  }
+]

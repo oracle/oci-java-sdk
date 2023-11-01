@@ -3,6 +3,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.28.0 - 2023-10-31
+### Added
+- Support for calling Oracle Cloud Infrastructure services in the us-saltlake-2 region
+- Support for disaster recovery of load balancers, network load balancers and file systems in the Disaster Recovery service
+- Support for performing disaster recovery drills in the Disaster Recovery service
+- Support for enterprise SKUs and extensibility in the Stack Monitoring service
+- Support for metric extensions in the Stack Monitoring service
+- Support for baseline and anomaly detection in the Stack Monitoring service
+- Support for integration with Database Management service in the MySQL HeatWave service
+- Support for MySQL database management in the Database Management service
+- Support for database firewalls in the Data Safe service  
+ 
+### Breaking Changes
+- Method `public java.lang.String getCompartmentId()` has been removed from the model `com.oracle.bmc.datasafe.model.ProfileAggregation` in the Data Safe service
+- Method `public java.lang.String getUserAssessmentId()` has been removed from the model `com.oracle.bmc.datasafe.model.ProfileAggregation` in the Data Safe service
+- `ProcessingException` is now caught and `BmcException` is thrown instead in order to fix timeout retries
+
 ## 3.27.0 - 2023-10-24
 ### Added
 - Support for optional parameters for autonomous container database create and update operations in the Database service

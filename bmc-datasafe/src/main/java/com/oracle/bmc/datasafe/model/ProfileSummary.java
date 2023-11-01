@@ -152,12 +152,12 @@ public final class ProfileSummary
             this.__explicitlySet__.add("userCount");
             return this;
         }
-        /** Maximum times the user is allowed in fail login before the user account is locked. */
+        /** Maximum times the user is allowed to fail login before the user account is locked. */
         @com.fasterxml.jackson.annotation.JsonProperty("failedLoginAttempts")
         private String failedLoginAttempts;
 
         /**
-         * Maximum times the user is allowed in fail login before the user account is locked.
+         * Maximum times the user is allowed to fail login before the user account is locked.
          *
          * @param failedLoginAttempts the value to set
          * @return this builder
@@ -448,12 +448,12 @@ public final class ProfileSummary
         return userCount;
     }
 
-    /** Maximum times the user is allowed in fail login before the user account is locked. */
+    /** Maximum times the user is allowed to fail login before the user account is locked. */
     @com.fasterxml.jackson.annotation.JsonProperty("failedLoginAttempts")
     private final String failedLoginAttempts;
 
     /**
-     * Maximum times the user is allowed in fail login before the user account is locked.
+     * Maximum times the user is allowed to fail login before the user account is locked.
      *
      * @return the value
      */

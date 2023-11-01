@@ -16,26 +16,26 @@ public class AssociateDrProtectionGroupRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.disasterrecovery.model.AssociateDrProtectionGroupDetails> {
 
-    /** Details for creating an association between two DR Protection Groups. */
+    /** Details for creating an association between two DR protection groups. */
     private com.oracle.bmc.disasterrecovery.model.AssociateDrProtectionGroupDetails
             associateDrProtectionGroupDetails;
 
-    /** Details for creating an association between two DR Protection Groups. */
+    /** Details for creating an association between two DR protection groups. */
     public com.oracle.bmc.disasterrecovery.model.AssociateDrProtectionGroupDetails
             getAssociateDrProtectionGroupDetails() {
         return associateDrProtectionGroupDetails;
     }
     /**
-     * The OCID of the DR Protection Group.
+     * The OCID of the DR protection group.
      *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      */
     private String drProtectionGroupId;
 
     /**
-     * The OCID of the DR Protection Group.
+     * The OCID of the DR protection group.
      *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      */
     public String getDrProtectionGroupId() {
         return drProtectionGroupId;
@@ -102,12 +102,12 @@ public class AssociateDrProtectionGroupRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for creating an association between two DR Protection Groups. */
+        /** Details for creating an association between two DR protection groups. */
         private com.oracle.bmc.disasterrecovery.model.AssociateDrProtectionGroupDetails
                 associateDrProtectionGroupDetails = null;
 
         /**
-         * Details for creating an association between two DR Protection Groups.
+         * Details for creating an association between two DR protection groups.
          *
          * @param associateDrProtectionGroupDetails the value to set
          * @return this builder instance
@@ -120,16 +120,16 @@ public class AssociateDrProtectionGroupRequest
         }
 
         /**
-         * The OCID of the DR Protection Group.
+         * The OCID of the DR protection group.
          *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          */
         private String drProtectionGroupId = null;
 
         /**
-         * The OCID of the DR Protection Group.
+         * The OCID of the DR protection group.
          *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
          * @param drProtectionGroupId the value to set
          * @return this builder instance

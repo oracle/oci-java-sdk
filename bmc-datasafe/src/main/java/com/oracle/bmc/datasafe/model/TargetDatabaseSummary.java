@@ -157,12 +157,12 @@ public final class TargetDatabaseSummary
             this.__explicitlySet__.add("databaseType");
             return this;
         }
-        /** The OCIDs of associated resources like Database, Data Safe private endpoint etc. */
+        /** The OCIDs of associated resources like database, Data Safe private endpoint etc. */
         @com.fasterxml.jackson.annotation.JsonProperty("associatedResourceIds")
         private java.util.List<String> associatedResourceIds;
 
         /**
-         * The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+         * The OCIDs of associated resources like database, Data Safe private endpoint etc.
          *
          * @param associatedResourceIds the value to set
          * @return this builder
@@ -426,12 +426,12 @@ public final class TargetDatabaseSummary
         return databaseType;
     }
 
-    /** The OCIDs of associated resources like Database, Data Safe private endpoint etc. */
+    /** The OCIDs of associated resources like database, Data Safe private endpoint etc. */
     @com.fasterxml.jackson.annotation.JsonProperty("associatedResourceIds")
     private final java.util.List<String> associatedResourceIds;
 
     /**
-     * The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     * The OCIDs of associated resources like database, Data Safe private endpoint etc.
      *
      * @return the value
      */

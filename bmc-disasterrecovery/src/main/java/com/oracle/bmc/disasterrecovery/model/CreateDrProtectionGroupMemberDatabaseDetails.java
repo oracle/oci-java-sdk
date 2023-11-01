@@ -37,17 +37,17 @@ public final class CreateDrProtectionGroupMemberDatabaseDetails
             return this;
         }
         /**
-         * The OCID of the vault secret where the database password is stored.
+         * The OCID of the vault secret where the database SYSDBA password is stored.
          *
-         * <p>Example: {@code ocid1.vaultsecret.oc1.phx.&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.vaultsecret.oc1..uniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("passwordVaultSecretId")
         private String passwordVaultSecretId;
 
         /**
-         * The OCID of the vault secret where the database password is stored.
+         * The OCID of the vault secret where the database SYSDBA password is stored.
          *
-         * <p>Example: {@code ocid1.vaultsecret.oc1.phx.&lt;unique_id&gt;}
+         * <p>Example: {@code ocid1.vaultsecret.oc1..uniqueID}
          *
          * @param passwordVaultSecretId the value to set
          * @return this builder
@@ -100,17 +100,17 @@ public final class CreateDrProtectionGroupMemberDatabaseDetails
     }
 
     /**
-     * The OCID of the vault secret where the database password is stored.
+     * The OCID of the vault secret where the database SYSDBA password is stored.
      *
-     * <p>Example: {@code ocid1.vaultsecret.oc1.phx.&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.vaultsecret.oc1..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("passwordVaultSecretId")
     private final String passwordVaultSecretId;
 
     /**
-     * The OCID of the vault secret where the database password is stored.
+     * The OCID of the vault secret where the database SYSDBA password is stored.
      *
-     * <p>Example: {@code ocid1.vaultsecret.oc1.phx.&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.vaultsecret.oc1..uniqueID}
      *
      * @return the value
      */

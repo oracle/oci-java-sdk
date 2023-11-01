@@ -102,14 +102,14 @@ public class ListSensitiveSchemasRequest
         return sortOrder;
     }
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order is
-     * ascending.
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+     * order is ascending.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order is
-     * ascending.
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+     * order is ascending.
      */
     public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         SchemaName("schemaName"),
@@ -144,8 +144,8 @@ public class ListSensitiveSchemasRequest
     };
 
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order is
-     * ascending.
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+     * order is ascending.
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -259,14 +259,14 @@ public class ListSensitiveSchemasRequest
         }
 
         /**
-         * The field to sort by. You can specify only one sort order (sortOrder). The default order
-         * is ascending.
+         * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+         * order is ascending.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can specify only one sort order (sortOrder). The default order
-         * is ascending.
+         * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
+         * order is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance

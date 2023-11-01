@@ -394,6 +394,10 @@ public class DbSystemAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("configurationId", request.getConfigurationId())
                 .appendQueryParam("isUpToDate", request.getIsUpToDate())
+                .appendListQueryParam(
+                        "databaseManagement",
+                        request.getDatabaseManagement(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendQueryParam("limit", request.getLimit())

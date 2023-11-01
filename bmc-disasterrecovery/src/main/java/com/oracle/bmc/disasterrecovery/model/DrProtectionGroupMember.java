@@ -5,7 +5,7 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Properties for a member in a DR Protection Group. <br>
+ * The properties of a member in a DR protection group. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -26,11 +26,20 @@ package com.oracle.bmc.disasterrecovery.model;
             value = DrProtectionGroupMemberVolumeGroup.class,
             name = "VOLUME_GROUP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DrProtectionGroupMemberNetworkLoadBalancer.class,
+            name = "NETWORK_LOAD_BALANCER"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DrProtectionGroupMemberFileSystem.class,
+            name = "FILE_SYSTEM"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DrProtectionGroupMemberComputeInstanceMovable.class,
             name = "COMPUTE_INSTANCE_MOVABLE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DrProtectionGroupMemberAutonomousDatabase.class,
             name = "AUTONOMOUS_DATABASE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DrProtectionGroupMemberLoadBalancer.class,
+            name = "LOAD_BALANCER"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DrProtectionGroupMemberComputeInstance.class,
             name = "COMPUTE_INSTANCE"),
@@ -55,7 +64,7 @@ public class DrProtectionGroupMember
     /**
      * The OCID of the member.
      *
-     * <p>Example: {@code ocid1.instance.oc1.phx.&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.instance.oc1..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("memberId")
     private final String memberId;
@@ -63,7 +72,7 @@ public class DrProtectionGroupMember
     /**
      * The OCID of the member.
      *
-     * <p>Example: {@code ocid1.instance.oc1.phx.&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.instance.oc1..uniqueID}
      *
      * @return the value
      */

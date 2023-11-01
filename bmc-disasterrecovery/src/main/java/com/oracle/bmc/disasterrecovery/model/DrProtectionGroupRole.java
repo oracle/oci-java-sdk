@@ -5,9 +5,10 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Enumeration of different roles of a DR Protection Group. - PRIMARY - The DR Protection Group has
- * a primary role in a DR configuration. - STANDBY - The DR Protection Group has a standby role in a
- * DR configuration. - UNCONFIGURED - The DR Protection Group is not part of a DR configuration
+ * Enumeration of the different roles of a DR protection group. - PRIMARY - The DR protection group
+ * has a primary role in the DR configuration. - STANDBY - The DR protection group has a standby
+ * role in the DR configuration. - UNCONFIGURED - The DR protection group is not part of the DR
+ * configuration.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public enum DrProtectionGroupRole implements com.oracle.bmc.http.internal.BmcEnum {

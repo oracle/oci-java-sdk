@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk-common-httpclient-choices</artifactId>
-    <version>3.27.0</version>
+    <version>3.28.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -68,7 +68,7 @@
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-addons-apache-configurator-jersey</artifactId>
-        <version>3.27.0</version>
+        <version>3.28.0</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -77,7 +77,7 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common-httpclient</artifactId>
-      <version>3.27.0</version>
+      <version>3.28.0</version>
     </dependency>
     <dependency>
       <groupId>org.glassfish.jersey.core</groupId>
@@ -112,6 +112,17 @@
     <dependency>
       <groupId>javax.annotation</groupId>
       <artifactId>javax.annotation-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.graalvm.nativeimage</groupId>
+      <artifactId>svm</artifactId>
+      <version>${graalvm.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.bouncycastle</groupId>
+      <artifactId>bcprov-jdk15to18</artifactId>
+      <scope>provided</scope>
     </dependency>
     <!-- Begin ApacheConnector Http Dependencies  -->
     <dependency>

@@ -17,6 +17,8 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.inject.Named;
+
 /**
  * Enforcer to ensure no new ObjectMapper objects are created in OCI Java SDK except in the
  * explicitly specified classes. Any new ObjectMapper object (including any form of constructors)
@@ -26,6 +28,7 @@ import java.util.List;
  * JacksonSerializer.getDefaultSerializer() from oci-java-sdk-common-httpclient-jersey to get the
  * json mapper.
  */
+@Named("newObjectMapperDefinitionDeniedRule")
 public class NewObjectMapperDefinitionDeniedRule implements EnforcerRule {
 
     private String excludeClasses;
@@ -38,7 +41,12 @@ public class NewObjectMapperDefinitionDeniedRule implements EnforcerRule {
     @Override
     public void execute(EnforcerRuleHelper helper) throws EnforcerRuleException {
         Log log = helper.getLog();
-        String[] ignoreClasses = (excludeClasses != null ? excludeClasses : "").split(",");
+        String[] ignoreClasses;
+        if (excludeClasses != null) {
+            ignoreClasses = excludeClasses.split(",");
+        } else {
+            ignoreClasses = new String[0];
+        }
         log.info(
                 "Classes that can create new ObjectMapper objects: "
                         + Arrays.toString(ignoreClasses));

@@ -5,7 +5,7 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Create properties for a member in a DR Protection Group. <br>
+ * Create properties for a member in a DR protection group. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -38,8 +38,17 @@ package com.oracle.bmc.disasterrecovery.model;
             value = CreateDrProtectionGroupMemberAutonomousDatabaseDetails.class,
             name = "AUTONOMOUS_DATABASE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateDrProtectionGroupMemberNetworkLoadBalancerDetails.class,
+            name = "NETWORK_LOAD_BALANCER"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateDrProtectionGroupMemberVolumeGroupDetails.class,
-            name = "VOLUME_GROUP")
+            name = "VOLUME_GROUP"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateDrProtectionGroupMemberFileSystemDetails.class,
+            name = "FILE_SYSTEM"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateDrProtectionGroupMemberLoadBalancerDetails.class,
+            name = "LOAD_BALANCER")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -55,7 +64,7 @@ public class CreateDrProtectionGroupMemberDetails
     /**
      * The OCID of the member.
      *
-     * <p>Example: {@code ocid1.instance.oc1.phx.&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.instance.oc1..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("memberId")
     private final String memberId;
@@ -63,7 +72,7 @@ public class CreateDrProtectionGroupMemberDetails
     /**
      * The OCID of the member.
      *
-     * <p>Example: {@code ocid1.instance.oc1.phx.&lt;unique_id&gt;}
+     * <p>Example: {@code ocid1.instance.oc1..uniqueID}
      *
      * @return the value
      */

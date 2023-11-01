@@ -246,10 +246,10 @@ public class ListSecurityAssessmentsRequest
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** A filter to return only security assessments that are set as baseline. */
+    /** A filter to return only the security assessments that are set as a baseline. */
     private Boolean isBaseline;
 
-    /** A filter to return only security assessments that are set as baseline. */
+    /** A filter to return only the security assessments that are set as a baseline. */
     public Boolean getIsBaseline() {
         return isBaseline;
     }
@@ -554,11 +554,11 @@ public class ListSecurityAssessmentsRequest
             return this;
         }
 
-        /** A filter to return only security assessments that are set as baseline. */
+        /** A filter to return only the security assessments that are set as a baseline. */
         private Boolean isBaseline = null;
 
         /**
-         * A filter to return only security assessments that are set as baseline.
+         * A filter to return only the security assessments that are set as a baseline.
          *
          * @param isBaseline the value to set
          * @return this builder instance

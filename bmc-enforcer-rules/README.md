@@ -9,13 +9,12 @@ Example:
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
-        <version>3.1.0</version>
+        <version>3.4.1</version>
         <dependencies>
           <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-enforcer-rules</artifactId>
             <version>2.46.0</version> <!-- use latest version -->
-            <optional>false</optional>
           </dependency>
         </dependencies>
         <executions>
@@ -44,7 +43,7 @@ Example output on failure:
 
 
 ```
-[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce) @ maven-test ---
+[INFO] --- maven-enforcer-plugin:3.4.1:enforce (enforce) @ maven-test ---
 [ERROR] Rule 0: com.oracle.bmc.enforcer.rule.NoMixedOciJavaSdkVersionsRule failed with message:
 Multiple different versions of com.oracle.oci.sdk:oci-java-sdk* dependencies have been found.
 Mixing different versions is not allowedDependencies.

@@ -72,10 +72,10 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
     public Severity getSeverity() {
         return severity;
     }
-    /** An optional filter to return only findings containing the specified reference. */
+    /** An optional filter to return only findings that match the specified reference. */
     private com.oracle.bmc.datasafe.model.SecurityAssessmentReferences references;
 
-    /** An optional filter to return only findings containing the specified reference. */
+    /** An optional filter to return only findings that match the specified reference. */
     public com.oracle.bmc.datasafe.model.SecurityAssessmentReferences getReferences() {
         return references;
     }
@@ -182,10 +182,18 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
-    /** Each finding has a key. This key is same for the finding across targets */
+    /**
+     * Each finding in security assessment has an associated key (think of key as a finding's name).
+     * For a given finding, the key will be the same across targets. The user can use these keys to
+     * filter the findings.
+     */
     private String findingKey;
 
-    /** Each finding has a key. This key is same for the finding across targets */
+    /**
+     * Each finding in security assessment has an associated key (think of key as a finding's name).
+     * For a given finding, the key will be the same across targets. The user can use these keys to
+     * filter the findings.
+     */
     public String getFindingKey() {
         return findingKey;
     }
@@ -238,11 +246,11 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** An optional filter to return only findings containing the specified reference. */
+        /** An optional filter to return only findings that match the specified reference. */
         private com.oracle.bmc.datasafe.model.SecurityAssessmentReferences references = null;
 
         /**
-         * An optional filter to return only findings containing the specified reference.
+         * An optional filter to return only findings that match the specified reference.
          *
          * @param references the value to set
          * @return this builder instance
@@ -337,11 +345,17 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** Each finding has a key. This key is same for the finding across targets */
+        /**
+         * Each finding in security assessment has an associated key (think of key as a finding's
+         * name). For a given finding, the key will be the same across targets. The user can use
+         * these keys to filter the findings.
+         */
         private String findingKey = null;
 
         /**
-         * Each finding has a key. This key is same for the finding across targets
+         * Each finding in security assessment has an associated key (think of key as a finding's
+         * name). For a given finding, the key will be the same across targets. The user can use
+         * these keys to filter the findings.
          *
          * @param findingKey the value to set
          * @return this builder instance

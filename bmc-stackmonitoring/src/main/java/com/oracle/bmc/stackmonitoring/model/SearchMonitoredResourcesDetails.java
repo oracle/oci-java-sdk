@@ -33,6 +33,7 @@ public final class SearchMonitoredResourcesDetails
         "hostNameContains",
         "managementAgentId",
         "lifecycleState",
+        "license",
         "timeCreatedGreaterThanOrEqualTo",
         "timeCreatedLessThan",
         "timeUpdatedGreaterThanOrEqualTo",
@@ -52,6 +53,7 @@ public final class SearchMonitoredResourcesDetails
             String hostNameContains,
             String managementAgentId,
             ResourceLifecycleState lifecycleState,
+            LicenseType license,
             java.util.Date timeCreatedGreaterThanOrEqualTo,
             java.util.Date timeCreatedLessThan,
             java.util.Date timeUpdatedGreaterThanOrEqualTo,
@@ -70,6 +72,7 @@ public final class SearchMonitoredResourcesDetails
         this.hostNameContains = hostNameContains;
         this.managementAgentId = managementAgentId;
         this.lifecycleState = lifecycleState;
+        this.license = license;
         this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
         this.timeCreatedLessThan = timeCreatedLessThan;
         this.timeUpdatedGreaterThanOrEqualTo = timeUpdatedGreaterThanOrEqualTo;
@@ -233,6 +236,21 @@ public final class SearchMonitoredResourcesDetails
         public Builder lifecycleState(ResourceLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /** License edition of the monitored resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("license")
+        private LicenseType license;
+
+        /**
+         * License edition of the monitored resource.
+         *
+         * @param license the value to set
+         * @return this builder
+         */
+        public Builder license(LicenseType license) {
+            this.license = license;
+            this.__explicitlySet__.add("license");
             return this;
         }
         /**
@@ -443,6 +461,7 @@ public final class SearchMonitoredResourcesDetails
                             this.hostNameContains,
                             this.managementAgentId,
                             this.lifecycleState,
+                            this.license,
                             this.timeCreatedGreaterThanOrEqualTo,
                             this.timeCreatedLessThan,
                             this.timeUpdatedGreaterThanOrEqualTo,
@@ -485,6 +504,9 @@ public final class SearchMonitoredResourcesDetails
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("license")) {
+                this.license(model.getLicense());
             }
             if (model.wasPropertyExplicitlySet("timeCreatedGreaterThanOrEqualTo")) {
                 this.timeCreatedGreaterThanOrEqualTo(model.getTimeCreatedGreaterThanOrEqualTo());
@@ -654,6 +676,19 @@ public final class SearchMonitoredResourcesDetails
      */
     public ResourceLifecycleState getLifecycleState() {
         return lifecycleState;
+    }
+
+    /** License edition of the monitored resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("license")
+    private final LicenseType license;
+
+    /**
+     * License edition of the monitored resource.
+     *
+     * @return the value
+     */
+    public LicenseType getLicense() {
+        return license;
     }
 
     /**
@@ -890,6 +925,7 @@ public final class SearchMonitoredResourcesDetails
         sb.append(", hostNameContains=").append(String.valueOf(this.hostNameContains));
         sb.append(", managementAgentId=").append(String.valueOf(this.managementAgentId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", license=").append(String.valueOf(this.license));
         sb.append(", timeCreatedGreaterThanOrEqualTo=")
                 .append(String.valueOf(this.timeCreatedGreaterThanOrEqualTo));
         sb.append(", timeCreatedLessThan=").append(String.valueOf(this.timeCreatedLessThan));
@@ -923,6 +959,7 @@ public final class SearchMonitoredResourcesDetails
                 && java.util.Objects.equals(this.hostNameContains, other.hostNameContains)
                 && java.util.Objects.equals(this.managementAgentId, other.managementAgentId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.license, other.license)
                 && java.util.Objects.equals(
                         this.timeCreatedGreaterThanOrEqualTo, other.timeCreatedGreaterThanOrEqualTo)
                 && java.util.Objects.equals(this.timeCreatedLessThan, other.timeCreatedLessThan)
@@ -957,6 +994,7 @@ public final class SearchMonitoredResourcesDetails
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.license == null ? 43 : this.license.hashCode());
         result =
                 (result * PRIME)
                         + (this.timeCreatedGreaterThanOrEqualTo == null

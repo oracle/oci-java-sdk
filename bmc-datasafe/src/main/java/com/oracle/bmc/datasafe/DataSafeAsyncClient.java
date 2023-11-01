@@ -622,6 +622,49 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeDatabaseSecurityConfigCompartmentResponse>
+            changeDatabaseSecurityConfigCompartment(
+                    ChangeDatabaseSecurityConfigCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeDatabaseSecurityConfigCompartmentRequest,
+                                    ChangeDatabaseSecurityConfigCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getDatabaseSecurityConfigId(),
+                "databaseSecurityConfigId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeDatabaseSecurityConfigCompartmentDetails(),
+                "changeDatabaseSecurityConfigCompartmentDetails is required");
+
+        return clientCall(request, ChangeDatabaseSecurityConfigCompartmentResponse::builder)
+                .logger(LOG, "changeDatabaseSecurityConfigCompartment")
+                .serviceDetails(
+                        "DataSafe",
+                        "ChangeDatabaseSecurityConfigCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DatabaseSecurityConfig/ChangeDatabaseSecurityConfigCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeDatabaseSecurityConfigCompartmentRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("databaseSecurityConfigs")
+                .appendPathParam(request.getDatabaseSecurityConfigId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeDatabaseSecurityConfigCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeDatabaseSecurityConfigCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeDiscoveryJobCompartmentResponse>
             changeDiscoveryJobCompartment(
                     ChangeDiscoveryJobCompartmentRequest request,
@@ -969,6 +1012,90 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeSecurityPolicyCompartmentResponse>
+            changeSecurityPolicyCompartment(
+                    ChangeSecurityPolicyCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSecurityPolicyCompartmentRequest,
+                                    ChangeSecurityPolicyCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(request.getSecurityPolicyId(), "securityPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeSecurityPolicyCompartmentDetails(),
+                "changeSecurityPolicyCompartmentDetails is required");
+
+        return clientCall(request, ChangeSecurityPolicyCompartmentResponse::builder)
+                .logger(LOG, "changeSecurityPolicyCompartment")
+                .serviceDetails(
+                        "DataSafe",
+                        "ChangeSecurityPolicyCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicy/ChangeSecurityPolicyCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeSecurityPolicyCompartmentRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("securityPolicies")
+                .appendPathParam(request.getSecurityPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeSecurityPolicyCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeSecurityPolicyCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeSecurityPolicyDeploymentCompartmentResponse>
+            changeSecurityPolicyDeploymentCompartment(
+                    ChangeSecurityPolicyDeploymentCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSecurityPolicyDeploymentCompartmentRequest,
+                                    ChangeSecurityPolicyDeploymentCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getSecurityPolicyDeploymentId(),
+                "securityPolicyDeploymentId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeSecurityPolicyDeploymentCompartmentDetails(),
+                "changeSecurityPolicyDeploymentCompartmentDetails is required");
+
+        return clientCall(request, ChangeSecurityPolicyDeploymentCompartmentResponse::builder)
+                .logger(LOG, "changeSecurityPolicyDeploymentCompartment")
+                .serviceDetails(
+                        "DataSafe",
+                        "ChangeSecurityPolicyDeploymentCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicyDeployment/ChangeSecurityPolicyDeploymentCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeSecurityPolicyDeploymentCompartmentRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("securityPolicyDeployments")
+                .appendPathParam(request.getSecurityPolicyDeploymentId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeSecurityPolicyDeploymentCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeSecurityPolicyDeploymentCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeSensitiveDataModelCompartmentResponse>
             changeSensitiveDataModelCompartment(
                     ChangeSensitiveDataModelCompartmentRequest request,
@@ -1042,6 +1169,89 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeSensitiveTypeCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeSqlCollectionCompartmentResponse>
+            changeSqlCollectionCompartment(
+                    ChangeSqlCollectionCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSqlCollectionCompartmentRequest,
+                                    ChangeSqlCollectionCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(request.getSqlCollectionId(), "sqlCollectionId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeSqlCollectionCompartmentDetails(),
+                "changeSqlCollectionCompartmentDetails is required");
+
+        return clientCall(request, ChangeSqlCollectionCompartmentResponse::builder)
+                .logger(LOG, "changeSqlCollectionCompartment")
+                .serviceDetails(
+                        "DataSafe",
+                        "ChangeSqlCollectionCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollection/ChangeSqlCollectionCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeSqlCollectionCompartmentRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlCollections")
+                .appendPathParam(request.getSqlCollectionId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeSqlCollectionCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeSqlCollectionCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeSqlFirewallPolicyCompartmentResponse>
+            changeSqlFirewallPolicyCompartment(
+                    ChangeSqlFirewallPolicyCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSqlFirewallPolicyCompartmentRequest,
+                                    ChangeSqlFirewallPolicyCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getSqlFirewallPolicyId(), "sqlFirewallPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeSqlFirewallPolicyCompartmentDetails(),
+                "changeSqlFirewallPolicyCompartmentDetails is required");
+
+        return clientCall(request, ChangeSqlFirewallPolicyCompartmentResponse::builder)
+                .logger(LOG, "changeSqlFirewallPolicyCompartment")
+                .serviceDetails(
+                        "DataSafe",
+                        "ChangeSqlFirewallPolicyCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallPolicy/ChangeSqlFirewallPolicyCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeSqlFirewallPolicyCompartmentRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlFirewallPolicies")
+                .appendPathParam(request.getSqlFirewallPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeSqlFirewallPolicyCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeSqlFirewallPolicyCompartmentResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1724,6 +1934,43 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSqlCollectionResponse> createSqlCollection(
+            CreateSqlCollectionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateSqlCollectionRequest, CreateSqlCollectionResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateSqlCollectionDetails(), "createSqlCollectionDetails is required");
+
+        return clientCall(request, CreateSqlCollectionResponse::builder)
+                .logger(LOG, "createSqlCollection")
+                .serviceDetails(
+                        "DataSafe",
+                        "CreateSqlCollection",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollection/CreateSqlCollection")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSqlCollectionRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlCollections")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SqlCollection.class,
+                        CreateSqlCollectionResponse.Builder::sqlCollection)
+                .handleResponseHeaderString("etag", CreateSqlCollectionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateSqlCollectionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateSqlCollectionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateSqlCollectionResponse.Builder::location)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTargetAlertPolicyAssociationResponse>
             createTargetAlertPolicyAssociation(
                     CreateTargetAlertPolicyAssociationRequest request,
@@ -2352,6 +2599,69 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteSensitiveTypeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSqlCollectionResponse> deleteSqlCollection(
+            DeleteSqlCollectionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSqlCollectionRequest, DeleteSqlCollectionResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSqlCollectionId(), "sqlCollectionId must not be blank");
+
+        return clientCall(request, DeleteSqlCollectionResponse::builder)
+                .logger(LOG, "deleteSqlCollection")
+                .serviceDetails(
+                        "DataSafe",
+                        "DeleteSqlCollection",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollection/DeleteSqlCollection")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSqlCollectionRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlCollections")
+                .appendPathParam(request.getSqlCollectionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteSqlCollectionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteSqlCollectionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSqlFirewallPolicyResponse> deleteSqlFirewallPolicy(
+            DeleteSqlFirewallPolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSqlFirewallPolicyRequest, DeleteSqlFirewallPolicyResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getSqlFirewallPolicyId(), "sqlFirewallPolicyId must not be blank");
+
+        return clientCall(request, DeleteSqlFirewallPolicyResponse::builder)
+                .logger(LOG, "deleteSqlFirewallPolicy")
+                .serviceDetails(
+                        "DataSafe",
+                        "DeleteSqlFirewallPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallPolicy/DeleteSqlFirewallPolicy")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSqlFirewallPolicyRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlFirewallPolicies")
+                .appendPathParam(request.getSqlFirewallPolicyId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteSqlFirewallPolicyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteSqlFirewallPolicyResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -3131,6 +3441,40 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<GenerateSqlFirewallPolicyResponse> generateSqlFirewallPolicy(
+            GenerateSqlFirewallPolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GenerateSqlFirewallPolicyRequest, GenerateSqlFirewallPolicyResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSqlCollectionId(), "sqlCollectionId must not be blank");
+
+        return clientCall(request, GenerateSqlFirewallPolicyResponse::builder)
+                .logger(LOG, "generateSqlFirewallPolicy")
+                .serviceDetails(
+                        "DataSafe",
+                        "GenerateSqlFirewallPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollection/GenerateSqlFirewallPolicy")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(GenerateSqlFirewallPolicyRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlCollections")
+                .appendPathParam(request.getSqlCollectionId())
+                .appendPathParam("actions")
+                .appendPathParam("generateSqlFirewallPolicy")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        GenerateSqlFirewallPolicyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", GenerateSqlFirewallPolicyResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GenerateUserAssessmentReportResponse>
             generateUserAssessmentReport(
                     GenerateUserAssessmentReportRequest request,
@@ -3500,6 +3844,39 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         "etag", GetDataSafePrivateEndpointResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDataSafePrivateEndpointResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDatabaseSecurityConfigResponse> getDatabaseSecurityConfig(
+            GetDatabaseSecurityConfigRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetDatabaseSecurityConfigRequest, GetDatabaseSecurityConfigResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getDatabaseSecurityConfigId(),
+                "databaseSecurityConfigId must not be blank");
+
+        return clientCall(request, GetDatabaseSecurityConfigResponse::builder)
+                .logger(LOG, "getDatabaseSecurityConfig")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetDatabaseSecurityConfig",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DatabaseSecurityConfig/GetDatabaseSecurityConfig")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDatabaseSecurityConfigRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("databaseSecurityConfigs")
+                .appendPathParam(request.getDatabaseSecurityConfigId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.DatabaseSecurityConfig.class,
+                        GetDatabaseSecurityConfigResponse.Builder::databaseSecurityConfig)
+                .handleResponseHeaderString("etag", GetDatabaseSecurityConfigResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDatabaseSecurityConfigResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -4013,6 +4390,115 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<GetSecurityPolicyResponse> getSecurityPolicy(
+            GetSecurityPolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSecurityPolicyRequest, GetSecurityPolicyResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSecurityPolicyId(), "securityPolicyId must not be blank");
+
+        return clientCall(request, GetSecurityPolicyResponse::builder)
+                .logger(LOG, "getSecurityPolicy")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetSecurityPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicy/GetSecurityPolicy")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSecurityPolicyRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("securityPolicies")
+                .appendPathParam(request.getSecurityPolicyId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SecurityPolicy.class,
+                        GetSecurityPolicyResponse.Builder::securityPolicy)
+                .handleResponseHeaderString("etag", GetSecurityPolicyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSecurityPolicyResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSecurityPolicyDeploymentResponse>
+            getSecurityPolicyDeployment(
+                    GetSecurityPolicyDeploymentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetSecurityPolicyDeploymentRequest,
+                                    GetSecurityPolicyDeploymentResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getSecurityPolicyDeploymentId(),
+                "securityPolicyDeploymentId must not be blank");
+
+        return clientCall(request, GetSecurityPolicyDeploymentResponse::builder)
+                .logger(LOG, "getSecurityPolicyDeployment")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetSecurityPolicyDeployment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicyDeployment/GetSecurityPolicyDeployment")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSecurityPolicyDeploymentRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("securityPolicyDeployments")
+                .appendPathParam(request.getSecurityPolicyDeploymentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SecurityPolicyDeployment.class,
+                        GetSecurityPolicyDeploymentResponse.Builder::securityPolicyDeployment)
+                .handleResponseHeaderString(
+                        "etag", GetSecurityPolicyDeploymentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSecurityPolicyDeploymentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSecurityPolicyEntryStateResponse>
+            getSecurityPolicyEntryState(
+                    GetSecurityPolicyEntryStateRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetSecurityPolicyEntryStateRequest,
+                                    GetSecurityPolicyEntryStateResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getSecurityPolicyDeploymentId(),
+                "securityPolicyDeploymentId must not be blank");
+
+        Validate.notBlank(
+                request.getSecurityPolicyEntryStateId(),
+                "securityPolicyEntryStateId must not be blank");
+
+        return clientCall(request, GetSecurityPolicyEntryStateResponse::builder)
+                .logger(LOG, "getSecurityPolicyEntryState")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetSecurityPolicyEntryState",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicyEntryState/GetSecurityPolicyEntryState")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSecurityPolicyEntryStateRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("securityPolicyDeployments")
+                .appendPathParam(request.getSecurityPolicyDeploymentId())
+                .appendPathParam("securityPolicyEntryStates")
+                .appendPathParam(request.getSecurityPolicyEntryStateId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SecurityPolicyEntryState.class,
+                        GetSecurityPolicyEntryStateResponse.Builder::securityPolicyEntryState)
+                .handleResponseHeaderString(
+                        "etag", GetSecurityPolicyEntryStateResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSecurityPolicyEntryStateResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSensitiveColumnResponse> getSensitiveColumn(
             GetSensitiveColumnRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -4108,6 +4594,69 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString("etag", GetSensitiveTypeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSensitiveTypeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSqlCollectionResponse> getSqlCollection(
+            GetSqlCollectionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSqlCollectionRequest, GetSqlCollectionResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSqlCollectionId(), "sqlCollectionId must not be blank");
+
+        return clientCall(request, GetSqlCollectionResponse::builder)
+                .logger(LOG, "getSqlCollection")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetSqlCollection",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollection/GetSqlCollection")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSqlCollectionRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlCollections")
+                .appendPathParam(request.getSqlCollectionId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SqlCollection.class,
+                        GetSqlCollectionResponse.Builder::sqlCollection)
+                .handleResponseHeaderString("etag", GetSqlCollectionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSqlCollectionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSqlFirewallPolicyResponse> getSqlFirewallPolicy(
+            GetSqlFirewallPolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSqlFirewallPolicyRequest, GetSqlFirewallPolicyResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getSqlFirewallPolicyId(), "sqlFirewallPolicyId must not be blank");
+
+        return clientCall(request, GetSqlFirewallPolicyResponse::builder)
+                .logger(LOG, "getSqlFirewallPolicy")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetSqlFirewallPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallPolicy/GetSqlFirewallPolicy")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSqlFirewallPolicyRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlFirewallPolicies")
+                .appendPathParam(request.getSqlFirewallPolicyId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SqlFirewallPolicy.class,
+                        GetSqlFirewallPolicyResponse.Builder::sqlFirewallPolicy)
+                .handleResponseHeaderString("etag", GetSqlFirewallPolicyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSqlFirewallPolicyResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -5058,6 +5607,56 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         ListDataSafePrivateEndpointsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDataSafePrivateEndpointsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDatabaseSecurityConfigsResponse>
+            listDatabaseSecurityConfigs(
+                    ListDatabaseSecurityConfigsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListDatabaseSecurityConfigsRequest,
+                                    ListDatabaseSecurityConfigsResponse>
+                            handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListDatabaseSecurityConfigsResponse::builder)
+                .logger(LOG, "listDatabaseSecurityConfigs")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListDatabaseSecurityConfigs",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DatabaseSecurityConfigCollection/ListDatabaseSecurityConfigs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDatabaseSecurityConfigsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("databaseSecurityConfigs")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("databaseSecurityConfigId", request.getDatabaseSecurityConfigId())
+                .appendQueryParam(
+                        "timeCreatedGreaterThanOrEqualTo",
+                        request.getTimeCreatedGreaterThanOrEqualTo())
+                .appendQueryParam("timeCreatedLessThan", request.getTimeCreatedLessThan())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.DatabaseSecurityConfigCollection.class,
+                        ListDatabaseSecurityConfigsResponse.Builder
+                                ::databaseSecurityConfigCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDatabaseSecurityConfigsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDatabaseSecurityConfigsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListDatabaseSecurityConfigsResponse.Builder::opcPrevPage)
                 .callAsync(handler);
     }
 
@@ -6180,6 +6779,142 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ListSecurityPoliciesResponse> listSecurityPolicies(
+            ListSecurityPoliciesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSecurityPoliciesRequest, ListSecurityPoliciesResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSecurityPoliciesResponse::builder)
+                .logger(LOG, "listSecurityPolicies")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSecurityPolicies",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicyCollection/ListSecurityPolicies")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSecurityPoliciesRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("securityPolicies")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("securityPolicyId", request.getSecurityPolicyId())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SecurityPolicyCollection.class,
+                        ListSecurityPoliciesResponse.Builder::securityPolicyCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSecurityPoliciesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSecurityPoliciesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSecurityPoliciesResponse.Builder::opcPrevPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecurityPolicyDeploymentsResponse>
+            listSecurityPolicyDeployments(
+                    ListSecurityPolicyDeploymentsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSecurityPolicyDeploymentsRequest,
+                                    ListSecurityPolicyDeploymentsResponse>
+                            handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSecurityPolicyDeploymentsResponse::builder)
+                .logger(LOG, "listSecurityPolicyDeployments")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSecurityPolicyDeployments",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicyDeploymentCollection/ListSecurityPolicyDeployments")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSecurityPolicyDeploymentsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("securityPolicyDeployments")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam(
+                        "securityPolicyDeploymentId", request.getSecurityPolicyDeploymentId())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendQueryParam("securityPolicyId", request.getSecurityPolicyId())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SecurityPolicyDeploymentCollection.class,
+                        ListSecurityPolicyDeploymentsResponse.Builder
+                                ::securityPolicyDeploymentCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListSecurityPolicyDeploymentsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSecurityPolicyDeploymentsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSecurityPolicyDeploymentsResponse.Builder::opcPrevPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecurityPolicyEntryStatesResponse>
+            listSecurityPolicyEntryStates(
+                    ListSecurityPolicyEntryStatesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSecurityPolicyEntryStatesRequest,
+                                    ListSecurityPolicyEntryStatesResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getSecurityPolicyDeploymentId(),
+                "securityPolicyDeploymentId must not be blank");
+
+        return clientCall(request, ListSecurityPolicyEntryStatesResponse::builder)
+                .logger(LOG, "listSecurityPolicyEntryStates")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSecurityPolicyEntryStates",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicyEntryStateCollection/ListSecurityPolicyEntryStates")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSecurityPolicyEntryStatesRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("securityPolicyDeployments")
+                .appendPathParam(request.getSecurityPolicyDeploymentId())
+                .appendPathParam("securityPolicyEntryStates")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("deploymentStatus", request.getDeploymentStatus())
+                .appendQueryParam("securityPolicyEntryId", request.getSecurityPolicyEntryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SecurityPolicyEntryStateCollection.class,
+                        ListSecurityPolicyEntryStatesResponse.Builder
+                                ::securityPolicyEntryStateCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListSecurityPolicyEntryStatesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSecurityPolicyEntryStatesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSecurityPolicyEntryStatesResponse.Builder::opcPrevPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSensitiveColumnsResponse> listSensitiveColumns(
             ListSensitiveColumnsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -6457,6 +7192,438 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         "opc-next-page", ListSensitiveTypesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListSensitiveTypesResponse.Builder::opcPrevPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSqlCollectionAnalyticsResponse>
+            listSqlCollectionAnalytics(
+                    ListSqlCollectionAnalyticsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSqlCollectionAnalyticsRequest,
+                                    ListSqlCollectionAnalyticsResponse>
+                            handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSqlCollectionAnalyticsResponse::builder)
+                .logger(LOG, "listSqlCollectionAnalytics")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSqlCollectionAnalytics",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollectionAnalyticsCollection/ListSqlCollectionAnalytics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSqlCollectionAnalyticsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlCollectionAnalytics")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendListQueryParam(
+                        "groupBy",
+                        request.getGroupBy(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("timeStarted", request.getTimeStarted())
+                .appendQueryParam("timeEnded", request.getTimeEnded())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SqlCollectionAnalyticsCollection.class,
+                        ListSqlCollectionAnalyticsResponse.Builder
+                                ::sqlCollectionAnalyticsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSqlCollectionAnalyticsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSqlCollectionAnalyticsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSqlCollectionAnalyticsResponse.Builder::opcPrevPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSqlCollectionLogInsightsResponse>
+            listSqlCollectionLogInsights(
+                    ListSqlCollectionLogInsightsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSqlCollectionLogInsightsRequest,
+                                    ListSqlCollectionLogInsightsResponse>
+                            handler) {
+        Objects.requireNonNull(request.getTimeStarted(), "timeStarted is required");
+
+        Objects.requireNonNull(request.getTimeEnded(), "timeEnded is required");
+
+        Validate.notBlank(request.getSqlCollectionId(), "sqlCollectionId must not be blank");
+
+        return clientCall(request, ListSqlCollectionLogInsightsResponse::builder)
+                .logger(LOG, "listSqlCollectionLogInsights")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSqlCollectionLogInsights",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollectionLogInsightsCollection/ListSqlCollectionLogInsights")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSqlCollectionLogInsightsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlCollections")
+                .appendPathParam(request.getSqlCollectionId())
+                .appendPathParam("logInsights")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("timeStarted", request.getTimeStarted())
+                .appendQueryParam("timeEnded", request.getTimeEnded())
+                .appendEnumQueryParam("groupBy", request.getGroupBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SqlCollectionLogInsightsCollection.class,
+                        ListSqlCollectionLogInsightsResponse.Builder
+                                ::sqlCollectionLogInsightsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListSqlCollectionLogInsightsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSqlCollectionLogInsightsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSqlCollectionLogInsightsResponse.Builder::opcPrevPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSqlCollectionsResponse> listSqlCollections(
+            ListSqlCollectionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSqlCollectionsRequest, ListSqlCollectionsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSqlCollectionsResponse::builder)
+                .logger(LOG, "listSqlCollections")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSqlCollections",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollectionCollection/ListSqlCollections")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSqlCollectionsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlCollections")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("sqlCollectionId", request.getSqlCollectionId())
+                .appendQueryParam(
+                        "timeCreatedGreaterThanOrEqualTo",
+                        request.getTimeCreatedGreaterThanOrEqualTo())
+                .appendQueryParam("timeCreatedLessThan", request.getTimeCreatedLessThan())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendQueryParam("dbUserName", request.getDbUserName())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SqlCollectionCollection.class,
+                        ListSqlCollectionsResponse.Builder::sqlCollectionCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSqlCollectionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSqlCollectionsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSqlCollectionsResponse.Builder::opcPrevPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSqlFirewallAllowedSqlAnalyticsResponse>
+            listSqlFirewallAllowedSqlAnalytics(
+                    ListSqlFirewallAllowedSqlAnalyticsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSqlFirewallAllowedSqlAnalyticsRequest,
+                                    ListSqlFirewallAllowedSqlAnalyticsResponse>
+                            handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSqlFirewallAllowedSqlAnalyticsResponse::builder)
+                .logger(LOG, "listSqlFirewallAllowedSqlAnalytics")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSqlFirewallAllowedSqlAnalytics",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallAllowedSqlAnalyticsCollection/ListSqlFirewallAllowedSqlAnalytics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSqlFirewallAllowedSqlAnalyticsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlFirewallAllowedSqlAnalytics")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("scimQuery", request.getScimQuery())
+                .appendListQueryParam(
+                        "groupBy",
+                        request.getGroupBy(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SqlFirewallAllowedSqlAnalyticsCollection
+                                .class,
+                        ListSqlFirewallAllowedSqlAnalyticsResponse.Builder
+                                ::sqlFirewallAllowedSqlAnalyticsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListSqlFirewallAllowedSqlAnalyticsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListSqlFirewallAllowedSqlAnalyticsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page",
+                        ListSqlFirewallAllowedSqlAnalyticsResponse.Builder::opcPrevPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSqlFirewallAllowedSqlsResponse>
+            listSqlFirewallAllowedSqls(
+                    ListSqlFirewallAllowedSqlsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSqlFirewallAllowedSqlsRequest,
+                                    ListSqlFirewallAllowedSqlsResponse>
+                            handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSqlFirewallAllowedSqlsResponse::builder)
+                .logger(LOG, "listSqlFirewallAllowedSqls")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSqlFirewallAllowedSqls",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallAllowedSqlCollection/ListSqlFirewallAllowedSqls")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSqlFirewallAllowedSqlsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlFirewallAllowedSqls")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("scimQuery", request.getScimQuery())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SqlFirewallAllowedSqlCollection.class,
+                        ListSqlFirewallAllowedSqlsResponse.Builder::sqlFirewallAllowedSqlCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSqlFirewallAllowedSqlsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSqlFirewallAllowedSqlsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSqlFirewallAllowedSqlsResponse.Builder::opcPrevPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSqlFirewallPoliciesResponse> listSqlFirewallPolicies(
+            ListSqlFirewallPoliciesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSqlFirewallPoliciesRequest, ListSqlFirewallPoliciesResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSqlFirewallPoliciesResponse::builder)
+                .logger(LOG, "listSqlFirewallPolicies")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSqlFirewallPolicies",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallPolicyCollection/ListSqlFirewallPolicies")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSqlFirewallPoliciesRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlFirewallPolicies")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("securityPolicyId", request.getSecurityPolicyId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("sqlFirewallPolicyId", request.getSqlFirewallPolicyId())
+                .appendQueryParam("dbUserName", request.getDbUserName())
+                .appendEnumQueryParam("violationAction", request.getViolationAction())
+                .appendQueryParam(
+                        "timeCreatedGreaterThanOrEqualTo",
+                        request.getTimeCreatedGreaterThanOrEqualTo())
+                .appendQueryParam("timeCreatedLessThan", request.getTimeCreatedLessThan())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SqlFirewallPolicyCollection.class,
+                        ListSqlFirewallPoliciesResponse.Builder::sqlFirewallPolicyCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSqlFirewallPoliciesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSqlFirewallPoliciesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSqlFirewallPoliciesResponse.Builder::opcPrevPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSqlFirewallPolicyAnalyticsResponse>
+            listSqlFirewallPolicyAnalytics(
+                    ListSqlFirewallPolicyAnalyticsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSqlFirewallPolicyAnalyticsRequest,
+                                    ListSqlFirewallPolicyAnalyticsResponse>
+                            handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSqlFirewallPolicyAnalyticsResponse::builder)
+                .logger(LOG, "listSqlFirewallPolicyAnalytics")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSqlFirewallPolicyAnalytics",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallPolicyAnalyticsCollection/ListSqlFirewallPolicyAnalytics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSqlFirewallPolicyAnalyticsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlFirewallPolicyAnalytics")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendListQueryParam(
+                        "groupBy",
+                        request.getGroupBy(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("securityPolicyId", request.getSecurityPolicyId())
+                .appendQueryParam("timeStarted", request.getTimeStarted())
+                .appendQueryParam("timeEnded", request.getTimeEnded())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SqlFirewallPolicyAnalyticsCollection.class,
+                        ListSqlFirewallPolicyAnalyticsResponse.Builder
+                                ::sqlFirewallPolicyAnalyticsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListSqlFirewallPolicyAnalyticsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListSqlFirewallPolicyAnalyticsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page",
+                        ListSqlFirewallPolicyAnalyticsResponse.Builder::opcPrevPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSqlFirewallViolationAnalyticsResponse>
+            listSqlFirewallViolationAnalytics(
+                    ListSqlFirewallViolationAnalyticsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSqlFirewallViolationAnalyticsRequest,
+                                    ListSqlFirewallViolationAnalyticsResponse>
+                            handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSqlFirewallViolationAnalyticsResponse::builder)
+                .logger(LOG, "listSqlFirewallViolationAnalytics")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSqlFirewallViolationAnalytics",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallViolationSummary/ListSqlFirewallViolationAnalytics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSqlFirewallViolationAnalyticsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlFirewallViolationAnalytics")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("timeStarted", request.getTimeStarted())
+                .appendQueryParam("timeEnded", request.getTimeEnded())
+                .appendQueryParam("queryTimeZone", request.getQueryTimeZone())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("scimQuery", request.getScimQuery())
+                .appendListQueryParam(
+                        "summaryField",
+                        request.getSummaryField(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "groupBy",
+                        request.getGroupBy(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SqlFirewallViolationAnalyticsCollection.class,
+                        ListSqlFirewallViolationAnalyticsResponse.Builder
+                                ::sqlFirewallViolationAnalyticsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListSqlFirewallViolationAnalyticsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListSqlFirewallViolationAnalyticsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page",
+                        ListSqlFirewallViolationAnalyticsResponse.Builder::opcPrevPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSqlFirewallViolationsResponse> listSqlFirewallViolations(
+            ListSqlFirewallViolationsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSqlFirewallViolationsRequest, ListSqlFirewallViolationsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSqlFirewallViolationsResponse::builder)
+                .logger(LOG, "listSqlFirewallViolations")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSqlFirewallViolations",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallViolationSummary/ListSqlFirewallViolations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSqlFirewallViolationsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlFirewallViolations")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("scimQuery", request.getScimQuery())
+                .accept("application/json, application/xml")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SqlFirewallViolationsCollection.class,
+                        ListSqlFirewallViolationsResponse.Builder::sqlFirewallViolationsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSqlFirewallViolationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSqlFirewallViolationsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSqlFirewallViolationsResponse.Builder::opcPrevPage)
                 .callAsync(handler);
     }
 
@@ -6877,6 +8044,8 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendQueryParam("targetDatabaseId", request.getTargetDatabaseId())
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(
@@ -7212,6 +8381,79 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<PurgeSqlCollectionLogsResponse> purgeSqlCollectionLogs(
+            PurgeSqlCollectionLogsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PurgeSqlCollectionLogsRequest, PurgeSqlCollectionLogsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSqlCollectionId(), "sqlCollectionId must not be blank");
+
+        return clientCall(request, PurgeSqlCollectionLogsResponse::builder)
+                .logger(LOG, "purgeSqlCollectionLogs")
+                .serviceDetails(
+                        "DataSafe",
+                        "PurgeSqlCollectionLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollection/PurgeSqlCollectionLogs")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(PurgeSqlCollectionLogsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlCollections")
+                .appendPathParam(request.getSqlCollectionId())
+                .appendPathParam("actions")
+                .appendPathParam("purgeLogs")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        PurgeSqlCollectionLogsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", PurgeSqlCollectionLogsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RefreshDatabaseSecurityConfigurationResponse>
+            refreshDatabaseSecurityConfiguration(
+                    RefreshDatabaseSecurityConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RefreshDatabaseSecurityConfigurationRequest,
+                                    RefreshDatabaseSecurityConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getDatabaseSecurityConfigId(),
+                "databaseSecurityConfigId must not be blank");
+
+        return clientCall(request, RefreshDatabaseSecurityConfigurationResponse::builder)
+                .logger(LOG, "refreshDatabaseSecurityConfiguration")
+                .serviceDetails(
+                        "DataSafe",
+                        "RefreshDatabaseSecurityConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DatabaseSecurityConfig/RefreshDatabaseSecurityConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RefreshDatabaseSecurityConfigurationRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("databaseSecurityConfigs")
+                .appendPathParam(request.getDatabaseSecurityConfigId())
+                .appendPathParam("actions")
+                .appendPathParam("refresh")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RefreshDatabaseSecurityConfigurationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RefreshDatabaseSecurityConfigurationResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<RefreshSecurityAssessmentResponse> refreshSecurityAssessment(
             RefreshSecurityAssessmentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -7247,6 +8489,43 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         RefreshSecurityAssessmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RefreshSecurityAssessmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RefreshSqlCollectionLogInsightsResponse>
+            refreshSqlCollectionLogInsights(
+                    RefreshSqlCollectionLogInsightsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RefreshSqlCollectionLogInsightsRequest,
+                                    RefreshSqlCollectionLogInsightsResponse>
+                            handler) {
+
+        Validate.notBlank(request.getSqlCollectionId(), "sqlCollectionId must not be blank");
+
+        return clientCall(request, RefreshSqlCollectionLogInsightsResponse::builder)
+                .logger(LOG, "refreshSqlCollectionLogInsights")
+                .serviceDetails(
+                        "DataSafe",
+                        "RefreshSqlCollectionLogInsights",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollection/RefreshSqlCollectionLogInsights")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RefreshSqlCollectionLogInsightsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlCollections")
+                .appendPathParam(request.getSqlCollectionId())
+                .appendPathParam("actions")
+                .appendPathParam("refreshLogInsights")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RefreshSqlCollectionLogInsightsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RefreshSqlCollectionLogInsightsResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -7567,6 +8846,39 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<StartSqlCollectionResponse> startSqlCollection(
+            StartSqlCollectionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StartSqlCollectionRequest, StartSqlCollectionResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSqlCollectionId(), "sqlCollectionId must not be blank");
+
+        return clientCall(request, StartSqlCollectionResponse::builder)
+                .logger(LOG, "startSqlCollection")
+                .serviceDetails(
+                        "DataSafe",
+                        "StartSqlCollection",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/sqlCollection/StartSqlCollection")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StartSqlCollectionRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlCollections")
+                .appendPathParam(request.getSqlCollectionId())
+                .appendPathParam("actions")
+                .appendPathParam("start")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", StartSqlCollectionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", StartSqlCollectionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<StopAuditTrailResponse> stopAuditTrail(
             StopAuditTrailRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -7595,6 +8907,39 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         "opc-work-request-id", StopAuditTrailResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", StopAuditTrailResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopSqlCollectionResponse> stopSqlCollection(
+            StopSqlCollectionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StopSqlCollectionRequest, StopSqlCollectionResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSqlCollectionId(), "sqlCollectionId must not be blank");
+
+        return clientCall(request, StopSqlCollectionResponse::builder)
+                .logger(LOG, "stopSqlCollection")
+                .serviceDetails(
+                        "DataSafe",
+                        "StopSqlCollection",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollection/StopSqlCollection")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StopSqlCollectionRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlCollections")
+                .appendPathParam(request.getSqlCollectionId())
+                .appendPathParam("actions")
+                .appendPathParam("stop")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", StopSqlCollectionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", StopSqlCollectionResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -7916,6 +9261,46 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateDatabaseSecurityConfigResponse>
+            updateDatabaseSecurityConfig(
+                    UpdateDatabaseSecurityConfigRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateDatabaseSecurityConfigRequest,
+                                    UpdateDatabaseSecurityConfigResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getDatabaseSecurityConfigId(),
+                "databaseSecurityConfigId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDatabaseSecurityConfigDetails(),
+                "updateDatabaseSecurityConfigDetails is required");
+
+        return clientCall(request, UpdateDatabaseSecurityConfigResponse::builder)
+                .logger(LOG, "updateDatabaseSecurityConfig")
+                .serviceDetails(
+                        "DataSafe",
+                        "UpdateDatabaseSecurityConfig",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DatabaseSecurityConfig/UpdateDatabaseSecurityConfig")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDatabaseSecurityConfigRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("databaseSecurityConfigs")
+                .appendPathParam(request.getDatabaseSecurityConfigId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateDatabaseSecurityConfigResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateDatabaseSecurityConfigResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateLibraryMaskingFormatResponse>
             updateLibraryMaskingFormat(
                     UpdateLibraryMaskingFormatRequest request,
@@ -8212,6 +9597,81 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateSecurityPolicyResponse> updateSecurityPolicy(
+            UpdateSecurityPolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSecurityPolicyRequest, UpdateSecurityPolicyResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSecurityPolicyId(), "securityPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateSecurityPolicyDetails(),
+                "updateSecurityPolicyDetails is required");
+
+        return clientCall(request, UpdateSecurityPolicyResponse::builder)
+                .logger(LOG, "updateSecurityPolicy")
+                .serviceDetails(
+                        "DataSafe",
+                        "UpdateSecurityPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicy/UpdateSecurityPolicy")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateSecurityPolicyRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("securityPolicies")
+                .appendPathParam(request.getSecurityPolicyId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateSecurityPolicyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateSecurityPolicyResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSecurityPolicyDeploymentResponse>
+            updateSecurityPolicyDeployment(
+                    UpdateSecurityPolicyDeploymentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateSecurityPolicyDeploymentRequest,
+                                    UpdateSecurityPolicyDeploymentResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getSecurityPolicyDeploymentId(),
+                "securityPolicyDeploymentId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateSecurityPolicyDeploymentDetails(),
+                "updateSecurityPolicyDeploymentDetails is required");
+
+        return clientCall(request, UpdateSecurityPolicyDeploymentResponse::builder)
+                .logger(LOG, "updateSecurityPolicyDeployment")
+                .serviceDetails(
+                        "DataSafe",
+                        "UpdateSecurityPolicyDeployment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicyDeployment/UpdateSecurityPolicyDeployment")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateSecurityPolicyDeploymentRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("securityPolicyDeployments")
+                .appendPathParam(request.getSecurityPolicyDeploymentId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateSecurityPolicyDeploymentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateSecurityPolicyDeploymentResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateSensitiveColumnResponse> updateSensitiveColumn(
             UpdateSensitiveColumnRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -8318,6 +9778,76 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         UpdateSensitiveTypeResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateSensitiveTypeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSqlCollectionResponse> updateSqlCollection(
+            UpdateSqlCollectionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSqlCollectionRequest, UpdateSqlCollectionResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSqlCollectionId(), "sqlCollectionId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateSqlCollectionDetails(), "updateSqlCollectionDetails is required");
+
+        return clientCall(request, UpdateSqlCollectionResponse::builder)
+                .logger(LOG, "updateSqlCollection")
+                .serviceDetails(
+                        "DataSafe",
+                        "UpdateSqlCollection",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollection/UpdateSqlCollection")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateSqlCollectionRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlCollections")
+                .appendPathParam(request.getSqlCollectionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateSqlCollectionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateSqlCollectionResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSqlFirewallPolicyResponse> updateSqlFirewallPolicy(
+            UpdateSqlFirewallPolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSqlFirewallPolicyRequest, UpdateSqlFirewallPolicyResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getSqlFirewallPolicyId(), "sqlFirewallPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateSqlFirewallPolicyDetails(),
+                "updateSqlFirewallPolicyDetails is required");
+
+        return clientCall(request, UpdateSqlFirewallPolicyResponse::builder)
+                .logger(LOG, "updateSqlFirewallPolicy")
+                .serviceDetails(
+                        "DataSafe",
+                        "UpdateSqlFirewallPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallPolicy/UpdateSqlFirewallPolicy")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateSqlFirewallPolicyRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlFirewallPolicies")
+                .appendPathParam(request.getSqlFirewallPolicyId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateSqlFirewallPolicyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateSqlFirewallPolicyResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 

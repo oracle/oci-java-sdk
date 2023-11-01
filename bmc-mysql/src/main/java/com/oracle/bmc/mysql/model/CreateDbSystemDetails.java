@@ -47,7 +47,8 @@ public final class CreateDbSystemDetails
         "freeformTags",
         "definedTags",
         "deletionPolicy",
-        "crashRecovery"
+        "crashRecovery",
+        "databaseManagement"
     })
     public CreateDbSystemDetails(
             String displayName,
@@ -73,7 +74,8 @@ public final class CreateDbSystemDetails
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             CreateDeletionPolicyDetails deletionPolicy,
-            CrashRecoveryStatus crashRecovery) {
+            CrashRecoveryStatus crashRecovery,
+            DatabaseManagementStatus databaseManagement) {
         super();
         this.displayName = displayName;
         this.description = description;
@@ -99,6 +101,7 @@ public final class CreateDbSystemDetails
         this.definedTags = definedTags;
         this.deletionPolicy = deletionPolicy;
         this.crashRecovery = crashRecovery;
+        this.databaseManagement = databaseManagement;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -548,6 +551,21 @@ public final class CreateDbSystemDetails
             this.__explicitlySet__.add("crashRecovery");
             return this;
         }
+        /** Whether to enable monitoring via the Database Management service. */
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseManagement")
+        private DatabaseManagementStatus databaseManagement;
+
+        /**
+         * Whether to enable monitoring via the Database Management service.
+         *
+         * @param databaseManagement the value to set
+         * @return this builder
+         */
+        public Builder databaseManagement(DatabaseManagementStatus databaseManagement) {
+            this.databaseManagement = databaseManagement;
+            this.__explicitlySet__.add("databaseManagement");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -578,7 +596,8 @@ public final class CreateDbSystemDetails
                             this.freeformTags,
                             this.definedTags,
                             this.deletionPolicy,
-                            this.crashRecovery);
+                            this.crashRecovery,
+                            this.databaseManagement);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -658,6 +677,9 @@ public final class CreateDbSystemDetails
             }
             if (model.wasPropertyExplicitlySet("crashRecovery")) {
                 this.crashRecovery(model.getCrashRecovery());
+            }
+            if (model.wasPropertyExplicitlySet("databaseManagement")) {
+                this.databaseManagement(model.getDatabaseManagement());
             }
             return this;
         }
@@ -1062,6 +1084,19 @@ public final class CreateDbSystemDetails
         return crashRecovery;
     }
 
+    /** Whether to enable monitoring via the Database Management service. */
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseManagement")
+    private final DatabaseManagementStatus databaseManagement;
+
+    /**
+     * Whether to enable monitoring via the Database Management service.
+     *
+     * @return the value
+     */
+    public DatabaseManagementStatus getDatabaseManagement() {
+        return databaseManagement;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1101,6 +1136,7 @@ public final class CreateDbSystemDetails
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", deletionPolicy=").append(String.valueOf(this.deletionPolicy));
         sb.append(", crashRecovery=").append(String.valueOf(this.crashRecovery));
+        sb.append(", databaseManagement=").append(String.valueOf(this.databaseManagement));
         sb.append(")");
         return sb.toString();
     }
@@ -1139,6 +1175,7 @@ public final class CreateDbSystemDetails
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.deletionPolicy, other.deletionPolicy)
                 && java.util.Objects.equals(this.crashRecovery, other.crashRecovery)
+                && java.util.Objects.equals(this.databaseManagement, other.databaseManagement)
                 && super.equals(other);
     }
 
@@ -1194,6 +1231,11 @@ public final class CreateDbSystemDetails
         result =
                 (result * PRIME)
                         + (this.crashRecovery == null ? 43 : this.crashRecovery.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseManagement == null
+                                ? 43
+                                : this.databaseManagement.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

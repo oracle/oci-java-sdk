@@ -5,10 +5,13 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * All available DR Plan types. Plans of type *precheck* are automatically created, updated, or
- * deleted. - SWITCHOVER - Switchover from primary to standby. - SWITCHOVER_PRECHECK - Precheck for
- * switchover DR Plan. - FAILOVER - Failover to standby. - FAILOVER_PRECHECK - Precheck for failover
- * DR Plan.
+ * The types of DR plan execution that can be created, updated, or deleted by the user. Executions
+ * of type *precheck* cannot be created separately by the user. They are automatically generated as
+ * part of the plan, however prechecks can be executed separately from a plan. - SWITCHOVER -
+ * Switchover from primary to standby. - SWITCHOVER_PRECHECK - Precheck for switchover DR plan. -
+ * FAILOVER - Failover to standby. - FAILOVER_PRECHECK - Precheck for failover DR plan. -
+ * START_DRILL - Start DR drill. - START_DRILL_PRECHECK - Precheck for a start drill DR plan. -
+ * STOP_DRILL - Stop DR drill. - STOP_DRILL_PRECHECK - Precheck for a stop drill DR plan.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public enum DrPlanExecutionType implements com.oracle.bmc.http.internal.BmcEnum {
@@ -16,6 +19,10 @@ public enum DrPlanExecutionType implements com.oracle.bmc.http.internal.BmcEnum 
     SwitchoverPrecheck("SWITCHOVER_PRECHECK"),
     Failover("FAILOVER"),
     FailoverPrecheck("FAILOVER_PRECHECK"),
+    StartDrill("START_DRILL"),
+    StartDrillPrecheck("START_DRILL_PRECHECK"),
+    StopDrill("STOP_DRILL"),
+    StopDrillPrecheck("STOP_DRILL_PRECHECK"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

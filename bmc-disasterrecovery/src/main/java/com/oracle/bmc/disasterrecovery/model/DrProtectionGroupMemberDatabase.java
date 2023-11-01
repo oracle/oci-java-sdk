@@ -5,7 +5,7 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Properties for a Database (DBCS) member of a DR Protection Group. <br>
+ * The properties for a Base Database or Exadata Database member of a DR protection group. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -36,17 +36,19 @@ public final class DrProtectionGroupMemberDatabase extends DrProtectionGroupMemb
             return this;
         }
         /**
-         * The ID of the vault secret where the database password is stored.
+         * The OCID of the vault secret where the database SYSDBA password is stored. This password
+         * is used for performing database DR operations.
          *
-         * <p>Example: {@code ocid1.vaultsecret.oc1.phx.exampleocid1}
+         * <p>Example: {@code ocid1.vaultsecret.oc1..uniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("passwordVaultSecretId")
         private String passwordVaultSecretId;
 
         /**
-         * The ID of the vault secret where the database password is stored.
+         * The OCID of the vault secret where the database SYSDBA password is stored. This password
+         * is used for performing database DR operations.
          *
-         * <p>Example: {@code ocid1.vaultsecret.oc1.phx.exampleocid1}
+         * <p>Example: {@code ocid1.vaultsecret.oc1..uniqueID}
          *
          * @param passwordVaultSecretId the value to set
          * @return this builder
@@ -97,17 +99,19 @@ public final class DrProtectionGroupMemberDatabase extends DrProtectionGroupMemb
     }
 
     /**
-     * The ID of the vault secret where the database password is stored.
+     * The OCID of the vault secret where the database SYSDBA password is stored. This password is
+     * used for performing database DR operations.
      *
-     * <p>Example: {@code ocid1.vaultsecret.oc1.phx.exampleocid1}
+     * <p>Example: {@code ocid1.vaultsecret.oc1..uniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("passwordVaultSecretId")
     private final String passwordVaultSecretId;
 
     /**
-     * The ID of the vault secret where the database password is stored.
+     * The OCID of the vault secret where the database SYSDBA password is stored. This password is
+     * used for performing database DR operations.
      *
-     * <p>Example: {@code ocid1.vaultsecret.oc1.phx.exampleocid1}
+     * <p>Example: {@code ocid1.vaultsecret.oc1..uniqueID}
      *
      * @return the value
      */

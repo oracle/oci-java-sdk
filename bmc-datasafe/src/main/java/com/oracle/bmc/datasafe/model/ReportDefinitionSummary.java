@@ -479,6 +479,8 @@ public final class ReportDefinitionSummary
         CustomReports("CUSTOM_REPORTS"),
         Summary("SUMMARY"),
         ActivityAuditing("ACTIVITY_AUDITING"),
+        FirewallViolations("FIREWALL_VIOLATIONS"),
+        AllowedSql("ALLOWED_SQL"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

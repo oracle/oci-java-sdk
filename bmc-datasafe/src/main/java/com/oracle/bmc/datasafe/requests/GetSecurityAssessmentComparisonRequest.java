@@ -22,10 +22,10 @@ public class GetSecurityAssessmentComparisonRequest
     public String getSecurityAssessmentId() {
         return securityAssessmentId;
     }
-    /** The OCID of the baseline security assessment. */
+    /** The OCID of the security assessment baseline. */
     private String comparisonSecurityAssessmentId;
 
-    /** The OCID of the baseline security assessment. */
+    /** The OCID of the security assessment baseline. */
     public String getComparisonSecurityAssessmentId() {
         return comparisonSecurityAssessmentId;
     }
@@ -57,11 +57,11 @@ public class GetSecurityAssessmentComparisonRequest
             return this;
         }
 
-        /** The OCID of the baseline security assessment. */
+        /** The OCID of the security assessment baseline. */
         private String comparisonSecurityAssessmentId = null;
 
         /**
-         * The OCID of the baseline security assessment.
+         * The OCID of the security assessment baseline.
          *
          * @param comparisonSecurityAssessmentId the value to set
          * @return this builder instance

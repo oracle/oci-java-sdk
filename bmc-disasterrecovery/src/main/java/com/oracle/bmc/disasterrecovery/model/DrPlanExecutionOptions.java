@@ -23,14 +23,26 @@ package com.oracle.bmc.disasterrecovery.model;
         defaultImpl = DrPlanExecutionOptions.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = StopDrillExecutionOptions.class,
+            name = "STOP_DRILL"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = SwitchoverExecutionOptions.class,
             name = "SWITCHOVER"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = FailoverPrecheckExecutionOptions.class,
             name = "FAILOVER_PRECHECK"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = StartDrillExecutionOptions.class,
+            name = "START_DRILL"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = SwitchoverPrecheckExecutionOptions.class,
             name = "SWITCHOVER_PRECHECK"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = StartDrillPrecheckExecutionOptions.class,
+            name = "START_DRILL_PRECHECK"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = StopDrillPrecheckExecutionOptions.class,
+            name = "STOP_DRILL_PRECHECK"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = FailoverExecutionOptions.class,
             name = "FAILOVER")
@@ -91,6 +103,10 @@ public class DrPlanExecutionOptions
         SwitchoverPrecheck("SWITCHOVER_PRECHECK"),
         Failover("FAILOVER"),
         FailoverPrecheck("FAILOVER_PRECHECK"),
+        StartDrillPrecheck("START_DRILL_PRECHECK"),
+        StartDrill("START_DRILL"),
+        StopDrillPrecheck("STOP_DRILL_PRECHECK"),
+        StopDrill("STOP_DRILL"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
