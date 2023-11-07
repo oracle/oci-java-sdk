@@ -13,8 +13,13 @@ public enum WorkItemType implements com.oracle.bmc.http.internal.BmcEnum {
     CryptoAnalysis("CRYPTO_ANALYSIS"),
     CryptoAnalysisMerge("CRYPTO_ANALYSIS_MERGE"),
     AdvancedUsageTracking("ADVANCED_USAGE_TRACKING"),
+    AdvUsageServerMetadata("ADV_USAGE_SERVER_METADATA"),
+    AdvUsageServerLibraries("ADV_USAGE_SERVER_LIBRARIES"),
+    AdvUsageJavaLibraries("ADV_USAGE_JAVA_LIBRARIES"),
     PerformanceTuning("PERFORMANCE_TUNING"),
     JmigrateAnalysis("JMIGRATE_ANALYSIS"),
+    JmigrateCreateReport("JMIGRATE_CREATE_REPORT"),
+    Drs("DRS"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

@@ -18,8 +18,15 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     RequestCryptoEventAnalysis("REQUEST_CRYPTO_EVENT_ANALYSIS"),
     RequestPerformanceTuningAnalysis("REQUEST_PERFORMANCE_TUNING_ANALYSIS"),
     RequestJavaMigrationAnalysis("REQUEST_JAVA_MIGRATION_ANALYSIS"),
+    DeleteJmsReport("DELETE_JMS_REPORT"),
     ScanJavaServerUsage("SCAN_JAVA_SERVER_USAGE"),
     ScanLibraryUsage("SCAN_LIBRARY_USAGE"),
+    ExportDataCsv("EXPORT_DATA_CSV"),
+    CreateDrsFile("CREATE_DRS_FILE"),
+    UpdateDrsFile("UPDATE_DRS_FILE"),
+    DeleteDrsFile("DELETE_DRS_FILE"),
+    EnableDrs("ENABLE_DRS"),
+    DisableDrs("DISABLE_DRS"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

@@ -1478,6 +1478,7 @@ public final class AutonomousContainerDatabaseSummary
         Restarting("RESTARTING"),
         MaintenanceInProgress("MAINTENANCE_IN_PROGRESS"),
         RoleChangeInProgress("ROLE_CHANGE_IN_PROGRESS"),
+        EnablingAutonomousDataGuard("ENABLING_AUTONOMOUS_DATA_GUARD"),
         Unavailable("UNAVAILABLE"),
 
         /**

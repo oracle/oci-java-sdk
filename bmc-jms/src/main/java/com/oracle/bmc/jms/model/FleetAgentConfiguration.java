@@ -31,6 +31,7 @@ public final class FleetAgentConfiguration
         "agentPollingIntervalInMinutes",
         "linuxConfiguration",
         "windowsConfiguration",
+        "macOsConfiguration",
         "timeLastModified"
     })
     public FleetAgentConfiguration(
@@ -40,6 +41,7 @@ public final class FleetAgentConfiguration
             Integer agentPollingIntervalInMinutes,
             FleetAgentOsConfiguration linuxConfiguration,
             FleetAgentOsConfiguration windowsConfiguration,
+            FleetAgentOsConfiguration macOsConfiguration,
             java.util.Date timeLastModified) {
         super();
         this.jreScanFrequencyInMinutes = jreScanFrequencyInMinutes;
@@ -49,6 +51,7 @@ public final class FleetAgentConfiguration
         this.agentPollingIntervalInMinutes = agentPollingIntervalInMinutes;
         this.linuxConfiguration = linuxConfiguration;
         this.windowsConfiguration = windowsConfiguration;
+        this.macOsConfiguration = macOsConfiguration;
         this.timeLastModified = timeLastModified;
     }
 
@@ -143,6 +146,15 @@ public final class FleetAgentConfiguration
             this.__explicitlySet__.add("windowsConfiguration");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("macOsConfiguration")
+        private FleetAgentOsConfiguration macOsConfiguration;
+
+        public Builder macOsConfiguration(FleetAgentOsConfiguration macOsConfiguration) {
+            this.macOsConfiguration = macOsConfiguration;
+            this.__explicitlySet__.add("macOsConfiguration");
+            return this;
+        }
         /**
          * The date and time of the last modification to the Fleet Agent Configuration (formatted
          * according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -175,6 +187,7 @@ public final class FleetAgentConfiguration
                             this.agentPollingIntervalInMinutes,
                             this.linuxConfiguration,
                             this.windowsConfiguration,
+                            this.macOsConfiguration,
                             this.timeLastModified);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -202,6 +215,9 @@ public final class FleetAgentConfiguration
             }
             if (model.wasPropertyExplicitlySet("windowsConfiguration")) {
                 this.windowsConfiguration(model.getWindowsConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("macOsConfiguration")) {
+                this.macOsConfiguration(model.getMacOsConfiguration());
             }
             if (model.wasPropertyExplicitlySet("timeLastModified")) {
                 this.timeLastModified(model.getTimeLastModified());
@@ -293,6 +309,13 @@ public final class FleetAgentConfiguration
         return windowsConfiguration;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("macOsConfiguration")
+    private final FleetAgentOsConfiguration macOsConfiguration;
+
+    public FleetAgentOsConfiguration getMacOsConfiguration() {
+        return macOsConfiguration;
+    }
+
     /**
      * The date and time of the last modification to the Fleet Agent Configuration (formatted
      * according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -335,6 +358,7 @@ public final class FleetAgentConfiguration
                 .append(String.valueOf(this.agentPollingIntervalInMinutes));
         sb.append(", linuxConfiguration=").append(String.valueOf(this.linuxConfiguration));
         sb.append(", windowsConfiguration=").append(String.valueOf(this.windowsConfiguration));
+        sb.append(", macOsConfiguration=").append(String.valueOf(this.macOsConfiguration));
         sb.append(", timeLastModified=").append(String.valueOf(this.timeLastModified));
         sb.append(")");
         return sb.toString();
@@ -361,6 +385,7 @@ public final class FleetAgentConfiguration
                         this.agentPollingIntervalInMinutes, other.agentPollingIntervalInMinutes)
                 && java.util.Objects.equals(this.linuxConfiguration, other.linuxConfiguration)
                 && java.util.Objects.equals(this.windowsConfiguration, other.windowsConfiguration)
+                && java.util.Objects.equals(this.macOsConfiguration, other.macOsConfiguration)
                 && java.util.Objects.equals(this.timeLastModified, other.timeLastModified)
                 && super.equals(other);
     }
@@ -399,6 +424,11 @@ public final class FleetAgentConfiguration
                         + (this.windowsConfiguration == null
                                 ? 43
                                 : this.windowsConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.macOsConfiguration == null
+                                ? 43
+                                : this.macOsConfiguration.hashCode());
         result =
                 (result * PRIME)
                         + (this.timeLastModified == null ? 43 : this.timeLastModified.hashCode());

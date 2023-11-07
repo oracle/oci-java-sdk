@@ -124,6 +124,21 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Request to perform validaition of the DRS file and create the file to the Object Storage.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateDrsFileResponse> createDrsFile(
+            CreateDrsFileRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateDrsFileRequest, CreateDrsFileResponse>
+                    handler);
+
+    /**
      * Create a new Fleet using the information provided.
      *
      * <p>`inventoryLog` is now a required parameter for CreateFleet API. Update existing
@@ -173,6 +188,21 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
             DeleteCryptoAnalysisResultRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteCryptoAnalysisResultRequest, DeleteCryptoAnalysisResultResponse>
+                    handler);
+
+    /**
+     * Request to delete the DRS file from the Object Storage.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDrsFileResponse> deleteDrsFile(
+            DeleteDrsFileRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteDrsFileRequest, DeleteDrsFileResponse>
                     handler);
 
     /**
@@ -228,6 +258,34 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Request to disable the DRS in the selected target in the Fleet.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableDrsResponse> disableDrs(
+            DisableDrsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DisableDrsRequest, DisableDrsResponse> handler);
+
+    /**
+     * Request to enable the DRS in the selected target in the Fleet.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableDrsResponse> enableDrs(
+            EnableDrsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<EnableDrsRequest, EnableDrsResponse> handler);
+
+    /**
      * Generates Agent Deploy Script for Fleet using the information provided.
      *
      * @param request The request object containing the details to send
@@ -257,6 +315,50 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
             GetCryptoAnalysisResultRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetCryptoAnalysisResultRequest, GetCryptoAnalysisResultResponse>
+                    handler);
+
+    /**
+     * Get the detail about the created DRS file in the Fleet.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDrsFileResponse> getDrsFile(
+            GetDrsFileRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetDrsFileRequest, GetDrsFileResponse> handler);
+
+    /**
+     * Returns export setting for the specified Fleet.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExportSettingResponse> getExportSetting(
+            GetExportSettingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetExportSettingRequest, GetExportSettingResponse>
+                    handler);
+
+    /**
+     * Returns last export status for the specified Fleet.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExportStatusResponse> getExportStatus(
+            GetExportStatusRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetExportStatusRequest, GetExportStatusResponse>
                     handler);
 
     /**
@@ -433,6 +535,21 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
             ListCryptoAnalysisResultsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListCryptoAnalysisResultsRequest, ListCryptoAnalysisResultsResponse>
+                    handler);
+
+    /**
+     * List the details about the created DRS files in the Fleet.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDrsFilesResponse> listDrsFiles(
+            ListDrsFilesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListDrsFilesRequest, ListDrsFilesResponse>
                     handler);
 
     /**
@@ -942,6 +1059,38 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
             SummarizeResourceInventoryRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             SummarizeResourceInventoryRequest, SummarizeResourceInventoryResponse>
+                    handler);
+
+    /**
+     * Request to perform validaition of the DRS file and update the existing file in the Object
+     * Storage.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDrsFileResponse> updateDrsFile(
+            UpdateDrsFileRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateDrsFileRequest, UpdateDrsFileResponse>
+                    handler);
+
+    /**
+     * Updates existing export setting for the specified Fleet.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExportSettingResponse> updateExportSetting(
+            UpdateExportSettingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExportSettingRequest, UpdateExportSettingResponse>
                     handler);
 
     /**

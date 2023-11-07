@@ -250,6 +250,19 @@ Use `ApacheConnectionClosingStrategy.ImmediateClosingStrategy` for large files w
 Note : If both the above Apache Connection closing strategies do not give you optimal results for your use-cases, please consider switching back to Jersey Default `HttpUrlConnectorProvider`.
 For more info on Apache Connector, please look into [ApacheConnector-README](https://github.com/oracle/oci-java-sdk/blob/master/ApacheConnector-README.md).
 
+### Errors may suddenly appear after updating to any of these JDK versions: 8u381, 11.0.20, 17.0.8, and 21.0.0.
+
+The following error message might be encountered:
+```
+java.lang.ClassNotFoundException: com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+```
+This issue is a result of the listed Java versions, which have a default maximum signature file size smaller than some Java SDK JARs.
+
+To resolve this problem, you can run Maven with the following parameter:
+`-Djdk.jar.maxSignatureFileSize=16000000`
+
+The low default value in Java will be addressed and resolved in upcoming minor Java version releases.
+
 ## License
 
 Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.

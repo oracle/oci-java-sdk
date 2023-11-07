@@ -656,6 +656,22 @@ public interface Database extends AutoCloseable {
             ConfigureAutonomousDatabaseVaultKeyRequest request);
 
     /**
+     * This operation updates SaaS administrative user configuration of the Autonomous Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ConfigureSaasAdminUserExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ConfigureSaasAdminUser API.
+     */
+    ConfigureSaasAdminUserResponse configureSaasAdminUser(ConfigureSaasAdminUserRequest request);
+
+    /**
      * Converts a non-container database to a pluggable database.
      *
      * @param request The request object containing the details to send
@@ -721,6 +737,34 @@ public interface Database extends AutoCloseable {
      */
     CreateAutonomousContainerDatabaseResponse createAutonomousContainerDatabase(
             CreateAutonomousContainerDatabaseRequest request);
+
+    /**
+     * Create a new Autonomous Data Guard association. An Autonomous Data Guard association
+     * represents the replication relationship between the specified Autonomous Container database
+     * and a peer Autonomous Container database. For more information, see [Using Oracle Data
+     * Guard](https://docs.cloud.oracle.com/Content/Database/Tasks/usingdataguard.htm).
+     *
+     * <p>All Oracle Cloud Infrastructure resources, including Data Guard associations, get an
+     * Oracle-assigned, unique ID called an Oracle Cloud Identifier (OCID). When you create a
+     * resource, you can find its OCID in the response. You can also retrieve a resource's OCID by
+     * using a List API operation on that resource type, or by viewing the resource in the Console.
+     * For more information, see [Resource
+     * Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateAutonomousContainerDatabaseDataguardAssociationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateAutonomousContainerDatabaseDataguardAssociation API.
+     */
+    CreateAutonomousContainerDatabaseDataguardAssociationResponse
+            createAutonomousContainerDatabaseDataguardAssociation(
+                    CreateAutonomousContainerDatabaseDataguardAssociationRequest request);
 
     /**
      * Creates a new Autonomous Database.
@@ -4933,6 +4977,22 @@ public interface Database extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateVaultKey API.
      */
     RotateVaultKeyResponse rotateVaultKey(RotateVaultKeyRequest request);
+
+    /**
+     * This operation gets SaaS administrative user status of the Autonomous Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/SaasAdminUserStatusExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use SaasAdminUserStatus
+     *     API.
+     */
+    SaasAdminUserStatusResponse saasAdminUserStatus(SaasAdminUserStatusRequest request);
 
     /**
      * Scans for pluggable databases in the specified external container database. This operation

@@ -31,12 +31,12 @@ public final class PerformanceTuningAnalysis
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** PerformanceTuningAnalysis flag to store enabled or disabled status. */
+        /** PerformanceTuningAnalysis flag to store enabled or disabled status */
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
-         * PerformanceTuningAnalysis flag to store enabled or disabled status.
+         * PerformanceTuningAnalysis flag to store enabled or disabled status
          *
          * @param isEnabled the value to set
          * @return this builder
@@ -76,12 +76,12 @@ public final class PerformanceTuningAnalysis
         return new Builder().copy(this);
     }
 
-    /** PerformanceTuningAnalysis flag to store enabled or disabled status. */
+    /** PerformanceTuningAnalysis flag to store enabled or disabled status */
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
-     * PerformanceTuningAnalysis flag to store enabled or disabled status.
+     * PerformanceTuningAnalysis flag to store enabled or disabled status
      *
      * @return the value
      */

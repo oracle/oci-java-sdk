@@ -1305,6 +1305,45 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ConfigureSaasAdminUserResponse configureSaasAdminUser(
+            ConfigureSaasAdminUserRequest request) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getConfigureSaasAdminUserDetails(),
+                "configureSaasAdminUserDetails is required");
+
+        return clientCall(request, ConfigureSaasAdminUserResponse::builder)
+                .logger(LOG, "configureSaasAdminUser")
+                .serviceDetails(
+                        "Database",
+                        "ConfigureSaasAdminUser",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ConfigureSaasAdminUser")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ConfigureSaasAdminUserRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabases")
+                .appendPathParam(request.getAutonomousDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("configureSaasAdminUser")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousDatabase.class,
+                        ConfigureSaasAdminUserResponse.Builder::autonomousDatabase)
+                .handleResponseHeaderString("etag", ConfigureSaasAdminUserResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ConfigureSaasAdminUserResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ConfigureSaasAdminUserResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public ConvertToPdbResponse convertToPdb(ConvertToPdbRequest request) {
 
         Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
@@ -1444,6 +1483,55 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CreateAutonomousContainerDatabaseResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateAutonomousContainerDatabaseDataguardAssociationResponse
+            createAutonomousContainerDatabaseDataguardAssociation(
+                    CreateAutonomousContainerDatabaseDataguardAssociationRequest request) {
+
+        Validate.notBlank(
+                request.getAutonomousContainerDatabaseId(),
+                "autonomousContainerDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateAutonomousContainerDatabaseDataguardAssociationDetails(),
+                "createAutonomousContainerDatabaseDataguardAssociationDetails is required");
+
+        return clientCall(
+                        request,
+                        CreateAutonomousContainerDatabaseDataguardAssociationResponse::builder)
+                .logger(LOG, "createAutonomousContainerDatabaseDataguardAssociation")
+                .serviceDetails(
+                        "Database",
+                        "CreateAutonomousContainerDatabaseDataguardAssociation",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/CreateAutonomousContainerDatabaseDataguardAssociation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(
+                        CreateAutonomousContainerDatabaseDataguardAssociationRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousContainerDatabases")
+                .appendPathParam(request.getAutonomousContainerDatabaseId())
+                .appendPathParam("autonomousContainerDatabaseDataguardAssociations")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model
+                                .AutonomousContainerDatabaseDataguardAssociation.class,
+                        CreateAutonomousContainerDatabaseDataguardAssociationResponse.Builder
+                                ::autonomousContainerDatabaseDataguardAssociation)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateAutonomousContainerDatabaseDataguardAssociationResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "etag",
+                        CreateAutonomousContainerDatabaseDataguardAssociationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateAutonomousContainerDatabaseDataguardAssociationResponse.Builder
+                                ::opcRequestId)
                 .callSync();
     }
 
@@ -9499,6 +9587,36 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-work-request-id", RotateVaultKeyResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RotateVaultKeyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public SaasAdminUserStatusResponse saasAdminUserStatus(SaasAdminUserStatusRequest request) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
+
+        return clientCall(request, SaasAdminUserStatusResponse::builder)
+                .logger(LOG, "saasAdminUserStatus")
+                .serviceDetails(
+                        "Database",
+                        "SaasAdminUserStatus",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/SaasAdminUserStatus")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SaasAdminUserStatusRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabases")
+                .appendPathParam(request.getAutonomousDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("getSaasAdminUserStatus")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.SaasAdminUserStatus.class,
+                        SaasAdminUserStatusResponse.Builder::saasAdminUserStatus)
+                .handleResponseHeaderString("etag", SaasAdminUserStatusResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", SaasAdminUserStatusResponse.Builder::opcRequestId)
                 .callSync();
     }
 

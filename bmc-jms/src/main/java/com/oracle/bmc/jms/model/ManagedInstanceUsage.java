@@ -32,9 +32,11 @@ public final class ManagedInstanceUsage
         "hostname",
         "hostId",
         "operatingSystem",
+        "agent",
         "approximateApplicationCount",
         "approximateInstallationCount",
         "approximateJreCount",
+        "drsFileStatus",
         "timeStart",
         "timeEnd",
         "timeFirstSeen",
@@ -46,9 +48,11 @@ public final class ManagedInstanceUsage
             String hostname,
             String hostId,
             OperatingSystem operatingSystem,
+            Agent agent,
             Integer approximateApplicationCount,
             Integer approximateInstallationCount,
             Integer approximateJreCount,
+            DrsFileStatus drsFileStatus,
             java.util.Date timeStart,
             java.util.Date timeEnd,
             java.util.Date timeFirstSeen,
@@ -59,9 +63,11 @@ public final class ManagedInstanceUsage
         this.hostname = hostname;
         this.hostId = hostId;
         this.operatingSystem = operatingSystem;
+        this.agent = agent;
         this.approximateApplicationCount = approximateApplicationCount;
         this.approximateInstallationCount = approximateInstallationCount;
         this.approximateJreCount = approximateJreCount;
+        this.drsFileStatus = drsFileStatus;
         this.timeStart = timeStart;
         this.timeEnd = timeEnd;
         this.timeFirstSeen = timeFirstSeen;
@@ -147,6 +153,15 @@ public final class ManagedInstanceUsage
             this.__explicitlySet__.add("operatingSystem");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("agent")
+        private Agent agent;
+
+        public Builder agent(Agent agent) {
+            this.agent = agent;
+            this.__explicitlySet__.add("agent");
+            return this;
+        }
         /** The approximate count of applications reported by this managed instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("approximateApplicationCount")
         private Integer approximateApplicationCount;
@@ -190,6 +205,21 @@ public final class ManagedInstanceUsage
         public Builder approximateJreCount(Integer approximateJreCount) {
             this.approximateJreCount = approximateJreCount;
             this.__explicitlySet__.add("approximateJreCount");
+            return this;
+        }
+        /** DRS file status */
+        @com.fasterxml.jackson.annotation.JsonProperty("drsFileStatus")
+        private DrsFileStatus drsFileStatus;
+
+        /**
+         * DRS file status
+         *
+         * @param drsFileStatus the value to set
+         * @return this builder
+         */
+        public Builder drsFileStatus(DrsFileStatus drsFileStatus) {
+            this.drsFileStatus = drsFileStatus;
+            this.__explicitlySet__.add("drsFileStatus");
             return this;
         }
         /**
@@ -288,9 +318,11 @@ public final class ManagedInstanceUsage
                             this.hostname,
                             this.hostId,
                             this.operatingSystem,
+                            this.agent,
                             this.approximateApplicationCount,
                             this.approximateInstallationCount,
                             this.approximateJreCount,
+                            this.drsFileStatus,
                             this.timeStart,
                             this.timeEnd,
                             this.timeFirstSeen,
@@ -318,6 +350,9 @@ public final class ManagedInstanceUsage
             if (model.wasPropertyExplicitlySet("operatingSystem")) {
                 this.operatingSystem(model.getOperatingSystem());
             }
+            if (model.wasPropertyExplicitlySet("agent")) {
+                this.agent(model.getAgent());
+            }
             if (model.wasPropertyExplicitlySet("approximateApplicationCount")) {
                 this.approximateApplicationCount(model.getApproximateApplicationCount());
             }
@@ -326,6 +361,9 @@ public final class ManagedInstanceUsage
             }
             if (model.wasPropertyExplicitlySet("approximateJreCount")) {
                 this.approximateJreCount(model.getApproximateJreCount());
+            }
+            if (model.wasPropertyExplicitlySet("drsFileStatus")) {
+                this.drsFileStatus(model.getDrsFileStatus());
             }
             if (model.wasPropertyExplicitlySet("timeStart")) {
                 this.timeStart(model.getTimeStart());
@@ -419,6 +457,13 @@ public final class ManagedInstanceUsage
         return operatingSystem;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("agent")
+    private final Agent agent;
+
+    public Agent getAgent() {
+        return agent;
+    }
+
     /** The approximate count of applications reported by this managed instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("approximateApplicationCount")
     private final Integer approximateApplicationCount;
@@ -456,6 +501,19 @@ public final class ManagedInstanceUsage
      */
     public Integer getApproximateJreCount() {
         return approximateJreCount;
+    }
+
+    /** DRS file status */
+    @com.fasterxml.jackson.annotation.JsonProperty("drsFileStatus")
+    private final DrsFileStatus drsFileStatus;
+
+    /**
+     * DRS file status
+     *
+     * @return the value
+     */
+    public DrsFileStatus getDrsFileStatus() {
+        return drsFileStatus;
     }
 
     /**
@@ -554,11 +612,13 @@ public final class ManagedInstanceUsage
         sb.append(", hostname=").append(String.valueOf(this.hostname));
         sb.append(", hostId=").append(String.valueOf(this.hostId));
         sb.append(", operatingSystem=").append(String.valueOf(this.operatingSystem));
+        sb.append(", agent=").append(String.valueOf(this.agent));
         sb.append(", approximateApplicationCount=")
                 .append(String.valueOf(this.approximateApplicationCount));
         sb.append(", approximateInstallationCount=")
                 .append(String.valueOf(this.approximateInstallationCount));
         sb.append(", approximateJreCount=").append(String.valueOf(this.approximateJreCount));
+        sb.append(", drsFileStatus=").append(String.valueOf(this.drsFileStatus));
         sb.append(", timeStart=").append(String.valueOf(this.timeStart));
         sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
         sb.append(", timeFirstSeen=").append(String.valueOf(this.timeFirstSeen));
@@ -582,11 +642,13 @@ public final class ManagedInstanceUsage
                 && java.util.Objects.equals(this.hostname, other.hostname)
                 && java.util.Objects.equals(this.hostId, other.hostId)
                 && java.util.Objects.equals(this.operatingSystem, other.operatingSystem)
+                && java.util.Objects.equals(this.agent, other.agent)
                 && java.util.Objects.equals(
                         this.approximateApplicationCount, other.approximateApplicationCount)
                 && java.util.Objects.equals(
                         this.approximateInstallationCount, other.approximateInstallationCount)
                 && java.util.Objects.equals(this.approximateJreCount, other.approximateJreCount)
+                && java.util.Objects.equals(this.drsFileStatus, other.drsFileStatus)
                 && java.util.Objects.equals(this.timeStart, other.timeStart)
                 && java.util.Objects.equals(this.timeEnd, other.timeEnd)
                 && java.util.Objects.equals(this.timeFirstSeen, other.timeFirstSeen)
@@ -611,6 +673,7 @@ public final class ManagedInstanceUsage
         result =
                 (result * PRIME)
                         + (this.operatingSystem == null ? 43 : this.operatingSystem.hashCode());
+        result = (result * PRIME) + (this.agent == null ? 43 : this.agent.hashCode());
         result =
                 (result * PRIME)
                         + (this.approximateApplicationCount == null
@@ -626,6 +689,9 @@ public final class ManagedInstanceUsage
                         + (this.approximateJreCount == null
                                 ? 43
                                 : this.approximateJreCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.drsFileStatus == null ? 43 : this.drsFileStatus.hashCode());
         result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
         result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
         result =

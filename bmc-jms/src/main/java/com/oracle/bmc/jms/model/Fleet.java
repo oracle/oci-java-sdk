@@ -35,6 +35,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         "inventoryLog",
         "operationLog",
         "isAdvancedFeaturesEnabled",
+        "isExportSettingEnabled",
         "timeCreated",
         "lifecycleState",
         "definedTags",
@@ -54,6 +55,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             CustomLog inventoryLog,
             CustomLog operationLog,
             Boolean isAdvancedFeaturesEnabled,
+            Boolean isExportSettingEnabled,
             java.util.Date timeCreated,
             LifecycleState lifecycleState,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -72,6 +74,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         this.inventoryLog = inventoryLog;
         this.operationLog = operationLog;
         this.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
+        this.isExportSettingEnabled = isExportSettingEnabled;
         this.timeCreated = timeCreated;
         this.lifecycleState = lifecycleState;
         this.definedTags = definedTags;
@@ -291,6 +294,21 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("isAdvancedFeaturesEnabled");
             return this;
         }
+        /** Whether or not export setting is enabled in this Fleet. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isExportSettingEnabled")
+        private Boolean isExportSettingEnabled;
+
+        /**
+         * Whether or not export setting is enabled in this Fleet.
+         *
+         * @param isExportSettingEnabled the value to set
+         * @return this builder
+         */
+        public Builder isExportSettingEnabled(Boolean isExportSettingEnabled) {
+            this.isExportSettingEnabled = isExportSettingEnabled;
+            this.__explicitlySet__.add("isExportSettingEnabled");
+            return this;
+        }
         /**
          * The creation date and time of the Fleet (formatted according to
          * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -416,6 +434,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
                             this.inventoryLog,
                             this.operationLog,
                             this.isAdvancedFeaturesEnabled,
+                            this.isExportSettingEnabled,
                             this.timeCreated,
                             this.lifecycleState,
                             this.definedTags,
@@ -464,6 +483,9 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("isAdvancedFeaturesEnabled")) {
                 this.isAdvancedFeaturesEnabled(model.getIsAdvancedFeaturesEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isExportSettingEnabled")) {
+                this.isExportSettingEnabled(model.getIsExportSettingEnabled());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -679,6 +701,19 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return isAdvancedFeaturesEnabled;
     }
 
+    /** Whether or not export setting is enabled in this Fleet. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isExportSettingEnabled")
+    private final Boolean isExportSettingEnabled;
+
+    /**
+     * Whether or not export setting is enabled in this Fleet.
+     *
+     * @return the value
+     */
+    public Boolean getIsExportSettingEnabled() {
+        return isExportSettingEnabled;
+    }
+
     /**
      * The creation date and time of the Fleet (formatted according to
      * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -804,6 +839,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         sb.append(", operationLog=").append(String.valueOf(this.operationLog));
         sb.append(", isAdvancedFeaturesEnabled=")
                 .append(String.valueOf(this.isAdvancedFeaturesEnabled));
+        sb.append(", isExportSettingEnabled=").append(String.valueOf(this.isExportSettingEnabled));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -840,6 +876,8 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
                 && java.util.Objects.equals(this.operationLog, other.operationLog)
                 && java.util.Objects.equals(
                         this.isAdvancedFeaturesEnabled, other.isAdvancedFeaturesEnabled)
+                && java.util.Objects.equals(
+                        this.isExportSettingEnabled, other.isExportSettingEnabled)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -890,6 +928,11 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
                         + (this.isAdvancedFeaturesEnabled == null
                                 ? 43
                                 : this.isAdvancedFeaturesEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isExportSettingEnabled == null
+                                ? 43
+                                : this.isExportSettingEnabled.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result =
                 (result * PRIME)
