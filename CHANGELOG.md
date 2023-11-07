@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.28.1 - 2023-11-07
+### Added
+- Support for Java Management Service Downloads
+- Support for creating autonomous dataguard associations in the Database service
+- Support for SaaS administrative user configurations for autonomous database in the Database service
+- Support for macOS in the the Java Management service
+- Support for distribution and management of deployment rule sets in the Java Management service
+- Support for new download location of Oracle Java runtime binaries in the Java Management service
+- Support for exporting data across regions in the Java Management service
+
 ## 3.28.0 - 2023-10-31
 ### Added
 - Support for calling Oracle Cloud Infrastructure services in the us-saltlake-2 region

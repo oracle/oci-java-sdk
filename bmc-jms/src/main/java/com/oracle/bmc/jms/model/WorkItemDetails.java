@@ -23,6 +23,9 @@ package com.oracle.bmc.jms.model;
         defaultImpl = WorkItemDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = LcmWorkItemDetails.class,
+            name = "LCM"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = BasicWorkItemDetails.class,
             name = "BASIC"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -99,6 +102,7 @@ public class WorkItemDetails extends com.oracle.bmc.http.client.internal.Explici
     public enum Kind implements com.oracle.bmc.http.internal.BmcEnum {
         Basic("BASIC"),
         Application("APPLICATION"),
+        Lcm("LCM"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

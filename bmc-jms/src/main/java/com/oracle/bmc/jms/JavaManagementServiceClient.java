@@ -281,6 +281,38 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
     }
 
     @Override
+    public CreateDrsFileResponse createDrsFile(CreateDrsFileRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateDrsFileDetails(), "createDrsFileDetails is required");
+
+        return clientCall(request, CreateDrsFileResponse::builder)
+                .logger(LOG, "createDrsFile")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "CreateDrsFile",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/CreateDrsFile")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDrsFileRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("drsFiles")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateDrsFileResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateDrsFileResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public CreateFleetResponse createFleet(CreateFleetRequest request) {
         Objects.requireNonNull(request.getCreateFleetDetails(), "createFleetDetails is required");
 
@@ -365,6 +397,37 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         DeleteCryptoAnalysisResultResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteCryptoAnalysisResultResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public DeleteDrsFileResponse deleteDrsFile(DeleteDrsFileRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+
+        Validate.notBlank(request.getDrsFileKey(), "drsFileKey must not be blank");
+
+        return clientCall(request, DeleteDrsFileResponse::builder)
+                .logger(LOG, "deleteDrsFile")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "DeleteDrsFile",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DrsFile/DeleteDrsFile")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDrsFileRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("drsFiles")
+                .appendPathParam(request.getDrsFileKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteDrsFileResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteDrsFileResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -469,6 +532,70 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
     }
 
     @Override
+    public DisableDrsResponse disableDrs(DisableDrsRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+        Objects.requireNonNull(request.getDisableDrsDetails(), "disableDrsDetails is required");
+
+        return clientCall(request, DisableDrsResponse::builder)
+                .logger(LOG, "disableDrs")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "DisableDrs",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/DisableDrs")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableDrsRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("actions")
+                .appendPathParam("disableDrs")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DisableDrsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DisableDrsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public EnableDrsResponse enableDrs(EnableDrsRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+        Objects.requireNonNull(request.getEnableDrsDetails(), "enableDrsDetails is required");
+
+        return clientCall(request, EnableDrsResponse::builder)
+                .logger(LOG, "enableDrs")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "EnableDrs",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/EnableDrs")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableDrsRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("actions")
+                .appendPathParam("enableDrs")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", EnableDrsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", EnableDrsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public GenerateAgentDeployScriptResponse generateAgentDeployScript(
             GenerateAgentDeployScriptRequest request) {
 
@@ -536,6 +663,96 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .handleResponseHeaderString("etag", GetCryptoAnalysisResultResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetCryptoAnalysisResultResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetDrsFileResponse getDrsFile(GetDrsFileRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+
+        Validate.notBlank(request.getDrsFileKey(), "drsFileKey must not be blank");
+
+        return clientCall(request, GetDrsFileResponse::builder)
+                .logger(LOG, "getDrsFile")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "GetDrsFile",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DrsFile/GetDrsFile")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDrsFileRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("drsFiles")
+                .appendPathParam(request.getDrsFileKey())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.jms.model.DrsFile.class, GetDrsFileResponse.Builder::drsFile)
+                .handleResponseHeaderString("etag", GetDrsFileResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDrsFileResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetExportSettingResponse getExportSetting(GetExportSettingRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+
+        return clientCall(request, GetExportSettingResponse::builder)
+                .logger(LOG, "getExportSetting")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "GetExportSetting",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ExportSetting/GetExportSetting")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExportSettingRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("exportSetting")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.jms.model.ExportSetting.class,
+                        GetExportSettingResponse.Builder::exportSetting)
+                .handleResponseHeaderString("etag", GetExportSettingResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExportSettingResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetExportStatusResponse getExportStatus(GetExportStatusRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+
+        return clientCall(request, GetExportStatusResponse::builder)
+                .logger(LOG, "getExportStatus")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "GetExportStatus",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ExportStatus/GetExportStatus")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExportStatusRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("exportStatus")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.jms.model.ExportStatus.class,
+                        GetExportStatusResponse.Builder::exportStatus)
+                .handleResponseHeaderString("etag", GetExportStatusResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExportStatusResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -899,6 +1116,40 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
     }
 
     @Override
+    public ListDrsFilesResponse listDrsFiles(ListDrsFilesRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+
+        return clientCall(request, ListDrsFilesResponse::builder)
+                .logger(LOG, "listDrsFiles")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListDrsFiles",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DrsFileCollection/ListDrsFiles")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDrsFilesRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("drsFiles")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.jms.model.DrsFileCollection.class,
+                        ListDrsFilesResponse.Builder::drsFileCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDrsFilesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDrsFilesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public ListFleetDiagnosesResponse listFleetDiagnoses(ListFleetDiagnosesRequest request) {
 
         Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
@@ -1029,6 +1280,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendPathParam("javaFamilies")
                 .appendQueryParam("familyVersion", request.getFamilyVersion())
                 .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("isSupportedVersion", request.getIsSupportedVersion())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
@@ -1315,6 +1567,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                 .appendQueryParam("fleetId", request.getFleetId())
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("managedInstanceId", request.getManagedInstanceId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -2108,6 +2361,74 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         SummarizeResourceInventoryResponse.Builder::resourceInventory)
                 .handleResponseHeaderString(
                         "opc-request-id", SummarizeResourceInventoryResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public UpdateDrsFileResponse updateDrsFile(UpdateDrsFileRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDrsFileDetails(), "updateDrsFileDetails is required");
+
+        Validate.notBlank(request.getDrsFileKey(), "drsFileKey must not be blank");
+
+        return clientCall(request, UpdateDrsFileResponse::builder)
+                .logger(LOG, "updateDrsFile")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "UpdateDrsFile",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/UpdateDrsFile")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDrsFileRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("drsFiles")
+                .appendPathParam(request.getDrsFileKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateDrsFileResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateDrsFileResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public UpdateExportSettingResponse updateExportSetting(UpdateExportSettingRequest request) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExportSettingDetails(), "updateExportSettingDetails is required");
+
+        return clientCall(request, UpdateExportSettingResponse::builder)
+                .logger(LOG, "updateExportSetting")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "UpdateExportSetting",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ExportSetting/UpdateExportSetting")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExportSettingRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("exportSetting")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.jms.model.ExportSetting.class,
+                        UpdateExportSettingResponse.Builder::exportSetting)
+                .handleResponseHeaderString("etag", UpdateExportSettingResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateExportSettingResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }

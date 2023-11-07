@@ -130,6 +130,21 @@ public interface JavaManagementService extends AutoCloseable {
     CreateBlocklistResponse createBlocklist(CreateBlocklistRequest request);
 
     /**
+     * Request to perform validaition of the DRS file and create the file to the Object Storage.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/CreateDrsFileExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDrsFile API.
+     */
+    CreateDrsFileResponse createDrsFile(CreateDrsFileRequest request);
+
+    /**
      * Create a new Fleet using the information provided.
      *
      * <p>`inventoryLog` is now a required parameter for CreateFleet API. Update existing
@@ -185,6 +200,21 @@ public interface JavaManagementService extends AutoCloseable {
             DeleteCryptoAnalysisResultRequest request);
 
     /**
+     * Request to delete the DRS file from the Object Storage.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/DeleteDrsFileExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDrsFile API.
+     */
+    DeleteDrsFileResponse deleteDrsFile(DeleteDrsFileRequest request);
+
+    /**
      * Deletes the Fleet specified by an identifier.
      *
      * @param request The request object containing the details to send
@@ -236,6 +266,36 @@ public interface JavaManagementService extends AutoCloseable {
             DeletePerformanceTuningAnalysisResultRequest request);
 
     /**
+     * Request to disable the DRS in the selected target in the Fleet.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/DisableDrsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableDrs API.
+     */
+    DisableDrsResponse disableDrs(DisableDrsRequest request);
+
+    /**
+     * Request to enable the DRS in the selected target in the Fleet.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/EnableDrsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableDrs API.
+     */
+    EnableDrsResponse enableDrs(EnableDrsRequest request);
+
+    /**
      * Generates Agent Deploy Script for Fleet using the information provided.
      *
      * @param request The request object containing the details to send
@@ -267,6 +327,53 @@ public interface JavaManagementService extends AutoCloseable {
      *     GetCryptoAnalysisResult API.
      */
     GetCryptoAnalysisResultResponse getCryptoAnalysisResult(GetCryptoAnalysisResultRequest request);
+
+    /**
+     * Get the detail about the created DRS file in the Fleet.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetDrsFileExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDrsFile API.
+     */
+    GetDrsFileResponse getDrsFile(GetDrsFileRequest request);
+
+    /**
+     * Returns export setting for the specified Fleet.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetExportSettingExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExportSetting
+     *     API.
+     */
+    GetExportSettingResponse getExportSetting(GetExportSettingRequest request);
+
+    /**
+     * Returns last export status for the specified Fleet.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetExportStatusExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExportStatus
+     *     API.
+     */
+    GetExportStatusResponse getExportStatus(GetExportStatusRequest request);
 
     /**
      * Retrieve a Fleet with the specified identifier.
@@ -443,6 +550,21 @@ public interface JavaManagementService extends AutoCloseable {
      */
     ListCryptoAnalysisResultsResponse listCryptoAnalysisResults(
             ListCryptoAnalysisResultsRequest request);
+
+    /**
+     * List the details about the created DRS files in the Fleet.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListDrsFilesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDrsFiles API.
+     */
+    ListDrsFilesResponse listDrsFiles(ListDrsFilesRequest request);
 
     /**
      * List potential diagnoses that would put a fleet into FAILED or NEEDS_ATTENTION lifecycle
@@ -954,6 +1076,38 @@ public interface JavaManagementService extends AutoCloseable {
      */
     SummarizeResourceInventoryResponse summarizeResourceInventory(
             SummarizeResourceInventoryRequest request);
+
+    /**
+     * Request to perform validaition of the DRS file and update the existing file in the Object
+     * Storage.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/UpdateDrsFileExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDrsFile API.
+     */
+    UpdateDrsFileResponse updateDrsFile(UpdateDrsFileRequest request);
+
+    /**
+     * Updates existing export setting for the specified Fleet.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/UpdateExportSettingExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExportSetting
+     *     API.
+     */
+    UpdateExportSettingResponse updateExportSetting(UpdateExportSettingRequest request);
 
     /**
      * Update the Fleet specified by an identifier.

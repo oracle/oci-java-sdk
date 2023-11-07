@@ -665,6 +665,22 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * This operation updates SaaS administrative user configuration of the Autonomous Database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ConfigureSaasAdminUserResponse> configureSaasAdminUser(
+            ConfigureSaasAdminUserRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ConfigureSaasAdminUserRequest, ConfigureSaasAdminUserResponse>
+                    handler);
+
+    /**
      * Converts a non-container database to a pluggable database.
      *
      * @param request The request object containing the details to send
@@ -731,6 +747,34 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     CreateAutonomousContainerDatabaseRequest,
                                     CreateAutonomousContainerDatabaseResponse>
+                            handler);
+
+    /**
+     * Create a new Autonomous Data Guard association. An Autonomous Data Guard association
+     * represents the replication relationship between the specified Autonomous Container database
+     * and a peer Autonomous Container database. For more information, see [Using Oracle Data
+     * Guard](https://docs.cloud.oracle.com/Content/Database/Tasks/usingdataguard.htm).
+     *
+     * <p>All Oracle Cloud Infrastructure resources, including Data Guard associations, get an
+     * Oracle-assigned, unique ID called an Oracle Cloud Identifier (OCID). When you create a
+     * resource, you can find its OCID in the response. You can also retrieve a resource's OCID by
+     * using a List API operation on that resource type, or by viewing the resource in the Console.
+     * For more information, see [Resource
+     * Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateAutonomousContainerDatabaseDataguardAssociationResponse>
+            createAutonomousContainerDatabaseDataguardAssociation(
+                    CreateAutonomousContainerDatabaseDataguardAssociationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateAutonomousContainerDatabaseDataguardAssociationRequest,
+                                    CreateAutonomousContainerDatabaseDataguardAssociationResponse>
                             handler);
 
     /**
@@ -4985,6 +5029,22 @@ public interface DatabaseAsync extends AutoCloseable {
     java.util.concurrent.Future<RotateVaultKeyResponse> rotateVaultKey(
             RotateVaultKeyRequest request,
             com.oracle.bmc.responses.AsyncHandler<RotateVaultKeyRequest, RotateVaultKeyResponse>
+                    handler);
+
+    /**
+     * This operation gets SaaS administrative user status of the Autonomous Database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SaasAdminUserStatusResponse> saasAdminUserStatus(
+            SaasAdminUserStatusRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SaasAdminUserStatusRequest, SaasAdminUserStatusResponse>
                     handler);
 
     /**
