@@ -183,7 +183,7 @@ public final class UserExtRiskScores
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: true - returned: always - type: integer - uniqueness:
-         * none
+         * none - idcsMaxValue: 100 - idcsMinValue: 0
          */
         @com.fasterxml.jackson.annotation.JsonProperty("score")
         private Integer score;
@@ -195,7 +195,7 @@ public final class UserExtRiskScores
          *
          * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: true - returned: always - type: integer - uniqueness:
-         * none
+         * none - idcsMaxValue: 100 - idcsMinValue: 0
          *
          * @param score the value to set
          * @return this builder
@@ -428,6 +428,7 @@ public final class UserExtRiskScores
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: true - returned: always - type: integer - uniqueness: none
+     * - idcsMaxValue: 100 - idcsMinValue: 0
      */
     @com.fasterxml.jackson.annotation.JsonProperty("score")
     private final Integer score;
@@ -439,6 +440,7 @@ public final class UserExtRiskScores
      *
      * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: true - returned: always - type: integer - uniqueness: none
+     * - idcsMaxValue: 100 - idcsMinValue: 0
      *
      * @return the value
      */

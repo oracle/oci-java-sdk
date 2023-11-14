@@ -296,14 +296,14 @@ public final class TranscriptionJobSummary
         }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}.
          *
          * @param freeformTags the value to set
          * @return this builder
@@ -315,14 +315,16 @@ public final class TranscriptionJobSummary
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Example: {@code {"foo-namespace-1": {"bar-key-1": "value-1", "bar-key-2": "value-2"},
+         * "foo-namespace-2": {"bar-key-1": "value-1", "bar-key-2": "value-2"}}}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Example: {@code {"foo-namespace-1": {"bar-key-1": "value-1", "bar-key-2": "value-2"},
+         * "foo-namespace-2": {"bar-key-1": "value-1", "bar-key-2": "value-2"}}}.
          *
          * @param definedTags the value to set
          * @return this builder
@@ -335,14 +337,14 @@ public final class TranscriptionJobSummary
         }
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}.
          *
          * @param systemTags the value to set
          * @return this builder
@@ -633,14 +635,14 @@ public final class TranscriptionJobSummary
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}.
      *
      * @return the value
      */
@@ -650,14 +652,16 @@ public final class TranscriptionJobSummary
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * {@code {"foo-namespace-1": {"bar-key-1": "value-1", "bar-key-2": "value-2"},
+     * "foo-namespace-2": {"bar-key-1": "value-1", "bar-key-2": "value-2"}}}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * {@code {"foo-namespace-1": {"bar-key-1": "value-1", "bar-key-2": "value-2"},
+     * "foo-namespace-2": {"bar-key-1": "value-1", "bar-key-2": "value-2"}}}.
      *
      * @return the value
      */
@@ -667,14 +671,14 @@ public final class TranscriptionJobSummary
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}.
      *
      * @return the value
      */

@@ -33,7 +33,7 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("IDENTITYDOMAINS")
                     .serviceEndpointPrefix("")
-                    .serviceEndpointTemplate("https://identity.{region}.oci.{secondLevelDomain}")
+                    .serviceEndpointTemplate("https://idcs-guid.identity.oraclecloud.com")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -190,6 +190,122 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<CreateApprovalWorkflowResponse> createApprovalWorkflow(
+            CreateApprovalWorkflowRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateApprovalWorkflowRequest, CreateApprovalWorkflowResponse>
+                    handler) {
+
+        return clientCall(request, CreateApprovalWorkflowResponse::builder)
+                .logger(LOG, "createApprovalWorkflow")
+                .serviceDetails("IdentityDomains", "CreateApprovalWorkflow", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateApprovalWorkflowRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflows")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.ApprovalWorkflow.class,
+                        CreateApprovalWorkflowResponse.Builder::approvalWorkflow)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateApprovalWorkflowResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateApprovalWorkflowResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateApprovalWorkflowAssignmentResponse>
+            createApprovalWorkflowAssignment(
+                    CreateApprovalWorkflowAssignmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateApprovalWorkflowAssignmentRequest,
+                                    CreateApprovalWorkflowAssignmentResponse>
+                            handler) {
+
+        return clientCall(request, CreateApprovalWorkflowAssignmentResponse::builder)
+                .logger(LOG, "createApprovalWorkflowAssignment")
+                .serviceDetails("IdentityDomains", "CreateApprovalWorkflowAssignment", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateApprovalWorkflowAssignmentRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflowAssignments")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.ApprovalWorkflowAssignment.class,
+                        CreateApprovalWorkflowAssignmentResponse.Builder
+                                ::approvalWorkflowAssignment)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateApprovalWorkflowAssignmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateApprovalWorkflowAssignmentResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateApprovalWorkflowStepResponse>
+            createApprovalWorkflowStep(
+                    CreateApprovalWorkflowStepRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateApprovalWorkflowStepRequest,
+                                    CreateApprovalWorkflowStepResponse>
+                            handler) {
+
+        return clientCall(request, CreateApprovalWorkflowStepResponse::builder)
+                .logger(LOG, "createApprovalWorkflowStep")
+                .serviceDetails("IdentityDomains", "CreateApprovalWorkflowStep", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateApprovalWorkflowStepRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflowSteps")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.ApprovalWorkflowStep.class,
+                        CreateApprovalWorkflowStepResponse.Builder::approvalWorkflowStep)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateApprovalWorkflowStepResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateApprovalWorkflowStepResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAuthTokenResponse> createAuthToken(
             CreateAuthTokenRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -258,6 +374,150 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                         CreateAuthenticationFactorsRemoverResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", CreateAuthenticationFactorsRemoverResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCloudGateResponse> createCloudGate(
+            CreateCloudGateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateCloudGateRequest, CreateCloudGateResponse>
+                    handler) {
+
+        return clientCall(request, CreateCloudGateResponse::builder)
+                .logger(LOG, "createCloudGate")
+                .serviceDetails("IdentityDomains", "CreateCloudGate", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateCloudGateRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGates")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGate.class,
+                        CreateCloudGateResponse.Builder::cloudGate)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateCloudGateResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateCloudGateResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCloudGateMappingResponse> createCloudGateMapping(
+            CreateCloudGateMappingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateCloudGateMappingRequest, CreateCloudGateMappingResponse>
+                    handler) {
+
+        return clientCall(request, CreateCloudGateMappingResponse::builder)
+                .logger(LOG, "createCloudGateMapping")
+                .serviceDetails("IdentityDomains", "CreateCloudGateMapping", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateCloudGateMappingRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGateMappings")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGateMapping.class,
+                        CreateCloudGateMappingResponse.Builder::cloudGateMapping)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateCloudGateMappingResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateCloudGateMappingResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCloudGateServerResponse> createCloudGateServer(
+            CreateCloudGateServerRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateCloudGateServerRequest, CreateCloudGateServerResponse>
+                    handler) {
+
+        return clientCall(request, CreateCloudGateServerResponse::builder)
+                .logger(LOG, "createCloudGateServer")
+                .serviceDetails("IdentityDomains", "CreateCloudGateServer", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateCloudGateServerRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGateServers")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGateServer.class,
+                        CreateCloudGateServerResponse.Builder::cloudGateServer)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateCloudGateServerResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateCloudGateServerResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConditionResponse> createCondition(
+            CreateConditionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateConditionRequest, CreateConditionResponse>
+                    handler) {
+
+        return clientCall(request, CreateConditionResponse::builder)
+                .logger(LOG, "createCondition")
+                .serviceDetails("IdentityDomains", "CreateCondition", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateConditionRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Conditions")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Condition.class,
+                        CreateConditionResponse.Builder::condition)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateConditionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateConditionResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -842,6 +1102,42 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<CreateNetworkPerimeterResponse> createNetworkPerimeter(
+            CreateNetworkPerimeterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateNetworkPerimeterRequest, CreateNetworkPerimeterResponse>
+                    handler) {
+
+        return clientCall(request, CreateNetworkPerimeterResponse::builder)
+                .logger(LOG, "createNetworkPerimeter")
+                .serviceDetails("IdentityDomains", "CreateNetworkPerimeter", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateNetworkPerimeterRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("NetworkPerimeters")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.NetworkPerimeter.class,
+                        CreateNetworkPerimeterResponse.Builder::networkPerimeter)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateNetworkPerimeterResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateNetworkPerimeterResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateOAuth2ClientCredentialResponse>
             createOAuth2ClientCredential(
                     CreateOAuth2ClientCredentialRequest request,
@@ -882,6 +1178,76 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<CreateOAuthClientCertificateResponse>
+            createOAuthClientCertificate(
+                    CreateOAuthClientCertificateRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateOAuthClientCertificateRequest,
+                                    CreateOAuthClientCertificateResponse>
+                            handler) {
+
+        return clientCall(request, CreateOAuthClientCertificateResponse::builder)
+                .logger(LOG, "createOAuthClientCertificate")
+                .serviceDetails("IdentityDomains", "CreateOAuthClientCertificate", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateOAuthClientCertificateRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("OAuthClientCertificates")
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.OAuthClientCertificate.class,
+                        CreateOAuthClientCertificateResponse.Builder::oAuthClientCertificate)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateOAuthClientCertificateResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateOAuthClientCertificateResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateOAuthPartnerCertificateResponse>
+            createOAuthPartnerCertificate(
+                    CreateOAuthPartnerCertificateRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateOAuthPartnerCertificateRequest,
+                                    CreateOAuthPartnerCertificateResponse>
+                            handler) {
+
+        return clientCall(request, CreateOAuthPartnerCertificateResponse::builder)
+                .logger(LOG, "createOAuthPartnerCertificate")
+                .serviceDetails("IdentityDomains", "CreateOAuthPartnerCertificate", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateOAuthPartnerCertificateRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("OAuthPartnerCertificates")
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.OAuthPartnerCertificate.class,
+                        CreateOAuthPartnerCertificateResponse.Builder::oAuthPartnerCertificate)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateOAuthPartnerCertificateResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateOAuthPartnerCertificateResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreatePasswordPolicyResponse> createPasswordPolicy(
             CreatePasswordPolicyRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -918,6 +1284,76 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePolicyResponse> createPolicy(
+            CreatePolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreatePolicyRequest, CreatePolicyResponse>
+                    handler) {
+
+        return clientCall(request, CreatePolicyResponse::builder)
+                .logger(LOG, "createPolicy")
+                .serviceDetails("IdentityDomains", "CreatePolicy", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreatePolicyRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Policies")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Policy.class,
+                        CreatePolicyResponse.Builder::policy)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreatePolicyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreatePolicyResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRuleResponse> createRule(
+            CreateRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateRuleRequest, CreateRuleResponse>
+                    handler) {
+
+        return clientCall(request, CreateRuleResponse::builder)
+                .logger(LOG, "createRule")
+                .serviceDetails("IdentityDomains", "CreateRule", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateRuleRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Rules")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Rule.class,
+                        CreateRuleResponse.Builder::rule)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateRuleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateRuleResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateSecurityQuestionResponse> createSecurityQuestion(
             CreateSecurityQuestionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -950,6 +1386,46 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-request-id", CreateSecurityQuestionResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateSecurityQuestionResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSelfRegistrationProfileResponse>
+            createSelfRegistrationProfile(
+                    CreateSelfRegistrationProfileRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateSelfRegistrationProfileRequest,
+                                    CreateSelfRegistrationProfileResponse>
+                            handler) {
+
+        return clientCall(request, CreateSelfRegistrationProfileResponse::builder)
+                .logger(LOG, "createSelfRegistrationProfile")
+                .serviceDetails("IdentityDomains", "CreateSelfRegistrationProfile", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSelfRegistrationProfileRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("SelfRegistrationProfiles")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.SelfRegistrationProfile.class,
+                        CreateSelfRegistrationProfileResponse.Builder::selfRegistrationProfile)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateSelfRegistrationProfileResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateSelfRegistrationProfileResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -1151,6 +1627,107 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteApprovalWorkflowResponse> deleteApprovalWorkflow(
+            DeleteApprovalWorkflowRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteApprovalWorkflowRequest, DeleteApprovalWorkflowResponse>
+                    handler) {
+
+        Validate.notBlank(request.getApprovalWorkflowId(), "approvalWorkflowId must not be blank");
+
+        return clientCall(request, DeleteApprovalWorkflowResponse::builder)
+                .logger(LOG, "deleteApprovalWorkflow")
+                .serviceDetails("IdentityDomains", "DeleteApprovalWorkflow", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteApprovalWorkflowRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflows")
+                .appendPathParam(request.getApprovalWorkflowId())
+                .appendQueryParam("forceDelete", request.getForceDelete())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteApprovalWorkflowResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApprovalWorkflowAssignmentResponse>
+            deleteApprovalWorkflowAssignment(
+                    DeleteApprovalWorkflowAssignmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteApprovalWorkflowAssignmentRequest,
+                                    DeleteApprovalWorkflowAssignmentResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getApprovalWorkflowAssignmentId(),
+                "approvalWorkflowAssignmentId must not be blank");
+
+        return clientCall(request, DeleteApprovalWorkflowAssignmentResponse::builder)
+                .logger(LOG, "deleteApprovalWorkflowAssignment")
+                .serviceDetails("IdentityDomains", "DeleteApprovalWorkflowAssignment", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteApprovalWorkflowAssignmentRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflowAssignments")
+                .appendPathParam(request.getApprovalWorkflowAssignmentId())
+                .appendQueryParam("forceDelete", request.getForceDelete())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteApprovalWorkflowAssignmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApprovalWorkflowStepResponse>
+            deleteApprovalWorkflowStep(
+                    DeleteApprovalWorkflowStepRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteApprovalWorkflowStepRequest,
+                                    DeleteApprovalWorkflowStepResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getApprovalWorkflowStepId(), "approvalWorkflowStepId must not be blank");
+
+        return clientCall(request, DeleteApprovalWorkflowStepResponse::builder)
+                .logger(LOG, "deleteApprovalWorkflowStep")
+                .serviceDetails("IdentityDomains", "DeleteApprovalWorkflowStep", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteApprovalWorkflowStepRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflowSteps")
+                .appendPathParam(request.getApprovalWorkflowStepId())
+                .appendQueryParam("forceDelete", request.getForceDelete())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteApprovalWorkflowStepResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAuthTokenResponse> deleteAuthToken(
             DeleteAuthTokenRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1178,6 +1755,130 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteAuthTokenResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCloudGateResponse> deleteCloudGate(
+            DeleteCloudGateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCloudGateRequest, DeleteCloudGateResponse>
+                    handler) {
+
+        Validate.notBlank(request.getCloudGateId(), "cloudGateId must not be blank");
+
+        return clientCall(request, DeleteCloudGateResponse::builder)
+                .logger(LOG, "deleteCloudGate")
+                .serviceDetails("IdentityDomains", "DeleteCloudGate", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCloudGateRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGates")
+                .appendPathParam(request.getCloudGateId())
+                .appendQueryParam("forceDelete", request.getForceDelete())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteCloudGateResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCloudGateMappingResponse> deleteCloudGateMapping(
+            DeleteCloudGateMappingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCloudGateMappingRequest, DeleteCloudGateMappingResponse>
+                    handler) {
+
+        Validate.notBlank(request.getCloudGateMappingId(), "cloudGateMappingId must not be blank");
+
+        return clientCall(request, DeleteCloudGateMappingResponse::builder)
+                .logger(LOG, "deleteCloudGateMapping")
+                .serviceDetails("IdentityDomains", "DeleteCloudGateMapping", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCloudGateMappingRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGateMappings")
+                .appendPathParam(request.getCloudGateMappingId())
+                .appendQueryParam("forceDelete", request.getForceDelete())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteCloudGateMappingResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCloudGateServerResponse> deleteCloudGateServer(
+            DeleteCloudGateServerRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCloudGateServerRequest, DeleteCloudGateServerResponse>
+                    handler) {
+
+        Validate.notBlank(request.getCloudGateServerId(), "cloudGateServerId must not be blank");
+
+        return clientCall(request, DeleteCloudGateServerResponse::builder)
+                .logger(LOG, "deleteCloudGateServer")
+                .serviceDetails("IdentityDomains", "DeleteCloudGateServer", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCloudGateServerRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGateServers")
+                .appendPathParam(request.getCloudGateServerId())
+                .appendQueryParam("forceDelete", request.getForceDelete())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteCloudGateServerResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConditionResponse> deleteCondition(
+            DeleteConditionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteConditionRequest, DeleteConditionResponse>
+                    handler) {
+
+        Validate.notBlank(request.getConditionId(), "conditionId must not be blank");
+
+        return clientCall(request, DeleteConditionResponse::builder)
+                .logger(LOG, "deleteCondition")
+                .serviceDetails("IdentityDomains", "DeleteCondition", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteConditionRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Conditions")
+                .appendPathParam(request.getConditionId())
+                .appendQueryParam("forceDelete", request.getForceDelete())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteConditionResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1626,6 +2327,37 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteNetworkPerimeterResponse> deleteNetworkPerimeter(
+            DeleteNetworkPerimeterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteNetworkPerimeterRequest, DeleteNetworkPerimeterResponse>
+                    handler) {
+
+        Validate.notBlank(request.getNetworkPerimeterId(), "networkPerimeterId must not be blank");
+
+        return clientCall(request, DeleteNetworkPerimeterResponse::builder)
+                .logger(LOG, "deleteNetworkPerimeter")
+                .serviceDetails("IdentityDomains", "DeleteNetworkPerimeter", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteNetworkPerimeterRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("NetworkPerimeters")
+                .appendPathParam(request.getNetworkPerimeterId())
+                .appendQueryParam("forceDelete", request.getForceDelete())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteNetworkPerimeterResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteOAuth2ClientCredentialResponse>
             deleteOAuth2ClientCredential(
                     DeleteOAuth2ClientCredentialRequest request,
@@ -1662,6 +2394,78 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteOAuthClientCertificateResponse>
+            deleteOAuthClientCertificate(
+                    DeleteOAuthClientCertificateRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteOAuthClientCertificateRequest,
+                                    DeleteOAuthClientCertificateResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getOAuthClientCertificateId(),
+                "oAuthClientCertificateId must not be blank");
+
+        return clientCall(request, DeleteOAuthClientCertificateResponse::builder)
+                .logger(LOG, "deleteOAuthClientCertificate")
+                .serviceDetails("IdentityDomains", "DeleteOAuthClientCertificate", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteOAuthClientCertificateRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("OAuthClientCertificates")
+                .appendPathParam(request.getOAuthClientCertificateId())
+                .appendQueryParam("forceDelete", request.getForceDelete())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteOAuthClientCertificateResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOAuthPartnerCertificateResponse>
+            deleteOAuthPartnerCertificate(
+                    DeleteOAuthPartnerCertificateRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteOAuthPartnerCertificateRequest,
+                                    DeleteOAuthPartnerCertificateResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getOAuthPartnerCertificateId(),
+                "oAuthPartnerCertificateId must not be blank");
+
+        return clientCall(request, DeleteOAuthPartnerCertificateResponse::builder)
+                .logger(LOG, "deleteOAuthPartnerCertificate")
+                .serviceDetails("IdentityDomains", "DeleteOAuthPartnerCertificate", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteOAuthPartnerCertificateRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("OAuthPartnerCertificates")
+                .appendPathParam(request.getOAuthPartnerCertificateId())
+                .appendQueryParam("forceDelete", request.getForceDelete())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteOAuthPartnerCertificateResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeletePasswordPolicyResponse> deletePasswordPolicy(
             DeletePasswordPolicyRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1693,6 +2497,66 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<DeletePolicyResponse> deletePolicy(
+            DeletePolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeletePolicyRequest, DeletePolicyResponse>
+                    handler) {
+
+        Validate.notBlank(request.getPolicyId(), "policyId must not be blank");
+
+        return clientCall(request, DeletePolicyResponse::builder)
+                .logger(LOG, "deletePolicy")
+                .serviceDetails("IdentityDomains", "DeletePolicy", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeletePolicyRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Policies")
+                .appendPathParam(request.getPolicyId())
+                .appendQueryParam("forceDelete", request.getForceDelete())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeletePolicyResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRuleResponse> deleteRule(
+            DeleteRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteRuleRequest, DeleteRuleResponse>
+                    handler) {
+
+        Validate.notBlank(request.getRuleId(), "ruleId must not be blank");
+
+        return clientCall(request, DeleteRuleResponse::builder)
+                .logger(LOG, "deleteRule")
+                .serviceDetails("IdentityDomains", "DeleteRule", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteRuleRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Rules")
+                .appendPathParam(request.getRuleId())
+                .appendQueryParam("forceDelete", request.getForceDelete())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteRuleResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteSecurityQuestionResponse> deleteSecurityQuestion(
             DeleteSecurityQuestionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1720,6 +2584,42 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteSecurityQuestionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSelfRegistrationProfileResponse>
+            deleteSelfRegistrationProfile(
+                    DeleteSelfRegistrationProfileRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteSelfRegistrationProfileRequest,
+                                    DeleteSelfRegistrationProfileResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getSelfRegistrationProfileId(),
+                "selfRegistrationProfileId must not be blank");
+
+        return clientCall(request, DeleteSelfRegistrationProfileResponse::builder)
+                .logger(LOG, "deleteSelfRegistrationProfile")
+                .serviceDetails("IdentityDomains", "DeleteSelfRegistrationProfile", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSelfRegistrationProfileRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("SelfRegistrationProfiles")
+                .appendPathParam(request.getSelfRegistrationProfileId())
+                .appendQueryParam("forceDelete", request.getForceDelete())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteSelfRegistrationProfileResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1997,6 +2897,123 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<GetApprovalWorkflowResponse> getApprovalWorkflow(
+            GetApprovalWorkflowRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetApprovalWorkflowRequest, GetApprovalWorkflowResponse>
+                    handler) {
+
+        Validate.notBlank(request.getApprovalWorkflowId(), "approvalWorkflowId must not be blank");
+
+        return clientCall(request, GetApprovalWorkflowResponse::builder)
+                .logger(LOG, "getApprovalWorkflow")
+                .serviceDetails("IdentityDomains", "GetApprovalWorkflow", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetApprovalWorkflowRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflows")
+                .appendPathParam(request.getApprovalWorkflowId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.ApprovalWorkflow.class,
+                        GetApprovalWorkflowResponse.Builder::approvalWorkflow)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetApprovalWorkflowResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetApprovalWorkflowAssignmentResponse>
+            getApprovalWorkflowAssignment(
+                    GetApprovalWorkflowAssignmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetApprovalWorkflowAssignmentRequest,
+                                    GetApprovalWorkflowAssignmentResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getApprovalWorkflowAssignmentId(),
+                "approvalWorkflowAssignmentId must not be blank");
+
+        return clientCall(request, GetApprovalWorkflowAssignmentResponse::builder)
+                .logger(LOG, "getApprovalWorkflowAssignment")
+                .serviceDetails("IdentityDomains", "GetApprovalWorkflowAssignment", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetApprovalWorkflowAssignmentRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflowAssignments")
+                .appendPathParam(request.getApprovalWorkflowAssignmentId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.ApprovalWorkflowAssignment.class,
+                        GetApprovalWorkflowAssignmentResponse.Builder::approvalWorkflowAssignment)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetApprovalWorkflowAssignmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetApprovalWorkflowStepResponse> getApprovalWorkflowStep(
+            GetApprovalWorkflowStepRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetApprovalWorkflowStepRequest, GetApprovalWorkflowStepResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getApprovalWorkflowStepId(), "approvalWorkflowStepId must not be blank");
+
+        return clientCall(request, GetApprovalWorkflowStepResponse::builder)
+                .logger(LOG, "getApprovalWorkflowStep")
+                .serviceDetails("IdentityDomains", "GetApprovalWorkflowStep", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetApprovalWorkflowStepRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflowSteps")
+                .appendPathParam(request.getApprovalWorkflowStepId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.ApprovalWorkflowStep.class,
+                        GetApprovalWorkflowStepResponse.Builder::approvalWorkflowStep)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetApprovalWorkflowStepResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAuthTokenResponse> getAuthToken(
             GetAuthTokenRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetAuthTokenRequest, GetAuthTokenResponse>
@@ -2071,6 +3088,189 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetAuthenticationFactorSettingResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBrandingSettingResponse> getBrandingSetting(
+            GetBrandingSettingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetBrandingSettingRequest, GetBrandingSettingResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBrandingSettingId(), "brandingSettingId must not be blank");
+
+        return clientCall(request, GetBrandingSettingResponse::builder)
+                .logger(LOG, "getBrandingSetting")
+                .serviceDetails("IdentityDomains", "GetBrandingSetting", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetBrandingSettingRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("BrandingSettings")
+                .appendPathParam(request.getBrandingSettingId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.BrandingSetting.class,
+                        GetBrandingSettingResponse.Builder::brandingSetting)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetBrandingSettingResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudGateResponse> getCloudGate(
+            GetCloudGateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetCloudGateRequest, GetCloudGateResponse>
+                    handler) {
+
+        Validate.notBlank(request.getCloudGateId(), "cloudGateId must not be blank");
+
+        return clientCall(request, GetCloudGateResponse::builder)
+                .logger(LOG, "getCloudGate")
+                .serviceDetails("IdentityDomains", "GetCloudGate", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCloudGateRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGates")
+                .appendPathParam(request.getCloudGateId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGate.class,
+                        GetCloudGateResponse.Builder::cloudGate)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCloudGateResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudGateMappingResponse> getCloudGateMapping(
+            GetCloudGateMappingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetCloudGateMappingRequest, GetCloudGateMappingResponse>
+                    handler) {
+
+        Validate.notBlank(request.getCloudGateMappingId(), "cloudGateMappingId must not be blank");
+
+        return clientCall(request, GetCloudGateMappingResponse::builder)
+                .logger(LOG, "getCloudGateMapping")
+                .serviceDetails("IdentityDomains", "GetCloudGateMapping", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCloudGateMappingRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGateMappings")
+                .appendPathParam(request.getCloudGateMappingId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGateMapping.class,
+                        GetCloudGateMappingResponse.Builder::cloudGateMapping)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCloudGateMappingResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudGateServerResponse> getCloudGateServer(
+            GetCloudGateServerRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetCloudGateServerRequest, GetCloudGateServerResponse>
+                    handler) {
+
+        Validate.notBlank(request.getCloudGateServerId(), "cloudGateServerId must not be blank");
+
+        return clientCall(request, GetCloudGateServerResponse::builder)
+                .logger(LOG, "getCloudGateServer")
+                .serviceDetails("IdentityDomains", "GetCloudGateServer", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCloudGateServerRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGateServers")
+                .appendPathParam(request.getCloudGateServerId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGateServer.class,
+                        GetCloudGateServerResponse.Builder::cloudGateServer)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCloudGateServerResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConditionResponse> getCondition(
+            GetConditionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetConditionRequest, GetConditionResponse>
+                    handler) {
+
+        Validate.notBlank(request.getConditionId(), "conditionId must not be blank");
+
+        return clientCall(request, GetConditionResponse::builder)
+                .logger(LOG, "getCondition")
+                .serviceDetails("IdentityDomains", "GetCondition", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetConditionRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Conditions")
+                .appendPathParam(request.getConditionId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Condition.class,
+                        GetConditionResponse.Builder::condition)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetConditionResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -2427,6 +3627,39 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<GetMyCompletedApprovalResponse> getMyCompletedApproval(
+            GetMyCompletedApprovalRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetMyCompletedApprovalRequest, GetMyCompletedApprovalResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getMyCompletedApprovalId(), "myCompletedApprovalId must not be blank");
+
+        return clientCall(request, GetMyCompletedApprovalResponse::builder)
+                .logger(LOG, "getMyCompletedApproval")
+                .serviceDetails("IdentityDomains", "GetMyCompletedApproval", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMyCompletedApprovalRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("MyCompletedApprovals")
+                .appendPathParam(request.getMyCompletedApprovalId())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.MyCompletedApproval.class,
+                        GetMyCompletedApprovalResponse.Builder::myCompletedApproval)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMyCompletedApprovalResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetMyCustomerSecretKeyResponse> getMyCustomerSecretKey(
             GetMyCustomerSecretKeyRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2528,6 +3761,75 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                         GetMyOAuth2ClientCredentialResponse.Builder::myOAuth2ClientCredential)
                 .handleResponseHeaderString(
                         "opc-request-id", GetMyOAuth2ClientCredentialResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMyPendingApprovalResponse> getMyPendingApproval(
+            GetMyPendingApprovalRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetMyPendingApprovalRequest, GetMyPendingApprovalResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getMyPendingApprovalId(), "myPendingApprovalId must not be blank");
+
+        return clientCall(request, GetMyPendingApprovalResponse::builder)
+                .logger(LOG, "getMyPendingApproval")
+                .serviceDetails("IdentityDomains", "GetMyPendingApproval", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMyPendingApprovalRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("MyPendingApprovals")
+                .appendPathParam(request.getMyPendingApprovalId())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.MyPendingApproval.class,
+                        GetMyPendingApprovalResponse.Builder::myPendingApproval)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMyPendingApprovalResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMyRequestResponse> getMyRequest(
+            GetMyRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetMyRequestRequest, GetMyRequestResponse>
+                    handler) {
+
+        Validate.notBlank(request.getMyRequestId(), "myRequestId must not be blank");
+
+        return clientCall(request, GetMyRequestResponse::builder)
+                .logger(LOG, "getMyRequest")
+                .serviceDetails("IdentityDomains", "GetMyRequest", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMyRequestRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("MyRequests")
+                .appendPathParam(request.getMyRequestId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.MyRequest.class,
+                        GetMyRequestResponse.Builder::myRequest)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMyRequestResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -2667,6 +3969,81 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<GetNetworkPerimeterResponse> getNetworkPerimeter(
+            GetNetworkPerimeterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetNetworkPerimeterRequest, GetNetworkPerimeterResponse>
+                    handler) {
+
+        Validate.notBlank(request.getNetworkPerimeterId(), "networkPerimeterId must not be blank");
+
+        return clientCall(request, GetNetworkPerimeterResponse::builder)
+                .logger(LOG, "getNetworkPerimeter")
+                .serviceDetails("IdentityDomains", "GetNetworkPerimeter", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetNetworkPerimeterRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("NetworkPerimeters")
+                .appendPathParam(request.getNetworkPerimeterId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.NetworkPerimeter.class,
+                        GetNetworkPerimeterResponse.Builder::networkPerimeter)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetNetworkPerimeterResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetNotificationSettingResponse> getNotificationSetting(
+            GetNotificationSettingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetNotificationSettingRequest, GetNotificationSettingResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getNotificationSettingId(), "notificationSettingId must not be blank");
+
+        return clientCall(request, GetNotificationSettingResponse::builder)
+                .logger(LOG, "getNotificationSetting")
+                .serviceDetails("IdentityDomains", "GetNotificationSetting", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetNotificationSettingRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("NotificationSettings")
+                .appendPathParam(request.getNotificationSettingId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.NotificationSetting.class,
+                        GetNotificationSettingResponse.Builder::notificationSetting)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetNotificationSettingResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetOAuth2ClientCredentialResponse> getOAuth2ClientCredential(
             GetOAuth2ClientCredentialRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2706,6 +4083,76 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<GetOAuthClientCertificateResponse> getOAuthClientCertificate(
+            GetOAuthClientCertificateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetOAuthClientCertificateRequest, GetOAuthClientCertificateResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getOAuthClientCertificateId(),
+                "oAuthClientCertificateId must not be blank");
+
+        return clientCall(request, GetOAuthClientCertificateResponse::builder)
+                .logger(LOG, "getOAuthClientCertificate")
+                .serviceDetails("IdentityDomains", "GetOAuthClientCertificate", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetOAuthClientCertificateRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("OAuthClientCertificates")
+                .appendPathParam(request.getOAuthClientCertificateId())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.OAuthClientCertificate.class,
+                        GetOAuthClientCertificateResponse.Builder::oAuthClientCertificate)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetOAuthClientCertificateResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOAuthPartnerCertificateResponse>
+            getOAuthPartnerCertificate(
+                    GetOAuthPartnerCertificateRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetOAuthPartnerCertificateRequest,
+                                    GetOAuthPartnerCertificateResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getOAuthPartnerCertificateId(),
+                "oAuthPartnerCertificateId must not be blank");
+
+        return clientCall(request, GetOAuthPartnerCertificateResponse::builder)
+                .logger(LOG, "getOAuthPartnerCertificate")
+                .serviceDetails("IdentityDomains", "GetOAuthPartnerCertificate", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetOAuthPartnerCertificateRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("OAuthPartnerCertificates")
+                .appendPathParam(request.getOAuthPartnerCertificateId())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.OAuthPartnerCertificate.class,
+                        GetOAuthPartnerCertificateResponse.Builder::oAuthPartnerCertificate)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetOAuthPartnerCertificateResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPasswordPolicyResponse> getPasswordPolicy(
             GetPasswordPolicyRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2739,6 +4186,107 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                         GetPasswordPolicyResponse.Builder::passwordPolicy)
                 .handleResponseHeaderString(
                         "opc-request-id", GetPasswordPolicyResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPolicyResponse> getPolicy(
+            GetPolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetPolicyRequest, GetPolicyResponse>
+                    handler) {
+
+        Validate.notBlank(request.getPolicyId(), "policyId must not be blank");
+
+        return clientCall(request, GetPolicyResponse::builder)
+                .logger(LOG, "getPolicy")
+                .serviceDetails("IdentityDomains", "GetPolicy", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPolicyRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Policies")
+                .appendPathParam(request.getPolicyId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Policy.class,
+                        GetPolicyResponse.Builder::policy)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPolicyResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRuleResponse> getRule(
+            GetRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetRuleRequest, GetRuleResponse> handler) {
+
+        Validate.notBlank(request.getRuleId(), "ruleId must not be blank");
+
+        return clientCall(request, GetRuleResponse::builder)
+                .logger(LOG, "getRule")
+                .serviceDetails("IdentityDomains", "GetRule", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetRuleRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Rules")
+                .appendPathParam(request.getRuleId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Rule.class,
+                        GetRuleResponse.Builder::rule)
+                .handleResponseHeaderString("opc-request-id", GetRuleResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSchemaResponse> getSchema(
+            GetSchemaRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetSchemaRequest, GetSchemaResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSchemaId(), "schemaId must not be blank");
+
+        return clientCall(request, GetSchemaResponse::builder)
+                .logger(LOG, "getSchema")
+                .serviceDetails("IdentityDomains", "GetSchema", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSchemaRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Schemas")
+                .appendPathParam(request.getSchemaId())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Schema.class,
+                        GetSchemaResponse.Builder::schema)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSchemaResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -2817,6 +4365,83 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                         GetSecurityQuestionSettingResponse.Builder::securityQuestionSetting)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSecurityQuestionSettingResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSelfRegistrationProfileResponse>
+            getSelfRegistrationProfile(
+                    GetSelfRegistrationProfileRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetSelfRegistrationProfileRequest,
+                                    GetSelfRegistrationProfileResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getSelfRegistrationProfileId(),
+                "selfRegistrationProfileId must not be blank");
+
+        return clientCall(request, GetSelfRegistrationProfileResponse::builder)
+                .logger(LOG, "getSelfRegistrationProfile")
+                .serviceDetails("IdentityDomains", "GetSelfRegistrationProfile", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSelfRegistrationProfileRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("SelfRegistrationProfiles")
+                .appendPathParam(request.getSelfRegistrationProfileId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.SelfRegistrationProfile.class,
+                        GetSelfRegistrationProfileResponse.Builder::selfRegistrationProfile)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSelfRegistrationProfileResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSettingResponse> getSetting(
+            GetSettingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetSettingRequest, GetSettingResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSettingId(), "settingId must not be blank");
+
+        return clientCall(request, GetSettingResponse::builder)
+                .logger(LOG, "getSetting")
+                .serviceDetails("IdentityDomains", "GetSetting", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSettingRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Settings")
+                .appendPathParam(request.getSettingId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Setting.class,
+                        GetSettingResponse.Builder::setting)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSettingResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -3134,6 +4759,140 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<ListApprovalWorkflowAssignmentsResponse>
+            listApprovalWorkflowAssignments(
+                    ListApprovalWorkflowAssignmentsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListApprovalWorkflowAssignmentsRequest,
+                                    ListApprovalWorkflowAssignmentsResponse>
+                            handler) {
+
+        return clientCall(request, ListApprovalWorkflowAssignmentsResponse::builder)
+                .logger(LOG, "listApprovalWorkflowAssignments")
+                .serviceDetails("IdentityDomains", "ListApprovalWorkflowAssignments", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListApprovalWorkflowAssignmentsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflowAssignments")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.ApprovalWorkflowAssignments.class,
+                        ListApprovalWorkflowAssignmentsResponse.Builder
+                                ::approvalWorkflowAssignments)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListApprovalWorkflowAssignmentsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListApprovalWorkflowAssignmentsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApprovalWorkflowStepsResponse> listApprovalWorkflowSteps(
+            ListApprovalWorkflowStepsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListApprovalWorkflowStepsRequest, ListApprovalWorkflowStepsResponse>
+                    handler) {
+
+        return clientCall(request, ListApprovalWorkflowStepsResponse::builder)
+                .logger(LOG, "listApprovalWorkflowSteps")
+                .serviceDetails("IdentityDomains", "ListApprovalWorkflowSteps", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListApprovalWorkflowStepsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflowSteps")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.ApprovalWorkflowSteps.class,
+                        ListApprovalWorkflowStepsResponse.Builder::approvalWorkflowSteps)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListApprovalWorkflowStepsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListApprovalWorkflowStepsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApprovalWorkflowsResponse> listApprovalWorkflows(
+            ListApprovalWorkflowsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListApprovalWorkflowsRequest, ListApprovalWorkflowsResponse>
+                    handler) {
+
+        return clientCall(request, ListApprovalWorkflowsResponse::builder)
+                .logger(LOG, "listApprovalWorkflows")
+                .serviceDetails("IdentityDomains", "ListApprovalWorkflows", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListApprovalWorkflowsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflows")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.ApprovalWorkflows.class,
+                        ListApprovalWorkflowsResponse.Builder::approvalWorkflows)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListApprovalWorkflowsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListApprovalWorkflowsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAppsResponse> listApps(
             ListAppsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListAppsRequest, ListAppsResponse>
@@ -3257,6 +5016,216 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListAuthenticationFactorSettingsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBrandingSettingsResponse> listBrandingSettings(
+            ListBrandingSettingsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListBrandingSettingsRequest, ListBrandingSettingsResponse>
+                    handler) {
+
+        return clientCall(request, ListBrandingSettingsResponse::builder)
+                .logger(LOG, "listBrandingSettings")
+                .serviceDetails("IdentityDomains", "ListBrandingSettings", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListBrandingSettingsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("BrandingSettings")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.BrandingSettings.class,
+                        ListBrandingSettingsResponse.Builder::brandingSettings)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListBrandingSettingsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListBrandingSettingsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCloudGateMappingsResponse> listCloudGateMappings(
+            ListCloudGateMappingsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListCloudGateMappingsRequest, ListCloudGateMappingsResponse>
+                    handler) {
+
+        return clientCall(request, ListCloudGateMappingsResponse::builder)
+                .logger(LOG, "listCloudGateMappings")
+                .serviceDetails("IdentityDomains", "ListCloudGateMappings", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCloudGateMappingsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGateMappings")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGateMappings.class,
+                        ListCloudGateMappingsResponse.Builder::cloudGateMappings)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCloudGateMappingsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCloudGateMappingsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCloudGateServersResponse> listCloudGateServers(
+            ListCloudGateServersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListCloudGateServersRequest, ListCloudGateServersResponse>
+                    handler) {
+
+        return clientCall(request, ListCloudGateServersResponse::builder)
+                .logger(LOG, "listCloudGateServers")
+                .serviceDetails("IdentityDomains", "ListCloudGateServers", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCloudGateServersRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGateServers")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGateServers.class,
+                        ListCloudGateServersResponse.Builder::cloudGateServers)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCloudGateServersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCloudGateServersResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCloudGatesResponse> listCloudGates(
+            ListCloudGatesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListCloudGatesRequest, ListCloudGatesResponse>
+                    handler) {
+
+        return clientCall(request, ListCloudGatesResponse::builder)
+                .logger(LOG, "listCloudGates")
+                .serviceDetails("IdentityDomains", "ListCloudGates", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCloudGatesRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGates")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGates.class,
+                        ListCloudGatesResponse.Builder::cloudGates)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCloudGatesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCloudGatesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConditionsResponse> listConditions(
+            ListConditionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListConditionsRequest, ListConditionsResponse>
+                    handler) {
+
+        return clientCall(request, ListConditionsResponse::builder)
+                .logger(LOG, "listConditions")
+                .serviceDetails("IdentityDomains", "ListConditions", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListConditionsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Conditions")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Conditions.class,
+                        ListConditionsResponse.Builder::conditions)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListConditionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListConditionsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -3662,6 +5631,44 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<ListMyCompletedApprovalsResponse> listMyCompletedApprovals(
+            ListMyCompletedApprovalsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListMyCompletedApprovalsRequest, ListMyCompletedApprovalsResponse>
+                    handler) {
+
+        return clientCall(request, ListMyCompletedApprovalsResponse::builder)
+                .logger(LOG, "listMyCompletedApprovals")
+                .serviceDetails("IdentityDomains", "ListMyCompletedApprovals", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMyCompletedApprovalsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("MyCompletedApprovals")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.MyCompletedApprovals.class,
+                        ListMyCompletedApprovalsResponse.Builder::myCompletedApprovals)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMyCompletedApprovalsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMyCompletedApprovalsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListMyCustomerSecretKeysResponse> listMyCustomerSecretKeys(
             ListMyCustomerSecretKeysRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -3821,6 +5828,44 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                         ListMyOAuth2ClientCredentialsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListMyOAuth2ClientCredentialsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMyPendingApprovalsResponse> listMyPendingApprovals(
+            ListMyPendingApprovalsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListMyPendingApprovalsRequest, ListMyPendingApprovalsResponse>
+                    handler) {
+
+        return clientCall(request, ListMyPendingApprovalsResponse::builder)
+                .logger(LOG, "listMyPendingApprovals")
+                .serviceDetails("IdentityDomains", "ListMyPendingApprovals", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMyPendingApprovalsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("MyPendingApprovals")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.MyPendingApprovals.class,
+                        ListMyPendingApprovalsResponse.Builder::myPendingApprovals)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMyPendingApprovalsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMyPendingApprovalsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -4063,6 +6108,87 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<ListNetworkPerimetersResponse> listNetworkPerimeters(
+            ListNetworkPerimetersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListNetworkPerimetersRequest, ListNetworkPerimetersResponse>
+                    handler) {
+
+        return clientCall(request, ListNetworkPerimetersResponse::builder)
+                .logger(LOG, "listNetworkPerimeters")
+                .serviceDetails("IdentityDomains", "ListNetworkPerimeters", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListNetworkPerimetersRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("NetworkPerimeters")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.NetworkPerimeters.class,
+                        ListNetworkPerimetersResponse.Builder::networkPerimeters)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListNetworkPerimetersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListNetworkPerimetersResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNotificationSettingsResponse> listNotificationSettings(
+            ListNotificationSettingsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListNotificationSettingsRequest, ListNotificationSettingsResponse>
+                    handler) {
+
+        return clientCall(request, ListNotificationSettingsResponse::builder)
+                .logger(LOG, "listNotificationSettings")
+                .serviceDetails("IdentityDomains", "ListNotificationSettings", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListNotificationSettingsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("NotificationSettings")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.NotificationSettings.class,
+                        ListNotificationSettingsResponse.Builder::notificationSettings)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListNotificationSettingsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListNotificationSettingsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListOAuth2ClientCredentialsResponse>
             listOAuth2ClientCredentials(
                     ListOAuth2ClientCredentialsRequest request,
@@ -4108,6 +6234,87 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<ListOAuthClientCertificatesResponse>
+            listOAuthClientCertificates(
+                    ListOAuthClientCertificatesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListOAuthClientCertificatesRequest,
+                                    ListOAuthClientCertificatesResponse>
+                            handler) {
+
+        return clientCall(request, ListOAuthClientCertificatesResponse::builder)
+                .logger(LOG, "listOAuthClientCertificates")
+                .serviceDetails("IdentityDomains", "ListOAuthClientCertificates", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListOAuthClientCertificatesRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("OAuthClientCertificates")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.OAuthClientCertificates.class,
+                        ListOAuthClientCertificatesResponse.Builder::oAuthClientCertificates)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListOAuthClientCertificatesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListOAuthClientCertificatesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOAuthPartnerCertificatesResponse>
+            listOAuthPartnerCertificates(
+                    ListOAuthPartnerCertificatesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListOAuthPartnerCertificatesRequest,
+                                    ListOAuthPartnerCertificatesResponse>
+                            handler) {
+
+        return clientCall(request, ListOAuthPartnerCertificatesResponse::builder)
+                .logger(LOG, "listOAuthPartnerCertificates")
+                .serviceDetails("IdentityDomains", "ListOAuthPartnerCertificates", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListOAuthPartnerCertificatesRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("OAuthPartnerCertificates")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.OAuthPartnerCertificates.class,
+                        ListOAuthPartnerCertificatesResponse.Builder::oAuthPartnerCertificates)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListOAuthPartnerCertificatesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListOAuthPartnerCertificatesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPasswordPoliciesResponse> listPasswordPolicies(
             ListPasswordPoliciesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -4147,6 +6354,48 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                         "opc-request-id", ListPasswordPoliciesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListPasswordPoliciesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPoliciesResponse> listPolicies(
+            ListPoliciesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListPoliciesRequest, ListPoliciesResponse>
+                    handler) {
+
+        return clientCall(request, ListPoliciesResponse::builder)
+                .logger(LOG, "listPolicies")
+                .serviceDetails("IdentityDomains", "ListPolicies", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPoliciesRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Policies")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Policies.class,
+                        ListPoliciesResponse.Builder::policies)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPoliciesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPoliciesResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -4195,6 +6444,83 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListResourceTypeSchemaAttributesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRulesResponse> listRules(
+            ListRulesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListRulesRequest, ListRulesResponse>
+                    handler) {
+
+        return clientCall(request, ListRulesResponse::builder)
+                .logger(LOG, "listRules")
+                .serviceDetails("IdentityDomains", "ListRules", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRulesRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Rules")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Rules.class,
+                        ListRulesResponse.Builder::rules)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListRulesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("opc-next-page", ListRulesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSchemasResponse> listSchemas(
+            ListSchemasRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListSchemasRequest, ListSchemasResponse>
+                    handler) {
+
+        return clientCall(request, ListSchemasResponse::builder)
+                .logger(LOG, "listSchemas")
+                .serviceDetails("IdentityDomains", "ListSchemas", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSchemasRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Schemas")
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Schemas.class,
+                        ListSchemasResponse.Builder::schemas)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSchemasResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSchemasResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -4279,6 +6605,89 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                         "opc-request-id", ListSecurityQuestionsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListSecurityQuestionsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSelfRegistrationProfilesResponse>
+            listSelfRegistrationProfiles(
+                    ListSelfRegistrationProfilesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSelfRegistrationProfilesRequest,
+                                    ListSelfRegistrationProfilesResponse>
+                            handler) {
+
+        return clientCall(request, ListSelfRegistrationProfilesResponse::builder)
+                .logger(LOG, "listSelfRegistrationProfiles")
+                .serviceDetails("IdentityDomains", "ListSelfRegistrationProfiles", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSelfRegistrationProfilesRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("SelfRegistrationProfiles")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.SelfRegistrationProfiles.class,
+                        ListSelfRegistrationProfilesResponse.Builder::selfRegistrationProfiles)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListSelfRegistrationProfilesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSelfRegistrationProfilesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSettingsResponse> listSettings(
+            ListSettingsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListSettingsRequest, ListSettingsResponse>
+                    handler) {
+
+        return clientCall(request, ListSettingsResponse::builder)
+                .logger(LOG, "listSettings")
+                .serviceDetails("IdentityDomains", "ListSettings", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSettingsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Settings")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Settings.class,
+                        ListSettingsResponse.Builder::settings)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSettingsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSettingsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -4612,6 +7021,87 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<PatchApprovalWorkflowResponse> patchApprovalWorkflow(
+            PatchApprovalWorkflowRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PatchApprovalWorkflowRequest, PatchApprovalWorkflowResponse>
+                    handler) {
+
+        Validate.notBlank(request.getApprovalWorkflowId(), "approvalWorkflowId must not be blank");
+
+        return clientCall(request, PatchApprovalWorkflowResponse::builder)
+                .logger(LOG, "patchApprovalWorkflow")
+                .serviceDetails("IdentityDomains", "PatchApprovalWorkflow", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchApprovalWorkflowRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflows")
+                .appendPathParam(request.getApprovalWorkflowId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.ApprovalWorkflow.class,
+                        PatchApprovalWorkflowResponse.Builder::approvalWorkflow)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchApprovalWorkflowResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PatchApprovalWorkflowResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PatchApprovalWorkflowStepResponse> patchApprovalWorkflowStep(
+            PatchApprovalWorkflowStepRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PatchApprovalWorkflowStepRequest, PatchApprovalWorkflowStepResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getApprovalWorkflowStepId(), "approvalWorkflowStepId must not be blank");
+
+        return clientCall(request, PatchApprovalWorkflowStepResponse::builder)
+                .logger(LOG, "patchApprovalWorkflowStep")
+                .serviceDetails("IdentityDomains", "PatchApprovalWorkflowStep", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchApprovalWorkflowStepRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflowSteps")
+                .appendPathParam(request.getApprovalWorkflowStepId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.ApprovalWorkflowStep.class,
+                        PatchApprovalWorkflowStepResponse.Builder::approvalWorkflowStep)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchApprovalWorkflowStepResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PatchApprovalWorkflowStepResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<PatchAuthTokenResponse> patchAuthToken(
             PatchAuthTokenRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -4648,6 +7138,166 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-request-id", PatchAuthTokenResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", PatchAuthTokenResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PatchCloudGateResponse> patchCloudGate(
+            PatchCloudGateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PatchCloudGateRequest, PatchCloudGateResponse>
+                    handler) {
+
+        Validate.notBlank(request.getCloudGateId(), "cloudGateId must not be blank");
+
+        return clientCall(request, PatchCloudGateResponse::builder)
+                .logger(LOG, "patchCloudGate")
+                .serviceDetails("IdentityDomains", "PatchCloudGate", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchCloudGateRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGates")
+                .appendPathParam(request.getCloudGateId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGate.class,
+                        PatchCloudGateResponse.Builder::cloudGate)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchCloudGateResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PatchCloudGateResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PatchCloudGateMappingResponse> patchCloudGateMapping(
+            PatchCloudGateMappingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PatchCloudGateMappingRequest, PatchCloudGateMappingResponse>
+                    handler) {
+
+        Validate.notBlank(request.getCloudGateMappingId(), "cloudGateMappingId must not be blank");
+
+        return clientCall(request, PatchCloudGateMappingResponse::builder)
+                .logger(LOG, "patchCloudGateMapping")
+                .serviceDetails("IdentityDomains", "PatchCloudGateMapping", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchCloudGateMappingRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGateMappings")
+                .appendPathParam(request.getCloudGateMappingId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGateMapping.class,
+                        PatchCloudGateMappingResponse.Builder::cloudGateMapping)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchCloudGateMappingResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PatchCloudGateMappingResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PatchCloudGateServerResponse> patchCloudGateServer(
+            PatchCloudGateServerRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PatchCloudGateServerRequest, PatchCloudGateServerResponse>
+                    handler) {
+
+        Validate.notBlank(request.getCloudGateServerId(), "cloudGateServerId must not be blank");
+
+        return clientCall(request, PatchCloudGateServerResponse::builder)
+                .logger(LOG, "patchCloudGateServer")
+                .serviceDetails("IdentityDomains", "PatchCloudGateServer", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchCloudGateServerRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGateServers")
+                .appendPathParam(request.getCloudGateServerId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGateServer.class,
+                        PatchCloudGateServerResponse.Builder::cloudGateServer)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchCloudGateServerResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PatchCloudGateServerResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PatchConditionResponse> patchCondition(
+            PatchConditionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PatchConditionRequest, PatchConditionResponse>
+                    handler) {
+
+        Validate.notBlank(request.getConditionId(), "conditionId must not be blank");
+
+        return clientCall(request, PatchConditionResponse::builder)
+                .logger(LOG, "patchCondition")
+                .serviceDetails("IdentityDomains", "PatchCondition", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchConditionRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Conditions")
+                .appendPathParam(request.getConditionId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Condition.class,
+                        PatchConditionResponse.Builder::condition)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchConditionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PatchConditionResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -5150,6 +7800,82 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<PatchMyPendingApprovalResponse> patchMyPendingApproval(
+            PatchMyPendingApprovalRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PatchMyPendingApprovalRequest, PatchMyPendingApprovalResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getMyPendingApprovalId(), "myPendingApprovalId must not be blank");
+
+        return clientCall(request, PatchMyPendingApprovalResponse::builder)
+                .logger(LOG, "patchMyPendingApproval")
+                .serviceDetails("IdentityDomains", "PatchMyPendingApproval", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchMyPendingApprovalRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("MyPendingApprovals")
+                .appendPathParam(request.getMyPendingApprovalId())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.MyPendingApproval.class,
+                        PatchMyPendingApprovalResponse.Builder::myPendingApproval)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchMyPendingApprovalResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PatchMyPendingApprovalResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PatchMyRequestResponse> patchMyRequest(
+            PatchMyRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PatchMyRequestRequest, PatchMyRequestResponse>
+                    handler) {
+
+        Validate.notBlank(request.getMyRequestId(), "myRequestId must not be blank");
+
+        return clientCall(request, PatchMyRequestResponse::builder)
+                .logger(LOG, "patchMyRequest")
+                .serviceDetails("IdentityDomains", "PatchMyRequest", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchMyRequestRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("MyRequests")
+                .appendPathParam(request.getMyRequestId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.MyRequest.class,
+                        PatchMyRequestResponse.Builder::myRequest)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchMyRequestResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PatchMyRequestResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<PatchMySmtpCredentialResponse> patchMySmtpCredential(
             PatchMySmtpCredentialRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -5181,6 +7907,46 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-request-id", PatchMySmtpCredentialResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", PatchMySmtpCredentialResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PatchNetworkPerimeterResponse> patchNetworkPerimeter(
+            PatchNetworkPerimeterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PatchNetworkPerimeterRequest, PatchNetworkPerimeterResponse>
+                    handler) {
+
+        Validate.notBlank(request.getNetworkPerimeterId(), "networkPerimeterId must not be blank");
+
+        return clientCall(request, PatchNetworkPerimeterResponse::builder)
+                .logger(LOG, "patchNetworkPerimeter")
+                .serviceDetails("IdentityDomains", "PatchNetworkPerimeter", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchNetworkPerimeterRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("NetworkPerimeters")
+                .appendPathParam(request.getNetworkPerimeterId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.NetworkPerimeter.class,
+                        PatchNetworkPerimeterResponse.Builder::networkPerimeter)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchNetworkPerimeterResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PatchNetworkPerimeterResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -5270,6 +8036,118 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<PatchPolicyResponse> patchPolicy(
+            PatchPolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<PatchPolicyRequest, PatchPolicyResponse>
+                    handler) {
+
+        Validate.notBlank(request.getPolicyId(), "policyId must not be blank");
+
+        return clientCall(request, PatchPolicyResponse::builder)
+                .logger(LOG, "patchPolicy")
+                .serviceDetails("IdentityDomains", "PatchPolicy", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchPolicyRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Policies")
+                .appendPathParam(request.getPolicyId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Policy.class,
+                        PatchPolicyResponse.Builder::policy)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchPolicyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PatchPolicyResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PatchRuleResponse> patchRule(
+            PatchRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<PatchRuleRequest, PatchRuleResponse>
+                    handler) {
+
+        Validate.notBlank(request.getRuleId(), "ruleId must not be blank");
+
+        return clientCall(request, PatchRuleResponse::builder)
+                .logger(LOG, "patchRule")
+                .serviceDetails("IdentityDomains", "PatchRule", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchRuleRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Rules")
+                .appendPathParam(request.getRuleId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Rule.class,
+                        PatchRuleResponse.Builder::rule)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchRuleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PatchRuleResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PatchSchemaResponse> patchSchema(
+            PatchSchemaRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<PatchSchemaRequest, PatchSchemaResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSchemaId(), "schemaId must not be blank");
+
+        return clientCall(request, PatchSchemaResponse::builder)
+                .logger(LOG, "patchSchema")
+                .serviceDetails("IdentityDomains", "PatchSchema", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchSchemaRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Schemas")
+                .appendPathParam(request.getSchemaId())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Schema.class,
+                        PatchSchemaResponse.Builder::schema)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchSchemaResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PatchSchemaResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<PatchSecurityQuestionResponse> patchSecurityQuestion(
             PatchSecurityQuestionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -5352,6 +8230,91 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                         PatchSecurityQuestionSettingResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", PatchSecurityQuestionSettingResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PatchSelfRegistrationProfileResponse>
+            patchSelfRegistrationProfile(
+                    PatchSelfRegistrationProfileRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    PatchSelfRegistrationProfileRequest,
+                                    PatchSelfRegistrationProfileResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getSelfRegistrationProfileId(),
+                "selfRegistrationProfileId must not be blank");
+
+        return clientCall(request, PatchSelfRegistrationProfileResponse::builder)
+                .logger(LOG, "patchSelfRegistrationProfile")
+                .serviceDetails("IdentityDomains", "PatchSelfRegistrationProfile", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchSelfRegistrationProfileRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("SelfRegistrationProfiles")
+                .appendPathParam(request.getSelfRegistrationProfileId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.SelfRegistrationProfile.class,
+                        PatchSelfRegistrationProfileResponse.Builder::selfRegistrationProfile)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        PatchSelfRegistrationProfileResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", PatchSelfRegistrationProfileResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PatchSettingResponse> patchSetting(
+            PatchSettingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<PatchSettingRequest, PatchSettingResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSettingId(), "settingId must not be blank");
+
+        return clientCall(request, PatchSettingResponse::builder)
+                .logger(LOG, "patchSetting")
+                .serviceDetails("IdentityDomains", "PatchSetting", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchSettingRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Settings")
+                .appendPathParam(request.getSettingId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Setting.class,
+                        PatchSettingResponse.Builder::setting)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchSettingResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PatchSettingResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -5597,6 +8560,46 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<PutApprovalWorkflowResponse> putApprovalWorkflow(
+            PutApprovalWorkflowRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PutApprovalWorkflowRequest, PutApprovalWorkflowResponse>
+                    handler) {
+
+        Validate.notBlank(request.getApprovalWorkflowId(), "approvalWorkflowId must not be blank");
+
+        return clientCall(request, PutApprovalWorkflowResponse::builder)
+                .logger(LOG, "putApprovalWorkflow")
+                .serviceDetails("IdentityDomains", "PutApprovalWorkflow", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutApprovalWorkflowRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflows")
+                .appendPathParam(request.getApprovalWorkflowId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.ApprovalWorkflow.class,
+                        PutApprovalWorkflowResponse.Builder::approvalWorkflow)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutApprovalWorkflowResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PutApprovalWorkflowResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<PutAuthenticationFactorSettingResponse>
             putAuthenticationFactorSetting(
                     PutAuthenticationFactorSettingRequest request,
@@ -5639,6 +8642,164 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                         PutAuthenticationFactorSettingResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", PutAuthenticationFactorSettingResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutCloudGateResponse> putCloudGate(
+            PutCloudGateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<PutCloudGateRequest, PutCloudGateResponse>
+                    handler) {
+
+        Validate.notBlank(request.getCloudGateId(), "cloudGateId must not be blank");
+
+        return clientCall(request, PutCloudGateResponse::builder)
+                .logger(LOG, "putCloudGate")
+                .serviceDetails("IdentityDomains", "PutCloudGate", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutCloudGateRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGates")
+                .appendPathParam(request.getCloudGateId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGate.class,
+                        PutCloudGateResponse.Builder::cloudGate)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutCloudGateResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PutCloudGateResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutCloudGateMappingResponse> putCloudGateMapping(
+            PutCloudGateMappingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PutCloudGateMappingRequest, PutCloudGateMappingResponse>
+                    handler) {
+
+        Validate.notBlank(request.getCloudGateMappingId(), "cloudGateMappingId must not be blank");
+
+        return clientCall(request, PutCloudGateMappingResponse::builder)
+                .logger(LOG, "putCloudGateMapping")
+                .serviceDetails("IdentityDomains", "PutCloudGateMapping", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutCloudGateMappingRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGateMappings")
+                .appendPathParam(request.getCloudGateMappingId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGateMapping.class,
+                        PutCloudGateMappingResponse.Builder::cloudGateMapping)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutCloudGateMappingResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PutCloudGateMappingResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutCloudGateServerResponse> putCloudGateServer(
+            PutCloudGateServerRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PutCloudGateServerRequest, PutCloudGateServerResponse>
+                    handler) {
+
+        Validate.notBlank(request.getCloudGateServerId(), "cloudGateServerId must not be blank");
+
+        return clientCall(request, PutCloudGateServerResponse::builder)
+                .logger(LOG, "putCloudGateServer")
+                .serviceDetails("IdentityDomains", "PutCloudGateServer", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutCloudGateServerRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGateServers")
+                .appendPathParam(request.getCloudGateServerId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGateServer.class,
+                        PutCloudGateServerResponse.Builder::cloudGateServer)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutCloudGateServerResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PutCloudGateServerResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutConditionResponse> putCondition(
+            PutConditionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<PutConditionRequest, PutConditionResponse>
+                    handler) {
+
+        Validate.notBlank(request.getConditionId(), "conditionId must not be blank");
+
+        return clientCall(request, PutConditionResponse::builder)
+                .logger(LOG, "putCondition")
+                .serviceDetails("IdentityDomains", "PutCondition", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutConditionRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Conditions")
+                .appendPathParam(request.getConditionId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Condition.class,
+                        PutConditionResponse.Builder::condition)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutConditionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PutConditionResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -5908,6 +9069,87 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<PutNetworkPerimeterResponse> putNetworkPerimeter(
+            PutNetworkPerimeterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PutNetworkPerimeterRequest, PutNetworkPerimeterResponse>
+                    handler) {
+
+        Validate.notBlank(request.getNetworkPerimeterId(), "networkPerimeterId must not be blank");
+
+        return clientCall(request, PutNetworkPerimeterResponse::builder)
+                .logger(LOG, "putNetworkPerimeter")
+                .serviceDetails("IdentityDomains", "PutNetworkPerimeter", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutNetworkPerimeterRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("NetworkPerimeters")
+                .appendPathParam(request.getNetworkPerimeterId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.NetworkPerimeter.class,
+                        PutNetworkPerimeterResponse.Builder::networkPerimeter)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutNetworkPerimeterResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PutNetworkPerimeterResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutNotificationSettingResponse> putNotificationSetting(
+            PutNotificationSettingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PutNotificationSettingRequest, PutNotificationSettingResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getNotificationSettingId(), "notificationSettingId must not be blank");
+
+        return clientCall(request, PutNotificationSettingResponse::builder)
+                .logger(LOG, "putNotificationSetting")
+                .serviceDetails("IdentityDomains", "PutNotificationSetting", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutNotificationSettingRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("NotificationSettings")
+                .appendPathParam(request.getNotificationSettingId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.NotificationSetting.class,
+                        PutNotificationSettingResponse.Builder::notificationSetting)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutNotificationSettingResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PutNotificationSettingResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<PutPasswordPolicyResponse> putPasswordPolicy(
             PutPasswordPolicyRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -5944,6 +9186,116 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-request-id", PutPasswordPolicyResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", PutPasswordPolicyResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPolicyResponse> putPolicy(
+            PutPolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<PutPolicyRequest, PutPolicyResponse>
+                    handler) {
+
+        Validate.notBlank(request.getPolicyId(), "policyId must not be blank");
+
+        return clientCall(request, PutPolicyResponse::builder)
+                .logger(LOG, "putPolicy")
+                .serviceDetails("IdentityDomains", "PutPolicy", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutPolicyRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Policies")
+                .appendPathParam(request.getPolicyId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Policy.class,
+                        PutPolicyResponse.Builder::policy)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutPolicyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PutPolicyResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRuleResponse> putRule(
+            PutRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<PutRuleRequest, PutRuleResponse> handler) {
+
+        Validate.notBlank(request.getRuleId(), "ruleId must not be blank");
+
+        return clientCall(request, PutRuleResponse::builder)
+                .logger(LOG, "putRule")
+                .serviceDetails("IdentityDomains", "PutRule", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutRuleRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Rules")
+                .appendPathParam(request.getRuleId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Rule.class,
+                        PutRuleResponse.Builder::rule)
+                .handleResponseHeaderString("opc-request-id", PutRuleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PutRuleResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutSchemaResponse> putSchema(
+            PutSchemaRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<PutSchemaRequest, PutSchemaResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSchemaId(), "schemaId must not be blank");
+
+        return clientCall(request, PutSchemaResponse::builder)
+                .logger(LOG, "putSchema")
+                .serviceDetails("IdentityDomains", "PutSchema", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutSchemaRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Schemas")
+                .appendPathParam(request.getSchemaId())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Schema.class,
+                        PutSchemaResponse.Builder::schema)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutSchemaResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PutSchemaResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -5989,6 +9341,90 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                         "opc-request-id", PutSecurityQuestionSettingResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", PutSecurityQuestionSettingResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutSelfRegistrationProfileResponse>
+            putSelfRegistrationProfile(
+                    PutSelfRegistrationProfileRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    PutSelfRegistrationProfileRequest,
+                                    PutSelfRegistrationProfileResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getSelfRegistrationProfileId(),
+                "selfRegistrationProfileId must not be blank");
+
+        return clientCall(request, PutSelfRegistrationProfileResponse::builder)
+                .logger(LOG, "putSelfRegistrationProfile")
+                .serviceDetails("IdentityDomains", "PutSelfRegistrationProfile", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutSelfRegistrationProfileRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("SelfRegistrationProfiles")
+                .appendPathParam(request.getSelfRegistrationProfileId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.SelfRegistrationProfile.class,
+                        PutSelfRegistrationProfileResponse.Builder::selfRegistrationProfile)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutSelfRegistrationProfileResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", PutSelfRegistrationProfileResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutSettingResponse> putSetting(
+            PutSettingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<PutSettingRequest, PutSettingResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSettingId(), "settingId must not be blank");
+
+        return clientCall(request, PutSettingResponse::builder)
+                .logger(LOG, "putSetting")
+                .serviceDetails("IdentityDomains", "PutSetting", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutSettingRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Settings")
+                .appendPathParam(request.getSettingId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Setting.class,
+                        PutSettingResponse.Builder::setting)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutSettingResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PutSettingResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -6396,6 +9832,146 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<SearchCloudGateMappingsResponse> searchCloudGateMappings(
+            SearchCloudGateMappingsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SearchCloudGateMappingsRequest, SearchCloudGateMappingsResponse>
+                    handler) {
+
+        return clientCall(request, SearchCloudGateMappingsResponse::builder)
+                .logger(LOG, "searchCloudGateMappings")
+                .serviceDetails("IdentityDomains", "SearchCloudGateMappings", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchCloudGateMappingsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGateMappings")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGateMappings.class,
+                        SearchCloudGateMappingsResponse.Builder::cloudGateMappings)
+                .handleResponseHeaderString(
+                        "opc-request-id", SearchCloudGateMappingsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SearchCloudGateMappingsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchCloudGateServersResponse> searchCloudGateServers(
+            SearchCloudGateServersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SearchCloudGateServersRequest, SearchCloudGateServersResponse>
+                    handler) {
+
+        return clientCall(request, SearchCloudGateServersResponse::builder)
+                .logger(LOG, "searchCloudGateServers")
+                .serviceDetails("IdentityDomains", "SearchCloudGateServers", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchCloudGateServersRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGateServers")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGateServers.class,
+                        SearchCloudGateServersResponse.Builder::cloudGateServers)
+                .handleResponseHeaderString(
+                        "opc-request-id", SearchCloudGateServersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SearchCloudGateServersResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchCloudGatesResponse> searchCloudGates(
+            SearchCloudGatesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SearchCloudGatesRequest, SearchCloudGatesResponse>
+                    handler) {
+
+        return clientCall(request, SearchCloudGatesResponse::builder)
+                .logger(LOG, "searchCloudGates")
+                .serviceDetails("IdentityDomains", "SearchCloudGates", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchCloudGatesRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGates")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGates.class,
+                        SearchCloudGatesResponse.Builder::cloudGates)
+                .handleResponseHeaderString(
+                        "opc-request-id", SearchCloudGatesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SearchCloudGatesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchConditionsResponse> searchConditions(
+            SearchConditionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SearchConditionsRequest, SearchConditionsResponse>
+                    handler) {
+
+        return clientCall(request, SearchConditionsResponse::builder)
+                .logger(LOG, "searchConditions")
+                .serviceDetails("IdentityDomains", "SearchConditions", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchConditionsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Conditions")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Conditions.class,
+                        SearchConditionsResponse.Builder::conditions)
+                .handleResponseHeaderString(
+                        "opc-request-id", SearchConditionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SearchConditionsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<SearchCustomerSecretKeysResponse> searchCustomerSecretKeys(
             SearchCustomerSecretKeysRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -6780,6 +10356,78 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<SearchNetworkPerimetersResponse> searchNetworkPerimeters(
+            SearchNetworkPerimetersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SearchNetworkPerimetersRequest, SearchNetworkPerimetersResponse>
+                    handler) {
+
+        return clientCall(request, SearchNetworkPerimetersResponse::builder)
+                .logger(LOG, "searchNetworkPerimeters")
+                .serviceDetails("IdentityDomains", "SearchNetworkPerimeters", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchNetworkPerimetersRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("NetworkPerimeters")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.NetworkPerimeters.class,
+                        SearchNetworkPerimetersResponse.Builder::networkPerimeters)
+                .handleResponseHeaderString(
+                        "opc-request-id", SearchNetworkPerimetersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SearchNetworkPerimetersResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchNotificationSettingsResponse>
+            searchNotificationSettings(
+                    SearchNotificationSettingsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SearchNotificationSettingsRequest,
+                                    SearchNotificationSettingsResponse>
+                            handler) {
+
+        return clientCall(request, SearchNotificationSettingsResponse::builder)
+                .logger(LOG, "searchNotificationSettings")
+                .serviceDetails("IdentityDomains", "SearchNotificationSettings", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchNotificationSettingsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("NotificationSettings")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.NotificationSettings.class,
+                        SearchNotificationSettingsResponse.Builder::notificationSettings)
+                .handleResponseHeaderString(
+                        "opc-request-id", SearchNotificationSettingsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SearchNotificationSettingsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<SearchOAuth2ClientCredentialsResponse>
             searchOAuth2ClientCredentials(
                     SearchOAuth2ClientCredentialsRequest request,
@@ -6818,6 +10466,83 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<SearchOAuthClientCertificatesResponse>
+            searchOAuthClientCertificates(
+                    SearchOAuthClientCertificatesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SearchOAuthClientCertificatesRequest,
+                                    SearchOAuthClientCertificatesResponse>
+                            handler) {
+
+        return clientCall(request, SearchOAuthClientCertificatesResponse::builder)
+                .logger(LOG, "searchOAuthClientCertificates")
+                .serviceDetails("IdentityDomains", "SearchOAuthClientCertificates", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchOAuthClientCertificatesRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("OAuthClientCertificates")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.OAuthClientCertificates.class,
+                        SearchOAuthClientCertificatesResponse.Builder::oAuthClientCertificates)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SearchOAuthClientCertificatesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SearchOAuthClientCertificatesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchOAuthPartnerCertificatesResponse>
+            searchOAuthPartnerCertificates(
+                    SearchOAuthPartnerCertificatesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SearchOAuthPartnerCertificatesRequest,
+                                    SearchOAuthPartnerCertificatesResponse>
+                            handler) {
+
+        return clientCall(request, SearchOAuthPartnerCertificatesResponse::builder)
+                .logger(LOG, "searchOAuthPartnerCertificates")
+                .serviceDetails("IdentityDomains", "SearchOAuthPartnerCertificates", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchOAuthPartnerCertificatesRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("OAuthPartnerCertificates")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.OAuthPartnerCertificates.class,
+                        SearchOAuthPartnerCertificatesResponse.Builder::oAuthPartnerCertificates)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SearchOAuthPartnerCertificatesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        SearchOAuthPartnerCertificatesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<SearchPasswordPoliciesResponse> searchPasswordPolicies(
             SearchPasswordPoliciesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -6849,6 +10574,41 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                         "opc-request-id", SearchPasswordPoliciesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SearchPasswordPoliciesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchPoliciesResponse> searchPolicies(
+            SearchPoliciesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SearchPoliciesRequest, SearchPoliciesResponse>
+                    handler) {
+
+        return clientCall(request, SearchPoliciesResponse::builder)
+                .logger(LOG, "searchPolicies")
+                .serviceDetails("IdentityDomains", "SearchPolicies", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchPoliciesRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Policies")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Policies.class,
+                        SearchPoliciesResponse.Builder::policies)
+                .handleResponseHeaderString(
+                        "opc-request-id", SearchPoliciesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SearchPoliciesResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -6889,6 +10649,74 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SearchResourceTypeSchemaAttributesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchRulesResponse> searchRules(
+            SearchRulesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<SearchRulesRequest, SearchRulesResponse>
+                    handler) {
+
+        return clientCall(request, SearchRulesResponse::builder)
+                .logger(LOG, "searchRules")
+                .serviceDetails("IdentityDomains", "SearchRules", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchRulesRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Rules")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Rules.class,
+                        SearchRulesResponse.Builder::rules)
+                .handleResponseHeaderString(
+                        "opc-request-id", SearchRulesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SearchRulesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchSchemasResponse> searchSchemas(
+            SearchSchemasRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<SearchSchemasRequest, SearchSchemasResponse>
+                    handler) {
+
+        return clientCall(request, SearchSchemasResponse::builder)
+                .logger(LOG, "searchSchemas")
+                .serviceDetails("IdentityDomains", "SearchSchemas", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchSchemasRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Schemas")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Schemas.class,
+                        SearchSchemasResponse.Builder::schemas)
+                .handleResponseHeaderString(
+                        "opc-request-id", SearchSchemasResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SearchSchemasResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -6963,6 +10791,80 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                         "opc-request-id", SearchSecurityQuestionsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SearchSecurityQuestionsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchSelfRegistrationProfilesResponse>
+            searchSelfRegistrationProfiles(
+                    SearchSelfRegistrationProfilesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SearchSelfRegistrationProfilesRequest,
+                                    SearchSelfRegistrationProfilesResponse>
+                            handler) {
+
+        return clientCall(request, SearchSelfRegistrationProfilesResponse::builder)
+                .logger(LOG, "searchSelfRegistrationProfiles")
+                .serviceDetails("IdentityDomains", "SearchSelfRegistrationProfiles", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchSelfRegistrationProfilesRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("SelfRegistrationProfiles")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.SelfRegistrationProfiles.class,
+                        SearchSelfRegistrationProfilesResponse.Builder::selfRegistrationProfiles)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SearchSelfRegistrationProfilesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        SearchSelfRegistrationProfilesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchSettingsResponse> searchSettings(
+            SearchSettingsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SearchSettingsRequest, SearchSettingsResponse>
+                    handler) {
+
+        return clientCall(request, SearchSettingsResponse::builder)
+                .logger(LOG, "searchSettings")
+                .serviceDetails("IdentityDomains", "SearchSettings", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchSettingsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Settings")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Settings.class,
+                        SearchSettingsResponse.Builder::settings)
+                .handleResponseHeaderString(
+                        "opc-request-id", SearchSettingsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SearchSettingsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 

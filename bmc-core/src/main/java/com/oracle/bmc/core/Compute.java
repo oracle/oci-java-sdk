@@ -201,6 +201,25 @@ public interface Compute extends AutoCloseable {
             ChangeComputeCapacityReservationCompartmentRequest request);
 
     /**
+     * Moves a compute capacity topology into a different compartment. For information about moving
+     * resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeComputeCapacityTopologyCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeComputeCapacityTopologyCompartment API.
+     */
+    ChangeComputeCapacityTopologyCompartmentResponse changeComputeCapacityTopologyCompartment(
+            ChangeComputeCapacityTopologyCompartmentRequest request);
+
+    /**
      * Moves a compute cluster into a different compartment within the same tenancy. A [compute
      * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
      * remote direct memory access (RDMA) network group.
@@ -361,6 +380,28 @@ public interface Compute extends AutoCloseable {
      */
     CreateComputeCapacityReservationResponse createComputeCapacityReservation(
             CreateComputeCapacityReservationRequest request);
+
+    /**
+     * Creates a new compute capacity topology in the specified compartment and availability domain.
+     *
+     * <p>Compute capacity topologies provide the RDMA network topology of your bare metal hosts so
+     * that you can launch instances on your bare metal hosts with targeted network locations.
+     *
+     * <p>Compute capacity topologies report the health status of your bare metal hosts.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateComputeCapacityTopologyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateComputeCapacityTopology API.
+     */
+    CreateComputeCapacityTopologyResponse createComputeCapacityTopology(
+            CreateComputeCapacityTopologyRequest request);
 
     /**
      * Creates an empty [compute
@@ -527,6 +568,23 @@ public interface Compute extends AutoCloseable {
      */
     DeleteComputeCapacityReservationResponse deleteComputeCapacityReservation(
             DeleteComputeCapacityReservationRequest request);
+
+    /**
+     * Deletes the specified compute capacity topology.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteComputeCapacityTopologyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteComputeCapacityTopology API.
+     */
+    DeleteComputeCapacityTopologyResponse deleteComputeCapacityTopology(
+            DeleteComputeCapacityTopologyRequest request);
 
     /**
      * Deletes a compute cluster. A [compute
@@ -805,6 +863,23 @@ public interface Compute extends AutoCloseable {
      */
     GetComputeCapacityReservationResponse getComputeCapacityReservation(
             GetComputeCapacityReservationRequest request);
+
+    /**
+     * Gets information about the specified compute capacity topology.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeCapacityTopologyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetComputeCapacityTopology API.
+     */
+    GetComputeCapacityTopologyResponse getComputeCapacityTopology(
+            GetComputeCapacityTopologyRequest request);
 
     /**
      * Gets information about a compute cluster. A [compute
@@ -1328,6 +1403,78 @@ public interface Compute extends AutoCloseable {
             ListComputeCapacityReservationsRequest request);
 
     /**
+     * Lists the compute capacity topologies in the specified compartment. You can filter the list
+     * by a compute capacity topology display name.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeCapacityTopologiesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListComputeCapacityTopologies API.
+     */
+    ListComputeCapacityTopologiesResponse listComputeCapacityTopologies(
+            ListComputeCapacityTopologiesRequest request);
+
+    /**
+     * Lists compute bare metal hosts in the specified compute capacity topology.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeCapacityTopologyComputeBareMetalHostsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListComputeCapacityTopologyComputeBareMetalHosts API.
+     */
+    ListComputeCapacityTopologyComputeBareMetalHostsResponse
+            listComputeCapacityTopologyComputeBareMetalHosts(
+                    ListComputeCapacityTopologyComputeBareMetalHostsRequest request);
+
+    /**
+     * Lists compute HPC islands in the specified compute capacity topology.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeCapacityTopologyComputeHpcIslandsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListComputeCapacityTopologyComputeHpcIslands API.
+     */
+    ListComputeCapacityTopologyComputeHpcIslandsResponse
+            listComputeCapacityTopologyComputeHpcIslands(
+                    ListComputeCapacityTopologyComputeHpcIslandsRequest request);
+
+    /**
+     * Lists compute network blocks in the specified compute capacity topology.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeCapacityTopologyComputeNetworkBlocksExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListComputeCapacityTopologyComputeNetworkBlocks API.
+     */
+    ListComputeCapacityTopologyComputeNetworkBlocksResponse
+            listComputeCapacityTopologyComputeNetworkBlocks(
+                    ListComputeCapacityTopologyComputeNetworkBlocksRequest request);
+
+    /**
      * Lists the compute clusters in the specified compartment. A [compute
      * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
      * remote direct memory access (RDMA) network group.
@@ -1708,6 +1855,24 @@ public interface Compute extends AutoCloseable {
      */
     UpdateComputeCapacityReservationResponse updateComputeCapacityReservation(
             UpdateComputeCapacityReservationRequest request);
+
+    /**
+     * Updates the specified compute capacity topology. Fields that are not provided in the request
+     * will not be updated.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateComputeCapacityTopologyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateComputeCapacityTopology API.
+     */
+    UpdateComputeCapacityTopologyResponse updateComputeCapacityTopology(
+            UpdateComputeCapacityTopologyRequest request);
 
     /**
      * Updates a compute cluster. A [compute

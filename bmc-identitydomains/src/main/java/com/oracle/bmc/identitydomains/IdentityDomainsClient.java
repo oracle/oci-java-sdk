@@ -20,7 +20,7 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("IDENTITYDOMAINS")
                     .serviceEndpointPrefix("")
-                    .serviceEndpointTemplate("https://identity.{region}.oci.{secondLevelDomain}")
+                    .serviceEndpointTemplate("https://idcs-guid.identity.oraclecloud.com")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -171,6 +171,109 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public CreateApprovalWorkflowResponse createApprovalWorkflow(
+            CreateApprovalWorkflowRequest request) {
+
+        return clientCall(request, CreateApprovalWorkflowResponse::builder)
+                .logger(LOG, "createApprovalWorkflow")
+                .serviceDetails("IdentityDomains", "CreateApprovalWorkflow", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateApprovalWorkflowRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflows")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.ApprovalWorkflow.class,
+                        CreateApprovalWorkflowResponse.Builder::approvalWorkflow)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateApprovalWorkflowResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateApprovalWorkflowResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public CreateApprovalWorkflowAssignmentResponse createApprovalWorkflowAssignment(
+            CreateApprovalWorkflowAssignmentRequest request) {
+
+        return clientCall(request, CreateApprovalWorkflowAssignmentResponse::builder)
+                .logger(LOG, "createApprovalWorkflowAssignment")
+                .serviceDetails("IdentityDomains", "CreateApprovalWorkflowAssignment", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateApprovalWorkflowAssignmentRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflowAssignments")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.ApprovalWorkflowAssignment.class,
+                        CreateApprovalWorkflowAssignmentResponse.Builder
+                                ::approvalWorkflowAssignment)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateApprovalWorkflowAssignmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateApprovalWorkflowAssignmentResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public CreateApprovalWorkflowStepResponse createApprovalWorkflowStep(
+            CreateApprovalWorkflowStepRequest request) {
+
+        return clientCall(request, CreateApprovalWorkflowStepResponse::builder)
+                .logger(LOG, "createApprovalWorkflowStep")
+                .serviceDetails("IdentityDomains", "CreateApprovalWorkflowStep", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateApprovalWorkflowStepRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflowSteps")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.ApprovalWorkflowStep.class,
+                        CreateApprovalWorkflowStepResponse.Builder::approvalWorkflowStep)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateApprovalWorkflowStepResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateApprovalWorkflowStepResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public CreateAuthTokenResponse createAuthToken(CreateAuthTokenRequest request) {
 
         return clientCall(request, CreateAuthTokenResponse::builder)
@@ -230,6 +333,136 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                         CreateAuthenticationFactorsRemoverResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", CreateAuthenticationFactorsRemoverResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public CreateCloudGateResponse createCloudGate(CreateCloudGateRequest request) {
+
+        return clientCall(request, CreateCloudGateResponse::builder)
+                .logger(LOG, "createCloudGate")
+                .serviceDetails("IdentityDomains", "CreateCloudGate", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateCloudGateRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGates")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGate.class,
+                        CreateCloudGateResponse.Builder::cloudGate)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateCloudGateResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateCloudGateResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public CreateCloudGateMappingResponse createCloudGateMapping(
+            CreateCloudGateMappingRequest request) {
+
+        return clientCall(request, CreateCloudGateMappingResponse::builder)
+                .logger(LOG, "createCloudGateMapping")
+                .serviceDetails("IdentityDomains", "CreateCloudGateMapping", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateCloudGateMappingRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGateMappings")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGateMapping.class,
+                        CreateCloudGateMappingResponse.Builder::cloudGateMapping)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateCloudGateMappingResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateCloudGateMappingResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public CreateCloudGateServerResponse createCloudGateServer(
+            CreateCloudGateServerRequest request) {
+
+        return clientCall(request, CreateCloudGateServerResponse::builder)
+                .logger(LOG, "createCloudGateServer")
+                .serviceDetails("IdentityDomains", "CreateCloudGateServer", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateCloudGateServerRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGateServers")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGateServer.class,
+                        CreateCloudGateServerResponse.Builder::cloudGateServer)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateCloudGateServerResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateCloudGateServerResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public CreateConditionResponse createCondition(CreateConditionRequest request) {
+
+        return clientCall(request, CreateConditionResponse::builder)
+                .logger(LOG, "createCondition")
+                .serviceDetails("IdentityDomains", "CreateCondition", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateConditionRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Conditions")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Condition.class,
+                        CreateConditionResponse.Builder::condition)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateConditionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateConditionResponse.Builder::etag)
                 .callSync();
     }
 
@@ -750,6 +983,39 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public CreateNetworkPerimeterResponse createNetworkPerimeter(
+            CreateNetworkPerimeterRequest request) {
+
+        return clientCall(request, CreateNetworkPerimeterResponse::builder)
+                .logger(LOG, "createNetworkPerimeter")
+                .serviceDetails("IdentityDomains", "CreateNetworkPerimeter", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateNetworkPerimeterRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("NetworkPerimeters")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.NetworkPerimeter.class,
+                        CreateNetworkPerimeterResponse.Builder::networkPerimeter)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateNetworkPerimeterResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateNetworkPerimeterResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public CreateOAuth2ClientCredentialResponse createOAuth2ClientCredential(
             CreateOAuth2ClientCredentialRequest request) {
 
@@ -781,6 +1047,66 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                         CreateOAuth2ClientCredentialResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", CreateOAuth2ClientCredentialResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public CreateOAuthClientCertificateResponse createOAuthClientCertificate(
+            CreateOAuthClientCertificateRequest request) {
+
+        return clientCall(request, CreateOAuthClientCertificateResponse::builder)
+                .logger(LOG, "createOAuthClientCertificate")
+                .serviceDetails("IdentityDomains", "CreateOAuthClientCertificate", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateOAuthClientCertificateRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("OAuthClientCertificates")
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.OAuthClientCertificate.class,
+                        CreateOAuthClientCertificateResponse.Builder::oAuthClientCertificate)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateOAuthClientCertificateResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateOAuthClientCertificateResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public CreateOAuthPartnerCertificateResponse createOAuthPartnerCertificate(
+            CreateOAuthPartnerCertificateRequest request) {
+
+        return clientCall(request, CreateOAuthPartnerCertificateResponse::builder)
+                .logger(LOG, "createOAuthPartnerCertificate")
+                .serviceDetails("IdentityDomains", "CreateOAuthPartnerCertificate", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateOAuthPartnerCertificateRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("OAuthPartnerCertificates")
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.OAuthPartnerCertificate.class,
+                        CreateOAuthPartnerCertificateResponse.Builder::oAuthPartnerCertificate)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateOAuthPartnerCertificateResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateOAuthPartnerCertificateResponse.Builder::etag)
                 .callSync();
     }
 
@@ -817,6 +1143,70 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public CreatePolicyResponse createPolicy(CreatePolicyRequest request) {
+
+        return clientCall(request, CreatePolicyResponse::builder)
+                .logger(LOG, "createPolicy")
+                .serviceDetails("IdentityDomains", "CreatePolicy", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreatePolicyRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Policies")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Policy.class,
+                        CreatePolicyResponse.Builder::policy)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreatePolicyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreatePolicyResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public CreateRuleResponse createRule(CreateRuleRequest request) {
+
+        return clientCall(request, CreateRuleResponse::builder)
+                .logger(LOG, "createRule")
+                .serviceDetails("IdentityDomains", "CreateRule", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateRuleRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Rules")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Rule.class,
+                        CreateRuleResponse.Builder::rule)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateRuleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateRuleResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public CreateSecurityQuestionResponse createSecurityQuestion(
             CreateSecurityQuestionRequest request) {
 
@@ -846,6 +1236,41 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id", CreateSecurityQuestionResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateSecurityQuestionResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public CreateSelfRegistrationProfileResponse createSelfRegistrationProfile(
+            CreateSelfRegistrationProfileRequest request) {
+
+        return clientCall(request, CreateSelfRegistrationProfileResponse::builder)
+                .logger(LOG, "createSelfRegistrationProfile")
+                .serviceDetails("IdentityDomains", "CreateSelfRegistrationProfile", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSelfRegistrationProfileRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("SelfRegistrationProfiles")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.SelfRegistrationProfile.class,
+                        CreateSelfRegistrationProfileResponse.Builder::selfRegistrationProfile)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateSelfRegistrationProfileResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateSelfRegistrationProfileResponse.Builder::etag)
                 .callSync();
     }
 
@@ -1028,6 +1453,94 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public DeleteApprovalWorkflowResponse deleteApprovalWorkflow(
+            DeleteApprovalWorkflowRequest request) {
+
+        Validate.notBlank(request.getApprovalWorkflowId(), "approvalWorkflowId must not be blank");
+
+        return clientCall(request, DeleteApprovalWorkflowResponse::builder)
+                .logger(LOG, "deleteApprovalWorkflow")
+                .serviceDetails("IdentityDomains", "DeleteApprovalWorkflow", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteApprovalWorkflowRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflows")
+                .appendPathParam(request.getApprovalWorkflowId())
+                .appendQueryParam("forceDelete", request.getForceDelete())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteApprovalWorkflowResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteApprovalWorkflowAssignmentResponse deleteApprovalWorkflowAssignment(
+            DeleteApprovalWorkflowAssignmentRequest request) {
+
+        Validate.notBlank(
+                request.getApprovalWorkflowAssignmentId(),
+                "approvalWorkflowAssignmentId must not be blank");
+
+        return clientCall(request, DeleteApprovalWorkflowAssignmentResponse::builder)
+                .logger(LOG, "deleteApprovalWorkflowAssignment")
+                .serviceDetails("IdentityDomains", "DeleteApprovalWorkflowAssignment", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteApprovalWorkflowAssignmentRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflowAssignments")
+                .appendPathParam(request.getApprovalWorkflowAssignmentId())
+                .appendQueryParam("forceDelete", request.getForceDelete())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteApprovalWorkflowAssignmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteApprovalWorkflowStepResponse deleteApprovalWorkflowStep(
+            DeleteApprovalWorkflowStepRequest request) {
+
+        Validate.notBlank(
+                request.getApprovalWorkflowStepId(), "approvalWorkflowStepId must not be blank");
+
+        return clientCall(request, DeleteApprovalWorkflowStepResponse::builder)
+                .logger(LOG, "deleteApprovalWorkflowStep")
+                .serviceDetails("IdentityDomains", "DeleteApprovalWorkflowStep", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteApprovalWorkflowStepRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflowSteps")
+                .appendPathParam(request.getApprovalWorkflowStepId())
+                .appendQueryParam("forceDelete", request.getForceDelete())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteApprovalWorkflowStepResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteAuthTokenResponse deleteAuthToken(DeleteAuthTokenRequest request) {
 
         Validate.notBlank(request.getAuthTokenId(), "authTokenId must not be blank");
@@ -1051,6 +1564,116 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteAuthTokenResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteCloudGateResponse deleteCloudGate(DeleteCloudGateRequest request) {
+
+        Validate.notBlank(request.getCloudGateId(), "cloudGateId must not be blank");
+
+        return clientCall(request, DeleteCloudGateResponse::builder)
+                .logger(LOG, "deleteCloudGate")
+                .serviceDetails("IdentityDomains", "DeleteCloudGate", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCloudGateRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGates")
+                .appendPathParam(request.getCloudGateId())
+                .appendQueryParam("forceDelete", request.getForceDelete())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteCloudGateResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteCloudGateMappingResponse deleteCloudGateMapping(
+            DeleteCloudGateMappingRequest request) {
+
+        Validate.notBlank(request.getCloudGateMappingId(), "cloudGateMappingId must not be blank");
+
+        return clientCall(request, DeleteCloudGateMappingResponse::builder)
+                .logger(LOG, "deleteCloudGateMapping")
+                .serviceDetails("IdentityDomains", "DeleteCloudGateMapping", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCloudGateMappingRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGateMappings")
+                .appendPathParam(request.getCloudGateMappingId())
+                .appendQueryParam("forceDelete", request.getForceDelete())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteCloudGateMappingResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteCloudGateServerResponse deleteCloudGateServer(
+            DeleteCloudGateServerRequest request) {
+
+        Validate.notBlank(request.getCloudGateServerId(), "cloudGateServerId must not be blank");
+
+        return clientCall(request, DeleteCloudGateServerResponse::builder)
+                .logger(LOG, "deleteCloudGateServer")
+                .serviceDetails("IdentityDomains", "DeleteCloudGateServer", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCloudGateServerRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGateServers")
+                .appendPathParam(request.getCloudGateServerId())
+                .appendQueryParam("forceDelete", request.getForceDelete())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteCloudGateServerResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteConditionResponse deleteCondition(DeleteConditionRequest request) {
+
+        Validate.notBlank(request.getConditionId(), "conditionId must not be blank");
+
+        return clientCall(request, DeleteConditionResponse::builder)
+                .logger(LOG, "deleteCondition")
+                .serviceDetails("IdentityDomains", "DeleteCondition", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteConditionRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Conditions")
+                .appendPathParam(request.getConditionId())
+                .appendQueryParam("forceDelete", request.getForceDelete())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteConditionResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1450,6 +2073,34 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public DeleteNetworkPerimeterResponse deleteNetworkPerimeter(
+            DeleteNetworkPerimeterRequest request) {
+
+        Validate.notBlank(request.getNetworkPerimeterId(), "networkPerimeterId must not be blank");
+
+        return clientCall(request, DeleteNetworkPerimeterResponse::builder)
+                .logger(LOG, "deleteNetworkPerimeter")
+                .serviceDetails("IdentityDomains", "DeleteNetworkPerimeter", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteNetworkPerimeterRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("NetworkPerimeters")
+                .appendPathParam(request.getNetworkPerimeterId())
+                .appendQueryParam("forceDelete", request.getForceDelete())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteNetworkPerimeterResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteOAuth2ClientCredentialResponse deleteOAuth2ClientCredential(
             DeleteOAuth2ClientCredentialRequest request) {
 
@@ -1481,6 +2132,68 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public DeleteOAuthClientCertificateResponse deleteOAuthClientCertificate(
+            DeleteOAuthClientCertificateRequest request) {
+
+        Validate.notBlank(
+                request.getOAuthClientCertificateId(),
+                "oAuthClientCertificateId must not be blank");
+
+        return clientCall(request, DeleteOAuthClientCertificateResponse::builder)
+                .logger(LOG, "deleteOAuthClientCertificate")
+                .serviceDetails("IdentityDomains", "DeleteOAuthClientCertificate", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteOAuthClientCertificateRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("OAuthClientCertificates")
+                .appendPathParam(request.getOAuthClientCertificateId())
+                .appendQueryParam("forceDelete", request.getForceDelete())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteOAuthClientCertificateResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteOAuthPartnerCertificateResponse deleteOAuthPartnerCertificate(
+            DeleteOAuthPartnerCertificateRequest request) {
+
+        Validate.notBlank(
+                request.getOAuthPartnerCertificateId(),
+                "oAuthPartnerCertificateId must not be blank");
+
+        return clientCall(request, DeleteOAuthPartnerCertificateResponse::builder)
+                .logger(LOG, "deleteOAuthPartnerCertificate")
+                .serviceDetails("IdentityDomains", "DeleteOAuthPartnerCertificate", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteOAuthPartnerCertificateRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("OAuthPartnerCertificates")
+                .appendPathParam(request.getOAuthPartnerCertificateId())
+                .appendQueryParam("forceDelete", request.getForceDelete())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteOAuthPartnerCertificateResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeletePasswordPolicyResponse deletePasswordPolicy(DeletePasswordPolicyRequest request) {
 
         Validate.notBlank(request.getPasswordPolicyId(), "passwordPolicyId must not be blank");
@@ -1504,6 +2217,60 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .handleResponseHeaderString(
                         "opc-request-id", DeletePasswordPolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeletePolicyResponse deletePolicy(DeletePolicyRequest request) {
+
+        Validate.notBlank(request.getPolicyId(), "policyId must not be blank");
+
+        return clientCall(request, DeletePolicyResponse::builder)
+                .logger(LOG, "deletePolicy")
+                .serviceDetails("IdentityDomains", "DeletePolicy", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeletePolicyRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Policies")
+                .appendPathParam(request.getPolicyId())
+                .appendQueryParam("forceDelete", request.getForceDelete())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeletePolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteRuleResponse deleteRule(DeleteRuleRequest request) {
+
+        Validate.notBlank(request.getRuleId(), "ruleId must not be blank");
+
+        return clientCall(request, DeleteRuleResponse::builder)
+                .logger(LOG, "deleteRule")
+                .serviceDetails("IdentityDomains", "DeleteRule", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteRuleRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Rules")
+                .appendPathParam(request.getRuleId())
+                .appendQueryParam("forceDelete", request.getForceDelete())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteRuleResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1532,6 +2299,37 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteSecurityQuestionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteSelfRegistrationProfileResponse deleteSelfRegistrationProfile(
+            DeleteSelfRegistrationProfileRequest request) {
+
+        Validate.notBlank(
+                request.getSelfRegistrationProfileId(),
+                "selfRegistrationProfileId must not be blank");
+
+        return clientCall(request, DeleteSelfRegistrationProfileResponse::builder)
+                .logger(LOG, "deleteSelfRegistrationProfile")
+                .serviceDetails("IdentityDomains", "DeleteSelfRegistrationProfile", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSelfRegistrationProfileRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("SelfRegistrationProfiles")
+                .appendPathParam(request.getSelfRegistrationProfileId())
+                .appendQueryParam("forceDelete", request.getForceDelete())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteSelfRegistrationProfileResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1784,6 +2582,111 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public GetApprovalWorkflowResponse getApprovalWorkflow(GetApprovalWorkflowRequest request) {
+
+        Validate.notBlank(request.getApprovalWorkflowId(), "approvalWorkflowId must not be blank");
+
+        return clientCall(request, GetApprovalWorkflowResponse::builder)
+                .logger(LOG, "getApprovalWorkflow")
+                .serviceDetails("IdentityDomains", "GetApprovalWorkflow", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetApprovalWorkflowRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflows")
+                .appendPathParam(request.getApprovalWorkflowId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.ApprovalWorkflow.class,
+                        GetApprovalWorkflowResponse.Builder::approvalWorkflow)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetApprovalWorkflowResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetApprovalWorkflowAssignmentResponse getApprovalWorkflowAssignment(
+            GetApprovalWorkflowAssignmentRequest request) {
+
+        Validate.notBlank(
+                request.getApprovalWorkflowAssignmentId(),
+                "approvalWorkflowAssignmentId must not be blank");
+
+        return clientCall(request, GetApprovalWorkflowAssignmentResponse::builder)
+                .logger(LOG, "getApprovalWorkflowAssignment")
+                .serviceDetails("IdentityDomains", "GetApprovalWorkflowAssignment", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetApprovalWorkflowAssignmentRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflowAssignments")
+                .appendPathParam(request.getApprovalWorkflowAssignmentId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.ApprovalWorkflowAssignment.class,
+                        GetApprovalWorkflowAssignmentResponse.Builder::approvalWorkflowAssignment)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetApprovalWorkflowAssignmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetApprovalWorkflowStepResponse getApprovalWorkflowStep(
+            GetApprovalWorkflowStepRequest request) {
+
+        Validate.notBlank(
+                request.getApprovalWorkflowStepId(), "approvalWorkflowStepId must not be blank");
+
+        return clientCall(request, GetApprovalWorkflowStepResponse::builder)
+                .logger(LOG, "getApprovalWorkflowStep")
+                .serviceDetails("IdentityDomains", "GetApprovalWorkflowStep", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetApprovalWorkflowStepRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflowSteps")
+                .appendPathParam(request.getApprovalWorkflowStepId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.ApprovalWorkflowStep.class,
+                        GetApprovalWorkflowStepResponse.Builder::approvalWorkflowStep)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetApprovalWorkflowStepResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetAuthTokenResponse getAuthToken(GetAuthTokenRequest request) {
 
         Validate.notBlank(request.getAuthTokenId(), "authTokenId must not be blank");
@@ -1850,6 +2753,171 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetAuthenticationFactorSettingResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetBrandingSettingResponse getBrandingSetting(GetBrandingSettingRequest request) {
+
+        Validate.notBlank(request.getBrandingSettingId(), "brandingSettingId must not be blank");
+
+        return clientCall(request, GetBrandingSettingResponse::builder)
+                .logger(LOG, "getBrandingSetting")
+                .serviceDetails("IdentityDomains", "GetBrandingSetting", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetBrandingSettingRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("BrandingSettings")
+                .appendPathParam(request.getBrandingSettingId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.BrandingSetting.class,
+                        GetBrandingSettingResponse.Builder::brandingSetting)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetBrandingSettingResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetCloudGateResponse getCloudGate(GetCloudGateRequest request) {
+
+        Validate.notBlank(request.getCloudGateId(), "cloudGateId must not be blank");
+
+        return clientCall(request, GetCloudGateResponse::builder)
+                .logger(LOG, "getCloudGate")
+                .serviceDetails("IdentityDomains", "GetCloudGate", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCloudGateRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGates")
+                .appendPathParam(request.getCloudGateId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGate.class,
+                        GetCloudGateResponse.Builder::cloudGate)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCloudGateResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetCloudGateMappingResponse getCloudGateMapping(GetCloudGateMappingRequest request) {
+
+        Validate.notBlank(request.getCloudGateMappingId(), "cloudGateMappingId must not be blank");
+
+        return clientCall(request, GetCloudGateMappingResponse::builder)
+                .logger(LOG, "getCloudGateMapping")
+                .serviceDetails("IdentityDomains", "GetCloudGateMapping", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCloudGateMappingRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGateMappings")
+                .appendPathParam(request.getCloudGateMappingId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGateMapping.class,
+                        GetCloudGateMappingResponse.Builder::cloudGateMapping)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCloudGateMappingResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetCloudGateServerResponse getCloudGateServer(GetCloudGateServerRequest request) {
+
+        Validate.notBlank(request.getCloudGateServerId(), "cloudGateServerId must not be blank");
+
+        return clientCall(request, GetCloudGateServerResponse::builder)
+                .logger(LOG, "getCloudGateServer")
+                .serviceDetails("IdentityDomains", "GetCloudGateServer", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCloudGateServerRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGateServers")
+                .appendPathParam(request.getCloudGateServerId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGateServer.class,
+                        GetCloudGateServerResponse.Builder::cloudGateServer)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCloudGateServerResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetConditionResponse getCondition(GetConditionRequest request) {
+
+        Validate.notBlank(request.getConditionId(), "conditionId must not be blank");
+
+        return clientCall(request, GetConditionResponse::builder)
+                .logger(LOG, "getCondition")
+                .serviceDetails("IdentityDomains", "GetCondition", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetConditionRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Conditions")
+                .appendPathParam(request.getConditionId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Condition.class,
+                        GetConditionResponse.Builder::condition)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetConditionResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2172,6 +3240,36 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public GetMyCompletedApprovalResponse getMyCompletedApproval(
+            GetMyCompletedApprovalRequest request) {
+
+        Validate.notBlank(
+                request.getMyCompletedApprovalId(), "myCompletedApprovalId must not be blank");
+
+        return clientCall(request, GetMyCompletedApprovalResponse::builder)
+                .logger(LOG, "getMyCompletedApproval")
+                .serviceDetails("IdentityDomains", "GetMyCompletedApproval", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMyCompletedApprovalRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("MyCompletedApprovals")
+                .appendPathParam(request.getMyCompletedApprovalId())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.MyCompletedApproval.class,
+                        GetMyCompletedApprovalResponse.Builder::myCompletedApproval)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMyCompletedApprovalResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetMyCustomerSecretKeyResponse getMyCustomerSecretKey(
             GetMyCustomerSecretKeyRequest request) {
 
@@ -2262,6 +3360,68 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                         GetMyOAuth2ClientCredentialResponse.Builder::myOAuth2ClientCredential)
                 .handleResponseHeaderString(
                         "opc-request-id", GetMyOAuth2ClientCredentialResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetMyPendingApprovalResponse getMyPendingApproval(GetMyPendingApprovalRequest request) {
+
+        Validate.notBlank(
+                request.getMyPendingApprovalId(), "myPendingApprovalId must not be blank");
+
+        return clientCall(request, GetMyPendingApprovalResponse::builder)
+                .logger(LOG, "getMyPendingApproval")
+                .serviceDetails("IdentityDomains", "GetMyPendingApproval", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMyPendingApprovalRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("MyPendingApprovals")
+                .appendPathParam(request.getMyPendingApprovalId())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.MyPendingApproval.class,
+                        GetMyPendingApprovalResponse.Builder::myPendingApproval)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMyPendingApprovalResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetMyRequestResponse getMyRequest(GetMyRequestRequest request) {
+
+        Validate.notBlank(request.getMyRequestId(), "myRequestId must not be blank");
+
+        return clientCall(request, GetMyRequestResponse::builder)
+                .logger(LOG, "getMyRequest")
+                .serviceDetails("IdentityDomains", "GetMyRequest", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMyRequestRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("MyRequests")
+                .appendPathParam(request.getMyRequestId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.MyRequest.class,
+                        GetMyRequestResponse.Builder::myRequest)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMyRequestResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2387,6 +3547,74 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public GetNetworkPerimeterResponse getNetworkPerimeter(GetNetworkPerimeterRequest request) {
+
+        Validate.notBlank(request.getNetworkPerimeterId(), "networkPerimeterId must not be blank");
+
+        return clientCall(request, GetNetworkPerimeterResponse::builder)
+                .logger(LOG, "getNetworkPerimeter")
+                .serviceDetails("IdentityDomains", "GetNetworkPerimeter", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetNetworkPerimeterRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("NetworkPerimeters")
+                .appendPathParam(request.getNetworkPerimeterId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.NetworkPerimeter.class,
+                        GetNetworkPerimeterResponse.Builder::networkPerimeter)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetNetworkPerimeterResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetNotificationSettingResponse getNotificationSetting(
+            GetNotificationSettingRequest request) {
+
+        Validate.notBlank(
+                request.getNotificationSettingId(), "notificationSettingId must not be blank");
+
+        return clientCall(request, GetNotificationSettingResponse::builder)
+                .logger(LOG, "getNotificationSetting")
+                .serviceDetails("IdentityDomains", "GetNotificationSetting", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetNotificationSettingRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("NotificationSettings")
+                .appendPathParam(request.getNotificationSettingId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.NotificationSetting.class,
+                        GetNotificationSettingResponse.Builder::notificationSetting)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetNotificationSettingResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetOAuth2ClientCredentialResponse getOAuth2ClientCredential(
             GetOAuth2ClientCredentialRequest request) {
 
@@ -2423,6 +3651,68 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public GetOAuthClientCertificateResponse getOAuthClientCertificate(
+            GetOAuthClientCertificateRequest request) {
+
+        Validate.notBlank(
+                request.getOAuthClientCertificateId(),
+                "oAuthClientCertificateId must not be blank");
+
+        return clientCall(request, GetOAuthClientCertificateResponse::builder)
+                .logger(LOG, "getOAuthClientCertificate")
+                .serviceDetails("IdentityDomains", "GetOAuthClientCertificate", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetOAuthClientCertificateRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("OAuthClientCertificates")
+                .appendPathParam(request.getOAuthClientCertificateId())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.OAuthClientCertificate.class,
+                        GetOAuthClientCertificateResponse.Builder::oAuthClientCertificate)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetOAuthClientCertificateResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetOAuthPartnerCertificateResponse getOAuthPartnerCertificate(
+            GetOAuthPartnerCertificateRequest request) {
+
+        Validate.notBlank(
+                request.getOAuthPartnerCertificateId(),
+                "oAuthPartnerCertificateId must not be blank");
+
+        return clientCall(request, GetOAuthPartnerCertificateResponse::builder)
+                .logger(LOG, "getOAuthPartnerCertificate")
+                .serviceDetails("IdentityDomains", "GetOAuthPartnerCertificate", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetOAuthPartnerCertificateRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("OAuthPartnerCertificates")
+                .appendPathParam(request.getOAuthPartnerCertificateId())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.OAuthPartnerCertificate.class,
+                        GetOAuthPartnerCertificateResponse.Builder::oAuthPartnerCertificate)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetOAuthPartnerCertificateResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetPasswordPolicyResponse getPasswordPolicy(GetPasswordPolicyRequest request) {
 
         Validate.notBlank(request.getPasswordPolicyId(), "passwordPolicyId must not be blank");
@@ -2452,6 +3742,99 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                         GetPasswordPolicyResponse.Builder::passwordPolicy)
                 .handleResponseHeaderString(
                         "opc-request-id", GetPasswordPolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetPolicyResponse getPolicy(GetPolicyRequest request) {
+
+        Validate.notBlank(request.getPolicyId(), "policyId must not be blank");
+
+        return clientCall(request, GetPolicyResponse::builder)
+                .logger(LOG, "getPolicy")
+                .serviceDetails("IdentityDomains", "GetPolicy", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPolicyRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Policies")
+                .appendPathParam(request.getPolicyId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Policy.class,
+                        GetPolicyResponse.Builder::policy)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetRuleResponse getRule(GetRuleRequest request) {
+
+        Validate.notBlank(request.getRuleId(), "ruleId must not be blank");
+
+        return clientCall(request, GetRuleResponse::builder)
+                .logger(LOG, "getRule")
+                .serviceDetails("IdentityDomains", "GetRule", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetRuleRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Rules")
+                .appendPathParam(request.getRuleId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Rule.class,
+                        GetRuleResponse.Builder::rule)
+                .handleResponseHeaderString("opc-request-id", GetRuleResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetSchemaResponse getSchema(GetSchemaRequest request) {
+
+        Validate.notBlank(request.getSchemaId(), "schemaId must not be blank");
+
+        return clientCall(request, GetSchemaResponse::builder)
+                .logger(LOG, "getSchema")
+                .serviceDetails("IdentityDomains", "GetSchema", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSchemaRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Schemas")
+                .appendPathParam(request.getSchemaId())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Schema.class,
+                        GetSchemaResponse.Builder::schema)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSchemaResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2521,6 +3904,75 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                         GetSecurityQuestionSettingResponse.Builder::securityQuestionSetting)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSecurityQuestionSettingResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetSelfRegistrationProfileResponse getSelfRegistrationProfile(
+            GetSelfRegistrationProfileRequest request) {
+
+        Validate.notBlank(
+                request.getSelfRegistrationProfileId(),
+                "selfRegistrationProfileId must not be blank");
+
+        return clientCall(request, GetSelfRegistrationProfileResponse::builder)
+                .logger(LOG, "getSelfRegistrationProfile")
+                .serviceDetails("IdentityDomains", "GetSelfRegistrationProfile", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSelfRegistrationProfileRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("SelfRegistrationProfiles")
+                .appendPathParam(request.getSelfRegistrationProfileId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.SelfRegistrationProfile.class,
+                        GetSelfRegistrationProfileResponse.Builder::selfRegistrationProfile)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSelfRegistrationProfileResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetSettingResponse getSetting(GetSettingRequest request) {
+
+        Validate.notBlank(request.getSettingId(), "settingId must not be blank");
+
+        return clientCall(request, GetSettingResponse::builder)
+                .logger(LOG, "getSetting")
+                .serviceDetails("IdentityDomains", "GetSetting", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSettingRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Settings")
+                .appendPathParam(request.getSettingId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Setting.class,
+                        GetSettingResponse.Builder::setting)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSettingResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2810,6 +4262,129 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public ListApprovalWorkflowAssignmentsResponse listApprovalWorkflowAssignments(
+            ListApprovalWorkflowAssignmentsRequest request) {
+
+        return clientCall(request, ListApprovalWorkflowAssignmentsResponse::builder)
+                .logger(LOG, "listApprovalWorkflowAssignments")
+                .serviceDetails("IdentityDomains", "ListApprovalWorkflowAssignments", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListApprovalWorkflowAssignmentsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflowAssignments")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.ApprovalWorkflowAssignments.class,
+                        ListApprovalWorkflowAssignmentsResponse.Builder
+                                ::approvalWorkflowAssignments)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListApprovalWorkflowAssignmentsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListApprovalWorkflowAssignmentsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListApprovalWorkflowStepsResponse listApprovalWorkflowSteps(
+            ListApprovalWorkflowStepsRequest request) {
+
+        return clientCall(request, ListApprovalWorkflowStepsResponse::builder)
+                .logger(LOG, "listApprovalWorkflowSteps")
+                .serviceDetails("IdentityDomains", "ListApprovalWorkflowSteps", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListApprovalWorkflowStepsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflowSteps")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.ApprovalWorkflowSteps.class,
+                        ListApprovalWorkflowStepsResponse.Builder::approvalWorkflowSteps)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListApprovalWorkflowStepsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListApprovalWorkflowStepsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListApprovalWorkflowsResponse listApprovalWorkflows(
+            ListApprovalWorkflowsRequest request) {
+
+        return clientCall(request, ListApprovalWorkflowsResponse::builder)
+                .logger(LOG, "listApprovalWorkflows")
+                .serviceDetails("IdentityDomains", "ListApprovalWorkflows", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListApprovalWorkflowsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflows")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.ApprovalWorkflows.class,
+                        ListApprovalWorkflowsResponse.Builder::approvalWorkflows)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListApprovalWorkflowsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListApprovalWorkflowsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListAppsResponse listApps(ListAppsRequest request) {
 
         return clientCall(request, ListAppsResponse::builder)
@@ -2921,6 +4496,197 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListAuthenticationFactorSettingsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListBrandingSettingsResponse listBrandingSettings(ListBrandingSettingsRequest request) {
+
+        return clientCall(request, ListBrandingSettingsResponse::builder)
+                .logger(LOG, "listBrandingSettings")
+                .serviceDetails("IdentityDomains", "ListBrandingSettings", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListBrandingSettingsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("BrandingSettings")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.BrandingSettings.class,
+                        ListBrandingSettingsResponse.Builder::brandingSettings)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListBrandingSettingsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListBrandingSettingsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListCloudGateMappingsResponse listCloudGateMappings(
+            ListCloudGateMappingsRequest request) {
+
+        return clientCall(request, ListCloudGateMappingsResponse::builder)
+                .logger(LOG, "listCloudGateMappings")
+                .serviceDetails("IdentityDomains", "ListCloudGateMappings", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCloudGateMappingsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGateMappings")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGateMappings.class,
+                        ListCloudGateMappingsResponse.Builder::cloudGateMappings)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCloudGateMappingsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCloudGateMappingsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListCloudGateServersResponse listCloudGateServers(ListCloudGateServersRequest request) {
+
+        return clientCall(request, ListCloudGateServersResponse::builder)
+                .logger(LOG, "listCloudGateServers")
+                .serviceDetails("IdentityDomains", "ListCloudGateServers", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCloudGateServersRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGateServers")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGateServers.class,
+                        ListCloudGateServersResponse.Builder::cloudGateServers)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCloudGateServersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCloudGateServersResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListCloudGatesResponse listCloudGates(ListCloudGatesRequest request) {
+
+        return clientCall(request, ListCloudGatesResponse::builder)
+                .logger(LOG, "listCloudGates")
+                .serviceDetails("IdentityDomains", "ListCloudGates", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCloudGatesRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGates")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGates.class,
+                        ListCloudGatesResponse.Builder::cloudGates)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCloudGatesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCloudGatesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListConditionsResponse listConditions(ListConditionsRequest request) {
+
+        return clientCall(request, ListConditionsResponse::builder)
+                .logger(LOG, "listConditions")
+                .serviceDetails("IdentityDomains", "ListConditions", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListConditionsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Conditions")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Conditions.class,
+                        ListConditionsResponse.Builder::conditions)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListConditionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListConditionsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -3293,6 +5059,41 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public ListMyCompletedApprovalsResponse listMyCompletedApprovals(
+            ListMyCompletedApprovalsRequest request) {
+
+        return clientCall(request, ListMyCompletedApprovalsResponse::builder)
+                .logger(LOG, "listMyCompletedApprovals")
+                .serviceDetails("IdentityDomains", "ListMyCompletedApprovals", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMyCompletedApprovalsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("MyCompletedApprovals")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.MyCompletedApprovals.class,
+                        ListMyCompletedApprovalsResponse.Builder::myCompletedApprovals)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMyCompletedApprovalsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMyCompletedApprovalsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListMyCustomerSecretKeysResponse listMyCustomerSecretKeys(
             ListMyCustomerSecretKeysRequest request) {
 
@@ -3438,6 +5239,41 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                         ListMyOAuth2ClientCredentialsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListMyOAuth2ClientCredentialsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListMyPendingApprovalsResponse listMyPendingApprovals(
+            ListMyPendingApprovalsRequest request) {
+
+        return clientCall(request, ListMyPendingApprovalsResponse::builder)
+                .logger(LOG, "listMyPendingApprovals")
+                .serviceDetails("IdentityDomains", "ListMyPendingApprovals", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMyPendingApprovalsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("MyPendingApprovals")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.MyPendingApprovals.class,
+                        ListMyPendingApprovalsResponse.Builder::myPendingApprovals)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMyPendingApprovalsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMyPendingApprovalsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -3661,6 +5497,81 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public ListNetworkPerimetersResponse listNetworkPerimeters(
+            ListNetworkPerimetersRequest request) {
+
+        return clientCall(request, ListNetworkPerimetersResponse::builder)
+                .logger(LOG, "listNetworkPerimeters")
+                .serviceDetails("IdentityDomains", "ListNetworkPerimeters", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListNetworkPerimetersRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("NetworkPerimeters")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.NetworkPerimeters.class,
+                        ListNetworkPerimetersResponse.Builder::networkPerimeters)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListNetworkPerimetersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListNetworkPerimetersResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListNotificationSettingsResponse listNotificationSettings(
+            ListNotificationSettingsRequest request) {
+
+        return clientCall(request, ListNotificationSettingsResponse::builder)
+                .logger(LOG, "listNotificationSettings")
+                .serviceDetails("IdentityDomains", "ListNotificationSettings", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListNotificationSettingsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("NotificationSettings")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.NotificationSettings.class,
+                        ListNotificationSettingsResponse.Builder::notificationSettings)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListNotificationSettingsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListNotificationSettingsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListOAuth2ClientCredentialsResponse listOAuth2ClientCredentials(
             ListOAuth2ClientCredentialsRequest request) {
 
@@ -3697,6 +5608,77 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-request-id", ListOAuth2ClientCredentialsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListOAuth2ClientCredentialsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListOAuthClientCertificatesResponse listOAuthClientCertificates(
+            ListOAuthClientCertificatesRequest request) {
+
+        return clientCall(request, ListOAuthClientCertificatesResponse::builder)
+                .logger(LOG, "listOAuthClientCertificates")
+                .serviceDetails("IdentityDomains", "ListOAuthClientCertificates", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListOAuthClientCertificatesRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("OAuthClientCertificates")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.OAuthClientCertificates.class,
+                        ListOAuthClientCertificatesResponse.Builder::oAuthClientCertificates)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListOAuthClientCertificatesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListOAuthClientCertificatesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListOAuthPartnerCertificatesResponse listOAuthPartnerCertificates(
+            ListOAuthPartnerCertificatesRequest request) {
+
+        return clientCall(request, ListOAuthPartnerCertificatesResponse::builder)
+                .logger(LOG, "listOAuthPartnerCertificates")
+                .serviceDetails("IdentityDomains", "ListOAuthPartnerCertificates", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListOAuthPartnerCertificatesRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("OAuthPartnerCertificates")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.OAuthPartnerCertificates.class,
+                        ListOAuthPartnerCertificatesResponse.Builder::oAuthPartnerCertificates)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListOAuthPartnerCertificatesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListOAuthPartnerCertificatesResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -3740,6 +5722,45 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public ListPoliciesResponse listPolicies(ListPoliciesRequest request) {
+
+        return clientCall(request, ListPoliciesResponse::builder)
+                .logger(LOG, "listPolicies")
+                .serviceDetails("IdentityDomains", "ListPolicies", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPoliciesRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Policies")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Policies.class,
+                        ListPoliciesResponse.Builder::policies)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPoliciesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPoliciesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListResourceTypeSchemaAttributesResponse listResourceTypeSchemaAttributes(
             ListResourceTypeSchemaAttributesRequest request) {
 
@@ -3779,6 +5800,77 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListResourceTypeSchemaAttributesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListRulesResponse listRules(ListRulesRequest request) {
+
+        return clientCall(request, ListRulesResponse::builder)
+                .logger(LOG, "listRules")
+                .serviceDetails("IdentityDomains", "ListRules", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRulesRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Rules")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Rules.class,
+                        ListRulesResponse.Builder::rules)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListRulesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("opc-next-page", ListRulesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListSchemasResponse listSchemas(ListSchemasRequest request) {
+
+        return clientCall(request, ListSchemasResponse::builder)
+                .logger(LOG, "listSchemas")
+                .serviceDetails("IdentityDomains", "ListSchemas", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSchemasRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Schemas")
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Schemas.class,
+                        ListSchemasResponse.Builder::schemas)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSchemasResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSchemasResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -3855,6 +5947,81 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-request-id", ListSecurityQuestionsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListSecurityQuestionsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListSelfRegistrationProfilesResponse listSelfRegistrationProfiles(
+            ListSelfRegistrationProfilesRequest request) {
+
+        return clientCall(request, ListSelfRegistrationProfilesResponse::builder)
+                .logger(LOG, "listSelfRegistrationProfiles")
+                .serviceDetails("IdentityDomains", "ListSelfRegistrationProfiles", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSelfRegistrationProfilesRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("SelfRegistrationProfiles")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.SelfRegistrationProfiles.class,
+                        ListSelfRegistrationProfilesResponse.Builder::selfRegistrationProfiles)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListSelfRegistrationProfilesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSelfRegistrationProfilesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListSettingsResponse listSettings(ListSettingsRequest request) {
+
+        return clientCall(request, ListSettingsResponse::builder)
+                .logger(LOG, "listSettings")
+                .serviceDetails("IdentityDomains", "ListSettings", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSettingsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Settings")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Settings.class,
+                        ListSettingsResponse.Builder::settings)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSettingsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSettingsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -4159,6 +6326,81 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public PatchApprovalWorkflowResponse patchApprovalWorkflow(
+            PatchApprovalWorkflowRequest request) {
+
+        Validate.notBlank(request.getApprovalWorkflowId(), "approvalWorkflowId must not be blank");
+
+        return clientCall(request, PatchApprovalWorkflowResponse::builder)
+                .logger(LOG, "patchApprovalWorkflow")
+                .serviceDetails("IdentityDomains", "PatchApprovalWorkflow", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchApprovalWorkflowRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflows")
+                .appendPathParam(request.getApprovalWorkflowId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.ApprovalWorkflow.class,
+                        PatchApprovalWorkflowResponse.Builder::approvalWorkflow)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchApprovalWorkflowResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PatchApprovalWorkflowResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public PatchApprovalWorkflowStepResponse patchApprovalWorkflowStep(
+            PatchApprovalWorkflowStepRequest request) {
+
+        Validate.notBlank(
+                request.getApprovalWorkflowStepId(), "approvalWorkflowStepId must not be blank");
+
+        return clientCall(request, PatchApprovalWorkflowStepResponse::builder)
+                .logger(LOG, "patchApprovalWorkflowStep")
+                .serviceDetails("IdentityDomains", "PatchApprovalWorkflowStep", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchApprovalWorkflowStepRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflowSteps")
+                .appendPathParam(request.getApprovalWorkflowStepId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.ApprovalWorkflowStep.class,
+                        PatchApprovalWorkflowStepResponse.Builder::approvalWorkflowStep)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchApprovalWorkflowStepResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PatchApprovalWorkflowStepResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public PatchAuthTokenResponse patchAuthToken(PatchAuthTokenRequest request) {
 
         Validate.notBlank(request.getAuthTokenId(), "authTokenId must not be blank");
@@ -4191,6 +6433,151 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id", PatchAuthTokenResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", PatchAuthTokenResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public PatchCloudGateResponse patchCloudGate(PatchCloudGateRequest request) {
+
+        Validate.notBlank(request.getCloudGateId(), "cloudGateId must not be blank");
+
+        return clientCall(request, PatchCloudGateResponse::builder)
+                .logger(LOG, "patchCloudGate")
+                .serviceDetails("IdentityDomains", "PatchCloudGate", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchCloudGateRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGates")
+                .appendPathParam(request.getCloudGateId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGate.class,
+                        PatchCloudGateResponse.Builder::cloudGate)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchCloudGateResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PatchCloudGateResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public PatchCloudGateMappingResponse patchCloudGateMapping(
+            PatchCloudGateMappingRequest request) {
+
+        Validate.notBlank(request.getCloudGateMappingId(), "cloudGateMappingId must not be blank");
+
+        return clientCall(request, PatchCloudGateMappingResponse::builder)
+                .logger(LOG, "patchCloudGateMapping")
+                .serviceDetails("IdentityDomains", "PatchCloudGateMapping", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchCloudGateMappingRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGateMappings")
+                .appendPathParam(request.getCloudGateMappingId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGateMapping.class,
+                        PatchCloudGateMappingResponse.Builder::cloudGateMapping)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchCloudGateMappingResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PatchCloudGateMappingResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public PatchCloudGateServerResponse patchCloudGateServer(PatchCloudGateServerRequest request) {
+
+        Validate.notBlank(request.getCloudGateServerId(), "cloudGateServerId must not be blank");
+
+        return clientCall(request, PatchCloudGateServerResponse::builder)
+                .logger(LOG, "patchCloudGateServer")
+                .serviceDetails("IdentityDomains", "PatchCloudGateServer", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchCloudGateServerRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGateServers")
+                .appendPathParam(request.getCloudGateServerId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGateServer.class,
+                        PatchCloudGateServerResponse.Builder::cloudGateServer)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchCloudGateServerResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PatchCloudGateServerResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public PatchConditionResponse patchCondition(PatchConditionRequest request) {
+
+        Validate.notBlank(request.getConditionId(), "conditionId must not be blank");
+
+        return clientCall(request, PatchConditionResponse::builder)
+                .logger(LOG, "patchCondition")
+                .serviceDetails("IdentityDomains", "PatchCondition", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchConditionRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Conditions")
+                .appendPathParam(request.getConditionId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Condition.class,
+                        PatchConditionResponse.Builder::condition)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchConditionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PatchConditionResponse.Builder::etag)
                 .callSync();
     }
 
@@ -4650,6 +7037,75 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public PatchMyPendingApprovalResponse patchMyPendingApproval(
+            PatchMyPendingApprovalRequest request) {
+
+        Validate.notBlank(
+                request.getMyPendingApprovalId(), "myPendingApprovalId must not be blank");
+
+        return clientCall(request, PatchMyPendingApprovalResponse::builder)
+                .logger(LOG, "patchMyPendingApproval")
+                .serviceDetails("IdentityDomains", "PatchMyPendingApproval", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchMyPendingApprovalRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("MyPendingApprovals")
+                .appendPathParam(request.getMyPendingApprovalId())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.MyPendingApproval.class,
+                        PatchMyPendingApprovalResponse.Builder::myPendingApproval)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchMyPendingApprovalResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PatchMyPendingApprovalResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public PatchMyRequestResponse patchMyRequest(PatchMyRequestRequest request) {
+
+        Validate.notBlank(request.getMyRequestId(), "myRequestId must not be blank");
+
+        return clientCall(request, PatchMyRequestResponse::builder)
+                .logger(LOG, "patchMyRequest")
+                .serviceDetails("IdentityDomains", "PatchMyRequest", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchMyRequestRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("MyRequests")
+                .appendPathParam(request.getMyRequestId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.MyRequest.class,
+                        PatchMyRequestResponse.Builder::myRequest)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchMyRequestResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PatchMyRequestResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public PatchMySmtpCredentialResponse patchMySmtpCredential(
             PatchMySmtpCredentialRequest request) {
 
@@ -4678,6 +7134,43 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id", PatchMySmtpCredentialResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", PatchMySmtpCredentialResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public PatchNetworkPerimeterResponse patchNetworkPerimeter(
+            PatchNetworkPerimeterRequest request) {
+
+        Validate.notBlank(request.getNetworkPerimeterId(), "networkPerimeterId must not be blank");
+
+        return clientCall(request, PatchNetworkPerimeterResponse::builder)
+                .logger(LOG, "patchNetworkPerimeter")
+                .serviceDetails("IdentityDomains", "PatchNetworkPerimeter", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchNetworkPerimeterRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("NetworkPerimeters")
+                .appendPathParam(request.getNetworkPerimeterId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.NetworkPerimeter.class,
+                        PatchNetworkPerimeterResponse.Builder::networkPerimeter)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchNetworkPerimeterResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PatchNetworkPerimeterResponse.Builder::etag)
                 .callSync();
     }
 
@@ -4758,6 +7251,109 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public PatchPolicyResponse patchPolicy(PatchPolicyRequest request) {
+
+        Validate.notBlank(request.getPolicyId(), "policyId must not be blank");
+
+        return clientCall(request, PatchPolicyResponse::builder)
+                .logger(LOG, "patchPolicy")
+                .serviceDetails("IdentityDomains", "PatchPolicy", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchPolicyRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Policies")
+                .appendPathParam(request.getPolicyId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Policy.class,
+                        PatchPolicyResponse.Builder::policy)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchPolicyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PatchPolicyResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public PatchRuleResponse patchRule(PatchRuleRequest request) {
+
+        Validate.notBlank(request.getRuleId(), "ruleId must not be blank");
+
+        return clientCall(request, PatchRuleResponse::builder)
+                .logger(LOG, "patchRule")
+                .serviceDetails("IdentityDomains", "PatchRule", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchRuleRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Rules")
+                .appendPathParam(request.getRuleId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Rule.class,
+                        PatchRuleResponse.Builder::rule)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchRuleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PatchRuleResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public PatchSchemaResponse patchSchema(PatchSchemaRequest request) {
+
+        Validate.notBlank(request.getSchemaId(), "schemaId must not be blank");
+
+        return clientCall(request, PatchSchemaResponse::builder)
+                .logger(LOG, "patchSchema")
+                .serviceDetails("IdentityDomains", "PatchSchema", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchSchemaRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Schemas")
+                .appendPathParam(request.getSchemaId())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Schema.class,
+                        PatchSchemaResponse.Builder::schema)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchSchemaResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PatchSchemaResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public PatchSecurityQuestionResponse patchSecurityQuestion(
             PatchSecurityQuestionRequest request) {
 
@@ -4832,6 +7428,83 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                         PatchSecurityQuestionSettingResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", PatchSecurityQuestionSettingResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public PatchSelfRegistrationProfileResponse patchSelfRegistrationProfile(
+            PatchSelfRegistrationProfileRequest request) {
+
+        Validate.notBlank(
+                request.getSelfRegistrationProfileId(),
+                "selfRegistrationProfileId must not be blank");
+
+        return clientCall(request, PatchSelfRegistrationProfileResponse::builder)
+                .logger(LOG, "patchSelfRegistrationProfile")
+                .serviceDetails("IdentityDomains", "PatchSelfRegistrationProfile", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchSelfRegistrationProfileRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("SelfRegistrationProfiles")
+                .appendPathParam(request.getSelfRegistrationProfileId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.SelfRegistrationProfile.class,
+                        PatchSelfRegistrationProfileResponse.Builder::selfRegistrationProfile)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        PatchSelfRegistrationProfileResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", PatchSelfRegistrationProfileResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public PatchSettingResponse patchSetting(PatchSettingRequest request) {
+
+        Validate.notBlank(request.getSettingId(), "settingId must not be blank");
+
+        return clientCall(request, PatchSettingResponse::builder)
+                .logger(LOG, "patchSetting")
+                .serviceDetails("IdentityDomains", "PatchSetting", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchSettingRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Settings")
+                .appendPathParam(request.getSettingId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Setting.class,
+                        PatchSettingResponse.Builder::setting)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchSettingResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PatchSettingResponse.Builder::etag)
                 .callSync();
     }
 
@@ -5056,6 +7729,42 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public PutApprovalWorkflowResponse putApprovalWorkflow(PutApprovalWorkflowRequest request) {
+
+        Validate.notBlank(request.getApprovalWorkflowId(), "approvalWorkflowId must not be blank");
+
+        return clientCall(request, PutApprovalWorkflowResponse::builder)
+                .logger(LOG, "putApprovalWorkflow")
+                .serviceDetails("IdentityDomains", "PutApprovalWorkflow", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutApprovalWorkflowRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("ApprovalWorkflows")
+                .appendPathParam(request.getApprovalWorkflowId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.ApprovalWorkflow.class,
+                        PutApprovalWorkflowResponse.Builder::approvalWorkflow)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutApprovalWorkflowResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PutApprovalWorkflowResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public PutAuthenticationFactorSettingResponse putAuthenticationFactorSetting(
             PutAuthenticationFactorSettingRequest request) {
 
@@ -5093,6 +7802,150 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                         PutAuthenticationFactorSettingResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", PutAuthenticationFactorSettingResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public PutCloudGateResponse putCloudGate(PutCloudGateRequest request) {
+
+        Validate.notBlank(request.getCloudGateId(), "cloudGateId must not be blank");
+
+        return clientCall(request, PutCloudGateResponse::builder)
+                .logger(LOG, "putCloudGate")
+                .serviceDetails("IdentityDomains", "PutCloudGate", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutCloudGateRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGates")
+                .appendPathParam(request.getCloudGateId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGate.class,
+                        PutCloudGateResponse.Builder::cloudGate)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutCloudGateResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PutCloudGateResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public PutCloudGateMappingResponse putCloudGateMapping(PutCloudGateMappingRequest request) {
+
+        Validate.notBlank(request.getCloudGateMappingId(), "cloudGateMappingId must not be blank");
+
+        return clientCall(request, PutCloudGateMappingResponse::builder)
+                .logger(LOG, "putCloudGateMapping")
+                .serviceDetails("IdentityDomains", "PutCloudGateMapping", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutCloudGateMappingRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGateMappings")
+                .appendPathParam(request.getCloudGateMappingId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGateMapping.class,
+                        PutCloudGateMappingResponse.Builder::cloudGateMapping)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutCloudGateMappingResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PutCloudGateMappingResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public PutCloudGateServerResponse putCloudGateServer(PutCloudGateServerRequest request) {
+
+        Validate.notBlank(request.getCloudGateServerId(), "cloudGateServerId must not be blank");
+
+        return clientCall(request, PutCloudGateServerResponse::builder)
+                .logger(LOG, "putCloudGateServer")
+                .serviceDetails("IdentityDomains", "PutCloudGateServer", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutCloudGateServerRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGateServers")
+                .appendPathParam(request.getCloudGateServerId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGateServer.class,
+                        PutCloudGateServerResponse.Builder::cloudGateServer)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutCloudGateServerResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PutCloudGateServerResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public PutConditionResponse putCondition(PutConditionRequest request) {
+
+        Validate.notBlank(request.getConditionId(), "conditionId must not be blank");
+
+        return clientCall(request, PutConditionResponse::builder)
+                .logger(LOG, "putCondition")
+                .serviceDetails("IdentityDomains", "PutCondition", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutConditionRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Conditions")
+                .appendPathParam(request.getConditionId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Condition.class,
+                        PutConditionResponse.Builder::condition)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutConditionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PutConditionResponse.Builder::etag)
                 .callSync();
     }
 
@@ -5338,6 +8191,80 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public PutNetworkPerimeterResponse putNetworkPerimeter(PutNetworkPerimeterRequest request) {
+
+        Validate.notBlank(request.getNetworkPerimeterId(), "networkPerimeterId must not be blank");
+
+        return clientCall(request, PutNetworkPerimeterResponse::builder)
+                .logger(LOG, "putNetworkPerimeter")
+                .serviceDetails("IdentityDomains", "PutNetworkPerimeter", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutNetworkPerimeterRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("NetworkPerimeters")
+                .appendPathParam(request.getNetworkPerimeterId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.NetworkPerimeter.class,
+                        PutNetworkPerimeterResponse.Builder::networkPerimeter)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutNetworkPerimeterResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PutNetworkPerimeterResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public PutNotificationSettingResponse putNotificationSetting(
+            PutNotificationSettingRequest request) {
+
+        Validate.notBlank(
+                request.getNotificationSettingId(), "notificationSettingId must not be blank");
+
+        return clientCall(request, PutNotificationSettingResponse::builder)
+                .logger(LOG, "putNotificationSetting")
+                .serviceDetails("IdentityDomains", "PutNotificationSetting", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutNotificationSettingRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("NotificationSettings")
+                .appendPathParam(request.getNotificationSettingId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.NotificationSetting.class,
+                        PutNotificationSettingResponse.Builder::notificationSetting)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutNotificationSettingResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PutNotificationSettingResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public PutPasswordPolicyResponse putPasswordPolicy(PutPasswordPolicyRequest request) {
 
         Validate.notBlank(request.getPasswordPolicyId(), "passwordPolicyId must not be blank");
@@ -5370,6 +8297,108 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id", PutPasswordPolicyResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", PutPasswordPolicyResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public PutPolicyResponse putPolicy(PutPolicyRequest request) {
+
+        Validate.notBlank(request.getPolicyId(), "policyId must not be blank");
+
+        return clientCall(request, PutPolicyResponse::builder)
+                .logger(LOG, "putPolicy")
+                .serviceDetails("IdentityDomains", "PutPolicy", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutPolicyRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Policies")
+                .appendPathParam(request.getPolicyId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Policy.class,
+                        PutPolicyResponse.Builder::policy)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutPolicyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PutPolicyResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public PutRuleResponse putRule(PutRuleRequest request) {
+
+        Validate.notBlank(request.getRuleId(), "ruleId must not be blank");
+
+        return clientCall(request, PutRuleResponse::builder)
+                .logger(LOG, "putRule")
+                .serviceDetails("IdentityDomains", "PutRule", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutRuleRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Rules")
+                .appendPathParam(request.getRuleId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Rule.class,
+                        PutRuleResponse.Builder::rule)
+                .handleResponseHeaderString("opc-request-id", PutRuleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PutRuleResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public PutSchemaResponse putSchema(PutSchemaRequest request) {
+
+        Validate.notBlank(request.getSchemaId(), "schemaId must not be blank");
+
+        return clientCall(request, PutSchemaResponse::builder)
+                .logger(LOG, "putSchema")
+                .serviceDetails("IdentityDomains", "PutSchema", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutSchemaRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Schemas")
+                .appendPathParam(request.getSchemaId())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Schema.class,
+                        PutSchemaResponse.Builder::schema)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutSchemaResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PutSchemaResponse.Builder::etag)
                 .callSync();
     }
 
@@ -5410,6 +8439,82 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-request-id", PutSecurityQuestionSettingResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", PutSecurityQuestionSettingResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public PutSelfRegistrationProfileResponse putSelfRegistrationProfile(
+            PutSelfRegistrationProfileRequest request) {
+
+        Validate.notBlank(
+                request.getSelfRegistrationProfileId(),
+                "selfRegistrationProfileId must not be blank");
+
+        return clientCall(request, PutSelfRegistrationProfileResponse::builder)
+                .logger(LOG, "putSelfRegistrationProfile")
+                .serviceDetails("IdentityDomains", "PutSelfRegistrationProfile", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutSelfRegistrationProfileRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("SelfRegistrationProfiles")
+                .appendPathParam(request.getSelfRegistrationProfileId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.SelfRegistrationProfile.class,
+                        PutSelfRegistrationProfileResponse.Builder::selfRegistrationProfile)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutSelfRegistrationProfileResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", PutSelfRegistrationProfileResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public PutSettingResponse putSetting(PutSettingRequest request) {
+
+        Validate.notBlank(request.getSettingId(), "settingId must not be blank");
+
+        return clientCall(request, PutSettingResponse::builder)
+                .logger(LOG, "putSetting")
+                .serviceDetails("IdentityDomains", "PutSetting", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutSettingRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Settings")
+                .appendPathParam(request.getSettingId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Setting.class,
+                        PutSettingResponse.Builder::setting)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutSettingResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PutSettingResponse.Builder::etag)
                 .callSync();
     }
 
@@ -5778,6 +8883,132 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public SearchCloudGateMappingsResponse searchCloudGateMappings(
+            SearchCloudGateMappingsRequest request) {
+
+        return clientCall(request, SearchCloudGateMappingsResponse::builder)
+                .logger(LOG, "searchCloudGateMappings")
+                .serviceDetails("IdentityDomains", "SearchCloudGateMappings", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchCloudGateMappingsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGateMappings")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGateMappings.class,
+                        SearchCloudGateMappingsResponse.Builder::cloudGateMappings)
+                .handleResponseHeaderString(
+                        "opc-request-id", SearchCloudGateMappingsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SearchCloudGateMappingsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public SearchCloudGateServersResponse searchCloudGateServers(
+            SearchCloudGateServersRequest request) {
+
+        return clientCall(request, SearchCloudGateServersResponse::builder)
+                .logger(LOG, "searchCloudGateServers")
+                .serviceDetails("IdentityDomains", "SearchCloudGateServers", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchCloudGateServersRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGateServers")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGateServers.class,
+                        SearchCloudGateServersResponse.Builder::cloudGateServers)
+                .handleResponseHeaderString(
+                        "opc-request-id", SearchCloudGateServersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SearchCloudGateServersResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public SearchCloudGatesResponse searchCloudGates(SearchCloudGatesRequest request) {
+
+        return clientCall(request, SearchCloudGatesResponse::builder)
+                .logger(LOG, "searchCloudGates")
+                .serviceDetails("IdentityDomains", "SearchCloudGates", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchCloudGatesRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("CloudGates")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.CloudGates.class,
+                        SearchCloudGatesResponse.Builder::cloudGates)
+                .handleResponseHeaderString(
+                        "opc-request-id", SearchCloudGatesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SearchCloudGatesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public SearchConditionsResponse searchConditions(SearchConditionsRequest request) {
+
+        return clientCall(request, SearchConditionsResponse::builder)
+                .logger(LOG, "searchConditions")
+                .serviceDetails("IdentityDomains", "SearchConditions", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchConditionsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Conditions")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Conditions.class,
+                        SearchConditionsResponse.Builder::conditions)
+                .handleResponseHeaderString(
+                        "opc-request-id", SearchConditionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SearchConditionsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public SearchCustomerSecretKeysResponse searchCustomerSecretKeys(
             SearchCustomerSecretKeysRequest request) {
 
@@ -6124,6 +9355,70 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public SearchNetworkPerimetersResponse searchNetworkPerimeters(
+            SearchNetworkPerimetersRequest request) {
+
+        return clientCall(request, SearchNetworkPerimetersResponse::builder)
+                .logger(LOG, "searchNetworkPerimeters")
+                .serviceDetails("IdentityDomains", "SearchNetworkPerimeters", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchNetworkPerimetersRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("NetworkPerimeters")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.NetworkPerimeters.class,
+                        SearchNetworkPerimetersResponse.Builder::networkPerimeters)
+                .handleResponseHeaderString(
+                        "opc-request-id", SearchNetworkPerimetersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SearchNetworkPerimetersResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public SearchNotificationSettingsResponse searchNotificationSettings(
+            SearchNotificationSettingsRequest request) {
+
+        return clientCall(request, SearchNotificationSettingsResponse::builder)
+                .logger(LOG, "searchNotificationSettings")
+                .serviceDetails("IdentityDomains", "SearchNotificationSettings", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchNotificationSettingsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("NotificationSettings")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.NotificationSettings.class,
+                        SearchNotificationSettingsResponse.Builder::notificationSettings)
+                .handleResponseHeaderString(
+                        "opc-request-id", SearchNotificationSettingsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SearchNotificationSettingsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public SearchOAuth2ClientCredentialsResponse searchOAuth2ClientCredentials(
             SearchOAuth2ClientCredentialsRequest request) {
 
@@ -6153,6 +9448,73 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                         SearchOAuth2ClientCredentialsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SearchOAuth2ClientCredentialsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public SearchOAuthClientCertificatesResponse searchOAuthClientCertificates(
+            SearchOAuthClientCertificatesRequest request) {
+
+        return clientCall(request, SearchOAuthClientCertificatesResponse::builder)
+                .logger(LOG, "searchOAuthClientCertificates")
+                .serviceDetails("IdentityDomains", "SearchOAuthClientCertificates", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchOAuthClientCertificatesRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("OAuthClientCertificates")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.OAuthClientCertificates.class,
+                        SearchOAuthClientCertificatesResponse.Builder::oAuthClientCertificates)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SearchOAuthClientCertificatesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SearchOAuthClientCertificatesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public SearchOAuthPartnerCertificatesResponse searchOAuthPartnerCertificates(
+            SearchOAuthPartnerCertificatesRequest request) {
+
+        return clientCall(request, SearchOAuthPartnerCertificatesResponse::builder)
+                .logger(LOG, "searchOAuthPartnerCertificates")
+                .serviceDetails("IdentityDomains", "SearchOAuthPartnerCertificates", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchOAuthPartnerCertificatesRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("OAuthPartnerCertificates")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.OAuthPartnerCertificates.class,
+                        SearchOAuthPartnerCertificatesResponse.Builder::oAuthPartnerCertificates)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SearchOAuthPartnerCertificatesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        SearchOAuthPartnerCertificatesResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -6189,6 +9551,37 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public SearchPoliciesResponse searchPolicies(SearchPoliciesRequest request) {
+
+        return clientCall(request, SearchPoliciesResponse::builder)
+                .logger(LOG, "searchPolicies")
+                .serviceDetails("IdentityDomains", "SearchPolicies", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchPoliciesRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Policies")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Policies.class,
+                        SearchPoliciesResponse.Builder::policies)
+                .handleResponseHeaderString(
+                        "opc-request-id", SearchPoliciesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SearchPoliciesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public SearchResourceTypeSchemaAttributesResponse searchResourceTypeSchemaAttributes(
             SearchResourceTypeSchemaAttributesRequest request) {
 
@@ -6220,6 +9613,68 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SearchResourceTypeSchemaAttributesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public SearchRulesResponse searchRules(SearchRulesRequest request) {
+
+        return clientCall(request, SearchRulesResponse::builder)
+                .logger(LOG, "searchRules")
+                .serviceDetails("IdentityDomains", "SearchRules", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchRulesRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Rules")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Rules.class,
+                        SearchRulesResponse.Builder::rules)
+                .handleResponseHeaderString(
+                        "opc-request-id", SearchRulesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SearchRulesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public SearchSchemasResponse searchSchemas(SearchSchemasRequest request) {
+
+        return clientCall(request, SearchSchemasResponse::builder)
+                .logger(LOG, "searchSchemas")
+                .serviceDetails("IdentityDomains", "SearchSchemas", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchSchemasRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Schemas")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Schemas.class,
+                        SearchSchemasResponse.Builder::schemas)
+                .handleResponseHeaderString(
+                        "opc-request-id", SearchSchemasResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SearchSchemasResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -6286,6 +9741,71 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-request-id", SearchSecurityQuestionsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SearchSecurityQuestionsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public SearchSelfRegistrationProfilesResponse searchSelfRegistrationProfiles(
+            SearchSelfRegistrationProfilesRequest request) {
+
+        return clientCall(request, SearchSelfRegistrationProfilesResponse::builder)
+                .logger(LOG, "searchSelfRegistrationProfiles")
+                .serviceDetails("IdentityDomains", "SearchSelfRegistrationProfiles", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchSelfRegistrationProfilesRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("SelfRegistrationProfiles")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.SelfRegistrationProfiles.class,
+                        SearchSelfRegistrationProfilesResponse.Builder::selfRegistrationProfiles)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SearchSelfRegistrationProfilesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        SearchSelfRegistrationProfilesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public SearchSettingsResponse searchSettings(SearchSettingsRequest request) {
+
+        return clientCall(request, SearchSettingsResponse::builder)
+                .logger(LOG, "searchSettings")
+                .serviceDetails("IdentityDomains", "SearchSettings", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchSettingsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("Settings")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.Settings.class,
+                        SearchSettingsResponse.Builder::settings)
+                .handleResponseHeaderString(
+                        "opc-request-id", SearchSettingsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SearchSettingsResponse.Builder::opcNextPage)
                 .callSync();
     }
 

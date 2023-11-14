@@ -23,11 +23,13 @@ package com.oracle.bmc.aispeech.model;
 public final class TranscriptionModelDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"domain", "languageCode"})
-    public TranscriptionModelDetails(Domain domain, LanguageCode languageCode) {
+    @java.beans.ConstructorProperties({"domain", "languageCode", "transcriptionSettings"})
+    public TranscriptionModelDetails(
+            Domain domain, LanguageCode languageCode, TranscriptionSettings transcriptionSettings) {
         super();
         this.domain = domain;
         this.languageCode = languageCode;
+        this.transcriptionSettings = transcriptionSettings;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -71,12 +73,22 @@ public final class TranscriptionModelDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("transcriptionSettings")
+        private TranscriptionSettings transcriptionSettings;
+
+        public Builder transcriptionSettings(TranscriptionSettings transcriptionSettings) {
+            this.transcriptionSettings = transcriptionSettings;
+            this.__explicitlySet__.add("transcriptionSettings");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TranscriptionModelDetails build() {
             TranscriptionModelDetails model =
-                    new TranscriptionModelDetails(this.domain, this.languageCode);
+                    new TranscriptionModelDetails(
+                            this.domain, this.languageCode, this.transcriptionSettings);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -90,6 +102,9 @@ public final class TranscriptionModelDetails
             }
             if (model.wasPropertyExplicitlySet("languageCode")) {
                 this.languageCode(model.getLanguageCode());
+            }
+            if (model.wasPropertyExplicitlySet("transcriptionSettings")) {
+                this.transcriptionSettings(model.getTranscriptionSettings());
             }
             return this;
         }
@@ -241,6 +256,13 @@ public final class TranscriptionModelDetails
         return languageCode;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("transcriptionSettings")
+    private final TranscriptionSettings transcriptionSettings;
+
+    public TranscriptionSettings getTranscriptionSettings() {
+        return transcriptionSettings;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -258,6 +280,7 @@ public final class TranscriptionModelDetails
         sb.append("super=").append(super.toString());
         sb.append("domain=").append(String.valueOf(this.domain));
         sb.append(", languageCode=").append(String.valueOf(this.languageCode));
+        sb.append(", transcriptionSettings=").append(String.valueOf(this.transcriptionSettings));
         sb.append(")");
         return sb.toString();
     }
@@ -274,6 +297,7 @@ public final class TranscriptionModelDetails
         TranscriptionModelDetails other = (TranscriptionModelDetails) o;
         return java.util.Objects.equals(this.domain, other.domain)
                 && java.util.Objects.equals(this.languageCode, other.languageCode)
+                && java.util.Objects.equals(this.transcriptionSettings, other.transcriptionSettings)
                 && super.equals(other);
     }
 
@@ -283,6 +307,11 @@ public final class TranscriptionModelDetails
         int result = 1;
         result = (result * PRIME) + (this.domain == null ? 43 : this.domain.hashCode());
         result = (result * PRIME) + (this.languageCode == null ? 43 : this.languageCode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.transcriptionSettings == null
+                                ? 43
+                                : this.transcriptionSettings.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
