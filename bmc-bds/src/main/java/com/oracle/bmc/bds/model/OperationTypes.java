@@ -42,6 +42,7 @@ public enum OperationTypes implements com.oracle.bmc.http.internal.BmcEnum {
     AddKafka("ADD_KAFKA"),
     RemoveKafka("REMOVE_KAFKA"),
     ExecuteBootstrapScript("EXECUTE_BOOTSTRAP_SCRIPT"),
+    OdhServiceCertificateUpdate("ODH_SERVICE_CERTIFICATE_UPDATE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

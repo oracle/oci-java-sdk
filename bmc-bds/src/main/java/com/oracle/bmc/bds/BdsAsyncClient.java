@@ -392,6 +392,45 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<CertificateServiceInfoResponse> certificateServiceInfo(
+            CertificateServiceInfoRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CertificateServiceInfoRequest, CertificateServiceInfoResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getCertificateServiceInfoDetails(),
+                "certificateServiceInfoDetails is required");
+
+        return clientCall(request, CertificateServiceInfoResponse::builder)
+                .logger(LOG, "certificateServiceInfo")
+                .serviceDetails(
+                        "Bds",
+                        "CertificateServiceInfo",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/CertificateServiceInfo")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CertificateServiceInfoRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("fetchOdhServiceCertificate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBodyList(
+                        com.oracle.bmc.bds.model.CertificateServiceInfoSummary.class,
+                        CertificateServiceInfoResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", CertificateServiceInfoResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CertificateServiceInfoResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeBdsInstanceCompartmentResponse>
             changeBdsInstanceCompartment(
                     ChangeBdsInstanceCompartmentRequest request,
@@ -668,6 +707,78 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteBdsMetastoreConfigurationResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableCertificateResponse> disableCertificate(
+            DisableCertificateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DisableCertificateRequest, DisableCertificateResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getDisableCertificateDetails(), "disableCertificateDetails is required");
+
+        return clientCall(request, DisableCertificateResponse::builder)
+                .logger(LOG, "disableCertificate")
+                .serviceDetails(
+                        "Bds",
+                        "DisableCertificate",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/DisableCertificate")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableCertificateRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("disableOdhServiceCertificate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", DisableCertificateResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DisableCertificateResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableCertificateResponse> enableCertificate(
+            EnableCertificateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            EnableCertificateRequest, EnableCertificateResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableCertificateDetails(), "enableCertificateDetails is required");
+
+        return clientCall(request, EnableCertificateResponse::builder)
+                .logger(LOG, "enableCertificate")
+                .serviceDetails(
+                        "Bds",
+                        "EnableCertificate",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/EnableCertificate")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableCertificateRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("enableOdhServiceCertificate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", EnableCertificateResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", EnableCertificateResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -1530,6 +1641,42 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                         "opc-request-id", RemoveNodeResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", RemoveNodeResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RenewCertificateResponse> renewCertificate(
+            RenewCertificateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RenewCertificateRequest, RenewCertificateResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getRenewCertificateDetails(), "renewCertificateDetails is required");
+
+        return clientCall(request, RenewCertificateResponse::builder)
+                .logger(LOG, "renewCertificate")
+                .serviceDetails(
+                        "Bds",
+                        "RenewCertificate",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/RenewCertificate")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RenewCertificateRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("renewOdhServiceCertificate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", RenewCertificateResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", RenewCertificateResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 

@@ -330,6 +330,46 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     }
 
     @Override
+    public ChangeComputeCapacityTopologyCompartmentResponse
+            changeComputeCapacityTopologyCompartment(
+                    ChangeComputeCapacityTopologyCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getComputeCapacityTopologyId(),
+                "computeCapacityTopologyId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeComputeCapacityTopologyCompartmentDetails(),
+                "changeComputeCapacityTopologyCompartmentDetails is required");
+
+        return clientCall(request, ChangeComputeCapacityTopologyCompartmentResponse::builder)
+                .logger(LOG, "changeComputeCapacityTopologyCompartment")
+                .serviceDetails(
+                        "Compute",
+                        "ChangeComputeCapacityTopologyCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityTopology/ChangeComputeCapacityTopologyCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeComputeCapacityTopologyCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeCapacityTopologies")
+                .appendPathParam(request.getComputeCapacityTopologyId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeComputeCapacityTopologyCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeComputeCapacityTopologyCompartmentResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public ChangeComputeClusterCompartmentResponse changeComputeClusterCompartment(
             ChangeComputeClusterCompartmentRequest request) {
 
@@ -605,6 +645,41 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     }
 
     @Override
+    public CreateComputeCapacityTopologyResponse createComputeCapacityTopology(
+            CreateComputeCapacityTopologyRequest request) {
+        Objects.requireNonNull(
+                request.getCreateComputeCapacityTopologyDetails(),
+                "createComputeCapacityTopologyDetails is required");
+
+        return clientCall(request, CreateComputeCapacityTopologyResponse::builder)
+                .logger(LOG, "createComputeCapacityTopology")
+                .serviceDetails("Compute", "CreateComputeCapacityTopology", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateComputeCapacityTopologyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeCapacityTopologies")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeCapacityTopology.class,
+                        CreateComputeCapacityTopologyResponse.Builder::computeCapacityTopology)
+                .handleResponseHeaderString(
+                        "etag", CreateComputeCapacityTopologyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "location", CreateComputeCapacityTopologyResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateComputeCapacityTopologyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateComputeCapacityTopologyResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public CreateComputeClusterResponse createComputeCluster(CreateComputeClusterRequest request) {
         Objects.requireNonNull(
                 request.getCreateComputeClusterDetails(),
@@ -811,6 +886,38 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteComputeCapacityReservationResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteComputeCapacityTopologyResponse deleteComputeCapacityTopology(
+            DeleteComputeCapacityTopologyRequest request) {
+
+        Validate.notBlank(
+                request.getComputeCapacityTopologyId(),
+                "computeCapacityTopologyId must not be blank");
+
+        return clientCall(request, DeleteComputeCapacityTopologyResponse::builder)
+                .logger(LOG, "deleteComputeCapacityTopology")
+                .serviceDetails(
+                        "Compute",
+                        "DeleteComputeCapacityTopology",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityTopology/DeleteComputeCapacityTopology")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteComputeCapacityTopologyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeCapacityTopologies")
+                .appendPathParam(request.getComputeCapacityTopologyId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteComputeCapacityTopologyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteComputeCapacityTopologyResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1219,6 +1326,38 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetComputeCapacityReservationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetComputeCapacityTopologyResponse getComputeCapacityTopology(
+            GetComputeCapacityTopologyRequest request) {
+
+        Validate.notBlank(
+                request.getComputeCapacityTopologyId(),
+                "computeCapacityTopologyId must not be blank");
+
+        return clientCall(request, GetComputeCapacityTopologyResponse::builder)
+                .logger(LOG, "getComputeCapacityTopology")
+                .serviceDetails(
+                        "Compute",
+                        "GetComputeCapacityTopology",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityTopology/GetComputeCapacityTopology")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetComputeCapacityTopologyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeCapacityTopologies")
+                .appendPathParam(request.getComputeCapacityTopologyId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeCapacityTopology.class,
+                        GetComputeCapacityTopologyResponse.Builder::computeCapacityTopology)
+                .handleResponseHeaderString(
+                        "etag", GetComputeCapacityTopologyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetComputeCapacityTopologyResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2004,6 +2143,181 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     }
 
     @Override
+    public ListComputeCapacityTopologiesResponse listComputeCapacityTopologies(
+            ListComputeCapacityTopologiesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListComputeCapacityTopologiesResponse::builder)
+                .logger(LOG, "listComputeCapacityTopologies")
+                .serviceDetails(
+                        "Compute",
+                        "ListComputeCapacityTopologies",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityTopology/ListComputeCapacityTopologies")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListComputeCapacityTopologiesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeCapacityTopologies")
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeCapacityTopologyCollection.class,
+                        ListComputeCapacityTopologiesResponse.Builder
+                                ::computeCapacityTopologyCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListComputeCapacityTopologiesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListComputeCapacityTopologiesResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListComputeCapacityTopologyComputeBareMetalHostsResponse
+            listComputeCapacityTopologyComputeBareMetalHosts(
+                    ListComputeCapacityTopologyComputeBareMetalHostsRequest request) {
+
+        Validate.notBlank(
+                request.getComputeCapacityTopologyId(),
+                "computeCapacityTopologyId must not be blank");
+
+        return clientCall(
+                        request, ListComputeCapacityTopologyComputeBareMetalHostsResponse::builder)
+                .logger(LOG, "listComputeCapacityTopologyComputeBareMetalHosts")
+                .serviceDetails(
+                        "Compute",
+                        "ListComputeCapacityTopologyComputeBareMetalHosts",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeBareMetalHost/ListComputeCapacityTopologyComputeBareMetalHosts")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListComputeCapacityTopologyComputeBareMetalHostsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeCapacityTopologies")
+                .appendPathParam(request.getComputeCapacityTopologyId())
+                .appendPathParam("computeBareMetalHosts")
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("computeHpcIslandId", request.getComputeHpcIslandId())
+                .appendQueryParam("computeNetworkBlockId", request.getComputeNetworkBlockId())
+                .appendQueryParam("computeLocalBlockId", request.getComputeLocalBlockId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeBareMetalHostCollection.class,
+                        ListComputeCapacityTopologyComputeBareMetalHostsResponse.Builder
+                                ::computeBareMetalHostCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListComputeCapacityTopologyComputeBareMetalHostsResponse.Builder
+                                ::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListComputeCapacityTopologyComputeBareMetalHostsResponse.Builder
+                                ::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListComputeCapacityTopologyComputeHpcIslandsResponse
+            listComputeCapacityTopologyComputeHpcIslands(
+                    ListComputeCapacityTopologyComputeHpcIslandsRequest request) {
+
+        Validate.notBlank(
+                request.getComputeCapacityTopologyId(),
+                "computeCapacityTopologyId must not be blank");
+
+        return clientCall(request, ListComputeCapacityTopologyComputeHpcIslandsResponse::builder)
+                .logger(LOG, "listComputeCapacityTopologyComputeHpcIslands")
+                .serviceDetails(
+                        "Compute",
+                        "ListComputeCapacityTopologyComputeHpcIslands",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHpcIsland/ListComputeCapacityTopologyComputeHpcIslands")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListComputeCapacityTopologyComputeHpcIslandsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeCapacityTopologies")
+                .appendPathParam(request.getComputeCapacityTopologyId())
+                .appendPathParam("computeHpcIslands")
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeHpcIslandCollection.class,
+                        ListComputeCapacityTopologyComputeHpcIslandsResponse.Builder
+                                ::computeHpcIslandCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListComputeCapacityTopologyComputeHpcIslandsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListComputeCapacityTopologyComputeHpcIslandsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListComputeCapacityTopologyComputeNetworkBlocksResponse
+            listComputeCapacityTopologyComputeNetworkBlocks(
+                    ListComputeCapacityTopologyComputeNetworkBlocksRequest request) {
+
+        Validate.notBlank(
+                request.getComputeCapacityTopologyId(),
+                "computeCapacityTopologyId must not be blank");
+
+        return clientCall(request, ListComputeCapacityTopologyComputeNetworkBlocksResponse::builder)
+                .logger(LOG, "listComputeCapacityTopologyComputeNetworkBlocks")
+                .serviceDetails(
+                        "Compute",
+                        "ListComputeCapacityTopologyComputeNetworkBlocks",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeNetworkBlock/ListComputeCapacityTopologyComputeNetworkBlocks")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListComputeCapacityTopologyComputeNetworkBlocksRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeCapacityTopologies")
+                .appendPathParam(request.getComputeCapacityTopologyId())
+                .appendPathParam("computeNetworkBlocks")
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("computeHpcIslandId", request.getComputeHpcIslandId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeNetworkBlockCollection.class,
+                        ListComputeCapacityTopologyComputeNetworkBlocksResponse.Builder
+                                ::computeNetworkBlockCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListComputeCapacityTopologyComputeNetworkBlocksResponse.Builder
+                                ::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListComputeCapacityTopologyComputeNetworkBlocksResponse.Builder
+                                ::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public ListComputeClustersResponse listComputeClusters(ListComputeClustersRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -2669,6 +2983,42 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateComputeCapacityReservationResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateComputeCapacityTopologyResponse updateComputeCapacityTopology(
+            UpdateComputeCapacityTopologyRequest request) {
+
+        Validate.notBlank(
+                request.getComputeCapacityTopologyId(),
+                "computeCapacityTopologyId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateComputeCapacityTopologyDetails(),
+                "updateComputeCapacityTopologyDetails is required");
+
+        return clientCall(request, UpdateComputeCapacityTopologyResponse::builder)
+                .logger(LOG, "updateComputeCapacityTopology")
+                .serviceDetails(
+                        "Compute",
+                        "UpdateComputeCapacityTopology",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityTopology/UpdateComputeCapacityTopology")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateComputeCapacityTopologyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeCapacityTopologies")
+                .appendPathParam(request.getComputeCapacityTopologyId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateComputeCapacityTopologyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateComputeCapacityTopologyResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 

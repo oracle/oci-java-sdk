@@ -197,6 +197,22 @@ public interface BdsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * A list of services and their certificate details.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CertificateServiceInfoResponse> certificateServiceInfo(
+            CertificateServiceInfoRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CertificateServiceInfoRequest, CertificateServiceInfoResponse>
+                    handler);
+
+    /**
      * Moves a Big Data Service cluster into a different compartment.
      *
      * @param request The request object containing the details to send
@@ -327,6 +343,38 @@ public interface BdsAsync extends AutoCloseable {
                                     DeleteBdsMetastoreConfigurationRequest,
                                     DeleteBdsMetastoreConfigurationResponse>
                             handler);
+
+    /**
+     * Disabling TLS/SSL for various ODH services running on the BDS cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableCertificateResponse> disableCertificate(
+            DisableCertificateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DisableCertificateRequest, DisableCertificateResponse>
+                    handler);
+
+    /**
+     * Configuring TLS/SSL for various ODH services running on the BDS cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableCertificateResponse> enableCertificate(
+            EnableCertificateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            EnableCertificateRequest, EnableCertificateResponse>
+                    handler);
 
     /**
      * Execute bootstrap script.
@@ -686,6 +734,21 @@ public interface BdsAsync extends AutoCloseable {
     java.util.concurrent.Future<RemoveNodeResponse> removeNode(
             RemoveNodeRequest request,
             com.oracle.bmc.responses.AsyncHandler<RemoveNodeRequest, RemoveNodeResponse> handler);
+
+    /**
+     * Renewing TLS/SSL for various ODH services running on the BDS cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RenewCertificateResponse> renewCertificate(
+            RenewCertificateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RenewCertificateRequest, RenewCertificateResponse>
+                    handler);
 
     /**
      * Restarts a single node of a Big Data Service cluster

@@ -199,6 +199,26 @@ public interface ComputeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves a compute capacity topology into a different compartment. For information about moving
+     * resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeComputeCapacityTopologyCompartmentResponse>
+            changeComputeCapacityTopologyCompartment(
+                    ChangeComputeCapacityTopologyCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeComputeCapacityTopologyCompartmentRequest,
+                                    ChangeComputeCapacityTopologyCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a compute cluster into a different compartment within the same tenancy. A [compute
      * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
      * remote direct memory access (RDMA) network group.
@@ -359,6 +379,29 @@ public interface ComputeAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     CreateComputeCapacityReservationRequest,
                                     CreateComputeCapacityReservationResponse>
+                            handler);
+
+    /**
+     * Creates a new compute capacity topology in the specified compartment and availability domain.
+     *
+     * <p>Compute capacity topologies provide the RDMA network topology of your bare metal hosts so
+     * that you can launch instances on your bare metal hosts with targeted network locations.
+     *
+     * <p>Compute capacity topologies report the health status of your bare metal hosts.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateComputeCapacityTopologyResponse>
+            createComputeCapacityTopology(
+                    CreateComputeCapacityTopologyRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateComputeCapacityTopologyRequest,
+                                    CreateComputeCapacityTopologyResponse>
                             handler);
 
     /**
@@ -530,6 +573,24 @@ public interface ComputeAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     DeleteComputeCapacityReservationRequest,
                                     DeleteComputeCapacityReservationResponse>
+                            handler);
+
+    /**
+     * Deletes the specified compute capacity topology.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteComputeCapacityTopologyResponse>
+            deleteComputeCapacityTopology(
+                    DeleteComputeCapacityTopologyRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteComputeCapacityTopologyRequest,
+                                    DeleteComputeCapacityTopologyResponse>
                             handler);
 
     /**
@@ -811,6 +872,22 @@ public interface ComputeAsync extends AutoCloseable {
                                     GetComputeCapacityReservationRequest,
                                     GetComputeCapacityReservationResponse>
                             handler);
+
+    /**
+     * Gets information about the specified compute capacity topology.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetComputeCapacityTopologyResponse> getComputeCapacityTopology(
+            GetComputeCapacityTopologyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetComputeCapacityTopologyRequest, GetComputeCapacityTopologyResponse>
+                    handler);
 
     /**
      * Gets information about a compute cluster. A [compute
@@ -1336,6 +1413,79 @@ public interface ComputeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Lists the compute capacity topologies in the specified compartment. You can filter the list
+     * by a compute capacity topology display name.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListComputeCapacityTopologiesResponse>
+            listComputeCapacityTopologies(
+                    ListComputeCapacityTopologiesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeCapacityTopologiesRequest,
+                                    ListComputeCapacityTopologiesResponse>
+                            handler);
+
+    /**
+     * Lists compute bare metal hosts in the specified compute capacity topology.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListComputeCapacityTopologyComputeBareMetalHostsResponse>
+            listComputeCapacityTopologyComputeBareMetalHosts(
+                    ListComputeCapacityTopologyComputeBareMetalHostsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeCapacityTopologyComputeBareMetalHostsRequest,
+                                    ListComputeCapacityTopologyComputeBareMetalHostsResponse>
+                            handler);
+
+    /**
+     * Lists compute HPC islands in the specified compute capacity topology.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListComputeCapacityTopologyComputeHpcIslandsResponse>
+            listComputeCapacityTopologyComputeHpcIslands(
+                    ListComputeCapacityTopologyComputeHpcIslandsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeCapacityTopologyComputeHpcIslandsRequest,
+                                    ListComputeCapacityTopologyComputeHpcIslandsResponse>
+                            handler);
+
+    /**
+     * Lists compute network blocks in the specified compute capacity topology.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListComputeCapacityTopologyComputeNetworkBlocksResponse>
+            listComputeCapacityTopologyComputeNetworkBlocks(
+                    ListComputeCapacityTopologyComputeNetworkBlocksRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeCapacityTopologyComputeNetworkBlocksRequest,
+                                    ListComputeCapacityTopologyComputeNetworkBlocksResponse>
+                            handler);
+
+    /**
      * Lists the compute clusters in the specified compartment. A [compute
      * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
      * remote direct memory access (RDMA) network group.
@@ -1719,6 +1869,25 @@ public interface ComputeAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     UpdateComputeCapacityReservationRequest,
                                     UpdateComputeCapacityReservationResponse>
+                            handler);
+
+    /**
+     * Updates the specified compute capacity topology. Fields that are not provided in the request
+     * will not be updated.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateComputeCapacityTopologyResponse>
+            updateComputeCapacityTopology(
+                    UpdateComputeCapacityTopologyRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateComputeCapacityTopologyRequest,
+                                    UpdateComputeCapacityTopologyResponse>
                             handler);
 
     /**

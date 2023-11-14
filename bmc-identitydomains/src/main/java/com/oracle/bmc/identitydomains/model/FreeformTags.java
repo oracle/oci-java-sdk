@@ -67,8 +67,9 @@ public final class FreeformTags extends com.oracle.bmc.http.client.internal.Expl
          *
          * <p>*Added In:** 2011192329
          *
-         * <p>*SCIM++ Properties:** - caseExact: false - required: true - mutability: readWrite -
-         * returned: default - type: string - idcsSearchable: true - uniqueness: none
+         * <p>*SCIM++ Properties:** - caseExact: false - required: true - idcsReturnEmptyWhenNull:
+         * true - mutability: readWrite - returned: default - type: string - idcsSearchable: true -
+         * uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
@@ -78,8 +79,9 @@ public final class FreeformTags extends com.oracle.bmc.http.client.internal.Expl
          *
          * <p>*Added In:** 2011192329
          *
-         * <p>*SCIM++ Properties:** - caseExact: false - required: true - mutability: readWrite -
-         * returned: default - type: string - idcsSearchable: true - uniqueness: none
+         * <p>*SCIM++ Properties:** - caseExact: false - required: true - idcsReturnEmptyWhenNull:
+         * true - mutability: readWrite - returned: default - type: string - idcsSearchable: true -
+         * uniqueness: none
          *
          * @param value the value to set
          * @return this builder
@@ -152,8 +154,9 @@ public final class FreeformTags extends com.oracle.bmc.http.client.internal.Expl
      *
      * <p>*Added In:** 2011192329
      *
-     * <p>*SCIM++ Properties:** - caseExact: false - required: true - mutability: readWrite -
-     * returned: default - type: string - idcsSearchable: true - uniqueness: none
+     * <p>*SCIM++ Properties:** - caseExact: false - required: true - idcsReturnEmptyWhenNull: true
+     * - mutability: readWrite - returned: default - type: string - idcsSearchable: true -
+     * uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
@@ -163,8 +166,9 @@ public final class FreeformTags extends com.oracle.bmc.http.client.internal.Expl
      *
      * <p>*Added In:** 2011192329
      *
-     * <p>*SCIM++ Properties:** - caseExact: false - required: true - mutability: readWrite -
-     * returned: default - type: string - idcsSearchable: true - uniqueness: none
+     * <p>*SCIM++ Properties:** - caseExact: false - required: true - idcsReturnEmptyWhenNull: true
+     * - mutability: readWrite - returned: default - type: string - idcsSearchable: true -
+     * uniqueness: none
      *
      * @return the value
      */

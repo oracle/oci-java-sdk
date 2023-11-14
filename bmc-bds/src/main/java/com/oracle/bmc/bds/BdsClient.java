@@ -386,6 +386,42 @@ public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
     }
 
     @Override
+    public CertificateServiceInfoResponse certificateServiceInfo(
+            CertificateServiceInfoRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getCertificateServiceInfoDetails(),
+                "certificateServiceInfoDetails is required");
+
+        return clientCall(request, CertificateServiceInfoResponse::builder)
+                .logger(LOG, "certificateServiceInfo")
+                .serviceDetails(
+                        "Bds",
+                        "CertificateServiceInfo",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/CertificateServiceInfo")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CertificateServiceInfoRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("fetchOdhServiceCertificate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBodyList(
+                        com.oracle.bmc.bds.model.CertificateServiceInfoSummary.class,
+                        CertificateServiceInfoResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", CertificateServiceInfoResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CertificateServiceInfoResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public ChangeBdsInstanceCompartmentResponse changeBdsInstanceCompartment(
             ChangeBdsInstanceCompartmentRequest request) {
 
@@ -628,6 +664,70 @@ public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteBdsMetastoreConfigurationResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DisableCertificateResponse disableCertificate(DisableCertificateRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getDisableCertificateDetails(), "disableCertificateDetails is required");
+
+        return clientCall(request, DisableCertificateResponse::builder)
+                .logger(LOG, "disableCertificate")
+                .serviceDetails(
+                        "Bds",
+                        "DisableCertificate",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/DisableCertificate")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableCertificateRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("disableOdhServiceCertificate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", DisableCertificateResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DisableCertificateResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public EnableCertificateResponse enableCertificate(EnableCertificateRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableCertificateDetails(), "enableCertificateDetails is required");
+
+        return clientCall(request, EnableCertificateResponse::builder)
+                .logger(LOG, "enableCertificate")
+                .serviceDetails(
+                        "Bds",
+                        "EnableCertificate",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/EnableCertificate")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableCertificateRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("enableOdhServiceCertificate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", EnableCertificateResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", EnableCertificateResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -1401,6 +1501,38 @@ public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-request-id", RemoveNodeResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", RemoveNodeResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RenewCertificateResponse renewCertificate(RenewCertificateRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getRenewCertificateDetails(), "renewCertificateDetails is required");
+
+        return clientCall(request, RenewCertificateResponse::builder)
+                .logger(LOG, "renewCertificate")
+                .serviceDetails(
+                        "Bds",
+                        "RenewCertificate",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/RenewCertificate")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RenewCertificateRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("renewOdhServiceCertificate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", RenewCertificateResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", RenewCertificateResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
