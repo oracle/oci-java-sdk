@@ -38,7 +38,8 @@ public final class AuthenticationFactorsRemover
         "compartmentOcid",
         "tenancyOcid",
         "user",
-        "type"
+        "type",
+        "token"
     })
     public AuthenticationFactorsRemover(
             String id,
@@ -55,7 +56,8 @@ public final class AuthenticationFactorsRemover
             String compartmentOcid,
             String tenancyOcid,
             AuthenticationFactorsRemoverUser user,
-            Type type) {
+            Type type,
+            String token) {
         super();
         this.id = id;
         this.ocid = ocid;
@@ -72,6 +74,7 @@ public final class AuthenticationFactorsRemover
         this.tenancyOcid = tenancyOcid;
         this.user = user;
         this.type = type;
+        this.token = token;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -414,6 +417,29 @@ public final class AuthenticationFactorsRemover
             this.__explicitlySet__.add("type");
             return this;
         }
+        /**
+         * Specifies the token to be removed
+         *
+         * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false -
+         * mutability: readWrite - returned: request - uniqueness: none - idcsSearchable: false
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("token")
+        private String token;
+
+        /**
+         * Specifies the token to be removed
+         *
+         * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false -
+         * mutability: readWrite - returned: request - uniqueness: none - idcsSearchable: false
+         *
+         * @param token the value to set
+         * @return this builder
+         */
+        public Builder token(String token) {
+            this.token = token;
+            this.__explicitlySet__.add("token");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -435,7 +461,8 @@ public final class AuthenticationFactorsRemover
                             this.compartmentOcid,
                             this.tenancyOcid,
                             this.user,
-                            this.type);
+                            this.type,
+                            this.token);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -488,6 +515,9 @@ public final class AuthenticationFactorsRemover
             }
             if (model.wasPropertyExplicitlySet("type")) {
                 this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("token")) {
+                this.token(model.getToken());
             }
             return this;
         }
@@ -847,6 +877,27 @@ public final class AuthenticationFactorsRemover
         return type;
     }
 
+    /**
+     * Specifies the token to be removed
+     *
+     * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false - mutability:
+     * readWrite - returned: request - uniqueness: none - idcsSearchable: false
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("token")
+    private final String token;
+
+    /**
+     * Specifies the token to be removed
+     *
+     * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false - mutability:
+     * readWrite - returned: request - uniqueness: none - idcsSearchable: false
+     *
+     * @return the value
+     */
+    public String getToken() {
+        return token;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -879,6 +930,7 @@ public final class AuthenticationFactorsRemover
         sb.append(", tenancyOcid=").append(String.valueOf(this.tenancyOcid));
         sb.append(", user=").append(String.valueOf(this.user));
         sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", token=").append(String.valueOf(this.token));
         sb.append(")");
         return sb.toString();
     }
@@ -910,6 +962,7 @@ public final class AuthenticationFactorsRemover
                 && java.util.Objects.equals(this.tenancyOcid, other.tenancyOcid)
                 && java.util.Objects.equals(this.user, other.user)
                 && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.token, other.token)
                 && super.equals(other);
     }
 
@@ -950,6 +1003,7 @@ public final class AuthenticationFactorsRemover
         result = (result * PRIME) + (this.tenancyOcid == null ? 43 : this.tenancyOcid.hashCode());
         result = (result * PRIME) + (this.user == null ? 43 : this.user.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.token == null ? 43 : this.token.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -37,6 +37,9 @@ public final class MyRequest extends com.oracle.bmc.http.client.internal.Explici
         "tenancyOcid",
         "justification",
         "status",
+        "action",
+        "expires",
+        "approvalDetails",
         "requestor",
         "requesting"
     })
@@ -55,7 +58,10 @@ public final class MyRequest extends com.oracle.bmc.http.client.internal.Explici
             String compartmentOcid,
             String tenancyOcid,
             String justification,
-            String status,
+            Status status,
+            Action action,
+            String expires,
+            java.util.List<MyRequestApprovalDetails> approvalDetails,
             MyRequestRequestor requestor,
             MyRequestRequesting requesting) {
         super();
@@ -74,6 +80,9 @@ public final class MyRequest extends com.oracle.bmc.http.client.internal.Explici
         this.tenancyOcid = tenancyOcid;
         this.justification = justification;
         this.status = status;
+        this.action = action;
+        this.expires = expires;
+        this.approvalDetails = approvalDetails;
         this.requestor = requestor;
         this.requesting = requesting;
     }
@@ -413,25 +422,112 @@ public final class MyRequest extends com.oracle.bmc.http.client.internal.Explici
          * status
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
+         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
          * none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
-        private String status;
+        private Status status;
 
         /**
          * status
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
+         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
          * none
          *
          * @param status the value to set
          * @return this builder
          */
-        public Builder status(String status) {
+        public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
+            return this;
+        }
+        /**
+         * Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the
+         * request while the request status is IN_PROGRESS. Requestor can't escalate the request if
+         * canceling or escalation is in progress.
+         *
+         * <p>*Added In:** 2307071836
+         *
+         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
+         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
+         * none
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("action")
+        private Action action;
+
+        /**
+         * Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the
+         * request while the request status is IN_PROGRESS. Requestor can't escalate the request if
+         * canceling or escalation is in progress.
+         *
+         * <p>*Added In:** 2307071836
+         *
+         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
+         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
+         * none
+         *
+         * @param action the value to set
+         * @return this builder
+         */
+        public Builder action(Action action) {
+            this.action = action;
+            this.__explicitlySet__.add("action");
+            return this;
+        }
+        /**
+         * Time by when Request expires
+         *
+         * <p>*Added In:** 2307071836
+         *
+         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
+         * readOnly - required: false - returned: default - type: dateTime - uniqueness: none
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("expires")
+        private String expires;
+
+        /**
+         * Time by when Request expires
+         *
+         * <p>*Added In:** 2307071836
+         *
+         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
+         * readOnly - required: false - returned: default - type: dateTime - uniqueness: none
+         *
+         * @param expires the value to set
+         * @return this builder
+         */
+        public Builder expires(String expires) {
+            this.expires = expires;
+            this.__explicitlySet__.add("expires");
+            return this;
+        }
+        /**
+         * Approvals created for this request.
+         *
+         * <p>*Added In:** 2307071836
+         *
+         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability:
+         * readOnly - returned: request - type: complex - uniqueness: none
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("approvalDetails")
+        private java.util.List<MyRequestApprovalDetails> approvalDetails;
+
+        /**
+         * Approvals created for this request.
+         *
+         * <p>*Added In:** 2307071836
+         *
+         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability:
+         * readOnly - returned: request - type: complex - uniqueness: none
+         *
+         * @param approvalDetails the value to set
+         * @return this builder
+         */
+        public Builder approvalDetails(java.util.List<MyRequestApprovalDetails> approvalDetails) {
+            this.approvalDetails = approvalDetails;
+            this.__explicitlySet__.add("approvalDetails");
             return this;
         }
 
@@ -474,6 +570,9 @@ public final class MyRequest extends com.oracle.bmc.http.client.internal.Explici
                             this.tenancyOcid,
                             this.justification,
                             this.status,
+                            this.action,
+                            this.expires,
+                            this.approvalDetails,
                             this.requestor,
                             this.requesting);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -528,6 +627,15 @@ public final class MyRequest extends com.oracle.bmc.http.client.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("status")) {
                 this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("action")) {
+                this.action(model.getAction());
+            }
+            if (model.wasPropertyExplicitlySet("expires")) {
+                this.expires(model.getExpires());
+            }
+            if (model.wasPropertyExplicitlySet("approvalDetails")) {
+                this.approvalDetails(model.getApprovalDetails());
             }
             if (model.wasPropertyExplicitlySet("requestor")) {
                 this.requestor(model.getRequestor());
@@ -836,21 +944,210 @@ public final class MyRequest extends com.oracle.bmc.http.client.internal.Explici
      * status
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
+     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
+     */
+    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+        Created("CREATED"),
+        Complete("COMPLETE"),
+        InProgress("IN_PROGRESS"),
+        Approved("APPROVED"),
+        Rejected("REJECTED"),
+        Canceled("CANCELED"),
+        Expired("EXPIRED"),
+        Failed("FAILED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Status.class);
+
+        private final String value;
+        private static java.util.Map<String, Status> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Status v : Status.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Status(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Status create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Status', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * status
+     *
+     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
+     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    private final String status;
+    private final Status status;
 
     /**
      * status
+     *
+     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
+     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
+     *
+     * @return the value
+     */
+    public Status getStatus() {
+        return status;
+    }
+
+    /**
+     * Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the
+     * request while the request status is IN_PROGRESS. Requestor can't escalate the request if
+     * canceling or escalation is in progress.
+     *
+     * <p>*Added In:** 2307071836
+     *
+     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
+     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
+     */
+    public enum Action implements com.oracle.bmc.http.internal.BmcEnum {
+        Cancel("CANCEL"),
+        Escalate("ESCALATE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Action.class);
+
+        private final String value;
+        private static java.util.Map<String, Action> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Action v : Action.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Action(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Action create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Action', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the
+     * request while the request status is IN_PROGRESS. Requestor can't escalate the request if
+     * canceling or escalation is in progress.
+     *
+     * <p>*Added In:** 2307071836
+     *
+     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
+     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("action")
+    private final Action action;
+
+    /**
+     * Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the
+     * request while the request status is IN_PROGRESS. Requestor can't escalate the request if
+     * canceling or escalation is in progress.
+     *
+     * <p>*Added In:** 2307071836
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
      *
      * @return the value
      */
-    public String getStatus() {
-        return status;
+    public Action getAction() {
+        return action;
+    }
+
+    /**
+     * Time by when Request expires
+     *
+     * <p>*Added In:** 2307071836
+     *
+     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readOnly -
+     * required: false - returned: default - type: dateTime - uniqueness: none
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("expires")
+    private final String expires;
+
+    /**
+     * Time by when Request expires
+     *
+     * <p>*Added In:** 2307071836
+     *
+     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readOnly -
+     * required: false - returned: default - type: dateTime - uniqueness: none
+     *
+     * @return the value
+     */
+    public String getExpires() {
+        return expires;
+    }
+
+    /**
+     * Approvals created for this request.
+     *
+     * <p>*Added In:** 2307071836
+     *
+     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability: readOnly -
+     * returned: request - type: complex - uniqueness: none
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("approvalDetails")
+    private final java.util.List<MyRequestApprovalDetails> approvalDetails;
+
+    /**
+     * Approvals created for this request.
+     *
+     * <p>*Added In:** 2307071836
+     *
+     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability: readOnly -
+     * returned: request - type: complex - uniqueness: none
+     *
+     * @return the value
+     */
+    public java.util.List<MyRequestApprovalDetails> getApprovalDetails() {
+        return approvalDetails;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("requestor")
@@ -899,6 +1196,9 @@ public final class MyRequest extends com.oracle.bmc.http.client.internal.Explici
         sb.append(", tenancyOcid=").append(String.valueOf(this.tenancyOcid));
         sb.append(", justification=").append(String.valueOf(this.justification));
         sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", action=").append(String.valueOf(this.action));
+        sb.append(", expires=").append(String.valueOf(this.expires));
+        sb.append(", approvalDetails=").append(String.valueOf(this.approvalDetails));
         sb.append(", requestor=").append(String.valueOf(this.requestor));
         sb.append(", requesting=").append(String.valueOf(this.requesting));
         sb.append(")");
@@ -932,6 +1232,9 @@ public final class MyRequest extends com.oracle.bmc.http.client.internal.Explici
                 && java.util.Objects.equals(this.tenancyOcid, other.tenancyOcid)
                 && java.util.Objects.equals(this.justification, other.justification)
                 && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.action, other.action)
+                && java.util.Objects.equals(this.expires, other.expires)
+                && java.util.Objects.equals(this.approvalDetails, other.approvalDetails)
                 && java.util.Objects.equals(this.requestor, other.requestor)
                 && java.util.Objects.equals(this.requesting, other.requesting)
                 && super.equals(other);
@@ -976,6 +1279,11 @@ public final class MyRequest extends com.oracle.bmc.http.client.internal.Explici
                 (result * PRIME)
                         + (this.justification == null ? 43 : this.justification.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
+        result = (result * PRIME) + (this.expires == null ? 43 : this.expires.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.approvalDetails == null ? 43 : this.approvalDetails.hashCode());
         result = (result * PRIME) + (this.requestor == null ? 43 : this.requestor.hashCode());
         result = (result * PRIME) + (this.requesting == null ? 43 : this.requesting.hashCode());
         result = (result * PRIME) + super.hashCode();

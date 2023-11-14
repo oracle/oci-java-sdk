@@ -13,14 +13,25 @@ import com.oracle.bmc.auth.internal.FileBasedKeySupplier;
 import com.oracle.bmc.auth.internal.FileBasedResourcePrincipalFederationClient;
 import com.oracle.bmc.auth.internal.FixedContentKeySupplier;
 import com.oracle.bmc.auth.internal.FixedContentResourcePrincipalFederationClient;
+import com.oracle.bmc.auth.internal.KeyPairAuthenticationDetailProvider;
+import com.oracle.bmc.auth.internal.ResourcePrincipalV2FederationClient;
 import com.oracle.bmc.auth.internal.ResourcePrincipalsFederationClient;
 import com.oracle.bmc.auth.internal.RptPathProvider;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 import com.oracle.bmc.util.internal.NameUtils;
+import com.oracle.bmc.util.internal.StringUtils;
 import com.oracle.bmc.util.internal.Validate;
+import org.slf4j.Logger;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.time.Duration;
 import java.util.Optional;
 
@@ -33,21 +44,21 @@ import java.util.Optional;
  *   <li>{@code OCI_RESOURCE_PRINCIPAL_VERSION}:
  *       <p>permitted values are "2.2" and "1.1" For OCI_RESOURCE_PRINCIPAL_VERSION = "2.2",
  *   <li>{@code OCI_RESOURCE_PRINCIPAL_RPST}:
- *       <p>If this is an absolute path, then the filesystem-supplied resource principal session
- *       token will be retrieved from that location. This mode supports token refresh (if the
- *       environment replaces the RPST in the filesystem).
+ *       <p>If this points to an existing file path, then the filesystem-supplied resource principal
+ *       session token will be retrieved from that location. This mode supports token refresh (if
+ *       the environment replaces the RPST in the filesystem).
  *       <p>Otherwise, the environment variable is taken to hold the raw value of an RPST. Under
  *       these circumstances, the RPST cannot be refreshed; consequently, this mode is only usable
  *       for short-lived executables.
  *   <li>{@code OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM}:
- *       <p>If this is an absolute path, then the filesystem-supplied private key will be retrieved
- *       from that location. As with the OCI_RESOURCE_PRINCIPAL_RPST, this mode supports token
- *       refresh if the environment can update the file contents.
+ *       <p>If this points to an existing file path, then the filesystem-supplied private key will
+ *       be retrieved from that location. As with the OCI_RESOURCE_PRINCIPAL_RPST, this mode
+ *       supports token refresh if the environment can update the file contents.
  *       <p>Otherwise, the value is interpreted as the direct injection of a private key. The same
  *       considerations as to the lifetime of this value apply when directly injecting a key.
  *   <li>{@code OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE}:
- *       <p>This is optional. If set, it contains either the location (as an absolute path) or the
- *       value of the passphrase associated with the private key.
+ *       <p>This is optional. If set, it contains either the location (as an existing file path) or
+ *       the value of the passphrase associated with the private key.
  *   <li>{@code OCI_RESOURCE_PRINCIPAL_REGION}:
  *       <p>If set, this holds the canonical form of the local region. This is intended to enable
  *       executables to locate their "local" OCI service endpoints. For
@@ -66,6 +77,8 @@ public class ResourcePrincipalAuthenticationDetailsProvider
                 RefreshableOnNotAuthenticatedProvider<String>,
                 ConfigurableRefreshOnNotAuthenticatedProvider<String> {
 
+    private static final Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(ResourcePrincipalAuthenticationDetailsProvider.class);
     static final String OCI_RESOURCE_PRINCIPAL_VERSION = "OCI_RESOURCE_PRINCIPAL_VERSION";
     static final String RP_VERSION_2_2 = "2.2";
     static final String OCI_RESOURCE_PRINCIPAL_RPST = "OCI_RESOURCE_PRINCIPAL_RPST";
@@ -74,7 +87,14 @@ public class ResourcePrincipalAuthenticationDetailsProvider
             "OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE";
     static final String OCI_RESOURCE_PRINCIPAL_REGION_ENV_VAR_NAME =
             "OCI_RESOURCE_PRINCIPAL_REGION";
+    private static final String OCI_RESOURCE_PRINCIPAL_RESOURCE_ID =
+            "OCI_RESOURCE_PRINCIPAL_RESOURCE_ID";
+    private static final String OCI_RESOURCE_PRINCIPAL_TENANCY_ID =
+            "OCI_RESOURCE_PRINCIPAL_TENANCY_ID";
     private static final String RP_VERSION_1_1 = "1.1";
+    protected static final String RP_VERSION_2_1 = "2.1";
+    protected static final String RP_VERSION_2_1_1 = "2.1.1";
+    protected static final String RP_VERSION_3_0 = "3.0";
     private static final String OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT =
             "OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT";
     private static final String OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT =
@@ -88,7 +108,7 @@ public class ResourcePrincipalAuthenticationDetailsProvider
      *
      * @return Region object.
      */
-    private final Region region;
+    protected final Region region;
 
     /**
      * Constructor of ResourcePrincipalAuthenticationDetailsProvider.
@@ -97,7 +117,7 @@ public class ResourcePrincipalAuthenticationDetailsProvider
      * @param sessionKeySupplier session key supplier implementation.
      * @param region the region
      */
-    ResourcePrincipalAuthenticationDetailsProvider(
+    public ResourcePrincipalAuthenticationDetailsProvider(
             FederationClient federationClient,
             SessionKeySupplier sessionKeySupplier,
             Region region) {
@@ -190,17 +210,17 @@ public class ResourcePrincipalAuthenticationDetailsProvider
          *
          * <p>Required.
          */
-        private String resourcePrincipalTokenEndpoint;
+        protected String resourcePrincipalTokenEndpoint;
 
         /**
          * The path provider for the resource principal token.
          *
          * <p>Defaults to DefaultRptPathProvider if null
          */
-        private RptPathProvider resourcePrincipalTokenPathProvider;
+        protected RptPathProvider resourcePrincipalTokenPathProvider;
 
         /** The configuration for the circuit breaker. */
-        private CircuitBreakerConfiguration circuitBreakerConfig;
+        protected CircuitBreakerConfiguration circuitBreakerConfig;
 
         /** Configures the resourcePrincipalTokenPathProvider to use. */
         public ResourcePrincipalAuthenticationDetailsProviderBuilder
@@ -269,7 +289,7 @@ public class ResourcePrincipalAuthenticationDetailsProvider
                             System.getenv(OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM);
                     final String ociResourcePrincipalPassphrase =
                             System.getenv(OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE);
-                    final String ociResourcePrincipalRPST =
+                    final String ociResourcePrincipalRpst =
                             System.getenv(OCI_RESOURCE_PRINCIPAL_RPST);
                     final String ociResourcePrincipalRegion =
                             System.getenv(OCI_RESOURCE_PRINCIPAL_REGION_ENV_VAR_NAME);
@@ -278,7 +298,7 @@ public class ResourcePrincipalAuthenticationDetailsProvider
                     return build_2_2(
                             ociResourcePrincipalPrivateKey,
                             ociResourcePrincipalPassphrase,
-                            ociResourcePrincipalRPST,
+                            ociResourcePrincipalRpst,
                             ociResourcePrincipalRegion,
                             inputType);
                 case RP_VERSION_1_1:
@@ -289,6 +309,30 @@ public class ResourcePrincipalAuthenticationDetailsProvider
 
                     return build_1_1(
                             ociResourcePrincipalRptEndpoint, ociResourcePrincipalRpstEndpoint);
+                case RP_VERSION_2_1:
+                case RP_VERSION_2_1_1:
+                    final String ociResourcePrincipalRptEndpointFor2_1_or_2_1_1 =
+                            System.getenv(OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT);
+                    final String ociResourcePrincipalRpstEndpointForLeafResourceFor2_1_or_2_1_1 =
+                            System.getenv(OCI_RESOURCE_PRINCIPAL_RPST);
+                    final String ociResourcePrincipalResourceIdForLeafResource =
+                            System.getenv(OCI_RESOURCE_PRINCIPAL_RESOURCE_ID);
+                    final String ociResourcePrincipalTenancyIdForLeafResource =
+                            System.getenv(OCI_RESOURCE_PRINCIPAL_TENANCY_ID);
+                    final String ociResourcePrincipalPrivateKeyForLeafResource =
+                            System.getenv(OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM);
+                    final String ociResourcePrincipalPassphraseForLeafResource =
+                            System.getenv(OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE);
+                    return build_2_1_or_2_1_1(
+                            ociResourcePrincipalRptEndpointFor2_1_or_2_1_1,
+                            ociResourcePrincipalRpstEndpointForLeafResourceFor2_1_or_2_1_1,
+                            ociResourcePrincipalResourceIdForLeafResource,
+                            ociResourcePrincipalTenancyIdForLeafResource,
+                            ociResourcePrincipalPrivateKeyForLeafResource,
+                            ociResourcePrincipalPassphraseForLeafResource,
+                            ociResourcePrincipalVersion);
+                case RP_VERSION_3_0:
+                    return build_3_0();
                 default:
                     throw new IllegalArgumentException(
                             OCI_RESOURCE_PRINCIPAL_VERSION
@@ -297,32 +341,76 @@ public class ResourcePrincipalAuthenticationDetailsProvider
             }
         }
 
-        /**
-         * Helper method that interprets the runtime environment to build a v2.2-configured client
-         *
-         * @return ResourcePrincipalAuthenticationDetailsProvider
-         */
-        public static ResourcePrincipalAuthenticationDetailsProvider build_2_2(
+        public ResourcePrincipalAuthenticationDetailsProvider build_2_1_or_2_1_1(
+                String ociResourcePrincipalRptEndpoint,
+                String ociResourcePrincipalRpstEndpoint,
+                String ociResourcePrincipalResourceId,
+                String ociResourcePrincipalTenancyId,
                 String ociResourcePrincipalPrivateKey,
                 String ociResourcePrincipalPassphrase,
-                String ociResourcePrincipalRPST,
-                String ociResourcePrincipalRegion,
-                String inputType) {
-            final FederationClient federationClient;
-            final SessionKeySupplier sessionKeySupplier;
-            final Region region;
+                String ociResourcePrincipalVersion) {
 
-            if (ociResourcePrincipalPrivateKey == null) {
-                throw new IllegalArgumentException(
-                        OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM
-                                + " "
-                                + inputType
-                                + " missing."
-                                + RP_DEBUG_INFORMATION_LOG);
+            Validate.isTrue(
+                    StringUtils.isNotBlank(ociResourcePrincipalRptEndpoint),
+                    "required: StringUtils.isNotBlank(resourcePrincipalTokenEndpoint)");
+            Validate.isTrue(
+                    StringUtils.isNotBlank(ociResourcePrincipalRpstEndpoint),
+                    "required: StringUtils.isNotBlank(resourcePrincipalSessionTokenEndpoint)");
+            Validate.isTrue(
+                    StringUtils.isNotBlank(ociResourcePrincipalResourceId),
+                    "required: StringUtils.isNotBlank(resourceId)");
+
+            if (ociResourcePrincipalVersion.equals("2.1.1")) {
+                Validate.isTrue(
+                        StringUtils.isNotBlank(ociResourcePrincipalTenancyId),
+                        "required: StringUtils.isNotBlank(tenancyId)");
             }
-            if (new File(ociResourcePrincipalPrivateKey).isAbsolute()) {
+
+            Validate.isTrue(
+                    StringUtils.isNotBlank(ociResourcePrincipalPrivateKey),
+                    "required: StringUtils.isNotBlank(ociResourcePrincipalPrivateKey)");
+
+            final String inputType = "environment variable";
+
+            sessionKeySupplier =
+                    getSessionKeySupplierFromPemAndPassphrase(
+                            ociResourcePrincipalPrivateKey,
+                            ociResourcePrincipalPassphrase,
+                            inputType);
+
+            KeyPairAuthenticationDetailProvider provider =
+                    getKeyPairAuthenticationDetailProvider(
+                            ociResourcePrincipalResourceId,
+                            ociResourcePrincipalPrivateKey,
+                            ociResourcePrincipalPassphrase,
+                            ociResourcePrincipalTenancyId);
+
+            federationClient =
+                    new ResourcePrincipalV2FederationClient(
+                            ociResourcePrincipalRptEndpoint,
+                            ociResourcePrincipalRpstEndpoint,
+                            sessionKeySupplier,
+                            provider,
+                            federationClientConfigurator,
+                            circuitBreakerConfig);
+
+            // auto detect region
+            autoDetectEndpointUsingMetadataUrl();
+
+            return new ResourcePrincipalAuthenticationDetailsProvider(
+                    federationClient, sessionKeySupplier, region);
+        }
+
+        private KeyPairAuthenticationDetailProvider getKeyPairAuthenticationDetailProvider(
+                String ociResourcePrincipalResourceId,
+                String ociResourcePrincipalPrivateKey,
+                String ociResourcePrincipalPassphrase,
+                String tenancyId) {
+            final InputStream privateKeyStream;
+            final String passphrase;
+            if (new File(ociResourcePrincipalPrivateKey).exists()) {
                 if (ociResourcePrincipalPassphrase != null
-                        && !new File(ociResourcePrincipalPassphrase).isAbsolute()) {
+                        && !new File(ociResourcePrincipalPassphrase).exists()) {
                     throw new IllegalArgumentException(
                             "Cannot mix path and constant settings for "
                                     + OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM
@@ -334,51 +422,60 @@ public class ResourcePrincipalAuthenticationDetailsProvider
                                     + ociResourcePrincipalPassphrase
                                     + RP_DEBUG_INFORMATION_LOG);
                 }
-                sessionKeySupplier =
-                        new FileBasedKeySupplier(
-                                ociResourcePrincipalPrivateKey, ociResourcePrincipalPassphrase);
-            } else {
-                final char[] passPhraseChars;
-                if (ociResourcePrincipalPassphrase != null) {
-                    passPhraseChars = ociResourcePrincipalPassphrase.toCharArray();
-                } else {
-                    passPhraseChars = null;
+                try {
+                    privateKeyStream = new FileInputStream(ociResourcePrincipalPrivateKey);
+                    Path passphrasePath = new File(ociResourcePrincipalPassphrase).toPath();
+                    if (passphrasePath != null) {
+                        passphrase = new String(Files.readAllBytes(passphrasePath));
+                    } else passphrase = null;
+                } catch (FileNotFoundException e) {
+                    throw new IllegalArgumentException("Can't find file for private key", e);
+                } catch (IOException e) {
+                    throw new RuntimeException("cannot read the passphrase", e);
                 }
-                sessionKeySupplier =
-                        new FixedContentKeySupplier(
-                                ociResourcePrincipalPrivateKey, passPhraseChars);
+
+            } else {
+                passphrase = ociResourcePrincipalPassphrase;
+                privateKeyStream =
+                        new ByteArrayInputStream(ociResourcePrincipalPrivateKey.getBytes());
             }
 
-            if (ociResourcePrincipalRPST == null) {
-                throw new IllegalArgumentException(
-                        OCI_RESOURCE_PRINCIPAL_RPST
-                                + " "
-                                + inputType
-                                + " missing."
-                                + RP_DEBUG_INFORMATION_LOG);
-            }
-            if (new File(ociResourcePrincipalRPST).isAbsolute()) {
-                federationClient =
-                        new FileBasedResourcePrincipalFederationClient(
-                                sessionKeySupplier, ociResourcePrincipalRPST);
-            } else {
-                federationClient =
-                        new FixedContentResourcePrincipalFederationClient(
-                                ociResourcePrincipalRPST, sessionKeySupplier);
-            }
+            return new KeyPairAuthenticationDetailProvider(
+                    ociResourcePrincipalResourceId,
+                    privateKeyStream,
+                    passphrase.toCharArray(),
+                    tenancyId);
+        }
 
-            if (ociResourcePrincipalRegion == null) {
-                throw new IllegalArgumentException(
-                        OCI_RESOURCE_PRINCIPAL_REGION_ENV_VAR_NAME
-                                + " "
-                                + inputType
-                                + " missing."
-                                + RP_DEBUG_INFORMATION_LOG);
-            } else {
-                region =
-                        Region.valueOf(
-                                NameUtils.canonicalizeForEnumTypes(ociResourcePrincipalRegion));
-            }
+        public ResourcePrincipalAuthenticationDetailsProvider build_3_0() {
+            return ResourcePrincipalsV3AuthenticationDetailsProvider.builder().build();
+        }
+
+        /**
+         * Helper method that interprets the runtime environment to build a v2.2-configured client
+         *
+         * @return ResourcePrincipalAuthenticationDetailsProvider
+         */
+        public static ResourcePrincipalAuthenticationDetailsProvider build_2_2(
+                String ociResourcePrincipalPrivateKey,
+                String ociResourcePrincipalPassphrase,
+                String ociResourcePrincipalRpst,
+                String ociResourcePrincipalRegion,
+                String inputType) {
+
+            final SessionKeySupplier sessionKeySupplier =
+                    getSessionKeySupplierFromPemAndPassphrase(
+                            ociResourcePrincipalPrivateKey,
+                            ociResourcePrincipalPassphrase,
+                            inputType);
+
+            final FederationClient federationClient =
+                    getFederationClientFromRpst(
+                            ociResourcePrincipalRpst, inputType, sessionKeySupplier);
+
+            final Region region =
+                    ResourcePrincipalAuthenticationDetailsProvider.getRegion(
+                            ociResourcePrincipalRegion, inputType);
 
             return new ResourcePrincipalAuthenticationDetailsProvider(
                     federationClient, sessionKeySupplier, region);
@@ -405,11 +502,7 @@ public class ResourcePrincipalAuthenticationDetailsProvider
 
         @Override
         protected FederationClient createFederationClient(SessionKeySupplier sessionKeySupplier) {
-            Validate.notNull(
-                    resourcePrincipalTokenEndpoint,
-                    "resourcePrincipalTokenEndpoint must not be null");
-            if (resourcePrincipalTokenPathProvider == null)
-                resourcePrincipalTokenPathProvider = new DefaultRptPathProvider();
+            createRptPathProvider();
 
             InstancePrincipalsAuthenticationDetailsProvider provider =
                     InstancePrincipalsAuthenticationDetailsProvider.builder()
@@ -441,11 +534,110 @@ public class ResourcePrincipalAuthenticationDetailsProvider
                     circuitBreakerConfig);
         }
 
+        protected void createRptPathProvider() {
+            Validate.notNull(
+                    resourcePrincipalTokenEndpoint,
+                    "resourcePrincipalTokenEndpoint must not be null");
+            if (resourcePrincipalTokenPathProvider == null) {
+                resourcePrincipalTokenPathProvider = new DefaultRptPathProvider();
+            }
+        }
+
         @Override
         protected ResourcePrincipalAuthenticationDetailsProvider buildProvider(
                 SessionKeySupplier sessionKeySupplierToUse) {
             return new ResourcePrincipalAuthenticationDetailsProvider(
                     federationClient, sessionKeySupplierToUse, region);
         }
+    }
+
+    protected static Region getRegion(String ociResourcePrincipalRegion, String inputType) {
+        if (ociResourcePrincipalRegion == null) {
+            throw new IllegalArgumentException(
+                    OCI_RESOURCE_PRINCIPAL_REGION_ENV_VAR_NAME
+                            + " "
+                            + inputType
+                            + " missing."
+                            + RP_DEBUG_INFORMATION_LOG);
+        }
+        return Region.valueOf(NameUtils.canonicalizeForEnumTypes(ociResourcePrincipalRegion));
+    }
+
+    protected static FederationClient getFederationClientFromRpst(
+            String ociResourcePrincipalRpst,
+            String inputType,
+            SessionKeySupplier sessionKeySupplier) {
+        FederationClient federationClient;
+        if (ociResourcePrincipalRpst == null) {
+            throw new IllegalArgumentException(
+                    OCI_RESOURCE_PRINCIPAL_RPST
+                            + " "
+                            + inputType
+                            + " missing."
+                            + RP_DEBUG_INFORMATION_LOG);
+        }
+        String ociResourcePrincipalRpstPath = ociResourcePrincipalRpst;
+        if (new File(ociResourcePrincipalRpstPath).exists()) {
+            LOG.debug(
+                    "Valid file for RPST. Creating instance of FileBasedResourcePrincipalFederationClient");
+            federationClient =
+                    new FileBasedResourcePrincipalFederationClient(
+                            sessionKeySupplier, ociResourcePrincipalRpstPath);
+        } else {
+            LOG.debug(
+                    "Loading RPST from content provided. Creating instance of FixedContentResourcePrincipalFederationClient");
+            federationClient =
+                    new FixedContentResourcePrincipalFederationClient(
+                            ociResourcePrincipalRpst, sessionKeySupplier);
+        }
+        return federationClient;
+    }
+
+    protected static SessionKeySupplier getSessionKeySupplierFromPemAndPassphrase(
+            String ociResourcePrincipalPrivateKey,
+            String ociResourcePrincipalPassphrase,
+            String inputType) {
+        SessionKeySupplier sessionKeySupplier;
+        if (ociResourcePrincipalPrivateKey == null) {
+            throw new IllegalArgumentException(
+                    OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM
+                            + " "
+                            + inputType
+                            + " missing."
+                            + RP_DEBUG_INFORMATION_LOG);
+        }
+        String ociResourcePrincipalPrivateKeyPath = ociResourcePrincipalPrivateKey;
+        if (new File(ociResourcePrincipalPrivateKeyPath).exists()) {
+            if (ociResourcePrincipalPassphrase != null
+                    && !new File(ociResourcePrincipalPassphrase).exists()) {
+                throw new IllegalArgumentException(
+                        "Cannot mix path and constant settings for "
+                                + OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM
+                                + " "
+                                + ociResourcePrincipalPrivateKey
+                                + " and "
+                                + OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE
+                                + " "
+                                + ociResourcePrincipalPassphrase
+                                + RP_DEBUG_INFORMATION_LOG);
+            }
+            LOG.debug("Valid file for private key. Creating instance of FileBasedKeySupplier");
+            sessionKeySupplier =
+                    new FileBasedKeySupplier(
+                            ociResourcePrincipalPrivateKeyPath, ociResourcePrincipalPassphrase);
+        } else {
+            final char[] passPhraseChars;
+            if (ociResourcePrincipalPassphrase != null) {
+                passPhraseChars = ociResourcePrincipalPassphrase.toCharArray();
+            } else {
+                passPhraseChars = null;
+            }
+            LOG.debug(
+                    "Invalid file for private key, using the content provided."
+                            + " Creating instance of FixedContentKeySupplier");
+            sessionKeySupplier =
+                    new FixedContentKeySupplier(ociResourcePrincipalPrivateKey, passPhraseChars);
+        }
+        return sessionKeySupplier;
     }
 }

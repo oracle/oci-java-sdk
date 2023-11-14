@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.29.0 - 2023-11-14
+### Added
+- Support for the PostgreSQL service
+- Support for new operations in the Identity Domains service
+- Support for enabling, disabling, and renewing SSL/TLS in the Big Data service
+- Support for diarization in the AI Speech service
+- Support for Capacity Topology API in the Compute service
+ 
+### Breaking Changes
+- Return type of method `public java.lang.String getStatus()` has been changed to `com.oracle.bmc.identitydomains.model.MyRequest$Status` in `com.oracle.bmc.identitydomains.model.MyRequest` in the Identity Domains service
+
 ## 3.28.1 - 2023-11-07
 ### Added
 - Support for Java Management Service Downloads

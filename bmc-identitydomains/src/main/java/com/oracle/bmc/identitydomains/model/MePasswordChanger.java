@@ -421,7 +421,7 @@ public final class MePasswordChanger
             return this;
         }
         /**
-         * Password attribute. Max length for password is controlled via Password Policy.
+         * Password attribute. The maximum length for a password is controlled by a password policy.
          *
          * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: true -
          * mutability: writeOnly - returned: never - uniqueness: none - caseExact: false -
@@ -431,7 +431,7 @@ public final class MePasswordChanger
         private String password;
 
         /**
-         * Password attribute. Max length for password is controlled via Password Policy.
+         * Password attribute. The maximum length for a password is controlled by a password policy.
          *
          * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: true -
          * mutability: writeOnly - returned: never - uniqueness: none - caseExact: false -
@@ -861,7 +861,7 @@ public final class MePasswordChanger
     }
 
     /**
-     * Password attribute. Max length for password is controlled via Password Policy.
+     * Password attribute. The maximum length for a password is controlled by a password policy.
      *
      * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: true - mutability:
      * writeOnly - returned: never - uniqueness: none - caseExact: false - idcsSensitive: hash -
@@ -871,7 +871,7 @@ public final class MePasswordChanger
     private final String password;
 
     /**
-     * Password attribute. Max length for password is controlled via Password Policy.
+     * Password attribute. The maximum length for a password is controlled by a password policy.
      *
      * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: true - mutability:
      * writeOnly - returned: never - uniqueness: none - caseExact: false - idcsSensitive: hash -

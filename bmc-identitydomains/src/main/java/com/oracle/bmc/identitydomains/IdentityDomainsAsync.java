@@ -75,6 +75,56 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Create ApprovalWorkflow
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateApprovalWorkflowResponse> createApprovalWorkflow(
+            CreateApprovalWorkflowRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateApprovalWorkflowRequest, CreateApprovalWorkflowResponse>
+                    handler);
+
+    /**
+     * Create Approval Workflow Assignment
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateApprovalWorkflowAssignmentResponse>
+            createApprovalWorkflowAssignment(
+                    CreateApprovalWorkflowAssignmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateApprovalWorkflowAssignmentRequest,
+                                    CreateApprovalWorkflowAssignmentResponse>
+                            handler);
+
+    /**
+     * Create ApprovalWorkflowStep
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateApprovalWorkflowStepResponse> createApprovalWorkflowStep(
+            CreateApprovalWorkflowStepRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateApprovalWorkflowStepRequest, CreateApprovalWorkflowStepResponse>
+                    handler);
+
+    /**
      * Create a user's Auth token.
      *
      * @param request The request object containing the details to send
@@ -106,6 +156,68 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                                     CreateAuthenticationFactorsRemoverRequest,
                                     CreateAuthenticationFactorsRemoverResponse>
                             handler);
+
+    /**
+     * Create a Cloud Gate
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateCloudGateResponse> createCloudGate(
+            CreateCloudGateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateCloudGateRequest, CreateCloudGateResponse>
+                    handler);
+
+    /**
+     * Create a Cloud Gate mapping
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateCloudGateMappingResponse> createCloudGateMapping(
+            CreateCloudGateMappingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateCloudGateMappingRequest, CreateCloudGateMappingResponse>
+                    handler);
+
+    /**
+     * Create a Cloud Gate server
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateCloudGateServerResponse> createCloudGateServer(
+            CreateCloudGateServerRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateCloudGateServerRequest, CreateCloudGateServerResponse>
+                    handler);
+
+    /**
+     * Create a Condition
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateConditionResponse> createCondition(
+            CreateConditionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateConditionRequest, CreateConditionResponse>
+                    handler);
 
     /**
      * Create a user's customer secret key.
@@ -380,6 +492,22 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Create a NetworkPerimeter
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateNetworkPerimeterResponse> createNetworkPerimeter(
+            CreateNetworkPerimeterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateNetworkPerimeterRequest, CreateNetworkPerimeterResponse>
+                    handler);
+
+    /**
      * Add a user's OAuth2 client credentials.
      *
      * @param request The request object containing the details to send
@@ -395,6 +523,41 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                             CreateOAuth2ClientCredentialRequest,
                             CreateOAuth2ClientCredentialResponse>
                     handler);
+
+    /**
+     * Create an OAuth Client Certificate
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateOAuthClientCertificateResponse> createOAuthClientCertificate(
+            CreateOAuthClientCertificateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateOAuthClientCertificateRequest,
+                            CreateOAuthClientCertificateResponse>
+                    handler);
+
+    /**
+     * Create an OAuth Partner Certificate
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateOAuthPartnerCertificateResponse>
+            createOAuthPartnerCertificate(
+                    CreateOAuthPartnerCertificateRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateOAuthPartnerCertificateRequest,
+                                    CreateOAuthPartnerCertificateResponse>
+                            handler);
 
     /**
      * Create a password policy.
@@ -413,6 +576,35 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Create a Policy
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreatePolicyResponse> createPolicy(
+            CreatePolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreatePolicyRequest, CreatePolicyResponse>
+                    handler);
+
+    /**
+     * Create a Rule
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateRuleResponse> createRule(
+            CreateRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateRuleRequest, CreateRuleResponse> handler);
+
+    /**
      * Create a security question.
      *
      * @param request The request object containing the details to send
@@ -427,6 +619,24 @@ public interface IdentityDomainsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             CreateSecurityQuestionRequest, CreateSecurityQuestionResponse>
                     handler);
+
+    /**
+     * Create a self-registration profile.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSelfRegistrationProfileResponse>
+            createSelfRegistrationProfile(
+                    CreateSelfRegistrationProfileRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateSelfRegistrationProfileRequest,
+                                    CreateSelfRegistrationProfileResponse>
+                            handler);
 
     /**
      * Create a user's SMTP credentials.
@@ -519,6 +729,56 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Delete ApprovalWorkflow
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteApprovalWorkflowResponse> deleteApprovalWorkflow(
+            DeleteApprovalWorkflowRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteApprovalWorkflowRequest, DeleteApprovalWorkflowResponse>
+                    handler);
+
+    /**
+     * Delete Approval Workflow Assignment
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteApprovalWorkflowAssignmentResponse>
+            deleteApprovalWorkflowAssignment(
+                    DeleteApprovalWorkflowAssignmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteApprovalWorkflowAssignmentRequest,
+                                    DeleteApprovalWorkflowAssignmentResponse>
+                            handler);
+
+    /**
+     * Delete ApprovalWorkflowStep
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteApprovalWorkflowStepResponse> deleteApprovalWorkflowStep(
+            DeleteApprovalWorkflowStepRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteApprovalWorkflowStepRequest, DeleteApprovalWorkflowStepResponse>
+                    handler);
+
+    /**
      * Delete a user's Auth token.
      *
      * @param request The request object containing the details to send
@@ -531,6 +791,68 @@ public interface IdentityDomainsAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteAuthTokenResponse> deleteAuthToken(
             DeleteAuthTokenRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteAuthTokenRequest, DeleteAuthTokenResponse>
+                    handler);
+
+    /**
+     * Delete a Cloud Gate
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteCloudGateResponse> deleteCloudGate(
+            DeleteCloudGateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteCloudGateRequest, DeleteCloudGateResponse>
+                    handler);
+
+    /**
+     * Delete a Cloud Gate mapping
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteCloudGateMappingResponse> deleteCloudGateMapping(
+            DeleteCloudGateMappingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCloudGateMappingRequest, DeleteCloudGateMappingResponse>
+                    handler);
+
+    /**
+     * Delete a Cloud Gate server
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteCloudGateServerResponse> deleteCloudGateServer(
+            DeleteCloudGateServerRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCloudGateServerRequest, DeleteCloudGateServerResponse>
+                    handler);
+
+    /**
+     * Delete a Condition
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteConditionResponse> deleteCondition(
+            DeleteConditionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteConditionRequest, DeleteConditionResponse>
                     handler);
 
     /**
@@ -754,6 +1076,22 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Delete a NetworkPerimeter
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteNetworkPerimeterResponse> deleteNetworkPerimeter(
+            DeleteNetworkPerimeterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteNetworkPerimeterRequest, DeleteNetworkPerimeterResponse>
+                    handler);
+
+    /**
      * Delete a user's OAuth2 client credentials.
      *
      * @param request The request object containing the details to send
@@ -769,6 +1107,41 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                             DeleteOAuth2ClientCredentialRequest,
                             DeleteOAuth2ClientCredentialResponse>
                     handler);
+
+    /**
+     * Delete an OAuth Client Certificate
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteOAuthClientCertificateResponse> deleteOAuthClientCertificate(
+            DeleteOAuthClientCertificateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteOAuthClientCertificateRequest,
+                            DeleteOAuthClientCertificateResponse>
+                    handler);
+
+    /**
+     * Delete an OAuth Partner Certificate
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteOAuthPartnerCertificateResponse>
+            deleteOAuthPartnerCertificate(
+                    DeleteOAuthPartnerCertificateRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteOAuthPartnerCertificateRequest,
+                                    DeleteOAuthPartnerCertificateResponse>
+                            handler);
 
     /**
      * Delete a password policy.
@@ -787,6 +1160,35 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Delete a Policy
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeletePolicyResponse> deletePolicy(
+            DeletePolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeletePolicyRequest, DeletePolicyResponse>
+                    handler);
+
+    /**
+     * Delete a Rule
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteRuleResponse> deleteRule(
+            DeleteRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteRuleRequest, DeleteRuleResponse> handler);
+
+    /**
      * Delete a security question.
      *
      * @param request The request object containing the details to send
@@ -801,6 +1203,24 @@ public interface IdentityDomainsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteSecurityQuestionRequest, DeleteSecurityQuestionResponse>
                     handler);
+
+    /**
+     * Delete a self-registration profile.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSelfRegistrationProfileResponse>
+            deleteSelfRegistrationProfile(
+                    DeleteSelfRegistrationProfileRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteSelfRegistrationProfileRequest,
+                                    DeleteSelfRegistrationProfileResponse>
+                            handler);
 
     /**
      * Delete a user's SMTP credentials.
@@ -923,6 +1343,56 @@ public interface IdentityDomainsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetAppRoleRequest, GetAppRoleResponse> handler);
 
     /**
+     * Get ApprovalWorkflow
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetApprovalWorkflowResponse> getApprovalWorkflow(
+            GetApprovalWorkflowRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetApprovalWorkflowRequest, GetApprovalWorkflowResponse>
+                    handler);
+
+    /**
+     * Get an Approval Workflow Assignment
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetApprovalWorkflowAssignmentResponse>
+            getApprovalWorkflowAssignment(
+                    GetApprovalWorkflowAssignmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetApprovalWorkflowAssignmentRequest,
+                                    GetApprovalWorkflowAssignmentResponse>
+                            handler);
+
+    /**
+     * Get ApprovalWorkflowStep
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetApprovalWorkflowStepResponse> getApprovalWorkflowStep(
+            GetApprovalWorkflowStepRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetApprovalWorkflowStepRequest, GetApprovalWorkflowStepResponse>
+                    handler);
+
+    /**
      * Get a user's Auth token.
      *
      * @param request The request object containing the details to send
@@ -954,6 +1424,84 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                                     GetAuthenticationFactorSettingRequest,
                                     GetAuthenticationFactorSettingResponse>
                             handler);
+
+    /**
+     * Get Branding Settings
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetBrandingSettingResponse> getBrandingSetting(
+            GetBrandingSettingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetBrandingSettingRequest, GetBrandingSettingResponse>
+                    handler);
+
+    /**
+     * Get a Cloud Gate
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCloudGateResponse> getCloudGate(
+            GetCloudGateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetCloudGateRequest, GetCloudGateResponse>
+                    handler);
+
+    /**
+     * Get a Cloud Gate mapping
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCloudGateMappingResponse> getCloudGateMapping(
+            GetCloudGateMappingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetCloudGateMappingRequest, GetCloudGateMappingResponse>
+                    handler);
+
+    /**
+     * Get a Cloud Gate server
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCloudGateServerResponse> getCloudGateServer(
+            GetCloudGateServerRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetCloudGateServerRequest, GetCloudGateServerResponse>
+                    handler);
+
+    /**
+     * Get a Condition
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetConditionResponse> getCondition(
+            GetConditionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetConditionRequest, GetConditionResponse>
+                    handler);
 
     /**
      * Get a user's customer secret key.
@@ -1108,6 +1656,22 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Get My MyCompletedApproval
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetMyCompletedApprovalResponse> getMyCompletedApproval(
+            GetMyCompletedApprovalRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetMyCompletedApprovalRequest, GetMyCompletedApprovalResponse>
+                    handler);
+
+    /**
      * Get a user's own customer secret key.
      *
      * @param request The request object containing the details to send
@@ -1151,6 +1715,37 @@ public interface IdentityDomainsAsync extends AutoCloseable {
             GetMyOAuth2ClientCredentialRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetMyOAuth2ClientCredentialRequest, GetMyOAuth2ClientCredentialResponse>
+                    handler);
+
+    /**
+     * Get My MyPendingApproval
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetMyPendingApprovalResponse> getMyPendingApproval(
+            GetMyPendingApprovalRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetMyPendingApprovalRequest, GetMyPendingApprovalResponse>
+                    handler);
+
+    /**
+     * Get My Requests
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetMyRequestResponse> getMyRequest(
+            GetMyRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetMyRequestRequest, GetMyRequestResponse>
                     handler);
 
     /**
@@ -1218,6 +1813,38 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Get a NetworkPerimeter
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetNetworkPerimeterResponse> getNetworkPerimeter(
+            GetNetworkPerimeterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetNetworkPerimeterRequest, GetNetworkPerimeterResponse>
+                    handler);
+
+    /**
+     * Get Notification Settings
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetNotificationSettingResponse> getNotificationSetting(
+            GetNotificationSettingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetNotificationSettingRequest, GetNotificationSettingResponse>
+                    handler);
+
+    /**
      * Get a user's OAuth2 client credentials.
      *
      * @param request The request object containing the details to send
@@ -1231,6 +1858,38 @@ public interface IdentityDomainsAsync extends AutoCloseable {
             GetOAuth2ClientCredentialRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetOAuth2ClientCredentialRequest, GetOAuth2ClientCredentialResponse>
+                    handler);
+
+    /**
+     * Get OAuth Client Certificates
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetOAuthClientCertificateResponse> getOAuthClientCertificate(
+            GetOAuthClientCertificateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetOAuthClientCertificateRequest, GetOAuthClientCertificateResponse>
+                    handler);
+
+    /**
+     * Get an OAuth Partner Certificate
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetOAuthPartnerCertificateResponse> getOAuthPartnerCertificate(
+            GetOAuthPartnerCertificateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetOAuthPartnerCertificateRequest, GetOAuthPartnerCertificateResponse>
                     handler);
 
     /**
@@ -1248,6 +1907,48 @@ public interface IdentityDomainsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetPasswordPolicyRequest, GetPasswordPolicyResponse>
                     handler);
+
+    /**
+     * Get a Policy
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPolicyResponse> getPolicy(
+            GetPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetPolicyRequest, GetPolicyResponse> handler);
+
+    /**
+     * Get a Rule
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetRuleResponse> getRule(
+            GetRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetRuleRequest, GetRuleResponse> handler);
+
+    /**
+     * Get a Schema
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSchemaResponse> getSchema(
+            GetSchemaRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetSchemaRequest, GetSchemaResponse> handler);
 
     /**
      * Get a security question.
@@ -1280,6 +1981,36 @@ public interface IdentityDomainsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetSecurityQuestionSettingRequest, GetSecurityQuestionSettingResponse>
                     handler);
+
+    /**
+     * Get a self-registration profile.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSelfRegistrationProfileResponse> getSelfRegistrationProfile(
+            GetSelfRegistrationProfileRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSelfRegistrationProfileRequest, GetSelfRegistrationProfileResponse>
+                    handler);
+
+    /**
+     * Get Settings
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSettingResponse> getSetting(
+            GetSettingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetSettingRequest, GetSettingResponse> handler);
 
     /**
      * Get a user's SMTP credentials.
@@ -1405,6 +2136,56 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Search Approval Workflow Assignments
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListApprovalWorkflowAssignmentsResponse>
+            listApprovalWorkflowAssignments(
+                    ListApprovalWorkflowAssignmentsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListApprovalWorkflowAssignmentsRequest,
+                                    ListApprovalWorkflowAssignmentsResponse>
+                            handler);
+
+    /**
+     * Search ApprovalWorkflowStep
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListApprovalWorkflowStepsResponse> listApprovalWorkflowSteps(
+            ListApprovalWorkflowStepsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListApprovalWorkflowStepsRequest, ListApprovalWorkflowStepsResponse>
+                    handler);
+
+    /**
+     * Search ApprovalWorkflow
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListApprovalWorkflowsResponse> listApprovalWorkflows(
+            ListApprovalWorkflowsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListApprovalWorkflowsRequest, ListApprovalWorkflowsResponse>
+                    handler);
+
+    /**
      * Search Apps
      *
      * @param request The request object containing the details to send
@@ -1450,6 +2231,84 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                                     ListAuthenticationFactorSettingsRequest,
                                     ListAuthenticationFactorSettingsResponse>
                             handler);
+
+    /**
+     * Search Branding Settings
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListBrandingSettingsResponse> listBrandingSettings(
+            ListBrandingSettingsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListBrandingSettingsRequest, ListBrandingSettingsResponse>
+                    handler);
+
+    /**
+     * Search Cloud Gate mappings
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCloudGateMappingsResponse> listCloudGateMappings(
+            ListCloudGateMappingsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListCloudGateMappingsRequest, ListCloudGateMappingsResponse>
+                    handler);
+
+    /**
+     * Search Cloud Gate servers
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCloudGateServersResponse> listCloudGateServers(
+            ListCloudGateServersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListCloudGateServersRequest, ListCloudGateServersResponse>
+                    handler);
+
+    /**
+     * Search Cloud Gates
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCloudGatesResponse> listCloudGates(
+            ListCloudGatesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListCloudGatesRequest, ListCloudGatesResponse>
+                    handler);
+
+    /**
+     * Search Conditions
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListConditionsResponse> listConditions(
+            ListConditionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListConditionsRequest, ListConditionsResponse>
+                    handler);
 
     /**
      * Search for a user's customer secret keys.
@@ -1605,6 +2464,22 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Search My MyCompletedApproval
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMyCompletedApprovalsResponse> listMyCompletedApprovals(
+            ListMyCompletedApprovalsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListMyCompletedApprovalsRequest, ListMyCompletedApprovalsResponse>
+                    handler);
+
+    /**
      * Search for a user's own customer secret key.
      *
      * @param request The request object containing the details to send
@@ -1667,6 +2542,22 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                                     ListMyOAuth2ClientCredentialsRequest,
                                     ListMyOAuth2ClientCredentialsResponse>
                             handler);
+
+    /**
+     * Search My Approvals
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMyPendingApprovalsResponse> listMyPendingApprovals(
+            ListMyPendingApprovalsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListMyPendingApprovalsRequest, ListMyPendingApprovalsResponse>
+                    handler);
 
     /**
      * Search My Requestable Groups
@@ -1764,6 +2655,38 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Search NetworkPerimeters
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListNetworkPerimetersResponse> listNetworkPerimeters(
+            ListNetworkPerimetersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListNetworkPerimetersRequest, ListNetworkPerimetersResponse>
+                    handler);
+
+    /**
+     * Search Notification Settings
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListNotificationSettingsResponse> listNotificationSettings(
+            ListNotificationSettingsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListNotificationSettingsRequest, ListNotificationSettingsResponse>
+                    handler);
+
+    /**
      * Search for a user's OAuth2 client credentials.
      *
      * @param request The request object containing the details to send
@@ -1777,6 +2700,39 @@ public interface IdentityDomainsAsync extends AutoCloseable {
             ListOAuth2ClientCredentialsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListOAuth2ClientCredentialsRequest, ListOAuth2ClientCredentialsResponse>
+                    handler);
+
+    /**
+     * Search OAuth Client Certificates
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListOAuthClientCertificatesResponse> listOAuthClientCertificates(
+            ListOAuthClientCertificatesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListOAuthClientCertificatesRequest, ListOAuthClientCertificatesResponse>
+                    handler);
+
+    /**
+     * Search OAuth Partner Certificates
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListOAuthPartnerCertificatesResponse> listOAuthPartnerCertificates(
+            ListOAuthPartnerCertificatesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListOAuthPartnerCertificatesRequest,
+                            ListOAuthPartnerCertificatesResponse>
                     handler);
 
     /**
@@ -1796,6 +2752,21 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Search Policies
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPoliciesResponse> listPolicies(
+            ListPoliciesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListPoliciesRequest, ListPoliciesResponse>
+                    handler);
+
+    /**
      * Search Resource Type Schema Attributes
      *
      * @param request The request object containing the details to send
@@ -1812,6 +2783,34 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                                     ListResourceTypeSchemaAttributesRequest,
                                     ListResourceTypeSchemaAttributesResponse>
                             handler);
+
+    /**
+     * Search Rules
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListRulesResponse> listRules(
+            ListRulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListRulesRequest, ListRulesResponse> handler);
+
+    /**
+     * Search Schemas
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSchemasResponse> listSchemas(
+            ListSchemasRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListSchemasRequest, ListSchemasResponse> handler);
 
     /**
      * Search for security question settings.
@@ -1844,6 +2843,38 @@ public interface IdentityDomainsAsync extends AutoCloseable {
             ListSecurityQuestionsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListSecurityQuestionsRequest, ListSecurityQuestionsResponse>
+                    handler);
+
+    /**
+     * Search for self-registration profiles.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSelfRegistrationProfilesResponse> listSelfRegistrationProfiles(
+            ListSelfRegistrationProfilesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSelfRegistrationProfilesRequest,
+                            ListSelfRegistrationProfilesResponse>
+                    handler);
+
+    /**
+     * Search Settings
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSettingsResponse> listSettings(
+            ListSettingsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListSettingsRequest, ListSettingsResponse>
                     handler);
 
     /**
@@ -1968,6 +2999,38 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Update ApprovalWorkflow
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchApprovalWorkflowResponse> patchApprovalWorkflow(
+            PatchApprovalWorkflowRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PatchApprovalWorkflowRequest, PatchApprovalWorkflowResponse>
+                    handler);
+
+    /**
+     * Update ApprovalWorkflowStep
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchApprovalWorkflowStepResponse> patchApprovalWorkflowStep(
+            PatchApprovalWorkflowStepRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PatchApprovalWorkflowStepRequest, PatchApprovalWorkflowStepResponse>
+                    handler);
+
+    /**
      * Update a user's Auth token.
      *
      * @param request The request object containing the details to send
@@ -1980,6 +3043,68 @@ public interface IdentityDomainsAsync extends AutoCloseable {
     java.util.concurrent.Future<PatchAuthTokenResponse> patchAuthToken(
             PatchAuthTokenRequest request,
             com.oracle.bmc.responses.AsyncHandler<PatchAuthTokenRequest, PatchAuthTokenResponse>
+                    handler);
+
+    /**
+     * Update a Cloud Gate
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchCloudGateResponse> patchCloudGate(
+            PatchCloudGateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<PatchCloudGateRequest, PatchCloudGateResponse>
+                    handler);
+
+    /**
+     * Update a Cloud Gate mapping
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchCloudGateMappingResponse> patchCloudGateMapping(
+            PatchCloudGateMappingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PatchCloudGateMappingRequest, PatchCloudGateMappingResponse>
+                    handler);
+
+    /**
+     * Update a Cloud Gate server
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchCloudGateServerResponse> patchCloudGateServer(
+            PatchCloudGateServerRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PatchCloudGateServerRequest, PatchCloudGateServerResponse>
+                    handler);
+
+    /**
+     * Update a Condition
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchConditionResponse> patchCondition(
+            PatchConditionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<PatchConditionRequest, PatchConditionResponse>
                     handler);
 
     /**
@@ -2183,6 +3308,37 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Update MyPendingApproval
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchMyPendingApprovalResponse> patchMyPendingApproval(
+            PatchMyPendingApprovalRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PatchMyPendingApprovalRequest, PatchMyPendingApprovalResponse>
+                    handler);
+
+    /**
+     * Update My Requests
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchMyRequestResponse> patchMyRequest(
+            PatchMyRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<PatchMyRequestRequest, PatchMyRequestResponse>
+                    handler);
+
+    /**
      * Update a user's own SMTP credential.
      *
      * @param request The request object containing the details to send
@@ -2196,6 +3352,22 @@ public interface IdentityDomainsAsync extends AutoCloseable {
             PatchMySmtpCredentialRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             PatchMySmtpCredentialRequest, PatchMySmtpCredentialResponse>
+                    handler);
+
+    /**
+     * Update a NetworkPerimeter
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchNetworkPerimeterResponse> patchNetworkPerimeter(
+            PatchNetworkPerimeterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PatchNetworkPerimeterRequest, PatchNetworkPerimeterResponse>
                     handler);
 
     /**
@@ -2231,6 +3403,48 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Update a Policy
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchPolicyResponse> patchPolicy(
+            PatchPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<PatchPolicyRequest, PatchPolicyResponse> handler);
+
+    /**
+     * Update a Rule
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchRuleResponse> patchRule(
+            PatchRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<PatchRuleRequest, PatchRuleResponse> handler);
+
+    /**
+     * Update a Schema Def
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchSchemaResponse> patchSchema(
+            PatchSchemaRequest request,
+            com.oracle.bmc.responses.AsyncHandler<PatchSchemaRequest, PatchSchemaResponse> handler);
+
+    /**
      * Update a security question.
      *
      * @param request The request object containing the details to send
@@ -2261,6 +3475,38 @@ public interface IdentityDomainsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             PatchSecurityQuestionSettingRequest,
                             PatchSecurityQuestionSettingResponse>
+                    handler);
+
+    /**
+     * Update a self-registration profile.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchSelfRegistrationProfileResponse> patchSelfRegistrationProfile(
+            PatchSelfRegistrationProfileRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PatchSelfRegistrationProfileRequest,
+                            PatchSelfRegistrationProfileResponse>
+                    handler);
+
+    /**
+     * Update a Setting
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchSettingResponse> patchSetting(
+            PatchSettingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<PatchSettingRequest, PatchSettingResponse>
                     handler);
 
     /**
@@ -2356,6 +3602,22 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Replace ApprovalWorkflow
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PutApprovalWorkflowResponse> putApprovalWorkflow(
+            PutApprovalWorkflowRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PutApprovalWorkflowRequest, PutApprovalWorkflowResponse>
+                    handler);
+
+    /**
      * Replace Authentication Factor Settings
      *
      * @param request The request object containing the details to send
@@ -2372,6 +3634,68 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                                     PutAuthenticationFactorSettingRequest,
                                     PutAuthenticationFactorSettingResponse>
                             handler);
+
+    /**
+     * Replace a Cloud Gate
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PutCloudGateResponse> putCloudGate(
+            PutCloudGateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<PutCloudGateRequest, PutCloudGateResponse>
+                    handler);
+
+    /**
+     * Replace a Cloud Gate mapping
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PutCloudGateMappingResponse> putCloudGateMapping(
+            PutCloudGateMappingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PutCloudGateMappingRequest, PutCloudGateMappingResponse>
+                    handler);
+
+    /**
+     * Replace a Cloud Gate server
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PutCloudGateServerResponse> putCloudGateServer(
+            PutCloudGateServerRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PutCloudGateServerRequest, PutCloudGateServerResponse>
+                    handler);
+
+    /**
+     * Replace a Condition
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PutConditionResponse> putCondition(
+            PutConditionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<PutConditionRequest, PutConditionResponse>
+                    handler);
 
     /**
      * Replace a Dynamic Resource Group.
@@ -2481,6 +3805,38 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Replace a NetworkPerimeter
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PutNetworkPerimeterResponse> putNetworkPerimeter(
+            PutNetworkPerimeterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PutNetworkPerimeterRequest, PutNetworkPerimeterResponse>
+                    handler);
+
+    /**
+     * Replace Notification Settings
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PutNotificationSettingResponse> putNotificationSetting(
+            PutNotificationSettingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PutNotificationSettingRequest, PutNotificationSettingResponse>
+                    handler);
+
+    /**
      * Replace a password policy.
      *
      * @param request The request object containing the details to send
@@ -2497,6 +3853,48 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Replace a Policy
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PutPolicyResponse> putPolicy(
+            PutPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<PutPolicyRequest, PutPolicyResponse> handler);
+
+    /**
+     * Replace a Rule
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PutRuleResponse> putRule(
+            PutRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<PutRuleRequest, PutRuleResponse> handler);
+
+    /**
+     * Replace a Schema Def
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PutSchemaResponse> putSchema(
+            PutSchemaRequest request,
+            com.oracle.bmc.responses.AsyncHandler<PutSchemaRequest, PutSchemaResponse> handler);
+
+    /**
      * Replace a security question setting.
      *
      * @param request The request object containing the details to send
@@ -2511,6 +3909,36 @@ public interface IdentityDomainsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             PutSecurityQuestionSettingRequest, PutSecurityQuestionSettingResponse>
                     handler);
+
+    /**
+     * Replace a self-registration profile.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PutSelfRegistrationProfileResponse> putSelfRegistrationProfile(
+            PutSelfRegistrationProfileRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PutSelfRegistrationProfileRequest, PutSelfRegistrationProfileResponse>
+                    handler);
+
+    /**
+     * Replace Settings
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PutSettingResponse> putSetting(
+            PutSettingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<PutSettingRequest, PutSettingResponse> handler);
 
     /**
      * Replace a user.
@@ -2607,7 +4035,7 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Search ApiKeys Using POST
+     * Search for API keys using POST.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2682,6 +4110,68 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                                     SearchAuthenticationFactorSettingsRequest,
                                     SearchAuthenticationFactorSettingsResponse>
                             handler);
+
+    /**
+     * Search Cloud Gate mappings Using POST
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SearchCloudGateMappingsResponse> searchCloudGateMappings(
+            SearchCloudGateMappingsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SearchCloudGateMappingsRequest, SearchCloudGateMappingsResponse>
+                    handler);
+
+    /**
+     * Search Cloud Gate servers Using POST
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SearchCloudGateServersResponse> searchCloudGateServers(
+            SearchCloudGateServersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SearchCloudGateServersRequest, SearchCloudGateServersResponse>
+                    handler);
+
+    /**
+     * Search Cloud Gates Using POST
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SearchCloudGatesResponse> searchCloudGates(
+            SearchCloudGatesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<SearchCloudGatesRequest, SearchCloudGatesResponse>
+                    handler);
+
+    /**
+     * Search Conditions Using POST
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SearchConditionsResponse> searchConditions(
+            SearchConditionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<SearchConditionsRequest, SearchConditionsResponse>
+                    handler);
 
     /**
      * Search for customer secret keys using POST.
@@ -2855,6 +4345,38 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Search NetworkPerimeters Using POST
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SearchNetworkPerimetersResponse> searchNetworkPerimeters(
+            SearchNetworkPerimetersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SearchNetworkPerimetersRequest, SearchNetworkPerimetersResponse>
+                    handler);
+
+    /**
+     * Search Notification Settings Using POST
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SearchNotificationSettingsResponse> searchNotificationSettings(
+            SearchNotificationSettingsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SearchNotificationSettingsRequest, SearchNotificationSettingsResponse>
+                    handler);
+
+    /**
      * Search for OAuth2 client credentials using POST.
      *
      * @param request The request object containing the details to send
@@ -2870,6 +4392,42 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     SearchOAuth2ClientCredentialsRequest,
                                     SearchOAuth2ClientCredentialsResponse>
+                            handler);
+
+    /**
+     * Search OAuth Client Certificates Using POST
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SearchOAuthClientCertificatesResponse>
+            searchOAuthClientCertificates(
+                    SearchOAuthClientCertificatesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SearchOAuthClientCertificatesRequest,
+                                    SearchOAuthClientCertificatesResponse>
+                            handler);
+
+    /**
+     * Search OAuth Partner Certificates Using POST
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SearchOAuthPartnerCertificatesResponse>
+            searchOAuthPartnerCertificates(
+                    SearchOAuthPartnerCertificatesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SearchOAuthPartnerCertificatesRequest,
+                                    SearchOAuthPartnerCertificatesResponse>
                             handler);
 
     /**
@@ -2889,6 +4447,21 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Search Policies Using POST
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SearchPoliciesResponse> searchPolicies(
+            SearchPoliciesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<SearchPoliciesRequest, SearchPoliciesResponse>
+                    handler);
+
+    /**
      * Search Resource Type Schema Attributes Using POST
      *
      * @param request The request object containing the details to send
@@ -2905,6 +4478,35 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                                     SearchResourceTypeSchemaAttributesRequest,
                                     SearchResourceTypeSchemaAttributesResponse>
                             handler);
+
+    /**
+     * Search Rules Using POST
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SearchRulesResponse> searchRules(
+            SearchRulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<SearchRulesRequest, SearchRulesResponse> handler);
+
+    /**
+     * Search Schemas Using POST
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SearchSchemasResponse> searchSchemas(
+            SearchSchemasRequest request,
+            com.oracle.bmc.responses.AsyncHandler<SearchSchemasRequest, SearchSchemasResponse>
+                    handler);
 
     /**
      * Search for security question settings using POST.
@@ -2938,6 +4540,39 @@ public interface IdentityDomainsAsync extends AutoCloseable {
             SearchSecurityQuestionsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             SearchSecurityQuestionsRequest, SearchSecurityQuestionsResponse>
+                    handler);
+
+    /**
+     * Search for self-registration profile using POST.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SearchSelfRegistrationProfilesResponse>
+            searchSelfRegistrationProfiles(
+                    SearchSelfRegistrationProfilesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SearchSelfRegistrationProfilesRequest,
+                                    SearchSelfRegistrationProfilesResponse>
+                            handler);
+
+    /**
+     * Search Settings Using POST
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SearchSettingsResponse> searchSettings(
+            SearchSettingsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<SearchSettingsRequest, SearchSettingsResponse>
                     handler);
 
     /**
