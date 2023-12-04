@@ -53,7 +53,8 @@ public final class CreateCloudVmClusterDetails
         "giVersion",
         "freeformTags",
         "definedTags",
-        "dataCollectionOptions"
+        "dataCollectionOptions",
+        "systemVersion"
     })
     public CreateCloudVmClusterDetails(
             String compartmentId,
@@ -84,7 +85,8 @@ public final class CreateCloudVmClusterDetails
             String giVersion,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            DataCollectionOptions dataCollectionOptions) {
+            DataCollectionOptions dataCollectionOptions,
+            String systemVersion) {
         super();
         this.compartmentId = compartmentId;
         this.subnetId = subnetId;
@@ -115,6 +117,7 @@ public final class CreateCloudVmClusterDetails
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.dataCollectionOptions = dataCollectionOptions;
+        this.systemVersion = systemVersion;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -699,6 +702,21 @@ public final class CreateCloudVmClusterDetails
             this.__explicitlySet__.add("dataCollectionOptions");
             return this;
         }
+        /** Operating system version of the image. */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemVersion")
+        private String systemVersion;
+
+        /**
+         * Operating system version of the image.
+         *
+         * @param systemVersion the value to set
+         * @return this builder
+         */
+        public Builder systemVersion(String systemVersion) {
+            this.systemVersion = systemVersion;
+            this.__explicitlySet__.add("systemVersion");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -734,7 +752,8 @@ public final class CreateCloudVmClusterDetails
                             this.giVersion,
                             this.freeformTags,
                             this.definedTags,
-                            this.dataCollectionOptions);
+                            this.dataCollectionOptions,
+                            this.systemVersion);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -829,6 +848,9 @@ public final class CreateCloudVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
                 this.dataCollectionOptions(model.getDataCollectionOptions());
+            }
+            if (model.wasPropertyExplicitlySet("systemVersion")) {
+                this.systemVersion(model.getSystemVersion());
             }
             return this;
         }
@@ -1390,6 +1412,19 @@ public final class CreateCloudVmClusterDetails
         return dataCollectionOptions;
     }
 
+    /** Operating system version of the image. */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemVersion")
+    private final String systemVersion;
+
+    /**
+     * Operating system version of the image.
+     *
+     * @return the value
+     */
+    public String getSystemVersion() {
+        return systemVersion;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1436,6 +1471,7 @@ public final class CreateCloudVmClusterDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
+        sb.append(", systemVersion=").append(String.valueOf(this.systemVersion));
         sb.append(")");
         return sb.toString();
     }
@@ -1483,6 +1519,7 @@ public final class CreateCloudVmClusterDetails
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
+                && java.util.Objects.equals(this.systemVersion, other.systemVersion)
                 && super.equals(other);
     }
 
@@ -1569,6 +1606,9 @@ public final class CreateCloudVmClusterDetails
                         + (this.dataCollectionOptions == null
                                 ? 43
                                 : this.dataCollectionOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.systemVersion == null ? 43 : this.systemVersion.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -929,6 +929,23 @@ public interface Database extends AutoCloseable {
     CreateConsoleConnectionResponse createConsoleConnection(CreateConsoleConnectionRequest request);
 
     /**
+     * Captures the most recent serial console data (up to a megabyte) for the specified database
+     * node.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateConsoleHistoryExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateConsoleHistory API.
+     */
+    CreateConsoleHistoryResponse createConsoleHistory(CreateConsoleHistoryRequest request);
+
+    /**
      * Creates a new Data Guard association. A Data Guard association represents the replication
      * relationship between the specified database and a peer database. For more information, see
      * [Using Oracle Data
@@ -1418,6 +1435,22 @@ public interface Database extends AutoCloseable {
      *     DeleteConsoleConnection API.
      */
     DeleteConsoleConnectionResponse deleteConsoleConnection(DeleteConsoleConnectionRequest request);
+
+    /**
+     * Deletes the specified database node console history.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteConsoleHistoryExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteConsoleHistory API.
+     */
+    DeleteConsoleHistoryResponse deleteConsoleHistory(DeleteConsoleHistoryRequest request);
 
     /**
      * Deletes the specified database. Applies only to Exadata systems.
@@ -2712,6 +2745,39 @@ public interface Database extends AutoCloseable {
     GetConsoleConnectionResponse getConsoleConnection(GetConsoleConnectionRequest request);
 
     /**
+     * Gets information about the specified database node console history.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetConsoleHistoryExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConsoleHistory
+     *     API.
+     */
+    GetConsoleHistoryResponse getConsoleHistory(GetConsoleHistoryRequest request);
+
+    /**
+     * Retrieves the specified database node console history contents upto a megabyte.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetConsoleHistoryContentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetConsoleHistoryContent API.
+     */
+    GetConsoleHistoryContentResponse getConsoleHistoryContent(
+            GetConsoleHistoryContentRequest request);
+
+    /**
      * Gets the specified Data Guard association's configuration information.
      *
      * @param request The request object containing the details to send
@@ -3846,6 +3912,22 @@ public interface Database extends AutoCloseable {
     ListConsoleConnectionsResponse listConsoleConnections(ListConsoleConnectionsRequest request);
 
     /**
+     * Lists the console histories for the specified database node.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListConsoleHistoriesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListConsoleHistories API.
+     */
+    ListConsoleHistoriesResponse listConsoleHistories(ListConsoleHistoriesRequest request);
+
+    /**
      * Lists the patches applicable to the requested container database.
      *
      * @param request The request object containing the details to send
@@ -4375,6 +4457,22 @@ public interface Database extends AutoCloseable {
      *     ListPluggableDatabases API.
      */
     ListPluggableDatabasesResponse listPluggableDatabases(ListPluggableDatabasesRequest request);
+
+    /**
+     * Gets a list of supported Exadata system versions for a given shape and GI version.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListSystemVersionsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSystemVersions
+     *     API.
+     */
+    ListSystemVersionsResponse listSystemVersions(ListSystemVersionsRequest request);
 
     /**
      * Gets a list of the VM cluster networks in the specified compartment. Applies to Exadata
@@ -5488,6 +5586,22 @@ public interface Database extends AutoCloseable {
      *     UpdateConsoleConnection API.
      */
     UpdateConsoleConnectionResponse updateConsoleConnection(UpdateConsoleConnectionRequest request);
+
+    /**
+     * Updates the specified database node console history.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateConsoleHistoryExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateConsoleHistory API.
+     */
+    UpdateConsoleHistoryResponse updateConsoleHistory(UpdateConsoleHistoryRequest request);
 
     /**
      * Updates the Data Guard association the specified database. This API can be used to change the

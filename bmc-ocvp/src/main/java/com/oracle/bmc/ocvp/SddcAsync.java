@@ -12,7 +12,7 @@ import com.oracle.bmc.ocvp.responses.*;
  * information, see [Oracle Cloud VMware
  * Solution](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/ocvsoverview.htm).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 public interface SddcAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */
@@ -186,6 +186,22 @@ public interface SddcAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListSddcsRequest, ListSddcsResponse> handler);
 
     /**
+     * Lists supported Commitments.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSupportedCommitmentsResponse> listSupportedCommitments(
+            ListSupportedCommitmentsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSupportedCommitmentsRequest, ListSupportedCommitmentsResponse>
+                    handler);
+
+    /**
      * Lists supported compute shapes for ESXi hosts.
      *
      * @param request The request object containing the details to send
@@ -199,22 +215,6 @@ public interface SddcAsync extends AutoCloseable {
             ListSupportedHostShapesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListSupportedHostShapesRequest, ListSupportedHostShapesResponse>
-                    handler);
-
-    /**
-     * Lists supported SKUs.
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
-     */
-    java.util.concurrent.Future<ListSupportedSkusResponse> listSupportedSkus(
-            ListSupportedSkusRequest request,
-            com.oracle.bmc.responses.AsyncHandler<
-                            ListSupportedSkusRequest, ListSupportedSkusResponse>
                     handler);
 
     /**
@@ -249,6 +249,21 @@ public interface SddcAsync extends AutoCloseable {
             RefreshHcxLicenseStatusRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             RefreshHcxLicenseStatusRequest, RefreshHcxLicenseStatusResponse>
+                    handler);
+
+    /**
+     * Retrieve the SDDC password.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RetrievePasswordResponse> retrievePassword(
+            RetrievePasswordRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RetrievePasswordRequest, RetrievePasswordResponse>
                     handler);
 
     /**

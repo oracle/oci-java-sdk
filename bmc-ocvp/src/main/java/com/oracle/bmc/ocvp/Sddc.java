@@ -15,7 +15,7 @@ import com.oracle.bmc.ocvp.responses.*;
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 public interface Sddc extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */
@@ -193,6 +193,23 @@ public interface Sddc extends AutoCloseable {
     ListSddcsResponse listSddcs(ListSddcsRequest request);
 
     /**
+     * Lists supported Commitments.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ListSupportedCommitmentsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListSupportedCommitments API.
+     */
+    ListSupportedCommitmentsResponse listSupportedCommitments(
+            ListSupportedCommitmentsRequest request);
+
+    /**
      * Lists supported compute shapes for ESXi hosts.
      *
      * @param request The request object containing the details to send
@@ -207,22 +224,6 @@ public interface Sddc extends AutoCloseable {
      *     ListSupportedHostShapes API.
      */
     ListSupportedHostShapesResponse listSupportedHostShapes(ListSupportedHostShapesRequest request);
-
-    /**
-     * Lists supported SKUs.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ListSupportedSkusExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSupportedSkus
-     *     API.
-     */
-    ListSupportedSkusResponse listSupportedSkus(ListSupportedSkusRequest request);
 
     /**
      * Lists the versions of bundled VMware software supported by the Oracle Cloud VMware Solution.
@@ -256,6 +257,22 @@ public interface Sddc extends AutoCloseable {
      *     RefreshHcxLicenseStatus API.
      */
     RefreshHcxLicenseStatusResponse refreshHcxLicenseStatus(RefreshHcxLicenseStatusRequest request);
+
+    /**
+     * Retrieve the SDDC password.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/RetrievePasswordExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetrievePassword
+     *     API.
+     */
+    RetrievePasswordResponse retrievePassword(RetrievePasswordRequest request);
 
     /**
      * Updates the specified SDDC.

@@ -241,15 +241,15 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
             return this;
         }
         /**
-         * Database Certificate - The base64 encoded content of mysql.pem file containing the server
-         * public key (for 1 and 2-way SSL).
+         * Database Certificate - The base64 encoded content of a .pem or .crt file. containing the
+         * server public key (for 1 and 2-way SSL).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslCa")
         private String sslCa;
 
         /**
-         * Database Certificate - The base64 encoded content of mysql.pem file containing the server
-         * public key (for 1 and 2-way SSL).
+         * Database Certificate - The base64 encoded content of a .pem or .crt file. containing the
+         * server public key (for 1 and 2-way SSL).
          *
          * @param sslCa the value to set
          * @return this builder
@@ -260,17 +260,17 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
             return this;
         }
         /**
-         * Certificates revoked by certificate authorities (CA). Server certificate must not be on
-         * this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable
-         * if TLS/MTLS option is selected.
+         * The base64 encoded list of certificates revoked by the trusted certificate authorities
+         * (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option
+         * is selected.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslCrl")
         private String sslCrl;
 
         /**
-         * Certificates revoked by certificate authorities (CA). Server certificate must not be on
-         * this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable
-         * if TLS/MTLS option is selected.
+         * The base64 encoded list of certificates revoked by the trusted certificate authorities
+         * (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option
+         * is selected.
          *
          * @param sslCrl the value to set
          * @return this builder
@@ -281,14 +281,14 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
             return this;
         }
         /**
-         * Client Certificate - The base64 encoded content of client-cert.pem file containing the
+         * Client Certificate - The base64 encoded content of a .pem or .crt file. containing the
          * client public key (for 2-way SSL).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslCert")
         private String sslCert;
 
         /**
-         * Client Certificate - The base64 encoded content of client-cert.pem file containing the
+         * Client Certificate - The base64 encoded content of a .pem or .crt file. containing the
          * client public key (for 2-way SSL).
          *
          * @param sslCert the value to set
@@ -299,12 +299,16 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
             this.__explicitlySet__.add("sslCert");
             return this;
         }
-        /** Client Key - The client-key.pem containing the client private key (for 2-way SSL). */
+        /**
+         * Client Key \u2013 The base64 encoded content of a .pem or .crt file containing the client
+         * private key (for 2-way SSL).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sslKey")
         private String sslKey;
 
         /**
-         * Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+         * Client Key \u2013 The base64 encoded content of a .pem or .crt file containing the client
+         * private key (for 2-way SSL).
          *
          * @param sslKey the value to set
          * @return this builder
@@ -673,15 +677,15 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
     }
 
     /**
-     * Database Certificate - The base64 encoded content of mysql.pem file containing the server
-     * public key (for 1 and 2-way SSL).
+     * Database Certificate - The base64 encoded content of a .pem or .crt file. containing the
+     * server public key (for 1 and 2-way SSL).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslCa")
     private final String sslCa;
 
     /**
-     * Database Certificate - The base64 encoded content of mysql.pem file containing the server
-     * public key (for 1 and 2-way SSL).
+     * Database Certificate - The base64 encoded content of a .pem or .crt file. containing the
+     * server public key (for 1 and 2-way SSL).
      *
      * @return the value
      */
@@ -690,17 +694,17 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
     }
 
     /**
-     * Certificates revoked by certificate authorities (CA). Server certificate must not be on this
-     * list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if
-     * TLS/MTLS option is selected.
+     * The base64 encoded list of certificates revoked by the trusted certificate authorities
+     * (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is
+     * selected.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslCrl")
     private final String sslCrl;
 
     /**
-     * Certificates revoked by certificate authorities (CA). Server certificate must not be on this
-     * list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if
-     * TLS/MTLS option is selected.
+     * The base64 encoded list of certificates revoked by the trusted certificate authorities
+     * (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is
+     * selected.
      *
      * @return the value
      */
@@ -709,14 +713,14 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
     }
 
     /**
-     * Client Certificate - The base64 encoded content of client-cert.pem file containing the client
+     * Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client
      * public key (for 2-way SSL).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslCert")
     private final String sslCert;
 
     /**
-     * Client Certificate - The base64 encoded content of client-cert.pem file containing the client
+     * Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client
      * public key (for 2-way SSL).
      *
      * @return the value
@@ -725,12 +729,16 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
         return sslCert;
     }
 
-    /** Client Key - The client-key.pem containing the client private key (for 2-way SSL). */
+    /**
+     * Client Key \u2013 The base64 encoded content of a .pem or .crt file containing the client
+     * private key (for 2-way SSL).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("sslKey")
     private final String sslKey;
 
     /**
-     * Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+     * Client Key \u2013 The base64 encoded content of a .pem or .crt file containing the client
+     * private key (for 2-way SSL).
      *
      * @return the value
      */

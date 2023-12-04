@@ -231,6 +231,22 @@ public interface GoldenGate extends AutoCloseable {
     CopyDeploymentBackupResponse copyDeploymentBackup(CopyDeploymentBackupRequest request);
 
     /**
+     * Creates a new certificate to truststore.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/CreateCertificateExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCertificate
+     *     API.
+     */
+    CreateCertificateResponse createCertificate(CreateCertificateRequest request);
+
+    /**
      * Creates a new Connection.
      *
      * @param request The request object containing the details to send
@@ -311,6 +327,22 @@ public interface GoldenGate extends AutoCloseable {
      *     CreateDeploymentBackup API.
      */
     CreateDeploymentBackupResponse createDeploymentBackup(CreateDeploymentBackupRequest request);
+
+    /**
+     * Deletes the certificate from truststore.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/DeleteCertificateExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCertificate
+     *     API.
+     */
+    DeleteCertificateResponse deleteCertificate(DeleteCertificateRequest request);
 
     /**
      * Deletes a Connection.
@@ -427,6 +459,21 @@ public interface GoldenGate extends AutoCloseable {
      *     ExportDeploymentWallet API.
      */
     ExportDeploymentWalletResponse exportDeploymentWallet(ExportDeploymentWalletRequest request);
+
+    /**
+     * Retrieves a Certificate.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/GetCertificateExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCertificate API.
+     */
+    GetCertificateResponse getCertificate(GetCertificateRequest request);
 
     /**
      * Retrieves a Connection.
@@ -553,6 +600,22 @@ public interface GoldenGate extends AutoCloseable {
      *     ImportDeploymentWallet API.
      */
     ImportDeploymentWalletResponse importDeploymentWallet(ImportDeploymentWalletRequest request);
+
+    /**
+     * Returns a list of certificates from truststore.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListCertificatesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCertificates
+     *     API.
+     */
+    ListCertificatesResponse listCertificates(ListCertificatesRequest request);
 
     /**
      * Lists the Connection Assignments in the compartment.

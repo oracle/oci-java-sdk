@@ -139,6 +139,7 @@ public final class Region implements Serializable, Comparable<Region> {
     public static final Region US_CHICAGO_1 = register("us-chicago-1", Realm.OC1, "ord");
     public static final Region MX_MONTERREY_1 = register("mx-monterrey-1", Realm.OC1, "mty");
     public static final Region US_SALTLAKE_2 = register("us-saltlake-2", Realm.OC1, "aga");
+    public static final Region SA_BOGOTA_1 = register("sa-bogota-1", Realm.OC1, "bog");
 
     // OC2
     public static final Region US_LANGLEY_1 = register("us-langley-1", Realm.OC2, "lfi");
@@ -177,6 +178,9 @@ public final class Region implements Serializable, Comparable<Region> {
     // OC19
     public static final Region EU_MADRID_2 = register("eu-madrid-2", Realm.OC19, "vll");
     public static final Region EU_FRANKFURT_2 = register("eu-frankfurt-2", Realm.OC19, "str");
+
+    // OC24
+    public static final Region EU_DCC_ZURICH_1 = register("eu-dcc-zurich-1", Realm.OC24, "avz");
 
     private static final Map<String, Map<Region, String>> SERVICE_TO_REGION_ENDPOINTS =
             new HashMap<>();

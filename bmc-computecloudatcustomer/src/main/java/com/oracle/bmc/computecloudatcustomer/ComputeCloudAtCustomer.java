@@ -8,9 +8,9 @@ import com.oracle.bmc.computecloudatcustomer.requests.*;
 import com.oracle.bmc.computecloudatcustomer.responses.*;
 
 /**
- * Use the Compute Cloud@Customer API to manage Compute Cloud@Customer Infrastructure deployments
- * and scheduled upgrades. For more information see [Compute Cloud@Customer
- * documentation](https://docs.cloud.oracle.com/iaas/Content/compute-cloud-at-customer/home.htm).
+ * Use the Compute Cloud@Customer API to manage Compute Cloud@Customer infrastructures and upgrade
+ * schedules. For more information see [Compute Cloud@Customer
+ * documentation](https://docs.cloud.oracle.com/iaas/compute-cloud-at-customer/home.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.

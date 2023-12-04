@@ -14,7 +14,7 @@ import com.oracle.bmc.ocvp.responses.*;
  * <p>The default configuration used is defined by {@link
  * com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 public class SddcWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final Sddc client;

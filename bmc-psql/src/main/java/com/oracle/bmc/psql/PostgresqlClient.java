@@ -133,7 +133,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, ChangeBackupCompartmentResponse::builder)
                 .logger(LOG, "changeBackupCompartment")
-                .serviceDetails("Postgresql", "ChangeBackupCompartment", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "ChangeBackupCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/Backup/ChangeBackupCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeBackupCompartmentRequest::builder)
                 .basePath("/20220915")
@@ -166,7 +169,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, ChangeConfigurationCompartmentResponse::builder)
                 .logger(LOG, "changeConfigurationCompartment")
-                .serviceDetails("Postgresql", "ChangeConfigurationCompartment", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "ChangeConfigurationCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/Configuration/ChangeConfigurationCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeConfigurationCompartmentRequest::builder)
                 .basePath("/20220915")
@@ -202,7 +208,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, ChangeDbSystemCompartmentResponse::builder)
                 .logger(LOG, "changeDbSystemCompartment")
-                .serviceDetails("Postgresql", "ChangeDbSystemCompartment", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "ChangeDbSystemCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/ChangeDbSystemCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeDbSystemCompartmentRequest::builder)
                 .basePath("/20220915")
@@ -230,7 +239,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, CreateBackupResponse::builder)
                 .logger(LOG, "createBackup")
-                .serviceDetails("Postgresql", "CreateBackup", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "CreateBackup",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/Backup/CreateBackup")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateBackupRequest::builder)
                 .basePath("/20220915")
@@ -254,7 +266,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, CreateConfigurationResponse::builder)
                 .logger(LOG, "createConfiguration")
-                .serviceDetails("Postgresql", "CreateConfiguration", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "CreateConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/Configuration/CreateConfiguration")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateConfigurationRequest::builder)
                 .basePath("/20220915")
@@ -280,7 +295,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, CreateDbSystemResponse::builder)
                 .logger(LOG, "createDbSystem")
-                .serviceDetails("Postgresql", "CreateDbSystem", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "CreateDbSystem",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/CreateDbSystem")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDbSystemRequest::builder)
                 .basePath("/20220915")
@@ -308,7 +326,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, DeleteBackupResponse::builder)
                 .logger(LOG, "deleteBackup")
-                .serviceDetails("Postgresql", "DeleteBackup", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "DeleteBackup",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/Backup/DeleteBackup")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteBackupRequest::builder)
                 .basePath("/20220915")
@@ -332,7 +353,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, DeleteConfigurationResponse::builder)
                 .logger(LOG, "deleteConfiguration")
-                .serviceDetails("Postgresql", "DeleteConfiguration", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "DeleteConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/Configuration/DeleteConfiguration")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteConfigurationRequest::builder)
                 .basePath("/20220915")
@@ -354,7 +378,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, DeleteDbSystemResponse::builder)
                 .logger(LOG, "deleteDbSystem")
-                .serviceDetails("Postgresql", "DeleteDbSystem", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "DeleteDbSystem",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/DeleteDbSystem")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDbSystemRequest::builder)
                 .basePath("/20220915")
@@ -380,7 +407,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, FailoverDbSystemResponse::builder)
                 .logger(LOG, "failoverDbSystem")
-                .serviceDetails("Postgresql", "FailoverDbSystem", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "FailoverDbSystem",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/FailoverDbSystem")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(FailoverDbSystemRequest::builder)
                 .basePath("/20220915")
@@ -408,7 +438,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, GetBackupResponse::builder)
                 .logger(LOG, "getBackup")
-                .serviceDetails("Postgresql", "GetBackup", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "GetBackup",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/Backup/GetBackup")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetBackupRequest::builder)
                 .basePath("/20220915")
@@ -432,7 +465,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, GetConfigurationResponse::builder)
                 .logger(LOG, "getConfiguration")
-                .serviceDetails("Postgresql", "GetConfiguration", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "GetConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/Configuration/GetConfiguration")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetConfigurationRequest::builder)
                 .basePath("/20220915")
@@ -457,7 +493,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, GetConnectionDetailsResponse::builder)
                 .logger(LOG, "getConnectionDetails")
-                .serviceDetails("Postgresql", "GetConnectionDetails", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "GetConnectionDetails",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/ConnectionDetails/GetConnectionDetails")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetConnectionDetailsRequest::builder)
                 .basePath("/20220915")
@@ -483,7 +522,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, GetDbSystemResponse::builder)
                 .logger(LOG, "getDbSystem")
-                .serviceDetails("Postgresql", "GetDbSystem", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "GetDbSystem",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/GetDbSystem")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDbSystemRequest::builder)
                 .basePath("/20220915")
@@ -514,7 +556,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, GetDefaultConfigurationResponse::builder)
                 .logger(LOG, "getDefaultConfiguration")
-                .serviceDetails("Postgresql", "GetDefaultConfiguration", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "GetDefaultConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DefaultConfiguration/GetDefaultConfiguration")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDefaultConfigurationRequest::builder)
                 .basePath("/20220915")
@@ -539,7 +584,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, GetPrimaryDbInstanceResponse::builder)
                 .logger(LOG, "getPrimaryDbInstance")
-                .serviceDetails("Postgresql", "GetPrimaryDbInstance", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "GetPrimaryDbInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/GetPrimaryDbInstance")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetPrimaryDbInstanceRequest::builder)
                 .basePath("/20220915")
@@ -565,7 +613,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("Postgresql", "GetWorkRequest", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20220915")
@@ -590,7 +641,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, ListBackupsResponse::builder)
                 .logger(LOG, "listBackups")
-                .serviceDetails("Postgresql", "ListBackups", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "ListBackups",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/BackupCollection/ListBackups")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListBackupsRequest::builder)
                 .basePath("/20220915")
@@ -624,7 +678,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, ListConfigurationsResponse::builder)
                 .logger(LOG, "listConfigurations")
-                .serviceDetails("Postgresql", "ListConfigurations", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "ListConfigurations",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/ConfigurationCollection/ListConfigurations")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListConfigurationsRequest::builder)
                 .basePath("/20220915")
@@ -657,7 +714,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, ListDbSystemsResponse::builder)
                 .logger(LOG, "listDbSystems")
-                .serviceDetails("Postgresql", "ListDbSystems", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "ListDbSystems",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystemCollection/ListDbSystems")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDbSystemsRequest::builder)
                 .basePath("/20220915")
@@ -689,7 +749,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, ListDefaultConfigurationsResponse::builder)
                 .logger(LOG, "listDefaultConfigurations")
-                .serviceDetails("Postgresql", "ListDefaultConfigurations", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "ListDefaultConfigurations",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DefaultConfigurationCollection/ListDefaultConfigurations")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDefaultConfigurationsRequest::builder)
                 .basePath("/20220915")
@@ -721,7 +784,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, ListShapesResponse::builder)
                 .logger(LOG, "listShapes")
-                .serviceDetails("Postgresql", "ListShapes", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "ListShapes",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/ShapeSummary/ListShapes")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListShapesRequest::builder)
                 .basePath("/20220915")
@@ -753,7 +819,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("Postgresql", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20220915")
@@ -784,7 +853,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("Postgresql", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20220915")
@@ -813,7 +885,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("Postgresql", "ListWorkRequests", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20220915")
@@ -848,7 +923,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, PatchDbSystemResponse::builder)
                 .logger(LOG, "patchDbSystem")
-                .serviceDetails("Postgresql", "PatchDbSystem", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "PatchDbSystem",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/PatchDbSystem")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchDbSystemRequest::builder)
                 .basePath("/20220915")
@@ -877,7 +955,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, ResetMasterUserPasswordResponse::builder)
                 .logger(LOG, "resetMasterUserPassword")
-                .serviceDetails("Postgresql", "ResetMasterUserPassword", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "ResetMasterUserPassword",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/ResetMasterUserPassword")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ResetMasterUserPasswordRequest::builder)
                 .basePath("/20220915")
@@ -910,7 +991,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, RestartDbInstanceInDbSystemResponse::builder)
                 .logger(LOG, "restartDbInstanceInDbSystem")
-                .serviceDetails("Postgresql", "RestartDbInstanceInDbSystem", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "RestartDbInstanceInDbSystem",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/RestartDbInstanceInDbSystem")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RestartDbInstanceInDbSystemRequest::builder)
                 .basePath("/20220915")
@@ -941,7 +1025,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, RestoreDbSystemResponse::builder)
                 .logger(LOG, "restoreDbSystem")
-                .serviceDetails("Postgresql", "RestoreDbSystem", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "RestoreDbSystem",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/RestoreDbSystem")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RestoreDbSystemRequest::builder)
                 .basePath("/20220915")
@@ -970,7 +1057,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, UpdateBackupResponse::builder)
                 .logger(LOG, "updateBackup")
-                .serviceDetails("Postgresql", "UpdateBackup", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "UpdateBackup",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/Backup/UpdateBackup")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateBackupRequest::builder)
                 .basePath("/20220915")
@@ -999,7 +1089,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, UpdateConfigurationResponse::builder)
                 .logger(LOG, "updateConfiguration")
-                .serviceDetails("Postgresql", "UpdateConfiguration", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "UpdateConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/Configuration/UpdateConfiguration")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateConfigurationRequest::builder)
                 .basePath("/20220915")
@@ -1029,7 +1122,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, UpdateDbSystemResponse::builder)
                 .logger(LOG, "updateDbSystem")
-                .serviceDetails("Postgresql", "UpdateDbSystem", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "UpdateDbSystem",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/UpdateDbSystem")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDbSystemRequest::builder)
                 .basePath("/20220915")
@@ -1061,7 +1157,10 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, UpdateDbSystemDbInstanceResponse::builder)
                 .logger(LOG, "updateDbSystemDbInstance")
-                .serviceDetails("Postgresql", "UpdateDbSystemDbInstance", "")
+                .serviceDetails(
+                        "Postgresql",
+                        "UpdateDbSystemDbInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/UpdateDbSystemDbInstance")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDbSystemDbInstanceRequest::builder)
                 .basePath("/20220915")

@@ -70,7 +70,10 @@ public final class AutonomousVmCluster
         "scanListenerPortNonTls",
         "isMtlsEnabled",
         "timeDatabaseSslCertificateExpires",
-        "timeOrdsCertificateExpires"
+        "timeOrdsCertificateExpires",
+        "exadataStorageInTBsLowestScaledValue",
+        "cpusLowestScaledValue",
+        "maxAcdsLowestScaledValue"
     })
     public AutonomousVmCluster(
             String id,
@@ -119,7 +122,10 @@ public final class AutonomousVmCluster
             Integer scanListenerPortNonTls,
             Boolean isMtlsEnabled,
             java.util.Date timeDatabaseSslCertificateExpires,
-            java.util.Date timeOrdsCertificateExpires) {
+            java.util.Date timeOrdsCertificateExpires,
+            Double exadataStorageInTBsLowestScaledValue,
+            Integer cpusLowestScaledValue,
+            Integer maxAcdsLowestScaledValue) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -169,6 +175,9 @@ public final class AutonomousVmCluster
         this.isMtlsEnabled = isMtlsEnabled;
         this.timeDatabaseSslCertificateExpires = timeDatabaseSslCertificateExpires;
         this.timeOrdsCertificateExpires = timeOrdsCertificateExpires;
+        this.exadataStorageInTBsLowestScaledValue = exadataStorageInTBsLowestScaledValue;
+        this.cpusLowestScaledValue = cpusLowestScaledValue;
+        this.maxAcdsLowestScaledValue = maxAcdsLowestScaledValue;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -979,6 +988,52 @@ public final class AutonomousVmCluster
             this.__explicitlySet__.add("timeOrdsCertificateExpires");
             return this;
         }
+        /** The lowest value to which exadataStorage in TBs can be scaled down. */
+        @com.fasterxml.jackson.annotation.JsonProperty("exadataStorageInTBsLowestScaledValue")
+        private Double exadataStorageInTBsLowestScaledValue;
+
+        /**
+         * The lowest value to which exadataStorage in TBs can be scaled down.
+         *
+         * @param exadataStorageInTBsLowestScaledValue the value to set
+         * @return this builder
+         */
+        public Builder exadataStorageInTBsLowestScaledValue(
+                Double exadataStorageInTBsLowestScaledValue) {
+            this.exadataStorageInTBsLowestScaledValue = exadataStorageInTBsLowestScaledValue;
+            this.__explicitlySet__.add("exadataStorageInTBsLowestScaledValue");
+            return this;
+        }
+        /** The lowest value to which cpus can be scaled down. */
+        @com.fasterxml.jackson.annotation.JsonProperty("cpusLowestScaledValue")
+        private Integer cpusLowestScaledValue;
+
+        /**
+         * The lowest value to which cpus can be scaled down.
+         *
+         * @param cpusLowestScaledValue the value to set
+         * @return this builder
+         */
+        public Builder cpusLowestScaledValue(Integer cpusLowestScaledValue) {
+            this.cpusLowestScaledValue = cpusLowestScaledValue;
+            this.__explicitlySet__.add("cpusLowestScaledValue");
+            return this;
+        }
+        /** The lowest value to which ACDs can be scaled down. */
+        @com.fasterxml.jackson.annotation.JsonProperty("maxAcdsLowestScaledValue")
+        private Integer maxAcdsLowestScaledValue;
+
+        /**
+         * The lowest value to which ACDs can be scaled down.
+         *
+         * @param maxAcdsLowestScaledValue the value to set
+         * @return this builder
+         */
+        public Builder maxAcdsLowestScaledValue(Integer maxAcdsLowestScaledValue) {
+            this.maxAcdsLowestScaledValue = maxAcdsLowestScaledValue;
+            this.__explicitlySet__.add("maxAcdsLowestScaledValue");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -1032,7 +1087,10 @@ public final class AutonomousVmCluster
                             this.scanListenerPortNonTls,
                             this.isMtlsEnabled,
                             this.timeDatabaseSslCertificateExpires,
-                            this.timeOrdsCertificateExpires);
+                            this.timeOrdsCertificateExpires,
+                            this.exadataStorageInTBsLowestScaledValue,
+                            this.cpusLowestScaledValue,
+                            this.maxAcdsLowestScaledValue);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1186,6 +1244,16 @@ public final class AutonomousVmCluster
             }
             if (model.wasPropertyExplicitlySet("timeOrdsCertificateExpires")) {
                 this.timeOrdsCertificateExpires(model.getTimeOrdsCertificateExpires());
+            }
+            if (model.wasPropertyExplicitlySet("exadataStorageInTBsLowestScaledValue")) {
+                this.exadataStorageInTBsLowestScaledValue(
+                        model.getExadataStorageInTBsLowestScaledValue());
+            }
+            if (model.wasPropertyExplicitlySet("cpusLowestScaledValue")) {
+                this.cpusLowestScaledValue(model.getCpusLowestScaledValue());
+            }
+            if (model.wasPropertyExplicitlySet("maxAcdsLowestScaledValue")) {
+                this.maxAcdsLowestScaledValue(model.getMaxAcdsLowestScaledValue());
             }
             return this;
         }
@@ -2041,6 +2109,45 @@ public final class AutonomousVmCluster
         return timeOrdsCertificateExpires;
     }
 
+    /** The lowest value to which exadataStorage in TBs can be scaled down. */
+    @com.fasterxml.jackson.annotation.JsonProperty("exadataStorageInTBsLowestScaledValue")
+    private final Double exadataStorageInTBsLowestScaledValue;
+
+    /**
+     * The lowest value to which exadataStorage in TBs can be scaled down.
+     *
+     * @return the value
+     */
+    public Double getExadataStorageInTBsLowestScaledValue() {
+        return exadataStorageInTBsLowestScaledValue;
+    }
+
+    /** The lowest value to which cpus can be scaled down. */
+    @com.fasterxml.jackson.annotation.JsonProperty("cpusLowestScaledValue")
+    private final Integer cpusLowestScaledValue;
+
+    /**
+     * The lowest value to which cpus can be scaled down.
+     *
+     * @return the value
+     */
+    public Integer getCpusLowestScaledValue() {
+        return cpusLowestScaledValue;
+    }
+
+    /** The lowest value to which ACDs can be scaled down. */
+    @com.fasterxml.jackson.annotation.JsonProperty("maxAcdsLowestScaledValue")
+    private final Integer maxAcdsLowestScaledValue;
+
+    /**
+     * The lowest value to which ACDs can be scaled down.
+     *
+     * @return the value
+     */
+    public Integer getMaxAcdsLowestScaledValue() {
+        return maxAcdsLowestScaledValue;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -2117,6 +2224,11 @@ public final class AutonomousVmCluster
                 .append(String.valueOf(this.timeDatabaseSslCertificateExpires));
         sb.append(", timeOrdsCertificateExpires=")
                 .append(String.valueOf(this.timeOrdsCertificateExpires));
+        sb.append(", exadataStorageInTBsLowestScaledValue=")
+                .append(String.valueOf(this.exadataStorageInTBsLowestScaledValue));
+        sb.append(", cpusLowestScaledValue=").append(String.valueOf(this.cpusLowestScaledValue));
+        sb.append(", maxAcdsLowestScaledValue=")
+                .append(String.valueOf(this.maxAcdsLowestScaledValue));
         sb.append(")");
         return sb.toString();
     }
@@ -2199,6 +2311,12 @@ public final class AutonomousVmCluster
                         other.timeDatabaseSslCertificateExpires)
                 && java.util.Objects.equals(
                         this.timeOrdsCertificateExpires, other.timeOrdsCertificateExpires)
+                && java.util.Objects.equals(
+                        this.exadataStorageInTBsLowestScaledValue,
+                        other.exadataStorageInTBsLowestScaledValue)
+                && java.util.Objects.equals(this.cpusLowestScaledValue, other.cpusLowestScaledValue)
+                && java.util.Objects.equals(
+                        this.maxAcdsLowestScaledValue, other.maxAcdsLowestScaledValue)
                 && super.equals(other);
     }
 
@@ -2369,6 +2487,21 @@ public final class AutonomousVmCluster
                         + (this.timeOrdsCertificateExpires == null
                                 ? 43
                                 : this.timeOrdsCertificateExpires.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataStorageInTBsLowestScaledValue == null
+                                ? 43
+                                : this.exadataStorageInTBsLowestScaledValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpusLowestScaledValue == null
+                                ? 43
+                                : this.cpusLowestScaledValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxAcdsLowestScaledValue == null
+                                ? 43
+                                : this.maxAcdsLowestScaledValue.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

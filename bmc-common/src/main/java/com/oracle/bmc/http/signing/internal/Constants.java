@@ -21,7 +21,6 @@ public class Constants {
     // Signing
     static final String REQUEST_TARGET = "(request-target)";
     static final String DATE = "date";
-    static final String X_DATE = "x-date";
     static final String CONTENT_LENGTH = "content-length";
     static final String CONTENT_TYPE = "content-type";
     static final String X_CONTENT_SHA256 = "x-content-sha256";
@@ -75,7 +74,7 @@ public class Constants {
     public static final List<String> OPTIONAL_HEADERS_NAMES =
             Collections.unmodifiableList(
                     Arrays.asList(
-                            OPC_OBO_TOKEN, CROSS_TENANCY_REQUEST_HEADER_NAME, X_SUBSCRIPTION, X_DATE));
+                            OPC_OBO_TOKEN, CROSS_TENANCY_REQUEST_HEADER_NAME, X_SUBSCRIPTION));
 
     public static final Map<String, List<String>> OPTIONAL_SIGNING_HEADERS_MAP =
             createHeadersToSignForVerbMap(

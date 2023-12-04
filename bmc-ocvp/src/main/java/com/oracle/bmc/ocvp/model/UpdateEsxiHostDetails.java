@@ -15,7 +15,7 @@ package com.oracle.bmc.ocvp.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = UpdateEsxiHostDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -25,20 +25,20 @@ public final class UpdateEsxiHostDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
-        "nextSku",
+        "nextCommitment",
         "billingDonorHostId",
         "freeformTags",
         "definedTags"
     })
     public UpdateEsxiHostDetails(
             String displayName,
-            Sku nextSku,
+            Commitment nextCommitment,
             String billingDonorHostId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
-        this.nextSku = nextSku;
+        this.nextCommitment = nextCommitment;
         this.billingDonorHostId = billingDonorHostId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -49,7 +49,7 @@ public final class UpdateEsxiHostDetails
         /**
          * A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are
          * 1-16 character length limit, Must start with a letter, Must be English letters, numbers,
-         * - only, No repeating hyphens, Must be unique within the SDDC.
+         * - only, No repeating hyphens, Must be unique within the Cluster.
          *
          * <p>Avoid entering confidential information.
          */
@@ -59,7 +59,7 @@ public final class UpdateEsxiHostDetails
         /**
          * A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are
          * 1-16 character length limit, Must start with a letter, Must be English letters, numbers,
-         * - only, No repeating hyphens, Must be unique within the SDDC.
+         * - only, No repeating hyphens, Must be unique within the Cluster.
          *
          * <p>Avoid entering confidential information.
          *
@@ -72,24 +72,26 @@ public final class UpdateEsxiHostDetails
             return this;
         }
         /**
-         * The billing option to switch to after the existing billing cycle ends. If {@code nextSku}
-         * is null or empty, {@code currentSku} continues to the next billing cycle. {@link
-         * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+         * The billing option to switch to after the existing billing cycle ends. If {@code
+         * nextCommitment} is null or empty, {@code currentCommitment} continues to the next billing
+         * cycle. {@link #listSupportedCommitments(ListSupportedCommitmentsRequest)
+         * listSupportedCommitments}.
          */
-        @com.fasterxml.jackson.annotation.JsonProperty("nextSku")
-        private Sku nextSku;
+        @com.fasterxml.jackson.annotation.JsonProperty("nextCommitment")
+        private Commitment nextCommitment;
 
         /**
-         * The billing option to switch to after the existing billing cycle ends. If {@code nextSku}
-         * is null or empty, {@code currentSku} continues to the next billing cycle. {@link
-         * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+         * The billing option to switch to after the existing billing cycle ends. If {@code
+         * nextCommitment} is null or empty, {@code currentCommitment} continues to the next billing
+         * cycle. {@link #listSupportedCommitments(ListSupportedCommitmentsRequest)
+         * listSupportedCommitments}.
          *
-         * @param nextSku the value to set
+         * @param nextCommitment the value to set
          * @return this builder
          */
-        public Builder nextSku(Sku nextSku) {
-            this.nextSku = nextSku;
-            this.__explicitlySet__.add("nextSku");
+        public Builder nextCommitment(Commitment nextCommitment) {
+            this.nextCommitment = nextCommitment;
+            this.__explicitlySet__.add("nextCommitment");
             return this;
         }
         /**
@@ -170,7 +172,7 @@ public final class UpdateEsxiHostDetails
             UpdateEsxiHostDetails model =
                     new UpdateEsxiHostDetails(
                             this.displayName,
-                            this.nextSku,
+                            this.nextCommitment,
                             this.billingDonorHostId,
                             this.freeformTags,
                             this.definedTags);
@@ -185,8 +187,8 @@ public final class UpdateEsxiHostDetails
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
             }
-            if (model.wasPropertyExplicitlySet("nextSku")) {
-                this.nextSku(model.getNextSku());
+            if (model.wasPropertyExplicitlySet("nextCommitment")) {
+                this.nextCommitment(model.getNextCommitment());
             }
             if (model.wasPropertyExplicitlySet("billingDonorHostId")) {
                 this.billingDonorHostId(model.getBillingDonorHostId());
@@ -213,7 +215,7 @@ public final class UpdateEsxiHostDetails
     /**
      * A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16
      * character length limit, Must start with a letter, Must be English letters, numbers, - only,
-     * No repeating hyphens, Must be unique within the SDDC.
+     * No repeating hyphens, Must be unique within the Cluster.
      *
      * <p>Avoid entering confidential information.
      */
@@ -223,7 +225,7 @@ public final class UpdateEsxiHostDetails
     /**
      * A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16
      * character length limit, Must start with a letter, Must be English letters, numbers, - only,
-     * No repeating hyphens, Must be unique within the SDDC.
+     * No repeating hyphens, Must be unique within the Cluster.
      *
      * <p>Avoid entering confidential information.
      *
@@ -234,22 +236,24 @@ public final class UpdateEsxiHostDetails
     }
 
     /**
-     * The billing option to switch to after the existing billing cycle ends. If {@code nextSku} is
-     * null or empty, {@code currentSku} continues to the next billing cycle. {@link
-     * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+     * The billing option to switch to after the existing billing cycle ends. If {@code
+     * nextCommitment} is null or empty, {@code currentCommitment} continues to the next billing
+     * cycle. {@link #listSupportedCommitments(ListSupportedCommitmentsRequest)
+     * listSupportedCommitments}.
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("nextSku")
-    private final Sku nextSku;
+    @com.fasterxml.jackson.annotation.JsonProperty("nextCommitment")
+    private final Commitment nextCommitment;
 
     /**
-     * The billing option to switch to after the existing billing cycle ends. If {@code nextSku} is
-     * null or empty, {@code currentSku} continues to the next billing cycle. {@link
-     * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+     * The billing option to switch to after the existing billing cycle ends. If {@code
+     * nextCommitment} is null or empty, {@code currentCommitment} continues to the next billing
+     * cycle. {@link #listSupportedCommitments(ListSupportedCommitmentsRequest)
+     * listSupportedCommitments}.
      *
      * @return the value
      */
-    public Sku getNextSku() {
-        return nextSku;
+    public Commitment getNextCommitment() {
+        return nextCommitment;
     }
 
     /**
@@ -331,7 +335,7 @@ public final class UpdateEsxiHostDetails
         sb.append("UpdateEsxiHostDetails(");
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
-        sb.append(", nextSku=").append(String.valueOf(this.nextSku));
+        sb.append(", nextCommitment=").append(String.valueOf(this.nextCommitment));
         sb.append(", billingDonorHostId=").append(String.valueOf(this.billingDonorHostId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -350,7 +354,7 @@ public final class UpdateEsxiHostDetails
 
         UpdateEsxiHostDetails other = (UpdateEsxiHostDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
-                && java.util.Objects.equals(this.nextSku, other.nextSku)
+                && java.util.Objects.equals(this.nextCommitment, other.nextCommitment)
                 && java.util.Objects.equals(this.billingDonorHostId, other.billingDonorHostId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -362,7 +366,9 @@ public final class UpdateEsxiHostDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
-        result = (result * PRIME) + (this.nextSku == null ? 43 : this.nextSku.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nextCommitment == null ? 43 : this.nextCommitment.hashCode());
         result =
                 (result * PRIME)
                         + (this.billingDonorHostId == null

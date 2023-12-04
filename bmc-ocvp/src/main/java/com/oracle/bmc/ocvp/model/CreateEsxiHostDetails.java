@@ -5,7 +5,7 @@
 package com.oracle.bmc.ocvp.model;
 
 /**
- * Details of the ESXi host to add to the SDDC. <br>
+ * Details of the ESXi host to add to the Cluster. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -15,7 +15,7 @@ package com.oracle.bmc.ocvp.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = CreateEsxiHostDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -24,46 +24,43 @@ public final class CreateEsxiHostDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
-        "sddcId",
+        "clusterId",
         "displayName",
         "billingDonorHostId",
-        "currentSku",
-        "nextSku",
+        "currentCommitment",
+        "nextCommitment",
         "computeAvailabilityDomain",
-        "failedEsxiHostId",
         "hostShapeName",
         "hostOcpuCount",
         "capacityReservationId",
-        "nonUpgradedEsxiHostId",
+        "esxiSoftwareVersion",
         "freeformTags",
         "definedTags"
     })
     public CreateEsxiHostDetails(
-            String sddcId,
+            String clusterId,
             String displayName,
             String billingDonorHostId,
-            Sku currentSku,
-            Sku nextSku,
+            Commitment currentCommitment,
+            Commitment nextCommitment,
             String computeAvailabilityDomain,
-            String failedEsxiHostId,
             String hostShapeName,
             Float hostOcpuCount,
             String capacityReservationId,
-            String nonUpgradedEsxiHostId,
+            String esxiSoftwareVersion,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
-        this.sddcId = sddcId;
+        this.clusterId = clusterId;
         this.displayName = displayName;
         this.billingDonorHostId = billingDonorHostId;
-        this.currentSku = currentSku;
-        this.nextSku = nextSku;
+        this.currentCommitment = currentCommitment;
+        this.nextCommitment = nextCommitment;
         this.computeAvailabilityDomain = computeAvailabilityDomain;
-        this.failedEsxiHostId = failedEsxiHostId;
         this.hostShapeName = hostShapeName;
         this.hostOcpuCount = hostOcpuCount;
         this.capacityReservationId = capacityReservationId;
-        this.nonUpgradedEsxiHostId = nonUpgradedEsxiHostId;
+        this.esxiSoftwareVersion = esxiSoftwareVersion;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -72,32 +69,32 @@ public final class CreateEsxiHostDetails
     public static class Builder {
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * SDDC to add the ESXi host to.
+         * Cluster to add the ESXi host to.
          */
-        @com.fasterxml.jackson.annotation.JsonProperty("sddcId")
-        private String sddcId;
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterId")
+        private String clusterId;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * SDDC to add the ESXi host to.
+         * Cluster to add the ESXi host to.
          *
-         * @param sddcId the value to set
+         * @param clusterId the value to set
          * @return this builder
          */
-        public Builder sddcId(String sddcId) {
-            this.sddcId = sddcId;
-            this.__explicitlySet__.add("sddcId");
+        public Builder clusterId(String clusterId) {
+            this.clusterId = clusterId;
+            this.__explicitlySet__.add("clusterId");
             return this;
         }
         /**
          * A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are
          * 1-16 character length limit, Must start with a letter, Must be English letters, numbers,
-         * - only, No repeating hyphens, Must be unique within the SDDC.
+         * - only, No repeating hyphens, Must be unique within the Cluster.
          *
-         * <p>If this attribute is not specified, the SDDC's {@code instanceDisplayNamePrefix}
+         * <p>If this attribute is not specified, the Cluster's {@code instanceDisplayNamePrefix}
          * attribute is used to name and incrementally number the ESXi host. For example, if you're
-         * creating the fourth ESXi host in the SDDC, and {@code instanceDisplayNamePrefix} is
-         * {@code MySDDC}, the host's display name is {@code MySDDC-4}.
+         * creating the fourth ESXi host in the Cluster, and {@code instanceDisplayNamePrefix} is
+         * {@code MyCluster}, the host's display name is {@code MyCluster-4}.
          *
          * <p>Avoid entering confidential information.
          */
@@ -107,12 +104,12 @@ public final class CreateEsxiHostDetails
         /**
          * A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are
          * 1-16 character length limit, Must start with a letter, Must be English letters, numbers,
-         * - only, No repeating hyphens, Must be unique within the SDDC.
+         * - only, No repeating hyphens, Must be unique within the Cluster.
          *
-         * <p>If this attribute is not specified, the SDDC's {@code instanceDisplayNamePrefix}
+         * <p>If this attribute is not specified, the Cluster's {@code instanceDisplayNamePrefix}
          * attribute is used to name and incrementally number the ESXi host. For example, if you're
-         * creating the fourth ESXi host in the SDDC, and {@code instanceDisplayNamePrefix} is
-         * {@code MySDDC}, the host's display name is {@code MySDDC-4}.
+         * creating the fourth ESXi host in the Cluster, and {@code instanceDisplayNamePrefix} is
+         * {@code MyCluster}, the host's display name is {@code MyCluster-4}.
          *
          * <p>Avoid entering confidential information.
          *
@@ -145,58 +142,60 @@ public final class CreateEsxiHostDetails
         }
         /**
          * The billing option currently used by the ESXi host. {@link
-         * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+         * #listSupportedCommitments(ListSupportedCommitmentsRequest) listSupportedCommitments}.
          */
-        @com.fasterxml.jackson.annotation.JsonProperty("currentSku")
-        private Sku currentSku;
+        @com.fasterxml.jackson.annotation.JsonProperty("currentCommitment")
+        private Commitment currentCommitment;
 
         /**
          * The billing option currently used by the ESXi host. {@link
-         * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+         * #listSupportedCommitments(ListSupportedCommitmentsRequest) listSupportedCommitments}.
          *
-         * @param currentSku the value to set
+         * @param currentCommitment the value to set
          * @return this builder
          */
-        public Builder currentSku(Sku currentSku) {
-            this.currentSku = currentSku;
-            this.__explicitlySet__.add("currentSku");
+        public Builder currentCommitment(Commitment currentCommitment) {
+            this.currentCommitment = currentCommitment;
+            this.__explicitlySet__.add("currentCommitment");
             return this;
         }
         /**
-         * The billing option to switch to after the existing billing cycle ends. If {@code nextSku}
-         * is null or empty, {@code currentSku} continues to the next billing cycle. {@link
-         * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+         * The billing option to switch to after the existing billing cycle ends. If {@code
+         * nextCommitment} is null or empty, {@code currentCommitment} continues to the next billing
+         * cycle. {@link #listSupportedCommitments(ListSupportedCommitmentsRequest)
+         * listSupportedCommitments}.
          */
-        @com.fasterxml.jackson.annotation.JsonProperty("nextSku")
-        private Sku nextSku;
+        @com.fasterxml.jackson.annotation.JsonProperty("nextCommitment")
+        private Commitment nextCommitment;
 
         /**
-         * The billing option to switch to after the existing billing cycle ends. If {@code nextSku}
-         * is null or empty, {@code currentSku} continues to the next billing cycle. {@link
-         * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+         * The billing option to switch to after the existing billing cycle ends. If {@code
+         * nextCommitment} is null or empty, {@code currentCommitment} continues to the next billing
+         * cycle. {@link #listSupportedCommitments(ListSupportedCommitmentsRequest)
+         * listSupportedCommitments}.
          *
-         * @param nextSku the value to set
+         * @param nextCommitment the value to set
          * @return this builder
          */
-        public Builder nextSku(Sku nextSku) {
-            this.nextSku = nextSku;
-            this.__explicitlySet__.add("nextSku");
+        public Builder nextCommitment(Commitment nextCommitment) {
+            this.nextCommitment = nextCommitment;
+            this.__explicitlySet__.add("nextCommitment");
             return this;
         }
         /**
-         * The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC,
-         * new ESXi host will be created in the same availability domain; for multi-AD SDDC, new
-         * ESXi host will be auto assigned to the next availability domain following evenly
-         * distribution strategy.
+         * The availability domain to create the ESXi host in. If keep empty, for AD-specific
+         * Cluster, new ESXi host will be created in the same availability domain; for multi-AD
+         * Cluster, new ESXi host will be auto assigned to the next availability domain following
+         * evenly distribution strategy.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("computeAvailabilityDomain")
         private String computeAvailabilityDomain;
 
         /**
-         * The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC,
-         * new ESXi host will be created in the same availability domain; for multi-AD SDDC, new
-         * ESXi host will be auto assigned to the next availability domain following evenly
-         * distribution strategy.
+         * The availability domain to create the ESXi host in. If keep empty, for AD-specific
+         * Cluster, new ESXi host will be created in the same availability domain; for multi-AD
+         * Cluster, new ESXi host will be auto assigned to the next availability domain following
+         * evenly distribution strategy.
          *
          * @param computeAvailabilityDomain the value to set
          * @return this builder
@@ -204,29 +203,6 @@ public final class CreateEsxiHostDetails
         public Builder computeAvailabilityDomain(String computeAvailabilityDomain) {
             this.computeAvailabilityDomain = computeAvailabilityDomain;
             this.__explicitlySet__.add("computeAvailabilityDomain");
-            return this;
-        }
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * ESXi host that is failed. This is an optional parameter. If this parameter is specified,
-         * a new ESXi host will be created to replace the failed one, and the {@code
-         * failedEsxiHostId} field will be updated in the newly created Esxi host.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("failedEsxiHostId")
-        private String failedEsxiHostId;
-
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * ESXi host that is failed. This is an optional parameter. If this parameter is specified,
-         * a new ESXi host will be created to replace the failed one, and the {@code
-         * failedEsxiHostId} field will be updated in the newly created Esxi host.
-         *
-         * @param failedEsxiHostId the value to set
-         * @return this builder
-         */
-        public Builder failedEsxiHostId(String failedEsxiHostId) {
-            this.failedEsxiHostId = failedEsxiHostId;
-            this.__explicitlySet__.add("failedEsxiHostId");
             return this;
         }
         /**
@@ -283,32 +259,28 @@ public final class CreateEsxiHostDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * ESXi host that will be upgraded. This is an optional parameter. If this parameter is
-         * specified, an ESXi host with the new software version is created to replace the original
-         * one, and the {@code nonUpgradedEsxiHostId} field is updated in the newly created Esxi
-         * host. See [Upgrading VMware
-         * Software](https://docs.cloud.oracle.com/Content/VMware/Concepts/upgrade.htm) for more
-         * information.
+         * The ESXi software bundle to install on the ESXi host. Only versions under the same
+         * vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be
+         * accepted. To get a list of the available versions, use {@link
+         * #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest)
+         * listSupportedVmwareSoftwareVersions}.
          */
-        @com.fasterxml.jackson.annotation.JsonProperty("nonUpgradedEsxiHostId")
-        private String nonUpgradedEsxiHostId;
+        @com.fasterxml.jackson.annotation.JsonProperty("esxiSoftwareVersion")
+        private String esxiSoftwareVersion;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * ESXi host that will be upgraded. This is an optional parameter. If this parameter is
-         * specified, an ESXi host with the new software version is created to replace the original
-         * one, and the {@code nonUpgradedEsxiHostId} field is updated in the newly created Esxi
-         * host. See [Upgrading VMware
-         * Software](https://docs.cloud.oracle.com/Content/VMware/Concepts/upgrade.htm) for more
-         * information.
+         * The ESXi software bundle to install on the ESXi host. Only versions under the same
+         * vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be
+         * accepted. To get a list of the available versions, use {@link
+         * #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest)
+         * listSupportedVmwareSoftwareVersions}.
          *
-         * @param nonUpgradedEsxiHostId the value to set
+         * @param esxiSoftwareVersion the value to set
          * @return this builder
          */
-        public Builder nonUpgradedEsxiHostId(String nonUpgradedEsxiHostId) {
-            this.nonUpgradedEsxiHostId = nonUpgradedEsxiHostId;
-            this.__explicitlySet__.add("nonUpgradedEsxiHostId");
+        public Builder esxiSoftwareVersion(String esxiSoftwareVersion) {
+            this.esxiSoftwareVersion = esxiSoftwareVersion;
+            this.__explicitlySet__.add("esxiSoftwareVersion");
             return this;
         }
         /**
@@ -369,17 +341,16 @@ public final class CreateEsxiHostDetails
         public CreateEsxiHostDetails build() {
             CreateEsxiHostDetails model =
                     new CreateEsxiHostDetails(
-                            this.sddcId,
+                            this.clusterId,
                             this.displayName,
                             this.billingDonorHostId,
-                            this.currentSku,
-                            this.nextSku,
+                            this.currentCommitment,
+                            this.nextCommitment,
                             this.computeAvailabilityDomain,
-                            this.failedEsxiHostId,
                             this.hostShapeName,
                             this.hostOcpuCount,
                             this.capacityReservationId,
-                            this.nonUpgradedEsxiHostId,
+                            this.esxiSoftwareVersion,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -390,8 +361,8 @@ public final class CreateEsxiHostDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateEsxiHostDetails model) {
-            if (model.wasPropertyExplicitlySet("sddcId")) {
-                this.sddcId(model.getSddcId());
+            if (model.wasPropertyExplicitlySet("clusterId")) {
+                this.clusterId(model.getClusterId());
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
@@ -399,17 +370,14 @@ public final class CreateEsxiHostDetails
             if (model.wasPropertyExplicitlySet("billingDonorHostId")) {
                 this.billingDonorHostId(model.getBillingDonorHostId());
             }
-            if (model.wasPropertyExplicitlySet("currentSku")) {
-                this.currentSku(model.getCurrentSku());
+            if (model.wasPropertyExplicitlySet("currentCommitment")) {
+                this.currentCommitment(model.getCurrentCommitment());
             }
-            if (model.wasPropertyExplicitlySet("nextSku")) {
-                this.nextSku(model.getNextSku());
+            if (model.wasPropertyExplicitlySet("nextCommitment")) {
+                this.nextCommitment(model.getNextCommitment());
             }
             if (model.wasPropertyExplicitlySet("computeAvailabilityDomain")) {
                 this.computeAvailabilityDomain(model.getComputeAvailabilityDomain());
-            }
-            if (model.wasPropertyExplicitlySet("failedEsxiHostId")) {
-                this.failedEsxiHostId(model.getFailedEsxiHostId());
             }
             if (model.wasPropertyExplicitlySet("hostShapeName")) {
                 this.hostShapeName(model.getHostShapeName());
@@ -420,8 +388,8 @@ public final class CreateEsxiHostDetails
             if (model.wasPropertyExplicitlySet("capacityReservationId")) {
                 this.capacityReservationId(model.getCapacityReservationId());
             }
-            if (model.wasPropertyExplicitlySet("nonUpgradedEsxiHostId")) {
-                this.nonUpgradedEsxiHostId(model.getNonUpgradedEsxiHostId());
+            if (model.wasPropertyExplicitlySet("esxiSoftwareVersion")) {
+                this.esxiSoftwareVersion(model.getEsxiSoftwareVersion());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -444,30 +412,30 @@ public final class CreateEsxiHostDetails
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * SDDC to add the ESXi host to.
+     * Cluster to add the ESXi host to.
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("sddcId")
-    private final String sddcId;
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterId")
+    private final String clusterId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * SDDC to add the ESXi host to.
+     * Cluster to add the ESXi host to.
      *
      * @return the value
      */
-    public String getSddcId() {
-        return sddcId;
+    public String getClusterId() {
+        return clusterId;
     }
 
     /**
      * A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16
      * character length limit, Must start with a letter, Must be English letters, numbers, - only,
-     * No repeating hyphens, Must be unique within the SDDC.
+     * No repeating hyphens, Must be unique within the Cluster.
      *
-     * <p>If this attribute is not specified, the SDDC's {@code instanceDisplayNamePrefix} attribute
-     * is used to name and incrementally number the ESXi host. For example, if you're creating the
-     * fourth ESXi host in the SDDC, and {@code instanceDisplayNamePrefix} is {@code MySDDC}, the
-     * host's display name is {@code MySDDC-4}.
+     * <p>If this attribute is not specified, the Cluster's {@code instanceDisplayNamePrefix}
+     * attribute is used to name and incrementally number the ESXi host. For example, if you're
+     * creating the fourth ESXi host in the Cluster, and {@code instanceDisplayNamePrefix} is {@code
+     * MyCluster}, the host's display name is {@code MyCluster-4}.
      *
      * <p>Avoid entering confidential information.
      */
@@ -477,12 +445,12 @@ public final class CreateEsxiHostDetails
     /**
      * A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16
      * character length limit, Must start with a letter, Must be English letters, numbers, - only,
-     * No repeating hyphens, Must be unique within the SDDC.
+     * No repeating hyphens, Must be unique within the Cluster.
      *
-     * <p>If this attribute is not specified, the SDDC's {@code instanceDisplayNamePrefix} attribute
-     * is used to name and incrementally number the ESXi host. For example, if you're creating the
-     * fourth ESXi host in the SDDC, and {@code instanceDisplayNamePrefix} is {@code MySDDC}, the
-     * host's display name is {@code MySDDC-4}.
+     * <p>If this attribute is not specified, the Cluster's {@code instanceDisplayNamePrefix}
+     * attribute is used to name and incrementally number the ESXi host. For example, if you're
+     * creating the fourth ESXi host in the Cluster, and {@code instanceDisplayNamePrefix} is {@code
+     * MyCluster}, the host's display name is {@code MyCluster-4}.
      *
      * <p>Avoid entering confidential information.
      *
@@ -511,78 +479,61 @@ public final class CreateEsxiHostDetails
 
     /**
      * The billing option currently used by the ESXi host. {@link
-     * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+     * #listSupportedCommitments(ListSupportedCommitmentsRequest) listSupportedCommitments}.
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("currentSku")
-    private final Sku currentSku;
+    @com.fasterxml.jackson.annotation.JsonProperty("currentCommitment")
+    private final Commitment currentCommitment;
 
     /**
      * The billing option currently used by the ESXi host. {@link
-     * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+     * #listSupportedCommitments(ListSupportedCommitmentsRequest) listSupportedCommitments}.
      *
      * @return the value
      */
-    public Sku getCurrentSku() {
-        return currentSku;
+    public Commitment getCurrentCommitment() {
+        return currentCommitment;
     }
 
     /**
-     * The billing option to switch to after the existing billing cycle ends. If {@code nextSku} is
-     * null or empty, {@code currentSku} continues to the next billing cycle. {@link
-     * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+     * The billing option to switch to after the existing billing cycle ends. If {@code
+     * nextCommitment} is null or empty, {@code currentCommitment} continues to the next billing
+     * cycle. {@link #listSupportedCommitments(ListSupportedCommitmentsRequest)
+     * listSupportedCommitments}.
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("nextSku")
-    private final Sku nextSku;
+    @com.fasterxml.jackson.annotation.JsonProperty("nextCommitment")
+    private final Commitment nextCommitment;
 
     /**
-     * The billing option to switch to after the existing billing cycle ends. If {@code nextSku} is
-     * null or empty, {@code currentSku} continues to the next billing cycle. {@link
-     * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+     * The billing option to switch to after the existing billing cycle ends. If {@code
+     * nextCommitment} is null or empty, {@code currentCommitment} continues to the next billing
+     * cycle. {@link #listSupportedCommitments(ListSupportedCommitmentsRequest)
+     * listSupportedCommitments}.
      *
      * @return the value
      */
-    public Sku getNextSku() {
-        return nextSku;
+    public Commitment getNextCommitment() {
+        return nextCommitment;
     }
 
     /**
-     * The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC, new
-     * ESXi host will be created in the same availability domain; for multi-AD SDDC, new ESXi host
-     * will be auto assigned to the next availability domain following evenly distribution strategy.
+     * The availability domain to create the ESXi host in. If keep empty, for AD-specific Cluster,
+     * new ESXi host will be created in the same availability domain; for multi-AD Cluster, new ESXi
+     * host will be auto assigned to the next availability domain following evenly distribution
+     * strategy.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("computeAvailabilityDomain")
     private final String computeAvailabilityDomain;
 
     /**
-     * The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC, new
-     * ESXi host will be created in the same availability domain; for multi-AD SDDC, new ESXi host
-     * will be auto assigned to the next availability domain following evenly distribution strategy.
+     * The availability domain to create the ESXi host in. If keep empty, for AD-specific Cluster,
+     * new ESXi host will be created in the same availability domain; for multi-AD Cluster, new ESXi
+     * host will be auto assigned to the next availability domain following evenly distribution
+     * strategy.
      *
      * @return the value
      */
     public String getComputeAvailabilityDomain() {
         return computeAvailabilityDomain;
-    }
-
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * ESXi host that is failed. This is an optional parameter. If this parameter is specified, a
-     * new ESXi host will be created to replace the failed one, and the {@code failedEsxiHostId}
-     * field will be updated in the newly created Esxi host.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("failedEsxiHostId")
-    private final String failedEsxiHostId;
-
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * ESXi host that is failed. This is an optional parameter. If this parameter is specified, a
-     * new ESXi host will be created to replace the failed one, and the {@code failedEsxiHostId}
-     * field will be updated in the newly created Esxi host.
-     *
-     * @return the value
-     */
-    public String getFailedEsxiHostId() {
-        return failedEsxiHostId;
     }
 
     /**
@@ -633,30 +584,26 @@ public final class CreateEsxiHostDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * ESXi host that will be upgraded. This is an optional parameter. If this parameter is
-     * specified, an ESXi host with the new software version is created to replace the original one,
-     * and the {@code nonUpgradedEsxiHostId} field is updated in the newly created Esxi host. See
-     * [Upgrading VMware
-     * Software](https://docs.cloud.oracle.com/Content/VMware/Concepts/upgrade.htm) for more
-     * information.
+     * The ESXi software bundle to install on the ESXi host. Only versions under the same
+     * vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be
+     * accepted. To get a list of the available versions, use {@link
+     * #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest)
+     * listSupportedVmwareSoftwareVersions}.
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("nonUpgradedEsxiHostId")
-    private final String nonUpgradedEsxiHostId;
+    @com.fasterxml.jackson.annotation.JsonProperty("esxiSoftwareVersion")
+    private final String esxiSoftwareVersion;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * ESXi host that will be upgraded. This is an optional parameter. If this parameter is
-     * specified, an ESXi host with the new software version is created to replace the original one,
-     * and the {@code nonUpgradedEsxiHostId} field is updated in the newly created Esxi host. See
-     * [Upgrading VMware
-     * Software](https://docs.cloud.oracle.com/Content/VMware/Concepts/upgrade.htm) for more
-     * information.
+     * The ESXi software bundle to install on the ESXi host. Only versions under the same
+     * vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be
+     * accepted. To get a list of the available versions, use {@link
+     * #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest)
+     * listSupportedVmwareSoftwareVersions}.
      *
      * @return the value
      */
-    public String getNonUpgradedEsxiHostId() {
-        return nonUpgradedEsxiHostId;
+    public String getEsxiSoftwareVersion() {
+        return esxiSoftwareVersion;
     }
 
     /**
@@ -720,18 +667,17 @@ public final class CreateEsxiHostDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateEsxiHostDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("sddcId=").append(String.valueOf(this.sddcId));
+        sb.append("clusterId=").append(String.valueOf(this.clusterId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", billingDonorHostId=").append(String.valueOf(this.billingDonorHostId));
-        sb.append(", currentSku=").append(String.valueOf(this.currentSku));
-        sb.append(", nextSku=").append(String.valueOf(this.nextSku));
+        sb.append(", currentCommitment=").append(String.valueOf(this.currentCommitment));
+        sb.append(", nextCommitment=").append(String.valueOf(this.nextCommitment));
         sb.append(", computeAvailabilityDomain=")
                 .append(String.valueOf(this.computeAvailabilityDomain));
-        sb.append(", failedEsxiHostId=").append(String.valueOf(this.failedEsxiHostId));
         sb.append(", hostShapeName=").append(String.valueOf(this.hostShapeName));
         sb.append(", hostOcpuCount=").append(String.valueOf(this.hostOcpuCount));
         sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
-        sb.append(", nonUpgradedEsxiHostId=").append(String.valueOf(this.nonUpgradedEsxiHostId));
+        sb.append(", esxiSoftwareVersion=").append(String.valueOf(this.esxiSoftwareVersion));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -748,18 +694,17 @@ public final class CreateEsxiHostDetails
         }
 
         CreateEsxiHostDetails other = (CreateEsxiHostDetails) o;
-        return java.util.Objects.equals(this.sddcId, other.sddcId)
+        return java.util.Objects.equals(this.clusterId, other.clusterId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.billingDonorHostId, other.billingDonorHostId)
-                && java.util.Objects.equals(this.currentSku, other.currentSku)
-                && java.util.Objects.equals(this.nextSku, other.nextSku)
+                && java.util.Objects.equals(this.currentCommitment, other.currentCommitment)
+                && java.util.Objects.equals(this.nextCommitment, other.nextCommitment)
                 && java.util.Objects.equals(
                         this.computeAvailabilityDomain, other.computeAvailabilityDomain)
-                && java.util.Objects.equals(this.failedEsxiHostId, other.failedEsxiHostId)
                 && java.util.Objects.equals(this.hostShapeName, other.hostShapeName)
                 && java.util.Objects.equals(this.hostOcpuCount, other.hostOcpuCount)
                 && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
-                && java.util.Objects.equals(this.nonUpgradedEsxiHostId, other.nonUpgradedEsxiHostId)
+                && java.util.Objects.equals(this.esxiSoftwareVersion, other.esxiSoftwareVersion)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -769,23 +714,24 @@ public final class CreateEsxiHostDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
-        result = (result * PRIME) + (this.sddcId == null ? 43 : this.sddcId.hashCode());
+        result = (result * PRIME) + (this.clusterId == null ? 43 : this.clusterId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result =
                 (result * PRIME)
                         + (this.billingDonorHostId == null
                                 ? 43
                                 : this.billingDonorHostId.hashCode());
-        result = (result * PRIME) + (this.currentSku == null ? 43 : this.currentSku.hashCode());
-        result = (result * PRIME) + (this.nextSku == null ? 43 : this.nextSku.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.currentCommitment == null ? 43 : this.currentCommitment.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nextCommitment == null ? 43 : this.nextCommitment.hashCode());
         result =
                 (result * PRIME)
                         + (this.computeAvailabilityDomain == null
                                 ? 43
                                 : this.computeAvailabilityDomain.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.failedEsxiHostId == null ? 43 : this.failedEsxiHostId.hashCode());
         result =
                 (result * PRIME)
                         + (this.hostShapeName == null ? 43 : this.hostShapeName.hashCode());
@@ -799,9 +745,9 @@ public final class CreateEsxiHostDetails
                                 : this.capacityReservationId.hashCode());
         result =
                 (result * PRIME)
-                        + (this.nonUpgradedEsxiHostId == null
+                        + (this.esxiSoftwareVersion == null
                                 ? 43
-                                : this.nonUpgradedEsxiHostId.hashCode());
+                                : this.esxiSoftwareVersion.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

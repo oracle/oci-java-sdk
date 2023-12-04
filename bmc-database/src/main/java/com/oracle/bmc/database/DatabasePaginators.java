@@ -3142,6 +3142,124 @@ public class DatabasePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listConsoleHistories operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListConsoleHistoriesResponse> listConsoleHistoriesResponseIterator(
+            final ListConsoleHistoriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListConsoleHistoriesRequest.Builder,
+                ListConsoleHistoriesRequest,
+                ListConsoleHistoriesResponse>(
+                new java.util.function.Supplier<ListConsoleHistoriesRequest.Builder>() {
+                    @Override
+                    public ListConsoleHistoriesRequest.Builder get() {
+                        return ListConsoleHistoriesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListConsoleHistoriesResponse, String>() {
+                    @Override
+                    public String apply(ListConsoleHistoriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListConsoleHistoriesRequest.Builder>,
+                        ListConsoleHistoriesRequest>() {
+                    @Override
+                    public ListConsoleHistoriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListConsoleHistoriesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListConsoleHistoriesRequest, ListConsoleHistoriesResponse>() {
+                    @Override
+                    public ListConsoleHistoriesResponse apply(ListConsoleHistoriesRequest request) {
+                        return client.listConsoleHistories(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.database.model.ConsoleHistorySummary} objects contained in responses from the
+     * listConsoleHistories operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.database.model.ConsoleHistorySummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.ConsoleHistorySummary>
+            listConsoleHistoriesRecordIterator(final ListConsoleHistoriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListConsoleHistoriesRequest.Builder,
+                ListConsoleHistoriesRequest,
+                ListConsoleHistoriesResponse,
+                com.oracle.bmc.database.model.ConsoleHistorySummary>(
+                new java.util.function.Supplier<ListConsoleHistoriesRequest.Builder>() {
+                    @Override
+                    public ListConsoleHistoriesRequest.Builder get() {
+                        return ListConsoleHistoriesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListConsoleHistoriesResponse, String>() {
+                    @Override
+                    public String apply(ListConsoleHistoriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListConsoleHistoriesRequest.Builder>,
+                        ListConsoleHistoriesRequest>() {
+                    @Override
+                    public ListConsoleHistoriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListConsoleHistoriesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListConsoleHistoriesRequest, ListConsoleHistoriesResponse>() {
+                    @Override
+                    public ListConsoleHistoriesResponse apply(ListConsoleHistoriesRequest request) {
+                        return client.listConsoleHistories(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListConsoleHistoriesResponse,
+                        java.util.List<com.oracle.bmc.database.model.ConsoleHistorySummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.database.model.ConsoleHistorySummary>
+                            apply(ListConsoleHistoriesResponse response) {
+                        return response.getConsoleHistoryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listContainerDatabasePatches operation. This iterable will fetch more data from the server as
      * needed.
      *
@@ -6669,6 +6787,124 @@ public class DatabasePaginators {
                     public java.util.List<com.oracle.bmc.database.model.PluggableDatabaseSummary>
                             apply(ListPluggableDatabasesResponse response) {
                         return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSystemVersions operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSystemVersionsResponse> listSystemVersionsResponseIterator(
+            final ListSystemVersionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSystemVersionsRequest.Builder,
+                ListSystemVersionsRequest,
+                ListSystemVersionsResponse>(
+                new java.util.function.Supplier<ListSystemVersionsRequest.Builder>() {
+                    @Override
+                    public ListSystemVersionsRequest.Builder get() {
+                        return ListSystemVersionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSystemVersionsResponse, String>() {
+                    @Override
+                    public String apply(ListSystemVersionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSystemVersionsRequest.Builder>,
+                        ListSystemVersionsRequest>() {
+                    @Override
+                    public ListSystemVersionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSystemVersionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSystemVersionsRequest, ListSystemVersionsResponse>() {
+                    @Override
+                    public ListSystemVersionsResponse apply(ListSystemVersionsRequest request) {
+                        return client.listSystemVersions(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.database.model.SystemVersionSummary} objects contained in responses from the
+     * listSystemVersions operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.database.model.SystemVersionSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.SystemVersionSummary>
+            listSystemVersionsRecordIterator(final ListSystemVersionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSystemVersionsRequest.Builder,
+                ListSystemVersionsRequest,
+                ListSystemVersionsResponse,
+                com.oracle.bmc.database.model.SystemVersionSummary>(
+                new java.util.function.Supplier<ListSystemVersionsRequest.Builder>() {
+                    @Override
+                    public ListSystemVersionsRequest.Builder get() {
+                        return ListSystemVersionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSystemVersionsResponse, String>() {
+                    @Override
+                    public String apply(ListSystemVersionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSystemVersionsRequest.Builder>,
+                        ListSystemVersionsRequest>() {
+                    @Override
+                    public ListSystemVersionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSystemVersionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSystemVersionsRequest, ListSystemVersionsResponse>() {
+                    @Override
+                    public ListSystemVersionsResponse apply(ListSystemVersionsRequest request) {
+                        return client.listSystemVersions(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSystemVersionsResponse,
+                        java.util.List<com.oracle.bmc.database.model.SystemVersionSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.database.model.SystemVersionSummary> apply(
+                            ListSystemVersionsResponse response) {
+                        return response.getSystemVersionCollection().getItems();
                     }
                 });
     }

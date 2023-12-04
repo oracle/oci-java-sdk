@@ -163,11 +163,6 @@ public class RequestSignerImpl implements RequestSigner {
             for (String optionalHeaderName : optionalHeaders) {
                 if (headers.get(optionalHeaderName) != null) {
                     requiredHeaders.add(optionalHeaderName);
-                    //If X-Date is present Date header is skipped
-                    if (Constants.X_DATE.equals(optionalHeaderName)) {
-                        requiredHeaders.remove(Constants.DATE);
-                    }
-
                 }
             }
 
