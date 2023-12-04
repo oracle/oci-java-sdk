@@ -57,7 +57,7 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
             LOG.warn(
                     com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
                             "OperationsInsightsAsyncClient",
-                            "downloadOperationsInsightsWarehouseWallet"));
+                            "downloadOperationsInsightsWarehouseWallet,getAwrHubObject"));
         }
     }
 
@@ -202,6 +202,47 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
                         "opc-request-id",
                         ChangeAutonomousDatabaseInsightAdvancedFeaturesResponse.Builder
                                 ::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeAwrHubSourceCompartmentResponse>
+            changeAwrHubSourceCompartment(
+                    ChangeAwrHubSourceCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeAwrHubSourceCompartmentRequest,
+                                    ChangeAwrHubSourceCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(request.getAwrHubSourceId(), "awrHubSourceId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeAwrHubSourceCompartmentDetails(),
+                "changeAwrHubSourceCompartmentDetails is required");
+
+        return clientCall(request, ChangeAwrHubSourceCompartmentResponse::builder)
+                .logger(LOG, "changeAwrHubSourceCompartment")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "ChangeAwrHubSourceCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/ChangeAwrHubSourceCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeAwrHubSourceCompartmentRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("awrHubSources")
+                .appendPathParam(request.getAwrHubSourceId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeAwrHubSourceCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeAwrHubSourceCompartmentResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -458,6 +499,50 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeOperationsInsightsWarehouseCompartmentResponse>
+            changeOperationsInsightsWarehouseCompartment(
+                    ChangeOperationsInsightsWarehouseCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeOperationsInsightsWarehouseCompartmentRequest,
+                                    ChangeOperationsInsightsWarehouseCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getOperationsInsightsWarehouseId(),
+                "operationsInsightsWarehouseId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeOperationsInsightsWarehouseCompartmentDetails(),
+                "changeOperationsInsightsWarehouseCompartmentDetails is required");
+
+        return clientCall(request, ChangeOperationsInsightsWarehouseCompartmentResponse::builder)
+                .logger(LOG, "changeOperationsInsightsWarehouseCompartment")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "ChangeOperationsInsightsWarehouseCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/ChangeOperationsInsightsWarehouseCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeOperationsInsightsWarehouseCompartmentRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("operationsInsightsWarehouses")
+                .appendPathParam(request.getOperationsInsightsWarehouseId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeOperationsInsightsWarehouseCompartmentResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeOperationsInsightsWarehouseCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeOpsiConfigurationCompartmentResponse>
             changeOpsiConfigurationCompartment(
                     ChangeOpsiConfigurationCompartmentRequest request,
@@ -572,6 +657,40 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
                 .handleResponseHeaderString(
                         "content-location", CreateAwrHubResponse.Builder::contentLocation)
                 .handleResponseHeaderString("etag", CreateAwrHubResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAwrHubSourceResponse> createAwrHubSource(
+            CreateAwrHubSourceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateAwrHubSourceRequest, CreateAwrHubSourceResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateAwrHubSourceDetails(), "createAwrHubSourceDetails is required");
+
+        return clientCall(request, CreateAwrHubSourceResponse::builder)
+                .logger(LOG, "createAwrHubSource")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "CreateAwrHubSource",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/CreateAwrHubSource")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateAwrHubSourceRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("awrHubSources")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.opsi.model.AwrHubSource.class,
+                        CreateAwrHubSourceResponse.Builder::awrHubSource)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateAwrHubSourceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateAwrHubSourceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", CreateAwrHubSourceResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -995,6 +1114,78 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteAwrHubObjectResponse> deleteAwrHubObject(
+            DeleteAwrHubObjectRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteAwrHubObjectRequest, DeleteAwrHubObjectResponse>
+                    handler) {
+
+        Validate.notBlank(request.getAwrHubSourceId(), "awrHubSourceId must not be blank");
+
+        Validate.notBlank(request.getObjectName(), "objectName must not be blank");
+
+        return clientCall(request, DeleteAwrHubObjectResponse::builder)
+                .logger(LOG, "deleteAwrHubObject")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "DeleteAwrHubObject",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubObjects/DeleteAwrHubObject")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteAwrHubObjectRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("awrHubObjects")
+                .appendPathParam("awrHubSources")
+                .appendPathParam(request.getAwrHubSourceId())
+                .appendPathParam("o")
+                .appendPathParam(request.getObjectName())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-client-request-id",
+                        DeleteAwrHubObjectResponse.Builder::opcClientRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteAwrHubObjectResponse.Builder::opcRequestId)
+                .handleResponseHeaderDate(
+                        "last-modified", DeleteAwrHubObjectResponse.Builder::lastModified)
+                .handleResponseHeaderString(
+                        "version-id", DeleteAwrHubObjectResponse.Builder::versionId)
+                .handleResponseHeaderBoolean(
+                        "is-delete-marker", DeleteAwrHubObjectResponse.Builder::isDeleteMarker)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAwrHubSourceResponse> deleteAwrHubSource(
+            DeleteAwrHubSourceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteAwrHubSourceRequest, DeleteAwrHubSourceResponse>
+                    handler) {
+
+        Validate.notBlank(request.getAwrHubSourceId(), "awrHubSourceId must not be blank");
+
+        return clientCall(request, DeleteAwrHubSourceResponse::builder)
+                .logger(LOG, "deleteAwrHubSource")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "DeleteAwrHubSource",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/DeleteAwrHubSource")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteAwrHubSourceRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("awrHubSources")
+                .appendPathParam(request.getAwrHubSourceId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteAwrHubSourceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteAwrHubSourceResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDatabaseInsightResponse> deleteDatabaseInsight(
             DeleteDatabaseInsightRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1333,6 +1524,40 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
     }
 
     @Override
+    public java.util.concurrent.Future<DisableAwrHubSourceResponse> disableAwrHubSource(
+            DisableAwrHubSourceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DisableAwrHubSourceRequest, DisableAwrHubSourceResponse>
+                    handler) {
+
+        Validate.notBlank(request.getAwrHubSourceId(), "awrHubSourceId must not be blank");
+
+        return clientCall(request, DisableAwrHubSourceResponse::builder)
+                .logger(LOG, "disableAwrHubSource")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "DisableAwrHubSource",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/DisableAwrHubSource")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableAwrHubSourceRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("awrHubSources")
+                .appendPathParam(request.getAwrHubSourceId())
+                .appendPathParam("actions")
+                .appendPathParam("disable")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisableAwrHubSourceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DisableAwrHubSourceResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableDatabaseInsightResponse> disableDatabaseInsight(
             DisableDatabaseInsightRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1523,6 +1748,39 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
                         "opc-request-id",
                         EnableAutonomousDatabaseInsightAdvancedFeaturesResponse.Builder
                                 ::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableAwrHubSourceResponse> enableAwrHubSource(
+            EnableAwrHubSourceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            EnableAwrHubSourceRequest, EnableAwrHubSourceResponse>
+                    handler) {
+
+        Validate.notBlank(request.getAwrHubSourceId(), "awrHubSourceId must not be blank");
+
+        return clientCall(request, EnableAwrHubSourceResponse::builder)
+                .logger(LOG, "enableAwrHubSource")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "EnableAwrHubSource",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/EnableAwrHubSource")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableAwrHubSourceRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("awrHubSources")
+                .appendPathParam(request.getAwrHubSourceId())
+                .appendPathParam("actions")
+                .appendPathParam("enable")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", EnableAwrHubSourceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", EnableAwrHubSourceResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1760,6 +2018,108 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
                 .handleResponseHeaderString("etag", GetAwrHubResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAwrHubResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAwrHubObjectResponse> getAwrHubObject(
+            GetAwrHubObjectRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetAwrHubObjectRequest, GetAwrHubObjectResponse>
+                    handler) {
+
+        Validate.notBlank(request.getAwrHubSourceId(), "awrHubSourceId must not be blank");
+
+        Validate.notBlank(request.getObjectName(), "objectName must not be blank");
+
+        return clientCall(request, GetAwrHubObjectResponse::builder)
+                .logger(LOG, "getAwrHubObject")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "GetAwrHubObject",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubObjects/GetAwrHubObject")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAwrHubObjectRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("awrHubObjects")
+                .appendPathParam("awrHubSources")
+                .appendPathParam(request.getAwrHubSourceId())
+                .appendPathParam("o")
+                .appendPathParam(request.getObjectName())
+                .accept("application/octet-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(java.io.InputStream.class, GetAwrHubObjectResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "opc-client-request-id",
+                        GetAwrHubObjectResponse.Builder::opcClientRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAwrHubObjectResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetAwrHubObjectResponse.Builder::etag)
+                .handleResponseHeadersMap("opc-meta-", GetAwrHubObjectResponse.Builder::opcMeta)
+                .handleResponseHeaderLong(
+                        "content-length", GetAwrHubObjectResponse.Builder::contentLength)
+                .handleResponseHeaderRange(
+                        "content-range", GetAwrHubObjectResponse.Builder::contentRange)
+                .handleResponseHeaderString(
+                        "content-md5", GetAwrHubObjectResponse.Builder::contentMd5)
+                .handleResponseHeaderString(
+                        "opc-multipart-md5", GetAwrHubObjectResponse.Builder::opcMultipartMd5)
+                .handleResponseHeaderString(
+                        "content-type", GetAwrHubObjectResponse.Builder::contentType)
+                .handleResponseHeaderString(
+                        "content-language", GetAwrHubObjectResponse.Builder::contentLanguage)
+                .handleResponseHeaderString(
+                        "content-encoding", GetAwrHubObjectResponse.Builder::contentEncoding)
+                .handleResponseHeaderString(
+                        "cache-control", GetAwrHubObjectResponse.Builder::cacheControl)
+                .handleResponseHeaderString(
+                        "content-disposition", GetAwrHubObjectResponse.Builder::contentDisposition)
+                .handleResponseHeaderDate(
+                        "last-modified", GetAwrHubObjectResponse.Builder::lastModified)
+                .handleResponseHeaderEnum(
+                        "storage-tier",
+                        com.oracle.bmc.opsi.responses.GetAwrHubObjectResponse.StorageTier::create,
+                        GetAwrHubObjectResponse.Builder::storageTier)
+                .handleResponseHeaderEnum(
+                        "archival-state",
+                        com.oracle.bmc.opsi.responses.GetAwrHubObjectResponse.ArchivalState::create,
+                        GetAwrHubObjectResponse.Builder::archivalState)
+                .handleResponseHeaderDate(
+                        "time-of-archival", GetAwrHubObjectResponse.Builder::timeOfArchival)
+                .handleResponseHeaderString(
+                        "version-id", GetAwrHubObjectResponse.Builder::versionId)
+                .handleResponseHeaderDate("expires", GetAwrHubObjectResponse.Builder::expires)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAwrHubSourceResponse> getAwrHubSource(
+            GetAwrHubSourceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetAwrHubSourceRequest, GetAwrHubSourceResponse>
+                    handler) {
+
+        Validate.notBlank(request.getAwrHubSourceId(), "awrHubSourceId must not be blank");
+
+        return clientCall(request, GetAwrHubSourceResponse::builder)
+                .logger(LOG, "getAwrHubSource")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "GetAwrHubSource",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/GetAwrHubSource")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAwrHubSourceRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("awrHubSources")
+                .appendPathParam(request.getAwrHubSourceId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.opsi.model.AwrHubSource.class,
+                        GetAwrHubSourceResponse.Builder::awrHubSource)
+                .handleResponseHeaderString("etag", GetAwrHubSourceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAwrHubSourceResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -2192,6 +2552,74 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderBigDecimal(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<HeadAwrHubObjectResponse> headAwrHubObject(
+            HeadAwrHubObjectRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            HeadAwrHubObjectRequest, HeadAwrHubObjectResponse>
+                    handler) {
+
+        Validate.notBlank(request.getAwrHubSourceId(), "awrHubSourceId must not be blank");
+
+        Validate.notBlank(request.getObjectName(), "objectName must not be blank");
+
+        return clientCall(request, HeadAwrHubObjectResponse::builder)
+                .logger(LOG, "headAwrHubObject")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "HeadAwrHubObject",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubObjects/HeadAwrHubObject")
+                .method(com.oracle.bmc.http.client.Method.HEAD)
+                .requestBuilder(HeadAwrHubObjectRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("awrHubObjects")
+                .appendPathParam("awrHubSources")
+                .appendPathParam(request.getAwrHubSourceId())
+                .appendPathParam("o")
+                .appendPathParam(request.getObjectName())
+                .accept("application/octet-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-client-request-id",
+                        HeadAwrHubObjectResponse.Builder::opcClientRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", HeadAwrHubObjectResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", HeadAwrHubObjectResponse.Builder::etag)
+                .handleResponseHeadersMap("opc-meta-", HeadAwrHubObjectResponse.Builder::opcMeta)
+                .handleResponseHeaderLong(
+                        "content-length", HeadAwrHubObjectResponse.Builder::contentLength)
+                .handleResponseHeaderString(
+                        "content-md5", HeadAwrHubObjectResponse.Builder::contentMd5)
+                .handleResponseHeaderString(
+                        "opc-multipart-md5", HeadAwrHubObjectResponse.Builder::opcMultipartMd5)
+                .handleResponseHeaderString(
+                        "content-type", HeadAwrHubObjectResponse.Builder::contentType)
+                .handleResponseHeaderString(
+                        "content-language", HeadAwrHubObjectResponse.Builder::contentLanguage)
+                .handleResponseHeaderString(
+                        "content-encoding", HeadAwrHubObjectResponse.Builder::contentEncoding)
+                .handleResponseHeaderString(
+                        "cache-control", HeadAwrHubObjectResponse.Builder::cacheControl)
+                .handleResponseHeaderString(
+                        "content-disposition", HeadAwrHubObjectResponse.Builder::contentDisposition)
+                .handleResponseHeaderDate(
+                        "last-modified", HeadAwrHubObjectResponse.Builder::lastModified)
+                .handleResponseHeaderEnum(
+                        "storage-tier",
+                        com.oracle.bmc.opsi.responses.HeadAwrHubObjectResponse.StorageTier::create,
+                        HeadAwrHubObjectResponse.Builder::storageTier)
+                .handleResponseHeaderEnum(
+                        "archival-state",
+                        com.oracle.bmc.opsi.responses.HeadAwrHubObjectResponse.ArchivalState
+                                ::create,
+                        HeadAwrHubObjectResponse.Builder::archivalState)
+                .handleResponseHeaderDate(
+                        "time-of-archival", HeadAwrHubObjectResponse.Builder::timeOfArchival)
+                .handleResponseHeaderString(
+                        "version-id", HeadAwrHubObjectResponse.Builder::versionId)
                 .callAsync(handler);
     }
 
@@ -2990,6 +3418,101 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
                         "opc-request-id", ListAwrDatabasesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAwrDatabasesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAwrHubObjectsResponse> listAwrHubObjects(
+            ListAwrHubObjectsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAwrHubObjectsRequest, ListAwrHubObjectsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getAwrHubSourceId(), "awrHubSourceId must not be blank");
+
+        return clientCall(request, ListAwrHubObjectsResponse::builder)
+                .logger(LOG, "listAwrHubObjects")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "ListAwrHubObjects",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubObjects/ListAwrHubObjects")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAwrHubObjectsRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("awrHubObjects")
+                .appendPathParam("awrHubSources")
+                .appendPathParam(request.getAwrHubSourceId())
+                .appendPathParam("o")
+                .appendQueryParam("prefix", request.getPrefix())
+                .appendQueryParam("start", request.getStart())
+                .appendQueryParam("end", request.getEnd())
+                .appendQueryParam("delimiter", request.getDelimiter())
+                .appendQueryParam("startAfter", request.getStartAfter())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("fields", request.getFields())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.opsi.model.ListObjects.class,
+                        ListAwrHubObjectsResponse.Builder::listObjects)
+                .handleResponseHeaderString(
+                        "opc-client-request-id",
+                        ListAwrHubObjectsResponse.Builder::opcClientRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAwrHubObjectsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAwrHubObjectsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAwrHubSourcesResponse> listAwrHubSources(
+            ListAwrHubSourcesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAwrHubSourcesRequest, ListAwrHubSourcesResponse>
+                    handler) {
+        Objects.requireNonNull(request.getAwrHubId(), "awrHubId is required");
+
+        return clientCall(request, ListAwrHubSourcesResponse::builder)
+                .logger(LOG, "listAwrHubSources")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "ListAwrHubSources",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/ListAwrHubSources")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAwrHubSourcesRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("awrHubSources")
+                .appendQueryParam("awrHubId", request.getAwrHubId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("awrHubSourceId", request.getAwrHubSourceId())
+                .appendListQueryParam(
+                        "sourceType",
+                        request.getSourceType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("name", request.getName())
+                .appendListQueryParam(
+                        "status",
+                        request.getStatus(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "lifecycleState",
+                        request.getLifecycleState(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.opsi.model.AwrHubSourceSummaryCollection.class,
+                        ListAwrHubSourcesResponse.Builder::awrHubSourceSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAwrHubSourcesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAwrHubSourcesResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -4308,6 +4831,52 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAwrHubObjectResponse> putAwrHubObject(
+            PutAwrHubObjectRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PutAwrHubObjectRequest, PutAwrHubObjectResponse>
+                    handler) {
+        Objects.requireNonNull(request.getPutAwrHubObjectBody(), "putAwrHubObjectBody is required");
+
+        Validate.notBlank(request.getAwrHubSourceId(), "awrHubSourceId must not be blank");
+
+        Validate.notBlank(request.getObjectName(), "objectName must not be blank");
+
+        return clientCall(request, PutAwrHubObjectResponse::builder)
+                .logger(LOG, "putAwrHubObject")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "PutAwrHubObject",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubObjects/PutAwrHubObject")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutAwrHubObjectRequest::builder)
+                .obmcsSigningStrategy(com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY)
+                .basePath("/20200630")
+                .appendPathParam("awrHubObjects")
+                .appendPathParam("awrHubSources")
+                .appendPathParam(request.getAwrHubSourceId())
+                .appendPathParam("o")
+                .appendPathParam(request.getObjectName())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-client-request-id",
+                        PutAwrHubObjectResponse.Builder::opcClientRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutAwrHubObjectResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-content-md5", PutAwrHubObjectResponse.Builder::opcContentMd5)
+                .handleResponseHeaderDate(
+                        "last-modified", PutAwrHubObjectResponse.Builder::lastModified)
+                .handleResponseHeaderString(
+                        "version-id", PutAwrHubObjectResponse.Builder::versionId)
                 .callAsync(handler);
     }
 
@@ -8005,6 +8574,39 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
                         "opc-work-request-id", UpdateAwrHubResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateAwrHubResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAwrHubSourceResponse> updateAwrHubSource(
+            UpdateAwrHubSourceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateAwrHubSourceRequest, UpdateAwrHubSourceResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getUpdateAwrHubSourceDetails(), "updateAwrHubSourceDetails is required");
+
+        Validate.notBlank(request.getAwrHubSourceId(), "awrHubSourceId must not be blank");
+
+        return clientCall(request, UpdateAwrHubSourceResponse::builder)
+                .logger(LOG, "updateAwrHubSource")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "UpdateAwrHubSource",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/UpdateAwrHubSource")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateAwrHubSourceRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("awrHubSources")
+                .appendPathParam(request.getAwrHubSourceId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateAwrHubSourceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateAwrHubSourceResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

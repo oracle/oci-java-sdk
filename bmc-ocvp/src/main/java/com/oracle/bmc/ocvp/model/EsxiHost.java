@@ -5,7 +5,7 @@
 package com.oracle.bmc.ocvp.model;
 
 /**
- * An ESXi host is a node in an SDDC. At a minimum, each SDDC has 3 ESXi hosts that are used to
+ * An ESXi host is a node in a Cluster. At a minimum, each Cluster has 3 ESXi hosts that are used to
  * implement a functioning VMware environment.
  *
  * <p>In terms of implementation, an ESXi host is a Compute instance that is configured with the
@@ -22,7 +22,7 @@ package com.oracle.bmc.ocvp.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EsxiHost.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -32,6 +32,7 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
         "id",
         "displayName",
         "sddcId",
+        "clusterId",
         "compartmentId",
         "computeInstanceId",
         "timeCreated",
@@ -41,13 +42,14 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
         "swapBillingHostId",
         "isBillingContinuationInProgress",
         "isBillingSwappingInProgress",
-        "currentSku",
-        "nextSku",
+        "currentCommitment",
+        "nextCommitment",
         "billingContractEndDate",
         "failedEsxiHostId",
         "replacementEsxiHostId",
         "gracePeriodEndDate",
         "vmwareSoftwareVersion",
+        "esxiSoftwareVersion",
         "nonUpgradedEsxiHostId",
         "upgradedReplacementEsxiHostId",
         "computeAvailabilityDomain",
@@ -61,6 +63,7 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
             String id,
             String displayName,
             String sddcId,
+            String clusterId,
             String compartmentId,
             String computeInstanceId,
             java.util.Date timeCreated,
@@ -70,13 +73,14 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
             String swapBillingHostId,
             Boolean isBillingContinuationInProgress,
             Boolean isBillingSwappingInProgress,
-            Sku currentSku,
-            Sku nextSku,
+            Commitment currentCommitment,
+            Commitment nextCommitment,
             java.util.Date billingContractEndDate,
             String failedEsxiHostId,
             String replacementEsxiHostId,
             java.util.Date gracePeriodEndDate,
             String vmwareSoftwareVersion,
+            String esxiSoftwareVersion,
             String nonUpgradedEsxiHostId,
             String upgradedReplacementEsxiHostId,
             String computeAvailabilityDomain,
@@ -89,6 +93,7 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
         this.id = id;
         this.displayName = displayName;
         this.sddcId = sddcId;
+        this.clusterId = clusterId;
         this.compartmentId = compartmentId;
         this.computeInstanceId = computeInstanceId;
         this.timeCreated = timeCreated;
@@ -98,13 +103,14 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
         this.swapBillingHostId = swapBillingHostId;
         this.isBillingContinuationInProgress = isBillingContinuationInProgress;
         this.isBillingSwappingInProgress = isBillingSwappingInProgress;
-        this.currentSku = currentSku;
-        this.nextSku = nextSku;
+        this.currentCommitment = currentCommitment;
+        this.nextCommitment = nextCommitment;
         this.billingContractEndDate = billingContractEndDate;
         this.failedEsxiHostId = failedEsxiHostId;
         this.replacementEsxiHostId = replacementEsxiHostId;
         this.gracePeriodEndDate = gracePeriodEndDate;
         this.vmwareSoftwareVersion = vmwareSoftwareVersion;
+        this.esxiSoftwareVersion = esxiSoftwareVersion;
         this.nonUpgradedEsxiHostId = nonUpgradedEsxiHostId;
         this.upgradedReplacementEsxiHostId = upgradedReplacementEsxiHostId;
         this.computeAvailabilityDomain = computeAvailabilityDomain;
@@ -176,14 +182,33 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains the SDDC.
+         * Cluster that the ESXi host belongs to.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterId")
+        private String clusterId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Cluster that the ESXi host belongs to.
+         *
+         * @param clusterId the value to set
+         * @return this builder
+         */
+        public Builder clusterId(String clusterId) {
+            this.clusterId = clusterId;
+            this.__explicitlySet__.add("clusterId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the Cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains the SDDC.
+         * compartment that contains the Cluster.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -343,56 +368,60 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
         }
         /**
          * The billing option currently used by the ESXi host. {@link
-         * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+         * #listSupportedCommitments(ListSupportedCommitmentsRequest) listSupportedCommitments}.
          */
-        @com.fasterxml.jackson.annotation.JsonProperty("currentSku")
-        private Sku currentSku;
+        @com.fasterxml.jackson.annotation.JsonProperty("currentCommitment")
+        private Commitment currentCommitment;
 
         /**
          * The billing option currently used by the ESXi host. {@link
-         * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+         * #listSupportedCommitments(ListSupportedCommitmentsRequest) listSupportedCommitments}.
          *
-         * @param currentSku the value to set
+         * @param currentCommitment the value to set
          * @return this builder
          */
-        public Builder currentSku(Sku currentSku) {
-            this.currentSku = currentSku;
-            this.__explicitlySet__.add("currentSku");
+        public Builder currentCommitment(Commitment currentCommitment) {
+            this.currentCommitment = currentCommitment;
+            this.__explicitlySet__.add("currentCommitment");
             return this;
         }
         /**
-         * The billing option to switch to after the current billing cycle ends. If {@code nextSku}
-         * is null or empty, {@code currentSku} continues to the next billing cycle. {@link
-         * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+         * The billing option to switch to after the current billing cycle ends. If {@code
+         * nextCommitment} is null or empty, {@code currentCommitment} continues to the next billing
+         * cycle. {@link #listSupportedCommitments(ListSupportedCommitmentsRequest)
+         * listSupportedCommitments}.
          */
-        @com.fasterxml.jackson.annotation.JsonProperty("nextSku")
-        private Sku nextSku;
+        @com.fasterxml.jackson.annotation.JsonProperty("nextCommitment")
+        private Commitment nextCommitment;
 
         /**
-         * The billing option to switch to after the current billing cycle ends. If {@code nextSku}
-         * is null or empty, {@code currentSku} continues to the next billing cycle. {@link
-         * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+         * The billing option to switch to after the current billing cycle ends. If {@code
+         * nextCommitment} is null or empty, {@code currentCommitment} continues to the next billing
+         * cycle. {@link #listSupportedCommitments(ListSupportedCommitmentsRequest)
+         * listSupportedCommitments}.
          *
-         * @param nextSku the value to set
+         * @param nextCommitment the value to set
          * @return this builder
          */
-        public Builder nextSku(Sku nextSku) {
-            this.nextSku = nextSku;
-            this.__explicitlySet__.add("nextSku");
+        public Builder nextCommitment(Commitment nextCommitment) {
+            this.nextCommitment = nextCommitment;
+            this.__explicitlySet__.add("nextCommitment");
             return this;
         }
         /**
-         * Current billing cycle end date. If the value in {@code currentSku} and {@code nextSku}
-         * are different, the value specified in {@code nextSku} becomes the new {@code currentSKU}
-         * when the {@code contractEndDate} is reached. Example: {@code 2016-08-25T21:10:29.600Z}
+         * Current billing cycle end date. If the value in {@code currentCommitment} and {@code
+         * nextCommitment} are different, the value specified in {@code nextCommitment} becomes the
+         * new {@code currentCommitment} when the {@code contractEndDate} is reached. Example:
+         * {@code 2016-08-25T21:10:29.600Z}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("billingContractEndDate")
         private java.util.Date billingContractEndDate;
 
         /**
-         * Current billing cycle end date. If the value in {@code currentSku} and {@code nextSku}
-         * are different, the value specified in {@code nextSku} becomes the new {@code currentSKU}
-         * when the {@code contractEndDate} is reached. Example: {@code 2016-08-25T21:10:29.600Z}
+         * Current billing cycle end date. If the value in {@code currentCommitment} and {@code
+         * nextCommitment} are different, the value specified in {@code nextCommitment} becomes the
+         * new {@code currentCommitment} when the {@code contractEndDate} is reached. Example:
+         * {@code 2016-08-25T21:10:29.600Z}
          *
          * @param billingContractEndDate the value to set
          * @return this builder
@@ -476,6 +505,25 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
         public Builder vmwareSoftwareVersion(String vmwareSoftwareVersion) {
             this.vmwareSoftwareVersion = vmwareSoftwareVersion;
             this.__explicitlySet__.add("vmwareSoftwareVersion");
+            return this;
+        }
+        /**
+         * The version of ESXi software that Oracle Cloud VMware Solution installed on the ESXi
+         * hosts.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("esxiSoftwareVersion")
+        private String esxiSoftwareVersion;
+
+        /**
+         * The version of ESXi software that Oracle Cloud VMware Solution installed on the ESXi
+         * hosts.
+         *
+         * @param esxiSoftwareVersion the value to set
+         * @return this builder
+         */
+        public Builder esxiSoftwareVersion(String esxiSoftwareVersion) {
+            this.esxiSoftwareVersion = esxiSoftwareVersion;
+            this.__explicitlySet__.add("esxiSoftwareVersion");
             return this;
         }
         /**
@@ -645,6 +693,7 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
                             this.id,
                             this.displayName,
                             this.sddcId,
+                            this.clusterId,
                             this.compartmentId,
                             this.computeInstanceId,
                             this.timeCreated,
@@ -654,13 +703,14 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
                             this.swapBillingHostId,
                             this.isBillingContinuationInProgress,
                             this.isBillingSwappingInProgress,
-                            this.currentSku,
-                            this.nextSku,
+                            this.currentCommitment,
+                            this.nextCommitment,
                             this.billingContractEndDate,
                             this.failedEsxiHostId,
                             this.replacementEsxiHostId,
                             this.gracePeriodEndDate,
                             this.vmwareSoftwareVersion,
+                            this.esxiSoftwareVersion,
                             this.nonUpgradedEsxiHostId,
                             this.upgradedReplacementEsxiHostId,
                             this.computeAvailabilityDomain,
@@ -685,6 +735,9 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("sddcId")) {
                 this.sddcId(model.getSddcId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterId")) {
+                this.clusterId(model.getClusterId());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
@@ -713,11 +766,11 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
             if (model.wasPropertyExplicitlySet("isBillingSwappingInProgress")) {
                 this.isBillingSwappingInProgress(model.getIsBillingSwappingInProgress());
             }
-            if (model.wasPropertyExplicitlySet("currentSku")) {
-                this.currentSku(model.getCurrentSku());
+            if (model.wasPropertyExplicitlySet("currentCommitment")) {
+                this.currentCommitment(model.getCurrentCommitment());
             }
-            if (model.wasPropertyExplicitlySet("nextSku")) {
-                this.nextSku(model.getNextSku());
+            if (model.wasPropertyExplicitlySet("nextCommitment")) {
+                this.nextCommitment(model.getNextCommitment());
             }
             if (model.wasPropertyExplicitlySet("billingContractEndDate")) {
                 this.billingContractEndDate(model.getBillingContractEndDate());
@@ -733,6 +786,9 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("vmwareSoftwareVersion")) {
                 this.vmwareSoftwareVersion(model.getVmwareSoftwareVersion());
+            }
+            if (model.wasPropertyExplicitlySet("esxiSoftwareVersion")) {
+                this.esxiSoftwareVersion(model.getEsxiSoftwareVersion());
             }
             if (model.wasPropertyExplicitlySet("nonUpgradedEsxiHostId")) {
                 this.nonUpgradedEsxiHostId(model.getNonUpgradedEsxiHostId());
@@ -824,14 +880,31 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains the SDDC.
+     * Cluster that the ESXi host belongs to.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterId")
+    private final String clusterId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Cluster that the ESXi host belongs to.
+     *
+     * @return the value
+     */
+    public String getClusterId() {
+        return clusterId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the Cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains the SDDC.
+     * compartment that contains the Cluster.
      *
      * @return the value
      */
@@ -973,52 +1046,56 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * The billing option currently used by the ESXi host. {@link
-     * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+     * #listSupportedCommitments(ListSupportedCommitmentsRequest) listSupportedCommitments}.
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("currentSku")
-    private final Sku currentSku;
+    @com.fasterxml.jackson.annotation.JsonProperty("currentCommitment")
+    private final Commitment currentCommitment;
 
     /**
      * The billing option currently used by the ESXi host. {@link
-     * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+     * #listSupportedCommitments(ListSupportedCommitmentsRequest) listSupportedCommitments}.
      *
      * @return the value
      */
-    public Sku getCurrentSku() {
-        return currentSku;
+    public Commitment getCurrentCommitment() {
+        return currentCommitment;
     }
 
     /**
-     * The billing option to switch to after the current billing cycle ends. If {@code nextSku} is
-     * null or empty, {@code currentSku} continues to the next billing cycle. {@link
-     * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+     * The billing option to switch to after the current billing cycle ends. If {@code
+     * nextCommitment} is null or empty, {@code currentCommitment} continues to the next billing
+     * cycle. {@link #listSupportedCommitments(ListSupportedCommitmentsRequest)
+     * listSupportedCommitments}.
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("nextSku")
-    private final Sku nextSku;
+    @com.fasterxml.jackson.annotation.JsonProperty("nextCommitment")
+    private final Commitment nextCommitment;
 
     /**
-     * The billing option to switch to after the current billing cycle ends. If {@code nextSku} is
-     * null or empty, {@code currentSku} continues to the next billing cycle. {@link
-     * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+     * The billing option to switch to after the current billing cycle ends. If {@code
+     * nextCommitment} is null or empty, {@code currentCommitment} continues to the next billing
+     * cycle. {@link #listSupportedCommitments(ListSupportedCommitmentsRequest)
+     * listSupportedCommitments}.
      *
      * @return the value
      */
-    public Sku getNextSku() {
-        return nextSku;
+    public Commitment getNextCommitment() {
+        return nextCommitment;
     }
 
     /**
-     * Current billing cycle end date. If the value in {@code currentSku} and {@code nextSku} are
-     * different, the value specified in {@code nextSku} becomes the new {@code currentSKU} when the
-     * {@code contractEndDate} is reached. Example: {@code 2016-08-25T21:10:29.600Z}
+     * Current billing cycle end date. If the value in {@code currentCommitment} and {@code
+     * nextCommitment} are different, the value specified in {@code nextCommitment} becomes the new
+     * {@code currentCommitment} when the {@code contractEndDate} is reached. Example: {@code
+     * 2016-08-25T21:10:29.600Z}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("billingContractEndDate")
     private final java.util.Date billingContractEndDate;
 
     /**
-     * Current billing cycle end date. If the value in {@code currentSku} and {@code nextSku} are
-     * different, the value specified in {@code nextSku} becomes the new {@code currentSKU} when the
-     * {@code contractEndDate} is reached. Example: {@code 2016-08-25T21:10:29.600Z}
+     * Current billing cycle end date. If the value in {@code currentCommitment} and {@code
+     * nextCommitment} are different, the value specified in {@code nextCommitment} becomes the new
+     * {@code currentCommitment} when the {@code contractEndDate} is reached. Example: {@code
+     * 2016-08-25T21:10:29.600Z}
      *
      * @return the value
      */
@@ -1090,6 +1167,21 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
      */
     public String getVmwareSoftwareVersion() {
         return vmwareSoftwareVersion;
+    }
+
+    /**
+     * The version of ESXi software that Oracle Cloud VMware Solution installed on the ESXi hosts.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("esxiSoftwareVersion")
+    private final String esxiSoftwareVersion;
+
+    /**
+     * The version of ESXi software that Oracle Cloud VMware Solution installed on the ESXi hosts.
+     *
+     * @return the value
+     */
+    public String getEsxiSoftwareVersion() {
+        return esxiSoftwareVersion;
     }
 
     /**
@@ -1250,6 +1342,7 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", sddcId=").append(String.valueOf(this.sddcId));
+        sb.append(", clusterId=").append(String.valueOf(this.clusterId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", computeInstanceId=").append(String.valueOf(this.computeInstanceId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -1261,13 +1354,14 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
                 .append(String.valueOf(this.isBillingContinuationInProgress));
         sb.append(", isBillingSwappingInProgress=")
                 .append(String.valueOf(this.isBillingSwappingInProgress));
-        sb.append(", currentSku=").append(String.valueOf(this.currentSku));
-        sb.append(", nextSku=").append(String.valueOf(this.nextSku));
+        sb.append(", currentCommitment=").append(String.valueOf(this.currentCommitment));
+        sb.append(", nextCommitment=").append(String.valueOf(this.nextCommitment));
         sb.append(", billingContractEndDate=").append(String.valueOf(this.billingContractEndDate));
         sb.append(", failedEsxiHostId=").append(String.valueOf(this.failedEsxiHostId));
         sb.append(", replacementEsxiHostId=").append(String.valueOf(this.replacementEsxiHostId));
         sb.append(", gracePeriodEndDate=").append(String.valueOf(this.gracePeriodEndDate));
         sb.append(", vmwareSoftwareVersion=").append(String.valueOf(this.vmwareSoftwareVersion));
+        sb.append(", esxiSoftwareVersion=").append(String.valueOf(this.esxiSoftwareVersion));
         sb.append(", nonUpgradedEsxiHostId=").append(String.valueOf(this.nonUpgradedEsxiHostId));
         sb.append(", upgradedReplacementEsxiHostId=")
                 .append(String.valueOf(this.upgradedReplacementEsxiHostId));
@@ -1295,6 +1389,7 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.sddcId, other.sddcId)
+                && java.util.Objects.equals(this.clusterId, other.clusterId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.computeInstanceId, other.computeInstanceId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -1306,14 +1401,15 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
                         this.isBillingContinuationInProgress, other.isBillingContinuationInProgress)
                 && java.util.Objects.equals(
                         this.isBillingSwappingInProgress, other.isBillingSwappingInProgress)
-                && java.util.Objects.equals(this.currentSku, other.currentSku)
-                && java.util.Objects.equals(this.nextSku, other.nextSku)
+                && java.util.Objects.equals(this.currentCommitment, other.currentCommitment)
+                && java.util.Objects.equals(this.nextCommitment, other.nextCommitment)
                 && java.util.Objects.equals(
                         this.billingContractEndDate, other.billingContractEndDate)
                 && java.util.Objects.equals(this.failedEsxiHostId, other.failedEsxiHostId)
                 && java.util.Objects.equals(this.replacementEsxiHostId, other.replacementEsxiHostId)
                 && java.util.Objects.equals(this.gracePeriodEndDate, other.gracePeriodEndDate)
                 && java.util.Objects.equals(this.vmwareSoftwareVersion, other.vmwareSoftwareVersion)
+                && java.util.Objects.equals(this.esxiSoftwareVersion, other.esxiSoftwareVersion)
                 && java.util.Objects.equals(this.nonUpgradedEsxiHostId, other.nonUpgradedEsxiHostId)
                 && java.util.Objects.equals(
                         this.upgradedReplacementEsxiHostId, other.upgradedReplacementEsxiHostId)
@@ -1334,6 +1430,7 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.sddcId == null ? 43 : this.sddcId.hashCode());
+        result = (result * PRIME) + (this.clusterId == null ? 43 : this.clusterId.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
@@ -1363,8 +1460,12 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
                         + (this.isBillingSwappingInProgress == null
                                 ? 43
                                 : this.isBillingSwappingInProgress.hashCode());
-        result = (result * PRIME) + (this.currentSku == null ? 43 : this.currentSku.hashCode());
-        result = (result * PRIME) + (this.nextSku == null ? 43 : this.nextSku.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.currentCommitment == null ? 43 : this.currentCommitment.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nextCommitment == null ? 43 : this.nextCommitment.hashCode());
         result =
                 (result * PRIME)
                         + (this.billingContractEndDate == null
@@ -1388,6 +1489,11 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
                         + (this.vmwareSoftwareVersion == null
                                 ? 43
                                 : this.vmwareSoftwareVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.esxiSoftwareVersion == null
+                                ? 43
+                                : this.esxiSoftwareVersion.hashCode());
         result =
                 (result * PRIME)
                         + (this.nonUpgradedEsxiHostId == null

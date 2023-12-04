@@ -6489,6 +6489,47 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public UploadDiscoveryDataResponse uploadDiscoveryData(UploadDiscoveryDataRequest request) {
+
+        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
+        Objects.requireNonNull(
+                request.getUploadDiscoveryDataDetails(), "uploadDiscoveryDataDetails is required");
+
+        return clientCall(request, UploadDiscoveryDataResponse::builder)
+                .logger(LOG, "uploadDiscoveryData")
+                .serviceDetails(
+                        "LogAnalytics",
+                        "UploadDiscoveryData",
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/UploadDiscoveryData")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UploadDiscoveryDataRequest::builder)
+                .obmcsSigningStrategy(com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY)
+                .basePath("/20200601")
+                .appendPathParam("namespaces")
+                .appendPathParam(request.getNamespaceName())
+                .appendPathParam("actions")
+                .appendPathParam("uploadDiscoveryData")
+                .appendEnumQueryParam("discoveryDataType", request.getDiscoveryDataType())
+                .appendEnumQueryParam("payloadType", request.getPayloadType())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-meta-properties", request.getOpcMetaProperties())
+                .appendHeader("content-type", request.getContentType())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("expect", request.getExpect())
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UploadDiscoveryDataResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-object-id", UploadDiscoveryDataResponse.Builder::opcObjectId)
+                .handleResponseHeaderDate(
+                        "timeCreated", UploadDiscoveryDataResponse.Builder::timeCreated)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public UploadLogEventsFileResponse uploadLogEventsFile(UploadLogEventsFileRequest request) {
 
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");

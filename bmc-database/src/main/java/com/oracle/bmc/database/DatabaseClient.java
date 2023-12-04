@@ -73,7 +73,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
             LOG.warn(
                     com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
                             "DatabaseClient",
-                            "downloadExadataInfrastructureConfigFile,downloadValidationReport,downloadVmClusterNetworkConfigFile,generateAutonomousDatabaseWallet"));
+                            "downloadExadataInfrastructureConfigFile,downloadValidationReport,downloadVmClusterNetworkConfigFile,generateAutonomousDatabaseWallet,getConsoleHistoryContent"));
         }
     }
 
@@ -1834,6 +1834,42 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public CreateConsoleHistoryResponse createConsoleHistory(CreateConsoleHistoryRequest request) {
+        Objects.requireNonNull(
+                request.getCreateConsoleHistoryDetails(),
+                "createConsoleHistoryDetails is required");
+
+        Validate.notBlank(request.getDbNodeId(), "dbNodeId must not be blank");
+
+        return clientCall(request, CreateConsoleHistoryResponse::builder)
+                .logger(LOG, "createConsoleHistory")
+                .serviceDetails(
+                        "Database",
+                        "CreateConsoleHistory",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleHistory/CreateConsoleHistory")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateConsoleHistoryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dbNodes")
+                .appendPathParam(request.getDbNodeId())
+                .appendPathParam("consoleHistories")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ConsoleHistory.class,
+                        CreateConsoleHistoryResponse.Builder::consoleHistory)
+                .handleResponseHeaderString("etag", CreateConsoleHistoryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateConsoleHistoryResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateConsoleHistoryResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateDataGuardAssociationResponse createDataGuardAssociation(
             CreateDataGuardAssociationRequest request) {
 
@@ -2675,6 +2711,37 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteConsoleConnectionResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteConsoleHistoryResponse deleteConsoleHistory(DeleteConsoleHistoryRequest request) {
+
+        Validate.notBlank(request.getDbNodeId(), "dbNodeId must not be blank");
+
+        Validate.notBlank(request.getConsoleHistoryId(), "consoleHistoryId must not be blank");
+
+        return clientCall(request, DeleteConsoleHistoryResponse::builder)
+                .logger(LOG, "deleteConsoleHistory")
+                .serviceDetails(
+                        "Database",
+                        "DeleteConsoleHistory",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleHistory/DeleteConsoleHistory")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteConsoleHistoryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dbNodes")
+                .appendPathParam(request.getDbNodeId())
+                .appendPathParam("consoleHistories")
+                .appendPathParam(request.getConsoleHistoryId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteConsoleHistoryResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteConsoleHistoryResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -5210,6 +5277,70 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public GetConsoleHistoryResponse getConsoleHistory(GetConsoleHistoryRequest request) {
+
+        Validate.notBlank(request.getDbNodeId(), "dbNodeId must not be blank");
+
+        Validate.notBlank(request.getConsoleHistoryId(), "consoleHistoryId must not be blank");
+
+        return clientCall(request, GetConsoleHistoryResponse::builder)
+                .logger(LOG, "getConsoleHistory")
+                .serviceDetails(
+                        "Database",
+                        "GetConsoleHistory",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleHistory/GetConsoleHistory")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetConsoleHistoryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dbNodes")
+                .appendPathParam(request.getDbNodeId())
+                .appendPathParam("consoleHistories")
+                .appendPathParam(request.getConsoleHistoryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.ConsoleHistory.class,
+                        GetConsoleHistoryResponse.Builder::consoleHistory)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetConsoleHistoryResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetConsoleHistoryResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public GetConsoleHistoryContentResponse getConsoleHistoryContent(
+            GetConsoleHistoryContentRequest request) {
+
+        Validate.notBlank(request.getDbNodeId(), "dbNodeId must not be blank");
+
+        Validate.notBlank(request.getConsoleHistoryId(), "consoleHistoryId must not be blank");
+
+        return clientCall(request, GetConsoleHistoryContentResponse::builder)
+                .logger(LOG, "getConsoleHistoryContent")
+                .serviceDetails(
+                        "Database",
+                        "GetConsoleHistoryContent",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleHistory/GetConsoleHistoryContent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetConsoleHistoryContentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dbNodes")
+                .appendPathParam(request.getDbNodeId())
+                .appendPathParam("consoleHistories")
+                .appendPathParam(request.getConsoleHistoryId())
+                .appendPathParam("content")
+                .accept("application/octet-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        java.io.InputStream.class,
+                        GetConsoleHistoryContentResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetConsoleHistoryContentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetConsoleHistoryContentResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public GetDataGuardAssociationResponse getDataGuardAssociation(
             GetDataGuardAssociationRequest request) {
 
@@ -7267,6 +7398,41 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ListConsoleHistoriesResponse listConsoleHistories(ListConsoleHistoriesRequest request) {
+
+        Validate.notBlank(request.getDbNodeId(), "dbNodeId must not be blank");
+
+        return clientCall(request, ListConsoleHistoriesResponse::builder)
+                .logger(LOG, "listConsoleHistories")
+                .serviceDetails(
+                        "Database",
+                        "ListConsoleHistories",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleHistory/ListConsoleHistories")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListConsoleHistoriesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dbNodes")
+                .appendPathParam(request.getDbNodeId())
+                .appendPathParam("consoleHistories")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.ConsoleHistoryCollection.class,
+                        ListConsoleHistoriesResponse.Builder::consoleHistoryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListConsoleHistoriesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListConsoleHistoriesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListContainerDatabasePatchesResponse listContainerDatabasePatches(
             ListContainerDatabasePatchesRequest request) {
 
@@ -8322,6 +8488,42 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListPluggableDatabasesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListPluggableDatabasesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListSystemVersionsResponse listSystemVersions(ListSystemVersionsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getShape(), "shape is required");
+
+        Objects.requireNonNull(request.getGiVersion(), "giVersion is required");
+
+        return clientCall(request, ListSystemVersionsResponse::builder)
+                .logger(LOG, "listSystemVersions")
+                .serviceDetails(
+                        "Database",
+                        "ListSystemVersions",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SystemVersionCollection/ListSystemVersions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSystemVersionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("systemVersions")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("shape", request.getShape())
+                .appendQueryParam("giVersion", request.getGiVersion())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.SystemVersionCollection.class,
+                        ListSystemVersionsResponse.Builder::systemVersionCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSystemVersionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSystemVersionsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -10598,6 +10800,45 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", UpdateConsoleConnectionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateConsoleConnectionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateConsoleHistoryResponse updateConsoleHistory(UpdateConsoleHistoryRequest request) {
+
+        Validate.notBlank(request.getDbNodeId(), "dbNodeId must not be blank");
+
+        Validate.notBlank(request.getConsoleHistoryId(), "consoleHistoryId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateConsoleHistoryDetails(),
+                "updateConsoleHistoryDetails is required");
+
+        return clientCall(request, UpdateConsoleHistoryResponse::builder)
+                .logger(LOG, "updateConsoleHistory")
+                .serviceDetails(
+                        "Database",
+                        "UpdateConsoleHistory",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleHistory/UpdateConsoleHistory")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateConsoleHistoryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dbNodes")
+                .appendPathParam(request.getDbNodeId())
+                .appendPathParam("consoleHistories")
+                .appendPathParam(request.getConsoleHistoryId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ConsoleHistory.class,
+                        UpdateConsoleHistoryResponse.Builder::consoleHistory)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateConsoleHistoryResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateConsoleHistoryResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateConsoleHistoryResponse.Builder::etag)
                 .callSync();
     }
 

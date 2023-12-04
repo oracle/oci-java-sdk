@@ -448,6 +448,37 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public CreateCertificateResponse createCertificate(CreateCertificateRequest request) {
+        Objects.requireNonNull(
+                request.getCreateCertificateDetails(), "createCertificateDetails is required");
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+
+        return clientCall(request, CreateCertificateResponse::builder)
+                .logger(LOG, "createCertificate")
+                .serviceDetails(
+                        "GoldenGate",
+                        "CreateCertificate",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/CertificateCollection/CreateCertificate")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateCertificateRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("certificates")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateCertificateResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateCertificateResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public CreateConnectionResponse createConnection(CreateConnectionRequest request) {
         Objects.requireNonNull(
                 request.getCreateConnectionDetails(), "createConnectionDetails is required");
@@ -607,6 +638,37 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         CreateDeploymentBackupResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDeploymentBackupResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public DeleteCertificateResponse deleteCertificate(DeleteCertificateRequest request) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+
+        Validate.notBlank(request.getCertificateKey(), "certificateKey must not be blank");
+
+        return clientCall(request, DeleteCertificateResponse::builder)
+                .logger(LOG, "deleteCertificate")
+                .serviceDetails(
+                        "GoldenGate",
+                        "DeleteCertificate",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Certificate/DeleteCertificate")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCertificateRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("certificates")
+                .appendPathParam(request.getCertificateKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteCertificateResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteCertificateResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -826,6 +888,38 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         ExportDeploymentWalletResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ExportDeploymentWalletResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetCertificateResponse getCertificate(GetCertificateRequest request) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+
+        Validate.notBlank(request.getCertificateKey(), "certificateKey must not be blank");
+
+        return clientCall(request, GetCertificateResponse::builder)
+                .logger(LOG, "getCertificate")
+                .serviceDetails(
+                        "GoldenGate",
+                        "GetCertificate",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Certificate/GetCertificate")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCertificateRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("certificates")
+                .appendPathParam(request.getCertificateKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.Certificate.class,
+                        GetCertificateResponse.Builder::certificate)
+                .handleResponseHeaderString("etag", GetCertificateResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCertificateResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -1066,6 +1160,41 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         ImportDeploymentWalletResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ImportDeploymentWalletResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListCertificatesResponse listCertificates(ListCertificatesRequest request) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+
+        return clientCall(request, ListCertificatesResponse::builder)
+                .logger(LOG, "listCertificates")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ListCertificates",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/CertificateCollection/ListCertificates")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCertificatesRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("certificates")
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.CertificateCollection.class,
+                        ListCertificatesResponse.Builder::certificateCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCertificatesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCertificatesResponse.Builder::opcNextPage)
                 .operationUsesDefaultRetries()
                 .callSync();
     }

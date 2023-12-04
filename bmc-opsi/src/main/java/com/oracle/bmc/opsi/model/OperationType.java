@@ -62,6 +62,12 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     UpdateNewsReport("UPDATE_NEWS_REPORT"),
     MoveNewsReport("MOVE_NEWS_REPORT"),
     DeleteNewsReport("DELETE_NEWS_REPORT"),
+    CreateAwrhubSource("CREATE_AWRHUB_SOURCE"),
+    DeleteAwrhubSource("DELETE_AWRHUB_SOURCE"),
+    UpdateAwrhubSource("UPDATE_AWRHUB_SOURCE"),
+    MoveAwrhubSource("MOVE_AWRHUB_SOURCE"),
+    EnableAwrhubSource("ENABLE_AWRHUB_SOURCE"),
+    DisableAwrhubSource("DISABLE_AWRHUB_SOURCE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

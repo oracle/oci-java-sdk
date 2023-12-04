@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Sddc {
     /** Service instance for Sddc. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -130,10 +130,10 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .serviceDetails(
                         "Sddc",
                         "CancelDowngradeHcx",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/CancelDowngradeHcx")
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/CancelDowngradeHcx")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CancelDowngradeHcxRequest::builder)
-                .basePath("/20200501")
+                .basePath("/20230701")
                 .appendPathParam("sddcs")
                 .appendPathParam(request.getSddcId())
                 .appendPathParam("actions")
@@ -164,10 +164,10 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .serviceDetails(
                         "Sddc",
                         "ChangeSddcCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/ChangeSddcCompartment")
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/ChangeSddcCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeSddcCompartmentRequest::builder)
-                .basePath("/20200501")
+                .basePath("/20230701")
                 .appendPathParam("sddcs")
                 .appendPathParam(request.getSddcId())
                 .appendPathParam("actions")
@@ -192,10 +192,10 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .serviceDetails(
                         "Sddc",
                         "CreateSddc",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/CreateSddc")
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/CreateSddc")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateSddcRequest::builder)
-                .basePath("/20200501")
+                .basePath("/20230701")
                 .appendPathParam("sddcs")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
@@ -219,10 +219,10 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .serviceDetails(
                         "Sddc",
                         "DeleteSddc",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/DeleteSddc")
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/DeleteSddc")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteSddcRequest::builder)
-                .basePath("/20200501")
+                .basePath("/20230701")
                 .appendPathParam("sddcs")
                 .appendPathParam(request.getSddcId())
                 .accept("application/json")
@@ -247,10 +247,10 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .serviceDetails(
                         "Sddc",
                         "DowngradeHcx",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/DowngradeHcx")
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/DowngradeHcx")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DowngradeHcxRequest::builder)
-                .basePath("/20200501")
+                .basePath("/20230701")
                 .appendPathParam("sddcs")
                 .appendPathParam(request.getSddcId())
                 .appendPathParam("actions")
@@ -278,10 +278,10 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .serviceDetails(
                         "Sddc",
                         "GetSddc",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/GetSddc")
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/GetSddc")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSddcRequest::builder)
-                .basePath("/20200501")
+                .basePath("/20230701")
                 .appendPathParam("sddcs")
                 .appendPathParam(request.getSddcId())
                 .accept("application/json")
@@ -302,10 +302,10 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .serviceDetails(
                         "Sddc",
                         "ListSddcs",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/SddcSummary/ListSddcs")
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/SddcSummary/ListSddcs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSddcsRequest::builder)
-                .basePath("/20200501")
+                .basePath("/20230701")
                 .appendPathParam("sddcs")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam(
@@ -329,6 +329,39 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
     }
 
     @Override
+    public ListSupportedCommitmentsResponse listSupportedCommitments(
+            ListSupportedCommitmentsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSupportedCommitmentsResponse::builder)
+                .logger(LOG, "listSupportedCommitments")
+                .serviceDetails(
+                        "Sddc",
+                        "ListSupportedCommitments",
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSupportedCommitmentsRequest::builder)
+                .basePath("/20230701")
+                .appendPathParam("supportedCommitments")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("hostShapeName", request.getHostShapeName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.ocvp.model.SupportedCommitmentSummaryCollection.class,
+                        ListSupportedCommitmentsResponse.Builder
+                                ::supportedCommitmentSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSupportedCommitmentsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSupportedCommitmentsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public ListSupportedHostShapesResponse listSupportedHostShapes(
             ListSupportedHostShapesRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
@@ -338,16 +371,18 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .serviceDetails(
                         "Sddc",
                         "ListSupportedHostShapes",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapeSummary/ListSupportedHostShapes")
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapeSummary/ListSupportedHostShapes")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSupportedHostShapesRequest::builder)
-                .basePath("/20200501")
+                .basePath("/20230701")
                 .appendPathParam("supportedHostShapes")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("name", request.getName())
-                .appendEnumQueryParam("sddcType", request.getSddcType())
+                .appendQueryParam(
+                        "isSingleHostSddcSupported", request.getIsSingleHostSddcSupported())
+                .appendQueryParam("initialHostShapeName", request.getInitialHostShapeName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -362,37 +397,6 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
     }
 
     @Override
-    public ListSupportedSkusResponse listSupportedSkus(ListSupportedSkusRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListSupportedSkusResponse::builder)
-                .logger(LOG, "listSupportedSkus")
-                .serviceDetails(
-                        "Sddc",
-                        "ListSupportedSkus",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSupportedSkusRequest::builder)
-                .basePath("/20200501")
-                .appendPathParam("supportedSkus")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("hostShapeName", request.getHostShapeName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.ocvp.model.SupportedSkuSummaryCollection.class,
-                        ListSupportedSkusResponse.Builder::supportedSkuSummaryCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListSupportedSkusResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListSupportedSkusResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
-                .callSync();
-    }
-
-    @Override
     public ListSupportedVmwareSoftwareVersionsResponse listSupportedVmwareSoftwareVersions(
             ListSupportedVmwareSoftwareVersionsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
@@ -402,14 +406,16 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .serviceDetails(
                         "Sddc",
                         "ListSupportedVmwareSoftwareVersions",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions")
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSupportedVmwareSoftwareVersionsRequest::builder)
-                .basePath("/20200501")
+                .basePath("/20230701")
                 .appendPathParam("supportedVmwareSoftwareVersions")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
+                .appendQueryParam("version", request.getVersion())
+                .appendQueryParam("hostShapeName", request.getHostShapeName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -437,10 +443,10 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .serviceDetails(
                         "Sddc",
                         "RefreshHcxLicenseStatus",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/RefreshHcxLicenseStatus")
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/RefreshHcxLicenseStatus")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RefreshHcxLicenseStatusRequest::builder)
-                .basePath("/20200501")
+                .basePath("/20230701")
                 .appendPathParam("sddcs")
                 .appendPathParam(request.getSddcId())
                 .appendPathParam("actions")
@@ -459,6 +465,40 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
     }
 
     @Override
+    public RetrievePasswordResponse retrievePassword(RetrievePasswordRequest request) {
+
+        Validate.notBlank(request.getSddcId(), "sddcId must not be blank");
+        Objects.requireNonNull(request.getType(), "type is required");
+
+        return clientCall(request, RetrievePasswordResponse::builder)
+                .logger(LOG, "retrievePassword")
+                .serviceDetails(
+                        "Sddc",
+                        "RetrievePassword",
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/RetrievePassword")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RetrievePasswordRequest::builder)
+                .basePath("/20230701")
+                .appendPathParam("sddcs")
+                .appendPathParam(request.getSddcId())
+                .appendPathParam("actions")
+                .appendPathParam("retrievePassword")
+                .appendEnumQueryParam("type", request.getType())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.ocvp.model.SddcPassword.class,
+                        RetrievePasswordResponse.Builder::sddcPassword)
+                .handleResponseHeaderString("etag", RetrievePasswordResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RetrievePasswordResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public UpdateSddcResponse updateSddc(UpdateSddcRequest request) {
 
         Validate.notBlank(request.getSddcId(), "sddcId must not be blank");
@@ -469,10 +509,10 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .serviceDetails(
                         "Sddc",
                         "UpdateSddc",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/UpdateSddc")
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/UpdateSddc")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateSddcRequest::builder)
-                .basePath("/20200501")
+                .basePath("/20230701")
                 .appendPathParam("sddcs")
                 .appendPathParam(request.getSddcId())
                 .accept("application/json")
@@ -497,10 +537,10 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .serviceDetails(
                         "Sddc",
                         "UpgradeHcx",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/UpgradeHcx")
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/UpgradeHcx")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(UpgradeHcxRequest::builder)
-                .basePath("/20200501")
+                .basePath("/20230701")
                 .appendPathParam("sddcs")
                 .appendPathParam(request.getSddcId())
                 .appendPathParam("actions")

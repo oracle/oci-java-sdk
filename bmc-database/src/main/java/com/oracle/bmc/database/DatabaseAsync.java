@@ -941,6 +941,23 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Captures the most recent serial console data (up to a megabyte) for the specified database
+     * node.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateConsoleHistoryResponse> createConsoleHistory(
+            CreateConsoleHistoryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateConsoleHistoryRequest, CreateConsoleHistoryResponse>
+                    handler);
+
+    /**
      * Creates a new Data Guard association. A Data Guard association represents the replication
      * relationship between the specified database and a peer database. For more information, see
      * [Using Oracle Data
@@ -1434,6 +1451,22 @@ public interface DatabaseAsync extends AutoCloseable {
             DeleteConsoleConnectionRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteConsoleConnectionRequest, DeleteConsoleConnectionResponse>
+                    handler);
+
+    /**
+     * Deletes the specified database node console history.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteConsoleHistoryResponse> deleteConsoleHistory(
+            DeleteConsoleHistoryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteConsoleHistoryRequest, DeleteConsoleHistoryResponse>
                     handler);
 
     /**
@@ -2743,6 +2776,38 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets information about the specified database node console history.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetConsoleHistoryResponse> getConsoleHistory(
+            GetConsoleHistoryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetConsoleHistoryRequest, GetConsoleHistoryResponse>
+                    handler);
+
+    /**
+     * Retrieves the specified database node console history contents upto a megabyte.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetConsoleHistoryContentResponse> getConsoleHistoryContent(
+            GetConsoleHistoryContentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetConsoleHistoryContentRequest, GetConsoleHistoryContentResponse>
+                    handler);
+
+    /**
      * Gets the specified Data Guard association's configuration information.
      *
      * @param request The request object containing the details to send
@@ -3885,6 +3950,22 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the console histories for the specified database node.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListConsoleHistoriesResponse> listConsoleHistories(
+            ListConsoleHistoriesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListConsoleHistoriesRequest, ListConsoleHistoriesResponse>
+                    handler);
+
+    /**
      * Lists the patches applicable to the requested container database.
      *
      * @param request The request object containing the details to send
@@ -4419,6 +4500,22 @@ public interface DatabaseAsync extends AutoCloseable {
             ListPluggableDatabasesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListPluggableDatabasesRequest, ListPluggableDatabasesResponse>
+                    handler);
+
+    /**
+     * Gets a list of supported Exadata system versions for a given shape and GI version.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSystemVersionsResponse> listSystemVersions(
+            ListSystemVersionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSystemVersionsRequest, ListSystemVersionsResponse>
                     handler);
 
     /**
@@ -5550,6 +5647,22 @@ public interface DatabaseAsync extends AutoCloseable {
             UpdateConsoleConnectionRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateConsoleConnectionRequest, UpdateConsoleConnectionResponse>
+                    handler);
+
+    /**
+     * Updates the specified database node console history.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateConsoleHistoryResponse> updateConsoleHistory(
+            UpdateConsoleHistoryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateConsoleHistoryRequest, UpdateConsoleHistoryResponse>
                     handler);
 
     /**

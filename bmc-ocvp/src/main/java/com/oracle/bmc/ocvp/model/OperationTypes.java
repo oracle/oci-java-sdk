@@ -5,10 +5,12 @@
 package com.oracle.bmc.ocvp.model;
 
 /** Possible asynchronous operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 public enum OperationTypes implements com.oracle.bmc.http.internal.BmcEnum {
     CreateSddc("CREATE_SDDC"),
     DeleteSddc("DELETE_SDDC"),
+    CreateCluster("CREATE_CLUSTER"),
+    DeleteCluster("DELETE_CLUSTER"),
     CreateEsxiHost("CREATE_ESXI_HOST"),
     DeleteEsxiHost("DELETE_ESXI_HOST"),
     UpgradeHcx("UPGRADE_HCX"),
@@ -16,6 +18,8 @@ public enum OperationTypes implements com.oracle.bmc.http.internal.BmcEnum {
     CancelDowngradeHcx("CANCEL_DOWNGRADE_HCX"),
     RefreshHcxLicenseStatus("REFRESH_HCX_LICENSE_STATUS"),
     SwapBilling("SWAP_BILLING"),
+    ReplaceHost("REPLACE_HOST"),
+    InPlaceUpgrade("IN_PLACE_UPGRADE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

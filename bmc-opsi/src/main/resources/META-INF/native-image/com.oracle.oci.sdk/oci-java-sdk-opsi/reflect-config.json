@@ -392,6 +392,12 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.opsi.model.ArchivalState",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.opsi.model.AutonomousDatabaseConfigurationSummary",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
@@ -802,6 +808,94 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.opsi.model.AwrHubObjects",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.opsi.model.AwrHubObjects$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.opsi.model.AwrHubSource",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.opsi.model.AwrHubSource$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.opsi.model.AwrHubSourceLifecycleState",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.opsi.model.AwrHubSourceStatus",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.opsi.model.AwrHubSourceSummary",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.opsi.model.AwrHubSourceSummary$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.opsi.model.AwrHubSourceSummaryCollection",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.opsi.model.AwrHubSourceSummaryCollection$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.opsi.model.AwrHubSourceType",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.opsi.model.AwrHubSources",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.opsi.model.AwrHubSources$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.opsi.model.AwrHubSummary",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
@@ -961,6 +1055,20 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.opsi.model.ChangeAwrHubSourceCompartmentDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.opsi.model.ChangeAwrHubSourceCompartmentDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.opsi.model.ChangeDatabaseInsightCompartmentDetails",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
@@ -1039,6 +1147,20 @@
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.opsi.model.ChangeOperationsInsightsPrivateEndpointCompartmentDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.opsi.model.ChangeOperationsInsightsWarehouseCompartmentDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.opsi.model.ChangeOperationsInsightsWarehouseCompartmentDetails$Builder",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "allDeclaredConstructors": true
@@ -1223,6 +1345,20 @@
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.opsi.model.CreateAwrHubDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.opsi.model.CreateAwrHubSourceDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.opsi.model.CreateAwrHubSourceDetails$Builder",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "allDeclaredConstructors": true
@@ -3590,6 +3726,20 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.opsi.model.ListObjects",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.opsi.model.ListObjects$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.opsi.model.MacsManagedCloudHostConfigurationSummary",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
@@ -3864,6 +4014,20 @@
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.opsi.model.NewsReports$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.opsi.model.ObjectSummary",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.opsi.model.ObjectSummary$Builder",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "allDeclaredConstructors": true
@@ -5098,6 +5262,12 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.opsi.model.StorageTier",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.opsi.model.StorageUsageTrend",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
@@ -5910,6 +6080,20 @@
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.opsi.model.UpdateAwrHubDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.opsi.model.UpdateAwrHubSourceDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.opsi.model.UpdateAwrHubSourceDetails$Builder",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "allDeclaredConstructors": true

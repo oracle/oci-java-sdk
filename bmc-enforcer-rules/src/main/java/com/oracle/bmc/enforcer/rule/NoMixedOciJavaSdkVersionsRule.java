@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 import javax.inject.Inject;
@@ -20,6 +19,7 @@ import javax.inject.Named;
 
 import org.apache.maven.artifact.Artifact;
 import org.apache.maven.enforcer.rule.api.AbstractEnforcerRule;
+import org.apache.maven.enforcer.rule.api.EnforcerLogger;
 import org.apache.maven.enforcer.rule.api.EnforcerRuleException;
 import org.apache.maven.execution.MavenSession;
 import org.apache.maven.project.DefaultProjectBuildingRequest;
@@ -34,6 +34,9 @@ public class NoMixedOciJavaSdkVersionsRule extends AbstractEnforcerRule {
     public static final String BANNED_GROUP_ID = "com.oracle.oci.sdk";
     public static final String BANNED_ARTIFACT_ID_PREFIX = "oci-java-sdk";
 
+    static final String MIN_MAVEN_VERSION = "3.8.1";
+    static final String MIN_ENFORCER_VERSION = "3.4.0";
+
     /**
      * Specify the allowedDependencies dependencies. This can be a list of artifacts in the format
      * <code>
@@ -45,7 +48,7 @@ public class NoMixedOciJavaSdkVersionsRule extends AbstractEnforcerRule {
      * "com.oracle.oci.sdk:oci-java-sdk-core"
      *
      * @see {@link #setAllowedDependencies(List)}
-     * @see {@link #getAllowedDependencies()} ()}
+     * @see {@link #getAllowedDependencies()}
      */
     @Inject private List<String> allowedDependencies;
 
@@ -53,21 +56,50 @@ public class NoMixedOciJavaSdkVersionsRule extends AbstractEnforcerRule {
 
     @Inject private MavenSession session;
 
+    private ProjectBuildingRequest buildingRequest;
+
+    public NoMixedOciJavaSdkVersionsRule() {}
+
+    NoMixedOciJavaSdkVersionsRule(
+            EnforcerLogger logger, MavenProject project, List<String> allowedDependencies) {
+        setLog(Objects.requireNonNull(logger));
+        this.project =
+                Objects.requireNonNull(
+                        project,
+                        "'project' was expected to be injected. Are you using maven enforcer v >= "
+                                + MIN_MAVEN_VERSION
+                                + "?");
+        this.allowedDependencies =
+                Objects.requireNonNull(
+                        allowedDependencies,
+                        "'allowedDependencies' was expected to be injected. Are you using maven v >= "
+                                + MIN_ENFORCER_VERSION
+                                + "?");
+    }
+
     @Override
     public void execute() throws EnforcerRuleException {
         Objects.requireNonNull(
                 project,
-                "'project' was expected to be injected. Are you using maven enforcer v >= 3.4.0?");
-        Objects.requireNonNull(
-                session,
-                "'session' was expected to be injected. Are you using maven enforcer v >= 3.4.0?");
+                "'project' was expected to be injected. Are you using maven enforcer v >= "
+                        + MIN_MAVEN_VERSION
+                        + "?");
         Objects.requireNonNull(
                 allowedDependencies,
-                "'allowedDependencies' was expected to be injected. Are you using maven v >= 3.8.1?");
+                "'allowedDependencies' was expected to be injected. Are you using maven v >= "
+                        + MIN_ENFORCER_VERSION
+                        + "?");
+        this.allowedDependencies =
+                allowedDependencies.stream().filter(s -> !s.isEmpty()).collect(Collectors.toList());
 
-        ProjectBuildingRequest buildingRequest =
-                new DefaultProjectBuildingRequest(session.getProjectBuildingRequest());
-        buildingRequest.setProject(project);
+        this.buildingRequest =
+                (session == null)
+                        ? null
+                        : new DefaultProjectBuildingRequest(session.getProjectBuildingRequest());
+        if (buildingRequest != null) {
+            buildingRequest.setProject(project);
+        }
+
         Set<Artifact> dependencies = getDependenciesToCheck();
         Map<String, Set<Artifact>> versions = checkDependencies(dependencies);
         if (versions.size() > 1) {
@@ -78,8 +110,7 @@ public class NoMixedOciJavaSdkVersionsRule extends AbstractEnforcerRule {
                     .append(BANNED_ARTIFACT_ID_PREFIX)
                     .append("* dependencies have been found.")
                     .append(System.lineSeparator());
-            buf.append("Mixing different versions is not allowedDependencies.")
-                    .append(System.lineSeparator());
+            buf.append("Mixing different versions is not allowed.").append(System.lineSeparator());
 
             for (String version : versions.keySet()) {
                 buf.append("Using version ")
@@ -93,7 +124,7 @@ public class NoMixedOciJavaSdkVersionsRule extends AbstractEnforcerRule {
 
             buf.append(
                     "Use 'mvn dependency:tree' to locate the source of the dependencies with the mixed versions.");
-            throw new EnforcerRuleException(buf.toString());
+            throw new NoMixedOciJavaSdkVersionsException(buf.toString(), versions);
         }
     }
 
@@ -124,8 +155,8 @@ public class NoMixedOciJavaSdkVersionsRule extends AbstractEnforcerRule {
             }
         }
 
-        // anything specifically allowedDependencies should be removed from the ban list
-        List<Artifact> ignored = ignoredDependencies(dependencies, allowedDependencies);
+        // anything in allowedDependencies should be removed from the ban list
+        Set<Artifact> ignored = ignoredDependencies(dependencies, allowedDependencies);
         if (!ignored.isEmpty()) {
             getLog().debug(
                             "Dependencies to ignore found: "
@@ -162,7 +193,11 @@ public class NoMixedOciJavaSdkVersionsRule extends AbstractEnforcerRule {
         }
 
         getLog().debug(
-                        "Different versions found: "
+                        "Unique versions found of "
+                                + BANNED_GROUP_ID
+                                + ":"
+                                + BANNED_ARTIFACT_ID_PREFIX
+                                + ": "
                                 + versions.keySet().size()
                                 + ": "
                                 + versions.keySet());
@@ -183,35 +218,15 @@ public class NoMixedOciJavaSdkVersionsRule extends AbstractEnforcerRule {
         return project.getArtifacts().stream()
                 .filter(
                         a ->
-                                a.getScope().equalsIgnoreCase("compile")
+                                a.getScope().isEmpty()
+                                        || a.getScope().equalsIgnoreCase("compile")
                                         || a.getScope().equalsIgnoreCase("runtime"))
                 .filter(a -> !a.isOptional())
                 .collect(Collectors.toSet());
     }
 
-    static List<Artifact> ignoredDependencies(
+    static Set<Artifact> ignoredDependencies(
             Collection<Artifact> dependencies, List<String> allowedDependencies) {
-        Set<Pattern> filteredOut =
-                allowedDependencies.stream()
-                        .filter(s -> !s.isEmpty())
-                        .map(Pattern::compile)
-                        .collect(Collectors.toSet());
-        return dependencies.stream()
-                .filter(dep -> filteredOut(dep, filteredOut))
-                .collect(Collectors.toList());
-    }
-
-    private static boolean filteredOut(Artifact dep, Set<Pattern> filteredOut) {
-        String simpleGav = toSimpleGav(dep);
-        for (Pattern pattern : filteredOut) {
-            if (pattern.matcher(simpleGav).matches()) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    static String toSimpleGav(Artifact gav) {
-        return gav.getGroupId() + ":" + gav.getArtifactId() + ":" + gav.getVersion();
+        return ArtifactUtils.filterDependencyArtifacts(dependencies, allowedDependencies);
     }
 }

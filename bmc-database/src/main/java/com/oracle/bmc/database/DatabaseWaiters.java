@@ -2712,6 +2712,63 @@ public class DatabaseWaiters {
      * @param request the request to send
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
+    public com.oracle.bmc.waiter.Waiter<CreateConsoleHistoryRequest, CreateConsoleHistoryResponse>
+            forCreateConsoleHistory(CreateConsoleHistoryRequest request) {
+        return forCreateConsoleHistory(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<CreateConsoleHistoryRequest, CreateConsoleHistoryResponse>
+            forCreateConsoleHistory(
+                    CreateConsoleHistoryRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<CreateConsoleHistoryResponse>() {
+                    @Override
+                    public CreateConsoleHistoryResponse call() throws Exception {
+                        final CreateConsoleHistoryResponse response =
+                                client.createConsoleHistory(request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
     public com.oracle.bmc.waiter.Waiter<
                     CreateDataGuardAssociationRequest, CreateDataGuardAssociationResponse>
             forCreateDataGuardAssociation(CreateDataGuardAssociationRequest request) {
@@ -4085,6 +4142,63 @@ public class DatabaseWaiters {
                     public DeleteConsoleConnectionResponse call() throws Exception {
                         final DeleteConsoleConnectionResponse response =
                                 client.deleteConsoleConnection(request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<DeleteConsoleHistoryRequest, DeleteConsoleHistoryResponse>
+            forDeleteConsoleHistory(DeleteConsoleHistoryRequest request) {
+        return forDeleteConsoleHistory(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<DeleteConsoleHistoryRequest, DeleteConsoleHistoryResponse>
+            forDeleteConsoleHistory(
+                    DeleteConsoleHistoryRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<DeleteConsoleHistoryResponse>() {
+                    @Override
+                    public DeleteConsoleHistoryResponse call() throws Exception {
+                        final DeleteConsoleHistoryResponse response =
+                                client.deleteConsoleHistory(request);
 
                         final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
                                 getWorkRequestRequest =
@@ -8516,6 +8630,113 @@ public class DatabaseWaiters {
                         },
                         targetStatesSet.contains(
                                 com.oracle.bmc.database.model.ConsoleConnection.LifecycleState
+                                        .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetConsoleHistoryRequest, GetConsoleHistoryResponse>
+            forConsoleHistory(
+                    GetConsoleHistoryRequest request,
+                    com.oracle.bmc.database.model.ConsoleHistory.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forConsoleHistory(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetConsoleHistoryRequest, GetConsoleHistoryResponse>
+            forConsoleHistory(
+                    GetConsoleHistoryRequest request,
+                    com.oracle.bmc.database.model.ConsoleHistory.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forConsoleHistory(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetConsoleHistoryRequest, GetConsoleHistoryResponse>
+            forConsoleHistory(
+                    GetConsoleHistoryRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.database.model.ConsoleHistory.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forConsoleHistory(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for ConsoleHistory.
+    private com.oracle.bmc.waiter.Waiter<GetConsoleHistoryRequest, GetConsoleHistoryResponse>
+            forConsoleHistory(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetConsoleHistoryRequest request,
+                    final com.oracle.bmc.database.model.ConsoleHistory.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.database.model.ConsoleHistory.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetConsoleHistoryRequest, GetConsoleHistoryResponse>() {
+                            @Override
+                            public GetConsoleHistoryResponse apply(
+                                    GetConsoleHistoryRequest request) {
+                                return client.getConsoleHistory(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetConsoleHistoryResponse>() {
+                            @Override
+                            public boolean test(GetConsoleHistoryResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getConsoleHistory().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.database.model.ConsoleHistory.LifecycleState
                                         .Deleted)),
                 request);
     }
@@ -14361,6 +14582,63 @@ public class DatabaseWaiters {
                     public UpdateConsoleConnectionResponse call() throws Exception {
                         final UpdateConsoleConnectionResponse response =
                                 client.updateConsoleConnection(request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<UpdateConsoleHistoryRequest, UpdateConsoleHistoryResponse>
+            forUpdateConsoleHistory(UpdateConsoleHistoryRequest request) {
+        return forUpdateConsoleHistory(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<UpdateConsoleHistoryRequest, UpdateConsoleHistoryResponse>
+            forUpdateConsoleHistory(
+                    UpdateConsoleHistoryRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<UpdateConsoleHistoryResponse>() {
+                    @Override
+                    public UpdateConsoleHistoryResponse call() throws Exception {
+                        final UpdateConsoleHistoryResponse response =
+                                client.updateConsoleHistory(request);
 
                         final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
                                 getWorkRequestRequest =

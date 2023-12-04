@@ -27,18 +27,27 @@ public final class UpdateAutonomousVmClusterDetails
         "maintenanceWindowDetails",
         "licenseModel",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "autonomousDataStorageSizeInTBs",
+        "cpuCoreCountPerNode",
+        "totalContainerDatabases"
     })
     public UpdateAutonomousVmClusterDetails(
             MaintenanceWindow maintenanceWindowDetails,
             LicenseModel licenseModel,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            Double autonomousDataStorageSizeInTBs,
+            Integer cpuCoreCountPerNode,
+            Integer totalContainerDatabases) {
         super();
         this.maintenanceWindowDetails = maintenanceWindowDetails;
         this.licenseModel = licenseModel;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.autonomousDataStorageSizeInTBs = autonomousDataStorageSizeInTBs;
+        this.cpuCoreCountPerNode = cpuCoreCountPerNode;
+        this.totalContainerDatabases = totalContainerDatabases;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -118,6 +127,55 @@ public final class UpdateAutonomousVmClusterDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * The new scaled up/down value for autonomous data storage in TBs for Autonomous VM
+         * cluster.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStorageSizeInTBs")
+        private Double autonomousDataStorageSizeInTBs;
+
+        /**
+         * The new scaled up/down value for autonomous data storage in TBs for Autonomous VM
+         * cluster.
+         *
+         * @param autonomousDataStorageSizeInTBs the value to set
+         * @return this builder
+         */
+        public Builder autonomousDataStorageSizeInTBs(Double autonomousDataStorageSizeInTBs) {
+            this.autonomousDataStorageSizeInTBs = autonomousDataStorageSizeInTBs;
+            this.__explicitlySet__.add("autonomousDataStorageSizeInTBs");
+            return this;
+        }
+        /** The new scaled up/down value for cpus per Autonomous VM cluster per node. */
+        @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
+        private Integer cpuCoreCountPerNode;
+
+        /**
+         * The new scaled up/down value for cpus per Autonomous VM cluster per node.
+         *
+         * @param cpuCoreCountPerNode the value to set
+         * @return this builder
+         */
+        public Builder cpuCoreCountPerNode(Integer cpuCoreCountPerNode) {
+            this.cpuCoreCountPerNode = cpuCoreCountPerNode;
+            this.__explicitlySet__.add("cpuCoreCountPerNode");
+            return this;
+        }
+        /** The new scaled up/down value for maxACD count for Autonomous VM cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("totalContainerDatabases")
+        private Integer totalContainerDatabases;
+
+        /**
+         * The new scaled up/down value for maxACD count for Autonomous VM cluster.
+         *
+         * @param totalContainerDatabases the value to set
+         * @return this builder
+         */
+        public Builder totalContainerDatabases(Integer totalContainerDatabases) {
+            this.totalContainerDatabases = totalContainerDatabases;
+            this.__explicitlySet__.add("totalContainerDatabases");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -128,7 +186,10 @@ public final class UpdateAutonomousVmClusterDetails
                             this.maintenanceWindowDetails,
                             this.licenseModel,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.autonomousDataStorageSizeInTBs,
+                            this.cpuCoreCountPerNode,
+                            this.totalContainerDatabases);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -148,6 +209,15 @@ public final class UpdateAutonomousVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousDataStorageSizeInTBs")) {
+                this.autonomousDataStorageSizeInTBs(model.getAutonomousDataStorageSizeInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("cpuCoreCountPerNode")) {
+                this.cpuCoreCountPerNode(model.getCpuCoreCountPerNode());
+            }
+            if (model.wasPropertyExplicitlySet("totalContainerDatabases")) {
+                this.totalContainerDatabases(model.getTotalContainerDatabases());
             }
             return this;
         }
@@ -264,6 +334,47 @@ public final class UpdateAutonomousVmClusterDetails
         return definedTags;
     }
 
+    /**
+     * The new scaled up/down value for autonomous data storage in TBs for Autonomous VM cluster.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStorageSizeInTBs")
+    private final Double autonomousDataStorageSizeInTBs;
+
+    /**
+     * The new scaled up/down value for autonomous data storage in TBs for Autonomous VM cluster.
+     *
+     * @return the value
+     */
+    public Double getAutonomousDataStorageSizeInTBs() {
+        return autonomousDataStorageSizeInTBs;
+    }
+
+    /** The new scaled up/down value for cpus per Autonomous VM cluster per node. */
+    @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
+    private final Integer cpuCoreCountPerNode;
+
+    /**
+     * The new scaled up/down value for cpus per Autonomous VM cluster per node.
+     *
+     * @return the value
+     */
+    public Integer getCpuCoreCountPerNode() {
+        return cpuCoreCountPerNode;
+    }
+
+    /** The new scaled up/down value for maxACD count for Autonomous VM cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("totalContainerDatabases")
+    private final Integer totalContainerDatabases;
+
+    /**
+     * The new scaled up/down value for maxACD count for Autonomous VM cluster.
+     *
+     * @return the value
+     */
+    public Integer getTotalContainerDatabases() {
+        return totalContainerDatabases;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -284,6 +395,11 @@ public final class UpdateAutonomousVmClusterDetails
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", autonomousDataStorageSizeInTBs=")
+                .append(String.valueOf(this.autonomousDataStorageSizeInTBs));
+        sb.append(", cpuCoreCountPerNode=").append(String.valueOf(this.cpuCoreCountPerNode));
+        sb.append(", totalContainerDatabases=")
+                .append(String.valueOf(this.totalContainerDatabases));
         sb.append(")");
         return sb.toString();
     }
@@ -303,6 +419,11 @@ public final class UpdateAutonomousVmClusterDetails
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(
+                        this.autonomousDataStorageSizeInTBs, other.autonomousDataStorageSizeInTBs)
+                && java.util.Objects.equals(this.cpuCoreCountPerNode, other.cpuCoreCountPerNode)
+                && java.util.Objects.equals(
+                        this.totalContainerDatabases, other.totalContainerDatabases)
                 && super.equals(other);
     }
 
@@ -318,6 +439,21 @@ public final class UpdateAutonomousVmClusterDetails
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousDataStorageSizeInTBs == null
+                                ? 43
+                                : this.autonomousDataStorageSizeInTBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpuCoreCountPerNode == null
+                                ? 43
+                                : this.cpuCoreCountPerNode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalContainerDatabases == null
+                                ? 43
+                                : this.totalContainerDatabases.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

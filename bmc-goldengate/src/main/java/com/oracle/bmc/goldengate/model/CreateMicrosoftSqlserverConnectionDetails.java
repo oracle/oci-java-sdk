@@ -238,15 +238,15 @@ public final class CreateMicrosoftSqlserverConnectionDetails extends CreateConne
             return this;
         }
         /**
-         * Database Certificate - The base64 encoded content of pem file containing the server
-         * public key (for 1-way SSL).
+         * Database Certificate - The base64 encoded content of a .pem or .crt file. containing the
+         * server public key (for 1-way SSL).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslCa")
         private String sslCa;
 
         /**
-         * Database Certificate - The base64 encoded content of pem file containing the server
-         * public key (for 1-way SSL).
+         * Database Certificate - The base64 encoded content of a .pem or .crt file. containing the
+         * server public key (for 1-way SSL).
          *
          * @param sslCa the value to set
          * @return this builder
@@ -566,15 +566,15 @@ public final class CreateMicrosoftSqlserverConnectionDetails extends CreateConne
     }
 
     /**
-     * Database Certificate - The base64 encoded content of pem file containing the server public
-     * key (for 1-way SSL).
+     * Database Certificate - The base64 encoded content of a .pem or .crt file. containing the
+     * server public key (for 1-way SSL).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslCa")
     private final String sslCa;
 
     /**
-     * Database Certificate - The base64 encoded content of pem file containing the server public
-     * key (for 1-way SSL).
+     * Database Certificate - The base64 encoded content of a .pem or .crt file. containing the
+     * server public key (for 1-way SSL).
      *
      * @return the value
      */

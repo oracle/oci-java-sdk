@@ -5,7 +5,7 @@
 package com.oracle.bmc.ocvp.model;
 
 /** Possible types of actions. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 public enum ActionTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Created("CREATED"),
     Updated("UPDATED"),

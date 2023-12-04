@@ -523,7 +523,7 @@ public interface ApplicationDependencyManagementAsync extends AutoCloseable {
 
     /**
      * Returns a list of Vulnerability Audits based on the specified query parameters. At least one
-     * of id, compartmentId or knowledgeBaseId query parameter must be provided.
+     * of id, compartmentId query parameter must be provided.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

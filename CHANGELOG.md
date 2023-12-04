@@ -3,6 +3,117 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.30.0 - 2023-12-04
+### Added
+- Support for calling Oracle Cloud Infrastructure services in the eu-dcc-zurich-1 and the sa-bogota-1 region
+- Support for managing certificates of target Servers in the Golden Gate service
+- Support for AWR Hub Snapshot ingest endpoints in the Operations Insights service
+- Support for reducing false positives in the Application Dependency Management service
+- Support for ARM shapes in the Data Science service
+- Support for new optional parameters in the upload discovery data API in the Usage service
+- Support for multiple clusters in a Software-Defined Data Centers (SDDCs) in the VMWare Solution service
+- Support for No/Zero days backup in Autonomous Container Database in the Database service
+- Support for provisioning a VM Cluster with a choice of Exadata image version in the Database service
+- Support for updating ocpu/ecpu count, local storage, ACD count and Exadata storage on Cloud Autonomous VM Cluster and Autonomous VM Cluster in the Database service
+- Support for serial console history in the Database service
+- Support for Oracle Linux 8 version database system in the Database service
+ 
+ 
+### Breaking Changes
+- Method `public com.oracle.bmc.ocvp.responses.ListSupportedSkusResponse listSupportedSkus(com.oracle.bmc.ocvp.requests.ListSupportedSkusRequest)` has been removed from com.oracle.bmc.ocvp.Sddc in the VMWare Solution service
+- Method `public java.lang.Iterable listSupportedSkusRecordIterator(com.oracle.bmc.ocvp.requests.ListSupportedSkusRequest)` has been removed from com.oracle.bmc.ocvp.SddcPaginators in the VMWare Solution service
+- Method `public java.lang.Iterable listSupportedSkusResponseIterator(com.oracle.bmc.ocvp.requests.ListSupportedSkusRequest)` has been removed from com.oracle.bmc.ocvp.SddcPaginators in the VMWare Solution service
+- Method `public com.oracle.bmc.ocvp.model.Sku getCurrentSku()` has been removed from com.oracle.bmc.ocvp.model.CreateEsxiHostDetails in the VMWare Solution service
+- Method `public java.lang.String getFailedEsxiHostId()` has been removed from com.oracle.bmc.ocvp.model.CreateEsxiHostDetails in the VMWare Solution service
+- Method `public com.oracle.bmc.ocvp.model.Sku getNextSku()` has been removed from com.oracle.bmc.ocvp.model.CreateEsxiHostDetails in the VMWare Solution service
+- Method `public java.lang.String getNonUpgradedEsxiHostId()` has been removed from com.oracle.bmc.ocvp.model.CreateEsxiHostDetails in the VMWare Solution service
+- Method `public java.lang.String getSddcId()` has been removed from com.oracle.bmc.ocvp.model.CreateEsxiHostDetails in the VMWare Solution service
+- Method `public java.lang.String getCapacityReservationId()` has been removed from com.oracle.bmc.ocvp.model.CreateSddcDetails in the VMWare Solution service
+- Method `public java.lang.String getComputeAvailabilityDomain()` has been removed from com.oracle.bmc.ocvp.model.CreateSddcDetails in the VMWare Solution service
+- Method `public java.util.List getDatastores()` has been removed from com.oracle.bmc.ocvp.model.CreateSddcDetails in the VMWare Solution service
+- Method `public java.lang.Integer getEsxiHostsCount()` has been removed from com.oracle.bmc.ocvp.model.CreateSddcDetails in the VMWare Solution service in the VMWare Solution service
+- Method `public java.lang.String getHcxVlanId()` has been removed from com.oracle.bmc.ocvp.model.CreateSddcDetail in the VMWare Solution service
+- Method `public java.lang.Float getInitialHostOcpuCount()` has been removed from com.oracle.bmc.ocvp.model.CreateSddcDetails in the VMWare Solution service
+- Method `public java.lang.String getInitialHostShapeName()` has been removed from com.oracle.bmc.ocvp.model.CreateSddcDetails in the VMWare Solution service
+- Method `public com.oracle.bmc.ocvp.model.Sku getInitialSku()` has been removed from com.oracle.bmc.ocvp.model.CreateSddcDetails in the VMWare Solution service
+- Method `public java.lang.String getInstanceDisplayNamePrefix()` has been removed from com.oracle.bmc.ocvp.model.CreateSddcDetails in the VMWare Solution service
+- Method `public java.lang.Boolean getIsHcxEnabled()` has been removed from com.oracle.bmc.ocvp.model.CreateSddcDetails in the VMWare Solution service
+- Method `public java.lang.Boolean getIsHcxEnterpriseEnabled()` has been removed from com.oracle.bmc.ocvp.model.CreateSddcDetails in the VMWare Solution service
+- Method `public java.lang.Boolean getIsShieldedInstanceEnabled()` has been removed from com.oracle.bmc.ocvp.model.CreateSddcDetails in the VMWare Solution service
+- Method `public java.lang.String getNsxEdgeUplink1VlanId()` has been removed from com.oracle.bmc.ocvp.model.CreateSddcDetails in the VMWare Solution service
+- Method `public java.lang.String getNsxEdgeUplink2VlanId()` has been removed from com.oracle.bmc.ocvp.model.CreateSddcDetails in the VMWare Solution service
+- Method `public java.lang.String getNsxEdgeVTepVlanId()` has been removed from com.oracle.bmc.ocvp.model.CreateSddcDetails in the VMWare Solution service
+- Method `public java.lang.String getNsxVTepVlanId()` has been removed from com.oracle.bmc.ocvp.model.CreateSddcDetails in the VMWare Solution service
+- Method `public java.lang.String getProvisioningSubnetId()` has been removed from com.oracle.bmc.ocvp.model.CreateSddcDetails in the VMWare Solution service
+- Method `public java.lang.String getProvisioningVlanId()` has been removed from com.oracle.bmc.ocvp.model.CreateSddcDetails in the VMWare Solution service
+- Method `public java.lang.String getReplicationVlanId()` has been removed from com.oracle.bmc.ocvp.model.CreateSddcDetails in the VMWare Solution service
+- Method `public java.lang.String getVmotionVlanId()` has been removed from com.oracle.bmc.ocvp.model.CreateSddcDetails in the VMWare Solution service
+- Method `public java.lang.String getVsanVlanId()` has been removed from com.oracle.bmc.ocvp.model.CreateSddcDetails in the VMWare Solution service
+- Method `public java.lang.String getVsphereVlanId()` has been removed from com.oracle.bmc.ocvp.model.CreateSddcDetails in the VMWare Solution service
+- Method `public java.lang.String getWorkloadNetworkCidr()` has been removed from com.oracle.bmc.ocvp.model.CreateSddcDetails in the VMWare Solution service
+- Method `public com.oracle.bmc.ocvp.model.Sku getCurrentSku()` has been removed from com.oracle.bmc.ocvp.model.EsxiHost in the VMWare Solution service
+- Method `public com.oracle.bmc.ocvp.model.Sku getNextSku()` has been removed from com.oracle.bmc.ocvp.model.EsxiHost in the VMWare Solution service
+- Method `public com.oracle.bmc.ocvp.model.Sku getCurrentSku()` has been removed from com.oracle.bmc.ocvp.model.EsxiHostSummary in the VMWare Solution service
+- Method `public com.oracle.bmc.ocvp.model.Sku getNextSku()` has been removed from com.oracle.bmc.ocvp.model.EsxiHostSummary in the VMWare Solution service
+- Method `public java.lang.String getCapacityReservationId()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.lang.String getComputeAvailabilityDomain()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.util.List getDatastores()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.lang.Integer getEsxiHostsCount()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.lang.String getHcxInitialPassword()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.lang.String getHcxOnPremKey()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.lang.String getHcxVlanId()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.lang.Float getInitialHostOcpuCount()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.lang.String getInitialHostShapeName()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public com.oracle.bmc.ocvp.model.Sku getInitialSku()` has been removed from com.oracle.bmc.ocvp.model.Sdd in the VMWare Solution service
+- Method `public java.lang.String getInstanceDisplayNamePrefix()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.lang.Boolean getIsHcxEnabled()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.lang.Boolean getIsHcxEnterpriseEnabled()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.lang.Boolean getIsShieldedInstanceEnabled()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.lang.String getNsxEdgeUplink1VlanId()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.lang.String getNsxEdgeUplink2VlanId()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.lang.String getNsxEdgeVTepVlanId()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.lang.String getNsxManagerInitialPassword()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.lang.String getNsxOverlaySegmentName()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.lang.String getNsxVTepVlanId()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.lang.String getProvisioningSubnetId()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.lang.String getProvisioningVlanId()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.lang.String getReplicationVlanId()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.util.List getUpgradeLicenses()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.lang.String getVcenterInitialPassword()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.lang.String getVmotionVlanId()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.lang.String getVsanVlanId()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.lang.String getVsphereUpgradeGuide()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.util.List getVsphereUpgradeObjects()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.lang.String getVsphereVlanId()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.lang.String getWorkloadNetworkCidr()` has been removed from com.oracle.bmc.ocvp.model.Sddc in the VMWare Solution service
+- Method `public java.lang.String getComputeAvailabilityDomain()` has been removed from com.oracle.bmc.ocvp.model.SddcSummary in the VMWare Solution service
+- Method `public java.lang.Integer getEsxiHostsCount()` has been removed from com.oracle.bmc.ocvp.model.SddcSummary in the VMWare Solution service
+- Method `public java.lang.Float getInitialHostOcpuCount()` has been removed from com.oracle.bmc.ocvp.model.SddcSummary in the VMWare Solution service
+- Method `public java.lang.String getInitialHostShapeName()` has been removed from com.oracle.bmc.ocvp.model.SddcSummary in the VMWare Solution service
+- Method `public java.lang.Boolean getIsHcxEnabled()` has been removed from com.oracle.bmc.ocvp.model.SddcSummary in the VMWare Solution service
+- Method `public java.lang.Boolean getIsShieldedInstanceEnabled()` has been removed from com.oracle.bmc.ocvp.model.SddcSummary in the VMWare Solution service
+- Method `public java.lang.Boolean getIsSupportMonthlySku()` has been removed from com.oracle.bmc.ocvp.model.SupportedHostShapeSummary in the VMWare Solution service
+- Method `public java.util.List getSupportedSddcTypes()` has been removed from com.oracle.bmc.ocvp.model.SupportedHostShapeSummary in the VMWare Solution service
+- Method `public com.oracle.bmc.ocvp.model.Sku getNextSku()` has been removed from com.oracle.bmc.ocvp.model.UpdateEsxiHostDetails in the VMWare Solution service
+- Method `public java.lang.String getHcxVlanId()` has been removed from com.oracle.bmc.ocvp.model.UpdateSddcDetails in the VMWare Solution service
+- Method `public java.lang.String getNsxEdgeUplink1VlanId()` has been removed from com.oracle.bmc.ocvp.model.UpdateSddcDetails in the VMWare Solution service
+- Method `public java.lang.String getNsxEdgeUplink2VlanId()` has been removed from com.oracle.bmc.ocvp.model.UpdateSddcDetails in the VMWare Solution service
+- Method `public java.lang.String getNsxEdgeVTepVlanId()` has been removed from com.oracle.bmc.ocvp.model.UpdateSddcDetails in the VMWare Solution service
+- Method `public java.lang.String getNsxVTepVlanId()` has been removed from com.oracle.bmc.ocvp.model.UpdateSddcDetails in the VMWare Solution service
+- Method `public java.lang.String getProvisioningVlanId()` has been removed from com.oracle.bmc.ocvp.model.UpdateSddcDetails in the VMWare Solution service
+- Method `public java.lang.String getReplicationVlanId()` has been removed from com.oracle.bmc.ocvp.model.UpdateSddcDetails in the VMWare Solution service
+- Method `public java.lang.String getVmotionVlanId()` has been removed from com.oracle.bmc.ocvp.model.UpdateSddcDetails in the VMWare Solution service
+- Method `public java.lang.String getVsanVlanId()` has been removed from com.oracle.bmc.ocvp.model.UpdateSddcDetails in the VMWare Solution service
+- Method `public java.lang.String getVsphereVlanId()` has been removed from com.oracle.bmc.ocvp.model.UpdateSddcDetails in the VMWare Solution service
+- Method `public com.oracle.bmc.ocvp.model.SddcTypes getSddcType()` has been removed from com.oracle.bmc.ocvp.requests.ListSupportedHostShapesRequest in the VMWare Solution service
+- Class `com.oracle.bmc.ocvp.requests.ListSupportedSkusRequest` has been removed in the VMWare Solution service
+- Class `com.oracle.bmc.ocvp.responses.ListSupportedSkusResponse` has been removed in the VMWare Solution service
+- Class `com.oracle.bmc.ocvp.model.DatastoreSummary` has been removed in the VMWare Solution service
+- Class `com.oracle.bmc.ocvp.model.SddcTypes` has been removed in the VMWare Solution service
+- Class `com.oracle.bmc.ocvp.model.Sku` has been removed in the VMWare Solution service
+- Class `com.oracle.bmc.ocvp.model.SupportedSkuSummary` has been removed in the VMWare Solution service
+- Class `com.oracle.bmc.ocvp.model.SupportedSkuSummaryCollection` has been removed in the VMWare Solution service
+
 ## 3.29.0 - 2023-11-14
 ### Added
 - Support for the PostgreSQL service

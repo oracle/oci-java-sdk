@@ -12,7 +12,7 @@ import com.oracle.bmc.ocvp.responses.*;
  * information, see [Oracle Cloud VMware
  * Solution](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/ocvsoverview.htm).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 public interface EsxiHostAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */
@@ -121,6 +121,21 @@ public interface EsxiHostAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetEsxiHostRequest, GetEsxiHostResponse> handler);
 
     /**
+     * In-place upgrade a ESXi host.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<InplaceUpgradeResponse> inplaceUpgrade(
+            InplaceUpgradeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<InplaceUpgradeRequest, InplaceUpgradeResponse>
+                    handler);
+
+    /**
      * Lists the ESXi hosts in the specified SDDC. The list can be filtered by Compute instance OCID
      * or ESXi display name.
      *
@@ -141,6 +156,20 @@ public interface EsxiHostAsync extends AutoCloseable {
             ListEsxiHostsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListEsxiHostsRequest, ListEsxiHostsResponse>
                     handler);
+
+    /**
+     * Replace a faulty ESXi host whose underlying bare metal is broken
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ReplaceHostResponse> replaceHost(
+            ReplaceHostRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ReplaceHostRequest, ReplaceHostResponse> handler);
 
     /**
      * Swap billing between two Active ESXi hosts.

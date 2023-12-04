@@ -12,7 +12,7 @@ import com.oracle.bmc.ocvp.responses.*;
  * information, see [Oracle Cloud VMware
  * Solution](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/ocvsoverview.htm).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 public interface WorkRequestAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

@@ -33,7 +33,7 @@ import com.oracle.bmc.ocvp.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 public class SddcPaginators {
     private final Sddc client;
 
@@ -156,6 +156,128 @@ public class SddcPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listSupportedCommitments operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSupportedCommitmentsResponse> listSupportedCommitmentsResponseIterator(
+            final ListSupportedCommitmentsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSupportedCommitmentsRequest.Builder,
+                ListSupportedCommitmentsRequest,
+                ListSupportedCommitmentsResponse>(
+                new java.util.function.Supplier<ListSupportedCommitmentsRequest.Builder>() {
+                    @Override
+                    public ListSupportedCommitmentsRequest.Builder get() {
+                        return ListSupportedCommitmentsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSupportedCommitmentsResponse, String>() {
+                    @Override
+                    public String apply(ListSupportedCommitmentsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSupportedCommitmentsRequest.Builder>,
+                        ListSupportedCommitmentsRequest>() {
+                    @Override
+                    public ListSupportedCommitmentsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSupportedCommitmentsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSupportedCommitmentsRequest, ListSupportedCommitmentsResponse>() {
+                    @Override
+                    public ListSupportedCommitmentsResponse apply(
+                            ListSupportedCommitmentsRequest request) {
+                        return client.listSupportedCommitments(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.ocvp.model.SupportedCommitmentSummary} objects contained in responses from the
+     * listSupportedCommitments operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.ocvp.model.SupportedCommitmentSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.ocvp.model.SupportedCommitmentSummary>
+            listSupportedCommitmentsRecordIterator(final ListSupportedCommitmentsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSupportedCommitmentsRequest.Builder,
+                ListSupportedCommitmentsRequest,
+                ListSupportedCommitmentsResponse,
+                com.oracle.bmc.ocvp.model.SupportedCommitmentSummary>(
+                new java.util.function.Supplier<ListSupportedCommitmentsRequest.Builder>() {
+                    @Override
+                    public ListSupportedCommitmentsRequest.Builder get() {
+                        return ListSupportedCommitmentsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSupportedCommitmentsResponse, String>() {
+                    @Override
+                    public String apply(ListSupportedCommitmentsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSupportedCommitmentsRequest.Builder>,
+                        ListSupportedCommitmentsRequest>() {
+                    @Override
+                    public ListSupportedCommitmentsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSupportedCommitmentsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSupportedCommitmentsRequest, ListSupportedCommitmentsResponse>() {
+                    @Override
+                    public ListSupportedCommitmentsResponse apply(
+                            ListSupportedCommitmentsRequest request) {
+                        return client.listSupportedCommitments(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSupportedCommitmentsResponse,
+                        java.util.List<com.oracle.bmc.ocvp.model.SupportedCommitmentSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.ocvp.model.SupportedCommitmentSummary>
+                            apply(ListSupportedCommitmentsResponse response) {
+                        return response.getSupportedCommitmentSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listSupportedHostShapes operation. This iterable will fetch more data from the server as
      * needed.
      *
@@ -272,124 +394,6 @@ public class SddcPaginators {
                     public java.util.List<com.oracle.bmc.ocvp.model.SupportedHostShapeSummary>
                             apply(ListSupportedHostShapesResponse response) {
                         return response.getSupportedHostShapeCollection().getItems();
-                    }
-                });
-    }
-
-    /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSupportedSkus operation. This iterable will fetch more data from the server as needed.
-     *
-     * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
-     */
-    public Iterable<ListSupportedSkusResponse> listSupportedSkusResponseIterator(
-            final ListSupportedSkusRequest request) {
-        return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSupportedSkusRequest.Builder,
-                ListSupportedSkusRequest,
-                ListSupportedSkusResponse>(
-                new java.util.function.Supplier<ListSupportedSkusRequest.Builder>() {
-                    @Override
-                    public ListSupportedSkusRequest.Builder get() {
-                        return ListSupportedSkusRequest.builder().copy(request);
-                    }
-                },
-                new java.util.function.Function<ListSupportedSkusResponse, String>() {
-                    @Override
-                    public String apply(ListSupportedSkusResponse response) {
-                        return response.getOpcNextPage();
-                    }
-                },
-                new java.util.function.Function<
-                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
-                                ListSupportedSkusRequest.Builder>,
-                        ListSupportedSkusRequest>() {
-                    @Override
-                    public ListSupportedSkusRequest apply(
-                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
-                                            ListSupportedSkusRequest.Builder>
-                                    input) {
-                        if (input.getNextPageToken() == null) {
-                            return input.getRequestBuilder().build();
-                        } else {
-                            return input.getRequestBuilder()
-                                    .page(input.getNextPageToken().orElse(null))
-                                    .build();
-                        }
-                    }
-                },
-                new java.util.function.Function<
-                        ListSupportedSkusRequest, ListSupportedSkusResponse>() {
-                    @Override
-                    public ListSupportedSkusResponse apply(ListSupportedSkusRequest request) {
-                        return client.listSupportedSkus(request);
-                    }
-                });
-    }
-
-    /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.ocvp.model.SupportedSkuSummary} objects contained in responses from the
-     * listSupportedSkus operation. This iterable will fetch more data from the server as needed.
-     *
-     * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.ocvp.model.SupportedSkuSummary} objects contained in responses received
-     *     from the service.
-     */
-    public Iterable<com.oracle.bmc.ocvp.model.SupportedSkuSummary> listSupportedSkusRecordIterator(
-            final ListSupportedSkusRequest request) {
-        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSupportedSkusRequest.Builder,
-                ListSupportedSkusRequest,
-                ListSupportedSkusResponse,
-                com.oracle.bmc.ocvp.model.SupportedSkuSummary>(
-                new java.util.function.Supplier<ListSupportedSkusRequest.Builder>() {
-                    @Override
-                    public ListSupportedSkusRequest.Builder get() {
-                        return ListSupportedSkusRequest.builder().copy(request);
-                    }
-                },
-                new java.util.function.Function<ListSupportedSkusResponse, String>() {
-                    @Override
-                    public String apply(ListSupportedSkusResponse response) {
-                        return response.getOpcNextPage();
-                    }
-                },
-                new java.util.function.Function<
-                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
-                                ListSupportedSkusRequest.Builder>,
-                        ListSupportedSkusRequest>() {
-                    @Override
-                    public ListSupportedSkusRequest apply(
-                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
-                                            ListSupportedSkusRequest.Builder>
-                                    input) {
-                        if (input.getNextPageToken() == null) {
-                            return input.getRequestBuilder().build();
-                        } else {
-                            return input.getRequestBuilder()
-                                    .page(input.getNextPageToken().orElse(null))
-                                    .build();
-                        }
-                    }
-                },
-                new java.util.function.Function<
-                        ListSupportedSkusRequest, ListSupportedSkusResponse>() {
-                    @Override
-                    public ListSupportedSkusResponse apply(ListSupportedSkusRequest request) {
-                        return client.listSupportedSkus(request);
-                    }
-                },
-                new java.util.function.Function<
-                        ListSupportedSkusResponse,
-                        java.util.List<com.oracle.bmc.ocvp.model.SupportedSkuSummary>>() {
-                    @Override
-                    public java.util.List<com.oracle.bmc.ocvp.model.SupportedSkuSummary> apply(
-                            ListSupportedSkusResponse response) {
-                        return response.getSupportedSkuSummaryCollection().getItems();
                     }
                 });
     }

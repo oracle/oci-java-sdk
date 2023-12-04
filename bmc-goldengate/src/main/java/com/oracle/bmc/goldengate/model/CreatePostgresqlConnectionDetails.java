@@ -261,14 +261,14 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
         }
         /**
          * The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for
-         * PostgreSQL.
+         * PostgreSQL. The supported file formats are .pem and .crt.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslCa")
         private String sslCa;
 
         /**
          * The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for
-         * PostgreSQL.
+         * PostgreSQL. The supported file formats are .pem and .crt.
          *
          * @param sslCa the value to set
          * @return this builder
@@ -280,14 +280,14 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
         }
         /**
          * The base64 encoded list of certificates revoked by the trusted certificate authorities
-         * (Trusted CA) for PostgreSQL.
+         * (Trusted CA).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslCrl")
         private String sslCrl;
 
         /**
          * The base64 encoded list of certificates revoked by the trusted certificate authorities
-         * (Trusted CA) for PostgreSQL.
+         * (Trusted CA).
          *
          * @param sslCrl the value to set
          * @return this builder
@@ -297,12 +297,16 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
             this.__explicitlySet__.add("sslCrl");
             return this;
         }
-        /** The base64 encoded certificate of the PostgreSQL server. */
+        /**
+         * The base64 encoded certificate of the PostgreSQL server. The supported file formats are
+         * .pem and .crt.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sslCert")
         private String sslCert;
 
         /**
-         * The base64 encoded certificate of the PostgreSQL server.
+         * The base64 encoded certificate of the PostgreSQL server. The supported file formats are
+         * .pem and .crt.
          *
          * @param sslCert the value to set
          * @return this builder
@@ -312,12 +316,16 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
             this.__explicitlySet__.add("sslCert");
             return this;
         }
-        /** The base64 encoded private key of the PostgreSQL server. */
+        /**
+         * The base64 encoded private key of the PostgreSQL server. The supported file formats are
+         * .pem and .crt.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sslKey")
         private String sslKey;
 
         /**
-         * The base64 encoded private key of the PostgreSQL server.
+         * The base64 encoded private key of the PostgreSQL server. The supported file formats are
+         * .pem and .crt.
          *
          * @param sslKey the value to set
          * @return this builder
@@ -660,14 +668,14 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
 
     /**
      * The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for
-     * PostgreSQL.
+     * PostgreSQL. The supported file formats are .pem and .crt.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslCa")
     private final String sslCa;
 
     /**
      * The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for
-     * PostgreSQL.
+     * PostgreSQL. The supported file formats are .pem and .crt.
      *
      * @return the value
      */
@@ -677,14 +685,14 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
 
     /**
      * The base64 encoded list of certificates revoked by the trusted certificate authorities
-     * (Trusted CA) for PostgreSQL.
+     * (Trusted CA).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslCrl")
     private final String sslCrl;
 
     /**
      * The base64 encoded list of certificates revoked by the trusted certificate authorities
-     * (Trusted CA) for PostgreSQL.
+     * (Trusted CA).
      *
      * @return the value
      */
@@ -692,12 +700,16 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
         return sslCrl;
     }
 
-    /** The base64 encoded certificate of the PostgreSQL server. */
+    /**
+     * The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem
+     * and .crt.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("sslCert")
     private final String sslCert;
 
     /**
-     * The base64 encoded certificate of the PostgreSQL server.
+     * The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem
+     * and .crt.
      *
      * @return the value
      */
@@ -705,12 +717,16 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
         return sslCert;
     }
 
-    /** The base64 encoded private key of the PostgreSQL server. */
+    /**
+     * The base64 encoded private key of the PostgreSQL server. The supported file formats are .pem
+     * and .crt.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("sslKey")
     private final String sslKey;
 
     /**
-     * The base64 encoded private key of the PostgreSQL server.
+     * The base64 encoded private key of the PostgreSQL server. The supported file formats are .pem
+     * and .crt.
      *
      * @return the value
      */

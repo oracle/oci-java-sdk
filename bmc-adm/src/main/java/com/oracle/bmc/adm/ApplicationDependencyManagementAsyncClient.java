@@ -851,7 +851,7 @@ public class ApplicationDependencyManagementAsyncClient
                 .serviceDetails(
                         "ApplicationDependencyManagement",
                         "ListApplicationDependencyRecommendations",
-                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/ApplicationDependencyRecommendationCollection/ListApplicationDependencyRecommendations")
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRun/ListApplicationDependencyRecommendations")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListApplicationDependencyRecommendationsRequest::builder)
                 .basePath("/20220421")
@@ -977,7 +977,7 @@ public class ApplicationDependencyManagementAsyncClient
                 .serviceDetails(
                         "ApplicationDependencyManagement",
                         "ListRemediationRecipes",
-                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipeCollection/ListRemediationRecipes")
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipe/ListRemediationRecipes")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListRemediationRecipesRequest::builder)
                 .basePath("/20220421")
@@ -1014,7 +1014,7 @@ public class ApplicationDependencyManagementAsyncClient
                 .serviceDetails(
                         "ApplicationDependencyManagement",
                         "ListRemediationRuns",
-                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRunCollection/ListRemediationRuns")
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRun/ListRemediationRuns")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListRemediationRunsRequest::builder)
                 .basePath("/20220421")
@@ -1053,7 +1053,7 @@ public class ApplicationDependencyManagementAsyncClient
                 .serviceDetails(
                         "ApplicationDependencyManagement",
                         "ListStages",
-                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRunStageCollection/ListStages")
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRunStage/ListStages")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListStagesRequest::builder)
                 .basePath("/20220421")

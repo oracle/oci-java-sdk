@@ -15,7 +15,7 @@ package com.oracle.bmc.ocvp.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = WorkRequestErrorCollection.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(

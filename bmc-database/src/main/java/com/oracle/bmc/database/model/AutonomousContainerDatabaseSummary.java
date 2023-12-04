@@ -70,7 +70,8 @@ public final class AutonomousContainerDatabaseSummary
         "computeModel",
         "provisionedCpus",
         "reservedCpus",
-        "largestProvisionableAutonomousDatabaseInCpus"
+        "largestProvisionableAutonomousDatabaseInCpus",
+        "timeOfLastBackup"
     })
     public AutonomousContainerDatabaseSummary(
             String id,
@@ -116,7 +117,8 @@ public final class AutonomousContainerDatabaseSummary
             ComputeModel computeModel,
             Float provisionedCpus,
             Float reservedCpus,
-            Float largestProvisionableAutonomousDatabaseInCpus) {
+            Float largestProvisionableAutonomousDatabaseInCpus,
+            java.util.Date timeOfLastBackup) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -163,6 +165,7 @@ public final class AutonomousContainerDatabaseSummary
         this.reservedCpus = reservedCpus;
         this.largestProvisionableAutonomousDatabaseInCpus =
                 largestProvisionableAutonomousDatabaseInCpus;
+        this.timeOfLastBackup = timeOfLastBackup;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -947,6 +950,25 @@ public final class AutonomousContainerDatabaseSummary
             this.__explicitlySet__.add("largestProvisionableAutonomousDatabaseInCpus");
             return this;
         }
+        /**
+         * The timestamp of last successful backup. Here NULL value represents either there are no
+         * successful backups or backups are not configured for this Autonomous Container Database.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastBackup")
+        private java.util.Date timeOfLastBackup;
+
+        /**
+         * The timestamp of last successful backup. Here NULL value represents either there are no
+         * successful backups or backups are not configured for this Autonomous Container Database.
+         *
+         * @param timeOfLastBackup the value to set
+         * @return this builder
+         */
+        public Builder timeOfLastBackup(java.util.Date timeOfLastBackup) {
+            this.timeOfLastBackup = timeOfLastBackup;
+            this.__explicitlySet__.add("timeOfLastBackup");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -997,7 +1019,8 @@ public final class AutonomousContainerDatabaseSummary
                             this.computeModel,
                             this.provisionedCpus,
                             this.reservedCpus,
-                            this.largestProvisionableAutonomousDatabaseInCpus);
+                            this.largestProvisionableAutonomousDatabaseInCpus,
+                            this.timeOfLastBackup);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1139,6 +1162,9 @@ public final class AutonomousContainerDatabaseSummary
             if (model.wasPropertyExplicitlySet("largestProvisionableAutonomousDatabaseInCpus")) {
                 this.largestProvisionableAutonomousDatabaseInCpus(
                         model.getLargestProvisionableAutonomousDatabaseInCpus());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfLastBackup")) {
+                this.timeOfLastBackup(model.getTimeOfLastBackup());
             }
             return this;
         }
@@ -2176,6 +2202,23 @@ public final class AutonomousContainerDatabaseSummary
         return largestProvisionableAutonomousDatabaseInCpus;
     }
 
+    /**
+     * The timestamp of last successful backup. Here NULL value represents either there are no
+     * successful backups or backups are not configured for this Autonomous Container Database.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastBackup")
+    private final java.util.Date timeOfLastBackup;
+
+    /**
+     * The timestamp of last successful backup. Here NULL value represents either there are no
+     * successful backups or backups are not configured for this Autonomous Container Database.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeOfLastBackup() {
+        return timeOfLastBackup;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -2242,6 +2285,7 @@ public final class AutonomousContainerDatabaseSummary
         sb.append(", reservedCpus=").append(String.valueOf(this.reservedCpus));
         sb.append(", largestProvisionableAutonomousDatabaseInCpus=")
                 .append(String.valueOf(this.largestProvisionableAutonomousDatabaseInCpus));
+        sb.append(", timeOfLastBackup=").append(String.valueOf(this.timeOfLastBackup));
         sb.append(")");
         return sb.toString();
     }
@@ -2310,6 +2354,7 @@ public final class AutonomousContainerDatabaseSummary
                 && java.util.Objects.equals(
                         this.largestProvisionableAutonomousDatabaseInCpus,
                         other.largestProvisionableAutonomousDatabaseInCpus)
+                && java.util.Objects.equals(this.timeOfLastBackup, other.timeOfLastBackup)
                 && super.equals(other);
     }
 
@@ -2441,6 +2486,9 @@ public final class AutonomousContainerDatabaseSummary
                         + (this.largestProvisionableAutonomousDatabaseInCpus == null
                                 ? 43
                                 : this.largestProvisionableAutonomousDatabaseInCpus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfLastBackup == null ? 43 : this.timeOfLastBackup.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

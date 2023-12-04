@@ -5,7 +5,7 @@
 package com.oracle.bmc.ocvp.model;
 
 /** Possible lifecycle states. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 public enum LifecycleStates implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Updating("UPDATING"),

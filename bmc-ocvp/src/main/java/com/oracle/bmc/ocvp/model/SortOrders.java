@@ -5,7 +5,7 @@
 package com.oracle.bmc.ocvp.model;
 
 /** Sort orders. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 public enum SortOrders implements com.oracle.bmc.http.internal.BmcEnum {
     Asc("ASC"),
     Desc("DESC"),
