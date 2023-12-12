@@ -229,6 +229,11 @@ An example can be found [here](https://github.com/oracle/oci-java-sdk/tree/maste
 
 ## More info
 
+### Idle connection monitor thread to evict idle and expired connections
+The SDK since version `3.31.0` by default enables an idle connection monitor thread to evict idle and expired connections in the Apache Connector. More details can be found [here](https://hc.apache.org/httpcomponents-client-4.5.x/current/tutorial/html/connmgmt.html) With this change we have also enabled connection reuse which fixes a performance regression caused in version `2.14.1`. Link to the detailed issue can be found [here](https://github.com/oracle/oci-java-sdk/issues/378). To disable the idle connection monitor thread, set the system property `oci.javasdk.apache.idle.connection.monitor.thread.enabled` to `false`. You can also configure the idle connection monitor thread by following this [example](https://github.com/oracle/oci-java-sdk/tree/master/bmc-other-examples/bmc-jersey-examples/src/main/java/ConfigureApacheIdleConnectionMonitorExample.java)
+
+Note : Disabling connection monitor thread by changing the system property disables the connection reuse
+
 ### Disabling extra logs related to streams
 The SDK emits warnings related to streams when an API that returns streams in its response is called. To disable the logs around streams, you can set 
 the system property `oci.javasdk.extra.stream.logs.enabled` to `false`. This can be done programmitically or by passing a system property in the java command line.

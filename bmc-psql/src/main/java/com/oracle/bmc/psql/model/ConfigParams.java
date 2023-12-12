@@ -5,7 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * DB Configuration <br>
+ * Database configuration. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -53,12 +53,12 @@ public final class ConfigParams extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Key is the configuration key. */
+        /** The configuration variable name. */
         @com.fasterxml.jackson.annotation.JsonProperty("configKey")
         private String configKey;
 
         /**
-         * Key is the configuration key.
+         * The configuration variable name.
          *
          * @param configKey the value to set
          * @return this builder
@@ -68,12 +68,12 @@ public final class ConfigParams extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("configKey");
             return this;
         }
-        /** Default value */
+        /** Default value for the configuration variable. */
         @com.fasterxml.jackson.annotation.JsonProperty("defaultConfigValue")
         private String defaultConfigValue;
 
         /**
-         * Default value
+         * Default value for the configuration variable.
          *
          * @param defaultConfigValue the value to set
          * @return this builder
@@ -83,12 +83,12 @@ public final class ConfigParams extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("defaultConfigValue");
             return this;
         }
-        /** User selected configuration value */
+        /** User-selected configuration variable value. */
         @com.fasterxml.jackson.annotation.JsonProperty("overridenConfigValue")
         private String overridenConfigValue;
 
         /**
-         * User selected configuration value
+         * User-selected configuration variable value.
          *
          * @param overridenConfigValue the value to set
          * @return this builder
@@ -98,12 +98,12 @@ public final class ConfigParams extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("overridenConfigValue");
             return this;
         }
-        /** Range or list of allowed values */
+        /** Range or list of allowed values. */
         @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
         private String allowedValues;
 
         /**
-         * Range or list of allowed values
+         * Range or list of allowed values.
          *
          * @param allowedValues the value to set
          * @return this builder
@@ -113,12 +113,12 @@ public final class ConfigParams extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("allowedValues");
             return this;
         }
-        /** If true, modfying this configuration value will requires restart. */
+        /** If true, modifying this configuration value will require a restart of the database. */
         @com.fasterxml.jackson.annotation.JsonProperty("isRestartRequired")
         private Boolean isRestartRequired;
 
         /**
-         * If true, modfying this configuration value will requires restart.
+         * If true, modifying this configuration value will require a restart of the database.
          *
          * @param isRestartRequired the value to set
          * @return this builder
@@ -128,12 +128,12 @@ public final class ConfigParams extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("isRestartRequired");
             return this;
         }
-        /** Describes about the Datatype value. */
+        /** Data type of the variable. */
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private String dataType;
 
         /**
-         * Describes about the Datatype value.
+         * Data type of the variable.
          *
          * @param dataType the value to set
          * @return this builder
@@ -143,12 +143,12 @@ public final class ConfigParams extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("dataType");
             return this;
         }
-        /** This flags tells whether the value is overridable or not. */
+        /** Whether the value can be overridden or not. */
         @com.fasterxml.jackson.annotation.JsonProperty("isOverridable")
         private Boolean isOverridable;
 
         /**
-         * This flags tells whether the value is overridable or not.
+         * Whether the value can be overridden or not.
          *
          * @param isOverridable the value to set
          * @return this builder
@@ -158,12 +158,12 @@ public final class ConfigParams extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("isOverridable");
             return this;
         }
-        /** Details about the Postgresql params. */
+        /** Details about the PostgreSQL parameter. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Details about the Postgresql params.
+         * Details about the PostgreSQL parameter.
          *
          * @param description the value to set
          * @return this builder
@@ -233,12 +233,12 @@ public final class ConfigParams extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** Key is the configuration key. */
+    /** The configuration variable name. */
     @com.fasterxml.jackson.annotation.JsonProperty("configKey")
     private final String configKey;
 
     /**
-     * Key is the configuration key.
+     * The configuration variable name.
      *
      * @return the value
      */
@@ -246,12 +246,12 @@ public final class ConfigParams extends com.oracle.bmc.http.client.internal.Expl
         return configKey;
     }
 
-    /** Default value */
+    /** Default value for the configuration variable. */
     @com.fasterxml.jackson.annotation.JsonProperty("defaultConfigValue")
     private final String defaultConfigValue;
 
     /**
-     * Default value
+     * Default value for the configuration variable.
      *
      * @return the value
      */
@@ -259,12 +259,12 @@ public final class ConfigParams extends com.oracle.bmc.http.client.internal.Expl
         return defaultConfigValue;
     }
 
-    /** User selected configuration value */
+    /** User-selected configuration variable value. */
     @com.fasterxml.jackson.annotation.JsonProperty("overridenConfigValue")
     private final String overridenConfigValue;
 
     /**
-     * User selected configuration value
+     * User-selected configuration variable value.
      *
      * @return the value
      */
@@ -272,12 +272,12 @@ public final class ConfigParams extends com.oracle.bmc.http.client.internal.Expl
         return overridenConfigValue;
     }
 
-    /** Range or list of allowed values */
+    /** Range or list of allowed values. */
     @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
     private final String allowedValues;
 
     /**
-     * Range or list of allowed values
+     * Range or list of allowed values.
      *
      * @return the value
      */
@@ -285,12 +285,12 @@ public final class ConfigParams extends com.oracle.bmc.http.client.internal.Expl
         return allowedValues;
     }
 
-    /** If true, modfying this configuration value will requires restart. */
+    /** If true, modifying this configuration value will require a restart of the database. */
     @com.fasterxml.jackson.annotation.JsonProperty("isRestartRequired")
     private final Boolean isRestartRequired;
 
     /**
-     * If true, modfying this configuration value will requires restart.
+     * If true, modifying this configuration value will require a restart of the database.
      *
      * @return the value
      */
@@ -298,12 +298,12 @@ public final class ConfigParams extends com.oracle.bmc.http.client.internal.Expl
         return isRestartRequired;
     }
 
-    /** Describes about the Datatype value. */
+    /** Data type of the variable. */
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final String dataType;
 
     /**
-     * Describes about the Datatype value.
+     * Data type of the variable.
      *
      * @return the value
      */
@@ -311,12 +311,12 @@ public final class ConfigParams extends com.oracle.bmc.http.client.internal.Expl
         return dataType;
     }
 
-    /** This flags tells whether the value is overridable or not. */
+    /** Whether the value can be overridden or not. */
     @com.fasterxml.jackson.annotation.JsonProperty("isOverridable")
     private final Boolean isOverridable;
 
     /**
-     * This flags tells whether the value is overridable or not.
+     * Whether the value can be overridden or not.
      *
      * @return the value
      */
@@ -324,12 +324,12 @@ public final class ConfigParams extends com.oracle.bmc.http.client.internal.Expl
         return isOverridable;
     }
 
-    /** Details about the Postgresql params. */
+    /** Details about the PostgreSQL parameter. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Details about the Postgresql params.
+     * Details about the PostgreSQL parameter.
      *
      * @return the value
      */

@@ -108,6 +108,15 @@ public final class CreateGenericConnectionDetails extends CreateConnectionDetail
             this.__explicitlySet__.add("subnetId");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
         /** The Generic technology type. */
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private GenericConnection.TechnologyType technologyType;
@@ -162,6 +171,7 @@ public final class CreateGenericConnectionDetails extends CreateConnectionDetail
                             this.keyId,
                             this.nsgIds,
                             this.subnetId,
+                            this.routingMethod,
                             this.technologyType,
                             this.host);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -199,6 +209,9 @@ public final class CreateGenericConnectionDetails extends CreateConnectionDetail
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -229,6 +242,7 @@ public final class CreateGenericConnectionDetails extends CreateConnectionDetail
             String keyId,
             java.util.List<String> nsgIds,
             String subnetId,
+            RoutingMethod routingMethod,
             GenericConnection.TechnologyType technologyType,
             String host) {
         super(
@@ -240,7 +254,8 @@ public final class CreateGenericConnectionDetails extends CreateConnectionDetail
                 vaultId,
                 keyId,
                 nsgIds,
-                subnetId);
+                subnetId,
+                routingMethod);
         this.technologyType = technologyType;
         this.host = host;
     }

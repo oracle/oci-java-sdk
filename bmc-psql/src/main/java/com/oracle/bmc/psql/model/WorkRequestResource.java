@@ -46,12 +46,12 @@ public final class WorkRequestResource
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The resource type the work request affects. */
+        /** The resource type that the work request affects. */
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
 
         /**
-         * The resource type the work request affects.
+         * The resource type that the work request affects.
          *
          * @param entityType the value to set
          * @return this builder
@@ -91,12 +91,12 @@ public final class WorkRequestResource
             this.__explicitlySet__.add("identifier");
             return this;
         }
-        /** The URI path that the user can do a GET on to access the resource metadata */
+        /** The URI path that the user can do a GET on to access the resource metadata. */
         @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
         private String entityUri;
 
         /**
-         * The URI path that the user can do a GET on to access the resource metadata
+         * The URI path that the user can do a GET on to access the resource metadata.
          *
          * @param entityUri the value to set
          * @return this builder
@@ -169,12 +169,12 @@ public final class WorkRequestResource
         return new Builder().copy(this);
     }
 
-    /** The resource type the work request affects. */
+    /** The resource type that the work request affects. */
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final String entityType;
 
     /**
-     * The resource type the work request affects.
+     * The resource type that the work request affects.
      *
      * @return the value
      */
@@ -208,12 +208,12 @@ public final class WorkRequestResource
         return identifier;
     }
 
-    /** The URI path that the user can do a GET on to access the resource metadata */
+    /** The URI path that the user can do a GET on to access the resource metadata. */
     @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
     private final String entityUri;
 
     /**
-     * The URI path that the user can do a GET on to access the resource metadata
+     * The URI path that the user can do a GET on to access the resource metadata.
      *
      * @return the value
      */

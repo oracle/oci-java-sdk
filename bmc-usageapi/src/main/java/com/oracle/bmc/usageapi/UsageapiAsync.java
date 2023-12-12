@@ -112,6 +112,24 @@ public interface UsageapiAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns the created usage carbon emissions query.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateUsageCarbonEmissionsQueryResponse>
+            createUsageCarbonEmissionsQuery(
+                    CreateUsageCarbonEmissionsQueryRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateUsageCarbonEmissionsQueryRequest,
+                                    CreateUsageCarbonEmissionsQueryResponse>
+                            handler);
+
+    /**
      * Delete a saved custom table by the OCID.
      *
      * @param request The request object containing the details to send
@@ -155,6 +173,24 @@ public interface UsageapiAsync extends AutoCloseable {
             DeleteScheduleRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteScheduleRequest, DeleteScheduleResponse>
                     handler);
+
+    /**
+     * Delete a usage carbon emissions saved query by the OCID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteUsageCarbonEmissionsQueryResponse>
+            deleteUsageCarbonEmissionsQuery(
+                    DeleteUsageCarbonEmissionsQueryRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteUsageCarbonEmissionsQueryRequest,
+                                    DeleteUsageCarbonEmissionsQueryResponse>
+                            handler);
 
     /**
      * Returns the saved custom table.
@@ -212,6 +248,23 @@ public interface UsageapiAsync extends AutoCloseable {
     java.util.concurrent.Future<GetScheduledRunResponse> getScheduledRun(
             GetScheduledRunRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetScheduledRunRequest, GetScheduledRunResponse>
+                    handler);
+
+    /**
+     * Returns the usage carbon emissions saved query.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetUsageCarbonEmissionsQueryResponse> getUsageCarbonEmissionsQuery(
+            GetUsageCarbonEmissionsQueryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetUsageCarbonEmissionsQueryRequest,
+                            GetUsageCarbonEmissionsQueryResponse>
                     handler);
 
     /**
@@ -275,6 +328,57 @@ public interface UsageapiAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns the usage carbon emissions saved query list.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListUsageCarbonEmissionsQueriesResponse>
+            listUsageCarbonEmissionsQueries(
+                    ListUsageCarbonEmissionsQueriesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListUsageCarbonEmissionsQueriesRequest,
+                                    ListUsageCarbonEmissionsQueriesResponse>
+                            handler);
+
+    /**
+     * Returns the average carbon emissions summary by SKU.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RequestAverageCarbonEmissionResponse> requestAverageCarbonEmission(
+            RequestAverageCarbonEmissionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RequestAverageCarbonEmissionRequest,
+                            RequestAverageCarbonEmissionResponse>
+                    handler);
+
+    /**
+     * Returns the clean energy usage summary by region.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RequestCleanEnergyUsageResponse> requestCleanEnergyUsage(
+            RequestCleanEnergyUsageRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RequestCleanEnergyUsageRequest, RequestCleanEnergyUsageResponse>
+                    handler);
+
+    /**
      * Returns the configurations list for the UI drop-down list.
      *
      * @param request The request object containing the details to send
@@ -306,6 +410,40 @@ public interface UsageapiAsync extends AutoCloseable {
             RequestSummarizedUsagesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             RequestSummarizedUsagesRequest, RequestSummarizedUsagesResponse>
+                    handler);
+
+    /**
+     * Returns the configuration list for the UI drop-down list of carbon emission console.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RequestUsageCarbonEmissionConfigResponse>
+            requestUsageCarbonEmissionConfig(
+                    RequestUsageCarbonEmissionConfigRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RequestUsageCarbonEmissionConfigRequest,
+                                    RequestUsageCarbonEmissionConfigResponse>
+                            handler);
+
+    /**
+     * Returns usage carbon emission for the given account.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RequestUsageCarbonEmissionsResponse> requestUsageCarbonEmissions(
+            RequestUsageCarbonEmissionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RequestUsageCarbonEmissionsRequest, RequestUsageCarbonEmissionsResponse>
                     handler);
 
     /**
@@ -352,4 +490,22 @@ public interface UsageapiAsync extends AutoCloseable {
             UpdateScheduleRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateScheduleRequest, UpdateScheduleResponse>
                     handler);
+
+    /**
+     * Update a usage carbon emissions saved query by the OCID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateUsageCarbonEmissionsQueryResponse>
+            updateUsageCarbonEmissionsQuery(
+                    UpdateUsageCarbonEmissionsQueryRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateUsageCarbonEmissionsQueryRequest,
+                                    UpdateUsageCarbonEmissionsQueryResponse>
+                            handler);
 }

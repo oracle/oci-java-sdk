@@ -90,6 +90,24 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
         /**
          * JDBC connection URL. e.g.:
          * 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
@@ -203,6 +221,8 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
                             this.vaultId,
                             this.keyId,
                             this.nsgIds,
+                            this.subnetId,
+                            this.routingMethod,
                             this.connectionUrl,
                             this.authenticationType,
                             this.username,
@@ -237,6 +257,12 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
             }
             if (model.wasPropertyExplicitlySet("connectionUrl")) {
                 this.connectionUrl(model.getConnectionUrl());
@@ -278,13 +304,24 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
             String vaultId,
             String keyId,
             java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
             String connectionUrl,
             SnowflakeConnection.AuthenticationType authenticationType,
             String username,
             String password,
             String privateKeyFile,
             String privateKeyPassphrase) {
-        super(displayName, description, freeformTags, definedTags, vaultId, keyId, nsgIds);
+        super(
+                displayName,
+                description,
+                freeformTags,
+                definedTags,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod);
         this.connectionUrl = connectionUrl;
         this.authenticationType = authenticationType;
         this.username = username;

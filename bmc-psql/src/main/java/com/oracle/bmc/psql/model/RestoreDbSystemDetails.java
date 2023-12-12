@@ -5,7 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Backup details to restore the DB system. <br>
+ * Backup details to restore the database system. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,12 +32,16 @@ public final class RestoreDbSystemDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** DbSystem backup identifier. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * database system backup.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("backupId")
         private String backupId;
 
         /**
-         * DbSystem backup identifier.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * database system backup.
          *
          * @param backupId the value to set
          * @return this builder
@@ -48,15 +52,15 @@ public final class RestoreDbSystemDetails
             return this;
         }
         /**
-         * The desired AD for 3AD regions. Optional parameter. If not set the AD will be chosen
-         * based on the current DB System's AD.
+         * The desired AD for regions with three ADs. This parameter is optional. If not set, the AD
+         * is chosen based on the database system's current AD.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("ad")
         private String ad;
 
         /**
-         * The desired AD for 3AD regions. Optional parameter. If not set the AD will be chosen
-         * based on the current DB System's AD.
+         * The desired AD for regions with three ADs. This parameter is optional. If not set, the AD
+         * is chosen based on the database system's current AD.
          *
          * @param ad the value to set
          * @return this builder
@@ -99,12 +103,16 @@ public final class RestoreDbSystemDetails
         return new Builder().copy(this);
     }
 
-    /** DbSystem backup identifier. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * database system backup.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("backupId")
     private final String backupId;
 
     /**
-     * DbSystem backup identifier.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * database system backup.
      *
      * @return the value
      */
@@ -113,15 +121,15 @@ public final class RestoreDbSystemDetails
     }
 
     /**
-     * The desired AD for 3AD regions. Optional parameter. If not set the AD will be chosen based on
-     * the current DB System's AD.
+     * The desired AD for regions with three ADs. This parameter is optional. If not set, the AD is
+     * chosen based on the database system's current AD.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("ad")
     private final String ad;
 
     /**
-     * The desired AD for 3AD regions. Optional parameter. If not set the AD will be chosen based on
-     * the current DB System's AD.
+     * The desired AD for regions with three ADs. This parameter is optional. If not set, the AD is
+     * chosen based on the database system's current AD.
      *
      * @return the value
      */

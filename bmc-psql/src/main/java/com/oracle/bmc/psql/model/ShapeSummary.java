@@ -5,7 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Summary of the DbSystem shape. <br>
+ * Summary of the database system shape. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,12 +32,12 @@ public final class ShapeSummary extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier for the shape */
+        /** A unique identifier for the shape. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier for the shape
+         * A unique identifier for the shape.
          *
          * @param id the value to set
          * @return this builder
@@ -47,12 +47,12 @@ public final class ShapeSummary extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The Compute Shape Name like VM.Standard.E4.Flex */
+        /** The name of the Compute VM shape. Example: {@code VM.Standard.E4.Flex} */
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
-         * The Compute Shape Name like VM.Standard.E4.Flex
+         * The name of the Compute VM shape. Example: {@code VM.Standard.E4.Flex}
          *
          * @param shape the value to set
          * @return this builder
@@ -62,12 +62,12 @@ public final class ShapeSummary extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("shape");
             return this;
         }
-        /** The number of OCPUs */
+        /** The number of OCPUs. */
         @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
         private Integer ocpuCount;
 
         /**
-         * The number of OCPUs
+         * The number of OCPUs.
          *
          * @param ocpuCount the value to set
          * @return this builder
@@ -77,12 +77,12 @@ public final class ShapeSummary extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("ocpuCount");
             return this;
         }
-        /** The amount of memory in GB */
+        /** The amount of memory in gigabytes. */
         @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
         private Integer memorySizeInGBs;
 
         /**
-         * The amount of memory in GB
+         * The amount of memory in gigabytes.
          *
          * @param memorySizeInGBs the value to set
          * @return this builder
@@ -132,12 +132,12 @@ public final class ShapeSummary extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** Unique identifier for the shape */
+    /** A unique identifier for the shape. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier for the shape
+     * A unique identifier for the shape.
      *
      * @return the value
      */
@@ -145,12 +145,12 @@ public final class ShapeSummary extends com.oracle.bmc.http.client.internal.Expl
         return id;
     }
 
-    /** The Compute Shape Name like VM.Standard.E4.Flex */
+    /** The name of the Compute VM shape. Example: {@code VM.Standard.E4.Flex} */
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
-     * The Compute Shape Name like VM.Standard.E4.Flex
+     * The name of the Compute VM shape. Example: {@code VM.Standard.E4.Flex}
      *
      * @return the value
      */
@@ -158,12 +158,12 @@ public final class ShapeSummary extends com.oracle.bmc.http.client.internal.Expl
         return shape;
     }
 
-    /** The number of OCPUs */
+    /** The number of OCPUs. */
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
     private final Integer ocpuCount;
 
     /**
-     * The number of OCPUs
+     * The number of OCPUs.
      *
      * @return the value
      */
@@ -171,12 +171,12 @@ public final class ShapeSummary extends com.oracle.bmc.http.client.internal.Expl
         return ocpuCount;
     }
 
-    /** The amount of memory in GB */
+    /** The amount of memory in gigabytes. */
     @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
     private final Integer memorySizeInGBs;
 
     /**
-     * The amount of memory in GB
+     * The amount of memory in gigabytes.
      *
      * @return the value
      */

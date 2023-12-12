@@ -15,17 +15,29 @@ public class CreateDbSystemRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.psql.model.CreateDbSystemDetails> {
 
-    /** Details for the new DbSystem. */
+    /** Details for the new database system. */
     private com.oracle.bmc.psql.model.CreateDbSystemDetails createDbSystemDetails;
 
-    /** Details for the new DbSystem. */
+    /** Details for the new database system. */
     public com.oracle.bmc.psql.model.CreateDbSystemDetails getCreateDbSystemDetails() {
         return createDbSystemDetails;
     }
-    /** A token that uniquely identifies a request so it can be retried in case of a timeout or */
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, {@code retrytoken} could be expired or
+     * invalidated.
+     */
     private String opcRetryToken;
 
-    /** A token that uniquely identifies a request so it can be retried in case of a timeout or */
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, {@code retrytoken} could be expired or
+     * invalidated.
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -54,11 +66,11 @@ public class CreateDbSystemRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the new DbSystem. */
+        /** Details for the new database system. */
         private com.oracle.bmc.psql.model.CreateDbSystemDetails createDbSystemDetails = null;
 
         /**
-         * Details for the new DbSystem.
+         * Details for the new database system.
          *
          * @param createDbSystemDetails the value to set
          * @return this builder instance
@@ -71,11 +83,19 @@ public class CreateDbSystemRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, {@code retrytoken} could be
+         * expired or invalidated.
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, {@code retrytoken} could be
+         * expired or invalidated.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance

@@ -157,6 +157,13 @@ public class ListHistoriesRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public com.oracle.bmc.optimizer.model.Status getStatus() {
         return status;
     }
+    /** Supplement additional resource information in extended metadata response. */
+    private Boolean includeResourceMetadata;
+
+    /** Supplement additional resource information in extended metadata response. */
+    public Boolean getIncludeResourceMetadata() {
+        return includeResourceMetadata;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -364,6 +371,20 @@ public class ListHistoriesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /** Supplement additional resource information in extended metadata response. */
+        private Boolean includeResourceMetadata = null;
+
+        /**
+         * Supplement additional resource information in extended metadata response.
+         *
+         * @param includeResourceMetadata the value to set
+         * @return this builder instance
+         */
+        public Builder includeResourceMetadata(Boolean includeResourceMetadata) {
+            this.includeResourceMetadata = includeResourceMetadata;
+            return this;
+        }
+
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
@@ -424,6 +445,7 @@ public class ListHistoriesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             sortBy(o.getSortBy());
             lifecycleState(o.getLifecycleState());
             status(o.getStatus());
+            includeResourceMetadata(o.getIncludeResourceMetadata());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -471,11 +493,12 @@ public class ListHistoriesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.sortBy = sortBy;
             request.lifecycleState = lifecycleState;
             request.status = status;
+            request.includeResourceMetadata = includeResourceMetadata;
             request.opcRequestId = opcRequestId;
             return request;
             // new ListHistoriesRequest(compartmentId, compartmentIdInSubtree, name,
             // recommendationName, recommendationId, resourceType, limit, page, sortOrder, sortBy,
-            // lifecycleState, status, opcRequestId);
+            // lifecycleState, status, includeResourceMetadata, opcRequestId);
         }
     }
 
@@ -498,6 +521,7 @@ public class ListHistoriesRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 .sortBy(sortBy)
                 .lifecycleState(lifecycleState)
                 .status(status)
+                .includeResourceMetadata(includeResourceMetadata)
                 .opcRequestId(opcRequestId);
     }
 
@@ -527,6 +551,7 @@ public class ListHistoriesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",status=").append(String.valueOf(this.status));
+        sb.append(",includeResourceMetadata=").append(String.valueOf(this.includeResourceMetadata));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -556,6 +581,8 @@ public class ListHistoriesRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(
+                        this.includeResourceMetadata, other.includeResourceMetadata)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -589,6 +616,11 @@ public class ListHistoriesRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.includeResourceMetadata == null
+                                ? 43
+                                : this.includeResourceMetadata.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

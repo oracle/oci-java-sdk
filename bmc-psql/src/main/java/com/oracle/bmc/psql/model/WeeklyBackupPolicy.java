@@ -5,7 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Weekly backup policy <br>
+ * Weekly backup policy. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -35,12 +35,12 @@ public final class WeeklyBackupPolicy extends BackupPolicy {
             this.__explicitlySet__.add("retentionDays");
             return this;
         }
-        /** Weekly days */
+        /** The day of the week that the backup starts. */
         @com.fasterxml.jackson.annotation.JsonProperty("daysOfTheWeek")
         private java.util.List<DaysOfTheWeek> daysOfTheWeek;
 
         /**
-         * Weekly days
+         * The day of the week that the backup starts.
          *
          * @param daysOfTheWeek the value to set
          * @return this builder
@@ -50,12 +50,12 @@ public final class WeeklyBackupPolicy extends BackupPolicy {
             this.__explicitlySet__.add("daysOfTheWeek");
             return this;
         }
-        /** Hour of the day when backup starts. */
+        /** Hour of the day when the backup starts. */
         @com.fasterxml.jackson.annotation.JsonProperty("backupStart")
         private String backupStart;
 
         /**
-         * Hour of the day when backup starts.
+         * Hour of the day when the backup starts.
          *
          * @param backupStart the value to set
          * @return this builder
@@ -164,12 +164,12 @@ public final class WeeklyBackupPolicy extends BackupPolicy {
             return UnknownEnumValue;
         }
     };
-    /** Weekly days */
+    /** The day of the week that the backup starts. */
     @com.fasterxml.jackson.annotation.JsonProperty("daysOfTheWeek")
     private final java.util.List<DaysOfTheWeek> daysOfTheWeek;
 
     /**
-     * Weekly days
+     * The day of the week that the backup starts.
      *
      * @return the value
      */
@@ -177,12 +177,12 @@ public final class WeeklyBackupPolicy extends BackupPolicy {
         return daysOfTheWeek;
     }
 
-    /** Hour of the day when backup starts. */
+    /** Hour of the day when the backup starts. */
     @com.fasterxml.jackson.annotation.JsonProperty("backupStart")
     private final String backupStart;
 
     /**
-     * Hour of the day when backup starts.
+     * Hour of the day when the backup starts.
      *
      * @return the value
      */

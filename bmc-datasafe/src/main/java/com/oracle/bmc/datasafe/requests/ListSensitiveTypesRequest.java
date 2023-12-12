@@ -334,6 +334,19 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
     public com.oracle.bmc.datasafe.model.DiscoveryLifecycleState getLifecycleState() {
         return lifecycleState;
     }
+    /**
+     * A filter to return only the common sensitive type resources. Common sensitive types belong to
+     * library sensitive types which are frequently used to perform sensitive data discovery.
+     */
+    private Boolean isCommon;
+
+    /**
+     * A filter to return only the common sensitive type resources. Common sensitive types belong to
+     * library sensitive types which are frequently used to perform sensitive data discovery.
+     */
+    public Boolean getIsCommon() {
+        return isCommon;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -655,6 +668,26 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
+         * A filter to return only the common sensitive type resources. Common sensitive types
+         * belong to library sensitive types which are frequently used to perform sensitive data
+         * discovery.
+         */
+        private Boolean isCommon = null;
+
+        /**
+         * A filter to return only the common sensitive type resources. Common sensitive types
+         * belong to library sensitive types which are frequently used to perform sensitive data
+         * discovery.
+         *
+         * @param isCommon the value to set
+         * @return this builder instance
+         */
+        public Builder isCommon(Boolean isCommon) {
+            this.isCommon = isCommon;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -701,6 +734,7 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
             limit(o.getLimit());
             page(o.getPage());
             lifecycleState(o.getLifecycleState());
+            isCommon(o.getIsCommon());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -752,11 +786,12 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
             request.limit = limit;
             request.page = page;
             request.lifecycleState = lifecycleState;
+            request.isCommon = isCommon;
             return request;
             // new ListSensitiveTypesRequest(compartmentId, compartmentIdInSubtree, accessLevel,
             // displayName, sensitiveTypeId, sensitiveTypeSource, entityType, parentCategoryId,
             // defaultMaskingFormatId, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan,
-            // sortOrder, sortBy, opcRequestId, limit, page, lifecycleState);
+            // sortOrder, sortBy, opcRequestId, limit, page, lifecycleState, isCommon);
         }
     }
 
@@ -783,7 +818,8 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
                 .opcRequestId(opcRequestId)
                 .limit(limit)
                 .page(page)
-                .lifecycleState(lifecycleState);
+                .lifecycleState(lifecycleState)
+                .isCommon(isCommon);
     }
 
     /**
@@ -818,6 +854,7 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",isCommon=").append(String.valueOf(this.isCommon));
         sb.append(")");
         return sb.toString();
     }
@@ -852,7 +889,8 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
-                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState);
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.isCommon, other.isCommon);
     }
 
     @Override
@@ -904,6 +942,7 @@ public class ListSensitiveTypesRequest extends com.oracle.bmc.requests.BmcReques
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.isCommon == null ? 43 : this.isCommon.hashCode());
         return result;
     }
 }

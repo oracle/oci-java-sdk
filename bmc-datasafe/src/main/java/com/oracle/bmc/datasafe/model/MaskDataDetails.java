@@ -278,7 +278,7 @@ public final class MaskDataDetails
         }
         /**
          * Indicates if redo logging is enabled during a masking operation. Set this attribute to
-         * true to enable redo logging. If set as flase, masking disables redo logging and flashback
+         * true to enable redo logging. If set as false, masking disables redo logging and flashback
          * logging to purge any original unmasked data from logs. However, in certain circumstances
          * when you only want to test masking, rollback changes, and retry masking, you could enable
          * logging and use a flashback database to retrieve the original unmasked data after it has
@@ -290,7 +290,7 @@ public final class MaskDataDetails
 
         /**
          * Indicates if redo logging is enabled during a masking operation. Set this attribute to
-         * true to enable redo logging. If set as flase, masking disables redo logging and flashback
+         * true to enable redo logging. If set as false, masking disables redo logging and flashback
          * logging to purge any original unmasked data from logs. However, in certain circumstances
          * when you only want to test masking, rollback changes, and retry masking, you could enable
          * logging and use a flashback database to retrieve the original unmasked data after it has
@@ -334,8 +334,10 @@ public final class MaskDataDetails
          * of parallelism) or an integer value to be used as the degree of parallelism. Parallel
          * execution helps effectively use multiple CPUs and improve masking performance. Refer to
          * the Oracle Database parallel execution framework when choosing an explicit degree of
-         * parallelism. If it's not provided, the value of the parallelDegree attribute in the
-         * MaskingPolicy resource is used.
+         * parallelism.
+         * https://www.oracle.com/pls/topic/lookup?ctx=dblatest&en/database/oracle/oracle-database&id=VLDBG-GUID-3E2AE088-2505-465E-A8B2-AC38813EA355
+         * If it's not provided, the value of the parallelDegree attribute in the MaskingPolicy
+         * resource is used.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("parallelDegree")
         private String parallelDegree;
@@ -346,8 +348,10 @@ public final class MaskDataDetails
          * of parallelism) or an integer value to be used as the degree of parallelism. Parallel
          * execution helps effectively use multiple CPUs and improve masking performance. Refer to
          * the Oracle Database parallel execution framework when choosing an explicit degree of
-         * parallelism. If it's not provided, the value of the parallelDegree attribute in the
-         * MaskingPolicy resource is used.
+         * parallelism.
+         * https://www.oracle.com/pls/topic/lookup?ctx=dblatest&en/database/oracle/oracle-database&id=VLDBG-GUID-3E2AE088-2505-465E-A8B2-AC38813EA355
+         * If it's not provided, the value of the parallelDegree attribute in the MaskingPolicy
+         * resource is used.
          *
          * @param parallelDegree the value to set
          * @return this builder
@@ -655,7 +659,7 @@ public final class MaskDataDetails
 
     /**
      * Indicates if redo logging is enabled during a masking operation. Set this attribute to true
-     * to enable redo logging. If set as flase, masking disables redo logging and flashback logging
+     * to enable redo logging. If set as false, masking disables redo logging and flashback logging
      * to purge any original unmasked data from logs. However, in certain circumstances when you
      * only want to test masking, rollback changes, and retry masking, you could enable logging and
      * use a flashback database to retrieve the original unmasked data after it has been masked. If
@@ -667,7 +671,7 @@ public final class MaskDataDetails
 
     /**
      * Indicates if redo logging is enabled during a masking operation. Set this attribute to true
-     * to enable redo logging. If set as flase, masking disables redo logging and flashback logging
+     * to enable redo logging. If set as false, masking disables redo logging and flashback logging
      * to purge any original unmasked data from logs. However, in certain circumstances when you
      * only want to test masking, rollback changes, and retry masking, you could enable logging and
      * use a flashback database to retrieve the original unmasked data after it has been masked. If
@@ -706,9 +710,10 @@ public final class MaskDataDetails
      * 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of
      * parallelism) or an integer value to be used as the degree of parallelism. Parallel execution
      * helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle
-     * Database parallel execution framework when choosing an explicit degree of parallelism. If
-     * it's not provided, the value of the parallelDegree attribute in the MaskingPolicy resource is
-     * used.
+     * Database parallel execution framework when choosing an explicit degree of parallelism.
+     * https://www.oracle.com/pls/topic/lookup?ctx=dblatest&en/database/oracle/oracle-database&id=VLDBG-GUID-3E2AE088-2505-465E-A8B2-AC38813EA355
+     * If it's not provided, the value of the parallelDegree attribute in the MaskingPolicy resource
+     * is used.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("parallelDegree")
     private final String parallelDegree;
@@ -718,9 +723,10 @@ public final class MaskDataDetails
      * 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of
      * parallelism) or an integer value to be used as the degree of parallelism. Parallel execution
      * helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle
-     * Database parallel execution framework when choosing an explicit degree of parallelism. If
-     * it's not provided, the value of the parallelDegree attribute in the MaskingPolicy resource is
-     * used.
+     * Database parallel execution framework when choosing an explicit degree of parallelism.
+     * https://www.oracle.com/pls/topic/lookup?ctx=dblatest&en/database/oracle/oracle-database&id=VLDBG-GUID-3E2AE088-2505-465E-A8B2-AC38813EA355
+     * If it's not provided, the value of the parallelDegree attribute in the MaskingPolicy resource
+     * is used.
      *
      * @return the value
      */

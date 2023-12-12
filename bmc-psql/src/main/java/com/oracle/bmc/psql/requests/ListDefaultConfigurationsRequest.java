@@ -15,10 +15,16 @@ import com.oracle.bmc.psql.model.*;
 public class ListDefaultConfigurationsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /**
+     * A filter to return only resources if their {@code lifecycleState} matches the given {@code
+     * lifecycleState}.
+     */
     private com.oracle.bmc.psql.model.Configuration.LifecycleState lifecycleState;
 
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /**
+     * A filter to return only resources if their {@code lifecycleState} matches the given {@code
+     * lifecycleState}.
+     */
     public com.oracle.bmc.psql.model.Configuration.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -29,24 +35,24 @@ public class ListDefaultConfigurationsRequest
     public String getDisplayName() {
         return displayName;
     }
-    /** Verison of the Postgresql DB like 14.5 */
+    /** Verison of the PostgreSQL database, such as 14.9. */
     private String dbVersion;
 
-    /** Verison of the Postgresql DB like 14.5 */
+    /** Verison of the PostgreSQL database, such as 14.9. */
     public String getDbVersion() {
         return dbVersion;
     }
-    /** Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex */
+    /** The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex} */
     private String shape;
 
-    /** Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex */
+    /** The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex} */
     public String getShape() {
         return shape;
     }
-    /** unique Configuration identifier */
+    /** A unique identifier for the configuration. */
     private String configurationId;
 
-    /** unique Configuration identifier */
+    /** A unique identifier for the configuration. */
     public String getConfigurationId() {
         return configurationId;
     }
@@ -142,12 +148,14 @@ public class ListDefaultConfigurationsRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * A filter to return only resources if their {@code lifecycleState} matches the given
+         * {@code lifecycleState}.
          */
         private com.oracle.bmc.psql.model.Configuration.LifecycleState lifecycleState = null;
 
         /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * A filter to return only resources if their {@code lifecycleState} matches the given
+         * {@code lifecycleState}.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -172,11 +180,11 @@ public class ListDefaultConfigurationsRequest
             return this;
         }
 
-        /** Verison of the Postgresql DB like 14.5 */
+        /** Verison of the PostgreSQL database, such as 14.9. */
         private String dbVersion = null;
 
         /**
-         * Verison of the Postgresql DB like 14.5
+         * Verison of the PostgreSQL database, such as 14.9.
          *
          * @param dbVersion the value to set
          * @return this builder instance
@@ -186,11 +194,11 @@ public class ListDefaultConfigurationsRequest
             return this;
         }
 
-        /** Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex */
+        /** The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex} */
         private String shape = null;
 
         /**
-         * Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
+         * The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex}
          *
          * @param shape the value to set
          * @return this builder instance
@@ -200,11 +208,11 @@ public class ListDefaultConfigurationsRequest
             return this;
         }
 
-        /** unique Configuration identifier */
+        /** A unique identifier for the configuration. */
         private String configurationId = null;
 
         /**
-         * unique Configuration identifier
+         * A unique identifier for the configuration.
          *
          * @param configurationId the value to set
          * @return this builder instance

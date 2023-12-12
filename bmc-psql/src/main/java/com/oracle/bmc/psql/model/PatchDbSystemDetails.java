@@ -5,9 +5,9 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * For Adding Read Replica DB Instance, Operation is INSERT and Value object to specify is
- * #/definitions/CreateDbInstanceDetails. For Removing Read Replica DB Instance, Operation is REMOVE
- * and Value object needs to be Array of dbInstanceId's <br>
+ * For adding read replica database instances, the operation is INSERT and value object to specify
+ * is #/definitions/CreateDbInstanceDetails. For removing read replica database instances, the
+ * operation is REMOVE and value object needs to be an array of dbInstanceId's. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

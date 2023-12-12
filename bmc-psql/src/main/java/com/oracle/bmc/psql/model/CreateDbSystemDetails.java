@@ -5,7 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * The information about new DbSystem. <br>
+ * The information about new database system. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -85,12 +85,16 @@ public final class CreateDbSystemDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** DbSystem display name */
+        /**
+         * A user-friendly display name for the database system. Avoid entering confidential
+         * information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * DbSystem display name
+         * A user-friendly display name for the database system. Avoid entering confidential
+         * information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -100,12 +104,12 @@ public final class CreateDbSystemDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Description of a DbSystem. This field should be input by the user. */
+        /** A user-provided description of a database system. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Description of a DbSystem. This field should be input by the user.
+         * A user-provided description of a database system.
          *
          * @param description the value to set
          * @return this builder
@@ -115,12 +119,16 @@ public final class CreateDbSystemDetails
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Compartment identifier */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the database system.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment identifier
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the database system.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -130,12 +138,12 @@ public final class CreateDbSystemDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Type of the DbSystem. */
+        /** Type of the database system. */
         @com.fasterxml.jackson.annotation.JsonProperty("systemType")
         private DbSystem.SystemType systemType;
 
         /**
-         * Type of the DbSystem.
+         * Type of the database system.
          *
          * @param systemType the value to set
          * @return this builder
@@ -145,12 +153,12 @@ public final class CreateDbSystemDetails
             this.__explicitlySet__.add("systemType");
             return this;
         }
-        /** Version of DbSystem software. */
+        /** Version of database system software. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
         /**
-         * Version of DbSystem software.
+         * Version of database system software.
          *
          * @param dbVersion the value to set
          * @return this builder
@@ -160,12 +168,16 @@ public final class CreateDbSystemDetails
             this.__explicitlySet__.add("dbVersion");
             return this;
         }
-        /** Configuration identifier */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * configuration associated with the database system.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("configId")
         private String configId;
 
         /**
-         * Configuration identifier
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * configuration associated with the database system.
          *
          * @param configId the value to set
          * @return this builder
@@ -185,15 +197,15 @@ public final class CreateDbSystemDetails
             return this;
         }
         /**
-         * Shape of DbInstance. This name should match from with one of the available shapes from
-         * /shapes API.
+         * The name of the shape for the database instance node. Use the /shapes API for accepted
+         * shapes. Example: {@code VM.Standard.E4.Flex}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
-         * Shape of DbInstance. This name should match from with one of the available shapes from
-         * /shapes API.
+         * The name of the shape for the database instance node. Use the /shapes API for accepted
+         * shapes. Example: {@code VM.Standard.E4.Flex}
          *
          * @param shape the value to set
          * @return this builder
@@ -203,12 +215,12 @@ public final class CreateDbSystemDetails
             this.__explicitlySet__.add("shape");
             return this;
         }
-        /** The total number of OCPUs available to each DbInstance. */
+        /** The total number of OCPUs available to each database instance node. */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceOcpuCount")
         private Integer instanceOcpuCount;
 
         /**
-         * The total number of OCPUs available to each DbInstance.
+         * The total number of OCPUs available to each database instance node.
          *
          * @param instanceOcpuCount the value to set
          * @return this builder
@@ -218,12 +230,12 @@ public final class CreateDbSystemDetails
             this.__explicitlySet__.add("instanceOcpuCount");
             return this;
         }
-        /** The total amount of memory available to each DbInstance, in gigabytes. */
+        /** The total amount of memory available to each database instance node, in gigabytes. */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceMemorySizeInGBs")
         private Integer instanceMemorySizeInGBs;
 
         /**
-         * The total amount of memory available to each DbInstance, in gigabytes.
+         * The total amount of memory available to each database instance node, in gigabytes.
          *
          * @param instanceMemorySizeInGBs the value to set
          * @return this builder
@@ -233,12 +245,12 @@ public final class CreateDbSystemDetails
             this.__explicitlySet__.add("instanceMemorySizeInGBs");
             return this;
         }
-        /** Count of DbInstances to be created in the DbSystem. */
+        /** Count of database instances nodes to be created in the database system. */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceCount")
         private Integer instanceCount;
 
         /**
-         * Count of DbInstances to be created in the DbSystem.
+         * Count of database instances nodes to be created in the database system.
          *
          * @param instanceCount the value to set
          * @return this builder
@@ -249,15 +261,15 @@ public final class CreateDbSystemDetails
             return this;
         }
         /**
-         * Details of DbInstances to be created. Optional parameter. If specified, its size must
-         * match instanceCount.
+         * Details of database instances nodes to be created. This parameter is optional. If
+         * specified, its size must match {@code instanceCount}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("instancesDetails")
         private java.util.List<CreateDbInstanceDetails> instancesDetails;
 
         /**
-         * Details of DbInstances to be created. Optional parameter. If specified, its size must
-         * match instanceCount.
+         * Details of database instances nodes to be created. This parameter is optional. If
+         * specified, its size must match {@code instanceCount}.
          *
          * @param instancesDetails the value to set
          * @return this builder
@@ -442,12 +454,16 @@ public final class CreateDbSystemDetails
         return new Builder().copy(this);
     }
 
-    /** DbSystem display name */
+    /**
+     * A user-friendly display name for the database system. Avoid entering confidential
+     * information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * DbSystem display name
+     * A user-friendly display name for the database system. Avoid entering confidential
+     * information.
      *
      * @return the value
      */
@@ -455,12 +471,12 @@ public final class CreateDbSystemDetails
         return displayName;
     }
 
-    /** Description of a DbSystem. This field should be input by the user. */
+    /** A user-provided description of a database system. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Description of a DbSystem. This field should be input by the user.
+     * A user-provided description of a database system.
      *
      * @return the value
      */
@@ -468,12 +484,16 @@ public final class CreateDbSystemDetails
         return description;
     }
 
-    /** Compartment identifier */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the database system.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment identifier
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the database system.
      *
      * @return the value
      */
@@ -481,12 +501,12 @@ public final class CreateDbSystemDetails
         return compartmentId;
     }
 
-    /** Type of the DbSystem. */
+    /** Type of the database system. */
     @com.fasterxml.jackson.annotation.JsonProperty("systemType")
     private final DbSystem.SystemType systemType;
 
     /**
-     * Type of the DbSystem.
+     * Type of the database system.
      *
      * @return the value
      */
@@ -494,12 +514,12 @@ public final class CreateDbSystemDetails
         return systemType;
     }
 
-    /** Version of DbSystem software. */
+    /** Version of database system software. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
 
     /**
-     * Version of DbSystem software.
+     * Version of database system software.
      *
      * @return the value
      */
@@ -507,12 +527,16 @@ public final class CreateDbSystemDetails
         return dbVersion;
     }
 
-    /** Configuration identifier */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * configuration associated with the database system.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("configId")
     private final String configId;
 
     /**
-     * Configuration identifier
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * configuration associated with the database system.
      *
      * @return the value
      */
@@ -528,15 +552,15 @@ public final class CreateDbSystemDetails
     }
 
     /**
-     * Shape of DbInstance. This name should match from with one of the available shapes from
-     * /shapes API.
+     * The name of the shape for the database instance node. Use the /shapes API for accepted
+     * shapes. Example: {@code VM.Standard.E4.Flex}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
-     * Shape of DbInstance. This name should match from with one of the available shapes from
-     * /shapes API.
+     * The name of the shape for the database instance node. Use the /shapes API for accepted
+     * shapes. Example: {@code VM.Standard.E4.Flex}
      *
      * @return the value
      */
@@ -544,12 +568,12 @@ public final class CreateDbSystemDetails
         return shape;
     }
 
-    /** The total number of OCPUs available to each DbInstance. */
+    /** The total number of OCPUs available to each database instance node. */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceOcpuCount")
     private final Integer instanceOcpuCount;
 
     /**
-     * The total number of OCPUs available to each DbInstance.
+     * The total number of OCPUs available to each database instance node.
      *
      * @return the value
      */
@@ -557,12 +581,12 @@ public final class CreateDbSystemDetails
         return instanceOcpuCount;
     }
 
-    /** The total amount of memory available to each DbInstance, in gigabytes. */
+    /** The total amount of memory available to each database instance node, in gigabytes. */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceMemorySizeInGBs")
     private final Integer instanceMemorySizeInGBs;
 
     /**
-     * The total amount of memory available to each DbInstance, in gigabytes.
+     * The total amount of memory available to each database instance node, in gigabytes.
      *
      * @return the value
      */
@@ -570,12 +594,12 @@ public final class CreateDbSystemDetails
         return instanceMemorySizeInGBs;
     }
 
-    /** Count of DbInstances to be created in the DbSystem. */
+    /** Count of database instances nodes to be created in the database system. */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceCount")
     private final Integer instanceCount;
 
     /**
-     * Count of DbInstances to be created in the DbSystem.
+     * Count of database instances nodes to be created in the database system.
      *
      * @return the value
      */
@@ -584,15 +608,15 @@ public final class CreateDbSystemDetails
     }
 
     /**
-     * Details of DbInstances to be created. Optional parameter. If specified, its size must match
-     * instanceCount.
+     * Details of database instances nodes to be created. This parameter is optional. If specified,
+     * its size must match {@code instanceCount}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("instancesDetails")
     private final java.util.List<CreateDbInstanceDetails> instancesDetails;
 
     /**
-     * Details of DbInstances to be created. Optional parameter. If specified, its size must match
-     * instanceCount.
+     * Details of database instances nodes to be created. This parameter is optional. If specified,
+     * its size must match {@code instanceCount}.
      *
      * @return the value
      */

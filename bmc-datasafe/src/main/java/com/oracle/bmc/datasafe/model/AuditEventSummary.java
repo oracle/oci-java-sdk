@@ -150,15 +150,15 @@ public final class AuditEventSummary
             return this;
         }
         /**
-         * The OCID of the compartment containing the audit event. This is the same as that of audit
-         * profile of the target database resource compartment.
+         * The OCID of the compartment containing the audit event. The compartment is the same as
+         * that of audit profile of the target database resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment containing the audit event. This is the same as that of audit
-         * profile of the target database resource compartment.
+         * The OCID of the compartment containing the audit event. The compartment is the same as
+         * that of audit profile of the target database resource.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -251,12 +251,12 @@ public final class AuditEventSummary
             this.__explicitlySet__.add("targetClass");
             return this;
         }
-        /** The time of the audit event occurrence in the target database. */
+        /** The time that the audit event occurs in the target database. */
         @com.fasterxml.jackson.annotation.JsonProperty("auditEventTime")
         private java.util.Date auditEventTime;
 
         /**
-         * The time of the audit event occurrence in the target database.
+         * The time that the audit event occurs in the target database.
          *
          * @param auditEventTime the value to set
          * @return this builder
@@ -299,15 +299,15 @@ public final class AuditEventSummary
             return this;
         }
         /**
-         * The name of the action executed by the user on the target database. i.e ALTER, CREATE,
-         * DROP.
+         * The name of the action executed by the user on the target database. For example ALTER,
+         * CREATE or DROP.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("operation")
         private String operation;
 
         /**
-         * The name of the action executed by the user on the target database. i.e ALTER, CREATE,
-         * DROP.
+         * The name of the action executed by the user on the target database. For example ALTER,
+         * CREATE or DROP.
          *
          * @param operation the value to set
          * @return this builder
@@ -333,15 +333,15 @@ public final class AuditEventSummary
             return this;
         }
         /**
-         * The name of the detail action executed by the user on the target database. i.e ALTER
-         * SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+         * The name of the detail action executed by the user on the target database. For example
+         * ALTER SEQUENCE, CREATE TRIGGER or CREATE INDEX.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("eventName")
         private String eventName;
 
         /**
-         * The name of the detail action executed by the user on the target database. i.e ALTER
-         * SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+         * The name of the detail action executed by the user on the target database. For example
+         * ALTER SEQUENCE, CREATE TRIGGER or CREATE INDEX.
          *
          * @param eventName the value to set
          * @return this builder
@@ -366,12 +366,12 @@ public final class AuditEventSummary
             this.__explicitlySet__.add("errorCode");
             return this;
         }
-        /** The detailed message on why the Error occurred. */
+        /** The detailed message on why the error occurred. */
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
         /**
-         * The detailed message on why the Error occurred.
+         * The detailed message on why the error occurred.
          *
          * @param errorMessage the value to set
          * @return this builder
@@ -382,15 +382,15 @@ public final class AuditEventSummary
             return this;
         }
         /**
-         * The type of the object in the source database affected by the action. i.e PL/SQL,
-         * SYNONYM, PACKAGE BODY.
+         * The type of the object in the source database affected by the action. For example PL/SQL,
+         * SYNONYM or PACKAGE BODY.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("objectType")
         private String objectType;
 
         /**
-         * The type of the object in the source database affected by the action. i.e PL/SQL,
-         * SYNONYM, PACKAGE BODY.
+         * The type of the object in the source database affected by the action. For example PL/SQL,
+         * SYNONYM or PACKAGE BODY.
          *
          * @param objectType the value to set
          * @return this builder
@@ -510,14 +510,14 @@ public final class AuditEventSummary
             return this;
         }
         /**
-         * The application from which the audit event was generated. Examples SQL Plus or SQL
+         * The application from which the audit event was generated. For example SQL Plus or SQL
          * Developer.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("clientProgram")
         private String clientProgram;
 
         /**
-         * The application from which the audit event was generated. Examples SQL Plus or SQL
+         * The application from which the audit event was generated. For example SQL Plus or SQL
          * Developer.
          *
          * @param clientProgram the value to set
@@ -881,15 +881,15 @@ public final class AuditEventSummary
     }
 
     /**
-     * The OCID of the compartment containing the audit event. This is the same as that of audit
-     * profile of the target database resource compartment.
+     * The OCID of the compartment containing the audit event. The compartment is the same as that
+     * of audit profile of the target database resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment containing the audit event. This is the same as that of audit
-     * profile of the target database resource compartment.
+     * The OCID of the compartment containing the audit event. The compartment is the same as that
+     * of audit profile of the target database resource.
      *
      * @return the value
      */
@@ -1067,12 +1067,12 @@ public final class AuditEventSummary
         return targetClass;
     }
 
-    /** The time of the audit event occurrence in the target database. */
+    /** The time that the audit event occurs in the target database. */
     @com.fasterxml.jackson.annotation.JsonProperty("auditEventTime")
     private final java.util.Date auditEventTime;
 
     /**
-     * The time of the audit event occurrence in the target database.
+     * The time that the audit event occurs in the target database.
      *
      * @return the value
      */
@@ -1107,13 +1107,15 @@ public final class AuditEventSummary
     }
 
     /**
-     * The name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
+     * The name of the action executed by the user on the target database. For example ALTER, CREATE
+     * or DROP.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     private final String operation;
 
     /**
-     * The name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
+     * The name of the action executed by the user on the target database. For example ALTER, CREATE
+     * or DROP.
      *
      * @return the value
      */
@@ -1181,15 +1183,15 @@ public final class AuditEventSummary
     }
 
     /**
-     * The name of the detail action executed by the user on the target database. i.e ALTER
-     * SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+     * The name of the detail action executed by the user on the target database. For example ALTER
+     * SEQUENCE, CREATE TRIGGER or CREATE INDEX.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("eventName")
     private final String eventName;
 
     /**
-     * The name of the detail action executed by the user on the target database. i.e ALTER
-     * SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+     * The name of the detail action executed by the user on the target database. For example ALTER
+     * SEQUENCE, CREATE TRIGGER or CREATE INDEX.
      *
      * @return the value
      */
@@ -1210,12 +1212,12 @@ public final class AuditEventSummary
         return errorCode;
     }
 
-    /** The detailed message on why the Error occurred. */
+    /** The detailed message on why the error occurred. */
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
     /**
-     * The detailed message on why the Error occurred.
+     * The detailed message on why the error occurred.
      *
      * @return the value
      */
@@ -1224,15 +1226,15 @@ public final class AuditEventSummary
     }
 
     /**
-     * The type of the object in the source database affected by the action. i.e PL/SQL, SYNONYM,
-     * PACKAGE BODY.
+     * The type of the object in the source database affected by the action. For example PL/SQL,
+     * SYNONYM or PACKAGE BODY.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("objectType")
     private final String objectType;
 
     /**
-     * The type of the object in the source database affected by the action. i.e PL/SQL, SYNONYM,
-     * PACKAGE BODY.
+     * The type of the object in the source database affected by the action. For example PL/SQL,
+     * SYNONYM or PACKAGE BODY.
      *
      * @return the value
      */
@@ -1336,13 +1338,15 @@ public final class AuditEventSummary
     }
 
     /**
-     * The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
+     * The application from which the audit event was generated. For example SQL Plus or SQL
+     * Developer.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("clientProgram")
     private final String clientProgram;
 
     /**
-     * The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
+     * The application from which the audit event was generated. For example SQL Plus or SQL
+     * Developer.
      *
      * @return the value
      */

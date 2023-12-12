@@ -5,7 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Db system backup information <br>
+ * Database system backup information. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -83,12 +83,16 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier that is immutable on creation */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * backup.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier that is immutable on creation
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * backup.
          *
          * @param id the value to set
          * @return this builder
@@ -98,12 +102,12 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Backup display name */
+        /** A user-friendly display name for the backup. Avoid entering confidential information. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Backup display name
+         * A user-friendly display name for the backup. Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -113,12 +117,12 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Backup description */
+        /** A description for the backup. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Backup description
+         * A description for the backup.
          *
          * @param description the value to set
          * @return this builder
@@ -128,12 +132,16 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Backup compartment identifier */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the backup.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Backup compartment identifier
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the backup.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -143,12 +151,12 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Specifies whether the backup was created manually, or via scheduled backup policy */
+        /** Specifies whether the backup was created manually, or by a management policy. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
         private SourceType sourceType;
 
         /**
-         * Specifies whether the backup was created manually, or via scheduled backup policy
+         * Specifies whether the backup was created manually, or by a management policy.
          *
          * @param sourceType the value to set
          * @return this builder
@@ -158,12 +166,20 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             this.__explicitlySet__.add("sourceType");
             return this;
         }
-        /** The time the the Backup was created. An RFC3339 formatted datetime string */
+        /**
+         * The date and time the backup was created, expressed in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the the Backup was created. An RFC3339 formatted datetime string
+         * The date and time the backup was created, expressed in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -173,12 +189,20 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time the Backup was updated. An RFC3339 formatted datetime string */
+        /**
+         * The date and time the backup was updated, expressed in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the Backup was updated. An RFC3339 formatted datetime string
+         * The date and time the backup was updated, expressed in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -188,12 +212,12 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the Backup. */
+        /** The current state of the backup. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the Backup.
+         * The current state of the backup.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -237,12 +261,12 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             this.__explicitlySet__.add("retentionPeriod");
             return this;
         }
-        /** Backup size in GB. */
+        /** The size of the backup, in gigabytes. */
         @com.fasterxml.jackson.annotation.JsonProperty("backupSize")
         private Integer backupSize;
 
         /**
-         * Backup size in GB.
+         * The size of the backup, in gigabytes.
          *
          * @param backupSize the value to set
          * @return this builder
@@ -252,12 +276,16 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             this.__explicitlySet__.add("backupSize");
             return this;
         }
-        /** The source DbSystem OCID. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * backup's source database system.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
         /**
-         * The source DbSystem OCID.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * backup's source database system.
          *
          * @param dbSystemId the value to set
          * @return this builder
@@ -464,12 +492,16 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         return new Builder().copy(this);
     }
 
-    /** Unique identifier that is immutable on creation */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * backup.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier that is immutable on creation
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * backup.
      *
      * @return the value
      */
@@ -477,12 +509,12 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         return id;
     }
 
-    /** Backup display name */
+    /** A user-friendly display name for the backup. Avoid entering confidential information. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Backup display name
+     * A user-friendly display name for the backup. Avoid entering confidential information.
      *
      * @return the value
      */
@@ -490,12 +522,12 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         return displayName;
     }
 
-    /** Backup description */
+    /** A description for the backup. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Backup description
+     * A description for the backup.
      *
      * @return the value
      */
@@ -503,12 +535,16 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         return description;
     }
 
-    /** Backup compartment identifier */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the backup.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Backup compartment identifier
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the backup.
      *
      * @return the value
      */
@@ -516,7 +552,7 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         return compartmentId;
     }
 
-    /** Specifies whether the backup was created manually, or via scheduled backup policy */
+    /** Specifies whether the backup was created manually, or by a management policy. */
     public enum SourceType implements com.oracle.bmc.http.internal.BmcEnum {
         Scheduled("SCHEDULED"),
         Manual("MANUAL"),
@@ -562,12 +598,12 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             return UnknownEnumValue;
         }
     };
-    /** Specifies whether the backup was created manually, or via scheduled backup policy */
+    /** Specifies whether the backup was created manually, or by a management policy. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
     private final SourceType sourceType;
 
     /**
-     * Specifies whether the backup was created manually, or via scheduled backup policy
+     * Specifies whether the backup was created manually, or by a management policy.
      *
      * @return the value
      */
@@ -575,12 +611,20 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         return sourceType;
     }
 
-    /** The time the the Backup was created. An RFC3339 formatted datetime string */
+    /**
+     * The date and time the backup was created, expressed in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the the Backup was created. An RFC3339 formatted datetime string
+     * The date and time the backup was created, expressed in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
      */
@@ -588,12 +632,20 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         return timeCreated;
     }
 
-    /** The time the Backup was updated. An RFC3339 formatted datetime string */
+    /**
+     * The date and time the backup was updated, expressed in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the Backup was updated. An RFC3339 formatted datetime string
+     * The date and time the backup was updated, expressed in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
      */
@@ -601,7 +653,7 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         return timeUpdated;
     }
 
-    /** The current state of the Backup. */
+    /** The current state of the backup. */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -650,12 +702,12 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             return UnknownEnumValue;
         }
     };
-    /** The current state of the Backup. */
+    /** The current state of the backup. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the Backup.
+     * The current state of the backup.
      *
      * @return the value
      */
@@ -693,12 +745,12 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         return retentionPeriod;
     }
 
-    /** Backup size in GB. */
+    /** The size of the backup, in gigabytes. */
     @com.fasterxml.jackson.annotation.JsonProperty("backupSize")
     private final Integer backupSize;
 
     /**
-     * Backup size in GB.
+     * The size of the backup, in gigabytes.
      *
      * @return the value
      */
@@ -706,12 +758,16 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         return backupSize;
     }
 
-    /** The source DbSystem OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * backup's source database system.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     private final String dbSystemId;
 
     /**
-     * The source DbSystem OCID.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * backup's source database system.
      *
      * @return the value
      */

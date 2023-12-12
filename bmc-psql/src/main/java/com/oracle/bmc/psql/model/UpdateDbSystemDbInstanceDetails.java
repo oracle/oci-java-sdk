@@ -5,7 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * DbInstance update parameters. <br>
+ * Database instance node update parameters. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,12 +32,16 @@ public final class UpdateDbSystemDbInstanceDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Display name of the DbInstance. */
+        /**
+         * A user-friendly display name of the database instance node. Avoid entering confidential
+         * information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Display name of the DbInstance.
+         * A user-friendly display name of the database instance node. Avoid entering confidential
+         * information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -47,12 +51,12 @@ public final class UpdateDbSystemDbInstanceDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Description of the DbInstance. */
+        /** A user-provided description of the database instance node. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Description of the DbInstance.
+         * A user-provided description of the database instance node.
          *
          * @param description the value to set
          * @return this builder
@@ -96,12 +100,16 @@ public final class UpdateDbSystemDbInstanceDetails
         return new Builder().copy(this);
     }
 
-    /** Display name of the DbInstance. */
+    /**
+     * A user-friendly display name of the database instance node. Avoid entering confidential
+     * information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Display name of the DbInstance.
+     * A user-friendly display name of the database instance node. Avoid entering confidential
+     * information.
      *
      * @return the value
      */
@@ -109,12 +117,12 @@ public final class UpdateDbSystemDbInstanceDetails
         return displayName;
     }
 
-    /** Description of the DbInstance. */
+    /** A user-provided description of the database instance node. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Description of the DbInstance.
+     * A user-provided description of the database instance node.
      *
      * @return the value
      */

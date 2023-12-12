@@ -15,10 +15,10 @@ public class UpdateDbSystemRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.psql.model.UpdateDbSystemDetails> {
 
-    /** unique DbSystem identifier */
+    /** A unique identifier for the database system. */
     private String dbSystemId;
 
-    /** unique DbSystem identifier */
+    /** A unique identifier for the database system. */
     public String getDbSystemId() {
         return dbSystemId;
     }
@@ -29,10 +29,20 @@ public class UpdateDbSystemRequest
     public com.oracle.bmc.psql.model.UpdateDbSystemDetails getUpdateDbSystemDetails() {
         return updateDbSystemDetails;
     }
-    /** For optimistic concurrency control. In the PUT or DELETE call */
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
+     */
     private String ifMatch;
 
-    /** For optimistic concurrency control. In the PUT or DELETE call */
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -43,10 +53,22 @@ public class UpdateDbSystemRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** A token that uniquely identifies a request so it can be retried in case of a timeout or */
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, {@code retrytoken} could be expired or
+     * invalidated.
+     */
     private String opcRetryToken;
 
-    /** A token that uniquely identifies a request so it can be retried in case of a timeout or */
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, {@code retrytoken} could be expired or
+     * invalidated.
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -68,11 +90,11 @@ public class UpdateDbSystemRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique DbSystem identifier */
+        /** A unique identifier for the database system. */
         private String dbSystemId = null;
 
         /**
-         * unique DbSystem identifier
+         * A unique identifier for the database system.
          *
          * @param dbSystemId the value to set
          * @return this builder instance
@@ -97,11 +119,19 @@ public class UpdateDbSystemRequest
             return this;
         }
 
-        /** For optimistic concurrency control. In the PUT or DELETE call */
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
+         */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -127,11 +157,19 @@ public class UpdateDbSystemRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, {@code retrytoken} could be
+         * expired or invalidated.
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, {@code retrytoken} could be
+         * expired or invalidated.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance

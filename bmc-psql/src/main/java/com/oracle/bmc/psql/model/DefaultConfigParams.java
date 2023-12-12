@@ -5,7 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Default DB Configuration <br>
+ * Default database configuration. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -52,12 +52,12 @@ public final class DefaultConfigParams
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Key is the configuration key. */
+        /** The configuration variable name. */
         @com.fasterxml.jackson.annotation.JsonProperty("configKey")
         private String configKey;
 
         /**
-         * Key is the configuration key.
+         * The configuration variable name.
          *
          * @param configKey the value to set
          * @return this builder
@@ -67,12 +67,12 @@ public final class DefaultConfigParams
             this.__explicitlySet__.add("configKey");
             return this;
         }
-        /** Default value */
+        /** Default value for the variable. */
         @com.fasterxml.jackson.annotation.JsonProperty("defaultConfigValue")
         private String defaultConfigValue;
 
         /**
-         * Default value
+         * Default value for the variable.
          *
          * @param defaultConfigValue the value to set
          * @return this builder
@@ -82,12 +82,12 @@ public final class DefaultConfigParams
             this.__explicitlySet__.add("defaultConfigValue");
             return this;
         }
-        /** Range or list of allowed values */
+        /** Range or list of allowed values. */
         @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
         private String allowedValues;
 
         /**
-         * Range or list of allowed values
+         * Range or list of allowed values.
          *
          * @param allowedValues the value to set
          * @return this builder
@@ -97,12 +97,12 @@ public final class DefaultConfigParams
             this.__explicitlySet__.add("allowedValues");
             return this;
         }
-        /** If true, modfying this configuration value will requires restart. */
+        /** If true, modifying this configuration value will require a restart. */
         @com.fasterxml.jackson.annotation.JsonProperty("isRestartRequired")
         private Boolean isRestartRequired;
 
         /**
-         * If true, modfying this configuration value will requires restart.
+         * If true, modifying this configuration value will require a restart.
          *
          * @param isRestartRequired the value to set
          * @return this builder
@@ -112,12 +112,12 @@ public final class DefaultConfigParams
             this.__explicitlySet__.add("isRestartRequired");
             return this;
         }
-        /** Describes about the Datatype value. */
+        /** Data type of the variable. */
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private String dataType;
 
         /**
-         * Describes about the Datatype value.
+         * Data type of the variable.
          *
          * @param dataType the value to set
          * @return this builder
@@ -127,12 +127,12 @@ public final class DefaultConfigParams
             this.__explicitlySet__.add("dataType");
             return this;
         }
-        /** This flags tells whether the value is overridable or not. */
+        /** Whether the value can be overridden or not. */
         @com.fasterxml.jackson.annotation.JsonProperty("isOverridable")
         private Boolean isOverridable;
 
         /**
-         * This flags tells whether the value is overridable or not.
+         * Whether the value can be overridden or not.
          *
          * @param isOverridable the value to set
          * @return this builder
@@ -142,12 +142,12 @@ public final class DefaultConfigParams
             this.__explicitlySet__.add("isOverridable");
             return this;
         }
-        /** Details about the Postgresql params. */
+        /** Details about the PostgreSQL variable. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Details about the Postgresql params.
+         * Details about the PostgreSQL variable.
          *
          * @param description the value to set
          * @return this builder
@@ -213,12 +213,12 @@ public final class DefaultConfigParams
         return new Builder().copy(this);
     }
 
-    /** Key is the configuration key. */
+    /** The configuration variable name. */
     @com.fasterxml.jackson.annotation.JsonProperty("configKey")
     private final String configKey;
 
     /**
-     * Key is the configuration key.
+     * The configuration variable name.
      *
      * @return the value
      */
@@ -226,12 +226,12 @@ public final class DefaultConfigParams
         return configKey;
     }
 
-    /** Default value */
+    /** Default value for the variable. */
     @com.fasterxml.jackson.annotation.JsonProperty("defaultConfigValue")
     private final String defaultConfigValue;
 
     /**
-     * Default value
+     * Default value for the variable.
      *
      * @return the value
      */
@@ -239,12 +239,12 @@ public final class DefaultConfigParams
         return defaultConfigValue;
     }
 
-    /** Range or list of allowed values */
+    /** Range or list of allowed values. */
     @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
     private final String allowedValues;
 
     /**
-     * Range or list of allowed values
+     * Range or list of allowed values.
      *
      * @return the value
      */
@@ -252,12 +252,12 @@ public final class DefaultConfigParams
         return allowedValues;
     }
 
-    /** If true, modfying this configuration value will requires restart. */
+    /** If true, modifying this configuration value will require a restart. */
     @com.fasterxml.jackson.annotation.JsonProperty("isRestartRequired")
     private final Boolean isRestartRequired;
 
     /**
-     * If true, modfying this configuration value will requires restart.
+     * If true, modifying this configuration value will require a restart.
      *
      * @return the value
      */
@@ -265,12 +265,12 @@ public final class DefaultConfigParams
         return isRestartRequired;
     }
 
-    /** Describes about the Datatype value. */
+    /** Data type of the variable. */
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final String dataType;
 
     /**
-     * Describes about the Datatype value.
+     * Data type of the variable.
      *
      * @return the value
      */
@@ -278,12 +278,12 @@ public final class DefaultConfigParams
         return dataType;
     }
 
-    /** This flags tells whether the value is overridable or not. */
+    /** Whether the value can be overridden or not. */
     @com.fasterxml.jackson.annotation.JsonProperty("isOverridable")
     private final Boolean isOverridable;
 
     /**
-     * This flags tells whether the value is overridable or not.
+     * Whether the value can be overridden or not.
      *
      * @return the value
      */
@@ -291,12 +291,12 @@ public final class DefaultConfigParams
         return isOverridable;
     }
 
-    /** Details about the Postgresql params. */
+    /** Details about the PostgreSQL variable. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Details about the Postgresql params.
+     * Details about the PostgreSQL variable.
      *
      * @return the value
      */

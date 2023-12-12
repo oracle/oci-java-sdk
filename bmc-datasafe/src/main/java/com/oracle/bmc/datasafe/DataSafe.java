@@ -564,7 +564,7 @@ public interface DataSafe extends AutoCloseable {
             ChangeSqlCollectionCompartmentRequest request);
 
     /**
-     * Moves the specified SQL firewall policy and its dependent resources into a different
+     * Moves the specified SQL Firewall policy and its dependent resources into a different
      * compartment.
      *
      * @param request The request object containing the details to send
@@ -1309,7 +1309,7 @@ public interface DataSafe extends AutoCloseable {
     DeleteSqlCollectionResponse deleteSqlCollection(DeleteSqlCollectionRequest request);
 
     /**
-     * Deletes the SQL firewall policy resource.
+     * Deletes the SQL Firewall policy resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1645,7 +1645,7 @@ public interface DataSafe extends AutoCloseable {
             GenerateOnPremConnectorConfigurationRequest request);
 
     /**
-     * Generates a PDF or XLS report based on parameters and report definition.
+     * Generates a .xls or .pdf report based on parameters and report definition.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1700,7 +1700,7 @@ public interface DataSafe extends AutoCloseable {
             GenerateSensitiveDataModelForDownloadRequest request);
 
     /**
-     * Generates or appends to the SQL firewall policy using the specified SQL collection.
+     * Generates or appends to the SQL Firewall policy using the specified SQL collection.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2082,7 +2082,7 @@ public interface DataSafe extends AutoCloseable {
     GetReportResponse getReport(GetReportRequest request);
 
     /**
-     * Downloads the specified report in the form of PDF or XLXS.
+     * Downloads the specified report in the form of .xls or .pdf.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2279,7 +2279,7 @@ public interface DataSafe extends AutoCloseable {
     GetSqlCollectionResponse getSqlCollection(GetSqlCollectionRequest request);
 
     /**
-     * Gets a SQL firewall policy by identifier.
+     * Gets a SQL Firewall policy by identifier.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3064,7 +3064,7 @@ public interface DataSafe extends AutoCloseable {
      * compartmentIdInSubtree is set to \"true,\" and if the parameter accessLevel is set to
      * ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
      * permissions on at least one resource, directly or indirectly (in subcompartments). If the
-     * operation is performed at the root compartment. If the requestor does not have access to at
+     * operation is performed at the root compartment and the requestor does not have access to at
      * least one subcompartment of the compartment specified by compartmentId, then \"Not
      * Authorized\" is returned.
      *
@@ -3483,10 +3483,10 @@ public interface DataSafe extends AutoCloseable {
     ListSqlCollectionsResponse listSqlCollections(ListSqlCollectionsRequest request);
 
     /**
-     * Returns the aggregation details of all SQL firewall allowed SQL statements.
+     * Returns the aggregation details of all SQL Firewall allowed SQL statements.
      *
      * <p>The ListSqlFirewallAllowedSqlAnalytics operation returns the aggregates of the SQL
-     * firewall allowed SQL statements in the specified `compartmentId`.
+     * Firewall allowed SQL statements in the specified `compartmentId`.
      *
      * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
      * the requestor has INSPECT permissions on at least one resource directly or indirectly
@@ -3515,9 +3515,9 @@ public interface DataSafe extends AutoCloseable {
             ListSqlFirewallAllowedSqlAnalyticsRequest request);
 
     /**
-     * Retrieves a list of all SQL firewall allowed SQL statements.
+     * Retrieves a list of all SQL Firewall allowed SQL statements.
      *
-     * <p>The ListSqlFirewallAllowedSqls operation returns only the SQL firewall allowed SQL
+     * <p>The ListSqlFirewallAllowedSqls operation returns only the SQL Firewall allowed SQL
      * statements in the specified `compartmentId`.
      *
      * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
@@ -3547,9 +3547,9 @@ public interface DataSafe extends AutoCloseable {
             ListSqlFirewallAllowedSqlsRequest request);
 
     /**
-     * Retrieves a list of all SQL firewall policies.
+     * Retrieves a list of all SQL Firewall policies.
      *
-     * <p>The ListSqlFirewallPolicies operation returns only the SQL firewall policies in the
+     * <p>The ListSqlFirewallPolicies operation returns only the SQL Firewall policies in the
      * specified `compartmentId`.
      *
      * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
@@ -3578,7 +3578,7 @@ public interface DataSafe extends AutoCloseable {
     ListSqlFirewallPoliciesResponse listSqlFirewallPolicies(ListSqlFirewallPoliciesRequest request);
 
     /**
-     * Gets a list of aggregated SQL firewall policy details.
+     * Gets a list of aggregated SQL Firewall policy details.
      *
      * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
      * the requestor has INSPECT permissions on at least one resource directly or indirectly
@@ -3607,7 +3607,7 @@ public interface DataSafe extends AutoCloseable {
             ListSqlFirewallPolicyAnalyticsRequest request);
 
     /**
-     * Returns the aggregation details of the SQL firewall violations.
+     * Returns the aggregation details of the SQL Firewall violations.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3624,7 +3624,7 @@ public interface DataSafe extends AutoCloseable {
             ListSqlFirewallViolationAnalyticsRequest request);
 
     /**
-     * Gets a list of all the SQL firewall violations captured by the firewall.
+     * Gets a list of all the SQL Firewall violations captured by the firewall.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3698,7 +3698,7 @@ public interface DataSafe extends AutoCloseable {
      * is set to \"true,\" and if the parameter accessLevel is set to ACCESSIBLE, then the operation
      * returns compartments in which the requestor has INSPECT permissions on at least one resource,
      * directly or indirectly (in subcompartments). If the operation is performed at the root
-     * compartment. If the requestor does not have access to at least one subcompartment of the
+     * compartment and the requestor does not have access to at least one subcompartment of the
      * compartment specified by compartmentId, then \"Not Authorized\" is returned.
      *
      * <p>The parameter compartmentIdInSubtree applies when you perform ListUserAnalytics on the
@@ -4064,7 +4064,7 @@ public interface DataSafe extends AutoCloseable {
     RefreshUserAssessmentResponse refreshUserAssessment(RefreshUserAssessmentRequest request);
 
     /**
-     * Deletes the schedule of a PDF or XLS report.
+     * Deletes the schedule of a .xls or .pdf report.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -4129,7 +4129,7 @@ public interface DataSafe extends AutoCloseable {
     RetrieveAuditPoliciesResponse retrieveAuditPolicies(RetrieveAuditPoliciesRequest request);
 
     /**
-     * Schedules a PDF or XLS report based on parameters and report definition.
+     * Schedules a .xls or .pdf report based on parameters and report definition.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -4649,7 +4649,7 @@ public interface DataSafe extends AutoCloseable {
     UpdateSqlCollectionResponse updateSqlCollection(UpdateSqlCollectionRequest request);
 
     /**
-     * Updates the SQL firewall policy.
+     * Updates the SQL Firewall policy.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

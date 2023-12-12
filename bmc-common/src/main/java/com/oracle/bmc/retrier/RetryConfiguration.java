@@ -26,21 +26,57 @@ public class RetryConfiguration extends WaiterConfiguration {
 
     public static final int DEFAULT_MAX_RETRY_ATTEMPTS = 8;
     public static final long DEFAULT_MAX_WAIT_TIME = TimeUnit.SECONDS.toMillis(30);
-
-    public static final RetryConfiguration SDK_DEFAULT_RETRY_CONFIGURATION =
-            RetryConfiguration.builder()
-                    .terminationStrategy(new MaxAttemptsTerminationStrategy(8))
-                    .delayStrategy(new ExponentialBackoffDelayStrategyWithJitter(30))
-                    .terminationStrategy(
-                            new MaxAttemptsTerminationStrategy(DEFAULT_MAX_RETRY_ATTEMPTS))
-                    .delayStrategy(
-                            new ExponentialBackoffDelayStrategyWithJitter(DEFAULT_MAX_WAIT_TIME))
-                    .retryCondition(
-                            exception -> new DefaultRetryCondition().shouldBeRetried(exception))
-                    .build();
-
     private final RetryCondition retryCondition;
     private final RetryOptions retryOptions;
+
+    // Default retry configuration
+    public static final RetryConfiguration
+            SDK_FAIL_FAST_CIRCUIT_BREAKER_DEFAULT_RETRY_CONFIGURATION =
+                    RetryConfiguration.builder()
+                            .terminationStrategy(
+                                    new MaxAttemptsTerminationStrategy(DEFAULT_MAX_RETRY_ATTEMPTS))
+                            .delayStrategy(
+                                    new ExponentialBackoffDelayStrategyWithJitter(
+                                            DEFAULT_MAX_WAIT_TIME))
+                            .retryCondition(
+                                    exception ->
+                                            new DefaultRetryCondition().shouldBeRetried(exception))
+                            .build();
+
+    // Retry on open CircuitBreaker configuration
+    public static final RetryConfiguration
+            SDK_RETRY_ON_OPEN_CIRCUIT_BREAKER_DEFAULT_RETRY_CONFIGURATION =
+                    RetryConfiguration.builder()
+                            .terminationStrategy(
+                                    new MaxAttemptsTerminationStrategy(DEFAULT_MAX_RETRY_ATTEMPTS))
+                            .delayStrategy(
+                                    new ExponentialBackoffDelayStrategyWithJitter(
+                                            DEFAULT_MAX_WAIT_TIME))
+                            .retryCondition(
+                                    exception ->
+                                            new RetryOnOpenCircuitBreakerDefaultRetryCondition()
+                                                    .shouldBeRetried(exception))
+                            .build();
+
+    public static final String
+            OCI_JAVASDK_DEFAULT_RETRY_ON_OPEN_CIRCUIT_BREAKER_SYSTEM_PROPERTY_NAME =
+                    "oci.javasdk.default.retry.on.open.circuit.breaker";
+
+    public static final RetryConfiguration SDK_DEFAULT_RETRY_CONFIGURATION;
+
+    static {
+        String retryOnOpenCircuitBreaker =
+                System.getProperty(
+                        OCI_JAVASDK_DEFAULT_RETRY_ON_OPEN_CIRCUIT_BREAKER_SYSTEM_PROPERTY_NAME,
+                        "false");
+        if (Boolean.parseBoolean(retryOnOpenCircuitBreaker)) {
+            SDK_DEFAULT_RETRY_CONFIGURATION =
+                    SDK_RETRY_ON_OPEN_CIRCUIT_BREAKER_DEFAULT_RETRY_CONFIGURATION;
+        } else {
+            SDK_DEFAULT_RETRY_CONFIGURATION =
+                    SDK_FAIL_FAST_CIRCUIT_BREAKER_DEFAULT_RETRY_CONFIGURATION;
+        }
+    }
 
     private RetryConfiguration(
             @Nonnull final TerminationStrategy terminationStrategy,

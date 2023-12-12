@@ -50,12 +50,35 @@ public final class JsonFormatAttribute extends AbstractFormatAttribute {
             this.__explicitlySet__.add("encoding");
             return this;
         }
+        /**
+         * Sample JSON with all fields of JSON schema specified in it for the JSON data files used
+         * in Data Flow, Data Loader or Data Preview and should be specified in Base64 encoded
+         * format. Maximum size is 2 MB.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("sampleEntityData")
+        private String sampleEntityData;
+
+        /**
+         * Sample JSON with all fields of JSON schema specified in it for the JSON data files used
+         * in Data Flow, Data Loader or Data Preview and should be specified in Base64 encoded
+         * format. Maximum size is 2 MB.
+         *
+         * @param sampleEntityData the value to set
+         * @return this builder
+         */
+        public Builder sampleEntityData(String sampleEntityData) {
+            this.sampleEntityData = sampleEntityData;
+            this.__explicitlySet__.add("sampleEntityData");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public JsonFormatAttribute build() {
-            JsonFormatAttribute model = new JsonFormatAttribute(this.isFilePattern, this.encoding);
+            JsonFormatAttribute model =
+                    new JsonFormatAttribute(
+                            this.isFilePattern, this.encoding, this.sampleEntityData);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -69,6 +92,9 @@ public final class JsonFormatAttribute extends AbstractFormatAttribute {
             }
             if (model.wasPropertyExplicitlySet("encoding")) {
                 this.encoding(model.getEncoding());
+            }
+            if (model.wasPropertyExplicitlySet("sampleEntityData")) {
+                this.sampleEntityData(model.getSampleEntityData());
             }
             return this;
         }
@@ -84,9 +110,10 @@ public final class JsonFormatAttribute extends AbstractFormatAttribute {
     }
 
     @Deprecated
-    public JsonFormatAttribute(Boolean isFilePattern, String encoding) {
+    public JsonFormatAttribute(Boolean isFilePattern, String encoding, String sampleEntityData) {
         super(isFilePattern);
         this.encoding = encoding;
+        this.sampleEntityData = sampleEntityData;
     }
 
     /** The encoding for the file. */
@@ -100,6 +127,25 @@ public final class JsonFormatAttribute extends AbstractFormatAttribute {
      */
     public String getEncoding() {
         return encoding;
+    }
+
+    /**
+     * Sample JSON with all fields of JSON schema specified in it for the JSON data files used in
+     * Data Flow, Data Loader or Data Preview and should be specified in Base64 encoded format.
+     * Maximum size is 2 MB.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("sampleEntityData")
+    private final String sampleEntityData;
+
+    /**
+     * Sample JSON with all fields of JSON schema specified in it for the JSON data files used in
+     * Data Flow, Data Loader or Data Preview and should be specified in Base64 encoded format.
+     * Maximum size is 2 MB.
+     *
+     * @return the value
+     */
+    public String getSampleEntityData() {
+        return sampleEntityData;
     }
 
     @Override
@@ -118,6 +164,7 @@ public final class JsonFormatAttribute extends AbstractFormatAttribute {
         sb.append("JsonFormatAttribute(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", encoding=").append(String.valueOf(this.encoding));
+        sb.append(", sampleEntityData=").append(String.valueOf(this.sampleEntityData));
         sb.append(")");
         return sb.toString();
     }
@@ -132,7 +179,9 @@ public final class JsonFormatAttribute extends AbstractFormatAttribute {
         }
 
         JsonFormatAttribute other = (JsonFormatAttribute) o;
-        return java.util.Objects.equals(this.encoding, other.encoding) && super.equals(other);
+        return java.util.Objects.equals(this.encoding, other.encoding)
+                && java.util.Objects.equals(this.sampleEntityData, other.sampleEntityData)
+                && super.equals(other);
     }
 
     @Override
@@ -140,6 +189,9 @@ public final class JsonFormatAttribute extends AbstractFormatAttribute {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.encoding == null ? 43 : this.encoding.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sampleEntityData == null ? 43 : this.sampleEntityData.hashCode());
         return result;
     }
 }

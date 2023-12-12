@@ -27,10 +27,16 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     public String getWorkRequestId() {
         return workRequestId;
     }
-    /** A filter to return only resources their lifecycleState matches the given OperationStatus. */
+    /**
+     * A filter to return only resources if their {@code lifecycleState} matches the given
+     * OperationStatus.
+     */
     private com.oracle.bmc.psql.model.OperationStatus status;
 
-    /** A filter to return only resources their lifecycleState matches the given OperationStatus. */
+    /**
+     * A filter to return only resources if their {@code lifecycleState} matches the given
+     * OperationStatus.
+     */
     public com.oracle.bmc.psql.model.OperationStatus getStatus() {
         return status;
     }
@@ -160,12 +166,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * A filter to return only resources their lifecycleState matches the given OperationStatus.
+         * A filter to return only resources if their {@code lifecycleState} matches the given
+         * OperationStatus.
          */
         private com.oracle.bmc.psql.model.OperationStatus status = null;
 
         /**
-         * A filter to return only resources their lifecycleState matches the given OperationStatus.
+         * A filter to return only resources if their {@code lifecycleState} matches the given
+         * OperationStatus.
          *
          * @param status the value to set
          * @return this builder instance

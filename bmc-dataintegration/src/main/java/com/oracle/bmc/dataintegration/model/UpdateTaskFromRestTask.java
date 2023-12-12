@@ -146,6 +146,15 @@ public final class UpdateTaskFromRestTask extends UpdateTaskDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isConcurrentAllowed")
+        private Boolean isConcurrentAllowed;
+
+        public Builder isConcurrentAllowed(Boolean isConcurrentAllowed) {
+            this.isConcurrentAllowed = isConcurrentAllowed;
+            this.__explicitlySet__.add("isConcurrentAllowed");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("registryMetadata")
         private RegistryMetadata registryMetadata;
 
@@ -354,6 +363,7 @@ public final class UpdateTaskFromRestTask extends UpdateTaskDetails {
                             this.parameters,
                             this.opConfigValues,
                             this.configProviderDelegate,
+                            this.isConcurrentAllowed,
                             this.registryMetadata,
                             this.authDetails,
                             this.authConfig,
@@ -415,6 +425,9 @@ public final class UpdateTaskFromRestTask extends UpdateTaskDetails {
             }
             if (model.wasPropertyExplicitlySet("configProviderDelegate")) {
                 this.configProviderDelegate(model.getConfigProviderDelegate());
+            }
+            if (model.wasPropertyExplicitlySet("isConcurrentAllowed")) {
+                this.isConcurrentAllowed(model.getIsConcurrentAllowed());
             }
             if (model.wasPropertyExplicitlySet("registryMetadata")) {
                 this.registryMetadata(model.getRegistryMetadata());
@@ -489,6 +502,7 @@ public final class UpdateTaskFromRestTask extends UpdateTaskDetails {
             java.util.List<Parameter> parameters,
             ConfigValues opConfigValues,
             ConfigProvider configProviderDelegate,
+            Boolean isConcurrentAllowed,
             RegistryMetadata registryMetadata,
             AuthDetails authDetails,
             AuthConfig authConfig,
@@ -518,6 +532,7 @@ public final class UpdateTaskFromRestTask extends UpdateTaskDetails {
                 parameters,
                 opConfigValues,
                 configProviderDelegate,
+                isConcurrentAllowed,
                 registryMetadata);
         this.authDetails = authDetails;
         this.authConfig = authConfig;

@@ -16,18 +16,18 @@ public class UpdateSqlFirewallPolicyRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datasafe.model.UpdateSqlFirewallPolicyDetails> {
 
-    /** The OCID of the SQL firewall policy resource. */
+    /** The OCID of the SQL Firewall policy resource. */
     private String sqlFirewallPolicyId;
 
-    /** The OCID of the SQL firewall policy resource. */
+    /** The OCID of the SQL Firewall policy resource. */
     public String getSqlFirewallPolicyId() {
         return sqlFirewallPolicyId;
     }
-    /** Details to update the SQL firewall policy. */
+    /** Details to update the SQL Firewall policy. */
     private com.oracle.bmc.datasafe.model.UpdateSqlFirewallPolicyDetails
             updateSqlFirewallPolicyDetails;
 
-    /** Details to update the SQL firewall policy. */
+    /** Details to update the SQL Firewall policy. */
     public com.oracle.bmc.datasafe.model.UpdateSqlFirewallPolicyDetails
             getUpdateSqlFirewallPolicyDetails() {
         return updateSqlFirewallPolicyDetails;
@@ -75,11 +75,11 @@ public class UpdateSqlFirewallPolicyRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the SQL firewall policy resource. */
+        /** The OCID of the SQL Firewall policy resource. */
         private String sqlFirewallPolicyId = null;
 
         /**
-         * The OCID of the SQL firewall policy resource.
+         * The OCID of the SQL Firewall policy resource.
          *
          * @param sqlFirewallPolicyId the value to set
          * @return this builder instance
@@ -89,12 +89,12 @@ public class UpdateSqlFirewallPolicyRequest
             return this;
         }
 
-        /** Details to update the SQL firewall policy. */
+        /** Details to update the SQL Firewall policy. */
         private com.oracle.bmc.datasafe.model.UpdateSqlFirewallPolicyDetails
                 updateSqlFirewallPolicyDetails = null;
 
         /**
-         * Details to update the SQL firewall policy.
+         * Details to update the SQL Firewall policy.
          *
          * @param updateSqlFirewallPolicyDetails the value to set
          * @return this builder instance

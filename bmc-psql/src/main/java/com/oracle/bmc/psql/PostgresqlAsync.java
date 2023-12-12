@@ -7,7 +7,11 @@ package com.oracle.bmc.psql;
 import com.oracle.bmc.psql.requests.*;
 import com.oracle.bmc.psql.responses.*;
 
-/** A description of the PGSQL Control Plane API */
+/**
+ * Use the OCI Database with PostgreSQL API to manage resources such as database systems, database
+ * nodes, backups, and configurations. For information, see the user guide documentation for the
+ * [service](https://docs.cloud.oracle.com/iaas/Content/postgresql/home.htm).
+ */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
 public interface PostgresqlAsync extends AutoCloseable {
 
@@ -60,8 +64,8 @@ public interface PostgresqlAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Moves a Backup resource from one compartment identifier to another. When provided, If-Match
-     * is checked against ETag values of the resource.
+     * Moves a backup from one compartment to another. When provided, If-Match is checked against
+     * ETag values of the resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -77,8 +81,8 @@ public interface PostgresqlAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Moves a Configuration resource from one compartment identifier to another. When provided,
-     * If-Match is checked against ETag values of the resource.
+     * Moves a configuration from one compartment to another. When provided, If-Match is checked
+     * against ETag values of the resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -96,8 +100,8 @@ public interface PostgresqlAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves a DbSystem resource from one compartment identifier to another. When provided, If-Match
-     * is checked against ETag values of the resource.
+     * Moves a database system from one compartment to another. When provided, If-Match is checked
+     * against ETag values of the resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -113,7 +117,7 @@ public interface PostgresqlAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new Backup.
+     * Creates a new backup.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -128,7 +132,7 @@ public interface PostgresqlAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new Configuration Set.
+     * Creates a new configuration.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -144,7 +148,7 @@ public interface PostgresqlAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new DbSystem.
+     * Creates a new database system.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -159,7 +163,7 @@ public interface PostgresqlAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a Backup resource by identifier
+     * Deletes a backup by identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -174,7 +178,7 @@ public interface PostgresqlAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a Cofniguration resource by identifier
+     * Deletes a configuration by identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -190,7 +194,7 @@ public interface PostgresqlAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a DbSystem resource by identifier
+     * Deletes a database system by identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -205,7 +209,7 @@ public interface PostgresqlAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Runs a failover operation. Optionally user can specify the desired AD for 3AD regions.
+     * Runs a failover operation. Optionally, specify the desired AD for regions with three ADs.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -220,7 +224,7 @@ public interface PostgresqlAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a Backup by identifier
+     * Gets a backup by identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -234,7 +238,7 @@ public interface PostgresqlAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetBackupRequest, GetBackupResponse> handler);
 
     /**
-     * Gets a Configuration by identifier
+     * Gets a configuration by identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -249,7 +253,7 @@ public interface PostgresqlAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the DbSystem connection details.
+     * Gets the database system connection details.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -265,7 +269,7 @@ public interface PostgresqlAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a DbSystem by identifier
+     * Gets a database system by identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -279,7 +283,7 @@ public interface PostgresqlAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetDbSystemRequest, GetDbSystemResponse> handler);
 
     /**
-     * Gets a Default Configuration by identifier
+     * Gets a default configuration by identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -295,7 +299,7 @@ public interface PostgresqlAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the primary DbInstance details.
+     * Gets the primary database instance node details.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -326,7 +330,7 @@ public interface PostgresqlAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of Backup.
+     * Returns a list of backups.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -340,7 +344,7 @@ public interface PostgresqlAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListBackupsRequest, ListBackupsResponse> handler);
 
     /**
-     * Returns a list of Configurations.
+     * Returns a list of configurations.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -356,7 +360,7 @@ public interface PostgresqlAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of DbSystems.
+     * Returns a list of database systems.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -371,7 +375,7 @@ public interface PostgresqlAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of Default Configurations.
+     * Returns a list of default configurations.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -448,7 +452,7 @@ public interface PostgresqlAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Patching operation allows to add DbInstances to the DbSystem or remove them.
+     * Modifies the database system by adding or removing database instance nodes.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -463,7 +467,7 @@ public interface PostgresqlAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Resets the Db system's master password.
+     * Resets the database system's master password.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -479,7 +483,7 @@ public interface PostgresqlAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Restarts the running DbInstance.
+     * Restarts the running database instance node.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -495,7 +499,7 @@ public interface PostgresqlAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Restore the Db System.
+     * Restore the database system.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -510,7 +514,7 @@ public interface PostgresqlAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the Backup
+     * Updates the backup.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -525,7 +529,7 @@ public interface PostgresqlAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates a display name or description of the Configuration Set.
+     * Updates a display name or description of the configuration.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -541,7 +545,7 @@ public interface PostgresqlAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the DbSystem
+     * Updates the database system.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -556,7 +560,7 @@ public interface PostgresqlAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the DbInstance.
+     * Updates the database instance node.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

@@ -13,10 +13,10 @@ import com.oracle.bmc.psql.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
 public class GetBackupRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** unique Backup identifier */
+    /** A unique identifier for the backup. */
     private String backupId;
 
-    /** unique Backup identifier */
+    /** A unique identifier for the backup. */
     public String getBackupId() {
         return backupId;
     }
@@ -34,11 +34,11 @@ public class GetBackupRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique Backup identifier */
+        /** A unique identifier for the backup. */
         private String backupId = null;
 
         /**
-         * unique Backup identifier
+         * A unique identifier for the backup.
          *
          * @param backupId the value to set
          * @return this builder instance

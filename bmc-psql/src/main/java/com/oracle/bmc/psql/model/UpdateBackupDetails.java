@@ -46,12 +46,12 @@ public final class UpdateBackupDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Backup display name */
+        /** A user-friendly display name for the backup. Avoid entering confidential information. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Backup display name
+         * A user-friendly display name for the backup. Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -61,12 +61,12 @@ public final class UpdateBackupDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Backup description */
+        /** A description for the backup. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Backup description
+         * A description for the backup.
          *
          * @param description the value to set
          * @return this builder
@@ -178,12 +178,12 @@ public final class UpdateBackupDetails
         return new Builder().copy(this);
     }
 
-    /** Backup display name */
+    /** A user-friendly display name for the backup. Avoid entering confidential information. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Backup display name
+     * A user-friendly display name for the backup. Avoid entering confidential information.
      *
      * @return the value
      */
@@ -191,12 +191,12 @@ public final class UpdateBackupDetails
         return displayName;
     }
 
-    /** Backup description */
+    /** A description for the backup. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Backup description
+     * A description for the backup.
      *
      * @return the value
      */

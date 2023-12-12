@@ -5,7 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Configuration Overrides for PGSQL instance. <br>
+ * Configuration overrides for a PostgreSQL instance. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +31,12 @@ public final class ConfigOverrides
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Key is the configuration key. */
+        /** Configuration variable name. */
         @com.fasterxml.jackson.annotation.JsonProperty("configKey")
         private String configKey;
 
         /**
-         * Key is the configuration key.
+         * Configuration variable name.
          *
          * @param configKey the value to set
          * @return this builder
@@ -46,12 +46,12 @@ public final class ConfigOverrides
             this.__explicitlySet__.add("configKey");
             return this;
         }
-        /** User selected configuration value */
+        /** User-selected variable value. */
         @com.fasterxml.jackson.annotation.JsonProperty("overridenConfigValue")
         private String overridenConfigValue;
 
         /**
-         * User selected configuration value
+         * User-selected variable value.
          *
          * @param overridenConfigValue the value to set
          * @return this builder
@@ -94,12 +94,12 @@ public final class ConfigOverrides
         return new Builder().copy(this);
     }
 
-    /** Key is the configuration key. */
+    /** Configuration variable name. */
     @com.fasterxml.jackson.annotation.JsonProperty("configKey")
     private final String configKey;
 
     /**
-     * Key is the configuration key.
+     * Configuration variable name.
      *
      * @return the value
      */
@@ -107,12 +107,12 @@ public final class ConfigOverrides
         return configKey;
     }
 
-    /** User selected configuration value */
+    /** User-selected variable value. */
     @com.fasterxml.jackson.annotation.JsonProperty("overridenConfigValue")
     private final String overridenConfigValue;
 
     /**
-     * User selected configuration value
+     * User-selected variable value.
      *
      * @return the value
      */

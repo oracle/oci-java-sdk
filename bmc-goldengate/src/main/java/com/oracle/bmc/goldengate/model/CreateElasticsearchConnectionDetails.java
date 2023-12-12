@@ -108,6 +108,15 @@ public final class CreateElasticsearchConnectionDetails extends CreateConnection
             this.__explicitlySet__.add("subnetId");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
         /** The Elasticsearch technology type. */
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private ElasticsearchConnection.TechnologyType technologyType;
@@ -254,6 +263,7 @@ public final class CreateElasticsearchConnectionDetails extends CreateConnection
                             this.keyId,
                             this.nsgIds,
                             this.subnetId,
+                            this.routingMethod,
                             this.technologyType,
                             this.servers,
                             this.securityProtocol,
@@ -295,6 +305,9 @@ public final class CreateElasticsearchConnectionDetails extends CreateConnection
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
             }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
@@ -341,6 +354,7 @@ public final class CreateElasticsearchConnectionDetails extends CreateConnection
             String keyId,
             java.util.List<String> nsgIds,
             String subnetId,
+            RoutingMethod routingMethod,
             ElasticsearchConnection.TechnologyType technologyType,
             String servers,
             ElasticsearchConnection.SecurityProtocol securityProtocol,
@@ -357,7 +371,8 @@ public final class CreateElasticsearchConnectionDetails extends CreateConnection
                 vaultId,
                 keyId,
                 nsgIds,
-                subnetId);
+                subnetId,
+                routingMethod);
         this.technologyType = technologyType;
         this.servers = servers;
         this.securityProtocol = securityProtocol;

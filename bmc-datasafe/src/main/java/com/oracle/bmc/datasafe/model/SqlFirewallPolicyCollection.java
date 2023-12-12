@@ -5,7 +5,7 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Collection of SQL firewall policy summary. <br>
+ * Collection of SQL Firewall policy summary. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +31,12 @@ public final class SqlFirewallPolicyCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Array of SQL firewall policy summary. */
+        /** Array of SQL Firewall policy summary. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SqlFirewallPolicySummary> items;
 
         /**
-         * Array of SQL firewall policy summary.
+         * Array of SQL Firewall policy summary.
          *
          * @param items the value to set
          * @return this builder
@@ -76,12 +76,12 @@ public final class SqlFirewallPolicyCollection
         return new Builder().copy(this);
     }
 
-    /** Array of SQL firewall policy summary. */
+    /** Array of SQL Firewall policy summary. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SqlFirewallPolicySummary> items;
 
     /**
-     * Array of SQL firewall policy summary.
+     * Array of SQL Firewall policy summary.
      *
      * @return the value
      */

@@ -44,6 +44,10 @@ public class ListDiscoveryAnalyticsRequest
     public enum GroupBy implements com.oracle.bmc.http.internal.BmcEnum {
         TargetId("targetId"),
         SensitiveDataModelId("sensitiveDataModelId"),
+        SensitiveTypeId("sensitiveTypeId"),
+        TargetIdAndSensitiveDataModelId("targetIdAndSensitiveDataModelId"),
+        SensitiveTypeIdAndTargetId("sensitiveTypeIdAndTargetId"),
+        SensitiveTypeIdAndSensitiveDataModelId("sensitiveTypeIdAndSensitiveDataModelId"),
         ;
 
         private final String value;
@@ -92,6 +96,13 @@ public class ListDiscoveryAnalyticsRequest
     public String getSensitiveDataModelId() {
         return sensitiveDataModelId;
     }
+    /** A filter to return only items related to a specific sensitive type OCID. */
+    private String sensitiveTypeId;
+
+    /** A filter to return only items related to a specific sensitive type OCID. */
+    public String getSensitiveTypeId() {
+        return sensitiveTypeId;
+    }
     /**
      * For list pagination. The maximum number of items to return per page in a paginated "List"
      * call. For details about how pagination works, see [List
@@ -130,6 +141,19 @@ public class ListDiscoveryAnalyticsRequest
     /** Unique identifier for the request. */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * A filter to return only the common sensitive type resources. Common sensitive types belong to
+     * library sensitive types which are frequently used to perform sensitive data discovery.
+     */
+    private Boolean isCommon;
+
+    /**
+     * A filter to return only the common sensitive type resources. Common sensitive types belong to
+     * library sensitive types which are frequently used to perform sensitive data discovery.
+     */
+    public Boolean getIsCommon() {
+        return isCommon;
     }
 
     public static class Builder
@@ -216,6 +240,20 @@ public class ListDiscoveryAnalyticsRequest
             return this;
         }
 
+        /** A filter to return only items related to a specific sensitive type OCID. */
+        private String sensitiveTypeId = null;
+
+        /**
+         * A filter to return only items related to a specific sensitive type OCID.
+         *
+         * @param sensitiveTypeId the value to set
+         * @return this builder instance
+         */
+        public Builder sensitiveTypeId(String sensitiveTypeId) {
+            this.sensitiveTypeId = sensitiveTypeId;
+            return this;
+        }
+
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List"
          * call. For details about how pagination works, see [List
@@ -273,6 +311,26 @@ public class ListDiscoveryAnalyticsRequest
         }
 
         /**
+         * A filter to return only the common sensitive type resources. Common sensitive types
+         * belong to library sensitive types which are frequently used to perform sensitive data
+         * discovery.
+         */
+        private Boolean isCommon = null;
+
+        /**
+         * A filter to return only the common sensitive type resources. Common sensitive types
+         * belong to library sensitive types which are frequently used to perform sensitive data
+         * discovery.
+         *
+         * @param isCommon the value to set
+         * @return this builder instance
+         */
+        public Builder isCommon(Boolean isCommon) {
+            this.isCommon = isCommon;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -307,9 +365,11 @@ public class ListDiscoveryAnalyticsRequest
             groupBy(o.getGroupBy());
             targetId(o.getTargetId());
             sensitiveDataModelId(o.getSensitiveDataModelId());
+            sensitiveTypeId(o.getSensitiveTypeId());
             limit(o.getLimit());
             page(o.getPage());
             opcRequestId(o.getOpcRequestId());
+            isCommon(o.getIsCommon());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -349,12 +409,15 @@ public class ListDiscoveryAnalyticsRequest
             request.groupBy = groupBy;
             request.targetId = targetId;
             request.sensitiveDataModelId = sensitiveDataModelId;
+            request.sensitiveTypeId = sensitiveTypeId;
             request.limit = limit;
             request.page = page;
             request.opcRequestId = opcRequestId;
+            request.isCommon = isCommon;
             return request;
             // new ListDiscoveryAnalyticsRequest(compartmentId, compartmentIdInSubtree, groupBy,
-            // targetId, sensitiveDataModelId, limit, page, opcRequestId);
+            // targetId, sensitiveDataModelId, sensitiveTypeId, limit, page, opcRequestId,
+            // isCommon);
         }
     }
 
@@ -370,9 +433,11 @@ public class ListDiscoveryAnalyticsRequest
                 .groupBy(groupBy)
                 .targetId(targetId)
                 .sensitiveDataModelId(sensitiveDataModelId)
+                .sensitiveTypeId(sensitiveTypeId)
                 .limit(limit)
                 .page(page)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .isCommon(isCommon);
     }
 
     /**
@@ -394,9 +459,11 @@ public class ListDiscoveryAnalyticsRequest
         sb.append(",groupBy=").append(String.valueOf(this.groupBy));
         sb.append(",targetId=").append(String.valueOf(this.targetId));
         sb.append(",sensitiveDataModelId=").append(String.valueOf(this.sensitiveDataModelId));
+        sb.append(",sensitiveTypeId=").append(String.valueOf(this.sensitiveTypeId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isCommon=").append(String.valueOf(this.isCommon));
         sb.append(")");
         return sb.toString();
     }
@@ -418,9 +485,11 @@ public class ListDiscoveryAnalyticsRequest
                 && java.util.Objects.equals(this.groupBy, other.groupBy)
                 && java.util.Objects.equals(this.targetId, other.targetId)
                 && java.util.Objects.equals(this.sensitiveDataModelId, other.sensitiveDataModelId)
+                && java.util.Objects.equals(this.sensitiveTypeId, other.sensitiveTypeId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.isCommon, other.isCommon);
     }
 
     @Override
@@ -442,9 +511,13 @@ public class ListDiscoveryAnalyticsRequest
                         + (this.sensitiveDataModelId == null
                                 ? 43
                                 : this.sensitiveDataModelId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sensitiveTypeId == null ? 43 : this.sensitiveTypeId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.isCommon == null ? 43 : this.isCommon.hashCode());
         return result;
     }
 }

@@ -5,7 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * The information to create a new Backup. <br>
+ * The information to create a new backup. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -52,12 +52,12 @@ public final class CreateBackupDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Backup display name. */
+        /** A user-friendly display name for the backup. Avoid entering confidential information. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Backup display name.
+         * A user-friendly display name for the backup. Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -67,12 +67,12 @@ public final class CreateBackupDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Backup description */
+        /** A description for the backup. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Backup description
+         * A description for the backup.
          *
          * @param description the value to set
          * @return this builder
@@ -82,12 +82,16 @@ public final class CreateBackupDetails
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Compartment identifier */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the backup.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment identifier
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the backup.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -97,12 +101,12 @@ public final class CreateBackupDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Posgresql DbSystem identifier */
+        /** The ID of the database system. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
         /**
-         * Posgresql DbSystem identifier
+         * The ID of the database system.
          *
          * @param dbSystemId the value to set
          * @return this builder
@@ -222,12 +226,12 @@ public final class CreateBackupDetails
         return new Builder().copy(this);
     }
 
-    /** Backup display name. */
+    /** A user-friendly display name for the backup. Avoid entering confidential information. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Backup display name.
+     * A user-friendly display name for the backup. Avoid entering confidential information.
      *
      * @return the value
      */
@@ -235,12 +239,12 @@ public final class CreateBackupDetails
         return displayName;
     }
 
-    /** Backup description */
+    /** A description for the backup. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Backup description
+     * A description for the backup.
      *
      * @return the value
      */
@@ -248,12 +252,16 @@ public final class CreateBackupDetails
         return description;
     }
 
-    /** Compartment identifier */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the backup.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment identifier
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the backup.
      *
      * @return the value
      */
@@ -261,12 +269,12 @@ public final class CreateBackupDetails
         return compartmentId;
     }
 
-    /** Posgresql DbSystem identifier */
+    /** The ID of the database system. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     private final String dbSystemId;
 
     /**
-     * Posgresql DbSystem identifier
+     * The ID of the database system.
      *
      * @return the value
      */

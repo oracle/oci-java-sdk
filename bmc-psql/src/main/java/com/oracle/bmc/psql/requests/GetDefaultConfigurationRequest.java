@@ -15,10 +15,10 @@ import com.oracle.bmc.psql.model.*;
 public class GetDefaultConfigurationRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** unique Configuration identifier */
+    /** A unique identifier for the configuration. */
     private String defaultConfigurationId;
 
-    /** unique Configuration identifier */
+    /** A unique identifier for the configuration. */
     public String getDefaultConfigurationId() {
         return defaultConfigurationId;
     }
@@ -36,11 +36,11 @@ public class GetDefaultConfigurationRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique Configuration identifier */
+        /** A unique identifier for the configuration. */
         private String defaultConfigurationId = null;
 
         /**
-         * unique Configuration identifier
+         * A unique identifier for the configuration.
          *
          * @param defaultConfigurationId the value to set
          * @return this builder instance

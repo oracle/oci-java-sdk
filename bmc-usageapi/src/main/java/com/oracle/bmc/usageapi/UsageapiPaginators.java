@@ -502,4 +502,132 @@ public class UsageapiPaginators {
                     }
                 });
     }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listUsageCarbonEmissionsQueries operation. This iterable will fetch more data from the server
+     * as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListUsageCarbonEmissionsQueriesResponse>
+            listUsageCarbonEmissionsQueriesResponseIterator(
+                    final ListUsageCarbonEmissionsQueriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListUsageCarbonEmissionsQueriesRequest.Builder,
+                ListUsageCarbonEmissionsQueriesRequest,
+                ListUsageCarbonEmissionsQueriesResponse>(
+                new java.util.function.Supplier<ListUsageCarbonEmissionsQueriesRequest.Builder>() {
+                    @Override
+                    public ListUsageCarbonEmissionsQueriesRequest.Builder get() {
+                        return ListUsageCarbonEmissionsQueriesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListUsageCarbonEmissionsQueriesResponse, String>() {
+                    @Override
+                    public String apply(ListUsageCarbonEmissionsQueriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListUsageCarbonEmissionsQueriesRequest.Builder>,
+                        ListUsageCarbonEmissionsQueriesRequest>() {
+                    @Override
+                    public ListUsageCarbonEmissionsQueriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListUsageCarbonEmissionsQueriesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListUsageCarbonEmissionsQueriesRequest,
+                        ListUsageCarbonEmissionsQueriesResponse>() {
+                    @Override
+                    public ListUsageCarbonEmissionsQueriesResponse apply(
+                            ListUsageCarbonEmissionsQueriesRequest request) {
+                        return client.listUsageCarbonEmissionsQueries(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.usageapi.model.UsageCarbonEmissionsQuerySummary} objects contained in
+     * responses from the listUsageCarbonEmissionsQueries operation. This iterable will fetch more
+     * data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.usageapi.model.UsageCarbonEmissionsQuerySummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.usageapi.model.UsageCarbonEmissionsQuerySummary>
+            listUsageCarbonEmissionsQueriesRecordIterator(
+                    final ListUsageCarbonEmissionsQueriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListUsageCarbonEmissionsQueriesRequest.Builder,
+                ListUsageCarbonEmissionsQueriesRequest,
+                ListUsageCarbonEmissionsQueriesResponse,
+                com.oracle.bmc.usageapi.model.UsageCarbonEmissionsQuerySummary>(
+                new java.util.function.Supplier<ListUsageCarbonEmissionsQueriesRequest.Builder>() {
+                    @Override
+                    public ListUsageCarbonEmissionsQueriesRequest.Builder get() {
+                        return ListUsageCarbonEmissionsQueriesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListUsageCarbonEmissionsQueriesResponse, String>() {
+                    @Override
+                    public String apply(ListUsageCarbonEmissionsQueriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListUsageCarbonEmissionsQueriesRequest.Builder>,
+                        ListUsageCarbonEmissionsQueriesRequest>() {
+                    @Override
+                    public ListUsageCarbonEmissionsQueriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListUsageCarbonEmissionsQueriesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListUsageCarbonEmissionsQueriesRequest,
+                        ListUsageCarbonEmissionsQueriesResponse>() {
+                    @Override
+                    public ListUsageCarbonEmissionsQueriesResponse apply(
+                            ListUsageCarbonEmissionsQueriesRequest request) {
+                        return client.listUsageCarbonEmissionsQueries(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListUsageCarbonEmissionsQueriesResponse,
+                        java.util.List<
+                                com.oracle.bmc.usageapi.model.UsageCarbonEmissionsQuerySummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.usageapi.model.UsageCarbonEmissionsQuerySummary>
+                            apply(ListUsageCarbonEmissionsQueriesResponse response) {
+                        return response.getUsageCarbonEmissionsQueryCollection().getItems();
+                    }
+                });
+    }
 }

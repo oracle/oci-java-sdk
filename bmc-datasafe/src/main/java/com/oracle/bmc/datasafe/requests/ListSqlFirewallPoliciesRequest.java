@@ -145,21 +145,21 @@ public class ListSqlFirewallPoliciesRequest
     public String getSecurityPolicyId() {
         return securityPolicyId;
     }
-    /** The current state of the SQL firewall policy. */
+    /** The current state of the SQL Firewall policy. */
     private com.oracle.bmc.datasafe.model.SqlFirewallPolicyLifecycleState lifecycleState;
 
-    /** The current state of the SQL firewall policy. */
+    /** The current state of the SQL Firewall policy. */
     public com.oracle.bmc.datasafe.model.SqlFirewallPolicyLifecycleState getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * An optional filter to return only resources that match the specified OCID of the SQL firewall
+     * An optional filter to return only resources that match the specified OCID of the SQL Firewall
      * policy resource.
      */
     private String sqlFirewallPolicyId;
 
     /**
-     * An optional filter to return only resources that match the specified OCID of the SQL firewall
+     * An optional filter to return only resources that match the specified OCID of the SQL Firewall
      * policy resource.
      */
     public String getSqlFirewallPolicyId() {
@@ -493,11 +493,11 @@ public class ListSqlFirewallPoliciesRequest
             return this;
         }
 
-        /** The current state of the SQL firewall policy. */
+        /** The current state of the SQL Firewall policy. */
         private com.oracle.bmc.datasafe.model.SqlFirewallPolicyLifecycleState lifecycleState = null;
 
         /**
-         * The current state of the SQL firewall policy.
+         * The current state of the SQL Firewall policy.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -510,13 +510,13 @@ public class ListSqlFirewallPoliciesRequest
 
         /**
          * An optional filter to return only resources that match the specified OCID of the SQL
-         * firewall policy resource.
+         * Firewall policy resource.
          */
         private String sqlFirewallPolicyId = null;
 
         /**
          * An optional filter to return only resources that match the specified OCID of the SQL
-         * firewall policy resource.
+         * Firewall policy resource.
          *
          * @param sqlFirewallPolicyId the value to set
          * @return this builder instance

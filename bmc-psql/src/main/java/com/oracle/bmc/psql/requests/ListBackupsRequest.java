@@ -20,24 +20,42 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The start date for getting backups. An RFC3339 formatted datetime string */
+    /**
+     * The start date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
+     * formatted datetime string.
+     */
     private java.util.Date timeStarted;
 
-    /** The start date for getting backups. An RFC3339 formatted datetime string */
+    /**
+     * The start date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
+     * formatted datetime string.
+     */
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
-    /** The End date for getting backups. An RFC3339 formatted datetime string. */
+    /**
+     * The end date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted
+     * datetime string.
+     */
     private java.util.Date timeEnded;
 
-    /** The End date for getting backups. An RFC3339 formatted datetime string. */
+    /**
+     * The end date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339) formatted
+     * datetime string.
+     */
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /**
+     * A filter to return only resources if their {@code lifecycleState} matches the given {@code
+     * lifecycleState}.
+     */
     private com.oracle.bmc.psql.model.Backup.LifecycleState lifecycleState;
 
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /**
+     * A filter to return only resources if their {@code lifecycleState} matches the given {@code
+     * lifecycleState}.
+     */
     public com.oracle.bmc.psql.model.Backup.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -48,17 +66,17 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public String getDisplayName() {
         return displayName;
     }
-    /** unique Backup identifier */
+    /** A unique identifier for the backup. */
     private String backupId;
 
-    /** unique Backup identifier */
+    /** A unique identifier for the backup. */
     public String getBackupId() {
         return backupId;
     }
-    /** unique DbSystem identifier */
+    /** A unique identifier for the database system. */
     private String id;
 
-    /** unique DbSystem identifier */
+    /** A unique identifier for the database system. */
     public String getId() {
         return id;
     }
@@ -167,11 +185,15 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The start date for getting backups. An RFC3339 formatted datetime string */
+        /**
+         * The start date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
+         * formatted datetime string.
+         */
         private java.util.Date timeStarted = null;
 
         /**
-         * The start date for getting backups. An RFC3339 formatted datetime string
+         * The start date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
+         * formatted datetime string.
          *
          * @param timeStarted the value to set
          * @return this builder instance
@@ -181,11 +203,15 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The End date for getting backups. An RFC3339 formatted datetime string. */
+        /**
+         * The end date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
+         * formatted datetime string.
+         */
         private java.util.Date timeEnded = null;
 
         /**
-         * The End date for getting backups. An RFC3339 formatted datetime string.
+         * The end date for getting backups. An [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
+         * formatted datetime string.
          *
          * @param timeEnded the value to set
          * @return this builder instance
@@ -196,12 +222,14 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * A filter to return only resources if their {@code lifecycleState} matches the given
+         * {@code lifecycleState}.
          */
         private com.oracle.bmc.psql.model.Backup.LifecycleState lifecycleState = null;
 
         /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * A filter to return only resources if their {@code lifecycleState} matches the given
+         * {@code lifecycleState}.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -226,11 +254,11 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** unique Backup identifier */
+        /** A unique identifier for the backup. */
         private String backupId = null;
 
         /**
-         * unique Backup identifier
+         * A unique identifier for the backup.
          *
          * @param backupId the value to set
          * @return this builder instance
@@ -240,11 +268,11 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** unique DbSystem identifier */
+        /** A unique identifier for the database system. */
         private String id = null;
 
         /**
-         * unique DbSystem identifier
+         * A unique identifier for the database system.
          *
          * @param id the value to set
          * @return this builder instance

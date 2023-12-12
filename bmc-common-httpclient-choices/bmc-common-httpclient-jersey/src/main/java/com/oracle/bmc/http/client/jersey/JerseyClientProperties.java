@@ -31,4 +31,38 @@ public enum JerseyClientProperties {
     public static final JerseyClientProperty<ExecutorServiceProvider> EXECUTOR_SERVICE_PROVIDER =
             JerseyClientProperty.create(
                     "com.oracle.bmc.http.client.jersey.executor_service_provider");
+    /**
+     * Idle monitor thread polls the connection manager to monitor for expired and idle connections
+     * and closes any such connections
+     *
+     * <p>If the property is absent then default value of true will be used
+     */
+    public static final JerseyClientProperty<Boolean>
+            APACHE_IDLE_CONNECTION_MONITOR_THREAD_ENABLED =
+                    JerseyClientProperty.create(
+                            "com.oracle.bmc.http.client.jersey.apache_idle_connection_monitor_thread_enabled");
+
+    /**
+     * The time interval after which the check and closing of expired/idle connections is performed
+     * by the idleMonitorThread. This is applicable only if idleConnectionMonitorThead is
+     * enabled/true
+     *
+     * <p>If the property is absent then default value of 5 seconds will be used
+     */
+    public static final JerseyClientProperty<Integer>
+            APACHE_IDLE_CONNECTION_MONITOR_THREAD_WAIT_TIME_SECONDS =
+                    JerseyClientProperty.create(
+                            "com.oracle.bmc.http.client.jersey.apache_idle_connection_monitor_thread_wait_time_seconds");
+
+    /**
+     * The idle timeout - close connections that have been idle longer than
+     * idleConnectionMonitorThreadIdleTimeoutInSeconds seconds by idleMonitorThread. This is
+     * applicable only if idleConnectionMonitorThead is enabled/true
+     *
+     * <p>If the property is absent then default value of 20 seconds will be used
+     */
+    public static final JerseyClientProperty<Integer>
+            APACHE_IDLE_CONNECTION_MONITOR_THREAD_IDLE_TIMEOUT_SECONDS =
+                    JerseyClientProperty.create(
+                            "com.oracle.bmc.http.client.jersey.apache_idle_connection_monitor_thread_idle_timeout_seconds");
 }

@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.psql.model;
 
-/** Possible Metadata keys for workRequest resource metadata */
+/** Possible metadata keys for workRequest resource metadata. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
 public enum WorkRequestResourceMetadataKey implements com.oracle.bmc.http.internal.BmcEnum {
     IsDryRun("IS_DRY_RUN"),

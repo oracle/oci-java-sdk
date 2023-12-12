@@ -109,12 +109,12 @@ public final class CreateScheduleDetails
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Specifies supported output file format. */
+        /** Specifies the supported output file format. */
         @com.fasterxml.jackson.annotation.JsonProperty("outputFileFormat")
         private OutputFileFormat outputFileFormat;
 
         /**
-         * Specifies supported output file format.
+         * Specifies the supported output file format.
          *
          * @param outputFileFormat the value to set
          * @return this builder
@@ -124,12 +124,12 @@ public final class CreateScheduleDetails
             this.__explicitlySet__.add("outputFileFormat");
             return this;
         }
-        /** The saved report id which can also be used to generate query. */
+        /** The saved report ID which can also be used to generate a query. */
         @com.fasterxml.jackson.annotation.JsonProperty("savedReportId")
         private String savedReportId;
 
         /**
-         * The saved report id which can also be used to generate query.
+         * The saved report ID which can also be used to generate a query.
          *
          * @param savedReportId the value to set
          * @return this builder
@@ -351,7 +351,7 @@ public final class CreateScheduleDetails
         return description;
     }
 
-    /** Specifies supported output file format. */
+    /** Specifies the supported output file format. */
     public enum OutputFileFormat implements com.oracle.bmc.http.internal.BmcEnum {
         Csv("CSV"),
         Pdf("PDF"),
@@ -384,12 +384,12 @@ public final class CreateScheduleDetails
             throw new IllegalArgumentException("Invalid OutputFileFormat: " + key);
         }
     };
-    /** Specifies supported output file format. */
+    /** Specifies the supported output file format. */
     @com.fasterxml.jackson.annotation.JsonProperty("outputFileFormat")
     private final OutputFileFormat outputFileFormat;
 
     /**
-     * Specifies supported output file format.
+     * Specifies the supported output file format.
      *
      * @return the value
      */
@@ -397,12 +397,12 @@ public final class CreateScheduleDetails
         return outputFileFormat;
     }
 
-    /** The saved report id which can also be used to generate query. */
+    /** The saved report ID which can also be used to generate a query. */
     @com.fasterxml.jackson.annotation.JsonProperty("savedReportId")
     private final String savedReportId;
 
     /**
-     * The saved report id which can also be used to generate query.
+     * The saved report ID which can also be used to generate a query.
      *
      * @return the value
      */

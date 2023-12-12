@@ -37,6 +37,8 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         "definedTags",
         "isHealthy",
         "subnetId",
+        "loadBalancerSubnetId",
+        "loadBalancerId",
         "fqdn",
         "licenseModel",
         "cpuCoreCount",
@@ -59,7 +61,8 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         "nextMaintenanceActionType",
         "nextMaintenanceDescription",
         "maintenanceConfiguration",
-        "timeOggVersionSupportedUntil"
+        "timeOggVersionSupportedUntil",
+        "ingressIps"
     })
     public Deployment(
             String id,
@@ -76,6 +79,8 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             Boolean isHealthy,
             String subnetId,
+            String loadBalancerSubnetId,
+            String loadBalancerId,
             String fqdn,
             LicenseModel licenseModel,
             Integer cpuCoreCount,
@@ -98,7 +103,8 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
             MaintenanceActionType nextMaintenanceActionType,
             String nextMaintenanceDescription,
             MaintenanceConfiguration maintenanceConfiguration,
-            java.util.Date timeOggVersionSupportedUntil) {
+            java.util.Date timeOggVersionSupportedUntil,
+            java.util.List<IngressIpDetails> ingressIps) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -114,6 +120,8 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         this.definedTags = definedTags;
         this.isHealthy = isHealthy;
         this.subnetId = subnetId;
+        this.loadBalancerSubnetId = loadBalancerSubnetId;
+        this.loadBalancerId = loadBalancerId;
         this.fqdn = fqdn;
         this.licenseModel = licenseModel;
         this.cpuCoreCount = cpuCoreCount;
@@ -137,6 +145,7 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         this.nextMaintenanceDescription = nextMaintenanceDescription;
         this.maintenanceConfiguration = maintenanceConfiguration;
         this.timeOggVersionSupportedUntil = timeOggVersionSupportedUntil;
+        this.ingressIps = ingressIps;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -377,14 +386,14 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * subnet being referenced.
+         * subnet of the deployment's private endpoint.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * subnet being referenced.
+         * subnet of the deployment's private endpoint.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -392,6 +401,52 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * public subnet in the customer tenancy. Can be provided only for public deployments. If
+         * provided, the loadbalancer will be created in this subnet instead of the service tenancy.
+         * For backward compatiblity this is an optional property for now, but it will become
+         * mandatory (for public deployments only) after October 1, 2024.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
+        private String loadBalancerSubnetId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * public subnet in the customer tenancy. Can be provided only for public deployments. If
+         * provided, the loadbalancer will be created in this subnet instead of the service tenancy.
+         * For backward compatiblity this is an optional property for now, but it will become
+         * mandatory (for public deployments only) after October 1, 2024.
+         *
+         * @param loadBalancerSubnetId the value to set
+         * @return this builder
+         */
+        public Builder loadBalancerSubnetId(String loadBalancerSubnetId) {
+            this.loadBalancerSubnetId = loadBalancerSubnetId;
+            this.__explicitlySet__.add("loadBalancerSubnetId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * loadbalancer in the customer's subnet. The loadbalancer of the public deployment created
+         * in the customer subnet.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
+        private String loadBalancerId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * loadbalancer in the customer's subnet. The loadbalancer of the public deployment created
+         * in the customer subnet.
+         *
+         * @param loadBalancerId the value to set
+         * @return this builder
+         */
+        public Builder loadBalancerId(String loadBalancerId) {
+            this.loadBalancerId = loadBalancerId;
+            this.__explicitlySet__.add("loadBalancerId");
             return this;
         }
         /** A three-label Fully Qualified Domain Name (FQDN) for a resource. */
@@ -770,6 +825,27 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("timeOggVersionSupportedUntil");
             return this;
         }
+        /**
+         * List of ingress IP addresses from where the GoldenGate deployment connects to this
+         * connection's privateIp. Customers may optionally set up ingress security rules to
+         * restrict traffic from these IP addresses.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("ingressIps")
+        private java.util.List<IngressIpDetails> ingressIps;
+
+        /**
+         * List of ingress IP addresses from where the GoldenGate deployment connects to this
+         * connection's privateIp. Customers may optionally set up ingress security rules to
+         * restrict traffic from these IP addresses.
+         *
+         * @param ingressIps the value to set
+         * @return this builder
+         */
+        public Builder ingressIps(java.util.List<IngressIpDetails> ingressIps) {
+            this.ingressIps = ingressIps;
+            this.__explicitlySet__.add("ingressIps");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -791,6 +867,8 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
                             this.definedTags,
                             this.isHealthy,
                             this.subnetId,
+                            this.loadBalancerSubnetId,
+                            this.loadBalancerId,
                             this.fqdn,
                             this.licenseModel,
                             this.cpuCoreCount,
@@ -813,7 +891,8 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
                             this.nextMaintenanceActionType,
                             this.nextMaintenanceDescription,
                             this.maintenanceConfiguration,
-                            this.timeOggVersionSupportedUntil);
+                            this.timeOggVersionSupportedUntil,
+                            this.ingressIps);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -863,6 +942,12 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("loadBalancerSubnetId")) {
+                this.loadBalancerSubnetId(model.getLoadBalancerSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("loadBalancerId")) {
+                this.loadBalancerId(model.getLoadBalancerId());
             }
             if (model.wasPropertyExplicitlySet("fqdn")) {
                 this.fqdn(model.getFqdn());
@@ -933,6 +1018,9 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("timeOggVersionSupportedUntil")) {
                 this.timeOggVersionSupportedUntil(model.getTimeOggVersionSupportedUntil());
+            }
+            if (model.wasPropertyExplicitlySet("ingressIps")) {
+                this.ingressIps(model.getIngressIps());
             }
             return this;
         }
@@ -1156,19 +1244,61 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * subnet being referenced.
+     * subnet of the deployment's private endpoint.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * subnet being referenced.
+     * subnet of the deployment's private endpoint.
      *
      * @return the value
      */
     public String getSubnetId() {
         return subnetId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+     * public subnet in the customer tenancy. Can be provided only for public deployments. If
+     * provided, the loadbalancer will be created in this subnet instead of the service tenancy. For
+     * backward compatiblity this is an optional property for now, but it will become mandatory (for
+     * public deployments only) after October 1, 2024.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
+    private final String loadBalancerSubnetId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+     * public subnet in the customer tenancy. Can be provided only for public deployments. If
+     * provided, the loadbalancer will be created in this subnet instead of the service tenancy. For
+     * backward compatiblity this is an optional property for now, but it will become mandatory (for
+     * public deployments only) after October 1, 2024.
+     *
+     * @return the value
+     */
+    public String getLoadBalancerSubnetId() {
+        return loadBalancerSubnetId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in
+     * the customer subnet.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
+    private final String loadBalancerId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in
+     * the customer subnet.
+     *
+     * @return the value
+     */
+    public String getLoadBalancerId() {
+        return loadBalancerId;
     }
 
     /** A three-label Fully Qualified Domain Name (FQDN) for a resource. */
@@ -1500,6 +1630,25 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         return timeOggVersionSupportedUntil;
     }
 
+    /**
+     * List of ingress IP addresses from where the GoldenGate deployment connects to this
+     * connection's privateIp. Customers may optionally set up ingress security rules to restrict
+     * traffic from these IP addresses.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("ingressIps")
+    private final java.util.List<IngressIpDetails> ingressIps;
+
+    /**
+     * List of ingress IP addresses from where the GoldenGate deployment connects to this
+     * connection's privateIp. Customers may optionally set up ingress security rules to restrict
+     * traffic from these IP addresses.
+     *
+     * @return the value
+     */
+    public java.util.List<IngressIpDetails> getIngressIps() {
+        return ingressIps;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1529,6 +1678,8 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", isHealthy=").append(String.valueOf(this.isHealthy));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", loadBalancerSubnetId=").append(String.valueOf(this.loadBalancerSubnetId));
+        sb.append(", loadBalancerId=").append(String.valueOf(this.loadBalancerId));
         sb.append(", fqdn=").append(String.valueOf(this.fqdn));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
@@ -1559,6 +1710,7 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
                 .append(String.valueOf(this.maintenanceConfiguration));
         sb.append(", timeOggVersionSupportedUntil=")
                 .append(String.valueOf(this.timeOggVersionSupportedUntil));
+        sb.append(", ingressIps=").append(String.valueOf(this.ingressIps));
         sb.append(")");
         return sb.toString();
     }
@@ -1587,6 +1739,8 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.isHealthy, other.isHealthy)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.loadBalancerSubnetId, other.loadBalancerSubnetId)
+                && java.util.Objects.equals(this.loadBalancerId, other.loadBalancerId)
                 && java.util.Objects.equals(this.fqdn, other.fqdn)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
@@ -1618,6 +1772,7 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
                         this.maintenanceConfiguration, other.maintenanceConfiguration)
                 && java.util.Objects.equals(
                         this.timeOggVersionSupportedUntil, other.timeOggVersionSupportedUntil)
+                && java.util.Objects.equals(this.ingressIps, other.ingressIps)
                 && super.equals(other);
     }
 
@@ -1651,6 +1806,14 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.isHealthy == null ? 43 : this.isHealthy.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.loadBalancerSubnetId == null
+                                ? 43
+                                : this.loadBalancerSubnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.loadBalancerId == null ? 43 : this.loadBalancerId.hashCode());
         result = (result * PRIME) + (this.fqdn == null ? 43 : this.fqdn.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
         result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
@@ -1726,6 +1889,7 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
                         + (this.timeOggVersionSupportedUntil == null
                                 ? 43
                                 : this.timeOggVersionSupportedUntil.hashCode());
+        result = (result * PRIME) + (this.ingressIps == null ? 43 : this.ingressIps.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -171,6 +171,15 @@ public final class OciObjectStorageConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("subnetId");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
         /** The OCI Object Storage technology type. */
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private OciObjectStorageConnection.TechnologyType technologyType;
@@ -264,6 +273,7 @@ public final class OciObjectStorageConnectionSummary extends ConnectionSummary {
                             this.ingressIps,
                             this.nsgIds,
                             this.subnetId,
+                            this.routingMethod,
                             this.technologyType,
                             this.tenancyId,
                             this.region,
@@ -324,6 +334,9 @@ public final class OciObjectStorageConnectionSummary extends ConnectionSummary {
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -367,6 +380,7 @@ public final class OciObjectStorageConnectionSummary extends ConnectionSummary {
             java.util.List<IngressIpDetails> ingressIps,
             java.util.List<String> nsgIds,
             String subnetId,
+            RoutingMethod routingMethod,
             OciObjectStorageConnection.TechnologyType technologyType,
             String tenancyId,
             String region,
@@ -387,7 +401,8 @@ public final class OciObjectStorageConnectionSummary extends ConnectionSummary {
                 keyId,
                 ingressIps,
                 nsgIds,
-                subnetId);
+                subnetId,
+                routingMethod);
         this.technologyType = technologyType;
         this.tenancyId = tenancyId;
         this.region = region;

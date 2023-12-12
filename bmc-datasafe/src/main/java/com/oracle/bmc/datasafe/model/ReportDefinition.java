@@ -243,12 +243,12 @@ public final class ReportDefinition
             this.__explicitlySet__.add("displayOrder");
             return this;
         }
-        /** Specifies the data and time the report definition was created. */
+        /** Specifies the date and time the report definition was created. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * Specifies the data and time the report definition was created.
+         * Specifies the date and time the report definition was created.
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -258,12 +258,12 @@ public final class ReportDefinition
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The date and time the report definition was update. */
+        /** The date and time the report definition was updated. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the report definition was update.
+         * The date and time the report definition was updated.
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -447,12 +447,12 @@ public final class ReportDefinition
             this.__explicitlySet__.add("schedule");
             return this;
         }
-        /** Specifies the format of the report ( either XLS or PDF ) */
+        /** Specifies the format of the report ( either .xls or .pdf ) */
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportMimeType")
         private ScheduledReportMimeType scheduledReportMimeType;
 
         /**
-         * Specifies the format of the report ( either XLS or PDF )
+         * Specifies the format of the report ( either .xls or .pdf )
          *
          * @param scheduledReportMimeType the value to set
          * @return this builder
@@ -492,12 +492,12 @@ public final class ReportDefinition
             this.__explicitlySet__.add("scheduledReportName");
             return this;
         }
-        /** The OCID of the compartment in which the scheduled resource should be created. */
+        /** The OCID of the compartment in which the scheduled resource will be created. */
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportCompartmentId")
         private String scheduledReportCompartmentId;
 
         /**
-         * The OCID of the compartment in which the scheduled resource should be created.
+         * The OCID of the compartment in which the scheduled resource will be created.
          *
          * @param scheduledReportCompartmentId the value to set
          * @return this builder
@@ -926,12 +926,12 @@ public final class ReportDefinition
         return displayOrder;
     }
 
-    /** Specifies the data and time the report definition was created. */
+    /** Specifies the date and time the report definition was created. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * Specifies the data and time the report definition was created.
+     * Specifies the date and time the report definition was created.
      *
      * @return the value
      */
@@ -939,12 +939,12 @@ public final class ReportDefinition
         return timeCreated;
     }
 
-    /** The date and time the report definition was update. */
+    /** The date and time the report definition was updated. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the report definition was update.
+     * The date and time the report definition was updated.
      *
      * @return the value
      */
@@ -1108,7 +1108,7 @@ public final class ReportDefinition
         return schedule;
     }
 
-    /** Specifies the format of the report ( either XLS or PDF ) */
+    /** Specifies the format of the report ( either .xls or .pdf ) */
     public enum ScheduledReportMimeType implements com.oracle.bmc.http.internal.BmcEnum {
         Pdf("PDF"),
         Xls("XLS"),
@@ -1154,12 +1154,12 @@ public final class ReportDefinition
             return UnknownEnumValue;
         }
     };
-    /** Specifies the format of the report ( either XLS or PDF ) */
+    /** Specifies the format of the report ( either .xls or .pdf ) */
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportMimeType")
     private final ScheduledReportMimeType scheduledReportMimeType;
 
     /**
-     * Specifies the format of the report ( either XLS or PDF )
+     * Specifies the format of the report ( either .xls or .pdf )
      *
      * @return the value
      */
@@ -1193,12 +1193,12 @@ public final class ReportDefinition
         return scheduledReportName;
     }
 
-    /** The OCID of the compartment in which the scheduled resource should be created. */
+    /** The OCID of the compartment in which the scheduled resource will be created. */
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportCompartmentId")
     private final String scheduledReportCompartmentId;
 
     /**
-     * The OCID of the compartment in which the scheduled resource should be created.
+     * The OCID of the compartment in which the scheduled resource will be created.
      *
      * @return the value
      */

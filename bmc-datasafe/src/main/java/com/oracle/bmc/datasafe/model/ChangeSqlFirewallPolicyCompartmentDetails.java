@@ -31,12 +31,12 @@ public final class ChangeSqlFirewallPolicyCompartmentDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the compartment where you want to move the SQL firewall policy. */
+        /** The OCID of the compartment where you want to move the SQL Firewall policy. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment where you want to move the SQL firewall policy.
+         * The OCID of the compartment where you want to move the SQL Firewall policy.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -77,12 +77,12 @@ public final class ChangeSqlFirewallPolicyCompartmentDetails
         return new Builder().copy(this);
     }
 
-    /** The OCID of the compartment where you want to move the SQL firewall policy. */
+    /** The OCID of the compartment where you want to move the SQL Firewall policy. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment where you want to move the SQL firewall policy.
+     * The OCID of the compartment where you want to move the SQL Firewall policy.
      *
      * @return the value
      */

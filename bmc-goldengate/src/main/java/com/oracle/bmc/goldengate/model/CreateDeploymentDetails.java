@@ -32,6 +32,7 @@ public final class CreateDeploymentDetails
         "definedTags",
         "deploymentBackupId",
         "subnetId",
+        "loadBalancerSubnetId",
         "fqdn",
         "nsgIds",
         "isPublic",
@@ -51,6 +52,7 @@ public final class CreateDeploymentDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String deploymentBackupId,
             String subnetId,
+            String loadBalancerSubnetId,
             String fqdn,
             java.util.List<String> nsgIds,
             Boolean isPublic,
@@ -69,6 +71,7 @@ public final class CreateDeploymentDetails
         this.definedTags = definedTags;
         this.deploymentBackupId = deploymentBackupId;
         this.subnetId = subnetId;
+        this.loadBalancerSubnetId = loadBalancerSubnetId;
         this.fqdn = fqdn;
         this.nsgIds = nsgIds;
         this.isPublic = isPublic;
@@ -212,14 +215,14 @@ public final class CreateDeploymentDetails
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * subnet being referenced.
+         * subnet of the deployment's private endpoint.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * subnet being referenced.
+         * subnet of the deployment's private endpoint.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -227,6 +230,31 @@ public final class CreateDeploymentDetails
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * public subnet in the customer tenancy. Can be provided only for public deployments. If
+         * provided, the loadbalancer will be created in this subnet instead of the service tenancy.
+         * For backward compatiblity this is an optional property for now, but it will become
+         * mandatory (for public deployments only) after October 1, 2024.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
+        private String loadBalancerSubnetId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * public subnet in the customer tenancy. Can be provided only for public deployments. If
+         * provided, the loadbalancer will be created in this subnet instead of the service tenancy.
+         * For backward compatiblity this is an optional property for now, but it will become
+         * mandatory (for public deployments only) after October 1, 2024.
+         *
+         * @param loadBalancerSubnetId the value to set
+         * @return this builder
+         */
+        public Builder loadBalancerSubnetId(String loadBalancerSubnetId) {
+            this.loadBalancerSubnetId = loadBalancerSubnetId;
+            this.__explicitlySet__.add("loadBalancerSubnetId");
             return this;
         }
         /** A three-label Fully Qualified Domain Name (FQDN) for a resource. */
@@ -372,6 +400,7 @@ public final class CreateDeploymentDetails
                             this.definedTags,
                             this.deploymentBackupId,
                             this.subnetId,
+                            this.loadBalancerSubnetId,
                             this.fqdn,
                             this.nsgIds,
                             this.isPublic,
@@ -412,6 +441,9 @@ public final class CreateDeploymentDetails
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("loadBalancerSubnetId")) {
+                this.loadBalancerSubnetId(model.getLoadBalancerSubnetId());
             }
             if (model.wasPropertyExplicitlySet("fqdn")) {
                 this.fqdn(model.getFqdn());
@@ -568,19 +600,42 @@ public final class CreateDeploymentDetails
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * subnet being referenced.
+     * subnet of the deployment's private endpoint.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * subnet being referenced.
+     * subnet of the deployment's private endpoint.
      *
      * @return the value
      */
     public String getSubnetId() {
         return subnetId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+     * public subnet in the customer tenancy. Can be provided only for public deployments. If
+     * provided, the loadbalancer will be created in this subnet instead of the service tenancy. For
+     * backward compatiblity this is an optional property for now, but it will become mandatory (for
+     * public deployments only) after October 1, 2024.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
+    private final String loadBalancerSubnetId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+     * public subnet in the customer tenancy. Can be provided only for public deployments. If
+     * provided, the loadbalancer will be created in this subnet instead of the service tenancy. For
+     * backward compatiblity this is an optional property for now, but it will become mandatory (for
+     * public deployments only) after October 1, 2024.
+     *
+     * @return the value
+     */
+    public String getLoadBalancerSubnetId() {
+        return loadBalancerSubnetId;
     }
 
     /** A three-label Fully Qualified Domain Name (FQDN) for a resource. */
@@ -715,6 +770,7 @@ public final class CreateDeploymentDetails
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", deploymentBackupId=").append(String.valueOf(this.deploymentBackupId));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", loadBalancerSubnetId=").append(String.valueOf(this.loadBalancerSubnetId));
         sb.append(", fqdn=").append(String.valueOf(this.fqdn));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", isPublic=").append(String.valueOf(this.isPublic));
@@ -747,6 +803,7 @@ public final class CreateDeploymentDetails
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.deploymentBackupId, other.deploymentBackupId)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.loadBalancerSubnetId, other.loadBalancerSubnetId)
                 && java.util.Objects.equals(this.fqdn, other.fqdn)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.isPublic, other.isPublic)
@@ -778,6 +835,11 @@ public final class CreateDeploymentDetails
                                 ? 43
                                 : this.deploymentBackupId.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.loadBalancerSubnetId == null
+                                ? 43
+                                : this.loadBalancerSubnetId.hashCode());
         result = (result * PRIME) + (this.fqdn == null ? 43 : this.fqdn.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.isPublic == null ? 43 : this.isPublic.hashCode());

@@ -171,6 +171,15 @@ public final class GoogleCloudStorageConnectionSummary extends ConnectionSummary
             this.__explicitlySet__.add("subnetId");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
         /** The Google Cloud Storage technology type. */
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private GoogleCloudStorageConnection.TechnologyType technologyType;
@@ -209,6 +218,7 @@ public final class GoogleCloudStorageConnectionSummary extends ConnectionSummary
                             this.ingressIps,
                             this.nsgIds,
                             this.subnetId,
+                            this.routingMethod,
                             this.technologyType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -266,6 +276,9 @@ public final class GoogleCloudStorageConnectionSummary extends ConnectionSummary
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -300,6 +313,7 @@ public final class GoogleCloudStorageConnectionSummary extends ConnectionSummary
             java.util.List<IngressIpDetails> ingressIps,
             java.util.List<String> nsgIds,
             String subnetId,
+            RoutingMethod routingMethod,
             GoogleCloudStorageConnection.TechnologyType technologyType) {
         super(
                 id,
@@ -317,7 +331,8 @@ public final class GoogleCloudStorageConnectionSummary extends ConnectionSummary
                 keyId,
                 ingressIps,
                 nsgIds,
-                subnetId);
+                subnetId,
+                routingMethod);
         this.technologyType = technologyType;
     }
 

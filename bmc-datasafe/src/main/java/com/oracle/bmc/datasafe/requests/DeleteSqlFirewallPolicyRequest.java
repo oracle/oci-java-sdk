@@ -15,10 +15,10 @@ import com.oracle.bmc.datasafe.model.*;
 public class DeleteSqlFirewallPolicyRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the SQL firewall policy resource. */
+    /** The OCID of the SQL Firewall policy resource. */
     private String sqlFirewallPolicyId;
 
-    /** The OCID of the SQL firewall policy resource. */
+    /** The OCID of the SQL Firewall policy resource. */
     public String getSqlFirewallPolicyId() {
         return sqlFirewallPolicyId;
     }
@@ -53,11 +53,11 @@ public class DeleteSqlFirewallPolicyRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the SQL firewall policy resource. */
+        /** The OCID of the SQL Firewall policy resource. */
         private String sqlFirewallPolicyId = null;
 
         /**
-         * The OCID of the SQL firewall policy resource.
+         * The OCID of the SQL Firewall policy resource.
          *
          * @param sqlFirewallPolicyId the value to set
          * @return this builder instance

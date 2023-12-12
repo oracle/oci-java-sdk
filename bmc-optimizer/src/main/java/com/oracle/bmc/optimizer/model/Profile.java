@@ -29,6 +29,7 @@ public final class Profile extends com.oracle.bmc.http.client.internal.Explicitl
         "aggregationIntervalInDays",
         "definedTags",
         "freeformTags",
+        "systemTags",
         "levelsConfiguration",
         "targetCompartments",
         "targetTags",
@@ -44,6 +45,7 @@ public final class Profile extends com.oracle.bmc.http.client.internal.Explicitl
             Integer aggregationIntervalInDays,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             LevelsConfiguration levelsConfiguration,
             TargetCompartments targetCompartments,
             TargetTags targetTags,
@@ -58,6 +60,7 @@ public final class Profile extends com.oracle.bmc.http.client.internal.Explicitl
         this.aggregationIntervalInDays = aggregationIntervalInDays;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
+        this.systemTags = systemTags;
         this.levelsConfiguration = levelsConfiguration;
         this.targetCompartments = targetCompartments;
         this.targetTags = targetTags;
@@ -200,6 +203,25 @@ public final class Profile extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * { "orcl-cloud": { "free-tier-retained": "true" } }}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * { "orcl-cloud": { "free-tier-retained": "true" } }}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("levelsConfiguration")
         private LevelsConfiguration levelsConfiguration;
@@ -286,6 +308,7 @@ public final class Profile extends com.oracle.bmc.http.client.internal.Explicitl
                             this.aggregationIntervalInDays,
                             this.definedTags,
                             this.freeformTags,
+                            this.systemTags,
                             this.levelsConfiguration,
                             this.targetCompartments,
                             this.targetTags,
@@ -320,6 +343,9 @@ public final class Profile extends com.oracle.bmc.http.client.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("levelsConfiguration")) {
                 this.levelsConfiguration(model.getLevelsConfiguration());
@@ -469,6 +495,23 @@ public final class Profile extends com.oracle.bmc.http.client.internal.Explicitl
         return freeformTags;
     }
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code {
+     * "orcl-cloud": { "free-tier-retained": "true" } }}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code {
+     * "orcl-cloud": { "free-tier-retained": "true" } }}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("levelsConfiguration")
     private final LevelsConfiguration levelsConfiguration;
 
@@ -552,6 +595,7 @@ public final class Profile extends com.oracle.bmc.http.client.internal.Explicitl
                 .append(String.valueOf(this.aggregationIntervalInDays));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", levelsConfiguration=").append(String.valueOf(this.levelsConfiguration));
         sb.append(", targetCompartments=").append(String.valueOf(this.targetCompartments));
         sb.append(", targetTags=").append(String.valueOf(this.targetTags));
@@ -580,6 +624,7 @@ public final class Profile extends com.oracle.bmc.http.client.internal.Explicitl
                         this.aggregationIntervalInDays, other.aggregationIntervalInDays)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.levelsConfiguration, other.levelsConfiguration)
                 && java.util.Objects.equals(this.targetCompartments, other.targetCompartments)
                 && java.util.Objects.equals(this.targetTags, other.targetTags)
@@ -606,6 +651,7 @@ public final class Profile extends com.oracle.bmc.http.client.internal.Explicitl
                                 : this.aggregationIntervalInDays.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result =
                 (result * PRIME)
                         + (this.levelsConfiguration == null

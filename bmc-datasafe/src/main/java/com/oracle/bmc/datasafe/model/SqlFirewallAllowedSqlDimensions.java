@@ -5,7 +5,7 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The dimensions available for SQL firewall allow SQL analytics. <br>
+ * The dimensions available for SQL Firewall allow SQL analytics. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -43,12 +43,12 @@ public final class SqlFirewallAllowedSqlDimensions
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the SQL firewall policy corresponding to the SQL firewall allowed SQL. */
+        /** The OCID of the SQL Firewall policy corresponding to the SQL Firewall allowed SQL. */
         @com.fasterxml.jackson.annotation.JsonProperty("sqlFirewallPolicyId")
         private String sqlFirewallPolicyId;
 
         /**
-         * The OCID of the SQL firewall policy corresponding to the SQL firewall allowed SQL.
+         * The OCID of the SQL Firewall policy corresponding to the SQL Firewall allowed SQL.
          *
          * @param sqlFirewallPolicyId the value to set
          * @return this builder
@@ -59,7 +59,7 @@ public final class SqlFirewallAllowedSqlDimensions
             return this;
         }
         /**
-         * Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User
+         * Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User
          * issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement
          * issued inside PL/SQL units.
          */
@@ -67,7 +67,7 @@ public final class SqlFirewallAllowedSqlDimensions
         private SqlLevel sqlLevel;
 
         /**
-         * Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User
+         * Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User
          * issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement
          * issued inside PL/SQL units.
          *
@@ -94,12 +94,12 @@ public final class SqlFirewallAllowedSqlDimensions
             this.__explicitlySet__.add("dbUserName");
             return this;
         }
-        /** The current state of the SQL firewall allowed SQL. */
+        /** The current state of the SQL Firewall allowed SQL. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private SqlFirewallAllowedSqlLifecycleState lifecycleState;
 
         /**
-         * The current state of the SQL firewall allowed SQL.
+         * The current state of the SQL Firewall allowed SQL.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -153,12 +153,12 @@ public final class SqlFirewallAllowedSqlDimensions
         return new Builder().copy(this);
     }
 
-    /** The OCID of the SQL firewall policy corresponding to the SQL firewall allowed SQL. */
+    /** The OCID of the SQL Firewall policy corresponding to the SQL Firewall allowed SQL. */
     @com.fasterxml.jackson.annotation.JsonProperty("sqlFirewallPolicyId")
     private final String sqlFirewallPolicyId;
 
     /**
-     * The OCID of the SQL firewall policy corresponding to the SQL firewall allowed SQL.
+     * The OCID of the SQL Firewall policy corresponding to the SQL Firewall allowed SQL.
      *
      * @return the value
      */
@@ -167,7 +167,7 @@ public final class SqlFirewallAllowedSqlDimensions
     }
 
     /**
-     * Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User
+     * Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User
      * issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement
      * issued inside PL/SQL units.
      */
@@ -217,7 +217,7 @@ public final class SqlFirewallAllowedSqlDimensions
         }
     };
     /**
-     * Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User
+     * Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User
      * issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement
      * issued inside PL/SQL units.
      */
@@ -225,7 +225,7 @@ public final class SqlFirewallAllowedSqlDimensions
     private final SqlLevel sqlLevel;
 
     /**
-     * Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User
+     * Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User
      * issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement
      * issued inside PL/SQL units.
      *
@@ -248,12 +248,12 @@ public final class SqlFirewallAllowedSqlDimensions
         return dbUserName;
     }
 
-    /** The current state of the SQL firewall allowed SQL. */
+    /** The current state of the SQL Firewall allowed SQL. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final SqlFirewallAllowedSqlLifecycleState lifecycleState;
 
     /**
-     * The current state of the SQL firewall allowed SQL.
+     * The current state of the SQL Firewall allowed SQL.
      *
      * @return the value
      */

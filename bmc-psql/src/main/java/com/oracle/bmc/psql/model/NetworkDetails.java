@@ -5,7 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * DbSystem network details. <br>
+ * Network details for the database system. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -33,12 +33,16 @@ public final class NetworkDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Customer Subnet identifier */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * customer subnet associated with the database system.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * Customer Subnet identifier
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * customer subnet associated with the database system.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -49,15 +53,15 @@ public final class NetworkDetails
             return this;
         }
         /**
-         * Private IP in customer subnet. The value is optional. If the IP is not provided the IP
-         * will be chosen among the available IP addresses from the specified subnet.
+         * Private IP in customer subnet. The value is optional. If the IP is not provided, the IP
+         * will be chosen from the available IP addresses from the specified subnet.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("primaryDbEndpointPrivateIp")
         private String primaryDbEndpointPrivateIp;
 
         /**
-         * Private IP in customer subnet. The value is optional. If the IP is not provided the IP
-         * will be chosen among the available IP addresses from the specified subnet.
+         * Private IP in customer subnet. The value is optional. If the IP is not provided, the IP
+         * will be chosen from the available IP addresses from the specified subnet.
          *
          * @param primaryDbEndpointPrivateIp the value to set
          * @return this builder
@@ -67,12 +71,18 @@ public final class NetworkDetails
             this.__explicitlySet__.add("primaryDbEndpointPrivateIp");
             return this;
         }
-        /** List of customer NetworkSecurityGroup identifiers */
+        /**
+         * List of customer Network Security Group
+         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * associated with the database system.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
-         * List of customer NetworkSecurityGroup identifiers
+         * List of customer Network Security Group
+         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * associated with the database system.
          *
          * @param nsgIds the value to set
          * @return this builder
@@ -119,12 +129,16 @@ public final class NetworkDetails
         return new Builder().copy(this);
     }
 
-    /** Customer Subnet identifier */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * customer subnet associated with the database system.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * Customer Subnet identifier
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * customer subnet associated with the database system.
      *
      * @return the value
      */
@@ -133,15 +147,15 @@ public final class NetworkDetails
     }
 
     /**
-     * Private IP in customer subnet. The value is optional. If the IP is not provided the IP will
-     * be chosen among the available IP addresses from the specified subnet.
+     * Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will
+     * be chosen from the available IP addresses from the specified subnet.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("primaryDbEndpointPrivateIp")
     private final String primaryDbEndpointPrivateIp;
 
     /**
-     * Private IP in customer subnet. The value is optional. If the IP is not provided the IP will
-     * be chosen among the available IP addresses from the specified subnet.
+     * Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will
+     * be chosen from the available IP addresses from the specified subnet.
      *
      * @return the value
      */
@@ -149,12 +163,18 @@ public final class NetworkDetails
         return primaryDbEndpointPrivateIp;
     }
 
-    /** List of customer NetworkSecurityGroup identifiers */
+    /**
+     * List of customer Network Security Group
+     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated
+     * with the database system.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
-     * List of customer NetworkSecurityGroup identifiers
+     * List of customer Network Security Group
+     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated
+     * with the database system.
      *
      * @return the value
      */

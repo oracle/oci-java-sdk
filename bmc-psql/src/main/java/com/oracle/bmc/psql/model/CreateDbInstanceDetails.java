@@ -5,7 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * The information about new DbInstance. <br>
+ * Information about the new database instance node. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -33,12 +33,12 @@ public final class CreateDbInstanceDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Display name of the DbInstance. */
+        /** Display name of the database instance node. Avoid entering confidential information. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Display name of the DbInstance.
+         * Display name of the database instance node. Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -48,12 +48,12 @@ public final class CreateDbInstanceDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Description of the DbInstance. This field should be input by the user. */
+        /** A user-provided description of the database instance node. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Description of the DbInstance. This field should be input by the user.
+         * A user-provided description of the database instance node.
          *
          * @param description the value to set
          * @return this builder
@@ -64,17 +64,17 @@ public final class CreateDbInstanceDetails
             return this;
         }
         /**
-         * Private IP in customer subnet that will be assigned to the DbInstance. The value is
-         * optional. If the IP is not provided the IP will be chosen among the available IP
-         * addresses from the specified subnet.
+         * Private IP in customer subnet that will be assigned to the database instance node. This
+         * value is optional. If the IP is not provided, the IP will be chosen from the available IP
+         * addresses in the specified subnet.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
         private String privateIp;
 
         /**
-         * Private IP in customer subnet that will be assigned to the DbInstance. The value is
-         * optional. If the IP is not provided the IP will be chosen among the available IP
-         * addresses from the specified subnet.
+         * Private IP in customer subnet that will be assigned to the database instance node. This
+         * value is optional. If the IP is not provided, the IP will be chosen from the available IP
+         * addresses in the specified subnet.
          *
          * @param privateIp the value to set
          * @return this builder
@@ -121,12 +121,12 @@ public final class CreateDbInstanceDetails
         return new Builder().copy(this);
     }
 
-    /** Display name of the DbInstance. */
+    /** Display name of the database instance node. Avoid entering confidential information. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Display name of the DbInstance.
+     * Display name of the database instance node. Avoid entering confidential information.
      *
      * @return the value
      */
@@ -134,12 +134,12 @@ public final class CreateDbInstanceDetails
         return displayName;
     }
 
-    /** Description of the DbInstance. This field should be input by the user. */
+    /** A user-provided description of the database instance node. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Description of the DbInstance. This field should be input by the user.
+     * A user-provided description of the database instance node.
      *
      * @return the value
      */
@@ -148,17 +148,17 @@ public final class CreateDbInstanceDetails
     }
 
     /**
-     * Private IP in customer subnet that will be assigned to the DbInstance. The value is optional.
-     * If the IP is not provided the IP will be chosen among the available IP addresses from the
-     * specified subnet.
+     * Private IP in customer subnet that will be assigned to the database instance node. This value
+     * is optional. If the IP is not provided, the IP will be chosen from the available IP addresses
+     * in the specified subnet.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
     private final String privateIp;
 
     /**
-     * Private IP in customer subnet that will be assigned to the DbInstance. The value is optional.
-     * If the IP is not provided the IP will be chosen among the available IP addresses from the
-     * specified subnet.
+     * Private IP in customer subnet that will be assigned to the database instance node. This value
+     * is optional. If the IP is not provided, the IP will be chosen from the available IP addresses
+     * in the specified subnet.
      *
      * @return the value
      */

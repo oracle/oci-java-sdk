@@ -90,6 +90,24 @@ public final class UpdateElasticsearchConnectionDetails extends UpdateConnection
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
         /**
          * Comma separated list of Elasticsearch server addresses, specified as host:port entries,
          * where :port is optional. If port is not specified, it defaults to 9200. Used for
@@ -219,6 +237,8 @@ public final class UpdateElasticsearchConnectionDetails extends UpdateConnection
                             this.vaultId,
                             this.keyId,
                             this.nsgIds,
+                            this.subnetId,
+                            this.routingMethod,
                             this.servers,
                             this.securityProtocol,
                             this.authenticationType,
@@ -253,6 +273,12 @@ public final class UpdateElasticsearchConnectionDetails extends UpdateConnection
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
             }
             if (model.wasPropertyExplicitlySet("servers")) {
                 this.servers(model.getServers());
@@ -294,13 +320,24 @@ public final class UpdateElasticsearchConnectionDetails extends UpdateConnection
             String vaultId,
             String keyId,
             java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
             String servers,
             ElasticsearchConnection.SecurityProtocol securityProtocol,
             ElasticsearchConnection.AuthenticationType authenticationType,
             String username,
             String password,
             String fingerprint) {
-        super(displayName, description, freeformTags, definedTags, vaultId, keyId, nsgIds);
+        super(
+                displayName,
+                description,
+                freeformTags,
+                definedTags,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod);
         this.servers = servers;
         this.securityProtocol = securityProtocol;
         this.authenticationType = authenticationType;

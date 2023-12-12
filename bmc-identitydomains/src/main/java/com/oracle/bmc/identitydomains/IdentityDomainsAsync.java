@@ -280,6 +280,24 @@ public interface IdentityDomainsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateGroupRequest, CreateGroupResponse> handler);
 
     /**
+     * Register a new Identity Propagation Trust configuration.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateIdentityPropagationTrustResponse>
+            createIdentityPropagationTrust(
+                    CreateIdentityPropagationTrustRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateIdentityPropagationTrustRequest,
+                                    CreateIdentityPropagationTrustResponse>
+                            handler);
+
+    /**
      * Create an Identity Provider
      *
      * @param request The request object containing the details to send
@@ -914,6 +932,24 @@ public interface IdentityDomainsAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteGroupResponse> deleteGroup(
             DeleteGroupRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteGroupRequest, DeleteGroupResponse> handler);
+
+    /**
+     * Delete an existing Identity Propagation Trust configuration.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteIdentityPropagationTrustResponse>
+            deleteIdentityPropagationTrust(
+                    DeleteIdentityPropagationTrustRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteIdentityPropagationTrustRequest,
+                                    DeleteIdentityPropagationTrustResponse>
+                            handler);
 
     /**
      * Delete an Identity Provider
@@ -1564,6 +1600,22 @@ public interface IdentityDomainsAsync extends AutoCloseable {
     java.util.concurrent.Future<GetGroupResponse> getGroup(
             GetGroupRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetGroupRequest, GetGroupResponse> handler);
+
+    /**
+     * Get an existing Identity Propagation Trust configuration.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetIdentityPropagationTrustResponse> getIdentityPropagationTrust(
+            GetIdentityPropagationTrustRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetIdentityPropagationTrustRequest, GetIdentityPropagationTrustResponse>
+                    handler);
 
     /**
      * Get an Identity Provider
@@ -2373,6 +2425,24 @@ public interface IdentityDomainsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListGroupsRequest, ListGroupsResponse> handler);
 
     /**
+     * List the Identity Propagation Trust configurations.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListIdentityPropagationTrustsResponse>
+            listIdentityPropagationTrusts(
+                    ListIdentityPropagationTrustsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListIdentityPropagationTrustsRequest,
+                                    ListIdentityPropagationTrustsResponse>
+                            handler);
+
+    /**
      * Search Identity Providers
      *
      * @param request The request object containing the details to send
@@ -3168,6 +3238,24 @@ public interface IdentityDomainsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<PatchGroupRequest, PatchGroupResponse> handler);
 
     /**
+     * Update an existing Identity Propagation Trust configuration.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchIdentityPropagationTrustResponse>
+            patchIdentityPropagationTrust(
+                    PatchIdentityPropagationTrustRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    PatchIdentityPropagationTrustRequest,
+                                    PatchIdentityPropagationTrustResponse>
+                            handler);
+
+    /**
      * Update an Identity Provider
      *
      * @param request The request object containing the details to send
@@ -3726,6 +3814,22 @@ public interface IdentityDomainsAsync extends AutoCloseable {
     java.util.concurrent.Future<PutGroupResponse> putGroup(
             PutGroupRequest request,
             com.oracle.bmc.responses.AsyncHandler<PutGroupRequest, PutGroupResponse> handler);
+
+    /**
+     * Replace an existing Identity Propagation Trust configuration.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PutIdentityPropagationTrustResponse> putIdentityPropagationTrust(
+            PutIdentityPropagationTrustRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PutIdentityPropagationTrustRequest, PutIdentityPropagationTrustResponse>
+                    handler);
 
     /**
      * Replace an Identity Provider

@@ -108,6 +108,15 @@ public final class CreateAzureSynapseConnectionDetails extends CreateConnectionD
             this.__explicitlySet__.add("subnetId");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
         /** The Azure Synapse Analytics technology type. */
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private AzureSynapseConnection.TechnologyType technologyType;
@@ -200,6 +209,7 @@ public final class CreateAzureSynapseConnectionDetails extends CreateConnectionD
                             this.keyId,
                             this.nsgIds,
                             this.subnetId,
+                            this.routingMethod,
                             this.technologyType,
                             this.connectionString,
                             this.username,
@@ -239,6 +249,9 @@ public final class CreateAzureSynapseConnectionDetails extends CreateConnectionD
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -275,6 +288,7 @@ public final class CreateAzureSynapseConnectionDetails extends CreateConnectionD
             String keyId,
             java.util.List<String> nsgIds,
             String subnetId,
+            RoutingMethod routingMethod,
             AzureSynapseConnection.TechnologyType technologyType,
             String connectionString,
             String username,
@@ -288,7 +302,8 @@ public final class CreateAzureSynapseConnectionDetails extends CreateConnectionD
                 vaultId,
                 keyId,
                 nsgIds,
-                subnetId);
+                subnetId,
+                routingMethod);
         this.technologyType = technologyType;
         this.connectionString = connectionString;
         this.username = username;

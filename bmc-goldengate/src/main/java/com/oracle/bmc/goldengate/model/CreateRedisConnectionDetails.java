@@ -108,6 +108,15 @@ public final class CreateRedisConnectionDetails extends CreateConnectionDetails 
             this.__explicitlySet__.add("subnetId");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
         /** The Redis technology type. */
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private RedisConnection.TechnologyType technologyType;
@@ -294,6 +303,7 @@ public final class CreateRedisConnectionDetails extends CreateConnectionDetails 
                             this.keyId,
                             this.nsgIds,
                             this.subnetId,
+                            this.routingMethod,
                             this.technologyType,
                             this.servers,
                             this.securityProtocol,
@@ -338,6 +348,9 @@ public final class CreateRedisConnectionDetails extends CreateConnectionDetails 
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
             }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
@@ -393,6 +406,7 @@ public final class CreateRedisConnectionDetails extends CreateConnectionDetails 
             String keyId,
             java.util.List<String> nsgIds,
             String subnetId,
+            RoutingMethod routingMethod,
             RedisConnection.TechnologyType technologyType,
             String servers,
             RedisConnection.SecurityProtocol securityProtocol,
@@ -412,7 +426,8 @@ public final class CreateRedisConnectionDetails extends CreateConnectionDetails 
                 vaultId,
                 keyId,
                 nsgIds,
-                subnetId);
+                subnetId,
+                routingMethod);
         this.technologyType = technologyType;
         this.servers = servers;
         this.securityProtocol = securityProtocol;

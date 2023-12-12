@@ -5,7 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Storage details of the DbSystem. <br>
+ * Storage details of the database system. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,13 +32,15 @@ public final class UpdateStorageDetailsParams
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * DbSystem Performance Unit. Only valid for {@code OCI_OPTIMIZED_STORAGE} dbSystem type.
+         * Guaranteed input/output storage requests per second (IOPS) available to the database
+         * system. Only valid for {@code OCI_OPTIMIZED_STORAGE} database system type.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("iops")
         private Long iops;
 
         /**
-         * DbSystem Performance Unit. Only valid for {@code OCI_OPTIMIZED_STORAGE} dbSystem type.
+         * Guaranteed input/output storage requests per second (IOPS) available to the database
+         * system. Only valid for {@code OCI_OPTIMIZED_STORAGE} database system type.
          *
          * @param iops the value to set
          * @return this builder
@@ -78,12 +80,16 @@ public final class UpdateStorageDetailsParams
         return new Builder().copy(this);
     }
 
-    /** DbSystem Performance Unit. Only valid for {@code OCI_OPTIMIZED_STORAGE} dbSystem type. */
+    /**
+     * Guaranteed input/output storage requests per second (IOPS) available to the database system.
+     * Only valid for {@code OCI_OPTIMIZED_STORAGE} database system type.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("iops")
     private final Long iops;
 
     /**
-     * DbSystem Performance Unit. Only valid for {@code OCI_OPTIMIZED_STORAGE} dbSystem type.
+     * Guaranteed input/output storage requests per second (IOPS) available to the database system.
+     * Only valid for {@code OCI_OPTIMIZED_STORAGE} database system type.
      *
      * @return the value
      */

@@ -5,7 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * The information to create a new Configuration. <br>
+ * The information to create a new configuration. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -64,12 +64,16 @@ public final class CreateConfigurationDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** configuration display name */
+        /**
+         * A user-friendly display name for the configuration. Avoid entering confidential
+         * information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * configuration display name
+         * A user-friendly display name for the configuration. Avoid entering confidential
+         * information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -79,12 +83,16 @@ public final class CreateConfigurationDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Compartment identifier */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the configuration.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment identifier
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the configuration.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -94,12 +102,12 @@ public final class CreateConfigurationDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Details about the Configuration Set. */
+        /** Details about the configuration set. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Details about the Configuration Set.
+         * Details about the configuration set.
          *
          * @param description the value to set
          * @return this builder
@@ -109,12 +117,12 @@ public final class CreateConfigurationDetails
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Compute Shape Name like VM.Standard3.Flex. */
+        /** The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex} */
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
-         * Compute Shape Name like VM.Standard3.Flex.
+         * The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex}
          *
          * @param shape the value to set
          * @return this builder
@@ -124,12 +132,12 @@ public final class CreateConfigurationDetails
             this.__explicitlySet__.add("shape");
             return this;
         }
-        /** Version of the Postgresql DB */
+        /** Version of the PostgreSQL database. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
         /**
-         * Version of the Postgresql DB
+         * Version of the PostgreSQL database.
          *
          * @param dbVersion the value to set
          * @return this builder
@@ -139,12 +147,12 @@ public final class CreateConfigurationDetails
             this.__explicitlySet__.add("dbVersion");
             return this;
         }
-        /** CPU cpuCoreCount. Min value is 1. Max value depends on the shape. */
+        /** CPU core count. */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceOcpuCount")
         private Integer instanceOcpuCount;
 
         /**
-         * CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+         * CPU core count.
          *
          * @param instanceOcpuCount the value to set
          * @return this builder
@@ -154,16 +162,12 @@ public final class CreateConfigurationDetails
             this.__explicitlySet__.add("instanceOcpuCount");
             return this;
         }
-        /**
-         * Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value
-         * depends on the shape.
-         */
+        /** Memory size in gigabytes with 1GB increment. */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceMemorySizeInGBs")
         private Integer instanceMemorySizeInGBs;
 
         /**
-         * Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value
-         * depends on the shape.
+         * Memory size in gigabytes with 1GB increment.
          *
          * @param instanceMemorySizeInGBs the value to set
          * @return this builder
@@ -313,12 +317,14 @@ public final class CreateConfigurationDetails
         return new Builder().copy(this);
     }
 
-    /** configuration display name */
+    /**
+     * A user-friendly display name for the configuration. Avoid entering confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * configuration display name
+     * A user-friendly display name for the configuration. Avoid entering confidential information.
      *
      * @return the value
      */
@@ -326,12 +332,16 @@ public final class CreateConfigurationDetails
         return displayName;
     }
 
-    /** Compartment identifier */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the configuration.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment identifier
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the configuration.
      *
      * @return the value
      */
@@ -339,12 +349,12 @@ public final class CreateConfigurationDetails
         return compartmentId;
     }
 
-    /** Details about the Configuration Set. */
+    /** Details about the configuration set. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Details about the Configuration Set.
+     * Details about the configuration set.
      *
      * @return the value
      */
@@ -352,12 +362,12 @@ public final class CreateConfigurationDetails
         return description;
     }
 
-    /** Compute Shape Name like VM.Standard3.Flex. */
+    /** The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex} */
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
-     * Compute Shape Name like VM.Standard3.Flex.
+     * The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex}
      *
      * @return the value
      */
@@ -365,12 +375,12 @@ public final class CreateConfigurationDetails
         return shape;
     }
 
-    /** Version of the Postgresql DB */
+    /** Version of the PostgreSQL database. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
 
     /**
-     * Version of the Postgresql DB
+     * Version of the PostgreSQL database.
      *
      * @return the value
      */
@@ -378,12 +388,12 @@ public final class CreateConfigurationDetails
         return dbVersion;
     }
 
-    /** CPU cpuCoreCount. Min value is 1. Max value depends on the shape. */
+    /** CPU core count. */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceOcpuCount")
     private final Integer instanceOcpuCount;
 
     /**
-     * CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+     * CPU core count.
      *
      * @return the value
      */
@@ -391,16 +401,12 @@ public final class CreateConfigurationDetails
         return instanceOcpuCount;
     }
 
-    /**
-     * Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends
-     * on the shape.
-     */
+    /** Memory size in gigabytes with 1GB increment. */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceMemorySizeInGBs")
     private final Integer instanceMemorySizeInGBs;
 
     /**
-     * Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends
-     * on the shape.
+     * Memory size in gigabytes with 1GB increment.
      *
      * @return the value
      */

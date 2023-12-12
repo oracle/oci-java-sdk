@@ -30,6 +30,7 @@ public final class ProfileSummary
         "aggregationIntervalInDays",
         "definedTags",
         "freeformTags",
+        "systemTags",
         "lifecycleState",
         "levelsConfiguration",
         "targetCompartments",
@@ -45,6 +46,7 @@ public final class ProfileSummary
             Integer aggregationIntervalInDays,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             LifecycleState lifecycleState,
             LevelsConfiguration levelsConfiguration,
             TargetCompartments targetCompartments,
@@ -59,6 +61,7 @@ public final class ProfileSummary
         this.aggregationIntervalInDays = aggregationIntervalInDays;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
+        this.systemTags = systemTags;
         this.lifecycleState = lifecycleState;
         this.levelsConfiguration = levelsConfiguration;
         this.targetCompartments = targetCompartments;
@@ -201,6 +204,25 @@ public final class ProfileSummary
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * { "orcl-cloud": { "free-tier-retained": "true" } }}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * { "orcl-cloud": { "free-tier-retained": "true" } }}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
         /** The profile's current state. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
@@ -287,6 +309,7 @@ public final class ProfileSummary
                             this.aggregationIntervalInDays,
                             this.definedTags,
                             this.freeformTags,
+                            this.systemTags,
                             this.lifecycleState,
                             this.levelsConfiguration,
                             this.targetCompartments,
@@ -321,6 +344,9 @@ public final class ProfileSummary
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -470,6 +496,23 @@ public final class ProfileSummary
         return freeformTags;
     }
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code {
+     * "orcl-cloud": { "free-tier-retained": "true" } }}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code {
+     * "orcl-cloud": { "free-tier-retained": "true" } }}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     /** The profile's current state. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
@@ -553,6 +596,7 @@ public final class ProfileSummary
                 .append(String.valueOf(this.aggregationIntervalInDays));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", levelsConfiguration=").append(String.valueOf(this.levelsConfiguration));
         sb.append(", targetCompartments=").append(String.valueOf(this.targetCompartments));
@@ -581,6 +625,7 @@ public final class ProfileSummary
                         this.aggregationIntervalInDays, other.aggregationIntervalInDays)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.levelsConfiguration, other.levelsConfiguration)
                 && java.util.Objects.equals(this.targetCompartments, other.targetCompartments)
@@ -607,6 +652,7 @@ public final class ProfileSummary
                                 : this.aggregationIntervalInDays.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

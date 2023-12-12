@@ -32,12 +32,12 @@ public final class WorkRequestErrorCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of workRequestError objects. */
+        /** List of work request errors. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<WorkRequestError> items;
 
         /**
-         * List of workRequestError objects.
+         * List of work request errors.
          *
          * @param items the value to set
          * @return this builder
@@ -77,12 +77,12 @@ public final class WorkRequestErrorCollection
         return new Builder().copy(this);
     }
 
-    /** List of workRequestError objects. */
+    /** List of work request errors. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<WorkRequestError> items;
 
     /**
-     * List of workRequestError objects.
+     * List of work request errors.
      *
      * @return the value
      */

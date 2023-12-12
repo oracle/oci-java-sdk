@@ -32,12 +32,12 @@ public final class ConfigurationCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of Configurations. */
+        /** List of configurations. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ConfigurationSummary> items;
 
         /**
-         * List of Configurations.
+         * List of configurations.
          *
          * @param items the value to set
          * @return this builder
@@ -77,12 +77,12 @@ public final class ConfigurationCollection
         return new Builder().copy(this);
     }
 
-    /** List of Configurations. */
+    /** List of configurations. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ConfigurationSummary> items;
 
     /**
-     * List of Configurations.
+     * List of configurations.
      *
      * @return the value
      */

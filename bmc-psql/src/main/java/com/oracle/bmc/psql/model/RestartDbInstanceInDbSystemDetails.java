@@ -5,7 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * DbInstance restart parameters. <br>
+ * Database instance node restart parameters. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,12 +32,12 @@ public final class RestartDbInstanceInDbSystemDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier of the DbInstance. */
+        /** A unique identifier for the database instance, or node. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbInstanceId")
         private String dbInstanceId;
 
         /**
-         * Unique identifier of the DbInstance.
+         * A unique identifier for the database instance, or node.
          *
          * @param dbInstanceId the value to set
          * @return this builder
@@ -47,12 +47,12 @@ public final class RestartDbInstanceInDbSystemDetails
             this.__explicitlySet__.add("dbInstanceId");
             return this;
         }
-        /** The DbInstance restart type to use. */
+        /** The restart type for the database instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("restartType")
         private RestartType restartType;
 
         /**
-         * The DbInstance restart type to use.
+         * The restart type for the database instance.
          *
          * @param restartType the value to set
          * @return this builder
@@ -96,12 +96,12 @@ public final class RestartDbInstanceInDbSystemDetails
         return new Builder().copy(this);
     }
 
-    /** Unique identifier of the DbInstance. */
+    /** A unique identifier for the database instance, or node. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbInstanceId")
     private final String dbInstanceId;
 
     /**
-     * Unique identifier of the DbInstance.
+     * A unique identifier for the database instance, or node.
      *
      * @return the value
      */
@@ -109,7 +109,7 @@ public final class RestartDbInstanceInDbSystemDetails
         return dbInstanceId;
     }
 
-    /** The DbInstance restart type to use. */
+    /** The restart type for the database instance. */
     public enum RestartType implements com.oracle.bmc.http.internal.BmcEnum {
         Normal("NORMAL"),
         NodeReboot("NODE_REBOOT"),
@@ -142,12 +142,12 @@ public final class RestartDbInstanceInDbSystemDetails
             throw new IllegalArgumentException("Invalid RestartType: " + key);
         }
     };
-    /** The DbInstance restart type to use. */
+    /** The restart type for the database instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("restartType")
     private final RestartType restartType;
 
     /**
-     * The DbInstance restart type to use.
+     * The restart type for the database instance.
      *
      * @return the value
      */

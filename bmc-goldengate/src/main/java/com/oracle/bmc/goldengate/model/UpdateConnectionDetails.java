@@ -104,7 +104,9 @@ public class UpdateConnectionDetails
         "definedTags",
         "vaultId",
         "keyId",
-        "nsgIds"
+        "nsgIds",
+        "subnetId",
+        "routingMethod"
     })
     protected UpdateConnectionDetails(
             String displayName,
@@ -113,7 +115,9 @@ public class UpdateConnectionDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String vaultId,
             String keyId,
-            java.util.List<String> nsgIds) {
+            java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod) {
         super();
         this.displayName = displayName;
         this.description = description;
@@ -122,6 +126,8 @@ public class UpdateConnectionDetails
         this.vaultId = vaultId;
         this.keyId = keyId;
         this.nsgIds = nsgIds;
+        this.subnetId = subnetId;
+        this.routingMethod = routingMethod;
     }
 
     /** An object's Display Name. */
@@ -243,6 +249,48 @@ public class UpdateConnectionDetails
         return nsgIds;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * target subnet of the dedicated connection.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+    private final String subnetId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * target subnet of the dedicated connection.
+     *
+     * @return the value
+     */
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    /**
+     * Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows
+     * through the Goldengate Service's network to public hosts. Cannot be used for private targets.
+     * SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private
+     * endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is
+     * created in the target VCN subnet for the connection. The subnetId is required when
+     * DEDICATED_ENDPOINT networking is selected.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+    private final RoutingMethod routingMethod;
+
+    /**
+     * Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows
+     * through the Goldengate Service's network to public hosts. Cannot be used for private targets.
+     * SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private
+     * endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is
+     * created in the target VCN subnet for the connection. The subnetId is required when
+     * DEDICATED_ENDPOINT networking is selected.
+     *
+     * @return the value
+     */
+    public RoutingMethod getRoutingMethod() {
+        return routingMethod;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -265,6 +313,8 @@ public class UpdateConnectionDetails
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", keyId=").append(String.valueOf(this.keyId));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", routingMethod=").append(String.valueOf(this.routingMethod));
         sb.append(")");
         return sb.toString();
     }
@@ -286,6 +336,8 @@ public class UpdateConnectionDetails
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(this.keyId, other.keyId)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.routingMethod, other.routingMethod)
                 && super.equals(other);
     }
 
@@ -300,6 +352,10 @@ public class UpdateConnectionDetails
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
         result = (result * PRIME) + (this.keyId == null ? 43 : this.keyId.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.routingMethod == null ? 43 : this.routingMethod.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

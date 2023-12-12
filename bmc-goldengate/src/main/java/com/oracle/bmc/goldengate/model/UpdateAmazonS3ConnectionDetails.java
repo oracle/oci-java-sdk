@@ -90,6 +90,24 @@ public final class UpdateAmazonS3ConnectionDetails extends UpdateConnectionDetai
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
         /** Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" */
         @com.fasterxml.jackson.annotation.JsonProperty("accessKeyId")
         private String accessKeyId;
@@ -134,6 +152,8 @@ public final class UpdateAmazonS3ConnectionDetails extends UpdateConnectionDetai
                             this.vaultId,
                             this.keyId,
                             this.nsgIds,
+                            this.subnetId,
+                            this.routingMethod,
                             this.accessKeyId,
                             this.secretAccessKey);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -165,6 +185,12 @@ public final class UpdateAmazonS3ConnectionDetails extends UpdateConnectionDetai
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
             }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
+            }
             if (model.wasPropertyExplicitlySet("accessKeyId")) {
                 this.accessKeyId(model.getAccessKeyId());
             }
@@ -193,9 +219,20 @@ public final class UpdateAmazonS3ConnectionDetails extends UpdateConnectionDetai
             String vaultId,
             String keyId,
             java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
             String accessKeyId,
             String secretAccessKey) {
-        super(displayName, description, freeformTags, definedTags, vaultId, keyId, nsgIds);
+        super(
+                displayName,
+                description,
+                freeformTags,
+                definedTags,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod);
         this.accessKeyId = accessKeyId;
         this.secretAccessKey = secretAccessKey;
     }

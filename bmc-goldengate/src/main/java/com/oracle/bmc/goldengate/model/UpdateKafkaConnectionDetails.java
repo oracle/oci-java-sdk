@@ -90,6 +90,24 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
          * stream pool being referenced.
@@ -312,6 +330,8 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
                             this.vaultId,
                             this.keyId,
                             this.nsgIds,
+                            this.subnetId,
+                            this.routingMethod,
                             this.streamPoolId,
                             this.bootstrapServers,
                             this.securityProtocol,
@@ -352,6 +372,12 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
             }
             if (model.wasPropertyExplicitlySet("streamPoolId")) {
                 this.streamPoolId(model.getStreamPoolId());
@@ -411,6 +437,8 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
             String vaultId,
             String keyId,
             java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
             String streamPoolId,
             java.util.List<KafkaBootstrapServer> bootstrapServers,
             KafkaConnection.SecurityProtocol securityProtocol,
@@ -423,7 +451,16 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
             String sslKeyPassword,
             String consumerProperties,
             String producerProperties) {
-        super(displayName, description, freeformTags, definedTags, vaultId, keyId, nsgIds);
+        super(
+                displayName,
+                description,
+                freeformTags,
+                definedTags,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod);
         this.streamPoolId = streamPoolId;
         this.bootstrapServers = bootstrapServers;
         this.securityProtocol = securityProtocol;

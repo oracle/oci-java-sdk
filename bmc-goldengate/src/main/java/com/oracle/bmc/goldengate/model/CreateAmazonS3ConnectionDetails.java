@@ -108,6 +108,15 @@ public final class CreateAmazonS3ConnectionDetails extends CreateConnectionDetai
             this.__explicitlySet__.add("subnetId");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
         /** The Amazon S3 technology type. */
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private AmazonS3Connection.TechnologyType technologyType;
@@ -169,6 +178,7 @@ public final class CreateAmazonS3ConnectionDetails extends CreateConnectionDetai
                             this.keyId,
                             this.nsgIds,
                             this.subnetId,
+                            this.routingMethod,
                             this.technologyType,
                             this.accessKeyId,
                             this.secretAccessKey);
@@ -207,6 +217,9 @@ public final class CreateAmazonS3ConnectionDetails extends CreateConnectionDetai
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -240,6 +253,7 @@ public final class CreateAmazonS3ConnectionDetails extends CreateConnectionDetai
             String keyId,
             java.util.List<String> nsgIds,
             String subnetId,
+            RoutingMethod routingMethod,
             AmazonS3Connection.TechnologyType technologyType,
             String accessKeyId,
             String secretAccessKey) {
@@ -252,7 +266,8 @@ public final class CreateAmazonS3ConnectionDetails extends CreateConnectionDetai
                 vaultId,
                 keyId,
                 nsgIds,
-                subnetId);
+                subnetId,
+                routingMethod);
         this.technologyType = technologyType;
         this.accessKeyId = accessKeyId;
         this.secretAccessKey = secretAccessKey;
