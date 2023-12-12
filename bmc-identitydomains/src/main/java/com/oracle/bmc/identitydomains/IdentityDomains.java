@@ -288,6 +288,23 @@ public interface IdentityDomains extends AutoCloseable {
     CreateGroupResponse createGroup(CreateGroupRequest request);
 
     /**
+     * Register a new Identity Propagation Trust configuration.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/CreateIdentityPropagationTrustExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateIdentityPropagationTrust API.
+     */
+    CreateIdentityPropagationTrustResponse createIdentityPropagationTrust(
+            CreateIdentityPropagationTrustRequest request);
+
+    /**
      * Create an Identity Provider
      *
      * @param request The request object containing the details to send
@@ -929,6 +946,23 @@ public interface IdentityDomains extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteGroup API.
      */
     DeleteGroupResponse deleteGroup(DeleteGroupRequest request);
+
+    /**
+     * Delete an existing Identity Propagation Trust configuration.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/DeleteIdentityPropagationTrustExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteIdentityPropagationTrust API.
+     */
+    DeleteIdentityPropagationTrustResponse deleteIdentityPropagationTrust(
+            DeleteIdentityPropagationTrustRequest request);
 
     /**
      * Delete an Identity Provider
@@ -1585,6 +1619,23 @@ public interface IdentityDomains extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetGroup API.
      */
     GetGroupResponse getGroup(GetGroupRequest request);
+
+    /**
+     * Get an existing Identity Propagation Trust configuration.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/GetIdentityPropagationTrustExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetIdentityPropagationTrust API.
+     */
+    GetIdentityPropagationTrustResponse getIdentityPropagationTrust(
+            GetIdentityPropagationTrustRequest request);
 
     /**
      * Get an Identity Provider
@@ -2414,6 +2465,23 @@ public interface IdentityDomains extends AutoCloseable {
     ListGroupsResponse listGroups(ListGroupsRequest request);
 
     /**
+     * List the Identity Propagation Trust configurations.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/ListIdentityPropagationTrustsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListIdentityPropagationTrusts API.
+     */
+    ListIdentityPropagationTrustsResponse listIdentityPropagationTrusts(
+            ListIdentityPropagationTrustsRequest request);
+
+    /**
      * Search Identity Providers
      *
      * @param request The request object containing the details to send
@@ -3226,6 +3294,23 @@ public interface IdentityDomains extends AutoCloseable {
     PatchGroupResponse patchGroup(PatchGroupRequest request);
 
     /**
+     * Update an existing Identity Propagation Trust configuration.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PatchIdentityPropagationTrustExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     PatchIdentityPropagationTrust API.
+     */
+    PatchIdentityPropagationTrustResponse patchIdentityPropagationTrust(
+            PatchIdentityPropagationTrustRequest request);
+
+    /**
      * Update an Identity Provider
      *
      * @param request The request object containing the details to send
@@ -3795,6 +3880,23 @@ public interface IdentityDomains extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use PutGroup API.
      */
     PutGroupResponse putGroup(PutGroupRequest request);
+
+    /**
+     * Replace an existing Identity Propagation Trust configuration.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PutIdentityPropagationTrustExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     PutIdentityPropagationTrust API.
+     */
+    PutIdentityPropagationTrustResponse putIdentityPropagationTrust(
+            PutIdentityPropagationTrustRequest request);
 
     /**
      * Replace an Identity Provider

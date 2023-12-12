@@ -57,12 +57,16 @@ public final class FindingSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The severity of the finding. */
+        /**
+         * The severity of the finding as determined by security assessment and is same as
+         * oracleDefinedSeverity, unless modified by user.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("severity")
         private Severity severity;
 
         /**
-         * The severity of the finding.
+         * The severity of the finding as determined by security assessment and is same as
+         * oracleDefinedSeverity, unless modified by user.
          *
          * @param severity the value to set
          * @return this builder
@@ -278,7 +282,10 @@ public final class FindingSummary
         return new Builder().copy(this);
     }
 
-    /** The severity of the finding. */
+    /**
+     * The severity of the finding as determined by security assessment and is same as
+     * oracleDefinedSeverity, unless modified by user.
+     */
     public enum Severity implements com.oracle.bmc.http.internal.BmcEnum {
         High("HIGH"),
         Medium("MEDIUM"),
@@ -328,12 +335,16 @@ public final class FindingSummary
             return UnknownEnumValue;
         }
     };
-    /** The severity of the finding. */
+    /**
+     * The severity of the finding as determined by security assessment and is same as
+     * oracleDefinedSeverity, unless modified by user.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
     private final Severity severity;
 
     /**
-     * The severity of the finding.
+     * The severity of the finding as determined by security assessment and is same as
+     * oracleDefinedSeverity, unless modified by user.
      *
      * @return the value
      */

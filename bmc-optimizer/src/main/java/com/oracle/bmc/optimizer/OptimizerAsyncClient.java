@@ -222,6 +222,7 @@ public class OptimizerAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
                         request.getChildTenancyIds(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("includeOrganization", request.getIncludeOrganization())
+                .appendQueryParam("includeResourceMetadata", request.getIncludeResourceMetadata())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
@@ -380,6 +381,7 @@ public class OptimizerAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
                 .basePath("/20200606")
                 .appendPathParam("resourceActions")
                 .appendPathParam(request.getResourceActionId())
+                .appendQueryParam("includeResourceMetadata", request.getIncludeResourceMetadata())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -542,6 +544,7 @@ public class OptimizerAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendEnumQueryParam("status", request.getStatus())
+                .appendQueryParam("includeResourceMetadata", request.getIncludeResourceMetadata())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -819,6 +822,7 @@ public class OptimizerAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendEnumQueryParam("status", request.getStatus())
+                .appendQueryParam("includeResourceMetadata", request.getIncludeResourceMetadata())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(

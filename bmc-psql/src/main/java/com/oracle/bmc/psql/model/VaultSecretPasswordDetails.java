@@ -5,7 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Secret details for the DbSystem password. <br>
+ * Secret details for the database system password. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -27,12 +27,16 @@ package com.oracle.bmc.psql.model;
 public final class VaultSecretPasswordDetails extends PasswordDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of secret where the password is stored. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * secret where the password is stored.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("secretId")
         private String secretId;
 
         /**
-         * The OCID of secret where the password is stored.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * secret where the password is stored.
          *
          * @param secretId the value to set
          * @return this builder
@@ -42,12 +46,12 @@ public final class VaultSecretPasswordDetails extends PasswordDetails {
             this.__explicitlySet__.add("secretId");
             return this;
         }
-        /** The secret version where the password is stored. */
+        /** The secret version of the stored password. */
         @com.fasterxml.jackson.annotation.JsonProperty("secretVersion")
         private String secretVersion;
 
         /**
-         * The secret version where the password is stored.
+         * The secret version of the stored password.
          *
          * @param secretVersion the value to set
          * @return this builder
@@ -98,12 +102,16 @@ public final class VaultSecretPasswordDetails extends PasswordDetails {
         this.secretVersion = secretVersion;
     }
 
-    /** The OCID of secret where the password is stored. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * secret where the password is stored.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("secretId")
     private final String secretId;
 
     /**
-     * The OCID of secret where the password is stored.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * secret where the password is stored.
      *
      * @return the value
      */
@@ -111,12 +119,12 @@ public final class VaultSecretPasswordDetails extends PasswordDetails {
         return secretId;
     }
 
-    /** The secret version where the password is stored. */
+    /** The secret version of the stored password. */
     @com.fasterxml.jackson.annotation.JsonProperty("secretVersion")
     private final String secretVersion;
 
     /**
-     * The secret version where the password is stored.
+     * The secret version of the stored password.
      *
      * @return the value
      */

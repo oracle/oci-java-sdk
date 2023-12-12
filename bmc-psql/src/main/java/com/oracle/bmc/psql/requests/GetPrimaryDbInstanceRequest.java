@@ -14,10 +14,10 @@ import com.oracle.bmc.psql.model.*;
 public class GetPrimaryDbInstanceRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** unique DbSystem identifier */
+    /** A unique identifier for the database system. */
     private String dbSystemId;
 
-    /** unique DbSystem identifier */
+    /** A unique identifier for the database system. */
     public String getDbSystemId() {
         return dbSystemId;
     }
@@ -35,11 +35,11 @@ public class GetPrimaryDbInstanceRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique DbSystem identifier */
+        /** A unique identifier for the database system. */
         private String dbSystemId = null;
 
         /**
-         * unique DbSystem identifier
+         * A unique identifier for the database system.
          *
          * @param dbSystemId the value to set
          * @return this builder instance

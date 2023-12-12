@@ -5,7 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Storage details of the DbSystem. <br>
+ * Storage details of the database system. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -38,19 +38,19 @@ public class StorageDetails extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * Specifies if the block volume used for the DbSystem is regional or AD-local. If not
-     * specified, it will be set to false. If isRegionallyDurable is set to true, availabilityDomain
-     * should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be
-     * specified.
+     * Specifies if the block volume used for the database system is regional or AD-local. If not
+     * specified, it will be set to false. If {@code isRegionallyDurable} is set to true, {@code
+     * availabilityDomain} should not be specified. If {@code isRegionallyDurable} is set to false,
+     * {@code availabilityDomain} must be specified.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isRegionallyDurable")
     private final Boolean isRegionallyDurable;
 
     /**
-     * Specifies if the block volume used for the DbSystem is regional or AD-local. If not
-     * specified, it will be set to false. If isRegionallyDurable is set to true, availabilityDomain
-     * should not be specified. If isRegionallyDurable is set to false, availabilityDomain must be
-     * specified.
+     * Specifies if the block volume used for the database system is regional or AD-local. If not
+     * specified, it will be set to false. If {@code isRegionallyDurable} is set to true, {@code
+     * availabilityDomain} should not be specified. If {@code isRegionallyDurable} is set to false,
+     * {@code availabilityDomain} must be specified.
      *
      * @return the value
      */
@@ -59,17 +59,17 @@ public class StorageDetails extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true,
-     * availabilityDomain should not be specified. If isRegionallyDurable is set to false,
-     * availabilityDomain must be specified.
+     * Specifies the availability domain of AD-local storage. If {@code isRegionallyDurable} is set
+     * to true, {@code availabilityDomain} should not be specified. If {@code isRegionallyDurable}
+     * is set to false, {@code availabilityDomain} must be specified.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * Specifies the availability domain of AD-local storage. If isRegionallyDurable is set to true,
-     * availabilityDomain should not be specified. If isRegionallyDurable is set to false,
-     * availabilityDomain must be specified.
+     * Specifies the availability domain of AD-local storage. If {@code isRegionallyDurable} is set
+     * to true, {@code availabilityDomain} should not be specified. If {@code isRegionallyDurable}
+     * is set to false, {@code availabilityDomain} must be specified.
      *
      * @return the value
      */

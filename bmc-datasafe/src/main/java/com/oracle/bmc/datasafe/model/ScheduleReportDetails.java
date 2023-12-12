@@ -102,12 +102,12 @@ public final class ScheduleReportDetails
             this.__explicitlySet__.add("schedule");
             return this;
         }
-        /** Specifies if the report will be in Excel or PDF format */
+        /** Specifies if the report will be in .xls or .pdf format */
         @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
         private MimeType mimeType;
 
         /**
-         * Specifies if the report will be in Excel or PDF format
+         * Specifies if the report will be in .xls or .pdf format
          *
          * @param mimeType the value to set
          * @return this builder
@@ -239,7 +239,7 @@ public final class ScheduleReportDetails
         return schedule;
     }
 
-    /** Specifies if the report will be in Excel or PDF format */
+    /** Specifies if the report will be in .xls or .pdf format */
     public enum MimeType implements com.oracle.bmc.http.internal.BmcEnum {
         Pdf("PDF"),
         Xls("XLS"),
@@ -272,12 +272,12 @@ public final class ScheduleReportDetails
             throw new IllegalArgumentException("Invalid MimeType: " + key);
         }
     };
-    /** Specifies if the report will be in Excel or PDF format */
+    /** Specifies if the report will be in .xls or .pdf format */
     @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
     private final MimeType mimeType;
 
     /**
-     * Specifies if the report will be in Excel or PDF format
+     * Specifies if the report will be in .xls or .pdf format
      *
      * @return the value
      */

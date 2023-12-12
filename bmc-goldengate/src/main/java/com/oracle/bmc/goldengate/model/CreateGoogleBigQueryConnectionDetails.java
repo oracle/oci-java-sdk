@@ -108,6 +108,15 @@ public final class CreateGoogleBigQueryConnectionDetails extends CreateConnectio
             this.__explicitlySet__.add("subnetId");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
         /** The Google BigQuery technology type. */
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private GoogleBigQueryConnection.TechnologyType technologyType;
@@ -158,6 +167,7 @@ public final class CreateGoogleBigQueryConnectionDetails extends CreateConnectio
                             this.keyId,
                             this.nsgIds,
                             this.subnetId,
+                            this.routingMethod,
                             this.technologyType,
                             this.serviceAccountKeyFile);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -195,6 +205,9 @@ public final class CreateGoogleBigQueryConnectionDetails extends CreateConnectio
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -225,6 +238,7 @@ public final class CreateGoogleBigQueryConnectionDetails extends CreateConnectio
             String keyId,
             java.util.List<String> nsgIds,
             String subnetId,
+            RoutingMethod routingMethod,
             GoogleBigQueryConnection.TechnologyType technologyType,
             String serviceAccountKeyFile) {
         super(
@@ -236,7 +250,8 @@ public final class CreateGoogleBigQueryConnectionDetails extends CreateConnectio
                 vaultId,
                 keyId,
                 nsgIds,
-                subnetId);
+                subnetId,
+                routingMethod);
         this.technologyType = technologyType;
         this.serviceAccountKeyFile = serviceAccountKeyFile;
     }

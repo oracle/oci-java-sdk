@@ -5,9 +5,9 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Restoring to a new DbSystem from the backup. The DbSystem details that are part of the
- * CreateDbSystem request are not required, but if present will override the backup's DbSystem
- * details snapshot. <br>
+ * Restoring to a new database system from the backup. The database system details that are part of
+ * the CreateDbSystem request are not required, but if present will override the details from the
+ * backup's database system snapshot. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -29,12 +29,16 @@ package com.oracle.bmc.psql.model;
 public final class BackupSourceDetails extends SourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** DbSystem backup identifier. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * database system backup.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("backupId")
         private String backupId;
 
         /**
-         * DbSystem backup identifier.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * database system backup.
          *
          * @param backupId the value to set
          * @return this builder
@@ -44,12 +48,12 @@ public final class BackupSourceDetails extends SourceDetails {
             this.__explicitlySet__.add("backupId");
             return this;
         }
-        /** Restore the DB config overrides from backup. Default is false */
+        /** Deprecated. Don't use. */
         @com.fasterxml.jackson.annotation.JsonProperty("isHavingRestoreConfigOverrides")
         private Boolean isHavingRestoreConfigOverrides;
 
         /**
-         * Restore the DB config overrides from backup. Default is false
+         * Deprecated. Don't use.
          *
          * @param isHavingRestoreConfigOverrides the value to set
          * @return this builder
@@ -100,12 +104,16 @@ public final class BackupSourceDetails extends SourceDetails {
         this.isHavingRestoreConfigOverrides = isHavingRestoreConfigOverrides;
     }
 
-    /** DbSystem backup identifier. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * database system backup.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("backupId")
     private final String backupId;
 
     /**
-     * DbSystem backup identifier.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * database system backup.
      *
      * @return the value
      */
@@ -113,12 +121,12 @@ public final class BackupSourceDetails extends SourceDetails {
         return backupId;
     }
 
-    /** Restore the DB config overrides from backup. Default is false */
+    /** Deprecated. Don't use. */
     @com.fasterxml.jackson.annotation.JsonProperty("isHavingRestoreConfigOverrides")
     private final Boolean isHavingRestoreConfigOverrides;
 
     /**
-     * Restore the DB config overrides from backup. Default is false
+     * Deprecated. Don't use.
      *
      * @return the value
      */

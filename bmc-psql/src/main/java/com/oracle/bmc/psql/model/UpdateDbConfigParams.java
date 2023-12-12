@@ -5,7 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Configuration for PGSQL instance. <br>
+ * Configuration for the PostgreSQL database instance. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -33,15 +33,17 @@ public final class UpdateDbConfigParams
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Specify whether config update requires a restart of Db instance or reload of config. Some
-         * of the config changes require restart of DB instnace's to apply.
+         * Whether a configuration update requires a restart of the database instance or a reload of
+         * the configuration. Some configuration changes require a restart of database instances to
+         * be applied.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("applyConfig")
         private ApplyConfig applyConfig;
 
         /**
-         * Specify whether config update requires a restart of Db instance or reload of config. Some
-         * of the config changes require restart of DB instnace's to apply.
+         * Whether a configuration update requires a restart of the database instance or a reload of
+         * the configuration. Some configuration changes require a restart of database instances to
+         * be applied.
          *
          * @param applyConfig the value to set
          * @return this builder
@@ -51,12 +53,16 @@ public final class UpdateDbConfigParams
             this.__explicitlySet__.add("applyConfig");
             return this;
         }
-        /** Configuration identifier */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * configuration.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("configId")
         private String configId;
 
         /**
-         * Configuration identifier
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * configuration.
          *
          * @param configId the value to set
          * @return this builder
@@ -100,8 +106,9 @@ public final class UpdateDbConfigParams
     }
 
     /**
-     * Specify whether config update requires a restart of Db instance or reload of config. Some of
-     * the config changes require restart of DB instnace's to apply.
+     * Whether a configuration update requires a restart of the database instance or a reload of the
+     * configuration. Some configuration changes require a restart of database instances to be
+     * applied.
      */
     public enum ApplyConfig implements com.oracle.bmc.http.internal.BmcEnum {
         Restart("RESTART"),
@@ -136,15 +143,17 @@ public final class UpdateDbConfigParams
         }
     };
     /**
-     * Specify whether config update requires a restart of Db instance or reload of config. Some of
-     * the config changes require restart of DB instnace's to apply.
+     * Whether a configuration update requires a restart of the database instance or a reload of the
+     * configuration. Some configuration changes require a restart of database instances to be
+     * applied.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("applyConfig")
     private final ApplyConfig applyConfig;
 
     /**
-     * Specify whether config update requires a restart of Db instance or reload of config. Some of
-     * the config changes require restart of DB instnace's to apply.
+     * Whether a configuration update requires a restart of the database instance or a reload of the
+     * configuration. Some configuration changes require a restart of database instances to be
+     * applied.
      *
      * @return the value
      */
@@ -152,12 +161,16 @@ public final class UpdateDbConfigParams
         return applyConfig;
     }
 
-    /** Configuration identifier */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * configuration.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("configId")
     private final String configId;
 
     /**
-     * Configuration identifier
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * configuration.
      *
      * @return the value
      */

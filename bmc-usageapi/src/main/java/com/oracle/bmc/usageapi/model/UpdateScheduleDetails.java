@@ -61,12 +61,12 @@ public final class UpdateScheduleDetails
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Specifies supported output file format. */
+        /** Specifies the supported output file format. */
         @com.fasterxml.jackson.annotation.JsonProperty("outputFileFormat")
         private OutputFileFormat outputFileFormat;
 
         /**
-         * Specifies supported output file format.
+         * Specifies the supported output file format.
          *
          * @param outputFileFormat the value to set
          * @return this builder
@@ -191,7 +191,7 @@ public final class UpdateScheduleDetails
         return description;
     }
 
-    /** Specifies supported output file format. */
+    /** Specifies the supported output file format. */
     public enum OutputFileFormat implements com.oracle.bmc.http.internal.BmcEnum {
         Csv("CSV"),
         Pdf("PDF"),
@@ -224,12 +224,12 @@ public final class UpdateScheduleDetails
             throw new IllegalArgumentException("Invalid OutputFileFormat: " + key);
         }
     };
-    /** Specifies supported output file format. */
+    /** Specifies the supported output file format. */
     @com.fasterxml.jackson.annotation.JsonProperty("outputFileFormat")
     private final OutputFileFormat outputFileFormat;
 
     /**
-     * Specifies supported output file format.
+     * Specifies the supported output file format.
      *
      * @return the value
      */

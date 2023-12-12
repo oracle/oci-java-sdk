@@ -47,12 +47,16 @@ public final class WorkRequestLogEntry
             this.__explicitlySet__.add("message");
             return this;
         }
-        /** The time the log message was written. An RFC3339 formatted datetime string */
+        /**
+         * The time the log message was written, as described in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
-         * The time the log message was written. An RFC3339 formatted datetime string
+         * The time the log message was written, as described in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339).
          *
          * @param timestamp the value to set
          * @return this builder
@@ -108,12 +112,16 @@ public final class WorkRequestLogEntry
         return message;
     }
 
-    /** The time the log message was written. An RFC3339 formatted datetime string */
+    /**
+     * The time the log message was written, as described in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
-     * The time the log message was written. An RFC3339 formatted datetime string
+     * The time the log message was written, as described in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339).
      *
      * @return the value
      */

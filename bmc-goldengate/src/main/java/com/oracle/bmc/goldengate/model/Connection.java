@@ -113,7 +113,8 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
         "keyId",
         "ingressIps",
         "nsgIds",
-        "subnetId"
+        "subnetId",
+        "routingMethod"
     })
     protected Connection(
             String id,
@@ -131,7 +132,8 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
             String keyId,
             java.util.List<IngressIpDetails> ingressIps,
             java.util.List<String> nsgIds,
-            String subnetId) {
+            String subnetId,
+            RoutingMethod routingMethod) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -149,6 +151,7 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
         this.ingressIps = ingressIps;
         this.nsgIds = nsgIds;
         this.subnetId = subnetId;
+        this.routingMethod = routingMethod;
     }
 
     /**
@@ -464,19 +467,44 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * subnet being referenced.
+     * target subnet of the dedicated connection.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * subnet being referenced.
+     * target subnet of the dedicated connection.
      *
      * @return the value
      */
     public String getSubnetId() {
         return subnetId;
+    }
+
+    /**
+     * Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows
+     * through the Goldengate Service's network to public hosts. Cannot be used for private targets.
+     * SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private
+     * endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is
+     * created in the target VCN subnet for the connection. The subnetId is required when
+     * DEDICATED_ENDPOINT networking is selected.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+    private final RoutingMethod routingMethod;
+
+    /**
+     * Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows
+     * through the Goldengate Service's network to public hosts. Cannot be used for private targets.
+     * SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private
+     * endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is
+     * created in the target VCN subnet for the connection. The subnetId is required when
+     * DEDICATED_ENDPOINT networking is selected.
+     *
+     * @return the value
+     */
+    public RoutingMethod getRoutingMethod() {
+        return routingMethod;
     }
 
     @Override
@@ -510,6 +538,7 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
         sb.append(", ingressIps=").append(String.valueOf(this.ingressIps));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", routingMethod=").append(String.valueOf(this.routingMethod));
         sb.append(")");
         return sb.toString();
     }
@@ -540,6 +569,7 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
                 && java.util.Objects.equals(this.ingressIps, other.ingressIps)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.routingMethod, other.routingMethod)
                 && super.equals(other);
     }
 
@@ -569,6 +599,9 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
         result = (result * PRIME) + (this.ingressIps == null ? 43 : this.ingressIps.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.routingMethod == null ? 43 : this.routingMethod.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

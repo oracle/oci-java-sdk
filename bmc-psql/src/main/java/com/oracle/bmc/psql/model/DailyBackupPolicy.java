@@ -5,7 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Daily backup policy <br>
+ * Daily backup policy. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -35,12 +35,12 @@ public final class DailyBackupPolicy extends BackupPolicy {
             this.__explicitlySet__.add("retentionDays");
             return this;
         }
-        /** Hour of the day when backup starts. */
+        /** Hour of the day when the backup starts. */
         @com.fasterxml.jackson.annotation.JsonProperty("backupStart")
         private String backupStart;
 
         /**
-         * Hour of the day when backup starts.
+         * Hour of the day when the backup starts.
          *
          * @param backupStart the value to set
          * @return this builder
@@ -89,12 +89,12 @@ public final class DailyBackupPolicy extends BackupPolicy {
         this.backupStart = backupStart;
     }
 
-    /** Hour of the day when backup starts. */
+    /** Hour of the day when the backup starts. */
     @com.fasterxml.jackson.annotation.JsonProperty("backupStart")
     private final String backupStart;
 
     /**
-     * Hour of the day when backup starts.
+     * Hour of the day when the backup starts.
      *
      * @return the value
      */

@@ -2305,6 +2305,12 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.goldengate.model.RoutingMethod",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.goldengate.model.SnoozeDeploymentUpgradeDetails",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,

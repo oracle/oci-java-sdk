@@ -11,7 +11,9 @@ import com.oracle.bmc.http.client.KeyStoreWithPassword;
 import com.oracle.bmc.http.client.ProxyConfiguration;
 import com.oracle.bmc.http.client.RequestInterceptor;
 import com.oracle.bmc.http.client.StandardClientProperties;
+import com.oracle.bmc.http.client.internal.ClientThreadFactory;
 import com.oracle.bmc.http.client.jersey3.internal.DaemonClientAsyncExecutorProvider;
+import com.oracle.bmc.http.client.jersey3.internal.IdleConnectionMonitor;
 import com.oracle.bmc.serialization.jackson.JacksonSerializer;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
@@ -21,6 +23,7 @@ import org.apache.http.client.HttpRequestRetryHandler;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.config.Registry;
 import org.apache.http.config.RegistryBuilder;
+import org.apache.http.conn.HttpClientConnectionManager;
 import org.apache.http.conn.socket.ConnectionSocketFactory;
 import org.apache.http.conn.socket.PlainConnectionSocketFactory;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
@@ -55,6 +58,8 @@ import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
 final class Jersey3HttpClientBuilder implements HttpClientBuilder {
@@ -65,8 +70,24 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
     private static final ClientBuilderDecorator SIMPLE_DECORATOR =
             clientBuilder -> clientBuilder.build();
 
-    public static ConnectionReuseStrategy DEFAULT_CONNECTION_REUSE_STRATEGY =
-            new NoConnectionReuseStrategy();
+    public static ConnectionReuseStrategy DEFAULT_CONNECTION_REUSE_STRATEGY;
+
+    private static boolean DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_ENABLED;
+
+    static {
+        DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_ENABLED =
+                Boolean.parseBoolean(
+                        System.getProperty(
+                                "oci.javasdk.apache.idle.connection.monitor.thread.enabled",
+                                "true"));
+        if (!DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_ENABLED) {
+            DEFAULT_CONNECTION_REUSE_STRATEGY = new NoConnectionReuseStrategy();
+        }
+    }
+
+    private static int DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_WAIT_TIME_IN_SECONDS = 5;
+    private static int DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_IDLE_TIMEOUT_IN_SECONDS = 20;
+
     public static HttpRequestRetryHandler DEFAULT_REQUEST_RETRY_HANDLER =
             new DefaultHttpRequestRetryHandler(0, false);
 
@@ -91,6 +112,10 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
 
     private boolean shouldSetDefaultConnectionManagerForApacheConnector = false;
 
+    private boolean apacheIdleConnectionMonitorThreadEnabled = false;
+    private int apacheIdleConnectionMonitorThreadWaitTimeInSeconds;
+    private int apacheIdleConnectionMonitorThreadIdleTimeoutInSeconds;
+
     Jersey3HttpClientBuilder() {
         // buffer by default, for signing and better error messages.
         properties.put(
@@ -111,6 +136,15 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
             // unless the user has set a different connection manager already using
             // properties.put(ApacheClientProperties.CONNECTION_MANAGER, cm)
             this.shouldSetDefaultConnectionManagerForApacheConnector = true;
+
+            this.apacheIdleConnectionMonitorThreadEnabled =
+                    DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_ENABLED;
+
+            this.apacheIdleConnectionMonitorThreadWaitTimeInSeconds =
+                    DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_WAIT_TIME_IN_SECONDS;
+
+            this.apacheIdleConnectionMonitorThreadIdleTimeoutInSeconds =
+                    DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_IDLE_TIMEOUT_IN_SECONDS;
 
             property(
                     com.oracle.bmc.http.client.jersey3.ApacheClientProperties
@@ -249,7 +283,35 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
                     buildDefaultPoolingHttpClientConnectionManagerForApacheConnector(sslContext);
             properties.put(ApacheClientProperties.CONNECTION_MANAGER, cm);
         }
+        Object connectionManagerObject = properties.get(ApacheClientProperties.CONNECTION_MANAGER);
 
+        if (apacheIdleConnectionMonitorThreadEnabled && connectionManagerObject != null) {
+            HttpClientConnectionManager connectionManager =
+                    (HttpClientConnectionManager) connectionManagerObject;
+            try {
+                final IdleConnectionMonitor idleConnectionMonitor =
+                        new IdleConnectionMonitor(
+                                connectionManager,
+                                apacheIdleConnectionMonitorThreadWaitTimeInSeconds,
+                                apacheIdleConnectionMonitorThreadIdleTimeoutInSeconds);
+
+                ExecutorService executorService =
+                        Executors.newFixedThreadPool(
+                                1,
+                                ClientThreadFactory.builder()
+                                        .nameFormat(
+                                                "idle-connection-monitor-thread-"
+                                                        + System.currentTimeMillis()
+                                                        + "-%d")
+                                        .isDaemon(true)
+                                        .build());
+
+                executorService.execute(idleConnectionMonitor);
+
+            } catch (Exception ex) {
+                LOG.info("Error creating/executing idle connection monitor thread", ex);
+            }
+        }
         ClientBuilder clientBuilder = ClientBuilder.newBuilder();
         ClientConfig clientConfig = new ClientConfig();
         if (shouldUseApacheConnector()) {

@@ -125,10 +125,10 @@ public class ListSqlFirewallPolicyAnalyticsRequest
     public String getPage() {
         return page;
     }
-    /** The group by parameter to summarize SQL firewall policy aggregation. */
+    /** The group by parameter to summarize SQL Firewall policy aggregation. */
     private java.util.List<GroupBy> groupBy;
 
-    /** The group by parameter to summarize SQL firewall policy aggregation. */
+    /** The group by parameter to summarize SQL Firewall policy aggregation. */
     public enum GroupBy implements com.oracle.bmc.http.internal.BmcEnum {
         ViolationAction("violationAction"),
         EnforcementScope("enforcementScope"),
@@ -164,14 +164,14 @@ public class ListSqlFirewallPolicyAnalyticsRequest
         }
     };
 
-    /** The group by parameter to summarize SQL firewall policy aggregation. */
+    /** The group by parameter to summarize SQL Firewall policy aggregation. */
     public java.util.List<GroupBy> getGroupBy() {
         return groupBy;
     }
-    /** The current state of the SQL firewall policy. */
+    /** The current state of the SQL Firewall policy. */
     private com.oracle.bmc.datasafe.model.SqlFirewallPolicyLifecycleState lifecycleState;
 
-    /** The current state of the SQL firewall policy. */
+    /** The current state of the SQL Firewall policy. */
     public com.oracle.bmc.datasafe.model.SqlFirewallPolicyLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -189,26 +189,26 @@ public class ListSqlFirewallPolicyAnalyticsRequest
         return securityPolicyId;
     }
     /**
-     * An optional filter to return the summary of the SQL firewall policies created after the
+     * An optional filter to return the summary of the SQL Firewall policies created after the
      * date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     private java.util.Date timeStarted;
 
     /**
-     * An optional filter to return the summary of the SQL firewall policies created after the
+     * An optional filter to return the summary of the SQL Firewall policies created after the
      * date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
     /**
-     * An optional filter to return the summary of the SQL firewall policies created before the
+     * An optional filter to return the summary of the SQL Firewall policies created before the
      * date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     private java.util.Date timeEnded;
 
     /**
-     * An optional filter to return the summary of the SQL firewall policies created before the
+     * An optional filter to return the summary of the SQL Firewall policies created before the
      * date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     public java.util.Date getTimeEnded() {
@@ -326,11 +326,11 @@ public class ListSqlFirewallPolicyAnalyticsRequest
             return this;
         }
 
-        /** The group by parameter to summarize SQL firewall policy aggregation. */
+        /** The group by parameter to summarize SQL Firewall policy aggregation. */
         private java.util.List<GroupBy> groupBy = null;
 
         /**
-         * The group by parameter to summarize SQL firewall policy aggregation.
+         * The group by parameter to summarize SQL Firewall policy aggregation.
          *
          * @param groupBy the value to set
          * @return this builder instance
@@ -341,7 +341,7 @@ public class ListSqlFirewallPolicyAnalyticsRequest
         }
 
         /**
-         * Singular setter. The group by parameter to summarize SQL firewall policy aggregation.
+         * Singular setter. The group by parameter to summarize SQL Firewall policy aggregation.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -350,11 +350,11 @@ public class ListSqlFirewallPolicyAnalyticsRequest
             return this.groupBy(java.util.Arrays.asList(singularValue));
         }
 
-        /** The current state of the SQL firewall policy. */
+        /** The current state of the SQL Firewall policy. */
         private com.oracle.bmc.datasafe.model.SqlFirewallPolicyLifecycleState lifecycleState = null;
 
         /**
-         * The current state of the SQL firewall policy.
+         * The current state of the SQL Firewall policy.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -384,14 +384,14 @@ public class ListSqlFirewallPolicyAnalyticsRequest
         }
 
         /**
-         * An optional filter to return the summary of the SQL firewall policies created after the
+         * An optional filter to return the summary of the SQL Firewall policies created after the
          * date-time specified, in the format defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339).
          */
         private java.util.Date timeStarted = null;
 
         /**
-         * An optional filter to return the summary of the SQL firewall policies created after the
+         * An optional filter to return the summary of the SQL Firewall policies created after the
          * date-time specified, in the format defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
@@ -404,14 +404,14 @@ public class ListSqlFirewallPolicyAnalyticsRequest
         }
 
         /**
-         * An optional filter to return the summary of the SQL firewall policies created before the
+         * An optional filter to return the summary of the SQL Firewall policies created before the
          * date-time specified, in the format defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339).
          */
         private java.util.Date timeEnded = null;
 
         /**
-         * An optional filter to return the summary of the SQL firewall policies created before the
+         * An optional filter to return the summary of the SQL Firewall policies created before the
          * date-time specified, in the format defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *

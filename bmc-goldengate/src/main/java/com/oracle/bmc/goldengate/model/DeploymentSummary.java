@@ -36,6 +36,8 @@ public final class DeploymentSummary
         "freeformTags",
         "definedTags",
         "subnetId",
+        "loadBalancerSubnetId",
+        "loadBalancerId",
         "licenseModel",
         "fqdn",
         "cpuCoreCount",
@@ -64,6 +66,8 @@ public final class DeploymentSummary
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String subnetId,
+            String loadBalancerSubnetId,
+            String loadBalancerId,
             LicenseModel licenseModel,
             String fqdn,
             Integer cpuCoreCount,
@@ -91,6 +95,8 @@ public final class DeploymentSummary
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.subnetId = subnetId;
+        this.loadBalancerSubnetId = loadBalancerSubnetId;
+        this.loadBalancerId = loadBalancerId;
         this.licenseModel = licenseModel;
         this.fqdn = fqdn;
         this.cpuCoreCount = cpuCoreCount;
@@ -311,14 +317,14 @@ public final class DeploymentSummary
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * subnet being referenced.
+         * subnet of the deployment's private endpoint.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * subnet being referenced.
+         * subnet of the deployment's private endpoint.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -326,6 +332,52 @@ public final class DeploymentSummary
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * public subnet in the customer tenancy. Can be provided only for public deployments. If
+         * provided, the loadbalancer will be created in this subnet instead of the service tenancy.
+         * For backward compatiblity this is an optional property for now, but it will become
+         * mandatory (for public deployments only) after October 1, 2024.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
+        private String loadBalancerSubnetId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * public subnet in the customer tenancy. Can be provided only for public deployments. If
+         * provided, the loadbalancer will be created in this subnet instead of the service tenancy.
+         * For backward compatiblity this is an optional property for now, but it will become
+         * mandatory (for public deployments only) after October 1, 2024.
+         *
+         * @param loadBalancerSubnetId the value to set
+         * @return this builder
+         */
+        public Builder loadBalancerSubnetId(String loadBalancerSubnetId) {
+            this.loadBalancerSubnetId = loadBalancerSubnetId;
+            this.__explicitlySet__.add("loadBalancerSubnetId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * loadbalancer in the customer's subnet. The loadbalancer of the public deployment created
+         * in the customer subnet.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
+        private String loadBalancerId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * loadbalancer in the customer's subnet. The loadbalancer of the public deployment created
+         * in the customer subnet.
+         *
+         * @param loadBalancerId the value to set
+         * @return this builder
+         */
+        public Builder loadBalancerId(String loadBalancerId) {
+            this.loadBalancerId = loadBalancerId;
+            this.__explicitlySet__.add("loadBalancerId");
             return this;
         }
         /** The Oracle license model that applies to a Deployment. */
@@ -598,6 +650,8 @@ public final class DeploymentSummary
                             this.freeformTags,
                             this.definedTags,
                             this.subnetId,
+                            this.loadBalancerSubnetId,
+                            this.loadBalancerId,
                             this.licenseModel,
                             this.fqdn,
                             this.cpuCoreCount,
@@ -655,6 +709,12 @@ public final class DeploymentSummary
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("loadBalancerSubnetId")) {
+                this.loadBalancerSubnetId(model.getLoadBalancerSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("loadBalancerId")) {
+                this.loadBalancerId(model.getLoadBalancerId());
             }
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
@@ -891,19 +951,61 @@ public final class DeploymentSummary
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * subnet being referenced.
+     * subnet of the deployment's private endpoint.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * subnet being referenced.
+     * subnet of the deployment's private endpoint.
      *
      * @return the value
      */
     public String getSubnetId() {
         return subnetId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+     * public subnet in the customer tenancy. Can be provided only for public deployments. If
+     * provided, the loadbalancer will be created in this subnet instead of the service tenancy. For
+     * backward compatiblity this is an optional property for now, but it will become mandatory (for
+     * public deployments only) after October 1, 2024.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
+    private final String loadBalancerSubnetId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+     * public subnet in the customer tenancy. Can be provided only for public deployments. If
+     * provided, the loadbalancer will be created in this subnet instead of the service tenancy. For
+     * backward compatiblity this is an optional property for now, but it will become mandatory (for
+     * public deployments only) after October 1, 2024.
+     *
+     * @return the value
+     */
+    public String getLoadBalancerSubnetId() {
+        return loadBalancerSubnetId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in
+     * the customer subnet.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
+    private final String loadBalancerId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in
+     * the customer subnet.
+     *
+     * @return the value
+     */
+    public String getLoadBalancerId() {
+        return loadBalancerId;
     }
 
     /** The Oracle license model that applies to a Deployment. */
@@ -1155,6 +1257,8 @@ public final class DeploymentSummary
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", loadBalancerSubnetId=").append(String.valueOf(this.loadBalancerSubnetId));
+        sb.append(", loadBalancerId=").append(String.valueOf(this.loadBalancerId));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
         sb.append(", fqdn=").append(String.valueOf(this.fqdn));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
@@ -1197,6 +1301,8 @@ public final class DeploymentSummary
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.loadBalancerSubnetId, other.loadBalancerSubnetId)
+                && java.util.Objects.equals(this.loadBalancerId, other.loadBalancerId)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
                 && java.util.Objects.equals(this.fqdn, other.fqdn)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
@@ -1241,6 +1347,14 @@ public final class DeploymentSummary
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.loadBalancerSubnetId == null
+                                ? 43
+                                : this.loadBalancerSubnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.loadBalancerId == null ? 43 : this.loadBalancerId.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
         result = (result * PRIME) + (this.fqdn == null ? 43 : this.fqdn.hashCode());
         result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());

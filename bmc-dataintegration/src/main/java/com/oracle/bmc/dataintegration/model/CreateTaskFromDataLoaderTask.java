@@ -135,6 +135,15 @@ public final class CreateTaskFromDataLoaderTask extends CreateTaskDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isConcurrentAllowed")
+        private Boolean isConcurrentAllowed;
+
+        public Builder isConcurrentAllowed(Boolean isConcurrentAllowed) {
+            this.isConcurrentAllowed = isConcurrentAllowed;
+            this.__explicitlySet__.add("isConcurrentAllowed");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("registryMetadata")
         private RegistryMetadata registryMetadata;
 
@@ -213,6 +222,7 @@ public final class CreateTaskFromDataLoaderTask extends CreateTaskDetails {
                             this.parameters,
                             this.opConfigValues,
                             this.configProviderDelegate,
+                            this.isConcurrentAllowed,
                             this.registryMetadata,
                             this.dataFlow,
                             this.conditionalCompositeFieldMap,
@@ -262,6 +272,9 @@ public final class CreateTaskFromDataLoaderTask extends CreateTaskDetails {
             if (model.wasPropertyExplicitlySet("configProviderDelegate")) {
                 this.configProviderDelegate(model.getConfigProviderDelegate());
             }
+            if (model.wasPropertyExplicitlySet("isConcurrentAllowed")) {
+                this.isConcurrentAllowed(model.getIsConcurrentAllowed());
+            }
             if (model.wasPropertyExplicitlySet("registryMetadata")) {
                 this.registryMetadata(model.getRegistryMetadata());
             }
@@ -304,6 +317,7 @@ public final class CreateTaskFromDataLoaderTask extends CreateTaskDetails {
             java.util.List<Parameter> parameters,
             ConfigValues opConfigValues,
             CreateConfigProvider configProviderDelegate,
+            Boolean isConcurrentAllowed,
             RegistryMetadata registryMetadata,
             DataFlow dataFlow,
             ConditionalCompositeFieldMap conditionalCompositeFieldMap,
@@ -322,6 +336,7 @@ public final class CreateTaskFromDataLoaderTask extends CreateTaskDetails {
                 parameters,
                 opConfigValues,
                 configProviderDelegate,
+                isConcurrentAllowed,
                 registryMetadata);
         this.dataFlow = dataFlow;
         this.conditionalCompositeFieldMap = conditionalCompositeFieldMap;

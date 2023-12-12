@@ -20,10 +20,16 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /**
+     * A filter to return only resources if their {@code lifecycleState} matches the given {@code
+     * lifecycleState}.
+     */
     private com.oracle.bmc.psql.model.DbSystem.LifecycleState lifecycleState;
 
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /**
+     * A filter to return only resources if their {@code lifecycleState} matches the given {@code
+     * lifecycleState}.
+     */
     public com.oracle.bmc.psql.model.DbSystem.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -34,10 +40,10 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public String getDisplayName() {
         return displayName;
     }
-    /** unique DbSystem identifier */
+    /** A unique identifier for the database system. */
     private String id;
 
-    /** unique DbSystem identifier */
+    /** A unique identifier for the database system. */
     public String getId() {
         return id;
     }
@@ -147,12 +153,14 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * A filter to return only resources if their {@code lifecycleState} matches the given
+         * {@code lifecycleState}.
          */
         private com.oracle.bmc.psql.model.DbSystem.LifecycleState lifecycleState = null;
 
         /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * A filter to return only resources if their {@code lifecycleState} matches the given
+         * {@code lifecycleState}.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -177,11 +185,11 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /** unique DbSystem identifier */
+        /** A unique identifier for the database system. */
         private String id = null;
 
         /**
-         * unique DbSystem identifier
+         * A unique identifier for the database system.
          *
          * @param id the value to set
          * @return this builder instance

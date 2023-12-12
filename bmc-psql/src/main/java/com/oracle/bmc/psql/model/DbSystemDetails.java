@@ -5,7 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Information about the DbSystem associated to a backup. <br>
+ * Information about the database system associated with a backup. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +31,12 @@ public final class DbSystemDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Type of the DbSystem. */
+        /** Type of the database system. */
         @com.fasterxml.jackson.annotation.JsonProperty("systemType")
         private DbSystem.SystemType systemType;
 
         /**
-         * Type of the DbSystem.
+         * Type of the database system.
          *
          * @param systemType the value to set
          * @return this builder
@@ -46,12 +46,12 @@ public final class DbSystemDetails
             this.__explicitlySet__.add("systemType");
             return this;
         }
-        /** The major and minor versions of the DbSystem software. */
+        /** The major and minor versions of the database system software. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
         /**
-         * The major and minor versions of the DbSystem software.
+         * The major and minor versions of the database system software.
          *
          * @param dbVersion the value to set
          * @return this builder
@@ -94,12 +94,12 @@ public final class DbSystemDetails
         return new Builder().copy(this);
     }
 
-    /** Type of the DbSystem. */
+    /** Type of the database system. */
     @com.fasterxml.jackson.annotation.JsonProperty("systemType")
     private final DbSystem.SystemType systemType;
 
     /**
-     * Type of the DbSystem.
+     * Type of the database system.
      *
      * @return the value
      */
@@ -107,12 +107,12 @@ public final class DbSystemDetails
         return systemType;
     }
 
-    /** The major and minor versions of the DbSystem software. */
+    /** The major and minor versions of the database system software. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
 
     /**
-     * The major and minor versions of the DbSystem software.
+     * The major and minor versions of the database system software.
      *
      * @return the value
      */

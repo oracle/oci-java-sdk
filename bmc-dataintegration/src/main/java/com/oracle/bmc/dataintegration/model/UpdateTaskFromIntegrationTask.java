@@ -144,6 +144,15 @@ public final class UpdateTaskFromIntegrationTask extends UpdateTaskDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isConcurrentAllowed")
+        private Boolean isConcurrentAllowed;
+
+        public Builder isConcurrentAllowed(Boolean isConcurrentAllowed) {
+            this.isConcurrentAllowed = isConcurrentAllowed;
+            this.__explicitlySet__.add("isConcurrentAllowed");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("registryMetadata")
         private RegistryMetadata registryMetadata;
 
@@ -181,6 +190,7 @@ public final class UpdateTaskFromIntegrationTask extends UpdateTaskDetails {
                             this.parameters,
                             this.opConfigValues,
                             this.configProviderDelegate,
+                            this.isConcurrentAllowed,
                             this.registryMetadata,
                             this.dataFlow);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -230,6 +240,9 @@ public final class UpdateTaskFromIntegrationTask extends UpdateTaskDetails {
             if (model.wasPropertyExplicitlySet("configProviderDelegate")) {
                 this.configProviderDelegate(model.getConfigProviderDelegate());
             }
+            if (model.wasPropertyExplicitlySet("isConcurrentAllowed")) {
+                this.isConcurrentAllowed(model.getIsConcurrentAllowed());
+            }
             if (model.wasPropertyExplicitlySet("registryMetadata")) {
                 this.registryMetadata(model.getRegistryMetadata());
             }
@@ -264,6 +277,7 @@ public final class UpdateTaskFromIntegrationTask extends UpdateTaskDetails {
             java.util.List<Parameter> parameters,
             ConfigValues opConfigValues,
             ConfigProvider configProviderDelegate,
+            Boolean isConcurrentAllowed,
             RegistryMetadata registryMetadata,
             DataFlow dataFlow) {
         super(
@@ -280,6 +294,7 @@ public final class UpdateTaskFromIntegrationTask extends UpdateTaskDetails {
                 parameters,
                 opConfigValues,
                 configProviderDelegate,
+                isConcurrentAllowed,
                 registryMetadata);
         this.dataFlow = dataFlow;
     }

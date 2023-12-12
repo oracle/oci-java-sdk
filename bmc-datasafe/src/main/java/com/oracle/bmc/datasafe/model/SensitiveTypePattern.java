@@ -117,6 +117,15 @@ public final class SensitiveTypePattern extends SensitiveType {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isCommon")
+        private Boolean isCommon;
+
+        public Builder isCommon(Boolean isCommon) {
+            this.isCommon = isCommon;
+            this.__explicitlySet__.add("isCommon");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -246,6 +255,7 @@ public final class SensitiveTypePattern extends SensitiveType {
                             this.timeUpdated,
                             this.description,
                             this.parentCategoryId,
+                            this.isCommon,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
@@ -291,6 +301,9 @@ public final class SensitiveTypePattern extends SensitiveType {
             }
             if (model.wasPropertyExplicitlySet("parentCategoryId")) {
                 this.parentCategoryId(model.getParentCategoryId());
+            }
+            if (model.wasPropertyExplicitlySet("isCommon")) {
+                this.isCommon(model.getIsCommon());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -341,6 +354,7 @@ public final class SensitiveTypePattern extends SensitiveType {
             java.util.Date timeUpdated,
             String description,
             String parentCategoryId,
+            Boolean isCommon,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
@@ -360,6 +374,7 @@ public final class SensitiveTypePattern extends SensitiveType {
                 timeUpdated,
                 description,
                 parentCategoryId,
+                isCommon,
                 freeformTags,
                 definedTags,
                 systemTags);

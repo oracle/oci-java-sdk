@@ -59,6 +59,7 @@ public class UpdateTaskDetails extends com.oracle.bmc.http.client.internal.Expli
         "parameters",
         "opConfigValues",
         "configProviderDelegate",
+        "isConcurrentAllowed",
         "registryMetadata"
     })
     protected UpdateTaskDetails(
@@ -75,6 +76,7 @@ public class UpdateTaskDetails extends com.oracle.bmc.http.client.internal.Expli
             java.util.List<Parameter> parameters,
             ConfigValues opConfigValues,
             ConfigProvider configProviderDelegate,
+            Boolean isConcurrentAllowed,
             RegistryMetadata registryMetadata) {
         super();
         this.key = key;
@@ -90,6 +92,7 @@ public class UpdateTaskDetails extends com.oracle.bmc.http.client.internal.Expli
         this.parameters = parameters;
         this.opConfigValues = opConfigValues;
         this.configProviderDelegate = configProviderDelegate;
+        this.isConcurrentAllowed = isConcurrentAllowed;
         this.registryMetadata = registryMetadata;
     }
 
@@ -260,6 +263,19 @@ public class UpdateTaskDetails extends com.oracle.bmc.http.client.internal.Expli
         return configProviderDelegate;
     }
 
+    /** Whether the same task can be executed concurrently. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isConcurrentAllowed")
+    private final Boolean isConcurrentAllowed;
+
+    /**
+     * Whether the same task can be executed concurrently.
+     *
+     * @return the value
+     */
+    public Boolean getIsConcurrentAllowed() {
+        return isConcurrentAllowed;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("registryMetadata")
     private final RegistryMetadata registryMetadata;
 
@@ -295,6 +311,7 @@ public class UpdateTaskDetails extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", parameters=").append(String.valueOf(this.parameters));
         sb.append(", opConfigValues=").append(String.valueOf(this.opConfigValues));
         sb.append(", configProviderDelegate=").append(String.valueOf(this.configProviderDelegate));
+        sb.append(", isConcurrentAllowed=").append(String.valueOf(this.isConcurrentAllowed));
         sb.append(", registryMetadata=").append(String.valueOf(this.registryMetadata));
         sb.append(")");
         return sb.toString();
@@ -324,6 +341,7 @@ public class UpdateTaskDetails extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.opConfigValues, other.opConfigValues)
                 && java.util.Objects.equals(
                         this.configProviderDelegate, other.configProviderDelegate)
+                && java.util.Objects.equals(this.isConcurrentAllowed, other.isConcurrentAllowed)
                 && java.util.Objects.equals(this.registryMetadata, other.registryMetadata)
                 && super.equals(other);
     }
@@ -353,6 +371,11 @@ public class UpdateTaskDetails extends com.oracle.bmc.http.client.internal.Expli
                         + (this.configProviderDelegate == null
                                 ? 43
                                 : this.configProviderDelegate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isConcurrentAllowed == null
+                                ? 43
+                                : this.isConcurrentAllowed.hashCode());
         result =
                 (result * PRIME)
                         + (this.registryMetadata == null ? 43 : this.registryMetadata.hashCode());

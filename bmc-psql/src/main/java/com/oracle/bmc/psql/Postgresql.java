@@ -8,9 +8,12 @@ import com.oracle.bmc.psql.requests.*;
 import com.oracle.bmc.psql.responses.*;
 
 /**
- * A description of the PGSQL Control Plane API This service client uses
- * CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit
- * breaker configuration is defined by the user.
+ * Use the OCI Database with PostgreSQL API to manage resources such as database systems, database
+ * nodes, backups, and configurations. For information, see the user guide documentation for the
+ * [service](https://docs.cloud.oracle.com/iaas/Content/postgresql/home.htm).
+ *
+ * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
+ * default if no circuit breaker configuration is defined by the user.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
 public interface Postgresql extends AutoCloseable {
@@ -64,8 +67,8 @@ public interface Postgresql extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Moves a Backup resource from one compartment identifier to another. When provided, If-Match
-     * is checked against ETag values of the resource.
+     * Moves a backup from one compartment to another. When provided, If-Match is checked against
+     * ETag values of the resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -81,8 +84,8 @@ public interface Postgresql extends AutoCloseable {
     ChangeBackupCompartmentResponse changeBackupCompartment(ChangeBackupCompartmentRequest request);
 
     /**
-     * Moves a Configuration resource from one compartment identifier to another. When provided,
-     * If-Match is checked against ETag values of the resource.
+     * Moves a configuration from one compartment to another. When provided, If-Match is checked
+     * against ETag values of the resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -99,8 +102,8 @@ public interface Postgresql extends AutoCloseable {
             ChangeConfigurationCompartmentRequest request);
 
     /**
-     * Moves a DbSystem resource from one compartment identifier to another. When provided, If-Match
-     * is checked against ETag values of the resource.
+     * Moves a database system from one compartment to another. When provided, If-Match is checked
+     * against ETag values of the resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -117,7 +120,7 @@ public interface Postgresql extends AutoCloseable {
             ChangeDbSystemCompartmentRequest request);
 
     /**
-     * Creates a new Backup.
+     * Creates a new backup.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -132,7 +135,7 @@ public interface Postgresql extends AutoCloseable {
     CreateBackupResponse createBackup(CreateBackupRequest request);
 
     /**
-     * Creates a new Configuration Set.
+     * Creates a new configuration.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -148,7 +151,7 @@ public interface Postgresql extends AutoCloseable {
     CreateConfigurationResponse createConfiguration(CreateConfigurationRequest request);
 
     /**
-     * Creates a new DbSystem.
+     * Creates a new database system.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -163,7 +166,7 @@ public interface Postgresql extends AutoCloseable {
     CreateDbSystemResponse createDbSystem(CreateDbSystemRequest request);
 
     /**
-     * Deletes a Backup resource by identifier
+     * Deletes a backup by identifier.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -178,7 +181,7 @@ public interface Postgresql extends AutoCloseable {
     DeleteBackupResponse deleteBackup(DeleteBackupRequest request);
 
     /**
-     * Deletes a Cofniguration resource by identifier
+     * Deletes a configuration by identifier.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -194,7 +197,7 @@ public interface Postgresql extends AutoCloseable {
     DeleteConfigurationResponse deleteConfiguration(DeleteConfigurationRequest request);
 
     /**
-     * Deletes a DbSystem resource by identifier
+     * Deletes a database system by identifier.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -209,7 +212,7 @@ public interface Postgresql extends AutoCloseable {
     DeleteDbSystemResponse deleteDbSystem(DeleteDbSystemRequest request);
 
     /**
-     * Runs a failover operation. Optionally user can specify the desired AD for 3AD regions.
+     * Runs a failover operation. Optionally, specify the desired AD for regions with three ADs.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -225,7 +228,7 @@ public interface Postgresql extends AutoCloseable {
     FailoverDbSystemResponse failoverDbSystem(FailoverDbSystemRequest request);
 
     /**
-     * Gets a Backup by identifier
+     * Gets a backup by identifier.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -240,7 +243,7 @@ public interface Postgresql extends AutoCloseable {
     GetBackupResponse getBackup(GetBackupRequest request);
 
     /**
-     * Gets a Configuration by identifier
+     * Gets a configuration by identifier.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -256,7 +259,7 @@ public interface Postgresql extends AutoCloseable {
     GetConfigurationResponse getConfiguration(GetConfigurationRequest request);
 
     /**
-     * Gets the DbSystem connection details.
+     * Gets the database system connection details.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -272,7 +275,7 @@ public interface Postgresql extends AutoCloseable {
     GetConnectionDetailsResponse getConnectionDetails(GetConnectionDetailsRequest request);
 
     /**
-     * Gets a DbSystem by identifier
+     * Gets a database system by identifier.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -287,7 +290,7 @@ public interface Postgresql extends AutoCloseable {
     GetDbSystemResponse getDbSystem(GetDbSystemRequest request);
 
     /**
-     * Gets a Default Configuration by identifier
+     * Gets a default configuration by identifier.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -303,7 +306,7 @@ public interface Postgresql extends AutoCloseable {
     GetDefaultConfigurationResponse getDefaultConfiguration(GetDefaultConfigurationRequest request);
 
     /**
-     * Gets the primary DbInstance details.
+     * Gets the primary database instance node details.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -334,7 +337,7 @@ public interface Postgresql extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
-     * Returns a list of Backup.
+     * Returns a list of backups.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -349,7 +352,7 @@ public interface Postgresql extends AutoCloseable {
     ListBackupsResponse listBackups(ListBackupsRequest request);
 
     /**
-     * Returns a list of Configurations.
+     * Returns a list of configurations.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -365,7 +368,7 @@ public interface Postgresql extends AutoCloseable {
     ListConfigurationsResponse listConfigurations(ListConfigurationsRequest request);
 
     /**
-     * Returns a list of DbSystems.
+     * Returns a list of database systems.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -380,7 +383,7 @@ public interface Postgresql extends AutoCloseable {
     ListDbSystemsResponse listDbSystems(ListDbSystemsRequest request);
 
     /**
-     * Returns a list of Default Configurations.
+     * Returns a list of default configurations.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -460,7 +463,7 @@ public interface Postgresql extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
-     * Patching operation allows to add DbInstances to the DbSystem or remove them.
+     * Modifies the database system by adding or removing database instance nodes.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -475,7 +478,7 @@ public interface Postgresql extends AutoCloseable {
     PatchDbSystemResponse patchDbSystem(PatchDbSystemRequest request);
 
     /**
-     * Resets the Db system's master password.
+     * Resets the database system's master password.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -491,7 +494,7 @@ public interface Postgresql extends AutoCloseable {
     ResetMasterUserPasswordResponse resetMasterUserPassword(ResetMasterUserPasswordRequest request);
 
     /**
-     * Restarts the running DbInstance.
+     * Restarts the running database instance node.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -508,7 +511,7 @@ public interface Postgresql extends AutoCloseable {
             RestartDbInstanceInDbSystemRequest request);
 
     /**
-     * Restore the Db System.
+     * Restore the database system.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -524,7 +527,7 @@ public interface Postgresql extends AutoCloseable {
     RestoreDbSystemResponse restoreDbSystem(RestoreDbSystemRequest request);
 
     /**
-     * Updates the Backup
+     * Updates the backup.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -539,7 +542,7 @@ public interface Postgresql extends AutoCloseable {
     UpdateBackupResponse updateBackup(UpdateBackupRequest request);
 
     /**
-     * Updates a display name or description of the Configuration Set.
+     * Updates a display name or description of the configuration.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -555,7 +558,7 @@ public interface Postgresql extends AutoCloseable {
     UpdateConfigurationResponse updateConfiguration(UpdateConfigurationRequest request);
 
     /**
-     * Updates the DbSystem
+     * Updates the database system.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -570,7 +573,7 @@ public interface Postgresql extends AutoCloseable {
     UpdateDbSystemResponse updateDbSystem(UpdateDbSystemRequest request);
 
     /**
-     * Updates the DbInstance.
+     * Updates the database instance node.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

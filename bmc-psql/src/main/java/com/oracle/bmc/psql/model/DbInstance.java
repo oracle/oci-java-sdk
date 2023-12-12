@@ -5,7 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * DbInstance information. <br>
+ * Information about a database instance node. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -53,12 +53,12 @@ public final class DbInstance extends com.oracle.bmc.http.client.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier that is immutable on creation. */
+        /** A unique identifier for the database instance node. Immutable on creation. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier that is immutable on creation.
+         * A unique identifier for the database instance node. Immutable on creation.
          *
          * @param id the value to set
          * @return this builder
@@ -68,12 +68,16 @@ public final class DbInstance extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Display name of the DbInstance. */
+        /**
+         * A user-friendly display name for the database instance node. Avoid entering confidential
+         * information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Display name of the DbInstance.
+         * A user-friendly display name for the database instance node. Avoid entering confidential
+         * information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -83,12 +87,12 @@ public final class DbInstance extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Description of the DbInstance. */
+        /** Description of the database instance node. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Description of the DbInstance.
+         * Description of the database instance node.
          *
          * @param description the value to set
          * @return this builder
@@ -98,12 +102,12 @@ public final class DbInstance extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The availability domain in which the DbInstance is placed. */
+        /** The availability domain in which the database instance node is located. */
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
-         * The availability domain in which the DbInstance is placed.
+         * The availability domain in which the database instance node is located.
          *
          * @param availabilityDomain the value to set
          * @return this builder
@@ -113,12 +117,12 @@ public final class DbInstance extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-        /** The current state of the DbInstance. */
+        /** The current state of the database instance node. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the DbInstance.
+         * The current state of the database instance node.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -147,12 +151,20 @@ public final class DbInstance extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** The time the the DbInstance was created. An RFC3339 formatted datetime string. */
+        /**
+         * The date and time that the database instance node was created, expressed in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the the DbInstance was created. An RFC3339 formatted datetime string.
+         * The date and time that the database instance node was created, expressed in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -162,12 +174,20 @@ public final class DbInstance extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time the DbInstance was updated. An RFC3339 formatted datetime string. */
+        /**
+         * The date and time that the database instance node was updated, expressed in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the DbInstance was updated. An RFC3339 formatted datetime string.
+         * The date and time that the database instance node was updated, expressed in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -237,12 +257,12 @@ public final class DbInstance extends com.oracle.bmc.http.client.internal.Explic
         return new Builder().copy(this);
     }
 
-    /** Unique identifier that is immutable on creation. */
+    /** A unique identifier for the database instance node. Immutable on creation. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier that is immutable on creation.
+     * A unique identifier for the database instance node. Immutable on creation.
      *
      * @return the value
      */
@@ -250,12 +270,16 @@ public final class DbInstance extends com.oracle.bmc.http.client.internal.Explic
         return id;
     }
 
-    /** Display name of the DbInstance. */
+    /**
+     * A user-friendly display name for the database instance node. Avoid entering confidential
+     * information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Display name of the DbInstance.
+     * A user-friendly display name for the database instance node. Avoid entering confidential
+     * information.
      *
      * @return the value
      */
@@ -263,12 +287,12 @@ public final class DbInstance extends com.oracle.bmc.http.client.internal.Explic
         return displayName;
     }
 
-    /** Description of the DbInstance. */
+    /** Description of the database instance node. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Description of the DbInstance.
+     * Description of the database instance node.
      *
      * @return the value
      */
@@ -276,12 +300,12 @@ public final class DbInstance extends com.oracle.bmc.http.client.internal.Explic
         return description;
     }
 
-    /** The availability domain in which the DbInstance is placed. */
+    /** The availability domain in which the database instance node is located. */
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * The availability domain in which the DbInstance is placed.
+     * The availability domain in which the database instance node is located.
      *
      * @return the value
      */
@@ -289,7 +313,7 @@ public final class DbInstance extends com.oracle.bmc.http.client.internal.Explic
         return availabilityDomain;
     }
 
-    /** The current state of the DbInstance. */
+    /** The current state of the database instance node. */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Updating("UPDATING"),
@@ -340,12 +364,12 @@ public final class DbInstance extends com.oracle.bmc.http.client.internal.Explic
             return UnknownEnumValue;
         }
     };
-    /** The current state of the DbInstance. */
+    /** The current state of the database instance node. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the DbInstance.
+     * The current state of the database instance node.
      *
      * @return the value
      */
@@ -370,12 +394,20 @@ public final class DbInstance extends com.oracle.bmc.http.client.internal.Explic
         return lifecycleDetails;
     }
 
-    /** The time the the DbInstance was created. An RFC3339 formatted datetime string. */
+    /**
+     * The date and time that the database instance node was created, expressed in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the the DbInstance was created. An RFC3339 formatted datetime string.
+     * The date and time that the database instance node was created, expressed in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
      */
@@ -383,12 +415,20 @@ public final class DbInstance extends com.oracle.bmc.http.client.internal.Explic
         return timeCreated;
     }
 
-    /** The time the DbInstance was updated. An RFC3339 formatted datetime string. */
+    /**
+     * The date and time that the database instance node was updated, expressed in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the DbInstance was updated. An RFC3339 formatted datetime string.
+     * The date and time that the database instance node was updated, expressed in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
      */

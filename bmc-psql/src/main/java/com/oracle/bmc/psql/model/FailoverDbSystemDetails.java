@@ -5,7 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * DB system failover information. <br>
+ * Database system failover information. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -33,15 +33,15 @@ public final class FailoverDbSystemDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The desired AD for 3AD regions. Optional parameter. If not set the AD will be chosen
-         * based on the availability.
+         * The preferred AD for regions with three availability domains. This parameter is optional.
+         * If not set, the AD will be chosen based on availability.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("ad")
         private String ad;
 
         /**
-         * The desired AD for 3AD regions. Optional parameter. If not set the AD will be chosen
-         * based on the availability.
+         * The preferred AD for regions with three availability domains. This parameter is optional.
+         * If not set, the AD will be chosen based on availability.
          *
          * @param ad the value to set
          * @return this builder
@@ -52,15 +52,17 @@ public final class FailoverDbSystemDetails
             return this;
         }
         /**
-         * Unique identifier of the DbInstance. Optional parameter. If not set an existing
-         * DbInstance will be chosen based on the availability.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * database instance node. This parameter is optional. If not set, an existing database
+         * instance node will be chosen based on availability.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dbInstanceId")
         private String dbInstanceId;
 
         /**
-         * Unique identifier of the DbInstance. Optional parameter. If not set an existing
-         * DbInstance will be chosen based on the availability.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * database instance node. This parameter is optional. If not set, an existing database
+         * instance node will be chosen based on availability.
          *
          * @param dbInstanceId the value to set
          * @return this builder
@@ -104,15 +106,15 @@ public final class FailoverDbSystemDetails
     }
 
     /**
-     * The desired AD for 3AD regions. Optional parameter. If not set the AD will be chosen based on
-     * the availability.
+     * The preferred AD for regions with three availability domains. This parameter is optional. If
+     * not set, the AD will be chosen based on availability.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("ad")
     private final String ad;
 
     /**
-     * The desired AD for 3AD regions. Optional parameter. If not set the AD will be chosen based on
-     * the availability.
+     * The preferred AD for regions with three availability domains. This parameter is optional. If
+     * not set, the AD will be chosen based on availability.
      *
      * @return the value
      */
@@ -121,15 +123,17 @@ public final class FailoverDbSystemDetails
     }
 
     /**
-     * Unique identifier of the DbInstance. Optional parameter. If not set an existing DbInstance
-     * will be chosen based on the availability.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * database instance node. This parameter is optional. If not set, an existing database instance
+     * node will be chosen based on availability.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dbInstanceId")
     private final String dbInstanceId;
 
     /**
-     * Unique identifier of the DbInstance. Optional parameter. If not set an existing DbInstance
-     * will be chosen based on the availability.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * database instance node. This parameter is optional. If not set, an existing database instance
+     * node will be chosen based on availability.
      *
      * @return the value
      */

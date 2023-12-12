@@ -189,6 +189,43 @@ public class UsageapiAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<CreateUsageCarbonEmissionsQueryResponse>
+            createUsageCarbonEmissionsQuery(
+                    CreateUsageCarbonEmissionsQueryRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateUsageCarbonEmissionsQueryRequest,
+                                    CreateUsageCarbonEmissionsQueryResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getCreateUsageCarbonEmissionsQueryDetails(),
+                "createUsageCarbonEmissionsQueryDetails is required");
+
+        return clientCall(request, CreateUsageCarbonEmissionsQueryResponse::builder)
+                .logger(LOG, "createUsageCarbonEmissionsQuery")
+                .serviceDetails(
+                        "Usageapi",
+                        "CreateUsageCarbonEmissionsQuery",
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/UsageCarbonEmissionsQuery/CreateUsageCarbonEmissionsQuery")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateUsageCarbonEmissionsQueryRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("usageCarbonEmissionsQueries")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.usageapi.model.UsageCarbonEmissionsQuery.class,
+                        CreateUsageCarbonEmissionsQueryResponse.Builder::usageCarbonEmissionsQuery)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateUsageCarbonEmissionsQueryResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateUsageCarbonEmissionsQueryResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteCustomTableResponse> deleteCustomTable(
             DeleteCustomTableRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -268,6 +305,39 @@ public class UsageapiAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendHeader("if-match", request.getIfMatch())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteScheduleResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUsageCarbonEmissionsQueryResponse>
+            deleteUsageCarbonEmissionsQuery(
+                    DeleteUsageCarbonEmissionsQueryRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteUsageCarbonEmissionsQueryRequest,
+                                    DeleteUsageCarbonEmissionsQueryResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getUsageCarbonEmissionsQueryId(),
+                "usageCarbonEmissionsQueryId must not be blank");
+
+        return clientCall(request, DeleteUsageCarbonEmissionsQueryResponse::builder)
+                .logger(LOG, "deleteUsageCarbonEmissionsQuery")
+                .serviceDetails(
+                        "Usageapi",
+                        "DeleteUsageCarbonEmissionsQuery",
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/UsageCarbonEmissionsQuery/DeleteUsageCarbonEmissionsQuery")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteUsageCarbonEmissionsQueryRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("usageCarbonEmissionsQueries")
+                .appendPathParam(request.getUsageCarbonEmissionsQueryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteUsageCarbonEmissionsQueryResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -389,6 +459,43 @@ public class UsageapiAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString(
                         "opc-request-id", GetScheduledRunResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetScheduledRunResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUsageCarbonEmissionsQueryResponse>
+            getUsageCarbonEmissionsQuery(
+                    GetUsageCarbonEmissionsQueryRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetUsageCarbonEmissionsQueryRequest,
+                                    GetUsageCarbonEmissionsQueryResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getUsageCarbonEmissionsQueryId(),
+                "usageCarbonEmissionsQueryId must not be blank");
+
+        return clientCall(request, GetUsageCarbonEmissionsQueryResponse::builder)
+                .logger(LOG, "getUsageCarbonEmissionsQuery")
+                .serviceDetails(
+                        "Usageapi",
+                        "GetUsageCarbonEmissionsQuery",
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/UsageCarbonEmissionsQuery/GetUsageCarbonEmissionsQuery")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetUsageCarbonEmissionsQueryRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("usageCarbonEmissionsQueries")
+                .appendPathParam(request.getUsageCarbonEmissionsQueryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.usageapi.model.UsageCarbonEmissionsQuery.class,
+                        GetUsageCarbonEmissionsQueryResponse.Builder::usageCarbonEmissionsQuery)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetUsageCarbonEmissionsQueryResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", GetUsageCarbonEmissionsQueryResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -535,6 +642,113 @@ public class UsageapiAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ListUsageCarbonEmissionsQueriesResponse>
+            listUsageCarbonEmissionsQueries(
+                    ListUsageCarbonEmissionsQueriesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListUsageCarbonEmissionsQueriesRequest,
+                                    ListUsageCarbonEmissionsQueriesResponse>
+                            handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListUsageCarbonEmissionsQueriesResponse::builder)
+                .logger(LOG, "listUsageCarbonEmissionsQueries")
+                .serviceDetails(
+                        "Usageapi",
+                        "ListUsageCarbonEmissionsQueries",
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/UsageCarbonEmissionsQuery/ListUsageCarbonEmissionsQueries")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListUsageCarbonEmissionsQueriesRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("usageCarbonEmissionsQueries")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.usageapi.model.UsageCarbonEmissionsQueryCollection.class,
+                        ListUsageCarbonEmissionsQueriesResponse.Builder
+                                ::usageCarbonEmissionsQueryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListUsageCarbonEmissionsQueriesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListUsageCarbonEmissionsQueriesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RequestAverageCarbonEmissionResponse>
+            requestAverageCarbonEmission(
+                    RequestAverageCarbonEmissionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RequestAverageCarbonEmissionRequest,
+                                    RequestAverageCarbonEmissionResponse>
+                            handler) {
+
+        Validate.notBlank(request.getSkuPartNumber(), "skuPartNumber must not be blank");
+
+        return clientCall(request, RequestAverageCarbonEmissionResponse::builder)
+                .logger(LOG, "requestAverageCarbonEmission")
+                .serviceDetails(
+                        "Usageapi",
+                        "RequestAverageCarbonEmission",
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/AverageCarbonEmission/RequestAverageCarbonEmission")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(RequestAverageCarbonEmissionRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("averageCarbonEmissions")
+                .appendPathParam(request.getSkuPartNumber())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.usageapi.model.AverageCarbonEmission.class,
+                        RequestAverageCarbonEmissionResponse.Builder::averageCarbonEmission)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RequestAverageCarbonEmissionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", RequestAverageCarbonEmissionResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RequestCleanEnergyUsageResponse> requestCleanEnergyUsage(
+            RequestCleanEnergyUsageRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RequestCleanEnergyUsageRequest, RequestCleanEnergyUsageResponse>
+                    handler) {
+
+        Validate.notBlank(request.getRegion(), "region must not be blank");
+
+        return clientCall(request, RequestCleanEnergyUsageResponse::builder)
+                .logger(LOG, "requestCleanEnergyUsage")
+                .serviceDetails(
+                        "Usageapi",
+                        "RequestCleanEnergyUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CleanEnergyUsage/RequestCleanEnergyUsage")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(RequestCleanEnergyUsageRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("cleanEnergyUsages")
+                .appendPathParam(request.getRegion())
+                .appendQueryParam("ad", request.getAd())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.usageapi.model.CleanEnergyUsage.class,
+                        RequestCleanEnergyUsageResponse.Builder::cleanEnergyUsage)
+                .handleResponseHeaderString(
+                        "opc-request-id", RequestCleanEnergyUsageResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", RequestCleanEnergyUsageResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<RequestSummarizedConfigurationsResponse>
             requestSummarizedConfigurations(
                     RequestSummarizedConfigurationsRequest request,
@@ -598,6 +812,75 @@ public class UsageapiAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         "opc-request-id", RequestSummarizedUsagesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", RequestSummarizedUsagesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RequestUsageCarbonEmissionConfigResponse>
+            requestUsageCarbonEmissionConfig(
+                    RequestUsageCarbonEmissionConfigRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RequestUsageCarbonEmissionConfigRequest,
+                                    RequestUsageCarbonEmissionConfigResponse>
+                            handler) {
+        Objects.requireNonNull(request.getTenantId(), "tenantId is required");
+
+        return clientCall(request, RequestUsageCarbonEmissionConfigResponse::builder)
+                .logger(LOG, "requestUsageCarbonEmissionConfig")
+                .serviceDetails(
+                        "Usageapi",
+                        "RequestUsageCarbonEmissionConfig",
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Configuration/RequestUsageCarbonEmissionConfig")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(RequestUsageCarbonEmissionConfigRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("usageCarbonEmissionsConfig")
+                .appendQueryParam("tenantId", request.getTenantId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.usageapi.model.ConfigurationAggregation.class,
+                        RequestUsageCarbonEmissionConfigResponse.Builder::configurationAggregation)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RequestUsageCarbonEmissionConfigResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RequestUsageCarbonEmissionsResponse>
+            requestUsageCarbonEmissions(
+                    RequestUsageCarbonEmissionsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RequestUsageCarbonEmissionsRequest,
+                                    RequestUsageCarbonEmissionsResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getRequestUsageCarbonEmissionsDetails(),
+                "requestUsageCarbonEmissionsDetails is required");
+
+        return clientCall(request, RequestUsageCarbonEmissionsResponse::builder)
+                .logger(LOG, "requestUsageCarbonEmissions")
+                .serviceDetails(
+                        "Usageapi",
+                        "RequestUsageCarbonEmissions",
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/UsageCarbonEmissionSummary/RequestUsageCarbonEmissions")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RequestUsageCarbonEmissionsRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("usageCarbonEmissions")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.usageapi.model.UsageCarbonEmissionAggregation.class,
+                        RequestUsageCarbonEmissionsResponse.Builder::usageCarbonEmissionAggregation)
+                .handleResponseHeaderString(
+                        "opc-request-id", RequestUsageCarbonEmissionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", RequestUsageCarbonEmissionsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -701,6 +984,48 @@ public class UsageapiAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateScheduleResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateScheduleResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUsageCarbonEmissionsQueryResponse>
+            updateUsageCarbonEmissionsQuery(
+                    UpdateUsageCarbonEmissionsQueryRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateUsageCarbonEmissionsQueryRequest,
+                                    UpdateUsageCarbonEmissionsQueryResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getUpdateUsageCarbonEmissionsQueryDetails(),
+                "updateUsageCarbonEmissionsQueryDetails is required");
+
+        Validate.notBlank(
+                request.getUsageCarbonEmissionsQueryId(),
+                "usageCarbonEmissionsQueryId must not be blank");
+
+        return clientCall(request, UpdateUsageCarbonEmissionsQueryResponse::builder)
+                .logger(LOG, "updateUsageCarbonEmissionsQuery")
+                .serviceDetails(
+                        "Usageapi",
+                        "UpdateUsageCarbonEmissionsQuery",
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/UsageCarbonEmissionsQuery/UpdateUsageCarbonEmissionsQuery")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateUsageCarbonEmissionsQueryRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("usageCarbonEmissionsQueries")
+                .appendPathParam(request.getUsageCarbonEmissionsQueryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.usageapi.model.UsageCarbonEmissionsQuery.class,
+                        UpdateUsageCarbonEmissionsQueryResponse.Builder::usageCarbonEmissionsQuery)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateUsageCarbonEmissionsQueryResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", UpdateUsageCarbonEmissionsQueryResponse.Builder::etag)
                 .callAsync(handler);
     }
 

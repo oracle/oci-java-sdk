@@ -5,7 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Description of DbSystem resource. <br>
+ * Information about a database system. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -101,12 +101,12 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier that is immutable on creation */
+        /** A unique identifier for the database system. Immutable on creation. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier that is immutable on creation
+         * A unique identifier for the database system. Immutable on creation.
          *
          * @param id the value to set
          * @return this builder
@@ -116,12 +116,16 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** DbSystem display name */
+        /**
+         * A user-friendly display name for the database system. Avoid entering confidential
+         * information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * DbSystem display name
+         * A user-friendly display name for the database system. Avoid entering confidential
+         * information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -131,12 +135,12 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Description of the DbSystem. */
+        /** A description of the database system. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Description of the DbSystem.
+         * A description of the database system.
          *
          * @param description the value to set
          * @return this builder
@@ -146,12 +150,16 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Compartment identifier */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the database system.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment identifier
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the database system.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -161,12 +169,20 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The time the the DbSystem was created. An RFC3339 formatted datetime string */
+        /**
+         * The date and time that the database system was created, expressed in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the the DbSystem was created. An RFC3339 formatted datetime string
+         * The date and time that the database system was created, expressed in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -176,12 +192,20 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time the DbSystem was updated. An RFC3339 formatted datetime string */
+        /**
+         * The date and time that the database system was updated, expressed in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the DbSystem was updated. An RFC3339 formatted datetime string
+         * The date and time that the database system was updated, expressed in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -191,12 +215,12 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the DbSystem. */
+        /** The current state of the database system. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the DbSystem.
+         * The current state of the database system.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -225,12 +249,12 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** The DB system username. */
+        /** The database system administrator username. */
         @com.fasterxml.jackson.annotation.JsonProperty("adminUsername")
         private String adminUsername;
 
         /**
-         * The DB system username.
+         * The database system administrator username.
          *
          * @param adminUsername the value to set
          * @return this builder
@@ -298,12 +322,12 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** Type of the DbSystem. */
+        /** Type of the database system. */
         @com.fasterxml.jackson.annotation.JsonProperty("systemType")
         private SystemType systemType;
 
         /**
-         * Type of the DbSystem.
+         * Type of the database system.
          *
          * @param systemType the value to set
          * @return this builder
@@ -313,12 +337,12 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("systemType");
             return this;
         }
-        /** The major and minor versions of the DbSystem software. */
+        /** The major and minor versions of the database system software. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
         /**
-         * The major and minor versions of the DbSystem software.
+         * The major and minor versions of the database system software.
          *
          * @param dbVersion the value to set
          * @return this builder
@@ -328,12 +352,16 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("dbVersion");
             return this;
         }
-        /** Configuration identifier */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * configuration associated with the database system.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("configId")
         private String configId;
 
         /**
-         * Configuration identifier
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * configuration associated with the database system.
          *
          * @param configId the value to set
          * @return this builder
@@ -343,12 +371,12 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("configId");
             return this;
         }
-        /** Shape of dbInstance. */
+        /** The name of the shape for the database instance. Example: {@code VM.Standard.E4.Flex} */
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
-         * Shape of dbInstance.
+         * The name of the shape for the database instance. Example: {@code VM.Standard.E4.Flex}
          *
          * @param shape the value to set
          * @return this builder
@@ -358,12 +386,12 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("shape");
             return this;
         }
-        /** The total number of OCPUs available to each DbInstance. */
+        /** The total number of OCPUs available to each database instance node. */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceOcpuCount")
         private Integer instanceOcpuCount;
 
         /**
-         * The total number of OCPUs available to each DbInstance.
+         * The total number of OCPUs available to each database instance node.
          *
          * @param instanceOcpuCount the value to set
          * @return this builder
@@ -373,12 +401,12 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("instanceOcpuCount");
             return this;
         }
-        /** The total amount of memory available to each DbInstance, in gigabytes. */
+        /** The total amount of memory available to each database instance node, in gigabytes. */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceMemorySizeInGBs")
         private Integer instanceMemorySizeInGBs;
 
         /**
-         * The total amount of memory available to each DbInstance, in gigabytes.
+         * The total amount of memory available to each database instance node, in gigabytes.
          *
          * @param instanceMemorySizeInGBs the value to set
          * @return this builder
@@ -388,12 +416,12 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("instanceMemorySizeInGBs");
             return this;
         }
-        /** Count of DbInstances in the DbSystem. */
+        /** Count of instances, or nodes, in the database system. */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceCount")
         private Integer instanceCount;
 
         /**
-         * Count of DbInstances in the DbSystem.
+         * Count of instances, or nodes, in the database system.
          *
          * @param instanceCount the value to set
          * @return this builder
@@ -403,12 +431,12 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("instanceCount");
             return this;
         }
-        /** The list of DbInstances in the DbSystem. */
+        /** The list of instances, or nodes, in the database system. */
         @com.fasterxml.jackson.annotation.JsonProperty("instances")
         private java.util.List<DbInstance> instances;
 
         /**
-         * The list of DbInstances in the DbSystem.
+         * The list of instances, or nodes, in the database system.
          *
          * @param instances the value to set
          * @return this builder
@@ -578,12 +606,12 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /** Unique identifier that is immutable on creation */
+    /** A unique identifier for the database system. Immutable on creation. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier that is immutable on creation
+     * A unique identifier for the database system. Immutable on creation.
      *
      * @return the value
      */
@@ -591,12 +619,16 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         return id;
     }
 
-    /** DbSystem display name */
+    /**
+     * A user-friendly display name for the database system. Avoid entering confidential
+     * information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * DbSystem display name
+     * A user-friendly display name for the database system. Avoid entering confidential
+     * information.
      *
      * @return the value
      */
@@ -604,12 +636,12 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         return displayName;
     }
 
-    /** Description of the DbSystem. */
+    /** A description of the database system. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Description of the DbSystem.
+     * A description of the database system.
      *
      * @return the value
      */
@@ -617,12 +649,16 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         return description;
     }
 
-    /** Compartment identifier */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the database system.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment identifier
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the database system.
      *
      * @return the value
      */
@@ -630,12 +666,20 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         return compartmentId;
     }
 
-    /** The time the the DbSystem was created. An RFC3339 formatted datetime string */
+    /**
+     * The date and time that the database system was created, expressed in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the the DbSystem was created. An RFC3339 formatted datetime string
+     * The date and time that the database system was created, expressed in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
      */
@@ -643,12 +687,20 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         return timeCreated;
     }
 
-    /** The time the DbSystem was updated. An RFC3339 formatted datetime string */
+    /**
+     * The date and time that the database system was updated, expressed in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the DbSystem was updated. An RFC3339 formatted datetime string
+     * The date and time that the database system was updated, expressed in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
      */
@@ -656,7 +708,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         return timeUpdated;
     }
 
-    /** The current state of the DbSystem. */
+    /** The current state of the database system. */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Updating("UPDATING"),
@@ -708,12 +760,12 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             return UnknownEnumValue;
         }
     };
-    /** The current state of the DbSystem. */
+    /** The current state of the database system. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the DbSystem.
+     * The current state of the database system.
      *
      * @return the value
      */
@@ -738,12 +790,12 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         return lifecycleDetails;
     }
 
-    /** The DB system username. */
+    /** The database system administrator username. */
     @com.fasterxml.jackson.annotation.JsonProperty("adminUsername")
     private final String adminUsername;
 
     /**
-     * The DB system username.
+     * The database system administrator username.
      *
      * @return the value
      */
@@ -802,7 +854,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         return systemTags;
     }
 
-    /** Type of the DbSystem. */
+    /** Type of the database system. */
     public enum SystemType implements com.oracle.bmc.http.internal.BmcEnum {
         OciOptimizedStorage("OCI_OPTIMIZED_STORAGE"),
 
@@ -847,12 +899,12 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             return UnknownEnumValue;
         }
     };
-    /** Type of the DbSystem. */
+    /** Type of the database system. */
     @com.fasterxml.jackson.annotation.JsonProperty("systemType")
     private final SystemType systemType;
 
     /**
-     * Type of the DbSystem.
+     * Type of the database system.
      *
      * @return the value
      */
@@ -860,12 +912,12 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         return systemType;
     }
 
-    /** The major and minor versions of the DbSystem software. */
+    /** The major and minor versions of the database system software. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
 
     /**
-     * The major and minor versions of the DbSystem software.
+     * The major and minor versions of the database system software.
      *
      * @return the value
      */
@@ -873,12 +925,16 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         return dbVersion;
     }
 
-    /** Configuration identifier */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * configuration associated with the database system.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("configId")
     private final String configId;
 
     /**
-     * Configuration identifier
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * configuration associated with the database system.
      *
      * @return the value
      */
@@ -886,12 +942,12 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         return configId;
     }
 
-    /** Shape of dbInstance. */
+    /** The name of the shape for the database instance. Example: {@code VM.Standard.E4.Flex} */
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
-     * Shape of dbInstance.
+     * The name of the shape for the database instance. Example: {@code VM.Standard.E4.Flex}
      *
      * @return the value
      */
@@ -899,12 +955,12 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         return shape;
     }
 
-    /** The total number of OCPUs available to each DbInstance. */
+    /** The total number of OCPUs available to each database instance node. */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceOcpuCount")
     private final Integer instanceOcpuCount;
 
     /**
-     * The total number of OCPUs available to each DbInstance.
+     * The total number of OCPUs available to each database instance node.
      *
      * @return the value
      */
@@ -912,12 +968,12 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         return instanceOcpuCount;
     }
 
-    /** The total amount of memory available to each DbInstance, in gigabytes. */
+    /** The total amount of memory available to each database instance node, in gigabytes. */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceMemorySizeInGBs")
     private final Integer instanceMemorySizeInGBs;
 
     /**
-     * The total amount of memory available to each DbInstance, in gigabytes.
+     * The total amount of memory available to each database instance node, in gigabytes.
      *
      * @return the value
      */
@@ -925,12 +981,12 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         return instanceMemorySizeInGBs;
     }
 
-    /** Count of DbInstances in the DbSystem. */
+    /** Count of instances, or nodes, in the database system. */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceCount")
     private final Integer instanceCount;
 
     /**
-     * Count of DbInstances in the DbSystem.
+     * Count of instances, or nodes, in the database system.
      *
      * @return the value
      */
@@ -938,12 +994,12 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         return instanceCount;
     }
 
-    /** The list of DbInstances in the DbSystem. */
+    /** The list of instances, or nodes, in the database system. */
     @com.fasterxml.jackson.annotation.JsonProperty("instances")
     private final java.util.List<DbInstance> instances;
 
     /**
-     * The list of DbInstances in the DbSystem.
+     * The list of instances, or nodes, in the database system.
      *
      * @return the value
      */

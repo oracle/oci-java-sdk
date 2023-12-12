@@ -5,7 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * The node endpoint information. <br>
+ * Information about the database instance node endpoint. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +31,12 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The FQDN of the endpoint */
+        /** The FQDN of the endpoint. */
         @com.fasterxml.jackson.annotation.JsonProperty("fqdn")
         private String fqdn;
 
         /**
-         * The FQDN of the endpoint
+         * The FQDN of the endpoint.
          *
          * @param fqdn the value to set
          * @return this builder
@@ -46,12 +46,12 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("fqdn");
             return this;
         }
-        /** The IP Address of the endpoint */
+        /** The IP address of the endpoint. */
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
-         * The IP Address of the endpoint
+         * The IP address of the endpoint.
          *
          * @param ipAddress the value to set
          * @return this builder
@@ -61,12 +61,12 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
-        /** The port Address of the endpoint */
+        /** The port address of the endpoint. */
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
         /**
-         * The port Address of the endpoint
+         * The port address of the endpoint.
          *
          * @param port the value to set
          * @return this builder
@@ -112,12 +112,12 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /** The FQDN of the endpoint */
+    /** The FQDN of the endpoint. */
     @com.fasterxml.jackson.annotation.JsonProperty("fqdn")
     private final String fqdn;
 
     /**
-     * The FQDN of the endpoint
+     * The FQDN of the endpoint.
      *
      * @return the value
      */
@@ -125,12 +125,12 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
         return fqdn;
     }
 
-    /** The IP Address of the endpoint */
+    /** The IP address of the endpoint. */
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
-     * The IP Address of the endpoint
+     * The IP address of the endpoint.
      *
      * @return the value
      */
@@ -138,12 +138,12 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
         return ipAddress;
     }
 
-    /** The port Address of the endpoint */
+    /** The port address of the endpoint. */
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
     /**
-     * The port Address of the endpoint
+     * The port address of the endpoint.
      *
      * @return the value
      */

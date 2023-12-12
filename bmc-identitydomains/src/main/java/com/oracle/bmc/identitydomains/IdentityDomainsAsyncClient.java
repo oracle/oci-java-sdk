@@ -667,6 +667,46 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<CreateIdentityPropagationTrustResponse>
+            createIdentityPropagationTrust(
+                    CreateIdentityPropagationTrustRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateIdentityPropagationTrustRequest,
+                                    CreateIdentityPropagationTrustResponse>
+                            handler) {
+
+        return clientCall(request, CreateIdentityPropagationTrustResponse::builder)
+                .logger(LOG, "createIdentityPropagationTrust")
+                .serviceDetails("IdentityDomains", "CreateIdentityPropagationTrust", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateIdentityPropagationTrustRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("IdentityPropagationTrusts")
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.IdentityPropagationTrust.class,
+                        CreateIdentityPropagationTrustResponse.Builder::identityPropagationTrust)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateIdentityPropagationTrustResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateIdentityPropagationTrustResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateIdentityProviderResponse> createIdentityProvider(
             CreateIdentityProviderRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2005,6 +2045,42 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteGroupResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteIdentityPropagationTrustResponse>
+            deleteIdentityPropagationTrust(
+                    DeleteIdentityPropagationTrustRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteIdentityPropagationTrustRequest,
+                                    DeleteIdentityPropagationTrustResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getIdentityPropagationTrustId(),
+                "identityPropagationTrustId must not be blank");
+
+        return clientCall(request, DeleteIdentityPropagationTrustResponse::builder)
+                .logger(LOG, "deleteIdentityPropagationTrust")
+                .serviceDetails("IdentityDomains", "DeleteIdentityPropagationTrust", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteIdentityPropagationTrustRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("IdentityPropagationTrusts")
+                .appendPathParam(request.getIdentityPropagationTrustId())
+                .appendQueryParam("forceDelete", request.getForceDelete())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteIdentityPropagationTrustResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -3419,6 +3495,47 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                         GetGroupResponse.Builder::group)
                 .handleResponseHeaderString(
                         "opc-request-id", GetGroupResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetIdentityPropagationTrustResponse>
+            getIdentityPropagationTrust(
+                    GetIdentityPropagationTrustRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetIdentityPropagationTrustRequest,
+                                    GetIdentityPropagationTrustResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getIdentityPropagationTrustId(),
+                "identityPropagationTrustId must not be blank");
+
+        return clientCall(request, GetIdentityPropagationTrustResponse::builder)
+                .logger(LOG, "getIdentityPropagationTrust")
+                .serviceDetails("IdentityDomains", "GetIdentityPropagationTrust", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetIdentityPropagationTrustRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("IdentityPropagationTrusts")
+                .appendPathParam(request.getIdentityPropagationTrustId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.IdentityPropagationTrust.class,
+                        GetIdentityPropagationTrustResponse.Builder::identityPropagationTrust)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetIdentityPropagationTrustResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -5396,6 +5513,52 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                         "opc-request-id", ListGroupsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListGroupsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIdentityPropagationTrustsResponse>
+            listIdentityPropagationTrusts(
+                    ListIdentityPropagationTrustsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListIdentityPropagationTrustsRequest,
+                                    ListIdentityPropagationTrustsResponse>
+                            handler) {
+
+        return clientCall(request, ListIdentityPropagationTrustsResponse::builder)
+                .logger(LOG, "listIdentityPropagationTrusts")
+                .serviceDetails("IdentityDomains", "ListIdentityPropagationTrusts", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListIdentityPropagationTrustsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("IdentityPropagationTrusts")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.IdentityPropagationTrusts.class,
+                        ListIdentityPropagationTrustsResponse.Builder::identityPropagationTrusts)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListIdentityPropagationTrustsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListIdentityPropagationTrustsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -7462,6 +7625,52 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<PatchIdentityPropagationTrustResponse>
+            patchIdentityPropagationTrust(
+                    PatchIdentityPropagationTrustRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    PatchIdentityPropagationTrustRequest,
+                                    PatchIdentityPropagationTrustResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getIdentityPropagationTrustId(),
+                "identityPropagationTrustId must not be blank");
+
+        return clientCall(request, PatchIdentityPropagationTrustResponse::builder)
+                .logger(LOG, "patchIdentityPropagationTrust")
+                .serviceDetails("IdentityDomains", "PatchIdentityPropagationTrust", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchIdentityPropagationTrustRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("IdentityPropagationTrusts")
+                .appendPathParam(request.getIdentityPropagationTrustId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.IdentityPropagationTrust.class,
+                        PatchIdentityPropagationTrustResponse.Builder::identityPropagationTrust)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        PatchIdentityPropagationTrustResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", PatchIdentityPropagationTrustResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<PatchIdentityProviderResponse> patchIdentityProvider(
             PatchIdentityProviderRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -8880,6 +9089,51 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-request-id", PutGroupResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", PutGroupResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutIdentityPropagationTrustResponse>
+            putIdentityPropagationTrust(
+                    PutIdentityPropagationTrustRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    PutIdentityPropagationTrustRequest,
+                                    PutIdentityPropagationTrustResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getIdentityPropagationTrustId(),
+                "identityPropagationTrustId must not be blank");
+
+        return clientCall(request, PutIdentityPropagationTrustResponse::builder)
+                .logger(LOG, "putIdentityPropagationTrust")
+                .serviceDetails("IdentityDomains", "PutIdentityPropagationTrust", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutIdentityPropagationTrustRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("IdentityPropagationTrusts")
+                .appendPathParam(request.getIdentityPropagationTrustId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.IdentityPropagationTrust.class,
+                        PutIdentityPropagationTrustResponse.Builder::identityPropagationTrust)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutIdentityPropagationTrustResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", PutIdentityPropagationTrustResponse.Builder::etag)
                 .callAsync(handler);
     }
 

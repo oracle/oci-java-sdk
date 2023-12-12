@@ -6,7 +6,7 @@ package com.oracle.bmc.datasafe.model;
 
 /**
  * Database Security Configurations resource represents the target database configurations. Included
- * in the Database Security Configurations are the SQL firewall configurations such as the status of
+ * in the Database Security Configurations are the SQL Firewall configurations such as the status of
  * the firewall, the time that the firewall status was last updated, violation log auto purge
  * settings, etc. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model

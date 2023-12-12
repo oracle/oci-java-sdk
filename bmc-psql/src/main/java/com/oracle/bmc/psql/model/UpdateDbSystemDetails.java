@@ -52,12 +52,16 @@ public final class UpdateDbSystemDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** DbSystem display name. */
+        /**
+         * A user-friendly display name for the database system. Avoid entering confidential
+         * information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * DbSystem display name.
+         * A user-friendly display name for the database system. Avoid entering confidential
+         * information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -67,12 +71,12 @@ public final class UpdateDbSystemDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Description of a DbSystem. This field should be input by the user. */
+        /** A user-provided description of the database system. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Description of a DbSystem. This field should be input by the user.
+         * A user-provided description of the database system.
          *
          * @param description the value to set
          * @return this builder
@@ -204,12 +208,16 @@ public final class UpdateDbSystemDetails
         return new Builder().copy(this);
     }
 
-    /** DbSystem display name. */
+    /**
+     * A user-friendly display name for the database system. Avoid entering confidential
+     * information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * DbSystem display name.
+     * A user-friendly display name for the database system. Avoid entering confidential
+     * information.
      *
      * @return the value
      */
@@ -217,12 +225,12 @@ public final class UpdateDbSystemDetails
         return displayName;
     }
 
-    /** Description of a DbSystem. This field should be input by the user. */
+    /** A user-provided description of the database system. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Description of a DbSystem. This field should be input by the user.
+     * A user-provided description of the database system.
      *
      * @return the value
      */

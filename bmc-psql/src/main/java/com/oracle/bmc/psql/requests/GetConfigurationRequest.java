@@ -13,10 +13,10 @@ import com.oracle.bmc.psql.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
 public class GetConfigurationRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** unique Configuration identifier */
+    /** A unique identifier for the configuration. */
     private String configurationId;
 
-    /** unique Configuration identifier */
+    /** A unique identifier for the configuration. */
     public String getConfigurationId() {
         return configurationId;
     }
@@ -34,11 +34,11 @@ public class GetConfigurationRequest extends com.oracle.bmc.requests.BmcRequest<
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique Configuration identifier */
+        /** A unique identifier for the configuration. */
         private String configurationId = null;
 
         /**
-         * unique Configuration identifier
+         * A unique identifier for the configuration.
          *
          * @param configurationId the value to set
          * @return this builder instance

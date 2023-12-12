@@ -5,7 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Summary of the Configuration. <br>
+ * Summary of the configuration. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -70,12 +70,16 @@ public final class ConfigurationSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier that is immutable on creation */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * configuration. Immutable on creation.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier that is immutable on creation
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * configuration. Immutable on creation.
          *
          * @param id the value to set
          * @return this builder
@@ -85,12 +89,16 @@ public final class ConfigurationSummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Configuration identifier name */
+        /**
+         * A user-friendly display name for the configuration. Avoid entering confidential
+         * information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Configuration identifier name
+         * A user-friendly display name for the configuration. Avoid entering confidential
+         * information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -100,12 +108,16 @@ public final class ConfigurationSummary
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Compartment identifier */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the configuration.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment identifier
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the configuration.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -115,12 +127,20 @@ public final class ConfigurationSummary
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The time the the Configuration was created. An RFC3339 formatted datetime string */
+        /**
+         * The date and time the configuration was created, expressed in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the the Configuration was created. An RFC3339 formatted datetime string
+         * The date and time the configuration was created, expressed in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -130,12 +150,12 @@ public final class ConfigurationSummary
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The current state of the Configuration. */
+        /** The current state of the configuration. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private Configuration.LifecycleState lifecycleState;
 
         /**
-         * The current state of the Configuration.
+         * The current state of the configuration.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -164,12 +184,12 @@ public final class ConfigurationSummary
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** Compute Shape Name like VM.Standard3.Flex. */
+        /** The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex} */
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
-         * Compute Shape Name like VM.Standard3.Flex.
+         * The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex}
          *
          * @param shape the value to set
          * @return this builder
@@ -179,12 +199,12 @@ public final class ConfigurationSummary
             this.__explicitlySet__.add("shape");
             return this;
         }
-        /** Version of the Postgresql DB */
+        /** Version of the PostgreSQL database. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
         /**
-         * Version of the Postgresql DB
+         * Version of the PostgreSQL database.
          *
          * @param dbVersion the value to set
          * @return this builder
@@ -194,12 +214,12 @@ public final class ConfigurationSummary
             this.__explicitlySet__.add("dbVersion");
             return this;
         }
-        /** CPU cpuCoreCount. Min value is 1. Max value depends on the shape. */
+        /** CPU core count. */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceOcpuCount")
         private Integer instanceOcpuCount;
 
         /**
-         * CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+         * CPU core count.
          *
          * @param instanceOcpuCount the value to set
          * @return this builder
@@ -209,16 +229,12 @@ public final class ConfigurationSummary
             this.__explicitlySet__.add("instanceOcpuCount");
             return this;
         }
-        /**
-         * Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value
-         * depends on the shape.
-         */
+        /** Memory size in gigabytes with 1GB increment. */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceMemorySizeInGBs")
         private Integer instanceMemorySizeInGBs;
 
         /**
-         * Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value
-         * depends on the shape.
+         * Memory size in gigabytes with 1GB increment.
          *
          * @param instanceMemorySizeInGBs the value to set
          * @return this builder
@@ -366,12 +382,16 @@ public final class ConfigurationSummary
         return new Builder().copy(this);
     }
 
-    /** Unique identifier that is immutable on creation */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * configuration. Immutable on creation.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier that is immutable on creation
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * configuration. Immutable on creation.
      *
      * @return the value
      */
@@ -379,12 +399,14 @@ public final class ConfigurationSummary
         return id;
     }
 
-    /** Configuration identifier name */
+    /**
+     * A user-friendly display name for the configuration. Avoid entering confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Configuration identifier name
+     * A user-friendly display name for the configuration. Avoid entering confidential information.
      *
      * @return the value
      */
@@ -392,12 +414,16 @@ public final class ConfigurationSummary
         return displayName;
     }
 
-    /** Compartment identifier */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the configuration.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment identifier
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the configuration.
      *
      * @return the value
      */
@@ -405,12 +431,20 @@ public final class ConfigurationSummary
         return compartmentId;
     }
 
-    /** The time the the Configuration was created. An RFC3339 formatted datetime string */
+    /**
+     * The date and time the configuration was created, expressed in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the the Configuration was created. An RFC3339 formatted datetime string
+     * The date and time the configuration was created, expressed in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
      */
@@ -418,12 +452,12 @@ public final class ConfigurationSummary
         return timeCreated;
     }
 
-    /** The current state of the Configuration. */
+    /** The current state of the configuration. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Configuration.LifecycleState lifecycleState;
 
     /**
-     * The current state of the Configuration.
+     * The current state of the configuration.
      *
      * @return the value
      */
@@ -448,12 +482,12 @@ public final class ConfigurationSummary
         return lifecycleDetails;
     }
 
-    /** Compute Shape Name like VM.Standard3.Flex. */
+    /** The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex} */
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
-     * Compute Shape Name like VM.Standard3.Flex.
+     * The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex}
      *
      * @return the value
      */
@@ -461,12 +495,12 @@ public final class ConfigurationSummary
         return shape;
     }
 
-    /** Version of the Postgresql DB */
+    /** Version of the PostgreSQL database. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
 
     /**
-     * Version of the Postgresql DB
+     * Version of the PostgreSQL database.
      *
      * @return the value
      */
@@ -474,12 +508,12 @@ public final class ConfigurationSummary
         return dbVersion;
     }
 
-    /** CPU cpuCoreCount. Min value is 1. Max value depends on the shape. */
+    /** CPU core count. */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceOcpuCount")
     private final Integer instanceOcpuCount;
 
     /**
-     * CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+     * CPU core count.
      *
      * @return the value
      */
@@ -487,16 +521,12 @@ public final class ConfigurationSummary
         return instanceOcpuCount;
     }
 
-    /**
-     * Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends
-     * on the shape.
-     */
+    /** Memory size in gigabytes with 1GB increment. */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceMemorySizeInGBs")
     private final Integer instanceMemorySizeInGBs;
 
     /**
-     * Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends
-     * on the shape.
+     * Memory size in gigabytes with 1GB increment.
      *
      * @return the value
      */

@@ -108,6 +108,15 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
             this.__explicitlySet__.add("subnetId");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
         /** The MongoDB technology type. */
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private MongoDbConnection.TechnologyType technologyType;
@@ -209,6 +218,7 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
                             this.keyId,
                             this.nsgIds,
                             this.subnetId,
+                            this.routingMethod,
                             this.technologyType,
                             this.connectionString,
                             this.username,
@@ -249,6 +259,9 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -288,6 +301,7 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
             String keyId,
             java.util.List<String> nsgIds,
             String subnetId,
+            RoutingMethod routingMethod,
             MongoDbConnection.TechnologyType technologyType,
             String connectionString,
             String username,
@@ -302,7 +316,8 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
                 vaultId,
                 keyId,
                 nsgIds,
-                subnetId);
+                subnetId,
+                routingMethod);
         this.technologyType = technologyType;
         this.connectionString = connectionString;
         this.username = username;

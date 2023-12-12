@@ -5,7 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Posgresql DB system backup policy <br>
+ * PostgreSQL database system backup policy. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -45,12 +45,12 @@ public class BackupPolicy extends com.oracle.bmc.http.client.internal.Explicitly
         this.retentionDays = retentionDays;
     }
 
-    /** How many days the customers data should be stored after the db system deletion. */
+    /** How many days the data should be stored after the database system deletion. */
     @com.fasterxml.jackson.annotation.JsonProperty("retentionDays")
     private final Integer retentionDays;
 
     /**
-     * How many days the customers data should be stored after the db system deletion.
+     * How many days the data should be stored after the database system deletion.
      *
      * @return the value
      */
@@ -103,7 +103,7 @@ public class BackupPolicy extends com.oracle.bmc.http.client.internal.Explicitly
         return result;
     }
 
-    /** Backup policy kind */
+    /** The kind of backup policy. */
     public enum Kind implements com.oracle.bmc.http.internal.BmcEnum {
         Daily("DAILY"),
         Weekly("WEEKLY"),

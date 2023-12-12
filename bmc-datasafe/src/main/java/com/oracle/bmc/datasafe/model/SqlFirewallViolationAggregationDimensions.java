@@ -223,7 +223,7 @@ public final class SqlFirewallViolationAggregationDimensions
             return this;
         }
         /**
-         * Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User
+         * Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User
          * issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement
          * issued inside PL/SQL units.
          */
@@ -231,7 +231,7 @@ public final class SqlFirewallViolationAggregationDimensions
         private java.util.List<SqlLevel> sqlLevel;
 
         /**
-         * Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User
+         * Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User
          * issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement
          * issued inside PL/SQL units.
          *
@@ -500,7 +500,7 @@ public final class SqlFirewallViolationAggregationDimensions
         }
     };
     /**
-     * Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User
+     * Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User
      * issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement
      * issued inside PL/SQL units.
      */
@@ -508,7 +508,7 @@ public final class SqlFirewallViolationAggregationDimensions
     private final java.util.List<SqlLevel> sqlLevel;
 
     /**
-     * Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User
+     * Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User
      * issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement
      * issued inside PL/SQL units.
      *

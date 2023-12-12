@@ -83,6 +83,9 @@ package com.oracle.bmc.datasafe.model;
             value = SubstringFormatEntry.class,
             name = "SUBSTRING"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PatternFormatEntry.class,
+            name = "PATTERN"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = RandomNumberFormatEntry.class,
             name = "RANDOM_NUMBER"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

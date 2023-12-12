@@ -5,7 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Change db system compartment operation details. <br>
+ * Change database system compartment operation details. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -33,14 +33,14 @@ public final class ChangeDbSystemCompartmentDetails
     public static class Builder {
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * compartment into which the resource should be moved.
+         * compartment into which the database system should be moved.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * compartment into which the resource should be moved.
+         * compartment into which the database system should be moved.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -83,14 +83,14 @@ public final class ChangeDbSystemCompartmentDetails
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * compartment into which the resource should be moved.
+     * compartment into which the database system should be moved.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * compartment into which the resource should be moved.
+     * compartment into which the database system should be moved.
      *
      * @return the value
      */

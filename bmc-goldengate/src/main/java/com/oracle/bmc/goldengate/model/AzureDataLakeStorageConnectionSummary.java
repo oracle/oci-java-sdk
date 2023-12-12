@@ -171,6 +171,15 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
             this.__explicitlySet__.add("subnetId");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
         /** The Azure Data Lake Storage technology type. */
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private AzureDataLakeStorageConnection.TechnologyType technologyType;
@@ -294,6 +303,7 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
                             this.ingressIps,
                             this.nsgIds,
                             this.subnetId,
+                            this.routingMethod,
                             this.technologyType,
                             this.authenticationType,
                             this.accountName,
@@ -356,6 +366,9 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -405,6 +418,7 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
             java.util.List<IngressIpDetails> ingressIps,
             java.util.List<String> nsgIds,
             String subnetId,
+            RoutingMethod routingMethod,
             AzureDataLakeStorageConnection.TechnologyType technologyType,
             AzureDataLakeStorageConnection.AuthenticationType authenticationType,
             String accountName,
@@ -427,7 +441,8 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
                 keyId,
                 ingressIps,
                 nsgIds,
-                subnetId);
+                subnetId,
+                routingMethod);
         this.technologyType = technologyType;
         this.authenticationType = authenticationType;
         this.accountName = accountName;

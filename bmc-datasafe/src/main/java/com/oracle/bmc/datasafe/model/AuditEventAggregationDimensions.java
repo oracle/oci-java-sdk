@@ -140,15 +140,15 @@ public final class AuditEventAggregationDimensions
             return this;
         }
         /**
-         * Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM,
-         * PACKAGE BODY.
+         * Type of object in the source database affected by the action. For example PL/SQL, SYNONYM
+         * or PACKAGE BODY.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("objectType")
         private java.util.List<String> objectType;
 
         /**
-         * Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM,
-         * PACKAGE BODY.
+         * Type of object in the source database affected by the action. For example PL/SQL, SYNONYM
+         * or PACKAGE BODY.
          *
          * @param objectType the value to set
          * @return this builder
@@ -174,14 +174,14 @@ public final class AuditEventAggregationDimensions
             return this;
         }
         /**
-         * The application from which the audit event was generated. Examples SQL Plus or SQL
+         * The application from which the audit event was generated. For example SQL Plus or SQL
          * Developer.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("clientProgram")
         private java.util.List<String> clientProgram;
 
         /**
-         * The application from which the audit event was generated. Examples SQL Plus or SQL
+         * The application from which the audit event was generated. For example SQL Plus or SQL
          * Developer.
          *
          * @param clientProgram the value to set
@@ -223,15 +223,15 @@ public final class AuditEventAggregationDimensions
             return this;
         }
         /**
-         * The name of the event executed by the user on the target database. i.e ALTER SEQUENCE,
-         * CREATE TRIGGER, CREATE INDEX.
+         * The name of the event executed by the user on the target database. For example ALTER
+         * SEQUENCE, CREATE TRIGGER or CREATE INDEX.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("eventName")
         private java.util.List<String> eventName;
 
         /**
-         * The name of the event executed by the user on the target database. i.e ALTER SEQUENCE,
-         * CREATE TRIGGER, CREATE INDEX.
+         * The name of the event executed by the user on the target database. For example ALTER
+         * SEQUENCE, CREATE TRIGGER or CREATE INDEX.
          *
          * @param eventName the value to set
          * @return this builder
@@ -424,15 +424,15 @@ public final class AuditEventAggregationDimensions
     }
 
     /**
-     * Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE
-     * BODY.
+     * Type of object in the source database affected by the action. For example PL/SQL, SYNONYM or
+     * PACKAGE BODY.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("objectType")
     private final java.util.List<String> objectType;
 
     /**
-     * Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE
-     * BODY.
+     * Type of object in the source database affected by the action. For example PL/SQL, SYNONYM or
+     * PACKAGE BODY.
      *
      * @return the value
      */
@@ -454,13 +454,15 @@ public final class AuditEventAggregationDimensions
     }
 
     /**
-     * The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
+     * The application from which the audit event was generated. For example SQL Plus or SQL
+     * Developer.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("clientProgram")
     private final java.util.List<String> clientProgram;
 
     /**
-     * The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
+     * The application from which the audit event was generated. For example SQL Plus or SQL
+     * Developer.
      *
      * @return the value
      */
@@ -547,15 +549,15 @@ public final class AuditEventAggregationDimensions
     }
 
     /**
-     * The name of the event executed by the user on the target database. i.e ALTER SEQUENCE, CREATE
-     * TRIGGER, CREATE INDEX.
+     * The name of the event executed by the user on the target database. For example ALTER
+     * SEQUENCE, CREATE TRIGGER or CREATE INDEX.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("eventName")
     private final java.util.List<String> eventName;
 
     /**
-     * The name of the event executed by the user on the target database. i.e ALTER SEQUENCE, CREATE
-     * TRIGGER, CREATE INDEX.
+     * The name of the event executed by the user on the target database. For example ALTER
+     * SEQUENCE, CREATE TRIGGER or CREATE INDEX.
      *
      * @return the value
      */

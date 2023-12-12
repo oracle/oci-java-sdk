@@ -185,11 +185,6 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .hasBody()
-                .handleBody(
-                        com.oracle.bmc.psql.model.Configuration.class,
-                        ChangeConfigurationCompartmentResponse.Builder::configuration)
-                .handleResponseHeaderString(
-                        "etag", ChangeConfigurationCompartmentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeConfigurationCompartmentResponse.Builder::opcRequestId)

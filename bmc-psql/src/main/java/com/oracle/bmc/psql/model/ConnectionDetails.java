@@ -5,8 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * The real-time DbSystem configuration that customers can use for getting access to the PostgreSQL
- * instance. <br>
+ * Database system connection information. Used to connect to PostgreSQL instance(s). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -38,7 +37,7 @@ public final class ConnectionDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The CA certificate to be used by the Posgresql client to connect to the database. The CA
+         * The CA certificate to be used by the PosgreSQL client to connect to the database. The CA
          * certificate is used to authenticate the server identity. It is issued by PostgreSQL
          * Service Private CA.
          */
@@ -46,7 +45,7 @@ public final class ConnectionDetails
         private String caCertificate;
 
         /**
-         * The CA certificate to be used by the Posgresql client to connect to the database. The CA
+         * The CA certificate to be used by the PosgreSQL client to connect to the database. The CA
          * certificate is used to authenticate the server identity. It is issued by PostgreSQL
          * Service Private CA.
          *
@@ -67,12 +66,12 @@ public final class ConnectionDetails
             this.__explicitlySet__.add("primaryDbEndpoint");
             return this;
         }
-        /** The list of DbInstance endpoints in the DbSystem. */
+        /** The list of database instance node endpoints in the database system. */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceEndpoints")
         private java.util.List<DbInstanceEndpoint> instanceEndpoints;
 
         /**
-         * The list of DbInstance endpoints in the DbSystem.
+         * The list of database instance node endpoints in the database system.
          *
          * @param instanceEndpoints the value to set
          * @return this builder
@@ -121,7 +120,7 @@ public final class ConnectionDetails
     }
 
     /**
-     * The CA certificate to be used by the Posgresql client to connect to the database. The CA
+     * The CA certificate to be used by the PosgreSQL client to connect to the database. The CA
      * certificate is used to authenticate the server identity. It is issued by PostgreSQL Service
      * Private CA.
      */
@@ -129,7 +128,7 @@ public final class ConnectionDetails
     private final String caCertificate;
 
     /**
-     * The CA certificate to be used by the Posgresql client to connect to the database. The CA
+     * The CA certificate to be used by the PosgreSQL client to connect to the database. The CA
      * certificate is used to authenticate the server identity. It is issued by PostgreSQL Service
      * Private CA.
      *
@@ -146,12 +145,12 @@ public final class ConnectionDetails
         return primaryDbEndpoint;
     }
 
-    /** The list of DbInstance endpoints in the DbSystem. */
+    /** The list of database instance node endpoints in the database system. */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceEndpoints")
     private final java.util.List<DbInstanceEndpoint> instanceEndpoints;
 
     /**
-     * The list of DbInstance endpoints in the DbSystem.
+     * The list of database instance node endpoints in the database system.
      *
      * @return the value
      */

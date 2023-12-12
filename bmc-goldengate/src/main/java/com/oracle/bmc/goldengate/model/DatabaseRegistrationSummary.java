@@ -290,14 +290,14 @@ public final class DatabaseRegistrationSummary
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * subnet being referenced.
+         * target subnet of the dedicated connection.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * subnet being referenced.
+         * target subnet of the dedicated connection.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -731,14 +731,14 @@ public final class DatabaseRegistrationSummary
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * subnet being referenced.
+     * target subnet of the dedicated connection.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * subnet being referenced.
+     * target subnet of the dedicated connection.
      *
      * @return the value
      */

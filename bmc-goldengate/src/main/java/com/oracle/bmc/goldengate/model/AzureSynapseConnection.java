@@ -171,6 +171,15 @@ public final class AzureSynapseConnection extends Connection {
             this.__explicitlySet__.add("subnetId");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
         /** The Azure Synapse Analytics technology type. */
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private TechnologyType technologyType;
@@ -249,6 +258,7 @@ public final class AzureSynapseConnection extends Connection {
                             this.ingressIps,
                             this.nsgIds,
                             this.subnetId,
+                            this.routingMethod,
                             this.technologyType,
                             this.connectionString,
                             this.username);
@@ -308,6 +318,9 @@ public final class AzureSynapseConnection extends Connection {
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -348,6 +361,7 @@ public final class AzureSynapseConnection extends Connection {
             java.util.List<IngressIpDetails> ingressIps,
             java.util.List<String> nsgIds,
             String subnetId,
+            RoutingMethod routingMethod,
             TechnologyType technologyType,
             String connectionString,
             String username) {
@@ -367,7 +381,8 @@ public final class AzureSynapseConnection extends Connection {
                 keyId,
                 ingressIps,
                 nsgIds,
-                subnetId);
+                subnetId,
+                routingMethod);
         this.technologyType = technologyType;
         this.connectionString = connectionString;
         this.username = username;

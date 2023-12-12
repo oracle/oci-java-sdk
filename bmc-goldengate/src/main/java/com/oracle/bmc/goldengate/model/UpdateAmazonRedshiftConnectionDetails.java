@@ -90,6 +90,24 @@ public final class UpdateAmazonRedshiftConnectionDetails extends UpdateConnectio
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
         /**
          * Connection URL. e.g.:
          * 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
@@ -165,6 +183,8 @@ public final class UpdateAmazonRedshiftConnectionDetails extends UpdateConnectio
                             this.vaultId,
                             this.keyId,
                             this.nsgIds,
+                            this.subnetId,
+                            this.routingMethod,
                             this.connectionUrl,
                             this.username,
                             this.password);
@@ -197,6 +217,12 @@ public final class UpdateAmazonRedshiftConnectionDetails extends UpdateConnectio
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
             }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
+            }
             if (model.wasPropertyExplicitlySet("connectionUrl")) {
                 this.connectionUrl(model.getConnectionUrl());
             }
@@ -228,10 +254,21 @@ public final class UpdateAmazonRedshiftConnectionDetails extends UpdateConnectio
             String vaultId,
             String keyId,
             java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
             String connectionUrl,
             String username,
             String password) {
-        super(displayName, description, freeformTags, definedTags, vaultId, keyId, nsgIds);
+        super(
+                displayName,
+                description,
+                freeformTags,
+                definedTags,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod);
         this.connectionUrl = connectionUrl;
         this.username = username;
         this.password = password;

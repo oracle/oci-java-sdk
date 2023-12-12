@@ -8,18 +8,6 @@ import com.oracle.bmc.psql.model.*;
 
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
 public class ChangeConfigurationCompartmentResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
-    private String etag;
-
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     * @return the value
-     */
-    public String getEtag() {
-        return etag;
-    }
-
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -36,35 +24,13 @@ public class ChangeConfigurationCompartmentResponse extends com.oracle.bmc.respo
         return opcRequestId;
     }
 
-    /** The returned {@code Configuration} instance. */
-    private com.oracle.bmc.psql.model.Configuration configuration;
-
-    /**
-     * The returned {@code Configuration} instance.
-     *
-     * @return the value
-     */
-    public com.oracle.bmc.psql.model.Configuration getConfiguration() {
-        return configuration;
-    }
-
-    @java.beans.ConstructorProperties({
-        "__httpStatusCode__",
-        "headers",
-        "etag",
-        "opcRequestId",
-        "configuration"
-    })
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId"})
     private ChangeConfigurationCompartmentResponse(
             int __httpStatusCode__,
             java.util.Map<String, java.util.List<String>> headers,
-            String etag,
-            String opcRequestId,
-            com.oracle.bmc.psql.model.Configuration configuration) {
+            String opcRequestId) {
         super(__httpStatusCode__, headers);
-        this.etag = etag;
         this.opcRequestId = opcRequestId;
-        this.configuration = configuration;
     }
 
     public static class Builder
@@ -86,20 +52,6 @@ public class ChangeConfigurationCompartmentResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
-        private String etag;
-
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         * @param etag the value to set
-         * @return this builder
-         */
-        public Builder etag(String etag) {
-            this.etag = etag;
-            return this;
-        }
-
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
@@ -118,20 +70,6 @@ public class ChangeConfigurationCompartmentResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned {@code Configuration} instance. */
-        private com.oracle.bmc.psql.model.Configuration configuration;
-
-        /**
-         * The returned {@code Configuration} instance.
-         *
-         * @param configuration the value to set
-         * @return this builder
-         */
-        public Builder configuration(com.oracle.bmc.psql.model.Configuration configuration) {
-            this.configuration = configuration;
-            return this;
-        }
-
         /**
          * Copy method to populate the builder with values from the given instance.
          *
@@ -141,9 +79,7 @@ public class ChangeConfigurationCompartmentResponse extends com.oracle.bmc.respo
         public Builder copy(ChangeConfigurationCompartmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
-            etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
-            configuration(o.getConfiguration());
 
             return this;
         }
@@ -156,7 +92,7 @@ public class ChangeConfigurationCompartmentResponse extends com.oracle.bmc.respo
         @Override
         public ChangeConfigurationCompartmentResponse build() {
             return new ChangeConfigurationCompartmentResponse(
-                    __httpStatusCode__, headers, etag, opcRequestId, configuration);
+                    __httpStatusCode__, headers, opcRequestId);
         }
     }
 
@@ -174,9 +110,7 @@ public class ChangeConfigurationCompartmentResponse extends com.oracle.bmc.respo
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
-        sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
-        sb.append(",configuration=").append(String.valueOf(configuration));
         sb.append(")");
         return sb.toString();
     }
@@ -191,21 +125,14 @@ public class ChangeConfigurationCompartmentResponse extends com.oracle.bmc.respo
         }
 
         ChangeConfigurationCompartmentResponse other = (ChangeConfigurationCompartmentResponse) o;
-        return super.equals(o)
-                && java.util.Objects.equals(this.etag, other.etag)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.configuration, other.configuration);
+        return super.equals(o) && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
-        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.configuration == null ? 43 : this.configuration.hashCode());
         return result;
     }
 }

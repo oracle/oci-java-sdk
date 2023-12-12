@@ -5,8 +5,8 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * A SDM masking policy difference resource. It helps track the difference between sensitive columns
- * of SDM and masking columns of the masking policy. <br>
+ * A resource that tracks the differences between sensitive columns in the sensitive data model and
+ * masking columns in the masking policy <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -68,12 +68,12 @@ public final class SdmMaskingPolicyDifference
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the SDM masking policy difference. */
+        /** The OCID of the Sensitive data model and masking policy difference resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The OCID of the SDM masking policy difference.
+         * The OCID of the Sensitive data model and masking policy difference resource.
          *
          * @param id the value to set
          * @return this builder
@@ -83,12 +83,16 @@ public final class SdmMaskingPolicyDifference
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of the compartment that contains the SDM masking policy difference. */
+        /**
+         * The OCID of the compartment that contains the Sensitive data model and masking policy
+         * difference resource.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment that contains the SDM masking policy difference.
+         * The OCID of the compartment that contains the Sensitive data model and masking policy
+         * difference resource.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -375,12 +379,12 @@ public final class SdmMaskingPolicyDifference
         return new Builder().copy(this);
     }
 
-    /** The OCID of the SDM masking policy difference. */
+    /** The OCID of the Sensitive data model and masking policy difference resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The OCID of the SDM masking policy difference.
+     * The OCID of the Sensitive data model and masking policy difference resource.
      *
      * @return the value
      */
@@ -388,12 +392,16 @@ public final class SdmMaskingPolicyDifference
         return id;
     }
 
-    /** The OCID of the compartment that contains the SDM masking policy difference. */
+    /**
+     * The OCID of the compartment that contains the Sensitive data model and masking policy
+     * difference resource.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment that contains the SDM masking policy difference.
+     * The OCID of the compartment that contains the Sensitive data model and masking policy
+     * difference resource.
      *
      * @return the value
      */

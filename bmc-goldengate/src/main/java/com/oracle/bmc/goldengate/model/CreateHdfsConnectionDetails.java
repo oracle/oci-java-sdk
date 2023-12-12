@@ -108,6 +108,15 @@ public final class CreateHdfsConnectionDetails extends CreateConnectionDetails {
             this.__explicitlySet__.add("subnetId");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
         /** The Hadoop Distributed File System technology type. */
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private HdfsConnection.TechnologyType technologyType;
@@ -158,6 +167,7 @@ public final class CreateHdfsConnectionDetails extends CreateConnectionDetails {
                             this.keyId,
                             this.nsgIds,
                             this.subnetId,
+                            this.routingMethod,
                             this.technologyType,
                             this.coreSiteXml);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -195,6 +205,9 @@ public final class CreateHdfsConnectionDetails extends CreateConnectionDetails {
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -225,6 +238,7 @@ public final class CreateHdfsConnectionDetails extends CreateConnectionDetails {
             String keyId,
             java.util.List<String> nsgIds,
             String subnetId,
+            RoutingMethod routingMethod,
             HdfsConnection.TechnologyType technologyType,
             String coreSiteXml) {
         super(
@@ -236,7 +250,8 @@ public final class CreateHdfsConnectionDetails extends CreateConnectionDetails {
                 vaultId,
                 keyId,
                 nsgIds,
-                subnetId);
+                subnetId,
+                routingMethod);
         this.technologyType = technologyType;
         this.coreSiteXml = coreSiteXml;
     }

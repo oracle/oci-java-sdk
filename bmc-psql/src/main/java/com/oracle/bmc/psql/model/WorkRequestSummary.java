@@ -58,12 +58,12 @@ public final class WorkRequestSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Type of the work request */
+        /** Type of the work request. */
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationType operationType;
 
         /**
-         * Type of the work request
+         * Type of the work request.
          *
          * @param operationType the value to set
          * @return this builder
@@ -88,12 +88,12 @@ public final class WorkRequestSummary
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The id of the work request. */
+        /** The ID of the work request. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The id of the work request.
+         * The ID of the work request.
          *
          * @param id the value to set
          * @return this builder
@@ -104,15 +104,21 @@ public final class WorkRequestSummary
             return this;
         }
         /**
-         * The ocid of the compartment that contains the work request. Work requests should be
-         * scoped to
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the work request. Work requests should be scoped to the same
+         * compartment as the resource the work request affects. If the work request affects
+         * multiple resources, and those resources are not in the same compartment, it is up to the
+         * service team to pick the primary resource whose compartment should be used
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The ocid of the compartment that contains the work request. Work requests should be
-         * scoped to
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the work request. Work requests should be scoped to the same
+         * compartment as the resource the work request affects. If the work request affects
+         * multiple resources, and those resources are not in the same compartment, it is up to the
+         * service team to pick the primary resource whose compartment should be used
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -191,14 +197,14 @@ public final class WorkRequestSummary
             return this;
         }
         /**
-         * The date and time the object was finished, as described in [RFC
+         * The date and time the request was finished, as described in [RFC
          * 3339](https://tools.ietf.org/rfc/rfc3339).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
         /**
-         * The date and time the object was finished, as described in [RFC
+         * The date and time the request was finished, as described in [RFC
          * 3339](https://tools.ietf.org/rfc/rfc3339).
          *
          * @param timeFinished the value to set
@@ -273,12 +279,12 @@ public final class WorkRequestSummary
         return new Builder().copy(this);
     }
 
-    /** Type of the work request */
+    /** Type of the work request. */
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationType operationType;
 
     /**
-     * Type of the work request
+     * Type of the work request.
      *
      * @return the value
      */
@@ -299,12 +305,12 @@ public final class WorkRequestSummary
         return status;
     }
 
-    /** The id of the work request. */
+    /** The ID of the work request. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The id of the work request.
+     * The ID of the work request.
      *
      * @return the value
      */
@@ -313,13 +319,21 @@ public final class WorkRequestSummary
     }
 
     /**
-     * The ocid of the compartment that contains the work request. Work requests should be scoped to
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the work request. Work requests should be scoped to the same
+     * compartment as the resource the work request affects. If the work request affects multiple
+     * resources, and those resources are not in the same compartment, it is up to the service team
+     * to pick the primary resource whose compartment should be used
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The ocid of the compartment that contains the work request. Work requests should be scoped to
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the work request. Work requests should be scoped to the same
+     * compartment as the resource the work request affects. If the work request affects multiple
+     * resources, and those resources are not in the same compartment, it is up to the service team
+     * to pick the primary resource whose compartment should be used
      *
      * @return the value
      */
@@ -388,14 +402,14 @@ public final class WorkRequestSummary
     }
 
     /**
-     * The date and time the object was finished, as described in [RFC
+     * The date and time the request was finished, as described in [RFC
      * 3339](https://tools.ietf.org/rfc/rfc3339).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
-     * The date and time the object was finished, as described in [RFC
+     * The date and time the request was finished, as described in [RFC
      * 3339](https://tools.ietf.org/rfc/rfc3339).
      *
      * @return the value

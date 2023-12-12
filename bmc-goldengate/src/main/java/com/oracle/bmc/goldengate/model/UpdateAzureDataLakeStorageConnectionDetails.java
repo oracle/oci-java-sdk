@@ -90,6 +90,24 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
+            return this;
+        }
         /** Used authentication mechanism to access Azure Data Lake Storage. */
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
         private AzureDataLakeStorageConnection.AuthenticationType authenticationType;
@@ -253,6 +271,8 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
                             this.vaultId,
                             this.keyId,
                             this.nsgIds,
+                            this.subnetId,
+                            this.routingMethod,
                             this.authenticationType,
                             this.accountName,
                             this.accountKey,
@@ -289,6 +309,12 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
             }
             if (model.wasPropertyExplicitlySet("authenticationType")) {
                 this.authenticationType(model.getAuthenticationType());
@@ -336,6 +362,8 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
             String vaultId,
             String keyId,
             java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
             AzureDataLakeStorageConnection.AuthenticationType authenticationType,
             String accountName,
             String accountKey,
@@ -344,7 +372,16 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
             String clientId,
             String clientSecret,
             String endpoint) {
-        super(displayName, description, freeformTags, definedTags, vaultId, keyId, nsgIds);
+        super(
+                displayName,
+                description,
+                freeformTags,
+                definedTags,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod);
         this.authenticationType = authenticationType;
         this.accountName = accountName;
         this.accountKey = accountKey;

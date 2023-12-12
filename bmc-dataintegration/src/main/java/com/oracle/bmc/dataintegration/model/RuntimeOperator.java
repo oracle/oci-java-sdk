@@ -156,12 +156,16 @@ public final class RuntimeOperator
             this.__explicitlySet__.add("endTimeInMillis");
             return this;
         }
-        /** status */
+        /**
+         * Status of RuntimeOperator. This field is deprecated, use RuntimeOperator's executionState
+         * field instead.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
-         * status
+         * Status of RuntimeOperator. This field is deprecated, use RuntimeOperator's executionState
+         * field instead.
          *
          * @param status the value to set
          * @return this builder
@@ -588,7 +592,10 @@ public final class RuntimeOperator
         return endTimeInMillis;
     }
 
-    /** status */
+    /**
+     * Status of RuntimeOperator. This field is deprecated, use RuntimeOperator's executionState
+     * field instead.
+     */
     public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         NotStarted("NOT_STARTED"),
         Queued("QUEUED"),
@@ -638,12 +645,16 @@ public final class RuntimeOperator
             return UnknownEnumValue;
         }
     };
-    /** status */
+    /**
+     * Status of RuntimeOperator. This field is deprecated, use RuntimeOperator's executionState
+     * field instead.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
-     * status
+     * Status of RuntimeOperator. This field is deprecated, use RuntimeOperator's executionState
+     * field instead.
      *
      * @return the value
      */

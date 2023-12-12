@@ -38,7 +38,8 @@ public final class UpdateInstanceDetails
         "faultDomain",
         "launchOptions",
         "availabilityConfig",
-        "timeMaintenanceRebootDue"
+        "timeMaintenanceRebootDue",
+        "dedicatedVmHostId"
     })
     public UpdateInstanceDetails(
             String capacityReservationId,
@@ -55,7 +56,8 @@ public final class UpdateInstanceDetails
             String faultDomain,
             UpdateLaunchOptions launchOptions,
             UpdateInstanceAvailabilityConfigDetails availabilityConfig,
-            java.util.Date timeMaintenanceRebootDue) {
+            java.util.Date timeMaintenanceRebootDue,
+            String dedicatedVmHostId) {
         super();
         this.capacityReservationId = capacityReservationId;
         this.definedTags = definedTags;
@@ -72,6 +74,7 @@ public final class UpdateInstanceDetails
         this.launchOptions = launchOptions;
         this.availabilityConfig = availabilityConfig;
         this.timeMaintenanceRebootDue = timeMaintenanceRebootDue;
+        this.dedicatedVmHostId = dedicatedVmHostId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -470,6 +473,29 @@ public final class UpdateInstanceDetails
             this.__explicitlySet__.add("timeMaintenanceRebootDue");
             return this;
         }
+        /**
+         * The OCID of the dedicated virtual machine host to place the instance on. Supported only
+         * if this VM instance was already placed on a dedicated virtual machine host - that is, you
+         * can't move an instance from on-demand capacity to dedicated capacity, nor can you move an
+         * instance from dedicated capacity to on-demand capacity.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostId")
+        private String dedicatedVmHostId;
+
+        /**
+         * The OCID of the dedicated virtual machine host to place the instance on. Supported only
+         * if this VM instance was already placed on a dedicated virtual machine host - that is, you
+         * can't move an instance from on-demand capacity to dedicated capacity, nor can you move an
+         * instance from dedicated capacity to on-demand capacity.
+         *
+         * @param dedicatedVmHostId the value to set
+         * @return this builder
+         */
+        public Builder dedicatedVmHostId(String dedicatedVmHostId) {
+            this.dedicatedVmHostId = dedicatedVmHostId;
+            this.__explicitlySet__.add("dedicatedVmHostId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -491,7 +517,8 @@ public final class UpdateInstanceDetails
                             this.faultDomain,
                             this.launchOptions,
                             this.availabilityConfig,
-                            this.timeMaintenanceRebootDue);
+                            this.timeMaintenanceRebootDue,
+                            this.dedicatedVmHostId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -544,6 +571,9 @@ public final class UpdateInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("timeMaintenanceRebootDue")) {
                 this.timeMaintenanceRebootDue(model.getTimeMaintenanceRebootDue());
+            }
+            if (model.wasPropertyExplicitlySet("dedicatedVmHostId")) {
+                this.dedicatedVmHostId(model.getDedicatedVmHostId());
             }
             return this;
         }
@@ -955,6 +985,27 @@ public final class UpdateInstanceDetails
         return timeMaintenanceRebootDue;
     }
 
+    /**
+     * The OCID of the dedicated virtual machine host to place the instance on. Supported only if
+     * this VM instance was already placed on a dedicated virtual machine host - that is, you can't
+     * move an instance from on-demand capacity to dedicated capacity, nor can you move an instance
+     * from dedicated capacity to on-demand capacity.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostId")
+    private final String dedicatedVmHostId;
+
+    /**
+     * The OCID of the dedicated virtual machine host to place the instance on. Supported only if
+     * this VM instance was already placed on a dedicated virtual machine host - that is, you can't
+     * move an instance from on-demand capacity to dedicated capacity, nor can you move an instance
+     * from dedicated capacity to on-demand capacity.
+     *
+     * @return the value
+     */
+    public String getDedicatedVmHostId() {
+        return dedicatedVmHostId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -987,6 +1038,7 @@ public final class UpdateInstanceDetails
         sb.append(", availabilityConfig=").append(String.valueOf(this.availabilityConfig));
         sb.append(", timeMaintenanceRebootDue=")
                 .append(String.valueOf(this.timeMaintenanceRebootDue));
+        sb.append(", dedicatedVmHostId=").append(String.valueOf(this.dedicatedVmHostId));
         sb.append(")");
         return sb.toString();
     }
@@ -1018,6 +1070,7 @@ public final class UpdateInstanceDetails
                 && java.util.Objects.equals(this.availabilityConfig, other.availabilityConfig)
                 && java.util.Objects.equals(
                         this.timeMaintenanceRebootDue, other.timeMaintenanceRebootDue)
+                && java.util.Objects.equals(this.dedicatedVmHostId, other.dedicatedVmHostId)
                 && super.equals(other);
     }
 
@@ -1062,6 +1115,9 @@ public final class UpdateInstanceDetails
                         + (this.timeMaintenanceRebootDue == null
                                 ? 43
                                 : this.timeMaintenanceRebootDue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dedicatedVmHostId == null ? 43 : this.dedicatedVmHostId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -5,7 +5,7 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * The DbInstance endpoint information. <br>
+ * The database instance node endpoint information. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,12 +32,12 @@ public final class DbInstanceEndpoint
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier of the DbInstance. */
+        /** Unique identifier of the database instance node. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbInstanceId")
         private String dbInstanceId;
 
         /**
-         * Unique identifier of the DbInstance.
+         * Unique identifier of the database instance node.
          *
          * @param dbInstanceId the value to set
          * @return this builder
@@ -89,12 +89,12 @@ public final class DbInstanceEndpoint
         return new Builder().copy(this);
     }
 
-    /** Unique identifier of the DbInstance. */
+    /** Unique identifier of the database instance node. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbInstanceId")
     private final String dbInstanceId;
 
     /**
-     * Unique identifier of the DbInstance.
+     * Unique identifier of the database instance node.
      *
      * @return the value
      */

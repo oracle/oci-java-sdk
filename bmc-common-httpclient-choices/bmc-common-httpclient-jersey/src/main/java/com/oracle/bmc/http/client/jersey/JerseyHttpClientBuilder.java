@@ -4,6 +4,8 @@
  */
 package com.oracle.bmc.http.client.jersey;
 
+import com.oracle.bmc.http.client.internal.ClientThreadFactory;
+import com.oracle.bmc.http.client.jersey.internal.IdleConnectionMonitor;
 import com.oracle.bmc.serialization.jackson.JacksonSerializer;
 import com.oracle.bmc.http.client.ClientProperty;
 import com.oracle.bmc.http.client.HttpClient;
@@ -18,6 +20,7 @@ import org.apache.http.client.HttpRequestRetryHandler;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.config.Registry;
 import org.apache.http.config.RegistryBuilder;
+import org.apache.http.conn.HttpClientConnectionManager;
 import org.apache.http.conn.socket.ConnectionSocketFactory;
 import org.apache.http.conn.socket.PlainConnectionSocketFactory;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
@@ -55,6 +58,8 @@ import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
 final class JerseyHttpClientBuilder implements HttpClientBuilder {
@@ -65,8 +70,24 @@ final class JerseyHttpClientBuilder implements HttpClientBuilder {
     private static final ClientBuilderDecorator SIMPLE_DECORATOR =
             clientBuilder -> clientBuilder.build();
 
-    public static ConnectionReuseStrategy DEFAULT_CONNECTION_REUSE_STRATEGY =
-            new NoConnectionReuseStrategy();
+    public static ConnectionReuseStrategy DEFAULT_CONNECTION_REUSE_STRATEGY;
+
+    private static boolean DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_ENABLED;
+
+    static {
+        DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_ENABLED =
+                Boolean.parseBoolean(
+                        System.getProperty(
+                                "oci.javasdk.apache.idle.connection.monitor.thread.enabled",
+                                "true"));
+        if (!DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_ENABLED) {
+            DEFAULT_CONNECTION_REUSE_STRATEGY = new NoConnectionReuseStrategy();
+        }
+    }
+
+    private static int DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_WAIT_TIME_IN_SECONDS = 5;
+    private static int DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_IDLE_TIMEOUT_IN_SECONDS = 20;
+
     public static HttpRequestRetryHandler DEFAULT_REQUEST_RETRY_HANDLER =
             new DefaultHttpRequestRetryHandler(0, false);
 
@@ -92,6 +113,10 @@ final class JerseyHttpClientBuilder implements HttpClientBuilder {
 
     private boolean shouldSetDefaultConnectionManagerForApacheConnector = false;
 
+    private boolean apacheIdleConnectionMonitorThreadEnabled = false;
+    private int apacheIdleConnectionMonitorThreadWaitTimeInSeconds;
+    private int apacheIdleConnectionMonitorThreadIdleTimeoutInSeconds;
+
     JerseyHttpClientBuilder() {
         // buffer by default, for signing and better error messages.
         properties.put(
@@ -111,6 +136,15 @@ final class JerseyHttpClientBuilder implements HttpClientBuilder {
             // unless the user has set a different connection manager already using
             // properties.put(ApacheClientProperties.CONNECTION_MANAGER, cm)
             this.shouldSetDefaultConnectionManagerForApacheConnector = true;
+
+            this.apacheIdleConnectionMonitorThreadEnabled =
+                    DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_ENABLED;
+
+            this.apacheIdleConnectionMonitorThreadWaitTimeInSeconds =
+                    DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_WAIT_TIME_IN_SECONDS;
+
+            this.apacheIdleConnectionMonitorThreadIdleTimeoutInSeconds =
+                    DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_IDLE_TIMEOUT_IN_SECONDS;
 
             property(
                     com.oracle.bmc.http.client.jersey.ApacheClientProperties
@@ -218,6 +252,15 @@ final class JerseyHttpClientBuilder implements HttpClientBuilder {
             useJerseyDefaultExecutorServiceProvider = (((Boolean) value) == Boolean.TRUE);
         } else if (key == JerseyClientProperties.EXECUTOR_SERVICE_PROVIDER) {
             executorServiceProvider = (ExecutorServiceProvider) value;
+        } else if (key == JerseyClientProperties.APACHE_IDLE_CONNECTION_MONITOR_THREAD_ENABLED) {
+            apacheIdleConnectionMonitorThreadEnabled = (Boolean) value;
+        } else if (key
+                == JerseyClientProperties.APACHE_IDLE_CONNECTION_MONITOR_THREAD_WAIT_TIME_SECONDS) {
+            apacheIdleConnectionMonitorThreadWaitTimeInSeconds = (Integer) value;
+        } else if (key
+                == JerseyClientProperties
+                        .APACHE_IDLE_CONNECTION_MONITOR_THREAD_IDLE_TIMEOUT_SECONDS) {
+            apacheIdleConnectionMonitorThreadIdleTimeoutInSeconds = (Integer) value;
         } else if (key == ClientBuilderDecorator.PROPERTY) {
             decorator = (ClientBuilderDecorator) value;
         } else if (key instanceof JerseyClientProperty) {
@@ -248,6 +291,35 @@ final class JerseyHttpClientBuilder implements HttpClientBuilder {
             PoolingHttpClientConnectionManager cm =
                     buildDefaultPoolingHttpClientConnectionManagerForApacheConnector(sslContext);
             properties.put(ApacheClientProperties.CONNECTION_MANAGER, cm);
+        }
+        Object connectionManagerObject = properties.get(ApacheClientProperties.CONNECTION_MANAGER);
+
+        if (apacheIdleConnectionMonitorThreadEnabled && connectionManagerObject != null) {
+            HttpClientConnectionManager connectionManager =
+                    (HttpClientConnectionManager) connectionManagerObject;
+            try {
+                final IdleConnectionMonitor idleConnectionMonitor =
+                        new IdleConnectionMonitor(
+                                connectionManager,
+                                apacheIdleConnectionMonitorThreadWaitTimeInSeconds,
+                                apacheIdleConnectionMonitorThreadIdleTimeoutInSeconds);
+
+                ExecutorService executorService =
+                        Executors.newFixedThreadPool(
+                                1,
+                                ClientThreadFactory.builder()
+                                        .nameFormat(
+                                                "idle-connection-monitor-thread-"
+                                                        + System.currentTimeMillis()
+                                                        + "-%d")
+                                        .isDaemon(true)
+                                        .build());
+
+                executorService.execute(idleConnectionMonitor);
+
+            } catch (Exception ex) {
+                LOG.info("Error creating/executing idle connection monitor thread", ex);
+            }
         }
 
         ClientBuilder clientBuilder = ClientBuilder.newBuilder();

@@ -5,8 +5,9 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Initial DbSystem credentials that the DbSystem will be provisioned with. The password details are
- * not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}. <br>
+ * Initial database system credentials that the database system will be provisioned with. The
+ * password details are not visible on any subsequent operation, such as GET
+ * /dbSystems/{dbSystemId}. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +32,12 @@ public final class Credentials extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The DB system username. */
+        /** The database system administrator username. */
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
         /**
-         * The DB system username.
+         * The database system administrator username.
          *
          * @param username the value to set
          * @return this builder
@@ -88,12 +89,12 @@ public final class Credentials extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** The DB system username. */
+    /** The database system administrator username. */
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
     /**
-     * The DB system username.
+     * The database system administrator username.
      *
      * @return the value
      */

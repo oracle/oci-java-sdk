@@ -76,7 +76,7 @@ public class EntryDetails extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The security policy entry type. Allowed values: - FIREWALL_POLICY - The SQL firewall policy
+     * The security policy entry type. Allowed values: - FIREWALL_POLICY - The SQL Firewall policy
      * entry type.
      */
     public enum EntryType implements com.oracle.bmc.http.internal.BmcEnum {

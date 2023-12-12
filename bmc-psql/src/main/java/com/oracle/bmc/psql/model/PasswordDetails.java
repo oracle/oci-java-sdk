@@ -5,8 +5,8 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Details for the DbSystem password. Password can be passed as {@code
- * VaultSecretPasswordDetails}(Vault) or {@code PlainTextPasswordDetails}. <br>
+ * Details for the database system password. Password can be passed as {@code
+ * VaultSecretPasswordDetails} or {@code PlainTextPasswordDetails}. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -79,7 +79,7 @@ public class PasswordDetails extends com.oracle.bmc.http.client.internal.Explici
         return result;
     }
 
-    /** Password type */
+    /** The password type. */
     public enum PasswordType implements com.oracle.bmc.http.internal.BmcEnum {
         PlainText("PLAIN_TEXT"),
         VaultSecret("VAULT_SECRET"),

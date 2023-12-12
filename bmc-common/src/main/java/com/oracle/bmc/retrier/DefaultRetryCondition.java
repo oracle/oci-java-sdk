@@ -39,7 +39,8 @@ public class DefaultRetryCondition implements RetryCondition {
         if (exception == null) {
             throw new java.lang.NullPointerException("exception is marked non-null but is null");
         }
-        return exception.isClientSide()
+        return (exception.isClientSide()
+                        && !(exception.getCause() instanceof CallNotAllowedException))
                 || exception.isTimeout()
                 || exception.getStatusCode() == 429
                 || exception.getStatusCode() == 500
@@ -50,8 +51,7 @@ public class DefaultRetryCondition implements RetryCondition {
                         && RETRYABLE_SERVICE_ERRORS
                                 .get(exception.getStatusCode())
                                 .contains(exception.getServiceCode()))
-                || isProcessingException(exception)
-                || exception.getCause() instanceof CallNotAllowedException;
+                || isProcessingException(exception);
     }
 
     public static boolean isProcessingException(final BmcException exception) {

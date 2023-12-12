@@ -13,17 +13,27 @@ import com.oracle.bmc.psql.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
 public class DeleteDbSystemRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** unique DbSystem identifier */
+    /** A unique identifier for the database system. */
     private String dbSystemId;
 
-    /** unique DbSystem identifier */
+    /** A unique identifier for the database system. */
     public String getDbSystemId() {
         return dbSystemId;
     }
-    /** For optimistic concurrency control. In the PUT or DELETE call */
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
+     */
     private String ifMatch;
 
-    /** For optimistic concurrency control. In the PUT or DELETE call */
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -41,11 +51,11 @@ public class DeleteDbSystemRequest extends com.oracle.bmc.requests.BmcRequest<ja
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique DbSystem identifier */
+        /** A unique identifier for the database system. */
         private String dbSystemId = null;
 
         /**
-         * unique DbSystem identifier
+         * A unique identifier for the database system.
          *
          * @param dbSystemId the value to set
          * @return this builder instance
@@ -55,11 +65,19 @@ public class DeleteDbSystemRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** For optimistic concurrency control. In the PUT or DELETE call */
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
+         */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance

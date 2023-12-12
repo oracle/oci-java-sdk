@@ -5741,8 +5741,10 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendEnumQueryParam("groupBy", request.getGroupBy())
                 .appendQueryParam("targetId", request.getTargetId())
                 .appendQueryParam("sensitiveDataModelId", request.getSensitiveDataModelId())
+                .appendQueryParam("sensitiveTypeId", request.getSensitiveTypeId())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
+                .appendQueryParam("isCommon", request.getIsCommon())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -7181,6 +7183,7 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("isCommon", request.getIsCommon())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
