@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.requests;
@@ -65,7 +65,7 @@ public class ListHostConfigurationsRequest
      * Filter by one or more platform types. Supported platformType(s) for MACS-managed external
      * host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud
      * host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight:
-     * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
+     * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
      */
     private java.util.List<PlatformType> platformType;
 
@@ -73,7 +73,7 @@ public class ListHostConfigurationsRequest
      * Filter by one or more platform types. Supported platformType(s) for MACS-managed external
      * host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud
      * host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight:
-     * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
+     * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
      */
     public enum PlatformType implements com.oracle.bmc.http.internal.BmcEnum {
         Linux("LINUX"),
@@ -82,6 +82,7 @@ public class ListHostConfigurationsRequest
         Zlinux("ZLINUX"),
         Windows("WINDOWS"),
         Aix("AIX"),
+        HpUx("HP_UX"),
         ;
 
         private final String value;
@@ -116,7 +117,7 @@ public class ListHostConfigurationsRequest
      * Filter by one or more platform types. Supported platformType(s) for MACS-managed external
      * host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud
      * host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight:
-     * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
+     * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
      */
     public java.util.List<PlatformType> getPlatformType() {
         return platformType;
@@ -433,7 +434,7 @@ public class ListHostConfigurationsRequest
          * Filter by one or more platform types. Supported platformType(s) for MACS-managed external
          * host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud
          * host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight:
-         * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
+         * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
          */
         private java.util.List<PlatformType> platformType = null;
 
@@ -441,7 +442,7 @@ public class ListHostConfigurationsRequest
          * Filter by one or more platform types. Supported platformType(s) for MACS-managed external
          * host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud
          * host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight:
-         * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
+         * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
          *
          * @param platformType the value to set
          * @return this builder instance
@@ -455,7 +456,7 @@ public class ListHostConfigurationsRequest
          * Singular setter. Filter by one or more platform types. Supported platformType(s) for
          * MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s)
          * for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed
-         * external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
+         * external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
          *
          * @param singularValue the singular value to set
          * @return this builder instance

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.operatoraccesscontrol;
@@ -154,11 +154,11 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeOperatorControlAssignmentCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -182,6 +182,7 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignment.class,
@@ -194,7 +195,6 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
                 .handleResponseHeaderString(
                         "opc-request-id",
                         CreateOperatorControlAssignmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -221,10 +221,10 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteOperatorControlAssignmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -249,6 +249,7 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
                 .appendPathParam(request.getOperatorControlAssignmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignment.class,
                         GetOperatorControlAssignmentResponse.Builder::operatorControlAssignment)
@@ -257,7 +258,6 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetOperatorControlAssignmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -287,6 +287,7 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.operatoraccesscontrol.model
                                 .OperatorControlAssignmentCollection.class,
@@ -298,7 +299,6 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListOperatorControlAssignmentsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -327,6 +327,7 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignment.class,
@@ -336,7 +337,6 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateOperatorControlAssignmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

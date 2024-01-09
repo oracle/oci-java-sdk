@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.monitoring;
@@ -329,6 +329,7 @@ public class MonitoringClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendEnumQueryParam("status", request.getStatus())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.monitoring.model.AlarmStatusSummary.class,
                         ListAlarmsStatusResponse.Builder::items)
@@ -336,7 +337,6 @@ public class MonitoringClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-next-page", ListAlarmsStatusResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListAlarmsStatusResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.secrets;
@@ -109,13 +109,13 @@ public class SecretsClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendEnumQueryParam("stage", request.getStage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.secrets.model.SecretBundle.class,
                         GetSecretBundleResponse.Builder::secretBundle)
                 .handleResponseHeaderString("etag", GetSecretBundleResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSecretBundleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -145,12 +145,12 @@ public class SecretsClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendEnumQueryParam("stage", request.getStage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.secrets.model.SecretBundle.class,
                         GetSecretBundleByNameResponse.Builder::secretBundle)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSecretBundleByNameResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -178,6 +178,7 @@ public class SecretsClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.secrets.model.SecretBundleVersionSummary.class,
                         ListSecretBundleVersionsResponse.Builder::items)
@@ -185,7 +186,6 @@ public class SecretsClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                         "opc-request-id", ListSecretBundleVersionsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListSecretBundleVersionsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

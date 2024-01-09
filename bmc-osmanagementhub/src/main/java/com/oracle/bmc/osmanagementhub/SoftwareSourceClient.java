@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -144,11 +144,11 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeAvailabilityOfSoftwareSourcesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -170,10 +170,10 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", CreateEntitlementResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -196,6 +196,7 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.SoftwareSource.class,
@@ -208,7 +209,6 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CreateSoftwareSourceResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -231,9 +231,9 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteSoftwareSourceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -257,12 +257,12 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.Erratum.class,
                         GetErratumResponse.Builder::erratum)
                 .handleResponseHeaderString(
                         "opc-request-id", GetErratumResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -290,12 +290,12 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("streamName", request.getStreamName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.ModuleStream.class,
                         GetModuleStreamResponse.Builder::moduleStream)
                 .handleResponseHeaderString(
                         "opc-request-id", GetModuleStreamResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -327,12 +327,12 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("streamName", request.getStreamName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.ModuleStreamProfile.class,
                         GetModuleStreamProfileResponse.Builder::moduleStreamProfile)
                 .handleResponseHeaderString(
                         "opc-request-id", GetModuleStreamProfileResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -358,12 +358,12 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getPackageGroupId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.PackageGroup.class,
                         GetPackageGroupResponse.Builder::packageGroup)
                 .handleResponseHeaderString(
                         "opc-request-id", GetPackageGroupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -390,12 +390,12 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getSoftwarePackageName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.SoftwarePackage.class,
                         GetSoftwarePackageResponse.Builder::softwarePackage)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSoftwarePackageResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -417,6 +417,7 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getSoftwareSourceId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.SoftwareSource.class,
                         GetSoftwareSourceResponse.Builder::softwareSource)
@@ -425,7 +426,6 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-request-id", GetSoftwareSourceResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetSoftwareSourceResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -452,6 +452,7 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.EntitlementCollection.class,
                         ListEntitlementsResponse.Builder::entitlementCollection)
@@ -459,7 +460,6 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-request-id", ListEntitlementsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListEntitlementsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -500,6 +500,7 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.ErratumCollection.class,
                         ListErrataResponse.Builder::erratumCollection)
@@ -507,7 +508,6 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-request-id", ListErrataResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListErrataResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -538,6 +538,7 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.ModuleStreamProfileCollection.class,
                         ListModuleStreamProfilesResponse.Builder::moduleStreamProfileCollection)
@@ -545,7 +546,6 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-request-id", ListModuleStreamProfilesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListModuleStreamProfilesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -576,6 +576,7 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("moduleNameContains", request.getModuleNameContains())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.ModuleStreamCollection.class,
                         ListModuleStreamsResponse.Builder::moduleStreamCollection)
@@ -583,7 +584,6 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-request-id", ListModuleStreamsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListModuleStreamsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -617,6 +617,7 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.PackageGroupCollection.class,
                         ListPackageGroupsResponse.Builder::packageGroupCollection)
@@ -624,7 +625,6 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-request-id", ListPackageGroupsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListPackageGroupsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -654,6 +654,7 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.SoftwarePackageCollection.class,
                         ListSoftwarePackagesResponse.Builder::softwarePackageCollection)
@@ -661,7 +662,6 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-request-id", ListSoftwarePackagesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListSoftwarePackagesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -686,12 +686,12 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("name", request.getName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.SoftwareSourceVendorCollection.class,
                         ListSoftwareSourceVendorsResponse.Builder::softwareSourceVendorCollection)
                 .handleResponseHeaderString(
                         "opc-request-id", ListSoftwareSourceVendorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -743,6 +743,7 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.SoftwareSourceCollection.class,
                         ListSoftwareSourcesResponse.Builder::softwareSourceCollection)
@@ -750,7 +751,6 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-request-id", ListSoftwareSourcesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListSoftwareSourcesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -777,6 +777,7 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.ModuleStreamCollection.class,
@@ -787,7 +788,6 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SearchSoftwareSourceModuleStreamsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -814,6 +814,7 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.ModuleCollection.class,
@@ -822,7 +823,6 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-request-id", SearchSoftwareSourceModulesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SearchSoftwareSourceModulesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -849,6 +849,7 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.PackageGroupCollection.class,
@@ -859,7 +860,6 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SearchSoftwareSourcePackageGroupsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -885,6 +885,7 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.SoftwareSource.class,
@@ -895,7 +896,6 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateSoftwareSourceResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

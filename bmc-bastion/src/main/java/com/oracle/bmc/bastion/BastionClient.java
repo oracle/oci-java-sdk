@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bastion;
@@ -284,13 +284,13 @@ public class BastionClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendPathParam(request.getBastionId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.bastion.model.Bastion.class,
                         GetBastionResponse.Builder::bastion)
                 .handleResponseHeaderString("etag", GetBastionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetBastionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -312,13 +312,13 @@ public class BastionClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendPathParam(request.getSessionId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.bastion.model.Session.class,
                         GetSessionResponse.Builder::session)
                 .handleResponseHeaderString("etag", GetSessionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSessionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -531,12 +531,12 @@ public class BastionClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateBastionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateBastionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -561,6 +561,7 @@ public class BastionClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.bastion.model.Session.class,
@@ -568,7 +569,6 @@ public class BastionClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString("etag", UpdateSessionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateSessionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

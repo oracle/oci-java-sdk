@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerinstances;
@@ -208,7 +208,7 @@ public interface ContainerInstance extends AutoCloseable {
     ListContainersResponse listContainers(ListContainersRequest request);
 
     /**
-     * Return a paginated list of errors for a given work request.
+     * Returns a paginated list of errors for a work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -224,7 +224,7 @@ public interface ContainerInstance extends AutoCloseable {
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
     /**
-     * Return a paginated list of logs for a given work request.
+     * Returns a paginated list of logs for a work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mediaservices;
@@ -149,10 +149,10 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeMediaAssetCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -182,6 +182,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -189,7 +190,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeMediaWorkflowCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -222,6 +222,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -230,7 +231,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeMediaWorkflowConfigurationCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -260,6 +260,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -267,7 +268,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeMediaWorkflowJobCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -300,6 +300,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -308,7 +309,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeStreamDistributionChannelCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -330,6 +330,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.MediaAsset.class,
@@ -337,7 +338,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString("etag", CreateMediaAssetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateMediaAssetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -359,6 +359,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.MediaWorkflow.class,
@@ -366,7 +367,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString("etag", CreateMediaWorkflowResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateMediaWorkflowResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -390,6 +390,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.MediaWorkflowConfiguration.class,
@@ -400,7 +401,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString(
                         "opc-request-id",
                         CreateMediaWorkflowConfigurationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -424,6 +424,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.MediaWorkflowJob.class,
@@ -431,7 +432,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString("etag", CreateMediaWorkflowJobResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateMediaWorkflowJobResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -455,6 +455,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.StreamCdnConfig.class,
@@ -462,7 +463,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString("etag", CreateStreamCdnConfigResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateStreamCdnConfigResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -486,6 +486,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.StreamDistributionChannel.class,
@@ -495,7 +496,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString(
                         "opc-request-id",
                         CreateStreamDistributionChannelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -519,6 +519,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.StreamPackagingConfig.class,
@@ -527,7 +528,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "etag", CreateStreamPackagingConfigResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateStreamPackagingConfigResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -551,9 +551,9 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteMediaAssetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -584,10 +584,10 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteMediaAssetDistributionChannelAttachmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -610,9 +610,9 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteMediaWorkflowResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -638,13 +638,13 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteMediaWorkflowConfigurationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteMediaWorkflowConfigurationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -668,12 +668,12 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteMediaWorkflowJobResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteMediaWorkflowJobResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -697,9 +697,9 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteStreamCdnConfigResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -725,10 +725,10 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteStreamDistributionChannelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -753,9 +753,9 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteStreamPackagingConfigResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -777,13 +777,13 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam(request.getMediaAssetId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.MediaAsset.class,
                         GetMediaAssetResponse.Builder::mediaAsset)
                 .handleResponseHeaderString("etag", GetMediaAssetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetMediaAssetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -813,6 +813,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendQueryParam("version", request.getVersion())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.MediaAssetDistributionChannelAttachment
                                 .class,
@@ -823,7 +824,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetMediaAssetDistributionChannelAttachmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -845,13 +845,13 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam(request.getMediaWorkflowId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.MediaWorkflow.class,
                         GetMediaWorkflowResponse.Builder::mediaWorkflow)
                 .handleResponseHeaderString("etag", GetMediaWorkflowResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetMediaWorkflowResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -876,6 +876,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam(request.getMediaWorkflowConfigurationId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.MediaWorkflowConfiguration.class,
                         GetMediaWorkflowConfigurationResponse.Builder::mediaWorkflowConfiguration)
@@ -884,7 +885,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetMediaWorkflowConfigurationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -906,13 +906,13 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam(request.getMediaWorkflowJobId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.MediaWorkflowJob.class,
                         GetMediaWorkflowJobResponse.Builder::mediaWorkflowJob)
                 .handleResponseHeaderString("etag", GetMediaWorkflowJobResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetMediaWorkflowJobResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -937,13 +937,13 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam(request.getKey())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.MediaWorkflowJobFact.class,
                         GetMediaWorkflowJobFactResponse.Builder::mediaWorkflowJobFact)
                 .handleResponseHeaderString("etag", GetMediaWorkflowJobFactResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetMediaWorkflowJobFactResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -965,13 +965,13 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam(request.getStreamCdnConfigId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.StreamCdnConfig.class,
                         GetStreamCdnConfigResponse.Builder::streamCdnConfig)
                 .handleResponseHeaderString("etag", GetStreamCdnConfigResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetStreamCdnConfigResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -996,6 +996,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam(request.getStreamDistributionChannelId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.StreamDistributionChannel.class,
                         GetStreamDistributionChannelResponse.Builder::streamDistributionChannel)
@@ -1004,7 +1005,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetStreamDistributionChannelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1028,13 +1028,13 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam(request.getStreamPackagingConfigId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.StreamPackagingConfig.class,
                         GetStreamPackagingConfigResponse.Builder::streamPackagingConfig)
                 .handleResponseHeaderString("etag", GetStreamPackagingConfigResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetStreamPackagingConfigResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1065,6 +1065,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.IngestStreamDistributionChannelResult
@@ -1074,7 +1075,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString(
                         "opc-request-id",
                         IngestStreamDistributionChannelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1105,6 +1105,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendQueryParam("distributionChannelId", request.getDistributionChannelId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model
                                 .MediaAssetDistributionChannelAttachmentCollection.class,
@@ -1116,7 +1117,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListMediaAssetDistributionChannelAttachmentsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1152,6 +1152,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "sourceMediaWorkflowVersion", request.getSourceMediaWorkflowVersion())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.MediaAssetCollection.class,
                         ListMediaAssetsResponse.Builder::mediaAssetCollection)
@@ -1159,7 +1160,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "opc-request-id", ListMediaAssetsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListMediaAssetsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1187,6 +1187,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.MediaWorkflowConfigurationCollection
                                 .class,
@@ -1198,7 +1199,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListMediaWorkflowConfigurationsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1228,6 +1228,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.MediaWorkflowJobFactCollection.class,
                         ListMediaWorkflowJobFactsResponse.Builder::mediaWorkflowJobFactCollection)
@@ -1235,7 +1236,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "opc-request-id", ListMediaWorkflowJobFactsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListMediaWorkflowJobFactsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1264,6 +1264,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.MediaWorkflowJobCollection.class,
                         ListMediaWorkflowJobsResponse.Builder::mediaWorkflowJobCollection)
@@ -1271,7 +1272,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "opc-request-id", ListMediaWorkflowJobsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListMediaWorkflowJobsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1299,6 +1299,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.MediaWorkflowTaskDeclarationCollection
                                 .class,
@@ -1310,7 +1311,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListMediaWorkflowTaskDeclarationsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1337,6 +1337,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.MediaWorkflowCollection.class,
                         ListMediaWorkflowsResponse.Builder::mediaWorkflowCollection)
@@ -1344,7 +1345,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "opc-request-id", ListMediaWorkflowsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListMediaWorkflowsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1373,6 +1373,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.StreamCdnConfigCollection.class,
                         ListStreamCdnConfigsResponse.Builder::streamCdnConfigCollection)
@@ -1380,7 +1381,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "opc-request-id", ListStreamCdnConfigsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListStreamCdnConfigsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1408,6 +1408,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.StreamDistributionChannelCollection
                                 .class,
@@ -1419,7 +1420,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListStreamDistributionChannelsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1449,6 +1449,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.StreamPackagingConfigCollection.class,
                         ListStreamPackagingConfigsResponse.Builder::streamPackagingConfigCollection)
@@ -1456,7 +1457,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "opc-request-id", ListStreamPackagingConfigsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListStreamPackagingConfigsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1481,6 +1481,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.SystemMediaWorkflowCollection.class,
                         ListSystemMediaWorkflowsResponse.Builder::systemMediaWorkflowCollection)
@@ -1488,7 +1489,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "opc-request-id", ListSystemMediaWorkflowsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListSystemMediaWorkflowsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1513,6 +1513,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.MediaAsset.class,
@@ -1520,7 +1521,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString("etag", UpdateMediaAssetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateMediaAssetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1545,6 +1545,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.MediaWorkflow.class,
@@ -1552,7 +1553,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString("etag", UpdateMediaWorkflowResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateMediaWorkflowResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1581,6 +1581,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.MediaWorkflowConfiguration.class,
@@ -1591,7 +1592,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateMediaWorkflowConfigurationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1618,6 +1618,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.MediaWorkflowJob.class,
@@ -1625,7 +1626,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString("etag", UpdateMediaWorkflowJobResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateMediaWorkflowJobResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1652,6 +1652,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.StreamCdnConfig.class,
@@ -1659,7 +1660,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString("etag", UpdateStreamCdnConfigResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateStreamCdnConfigResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1688,6 +1688,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.StreamDistributionChannel.class,
@@ -1697,7 +1698,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateStreamDistributionChannelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1725,6 +1725,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.mediaservices.model.StreamPackagingConfig.class,
@@ -1736,7 +1737,6 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         UpdateStreamPackagingConfigResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateStreamPackagingConfigResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

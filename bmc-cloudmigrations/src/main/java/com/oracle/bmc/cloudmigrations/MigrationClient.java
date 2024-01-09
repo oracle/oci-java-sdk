@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudmigrations;
@@ -168,9 +168,9 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", CancelWorkRequestResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -200,13 +200,13 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeMigrationCompartmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeMigrationCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -236,6 +236,7 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
@@ -243,7 +244,6 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeMigrationPlanCompartmentResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -274,6 +274,7 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
@@ -281,7 +282,6 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeReplicationScheduleCompartmentResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -303,6 +303,7 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.cloudmigrations.model.Migration.class,
@@ -310,7 +311,6 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", CreateMigrationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateMigrationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -333,6 +333,7 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.cloudmigrations.model.MigrationAsset.class,
@@ -347,7 +348,6 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "location", CreateMigrationAssetResponse.Builder::location)
                 .handleResponseHeaderString(
                         "content-location", CreateMigrationAssetResponse.Builder::contentLocation)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -369,6 +369,7 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.cloudmigrations.model.MigrationPlan.class,
@@ -383,7 +384,6 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "location", CreateMigrationPlanResponse.Builder::location)
                 .handleResponseHeaderString(
                         "content-location", CreateMigrationPlanResponse.Builder::contentLocation)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -407,6 +407,7 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.cloudmigrations.model.ReplicationSchedule.class,
@@ -422,7 +423,6 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "content-location",
                         CreateReplicationScheduleResponse.Builder::contentLocation)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -444,6 +444,7 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.cloudmigrations.model.TargetAsset.class,
@@ -456,7 +457,6 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("location", CreateTargetAssetResponse.Builder::location)
                 .handleResponseHeaderString(
                         "content-location", CreateTargetAssetResponse.Builder::contentLocation)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -479,11 +479,11 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteMigrationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteMigrationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -506,12 +506,12 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteMigrationAssetResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteMigrationAssetResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -534,12 +534,12 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteMigrationPlanResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteMigrationPlanResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -564,12 +564,12 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteReplicationScheduleResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteReplicationScheduleResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -592,11 +592,11 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteTargetAssetResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteTargetAssetResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -622,12 +622,12 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ExecuteMigrationPlanResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ExecuteMigrationPlanResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -651,11 +651,11 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("export")
                 .accept("text/csv")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         java.io.InputStream.class, ExportMigrationPlanResponse.Builder::inputStream)
                 .handleResponseHeaderString(
                         "opc-request-id", ExportMigrationPlanResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -677,13 +677,13 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getMigrationId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudmigrations.model.Migration.class,
                         GetMigrationResponse.Builder::migration)
                 .handleResponseHeaderString("etag", GetMigrationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetMigrationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -705,13 +705,13 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getMigrationAssetId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudmigrations.model.MigrationAsset.class,
                         GetMigrationAssetResponse.Builder::migrationAsset)
                 .handleResponseHeaderString("etag", GetMigrationAssetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetMigrationAssetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -733,13 +733,13 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getMigrationPlanId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudmigrations.model.MigrationPlan.class,
                         GetMigrationPlanResponse.Builder::migrationPlan)
                 .handleResponseHeaderString("etag", GetMigrationPlanResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetMigrationPlanResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -764,12 +764,12 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("replicationProgress")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudmigrations.model.ReplicationProgress.class,
                         GetReplicationProgressResponse.Builder::replicationProgress)
                 .handleResponseHeaderString(
                         "opc-request-id", GetReplicationProgressResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -793,13 +793,13 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getReplicationScheduleId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudmigrations.model.ReplicationSchedule.class,
                         GetReplicationScheduleResponse.Builder::replicationSchedule)
                 .handleResponseHeaderString("etag", GetReplicationScheduleResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetReplicationScheduleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -821,13 +821,13 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getTargetAssetId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudmigrations.model.TargetAsset.class,
                         GetTargetAssetResponse.Builder::targetAsset)
                 .handleResponseHeaderString("etag", GetTargetAssetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetTargetAssetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -849,6 +849,7 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudmigrations.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -857,7 +858,6 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -885,6 +885,7 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleResponseHeaderString(
@@ -892,7 +893,6 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         ImportMigrationPlanResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ImportMigrationPlanResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -923,6 +923,7 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudmigrations.model.AvailableShapesCollection.class,
                         ListAvailableShapesResponse.Builder::availableShapesCollection)
@@ -930,7 +931,6 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListAvailableShapesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAvailableShapesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -957,6 +957,7 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudmigrations.model.MigrationAssetCollection.class,
                         ListMigrationAssetsResponse.Builder::migrationAssetCollection)
@@ -964,7 +965,6 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListMigrationAssetsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListMigrationAssetsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -992,6 +992,7 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudmigrations.model.MigrationPlanCollection.class,
                         ListMigrationPlansResponse.Builder::migrationPlanCollection)
@@ -999,7 +1000,6 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListMigrationPlansResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListMigrationPlansResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1026,6 +1026,7 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudmigrations.model.MigrationCollection.class,
                         ListMigrationsResponse.Builder::migrationCollection)
@@ -1033,7 +1034,6 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListMigrationsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListMigrationsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1061,6 +1061,7 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudmigrations.model.ReplicationScheduleCollection.class,
                         ListReplicationSchedulesResponse.Builder::replicationScheduleCollection)
@@ -1068,7 +1069,6 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListReplicationSchedulesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListReplicationSchedulesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1095,6 +1095,7 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudmigrations.model.TargetAssetCollection.class,
                         ListTargetAssetsResponse.Builder::targetAssetCollection)
@@ -1102,7 +1103,6 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListTargetAssetsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListTargetAssetsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1130,6 +1130,7 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudmigrations.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -1137,7 +1138,6 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1164,6 +1164,7 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudmigrations.model.WorkRequestLogEntryCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
@@ -1171,7 +1172,6 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1199,6 +1199,7 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudmigrations.model.WorkRequestSummaryCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestSummaryCollection)
@@ -1206,7 +1207,6 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1232,11 +1232,11 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", RefreshMigrationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RefreshMigrationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1263,12 +1263,12 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RefreshMigrationAssetResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RefreshMigrationAssetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1294,12 +1294,12 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RefreshMigrationPlanResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RefreshMigrationPlanResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1326,12 +1326,12 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         StartAssetReplicationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", StartAssetReplicationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1358,12 +1358,12 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         StartMigrationReplicationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", StartMigrationReplicationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1388,6 +1388,7 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.cloudmigrations.model.Migration.class,
@@ -1395,7 +1396,6 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", UpdateMigrationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateMigrationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1421,6 +1421,7 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.cloudmigrations.model.MigrationAsset.class,
@@ -1428,7 +1429,6 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", UpdateMigrationAssetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateMigrationAssetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1454,13 +1454,13 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateMigrationPlanResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateMigrationPlanResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1489,13 +1489,13 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateReplicationScheduleResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateReplicationScheduleResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1521,12 +1521,12 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateTargetAssetResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateTargetAssetResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.queue;
@@ -105,9 +105,9 @@ public class QueueClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .appendPathParam(request.getMessageReceipt())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteMessageResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -134,13 +134,13 @@ public class QueueClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .appendPathParam("deleteMessages")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.queue.model.DeleteMessagesResult.class,
                         DeleteMessagesResponse.Builder::deleteMessagesResult)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteMessagesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -195,12 +195,12 @@ public class QueueClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .appendQueryParam("channelId", request.getChannelId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.queue.model.QueueStats.class,
                         GetStatsResponse.Builder::queueStats)
                 .handleResponseHeaderString(
                         "opc-request-id", GetStatsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -226,6 +226,7 @@ public class QueueClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .appendQueryParam("channelFilter", request.getChannelFilter())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.queue.model.ChannelCollection.class,
                         ListChannelsResponse.Builder::channelCollection)
@@ -233,7 +234,6 @@ public class QueueClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                         "opc-request-id", ListChannelsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListChannelsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -290,13 +290,13 @@ public class QueueClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .appendPathParam(request.getMessageReceipt())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.queue.model.UpdatedMessage.class,
                         UpdateMessageResponse.Builder::updatedMessage)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateMessageResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -323,13 +323,13 @@ public class QueueClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                 .appendPathParam("updateMessages")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.queue.model.UpdateMessagesResult.class,
                         UpdateMessagesResponse.Builder::updateMessagesResult)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateMessagesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

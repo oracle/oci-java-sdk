@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.marketplacepublisher;
@@ -146,13 +146,13 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.TermVersion.class,
                         ActivateTermVersionResponse.Builder::termVersion)
                 .handleResponseHeaderString("etag", ActivateTermVersionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", ActivateTermVersionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -175,9 +175,9 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", CancelWorkRequestResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -204,12 +204,12 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CascadingDeleteListingResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CascadingDeleteListingResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -236,13 +236,13 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CascadingDeleteListingRevisionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         CascadingDeleteListingRevisionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -272,10 +272,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeArtifactCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -305,10 +305,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeListingCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -334,6 +334,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.ListingRevision.class,
                         ChangeListingRevisionToNewStatusResponse.Builder::listingRevision)
@@ -342,7 +343,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeListingRevisionToNewStatusResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -372,10 +372,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeTermCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -401,12 +401,12 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CloneListingRevisionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CloneListingRevisionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -428,12 +428,12 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateArtifactResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateArtifactResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -455,6 +455,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.Listing.class,
@@ -462,7 +463,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString("etag", CreateListingResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateListingResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -486,6 +486,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.ListingRevision.class,
@@ -493,7 +494,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString("etag", CreateListingRevisionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateListingRevisionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -517,6 +517,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.ListingRevisionAttachment.class,
@@ -526,7 +527,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                         CreateListingRevisionAttachmentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", CreateListingRevisionAttachmentResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -550,6 +550,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.ListingRevisionNote.class,
@@ -557,7 +558,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-request-id", CreateListingRevisionNoteResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateListingRevisionNoteResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -581,6 +581,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.ListingRevisionPackage.class,
@@ -590,7 +591,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                         CreateListingRevisionPackageResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", CreateListingRevisionPackageResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -611,6 +611,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.Term.class,
@@ -618,7 +619,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString("etag", CreateTermResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateTermResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -644,6 +644,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("display-name", request.getDisplayName())
                 .appendHeader("term-id", request.getTermId())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleBody(
@@ -652,7 +653,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString("etag", CreateTermVersionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateTermVersionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -676,11 +676,11 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteArtifactResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteArtifactResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -703,9 +703,9 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteListingResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -729,9 +729,9 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteListingRevisionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -757,10 +757,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteListingRevisionAttachmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -785,9 +785,9 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteListingRevisionNoteResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -813,10 +813,10 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteListingRevisionPackageResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -839,9 +839,9 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteTermResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -864,9 +864,9 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteTermVersionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -888,13 +888,13 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendPathParam(request.getArtifactId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.Artifact.class,
                         GetArtifactResponse.Builder::artifact)
                 .handleResponseHeaderString("etag", GetArtifactResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetArtifactResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -918,13 +918,13 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.Category.class,
                         GetCategoryResponse.Builder::category)
                 .handleResponseHeaderString("etag", GetCategoryResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetCategoryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -946,13 +946,13 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendPathParam(request.getListingId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.Listing.class,
                         GetListingResponse.Builder::listing)
                 .handleResponseHeaderString("etag", GetListingResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetListingResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -974,13 +974,13 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendPathParam(request.getListingRevisionId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.ListingRevision.class,
                         GetListingRevisionResponse.Builder::listingRevision)
                 .handleResponseHeaderString("etag", GetListingRevisionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetListingRevisionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1005,6 +1005,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendPathParam(request.getListingRevisionAttachmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.ListingRevisionAttachment.class,
                         GetListingRevisionAttachmentResponse.Builder::listingRevisionAttachment)
@@ -1013,7 +1014,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                         GetListingRevisionAttachmentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", GetListingRevisionAttachmentResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1037,13 +1037,13 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendPathParam(request.getListingRevisionNoteId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.ListingRevisionNote.class,
                         GetListingRevisionNoteResponse.Builder::listingRevisionNote)
                 .handleResponseHeaderString(
                         "opc-request-id", GetListingRevisionNoteResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetListingRevisionNoteResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1068,13 +1068,13 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendPathParam(request.getListingRevisionPackageId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.ListingRevisionPackage.class,
                         GetListingRevisionPackageResponse.Builder::listingRevisionPackage)
                 .handleResponseHeaderString(
                         "opc-request-id", GetListingRevisionPackageResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetListingRevisionPackageResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1096,13 +1096,13 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendPathParam(request.getMarketCode())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.Market.class,
                         GetMarketResponse.Builder::market)
                 .handleResponseHeaderString("etag", GetMarketResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetMarketResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1124,13 +1124,13 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendPathParam(request.getProductCode())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.Product.class,
                         GetProductResponse.Builder::product)
                 .handleResponseHeaderString("etag", GetProductResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetProductResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1152,13 +1152,13 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendPathParam(request.getPublisherId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.Publisher.class,
                         GetPublisherResponse.Builder::publisher)
                 .handleResponseHeaderString("etag", GetPublisherResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetPublisherResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1180,12 +1180,12 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendPathParam(request.getTermId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.Term.class,
                         GetTermResponse.Builder::term)
                 .handleResponseHeaderString("etag", GetTermResponse.Builder::etag)
                 .handleResponseHeaderString("opc-request-id", GetTermResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1207,13 +1207,13 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendPathParam(request.getTermVersionId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.TermVersion.class,
                         GetTermVersionResponse.Builder::termVersion)
                 .handleResponseHeaderString("etag", GetTermVersionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetTermVersionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1235,6 +1235,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -1243,7 +1244,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1271,6 +1271,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.ArtifactCollection.class,
                         ListArtifactsResponse.Builder::artifactCollection)
@@ -1278,7 +1279,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                         "opc-request-id", ListArtifactsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListArtifactsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1305,6 +1305,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendQueryParam("name", request.getName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.CategoryCollection.class,
                         ListCategoriesResponse.Builder::categoryCollection)
@@ -1312,7 +1313,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                         "opc-next-page", ListCategoriesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListCategoriesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1341,6 +1341,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model
                                 .ListingRevisionAttachmentCollection.class,
@@ -1352,7 +1353,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListListingRevisionAttachmentsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1379,6 +1379,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.ListingRevisionNoteCollection
                                 .class,
@@ -1387,7 +1388,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                         "opc-request-id", ListListingRevisionNotesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListListingRevisionNotesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1416,6 +1416,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.ListingRevisionPackageCollection
                                 .class,
@@ -1425,7 +1426,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                         "opc-request-id", ListListingRevisionPackagesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListListingRevisionPackagesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1454,6 +1454,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.ListingRevisionCollection.class,
                         ListListingRevisionsResponse.Builder::listingRevisionCollection)
@@ -1461,7 +1462,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                         "opc-request-id", ListListingRevisionsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListListingRevisionsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1488,6 +1488,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.ListingCollection.class,
                         ListListingsResponse.Builder::listingCollection)
@@ -1495,7 +1496,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                         "opc-request-id", ListListingsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListListingsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1521,6 +1521,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendQueryParam("name", request.getName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.MarketCollection.class,
                         ListMarketsResponse.Builder::marketCollection)
@@ -1528,7 +1529,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                         "opc-next-page", ListMarketsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListMarketsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1554,6 +1554,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendQueryParam("name", request.getName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.ProductCollection.class,
                         ListProductsResponse.Builder::productCollection)
@@ -1561,7 +1562,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                         "opc-next-page", ListProductsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListProductsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1587,6 +1587,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendQueryParam("name", request.getName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.PublisherCollection.class,
                         ListPublishersResponse.Builder::publisherCollection)
@@ -1594,7 +1595,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                         "opc-next-page", ListPublishersResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListPublishersResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1621,6 +1621,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendQueryParam("displayName", request.getDisplayName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.TermVersionCollection.class,
                         ListTermVersionsResponse.Builder::termVersionCollection)
@@ -1628,7 +1629,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                         "opc-next-page", ListTermVersionsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListTermVersionsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1654,13 +1654,13 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendQueryParam("name", request.getName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.TermCollection.class,
                         ListTermsResponse.Builder::termCollection)
                 .handleResponseHeaderString("opc-next-page", ListTermsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListTermsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1688,6 +1688,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -1695,7 +1696,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1722,6 +1722,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.WorkRequestLogEntryCollection
                                 .class,
@@ -1730,7 +1731,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1758,6 +1758,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.WorkRequestSummaryCollection
                                 .class,
@@ -1766,7 +1767,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1795,13 +1795,13 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         MarkListingRevisionPackageAsDefaultResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         MarkListingRevisionPackageAsDefaultResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1828,12 +1828,12 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         PublishListingRevisionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", PublishListingRevisionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1863,6 +1863,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -1870,7 +1871,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-request-id",
                         PublishListingRevisionAsPrivateResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1899,13 +1899,13 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         PublishListingRevisionPackageResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         PublishListingRevisionPackageResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1935,6 +1935,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.ListingRevision.class,
@@ -1944,7 +1945,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-request-id",
                         SubmitListingRevisionForReviewResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1973,13 +1973,13 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UnPublishListingRevisionPackageResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UnPublishListingRevisionPackageResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2004,12 +2004,12 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateArtifactResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateArtifactResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2034,6 +2034,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.Listing.class,
@@ -2041,7 +2042,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString("etag", UpdateListingResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateListingResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2068,6 +2068,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.ListingRevision.class,
@@ -2075,7 +2076,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString("etag", UpdateListingRevisionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateListingRevisionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2104,6 +2104,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.ListingRevisionAttachment.class,
@@ -2113,7 +2114,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                         UpdateListingRevisionAttachmentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", UpdateListingRevisionAttachmentResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2143,6 +2143,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleBody(
@@ -2154,7 +2155,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                         UpdateListingRevisionAttachmentContentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", UpdateListingRevisionAttachmentContentResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2183,6 +2183,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleBody(
@@ -2193,7 +2194,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateListingRevisionIconContentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2222,6 +2222,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.ListingRevisionPackage.class,
@@ -2231,7 +2232,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                         UpdateListingRevisionPackageResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", UpdateListingRevisionPackageResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2255,6 +2255,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.Term.class,
@@ -2262,7 +2263,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString("etag", UpdateTermResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateTermResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2287,6 +2287,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.marketplacepublisher.model.TermVersion.class,
@@ -2294,7 +2295,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString("etag", UpdateTermVersionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateTermVersionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2322,6 +2322,7 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("display-name", request.getDisplayName())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleBody(
@@ -2330,7 +2331,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString("etag", UpdateTermVersionContentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateTermVersionContentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2357,12 +2357,12 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ValidateAndPublishArtifactResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ValidateAndPublishArtifactResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2389,12 +2389,12 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         WithdrawListingRevisionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", WithdrawListingRevisionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

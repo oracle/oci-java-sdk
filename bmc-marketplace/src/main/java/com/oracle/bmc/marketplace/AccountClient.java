@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.marketplace;
@@ -103,12 +103,12 @@ public class AccountClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendQueryParam("imageId", request.getImageId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplace.model.LaunchEligibility.class,
                         GetLaunchEligibilityResponse.Builder::launchEligibility)
                 .handleResponseHeaderString(
                         "opc-request-id", GetLaunchEligibilityResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -130,6 +130,7 @@ public class AccountClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.marketplace.model.ThirdPartyPaidListingEligibility.class,
                         GetThirdPartyPaidListingEligibilityResponse.Builder
@@ -137,7 +138,6 @@ public class AccountClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetThirdPartyPaidListingEligibilityResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

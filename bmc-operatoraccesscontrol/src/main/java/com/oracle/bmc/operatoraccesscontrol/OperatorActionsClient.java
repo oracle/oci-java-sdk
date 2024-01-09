@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.operatoraccesscontrol;
@@ -107,12 +107,12 @@ public class OperatorActionsClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam(request.getOperatorActionId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.operatoraccesscontrol.model.OperatorAction.class,
                         GetOperatorActionResponse.Builder::operatorAction)
                 .handleResponseHeaderString(
                         "opc-request-id", GetOperatorActionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -140,6 +140,7 @@ public class OperatorActionsClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.operatoraccesscontrol.model.OperatorActionCollection.class,
                         ListOperatorActionsResponse.Builder::operatorActionCollection)
@@ -147,7 +148,6 @@ public class OperatorActionsClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-request-id", ListOperatorActionsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListOperatorActionsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.http.internal;
@@ -176,14 +176,20 @@ public final class ClientCall<
 
     public ClientCall<REQ, RESP, RESP_BUILDER> hasBinaryRequestBody() {
         this.hasBinaryRequestBody = true;
-        if (request.getRetryConfiguration() != null
+        RetryConfiguration preferredRetryConfiguration =
+                Retriers.getPreferredRetryConfiguration(
+                        this.request.getRetryConfiguration(),
+                        this.retryConfiguration,
+                        this.operationUsesDefaultRetries);
+        if (Retriers.shouldPrepareForRetryBecauseOfRetryConfiguration(preferredRetryConfiguration)
                 || authenticationDetailsProvider instanceof RefreshableOnNotAuthenticatedProvider) {
             request =
                     (REQ)
                             Retriers.wrapBodyInputStreamIfNecessary(
                                     (BmcRequest<InputStream>) request,
                                     (BmcRequest.Builder<BmcRequest<InputStream>, InputStream>)
-                                            requestBuilder.get());
+                                            requestBuilder.get(),
+                                    preferredRetryConfiguration);
         }
         return this;
     }
@@ -200,19 +206,17 @@ public final class ClientCall<
         } else {
             httpRequest.body(body);
         }
-        if (body instanceof InputStream) {
-            // EntityFactory used to try to infer this from request.getContentType (and also
-            // getContentLanguage and
-            // getContentEncoding) using reflection. However it seems like this is only used for
-            // PutObjectRequest, which
-            // also sets these manually (they're `in: header` parameters), so we don't need to do
-            // this. There's a test
-            // in bmc-sdk-swagger that ensures these headers aren't overwritten by jax-rs.
-            if (!headers.contains("content-type")) {
+        if (!headers.contains("content-type")) {
+            if (body instanceof InputStream) {
+                // EntityFactory used to try to infer this from request.getContentType (and also
+                // getContentLanguage and getContentEncoding) using reflection.
+                // However, it seems like this is only used for PutObjectRequest, which
+                // also sets these manually (they're `in: header` parameters), so we don't need to
+                // do this. These headers aren't overwritten by jax-rs.
                 appendHeader("Content-Type", "application/octet-stream");
+            } else {
+                appendHeader("Content-Type", "application/json");
             }
-        } else {
-            appendHeader("Content-Type", "application/json");
         }
         if (request.supportsExpect100Continue() && !headers.contains("expect")) {
             appendHeader("Expect", "100-continue");
@@ -965,9 +969,13 @@ public final class ClientCall<
                                             if (isProcessingException(t)) {
                                                 throw new BmcException(
                                                         true, t.getMessage(), t, requestId);
+                                            } else if (t != null) {
+                                                return ClientCall.<HttpResponse>failedFuture(t);
+                                            } else {
+                                                return CompletableFuture.completedFuture(r);
                                             }
-                                            return r;
-                                        });
+                                        })
+                                .thenCompose(Function.identity());
             } catch (Exception e) {
                 return failedFuture(e);
             }
@@ -1001,9 +1009,13 @@ public final class ClientCall<
                                                         t);
                                                 throw new BmcException(
                                                         true, t.getMessage(), t, requestId);
+                                            } else if (t != null) {
+                                                return ClientCall.<HttpResponse>failedFuture(t);
+                                            } else {
+                                                return CompletableFuture.completedFuture(r);
                                             }
-                                            return r;
-                                        });
+                                        })
+                                .thenCompose(Function.identity());
             } catch (Exception e) {
                 addToHistory(e);
                 circuitBreaker.onError(

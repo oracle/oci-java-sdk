@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.devops;
@@ -171,6 +171,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.devops.model.Deployment.class,
@@ -178,7 +179,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString("etag", ApproveDeploymentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", ApproveDeploymentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -206,6 +206,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.devops.model.BuildRun.class,
@@ -213,7 +214,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString("etag", CancelBuildRunResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CancelBuildRunResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -241,6 +241,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.devops.model.Deployment.class,
@@ -248,7 +249,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString("etag", CancelDeploymentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CancelDeploymentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -275,13 +275,13 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CancelScheduledCascadingProjectDeletionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         CancelScheduledCascadingProjectDeletionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -311,13 +311,13 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeProjectCompartmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeProjectCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -339,6 +339,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.devops.model.BuildPipeline.class,
@@ -351,7 +352,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-request-id", CreateBuildPipelineResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", CreateBuildPipelineResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -375,6 +375,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.devops.model.BuildPipelineStage.class,
@@ -387,7 +388,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-request-id", CreateBuildPipelineStageResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", CreateBuildPipelineStageResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -410,6 +410,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.devops.model.BuildRun.class,
@@ -418,7 +419,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString(
                         "opc-request-id", CreateBuildRunResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("location", CreateBuildRunResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -440,6 +440,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.devops.model.Connection.class,
@@ -450,7 +451,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString(
                         "opc-request-id", CreateConnectionResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("location", CreateConnectionResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -473,6 +473,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.devops.model.DeployArtifact.class,
@@ -485,7 +486,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         CreateDeployArtifactResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDeployArtifactResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -509,6 +509,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.devops.model.DeployEnvironment.class,
@@ -521,7 +522,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         CreateDeployEnvironmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDeployEnvironmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -544,6 +544,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.devops.model.DeployPipeline.class,
@@ -556,7 +557,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString("etag", CreateDeployPipelineResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDeployPipelineResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -578,6 +578,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.devops.model.DeployStage.class,
@@ -588,7 +589,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-work-request-id", CreateDeployStageResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDeployStageResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -610,6 +610,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.devops.model.Deployment.class,
@@ -617,7 +618,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString("etag", CreateDeploymentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDeploymentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -639,6 +639,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.devops.model.Project.class,
@@ -649,7 +650,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-work-request-id", CreateProjectResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateProjectResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -671,6 +671,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.devops.model.Repository.class,
@@ -681,7 +682,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString(
                         "opc-request-id", CreateRepositoryResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateRepositoryResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -703,6 +703,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.devops.model.TriggerCreateResult.class,
@@ -713,7 +714,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString(
                         "opc-request-id", CreateTriggerResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("location", CreateTriggerResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -736,12 +736,12 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteBuildPipelineResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteBuildPipelineResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -766,12 +766,12 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteBuildPipelineStageResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteBuildPipelineStageResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -794,11 +794,11 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteConnectionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteConnectionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -821,12 +821,12 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteDeployArtifactResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDeployArtifactResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -851,12 +851,12 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteDeployEnvironmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDeployEnvironmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -879,12 +879,12 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteDeployPipelineResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDeployPipelineResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -907,11 +907,11 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteDeployStageResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDeployStageResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -934,11 +934,11 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteProjectResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteProjectResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -966,11 +966,11 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteRefResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteRefResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -993,11 +993,11 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteRepositoryResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteRepositoryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1020,11 +1020,11 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteTriggerResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteTriggerResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1046,13 +1046,13 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendPathParam(request.getBuildPipelineId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.BuildPipeline.class,
                         GetBuildPipelineResponse.Builder::buildPipeline)
                 .handleResponseHeaderString("etag", GetBuildPipelineResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetBuildPipelineResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1076,13 +1076,13 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendPathParam(request.getBuildPipelineStageId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.BuildPipelineStage.class,
                         GetBuildPipelineStageResponse.Builder::buildPipelineStage)
                 .handleResponseHeaderString("etag", GetBuildPipelineStageResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetBuildPipelineStageResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1104,13 +1104,13 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendPathParam(request.getBuildRunId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.BuildRun.class,
                         GetBuildRunResponse.Builder::buildRun)
                 .handleResponseHeaderString("etag", GetBuildRunResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetBuildRunResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1136,13 +1136,13 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendPathParam(request.getCommitId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.RepositoryCommit.class,
                         GetCommitResponse.Builder::repositoryCommit)
                 .handleResponseHeaderString("etag", GetCommitResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetCommitResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1170,13 +1170,13 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "isComparisonFromMergeBase", request.getIsComparisonFromMergeBase())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.DiffResponse.class,
                         GetCommitDiffResponse.Builder::diffResponse)
                 .handleResponseHeaderString("etag", GetCommitDiffResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetCommitDiffResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1198,13 +1198,13 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendPathParam(request.getConnectionId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.Connection.class,
                         GetConnectionResponse.Builder::connection)
                 .handleResponseHeaderString("etag", GetConnectionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetConnectionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1226,13 +1226,13 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendPathParam(request.getDeployArtifactId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.DeployArtifact.class,
                         GetDeployArtifactResponse.Builder::deployArtifact)
                 .handleResponseHeaderString("etag", GetDeployArtifactResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDeployArtifactResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1255,13 +1255,13 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendPathParam(request.getDeployEnvironmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.DeployEnvironment.class,
                         GetDeployEnvironmentResponse.Builder::deployEnvironment)
                 .handleResponseHeaderString("etag", GetDeployEnvironmentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDeployEnvironmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1283,13 +1283,13 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendPathParam(request.getDeployPipelineId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.DeployPipeline.class,
                         GetDeployPipelineResponse.Builder::deployPipeline)
                 .handleResponseHeaderString("etag", GetDeployPipelineResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDeployPipelineResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1311,13 +1311,13 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendPathParam(request.getDeployStageId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.DeployStage.class,
                         GetDeployStageResponse.Builder::deployStage)
                 .handleResponseHeaderString("etag", GetDeployStageResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDeployStageResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1339,13 +1339,13 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendPathParam(request.getDeploymentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.Deployment.class,
                         GetDeploymentResponse.Builder::deployment)
                 .handleResponseHeaderString("etag", GetDeploymentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDeploymentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1378,6 +1378,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "isComparisonFromMergeBase", request.getIsComparisonFromMergeBase())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.FileDiffResponse.class,
                         GetFileDiffResponse.Builder::fileDiffResponse)
@@ -1385,7 +1386,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString(
                         "opc-request-id", GetFileDiffResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("Sunset", GetFileDiffResponse.Builder::sunset)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1412,13 +1412,13 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendPathParam(request.getMirrorRecordType().getValue())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.RepositoryMirrorRecord.class,
                         GetMirrorRecordResponse.Builder::repositoryMirrorRecord)
                 .handleResponseHeaderString("etag", GetMirrorRecordResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetMirrorRecordResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1443,13 +1443,13 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendQueryParam("refName", request.getRefName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.RepositoryObject.class,
                         GetObjectResponse.Builder::repositoryObject)
                 .handleResponseHeaderString(
                         "opc-request-id", GetObjectResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetObjectResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1477,6 +1477,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendQueryParam("filePath", request.getFilePath())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         java.io.InputStream.class, GetObjectContentResponse.Builder::inputStream)
                 .handleResponseHeaderString(
@@ -1485,7 +1486,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "Content-Type", GetObjectContentResponse.Builder::contentType)
                 .handleResponseHeaderString(
                         "Content-Disposition", GetObjectContentResponse.Builder::contentDisposition)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1507,13 +1507,13 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendPathParam(request.getProjectId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.Project.class,
                         GetProjectResponse.Builder::project)
                 .handleResponseHeaderString("etag", GetProjectResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetProjectResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1539,12 +1539,12 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendPathParam(request.getRefName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.RepositoryRef.class,
                         GetRefResponse.Builder::repositoryRef)
                 .handleResponseHeaderString("etag", GetRefResponse.Builder::etag)
                 .handleResponseHeaderString("opc-request-id", GetRefResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1576,13 +1576,13 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "isComparisonFromMergeBase", request.getIsComparisonFromMergeBase())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.FileDiffResponse.class,
                         GetRepoFileDiffResponse.Builder::fileDiffResponse)
                 .handleResponseHeaderString("etag", GetRepoFileDiffResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetRepoFileDiffResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1611,13 +1611,13 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.RepositoryFileLines.class,
                         GetRepoFileLinesResponse.Builder::repositoryFileLines)
                 .handleResponseHeaderString(
                         "opc-request-id", GetRepoFileLinesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetRepoFileLinesResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1643,13 +1643,13 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.Repository.class,
                         GetRepositoryResponse.Builder::repository)
                 .handleResponseHeaderString("etag", GetRepositoryResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetRepositoryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1676,6 +1676,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendQueryParam("format", request.getFormat())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         java.io.InputStream.class,
                         GetRepositoryArchiveContentResponse.Builder::inputStream)
@@ -1686,7 +1687,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString(
                         "Content-Disposition",
                         GetRepositoryArchiveContentResponse.Builder::contentDisposition)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1718,6 +1718,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.RepositoryFileLines.class,
                         GetRepositoryFileLinesResponse.Builder::repositoryFileLines)
@@ -1726,7 +1727,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString("etag", GetRepositoryFileLinesResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "Sunset", GetRepositoryFileLinesResponse.Builder::sunset)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1748,13 +1748,13 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendPathParam(request.getTriggerId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.Trigger.class,
                         GetTriggerResponse.Builder::trigger)
                 .handleResponseHeaderString("etag", GetTriggerResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetTriggerResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1776,6 +1776,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -1783,7 +1784,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderFloat(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1810,6 +1810,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.RepositoryAuthorCollection.class,
                         ListAuthorsResponse.Builder::repositoryAuthorCollection)
@@ -1817,7 +1818,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-request-id", ListAuthorsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAuthorsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1846,6 +1846,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.BuildPipelineStageCollection.class,
                         ListBuildPipelineStagesResponse.Builder::buildPipelineStageCollection)
@@ -1853,7 +1854,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-request-id", ListBuildPipelineStagesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListBuildPipelineStagesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1881,6 +1881,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.BuildPipelineCollection.class,
                         ListBuildPipelinesResponse.Builder::buildPipelineCollection)
@@ -1888,7 +1889,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-request-id", ListBuildPipelinesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListBuildPipelinesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1917,6 +1917,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.BuildRunSummaryCollection.class,
                         ListBuildRunsResponse.Builder::buildRunSummaryCollection)
@@ -1924,7 +1925,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-request-id", ListBuildRunsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListBuildRunsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1956,6 +1956,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.DiffCollection.class,
                         ListCommitDiffsResponse.Builder::diffCollection)
@@ -1963,7 +1964,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-request-id", ListCommitDiffsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListCommitDiffsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1997,6 +1997,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.RepositoryCommitCollection.class,
                         ListCommitsResponse.Builder::repositoryCommitCollection)
@@ -2004,7 +2005,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-request-id", ListCommitsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListCommitsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2033,6 +2033,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.ConnectionCollection.class,
                         ListConnectionsResponse.Builder::connectionCollection)
@@ -2040,7 +2041,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-request-id", ListConnectionsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListConnectionsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2068,6 +2068,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.DeployArtifactCollection.class,
                         ListDeployArtifactsResponse.Builder::deployArtifactCollection)
@@ -2075,7 +2076,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-request-id", ListDeployArtifactsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDeployArtifactsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2104,6 +2104,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.DeployEnvironmentCollection.class,
                         ListDeployEnvironmentsResponse.Builder::deployEnvironmentCollection)
@@ -2111,7 +2112,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-request-id", ListDeployEnvironmentsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDeployEnvironmentsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2139,6 +2139,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.DeployPipelineCollection.class,
                         ListDeployPipelinesResponse.Builder::deployPipelineCollection)
@@ -2146,7 +2147,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-request-id", ListDeployPipelinesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDeployPipelinesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2174,6 +2174,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.DeployStageCollection.class,
                         ListDeployStagesResponse.Builder::deployStageCollection)
@@ -2181,7 +2182,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-request-id", ListDeployStagesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDeployStagesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2214,6 +2214,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         request.getTimeCreatedGreaterThanOrEqualTo())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.DeploymentCollection.class,
                         ListDeploymentsResponse.Builder::deploymentCollection)
@@ -2221,7 +2222,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-request-id", ListDeploymentsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDeploymentsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2247,6 +2247,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.RepositoryMirrorRecordCollection.class,
                         ListMirrorRecordsResponse.Builder::repositoryMirrorRecordCollection)
@@ -2254,7 +2255,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-request-id", ListMirrorRecordsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListMirrorRecordsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2285,13 +2285,13 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.RepositoryPathCollection.class,
                         ListPathsResponse.Builder::repositoryPathCollection)
                 .handleResponseHeaderString(
                         "opc-request-id", ListPathsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("opc-next-page", ListPathsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2319,6 +2319,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.ProjectCollection.class,
                         ListProjectsResponse.Builder::projectCollection)
@@ -2326,7 +2327,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-request-id", ListProjectsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListProjectsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2356,13 +2356,13 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.RepositoryRefCollection.class,
                         ListRefsResponse.Builder::repositoryRefCollection)
                 .handleResponseHeaderString(
                         "opc-request-id", ListRefsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("opc-next-page", ListRefsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2390,6 +2390,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.RepositoryCollection.class,
                         ListRepositoriesResponse.Builder::repositoryCollection)
@@ -2397,7 +2398,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-request-id", ListRepositoriesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListRepositoriesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2425,6 +2425,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.TriggerCollection.class,
                         ListTriggersResponse.Builder::triggerCollection)
@@ -2432,7 +2433,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-request-id", ListTriggersResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListTriggersResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2460,6 +2460,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -2467,7 +2468,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2494,6 +2494,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.WorkRequestLogEntryCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
@@ -2501,7 +2502,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2533,6 +2533,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.WorkRequestCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestCollection)
@@ -2540,7 +2541,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2565,11 +2565,11 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", MirrorRepositoryResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", MirrorRepositoryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2599,6 +2599,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.devops.model.RepositoryRef.class,
@@ -2609,7 +2610,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-work-request-id", PutRepositoryRefResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", PutRepositoryRefResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2636,13 +2636,13 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ScheduleCascadingProjectDeletionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ScheduleCascadingProjectDeletionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2667,6 +2667,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.devops.model.BuildPipeline.class,
@@ -2679,7 +2680,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         UpdateBuildPipelineResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "location", UpdateBuildPipelineResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2707,6 +2707,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.devops.model.BuildPipelineStage.class,
@@ -2719,7 +2720,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-request-id", UpdateBuildPipelineStageResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", UpdateBuildPipelineStageResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2744,6 +2744,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.devops.model.BuildRun.class,
@@ -2752,7 +2753,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateBuildRunResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("location", UpdateBuildRunResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2777,6 +2777,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.devops.model.Connection.class,
@@ -2787,7 +2788,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateConnectionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString("location", UpdateConnectionResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2813,6 +2813,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.devops.model.DeployArtifact.class,
@@ -2825,7 +2826,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         UpdateDeployArtifactResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDeployArtifactResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2853,6 +2853,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.devops.model.DeployEnvironment.class,
@@ -2865,7 +2866,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         UpdateDeployEnvironmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDeployEnvironmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2891,6 +2891,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.devops.model.DeployPipeline.class,
@@ -2903,7 +2904,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         UpdateDeployPipelineResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDeployPipelineResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2928,6 +2928,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.devops.model.DeployStage.class,
@@ -2938,7 +2939,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-work-request-id", UpdateDeployStageResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDeployStageResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2963,6 +2963,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.devops.model.Deployment.class,
@@ -2970,7 +2971,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString("etag", UpdateDeploymentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDeploymentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2995,6 +2995,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.devops.model.Project.class,
@@ -3005,7 +3006,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-work-request-id", UpdateProjectResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateProjectResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3030,6 +3030,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.devops.model.Repository.class,
@@ -3039,7 +3040,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateRepositoryResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateRepositoryResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3064,6 +3064,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.devops.model.Trigger.class,
@@ -3074,7 +3075,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateTriggerResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("location", UpdateTriggerResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3100,13 +3100,13 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.devops.model.Connection.class,
                         ValidateConnectionResponse.Builder::connection)
                 .handleResponseHeaderString(
                         "opc-request-id", ValidateConnectionResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", ValidateConnectionResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

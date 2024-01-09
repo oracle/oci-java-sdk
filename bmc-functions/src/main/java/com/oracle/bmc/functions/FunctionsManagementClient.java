@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.functions;
@@ -149,11 +149,11 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeApplicationCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -174,6 +174,7 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .appendPathParam("applications")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.functions.model.Application.class,
@@ -181,7 +182,6 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .handleResponseHeaderString("etag", CreateApplicationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateApplicationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -202,6 +202,7 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .appendPathParam("functions")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.functions.model.Function.class,
@@ -209,7 +210,6 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .handleResponseHeaderString("etag", CreateFunctionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateFunctionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -232,9 +232,9 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteApplicationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -257,9 +257,9 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteFunctionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -281,13 +281,13 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .appendPathParam(request.getApplicationId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.functions.model.Application.class,
                         GetApplicationResponse.Builder::application)
                 .handleResponseHeaderString("etag", GetApplicationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetApplicationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -309,13 +309,13 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .appendPathParam(request.getFunctionId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.functions.model.Function.class,
                         GetFunctionResponse.Builder::function)
                 .handleResponseHeaderString("etag", GetFunctionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetFunctionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -337,13 +337,13 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .appendPathParam(request.getPbfListingId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.functions.model.PbfListing.class,
                         GetPbfListingResponse.Builder::pbfListing)
                 .handleResponseHeaderString("etag", GetPbfListingResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetPbfListingResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -366,13 +366,13 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .appendPathParam(request.getPbfListingVersionId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.functions.model.PbfListingVersion.class,
                         GetPbfListingVersionResponse.Builder::pbfListingVersion)
                 .handleResponseHeaderString("etag", GetPbfListingVersionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetPbfListingVersionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -400,6 +400,7 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.functions.model.ApplicationSummary.class,
                         ListApplicationsResponse.Builder::items)
@@ -407,7 +408,6 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                         "opc-next-page", ListApplicationsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListApplicationsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -435,6 +435,7 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.functions.model.FunctionSummary.class,
                         ListFunctionsResponse.Builder::items)
@@ -442,7 +443,6 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                         "opc-next-page", ListFunctionsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListFunctionsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -472,6 +472,7 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.functions.model.PbfListingVersionsCollection.class,
                         ListPbfListingVersionsResponse.Builder::pbfListingVersionsCollection)
@@ -479,7 +480,6 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                         "opc-request-id", ListPbfListingVersionsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListPbfListingVersionsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -511,6 +511,7 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.functions.model.PbfListingsCollection.class,
                         ListPbfListingsResponse.Builder::pbfListingsCollection)
@@ -518,7 +519,6 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                         "opc-request-id", ListPbfListingsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListPbfListingsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -542,6 +542,7 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.functions.model.TriggersCollection.class,
                         ListTriggersResponse.Builder::triggersCollection)
@@ -549,7 +550,6 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                         "opc-request-id", ListTriggersResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListTriggersResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -574,6 +574,7 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.functions.model.Application.class,
@@ -581,7 +582,6 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .handleResponseHeaderString("etag", UpdateApplicationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateApplicationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -606,6 +606,7 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.functions.model.Function.class,
@@ -613,7 +614,6 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .handleResponseHeaderString("etag", UpdateFunctionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateFunctionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

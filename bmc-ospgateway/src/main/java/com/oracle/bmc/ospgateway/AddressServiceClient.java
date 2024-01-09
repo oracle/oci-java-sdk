@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ospgateway;
@@ -104,12 +104,12 @@ public class AddressServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.ospgateway.model.Address.class,
                         GetAddressResponse.Builder::address)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAddressResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -137,6 +137,7 @@ public class AddressServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.ospgateway.model.VerifyAddressReceipt.class,
@@ -144,7 +145,6 @@ public class AddressServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString(
                         "opc-request-id", VerifyAddressResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", VerifyAddressResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

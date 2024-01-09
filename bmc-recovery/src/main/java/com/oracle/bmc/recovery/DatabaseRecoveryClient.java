@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.recovery;
@@ -174,6 +174,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -181,7 +182,6 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeProtectedDatabaseCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -210,6 +210,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -217,7 +218,6 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeProtectionPolicyCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -247,6 +247,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -254,7 +255,6 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeRecoveryServiceSubnetCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -278,6 +278,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.recovery.model.ProtectedDatabase.class,
@@ -290,7 +291,6 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         CreateProtectedDatabaseResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateProtectedDatabaseResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -314,6 +314,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.recovery.model.ProtectionPolicy.class,
@@ -326,7 +327,6 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         CreateProtectionPolicyResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateProtectionPolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -350,6 +350,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.recovery.model.RecoveryServiceSubnet.class,
@@ -363,7 +364,6 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         CreateRecoveryServiceSubnetResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateRecoveryServiceSubnetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -388,12 +388,12 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteProtectedDatabaseResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteProtectedDatabaseResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -417,12 +417,12 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteProtectionPolicyResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteProtectionPolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -447,12 +447,12 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteRecoveryServiceSubnetResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteRecoveryServiceSubnetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -479,6 +479,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         java.io.InputStream.class,
@@ -488,7 +489,6 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .handleResponseHeaderString(
                         "opc-request-id",
                         FetchProtectedDatabaseConfigurationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -511,13 +511,13 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendPathParam(request.getProtectedDatabaseId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.recovery.model.ProtectedDatabase.class,
                         GetProtectedDatabaseResponse.Builder::protectedDatabase)
                 .handleResponseHeaderString("etag", GetProtectedDatabaseResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetProtectedDatabaseResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -539,13 +539,13 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendPathParam(request.getProtectionPolicyId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.recovery.model.ProtectionPolicy.class,
                         GetProtectionPolicyResponse.Builder::protectionPolicy)
                 .handleResponseHeaderString("etag", GetProtectionPolicyResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetProtectionPolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -569,13 +569,13 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendPathParam(request.getRecoveryServiceSubnetId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.recovery.model.RecoveryServiceSubnet.class,
                         GetRecoveryServiceSubnetResponse.Builder::recoveryServiceSubnet)
                 .handleResponseHeaderString("etag", GetRecoveryServiceSubnetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetRecoveryServiceSubnetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -597,6 +597,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.recovery.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -604,7 +605,6 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -635,6 +635,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.recovery.model.ProtectedDatabaseCollection.class,
                         ListProtectedDatabasesResponse.Builder::protectedDatabaseCollection)
@@ -642,7 +643,6 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         "opc-request-id", ListProtectedDatabasesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListProtectedDatabasesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -672,6 +672,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.recovery.model.ProtectionPolicyCollection.class,
                         ListProtectionPoliciesResponse.Builder::protectionPolicyCollection)
@@ -679,7 +680,6 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         "opc-request-id", ListProtectionPoliciesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListProtectionPoliciesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -709,6 +709,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.recovery.model.RecoveryServiceSubnetCollection.class,
                         ListRecoveryServiceSubnetsResponse.Builder::recoveryServiceSubnetCollection)
@@ -716,7 +717,6 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         "opc-request-id", ListRecoveryServiceSubnetsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListRecoveryServiceSubnetsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -744,6 +744,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.recovery.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -751,7 +752,6 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -778,6 +778,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.recovery.model.WorkRequestLogEntryCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
@@ -785,7 +786,6 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -813,6 +813,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.recovery.model.WorkRequestSummaryCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestSummaryCollection)
@@ -820,7 +821,6 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -848,13 +848,13 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateProtectedDatabaseResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateProtectedDatabaseResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -881,13 +881,13 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateProtectionPolicyResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateProtectionPolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -915,13 +915,13 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateRecoveryServiceSubnetResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateRecoveryServiceSubnetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

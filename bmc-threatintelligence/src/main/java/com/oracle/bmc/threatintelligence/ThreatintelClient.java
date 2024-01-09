@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.threatintelligence;
@@ -143,12 +143,12 @@ public class ThreatintelClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.threatintelligence.model.Indicator.class,
                         GetIndicatorResponse.Builder::indicator)
                 .handleResponseHeaderString(
                         "opc-request-id", GetIndicatorResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -170,12 +170,12 @@ public class ThreatintelClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.threatintelligence.model.IndicatorCountCollection.class,
                         ListIndicatorCountsResponse.Builder::indicatorCountCollection)
                 .handleResponseHeaderString(
                         "opc-request-id", ListIndicatorCountsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -221,6 +221,7 @@ public class ThreatintelClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.threatintelligence.model.IndicatorSummaryCollection.class,
                         ListIndicatorsResponse.Builder::indicatorSummaryCollection)
@@ -228,7 +229,6 @@ public class ThreatintelClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListIndicatorsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListIndicatorsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -252,6 +252,7 @@ public class ThreatintelClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.threatintelligence.model.ThreatTypesCollection.class,
                         ListThreatTypesResponse.Builder::threatTypesCollection)
@@ -259,7 +260,6 @@ public class ThreatintelClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListThreatTypesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListThreatTypesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -287,6 +287,7 @@ public class ThreatintelClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.threatintelligence.model.IndicatorSummaryCollection.class,
@@ -295,7 +296,6 @@ public class ThreatintelClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", SummarizeIndicatorsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeIndicatorsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

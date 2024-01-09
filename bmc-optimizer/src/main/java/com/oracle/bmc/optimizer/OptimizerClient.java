@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.optimizer;
@@ -147,13 +147,13 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", BulkApplyRecommendationsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         BulkApplyRecommendationsResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -175,6 +175,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.Profile.class,
@@ -182,7 +183,6 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", CreateProfileResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateProfileResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -205,9 +205,9 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteProfileResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -246,6 +246,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.ResourceActionCollection.class,
@@ -256,7 +257,6 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", FilterResourceActionsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", FilterResourceActionsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -278,12 +278,12 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getCategoryId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.Category.class,
                         GetCategoryResponse.Builder::category)
                 .handleResponseHeaderString(
                         "opc-request-id", GetCategoryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -305,13 +305,13 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getEnrollmentStatusId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.EnrollmentStatus.class,
                         GetEnrollmentStatusResponse.Builder::enrollmentStatus)
                 .handleResponseHeaderString("etag", GetEnrollmentStatusResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetEnrollmentStatusResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -333,13 +333,13 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getProfileId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.Profile.class,
                         GetProfileResponse.Builder::profile)
                 .handleResponseHeaderString("etag", GetProfileResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetProfileResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -361,13 +361,13 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getRecommendationId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.Recommendation.class,
                         GetRecommendationResponse.Builder::recommendation)
                 .handleResponseHeaderString("etag", GetRecommendationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetRecommendationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -390,13 +390,13 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("includeResourceMetadata", request.getIncludeResourceMetadata())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.ResourceAction.class,
                         GetResourceActionResponse.Builder::resourceAction)
                 .handleResponseHeaderString("etag", GetResourceActionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetResourceActionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -418,6 +418,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -425,7 +426,6 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderFloat(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -461,6 +461,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.CategoryCollection.class,
                         ListCategoriesResponse.Builder::categoryCollection)
@@ -470,7 +471,6 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListCategoriesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListCategoriesResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -498,6 +498,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("status", request.getStatus())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.EnrollmentStatusCollection.class,
                         ListEnrollmentStatusesResponse.Builder::enrollmentStatusCollection)
@@ -507,7 +508,6 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListEnrollmentStatusesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListEnrollmentStatusesResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -543,6 +543,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("includeResourceMetadata", request.getIncludeResourceMetadata())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.HistoryCollection.class,
                         ListHistoriesResponse.Builder::historyCollection)
@@ -552,7 +553,6 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListHistoriesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListHistoriesResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -583,6 +583,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.ProfileLevelCollection.class,
                         ListProfileLevelsResponse.Builder::profileLevelCollection)
@@ -592,7 +593,6 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListProfileLevelsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListProfileLevelsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -619,6 +619,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.ProfileCollection.class,
                         ListProfilesResponse.Builder::profileCollection)
@@ -628,7 +629,6 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListProfilesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListProfilesResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -660,6 +660,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.RecommendationStrategyCollection.class,
                         ListRecommendationStrategiesResponse.Builder
@@ -671,7 +672,6 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListRecommendationStrategiesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListRecommendationStrategiesResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -710,6 +710,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("status", request.getStatus())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.RecommendationCollection.class,
                         ListRecommendationsResponse.Builder::recommendationCollection)
@@ -719,7 +720,6 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListRecommendationsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListRecommendationsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -749,6 +749,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.QueryableFieldCollection.class,
                         ListResourceActionQueryableFieldsResponse.Builder::queryableFieldCollection)
@@ -761,7 +762,6 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-prev-page",
                         ListResourceActionQueryableFieldsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -802,6 +802,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("includeResourceMetadata", request.getIncludeResourceMetadata())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.ResourceActionCollection.class,
                         ListResourceActionsResponse.Builder::resourceActionCollection)
@@ -811,7 +812,6 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListResourceActionsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListResourceActionsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -837,6 +837,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -844,7 +845,6 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -869,6 +869,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.WorkRequestLogEntryCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
@@ -876,7 +877,6 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -899,6 +899,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.WorkRequestCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestCollection)
@@ -906,7 +907,6 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -933,6 +933,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.EnrollmentStatus.class,
@@ -940,7 +941,6 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", UpdateEnrollmentStatusResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateEnrollmentStatusResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -965,6 +965,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.Profile.class,
@@ -972,7 +973,6 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", UpdateProfileResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateProfileResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1030,6 +1030,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.optimizer.model.ResourceAction.class,
@@ -1037,7 +1038,6 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", UpdateResourceActionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateResourceActionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

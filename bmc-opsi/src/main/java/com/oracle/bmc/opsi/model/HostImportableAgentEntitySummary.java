@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -67,7 +67,7 @@ public final class HostImportableAgentEntitySummary extends ImportableAgentEntit
          * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX,
          * SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight:
          * [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS,
-         * SUNOS, ZLINUX, WINDOWS, AIX].
+         * SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
          */
         @com.fasterxml.jackson.annotation.JsonProperty("platformType")
         private PlatformType platformType;
@@ -76,7 +76,7 @@ public final class HostImportableAgentEntitySummary extends ImportableAgentEntit
          * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX,
          * SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight:
          * [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS,
-         * SUNOS, ZLINUX, WINDOWS, AIX].
+         * SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
          *
          * @param platformType the value to set
          * @return this builder
@@ -162,7 +162,7 @@ public final class HostImportableAgentEntitySummary extends ImportableAgentEntit
      * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX,
      * SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
      * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS,
-     * ZLINUX, WINDOWS, AIX].
+     * ZLINUX, WINDOWS, AIX, HP-UX].
      */
     public enum PlatformType implements com.oracle.bmc.http.internal.BmcEnum {
         Linux("LINUX"),
@@ -171,6 +171,7 @@ public final class HostImportableAgentEntitySummary extends ImportableAgentEntit
         Zlinux("ZLINUX"),
         Windows("WINDOWS"),
         Aix("AIX"),
+        HpUx("HP_UX"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -217,7 +218,7 @@ public final class HostImportableAgentEntitySummary extends ImportableAgentEntit
      * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX,
      * SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
      * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS,
-     * ZLINUX, WINDOWS, AIX].
+     * ZLINUX, WINDOWS, AIX, HP-UX].
      */
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
     private final PlatformType platformType;
@@ -226,7 +227,7 @@ public final class HostImportableAgentEntitySummary extends ImportableAgentEntit
      * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX,
      * SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
      * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS,
-     * ZLINUX, WINDOWS, AIX].
+     * ZLINUX, WINDOWS, AIX, HP-UX].
      *
      * @return the value
      */

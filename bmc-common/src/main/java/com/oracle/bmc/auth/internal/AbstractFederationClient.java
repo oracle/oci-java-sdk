@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.auth.internal;
@@ -25,8 +25,11 @@ import com.oracle.bmc.http.internal.LogHeadersFilter;
 import com.oracle.bmc.http.signing.DefaultRequestSigner;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.requests.BmcRequest;
+import com.oracle.bmc.retrier.RetryConfiguration;
 import com.oracle.bmc.util.internal.StringUtils;
 import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
+import com.oracle.bmc.waiter.FixedTimeDelayStrategy;
 import org.slf4j.Logger;
 
 import java.net.URI;
@@ -310,6 +313,12 @@ public abstract class AbstractFederationClient
                         .appendPathPart("resourcePrincipalSessionToken")
                         .circuitBreaker(circuitBreaker)
                         .hasBody()
+                        .retryConfiguration(
+                                RetryConfiguration.builder()
+                                        .terminationStrategy(new MaxAttemptsTerminationStrategy(5))
+                                        .delayStrategy(new FixedTimeDelayStrategy(250))
+                                        .retryCondition(exception -> true)
+                                        .build())
                         .callSync()
                         .token;
 

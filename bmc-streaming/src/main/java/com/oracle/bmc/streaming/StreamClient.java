@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.streaming;
@@ -62,12 +62,12 @@ public class StreamClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendQueryParam("cursor", request.getCursor())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.streaming.model.Cursor.class,
                         ConsumerCommitResponse.Builder::cursor)
                 .handleResponseHeaderString(
                         "opc-request-id", ConsumerCommitResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -92,12 +92,12 @@ public class StreamClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendQueryParam("cursor", request.getCursor())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.streaming.model.Cursor.class,
                         ConsumerHeartbeatResponse.Builder::cursor)
                 .handleResponseHeaderString(
                         "opc-request-id", ConsumerHeartbeatResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -121,13 +121,13 @@ public class StreamClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendPathParam("cursors")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.streaming.model.Cursor.class,
                         CreateCursorResponse.Builder::cursor)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateCursorResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -152,13 +152,13 @@ public class StreamClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendPathParam("groupCursors")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.streaming.model.Cursor.class,
                         CreateGroupCursorResponse.Builder::cursor)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateGroupCursorResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -184,11 +184,11 @@ public class StreamClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendPathParam(request.getGroupName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.streaming.model.Group.class, GetGroupResponse.Builder::group)
                 .handleResponseHeaderString(
                         "opc-request-id", GetGroupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -214,6 +214,7 @@ public class StreamClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.streaming.model.Message.class,
                         GetMessagesResponse.Builder::items)
@@ -221,7 +222,6 @@ public class StreamClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-next-cursor", GetMessagesResponse.Builder::opcNextCursor)
                 .handleResponseHeaderString(
                         "opc-request-id", GetMessagesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -278,10 +278,10 @@ public class StreamClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendPathParam(request.getGroupName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateGroupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

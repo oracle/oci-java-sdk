@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi;
@@ -7372,6 +7372,102 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
                         "opc-total-items", SummarizeExadataMembersResponse.Builder::opcTotalItems)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeExadataMembersResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeHostInsightDiskStatisticsResponse>
+            summarizeHostInsightDiskStatistics(
+                    SummarizeHostInsightDiskStatisticsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeHostInsightDiskStatisticsRequest,
+                                    SummarizeHostInsightDiskStatisticsResponse>
+                            handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getId(), "id is required");
+
+        return clientCall(request, SummarizeHostInsightDiskStatisticsResponse::builder)
+                .logger(LOG, "summarizeHostInsightDiskStatistics")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "SummarizeHostInsightDiskStatistics",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightDiskStatistics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeHostInsightDiskStatisticsRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("hostInsights")
+                .appendPathParam("diskStatistics")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("analysisTimeInterval", request.getAnalysisTimeInterval())
+                .appendQueryParam("timeIntervalStart", request.getTimeIntervalStart())
+                .appendQueryParam("timeIntervalEnd", request.getTimeIntervalEnd())
+                .appendQueryParam("hostId", request.getHostId())
+                .appendEnumQueryParam("statistic", request.getStatistic())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.opsi.model.SummarizeHostInsightsDiskStatisticsCollection
+                                .class,
+                        SummarizeHostInsightDiskStatisticsResponse.Builder
+                                ::summarizeHostInsightsDiskStatisticsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SummarizeHostInsightDiskStatisticsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        SummarizeHostInsightDiskStatisticsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeHostInsightHostRecommendationResponse>
+            summarizeHostInsightHostRecommendation(
+                    SummarizeHostInsightHostRecommendationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeHostInsightHostRecommendationRequest,
+                                    SummarizeHostInsightHostRecommendationResponse>
+                            handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getId(), "id is required");
+
+        Objects.requireNonNull(request.getResourceMetric(), "resourceMetric is required");
+
+        return clientCall(request, SummarizeHostInsightHostRecommendationResponse::builder)
+                .logger(LOG, "summarizeHostInsightHostRecommendation")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "SummarizeHostInsightHostRecommendation",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightHostRecommendation")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeHostInsightHostRecommendationRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("hostInsights")
+                .appendPathParam("hostRecommendation")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("resourceMetric", request.getResourceMetric())
+                .appendQueryParam("analysisTimeInterval", request.getAnalysisTimeInterval())
+                .appendQueryParam("timeIntervalStart", request.getTimeIntervalStart())
+                .appendQueryParam("timeIntervalEnd", request.getTimeIntervalEnd())
+                .appendQueryParam("hostId", request.getHostId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("statistic", request.getStatistic())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.opsi.model.SummarizeHostInsightHostRecommendationAggregation
+                                .class,
+                        SummarizeHostInsightHostRecommendationResponse.Builder
+                                ::summarizeHostInsightHostRecommendationAggregation)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SummarizeHostInsightHostRecommendationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        SummarizeHostInsightHostRecommendationResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 

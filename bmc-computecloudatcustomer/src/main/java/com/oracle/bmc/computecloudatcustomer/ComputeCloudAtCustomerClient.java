@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.computecloudatcustomer;
@@ -151,11 +151,11 @@ public class ComputeCloudAtCustomerClient extends com.oracle.bmc.http.internal.B
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeCccInfrastructureCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -186,11 +186,11 @@ public class ComputeCloudAtCustomerClient extends com.oracle.bmc.http.internal.B
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeCccUpgradeScheduleCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -214,6 +214,7 @@ public class ComputeCloudAtCustomerClient extends com.oracle.bmc.http.internal.B
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.computecloudatcustomer.model.CccInfrastructure.class,
@@ -221,7 +222,6 @@ public class ComputeCloudAtCustomerClient extends com.oracle.bmc.http.internal.B
                 .handleResponseHeaderString("etag", CreateCccInfrastructureResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateCccInfrastructureResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -245,6 +245,7 @@ public class ComputeCloudAtCustomerClient extends com.oracle.bmc.http.internal.B
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.computecloudatcustomer.model.CccUpgradeSchedule.class,
@@ -252,7 +253,6 @@ public class ComputeCloudAtCustomerClient extends com.oracle.bmc.http.internal.B
                 .handleResponseHeaderString("etag", CreateCccUpgradeScheduleResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateCccUpgradeScheduleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -327,13 +327,13 @@ public class ComputeCloudAtCustomerClient extends com.oracle.bmc.http.internal.B
                 .appendPathParam(request.getCccInfrastructureId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.computecloudatcustomer.model.CccInfrastructure.class,
                         GetCccInfrastructureResponse.Builder::cccInfrastructure)
                 .handleResponseHeaderString("etag", GetCccInfrastructureResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetCccInfrastructureResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -357,13 +357,13 @@ public class ComputeCloudAtCustomerClient extends com.oracle.bmc.http.internal.B
                 .appendPathParam(request.getCccUpgradeScheduleId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.computecloudatcustomer.model.CccUpgradeSchedule.class,
                         GetCccUpgradeScheduleResponse.Builder::cccUpgradeSchedule)
                 .handleResponseHeaderString("etag", GetCccUpgradeScheduleResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetCccUpgradeScheduleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -394,6 +394,7 @@ public class ComputeCloudAtCustomerClient extends com.oracle.bmc.http.internal.B
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.computecloudatcustomer.model.CccInfrastructureCollection
                                 .class,
@@ -404,7 +405,6 @@ public class ComputeCloudAtCustomerClient extends com.oracle.bmc.http.internal.B
                         "opc-next-page", ListCccInfrastructuresResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListCccInfrastructuresResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -435,6 +435,7 @@ public class ComputeCloudAtCustomerClient extends com.oracle.bmc.http.internal.B
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.computecloudatcustomer.model.CccUpgradeScheduleCollection
                                 .class,
@@ -445,7 +446,6 @@ public class ComputeCloudAtCustomerClient extends com.oracle.bmc.http.internal.B
                         "opc-next-page", ListCccUpgradeSchedulesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListCccUpgradeSchedulesResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

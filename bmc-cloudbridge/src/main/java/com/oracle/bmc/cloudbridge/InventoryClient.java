@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudbridge;
@@ -158,6 +158,7 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("inventoryId", request.getInventoryId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.AssetAggregationCollection.class,
                         AnalyzeAssetsResponse.Builder::assetAggregationCollection)
@@ -165,7 +166,6 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", AnalyzeAssetsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", AnalyzeAssetsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -195,10 +195,10 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeAssetCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -226,6 +226,7 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.Asset.class,
@@ -233,7 +234,6 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", ChangeAssetTagsResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeAssetTagsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -254,6 +254,7 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.Asset.class,
@@ -261,7 +262,6 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", CreateAssetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateAssetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -283,12 +283,12 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", CreateInventoryResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateInventoryResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -311,9 +311,9 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteAssetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -336,11 +336,11 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteInventoryResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteInventoryResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -362,13 +362,13 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getAssetId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.Asset.class,
                         GetAssetResponse.Builder::asset)
                 .handleResponseHeaderString("etag", GetAssetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAssetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -390,6 +390,7 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getInventoryId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.Inventory.class,
                         GetInventoryResponse.Builder::inventory)
@@ -398,7 +399,6 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", GetInventoryResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", GetInventoryResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -425,12 +425,12 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ImportInventoryResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", ImportInventoryResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -462,6 +462,7 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("inventoryId", request.getInventoryId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.AssetCollection.class,
                         ListAssetsResponse.Builder::assetCollection)
@@ -469,7 +470,6 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListAssetsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAssetsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -497,6 +497,7 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.HistoricalMetricCollection.class,
                         ListHistoricalMetricsResponse.Builder::historicalMetricCollection)
@@ -504,7 +505,6 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListHistoricalMetricsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListHistoricalMetricsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -530,6 +530,7 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.InventoryCollection.class,
                         ListInventoriesResponse.Builder::inventoryCollection)
@@ -537,7 +538,6 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListInventoriesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListInventoriesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -566,6 +566,7 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.HistoricalMetricCollection.class,
@@ -573,7 +574,6 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", SubmitHistoricalMetricsResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", SubmitHistoricalMetricsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -597,6 +597,7 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.Asset.class,
@@ -604,7 +605,6 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", UpdateAssetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateAssetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -629,6 +629,7 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.cloudbridge.model.Inventory.class,
@@ -636,7 +637,6 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", UpdateInventoryResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateInventoryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

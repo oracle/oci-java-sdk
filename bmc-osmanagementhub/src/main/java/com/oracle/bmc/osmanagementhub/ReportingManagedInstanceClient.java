@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -155,6 +155,7 @@ public class ReportingManagedInstanceClient extends com.oracle.bmc.http.internal
                         request.getBugUpdatesAvailableGreaterThan())
                 .accept("application/x-yaml")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         java.io.InputStream.class,
                         GetManagedInstanceAnalyticContentResponse.Builder::inputStream)
@@ -163,7 +164,6 @@ public class ReportingManagedInstanceClient extends com.oracle.bmc.http.internal
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetManagedInstanceAnalyticContentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -196,13 +196,13 @@ public class ReportingManagedInstanceClient extends com.oracle.bmc.http.internal
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/x-yaml")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         java.io.InputStream.class,
                         GetManagedInstanceContentResponse.Builder::inputStream)
                 .handleResponseHeaderString("etag", GetManagedInstanceContentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetManagedInstanceContentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -245,6 +245,7 @@ public class ReportingManagedInstanceClient extends com.oracle.bmc.http.internal
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.ManagedInstanceAnalyticCollection
                                 .class,
@@ -256,7 +257,6 @@ public class ReportingManagedInstanceClient extends com.oracle.bmc.http.internal
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeManagedInstanceAnalyticsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

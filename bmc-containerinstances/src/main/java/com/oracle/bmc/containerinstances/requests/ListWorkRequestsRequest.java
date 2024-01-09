@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerinstances.requests;
@@ -91,21 +91,25 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
-    /** A filter to return only resources their lifecycleState matches the given OperationStatus. */
+    /**
+     * A filter to return resources with a lifecycleState that matches the given OperationStatus.
+     */
     private com.oracle.bmc.containerinstances.model.OperationStatus status;
 
-    /** A filter to return only resources their lifecycleState matches the given OperationStatus. */
+    /**
+     * A filter to return resources with a lifecycleState that matches the given OperationStatus.
+     */
     public com.oracle.bmc.containerinstances.model.OperationStatus getStatus() {
         return status;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeAccepted is
+     * The field to sort by. You can provide one sort order. Default order for timeAccepted is
      * descending.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeAccepted is
+     * The field to sort by. You can provide one sort order. Default order for timeAccepted is
      * descending.
      */
     public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
@@ -141,16 +145,16 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeAccepted is
+     * The field to sort by. You can provide one sort order. Default order for timeAccepted is
      * descending.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /** The sort order to use, either ascending (ASC) or descending (DESC). */
     private com.oracle.bmc.containerinstances.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /** The sort order to use, either ascending (ASC) or descending (DESC). */
     public com.oracle.bmc.containerinstances.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -272,12 +276,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * A filter to return only resources their lifecycleState matches the given OperationStatus.
+         * A filter to return resources with a lifecycleState that matches the given
+         * OperationStatus.
          */
         private com.oracle.bmc.containerinstances.model.OperationStatus status = null;
 
         /**
-         * A filter to return only resources their lifecycleState matches the given OperationStatus.
+         * A filter to return resources with a lifecycleState that matches the given
+         * OperationStatus.
          *
          * @param status the value to set
          * @return this builder instance
@@ -288,14 +294,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeAccepted
-         * is descending.
+         * The field to sort by. You can provide one sort order. Default order for timeAccepted is
+         * descending.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeAccepted
-         * is descending.
+         * The field to sort by. You can provide one sort order. Default order for timeAccepted is
+         * descending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -305,11 +311,11 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The sort order to use, either 'ASC' or 'DESC'. */
+        /** The sort order to use, either ascending (ASC) or descending (DESC). */
         private com.oracle.bmc.containerinstances.model.SortOrder sortOrder = null;
 
         /**
-         * The sort order to use, either 'ASC' or 'DESC'.
+         * The sort order to use, either ascending (ASC) or descending (DESC).
          *
          * @param sortOrder the value to set
          * @return this builder instance

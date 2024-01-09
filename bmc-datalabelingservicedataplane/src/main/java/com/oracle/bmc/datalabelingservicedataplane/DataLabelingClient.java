@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datalabelingservicedataplane;
@@ -167,6 +167,7 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datalabelingservicedataplane.model.Annotation.class,
@@ -174,7 +175,6 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString("etag", CreateAnnotationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateAnnotationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -195,6 +195,7 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datalabelingservicedataplane.model.Record.class,
@@ -202,7 +203,6 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString("etag", CreateRecordResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateRecordResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -225,9 +225,9 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteAnnotationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -250,9 +250,9 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteRecordResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -274,13 +274,13 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getAnnotationId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datalabelingservicedataplane.model.Annotation.class,
                         GetAnnotationResponse.Builder::annotation)
                 .handleResponseHeaderString("etag", GetAnnotationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAnnotationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -302,13 +302,13 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getDatasetId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datalabelingservicedataplane.model.Dataset.class,
                         GetDatasetResponse.Builder::dataset)
                 .handleResponseHeaderString("etag", GetDatasetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDatasetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -330,13 +330,13 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getRecordId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datalabelingservicedataplane.model.Record.class,
                         GetRecordResponse.Builder::record)
                 .handleResponseHeaderString("etag", GetRecordResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetRecordResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -360,6 +360,7 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/octet-stream")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-none-match", request.getIfNoneMatch())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         java.io.InputStream.class, GetRecordContentResponse.Builder::inputStream)
                 .handleResponseHeaderString("etag", GetRecordContentResponse.Builder::etag)
@@ -373,7 +374,6 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "content-type", GetRecordContentResponse.Builder::contentType)
                 .handleResponseHeaderString(
                         "cache-control", GetRecordContentResponse.Builder::cacheControl)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -399,6 +399,7 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/octet-stream")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-none-match", request.getIfNoneMatch())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         java.io.InputStream.class,
                         GetRecordPreviewContentResponse.Builder::inputStream)
@@ -414,7 +415,6 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "content-type", GetRecordPreviewContentResponse.Builder::contentType)
                 .handleResponseHeaderString(
                         "cache-control", GetRecordPreviewContentResponse.Builder::cacheControl)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -451,6 +451,7 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datalabelingservicedataplane.model.AnnotationCollection
                                 .class,
@@ -459,7 +460,6 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListAnnotationsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAnnotationsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -495,6 +495,7 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datalabelingservicedataplane.model.RecordCollection.class,
                         ListRecordsResponse.Builder::recordCollection)
@@ -502,7 +503,6 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListRecordsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListRecordsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -534,6 +534,7 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("annotationGroupBy", request.getAnnotationGroupBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datalabelingservicedataplane.model
                                 .AnnotationAnalyticsAggregationCollection.class,
@@ -544,7 +545,6 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         SummarizeAnnotationAnalyticsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeAnnotationAnalyticsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -575,6 +575,7 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datalabelingservicedataplane.model
                                 .RecordAnalyticsAggregationCollection.class,
@@ -584,7 +585,6 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", SummarizeRecordAnalyticsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeRecordAnalyticsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -609,6 +609,7 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datalabelingservicedataplane.model.Annotation.class,
@@ -616,7 +617,6 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString("etag", UpdateAnnotationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateAnnotationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -640,6 +640,7 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datalabelingservicedataplane.model.Record.class,
@@ -647,7 +648,6 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString("etag", UpdateRecordResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateRecordResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
