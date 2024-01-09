@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.limits;
@@ -115,12 +115,12 @@ public class LimitsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.limits.model.ResourceAvailability.class,
                         GetResourceAvailabilityResponse.Builder::resourceAvailability)
                 .handleResponseHeaderString(
                         "opc-request-id", GetResourceAvailabilityResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -148,6 +148,7 @@ public class LimitsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.limits.model.LimitDefinitionSummary.class,
                         ListLimitDefinitionsResponse.Builder::items)
@@ -155,7 +156,6 @@ public class LimitsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-next-page", ListLimitDefinitionsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListLimitDefinitionsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -187,6 +187,7 @@ public class LimitsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.limits.model.LimitValueSummary.class,
                         ListLimitValuesResponse.Builder::items)
@@ -194,7 +195,6 @@ public class LimitsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-next-page", ListLimitValuesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListLimitValuesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -220,6 +220,7 @@ public class LimitsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.limits.model.ServiceSummary.class,
                         ListServicesResponse.Builder::items)
@@ -227,7 +228,6 @@ public class LimitsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-next-page", ListServicesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListServicesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

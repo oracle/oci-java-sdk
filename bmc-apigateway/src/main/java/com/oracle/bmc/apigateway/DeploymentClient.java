@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apigateway;
@@ -172,6 +172,7 @@ public class DeploymentClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.apigateway.model.Deployment.class,
@@ -182,7 +183,6 @@ public class DeploymentClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDeploymentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("location", CreateDeploymentResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -230,13 +230,13 @@ public class DeploymentClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getDeploymentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.apigateway.model.Deployment.class,
                         GetDeploymentResponse.Builder::deployment)
                 .handleResponseHeaderString("etag", GetDeploymentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDeploymentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -264,6 +264,7 @@ public class DeploymentClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.apigateway.model.DeploymentCollection.class,
                         ListDeploymentsResponse.Builder::deploymentCollection)
@@ -273,7 +274,6 @@ public class DeploymentClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-next-page", ListDeploymentsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListDeploymentsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

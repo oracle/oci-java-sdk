@@ -1,10 +1,12 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.http.internal;
 
+import com.oracle.bmc.util.internal.ClientCompatibilityChecker;
 import com.oracle.bmc.ClientConfiguration;
+import com.oracle.bmc.ClientRuntime;
 import com.oracle.bmc.Realm;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.Service;
@@ -30,7 +32,6 @@ import com.oracle.bmc.internal.Alloy;
 import com.oracle.bmc.internal.EndpointBuilder;
 import com.oracle.bmc.requests.BmcRequest;
 import com.oracle.bmc.responses.BmcResponse;
-import com.oracle.bmc.util.internal.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -50,7 +51,6 @@ abstract class BaseClient implements AutoCloseable {
     private static final ClientConfigurator DEFAULT_CONFIGURATOR = new DefaultConfigurator();
     private static final ClientIdFilter CLIENT_ID_FILTER = new ClientIdFilter();
     private static final LogHeadersFilter LOG_HEADERS_FILTER = new LogHeadersFilter();
-
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
     private final Service service;
@@ -67,6 +67,12 @@ abstract class BaseClient implements AutoCloseable {
     private volatile String endpoint;
     private volatile HttpClient httpClient;
     private volatile Region region;
+
+    /** Compatible SDK version, provided by the codegen. */
+    public final String clientCommonLibraryVersion;
+
+    /** Minimum compatible SDK version, maybe provided by the codegen. */
+    public final Optional<String> minimumClientCommonLibraryVersionFromClient;
 
     protected BaseClient(
             ClientBuilderBase<?, ?> builder,
@@ -154,6 +160,45 @@ abstract class BaseClient implements AutoCloseable {
                 setRegion(regionFromBuilder);
             }
         }
+
+        // setting version information for the client
+        String version = null;
+        String minVersion = null;
+
+        try (java.io.InputStream propertyStream =
+                this.getClass()
+                        .getClassLoader()
+                        .getResourceAsStream(
+                                this.getClass().getPackage().getName().replace('.', '/')
+                                        + "/client.properties")) {
+            if (propertyStream != null) {
+                java.util.Properties properties = new java.util.Properties();
+                properties.load(propertyStream);
+                version =
+                        properties.getProperty(
+                                ClientCompatibilityChecker
+                                        .JAVA_CLIENT_CODEGEN_VERSION_PROPERTY_NAME);
+                minVersion =
+                        properties.getProperty(
+                                ClientCompatibilityChecker
+                                        .JAVA_MINIMUM_CLIENT_CODEGEN_VERSION_FROM_CLIENT_PROPERTY_NAME);
+            } else {
+                logger.warn("Failed to load client.properties for {}", this.getClass().getName());
+            }
+        } catch (Exception e) {
+            logger.warn("Failed to load client.properties for " + this.getClass().getName(), e);
+        } finally {
+            clientCommonLibraryVersion = version;
+            minimumClientCommonLibraryVersionFromClient = Optional.ofNullable(minVersion);
+        }
+
+        ClientRuntime.getRuntime()
+                .getClientCompatibilityChecker()
+                .isClientCodegenVersionCompatible(
+                        this.getClass().getName(),
+                        clientCommonLibraryVersion,
+                        minimumClientCommonLibraryVersionFromClient,
+                        logger);
     }
 
     protected ClientConfigurator getDefaultConfigurator() {
@@ -404,6 +449,14 @@ abstract class BaseClient implements AutoCloseable {
         if (httpClient != null) {
             httpClient.close();
         }
+    }
+
+    public String getClientCommonLibraryVersion() {
+        return clientCommonLibraryVersion;
+    }
+
+    public Optional<String> getMinimumClientCommonLibraryVersionFromClient() {
+        return minimumClientCommonLibraryVersionFromClient;
     }
 
     protected <

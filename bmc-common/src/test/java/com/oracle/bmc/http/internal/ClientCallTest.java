@@ -1,14 +1,16 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.http.internal;
 
+import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
+import com.oracle.bmc.circuitbreaker.internal.resilience4j.OciCircuitBreakerImpl;
 import com.oracle.bmc.http.client.HttpClient;
 import com.oracle.bmc.http.client.HttpRequest;
 import com.oracle.bmc.http.client.HttpResponse;
-import com.oracle.bmc.http.client.Serializer;
 import com.oracle.bmc.http.client.Method;
+import com.oracle.bmc.http.client.Serializer;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.retrier.RetryConfiguration;
 import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
@@ -762,6 +764,27 @@ public class ClientCallTest {
                 assertTrue(e.getMessage().contains("(-1, null, true)"));
                 assertTrue(e.getMessage().contains("Timeout Exception"));
                 assert (e.isTimeout());
+            }
+        }
+
+        @Test
+        public void test_circuitBreakerException() {
+            CompletableFuture<HttpResponse> future = new CompletableFuture<>();
+            future.completeExceptionally(new RuntimeException("foo"));
+            when(mockClient.isProcessingException(any())).thenReturn(false);
+            when(mockRequest.execute()).thenReturn(future);
+            try {
+                TestResponse resResp =
+                        ClientCall.builder(mockClient, new TestRequest(), responseBuilder)
+                                .circuitBreaker(
+                                        new OciCircuitBreakerImpl(
+                                                new CircuitBreakerConfiguration(), t -> true))
+                                .logger(mockLogger, "mockLogger")
+                                .method(Method.GET)
+                                .callSync();
+                fail("Expected to throw");
+            } catch (BmcException e) {
+                assertEquals("foo", e.getCause().getMessage());
             }
         }
     }

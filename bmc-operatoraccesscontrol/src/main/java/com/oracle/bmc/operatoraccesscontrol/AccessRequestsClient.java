@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.operatoraccesscontrol;
@@ -148,13 +148,13 @@ public class AccessRequestsClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ApproveAccessRequestResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ApproveAccessRequestResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -176,12 +176,12 @@ public class AccessRequestsClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getAccessRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.operatoraccesscontrol.model.AccessRequest.class,
                         GetAccessRequestResponse.Builder::accessRequest)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAccessRequestResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -209,6 +209,7 @@ public class AccessRequestsClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.operatoraccesscontrol.model.AccessRequest.class,
@@ -216,7 +217,6 @@ public class AccessRequestsClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString("etag", InteractionRequestResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", InteractionRequestResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -242,6 +242,7 @@ public class AccessRequestsClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.operatoraccesscontrol.model.AccessRequestHistoryCollection
                                 .class,
@@ -250,7 +251,6 @@ public class AccessRequestsClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-request-id", ListAccessRequestHistoriesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAccessRequestHistoriesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -280,6 +280,7 @@ public class AccessRequestsClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.operatoraccesscontrol.model.AccessRequestCollection.class,
                         ListAccessRequestsResponse.Builder::accessRequestCollection)
@@ -287,7 +288,6 @@ public class AccessRequestsClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-request-id", ListAccessRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAccessRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -312,6 +312,7 @@ public class AccessRequestsClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.operatoraccesscontrol.model.InteractionCollection.class,
                         ListInteractionsResponse.Builder::interactionCollection)
@@ -319,7 +320,6 @@ public class AccessRequestsClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-request-id", ListInteractionsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListInteractionsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -347,13 +347,13 @@ public class AccessRequestsClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RejectAccessRequestResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RejectAccessRequestResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -381,6 +381,7 @@ public class AccessRequestsClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.operatoraccesscontrol.model.AccessRequest.class,
@@ -388,7 +389,6 @@ public class AccessRequestsClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString("etag", ReviewAccessRequestResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", ReviewAccessRequestResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -416,13 +416,13 @@ public class AccessRequestsClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RevokeAccessRequestResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RevokeAccessRequestResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

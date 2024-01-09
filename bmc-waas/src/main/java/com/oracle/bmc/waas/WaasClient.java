@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.waas;
@@ -545,13 +545,13 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendPathParam(request.getAddressListId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.waas.model.AddressList.class,
                         GetAddressListResponse.Builder::addressList)
                 .handleResponseHeaderString("etag", GetAddressListResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAddressListResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -573,13 +573,13 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendPathParam(request.getCertificateId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.waas.model.Certificate.class,
                         GetCertificateResponse.Builder::certificate)
                 .handleResponseHeaderString("etag", GetCertificateResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetCertificateResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -603,13 +603,13 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendPathParam(request.getCustomProtectionRuleId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.waas.model.CustomProtectionRule.class,
                         GetCustomProtectionRuleResponse.Builder::customProtectionRule)
                 .handleResponseHeaderString("etag", GetCustomProtectionRuleResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetCustomProtectionRuleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -634,6 +634,7 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendPathParam("deviceFingerprintChallenge")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.waas.model.DeviceFingerprintChallenge.class,
                         GetDeviceFingerprintChallengeResponse.Builder::deviceFingerprintChallenge)
@@ -642,7 +643,6 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetDeviceFingerprintChallengeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -667,6 +667,7 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendPathParam("humanInteractionChallenge")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.waas.model.HumanInteractionChallenge.class,
                         GetHumanInteractionChallengeResponse.Builder::humanInteractionChallenge)
@@ -675,7 +676,6 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetHumanInteractionChallengeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -699,13 +699,13 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendPathParam("jsChallenge")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.waas.model.JsChallenge.class,
                         GetJsChallengeResponse.Builder::jsChallenge)
                 .handleResponseHeaderString("etag", GetJsChallengeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetJsChallengeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -728,13 +728,13 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendPathParam("policyConfig")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.waas.model.PolicyConfig.class,
                         GetPolicyConfigResponse.Builder::policyConfig)
                 .handleResponseHeaderString("etag", GetPolicyConfigResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetPolicyConfigResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -761,13 +761,13 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendPathParam(request.getProtectionRuleKey())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.waas.model.ProtectionRule.class,
                         GetProtectionRuleResponse.Builder::protectionRule)
                 .handleResponseHeaderString("etag", GetProtectionRuleResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetProtectionRuleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -792,13 +792,13 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendPathParam("protectionSettings")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.waas.model.ProtectionSettings.class,
                         GetProtectionSettingsResponse.Builder::protectionSettings)
                 .handleResponseHeaderString("etag", GetProtectionSettingsResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetProtectionSettingsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -820,13 +820,13 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendPathParam(request.getWaasPolicyId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.waas.model.WaasPolicy.class,
                         GetWaasPolicyResponse.Builder::waasPolicy)
                 .handleResponseHeaderString("etag", GetWaasPolicyResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetWaasPolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -851,13 +851,13 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendPathParam("addressRateLimiting")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.waas.model.AddressRateLimiting.class,
                         GetWafAddressRateLimitingResponse.Builder::addressRateLimiting)
                 .handleResponseHeaderString("etag", GetWafAddressRateLimitingResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetWafAddressRateLimitingResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -880,13 +880,13 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendPathParam("wafConfig")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.waas.model.WafConfig.class,
                         GetWafConfigResponse.Builder::wafConfig)
                 .handleResponseHeaderString("etag", GetWafConfigResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetWafConfigResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -908,6 +908,7 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.waas.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -916,7 +917,6 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                         "Retry-After", GetWorkRequestResponse.Builder::retryAfter)
                 .handleResponseHeaderString(
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -942,6 +942,7 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.waas.model.AccessRule.class,
                         ListAccessRulesResponse.Builder::items)
@@ -950,7 +951,6 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                         "opc-next-page", ListAccessRulesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListAccessRulesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -991,6 +991,7 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendQueryParam("timeCreatedLessThan", request.getTimeCreatedLessThan())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.waas.model.AddressListSummary.class,
                         ListAddressListsResponse.Builder::items)
@@ -998,7 +999,6 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                         "opc-next-page", ListAddressListsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListAddressListsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1024,6 +1024,7 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.waas.model.CachingRuleSummary.class,
                         ListCachingRulesResponse.Builder::items)
@@ -1032,7 +1033,6 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                         "opc-next-page", ListCachingRulesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListCachingRulesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1058,6 +1058,7 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.waas.model.Captcha.class,
                         ListCaptchasResponse.Builder::items)
@@ -1066,7 +1067,6 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                         "opc-next-page", ListCaptchasResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListCaptchasResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1107,6 +1107,7 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendQueryParam("timeCreatedLessThan", request.getTimeCreatedLessThan())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.waas.model.CertificateSummary.class,
                         ListCertificatesResponse.Builder::items)
@@ -1114,7 +1115,6 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                         "opc-next-page", ListCertificatesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListCertificatesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1156,6 +1156,7 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendQueryParam("timeCreatedLessThan", request.getTimeCreatedLessThan())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.waas.model.CustomProtectionRuleSummary.class,
                         ListCustomProtectionRulesResponse.Builder::items)
@@ -1163,7 +1164,6 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                         "opc-next-page", ListCustomProtectionRulesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListCustomProtectionRulesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1186,6 +1186,7 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.waas.model.EdgeSubnet.class,
                         ListEdgeSubnetsResponse.Builder::items)
@@ -1193,7 +1194,6 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                         "opc-next-page", ListEdgeSubnetsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListEdgeSubnetsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1219,6 +1219,7 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.waas.model.GoodBot.class,
                         ListGoodBotsResponse.Builder::items)
@@ -1227,7 +1228,6 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                         "opc-request-id", ListGoodBotsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListGoodBotsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1261,6 +1261,7 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.waas.model.ProtectionRule.class,
                         ListProtectionRulesResponse.Builder::items)
@@ -1269,7 +1270,6 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                         "opc-next-page", ListProtectionRulesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListProtectionRulesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1296,6 +1296,7 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.waas.model.Recommendation.class,
                         ListRecommendationsResponse.Builder::items)
@@ -1304,7 +1305,6 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                         "opc-next-page", ListRecommendationsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListRecommendationsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1330,6 +1330,7 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.waas.model.ThreatFeed.class,
                         ListThreatFeedsResponse.Builder::items)
@@ -1338,7 +1339,6 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                         "opc-request-id", ListThreatFeedsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListThreatFeedsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1379,6 +1379,7 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendQueryParam("timeCreatedLessThan", request.getTimeCreatedLessThan())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.waas.model.WaasPolicySummary.class,
                         ListWaasPoliciesResponse.Builder::items)
@@ -1386,7 +1387,6 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                         "opc-next-page", ListWaasPoliciesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWaasPoliciesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1421,6 +1421,7 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.waas.model.WaasPolicyCustomProtectionRuleSummary.class,
                         ListWaasPolicyCustomProtectionRulesResponse.Builder::items)
@@ -1432,7 +1433,6 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ListWaasPolicyCustomProtectionRulesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1468,6 +1468,7 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.waas.model.WafBlockedRequest.class,
                         ListWafBlockedRequestsResponse.Builder::items)
@@ -1475,7 +1476,6 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                         "opc-request-id", ListWafBlockedRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWafBlockedRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1569,13 +1569,13 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.waas.model.WafLog.class, ListWafLogsResponse.Builder::items)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWafLogsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWafLogsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1606,6 +1606,7 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.waas.model.WafRequest.class,
                         ListWafRequestsResponse.Builder::items)
@@ -1613,7 +1614,6 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                         "opc-request-id", ListWafRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWafRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1644,6 +1644,7 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.waas.model.WafTrafficDatum.class,
                         ListWafTrafficResponse.Builder::items)
@@ -1651,7 +1652,6 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                         "opc-request-id", ListWafTrafficResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWafTrafficResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1677,6 +1677,7 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.waas.model.Whitelist.class,
                         ListWhitelistsResponse.Builder::items)
@@ -1685,7 +1686,6 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                         "opc-request-id", ListWhitelistsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWhitelistsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1713,6 +1713,7 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.waas.model.WorkRequestSummary.class,
                         ListWorkRequestsResponse.Builder::items)
@@ -1720,7 +1721,6 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

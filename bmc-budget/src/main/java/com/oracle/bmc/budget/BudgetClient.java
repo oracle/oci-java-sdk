@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.budget;
@@ -143,6 +143,7 @@ public class BudgetClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.budget.model.AlertRule.class,
@@ -150,7 +151,6 @@ public class BudgetClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString(
                         "opc-request-id", CreateAlertRuleResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateAlertRuleResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -171,6 +171,7 @@ public class BudgetClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.budget.model.Budget.class,
@@ -178,7 +179,6 @@ public class BudgetClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString(
                         "opc-request-id", CreateBudgetResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateBudgetResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -205,9 +205,9 @@ public class BudgetClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteAlertRuleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -230,9 +230,9 @@ public class BudgetClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteBudgetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -258,13 +258,13 @@ public class BudgetClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendPathParam(request.getAlertRuleId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.budget.model.AlertRule.class,
                         GetAlertRuleResponse.Builder::alertRule)
                 .handleResponseHeaderString("etag", GetAlertRuleResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAlertRuleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -286,12 +286,12 @@ public class BudgetClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendPathParam(request.getBudgetId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.budget.model.Budget.class, GetBudgetResponse.Builder::budget)
                 .handleResponseHeaderString("etag", GetBudgetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetBudgetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -320,6 +320,7 @@ public class BudgetClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendQueryParam("displayName", request.getDisplayName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.budget.model.AlertRuleSummary.class,
                         ListAlertRulesResponse.Builder::items)
@@ -327,7 +328,6 @@ public class BudgetClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-request-id", ListAlertRulesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAlertRulesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -355,6 +355,7 @@ public class BudgetClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendEnumQueryParam("targetType", request.getTargetType())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.budget.model.BudgetSummary.class,
                         ListBudgetsResponse.Builder::items)
@@ -362,7 +363,6 @@ public class BudgetClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-request-id", ListBudgetsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListBudgetsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -391,6 +391,7 @@ public class BudgetClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.budget.model.AlertRule.class,
@@ -398,7 +399,6 @@ public class BudgetClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateAlertRuleResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateAlertRuleResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -422,6 +422,7 @@ public class BudgetClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.budget.model.Budget.class,
@@ -429,7 +430,6 @@ public class BudgetClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateBudgetResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateBudgetResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

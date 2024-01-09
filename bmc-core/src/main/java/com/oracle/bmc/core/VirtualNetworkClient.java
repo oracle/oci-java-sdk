@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core;
@@ -459,8 +459,8 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("actions")
                 .appendPathParam("bulkAddPublicPrefixes")
                 .accept("application/json")
-                .hasBody()
                 .operationUsesDefaultRetries()
+                .hasBody()
                 .callSync();
     }
 
@@ -487,8 +487,8 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("actions")
                 .appendPathParam("bulkDeletePublicPrefixes")
                 .accept("application/json")
-                .hasBody()
                 .operationUsesDefaultRetries()
+                .hasBody()
                 .callSync();
     }
 
@@ -585,11 +585,11 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString("etag", ChangeCpeCompartmentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeCpeCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -618,13 +618,13 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "etag", ChangeCrossConnectCompartmentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeCrossConnectCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -654,13 +654,13 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "etag", ChangeCrossConnectGroupCompartmentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeCrossConnectGroupCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -757,13 +757,13 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "etag", ChangeIPSecConnectionCompartmentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeIPSecConnectionCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -996,13 +996,13 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "etag", ChangeRemotePeeringConnectionCompartmentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeRemotePeeringConnectionCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1201,13 +1201,13 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "etag", ChangeVirtualCircuitCompartmentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeVirtualCircuitCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1337,11 +1337,11 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("actions")
                 .appendPathParam("connect")
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ConnectRemotePeeringConnectionsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1417,12 +1417,12 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("cpes")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(com.oracle.bmc.core.model.Cpe.class, CreateCpeResponse.Builder::cpe)
                 .handleResponseHeaderString("etag", CreateCpeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateCpeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1443,6 +1443,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("crossConnects")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.core.model.CrossConnect.class,
@@ -1450,7 +1451,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString("etag", CreateCrossConnectResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateCrossConnectResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1473,6 +1473,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("crossConnectGroups")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.core.model.CrossConnectGroup.class,
@@ -1480,7 +1481,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString("etag", CreateCrossConnectGroupResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateCrossConnectGroupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1637,6 +1637,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("ipsecConnections")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.core.model.IPSecConnection.class,
@@ -1644,7 +1645,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString("etag", CreateIPSecConnectionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateIPSecConnectionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1889,6 +1889,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("remotePeeringConnections")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.core.model.RemotePeeringConnection.class,
@@ -1898,7 +1899,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString(
                         "opc-request-id",
                         CreateRemotePeeringConnectionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2051,6 +2051,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("virtualCircuits")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.core.model.VirtualCircuit.class,
@@ -2058,7 +2059,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString("etag", CreateVirtualCircuitResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateVirtualCircuitResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2177,9 +2177,9 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getCpeId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteCpeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2198,9 +2198,9 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getCrossConnectId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteCrossConnectResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2221,9 +2221,9 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getCrossConnectGroupId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteCrossConnectGroupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2351,9 +2351,9 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getIpscId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteIPSecConnectionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2548,10 +2548,10 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getRemotePeeringConnectionId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteRemotePeeringConnectionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2670,9 +2670,9 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getVirtualCircuitId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteVirtualCircuitResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2807,13 +2807,13 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("ipsecAlgorithms")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.core.model.AllowedIkeIPSecParameters.class,
                         GetAllowedIkeIPSecParametersResponse.Builder::allowedIkeIPSecParameters)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetAllowedIkeIPSecParametersResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2888,10 +2888,10 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("cpes")
                 .appendPathParam(request.getCpeId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(com.oracle.bmc.core.model.Cpe.class, GetCpeResponse.Builder::cpe)
                 .handleResponseHeaderString("etag", GetCpeResponse.Builder::etag)
                 .handleResponseHeaderString("opc-request-id", GetCpeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2915,12 +2915,12 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("cpeConfigContent")
                 .accept("text/plain; charset=utf-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         java.io.InputStream.class,
                         GetCpeDeviceConfigContentResponse.Builder::inputStream)
                 .handleResponseHeaderString(
                         "opc-request-id", GetCpeDeviceConfigContentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2942,12 +2942,12 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getCpeDeviceShapeId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.core.model.CpeDeviceShapeDetail.class,
                         GetCpeDeviceShapeResponse.Builder::cpeDeviceShapeDetail)
                 .handleResponseHeaderString(
                         "opc-request-id", GetCpeDeviceShapeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2968,13 +2968,13 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("crossConnects")
                 .appendPathParam(request.getCrossConnectId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.core.model.CrossConnect.class,
                         GetCrossConnectResponse.Builder::crossConnect)
                 .handleResponseHeaderString("etag", GetCrossConnectResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetCrossConnectResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2996,13 +2996,13 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("crossConnectGroups")
                 .appendPathParam(request.getCrossConnectGroupId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.core.model.CrossConnectGroup.class,
                         GetCrossConnectGroupResponse.Builder::crossConnectGroup)
                 .handleResponseHeaderString("etag", GetCrossConnectGroupResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetCrossConnectGroupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3025,13 +3025,13 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getCrossConnectId())
                 .appendPathParam("letterOfAuthority")
                 .accept("application/json, text/html")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.core.model.LetterOfAuthority.class,
                         GetCrossConnectLetterOfAuthorityResponse.Builder::letterOfAuthority)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetCrossConnectLetterOfAuthorityResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3054,12 +3054,12 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getCrossConnectId())
                 .appendPathParam("status")
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.core.model.CrossConnectStatus.class,
                         GetCrossConnectStatusResponse.Builder::crossConnectStatus)
                 .handleResponseHeaderString(
                         "opc-request-id", GetCrossConnectStatusResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3158,12 +3158,12 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("redundancyStatus")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.core.model.DrgRedundancyStatus.class,
                         GetDrgRedundancyStatusResponse.Builder::drgRedundancyStatus)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDrgRedundancyStatusResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3239,13 +3239,13 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("fastConnectProviderServices")
                 .appendPathParam(request.getProviderServiceId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.core.model.FastConnectProviderService.class,
                         GetFastConnectProviderServiceResponse.Builder::fastConnectProviderService)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetFastConnectProviderServiceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3272,6 +3272,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("providerServiceKeys")
                 .appendPathParam(request.getProviderServiceKeyName())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.core.model.FastConnectProviderServiceKey.class,
                         GetFastConnectProviderServiceKeyResponse.Builder
@@ -3279,7 +3280,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetFastConnectProviderServiceKeyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3300,13 +3300,13 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("ipsecConnections")
                 .appendPathParam(request.getIpscId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.core.model.IPSecConnection.class,
                         GetIPSecConnectionResponse.Builder::iPSecConnection)
                 .handleResponseHeaderString("etag", GetIPSecConnectionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetIPSecConnectionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3329,6 +3329,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getIpscId())
                 .appendPathParam("deviceConfig")
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.core.model.IPSecConnectionDeviceConfig.class,
                         GetIPSecConnectionDeviceConfigResponse.Builder::iPSecConnectionDeviceConfig)
@@ -3337,7 +3338,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetIPSecConnectionDeviceConfigResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3360,6 +3360,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getIpscId())
                 .appendPathParam("deviceStatus")
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.core.model.IPSecConnectionDeviceStatus.class,
                         GetIPSecConnectionDeviceStatusResponse.Builder::iPSecConnectionDeviceStatus)
@@ -3368,7 +3369,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetIPSecConnectionDeviceStatusResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3394,13 +3394,13 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("tunnels")
                 .appendPathParam(request.getTunnelId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.core.model.IPSecConnectionTunnel.class,
                         GetIPSecConnectionTunnelResponse.Builder::iPSecConnectionTunnel)
                 .handleResponseHeaderString("etag", GetIPSecConnectionTunnelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetIPSecConnectionTunnelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3427,6 +3427,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getTunnelId())
                 .appendPathParam("error")
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.core.model.IPSecConnectionTunnelErrorDetails.class,
                         GetIPSecConnectionTunnelErrorResponse.Builder
@@ -3434,7 +3435,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetIPSecConnectionTunnelErrorResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3461,6 +3461,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getTunnelId())
                 .appendPathParam("sharedSecret")
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.core.model.IPSecConnectionTunnelSharedSecret.class,
                         GetIPSecConnectionTunnelSharedSecretResponse.Builder
@@ -3470,7 +3471,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetIPSecConnectionTunnelSharedSecretResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3520,13 +3520,13 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("cpeConfigContent")
                 .accept("text/plain; charset=utf-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         java.io.InputStream.class,
                         GetIpsecCpeDeviceConfigContentResponse.Builder::inputStream)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetIpsecCpeDeviceConfigContentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3826,6 +3826,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("remotePeeringConnections")
                 .appendPathParam(request.getRemotePeeringConnectionId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.core.model.RemotePeeringConnection.class,
                         GetRemotePeeringConnectionResponse.Builder::remotePeeringConnection)
@@ -3833,7 +3834,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "etag", GetRemotePeeringConnectionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetRemotePeeringConnectionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4023,13 +4023,13 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("tunnelDeviceConfig")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.core.model.TunnelCpeDeviceConfig.class,
                         GetTunnelCpeDeviceConfigResponse.Builder::tunnelCpeDeviceConfig)
                 .handleResponseHeaderString("etag", GetTunnelCpeDeviceConfigResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetTunnelCpeDeviceConfigResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4058,13 +4058,13 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("content")
                 .accept("text/plain; charset=utf-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         java.io.InputStream.class,
                         GetTunnelCpeDeviceConfigContentResponse.Builder::inputStream)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetTunnelCpeDeviceConfigContentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4200,13 +4200,13 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("virtualCircuits")
                 .appendPathParam(request.getVirtualCircuitId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.core.model.VirtualCircuit.class,
                         GetVirtualCircuitResponse.Builder::virtualCircuit)
                 .handleResponseHeaderString("etag", GetVirtualCircuitResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetVirtualCircuitResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4296,13 +4296,13 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .basePath("/20160918")
                 .appendPathParam("allowedPeerRegionsForRemotePeering")
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.core.model.PeerRegionForRemotePeering.class,
                         ListAllowedPeerRegionsForRemotePeeringResponse.Builder::items)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ListAllowedPeerRegionsForRemotePeeringResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4422,6 +4422,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.core.model.CpeDeviceShapeSummary.class,
                         ListCpeDeviceShapesResponse.Builder::items)
@@ -4429,7 +4430,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-next-page", ListCpeDeviceShapesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListCpeDeviceShapesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4451,12 +4451,12 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.core.model.Cpe.class, ListCpesResponse.Builder::items)
                 .handleResponseHeaderString("opc-next-page", ListCpesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListCpesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4483,6 +4483,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.core.model.CrossConnectGroup.class,
                         ListCrossConnectGroupsResponse.Builder::items)
@@ -4490,7 +4491,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-next-page", ListCrossConnectGroupsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListCrossConnectGroupsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4513,6 +4513,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.core.model.CrossConnectLocation.class,
                         ListCrossConnectLocationsResponse.Builder::items)
@@ -4520,7 +4521,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-next-page", ListCrossConnectLocationsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListCrossConnectLocationsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4544,13 +4544,13 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("crossConnectMappings")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.core.model.CrossConnectMappingDetailsCollection.class,
                         ListCrossConnectMappingsResponse.Builder
                                 ::crossConnectMappingDetailsCollection)
                 .handleResponseHeaderString(
                         "opc-request-id", ListCrossConnectMappingsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4577,6 +4577,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.core.model.CrossConnect.class,
                         ListCrossConnectsResponse.Builder::items)
@@ -4584,7 +4585,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-next-page", ListCrossConnectsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListCrossConnectsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4607,6 +4607,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.core.model.CrossConnectPortSpeedShape.class,
                         ListCrossconnectPortSpeedShapesResponse.Builder::items)
@@ -4616,7 +4617,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ListCrossconnectPortSpeedShapesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4869,6 +4869,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.core.model.FastConnectProviderService.class,
                         ListFastConnectProviderServicesResponse.Builder::items)
@@ -4878,7 +4879,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ListFastConnectProviderServicesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4907,6 +4907,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.core.model.VirtualCircuitBandwidthShape.class,
                         ListFastConnectProviderVirtualCircuitBandwidthShapesResponse.Builder::items)
@@ -4918,7 +4919,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-request-id",
                         ListFastConnectProviderVirtualCircuitBandwidthShapesResponse.Builder
                                 ::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4948,6 +4948,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("advertiser", request.getAdvertiser())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.core.model.TunnelRouteSummary.class,
                         ListIPSecConnectionTunnelRoutesResponse.Builder::items)
@@ -4960,7 +4961,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderInteger(
                         "opc-total-items",
                         ListIPSecConnectionTunnelRoutesResponse.Builder::opcTotalItems)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4990,6 +4990,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.core.model.TunnelSecurityAssociationSummary.class,
                         ListIPSecConnectionTunnelSecurityAssociationsResponse.Builder::items)
@@ -5003,7 +5004,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-total-items",
                         ListIPSecConnectionTunnelSecurityAssociationsResponse.Builder
                                 ::opcTotalItems)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5028,6 +5028,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.core.model.IPSecConnectionTunnel.class,
                         ListIPSecConnectionTunnelsResponse.Builder::items)
@@ -5035,7 +5036,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-next-page", ListIPSecConnectionTunnelsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListIPSecConnectionTunnelsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5059,6 +5059,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.core.model.IPSecConnection.class,
                         ListIPSecConnectionsResponse.Builder::items)
@@ -5066,7 +5067,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-next-page", ListIPSecConnectionsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListIPSecConnectionsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5417,6 +5417,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.core.model.RemotePeeringConnection.class,
                         ListRemotePeeringConnectionsResponse.Builder::items)
@@ -5425,7 +5426,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ListRemotePeeringConnectionsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5636,6 +5636,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.core.model.VirtualCircuitAssociatedTunnelDetails.class,
                         ListVirtualCircuitAssociatedTunnelsResponse.Builder::items)
@@ -5647,7 +5648,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListVirtualCircuitAssociatedTunnelsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5670,6 +5670,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.core.model.VirtualCircuitBandwidthShape.class,
                         ListVirtualCircuitBandwidthShapesResponse.Builder::items)
@@ -5679,7 +5680,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ListVirtualCircuitBandwidthShapesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5703,13 +5703,13 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("publicPrefixes")
                 .appendEnumQueryParam("verificationState", request.getVerificationState())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.core.model.VirtualCircuitPublicPrefix.class,
                         ListVirtualCircuitPublicPrefixesResponse.Builder::items)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ListVirtualCircuitPublicPrefixesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5735,6 +5735,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.core.model.VirtualCircuit.class,
                         ListVirtualCircuitsResponse.Builder::items)
@@ -5742,7 +5743,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-next-page", ListVirtualCircuitsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListVirtualCircuitsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6216,12 +6216,12 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getCpeId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(com.oracle.bmc.core.model.Cpe.class, UpdateCpeResponse.Builder::cpe)
                 .handleResponseHeaderString("etag", UpdateCpeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateCpeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6245,6 +6245,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getCrossConnectId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.core.model.CrossConnect.class,
@@ -6252,7 +6253,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString("etag", UpdateCrossConnectResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateCrossConnectResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6279,6 +6279,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getCrossConnectGroupId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.core.model.CrossConnectGroup.class,
@@ -6286,7 +6287,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString("etag", UpdateCrossConnectGroupResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateCrossConnectGroupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6526,6 +6526,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getIpscId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.core.model.IPSecConnection.class,
@@ -6533,7 +6534,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString("etag", UpdateIPSecConnectionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateIPSecConnectionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6564,6 +6564,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.core.model.IPSecConnectionTunnel.class,
@@ -6572,7 +6573,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "etag", UpdateIPSecConnectionTunnelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateIPSecConnectionTunnelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6603,6 +6603,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam("sharedSecret")
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.core.model.IPSecConnectionTunnelSharedSecret.class,
@@ -6613,7 +6614,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateIPSecConnectionTunnelSharedSecretResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6924,6 +6924,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getRemotePeeringConnectionId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.core.model.RemotePeeringConnection.class,
@@ -6933,7 +6934,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateRemotePeeringConnectionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7086,6 +7086,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.core.model.TunnelCpeDeviceConfig.class,
@@ -7094,7 +7095,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "etag", UpdateTunnelCpeDeviceConfigResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateTunnelCpeDeviceConfigResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7146,6 +7146,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getVirtualCircuitId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.core.model.VirtualCircuit.class,
@@ -7153,7 +7154,6 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString("etag", UpdateVirtualCircuitResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateVirtualCircuitResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

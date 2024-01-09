@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerinstances.requests;
@@ -64,13 +64,13 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
         return limit;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timestamp is
+     * The field to sort by. You can provide one sort order. Default order for timestamp is
      * descending.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timestamp is
+     * The field to sort by. You can provide one sort order. Default order for timestamp is
      * descending.
      */
     public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
@@ -106,16 +106,16 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timestamp is
+     * The field to sort by. You can provide one sort order. Default order for timestamp is
      * descending.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /** The sort order to use, either ascending (ASC) or descending (DESC). */
     private com.oracle.bmc.containerinstances.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /** The sort order to use, either ascending (ASC) or descending (DESC). */
     public com.oracle.bmc.containerinstances.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -199,13 +199,13 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timestamp is
+         * The field to sort by. You can provide one sort order. Default order for timestamp is
          * descending.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timestamp is
+         * The field to sort by. You can provide one sort order. Default order for timestamp is
          * descending.
          *
          * @param sortBy the value to set
@@ -216,11 +216,11 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The sort order to use, either 'ASC' or 'DESC'. */
+        /** The sort order to use, either ascending (ASC) or descending (DESC). */
         private com.oracle.bmc.containerinstances.model.SortOrder sortOrder = null;
 
         /**
-         * The sort order to use, either 'ASC' or 'DESC'.
+         * The sort order to use, either ascending (ASC) or descending (DESC).
          *
          * @param sortOrder the value to set
          * @return this builder instance

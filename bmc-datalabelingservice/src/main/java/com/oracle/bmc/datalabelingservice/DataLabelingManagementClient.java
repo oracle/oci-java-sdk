@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datalabelingservice;
@@ -149,12 +149,12 @@ public class DataLabelingManagementClient extends com.oracle.bmc.http.internal.B
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", AddDatasetLabelsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", AddDatasetLabelsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -183,13 +183,13 @@ public class DataLabelingManagementClient extends com.oracle.bmc.http.internal.B
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeDatasetCompartmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeDatasetCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -211,6 +211,7 @@ public class DataLabelingManagementClient extends com.oracle.bmc.http.internal.B
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datalabelingservice.model.Dataset.class,
@@ -223,7 +224,6 @@ public class DataLabelingManagementClient extends com.oracle.bmc.http.internal.B
                         "opc-work-request-id", CreateDatasetResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDatasetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -246,11 +246,11 @@ public class DataLabelingManagementClient extends com.oracle.bmc.http.internal.B
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteDatasetResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDatasetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -280,13 +280,13 @@ public class DataLabelingManagementClient extends com.oracle.bmc.http.internal.B
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         GenerateDatasetRecordsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", GenerateDatasetRecordsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -308,13 +308,13 @@ public class DataLabelingManagementClient extends com.oracle.bmc.http.internal.B
                 .appendPathParam(request.getDatasetId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datalabelingservice.model.Dataset.class,
                         GetDatasetResponse.Builder::dataset)
                 .handleResponseHeaderString("etag", GetDatasetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDatasetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -336,6 +336,7 @@ public class DataLabelingManagementClient extends com.oracle.bmc.http.internal.B
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datalabelingservice.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -343,7 +344,6 @@ public class DataLabelingManagementClient extends com.oracle.bmc.http.internal.B
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -373,13 +373,13 @@ public class DataLabelingManagementClient extends com.oracle.bmc.http.internal.B
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ImportPreAnnotatedDataResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ImportPreAnnotatedDataResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -404,6 +404,7 @@ public class DataLabelingManagementClient extends com.oracle.bmc.http.internal.B
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datalabelingservice.model.AnnotationFormatCollection.class,
                         ListAnnotationFormatsResponse.Builder::annotationFormatCollection)
@@ -411,7 +412,6 @@ public class DataLabelingManagementClient extends com.oracle.bmc.http.internal.B
                         "opc-request-id", ListAnnotationFormatsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAnnotationFormatsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -440,6 +440,7 @@ public class DataLabelingManagementClient extends com.oracle.bmc.http.internal.B
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datalabelingservice.model.DatasetCollection.class,
                         ListDatasetsResponse.Builder::datasetCollection)
@@ -447,7 +448,6 @@ public class DataLabelingManagementClient extends com.oracle.bmc.http.internal.B
                         "opc-request-id", ListDatasetsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDatasetsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -473,6 +473,7 @@ public class DataLabelingManagementClient extends com.oracle.bmc.http.internal.B
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datalabelingservice.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -480,7 +481,6 @@ public class DataLabelingManagementClient extends com.oracle.bmc.http.internal.B
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -505,6 +505,7 @@ public class DataLabelingManagementClient extends com.oracle.bmc.http.internal.B
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datalabelingservice.model.WorkRequestLogEntryCollection
                                 .class,
@@ -513,7 +514,6 @@ public class DataLabelingManagementClient extends com.oracle.bmc.http.internal.B
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -537,6 +537,7 @@ public class DataLabelingManagementClient extends com.oracle.bmc.http.internal.B
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datalabelingservice.model.WorkRequestSummaryCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestSummaryCollection)
@@ -544,7 +545,6 @@ public class DataLabelingManagementClient extends com.oracle.bmc.http.internal.B
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -572,13 +572,13 @@ public class DataLabelingManagementClient extends com.oracle.bmc.http.internal.B
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RemoveDatasetLabelsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RemoveDatasetLabelsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -606,13 +606,13 @@ public class DataLabelingManagementClient extends com.oracle.bmc.http.internal.B
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RenameDatasetLabelsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RenameDatasetLabelsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -640,12 +640,12 @@ public class DataLabelingManagementClient extends com.oracle.bmc.http.internal.B
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", SnapshotDatasetResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", SnapshotDatasetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -670,6 +670,7 @@ public class DataLabelingManagementClient extends com.oracle.bmc.http.internal.B
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datalabelingservice.model.Dataset.class,
@@ -677,7 +678,6 @@ public class DataLabelingManagementClient extends com.oracle.bmc.http.internal.B
                 .handleResponseHeaderString("etag", UpdateDatasetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDatasetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

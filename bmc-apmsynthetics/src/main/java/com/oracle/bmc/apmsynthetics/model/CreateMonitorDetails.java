@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmsynthetics.model;
@@ -238,10 +238,10 @@ public final class CreateMonitorDetails
             return this;
         }
         /**
-         * Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types,
-         * target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then
-         * the monitor will run the selected script (specified by scriptId in monitor) against the
-         * specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor
+         * Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor
+         * types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type,
+         * then the monitor will run the selected script (specified by scriptId in monitor) against
+         * the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor
          * type, then the monitor will run the selected script as it is. For NETWORK monitor with
          * TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
          */
@@ -249,10 +249,10 @@ public final class CreateMonitorDetails
         private String target;
 
         /**
-         * Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types,
-         * target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then
-         * the monitor will run the selected script (specified by scriptId in monitor) against the
-         * specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor
+         * Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor
+         * types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type,
+         * then the monitor will run the selected script (specified by scriptId in monitor) against
+         * the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor
          * type, then the monitor will run the selected script as it is. For NETWORK monitor with
          * TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
          *
@@ -635,23 +635,23 @@ public final class CreateMonitorDetails
     }
 
     /**
-     * Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target
-     * is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor
-     * will run the selected script (specified by scriptId in monitor) against the specified target
-     * endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor
-     * will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to
-     * be provided along with target. Example: 192.168.0.1:80
+     * Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor
+     * types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then
+     * the monitor will run the selected script (specified by scriptId in monitor) against the
+     * specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type,
+     * then the monitor will run the selected script as it is. For NETWORK monitor with TCP
+     * protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
      */
     @com.fasterxml.jackson.annotation.JsonProperty("target")
     private final String target;
 
     /**
-     * Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target
-     * is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor
-     * will run the selected script (specified by scriptId in monitor) against the specified target
-     * endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor
-     * will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to
-     * be provided along with target. Example: 192.168.0.1:80
+     * Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor
+     * types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then
+     * the monitor will run the selected script (specified by scriptId in monitor) against the
+     * specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type,
+     * then the monitor will run the selected script as it is. For NETWORK monitor with TCP
+     * protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
      *
      * @return the value
      */

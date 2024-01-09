@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.http.signing.internal;
@@ -352,6 +352,8 @@ public class RequestSignerImpl implements RequestSigner {
             return missingHeaders;
         }
 
+        final byte[] bodyBytes = readBodyBytes(body);
+
         // supply content-type, content-length and x-content-sha256 if missing (PUT, PATCH, and POST
         // only)
         if (requiredHeaders.contains(Constants.CONTENT_TYPE)) {
@@ -360,7 +362,10 @@ public class RequestSignerImpl implements RequestSigner {
             // NOTE: this should never happen as EntityFactory ensures all
             // requests have this header, so log a warning
             if (!existingHeaders.containsKey(Constants.CONTENT_TYPE)) {
-                LOG.warn("Missing 'content-type' header, defaulting to 'application/json'");
+                if (bodyBytes.length > 0) {
+                    // The content-type header is not required if content-length is 0
+                    LOG.warn("Missing 'content-type' header, defaulting to 'application/json'");
+                }
                 missingHeaders.put(Constants.CONTENT_TYPE, Constants.JSON_CONTENT_TYPE);
             } else {
                 List<String> contentTypes = existingHeaders.get(Constants.CONTENT_TYPE);
@@ -375,7 +380,6 @@ public class RequestSignerImpl implements RequestSigner {
             }
         }
 
-        final byte[] bodyBytes = readBodyBytes(body);
         if (isRequiredHeaderMissing(Constants.CONTENT_LENGTH, requiredHeaders, existingHeaders)) {
             missingHeaders.put(Constants.CONTENT_LENGTH, Integer.toString(bodyBytes.length));
         }

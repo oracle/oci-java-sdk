@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -114,6 +114,7 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -121,7 +122,6 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id",
                         AttachSoftwareSourcesToManagedInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -152,6 +152,7 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -159,7 +160,6 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DetachSoftwareSourcesFromManagedInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -189,6 +189,7 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -196,7 +197,6 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DisableModuleStreamOnManagedInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -226,6 +226,7 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -233,7 +234,6 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id",
                         EnableModuleStreamOnManagedInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -255,6 +255,7 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam(request.getManagedInstanceId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.ManagedInstance.class,
                         GetManagedInstanceResponse.Builder::managedInstance)
@@ -263,7 +264,6 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-request-id", GetManagedInstanceResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetManagedInstanceResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -294,6 +294,7 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -302,7 +303,6 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id",
                         InstallModuleStreamProfileOnManagedInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -332,6 +332,7 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -339,7 +340,6 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id",
                         InstallPackagesOnManagedInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -373,6 +373,7 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.AvailablePackageCollection.class,
                         ListManagedInstanceAvailablePackagesResponse.Builder
@@ -383,7 +384,6 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListManagedInstanceAvailablePackagesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -418,6 +418,7 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.AvailableSoftwareSourceCollection
                                 .class,
@@ -429,7 +430,6 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListManagedInstanceAvailableSoftwareSourcesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -467,6 +467,7 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.ManagedInstanceErratumSummaryCollection
                                 .class,
@@ -476,7 +477,6 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-request-id", ListManagedInstanceErrataResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListManagedInstanceErrataResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -512,6 +512,7 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.InstalledPackageCollection.class,
                         ListManagedInstanceInstalledPackagesResponse.Builder
@@ -522,7 +523,6 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListManagedInstanceInstalledPackagesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -553,6 +553,7 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.ManagedInstanceModuleCollection.class,
                         ListManagedInstanceModulesResponse.Builder::managedInstanceModuleCollection)
@@ -563,7 +564,6 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-request-id", ListManagedInstanceModulesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListManagedInstanceModulesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -605,6 +605,7 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.UpdatablePackageCollection.class,
                         ListManagedInstanceUpdatablePackagesResponse.Builder
@@ -615,7 +616,6 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListManagedInstanceUpdatablePackagesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -670,6 +670,7 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.ManagedInstanceCollection.class,
                         ListManagedInstancesResponse.Builder::managedInstanceCollection)
@@ -677,7 +678,6 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-request-id", ListManagedInstancesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListManagedInstancesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -707,6 +707,7 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -714,7 +715,6 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ManageModuleStreamsOnManagedInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -741,13 +741,13 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RefreshSoftwareOnManagedInstanceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         RefreshSoftwareOnManagedInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -778,6 +778,7 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -786,7 +787,6 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id",
                         RemoveModuleStreamProfileFromManagedInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -816,6 +816,7 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -823,7 +824,6 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id",
                         RemovePackagesFromManagedInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -853,6 +853,7 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -860,7 +861,6 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id",
                         SwitchModuleStreamOnManagedInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -889,6 +889,7 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -898,7 +899,6 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-request-id",
                         UpdateAllPackagesOnManagedInstancesInCompartmentResponse.Builder
                                 ::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -925,6 +925,7 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.ManagedInstance.class,
@@ -932,7 +933,6 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", UpdateManagedInstanceResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateManagedInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -962,6 +962,7 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -969,7 +970,6 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdatePackagesOnManagedInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

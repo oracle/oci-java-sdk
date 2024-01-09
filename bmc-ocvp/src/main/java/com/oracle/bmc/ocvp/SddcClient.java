@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ocvp;
@@ -142,11 +142,11 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", CancelDowngradeHcxResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CancelDowngradeHcxResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -176,10 +176,10 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeSddcCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -200,12 +200,12 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateSddcResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateSddcResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -228,11 +228,11 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteSddcResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteSddcResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -259,12 +259,12 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DowngradeHcxResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DowngradeHcxResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -286,10 +286,10 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendPathParam(request.getSddcId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(com.oracle.bmc.ocvp.model.Sddc.class, GetSddcResponse.Builder::sddc)
                 .handleResponseHeaderString("etag", GetSddcResponse.Builder::etag)
                 .handleResponseHeaderString("opc-request-id", GetSddcResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -318,13 +318,13 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.ocvp.model.SddcCollection.class,
                         ListSddcsResponse.Builder::sddcCollection)
                 .handleResponseHeaderString(
                         "opc-request-id", ListSddcsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("opc-next-page", ListSddcsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -349,6 +349,7 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendQueryParam("hostShapeName", request.getHostShapeName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.ocvp.model.SupportedCommitmentSummaryCollection.class,
                         ListSupportedCommitmentsResponse.Builder
@@ -357,7 +358,6 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                         "opc-request-id", ListSupportedCommitmentsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListSupportedCommitmentsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -385,6 +385,7 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendQueryParam("initialHostShapeName", request.getInitialHostShapeName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.ocvp.model.SupportedHostShapeCollection.class,
                         ListSupportedHostShapesResponse.Builder::supportedHostShapeCollection)
@@ -392,7 +393,6 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                         "opc-request-id", ListSupportedHostShapesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListSupportedHostShapesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -418,6 +418,7 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendQueryParam("hostShapeName", request.getHostShapeName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.ocvp.model.SupportedVmwareSoftwareVersionCollection.class,
                         ListSupportedVmwareSoftwareVersionsResponse.Builder
@@ -428,7 +429,6 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListSupportedVmwareSoftwareVersionsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -455,12 +455,12 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RefreshHcxLicenseStatusResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RefreshHcxLicenseStatusResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -488,13 +488,13 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.ocvp.model.SddcPassword.class,
                         RetrievePasswordResponse.Builder::sddcPassword)
                 .handleResponseHeaderString("etag", RetrievePasswordResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", RetrievePasswordResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -518,12 +518,12 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(com.oracle.bmc.ocvp.model.Sddc.class, UpdateSddcResponse.Builder::sddc)
                 .handleResponseHeaderString("etag", UpdateSddcResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateSddcResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -549,11 +549,11 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpgradeHcxResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpgradeHcxResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

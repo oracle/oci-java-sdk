@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -62,6 +62,25 @@ public final class HostCpuStatistics extends HostResourceStatistics {
             this.__explicitlySet__.add("usageChangePercent");
             return this;
         }
+        /**
+         * The baseline utilization is a fraction of each CPU core expressed in percentages, either
+         * 12.5% or 50%. The baseline provides the minimum CPUs that can be used constantly.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("cpuBaseline")
+        private Double cpuBaseline;
+
+        /**
+         * The baseline utilization is a fraction of each CPU core expressed in percentages, either
+         * 12.5% or 50%. The baseline provides the minimum CPUs that can be used constantly.
+         *
+         * @param cpuBaseline the value to set
+         * @return this builder
+         */
+        public Builder cpuBaseline(Double cpuBaseline) {
+            this.cpuBaseline = cpuBaseline;
+            this.__explicitlySet__.add("cpuBaseline");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("load")
         private SummaryStatistics load;
@@ -82,6 +101,7 @@ public final class HostCpuStatistics extends HostResourceStatistics {
                             this.capacity,
                             this.utilizationPercent,
                             this.usageChangePercent,
+                            this.cpuBaseline,
                             this.load);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -102,6 +122,9 @@ public final class HostCpuStatistics extends HostResourceStatistics {
             }
             if (model.wasPropertyExplicitlySet("usageChangePercent")) {
                 this.usageChangePercent(model.getUsageChangePercent());
+            }
+            if (model.wasPropertyExplicitlySet("cpuBaseline")) {
+                this.cpuBaseline(model.getCpuBaseline());
             }
             if (model.wasPropertyExplicitlySet("load")) {
                 this.load(model.getLoad());
@@ -125,9 +148,28 @@ public final class HostCpuStatistics extends HostResourceStatistics {
             Double capacity,
             Double utilizationPercent,
             Double usageChangePercent,
+            Double cpuBaseline,
             SummaryStatistics load) {
         super(usage, capacity, utilizationPercent, usageChangePercent);
+        this.cpuBaseline = cpuBaseline;
         this.load = load;
+    }
+
+    /**
+     * The baseline utilization is a fraction of each CPU core expressed in percentages, either
+     * 12.5% or 50%. The baseline provides the minimum CPUs that can be used constantly.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("cpuBaseline")
+    private final Double cpuBaseline;
+
+    /**
+     * The baseline utilization is a fraction of each CPU core expressed in percentages, either
+     * 12.5% or 50%. The baseline provides the minimum CPUs that can be used constantly.
+     *
+     * @return the value
+     */
+    public Double getCpuBaseline() {
+        return cpuBaseline;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("load")
@@ -152,6 +194,7 @@ public final class HostCpuStatistics extends HostResourceStatistics {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HostCpuStatistics(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", cpuBaseline=").append(String.valueOf(this.cpuBaseline));
         sb.append(", load=").append(String.valueOf(this.load));
         sb.append(")");
         return sb.toString();
@@ -167,13 +210,16 @@ public final class HostCpuStatistics extends HostResourceStatistics {
         }
 
         HostCpuStatistics other = (HostCpuStatistics) o;
-        return java.util.Objects.equals(this.load, other.load) && super.equals(other);
+        return java.util.Objects.equals(this.cpuBaseline, other.cpuBaseline)
+                && java.util.Objects.equals(this.load, other.load)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result = (result * PRIME) + (this.cpuBaseline == null ? 43 : this.cpuBaseline.hashCode());
         result = (result * PRIME) + (this.load == null ? 43 : this.load.hashCode());
         return result;
     }

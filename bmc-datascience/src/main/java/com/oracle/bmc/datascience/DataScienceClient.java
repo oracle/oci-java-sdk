@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience;
@@ -170,13 +170,13 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datascience.model.Model.class,
                         ActivateModelResponse.Builder::model)
                 .handleResponseHeaderString("etag", ActivateModelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", ActivateModelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -261,9 +261,9 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", CancelJobRunResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -289,9 +289,9 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", CancelPipelineRunResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -348,6 +348,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
@@ -356,7 +357,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-work-request-id",
                         ChangeDataSciencePrivateEndpointCompartmentResponse.Builder
                                 ::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -667,6 +667,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.DataSciencePrivateEndpoint.class,
@@ -682,7 +683,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         CreateDataSciencePrivateEndpointResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "Location", CreateDataSciencePrivateEndpointResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -703,13 +703,13 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.Job.class, CreateJobResponse.Builder::job)
                 .handleResponseHeaderString("etag", CreateJobResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateJobResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -762,6 +762,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.JobRun.class,
@@ -769,7 +770,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", CreateJobRunResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateJobRunResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -790,6 +790,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.Model.class,
@@ -797,7 +798,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", CreateModelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateModelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -826,12 +826,12 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("content-length", request.getContentLength())
                 .appendHeader("content-disposition", request.getContentDisposition())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleResponseHeaderString("etag", CreateModelArtifactResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateModelArtifactResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -855,6 +855,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.ModelDeployment.class,
@@ -867,7 +868,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CreateModelDeploymentResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -895,6 +895,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.ModelProvenance.class,
@@ -902,7 +903,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id", CreateModelProvenanceResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateModelProvenanceResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -926,6 +926,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.ModelVersionSet.class,
@@ -933,7 +934,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", CreateModelVersionSetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateModelVersionSetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -957,6 +957,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.NotebookSession.class,
@@ -969,7 +970,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CreateNotebookSessionResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -991,6 +991,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.Pipeline.class,
@@ -998,7 +999,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", CreatePipelineResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreatePipelineResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1020,6 +1020,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.PipelineRun.class,
@@ -1028,7 +1029,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("location", CreatePipelineRunResponse.Builder::location)
                 .handleResponseHeaderString(
                         "opc-request-id", CreatePipelineRunResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1050,6 +1050,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.Project.class,
@@ -1057,7 +1058,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", CreateProjectResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateProjectResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1117,13 +1117,13 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datascience.model.Model.class,
                         DeactivateModelResponse.Builder::model)
                 .handleResponseHeaderString("etag", DeactivateModelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", DeactivateModelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1238,11 +1238,11 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteJobResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteJobResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1265,9 +1265,9 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteJobRunResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1290,9 +1290,9 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteModelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1316,12 +1316,12 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteModelDeploymentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteModelDeploymentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1346,12 +1346,12 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteModelVersionSetResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteModelVersionSetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1375,12 +1375,12 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteNotebookSessionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteNotebookSessionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1457,11 +1457,11 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteProjectResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteProjectResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1489,13 +1489,13 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ExportModelArtifactResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ExportModelArtifactResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1520,6 +1520,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getDataSciencePrivateEndpointId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datascience.model.DataSciencePrivateEndpoint.class,
                         GetDataSciencePrivateEndpointResponse.Builder::dataSciencePrivateEndpoint)
@@ -1528,7 +1529,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetDataSciencePrivateEndpointResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1550,10 +1550,10 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getJobId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(com.oracle.bmc.datascience.model.Job.class, GetJobResponse.Builder::job)
                 .handleResponseHeaderString("etag", GetJobResponse.Builder::etag)
                 .handleResponseHeaderString("opc-request-id", GetJobResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1579,6 +1579,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/octet-stream")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("range", request.getRange())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         java.io.InputStream.class,
                         GetJobArtifactContentResponse.Builder::inputStream)
@@ -1594,7 +1595,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "content-disposition",
                         GetJobArtifactContentResponse.Builder::contentDisposition)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1616,13 +1616,13 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getJobRunId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datascience.model.JobRun.class,
                         GetJobRunResponse.Builder::jobRun)
                 .handleResponseHeaderString("etag", GetJobRunResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetJobRunResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1644,13 +1644,13 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getModelId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datascience.model.Model.class,
                         GetModelResponse.Builder::model)
                 .handleResponseHeaderString("etag", GetModelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetModelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1676,6 +1676,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/octet-stream")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("range", request.getRange())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         java.io.InputStream.class,
                         GetModelArtifactContentResponse.Builder::inputStream)
@@ -1691,7 +1692,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "content-md5", GetModelArtifactContentResponse.Builder::contentMd5)
                 .handleResponseHeaderDate(
                         "last-modified", GetModelArtifactContentResponse.Builder::lastModified)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1713,13 +1713,13 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getModelDeploymentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datascience.model.ModelDeployment.class,
                         GetModelDeploymentResponse.Builder::modelDeployment)
                 .handleResponseHeaderString("etag", GetModelDeploymentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetModelDeploymentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1742,13 +1742,13 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam("provenance")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datascience.model.ModelProvenance.class,
                         GetModelProvenanceResponse.Builder::modelProvenance)
                 .handleResponseHeaderString("etag", GetModelProvenanceResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetModelProvenanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1770,13 +1770,13 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getModelVersionSetId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datascience.model.ModelVersionSet.class,
                         GetModelVersionSetResponse.Builder::modelVersionSet)
                 .handleResponseHeaderString("etag", GetModelVersionSetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetModelVersionSetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1798,13 +1798,13 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getNotebookSessionId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datascience.model.NotebookSession.class,
                         GetNotebookSessionResponse.Builder::notebookSession)
                 .handleResponseHeaderString("etag", GetNotebookSessionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetNotebookSessionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1826,13 +1826,13 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getPipelineId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datascience.model.Pipeline.class,
                         GetPipelineResponse.Builder::pipeline)
                 .handleResponseHeaderString("etag", GetPipelineResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetPipelineResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1854,13 +1854,13 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getPipelineRunId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datascience.model.PipelineRun.class,
                         GetPipelineRunResponse.Builder::pipelineRun)
                 .handleResponseHeaderString("etag", GetPipelineRunResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetPipelineRunResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1882,13 +1882,13 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getProjectId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datascience.model.Project.class,
                         GetProjectResponse.Builder::project)
                 .handleResponseHeaderString("etag", GetProjectResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetProjectResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1919,6 +1919,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/octet-stream")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("range", request.getRange())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         java.io.InputStream.class,
                         GetStepArtifactContentResponse.Builder::inputStream)
@@ -1934,7 +1935,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "content-disposition",
                         GetStepArtifactContentResponse.Builder::contentDisposition)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1956,6 +1956,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.datascience.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -1964,7 +1965,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1988,6 +1988,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam("content")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString("etag", HeadJobArtifactResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", HeadJobArtifactResponse.Builder::opcRequestId)
@@ -1999,7 +2000,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "content-disposition", HeadJobArtifactResponse.Builder::contentDisposition)
                 .handleResponseHeaderDate(
                         "last-modified", HeadJobArtifactResponse.Builder::lastModified)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2023,6 +2023,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam("content")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString("etag", HeadModelArtifactResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", HeadModelArtifactResponse.Builder::opcRequestId)
@@ -2035,7 +2036,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "content-md5", HeadModelArtifactResponse.Builder::contentMd5)
                 .handleResponseHeaderDate(
                         "last-modified", HeadModelArtifactResponse.Builder::lastModified)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2063,6 +2063,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam("content")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString("etag", HeadStepArtifactResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", HeadStepArtifactResponse.Builder::opcRequestId)
@@ -2074,7 +2075,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "content-disposition", HeadStepArtifactResponse.Builder::contentDisposition)
                 .handleResponseHeaderDate(
                         "last-modified", HeadStepArtifactResponse.Builder::lastModified)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2137,6 +2137,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "dataScienceResourceType", request.getDataScienceResourceType())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.DataSciencePrivateEndpointSummary.class,
                         ListDataSciencePrivateEndpointsResponse.Builder::items)
@@ -2149,7 +2150,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ListDataSciencePrivateEndpointsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2173,6 +2173,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.FastLaunchJobConfigSummary.class,
                         ListFastLaunchJobConfigsResponse.Builder::items)
@@ -2182,7 +2183,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-prev-page", ListFastLaunchJobConfigsResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListFastLaunchJobConfigsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2212,6 +2212,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.JobRunSummary.class,
                         ListJobRunsResponse.Builder::items)
@@ -2221,7 +2222,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-prev-page", ListJobRunsResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListJobRunsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2244,6 +2244,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.JobShapeSummary.class,
                         ListJobShapesResponse.Builder::items)
@@ -2253,7 +2254,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-prev-page", ListJobShapesResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListJobShapesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2283,6 +2283,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.JobSummary.class,
                         ListJobsResponse.Builder::items)
@@ -2290,7 +2291,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("opc-prev-page", ListJobsResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListJobsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2314,6 +2314,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary.class,
                         ListModelDeploymentShapesResponse.Builder::items)
@@ -2323,7 +2324,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-prev-page", ListModelDeploymentShapesResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListModelDeploymentShapesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2353,6 +2353,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.ModelDeploymentSummary.class,
                         ListModelDeploymentsResponse.Builder::items)
@@ -2362,7 +2363,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-prev-page", ListModelDeploymentsResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListModelDeploymentsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2392,6 +2392,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.ModelVersionSetSummary.class,
                         ListModelVersionSetsResponse.Builder::items)
@@ -2401,7 +2402,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-prev-page", ListModelVersionSetsResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListModelVersionSetsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2433,6 +2433,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.ModelSummary.class,
                         ListModelsResponse.Builder::items)
@@ -2442,7 +2443,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-prev-page", ListModelsResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListModelsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2466,6 +2466,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.NotebookSessionShapeSummary.class,
                         ListNotebookSessionShapesResponse.Builder::items)
@@ -2475,7 +2476,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-prev-page", ListNotebookSessionShapesResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListNotebookSessionShapesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2505,6 +2505,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.NotebookSessionSummary.class,
                         ListNotebookSessionsResponse.Builder::items)
@@ -2514,7 +2515,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-prev-page", ListNotebookSessionsResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListNotebookSessionsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2544,6 +2544,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.PipelineRunSummary.class,
                         ListPipelineRunsResponse.Builder::items)
@@ -2553,7 +2554,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-next-page", ListPipelineRunsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListPipelineRunsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2583,6 +2583,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.PipelineSummary.class,
                         ListPipelinesResponse.Builder::items)
@@ -2592,7 +2593,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-next-page", ListPipelinesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListPipelinesResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2621,6 +2621,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.ProjectSummary.class,
                         ListProjectsResponse.Builder::items)
@@ -2630,7 +2631,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-prev-page", ListProjectsResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListProjectsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2656,6 +2656,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.WorkRequestError.class,
                         ListWorkRequestErrorsResponse.Builder::items)
@@ -2665,7 +2666,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListWorkRequestErrorsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2690,6 +2690,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.WorkRequestLogEntry.class,
                         ListWorkRequestLogsResponse.Builder::items)
@@ -2699,7 +2700,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListWorkRequestLogsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2727,6 +2727,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.datascience.model.WorkRequestSummary.class,
                         ListWorkRequestsResponse.Builder::items)
@@ -2736,7 +2737,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-prev-page", ListWorkRequestsResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2801,13 +2801,13 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.Job.class, UpdateJobResponse.Builder::job)
                 .handleResponseHeaderString("etag", UpdateJobResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateJobResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2831,6 +2831,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.JobRun.class,
@@ -2838,7 +2839,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", UpdateJobRunResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateJobRunResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2862,6 +2862,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.Model.class,
@@ -2869,7 +2870,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", UpdateModelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateModelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2896,13 +2896,13 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateModelDeploymentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateModelDeploymentResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2930,6 +2930,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.ModelProvenance.class,
@@ -2937,7 +2938,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateModelProvenanceResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateModelProvenanceResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2964,6 +2964,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.ModelVersionSet.class,
@@ -2971,7 +2972,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", UpdateModelVersionSetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateModelVersionSetResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2998,6 +2998,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.NotebookSession.class,
@@ -3005,7 +3006,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", UpdateNotebookSessionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateNotebookSessionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3092,6 +3092,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.Project.class,
@@ -3099,7 +3100,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", UpdateProjectResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateProjectResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

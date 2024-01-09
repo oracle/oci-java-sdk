@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -140,6 +140,7 @@ public class ScheduledJobClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.ScheduledJob.class,
@@ -149,7 +150,6 @@ public class ScheduledJobClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id", CreateScheduledJobResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateScheduledJobResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -172,9 +172,9 @@ public class ScheduledJobClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteScheduledJobResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -196,6 +196,7 @@ public class ScheduledJobClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getScheduledJobId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.ScheduledJob.class,
                         GetScheduledJobResponse.Builder::scheduledJob)
@@ -204,7 +205,6 @@ public class ScheduledJobClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", GetScheduledJobResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetScheduledJobResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -242,6 +242,7 @@ public class ScheduledJobClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.ScheduledJobCollection.class,
                         ListScheduledJobsResponse.Builder::scheduledJobCollection)
@@ -249,7 +250,6 @@ public class ScheduledJobClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListScheduledJobsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListScheduledJobsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -275,9 +275,9 @@ public class ScheduledJobClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", RunScheduledJobNowResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -302,6 +302,7 @@ public class ScheduledJobClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.ScheduledJob.class,
@@ -309,7 +310,6 @@ public class ScheduledJobClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString("etag", UpdateScheduledJobResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateScheduledJobResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

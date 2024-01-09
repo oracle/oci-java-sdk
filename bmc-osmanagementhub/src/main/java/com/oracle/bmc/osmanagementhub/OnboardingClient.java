@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -140,6 +140,7 @@ public class OnboardingClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.Profile.class,
@@ -147,7 +148,6 @@ public class OnboardingClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString("etag", CreateProfileResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateProfileResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -170,9 +170,9 @@ public class OnboardingClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteProfileResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -194,13 +194,13 @@ public class OnboardingClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getProfileId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.Profile.class,
                         GetProfileResponse.Builder::profile)
                 .handleResponseHeaderString("etag", GetProfileResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetProfileResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -238,6 +238,7 @@ public class OnboardingClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.ProfileCollection.class,
                         ListProfilesResponse.Builder::profileCollection)
@@ -245,7 +246,6 @@ public class OnboardingClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", ListProfilesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListProfilesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -270,6 +270,7 @@ public class OnboardingClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.osmanagementhub.model.Profile.class,
@@ -277,7 +278,6 @@ public class OnboardingClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString("etag", UpdateProfileResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateProfileResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

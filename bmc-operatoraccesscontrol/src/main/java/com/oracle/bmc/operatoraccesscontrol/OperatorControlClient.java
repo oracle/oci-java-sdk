@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.operatoraccesscontrol;
@@ -149,11 +149,11 @@ public class OperatorControlClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeOperatorControlCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -177,6 +177,7 @@ public class OperatorControlClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.operatoraccesscontrol.model.OperatorControl.class,
@@ -184,7 +185,6 @@ public class OperatorControlClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", CreateOperatorControlResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateOperatorControlResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -209,9 +209,9 @@ public class OperatorControlClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteOperatorControlResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -233,13 +233,13 @@ public class OperatorControlClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam(request.getOperatorControlId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.operatoraccesscontrol.model.OperatorControl.class,
                         GetOperatorControlResponse.Builder::operatorControl)
                 .handleResponseHeaderString("etag", GetOperatorControlResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetOperatorControlResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -267,6 +267,7 @@ public class OperatorControlClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.operatoraccesscontrol.model.OperatorControlCollection.class,
                         ListOperatorControlsResponse.Builder::operatorControlCollection)
@@ -274,7 +275,6 @@ public class OperatorControlClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-request-id", ListOperatorControlsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListOperatorControlsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -301,6 +301,7 @@ public class OperatorControlClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.operatoraccesscontrol.model.OperatorControl.class,
@@ -308,7 +309,6 @@ public class OperatorControlClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", UpdateOperatorControlResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateOperatorControlResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

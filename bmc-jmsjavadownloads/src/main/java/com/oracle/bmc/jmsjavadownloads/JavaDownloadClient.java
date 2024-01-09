@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jmsjavadownloads;
@@ -156,7 +156,10 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
-                .serviceDetails("JavaDownload", "CancelWorkRequest", "")
+                .serviceDetails(
+                        "JavaDownload",
+                        "CancelWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequest/CancelWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/")
@@ -166,9 +169,9 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", CancelWorkRequestResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -181,7 +184,10 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, CreateJavaDownloadReportResponse::builder)
                 .logger(LOG, "createJavaDownloadReport")
-                .serviceDetails("JavaDownload", "CreateJavaDownloadReport", "")
+                .serviceDetails(
+                        "JavaDownload",
+                        "CreateJavaDownloadReport",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/CreateJavaDownloadReport")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateJavaDownloadReportRequest::builder)
                 .basePath("/")
@@ -190,13 +196,13 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CreateJavaDownloadReportResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateJavaDownloadReportResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -209,7 +215,10 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, CreateJavaDownloadTokenResponse::builder)
                 .logger(LOG, "createJavaDownloadToken")
-                .serviceDetails("JavaDownload", "CreateJavaDownloadToken", "")
+                .serviceDetails(
+                        "JavaDownload",
+                        "CreateJavaDownloadToken",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/CreateJavaDownloadToken")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateJavaDownloadTokenRequest::builder)
                 .basePath("/")
@@ -218,6 +227,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.jmsjavadownloads.model.JavaDownloadToken.class,
@@ -228,7 +238,6 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         CreateJavaDownloadTokenResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateJavaDownloadTokenResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -241,7 +250,10 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, CreateJavaLicenseAcceptanceRecordResponse::builder)
                 .logger(LOG, "createJavaLicenseAcceptanceRecord")
-                .serviceDetails("JavaDownload", "CreateJavaLicenseAcceptanceRecord", "")
+                .serviceDetails(
+                        "JavaDownload",
+                        "CreateJavaLicenseAcceptanceRecord",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/CreateJavaLicenseAcceptanceRecord")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateJavaLicenseAcceptanceRecordRequest::builder)
                 .basePath("/")
@@ -250,6 +262,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.jmsjavadownloads.model.JavaLicenseAcceptanceRecord.class,
@@ -260,7 +273,6 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         CreateJavaLicenseAcceptanceRecordResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", CreateJavaLicenseAcceptanceRecordResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -273,7 +285,10 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, DeleteJavaDownloadReportResponse::builder)
                 .logger(LOG, "deleteJavaDownloadReport")
-                .serviceDetails("JavaDownload", "DeleteJavaDownloadReport", "")
+                .serviceDetails(
+                        "JavaDownload",
+                        "DeleteJavaDownloadReport",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/DeleteJavaDownloadReport")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteJavaDownloadReportRequest::builder)
                 .basePath("/")
@@ -283,12 +298,12 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteJavaDownloadReportResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteJavaDownloadReportResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -301,7 +316,10 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, DeleteJavaDownloadTokenResponse::builder)
                 .logger(LOG, "deleteJavaDownloadToken")
-                .serviceDetails("JavaDownload", "DeleteJavaDownloadToken", "")
+                .serviceDetails(
+                        "JavaDownload",
+                        "DeleteJavaDownloadToken",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/DeleteJavaDownloadToken")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteJavaDownloadTokenRequest::builder)
                 .basePath("/")
@@ -311,12 +329,12 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteJavaDownloadTokenResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteJavaDownloadTokenResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -330,7 +348,10 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, DeleteJavaLicenseAcceptanceRecordResponse::builder)
                 .logger(LOG, "deleteJavaLicenseAcceptanceRecord")
-                .serviceDetails("JavaDownload", "DeleteJavaLicenseAcceptanceRecord", "")
+                .serviceDetails(
+                        "JavaDownload",
+                        "DeleteJavaLicenseAcceptanceRecord",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/DeleteJavaLicenseAcceptanceRecord")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteJavaLicenseAcceptanceRecordRequest::builder)
                 .basePath("/")
@@ -340,10 +361,10 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteJavaLicenseAcceptanceRecordResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -356,7 +377,10 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GenerateArtifactDownloadUrlResponse::builder)
                 .logger(LOG, "generateArtifactDownloadUrl")
-                .serviceDetails("JavaDownload", "GenerateArtifactDownloadUrl", "")
+                .serviceDetails(
+                        "JavaDownload",
+                        "GenerateArtifactDownloadUrl",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(GenerateArtifactDownloadUrlRequest::builder)
                 .basePath("/")
@@ -365,13 +389,13 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("generateArtifactDownloadUrl")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.jmsjavadownloads.model.DownloadUrl.class,
                         GenerateArtifactDownloadUrlResponse.Builder::downloadUrl)
                 .handleResponseHeaderString(
                         "opc-request-id", GenerateArtifactDownloadUrlResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -384,7 +408,10 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GetJavaDownloadReportResponse::builder)
                 .logger(LOG, "getJavaDownloadReport")
-                .serviceDetails("JavaDownload", "GetJavaDownloadReport", "")
+                .serviceDetails(
+                        "JavaDownload",
+                        "GetJavaDownloadReport",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/GetJavaDownloadReport")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJavaDownloadReportRequest::builder)
                 .basePath("/")
@@ -393,13 +420,13 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getJavaDownloadReportId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jmsjavadownloads.model.JavaDownloadReport.class,
                         GetJavaDownloadReportResponse.Builder::javaDownloadReport)
                 .handleResponseHeaderString("etag", GetJavaDownloadReportResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetJavaDownloadReportResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -412,7 +439,10 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GetJavaDownloadReportContentResponse::builder)
                 .logger(LOG, "getJavaDownloadReportContent")
-                .serviceDetails("JavaDownload", "GetJavaDownloadReportContent", "")
+                .serviceDetails(
+                        "JavaDownload",
+                        "GetJavaDownloadReportContent",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/GetJavaDownloadReportContent")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJavaDownloadReportContentRequest::builder)
                 .basePath("/")
@@ -422,6 +452,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("content")
                 .accept("text/csv")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         java.io.InputStream.class,
                         GetJavaDownloadReportContentResponse.Builder::inputStream)
@@ -430,7 +461,6 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetJavaDownloadReportContentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -442,7 +472,10 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GetJavaDownloadTokenResponse::builder)
                 .logger(LOG, "getJavaDownloadToken")
-                .serviceDetails("JavaDownload", "GetJavaDownloadToken", "")
+                .serviceDetails(
+                        "JavaDownload",
+                        "GetJavaDownloadToken",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/GetJavaDownloadToken")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJavaDownloadTokenRequest::builder)
                 .basePath("/")
@@ -451,13 +484,13 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getJavaDownloadTokenId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jmsjavadownloads.model.JavaDownloadToken.class,
                         GetJavaDownloadTokenResponse.Builder::javaDownloadToken)
                 .handleResponseHeaderString("etag", GetJavaDownloadTokenResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetJavaDownloadTokenResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -468,7 +501,10 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GetJavaLicenseResponse::builder)
                 .logger(LOG, "getJavaLicense")
-                .serviceDetails("JavaDownload", "GetJavaLicense", "")
+                .serviceDetails(
+                        "JavaDownload",
+                        "GetJavaLicense",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicense/GetJavaLicense")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJavaLicenseRequest::builder)
                 .basePath("/")
@@ -477,12 +513,12 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getLicenseType().getValue())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jmsjavadownloads.model.JavaLicense.class,
                         GetJavaLicenseResponse.Builder::javaLicense)
                 .handleResponseHeaderString(
                         "opc-request-id", GetJavaLicenseResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -496,7 +532,10 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GetJavaLicenseAcceptanceRecordResponse::builder)
                 .logger(LOG, "getJavaLicenseAcceptanceRecord")
-                .serviceDetails("JavaDownload", "GetJavaLicenseAcceptanceRecord", "")
+                .serviceDetails(
+                        "JavaDownload",
+                        "GetJavaLicenseAcceptanceRecord",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/GetJavaLicenseAcceptanceRecord")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJavaLicenseAcceptanceRecordRequest::builder)
                 .basePath("/")
@@ -505,6 +544,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getJavaLicenseAcceptanceRecordId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jmsjavadownloads.model.JavaLicenseAcceptanceRecord.class,
                         GetJavaLicenseAcceptanceRecordResponse.Builder::javaLicenseAcceptanceRecord)
@@ -513,7 +553,6 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         GetJavaLicenseAcceptanceRecordResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", GetJavaLicenseAcceptanceRecordResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -524,7 +563,10 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("JavaDownload", "GetWorkRequest", "")
+                .serviceDetails(
+                        "JavaDownload",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/")
@@ -533,6 +575,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jmsjavadownloads.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -540,7 +583,6 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderLong("retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -551,7 +593,10 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListJavaDownloadRecordsResponse::builder)
                 .logger(LOG, "listJavaDownloadRecords")
-                .serviceDetails("JavaDownload", "ListJavaDownloadRecords", "")
+                .serviceDetails(
+                        "JavaDownload",
+                        "ListJavaDownloadRecords",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadRecord/ListJavaDownloadRecords")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJavaDownloadRecordsRequest::builder)
                 .basePath("/")
@@ -571,6 +616,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jmsjavadownloads.model.JavaDownloadRecordCollection.class,
                         ListJavaDownloadRecordsResponse.Builder::javaDownloadRecordCollection)
@@ -578,7 +624,6 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListJavaDownloadRecordsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListJavaDownloadRecordsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -589,7 +634,10 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListJavaDownloadReportsResponse::builder)
                 .logger(LOG, "listJavaDownloadReports")
-                .serviceDetails("JavaDownload", "ListJavaDownloadReports", "")
+                .serviceDetails(
+                        "JavaDownload",
+                        "ListJavaDownloadReports",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/ListJavaDownloadReports")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJavaDownloadReportsRequest::builder)
                 .basePath("/")
@@ -605,6 +653,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jmsjavadownloads.model.JavaDownloadReportCollection.class,
                         ListJavaDownloadReportsResponse.Builder::javaDownloadReportCollection)
@@ -612,7 +661,6 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListJavaDownloadReportsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListJavaDownloadReportsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -623,7 +671,10 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListJavaDownloadTokensResponse::builder)
                 .logger(LOG, "listJavaDownloadTokens")
-                .serviceDetails("JavaDownload", "ListJavaDownloadTokens", "")
+                .serviceDetails(
+                        "JavaDownload",
+                        "ListJavaDownloadTokens",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/ListJavaDownloadTokens")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJavaDownloadTokensRequest::builder)
                 .basePath("/")
@@ -642,6 +693,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jmsjavadownloads.model.JavaDownloadTokenCollection.class,
                         ListJavaDownloadTokensResponse.Builder::javaDownloadTokenCollection)
@@ -649,7 +701,6 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListJavaDownloadTokensResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListJavaDownloadTokensResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -660,7 +711,10 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListJavaLicenseAcceptanceRecordsResponse::builder)
                 .logger(LOG, "listJavaLicenseAcceptanceRecords")
-                .serviceDetails("JavaDownload", "ListJavaLicenseAcceptanceRecords", "")
+                .serviceDetails(
+                        "JavaDownload",
+                        "ListJavaLicenseAcceptanceRecords",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/ListJavaLicenseAcceptanceRecords")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJavaLicenseAcceptanceRecordsRequest::builder)
                 .basePath("/")
@@ -677,6 +731,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jmsjavadownloads.model.JavaLicenseAcceptanceRecordCollection
                                 .class,
@@ -688,7 +743,6 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListJavaLicenseAcceptanceRecordsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -697,7 +751,10 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListJavaLicensesResponse::builder)
                 .logger(LOG, "listJavaLicenses")
-                .serviceDetails("JavaDownload", "ListJavaLicenses", "")
+                .serviceDetails(
+                        "JavaDownload",
+                        "ListJavaLicenses",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicense/ListJavaLicenses")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJavaLicensesRequest::builder)
                 .basePath("/")
@@ -711,6 +768,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jmsjavadownloads.model.JavaLicenseCollection.class,
                         ListJavaLicensesResponse.Builder::javaLicenseCollection)
@@ -718,7 +776,6 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListJavaLicensesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListJavaLicensesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -730,7 +787,10 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("JavaDownload", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "JavaDownload",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/")
@@ -744,6 +804,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jmsjavadownloads.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -751,7 +812,6 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -762,7 +822,10 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("JavaDownload", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "JavaDownload",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/")
@@ -776,6 +839,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jmsjavadownloads.model.WorkRequestLogEntryCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
@@ -783,7 +847,6 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -793,7 +856,10 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("JavaDownload", "ListWorkRequests", "")
+                .serviceDetails(
+                        "JavaDownload",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/")
@@ -809,6 +875,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.jmsjavadownloads.model.WorkRequestSummaryCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestSummaryCollection)
@@ -816,7 +883,6 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -829,7 +895,10 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, RequestSummarizedJavaDownloadCountsResponse::builder)
                 .logger(LOG, "requestSummarizedJavaDownloadCounts")
-                .serviceDetails("JavaDownload", "RequestSummarizedJavaDownloadCounts", "")
+                .serviceDetails(
+                        "JavaDownload",
+                        "RequestSummarizedJavaDownloadCounts",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadCountAggregation/RequestSummarizedJavaDownloadCounts")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RequestSummarizedJavaDownloadCountsRequest::builder)
                 .basePath("/")
@@ -838,6 +907,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("requestSummarizedJavaDownloadCounts")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.jmsjavadownloads.model.JavaDownloadCountAggregationCollection
@@ -850,7 +920,6 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         RequestSummarizedJavaDownloadCountsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -866,7 +935,10 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, UpdateJavaDownloadTokenResponse::builder)
                 .logger(LOG, "updateJavaDownloadToken")
-                .serviceDetails("JavaDownload", "UpdateJavaDownloadToken", "")
+                .serviceDetails(
+                        "JavaDownload",
+                        "UpdateJavaDownloadToken",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/UpdateJavaDownloadToken")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateJavaDownloadTokenRequest::builder)
                 .basePath("/")
@@ -876,13 +948,13 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateJavaDownloadTokenResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateJavaDownloadTokenResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -899,7 +971,10 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, UpdateJavaLicenseAcceptanceRecordResponse::builder)
                 .logger(LOG, "updateJavaLicenseAcceptanceRecord")
-                .serviceDetails("JavaDownload", "UpdateJavaLicenseAcceptanceRecord", "")
+                .serviceDetails(
+                        "JavaDownload",
+                        "UpdateJavaLicenseAcceptanceRecord",
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/UpdateJavaLicenseAcceptanceRecord")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateJavaLicenseAcceptanceRecordRequest::builder)
                 .basePath("/")
@@ -909,6 +984,7 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.jmsjavadownloads.model.JavaLicenseAcceptanceRecord.class,
@@ -919,7 +995,6 @@ public class JavaDownloadClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         UpdateJavaLicenseAcceptanceRecordResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", UpdateJavaLicenseAcceptanceRecordResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

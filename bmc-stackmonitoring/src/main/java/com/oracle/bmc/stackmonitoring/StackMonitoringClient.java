@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.stackmonitoring;
@@ -209,10 +209,10 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeConfigCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -313,11 +313,11 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeMonitoredResourceTaskCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -341,6 +341,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.BaselineableMetric.class,
@@ -350,7 +351,6 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", CreateBaselineableMetricResponse.Builder::etag)
                 .handleResponseHeaderInteger(
                         "retry-after", CreateBaselineableMetricResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -371,6 +371,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.Config.class,
@@ -378,7 +379,6 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", CreateConfigResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateConfigResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -504,6 +504,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.MonitoredResourceTask.class,
@@ -515,7 +516,6 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CreateMonitoredResourceTaskResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -539,6 +539,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.MonitoredResourceType.class,
@@ -547,7 +548,6 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                         "etag", CreateMonitoredResourceTypeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateMonitoredResourceTypeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -572,11 +572,11 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteBaselineableMetricResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", DeleteBaselineableMetricResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -599,9 +599,9 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteConfigResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -624,9 +624,9 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDiscoveryJobResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -870,6 +870,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.EvaluateBaselineableMetricResult.class,
@@ -879,7 +880,6 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-request-id", EvaluateBaselineableMetricResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", EvaluateBaselineableMetricResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -906,13 +906,13 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         java.io.InputStream.class,
                         ExportMetricExtensionResponse.Builder::inputStream)
                 .handleResponseHeaderString("etag", ExportMetricExtensionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", ExportMetricExtensionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -936,6 +936,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam(request.getBaselineableMetricId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.BaselineableMetric.class,
                         GetBaselineableMetricResponse.Builder::baselineableMetric)
@@ -944,7 +945,6 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", GetBaselineableMetricResponse.Builder::etag)
                 .handleResponseHeaderInteger(
                         "retry-after", GetBaselineableMetricResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -966,13 +966,13 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam(request.getConfigId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.Config.class,
                         GetConfigResponse.Builder::config)
                 .handleResponseHeaderString("etag", GetConfigResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetConfigResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -994,13 +994,13 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam(request.getDiscoveryJobId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.DiscoveryJob.class,
                         GetDiscoveryJobResponse.Builder::discoveryJob)
                 .handleResponseHeaderString("etag", GetDiscoveryJobResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDiscoveryJobResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1022,13 +1022,13 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam(request.getMetricExtensionId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.MetricExtension.class,
                         GetMetricExtensionResponse.Builder::metricExtension)
                 .handleResponseHeaderString(
                         "opc-request-id", GetMetricExtensionResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetMetricExtensionResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1051,13 +1051,13 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam(request.getMonitoredResourceId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.MonitoredResource.class,
                         GetMonitoredResourceResponse.Builder::monitoredResource)
                 .handleResponseHeaderString("etag", GetMonitoredResourceResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetMonitoredResourceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1081,13 +1081,13 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam(request.getMonitoredResourceTaskId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.MonitoredResourceTask.class,
                         GetMonitoredResourceTaskResponse.Builder::monitoredResourceTask)
                 .handleResponseHeaderString("etag", GetMonitoredResourceTaskResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetMonitoredResourceTaskResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1111,13 +1111,13 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam(request.getMonitoredResourceTypeId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.MonitoredResourceType.class,
                         GetMonitoredResourceTypeResponse.Builder::monitoredResourceType)
                 .handleResponseHeaderString("etag", GetMonitoredResourceTypeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetMonitoredResourceTypeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1139,6 +1139,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -1146,7 +1147,6 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1175,6 +1175,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.BaselineableMetricSummaryCollection
                                 .class,
@@ -1186,7 +1187,6 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-next-page", ListBaselineableMetricsResponse.Builder::opcNextPage)
                 .handleResponseHeaderInteger(
                         "retry-after", ListBaselineableMetricsResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1214,6 +1214,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.ConfigCollection.class,
                         ListConfigsResponse.Builder::configCollection)
@@ -1221,7 +1222,6 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-request-id", ListConfigsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListConfigsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1249,6 +1249,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.DiscoveryJobLogCollection.class,
                         ListDiscoveryJobLogsResponse.Builder::discoveryJobLogCollection)
@@ -1256,7 +1257,6 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-next-page", ListDiscoveryJobLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListDiscoveryJobLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1282,6 +1282,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.DiscoveryJobCollection.class,
                         ListDiscoveryJobsResponse.Builder::discoveryJobCollection)
@@ -1289,7 +1290,6 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-next-page", ListDiscoveryJobsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListDiscoveryJobsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1319,6 +1319,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendQueryParam("enabledOnResourceId", request.getEnabledOnResourceId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.MetricExtensionCollection.class,
                         ListMetricExtensionsResponse.Builder::metricExtensionCollection)
@@ -1326,7 +1327,6 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-request-id", ListMetricExtensionsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListMetricExtensionsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1353,6 +1353,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.MonitoredResourceTasksCollection.class,
                         ListMonitoredResourceTasksResponse.Builder
@@ -1364,7 +1365,6 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderInteger(
                         "opc-total-items",
                         ListMonitoredResourceTasksResponse.Builder::opcTotalItems)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1402,6 +1402,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.MonitoredResourceTypesCollection.class,
                         ListMonitoredResourceTypesResponse.Builder
@@ -1413,7 +1414,6 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderInteger(
                         "opc-total-items",
                         ListMonitoredResourceTypesResponse.Builder::opcTotalItems)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1441,6 +1441,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.MonitoredResourceCollection.class,
                         ListMonitoredResourcesResponse.Builder::monitoredResourceCollection)
@@ -1450,7 +1451,6 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-next-page", ListMonitoredResourcesResponse.Builder::opcNextPage)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListMonitoredResourcesResponse.Builder::opcTotalItems)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1478,6 +1478,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -1485,7 +1486,6 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1512,6 +1512,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.WorkRequestLogEntryCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
@@ -1519,7 +1520,6 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1547,6 +1547,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.WorkRequestSummaryCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestSummaryCollection)
@@ -1554,7 +1555,6 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1583,10 +1583,10 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ManageLicenseResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1652,6 +1652,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model
                                 .MonitoredResourcesCountAggregationCollection.class,
@@ -1666,7 +1667,6 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderInteger(
                         "opc-total-items",
                         RequestMonitoredResourcesSummarizedCountResponse.Builder::opcTotalItems)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1703,6 +1703,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.AssociatedResourcesCollection.class,
@@ -1713,7 +1714,6 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-next-page", SearchAssociatedResourcesResponse.Builder::opcNextPage)
                 .handleResponseHeaderInteger(
                         "opc-total-items", SearchAssociatedResourcesResponse.Builder::opcTotalItems)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1742,6 +1742,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.MonitoredResourceAssociationsCollection
@@ -1757,7 +1758,6 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderInteger(
                         "opc-total-items",
                         SearchMonitoredResourceAssociationsResponse.Builder::opcTotalItems)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1792,6 +1792,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.MonitoredResourceMembersCollection
@@ -1807,7 +1808,6 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderInteger(
                         "opc-total-items",
                         SearchMonitoredResourceMembersResponse.Builder::opcTotalItems)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1844,6 +1844,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.MonitoredResourceCollection.class,
@@ -1854,7 +1855,6 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-next-page", SearchMonitoredResourcesResponse.Builder::opcNextPage)
                 .handleResponseHeaderInteger(
                         "opc-total-items", SearchMonitoredResourcesResponse.Builder::opcTotalItems)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1922,13 +1922,13 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateAndPropagateTagsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateAndPropagateTagsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1956,6 +1956,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.BaselineableMetric.class,
@@ -1965,7 +1966,6 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", UpdateBaselineableMetricResponse.Builder::etag)
                 .handleResponseHeaderInteger(
                         "retry-after", UpdateBaselineableMetricResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1989,6 +1989,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.stackmonitoring.model.Config.class,
@@ -1996,7 +1997,6 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", UpdateConfigResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateConfigResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

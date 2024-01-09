@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.auth;
@@ -66,10 +66,6 @@ public class SessionTokenAuthTest {
     }
 
     private void writeToSessionTokenFile(String token) throws IOException {
-        // In case the file does not exist.
-        File tokenFile = new File(TOKEN_FILE_PATH);
-        tokenFile.createNewFile();
-
         // Write to & close file.
         FileWriter writer = new FileWriter(TOKEN_FILE_PATH);
         writer.write(token);

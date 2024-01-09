@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apigateway;
@@ -229,6 +229,7 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.apigateway.model.Api.class, CreateApiResponse.Builder::api)
@@ -238,7 +239,6 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString(
                         "opc-request-id", CreateApiResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("location", CreateApiResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -257,6 +257,7 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.apigateway.model.Certificate.class,
@@ -267,7 +268,6 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateCertificateResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString("location", CreateCertificateResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -288,6 +288,7 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.apigateway.model.Sdk.class, CreateSdkResponse.Builder::sdk)
@@ -297,7 +298,6 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString(
                         "opc-request-id", CreateSdkResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("location", CreateSdkResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -397,10 +397,10 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getApiId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(com.oracle.bmc.apigateway.model.Api.class, GetApiResponse.Builder::api)
                 .handleResponseHeaderString("etag", GetApiResponse.Builder::etag)
                 .handleResponseHeaderString("opc-request-id", GetApiResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -425,13 +425,13 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("range", request.getRange())
+                .operationUsesDefaultRetries()
                 .handleBody(java.io.InputStream.class, GetApiContentResponse.Builder::inputStream)
                 .handleResponseHeaderString("etag", GetApiContentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetApiContentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "x-content-sha256", GetApiContentResponse.Builder::xContentSha256)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -456,6 +456,7 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.apigateway.model.ApiSpecification.class,
                         GetApiDeploymentSpecificationResponse.Builder::apiSpecification)
@@ -464,7 +465,6 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetApiDeploymentSpecificationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -488,13 +488,13 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.apigateway.model.ApiValidations.class,
                         GetApiValidationsResponse.Builder::apiValidations)
                 .handleResponseHeaderString("etag", GetApiValidationsResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetApiValidationsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -516,13 +516,13 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getCertificateId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.apigateway.model.Certificate.class,
                         GetCertificateResponse.Builder::certificate)
                 .handleResponseHeaderString("etag", GetCertificateResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetCertificateResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -544,10 +544,10 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getSdkId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(com.oracle.bmc.apigateway.model.Sdk.class, GetSdkResponse.Builder::sdk)
                 .handleResponseHeaderString("etag", GetSdkResponse.Builder::etag)
                 .handleResponseHeaderString("opc-request-id", GetSdkResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -574,6 +574,7 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.apigateway.model.ApiCollection.class,
                         ListApisResponse.Builder::apiCollection)
@@ -581,7 +582,6 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", ListApisResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("opc-next-page", ListApisResponse.Builder::opcNextPage)
                 .handleResponseHeaderString("opc-prev-page", ListApisResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -608,6 +608,7 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.apigateway.model.CertificateCollection.class,
                         ListCertificatesResponse.Builder::certificateCollection)
@@ -617,7 +618,6 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-next-page", ListCertificatesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListCertificatesResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -643,6 +643,7 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.apigateway.model.SdkLanguageTypeCollection.class,
                         ListSdkLanguageTypesResponse.Builder::sdkLanguageTypeCollection)
@@ -652,7 +653,6 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-next-page", ListSdkLanguageTypesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListSdkLanguageTypesResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -679,6 +679,7 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendQueryParam("apiId", request.getApiId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.apigateway.model.SdkCollection.class,
                         ListSdksResponse.Builder::sdkCollection)
@@ -686,7 +687,6 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", ListSdksResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("opc-next-page", ListSdksResponse.Builder::opcNextPage)
                 .handleResponseHeaderString("opc-prev-page", ListSdksResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.psql;
@@ -148,13 +148,13 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeBackupCompartmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeBackupCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -184,11 +184,11 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeConfigurationCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -218,13 +218,13 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeDbSystemCompartmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeDbSystemCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -245,12 +245,12 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateBackupResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateBackupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -272,6 +272,7 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.psql.model.Configuration.class,
@@ -279,7 +280,6 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString(
                         "opc-request-id", CreateConfigurationResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateConfigurationResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -301,6 +301,7 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.psql.model.DbSystem.class,
@@ -310,7 +311,6 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-work-request-id", CreateDbSystemResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDbSystemResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -333,11 +333,11 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteBackupResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteBackupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -360,9 +360,9 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteConfigurationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -385,11 +385,11 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteDbSystemResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDbSystemResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -417,12 +417,12 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", FailoverDbSystemResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", FailoverDbSystemResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -444,12 +444,12 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getBackupId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.psql.model.Backup.class, GetBackupResponse.Builder::backup)
                 .handleResponseHeaderString("etag", GetBackupResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetBackupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -471,13 +471,13 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getConfigurationId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.psql.model.Configuration.class,
                         GetConfigurationResponse.Builder::configuration)
                 .handleResponseHeaderString("etag", GetConfigurationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetConfigurationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -500,13 +500,13 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam("connectionDetails")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.psql.model.ConnectionDetails.class,
                         GetConnectionDetailsResponse.Builder::connectionDetails)
                 .handleResponseHeaderString("etag", GetConnectionDetailsResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetConnectionDetailsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -532,13 +532,13 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.psql.model.DbSystem.class,
                         GetDbSystemResponse.Builder::dbSystem)
                 .handleResponseHeaderString("etag", GetDbSystemResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDbSystemResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -562,13 +562,13 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getDefaultConfigurationId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.psql.model.DefaultConfiguration.class,
                         GetDefaultConfigurationResponse.Builder::defaultConfiguration)
                 .handleResponseHeaderString("etag", GetDefaultConfigurationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDefaultConfigurationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -591,13 +591,13 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam("primaryDbInstance")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.psql.model.PrimaryDbInstanceDetails.class,
                         GetPrimaryDbInstanceResponse.Builder::primaryDbInstanceDetails)
                 .handleResponseHeaderString("etag", GetPrimaryDbInstanceResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetPrimaryDbInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -619,6 +619,7 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.psql.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -627,7 +628,6 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -657,6 +657,7 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.psql.model.BackupCollection.class,
                         ListBackupsResponse.Builder::backupCollection)
@@ -664,7 +665,6 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", ListBackupsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListBackupsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -693,6 +693,7 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.psql.model.ConfigurationCollection.class,
                         ListConfigurationsResponse.Builder::configurationCollection)
@@ -700,7 +701,6 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", ListConfigurationsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListConfigurationsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -727,6 +727,7 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.psql.model.DbSystemCollection.class,
                         ListDbSystemsResponse.Builder::dbSystemCollection)
@@ -734,7 +735,6 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", ListDbSystemsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDbSystemsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -763,6 +763,7 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.psql.model.DefaultConfigurationCollection.class,
                         ListDefaultConfigurationsResponse.Builder::defaultConfigurationCollection)
@@ -770,7 +771,6 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", ListDefaultConfigurationsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDefaultConfigurationsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -795,6 +795,7 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.psql.model.ShapeCollection.class,
                         ListShapesResponse.Builder::shapeCollection)
@@ -802,7 +803,6 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", ListShapesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListShapesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -830,6 +830,7 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.psql.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -837,7 +838,6 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -864,6 +864,7 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.psql.model.WorkRequestLogEntryCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
@@ -871,7 +872,6 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -898,6 +898,7 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.psql.model.WorkRequestSummaryCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestSummaryCollection)
@@ -905,7 +906,6 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -930,12 +930,12 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", PatchDbSystemResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", PatchDbSystemResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -965,13 +965,13 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ResetMasterUserPasswordResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ResetMasterUserPasswordResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1001,13 +1001,13 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RestartDbInstanceInDbSystemResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RestartDbInstanceInDbSystemResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1035,12 +1035,12 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", RestoreDbSystemResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RestoreDbSystemResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1064,6 +1064,7 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.psql.model.Backup.class,
@@ -1071,7 +1072,6 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString("etag", UpdateBackupResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateBackupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1097,6 +1097,7 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.psql.model.Configuration.class,
@@ -1104,7 +1105,6 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateConfigurationResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateConfigurationResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1130,12 +1130,12 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateDbSystemResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDbSystemResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1167,13 +1167,13 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateDbSystemDbInstanceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDbSystemDbInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

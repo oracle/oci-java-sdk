@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identity;
@@ -144,11 +144,11 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", ActivateDomainResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", ActivateDomainResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -179,6 +179,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.MfaTotpDeviceSummary.class,
@@ -186,7 +187,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", ActivateMfaTotpDeviceResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", ActivateMfaTotpDeviceResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -213,6 +213,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.TagDefault.class,
@@ -220,7 +221,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", AddTagDefaultLockResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", AddTagDefaultLockResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -247,6 +247,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.TagNamespace.class,
@@ -254,7 +255,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", AddTagNamespaceLockResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", AddTagNamespaceLockResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -275,6 +275,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("userGroupMemberships")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.UserGroupMembership.class,
@@ -282,7 +283,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", AddUserToGroupResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", AddUserToGroupResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -306,6 +306,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.TagDefaultSummary.class,
                         AssembleEffectiveTagSetResponse.Builder::items)
@@ -313,7 +314,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", AssembleEffectiveTagSetResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", AssembleEffectiveTagSetResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -340,13 +340,13 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", BulkDeleteResourcesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         BulkDeleteResourcesResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -371,12 +371,12 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", BulkDeleteTagsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", BulkDeleteTagsResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -398,12 +398,12 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", BulkEditTagsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", BulkEditTagsResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -430,12 +430,12 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", BulkMoveResourcesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", BulkMoveResourcesResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -463,12 +463,12 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", CascadeDeleteTagNamespaceResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CascadeDeleteTagNamespaceResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -498,13 +498,13 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeDomainCompartmentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeDomainCompartmentResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -534,13 +534,13 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeDomainLicenseTypeResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeDomainLicenseTypeResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -569,11 +569,11 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeTagNamespaceCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -598,6 +598,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("authTokens")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.AuthToken.class,
@@ -605,7 +606,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", CreateAuthTokenResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateAuthTokenResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -626,6 +626,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("compartments")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.Compartment.class,
@@ -633,7 +634,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", CreateCompartmentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateCompartmentResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -660,6 +660,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("customerSecretKeys")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.CustomerSecretKey.class,
@@ -667,7 +668,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", CreateCustomerSecretKeyResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateCustomerSecretKeyResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -693,6 +693,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.DbCredential.class,
@@ -700,7 +701,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDbCredentialResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateDbCredentialResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -721,12 +721,12 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDomainResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateDomainResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -747,6 +747,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("dynamicGroups")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.DynamicGroup.class,
@@ -754,7 +755,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDynamicGroupResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateDynamicGroupResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -774,6 +774,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("groups")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.Group.class,
@@ -781,7 +782,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", CreateGroupResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateGroupResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -804,6 +804,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("identityProviders")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.IdentityProvider.class,
@@ -811,7 +812,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", CreateIdentityProviderResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateIdentityProviderResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -838,6 +838,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("groupMappings")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.IdpGroupMapping.class,
@@ -845,7 +846,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", CreateIdpGroupMappingResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateIdpGroupMappingResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -868,13 +868,13 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("mfaTotpDevices")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.identity.model.MfaTotpDevice.class,
                         CreateMfaTotpDeviceResponse.Builder::mfaTotpDevice)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateMfaTotpDeviceResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateMfaTotpDeviceResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -895,6 +895,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("networkSources")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.NetworkSources.class,
@@ -902,7 +903,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", CreateNetworkSourceResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateNetworkSourceResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -929,6 +929,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("oauth2ClientCredentials")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.OAuth2ClientCredential.class,
@@ -937,7 +938,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", CreateOAuthClientCredentialResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", CreateOAuthClientCredentialResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -961,13 +961,13 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("uiPassword")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.identity.model.UIPassword.class,
                         CreateOrResetUIPasswordResponse.Builder::uIPassword)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateOrResetUIPasswordResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateOrResetUIPasswordResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -987,6 +987,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("policies")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.Policy.class,
@@ -994,7 +995,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", CreatePolicyResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreatePolicyResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1021,13 +1021,13 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("regionSubscriptions")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.RegionSubscription.class,
                         CreateRegionSubscriptionResponse.Builder::regionSubscription)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateRegionSubscriptionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1053,6 +1053,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("smtpCredentials")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.SmtpCredential.class,
@@ -1060,7 +1061,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", CreateSmtpCredentialResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateSmtpCredentialResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1085,6 +1085,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("swiftPasswords")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.SwiftPassword.class,
@@ -1092,7 +1093,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", CreateSwiftPasswordResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateSwiftPasswordResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1117,12 +1117,12 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(com.oracle.bmc.identity.model.Tag.class, CreateTagResponse.Builder::tag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateTagResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateTagResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1144,6 +1144,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.TagDefault.class,
@@ -1151,7 +1152,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", CreateTagDefaultResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateTagDefaultResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1172,13 +1172,13 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("tagNamespaces")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.TagNamespace.class,
                         CreateTagNamespaceResponse.Builder::tagNamespace)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateTagNamespaceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1198,13 +1198,13 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("users")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.User.class, CreateUserResponse.Builder::user)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateUserResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateUserResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1230,11 +1230,11 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeactivateDomainResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeactivateDomainResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1257,9 +1257,9 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getFingerprint())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteApiKeyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1282,9 +1282,9 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getAuthTokenId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteAuthTokenResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1306,11 +1306,11 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteCompartmentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteCompartmentResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1335,9 +1335,9 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getCustomerSecretKeyId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteCustomerSecretKeyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1364,9 +1364,9 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDbCredentialResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1389,11 +1389,11 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDomainResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteDomainResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1412,9 +1412,9 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getDynamicGroupId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDynamicGroupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1433,9 +1433,9 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getGroupId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteGroupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1455,9 +1455,9 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getIdentityProviderId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteIdentityProviderResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1481,9 +1481,9 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getMappingId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteIdpGroupMappingResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1509,9 +1509,9 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getMfaTotpDeviceId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteMfaTotpDeviceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1533,9 +1533,9 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getNetworkSourceId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteNetworkSourceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1564,9 +1564,9 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getOauth2ClientCredentialId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteOAuthClientCredentialResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1585,9 +1585,9 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getPolicyId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeletePolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1610,9 +1610,9 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getSmtpCredentialId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteSmtpCredentialResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1635,9 +1635,9 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getSwiftPasswordId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteSwiftPasswordResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1664,11 +1664,11 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteTagResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteTagResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1692,9 +1692,9 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteTagDefaultResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1718,9 +1718,9 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteTagNamespaceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1739,9 +1739,9 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getUserId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteUserResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1771,13 +1771,13 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", EnableReplicationToRegionResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         EnableReplicationToRegionResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1805,13 +1805,13 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("generateSeed")
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.identity.model.MfaTotpDevice.class,
                         GenerateTotpSeedResponse.Builder::mfaTotpDevice)
                 .handleResponseHeaderString(
                         "opc-request-id", GenerateTotpSeedResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GenerateTotpSeedResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1833,13 +1833,13 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("authenticationPolicies")
                 .appendPathParam(request.getCompartmentId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.identity.model.AuthenticationPolicy.class,
                         GetAuthenticationPolicyResponse.Builder::authenticationPolicy)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAuthenticationPolicyResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetAuthenticationPolicyResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1860,13 +1860,13 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("compartments")
                 .appendPathParam(request.getCompartmentId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.identity.model.Compartment.class,
                         GetCompartmentResponse.Builder::compartment)
                 .handleResponseHeaderString(
                         "opc-request-id", GetCompartmentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetCompartmentResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1888,13 +1888,13 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getDomainId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.identity.model.Domain.class,
                         GetDomainResponse.Builder::domain)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDomainResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetDomainResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1915,13 +1915,13 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("dynamicGroups")
                 .appendPathParam(request.getDynamicGroupId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.identity.model.DynamicGroup.class,
                         GetDynamicGroupResponse.Builder::dynamicGroup)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDynamicGroupResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetDynamicGroupResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1942,12 +1942,12 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("groups")
                 .appendPathParam(request.getGroupId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.identity.model.Group.class, GetGroupResponse.Builder::group)
                 .handleResponseHeaderString(
                         "opc-request-id", GetGroupResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetGroupResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1969,12 +1969,12 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getIamWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.identity.model.IamWorkRequest.class,
                         GetIamWorkRequestResponse.Builder::iamWorkRequest)
                 .handleResponseHeaderString(
                         "opc-request-id", GetIamWorkRequestResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1995,13 +1995,13 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("identityProviders")
                 .appendPathParam(request.getIdentityProviderId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.identity.model.IdentityProvider.class,
                         GetIdentityProviderResponse.Builder::identityProvider)
                 .handleResponseHeaderString(
                         "opc-request-id", GetIdentityProviderResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetIdentityProviderResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2026,13 +2026,13 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("groupMappings")
                 .appendPathParam(request.getMappingId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.identity.model.IdpGroupMapping.class,
                         GetIdpGroupMappingResponse.Builder::idpGroupMapping)
                 .handleResponseHeaderString(
                         "opc-request-id", GetIdpGroupMappingResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetIdpGroupMappingResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2057,13 +2057,13 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("mfaTotpDevices")
                 .appendPathParam(request.getMfaTotpDeviceId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.identity.model.MfaTotpDeviceSummary.class,
                         GetMfaTotpDeviceResponse.Builder::mfaTotpDeviceSummary)
                 .handleResponseHeaderString(
                         "opc-request-id", GetMfaTotpDeviceResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetMfaTotpDeviceResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2084,13 +2084,13 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("networkSources")
                 .appendPathParam(request.getNetworkSourceId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.identity.model.NetworkSources.class,
                         GetNetworkSourceResponse.Builder::networkSources)
                 .handleResponseHeaderString(
                         "opc-request-id", GetNetworkSourceResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetNetworkSourceResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2111,13 +2111,13 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("policies")
                 .appendPathParam(request.getPolicyId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.identity.model.Policy.class,
                         GetPolicyResponse.Builder::policy)
                 .handleResponseHeaderString(
                         "opc-request-id", GetPolicyResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetPolicyResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2144,12 +2144,12 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getStandardTagNamespaceName())
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.identity.model.StandardTagNamespaceTemplate.class,
                         GetStandardTagTemplateResponse.Builder::standardTagNamespaceTemplate)
                 .handleResponseHeaderString(
                         "opc-request-id", GetStandardTagTemplateResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2174,10 +2174,10 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("tags")
                 .appendPathParam(request.getTagName())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(com.oracle.bmc.identity.model.Tag.class, GetTagResponse.Builder::tag)
                 .handleResponseHeaderString("opc-request-id", GetTagResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetTagResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2198,13 +2198,13 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("tagDefaults")
                 .appendPathParam(request.getTagDefaultId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.identity.model.TagDefault.class,
                         GetTagDefaultResponse.Builder::tagDefault)
                 .handleResponseHeaderString(
                         "opc-request-id", GetTagDefaultResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetTagDefaultResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2225,12 +2225,12 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("tagNamespaces")
                 .appendPathParam(request.getTagNamespaceId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.identity.model.TagNamespace.class,
                         GetTagNamespaceResponse.Builder::tagNamespace)
                 .handleResponseHeaderString(
                         "opc-request-id", GetTagNamespaceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2252,6 +2252,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("taggingWorkRequests")
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.identity.model.TaggingWorkRequest.class,
                         GetTaggingWorkRequestResponse.Builder::taggingWorkRequest)
@@ -2259,7 +2260,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", GetTaggingWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderFloat(
                         "retry-after", GetTaggingWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2280,12 +2280,12 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("tenancies")
                 .appendPathParam(request.getTenancyId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.identity.model.Tenancy.class,
                         GetTenancyResponse.Builder::tenancy)
                 .handleResponseHeaderString(
                         "opc-request-id", GetTenancyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2306,10 +2306,10 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("users")
                 .appendPathParam(request.getUserId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(com.oracle.bmc.identity.model.User.class, GetUserResponse.Builder::user)
                 .handleResponseHeaderString("opc-request-id", GetUserResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetUserResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2332,13 +2332,13 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("userGroupMemberships")
                 .appendPathParam(request.getUserGroupMembershipId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.identity.model.UserGroupMembership.class,
                         GetUserGroupMembershipResponse.Builder::userGroupMembership)
                 .handleResponseHeaderString(
                         "opc-request-id", GetUserGroupMembershipResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetUserGroupMembershipResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2361,6 +2361,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getUserId())
                 .appendPathParam("uiPassword")
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.identity.model.UIPasswordInformation.class,
                         GetUserUIPasswordInformationResponse.Builder::uIPasswordInformation)
@@ -2369,7 +2370,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         GetUserUIPasswordInformationResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", GetUserUIPasswordInformationResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2390,6 +2390,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("workRequests")
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.identity.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -2397,7 +2398,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderFloat(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2419,12 +2419,12 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ImportStandardTagsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", ImportStandardTagsResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2445,6 +2445,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("currentLicenseTypeName", request.getCurrentLicenseTypeName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.AllowedDomainLicenseTypeSummary.class,
                         ListAllowedDomainLicenseTypesResponse.Builder::items)
@@ -2453,7 +2454,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         ListAllowedDomainLicenseTypesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAllowedDomainLicenseTypesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2475,6 +2475,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getUserId())
                 .appendPathParam("apiKeys")
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.ApiKey.class,
                         ListApiKeysResponse.Builder::items)
@@ -2482,7 +2483,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListApiKeysResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListApiKeysResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2504,6 +2504,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getUserId())
                 .appendPathParam("authTokens")
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.AuthToken.class,
                         ListAuthTokensResponse.Builder::items)
@@ -2511,7 +2512,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListAuthTokensResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAuthTokensResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2532,6 +2532,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("availabilityDomains")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.AvailabilityDomain.class,
                         ListAvailabilityDomainsResponse.Builder::items)
@@ -2539,7 +2540,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListAvailabilityDomainsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAvailabilityDomainsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2563,6 +2563,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.identity.model.BulkActionResourceTypeCollection.class,
                         ListBulkActionResourceTypesResponse.Builder
@@ -2571,7 +2572,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListBulkActionResourceTypesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListBulkActionResourceTypesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2593,6 +2593,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.identity.model.BulkEditTagsResourceTypeCollection.class,
                         ListBulkEditTagsResourceTypesResponse.Builder
@@ -2602,7 +2603,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         ListBulkEditTagsResourceTypesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListBulkEditTagsResourceTypesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2630,6 +2630,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.Compartment.class,
                         ListCompartmentsResponse.Builder::items)
@@ -2637,7 +2638,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListCompartmentsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListCompartmentsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2661,6 +2661,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.Tag.class,
                         ListCostTrackingTagsResponse.Builder::items)
@@ -2668,7 +2669,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListCostTrackingTagsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListCostTrackingTagsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2691,6 +2691,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getUserId())
                 .appendPathParam("customerSecretKeys")
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.CustomerSecretKeySummary.class,
                         ListCustomerSecretKeysResponse.Builder::items)
@@ -2698,7 +2699,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListCustomerSecretKeysResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListCustomerSecretKeysResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2727,6 +2727,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.DbCredentialSummary.class,
                         ListDbCredentialsResponse.Builder::items)
@@ -2734,7 +2735,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListDbCredentialsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDbCredentialsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2767,6 +2767,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.DomainSummary.class,
                         ListDomainsResponse.Builder::items)
@@ -2774,7 +2775,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListDomainsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDomainsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2800,6 +2800,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.DynamicGroup.class,
                         ListDynamicGroupsResponse.Builder::items)
@@ -2807,7 +2808,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListDynamicGroupsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDynamicGroupsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2830,12 +2830,12 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.FaultDomain.class,
                         ListFaultDomainsResponse.Builder::items)
                 .handleResponseHeaderString(
                         "opc-request-id", ListFaultDomainsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2861,6 +2861,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.Group.class,
                         ListGroupsResponse.Builder::items)
@@ -2868,7 +2869,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListGroupsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListGroupsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2895,6 +2895,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.IamWorkRequestErrorSummary.class,
                         ListIamWorkRequestErrorsResponse.Builder::items)
@@ -2902,7 +2903,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListIamWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListIamWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2929,6 +2929,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.IamWorkRequestLogSummary.class,
                         ListIamWorkRequestLogsResponse.Builder::items)
@@ -2938,7 +2939,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "retry-after", ListIamWorkRequestLogsResponse.Builder::retryAfter)
                 .handleResponseHeaderString(
                         "opc-next-page", ListIamWorkRequestLogsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2962,6 +2962,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("resourceIdentifier", request.getResourceIdentifier())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.IamWorkRequestSummary.class,
                         ListIamWorkRequestsResponse.Builder::items)
@@ -2969,7 +2970,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListIamWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListIamWorkRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2996,6 +2996,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("name", request.getName())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.IdentityProviderGroupSummary.class,
                         ListIdentityProviderGroupsResponse.Builder::items)
@@ -3003,7 +3004,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListIdentityProviderGroupsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListIdentityProviderGroupsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3033,6 +3033,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.IdentityProvider.class,
                         ListIdentityProvidersResponse.Builder::items)
@@ -3040,7 +3041,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListIdentityProvidersResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListIdentityProvidersResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3064,6 +3064,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.IdpGroupMapping.class,
                         ListIdpGroupMappingsResponse.Builder::items)
@@ -3071,7 +3072,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListIdpGroupMappingsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListIdpGroupMappingsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3097,6 +3097,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.MfaTotpDeviceSummary.class,
                         ListMfaTotpDevicesResponse.Builder::items)
@@ -3104,7 +3105,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListMfaTotpDevicesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListMfaTotpDevicesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3130,6 +3130,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.NetworkSourcesSummary.class,
                         ListNetworkSourcesResponse.Builder::items)
@@ -3137,7 +3138,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListNetworkSourcesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListNetworkSourcesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3163,6 +3163,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("limit", request.getLimit())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary.class,
                         ListOAuthClientCredentialsResponse.Builder::items)
@@ -3170,7 +3171,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListOAuthClientCredentialsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListOAuthClientCredentialsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3196,6 +3196,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.Policy.class,
                         ListPoliciesResponse.Builder::items)
@@ -3203,7 +3204,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListPoliciesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListPoliciesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3226,12 +3226,12 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getTenancyId())
                 .appendPathParam("regionSubscriptions")
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.RegionSubscription.class,
                         ListRegionSubscriptionsResponse.Builder::items)
                 .handleResponseHeaderString(
                         "opc-request-id", ListRegionSubscriptionsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3249,12 +3249,12 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .basePath("/20160918")
                 .appendPathParam("regions")
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.Region.class,
                         ListRegionsResponse.Builder::items)
                 .handleResponseHeaderString(
                         "opc-request-id", ListRegionsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3276,6 +3276,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getUserId())
                 .appendPathParam("smtpCredentials")
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.SmtpCredentialSummary.class,
                         ListSmtpCredentialsResponse.Builder::items)
@@ -3283,7 +3284,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListSmtpCredentialsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListSmtpCredentialsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3307,6 +3307,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.StandardTagNamespaceTemplateSummary.class,
                         ListStandardTagNamespacesResponse.Builder::items)
@@ -3314,7 +3315,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListStandardTagNamespacesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListStandardTagNamespacesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3336,6 +3336,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getUserId())
                 .appendPathParam("swiftPasswords")
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.SwiftPassword.class,
                         ListSwiftPasswordsResponse.Builder::items)
@@ -3343,7 +3344,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListSwiftPasswordsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListSwiftPasswordsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3367,6 +3367,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("tagDefinitionId", request.getTagDefinitionId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.TagDefaultSummary.class,
                         ListTagDefaultsResponse.Builder::items)
@@ -3374,7 +3375,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListTagDefaultsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListTagDefaultsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3398,6 +3398,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("includeSubcompartments", request.getIncludeSubcompartments())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.TagNamespaceSummary.class,
                         ListTagNamespacesResponse.Builder::items)
@@ -3405,7 +3406,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListTagNamespacesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListTagNamespacesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3430,6 +3430,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.TaggingWorkRequestErrorSummary.class,
                         ListTaggingWorkRequestErrorsResponse.Builder::items)
@@ -3440,7 +3441,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "retry-after", ListTaggingWorkRequestErrorsResponse.Builder::retryAfter)
                 .handleResponseHeaderString(
                         "opc-next-page", ListTaggingWorkRequestErrorsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3465,6 +3465,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary.class,
                         ListTaggingWorkRequestLogsResponse.Builder::items)
@@ -3474,7 +3475,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "retry-after", ListTaggingWorkRequestLogsResponse.Builder::retryAfter)
                 .handleResponseHeaderString(
                         "opc-next-page", ListTaggingWorkRequestLogsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3498,6 +3498,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("resourceIdentifier", request.getResourceIdentifier())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.TaggingWorkRequestSummary.class,
                         ListTaggingWorkRequestsResponse.Builder::items)
@@ -3505,7 +3506,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListTaggingWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListTaggingWorkRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3530,13 +3530,13 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("limit", request.getLimit())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.TagSummary.class,
                         ListTagsResponse.Builder::items)
                 .handleResponseHeaderString(
                         "opc-request-id", ListTagsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("opc-next-page", ListTagsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3561,6 +3561,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.UserGroupMembership.class,
                         ListUserGroupMembershipsResponse.Builder::items)
@@ -3568,7 +3569,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListUserGroupMembershipsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListUserGroupMembershipsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3596,12 +3596,12 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.User.class, ListUsersResponse.Builder::items)
                 .handleResponseHeaderString(
                         "opc-request-id", ListUsersResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("opc-next-page", ListUsersResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3624,6 +3624,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("resourceIdentifier", request.getResourceIdentifier())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.identity.model.WorkRequestSummary.class,
                         ListWorkRequestsResponse.Builder::items)
@@ -3631,7 +3632,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3659,12 +3659,12 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", MoveCompartmentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", MoveCompartmentResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3689,13 +3689,13 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.identity.model.Compartment.class,
                         RecoverCompartmentResponse.Builder::compartment)
                 .handleResponseHeaderString(
                         "opc-request-id", RecoverCompartmentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", RecoverCompartmentResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3722,6 +3722,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.TagDefault.class,
@@ -3729,7 +3730,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", RemoveTagDefaultLockResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", RemoveTagDefaultLockResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3757,6 +3757,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.TagNamespace.class,
@@ -3764,7 +3765,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", RemoveTagNamespaceLockResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", RemoveTagNamespaceLockResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3787,9 +3787,9 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getUserGroupMembershipId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", RemoveUserFromGroupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3812,12 +3812,12 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("actions")
                 .appendPathParam("resetScimClient")
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.identity.model.ScimClientCredentials.class,
                         ResetIdpScimClientResponse.Builder::scimClientCredentials)
                 .handleResponseHeaderString(
                         "opc-request-id", ResetIdpScimClientResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3845,6 +3845,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getAuthTokenId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.AuthToken.class,
@@ -3852,7 +3853,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateAuthTokenResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateAuthTokenResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3878,6 +3878,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.AuthenticationPolicy.class,
@@ -3886,7 +3887,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", UpdateAuthenticationPolicyResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", UpdateAuthenticationPolicyResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3910,6 +3910,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.Compartment.class,
@@ -3917,7 +3918,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateCompartmentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateCompartmentResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3948,6 +3948,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getCustomerSecretKeyId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.CustomerSecretKeySummary.class,
@@ -3955,7 +3956,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateCustomerSecretKeyResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateCustomerSecretKeyResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3979,12 +3979,12 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDomainResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateDomainResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4008,6 +4008,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getDynamicGroupId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.DynamicGroup.class,
@@ -4015,7 +4016,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDynamicGroupResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateDynamicGroupResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4038,6 +4038,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getGroupId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.Group.class,
@@ -4045,7 +4046,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateGroupResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateGroupResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4071,6 +4071,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getIdentityProviderId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.IdentityProvider.class,
@@ -4078,7 +4079,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateIdentityProviderResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateIdentityProviderResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4108,6 +4108,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getMappingId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.IdpGroupMapping.class,
@@ -4115,7 +4116,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateIdpGroupMappingResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateIdpGroupMappingResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4139,6 +4139,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getNetworkSourceId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.NetworkSources.class,
@@ -4146,7 +4147,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateNetworkSourceResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateNetworkSourceResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4178,6 +4178,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getOauth2ClientCredentialId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.OAuth2ClientCredential.class,
@@ -4186,7 +4187,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", UpdateOAuthClientCredentialResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", UpdateOAuthClientCredentialResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4209,6 +4209,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getPolicyId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.Policy.class,
@@ -4216,7 +4217,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", UpdatePolicyResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdatePolicyResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4245,6 +4245,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getSmtpCredentialId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.SmtpCredentialSummary.class,
@@ -4252,7 +4253,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateSmtpCredentialResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateSmtpCredentialResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4280,6 +4280,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getSwiftPasswordId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.SwiftPassword.class,
@@ -4287,7 +4288,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateSwiftPasswordResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateSwiftPasswordResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4315,12 +4315,12 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(com.oracle.bmc.identity.model.Tag.class, UpdateTagResponse.Builder::tag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateTagResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateTagResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4346,6 +4346,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.TagDefault.class,
@@ -4353,7 +4354,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateTagDefaultResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateTagDefaultResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4377,13 +4377,13 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getTagNamespaceId())
                 .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.TagNamespace.class,
                         UpdateTagNamespaceResponse.Builder::tagNamespace)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateTagNamespaceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4406,13 +4406,13 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getUserId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.User.class, UpdateUserResponse.Builder::user)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateUserResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateUserResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4439,6 +4439,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("capabilities")
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.User.class,
@@ -4446,7 +4447,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateUserCapabilitiesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateUserCapabilitiesResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4470,6 +4470,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("state")
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.User.class,
@@ -4477,7 +4478,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateUserStateResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateUserStateResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4501,6 +4501,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("apiKeys")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.identity.model.ApiKey.class,
@@ -4508,7 +4509,6 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", UploadApiKeyResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UploadApiKeyResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

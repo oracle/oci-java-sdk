@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement;
@@ -325,6 +325,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
@@ -332,7 +333,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeExternalDbSystemCompartmentResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -365,6 +365,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
@@ -374,7 +375,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-work-request-id",
                         ChangeExternalExadataInfrastructureCompartmentResponse.Builder
                                 ::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -559,6 +559,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbSystemConnector.class,
                         CheckExternalDbSystemConnectorConnectionStatusResponse.Builder
@@ -571,7 +572,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "content-location",
                         CheckExternalDbSystemConnectorConnectionStatusResponse.Builder
                                 ::contentLocation)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -600,6 +600,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
                                 .ExternalExadataStorageConnectorStatus.class,
@@ -610,7 +611,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         CheckExternalExadataStorageConnectorResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -736,6 +736,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbSystem.class,
@@ -750,7 +751,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "location", CreateExternalDbSystemResponse.Builder::location)
                 .handleResponseHeaderString(
                         "content-location", CreateExternalDbSystemResponse.Builder::contentLocation)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -774,6 +774,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbSystemConnector.class,
@@ -783,7 +784,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         CreateExternalDbSystemConnectorResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", CreateExternalDbSystemConnectorResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -807,6 +807,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbSystemDiscovery.class,
@@ -824,7 +825,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "content-location",
                         CreateExternalDbSystemDiscoveryResponse.Builder::contentLocation)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -848,6 +848,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalExadataInfrastructure.class,
@@ -858,7 +859,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         CreateExternalExadataInfrastructureResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", CreateExternalExadataInfrastructureResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -882,6 +882,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalExadataStorageConnector
@@ -893,7 +894,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         CreateExternalExadataStorageConnectorResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", CreateExternalExadataStorageConnectorResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1329,13 +1329,13 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DisableExternalDbSystemDatabaseManagementResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DisableExternalDbSystemDatabaseManagementResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1362,13 +1362,13 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DisableExternalDbSystemStackMonitoringResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DisableExternalDbSystemStackMonitoringResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1398,6 +1398,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DisableExternalExadataInfrastructureManagementResponse.Builder
@@ -1406,7 +1407,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-work-request-id",
                         DisableExternalExadataInfrastructureManagementResponse.Builder
                                 ::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1500,6 +1500,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
@@ -1511,7 +1512,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DiscoverExternalExadataInfrastructureResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1672,6 +1672,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
@@ -1679,7 +1680,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         EnableExternalDbSystemDatabaseManagementResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1709,6 +1709,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
@@ -1716,7 +1717,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         EnableExternalDbSystemStackMonitoringResponse.Builder::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1749,6 +1749,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
@@ -1757,7 +1758,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-work-request-id",
                         EnableExternalExadataInfrastructureManagementResponse.Builder
                                 ::opcWorkRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2097,13 +2097,13 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getExternalAsmId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalAsm.class,
                         GetExternalAsmResponse.Builder::externalAsm)
                 .handleResponseHeaderString("etag", GetExternalAsmResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetExternalAsmResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2127,12 +2127,12 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("configuration")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalAsmConfiguration.class,
                         GetExternalAsmConfigurationResponse.Builder::externalAsmConfiguration)
                 .handleResponseHeaderString(
                         "opc-request-id", GetExternalAsmConfigurationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2156,12 +2156,12 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getExternalAsmInstanceId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalAsmInstance.class,
                         GetExternalAsmInstanceResponse.Builder::externalAsmInstance)
                 .handleResponseHeaderString(
                         "opc-request-id", GetExternalAsmInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2183,13 +2183,13 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getExternalClusterId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalCluster.class,
                         GetExternalClusterResponse.Builder::externalCluster)
                 .handleResponseHeaderString("etag", GetExternalClusterResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetExternalClusterResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2214,6 +2214,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getExternalClusterInstanceId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalClusterInstance.class,
                         GetExternalClusterInstanceResponse.Builder::externalClusterInstance)
@@ -2221,7 +2222,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "etag", GetExternalClusterInstanceResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetExternalClusterInstanceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2243,12 +2243,12 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getExternalDbHomeId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbHome.class,
                         GetExternalDbHomeResponse.Builder::externalDbHome)
                 .handleResponseHeaderString(
                         "opc-request-id", GetExternalDbHomeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2270,13 +2270,13 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getExternalDbNodeId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbNode.class,
                         GetExternalDbNodeResponse.Builder::externalDbNode)
                 .handleResponseHeaderString("etag", GetExternalDbNodeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetExternalDbNodeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2298,13 +2298,13 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getExternalDbSystemId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbSystem.class,
                         GetExternalDbSystemResponse.Builder::externalDbSystem)
                 .handleResponseHeaderString("etag", GetExternalDbSystemResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetExternalDbSystemResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2329,6 +2329,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getExternalDbSystemConnectorId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbSystemConnector.class,
                         GetExternalDbSystemConnectorResponse.Builder::externalDbSystemConnector)
@@ -2337,7 +2338,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetExternalDbSystemConnectorResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2362,6 +2362,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getExternalDbSystemDiscoveryId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbSystemDiscovery.class,
                         GetExternalDbSystemDiscoveryResponse.Builder::externalDbSystemDiscovery)
@@ -2370,7 +2371,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetExternalDbSystemDiscoveryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2395,6 +2395,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getExternalExadataInfrastructureId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalExadataInfrastructure.class,
                         GetExternalExadataInfrastructureResponse.Builder
@@ -2404,7 +2405,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         GetExternalExadataInfrastructureResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", GetExternalExadataInfrastructureResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2429,6 +2429,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getExternalExadataStorageConnectorId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalExadataStorageConnector
                                 .class,
@@ -2439,7 +2440,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetExternalExadataStorageConnectorResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2464,6 +2464,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getExternalExadataStorageGridId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalExadataStorageGrid.class,
                         GetExternalExadataStorageGridResponse.Builder::externalExadataStorageGrid)
@@ -2472,7 +2473,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetExternalExadataStorageGridResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2497,6 +2497,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getExternalExadataStorageServerId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalExadataStorageServer.class,
                         GetExternalExadataStorageServerResponse.Builder
@@ -2506,7 +2507,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetExternalExadataStorageServerResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2528,13 +2528,13 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getExternalListenerId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalListener.class,
                         GetExternalListenerResponse.Builder::externalListener)
                 .handleResponseHeaderString("etag", GetExternalListenerResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetExternalListenerResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2559,12 +2559,12 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("iormPlan")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.IormPlan.class,
                         GetIormPlanResponse.Builder::iormPlan)
                 .handleResponseHeaderString(
                         "opc-request-id", GetIormPlanResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2723,12 +2723,12 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("openAlertHistory")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.OpenAlertHistory.class,
                         GetOpenAlertHistoryResponse.Builder::openAlertHistory)
                 .handleResponseHeaderString(
                         "opc-request-id", GetOpenAlertHistoryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2928,12 +2928,12 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getPlanName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlPlanBaseline.class,
                         GetSqlPlanBaselineResponse.Builder::sqlPlanBaseline)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSqlPlanBaselineResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2957,6 +2957,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("sqlPlanBaselineConfiguration")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlPlanBaselineConfiguration.class,
                         GetSqlPlanBaselineConfigurationResponse.Builder
@@ -2964,7 +2965,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetSqlPlanBaselineConfigurationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3019,12 +3019,12 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("topSqlCpuActivity")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.TopSqlCpuActivity.class,
                         GetTopSqlCpuActivityResponse.Builder::topSqlCpuActivity)
                 .handleResponseHeaderString(
                         "opc-request-id", GetTopSqlCpuActivityResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3347,6 +3347,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.CursorCacheStatementCollection
                                 .class,
@@ -3355,7 +3356,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListCursorCacheStatementsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListCursorCacheStatementsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3495,6 +3495,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalAsmDiskGroupCollection
                                 .class,
@@ -3503,7 +3504,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListExternalAsmDiskGroupsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExternalAsmDiskGroupsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3530,6 +3530,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalAsmInstanceCollection.class,
                         ListExternalAsmInstancesResponse.Builder::externalAsmInstanceCollection)
@@ -3537,7 +3538,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListExternalAsmInstancesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExternalAsmInstancesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3564,6 +3564,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalAsmUserCollection.class,
                         ListExternalAsmUsersResponse.Builder::externalAsmUserCollection)
@@ -3571,7 +3572,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListExternalAsmUsersResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExternalAsmUsersResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3597,6 +3597,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalAsmCollection.class,
                         ListExternalAsmsResponse.Builder::externalAsmCollection)
@@ -3604,7 +3605,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListExternalAsmsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExternalAsmsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3631,6 +3631,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalClusterInstanceCollection
                                 .class,
@@ -3641,7 +3642,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         ListExternalClusterInstancesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExternalClusterInstancesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3667,6 +3667,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalClusterCollection.class,
                         ListExternalClustersResponse.Builder::externalClusterCollection)
@@ -3674,7 +3675,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListExternalClustersResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExternalClustersResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3701,6 +3701,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDatabaseCollection.class,
                         ListExternalDatabasesResponse.Builder::externalDatabaseCollection)
@@ -3708,7 +3709,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListExternalDatabasesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExternalDatabasesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3734,6 +3734,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbHomeCollection.class,
                         ListExternalDbHomesResponse.Builder::externalDbHomeCollection)
@@ -3741,7 +3742,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListExternalDbHomesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExternalDbHomesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3767,6 +3767,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbNodeCollection.class,
                         ListExternalDbNodesResponse.Builder::externalDbNodeCollection)
@@ -3774,7 +3775,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListExternalDbNodesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExternalDbNodesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3801,6 +3801,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbSystemConnectorCollection
                                 .class,
@@ -3812,7 +3813,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListExternalDbSystemConnectorsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3839,6 +3839,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbSystemDiscoveryCollection
                                 .class,
@@ -3850,7 +3851,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListExternalDbSystemDiscoveriesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3877,6 +3877,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbSystemCollection.class,
                         ListExternalDbSystemsResponse.Builder::externalDbSystemCollection)
@@ -3884,7 +3885,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListExternalDbSystemsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExternalDbSystemsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3911,6 +3911,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
                                 .ExternalExadataInfrastructureCollection.class,
@@ -3922,7 +3923,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListExternalExadataInfrastructuresResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3956,6 +3956,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
                                 .ExternalExadataStorageConnectorCollection.class,
@@ -3967,7 +3968,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListExternalExadataStorageConnectorsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4001,6 +4001,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
                                 .ExternalExadataStorageServerCollection.class,
@@ -4012,7 +4013,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListExternalExadataStorageServersResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4042,6 +4042,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalListenerServiceCollection
                                 .class,
@@ -4052,7 +4053,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         ListExternalListenerServicesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExternalListenerServicesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4079,6 +4079,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalListenerCollection.class,
                         ListExternalListenersResponse.Builder::externalListenerCollection)
@@ -4086,7 +4087,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListExternalListenersResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExternalListenersResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4602,6 +4602,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlPlanBaselineJobCollection.class,
                         ListSqlPlanBaselineJobsResponse.Builder::sqlPlanBaselineJobCollection)
@@ -4609,7 +4610,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListSqlPlanBaselineJobsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListSqlPlanBaselineJobsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4645,6 +4645,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlPlanBaselineCollection.class,
                         ListSqlPlanBaselinesResponse.Builder::sqlPlanBaselineCollection)
@@ -4652,7 +4653,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListSqlPlanBaselinesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListSqlPlanBaselinesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5642,6 +5642,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.MetricsAggregationRangeCollection
                                 .class,
@@ -5651,7 +5652,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", SummarizeExternalAsmMetricsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeExternalAsmMetricsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5683,6 +5683,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.MetricsAggregationRangeCollection
                                 .class,
@@ -5694,7 +5695,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeExternalClusterMetricsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5726,6 +5726,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.MetricsAggregationRangeCollection
                                 .class,
@@ -5737,7 +5738,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeExternalDbNodeMetricsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5770,6 +5770,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("endTime", request.getEndTime())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.MetricsAggregationRangeCollection
                                 .class,
@@ -5781,7 +5782,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeExternalDbSystemAvailabilityMetricsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5813,6 +5813,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.MetricsAggregationRangeCollection
                                 .class,
@@ -5824,7 +5825,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeExternalListenerMetricsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5897,6 +5897,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("endTime", request.getEndTime())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.MetricsAggregationRangeCollection
                                 .class,
@@ -5908,7 +5909,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeManagedDatabaseAvailabilityMetricsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5933,6 +5933,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlPlanBaselineAggregationCollection
                                 .class,
@@ -5942,7 +5943,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", SummarizeSqlPlanBaselinesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeSqlPlanBaselinesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5968,6 +5968,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlPlanBaselineAggregationCollection
                                 .class,
@@ -5979,7 +5980,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeSqlPlanBaselinesByLastExecutionResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6313,6 +6313,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalExadataInfrastructure.class,
@@ -6323,7 +6324,6 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         UpdateExternalExadataInfrastructureResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", UpdateExternalExadataInfrastructureResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

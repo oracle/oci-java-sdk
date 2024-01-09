@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerengine;
@@ -174,13 +174,13 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ClusterMigrateToNativeVcnResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ClusterMigrateToNativeVcnResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -207,12 +207,12 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CompleteCredentialRotationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CompleteCredentialRotationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -234,12 +234,12 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateClusterResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateClusterResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -263,12 +263,12 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam("content")
                 .accept("application/x-yaml")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         java.io.InputStream.class, CreateKubeconfigResponse.Builder::inputStream)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateKubeconfigResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -290,12 +290,12 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateNodePoolResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateNodePoolResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -319,13 +319,13 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CreateVirtualNodePoolResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateVirtualNodePoolResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -353,6 +353,7 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.containerengine.model.WorkloadMapping.class,
@@ -360,7 +361,6 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", CreateWorkloadMappingResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateWorkloadMappingResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -383,11 +383,11 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteClusterResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteClusterResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -420,11 +420,11 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteNodeResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteNodeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -452,11 +452,11 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteNodePoolResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteNodePoolResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -486,12 +486,12 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteVirtualNodePoolResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteVirtualNodePoolResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -514,9 +514,9 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteWorkRequestResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -544,9 +544,9 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteWorkloadMappingResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -576,11 +576,11 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DisableAddonResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DisableAddonResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -606,13 +606,13 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam(request.getAddonName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.containerengine.model.Addon.class,
                         GetAddonResponse.Builder::addon)
                 .handleResponseHeaderString("etag", GetAddonResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAddonResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -634,13 +634,13 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam(request.getClusterId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.containerengine.model.Cluster.class,
                         GetClusterResponse.Builder::cluster)
                 .handleResponseHeaderString("etag", GetClusterResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetClusterResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -664,6 +664,7 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam("migrateToNativeVcnStatus")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.containerengine.model.ClusterMigrateToNativeVcnStatus.class,
                         GetClusterMigrateToNativeVcnStatusResponse.Builder
@@ -673,7 +674,6 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetClusterMigrateToNativeVcnStatusResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -696,12 +696,12 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.containerengine.model.ClusterOptions.class,
                         GetClusterOptionsResponse.Builder::clusterOptions)
                 .handleResponseHeaderString(
                         "opc-request-id", GetClusterOptionsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -725,6 +725,7 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam("credentialRotationStatus")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.containerengine.model.CredentialRotationStatus.class,
                         GetCredentialRotationStatusResponse.Builder::credentialRotationStatus)
@@ -732,7 +733,6 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                         "etag", GetCredentialRotationStatusResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetCredentialRotationStatusResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -754,13 +754,13 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam(request.getNodePoolId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.containerengine.model.NodePool.class,
                         GetNodePoolResponse.Builder::nodePool)
                 .handleResponseHeaderString("etag", GetNodePoolResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetNodePoolResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -783,12 +783,12 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.containerengine.model.NodePoolOptions.class,
                         GetNodePoolOptionsResponse.Builder::nodePoolOptions)
                 .handleResponseHeaderString(
                         "opc-request-id", GetNodePoolOptionsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -814,13 +814,13 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam(request.getVirtualNodeId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.containerengine.model.VirtualNode.class,
                         GetVirtualNodeResponse.Builder::virtualNode)
                 .handleResponseHeaderString("etag", GetVirtualNodeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetVirtualNodeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -842,13 +842,13 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam(request.getVirtualNodePoolId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.containerengine.model.VirtualNodePool.class,
                         GetVirtualNodePoolResponse.Builder::virtualNodePool)
                 .handleResponseHeaderString("etag", GetVirtualNodePoolResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetVirtualNodePoolResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -870,6 +870,7 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.containerengine.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -878,7 +879,6 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -904,13 +904,13 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam(request.getWorkloadMappingId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.containerengine.model.WorkloadMapping.class,
                         GetWorkloadMappingResponse.Builder::workloadMapping)
                 .handleResponseHeaderString("etag", GetWorkloadMappingResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetWorkloadMappingResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -936,12 +936,12 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", InstallAddonResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", InstallAddonResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -967,6 +967,7 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.containerengine.model.AddonOptionSummary.class,
                         ListAddonOptionsResponse.Builder::items)
@@ -974,7 +975,6 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-next-page", ListAddonOptionsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListAddonOptionsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1001,6 +1001,7 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.containerengine.model.AddonSummary.class,
                         ListAddonsResponse.Builder::items)
@@ -1008,7 +1009,6 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-next-page", ListAddonsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListAddonsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1038,6 +1038,7 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.containerengine.model.ClusterSummary.class,
                         ListClustersResponse.Builder::items)
@@ -1045,7 +1046,6 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-next-page", ListClustersResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListClustersResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1076,6 +1076,7 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.containerengine.model.NodePoolSummary.class,
                         ListNodePoolsResponse.Builder::items)
@@ -1083,7 +1084,6 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-next-page", ListNodePoolsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListNodePoolsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1110,6 +1110,7 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.containerengine.model.PodShapeSummary.class,
                         ListPodShapesResponse.Builder::items)
@@ -1117,7 +1118,6 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-next-page", ListPodShapesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListPodShapesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1148,6 +1148,7 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.containerengine.model.VirtualNodePoolSummary.class,
                         ListVirtualNodePoolsResponse.Builder::items)
@@ -1155,7 +1156,6 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-next-page", ListVirtualNodePoolsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListVirtualNodePoolsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1183,6 +1183,7 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.containerengine.model.VirtualNodeSummary.class,
                         ListVirtualNodesResponse.Builder::items)
@@ -1190,7 +1191,6 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-next-page", ListVirtualNodesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListVirtualNodesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1216,12 +1216,12 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.containerengine.model.WorkRequestError.class,
                         ListWorkRequestErrorsResponse.Builder::items)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1246,12 +1246,12 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.containerengine.model.WorkRequestLogEntry.class,
                         ListWorkRequestLogsResponse.Builder::items)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1283,6 +1283,7 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.containerengine.model.WorkRequestSummary.class,
                         ListWorkRequestsResponse.Builder::items)
@@ -1290,7 +1291,6 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1317,6 +1317,7 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.containerengine.model.WorkloadMappingSummary.class,
                         ListWorkloadMappingsResponse.Builder::items)
@@ -1324,7 +1325,6 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-next-page", ListWorkloadMappingsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkloadMappingsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1354,13 +1354,13 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         StartCredentialRotationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", StartCredentialRotationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1388,12 +1388,12 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateAddonResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateAddonResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1418,12 +1418,12 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateClusterResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateClusterResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1452,13 +1452,13 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateClusterEndpointConfigResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateClusterEndpointConfigResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1488,12 +1488,12 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateNodePoolResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateNodePoolResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1520,13 +1520,13 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateVirtualNodePoolResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateVirtualNodePoolResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1557,6 +1557,7 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.containerengine.model.WorkloadMapping.class,
@@ -1564,7 +1565,6 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", UpdateWorkloadMappingResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateWorkloadMappingResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

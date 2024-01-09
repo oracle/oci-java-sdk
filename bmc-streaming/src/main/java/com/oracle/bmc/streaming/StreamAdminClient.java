@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.streaming;
@@ -147,11 +147,11 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeConnectHarnessCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -180,10 +180,10 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeStreamCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -212,10 +212,10 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeStreamPoolCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -238,6 +238,7 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.streaming.model.ConnectHarness.class,
@@ -245,7 +246,6 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id", CreateConnectHarnessResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateConnectHarnessResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -265,6 +265,7 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam("streams")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.streaming.model.Stream.class,
@@ -272,7 +273,6 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id", CreateStreamResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateStreamResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -294,6 +294,7 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.streaming.model.StreamPool.class,
@@ -301,7 +302,6 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id", CreateStreamPoolResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateStreamPoolResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -324,9 +324,9 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteConnectHarnessResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -349,9 +349,9 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteStreamResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -374,9 +374,9 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteStreamPoolResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -398,13 +398,13 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getConnectHarnessId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.streaming.model.ConnectHarness.class,
                         GetConnectHarnessResponse.Builder::connectHarness)
                 .handleResponseHeaderString(
                         "opc-request-id", GetConnectHarnessResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetConnectHarnessResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -426,13 +426,13 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getStreamId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.streaming.model.Stream.class,
                         GetStreamResponse.Builder::stream)
                 .handleResponseHeaderString(
                         "opc-request-id", GetStreamResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetStreamResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -454,13 +454,13 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getStreamPoolId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.streaming.model.StreamPool.class,
                         GetStreamPoolResponse.Builder::streamPool)
                 .handleResponseHeaderString(
                         "opc-request-id", GetStreamPoolResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetStreamPoolResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -488,6 +488,7 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.streaming.model.ConnectHarnessSummary.class,
                         ListConnectHarnessesResponse.Builder::items)
@@ -497,7 +498,6 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-prev-page", ListConnectHarnessesResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListConnectHarnessesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -525,6 +525,7 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.streaming.model.StreamPoolSummary.class,
                         ListStreamPoolsResponse.Builder::items)
@@ -534,7 +535,6 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-prev-page", ListStreamPoolsResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListStreamPoolsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -562,6 +562,7 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.streaming.model.StreamSummary.class,
                         ListStreamsResponse.Builder::items)
@@ -571,7 +572,6 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-prev-page", ListStreamsResponse.Builder::opcPrevPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListStreamsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -597,6 +597,7 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.streaming.model.ConnectHarness.class,
@@ -604,7 +605,6 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateConnectHarnessResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateConnectHarnessResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -628,6 +628,7 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.streaming.model.Stream.class,
@@ -635,7 +636,6 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateStreamResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateStreamResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -660,6 +660,7 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.streaming.model.StreamPool.class,
@@ -667,7 +668,6 @@ public class StreamAdminClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateStreamPoolResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateStreamPoolResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

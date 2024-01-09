@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.rover;
@@ -148,11 +148,11 @@ public class RoverEntitlementClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeRoverEntitlementCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -176,6 +176,7 @@ public class RoverEntitlementClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.rover.model.RoverEntitlement.class,
@@ -183,7 +184,6 @@ public class RoverEntitlementClient extends com.oracle.bmc.http.internal.BaseSyn
                 .handleResponseHeaderString(
                         "opc-request-id", CreateRoverEntitlementResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateRoverEntitlementResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -208,9 +208,9 @@ public class RoverEntitlementClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteRoverEntitlementResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -235,13 +235,13 @@ public class RoverEntitlementClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.rover.model.RoverEntitlement.class,
                         GetRoverEntitlementResponse.Builder::roverEntitlement)
                 .handleResponseHeaderString(
                         "opc-request-id", GetRoverEntitlementResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetRoverEntitlementResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -270,6 +270,7 @@ public class RoverEntitlementClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.rover.model.RoverEntitlementCollection.class,
                         ListRoverEntitlementsResponse.Builder::roverEntitlementCollection)
@@ -279,7 +280,6 @@ public class RoverEntitlementClient extends com.oracle.bmc.http.internal.BaseSyn
                         "opc-next-page", ListRoverEntitlementsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListRoverEntitlementsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -306,6 +306,7 @@ public class RoverEntitlementClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.rover.model.RoverEntitlement.class,
@@ -313,7 +314,6 @@ public class RoverEntitlementClient extends com.oracle.bmc.http.internal.BaseSyn
                 .handleResponseHeaderString("etag", UpdateRoverEntitlementResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateRoverEntitlementResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.servicemesh;
@@ -141,9 +141,9 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", CancelWorkRequestResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -173,6 +173,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -180,7 +181,6 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeAccessPolicyCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -210,6 +210,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -217,7 +218,6 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeIngressGatewayCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -250,6 +250,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -257,7 +258,6 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeIngressGatewayRouteTableCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -287,13 +287,13 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeMeshCompartmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeMeshCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -324,6 +324,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -331,7 +332,6 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeVirtualDeploymentCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -361,6 +361,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -368,7 +369,6 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeVirtualServiceCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -401,6 +401,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -408,7 +409,6 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeVirtualServiceRouteTableCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -430,6 +430,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.servicemesh.model.AccessPolicy.class,
@@ -441,7 +442,6 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", CreateAccessPolicyResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", CreateAccessPolicyResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -464,6 +464,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.servicemesh.model.IngressGateway.class,
@@ -476,7 +477,6 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", CreateIngressGatewayResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", CreateIngressGatewayResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -500,6 +500,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.servicemesh.model.IngressGatewayRouteTable.class,
@@ -514,7 +515,6 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         CreateIngressGatewayRouteTableResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", CreateIngressGatewayRouteTableResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -535,6 +535,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.servicemesh.model.Mesh.class,
@@ -545,7 +546,6 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id", CreateMeshResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("location", CreateMeshResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -569,6 +569,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.servicemesh.model.VirtualDeployment.class,
@@ -581,7 +582,6 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", CreateVirtualDeploymentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", CreateVirtualDeploymentResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -604,6 +604,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.servicemesh.model.VirtualService.class,
@@ -616,7 +617,6 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", CreateVirtualServiceResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", CreateVirtualServiceResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -640,6 +640,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.servicemesh.model.VirtualServiceRouteTable.class,
@@ -654,7 +655,6 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         CreateVirtualServiceRouteTableResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", CreateVirtualServiceRouteTableResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -677,11 +677,11 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteAccessPolicyResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteAccessPolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -704,12 +704,12 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteIngressGatewayResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteIngressGatewayResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -735,13 +735,13 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteIngressGatewayRouteTableResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteIngressGatewayRouteTableResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -764,11 +764,11 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteMeshResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteMeshResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -793,12 +793,12 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteVirtualDeploymentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteVirtualDeploymentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -821,12 +821,12 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteVirtualServiceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteVirtualServiceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -852,13 +852,13 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteVirtualServiceRouteTableResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteVirtualServiceRouteTableResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -880,13 +880,13 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getAccessPolicyId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicemesh.model.AccessPolicy.class,
                         GetAccessPolicyResponse.Builder::accessPolicy)
                 .handleResponseHeaderString("etag", GetAccessPolicyResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAccessPolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -908,13 +908,13 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getIngressGatewayId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicemesh.model.IngressGateway.class,
                         GetIngressGatewayResponse.Builder::ingressGateway)
                 .handleResponseHeaderString("etag", GetIngressGatewayResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetIngressGatewayResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -939,6 +939,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getIngressGatewayRouteTableId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicemesh.model.IngressGatewayRouteTable.class,
                         GetIngressGatewayRouteTableResponse.Builder::ingressGatewayRouteTable)
@@ -946,7 +947,6 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "etag", GetIngressGatewayRouteTableResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetIngressGatewayRouteTableResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -968,11 +968,11 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getMeshId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicemesh.model.Mesh.class, GetMeshResponse.Builder::mesh)
                 .handleResponseHeaderString("etag", GetMeshResponse.Builder::etag)
                 .handleResponseHeaderString("opc-request-id", GetMeshResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -991,12 +991,12 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam("proxyDetails")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicemesh.model.ProxyDetails.class,
                         GetProxyDetailsResponse.Builder::proxyDetails)
                 .handleResponseHeaderString(
                         "opc-request-id", GetProxyDetailsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1019,13 +1019,13 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getVirtualDeploymentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicemesh.model.VirtualDeployment.class,
                         GetVirtualDeploymentResponse.Builder::virtualDeployment)
                 .handleResponseHeaderString("etag", GetVirtualDeploymentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetVirtualDeploymentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1047,13 +1047,13 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getVirtualServiceId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicemesh.model.VirtualService.class,
                         GetVirtualServiceResponse.Builder::virtualService)
                 .handleResponseHeaderString("etag", GetVirtualServiceResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetVirtualServiceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1078,6 +1078,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getVirtualServiceRouteTableId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicemesh.model.VirtualServiceRouteTable.class,
                         GetVirtualServiceRouteTableResponse.Builder::virtualServiceRouteTable)
@@ -1085,7 +1086,6 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "etag", GetVirtualServiceRouteTableResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetVirtualServiceRouteTableResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1107,6 +1107,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicemesh.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -1115,7 +1116,6 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1144,6 +1144,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicemesh.model.AccessPolicyCollection.class,
                         ListAccessPoliciesResponse.Builder::accessPolicyCollection)
@@ -1151,7 +1152,6 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListAccessPoliciesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAccessPoliciesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1181,6 +1181,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicemesh.model.IngressGatewayRouteTableCollection.class,
                         ListIngressGatewayRouteTablesResponse.Builder
@@ -1190,7 +1191,6 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         ListIngressGatewayRouteTablesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListIngressGatewayRouteTablesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1219,6 +1219,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicemesh.model.IngressGatewayCollection.class,
                         ListIngressGatewaysResponse.Builder::ingressGatewayCollection)
@@ -1226,7 +1227,6 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListIngressGatewaysResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListIngressGatewaysResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1254,6 +1254,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("id", request.getId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicemesh.model.MeshCollection.class,
                         ListMeshesResponse.Builder::meshCollection)
@@ -1261,7 +1262,6 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListMeshesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListMeshesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1291,6 +1291,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicemesh.model.VirtualDeploymentCollection.class,
                         ListVirtualDeploymentsResponse.Builder::virtualDeploymentCollection)
@@ -1298,7 +1299,6 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListVirtualDeploymentsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListVirtualDeploymentsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1328,6 +1328,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicemesh.model.VirtualServiceRouteTableCollection.class,
                         ListVirtualServiceRouteTablesResponse.Builder
@@ -1337,7 +1338,6 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         ListVirtualServiceRouteTablesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListVirtualServiceRouteTablesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1366,6 +1366,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicemesh.model.VirtualServiceCollection.class,
                         ListVirtualServicesResponse.Builder::virtualServiceCollection)
@@ -1373,7 +1374,6 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListVirtualServicesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListVirtualServicesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1401,6 +1401,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicemesh.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -1408,7 +1409,6 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1435,6 +1435,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicemesh.model.WorkRequestLogEntryCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
@@ -1442,7 +1443,6 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1470,6 +1470,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.servicemesh.model.WorkRequestCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestCollection)
@@ -1477,7 +1478,6 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1503,12 +1503,12 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateAccessPolicyResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateAccessPolicyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1535,13 +1535,13 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateIngressGatewayResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateIngressGatewayResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1571,6 +1571,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -1578,7 +1579,6 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateIngressGatewayRouteTableResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1603,12 +1603,12 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateMeshResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateMeshResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1637,13 +1637,13 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateVirtualDeploymentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateVirtualDeploymentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1670,13 +1670,13 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateVirtualServiceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateVirtualServiceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1706,6 +1706,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -1713,7 +1714,6 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateVirtualServiceRouteTableResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

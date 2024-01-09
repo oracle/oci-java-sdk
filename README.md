@@ -55,7 +55,7 @@ There is no HTTP client library configured by default. The OCI Java SDK offers t
 ### GraalVM Native Image Build
 
 OCI Java SDK Jersey HTTP client and Jersey 3 Http client are both ready for GraalVM Native Image. 
-See [bmc-examples/native-gradle-example](bmc-examples/native-gradle-example) and [bmc-examples/native-maven-example](bmc-examples/native-maven-example)
+See [bmc-examples/native-gradle-example](bmc-examples/native-gradle-example) and [bmc-other-examples/native-maven-example](bmc-other-examples/native-maven-example)
 for configuration details for building Native Image executables.
 
 ### Invocation callbacks

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ocvp;
@@ -139,12 +139,12 @@ public class ClusterClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateClusterResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateClusterResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -167,11 +167,11 @@ public class ClusterClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteClusterResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteClusterResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -193,13 +193,13 @@ public class ClusterClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendPathParam(request.getClusterId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.ocvp.model.Cluster.class,
                         GetClusterResponse.Builder::cluster)
                 .handleResponseHeaderString("etag", GetClusterResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetClusterResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -226,6 +226,7 @@ public class ClusterClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.ocvp.model.ClusterCollection.class,
                         ListClustersResponse.Builder::clusterCollection)
@@ -233,7 +234,6 @@ public class ClusterClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                         "opc-request-id", ListClustersResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListClustersResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -258,6 +258,7 @@ public class ClusterClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.ocvp.model.Cluster.class,
@@ -265,7 +266,6 @@ public class ClusterClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString("etag", UpdateClusterResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateClusterResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

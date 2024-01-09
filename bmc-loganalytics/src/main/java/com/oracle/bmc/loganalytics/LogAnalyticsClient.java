@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics;
@@ -179,10 +179,10 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", AddEntityAssociationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -212,10 +212,10 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", AddSourceEventTypesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -250,13 +250,13 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("expect", request.getExpect())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", AppendLookupDataResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", AppendLookupDataResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -325,6 +325,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("basicLabelSortBy", request.getBasicLabelSortBy())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsLabelCollection.class,
@@ -335,7 +336,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", BatchGetBasicInfoResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", BatchGetBasicInfoResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -363,9 +363,9 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", CancelQueryWorkRequestResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -399,11 +399,11 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeIngestTimeRuleCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -438,11 +438,11 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeLogAnalyticsEmBridgeCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -477,11 +477,11 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeLogAnalyticsEntityCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -516,11 +516,11 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeLogAnalyticsLogGroupCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -629,8 +629,8 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString("opc-request-id", CleanResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
+                .handleResponseHeaderString("opc-request-id", CleanResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -657,13 +657,13 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("compareContent")
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.CompareContentResult.class,
                         CompareContentResponse.Builder::compareContentResult)
                 .handleResponseHeaderString(
                         "opc-request-id", CompareContentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -690,6 +690,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.IngestTimeRule.class,
@@ -697,7 +698,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString("etag", CreateIngestTimeRuleResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateIngestTimeRuleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -725,6 +725,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsEmBridge.class,
@@ -733,7 +734,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "etag", CreateLogAnalyticsEmBridgeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateLogAnalyticsEmBridgeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -761,6 +761,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsEntity.class,
@@ -768,7 +769,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString("etag", CreateLogAnalyticsEntityResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateLogAnalyticsEntityResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -796,11 +796,11 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         CreateLogAnalyticsEntityTypeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -828,6 +828,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsLogGroup.class,
@@ -836,7 +837,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "etag", CreateLogAnalyticsLogGroupResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateLogAnalyticsLogGroupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -933,12 +933,12 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteAssociationsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteAssociationsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -966,9 +966,9 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteFieldResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -995,9 +995,9 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteIngestTimeRuleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1025,9 +1025,9 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteLabelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1147,9 +1147,9 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteLogAnalyticsLogGroupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1210,11 +1210,11 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteLookupResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteLookupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1242,9 +1242,9 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteParserResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1271,9 +1271,9 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteScheduledTaskResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1301,9 +1301,9 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteSourceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1430,13 +1430,13 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.Success.class,
                         DisableArchivingResponse.Builder::success)
                 .handleResponseHeaderString(
                         "opc-request-id", DisableArchivingResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", DisableArchivingResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1469,13 +1469,13 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DisableAutoAssociationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DisableAutoAssociationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1505,12 +1505,12 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DisableIngestTimeRuleResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DisableIngestTimeRuleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1542,10 +1542,10 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", DisableSourceEventTypesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1571,13 +1571,13 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.Success.class,
                         EnableArchivingResponse.Builder::success)
                 .handleResponseHeaderString(
                         "opc-request-id", EnableArchivingResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", EnableArchivingResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1610,13 +1610,13 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         EnableAutoAssociationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", EnableAutoAssociationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1645,12 +1645,12 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         EnableIngestTimeRuleResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", EnableIngestTimeRuleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1682,10 +1682,10 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", EnableSourceEventTypesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1716,6 +1716,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.EstimatePurgeDataSizeResult.class,
@@ -1723,7 +1724,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id", EstimatePurgeDataSizeResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", EstimatePurgeDataSizeResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1752,13 +1752,13 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("estimateRecallDataSize")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult.class,
                         EstimateRecallDataSizeResponse.Builder::estimateRecallDataSizeResult)
                 .handleResponseHeaderString(
                         "opc-request-id", EstimateRecallDataSizeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1787,13 +1787,13 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("estimateReleaseDataSize")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.EstimateReleaseDataSizeResult.class,
                         EstimateReleaseDataSizeResponse.Builder::estimateReleaseDataSizeResult)
                 .handleResponseHeaderString(
                         "opc-request-id", EstimateReleaseDataSizeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1818,12 +1818,12 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/octet-stream")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         java.io.InputStream.class, ExportCustomContentResponse.Builder::inputStream)
                 .handleResponseHeaderString(
                         "opc-request-id", ExportCustomContentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1849,12 +1849,12 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("export")
                 .accept("application/octet-stream")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         java.io.InputStream.class, ExportQueryResultResponse.Builder::inputStream)
                 .handleResponseHeaderString(
                         "opc-request-id", ExportQueryResultResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1883,6 +1883,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.ExtractLogFieldResults.class,
@@ -1890,7 +1891,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ExtractStructuredLogFieldPathsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1919,6 +1919,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.ExtractLogHeaderResults.class,
@@ -1926,7 +1927,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ExtractStructuredLogHeaderPathsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1952,12 +1952,12 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("filter")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.FilterOutput.class,
                         FilterResponse.Builder::filterOutput)
                 .handleResponseHeaderString("opc-request-id", FilterResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1983,12 +1983,12 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.AssociationSummaryReport.class,
                         GetAssociationSummaryResponse.Builder::associationSummaryReport)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAssociationSummaryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2014,12 +2014,12 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getCategoryName())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsCategory.class,
                         GetCategoryResponse.Builder::logAnalyticsCategory)
                 .handleResponseHeaderString(
                         "opc-request-id", GetCategoryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2046,12 +2046,12 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.ColumnNameCollection.class,
                         GetColumnNamesResponse.Builder::columnNameCollection)
                 .handleResponseHeaderString(
                         "opc-request-id", GetColumnNamesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2077,12 +2077,12 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsConfigWorkRequest.class,
                         GetConfigWorkRequestResponse.Builder::logAnalyticsConfigWorkRequest)
                 .handleResponseHeaderString(
                         "opc-request-id", GetConfigWorkRequestResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2108,13 +2108,13 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getFieldName())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsField.class,
                         GetFieldResponse.Builder::logAnalyticsField)
                 .handleResponseHeaderString("etag", GetFieldResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetFieldResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2138,12 +2138,12 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("isShowDetail", request.getIsShowDetail())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.FieldSummaryReport.class,
                         GetFieldsSummaryResponse.Builder::fieldSummaryReport)
                 .handleResponseHeaderString(
                         "opc-request-id", GetFieldsSummaryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2169,13 +2169,13 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getIngestTimeRuleId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.IngestTimeRule.class,
                         GetIngestTimeRuleResponse.Builder::ingestTimeRule)
                 .handleResponseHeaderString("etag", GetIngestTimeRuleResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetIngestTimeRuleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2201,13 +2201,13 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getLabelName())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsLabel.class,
                         GetLabelResponse.Builder::logAnalyticsLabel)
                 .handleResponseHeaderString("etag", GetLabelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetLabelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2230,12 +2230,12 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("labelSummary")
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LabelSummaryReport.class,
                         GetLabelSummaryResponse.Builder::labelSummaryReport)
                 .handleResponseHeaderString(
                         "opc-request-id", GetLabelSummaryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2427,13 +2427,13 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getLogAnalyticsLogGroupId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsLogGroup.class,
                         GetLogAnalyticsLogGroupResponse.Builder::logAnalyticsLogGroup)
                 .handleResponseHeaderString("etag", GetLogAnalyticsLogGroupResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetLogAnalyticsLogGroupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2459,13 +2459,13 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogGroupSummaryReport.class,
                         GetLogAnalyticsLogGroupsSummaryResponse.Builder::logGroupSummaryReport)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetLogAnalyticsLogGroupsSummaryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2494,6 +2494,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getLogAnalyticsObjectCollectionRuleId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsObjectCollectionRule.class,
                         GetLogAnalyticsObjectCollectionRuleResponse.Builder
@@ -2503,7 +2504,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetLogAnalyticsObjectCollectionRuleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2527,12 +2527,12 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("logSetsCount")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogSetsCount.class,
                         GetLogSetsCountResponse.Builder::logSetsCount)
                 .handleResponseHeaderString(
                         "opc-request-id", GetLogSetsCountResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2558,13 +2558,13 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getLookupName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsLookup.class,
                         GetLookupResponse.Builder::logAnalyticsLookup)
                 .handleResponseHeaderString("etag", GetLookupResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetLookupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2587,12 +2587,12 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("lookupSummary")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LookupSummaryReport.class,
                         GetLookupSummaryResponse.Builder::lookupSummaryReport)
                 .handleResponseHeaderString(
                         "opc-request-id", GetLookupSummaryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2614,13 +2614,13 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getNamespaceName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.Namespace.class,
                         GetNamespaceResponse.Builder::namespace)
                 .handleResponseHeaderString(
                         "opc-request-id", GetNamespaceResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetNamespaceResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2646,13 +2646,13 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getParserName())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsParser.class,
                         GetParserResponse.Builder::logAnalyticsParser)
                 .handleResponseHeaderString("etag", GetParserResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetParserResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2675,12 +2675,12 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("parsersSummary")
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.ParserSummaryReport.class,
                         GetParserSummaryResponse.Builder::parserSummaryReport)
                 .handleResponseHeaderString(
                         "opc-request-id", GetParserSummaryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2707,6 +2707,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsPreferenceCollection.class,
                         GetPreferencesResponse.Builder::logAnalyticsPreferenceCollection)
@@ -2716,7 +2717,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", GetPreferencesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", GetPreferencesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2748,6 +2748,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("outputMode", request.getOutputMode())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.QueryAggregation.class,
                         GetQueryResultResponse.Builder::queryAggregation)
@@ -2759,7 +2760,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-prev-page", GetQueryResultResponse.Builder::opcPrevPage)
                 .handleResponseHeaderFloat(
                         "retry-after", GetQueryResultResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2785,6 +2785,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.QueryWorkRequest.class,
                         GetQueryWorkRequestResponse.Builder::queryWorkRequest)
@@ -2793,7 +2794,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString("etag", GetQueryWorkRequestResponse.Builder::etag)
                 .handleResponseHeaderFloat(
                         "retry-after", GetQueryWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2817,12 +2817,12 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("recallCount")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.RecallCount.class,
                         GetRecallCountResponse.Builder::recallCount)
                 .handleResponseHeaderString(
                         "opc-request-id", GetRecallCountResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2848,6 +2848,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("timeDataEnded", request.getTimeDataEnded())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.RecalledDataSize.class,
                         GetRecalledDataSizeResponse.Builder::recalledDataSize)
@@ -2857,7 +2858,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", GetRecalledDataSizeResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", GetRecalledDataSizeResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2882,12 +2882,12 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.RuleSummaryReport.class,
                         GetRulesSummaryResponse.Builder::ruleSummaryReport)
                 .handleResponseHeaderString(
                         "opc-request-id", GetRulesSummaryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2913,13 +2913,13 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getScheduledTaskId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.ScheduledTask.class,
                         GetScheduledTaskResponse.Builder::scheduledTask)
                 .handleResponseHeaderString(
                         "opc-request-id", GetScheduledTaskResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetScheduledTaskResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2947,13 +2947,13 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsSource.class,
                         GetSourceResponse.Builder::logAnalyticsSource)
                 .handleResponseHeaderString("etag", GetSourceResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSourceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2976,12 +2976,12 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("sourceSummary")
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.SourceSummaryReport.class,
                         GetSourceSummaryResponse.Builder::sourceSummaryReport)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSourceSummaryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3004,13 +3004,13 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("storage")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.Storage.class,
                         GetStorageResponse.Builder::storage)
                 .handleResponseHeaderString(
                         "opc-request-id", GetStorageResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetStorageResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3034,12 +3034,12 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("usage")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.StorageUsage.class,
                         GetStorageUsageResponse.Builder::storageUsage)
                 .handleResponseHeaderString(
                         "opc-request-id", GetStorageUsageResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3066,6 +3066,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.StorageWorkRequest.class,
                         GetStorageWorkRequestResponse.Builder::storageWorkRequest)
@@ -3074,7 +3075,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString("etag", GetStorageWorkRequestResponse.Builder::etag)
                 .handleResponseHeaderFloat(
                         "retry-after", GetStorageWorkRequestResponse.Builder::retryAfter)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3098,12 +3098,12 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("unprocessedDataBucket")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.UnprocessedDataBucket.class,
                         GetUnprocessedDataBucketResponse.Builder::unprocessedDataBucket)
                 .handleResponseHeaderString(
                         "opc-request-id", GetUnprocessedDataBucketResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3129,13 +3129,13 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getUploadReference())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.Upload.class,
                         GetUploadResponse.Builder::upload)
                 .handleResponseHeaderString("etag", GetUploadResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetUploadResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3198,6 +3198,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("expect", request.getExpect())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleBody(
@@ -3205,7 +3206,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         ImportCustomContentResponse.Builder::logAnalyticsImportCustomContent)
                 .handleResponseHeaderString(
                         "opc-request-id", ImportCustomContentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3241,6 +3241,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.AssociableEntityCollection.class,
                         ListAssociableEntitiesResponse.Builder::associableEntityCollection)
@@ -3250,7 +3251,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListAssociableEntitiesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListAssociableEntitiesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3283,6 +3283,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsAssociatedEntityCollection
                                 .class,
@@ -3294,7 +3295,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListAssociatedEntitiesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListAssociatedEntitiesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3325,6 +3325,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.AutoAssociationCollection.class,
                         ListAutoAssociationsResponse.Builder::autoAssociationCollection)
@@ -3334,7 +3335,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListAutoAssociationsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListAutoAssociationsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3364,6 +3364,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("name", request.getName())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsCategoryCollection.class,
                         ListCategoriesResponse.Builder::logAnalyticsCategoryCollection)
@@ -3373,7 +3374,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListCategoriesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListCategoriesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3402,6 +3402,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json;charset=UTF-8")
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsConfigWorkRequestCollection
                                 .class,
@@ -3413,7 +3414,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListConfigWorkRequestsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListConfigWorkRequestsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3447,6 +3447,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.EffectivePropertyCollection.class,
                         ListEffectivePropertiesResponse.Builder::effectivePropertyCollection)
@@ -3456,7 +3457,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListEffectivePropertiesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListEffectivePropertiesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3481,12 +3481,12 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("encryptionKeyInfo")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.EncryptionKeyInfoCollection.class,
                         ListEncryptionKeyInfoResponse.Builder::encryptionKeyInfoCollection)
                 .handleResponseHeaderString(
                         "opc-request-id", ListEncryptionKeyInfoResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3562,6 +3562,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsAssociationCollection.class,
                         ListEntitySourceAssociationsResponse.Builder
@@ -3573,7 +3574,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ListEntitySourceAssociationsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3608,6 +3608,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsFieldCollection.class,
                         ListFieldsResponse.Builder::logAnalyticsFieldCollection)
@@ -3617,7 +3618,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListFieldsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListFieldsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3651,6 +3651,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.IngestTimeRuleSummaryCollection.class,
                         ListIngestTimeRulesResponse.Builder::ingestTimeRuleSummaryCollection)
@@ -3660,7 +3661,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListIngestTimeRulesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListIngestTimeRulesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3685,6 +3685,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LabelPriorityCollection.class,
                         ListLabelPrioritiesResponse.Builder::labelPriorityCollection)
@@ -3694,7 +3695,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListLabelPrioritiesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListLabelPrioritiesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3723,6 +3723,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("labelSourceSortBy", request.getLabelSourceSortBy())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LabelSourceCollection.class,
                         ListLabelSourceDetailsResponse.Builder::labelSourceCollection)
@@ -3732,7 +3733,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListLabelSourceDetailsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListLabelSourceDetailsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3765,6 +3765,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("labelSortBy", request.getLabelSortBy())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsLabelCollection.class,
                         ListLabelsResponse.Builder::logAnalyticsLabelCollection)
@@ -3774,7 +3775,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListLabelsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListLabelsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3989,6 +3989,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsLogGroupSummaryCollection
                                 .class,
@@ -4000,7 +4001,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListLogAnalyticsLogGroupsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListLogAnalyticsLogGroupsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4032,6 +4032,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsObjectCollectionRuleCollection
                                 .class,
@@ -4043,7 +4044,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListLogAnalyticsObjectCollectionRulesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4074,6 +4074,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogSetCollection.class,
                         ListLogSetsResponse.Builder::logSetCollection)
@@ -4081,7 +4082,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListLogSetsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListLogSetsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4115,6 +4115,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsLookupCollection.class,
                         ListLookupsResponse.Builder::logAnalyticsLookupCollection)
@@ -4124,7 +4125,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListLookupsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListLookupsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4151,6 +4151,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsMetaSourceTypeCollection
                                 .class,
@@ -4161,7 +4162,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListMetaSourceTypesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListMetaSourceTypesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4182,12 +4182,12 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.NamespaceCollection.class,
                         ListNamespacesResponse.Builder::namespaceCollection)
                 .handleResponseHeaderString(
                         "opc-request-id", ListNamespacesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4218,6 +4218,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("timeDataEnded", request.getTimeDataEnded())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.OverlappingRecallCollection.class,
                         ListOverlappingRecallsResponse.Builder::overlappingRecallCollection)
@@ -4227,7 +4228,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListOverlappingRecallsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListOverlappingRecallsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4255,6 +4255,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsParserFunctionCollection
                                 .class,
@@ -4265,7 +4266,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListParserFunctionsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListParserFunctionsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4293,6 +4293,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsParserMetaPluginCollection
                                 .class,
@@ -4304,7 +4305,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListParserMetaPluginsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListParserMetaPluginsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4338,6 +4338,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsParserCollection.class,
                         ListParsersResponse.Builder::logAnalyticsParserCollection)
@@ -4347,7 +4348,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListParsersResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListParsersResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4379,6 +4379,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.PropertyMetadataSummaryCollection.class,
                         ListPropertiesMetadataResponse.Builder::propertyMetadataSummaryCollection)
@@ -4388,7 +4389,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListPropertiesMetadataResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListPropertiesMetadataResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4419,6 +4419,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.QueryWorkRequestCollection.class,
                         ListQueryWorkRequestsResponse.Builder::queryWorkRequestCollection)
@@ -4428,7 +4429,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListQueryWorkRequestsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListQueryWorkRequestsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4460,6 +4460,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("timeDataEndedLessThan", request.getTimeDataEndedLessThan())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.RecalledDataCollection.class,
                         ListRecalledDataResponse.Builder::recalledDataCollection)
@@ -4469,7 +4470,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListRecalledDataResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListRecalledDataResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4501,6 +4501,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsResourceCategoryCollection
                                 .class,
@@ -4512,7 +4513,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListResourceCategoriesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListResourceCategoriesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4544,6 +4544,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.RuleSummaryCollection.class,
                         ListRulesResponse.Builder::ruleSummaryCollection)
@@ -4551,7 +4552,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id", ListRulesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("opc-next-page", ListRulesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4586,6 +4586,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("displayNameContains", request.getDisplayNameContains())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.ScheduledTaskCollection.class,
                         ListScheduledTasksResponse.Builder::scheduledTaskCollection)
@@ -4595,7 +4596,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListScheduledTasksResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListScheduledTasksResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4631,6 +4631,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsAssociationCollection.class,
                         ListSourceAssociationsResponse.Builder::logAnalyticsAssociationCollection)
@@ -4640,7 +4641,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListSourceAssociationsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListSourceAssociationsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4674,6 +4674,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.EventTypeCollection.class,
                         ListSourceEventTypesResponse.Builder::eventTypeCollection)
@@ -4683,7 +4684,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListSourceEventTypesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListSourceEventTypesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4715,6 +4715,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model
                                 .LogAnalyticsSourceExtendedFieldDefinitionCollection.class,
@@ -4729,7 +4730,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ListSourceExtendedFieldDefinitionsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4757,6 +4757,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsLabelOperatorCollection.class,
                         ListSourceLabelOperatorsResponse.Builder
@@ -4767,7 +4768,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListSourceLabelOperatorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListSourceLabelOperatorsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4795,6 +4795,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsMetaFunctionCollection.class,
                         ListSourceMetaFunctionsResponse.Builder::logAnalyticsMetaFunctionCollection)
@@ -4804,7 +4805,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListSourceMetaFunctionsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListSourceMetaFunctionsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4836,6 +4836,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsSourcePatternCollection.class,
                         ListSourcePatternsResponse.Builder::logAnalyticsSourcePatternCollection)
@@ -4845,7 +4846,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListSourcePatternsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListSourcePatternsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4881,6 +4881,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsSourceCollection.class,
                         ListSourcesResponse.Builder::logAnalyticsSourceCollection)
@@ -4890,7 +4891,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListSourcesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListSourcesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4924,6 +4924,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.WorkRequestErrorCollection.class,
                         ListStorageWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -4934,7 +4935,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListStorageWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListStorageWorkRequestErrorsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -4970,6 +4970,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("policyId", request.getPolicyId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.StorageWorkRequestCollection.class,
                         ListStorageWorkRequestsResponse.Builder::storageWorkRequestCollection)
@@ -4979,7 +4980,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListStorageWorkRequestsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListStorageWorkRequestsResponse.Builder::opcPrevPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5005,6 +5005,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.CharEncodingCollection.class,
                         ListSupportedCharEncodingsResponse.Builder::charEncodingCollection)
@@ -5015,7 +5016,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderLong(
                         "opc-total-items",
                         ListSupportedCharEncodingsResponse.Builder::opcTotalItems)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5041,6 +5041,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.TimezoneCollection.class,
                         ListSupportedTimezonesResponse.Builder::timezoneCollection)
@@ -5050,7 +5051,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListSupportedTimezonesResponse.Builder::opcNextPage)
                 .handleResponseHeaderLong(
                         "opc-total-items", ListSupportedTimezonesResponse.Builder::opcTotalItems)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5086,6 +5086,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.UploadFileCollection.class,
                         ListUploadFilesResponse.Builder::uploadFileCollection)
@@ -5093,7 +5094,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListUploadFilesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListUploadFilesResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5122,6 +5122,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.UploadWarningCollection.class,
                         ListUploadWarningsResponse.Builder::uploadWarningCollection)
@@ -5129,7 +5130,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListUploadWarningsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListUploadWarningsResponse.Builder::opcNextPage)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5159,6 +5159,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("warningsFilter", request.getWarningsFilter())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.UploadCollection.class,
                         ListUploadsResponse.Builder::uploadCollection)
@@ -5168,7 +5169,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListUploadsResponse.Builder::opcNextPage)
                 .handleResponseHeaderLong(
                         "opc-total-items", ListUploadsResponse.Builder::opcTotalItems)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5207,6 +5207,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsWarningCollection.class,
                         ListWarningsResponse.Builder::logAnalyticsWarningCollection)
@@ -5216,7 +5217,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListWarningsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWarningsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5402,13 +5402,13 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("parse")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.ParseQueryOutput.class,
                         ParseQueryResponse.Builder::parseQueryOutput)
                 .handleResponseHeaderString(
                         "opc-request-id", ParseQueryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5437,13 +5437,13 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.ScheduledTask.class,
                         PauseScheduledTaskResponse.Builder::scheduledTask)
                 .handleResponseHeaderString(
                         "opc-request-id", PauseScheduledTaskResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", PauseScheduledTaskResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5542,6 +5542,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.QueryAggregation.class,
@@ -5554,7 +5555,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-work-request-id", QueryResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString("location", QueryResponse.Builder::location)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5630,6 +5630,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("expect", request.getExpect())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleBody(
@@ -5638,7 +5639,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString("etag", RegisterLookupResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", RegisterLookupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5709,10 +5709,10 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", RemoveEntityAssociationsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5740,10 +5740,10 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", RemovePreferencesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5772,10 +5772,10 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("removeResourceCategories")
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", RemoveResourceCategoriesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5807,10 +5807,10 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", RemoveSourceEventTypesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5839,13 +5839,13 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.ScheduledTask.class,
                         ResumeScheduledTaskResponse.Builder::scheduledTask)
                 .handleResponseHeaderString(
                         "opc-request-id", ResumeScheduledTaskResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", ResumeScheduledTaskResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5934,12 +5934,12 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("suggest")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.SuggestOutput.class,
                         SuggestResponse.Builder::suggestOutput)
                 .handleResponseHeaderString("opc-request-id", SuggestResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -5970,10 +5970,10 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", SuppressWarningResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6003,13 +6003,13 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.ParserTestResult.class,
                         TestParserResponse.Builder::parserTestResult)
                 .handleResponseHeaderString(
                         "opc-request-id", TestParserResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6040,10 +6040,10 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", UnsuppressWarningResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6073,6 +6073,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.IngestTimeRule.class,
@@ -6080,7 +6081,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString("etag", UpdateIngestTimeRuleResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateIngestTimeRuleResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6223,6 +6223,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsLogGroup.class,
@@ -6231,7 +6232,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "etag", UpdateLogAnalyticsLogGroupResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateLogAnalyticsLogGroupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6304,6 +6304,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsLookup.class,
@@ -6311,7 +6312,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString("etag", UpdateLookupResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateLookupResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6346,13 +6346,13 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("expect", request.getExpect())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateLookupDataResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateLookupDataResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6380,10 +6380,10 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", UpdatePreferencesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6412,10 +6412,10 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("updateResourceCategories")
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateResourceCategoriesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6444,6 +6444,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.ScheduledTask.class,
@@ -6451,7 +6452,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateScheduledTaskResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateScheduledTaskResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6477,6 +6477,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.Storage.class,
@@ -6484,7 +6485,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateStorageResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateStorageResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6517,6 +6517,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("content-type", request.getContentType())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("expect", request.getExpect())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleResponseHeaderString(
@@ -6525,7 +6526,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-object-id", UploadDiscoveryDataResponse.Builder::opcObjectId)
                 .handleResponseHeaderDate(
                         "timeCreated", UploadDiscoveryDataResponse.Builder::timeCreated)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6560,6 +6560,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("content-type", request.getContentType())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("expect", request.getExpect())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleResponseHeaderString(
@@ -6568,7 +6569,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-object-id", UploadLogEventsFileResponse.Builder::opcObjectId)
                 .handleResponseHeaderDate(
                         "timeCreated", UploadLogEventsFileResponse.Builder::timeCreated)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6617,6 +6617,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-meta-loggrpid", request.getOpcMetaLoggrpid())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("expect", request.getExpect())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleBody(
@@ -6628,7 +6629,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-content-md5", UploadLogFileResponse.Builder::opcContentMd5)
                 .handleResponseHeaderString(
                         "opc-object-id", UploadLogFileResponse.Builder::opcObjectId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6658,12 +6658,12 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpsertAssociationsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpsertAssociationsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6693,6 +6693,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsField.class,
@@ -6700,7 +6701,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString("etag", UpsertFieldResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpsertFieldResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6730,6 +6730,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsLabel.class,
@@ -6737,7 +6738,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString("etag", UpsertLabelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpsertLabelResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6767,6 +6767,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsParser.class,
@@ -6774,7 +6775,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString("etag", UpsertParserResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpsertParserResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6807,6 +6807,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsSource.class,
@@ -6814,7 +6815,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString("etag", UpsertSourceResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpsertSourceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6848,6 +6848,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.LogAnalyticsAssociationParameterCollection
@@ -6859,7 +6860,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ValidateAssociationParametersResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6886,13 +6886,13 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("validateEndpoint")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.ValidateEndpointResult.class,
                         ValidateEndpointResponse.Builder::validateEndpointResult)
                 .handleResponseHeaderString(
                         "opc-request-id", ValidateEndpointResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6922,12 +6922,12 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("filename", request.getFilename())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.FileValidationResponse.class,
                         ValidateFileResponse.Builder::fileValidationResponse)
                 .handleResponseHeaderString(
                         "opc-request-id", ValidateFileResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6956,13 +6956,13 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("validateLabelCondition")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.ValidateLabelConditionResult.class,
                         ValidateLabelConditionResponse.Builder::validateLabelConditionResult)
                 .handleResponseHeaderString(
                         "opc-request-id", ValidateLabelConditionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -6994,13 +6994,13 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.SourceValidateResults.class,
                         ValidateSourceResponse.Builder::sourceValidateResults)
                 .handleResponseHeaderString(
                         "opc-request-id", ValidateSourceResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7028,6 +7028,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json;charset=UTF-8")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.ExtendedFieldsValidationResult.class,
@@ -7036,7 +7037,6 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ValidateSourceExtendedFieldDetailsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7070,12 +7070,12 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("logSourceName", request.getLogSourceName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.SourceMappingResponse.class,
                         ValidateSourceMappingResponse.Builder::sourceMappingResponse)
                 .handleResponseHeaderString(
                         "opc-request-id", ValidateSourceMappingResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -7105,11 +7105,11 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.loganalytics.model.VerifyOutput.class,
                         VerifyResponse.Builder::verifyOutput)
                 .handleResponseHeaderString("opc-request-id", VerifyResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.artifacts;
@@ -149,11 +149,11 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeContainerRepositoryCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -183,10 +183,10 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeRepositoryCompartmentResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -212,6 +212,7 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.artifacts.model.ContainerImageSignature.class,
@@ -221,7 +222,6 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         CreateContainerImageSignatureResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -246,6 +246,7 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.artifacts.model.ContainerRepository.class,
@@ -253,7 +254,6 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", CreateContainerRepositoryResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateContainerRepositoryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -305,9 +305,9 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteContainerImageResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -332,10 +332,10 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteContainerImageSignatureResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -360,9 +360,9 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteContainerRepositoryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -387,9 +387,9 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteGenericArtifactResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -422,9 +422,9 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteGenericArtifactByPathResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -447,9 +447,9 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteRepositoryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -472,13 +472,13 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.artifacts.model.ContainerConfiguration.class,
                         GetContainerConfigurationResponse.Builder::containerConfiguration)
                 .handleResponseHeaderString("etag", GetContainerConfigurationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetContainerConfigurationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -501,13 +501,13 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getImageId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.artifacts.model.ContainerImage.class,
                         GetContainerImageResponse.Builder::containerImage)
                 .handleResponseHeaderString("etag", GetContainerImageResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetContainerImageResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -531,6 +531,7 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getImageSignatureId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.artifacts.model.ContainerImageSignature.class,
                         GetContainerImageSignatureResponse.Builder::containerImageSignature)
@@ -538,7 +539,6 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "etag", GetContainerImageSignatureResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetContainerImageSignatureResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -562,13 +562,13 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getRepositoryId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.artifacts.model.ContainerRepository.class,
                         GetContainerRepositoryResponse.Builder::containerRepository)
                 .handleResponseHeaderString("etag", GetContainerRepositoryResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetContainerRepositoryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -591,13 +591,13 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getArtifactId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.artifacts.model.GenericArtifact.class,
                         GetGenericArtifactResponse.Builder::genericArtifact)
                 .handleResponseHeaderString("etag", GetGenericArtifactResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetGenericArtifactResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -629,13 +629,13 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getVersion())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.artifacts.model.GenericArtifact.class,
                         GetGenericArtifactByPathResponse.Builder::genericArtifact)
                 .handleResponseHeaderString("etag", GetGenericArtifactByPathResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetGenericArtifactByPathResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -657,13 +657,13 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getRepositoryId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.artifacts.model.Repository.class,
                         GetRepositoryResponse.Builder::repository)
                 .handleResponseHeaderString("etag", GetRepositoryResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetRepositoryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -699,6 +699,7 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.artifacts.model.ContainerImageSignatureCollection.class,
                         ListContainerImageSignaturesResponse.Builder
@@ -708,7 +709,6 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ListContainerImageSignaturesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -742,6 +742,7 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.artifacts.model.ContainerImageCollection.class,
                         ListContainerImagesResponse.Builder::containerImageCollection)
@@ -749,7 +750,6 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListContainerImagesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListContainerImagesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -781,6 +781,7 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.artifacts.model.ContainerRepositoryCollection.class,
                         ListContainerRepositoriesResponse.Builder::containerRepositoryCollection)
@@ -788,7 +789,6 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListContainerRepositoriesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListContainerRepositoriesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -823,6 +823,7 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.artifacts.model.GenericArtifactCollection.class,
                         ListGenericArtifactsResponse.Builder::genericArtifactCollection)
@@ -830,7 +831,6 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListGenericArtifactsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListGenericArtifactsResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -859,6 +859,7 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.artifacts.model.RepositoryCollection.class,
                         ListRepositoriesResponse.Builder::repositoryCollection)
@@ -866,7 +867,6 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListRepositoriesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListRepositoriesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -897,6 +897,7 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.artifacts.model.ContainerImage.class,
@@ -904,7 +905,6 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", RemoveContainerVersionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", RemoveContainerVersionResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -935,6 +935,7 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.artifacts.model.ContainerImage.class,
@@ -942,7 +943,6 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", RestoreContainerImageResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", RestoreContainerImageResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -970,6 +970,7 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.artifacts.model.ContainerConfiguration.class,
@@ -979,7 +980,6 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateContainerConfigurationResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1006,6 +1006,7 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.artifacts.model.ContainerImage.class,
@@ -1013,7 +1014,6 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", UpdateContainerImageResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateContainerImageResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1041,6 +1041,7 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.artifacts.model.ContainerImageSignature.class,
@@ -1050,7 +1051,6 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateContainerImageSignatureResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1078,6 +1078,7 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.artifacts.model.ContainerRepository.class,
@@ -1085,7 +1086,6 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", UpdateContainerRepositoryResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateContainerRepositoryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1113,6 +1113,7 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.artifacts.model.GenericArtifact.class,
@@ -1120,7 +1121,6 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", UpdateGenericArtifactResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateGenericArtifactResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1156,6 +1156,7 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.artifacts.model.GenericArtifact.class,
@@ -1164,7 +1165,6 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "etag", UpdateGenericArtifactByPathResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateGenericArtifactByPathResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1189,6 +1189,7 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.artifacts.model.Repository.class,
@@ -1196,7 +1197,6 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", UpdateRepositoryResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateRepositoryResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

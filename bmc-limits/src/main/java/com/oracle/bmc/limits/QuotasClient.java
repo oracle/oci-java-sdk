@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.limits;
@@ -172,13 +172,13 @@ public class QuotasClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.limits.model.Quota.class, CreateQuotaResponse.Builder::quota)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateQuotaResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateQuotaResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -203,9 +203,9 @@ public class QuotasClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteQuotaResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -228,12 +228,12 @@ public class QuotasClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendPathParam(request.getQuotaId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.limits.model.Quota.class, GetQuotaResponse.Builder::quota)
                 .handleResponseHeaderString(
                         "opc-request-id", GetQuotaResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetQuotaResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -261,6 +261,7 @@ public class QuotasClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.limits.model.QuotaSummary.class,
                         ListQuotasResponse.Builder::items)
@@ -268,7 +269,6 @@ public class QuotasClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-next-page", ListQuotasResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListQuotasResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -327,13 +327,13 @@ public class QuotasClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.limits.model.Quota.class, UpdateQuotaResponse.Builder::quota)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateQuotaResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateQuotaResponse.Builder::etag)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

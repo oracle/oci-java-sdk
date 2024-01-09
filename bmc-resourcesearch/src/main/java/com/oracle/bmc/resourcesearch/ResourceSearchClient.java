@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.resourcesearch;
@@ -106,12 +106,12 @@ public class ResourceSearchClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.resourcesearch.model.ResourceType.class,
                         GetResourceTypeResponse.Builder::resourceType)
                 .handleResponseHeaderString(
                         "opc-request-id", GetResourceTypeResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -132,6 +132,7 @@ public class ResourceSearchClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBodyList(
                         com.oracle.bmc.resourcesearch.model.ResourceType.class,
                         ListResourceTypesResponse.Builder::items)
@@ -139,7 +140,6 @@ public class ResourceSearchClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-next-page", ListResourceTypesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListResourceTypesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -162,6 +162,7 @@ public class ResourceSearchClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("tenantId", request.getTenantId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.resourcesearch.model.ResourceSummaryCollection.class,
@@ -172,7 +173,6 @@ public class ResourceSearchClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-previous-page", SearchResourcesResponse.Builder::opcPreviousPage)
                 .handleResponseHeaderString(
                         "opc-request-id", SearchResourcesResponse.Builder::opcRequestId)
-                .operationUsesDefaultRetries()
                 .callSync();
     }
 

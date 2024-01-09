@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.retrier;
@@ -40,6 +40,17 @@ public final class Retriers {
         }
         LOG.info("Setting default retry configuration to {}", retryConfiguration);
         DEFAULT_RETRY_CONFIGURATION = retryConfiguration;
+    }
+
+    /**
+     * Getter for the default retry configuration. This can be overriden by setting a retry
+     * configuration on the client (via {@link com.oracle.bmc.ClientConfiguration}) or the request
+     * (via {@link com.oracle.bmc.requests.BmcRequest#setRetryConfiguration(RetryConfiguration)})
+     *
+     * @return the default {@link RetryConfiguration} set
+     */
+    public static RetryConfiguration getDefaultRetryConfiguration() {
+        return DEFAULT_RETRY_CONFIGURATION;
     }
 
     /**
@@ -89,7 +100,30 @@ public final class Retriers {
             @Nullable final RetryConfiguration requestRetryConfiguration,
             @Nullable final RetryConfiguration clientRetryConfiguration,
             boolean specBasedDefaultRetryEnabled) {
-        final Optional<RetryConfiguration> userRetryStrategy =
+
+        RetryConfiguration preferredRetryConfiguration =
+                getPreferredRetryConfiguration(
+                        requestRetryConfiguration,
+                        clientRetryConfiguration,
+                        specBasedDefaultRetryEnabled);
+        LOG.debug("Using retry configuration: {}", preferredRetryConfiguration);
+        return new BmcGenericRetrier(preferredRetryConfiguration);
+    }
+
+    /**
+     * Choose the desired retry configuration.
+     *
+     * @param requestRetryConfiguration the retry configuration set on the request object
+     * @param clientRetryConfiguration the retry configuration set on the client object
+     * @param specBasedDefaultRetryEnabled boolean value indicating if default retry is enabled via
+     *     spec
+     * @return The appropriate retry configuration
+     */
+    public static RetryConfiguration getPreferredRetryConfiguration(
+            @Nullable RetryConfiguration requestRetryConfiguration,
+            @Nullable RetryConfiguration clientRetryConfiguration,
+            boolean specBasedDefaultRetryEnabled) {
+        final Optional<RetryConfiguration> userRetryConfiguration =
                 Stream.of(
                                 requestRetryConfiguration,
                                 clientRetryConfiguration,
@@ -98,8 +132,8 @@ public final class Retriers {
                         .findFirst();
 
         RetryConfiguration preferredRetryConfiguration = null;
-        if (userRetryStrategy.isPresent()) {
-            preferredRetryConfiguration = userRetryStrategy.get();
+        if (userRetryConfiguration.isPresent()) {
+            preferredRetryConfiguration = userRetryConfiguration.get();
         } else if (envBasedRetryConfiguration() != null) {
             preferredRetryConfiguration = envBasedRetryConfiguration();
         } else if (specBasedDefaultRetryEnabled) {
@@ -108,8 +142,42 @@ public final class Retriers {
             preferredRetryConfiguration = RetryConfiguration.NO_RETRY_CONFIGURATION;
         }
 
-        LOG.debug("Using retry configuration: {}", preferredRetryConfiguration);
-        return new BmcGenericRetrier(preferredRetryConfiguration);
+        return preferredRetryConfiguration;
+    }
+
+    /**
+     * Returns true if the retry configuration indicates that we should prepare for retries.
+     *
+     * <p>We don't need to prepare for retries if the retry configuration is null; or if there is no
+     * termination strategy; or if the termination strategy says to make exactly 1 attempt.
+     *
+     * <p>We do have to prepare for retries if there is a retry configuration and termination
+     * strategy, and: (a) the termination strategy is not count-based; or (b) the termination
+     * strategy is count-based and we are willing to make more than 1 attempt.
+     *
+     * @param rc retry configuration
+     * @return true if we should prepare for retries
+     */
+    public static boolean shouldPrepareForRetryBecauseOfRetryConfiguration(RetryConfiguration rc) {
+        boolean hasTerminationStrategy = false;
+        boolean isMaxAttemptsTerminationStrategy = false;
+        if (rc != null) {
+            hasTerminationStrategy = rc.getTerminationStrategy() != null;
+            if (hasTerminationStrategy) {
+                isMaxAttemptsTerminationStrategy =
+                        rc.getTerminationStrategy()
+                                instanceof com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
+            }
+        }
+        final boolean shouldRetry =
+                hasTerminationStrategy
+                        && (!isMaxAttemptsTerminationStrategy
+                                || isMaxAttemptsTerminationStrategy
+                                        && ((com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy)
+                                                                rc.getTerminationStrategy())
+                                                        .getMaxAttempts()
+                                                > 1);
+        return shouldRetry;
     }
 
     private static RetryConfiguration envBasedRetryConfiguration() {
@@ -190,7 +258,7 @@ public final class Retriers {
             if (failIfUnsupported) {
                 throw new RuntimeException(
                         String.format(
-                                "Stream {} does not support mark/reset, retries do not work",
+                                "Stream %s does not support mark/reset, retries do not work",
                                 body.getClass().getName()));
             } else {
                 LOG.warn(
@@ -227,12 +295,15 @@ public final class Retriers {
      *
      * @param request request being handled
      * @param builder builder for the request
+     * @param retryConfiguration the effective retry configuration for this request
      * @param <T> type of the request
      * @return request with the input stream wrapped
      */
     @InternalSdk
     public static <T extends BmcRequest<InputStream>> T wrapBodyInputStreamIfNecessary(
-            T request, BmcRequest.Builder<T, InputStream> builder) {
+            T request,
+            BmcRequest.Builder<T, InputStream> builder,
+            RetryConfiguration retryConfiguration) {
         final java.io.InputStream body = request.getBody$();
 
         final InputStream wrappedStream = wrapInputStreamForRetry(body);
@@ -244,7 +315,6 @@ public final class Retriers {
         // requests retryConfiguration
         // The markLimit = Integer.MAX_VALUE guarantees that we can read at least that many bytes
         // before we cannot rewind anymore.
-        final RetryConfiguration retryConfiguration = request.getRetryConfiguration();
         if (retryConfiguration != null && retryConfiguration.getRetryOptions() != null) {
             wrappedStream.mark(retryConfiguration.getRetryOptions().getMarkReadLimit());
         } else {
