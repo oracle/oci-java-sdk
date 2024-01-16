@@ -227,16 +227,18 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
         return sortOrder;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     * resource that is monitored by the metric that you are searching for.
+     * A filter to return only the resource with the specified
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). The
+     * resource must be monitored by the metric that you are searching for.
      *
      * <p>Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
      */
     private String resourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     * resource that is monitored by the metric that you are searching for.
+     * A filter to return only the resource with the specified
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). The
+     * resource must be monitored by the metric that you are searching for.
      *
      * <p>Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
      */
@@ -261,16 +263,18 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
         return serviceName;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the entity monitored by the metric that you are searching for.
+     * A filter to return only resources that match the given entity
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) exactly.
+     * The resource (entity) must be monitored by the metric that you are searching for.
      *
      * <p>Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
      */
     private String entityId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the entity monitored by the metric that you are searching for.
+     * A filter to return only resources that match the given entity
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) exactly.
+     * The resource (entity) must be monitored by the metric that you are searching for.
      *
      * <p>Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
      */
@@ -278,18 +282,16 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
         return entityId;
     }
     /**
-     * The status of the metric stream to use for alarm filtering. For example, set {@code
-     * StatusQueryParam} to "FIRING" to filter results to metric streams of the alarm with that
-     * status. Default behaviour is to return alarms irrespective of metric streams' status.
+     * A filter to return only metric streams that match the specified status. For example, the
+     * value "FIRING" returns only firing metric streams.
      *
      * <p>Example: {@code FIRING}
      */
     private Status status;
 
     /**
-     * The status of the metric stream to use for alarm filtering. For example, set {@code
-     * StatusQueryParam} to "FIRING" to filter results to metric streams of the alarm with that
-     * status. Default behaviour is to return alarms irrespective of metric streams' status.
+     * A filter to return only metric streams that match the specified status. For example, the
+     * value "FIRING" returns only firing metric streams.
      *
      * <p>Example: {@code FIRING}
      */
@@ -327,9 +329,8 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
     };
 
     /**
-     * The status of the metric stream to use for alarm filtering. For example, set {@code
-     * StatusQueryParam} to "FIRING" to filter results to metric streams of the alarm with that
-     * status. Default behaviour is to return alarms irrespective of metric streams' status.
+     * A filter to return only metric streams that match the specified status. For example, the
+     * value "FIRING" returns only firing metric streams.
      *
      * <p>Example: {@code FIRING}
      */
@@ -522,16 +523,18 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of a resource that is monitored by the metric that you are searching for.
+         * A filter to return only the resource with the specified
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). The
+         * resource must be monitored by the metric that you are searching for.
          *
          * <p>Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
          */
         private String resourceId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of a resource that is monitored by the metric that you are searching for.
+         * A filter to return only the resource with the specified
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). The
+         * resource must be monitored by the metric that you are searching for.
          *
          * <p>Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
          *
@@ -568,16 +571,20 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the entity monitored by the metric that you are searching for.
+         * A filter to return only resources that match the given entity
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * exactly. The resource (entity) must be monitored by the metric that you are searching
+         * for.
          *
          * <p>Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
          */
         private String entityId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the entity monitored by the metric that you are searching for.
+         * A filter to return only resources that match the given entity
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * exactly. The resource (entity) must be monitored by the metric that you are searching
+         * for.
          *
          * <p>Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
          *
@@ -590,18 +597,16 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The status of the metric stream to use for alarm filtering. For example, set {@code
-         * StatusQueryParam} to "FIRING" to filter results to metric streams of the alarm with that
-         * status. Default behaviour is to return alarms irrespective of metric streams' status.
+         * A filter to return only metric streams that match the specified status. For example, the
+         * value "FIRING" returns only firing metric streams.
          *
          * <p>Example: {@code FIRING}
          */
         private Status status = null;
 
         /**
-         * The status of the metric stream to use for alarm filtering. For example, set {@code
-         * StatusQueryParam} to "FIRING" to filter results to metric streams of the alarm with that
-         * status. Default behaviour is to return alarms irrespective of metric streams' status.
+         * A filter to return only metric streams that match the specified status. For example, the
+         * value "FIRING" returns only firing metric streams.
          *
          * <p>Example: {@code FIRING}
          *

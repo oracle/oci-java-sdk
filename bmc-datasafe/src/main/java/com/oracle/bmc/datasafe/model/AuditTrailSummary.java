@@ -38,6 +38,7 @@ public final class AuditTrailSummary
         "lifecycleDetails",
         "isAutoPurgeEnabled",
         "auditCollectionStartTime",
+        "peerTargetDatabaseKey",
         "freeformTags",
         "definedTags"
     })
@@ -56,6 +57,7 @@ public final class AuditTrailSummary
             String lifecycleDetails,
             Boolean isAutoPurgeEnabled,
             java.util.Date auditCollectionStartTime,
+            Integer peerTargetDatabaseKey,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -73,6 +75,7 @@ public final class AuditTrailSummary
         this.lifecycleDetails = lifecycleDetails;
         this.isAutoPurgeEnabled = isAutoPurgeEnabled;
         this.auditCollectionStartTime = auditCollectionStartTime;
+        this.peerTargetDatabaseKey = peerTargetDatabaseKey;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -303,6 +306,21 @@ public final class AuditTrailSummary
             this.__explicitlySet__.add("auditCollectionStartTime");
             return this;
         }
+        /** The secondary id assigned for the peer database registered with Data Safe. */
+        @com.fasterxml.jackson.annotation.JsonProperty("peerTargetDatabaseKey")
+        private Integer peerTargetDatabaseKey;
+
+        /**
+         * The secondary id assigned for the peer database registered with Data Safe.
+         *
+         * @param peerTargetDatabaseKey the value to set
+         * @return this builder
+         */
+        public Builder peerTargetDatabaseKey(Integer peerTargetDatabaseKey) {
+            this.peerTargetDatabaseKey = peerTargetDatabaseKey;
+            this.__explicitlySet__.add("peerTargetDatabaseKey");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -375,6 +393,7 @@ public final class AuditTrailSummary
                             this.lifecycleDetails,
                             this.isAutoPurgeEnabled,
                             this.auditCollectionStartTime,
+                            this.peerTargetDatabaseKey,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -426,6 +445,9 @@ public final class AuditTrailSummary
             }
             if (model.wasPropertyExplicitlySet("auditCollectionStartTime")) {
                 this.auditCollectionStartTime(model.getAuditCollectionStartTime());
+            }
+            if (model.wasPropertyExplicitlySet("peerTargetDatabaseKey")) {
+                this.peerTargetDatabaseKey(model.getPeerTargetDatabaseKey());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -642,6 +664,19 @@ public final class AuditTrailSummary
         return auditCollectionStartTime;
     }
 
+    /** The secondary id assigned for the peer database registered with Data Safe. */
+    @com.fasterxml.jackson.annotation.JsonProperty("peerTargetDatabaseKey")
+    private final Integer peerTargetDatabaseKey;
+
+    /**
+     * The secondary id assigned for the peer database registered with Data Safe.
+     *
+     * @return the value
+     */
+    public Integer getPeerTargetDatabaseKey() {
+        return peerTargetDatabaseKey;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -718,6 +753,7 @@ public final class AuditTrailSummary
         sb.append(", isAutoPurgeEnabled=").append(String.valueOf(this.isAutoPurgeEnabled));
         sb.append(", auditCollectionStartTime=")
                 .append(String.valueOf(this.auditCollectionStartTime));
+        sb.append(", peerTargetDatabaseKey=").append(String.valueOf(this.peerTargetDatabaseKey));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -749,6 +785,7 @@ public final class AuditTrailSummary
                 && java.util.Objects.equals(this.isAutoPurgeEnabled, other.isAutoPurgeEnabled)
                 && java.util.Objects.equals(
                         this.auditCollectionStartTime, other.auditCollectionStartTime)
+                && java.util.Objects.equals(this.peerTargetDatabaseKey, other.peerTargetDatabaseKey)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -790,6 +827,11 @@ public final class AuditTrailSummary
                         + (this.auditCollectionStartTime == null
                                 ? 43
                                 : this.auditCollectionStartTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerTargetDatabaseKey == null
+                                ? 43
+                                : this.peerTargetDatabaseKey.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

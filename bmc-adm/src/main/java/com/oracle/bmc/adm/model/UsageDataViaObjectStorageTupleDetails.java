@@ -5,7 +5,9 @@
 package com.oracle.bmc.adm.model;
 
 /**
- * Reference to an object in Object Storage as a tuple. <br>
+ * Reference to an object in object storage as a tuple. The usage data file uploaded to object
+ * storage must be a gzip archive of the JSON usage data returned from the GraalVM
+ * native-image-inspect tool after a native-image build. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

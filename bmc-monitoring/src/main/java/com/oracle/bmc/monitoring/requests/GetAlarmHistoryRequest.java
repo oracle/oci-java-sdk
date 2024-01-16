@@ -137,7 +137,7 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
      * A filter to return only alarm history entries with timestamps occurring on or after the
      * specified date and time. Format defined by RFC3339.
      *
-     * <p>Example: {@code 2019-01-01T01:00:00.789Z}
+     * <p>Example: {@code 2023-01-01T01:00:00.789Z}
      */
     private java.util.Date timestampGreaterThanOrEqualTo;
 
@@ -145,7 +145,7 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
      * A filter to return only alarm history entries with timestamps occurring on or after the
      * specified date and time. Format defined by RFC3339.
      *
-     * <p>Example: {@code 2019-01-01T01:00:00.789Z}
+     * <p>Example: {@code 2023-01-01T01:00:00.789Z}
      */
     public java.util.Date getTimestampGreaterThanOrEqualTo() {
         return timestampGreaterThanOrEqualTo;
@@ -154,7 +154,7 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
      * A filter to return only alarm history entries with timestamps occurring before the specified
      * date and time. Format defined by RFC3339.
      *
-     * <p>Example: {@code 2019-01-02T01:00:00.789Z}
+     * <p>Example: {@code 2023-01-02T01:00:00.789Z}
      */
     private java.util.Date timestampLessThan;
 
@@ -162,7 +162,7 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
      * A filter to return only alarm history entries with timestamps occurring before the specified
      * date and time. Format defined by RFC3339.
      *
-     * <p>Example: {@code 2019-01-02T01:00:00.789Z}
+     * <p>Example: {@code 2023-01-02T01:00:00.789Z}
      */
     public java.util.Date getTimestampLessThan() {
         return timestampLessThan;
@@ -286,7 +286,7 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
          * A filter to return only alarm history entries with timestamps occurring on or after the
          * specified date and time. Format defined by RFC3339.
          *
-         * <p>Example: {@code 2019-01-01T01:00:00.789Z}
+         * <p>Example: {@code 2023-01-01T01:00:00.789Z}
          */
         private java.util.Date timestampGreaterThanOrEqualTo = null;
 
@@ -294,7 +294,7 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
          * A filter to return only alarm history entries with timestamps occurring on or after the
          * specified date and time. Format defined by RFC3339.
          *
-         * <p>Example: {@code 2019-01-01T01:00:00.789Z}
+         * <p>Example: {@code 2023-01-01T01:00:00.789Z}
          *
          * @param timestampGreaterThanOrEqualTo the value to set
          * @return this builder instance
@@ -308,7 +308,7 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
          * A filter to return only alarm history entries with timestamps occurring before the
          * specified date and time. Format defined by RFC3339.
          *
-         * <p>Example: {@code 2019-01-02T01:00:00.789Z}
+         * <p>Example: {@code 2023-01-02T01:00:00.789Z}
          */
         private java.util.Date timestampLessThan = null;
 
@@ -316,7 +316,7 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
          * A filter to return only alarm history entries with timestamps occurring before the
          * specified date and time. Format defined by RFC3339.
          *
-         * <p>Example: {@code 2019-01-02T01:00:00.789Z}
+         * <p>Example: {@code 2023-01-02T01:00:00.789Z}
          *
          * @param timestampLessThan the value to set
          * @return this builder instance

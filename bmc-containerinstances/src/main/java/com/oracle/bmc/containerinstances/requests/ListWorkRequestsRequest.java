@@ -158,6 +158,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     public com.oracle.bmc.containerinstances.model.SortOrder getSortOrder() {
         return sortOrder;
     }
+    /** The OCID of the resource affected by the work request. */
+    private String resourceId;
+
+    /** The OCID of the resource affected by the work request. */
+    public String getResourceId() {
+        return resourceId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -325,6 +332,20 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /** The OCID of the resource affected by the work request. */
+        private String resourceId = null;
+
+        /**
+         * The OCID of the resource affected by the work request.
+         *
+         * @param resourceId the value to set
+         * @return this builder instance
+         */
+        public Builder resourceId(String resourceId) {
+            this.resourceId = resourceId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -364,6 +385,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             status(o.getStatus());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
+            resourceId(o.getResourceId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -407,9 +429,10 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.status = status;
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
+            request.resourceId = resourceId;
             return request;
             // new ListWorkRequestsRequest(compartmentId, workRequestId, opcRequestId, page, limit,
-            // availabilityDomain, status, sortBy, sortOrder);
+            // availabilityDomain, status, sortBy, sortOrder, resourceId);
         }
     }
 
@@ -428,7 +451,8 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 .availabilityDomain(availabilityDomain)
                 .status(status)
                 .sortBy(sortBy)
-                .sortOrder(sortOrder);
+                .sortOrder(sortOrder)
+                .resourceId(resourceId);
     }
 
     /**
@@ -454,6 +478,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append(",status=").append(String.valueOf(this.status));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",resourceId=").append(String.valueOf(this.resourceId));
         sb.append(")");
         return sb.toString();
     }
@@ -477,7 +502,8 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
-                && java.util.Objects.equals(this.sortOrder, other.sortOrder);
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.resourceId, other.resourceId);
     }
 
     @Override
@@ -501,6 +527,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
         return result;
     }
 }

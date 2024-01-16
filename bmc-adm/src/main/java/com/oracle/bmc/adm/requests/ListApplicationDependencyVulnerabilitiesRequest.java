@@ -30,30 +30,43 @@ public class ListApplicationDependencyVulnerabilitiesRequest
         return vulnerabilityId;
     }
     /**
-     * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring
-     * System Version 3 (CVSS V3) greater or equal than the specified value.
+     * A filter that returns only Vulnerabilities that have a Common Vulnerability Scoring System
+     * Version 3 (CVSS V3) greater than or equal to the specified value.
      */
     private Float cvssV3GreaterThanOrEqual;
 
     /**
-     * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring
-     * System Version 3 (CVSS V3) greater or equal than the specified value.
+     * A filter that returns only Vulnerabilities that have a Common Vulnerability Scoring System
+     * Version 3 (CVSS V3) greater than or equal to the specified value.
      */
     public Float getCvssV3GreaterThanOrEqual() {
         return cvssV3GreaterThanOrEqual;
     }
     /**
-     * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring
-     * System Version 2 (CVSS V2) greater or equal than the specified value.
+     * A filter that returns only Vulnerabilities that have a Common Vulnerability Scoring System
+     * Version 2 (CVSS V2) greater than or equal to the specified value.
      */
     private Float cvssV2GreaterThanOrEqual;
 
     /**
-     * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring
-     * System Version 2 (CVSS V2) greater or equal than the specified value.
+     * A filter that returns only Vulnerabilities that have a Common Vulnerability Scoring System
+     * Version 2 (CVSS V2) greater than or equal to the specified value.
      */
     public Float getCvssV2GreaterThanOrEqual() {
         return cvssV2GreaterThanOrEqual;
+    }
+    /**
+     * A filter that returns only Vulnerabilities that have a severity greater than or equal to the
+     * specified value.
+     */
+    private com.oracle.bmc.adm.model.VulnerabilitySeverity severityGreaterThanOrEqual;
+
+    /**
+     * A filter that returns only Vulnerabilities that have a severity greater than or equal to the
+     * specified value.
+     */
+    public com.oracle.bmc.adm.model.VulnerabilitySeverity getSeverityGreaterThanOrEqual() {
+        return severityGreaterThanOrEqual;
     }
     /** The maximum number of items to return. */
     private Integer limit;
@@ -91,9 +104,10 @@ public class ListApplicationDependencyVulnerabilitiesRequest
      * breadth-first manner. Children are sorted based on their GAV property alphabetically (either
      * ascending or descending, depending on the order parameter). Default order is ascending.
      * Default order for gav is ascending where ascending corresponds to alphanumerical order.
-     * Default order for nodeId is ascending where ascending corresponds to alphanumerical order.
-     * Sorting by DFS or BFS cannot be used in conjunction with the following query parameters:
-     * "gav", "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual" and "vulnerabilityId".
+     * Default order for purl is ascending where ascending corresponds to alphabetical order Default
+     * order for nodeId is ascending where ascending corresponds to alphanumerical order. Sorting by
+     * DFS or BFS cannot be used in conjunction with the following query parameters: "gav",
+     * "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual" and "vulnerabilityId".
      */
     private SortBy sortBy;
 
@@ -106,12 +120,14 @@ public class ListApplicationDependencyVulnerabilitiesRequest
      * breadth-first manner. Children are sorted based on their GAV property alphabetically (either
      * ascending or descending, depending on the order parameter). Default order is ascending.
      * Default order for gav is ascending where ascending corresponds to alphanumerical order.
-     * Default order for nodeId is ascending where ascending corresponds to alphanumerical order.
-     * Sorting by DFS or BFS cannot be used in conjunction with the following query parameters:
-     * "gav", "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual" and "vulnerabilityId".
+     * Default order for purl is ascending where ascending corresponds to alphabetical order Default
+     * order for nodeId is ascending where ascending corresponds to alphanumerical order. Sorting by
+     * DFS or BFS cannot be used in conjunction with the following query parameters: "gav",
+     * "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual" and "vulnerabilityId".
      */
     public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Gav("gav"),
+        Purl("purl"),
         NodeId("nodeId"),
         Dfs("dfs"),
         Bfs("bfs"),
@@ -154,9 +170,10 @@ public class ListApplicationDependencyVulnerabilitiesRequest
      * breadth-first manner. Children are sorted based on their GAV property alphabetically (either
      * ascending or descending, depending on the order parameter). Default order is ascending.
      * Default order for gav is ascending where ascending corresponds to alphanumerical order.
-     * Default order for nodeId is ascending where ascending corresponds to alphanumerical order.
-     * Sorting by DFS or BFS cannot be used in conjunction with the following query parameters:
-     * "gav", "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual" and "vulnerabilityId".
+     * Default order for purl is ascending where ascending corresponds to alphabetical order Default
+     * order for nodeId is ascending where ascending corresponds to alphanumerical order. Sorting by
+     * DFS or BFS cannot be used in conjunction with the following query parameters: "gav",
+     * "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual" and "vulnerabilityId".
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -206,6 +223,19 @@ public class ListApplicationDependencyVulnerabilitiesRequest
     public String getGav() {
         return gav;
     }
+    /**
+     * A filter to return only resources that match the entire PURL given
+     * (https://github.com/package-url/purl-spec/).
+     */
+    private String purl;
+
+    /**
+     * A filter to return only resources that match the entire PURL given
+     * (https://github.com/package-url/purl-spec/).
+     */
+    public String getPurl() {
+        return purl;
+    }
     /** The client request ID for tracing. */
     private String opcRequestId;
 
@@ -249,14 +279,14 @@ public class ListApplicationDependencyVulnerabilitiesRequest
         }
 
         /**
-         * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring
-         * System Version 3 (CVSS V3) greater or equal than the specified value.
+         * A filter that returns only Vulnerabilities that have a Common Vulnerability Scoring
+         * System Version 3 (CVSS V3) greater than or equal to the specified value.
          */
         private Float cvssV3GreaterThanOrEqual = null;
 
         /**
-         * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring
-         * System Version 3 (CVSS V3) greater or equal than the specified value.
+         * A filter that returns only Vulnerabilities that have a Common Vulnerability Scoring
+         * System Version 3 (CVSS V3) greater than or equal to the specified value.
          *
          * @param cvssV3GreaterThanOrEqual the value to set
          * @return this builder instance
@@ -267,20 +297,39 @@ public class ListApplicationDependencyVulnerabilitiesRequest
         }
 
         /**
-         * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring
-         * System Version 2 (CVSS V2) greater or equal than the specified value.
+         * A filter that returns only Vulnerabilities that have a Common Vulnerability Scoring
+         * System Version 2 (CVSS V2) greater than or equal to the specified value.
          */
         private Float cvssV2GreaterThanOrEqual = null;
 
         /**
-         * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring
-         * System Version 2 (CVSS V2) greater or equal than the specified value.
+         * A filter that returns only Vulnerabilities that have a Common Vulnerability Scoring
+         * System Version 2 (CVSS V2) greater than or equal to the specified value.
          *
          * @param cvssV2GreaterThanOrEqual the value to set
          * @return this builder instance
          */
         public Builder cvssV2GreaterThanOrEqual(Float cvssV2GreaterThanOrEqual) {
             this.cvssV2GreaterThanOrEqual = cvssV2GreaterThanOrEqual;
+            return this;
+        }
+
+        /**
+         * A filter that returns only Vulnerabilities that have a severity greater than or equal to
+         * the specified value.
+         */
+        private com.oracle.bmc.adm.model.VulnerabilitySeverity severityGreaterThanOrEqual = null;
+
+        /**
+         * A filter that returns only Vulnerabilities that have a severity greater than or equal to
+         * the specified value.
+         *
+         * @param severityGreaterThanOrEqual the value to set
+         * @return this builder instance
+         */
+        public Builder severityGreaterThanOrEqual(
+                com.oracle.bmc.adm.model.VulnerabilitySeverity severityGreaterThanOrEqual) {
+            this.severityGreaterThanOrEqual = severityGreaterThanOrEqual;
             return this;
         }
 
@@ -339,8 +388,9 @@ public class ListApplicationDependencyVulnerabilitiesRequest
          * a breadth-first manner. Children are sorted based on their GAV property alphabetically
          * (either ascending or descending, depending on the order parameter). Default order is
          * ascending. Default order for gav is ascending where ascending corresponds to
-         * alphanumerical order. Default order for nodeId is ascending where ascending corresponds
-         * to alphanumerical order. Sorting by DFS or BFS cannot be used in conjunction with the
+         * alphanumerical order. Default order for purl is ascending where ascending corresponds to
+         * alphabetical order Default order for nodeId is ascending where ascending corresponds to
+         * alphanumerical order. Sorting by DFS or BFS cannot be used in conjunction with the
          * following query parameters: "gav", "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual"
          * and "vulnerabilityId".
          */
@@ -355,8 +405,9 @@ public class ListApplicationDependencyVulnerabilitiesRequest
          * a breadth-first manner. Children are sorted based on their GAV property alphabetically
          * (either ascending or descending, depending on the order parameter). Default order is
          * ascending. Default order for gav is ascending where ascending corresponds to
-         * alphanumerical order. Default order for nodeId is ascending where ascending corresponds
-         * to alphanumerical order. Sorting by DFS or BFS cannot be used in conjunction with the
+         * alphanumerical order. Default order for purl is ascending where ascending corresponds to
+         * alphabetical order Default order for nodeId is ascending where ascending corresponds to
+         * alphanumerical order. Sorting by DFS or BFS cannot be used in conjunction with the
          * following query parameters: "gav", "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual"
          * and "vulnerabilityId".
          *
@@ -428,6 +479,24 @@ public class ListApplicationDependencyVulnerabilitiesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire PURL given
+         * (https://github.com/package-url/purl-spec/).
+         */
+        private String purl = null;
+
+        /**
+         * A filter to return only resources that match the entire PURL given
+         * (https://github.com/package-url/purl-spec/).
+         *
+         * @param purl the value to set
+         * @return this builder instance
+         */
+        public Builder purl(String purl) {
+            this.purl = purl;
+            return this;
+        }
+
         /** The client request ID for tracing. */
         private String opcRequestId = null;
 
@@ -476,6 +545,7 @@ public class ListApplicationDependencyVulnerabilitiesRequest
             vulnerabilityId(o.getVulnerabilityId());
             cvssV3GreaterThanOrEqual(o.getCvssV3GreaterThanOrEqual());
             cvssV2GreaterThanOrEqual(o.getCvssV2GreaterThanOrEqual());
+            severityGreaterThanOrEqual(o.getSeverityGreaterThanOrEqual());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
@@ -483,6 +553,7 @@ public class ListApplicationDependencyVulnerabilitiesRequest
             rootNodeId(o.getRootNodeId());
             depth(o.getDepth());
             gav(o.getGav());
+            purl(o.getPurl());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -526,6 +597,7 @@ public class ListApplicationDependencyVulnerabilitiesRequest
             request.vulnerabilityId = vulnerabilityId;
             request.cvssV3GreaterThanOrEqual = cvssV3GreaterThanOrEqual;
             request.cvssV2GreaterThanOrEqual = cvssV2GreaterThanOrEqual;
+            request.severityGreaterThanOrEqual = severityGreaterThanOrEqual;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
@@ -533,11 +605,13 @@ public class ListApplicationDependencyVulnerabilitiesRequest
             request.rootNodeId = rootNodeId;
             request.depth = depth;
             request.gav = gav;
+            request.purl = purl;
             request.opcRequestId = opcRequestId;
             return request;
             // new ListApplicationDependencyVulnerabilitiesRequest(vulnerabilityAuditId,
-            // vulnerabilityId, cvssV3GreaterThanOrEqual, cvssV2GreaterThanOrEqual, limit, page,
-            // sortOrder, sortBy, rootNodeId, depth, gav, opcRequestId);
+            // vulnerabilityId, cvssV3GreaterThanOrEqual, cvssV2GreaterThanOrEqual,
+            // severityGreaterThanOrEqual, limit, page, sortOrder, sortBy, rootNodeId, depth, gav,
+            // purl, opcRequestId);
         }
     }
 
@@ -552,6 +626,7 @@ public class ListApplicationDependencyVulnerabilitiesRequest
                 .vulnerabilityId(vulnerabilityId)
                 .cvssV3GreaterThanOrEqual(cvssV3GreaterThanOrEqual)
                 .cvssV2GreaterThanOrEqual(cvssV2GreaterThanOrEqual)
+                .severityGreaterThanOrEqual(severityGreaterThanOrEqual)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
@@ -559,6 +634,7 @@ public class ListApplicationDependencyVulnerabilitiesRequest
                 .rootNodeId(rootNodeId)
                 .depth(depth)
                 .gav(gav)
+                .purl(purl)
                 .opcRequestId(opcRequestId);
     }
 
@@ -582,6 +658,8 @@ public class ListApplicationDependencyVulnerabilitiesRequest
                 .append(String.valueOf(this.cvssV3GreaterThanOrEqual));
         sb.append(",cvssV2GreaterThanOrEqual=")
                 .append(String.valueOf(this.cvssV2GreaterThanOrEqual));
+        sb.append(",severityGreaterThanOrEqual=")
+                .append(String.valueOf(this.severityGreaterThanOrEqual));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -589,6 +667,7 @@ public class ListApplicationDependencyVulnerabilitiesRequest
         sb.append(",rootNodeId=").append(String.valueOf(this.rootNodeId));
         sb.append(",depth=").append(String.valueOf(this.depth));
         sb.append(",gav=").append(String.valueOf(this.gav));
+        sb.append(",purl=").append(String.valueOf(this.purl));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -612,6 +691,8 @@ public class ListApplicationDependencyVulnerabilitiesRequest
                         this.cvssV3GreaterThanOrEqual, other.cvssV3GreaterThanOrEqual)
                 && java.util.Objects.equals(
                         this.cvssV2GreaterThanOrEqual, other.cvssV2GreaterThanOrEqual)
+                && java.util.Objects.equals(
+                        this.severityGreaterThanOrEqual, other.severityGreaterThanOrEqual)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -619,6 +700,7 @@ public class ListApplicationDependencyVulnerabilitiesRequest
                 && java.util.Objects.equals(this.rootNodeId, other.rootNodeId)
                 && java.util.Objects.equals(this.depth, other.depth)
                 && java.util.Objects.equals(this.gav, other.gav)
+                && java.util.Objects.equals(this.purl, other.purl)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -644,6 +726,11 @@ public class ListApplicationDependencyVulnerabilitiesRequest
                         + (this.cvssV2GreaterThanOrEqual == null
                                 ? 43
                                 : this.cvssV2GreaterThanOrEqual.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.severityGreaterThanOrEqual == null
+                                ? 43
+                                : this.severityGreaterThanOrEqual.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
@@ -651,6 +738,7 @@ public class ListApplicationDependencyVulnerabilitiesRequest
         result = (result * PRIME) + (this.rootNodeId == null ? 43 : this.rootNodeId.hashCode());
         result = (result * PRIME) + (this.depth == null ? 43 : this.depth.hashCode());
         result = (result * PRIME) + (this.gav == null ? 43 : this.gav.hashCode());
+        result = (result * PRIME) + (this.purl == null ? 43 : this.purl.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

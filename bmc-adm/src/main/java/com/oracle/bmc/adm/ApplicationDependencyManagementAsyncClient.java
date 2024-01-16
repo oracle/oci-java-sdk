@@ -480,9 +480,6 @@ public class ApplicationDependencyManagementAsyncClient
                         CreateVulnerabilityAuditResponse.Builder::vulnerabilityAudit)
                 .handleResponseHeaderString("etag", CreateVulnerabilityAuditResponse.Builder::etag)
                 .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateVulnerabilityAuditResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
                         "opc-request-id", CreateVulnerabilityAuditResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
@@ -862,6 +859,7 @@ public class ApplicationDependencyManagementAsyncClient
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendQueryParam("gav", request.getGav())
+                .appendQueryParam("purl", request.getPurl())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -906,6 +904,8 @@ public class ApplicationDependencyManagementAsyncClient
                 .appendQueryParam("vulnerabilityId", request.getVulnerabilityId())
                 .appendQueryParam("cvssV3GreaterThanOrEqual", request.getCvssV3GreaterThanOrEqual())
                 .appendQueryParam("cvssV2GreaterThanOrEqual", request.getCvssV2GreaterThanOrEqual())
+                .appendEnumQueryParam(
+                        "severityGreaterThanOrEqual", request.getSeverityGreaterThanOrEqual())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
@@ -913,6 +913,7 @@ public class ApplicationDependencyManagementAsyncClient
                 .appendQueryParam("rootNodeId", request.getRootNodeId())
                 .appendQueryParam("depth", request.getDepth())
                 .appendQueryParam("gav", request.getGav())
+                .appendQueryParam("purl", request.getPurl())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -1105,6 +1106,14 @@ public class ApplicationDependencyManagementAsyncClient
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam(
+                        "timeCreatedGreaterThanOrEqualTo",
+                        request.getTimeCreatedGreaterThanOrEqualTo())
+                .appendQueryParam(
+                        "timeCreatedLessThanOrEqualTo", request.getTimeCreatedLessThanOrEqualTo())
+                .appendEnumQueryParam(
+                        "maxObservedSeverityGreaterThanOrEqualTo",
+                        request.getMaxObservedSeverityGreaterThanOrEqualTo())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(

@@ -140,7 +140,7 @@ public final class Metric extends com.oracle.bmc.http.client.internal.Explicitly
          * Qualifiers provided in a metric definition. Available dimensions vary by metric
          * namespace. Each dimension takes the form of a key-value pair.
          *
-         * <p>Example: {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}
+         * <p>Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private java.util.Map<String, String> dimensions;
@@ -149,7 +149,7 @@ public final class Metric extends com.oracle.bmc.http.client.internal.Explicitly
          * Qualifiers provided in a metric definition. Available dimensions vary by metric
          * namespace. Each dimension takes the form of a key-value pair.
          *
-         * <p>Example: {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}
+         * <p>Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
          *
          * @param dimensions the value to set
          * @return this builder
@@ -291,7 +291,7 @@ public final class Metric extends com.oracle.bmc.http.client.internal.Explicitly
      * Qualifiers provided in a metric definition. Available dimensions vary by metric namespace.
      * Each dimension takes the form of a key-value pair.
      *
-     * <p>Example: {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}
+     * <p>Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
     private final java.util.Map<String, String> dimensions;
@@ -300,7 +300,7 @@ public final class Metric extends com.oracle.bmc.http.client.internal.Explicitly
      * Qualifiers provided in a metric definition. Available dimensions vary by metric namespace.
      * Each dimension takes the form of a key-value pair.
      *
-     * <p>Example: {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}
+     * <p>Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
      *
      * @return the value
      */

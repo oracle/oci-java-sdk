@@ -541,6 +541,7 @@ public class ContainerInstanceAsyncClient extends com.oracle.bmc.http.internal.B
                 .appendEnumQueryParam("status", request.getStatus())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("resourceId", request.getResourceId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(

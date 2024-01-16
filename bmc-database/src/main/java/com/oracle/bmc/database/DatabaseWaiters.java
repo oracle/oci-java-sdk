@@ -84,21 +84,17 @@ public class DatabaseWaiters {
                         final ActivateExadataInfrastructureResponse response =
                                 client.activateExadataInfrastructure(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -152,21 +148,17 @@ public class DatabaseWaiters {
                         final AddStorageCapacityCloudExadataInfrastructureResponse response =
                                 client.addStorageCapacityCloudExadataInfrastructure(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -219,21 +211,17 @@ public class DatabaseWaiters {
                         final AddStorageCapacityExadataInfrastructureResponse response =
                                 client.addStorageCapacityExadataInfrastructure(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -284,21 +272,17 @@ public class DatabaseWaiters {
                         final AddVirtualMachineToCloudVmClusterResponse response =
                                 client.addVirtualMachineToCloudVmCluster(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -347,21 +331,17 @@ public class DatabaseWaiters {
                         final AddVirtualMachineToVmClusterResponse response =
                                 client.addVirtualMachineToVmCluster(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -410,21 +390,17 @@ public class DatabaseWaiters {
                         final AutonomousDatabaseManualRefreshResponse response =
                                 client.autonomousDatabaseManualRefresh(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -469,21 +445,17 @@ public class DatabaseWaiters {
                     public CancelBackupResponse call() throws Exception {
                         final CancelBackupResponse response = client.cancelBackup(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -537,21 +509,17 @@ public class DatabaseWaiters {
                         final ChangeAutonomousContainerDatabaseCompartmentResponse response =
                                 client.changeAutonomousContainerDatabaseCompartment(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -603,21 +571,17 @@ public class DatabaseWaiters {
                         final ChangeAutonomousDatabaseCompartmentResponse response =
                                 client.changeAutonomousDatabaseCompartment(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -671,21 +635,17 @@ public class DatabaseWaiters {
                         final ChangeAutonomousExadataInfrastructureCompartmentResponse response =
                                 client.changeAutonomousExadataInfrastructureCompartment(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -737,21 +697,17 @@ public class DatabaseWaiters {
                         final ChangeAutonomousVmClusterCompartmentResponse response =
                                 client.changeAutonomousVmClusterCompartment(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -803,21 +759,17 @@ public class DatabaseWaiters {
                         final ChangeBackupDestinationCompartmentResponse response =
                                 client.changeBackupDestinationCompartment(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -871,21 +823,17 @@ public class DatabaseWaiters {
                         final ChangeCloudAutonomousVmClusterCompartmentResponse response =
                                 client.changeCloudAutonomousVmClusterCompartment(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -939,21 +887,17 @@ public class DatabaseWaiters {
                         final ChangeCloudExadataInfrastructureCompartmentResponse response =
                                 client.changeCloudExadataInfrastructureCompartment(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -1002,21 +946,17 @@ public class DatabaseWaiters {
                         final ChangeCloudVmClusterCompartmentResponse response =
                                 client.changeCloudVmClusterCompartment(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -1069,21 +1009,17 @@ public class DatabaseWaiters {
                         final ChangeDatabaseSoftwareImageCompartmentResponse response =
                                 client.changeDatabaseSoftwareImageCompartment(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -1130,21 +1066,17 @@ public class DatabaseWaiters {
                         final ChangeDataguardRoleResponse response =
                                 client.changeDataguardRole(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -1193,21 +1125,17 @@ public class DatabaseWaiters {
                         final ChangeDbSystemCompartmentResponse response =
                                 client.changeDbSystemCompartment(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -1259,21 +1187,17 @@ public class DatabaseWaiters {
                         final ChangeDisasterRecoveryConfigurationResponse response =
                                 client.changeDisasterRecoveryConfiguration(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -1326,21 +1250,17 @@ public class DatabaseWaiters {
                         final ChangeExadataInfrastructureCompartmentResponse response =
                                 client.changeExadataInfrastructureCompartment(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -1394,21 +1314,17 @@ public class DatabaseWaiters {
                         final ChangeExternalContainerDatabaseCompartmentResponse response =
                                 client.changeExternalContainerDatabaseCompartment(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -1462,21 +1378,17 @@ public class DatabaseWaiters {
                         final ChangeExternalNonContainerDatabaseCompartmentResponse response =
                                 client.changeExternalNonContainerDatabaseCompartment(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -1530,21 +1442,17 @@ public class DatabaseWaiters {
                         final ChangeExternalPluggableDatabaseCompartmentResponse response =
                                 client.changeExternalPluggableDatabaseCompartment(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -1593,21 +1501,17 @@ public class DatabaseWaiters {
                         final ChangeKeyStoreCompartmentResponse response =
                                 client.changeKeyStoreCompartment(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -1654,21 +1558,17 @@ public class DatabaseWaiters {
                         final ChangeKeyStoreTypeResponse response =
                                 client.changeKeyStoreType(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -1717,21 +1617,17 @@ public class DatabaseWaiters {
                         final ChangeOneoffPatchCompartmentResponse response =
                                 client.changeOneoffPatchCompartment(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -1780,21 +1676,17 @@ public class DatabaseWaiters {
                         final ChangeVmClusterCompartmentResponse response =
                                 client.changeVmClusterCompartment(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -1848,21 +1740,17 @@ public class DatabaseWaiters {
                         final CheckExternalDatabaseConnectorConnectionStatusResponse response =
                                 client.checkExternalDatabaseConnectorConnectionStatus(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -1911,21 +1799,17 @@ public class DatabaseWaiters {
                         final CompleteExternalBackupJobResponse response =
                                 client.completeExternalBackupJob(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -1977,21 +1861,17 @@ public class DatabaseWaiters {
                         final ConfigureAutonomousDatabaseVaultKeyResponse response =
                                 client.configureAutonomousDatabaseVaultKey(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -2040,21 +1920,17 @@ public class DatabaseWaiters {
                         final ConfigureSaasAdminUserResponse response =
                                 client.configureSaasAdminUser(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -2099,21 +1975,17 @@ public class DatabaseWaiters {
                     public ConvertToPdbResponse call() throws Exception {
                         final ConvertToPdbResponse response = client.convertToPdb(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -2164,21 +2036,17 @@ public class DatabaseWaiters {
                         final ConvertToRegularPluggableDatabaseResponse response =
                                 client.convertToRegularPluggableDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -2225,21 +2093,17 @@ public class DatabaseWaiters {
                         final CreateApplicationVipResponse response =
                                 client.createApplicationVip(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -2290,21 +2154,17 @@ public class DatabaseWaiters {
                         final CreateAutonomousContainerDatabaseResponse response =
                                 client.createAutonomousContainerDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -2361,21 +2221,17 @@ public class DatabaseWaiters {
                                                 .createAutonomousContainerDatabaseDataguardAssociation(
                                                         request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -2424,21 +2280,17 @@ public class DatabaseWaiters {
                         final CreateAutonomousDatabaseResponse response =
                                 client.createAutonomousDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -2487,21 +2339,17 @@ public class DatabaseWaiters {
                         final CreateAutonomousDatabaseBackupResponse response =
                                 client.createAutonomousDatabaseBackup(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -2550,21 +2398,17 @@ public class DatabaseWaiters {
                         final CreateAutonomousVmClusterResponse response =
                                 client.createAutonomousVmCluster(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -2609,21 +2453,17 @@ public class DatabaseWaiters {
                     public CreateBackupResponse call() throws Exception {
                         final CreateBackupResponse response = client.createBackup(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -2672,21 +2512,17 @@ public class DatabaseWaiters {
                         final CreateCloudAutonomousVmClusterResponse response =
                                 client.createCloudAutonomousVmCluster(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -2737,21 +2573,17 @@ public class DatabaseWaiters {
                         final CreateCloudExadataInfrastructureResponse response =
                                 client.createCloudExadataInfrastructure(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -2798,21 +2630,17 @@ public class DatabaseWaiters {
                         final CreateCloudVmClusterResponse response =
                                 client.createCloudVmCluster(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -2861,21 +2689,17 @@ public class DatabaseWaiters {
                         final CreateConsoleConnectionResponse response =
                                 client.createConsoleConnection(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -2922,21 +2746,17 @@ public class DatabaseWaiters {
                         final CreateConsoleHistoryResponse response =
                                 client.createConsoleHistory(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -2985,21 +2805,17 @@ public class DatabaseWaiters {
                         final CreateDataGuardAssociationResponse response =
                                 client.createDataGuardAssociation(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -3045,21 +2861,17 @@ public class DatabaseWaiters {
                     public CreateDatabaseResponse call() throws Exception {
                         final CreateDatabaseResponse response = client.createDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -3108,21 +2920,17 @@ public class DatabaseWaiters {
                         final CreateDatabaseSoftwareImageResponse response =
                                 client.createDatabaseSoftwareImage(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -3167,21 +2975,17 @@ public class DatabaseWaiters {
                     public CreateDbHomeResponse call() throws Exception {
                         final CreateDbHomeResponse response = client.createDbHome(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -3230,21 +3034,17 @@ public class DatabaseWaiters {
                         final CreateExadataInfrastructureResponse response =
                                 client.createExadataInfrastructure(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -3293,21 +3093,17 @@ public class DatabaseWaiters {
                         final CreateExternalBackupJobResponse response =
                                 client.createExternalBackupJob(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -3356,21 +3152,17 @@ public class DatabaseWaiters {
                         final CreateExternalContainerDatabaseResponse response =
                                 client.createExternalContainerDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -3419,21 +3211,17 @@ public class DatabaseWaiters {
                         final CreateExternalDatabaseConnectorResponse response =
                                 client.createExternalDatabaseConnector(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -3485,21 +3273,17 @@ public class DatabaseWaiters {
                         final CreateExternalNonContainerDatabaseResponse response =
                                 client.createExternalNonContainerDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -3548,21 +3332,17 @@ public class DatabaseWaiters {
                         final CreateExternalPluggableDatabaseResponse response =
                                 client.createExternalPluggableDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -3609,21 +3389,17 @@ public class DatabaseWaiters {
                         final CreateOneoffPatchResponse response =
                                 client.createOneoffPatch(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -3672,21 +3448,17 @@ public class DatabaseWaiters {
                         final CreatePluggableDatabaseResponse response =
                                 client.createPluggableDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -3732,21 +3504,17 @@ public class DatabaseWaiters {
                     public CreateVmClusterResponse call() throws Exception {
                         final CreateVmClusterResponse response = client.createVmCluster(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -3795,21 +3563,17 @@ public class DatabaseWaiters {
                         final CreateVmClusterNetworkResponse response =
                                 client.createVmClusterNetwork(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -3854,21 +3618,17 @@ public class DatabaseWaiters {
                     public DbNodeActionResponse call() throws Exception {
                         final DbNodeActionResponse response = client.dbNodeAction(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -3915,21 +3675,17 @@ public class DatabaseWaiters {
                         final DeleteApplicationVipResponse response =
                                 client.deleteApplicationVip(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -3978,21 +3734,17 @@ public class DatabaseWaiters {
                         final DeleteAutonomousDatabaseResponse response =
                                 client.deleteAutonomousDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -4041,21 +3793,17 @@ public class DatabaseWaiters {
                         final DeleteAutonomousDatabaseBackupResponse response =
                                 client.deleteAutonomousDatabaseBackup(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -4104,21 +3852,17 @@ public class DatabaseWaiters {
                         final DeleteAutonomousVmClusterResponse response =
                                 client.deleteAutonomousVmCluster(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -4163,21 +3907,17 @@ public class DatabaseWaiters {
                     public DeleteBackupResponse call() throws Exception {
                         final DeleteBackupResponse response = client.deleteBackup(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -4226,21 +3966,17 @@ public class DatabaseWaiters {
                         final DeleteCloudAutonomousVmClusterResponse response =
                                 client.deleteCloudAutonomousVmCluster(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -4291,21 +4027,17 @@ public class DatabaseWaiters {
                         final DeleteCloudExadataInfrastructureResponse response =
                                 client.deleteCloudExadataInfrastructure(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -4352,21 +4084,17 @@ public class DatabaseWaiters {
                         final DeleteCloudVmClusterResponse response =
                                 client.deleteCloudVmCluster(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -4415,21 +4143,17 @@ public class DatabaseWaiters {
                         final DeleteConsoleConnectionResponse response =
                                 client.deleteConsoleConnection(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -4476,21 +4200,17 @@ public class DatabaseWaiters {
                         final DeleteConsoleHistoryResponse response =
                                 client.deleteConsoleHistory(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -4536,21 +4256,17 @@ public class DatabaseWaiters {
                     public DeleteDatabaseResponse call() throws Exception {
                         final DeleteDatabaseResponse response = client.deleteDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -4599,21 +4315,17 @@ public class DatabaseWaiters {
                         final DeleteDatabaseSoftwareImageResponse response =
                                 client.deleteDatabaseSoftwareImage(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -4658,21 +4370,17 @@ public class DatabaseWaiters {
                     public DeleteDbHomeResponse call() throws Exception {
                         final DeleteDbHomeResponse response = client.deleteDbHome(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -4721,21 +4429,17 @@ public class DatabaseWaiters {
                         final DeleteExadataInfrastructureResponse response =
                                 client.deleteExadataInfrastructure(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -4784,21 +4488,17 @@ public class DatabaseWaiters {
                         final DeleteExternalContainerDatabaseResponse response =
                                 client.deleteExternalContainerDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -4847,21 +4547,17 @@ public class DatabaseWaiters {
                         final DeleteExternalDatabaseConnectorResponse response =
                                 client.deleteExternalDatabaseConnector(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -4913,21 +4609,17 @@ public class DatabaseWaiters {
                         final DeleteExternalNonContainerDatabaseResponse response =
                                 client.deleteExternalNonContainerDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -4976,21 +4668,17 @@ public class DatabaseWaiters {
                         final DeleteExternalPluggableDatabaseResponse response =
                                 client.deleteExternalPluggableDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -5037,21 +4725,17 @@ public class DatabaseWaiters {
                         final DeleteOneoffPatchResponse response =
                                 client.deleteOneoffPatch(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -5100,21 +4784,17 @@ public class DatabaseWaiters {
                         final DeletePluggableDatabaseResponse response =
                                 client.deletePluggableDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -5160,21 +4840,17 @@ public class DatabaseWaiters {
                     public DeleteVmClusterResponse call() throws Exception {
                         final DeleteVmClusterResponse response = client.deleteVmCluster(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -5223,21 +4899,17 @@ public class DatabaseWaiters {
                         final DeleteVmClusterNetworkResponse response =
                                 client.deleteVmClusterNetwork(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -5289,21 +4961,17 @@ public class DatabaseWaiters {
                         final DeregisterAutonomousDatabaseDataSafeResponse response =
                                 client.deregisterAutonomousDatabaseDataSafe(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -5355,21 +5023,17 @@ public class DatabaseWaiters {
                         final DisableAutonomousDatabaseManagementResponse response =
                                 client.disableAutonomousDatabaseManagement(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -5423,21 +5087,17 @@ public class DatabaseWaiters {
                         final DisableAutonomousDatabaseOperationsInsightsResponse response =
                                 client.disableAutonomousDatabaseOperationsInsights(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -5486,21 +5146,17 @@ public class DatabaseWaiters {
                         final DisableDatabaseManagementResponse response =
                                 client.disableDatabaseManagement(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -5554,21 +5210,17 @@ public class DatabaseWaiters {
                         final DisableExternalContainerDatabaseDatabaseManagementResponse response =
                                 client.disableExternalContainerDatabaseDatabaseManagement(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -5622,21 +5274,17 @@ public class DatabaseWaiters {
                         final DisableExternalContainerDatabaseStackMonitoringResponse response =
                                 client.disableExternalContainerDatabaseStackMonitoring(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -5693,21 +5341,17 @@ public class DatabaseWaiters {
                                                 .disableExternalNonContainerDatabaseDatabaseManagement(
                                                         request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -5764,21 +5408,17 @@ public class DatabaseWaiters {
                                                 .disableExternalNonContainerDatabaseOperationsInsights(
                                                         request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -5832,21 +5472,17 @@ public class DatabaseWaiters {
                         final DisableExternalNonContainerDatabaseStackMonitoringResponse response =
                                 client.disableExternalNonContainerDatabaseStackMonitoring(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -5900,21 +5536,17 @@ public class DatabaseWaiters {
                         final DisableExternalPluggableDatabaseDatabaseManagementResponse response =
                                 client.disableExternalPluggableDatabaseDatabaseManagement(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -5968,21 +5600,17 @@ public class DatabaseWaiters {
                         final DisableExternalPluggableDatabaseOperationsInsightsResponse response =
                                 client.disableExternalPluggableDatabaseOperationsInsights(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -6036,21 +5664,17 @@ public class DatabaseWaiters {
                         final DisableExternalPluggableDatabaseStackMonitoringResponse response =
                                 client.disableExternalPluggableDatabaseStackMonitoring(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -6102,21 +5726,17 @@ public class DatabaseWaiters {
                         final DisablePluggableDatabaseManagementResponse response =
                                 client.disablePluggableDatabaseManagement(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -6168,21 +5788,17 @@ public class DatabaseWaiters {
                         final EnableAutonomousDatabaseManagementResponse response =
                                 client.enableAutonomousDatabaseManagement(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -6236,21 +5852,17 @@ public class DatabaseWaiters {
                         final EnableAutonomousDatabaseOperationsInsightsResponse response =
                                 client.enableAutonomousDatabaseOperationsInsights(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -6299,21 +5911,17 @@ public class DatabaseWaiters {
                         final EnableDatabaseManagementResponse response =
                                 client.enableDatabaseManagement(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -6367,21 +5975,17 @@ public class DatabaseWaiters {
                         final EnableExternalContainerDatabaseDatabaseManagementResponse response =
                                 client.enableExternalContainerDatabaseDatabaseManagement(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -6435,21 +6039,17 @@ public class DatabaseWaiters {
                         final EnableExternalContainerDatabaseStackMonitoringResponse response =
                                 client.enableExternalContainerDatabaseStackMonitoring(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -6505,21 +6105,17 @@ public class DatabaseWaiters {
                                         client.enableExternalNonContainerDatabaseDatabaseManagement(
                                                 request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -6575,21 +6171,17 @@ public class DatabaseWaiters {
                                         client.enableExternalNonContainerDatabaseOperationsInsights(
                                                 request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -6643,21 +6235,17 @@ public class DatabaseWaiters {
                         final EnableExternalNonContainerDatabaseStackMonitoringResponse response =
                                 client.enableExternalNonContainerDatabaseStackMonitoring(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -6711,21 +6299,17 @@ public class DatabaseWaiters {
                         final EnableExternalPluggableDatabaseDatabaseManagementResponse response =
                                 client.enableExternalPluggableDatabaseDatabaseManagement(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -6779,21 +6363,17 @@ public class DatabaseWaiters {
                         final EnableExternalPluggableDatabaseOperationsInsightsResponse response =
                                 client.enableExternalPluggableDatabaseOperationsInsights(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -6847,21 +6427,17 @@ public class DatabaseWaiters {
                         final EnableExternalPluggableDatabaseStackMonitoringResponse response =
                                 client.enableExternalPluggableDatabaseStackMonitoring(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -6912,21 +6488,17 @@ public class DatabaseWaiters {
                         final EnablePluggableDatabaseManagementResponse response =
                                 client.enablePluggableDatabaseManagement(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -6975,21 +6547,17 @@ public class DatabaseWaiters {
                         final FailOverAutonomousDatabaseResponse response =
                                 client.failOverAutonomousDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -7046,21 +6614,17 @@ public class DatabaseWaiters {
                                                 .failoverAutonomousContainerDatabaseDataguardAssociation(
                                                         request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -7109,21 +6673,17 @@ public class DatabaseWaiters {
                         final FailoverDataGuardAssociationResponse response =
                                 client.failoverDataGuardAssociation(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -11831,21 +11391,17 @@ public class DatabaseWaiters {
                         final LaunchAutonomousExadataInfrastructureResponse response =
                                 client.launchAutonomousExadataInfrastructure(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -11891,21 +11447,17 @@ public class DatabaseWaiters {
                     public LaunchDbSystemResponse call() throws Exception {
                         final LaunchDbSystemResponse response = client.launchDbSystem(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -11954,21 +11506,17 @@ public class DatabaseWaiters {
                         final LocalClonePluggableDatabaseResponse response =
                                 client.localClonePluggableDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -12020,21 +11568,17 @@ public class DatabaseWaiters {
                         final MigrateExadataDbSystemResourceModelResponse response =
                                 client.migrateExadataDbSystemResourceModel(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -12080,21 +11624,17 @@ public class DatabaseWaiters {
                     public MigrateVaultKeyResponse call() throws Exception {
                         final MigrateVaultKeyResponse response = client.migrateVaultKey(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -12143,21 +11683,17 @@ public class DatabaseWaiters {
                         final ModifyDatabaseManagementResponse response =
                                 client.modifyDatabaseManagement(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -12208,21 +11744,17 @@ public class DatabaseWaiters {
                         final ModifyPluggableDatabaseManagementResponse response =
                                 client.modifyPluggableDatabaseManagement(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -12271,21 +11803,17 @@ public class DatabaseWaiters {
                         final RefreshPluggableDatabaseResponse response =
                                 client.refreshPluggableDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -12337,21 +11865,17 @@ public class DatabaseWaiters {
                         final RegisterAutonomousDatabaseDataSafeResponse response =
                                 client.registerAutonomousDatabaseDataSafe(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -12408,21 +11932,17 @@ public class DatabaseWaiters {
                                                 .reinstateAutonomousContainerDatabaseDataguardAssociation(
                                                         request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -12471,21 +11991,17 @@ public class DatabaseWaiters {
                         final ReinstateDataGuardAssociationResponse response =
                                 client.reinstateDataGuardAssociation(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -12534,21 +12050,17 @@ public class DatabaseWaiters {
                         final RemoteClonePluggableDatabaseResponse response =
                                 client.remoteClonePluggableDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -12601,21 +12113,17 @@ public class DatabaseWaiters {
                         final RemoveVirtualMachineFromCloudVmClusterResponse response =
                                 client.removeVirtualMachineFromCloudVmCluster(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -12666,21 +12174,17 @@ public class DatabaseWaiters {
                         final RemoveVirtualMachineFromVmClusterResponse response =
                                 client.removeVirtualMachineFromVmCluster(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -12729,21 +12233,17 @@ public class DatabaseWaiters {
                         final ResizeVmClusterNetworkResponse response =
                                 client.resizeVmClusterNetwork(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -12795,21 +12295,17 @@ public class DatabaseWaiters {
                         final RestartAutonomousContainerDatabaseResponse response =
                                 client.restartAutonomousContainerDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -12858,21 +12354,17 @@ public class DatabaseWaiters {
                         final RestartAutonomousDatabaseResponse response =
                                 client.restartAutonomousDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -12921,21 +12413,17 @@ public class DatabaseWaiters {
                         final RestoreAutonomousDatabaseResponse response =
                                 client.restoreAutonomousDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -12981,21 +12469,17 @@ public class DatabaseWaiters {
                     public RestoreDatabaseResponse call() throws Exception {
                         final RestoreDatabaseResponse response = client.restoreDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -13049,21 +12533,17 @@ public class DatabaseWaiters {
                         final RotateAutonomousContainerDatabaseEncryptionKeyResponse response =
                                 client.rotateAutonomousContainerDatabaseEncryptionKey(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -13115,21 +12595,17 @@ public class DatabaseWaiters {
                         final RotateAutonomousDatabaseEncryptionKeyResponse response =
                                 client.rotateAutonomousDatabaseEncryptionKey(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -13181,21 +12657,17 @@ public class DatabaseWaiters {
                         final RotateAutonomousVmClusterOrdsCertsResponse response =
                                 client.rotateAutonomousVmClusterOrdsCerts(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -13246,21 +12718,17 @@ public class DatabaseWaiters {
                         final RotateAutonomousVmClusterSslCertsResponse response =
                                 client.rotateAutonomousVmClusterSslCerts(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -13313,21 +12781,17 @@ public class DatabaseWaiters {
                         final RotateCloudAutonomousVmClusterOrdsCertsResponse response =
                                 client.rotateCloudAutonomousVmClusterOrdsCerts(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -13380,21 +12844,17 @@ public class DatabaseWaiters {
                         final RotateCloudAutonomousVmClusterSslCertsResponse response =
                                 client.rotateCloudAutonomousVmClusterSslCerts(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -13440,21 +12900,17 @@ public class DatabaseWaiters {
                     public RotateOrdsCertsResponse call() throws Exception {
                         final RotateOrdsCertsResponse response = client.rotateOrdsCerts(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -13506,21 +12962,17 @@ public class DatabaseWaiters {
                         final RotatePluggableDatabaseEncryptionKeyResponse response =
                                 client.rotatePluggableDatabaseEncryptionKey(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -13566,21 +13018,17 @@ public class DatabaseWaiters {
                     public RotateSslCertsResponse call() throws Exception {
                         final RotateSslCertsResponse response = client.rotateSslCerts(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -13626,21 +13074,17 @@ public class DatabaseWaiters {
                     public RotateVaultKeyResponse call() throws Exception {
                         final RotateVaultKeyResponse response = client.rotateVaultKey(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -13694,21 +13138,17 @@ public class DatabaseWaiters {
                         final ScanExternalContainerDatabasePluggableDatabasesResponse response =
                                 client.scanExternalContainerDatabasePluggableDatabases(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -13757,21 +13197,17 @@ public class DatabaseWaiters {
                         final ShrinkAutonomousDatabaseResponse response =
                                 client.shrinkAutonomousDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -13820,21 +13256,17 @@ public class DatabaseWaiters {
                         final StartAutonomousDatabaseResponse response =
                                 client.startAutonomousDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -13883,21 +13315,17 @@ public class DatabaseWaiters {
                         final StartPluggableDatabaseResponse response =
                                 client.startPluggableDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -13946,21 +13374,17 @@ public class DatabaseWaiters {
                         final StopAutonomousDatabaseResponse response =
                                 client.stopAutonomousDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -14007,21 +13431,17 @@ public class DatabaseWaiters {
                         final StopPluggableDatabaseResponse response =
                                 client.stopPluggableDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -14078,21 +13498,17 @@ public class DatabaseWaiters {
                                                 .switchoverAutonomousContainerDatabaseDataguardAssociation(
                                                         request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -14141,21 +13557,17 @@ public class DatabaseWaiters {
                         final SwitchoverAutonomousDatabaseResponse response =
                                 client.switchoverAutonomousDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -14204,21 +13616,17 @@ public class DatabaseWaiters {
                         final SwitchoverDataGuardAssociationResponse response =
                                 client.switchoverDataGuardAssociation(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -14270,21 +13678,17 @@ public class DatabaseWaiters {
                         final TerminateAutonomousContainerDatabaseResponse response =
                                 client.terminateAutonomousContainerDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -14338,21 +13742,17 @@ public class DatabaseWaiters {
                         final TerminateAutonomousExadataInfrastructureResponse response =
                                 client.terminateAutonomousExadataInfrastructure(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -14399,21 +13799,17 @@ public class DatabaseWaiters {
                         final TerminateDbSystemResponse response =
                                 client.terminateDbSystem(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -14464,21 +13860,17 @@ public class DatabaseWaiters {
                         final UpdateAutonomousContainerDatabaseResponse response =
                                 client.updateAutonomousContainerDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -14535,21 +13927,17 @@ public class DatabaseWaiters {
                                                 .updateAutonomousContainerDatabaseDataguardAssociation(
                                                         request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -14598,21 +13986,17 @@ public class DatabaseWaiters {
                         final UpdateAutonomousDatabaseResponse response =
                                 client.updateAutonomousDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -14661,21 +14045,17 @@ public class DatabaseWaiters {
                         final UpdateAutonomousDatabaseBackupResponse response =
                                 client.updateAutonomousDatabaseBackup(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -14728,21 +14108,17 @@ public class DatabaseWaiters {
                         final UpdateAutonomousDatabaseRegionalWalletResponse response =
                                 client.updateAutonomousDatabaseRegionalWallet(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -14791,21 +14167,17 @@ public class DatabaseWaiters {
                         final UpdateAutonomousDatabaseWalletResponse response =
                                 client.updateAutonomousDatabaseWallet(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -14857,21 +14229,17 @@ public class DatabaseWaiters {
                         final UpdateAutonomousExadataInfrastructureResponse response =
                                 client.updateAutonomousExadataInfrastructure(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -14920,21 +14288,17 @@ public class DatabaseWaiters {
                         final UpdateAutonomousVmClusterResponse response =
                                 client.updateAutonomousVmCluster(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -14983,21 +14347,17 @@ public class DatabaseWaiters {
                         final UpdateCloudAutonomousVmClusterResponse response =
                                 client.updateCloudAutonomousVmCluster(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -15048,21 +14408,17 @@ public class DatabaseWaiters {
                         final UpdateCloudExadataInfrastructureResponse response =
                                 client.updateCloudExadataInfrastructure(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -15109,21 +14465,17 @@ public class DatabaseWaiters {
                         final UpdateCloudVmClusterResponse response =
                                 client.updateCloudVmCluster(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -15172,21 +14524,17 @@ public class DatabaseWaiters {
                         final UpdateCloudVmClusterIormConfigResponse response =
                                 client.updateCloudVmClusterIormConfig(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -15235,21 +14583,17 @@ public class DatabaseWaiters {
                         final UpdateConsoleConnectionResponse response =
                                 client.updateConsoleConnection(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -15296,21 +14640,17 @@ public class DatabaseWaiters {
                         final UpdateConsoleHistoryResponse response =
                                 client.updateConsoleHistory(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -15359,21 +14699,17 @@ public class DatabaseWaiters {
                         final UpdateDataGuardAssociationResponse response =
                                 client.updateDataGuardAssociation(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -15419,21 +14755,17 @@ public class DatabaseWaiters {
                     public UpdateDatabaseResponse call() throws Exception {
                         final UpdateDatabaseResponse response = client.updateDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -15478,21 +14810,17 @@ public class DatabaseWaiters {
                     public UpdateDbHomeResponse call() throws Exception {
                         final UpdateDbHomeResponse response = client.updateDbHome(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -15537,21 +14865,17 @@ public class DatabaseWaiters {
                     public UpdateDbNodeResponse call() throws Exception {
                         final UpdateDbNodeResponse response = client.updateDbNode(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -15597,21 +14921,17 @@ public class DatabaseWaiters {
                     public UpdateDbSystemResponse call() throws Exception {
                         final UpdateDbSystemResponse response = client.updateDbSystem(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -15660,21 +14980,17 @@ public class DatabaseWaiters {
                         final UpdateExadataInfrastructureResponse response =
                                 client.updateExadataInfrastructure(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -15723,21 +15039,17 @@ public class DatabaseWaiters {
                         final UpdateExadataIormConfigResponse response =
                                 client.updateExadataIormConfig(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -15786,21 +15098,17 @@ public class DatabaseWaiters {
                         final UpdateExternalContainerDatabaseResponse response =
                                 client.updateExternalContainerDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -15849,21 +15157,17 @@ public class DatabaseWaiters {
                         final UpdateExternalDatabaseConnectorResponse response =
                                 client.updateExternalDatabaseConnector(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -15915,21 +15219,17 @@ public class DatabaseWaiters {
                         final UpdateExternalNonContainerDatabaseResponse response =
                                 client.updateExternalNonContainerDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -15978,21 +15278,17 @@ public class DatabaseWaiters {
                         final UpdateExternalPluggableDatabaseResponse response =
                                 client.updateExternalPluggableDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -16041,21 +15337,17 @@ public class DatabaseWaiters {
                         final UpdatePluggableDatabaseResponse response =
                                 client.updatePluggableDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -16101,21 +15393,17 @@ public class DatabaseWaiters {
                     public UpdateVmClusterResponse call() throws Exception {
                         final UpdateVmClusterResponse response = client.updateVmCluster(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -16164,21 +15452,17 @@ public class DatabaseWaiters {
                         final UpdateVmClusterNetworkResponse response =
                                 client.updateVmClusterNetwork(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -16224,21 +15508,17 @@ public class DatabaseWaiters {
                     public UpgradeDatabaseResponse call() throws Exception {
                         final UpgradeDatabaseResponse response = client.upgradeDatabase(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -16284,21 +15564,17 @@ public class DatabaseWaiters {
                     public UpgradeDbSystemResponse call() throws Exception {
                         final UpgradeDbSystemResponse response = client.upgradeDbSystem(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -16347,21 +15623,17 @@ public class DatabaseWaiters {
                         final ValidateVmClusterNetworkResponse response =
                                 client.validateVmClusterNetwork(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },

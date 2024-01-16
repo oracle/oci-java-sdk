@@ -42,6 +42,128 @@ public class MonitoringPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listAlarmSuppressions operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListAlarmSuppressionsResponse> listAlarmSuppressionsResponseIterator(
+            final ListAlarmSuppressionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAlarmSuppressionsRequest.Builder,
+                ListAlarmSuppressionsRequest,
+                ListAlarmSuppressionsResponse>(
+                new java.util.function.Supplier<ListAlarmSuppressionsRequest.Builder>() {
+                    @Override
+                    public ListAlarmSuppressionsRequest.Builder get() {
+                        return ListAlarmSuppressionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAlarmSuppressionsResponse, String>() {
+                    @Override
+                    public String apply(ListAlarmSuppressionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAlarmSuppressionsRequest.Builder>,
+                        ListAlarmSuppressionsRequest>() {
+                    @Override
+                    public ListAlarmSuppressionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAlarmSuppressionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAlarmSuppressionsRequest, ListAlarmSuppressionsResponse>() {
+                    @Override
+                    public ListAlarmSuppressionsResponse apply(
+                            ListAlarmSuppressionsRequest request) {
+                        return client.listAlarmSuppressions(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.monitoring.model.AlarmSuppressionSummary} objects contained in responses from
+     * the listAlarmSuppressions operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.monitoring.model.AlarmSuppressionSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.monitoring.model.AlarmSuppressionSummary>
+            listAlarmSuppressionsRecordIterator(final ListAlarmSuppressionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAlarmSuppressionsRequest.Builder,
+                ListAlarmSuppressionsRequest,
+                ListAlarmSuppressionsResponse,
+                com.oracle.bmc.monitoring.model.AlarmSuppressionSummary>(
+                new java.util.function.Supplier<ListAlarmSuppressionsRequest.Builder>() {
+                    @Override
+                    public ListAlarmSuppressionsRequest.Builder get() {
+                        return ListAlarmSuppressionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAlarmSuppressionsResponse, String>() {
+                    @Override
+                    public String apply(ListAlarmSuppressionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAlarmSuppressionsRequest.Builder>,
+                        ListAlarmSuppressionsRequest>() {
+                    @Override
+                    public ListAlarmSuppressionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAlarmSuppressionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAlarmSuppressionsRequest, ListAlarmSuppressionsResponse>() {
+                    @Override
+                    public ListAlarmSuppressionsResponse apply(
+                            ListAlarmSuppressionsRequest request) {
+                        return client.listAlarmSuppressions(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAlarmSuppressionsResponse,
+                        java.util.List<com.oracle.bmc.monitoring.model.AlarmSuppressionSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.monitoring.model.AlarmSuppressionSummary>
+                            apply(ListAlarmSuppressionsResponse response) {
+                        return response.getAlarmSuppressionCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listAlarms
      * operation. This iterable will fetch more data from the server as needed.
      *

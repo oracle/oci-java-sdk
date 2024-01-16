@@ -439,7 +439,7 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * The human-readable content of the delivered alarm notification. Oracle recommends
          * providing guidance to operators for resolving the alarm condition. Consider adding links
-         * to standard runbook practices.
+         * to standard runbook practices. Avoid entering confidential information.
          *
          * <p>Example: {@code High CPU usage alert. Follow runbook instructions for resolution.}
          */
@@ -449,7 +449,7 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * The human-readable content of the delivered alarm notification. Oracle recommends
          * providing guidance to operators for resolving the alarm condition. Consider adding links
-         * to standard runbook practices.
+         * to standard runbook practices. Avoid entering confidential information.
          *
          * <p>Example: {@code High CPU usage alert. Follow runbook instructions for resolution.}
          *
@@ -515,7 +515,7 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
          * A list of destinations for alarm notifications. Each destination is represented by the
          * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * related resource, such as a {@link NotificationTopic}. Supported destination services:
-         * Notifications , Streaming. Limit: One destination per supported destination service.
+         * Notifications, Streaming. Limit: One destination per supported destination service.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("destinations")
         private java.util.List<String> destinations;
@@ -524,7 +524,7 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
          * A list of destinations for alarm notifications. Each destination is represented by the
          * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * related resource, such as a {@link NotificationTopic}. Supported destination services:
-         * Notifications , Streaming. Limit: One destination per supported destination service.
+         * Notifications, Streaming. Limit: One destination per supported destination service.
          *
          * @param destinations the value to set
          * @return this builder
@@ -662,7 +662,7 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * The date and time the alarm was created. Format defined by RFC3339.
          *
-         * <p>Example: {@code 2019-02-01T01:02:29.600Z}
+         * <p>Example: {@code 2023-02-01T01:02:29.600Z}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
@@ -670,7 +670,7 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * The date and time the alarm was created. Format defined by RFC3339.
          *
-         * <p>Example: {@code 2019-02-01T01:02:29.600Z}
+         * <p>Example: {@code 2023-02-01T01:02:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -683,7 +683,7 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * The date and time the alarm was last updated. Format defined by RFC3339.
          *
-         * <p>Example: {@code 2019-02-03T01:02:29.600Z}
+         * <p>Example: {@code 2023-02-03T01:02:29.600Z}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
@@ -691,7 +691,7 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * The date and time the alarm was last updated. Format defined by RFC3339.
          *
-         * <p>Example: {@code 2019-02-03T01:02:29.600Z}
+         * <p>Example: {@code 2023-02-03T01:02:29.600Z}
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -1176,7 +1176,7 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * The human-readable content of the delivered alarm notification. Oracle recommends providing
      * guidance to operators for resolving the alarm condition. Consider adding links to standard
-     * runbook practices.
+     * runbook practices. Avoid entering confidential information.
      *
      * <p>Example: {@code High CPU usage alert. Follow runbook instructions for resolution.}
      */
@@ -1186,7 +1186,7 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * The human-readable content of the delivered alarm notification. Oracle recommends providing
      * guidance to operators for resolving the alarm condition. Consider adding links to standard
-     * runbook practices.
+     * runbook practices. Avoid entering confidential information.
      *
      * <p>Example: {@code High CPU usage alert. Follow runbook instructions for resolution.}
      *
@@ -1299,7 +1299,7 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * A list of destinations for alarm notifications. Each destination is represented by the
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
      * related resource, such as a {@link NotificationTopic}. Supported destination services:
-     * Notifications , Streaming. Limit: One destination per supported destination service.
+     * Notifications, Streaming. Limit: One destination per supported destination service.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("destinations")
     private final java.util.List<String> destinations;
@@ -1308,7 +1308,7 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * A list of destinations for alarm notifications. Each destination is represented by the
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
      * related resource, such as a {@link NotificationTopic}. Supported destination services:
-     * Notifications , Streaming. Limit: One destination per supported destination service.
+     * Notifications, Streaming. Limit: One destination per supported destination service.
      *
      * @return the value
      */
@@ -1482,7 +1482,7 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * The date and time the alarm was created. Format defined by RFC3339.
      *
-     * <p>Example: {@code 2019-02-01T01:02:29.600Z}
+     * <p>Example: {@code 2023-02-01T01:02:29.600Z}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
@@ -1490,7 +1490,7 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * The date and time the alarm was created. Format defined by RFC3339.
      *
-     * <p>Example: {@code 2019-02-01T01:02:29.600Z}
+     * <p>Example: {@code 2023-02-01T01:02:29.600Z}
      *
      * @return the value
      */
@@ -1501,7 +1501,7 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * The date and time the alarm was last updated. Format defined by RFC3339.
      *
-     * <p>Example: {@code 2019-02-03T01:02:29.600Z}
+     * <p>Example: {@code 2023-02-03T01:02:29.600Z}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
@@ -1509,7 +1509,7 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * The date and time the alarm was last updated. Format defined by RFC3339.
      *
-     * <p>Example: {@code 2019-02-03T01:02:29.600Z}
+     * <p>Example: {@code 2023-02-03T01:02:29.600Z}
      *
      * @return the value
      */
