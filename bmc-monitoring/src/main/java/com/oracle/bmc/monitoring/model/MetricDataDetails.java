@@ -56,8 +56,8 @@ public final class MetricDataDetails
          * The source service or application emitting the metric.
          *
          * <p>A valid namespace value starts with an alphabetical character and includes only
-         * alphanumeric characters and underscores. The "oci_" prefix is reserved. Avoid entering
-         * confidential information.
+         * alphanumeric characters and underscores. Custom metrics can't use the following reserved
+         * prefixes: {@code oci_} and {@code oracle_} Avoid entering confidential information.
          *
          * <p>Example: {@code my_namespace}
          */
@@ -68,8 +68,8 @@ public final class MetricDataDetails
          * The source service or application emitting the metric.
          *
          * <p>A valid namespace value starts with an alphabetical character and includes only
-         * alphanumeric characters and underscores. The "oci_" prefix is reserved. Avoid entering
-         * confidential information.
+         * alphanumeric characters and underscores. Custom metrics can't use the following reserved
+         * prefixes: {@code oci_} and {@code oracle_} Avoid entering confidential information.
          *
          * <p>Example: {@code my_namespace}
          *
@@ -133,8 +133,8 @@ public final class MetricDataDetails
          * The name of the metric.
          *
          * <p>A valid name value starts with an alphabetical character and includes only
-         * alphanumeric characters, dots, underscores, hyphens, and dollar signs. The {@code oci_}
-         * prefix is reserved. Avoid entering confidential information.
+         * alphanumeric characters, dots, underscores, hyphens, and dollar signs. Avoid entering
+         * confidential information.
          *
          * <p>Example: {@code my_app.success_rate}
          */
@@ -145,8 +145,8 @@ public final class MetricDataDetails
          * The name of the metric.
          *
          * <p>A valid name value starts with an alphabetical character and includes only
-         * alphanumeric characters, dots, underscores, hyphens, and dollar signs. The {@code oci_}
-         * prefix is reserved. Avoid entering confidential information.
+         * alphanumeric characters, dots, underscores, hyphens, and dollar signs. Avoid entering
+         * confidential information.
          *
          * <p>Example: {@code my_app.success_rate}
          *
@@ -166,7 +166,7 @@ public final class MetricDataDetails
          * a dimension value is 512. Empty strings are not allowed for keys or values. Avoid
          * entering confidential information.
          *
-         * <p>Example: {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}
+         * <p>Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private java.util.Map<String, String> dimensions;
@@ -179,7 +179,7 @@ public final class MetricDataDetails
          * a dimension value is 512. Empty strings are not allowed for keys or values. Avoid
          * entering confidential information.
          *
-         * <p>Example: {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}
+         * <p>Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
          *
          * @param dimensions the value to set
          * @return this builder
@@ -295,8 +295,8 @@ public final class MetricDataDetails
      * The source service or application emitting the metric.
      *
      * <p>A valid namespace value starts with an alphabetical character and includes only
-     * alphanumeric characters and underscores. The "oci_" prefix is reserved. Avoid entering
-     * confidential information.
+     * alphanumeric characters and underscores. Custom metrics can't use the following reserved
+     * prefixes: {@code oci_} and {@code oracle_} Avoid entering confidential information.
      *
      * <p>Example: {@code my_namespace}
      */
@@ -307,8 +307,8 @@ public final class MetricDataDetails
      * The source service or application emitting the metric.
      *
      * <p>A valid namespace value starts with an alphabetical character and includes only
-     * alphanumeric characters and underscores. The "oci_" prefix is reserved. Avoid entering
-     * confidential information.
+     * alphanumeric characters and underscores. Custom metrics can't use the following reserved
+     * prefixes: {@code oci_} and {@code oracle_} Avoid entering confidential information.
      *
      * <p>Example: {@code my_namespace}
      *
@@ -366,8 +366,8 @@ public final class MetricDataDetails
      * The name of the metric.
      *
      * <p>A valid name value starts with an alphabetical character and includes only alphanumeric
-     * characters, dots, underscores, hyphens, and dollar signs. The {@code oci_} prefix is
-     * reserved. Avoid entering confidential information.
+     * characters, dots, underscores, hyphens, and dollar signs. Avoid entering confidential
+     * information.
      *
      * <p>Example: {@code my_app.success_rate}
      */
@@ -378,8 +378,8 @@ public final class MetricDataDetails
      * The name of the metric.
      *
      * <p>A valid name value starts with an alphabetical character and includes only alphanumeric
-     * characters, dots, underscores, hyphens, and dollar signs. The {@code oci_} prefix is
-     * reserved. Avoid entering confidential information.
+     * characters, dots, underscores, hyphens, and dollar signs. Avoid entering confidential
+     * information.
      *
      * <p>Example: {@code my_app.success_rate}
      *
@@ -397,7 +397,7 @@ public final class MetricDataDetails
      * is 512. Empty strings are not allowed for keys or values. Avoid entering confidential
      * information.
      *
-     * <p>Example: {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}
+     * <p>Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
     private final java.util.Map<String, String> dimensions;
@@ -410,7 +410,7 @@ public final class MetricDataDetails
      * is 512. Empty strings are not allowed for keys or values. Avoid entering confidential
      * information.
      *
-     * <p>Example: {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}
+     * <p>Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
      *
      * @return the value
      */

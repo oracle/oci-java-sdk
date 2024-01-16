@@ -84,21 +84,17 @@ public class ComputeManagementWaiters {
                         final AttachInstancePoolInstanceResponse response =
                                 client.attachInstancePoolInstance(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -145,21 +141,17 @@ public class ComputeManagementWaiters {
                         final CreateClusterNetworkResponse response =
                                 client.createClusterNetwork(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -208,21 +200,17 @@ public class ComputeManagementWaiters {
                         final DetachInstancePoolInstanceResponse response =
                                 client.detachInstancePoolInstance(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -713,21 +701,17 @@ public class ComputeManagementWaiters {
                         final LaunchInstanceConfigurationResponse response =
                                 client.launchInstanceConfiguration(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },
@@ -776,21 +760,17 @@ public class ComputeManagementWaiters {
                         final TerminateClusterNetworkResponse response =
                                 client.terminateClusterNetwork(request);
 
-                        if (response.getOpcWorkRequestId() != null) {
-                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                    getWorkRequestRequest =
-                                            com.oracle.bmc.workrequests.requests
-                                                    .GetWorkRequestRequest.builder()
-                                                    .workRequestId(response.getOpcWorkRequestId())
-                                                    .build();
-                            workRequestClient
-                                    .getWaiters()
-                                    .forWorkRequest(
-                                            getWorkRequestRequest,
-                                            terminationStrategy,
-                                            delayStrategy)
-                                    .execute();
-                        }
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
                         return response;
                     }
                 },

@@ -57,6 +57,9 @@ public final class AuditEventSummary
         "clientId",
         "auditPolicies",
         "auditType",
+        "peerTargetDatabaseKey",
+        "trailSource",
+        "databaseUniqueName",
         "freeformTags",
         "definedTags"
     })
@@ -93,6 +96,9 @@ public final class AuditEventSummary
             String clientId,
             String auditPolicies,
             AuditType auditType,
+            Integer peerTargetDatabaseKey,
+            AuditTrailSource trailSource,
+            String databaseUniqueName,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -128,6 +134,9 @@ public final class AuditEventSummary
         this.clientId = clientId;
         this.auditPolicies = auditPolicies;
         this.auditType = auditType;
+        this.peerTargetDatabaseKey = peerTargetDatabaseKey;
+        this.trailSource = trailSource;
+        this.databaseUniqueName = databaseUniqueName;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -652,6 +661,51 @@ public final class AuditEventSummary
             this.__explicitlySet__.add("auditType");
             return this;
         }
+        /** The secondary id assigned for the peer database registered with Data Safe. */
+        @com.fasterxml.jackson.annotation.JsonProperty("peerTargetDatabaseKey")
+        private Integer peerTargetDatabaseKey;
+
+        /**
+         * The secondary id assigned for the peer database registered with Data Safe.
+         *
+         * @param peerTargetDatabaseKey the value to set
+         * @return this builder
+         */
+        public Builder peerTargetDatabaseKey(Integer peerTargetDatabaseKey) {
+            this.peerTargetDatabaseKey = peerTargetDatabaseKey;
+            this.__explicitlySet__.add("peerTargetDatabaseKey");
+            return this;
+        }
+        /** The underlying source of unified audit trail. */
+        @com.fasterxml.jackson.annotation.JsonProperty("trailSource")
+        private AuditTrailSource trailSource;
+
+        /**
+         * The underlying source of unified audit trail.
+         *
+         * @param trailSource the value to set
+         * @return this builder
+         */
+        public Builder trailSource(AuditTrailSource trailSource) {
+            this.trailSource = trailSource;
+            this.__explicitlySet__.add("trailSource");
+            return this;
+        }
+        /** Unique name of the database associated to the peer target database. */
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseUniqueName")
+        private String databaseUniqueName;
+
+        /**
+         * Unique name of the database associated to the peer target database.
+         *
+         * @param databaseUniqueName the value to set
+         * @return this builder
+         */
+        public Builder databaseUniqueName(String databaseUniqueName) {
+            this.databaseUniqueName = databaseUniqueName;
+            this.__explicitlySet__.add("databaseUniqueName");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -742,6 +796,9 @@ public final class AuditEventSummary
                             this.clientId,
                             this.auditPolicies,
                             this.auditType,
+                            this.peerTargetDatabaseKey,
+                            this.trailSource,
+                            this.databaseUniqueName,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -847,6 +904,15 @@ public final class AuditEventSummary
             }
             if (model.wasPropertyExplicitlySet("auditType")) {
                 this.auditType(model.getAuditType());
+            }
+            if (model.wasPropertyExplicitlySet("peerTargetDatabaseKey")) {
+                this.peerTargetDatabaseKey(model.getPeerTargetDatabaseKey());
+            }
+            if (model.wasPropertyExplicitlySet("trailSource")) {
+                this.trailSource(model.getTrailSource());
+            }
+            if (model.wasPropertyExplicitlySet("databaseUniqueName")) {
+                this.databaseUniqueName(model.getDatabaseUniqueName());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -1559,6 +1625,45 @@ public final class AuditEventSummary
         return auditType;
     }
 
+    /** The secondary id assigned for the peer database registered with Data Safe. */
+    @com.fasterxml.jackson.annotation.JsonProperty("peerTargetDatabaseKey")
+    private final Integer peerTargetDatabaseKey;
+
+    /**
+     * The secondary id assigned for the peer database registered with Data Safe.
+     *
+     * @return the value
+     */
+    public Integer getPeerTargetDatabaseKey() {
+        return peerTargetDatabaseKey;
+    }
+
+    /** The underlying source of unified audit trail. */
+    @com.fasterxml.jackson.annotation.JsonProperty("trailSource")
+    private final AuditTrailSource trailSource;
+
+    /**
+     * The underlying source of unified audit trail.
+     *
+     * @return the value
+     */
+    public AuditTrailSource getTrailSource() {
+        return trailSource;
+    }
+
+    /** Unique name of the database associated to the peer target database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseUniqueName")
+    private final String databaseUniqueName;
+
+    /**
+     * Unique name of the database associated to the peer target database.
+     *
+     * @return the value
+     */
+    public String getDatabaseUniqueName() {
+        return databaseUniqueName;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -1653,6 +1758,9 @@ public final class AuditEventSummary
         sb.append(", clientId=").append(String.valueOf(this.clientId));
         sb.append(", auditPolicies=").append(String.valueOf(this.auditPolicies));
         sb.append(", auditType=").append(String.valueOf(this.auditType));
+        sb.append(", peerTargetDatabaseKey=").append(String.valueOf(this.peerTargetDatabaseKey));
+        sb.append(", trailSource=").append(String.valueOf(this.trailSource));
+        sb.append(", databaseUniqueName=").append(String.valueOf(this.databaseUniqueName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -1702,6 +1810,9 @@ public final class AuditEventSummary
                 && java.util.Objects.equals(this.clientId, other.clientId)
                 && java.util.Objects.equals(this.auditPolicies, other.auditPolicies)
                 && java.util.Objects.equals(this.auditType, other.auditType)
+                && java.util.Objects.equals(this.peerTargetDatabaseKey, other.peerTargetDatabaseKey)
+                && java.util.Objects.equals(this.trailSource, other.trailSource)
+                && java.util.Objects.equals(this.databaseUniqueName, other.databaseUniqueName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -1763,6 +1874,17 @@ public final class AuditEventSummary
                 (result * PRIME)
                         + (this.auditPolicies == null ? 43 : this.auditPolicies.hashCode());
         result = (result * PRIME) + (this.auditType == null ? 43 : this.auditType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerTargetDatabaseKey == null
+                                ? 43
+                                : this.peerTargetDatabaseKey.hashCode());
+        result = (result * PRIME) + (this.trailSource == null ? 43 : this.trailSource.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseUniqueName == null
+                                ? 43
+                                : this.databaseUniqueName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

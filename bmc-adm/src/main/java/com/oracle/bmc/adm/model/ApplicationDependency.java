@@ -23,11 +23,15 @@ package com.oracle.bmc.adm.model;
 public final class ApplicationDependency
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"gav", "nodeId", "applicationDependencyNodeIds"})
+    @java.beans.ConstructorProperties({"gav", "purl", "nodeId", "applicationDependencyNodeIds"})
     public ApplicationDependency(
-            String gav, String nodeId, java.util.List<String> applicationDependencyNodeIds) {
+            String gav,
+            String purl,
+            String nodeId,
+            java.util.List<String> applicationDependencyNodeIds) {
         super();
         this.gav = gav;
+        this.purl = purl;
         this.nodeId = nodeId;
         this.applicationDependencyNodeIds = applicationDependencyNodeIds;
     }
@@ -35,15 +39,15 @@ public final class ApplicationDependency
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Group Artifact Version (GAV) identifier (Group:Artifact:Version), e.g.
-         * org.graalvm.nativeimage:svm:21.1.0.
+         * Group Artifact Version (GAV) identifier (Group:Artifact:Version). Example:
+         * org.graalvm.nativeimage:svm:21.1.0. "N/A" for non-maven artifacts.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("gav")
         private String gav;
 
         /**
-         * Group Artifact Version (GAV) identifier (Group:Artifact:Version), e.g.
-         * org.graalvm.nativeimage:svm:21.1.0.
+         * Group Artifact Version (GAV) identifier (Group:Artifact:Version). Example:
+         * org.graalvm.nativeimage:svm:21.1.0. "N/A" for non-maven artifacts.
          *
          * @param gav the value to set
          * @return this builder
@@ -51,6 +55,25 @@ public final class ApplicationDependency
         public Builder gav(String gav) {
             this.gav = gav;
             this.__explicitlySet__.add("gav");
+            return this;
+        }
+        /**
+         * Package URL defined in https://github.com/package-url/purl-spec, e.g.
+         * pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("purl")
+        private String purl;
+
+        /**
+         * Package URL defined in https://github.com/package-url/purl-spec, e.g.
+         * pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+         *
+         * @param purl the value to set
+         * @return this builder
+         */
+        public Builder purl(String purl) {
+            this.purl = purl;
+            this.__explicitlySet__.add("purl");
             return this;
         }
         /**
@@ -109,7 +132,7 @@ public final class ApplicationDependency
         public ApplicationDependency build() {
             ApplicationDependency model =
                     new ApplicationDependency(
-                            this.gav, this.nodeId, this.applicationDependencyNodeIds);
+                            this.gav, this.purl, this.nodeId, this.applicationDependencyNodeIds);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -120,6 +143,9 @@ public final class ApplicationDependency
         public Builder copy(ApplicationDependency model) {
             if (model.wasPropertyExplicitlySet("gav")) {
                 this.gav(model.getGav());
+            }
+            if (model.wasPropertyExplicitlySet("purl")) {
+                this.purl(model.getPurl());
             }
             if (model.wasPropertyExplicitlySet("nodeId")) {
                 this.nodeId(model.getNodeId());
@@ -141,20 +167,37 @@ public final class ApplicationDependency
     }
 
     /**
-     * Group Artifact Version (GAV) identifier (Group:Artifact:Version), e.g.
-     * org.graalvm.nativeimage:svm:21.1.0.
+     * Group Artifact Version (GAV) identifier (Group:Artifact:Version). Example:
+     * org.graalvm.nativeimage:svm:21.1.0. "N/A" for non-maven artifacts.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("gav")
     private final String gav;
 
     /**
-     * Group Artifact Version (GAV) identifier (Group:Artifact:Version), e.g.
-     * org.graalvm.nativeimage:svm:21.1.0.
+     * Group Artifact Version (GAV) identifier (Group:Artifact:Version). Example:
+     * org.graalvm.nativeimage:svm:21.1.0. "N/A" for non-maven artifacts.
      *
      * @return the value
      */
     public String getGav() {
         return gav;
+    }
+
+    /**
+     * Package URL defined in https://github.com/package-url/purl-spec, e.g.
+     * pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("purl")
+    private final String purl;
+
+    /**
+     * Package URL defined in https://github.com/package-url/purl-spec, e.g.
+     * pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+     *
+     * @return the value
+     */
+    public String getPurl() {
+        return purl;
     }
 
     /**
@@ -217,6 +260,7 @@ public final class ApplicationDependency
         sb.append("ApplicationDependency(");
         sb.append("super=").append(super.toString());
         sb.append("gav=").append(String.valueOf(this.gav));
+        sb.append(", purl=").append(String.valueOf(this.purl));
         sb.append(", nodeId=").append(String.valueOf(this.nodeId));
         sb.append(", applicationDependencyNodeIds=")
                 .append(String.valueOf(this.applicationDependencyNodeIds));
@@ -235,6 +279,7 @@ public final class ApplicationDependency
 
         ApplicationDependency other = (ApplicationDependency) o;
         return java.util.Objects.equals(this.gav, other.gav)
+                && java.util.Objects.equals(this.purl, other.purl)
                 && java.util.Objects.equals(this.nodeId, other.nodeId)
                 && java.util.Objects.equals(
                         this.applicationDependencyNodeIds, other.applicationDependencyNodeIds)
@@ -246,6 +291,7 @@ public final class ApplicationDependency
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.gav == null ? 43 : this.gav.hashCode());
+        result = (result * PRIME) + (this.purl == null ? 43 : this.purl.hashCode());
         result = (result * PRIME) + (this.nodeId == null ? 43 : this.nodeId.hashCode());
         result =
                 (result * PRIME)

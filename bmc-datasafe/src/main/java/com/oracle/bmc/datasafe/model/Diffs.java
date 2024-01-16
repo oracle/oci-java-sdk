@@ -262,6 +262,7 @@ public final class Diffs extends com.oracle.bmc.http.client.internal.ExplicitlyS
         Evaluate("EVALUATE"),
         Advisory("ADVISORY"),
         Pass("PASS"),
+        Deferred("DEFERRED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

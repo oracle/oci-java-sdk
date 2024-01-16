@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.32.0 - 2024-01-16
+### Added
+- Support for resource id filter on the service work requests in the Container Instances service
+- Support for polyglot vulnerability audit in the Application Dependency Management service
+- Support for create, read, and update operations on peer databases in the Data Safe service
+- Support for dimension specific alarm suppressions in the Monitoring service
+- Support for calculating audit volume in the Data Safe service
+- Support for viewing schema accesses in data safe user assessments in the Data Safe service
+- Support for security feature usage in the Data Safe service
+- Support for viewing the top security findings in data safe security assessments in the Data Safe service
+- Support for additional filters in list findings operation in the Data Safe service
+- Support for updating risk level of the specified finding in the Data Safe service
+  
+### Breaking Changes
+- Method `public java.lang.String getOpcWorkRequestId()` has been removed from the response model `com.oracle.bmc.adm.responses.CreateVulnerabilityAuditResponse` in the Application Dependency Management service
+
 ## 3.31.1 - 2024-01-09
 ### Added
 - Support for calling Oracle Cloud Infrastructure services in the sa-valparaiso-1 region

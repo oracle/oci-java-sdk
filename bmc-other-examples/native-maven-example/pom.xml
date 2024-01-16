@@ -1,37 +1,47 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk-examples-native</artifactId>
-  <version>3.31.1</version>
-
-  <properties>
-    <mainClass>StreamsExample</mainClass>
-    <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-    <native-maven-plugin.version>0.9.27</native-maven-plugin.version>
-    <exec-maven-plugin.version>1.2.1</exec-maven-plugin.version>
-  </properties>
-
+  <version>3.32.0</version>
   <name>Oracle Cloud Infrastructure SDK - Native Example</name>
   <description>This project contains an example on how to use the SDK used for Oracle Cloud Infrastructure in a native executable</description>
   <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+
+  <properties>
+    <mainClass>StreamsExample</mainClass>
+    <native-maven-plugin.version>0.9.27</native-maven-plugin.version>
+  </properties>
 
   <build>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>${maven-compiler-plugin.version}</version>
+        <version>3.8.1</version>
         <configuration>
           <source>1.8</source>
           <target>1.8</target>
         </configuration>
       </plugin>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.0.1</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <phase>package</phase>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
-        <version>${exec-maven-plugin.version}</version>
+        <version>1.6.0</version>
         <configuration>
           <mainClass>${mainClass}</mainClass>
         </configuration>
@@ -79,14 +89,14 @@
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-bom</artifactId>
-        <version>3.31.1</version>
+        <version>3.32.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
-        <version>3.31.1</version>
+        <version>3.32.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

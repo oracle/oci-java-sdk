@@ -182,6 +182,36 @@ public class MonitoringClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public CreateAlarmSuppressionResponse createAlarmSuppression(
+            CreateAlarmSuppressionRequest request) {
+        Objects.requireNonNull(
+                request.getCreateAlarmSuppressionDetails(),
+                "createAlarmSuppressionDetails is required");
+
+        return clientCall(request, CreateAlarmSuppressionResponse::builder)
+                .logger(LOG, "createAlarmSuppression")
+                .serviceDetails(
+                        "Monitoring",
+                        "CreateAlarmSuppression",
+                        "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmSuppression/CreateAlarmSuppression")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateAlarmSuppressionRequest::builder)
+                .basePath("/20180401")
+                .appendPathParam("alarmSuppressions")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.monitoring.model.AlarmSuppression.class,
+                        CreateAlarmSuppressionResponse.Builder::alarmSuppression)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateAlarmSuppressionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateAlarmSuppressionResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public DeleteAlarmResponse deleteAlarm(DeleteAlarmRequest request) {
 
         Validate.notBlank(request.getAlarmId(), "alarmId must not be blank");
@@ -202,6 +232,31 @@ public class MonitoringClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteAlarmResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteAlarmSuppressionResponse deleteAlarmSuppression(
+            DeleteAlarmSuppressionRequest request) {
+
+        Validate.notBlank(request.getAlarmSuppressionId(), "alarmSuppressionId must not be blank");
+
+        return clientCall(request, DeleteAlarmSuppressionResponse::builder)
+                .logger(LOG, "deleteAlarmSuppression")
+                .serviceDetails(
+                        "Monitoring",
+                        "DeleteAlarmSuppression",
+                        "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmSuppression/DeleteAlarmSuppression")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteAlarmSuppressionRequest::builder)
+                .basePath("/20180401")
+                .appendPathParam("alarmSuppressions")
+                .appendPathParam(request.getAlarmSuppressionId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteAlarmSuppressionResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -264,6 +319,69 @@ public class MonitoringClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", GetAlarmHistoryResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", GetAlarmHistoryResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public GetAlarmSuppressionResponse getAlarmSuppression(GetAlarmSuppressionRequest request) {
+
+        Validate.notBlank(request.getAlarmSuppressionId(), "alarmSuppressionId must not be blank");
+
+        return clientCall(request, GetAlarmSuppressionResponse::builder)
+                .logger(LOG, "getAlarmSuppression")
+                .serviceDetails(
+                        "Monitoring",
+                        "GetAlarmSuppression",
+                        "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmSuppression/GetAlarmSuppression")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAlarmSuppressionRequest::builder)
+                .basePath("/20180401")
+                .appendPathParam("alarmSuppressions")
+                .appendPathParam(request.getAlarmSuppressionId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.monitoring.model.AlarmSuppression.class,
+                        GetAlarmSuppressionResponse.Builder::alarmSuppression)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAlarmSuppressionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetAlarmSuppressionResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public ListAlarmSuppressionsResponse listAlarmSuppressions(
+            ListAlarmSuppressionsRequest request) {
+        Objects.requireNonNull(request.getAlarmId(), "alarmId is required");
+
+        return clientCall(request, ListAlarmSuppressionsResponse::builder)
+                .logger(LOG, "listAlarmSuppressions")
+                .serviceDetails(
+                        "Monitoring",
+                        "ListAlarmSuppressions",
+                        "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmSuppressionCollection/ListAlarmSuppressions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAlarmSuppressionsRequest::builder)
+                .basePath("/20180401")
+                .appendPathParam("alarmSuppressions")
+                .appendQueryParam("alarmId", request.getAlarmId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.monitoring.model.AlarmSuppressionCollection.class,
+                        ListAlarmSuppressionsResponse.Builder::alarmSuppressionCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAlarmSuppressionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAlarmSuppressionsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-previous-page", ListAlarmSuppressionsResponse.Builder::opcPreviousPage)
                 .callSync();
     }
 
@@ -460,6 +578,46 @@ public class MonitoringClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", RetrieveDimensionStatesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", RetrieveDimensionStatesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public SummarizeAlarmSuppressionHistoryResponse summarizeAlarmSuppressionHistory(
+            SummarizeAlarmSuppressionHistoryRequest request) {
+
+        Validate.notBlank(request.getAlarmId(), "alarmId must not be blank");
+
+        return clientCall(request, SummarizeAlarmSuppressionHistoryResponse::builder)
+                .logger(LOG, "summarizeAlarmSuppressionHistory")
+                .serviceDetails(
+                        "Monitoring",
+                        "SummarizeAlarmSuppressionHistory",
+                        "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmSuppression/SummarizeAlarmSuppressionHistory")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SummarizeAlarmSuppressionHistoryRequest::builder)
+                .basePath("/20180401")
+                .appendPathParam("alarms")
+                .appendPathParam(request.getAlarmId())
+                .appendPathParam("actions")
+                .appendPathParam("summarizeAlarmSuppressionHistory")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.monitoring.model.AlarmSuppressionHistoryItemCollection.class,
+                        SummarizeAlarmSuppressionHistoryResponse.Builder
+                                ::alarmSuppressionHistoryItemCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SummarizeAlarmSuppressionHistoryResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        SummarizeAlarmSuppressionHistoryResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-previous-page",
+                        SummarizeAlarmSuppressionHistoryResponse.Builder::opcPreviousPage)
                 .callSync();
     }
 

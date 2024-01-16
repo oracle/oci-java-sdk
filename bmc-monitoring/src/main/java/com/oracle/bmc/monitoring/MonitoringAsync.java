@@ -9,7 +9,7 @@ import com.oracle.bmc.monitoring.responses.*;
 
 /**
  * Use the Monitoring API to manage metric queries and alarms for assessing the health, capacity,
- * and performance of your cloud resources. Endpoints vary by operation. For PostMetric, use the
+ * and performance of your cloud resources. Endpoints vary by operation. For PostMetricData, use the
  * {@code telemetry-ingestion} endpoints; for all other operations, use the {@code telemetry}
  * endpoints. For more information, see [the Monitoring
  * documentation](https://docs.cloud.oracle.com/iaas/Content/Monitoring/home.htm).
@@ -106,6 +106,30 @@ public interface MonitoringAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateAlarmRequest, CreateAlarmResponse> handler);
 
     /**
+     * Creates a dimension-specific suppression for an alarm.
+     *
+     * <p>For important limits information, see [Limits on
+     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     *
+     * <p>This call is subject to a Monitoring limit that applies to the total number of requests
+     * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
+     * request when the total rate of alarm operations exceeds 10 requests, or transactions, per
+     * second (TPS) for a given tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateAlarmSuppressionResponse> createAlarmSuppression(
+            CreateAlarmSuppressionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateAlarmSuppressionRequest, CreateAlarmSuppressionResponse>
+                    handler);
+
+    /**
      * Deletes the specified alarm. For more information, see [Deleting an
      * Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/delete-alarm.htm). For
      * important limits information, see [Limits on
@@ -126,6 +150,30 @@ public interface MonitoringAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteAlarmResponse> deleteAlarm(
             DeleteAlarmRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteAlarmRequest, DeleteAlarmResponse> handler);
+
+    /**
+     * Deletes the specified alarm suppression.
+     *
+     * <p>For important limits information, see [Limits on
+     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     *
+     * <p>This call is subject to a Monitoring limit that applies to the total number of requests
+     * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
+     * request when the total rate of alarm operations exceeds 10 requests, or transactions, per
+     * second (TPS) for a given tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteAlarmSuppressionResponse> deleteAlarmSuppression(
+            DeleteAlarmSuppressionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteAlarmSuppressionRequest, DeleteAlarmSuppressionResponse>
+                    handler);
 
     /**
      * Gets the specified alarm. For more information, see [Getting an
@@ -173,6 +221,55 @@ public interface MonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the specified alarm suppression.
+     *
+     * <p>For important limits information, see [Limits on
+     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     *
+     * <p>This call is subject to a Monitoring limit that applies to the total number of requests
+     * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
+     * request when the total rate of alarm operations exceeds 10 requests, or transactions, per
+     * second (TPS) for a given tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAlarmSuppressionResponse> getAlarmSuppression(
+            GetAlarmSuppressionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetAlarmSuppressionRequest, GetAlarmSuppressionResponse>
+                    handler);
+
+    /**
+     * Lists alarm suppressions for the specified alarm. Only dimension-level suppressions are
+     * listed. Alarm-level suppressions are not listed.
+     *
+     * <p>For important limits information, see [Limits on
+     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     *
+     * <p>This call is subject to a Monitoring limit that applies to the total number of requests
+     * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
+     * request when the total rate of alarm operations exceeds 10 requests, or transactions, per
+     * second (TPS) for a given tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAlarmSuppressionsResponse> listAlarmSuppressions(
+            ListAlarmSuppressionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListAlarmSuppressionsRequest, ListAlarmSuppressionsResponse>
+                    handler);
+
+    /**
      * Lists the alarms for the specified compartment. For more information, see [Listing
      * Alarms](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm.htm). For
      * important limits information, see [Limits on
@@ -198,7 +295,8 @@ public interface MonitoringAsync extends AutoCloseable {
      * List the status of each alarm in the specified compartment. Status is collective, across all
      * metric streams in the alarm. To list alarm status for each metric stream, use {@link
      * #retrieveDimensionStates(RetrieveDimensionStatesRequest, Consumer, Consumer)
-     * retrieveDimensionStates}. For more information, see [Listing Alarm
+     * retrieveDimensionStates}. Optionally filter by resource or status value. For more
+     * information, see [Listing Alarm
      * Statuses](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
      * For important limits information, see [Limits on
      * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
@@ -338,6 +436,33 @@ public interface MonitoringAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             RetrieveDimensionStatesRequest, RetrieveDimensionStatesResponse>
                     handler);
+
+    /**
+     * Returns history of suppressions for the specified alarm, including both dimension-specific
+     * and and alarm-wide suppressions.
+     *
+     * <p>For important limits information, see [Limits on
+     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     *
+     * <p>This call is subject to a Monitoring limit that applies to the total number of requests
+     * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
+     * request when the total rate of alarm operations exceeds 10 requests, or transactions, per
+     * second (TPS) for a given tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeAlarmSuppressionHistoryResponse>
+            summarizeAlarmSuppressionHistory(
+                    SummarizeAlarmSuppressionHistoryRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeAlarmSuppressionHistoryRequest,
+                                    SummarizeAlarmSuppressionHistoryResponse>
+                            handler);
 
     /**
      * Returns aggregated data that match the criteria specified in the request. Compartment OCID

@@ -102,7 +102,7 @@ public final class AlarmStatusSummary
             return this;
         }
         /**
-         * The configured severity of the alarm.
+         * The perceived type of response required when the alarm is in the "FIRING" state.
          *
          * <p>Example: {@code CRITICAL}
          */
@@ -110,7 +110,7 @@ public final class AlarmStatusSummary
         private Severity severity;
 
         /**
-         * The configured severity of the alarm.
+         * The perceived type of response required when the alarm is in the "FIRING" state.
          *
          * <p>Example: {@code CRITICAL}
          *
@@ -127,7 +127,7 @@ public final class AlarmStatusSummary
          * transitioned from OK to Firing. Note: A three-minute lag for this value accounts for any
          * late-arriving metrics.
          *
-         * <p>Example: {@code 2019-02-01T01:02:29.600Z}
+         * <p>Example: {@code 2023-02-01T01:02:29.600Z}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timestampTriggered")
         private java.util.Date timestampTriggered;
@@ -137,7 +137,7 @@ public final class AlarmStatusSummary
          * transitioned from OK to Firing. Note: A three-minute lag for this value accounts for any
          * late-arriving metrics.
          *
-         * <p>Example: {@code 2019-02-01T01:02:29.600Z}
+         * <p>Example: {@code 2023-02-01T01:02:29.600Z}
          *
          * @param timestampTriggered the value to set
          * @return this builder
@@ -274,7 +274,7 @@ public final class AlarmStatusSummary
     }
 
     /**
-     * The configured severity of the alarm.
+     * The perceived type of response required when the alarm is in the "FIRING" state.
      *
      * <p>Example: {@code CRITICAL}
      */
@@ -326,7 +326,7 @@ public final class AlarmStatusSummary
         }
     };
     /**
-     * The configured severity of the alarm.
+     * The perceived type of response required when the alarm is in the "FIRING" state.
      *
      * <p>Example: {@code CRITICAL}
      */
@@ -334,7 +334,7 @@ public final class AlarmStatusSummary
     private final Severity severity;
 
     /**
-     * The configured severity of the alarm.
+     * The perceived type of response required when the alarm is in the "FIRING" state.
      *
      * <p>Example: {@code CRITICAL}
      *
@@ -349,7 +349,7 @@ public final class AlarmStatusSummary
      * transitioned from OK to Firing. Note: A three-minute lag for this value accounts for any
      * late-arriving metrics.
      *
-     * <p>Example: {@code 2019-02-01T01:02:29.600Z}
+     * <p>Example: {@code 2023-02-01T01:02:29.600Z}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timestampTriggered")
     private final java.util.Date timestampTriggered;
@@ -359,7 +359,7 @@ public final class AlarmStatusSummary
      * transitioned from OK to Firing. Note: A three-minute lag for this value accounts for any
      * late-arriving metrics.
      *
-     * <p>Example: {@code 2019-02-01T01:02:29.600Z}
+     * <p>Example: {@code 2023-02-01T01:02:29.600Z}
      *
      * @return the value
      */

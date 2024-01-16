@@ -1413,7 +1413,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteApiKeyResponse::builder)
                 .logger(LOG, "deleteApiKey")
-                .serviceDetails("IdentityDomains", "DeleteApiKey", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteApiKey",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApiKey/DeleteApiKey")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteApiKeyRequest::builder)
                 .basePath("")
@@ -1440,7 +1443,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteAppResponse::builder)
                 .logger(LOG, "deleteApp")
-                .serviceDetails("IdentityDomains", "DeleteApp", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteApp",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/App/DeleteApp")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteAppRequest::builder)
                 .basePath("")
@@ -1467,7 +1473,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteAppRoleResponse::builder)
                 .logger(LOG, "deleteAppRole")
-                .serviceDetails("IdentityDomains", "DeleteAppRole", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteAppRole",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AppRole/DeleteAppRole")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteAppRoleRequest::builder)
                 .basePath("")
@@ -1495,7 +1504,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteApprovalWorkflowResponse::builder)
                 .logger(LOG, "deleteApprovalWorkflow")
-                .serviceDetails("IdentityDomains", "DeleteApprovalWorkflow", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteApprovalWorkflow",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApprovalWorkflow/DeleteApprovalWorkflow")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteApprovalWorkflowRequest::builder)
                 .basePath("")
@@ -1525,7 +1537,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteApprovalWorkflowAssignmentResponse::builder)
                 .logger(LOG, "deleteApprovalWorkflowAssignment")
-                .serviceDetails("IdentityDomains", "DeleteApprovalWorkflowAssignment", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteApprovalWorkflowAssignment",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApprovalWorkflowAssignment/DeleteApprovalWorkflowAssignment")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteApprovalWorkflowAssignmentRequest::builder)
                 .basePath("")
@@ -1555,7 +1570,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteApprovalWorkflowStepResponse::builder)
                 .logger(LOG, "deleteApprovalWorkflowStep")
-                .serviceDetails("IdentityDomains", "DeleteApprovalWorkflowStep", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteApprovalWorkflowStep",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApprovalWorkflowStep/DeleteApprovalWorkflowStep")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteApprovalWorkflowStepRequest::builder)
                 .basePath("")
@@ -1582,7 +1600,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteAuthTokenResponse::builder)
                 .logger(LOG, "deleteAuthToken")
-                .serviceDetails("IdentityDomains", "DeleteAuthToken", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteAuthToken",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AuthToken/DeleteAuthToken")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteAuthTokenRequest::builder)
                 .basePath("")
@@ -1609,7 +1630,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteCloudGateResponse::builder)
                 .logger(LOG, "deleteCloudGate")
-                .serviceDetails("IdentityDomains", "DeleteCloudGate", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteCloudGate",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGate/DeleteCloudGate")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteCloudGateRequest::builder)
                 .basePath("")
@@ -1637,7 +1661,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteCloudGateMappingResponse::builder)
                 .logger(LOG, "deleteCloudGateMapping")
-                .serviceDetails("IdentityDomains", "DeleteCloudGateMapping", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteCloudGateMapping",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGateMapping/DeleteCloudGateMapping")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteCloudGateMappingRequest::builder)
                 .basePath("")
@@ -1665,7 +1692,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteCloudGateServerResponse::builder)
                 .logger(LOG, "deleteCloudGateServer")
-                .serviceDetails("IdentityDomains", "DeleteCloudGateServer", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteCloudGateServer",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGateServer/DeleteCloudGateServer")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteCloudGateServerRequest::builder)
                 .basePath("")
@@ -1692,7 +1722,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteConditionResponse::builder)
                 .logger(LOG, "deleteCondition")
-                .serviceDetails("IdentityDomains", "DeleteCondition", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteCondition",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Condition/DeleteCondition")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteConditionRequest::builder)
                 .basePath("")
@@ -1721,7 +1754,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteCustomerSecretKeyResponse::builder)
                 .logger(LOG, "deleteCustomerSecretKey")
-                .serviceDetails("IdentityDomains", "DeleteCustomerSecretKey", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteCustomerSecretKey",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CustomerSecretKey/DeleteCustomerSecretKey")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteCustomerSecretKeyRequest::builder)
                 .basePath("")
@@ -1750,7 +1786,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteDynamicResourceGroupResponse::builder)
                 .logger(LOG, "deleteDynamicResourceGroup")
-                .serviceDetails("IdentityDomains", "DeleteDynamicResourceGroup", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteDynamicResourceGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/DynamicResourceGroup/DeleteDynamicResourceGroup")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDynamicResourceGroupRequest::builder)
                 .basePath("")
@@ -1777,7 +1816,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteGrantResponse::builder)
                 .logger(LOG, "deleteGrant")
-                .serviceDetails("IdentityDomains", "DeleteGrant", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteGrant",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Grant/DeleteGrant")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteGrantRequest::builder)
                 .basePath("")
@@ -1804,7 +1846,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteGroupResponse::builder)
                 .logger(LOG, "deleteGroup")
-                .serviceDetails("IdentityDomains", "DeleteGroup", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Group/DeleteGroup")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteGroupRequest::builder)
                 .basePath("")
@@ -1834,7 +1879,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteIdentityPropagationTrustResponse::builder)
                 .logger(LOG, "deleteIdentityPropagationTrust")
-                .serviceDetails("IdentityDomains", "DeleteIdentityPropagationTrust", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteIdentityPropagationTrust",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityPropagationTrust/DeleteIdentityPropagationTrust")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteIdentityPropagationTrustRequest::builder)
                 .basePath("")
@@ -1863,7 +1911,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteIdentityProviderResponse::builder)
                 .logger(LOG, "deleteIdentityProvider")
-                .serviceDetails("IdentityDomains", "DeleteIdentityProvider", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteIdentityProvider",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProvider/DeleteIdentityProvider")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteIdentityProviderRequest::builder)
                 .basePath("")
@@ -1890,7 +1941,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteMyApiKeyResponse::builder)
                 .logger(LOG, "deleteMyApiKey")
-                .serviceDetails("IdentityDomains", "DeleteMyApiKey", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteMyApiKey",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyApiKey/DeleteMyApiKey")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteMyApiKeyRequest::builder)
                 .basePath("")
@@ -1917,7 +1971,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteMyAuthTokenResponse::builder)
                 .logger(LOG, "deleteMyAuthToken")
-                .serviceDetails("IdentityDomains", "DeleteMyAuthToken", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteMyAuthToken",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyAuthToken/DeleteMyAuthToken")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteMyAuthTokenRequest::builder)
                 .basePath("")
@@ -1946,7 +2003,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteMyCustomerSecretKeyResponse::builder)
                 .logger(LOG, "deleteMyCustomerSecretKey")
-                .serviceDetails("IdentityDomains", "DeleteMyCustomerSecretKey", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteMyCustomerSecretKey",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyCustomerSecretKey/DeleteMyCustomerSecretKey")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteMyCustomerSecretKeyRequest::builder)
                 .basePath("")
@@ -1973,7 +2033,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteMyDeviceResponse::builder)
                 .logger(LOG, "deleteMyDevice")
-                .serviceDetails("IdentityDomains", "DeleteMyDevice", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteMyDevice",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyDevice/DeleteMyDevice")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteMyDeviceRequest::builder)
                 .basePath("")
@@ -2003,7 +2066,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteMyOAuth2ClientCredentialResponse::builder)
                 .logger(LOG, "deleteMyOAuth2ClientCredential")
-                .serviceDetails("IdentityDomains", "DeleteMyOAuth2ClientCredential", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteMyOAuth2ClientCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyOAuth2ClientCredential/DeleteMyOAuth2ClientCredential")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteMyOAuth2ClientCredentialRequest::builder)
                 .basePath("")
@@ -2032,7 +2098,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteMySmtpCredentialResponse::builder)
                 .logger(LOG, "deleteMySmtpCredential")
-                .serviceDetails("IdentityDomains", "DeleteMySmtpCredential", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteMySmtpCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MySmtpCredential/DeleteMySmtpCredential")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteMySmtpCredentialRequest::builder)
                 .basePath("")
@@ -2060,7 +2129,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteMySupportAccountResponse::builder)
                 .logger(LOG, "deleteMySupportAccount")
-                .serviceDetails("IdentityDomains", "DeleteMySupportAccount", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteMySupportAccount",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MySupportAccount/DeleteMySupportAccount")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteMySupportAccountRequest::builder)
                 .basePath("")
@@ -2089,7 +2161,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteMyTrustedUserAgentResponse::builder)
                 .logger(LOG, "deleteMyTrustedUserAgent")
-                .serviceDetails("IdentityDomains", "DeleteMyTrustedUserAgent", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteMyTrustedUserAgent",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyTrustedUserAgent/DeleteMyTrustedUserAgent")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteMyTrustedUserAgentRequest::builder)
                 .basePath("")
@@ -2118,7 +2193,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteMyUserDbCredentialResponse::builder)
                 .logger(LOG, "deleteMyUserDbCredential")
-                .serviceDetails("IdentityDomains", "DeleteMyUserDbCredential", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteMyUserDbCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyUserDbCredential/DeleteMyUserDbCredential")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteMyUserDbCredentialRequest::builder)
                 .basePath("")
@@ -2146,7 +2224,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteNetworkPerimeterResponse::builder)
                 .logger(LOG, "deleteNetworkPerimeter")
-                .serviceDetails("IdentityDomains", "DeleteNetworkPerimeter", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteNetworkPerimeter",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/NetworkPerimeter/DeleteNetworkPerimeter")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteNetworkPerimeterRequest::builder)
                 .basePath("")
@@ -2176,7 +2257,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteOAuth2ClientCredentialResponse::builder)
                 .logger(LOG, "deleteOAuth2ClientCredential")
-                .serviceDetails("IdentityDomains", "DeleteOAuth2ClientCredential", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteOAuth2ClientCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OAuth2ClientCredential/DeleteOAuth2ClientCredential")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteOAuth2ClientCredentialRequest::builder)
                 .basePath("")
@@ -2207,7 +2291,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteOAuthClientCertificateResponse::builder)
                 .logger(LOG, "deleteOAuthClientCertificate")
-                .serviceDetails("IdentityDomains", "DeleteOAuthClientCertificate", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteOAuthClientCertificate",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OAuthClientCertificate/DeleteOAuthClientCertificate")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteOAuthClientCertificateRequest::builder)
                 .basePath("")
@@ -2238,7 +2325,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteOAuthPartnerCertificateResponse::builder)
                 .logger(LOG, "deleteOAuthPartnerCertificate")
-                .serviceDetails("IdentityDomains", "DeleteOAuthPartnerCertificate", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteOAuthPartnerCertificate",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OAuthPartnerCertificate/DeleteOAuthPartnerCertificate")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteOAuthPartnerCertificateRequest::builder)
                 .basePath("")
@@ -2266,7 +2356,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeletePasswordPolicyResponse::builder)
                 .logger(LOG, "deletePasswordPolicy")
-                .serviceDetails("IdentityDomains", "DeletePasswordPolicy", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeletePasswordPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/PasswordPolicy/DeletePasswordPolicy")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeletePasswordPolicyRequest::builder)
                 .basePath("")
@@ -2293,7 +2386,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeletePolicyResponse::builder)
                 .logger(LOG, "deletePolicy")
-                .serviceDetails("IdentityDomains", "DeletePolicy", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeletePolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Policy/DeletePolicy")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeletePolicyRequest::builder)
                 .basePath("")
@@ -2320,7 +2416,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteRuleResponse::builder)
                 .logger(LOG, "deleteRule")
-                .serviceDetails("IdentityDomains", "DeleteRule", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteRule",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Rule/DeleteRule")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteRuleRequest::builder)
                 .basePath("")
@@ -2348,7 +2447,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteSecurityQuestionResponse::builder)
                 .logger(LOG, "deleteSecurityQuestion")
-                .serviceDetails("IdentityDomains", "DeleteSecurityQuestion", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteSecurityQuestion",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SecurityQuestion/DeleteSecurityQuestion")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteSecurityQuestionRequest::builder)
                 .basePath("")
@@ -2378,7 +2480,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteSelfRegistrationProfileResponse::builder)
                 .logger(LOG, "deleteSelfRegistrationProfile")
-                .serviceDetails("IdentityDomains", "DeleteSelfRegistrationProfile", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteSelfRegistrationProfile",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SelfRegistrationProfile/DeleteSelfRegistrationProfile")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteSelfRegistrationProfileRequest::builder)
                 .basePath("")
@@ -2406,7 +2511,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteSmtpCredentialResponse::builder)
                 .logger(LOG, "deleteSmtpCredential")
-                .serviceDetails("IdentityDomains", "DeleteSmtpCredential", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteSmtpCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SmtpCredential/DeleteSmtpCredential")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteSmtpCredentialRequest::builder)
                 .basePath("")
@@ -2433,7 +2541,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteUserResponse::builder)
                 .logger(LOG, "deleteUser")
-                .serviceDetails("IdentityDomains", "DeleteUser", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteUser",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/User/DeleteUser")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteUserRequest::builder)
                 .basePath("")
@@ -2461,7 +2572,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteUserDbCredentialResponse::builder)
                 .logger(LOG, "deleteUserDbCredential")
-                .serviceDetails("IdentityDomains", "DeleteUserDbCredential", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteUserDbCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserDbCredential/DeleteUserDbCredential")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteUserDbCredentialRequest::builder)
                 .basePath("")
@@ -2488,7 +2602,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetAccountMgmtInfoResponse::builder)
                 .logger(LOG, "getAccountMgmtInfo")
-                .serviceDetails("IdentityDomains", "GetAccountMgmtInfo", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetAccountMgmtInfo",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AccountMgmtInfo/GetAccountMgmtInfo")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAccountMgmtInfoRequest::builder)
                 .basePath("")
@@ -2524,7 +2641,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetAccountRecoverySettingResponse::builder)
                 .logger(LOG, "getAccountRecoverySetting")
-                .serviceDetails("IdentityDomains", "GetAccountRecoverySetting", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetAccountRecoverySetting",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AccountRecoverySetting/GetAccountRecoverySetting")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAccountRecoverySettingRequest::builder)
                 .basePath("")
@@ -2557,7 +2677,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetApiKeyResponse::builder)
                 .logger(LOG, "getApiKey")
-                .serviceDetails("IdentityDomains", "GetApiKey", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetApiKey",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApiKey/GetApiKey")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetApiKeyRequest::builder)
                 .basePath("")
@@ -2590,7 +2713,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetAppResponse::builder)
                 .logger(LOG, "getApp")
-                .serviceDetails("IdentityDomains", "GetApp", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetApp",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/App/GetApp")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAppRequest::builder)
                 .basePath("")
@@ -2621,7 +2747,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetAppRoleResponse::builder)
                 .logger(LOG, "getAppRole")
-                .serviceDetails("IdentityDomains", "GetAppRole", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetAppRole",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AppRole/GetAppRole")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAppRoleRequest::builder)
                 .basePath("")
@@ -2654,7 +2783,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetApprovalWorkflowResponse::builder)
                 .logger(LOG, "getApprovalWorkflow")
-                .serviceDetails("IdentityDomains", "GetApprovalWorkflow", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetApprovalWorkflow",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApprovalWorkflow/GetApprovalWorkflow")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetApprovalWorkflowRequest::builder)
                 .basePath("")
@@ -2690,7 +2822,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetApprovalWorkflowAssignmentResponse::builder)
                 .logger(LOG, "getApprovalWorkflowAssignment")
-                .serviceDetails("IdentityDomains", "GetApprovalWorkflowAssignment", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetApprovalWorkflowAssignment",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApprovalWorkflowAssignment/GetApprovalWorkflowAssignment")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetApprovalWorkflowAssignmentRequest::builder)
                 .basePath("")
@@ -2726,7 +2861,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetApprovalWorkflowStepResponse::builder)
                 .logger(LOG, "getApprovalWorkflowStep")
-                .serviceDetails("IdentityDomains", "GetApprovalWorkflowStep", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetApprovalWorkflowStep",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApprovalWorkflowStep/GetApprovalWorkflowStep")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetApprovalWorkflowStepRequest::builder)
                 .basePath("")
@@ -2759,7 +2897,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetAuthTokenResponse::builder)
                 .logger(LOG, "getAuthToken")
-                .serviceDetails("IdentityDomains", "GetAuthToken", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetAuthToken",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AuthToken/GetAuthToken")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAuthTokenRequest::builder)
                 .basePath("")
@@ -2795,7 +2936,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetAuthenticationFactorSettingResponse::builder)
                 .logger(LOG, "getAuthenticationFactorSetting")
-                .serviceDetails("IdentityDomains", "GetAuthenticationFactorSetting", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetAuthenticationFactorSetting",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AuthenticationFactorSetting/GetAuthenticationFactorSetting")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAuthenticationFactorSettingRequest::builder)
                 .basePath("")
@@ -2829,7 +2973,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetBrandingSettingResponse::builder)
                 .logger(LOG, "getBrandingSetting")
-                .serviceDetails("IdentityDomains", "GetBrandingSetting", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetBrandingSetting",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/BrandingSetting/GetBrandingSetting")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetBrandingSettingRequest::builder)
                 .basePath("")
@@ -2862,7 +3009,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetCloudGateResponse::builder)
                 .logger(LOG, "getCloudGate")
-                .serviceDetails("IdentityDomains", "GetCloudGate", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetCloudGate",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGate/GetCloudGate")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetCloudGateRequest::builder)
                 .basePath("")
@@ -2895,7 +3045,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetCloudGateMappingResponse::builder)
                 .logger(LOG, "getCloudGateMapping")
-                .serviceDetails("IdentityDomains", "GetCloudGateMapping", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetCloudGateMapping",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGateMapping/GetCloudGateMapping")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetCloudGateMappingRequest::builder)
                 .basePath("")
@@ -2928,7 +3081,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetCloudGateServerResponse::builder)
                 .logger(LOG, "getCloudGateServer")
-                .serviceDetails("IdentityDomains", "GetCloudGateServer", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetCloudGateServer",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGateServer/GetCloudGateServer")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetCloudGateServerRequest::builder)
                 .basePath("")
@@ -2961,7 +3117,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetConditionResponse::builder)
                 .logger(LOG, "getCondition")
-                .serviceDetails("IdentityDomains", "GetCondition", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetCondition",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Condition/GetCondition")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetConditionRequest::builder)
                 .basePath("")
@@ -2995,7 +3154,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetCustomerSecretKeyResponse::builder)
                 .logger(LOG, "getCustomerSecretKey")
-                .serviceDetails("IdentityDomains", "GetCustomerSecretKey", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetCustomerSecretKey",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CustomerSecretKey/GetCustomerSecretKey")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetCustomerSecretKeyRequest::builder)
                 .basePath("")
@@ -3030,7 +3192,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetDynamicResourceGroupResponse::builder)
                 .logger(LOG, "getDynamicResourceGroup")
-                .serviceDetails("IdentityDomains", "GetDynamicResourceGroup", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetDynamicResourceGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/DynamicResourceGroup/GetDynamicResourceGroup")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDynamicResourceGroupRequest::builder)
                 .basePath("")
@@ -3063,7 +3228,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetGrantResponse::builder)
                 .logger(LOG, "getGrant")
-                .serviceDetails("IdentityDomains", "GetGrant", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetGrant",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Grant/GetGrant")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetGrantRequest::builder)
                 .basePath("")
@@ -3096,7 +3264,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetGroupResponse::builder)
                 .logger(LOG, "getGroup")
-                .serviceDetails("IdentityDomains", "GetGroup", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Group/GetGroup")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetGroupRequest::builder)
                 .basePath("")
@@ -3132,7 +3303,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetIdentityPropagationTrustResponse::builder)
                 .logger(LOG, "getIdentityPropagationTrust")
-                .serviceDetails("IdentityDomains", "GetIdentityPropagationTrust", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetIdentityPropagationTrust",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityPropagationTrust/GetIdentityPropagationTrust")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetIdentityPropagationTrustRequest::builder)
                 .basePath("")
@@ -3165,7 +3339,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetIdentityProviderResponse::builder)
                 .logger(LOG, "getIdentityProvider")
-                .serviceDetails("IdentityDomains", "GetIdentityProvider", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetIdentityProvider",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProvider/GetIdentityProvider")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetIdentityProviderRequest::builder)
                 .basePath("")
@@ -3198,7 +3375,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetIdentitySettingResponse::builder)
                 .logger(LOG, "getIdentitySetting")
-                .serviceDetails("IdentityDomains", "GetIdentitySetting", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetIdentitySetting",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentitySetting/GetIdentitySetting")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetIdentitySettingRequest::builder)
                 .basePath("")
@@ -3231,7 +3411,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetKmsiSettingResponse::builder)
                 .logger(LOG, "getKmsiSetting")
-                .serviceDetails("IdentityDomains", "GetKmsiSetting", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetKmsiSetting",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/KmsiSetting/GetKmsiSetting")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetKmsiSettingRequest::builder)
                 .basePath("")
@@ -3262,7 +3445,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetMeResponse::builder)
                 .logger(LOG, "getMe")
-                .serviceDetails("IdentityDomains", "GetMe", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetMe",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Me/GetMe")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMeRequest::builder)
                 .basePath("")
@@ -3292,7 +3478,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetMyApiKeyResponse::builder)
                 .logger(LOG, "getMyApiKey")
-                .serviceDetails("IdentityDomains", "GetMyApiKey", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetMyApiKey",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyApiKey/GetMyApiKey")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMyApiKeyRequest::builder)
                 .basePath("")
@@ -3320,7 +3509,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetMyAuthTokenResponse::builder)
                 .logger(LOG, "getMyAuthToken")
-                .serviceDetails("IdentityDomains", "GetMyAuthToken", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetMyAuthToken",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyAuthToken/GetMyAuthToken")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMyAuthTokenRequest::builder)
                 .basePath("")
@@ -3350,7 +3542,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetMyCompletedApprovalResponse::builder)
                 .logger(LOG, "getMyCompletedApproval")
-                .serviceDetails("IdentityDomains", "GetMyCompletedApproval", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetMyCompletedApproval",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyCompletedApproval/GetMyCompletedApproval")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMyCompletedApprovalRequest::builder)
                 .basePath("")
@@ -3380,7 +3575,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetMyCustomerSecretKeyResponse::builder)
                 .logger(LOG, "getMyCustomerSecretKey")
-                .serviceDetails("IdentityDomains", "GetMyCustomerSecretKey", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetMyCustomerSecretKey",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyCustomerSecretKey/GetMyCustomerSecretKey")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMyCustomerSecretKeyRequest::builder)
                 .basePath("")
@@ -3408,7 +3606,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetMyDeviceResponse::builder)
                 .logger(LOG, "getMyDevice")
-                .serviceDetails("IdentityDomains", "GetMyDevice", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetMyDevice",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyDevice/GetMyDevice")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMyDeviceRequest::builder)
                 .basePath("")
@@ -3444,7 +3645,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetMyOAuth2ClientCredentialResponse::builder)
                 .logger(LOG, "getMyOAuth2ClientCredential")
-                .serviceDetails("IdentityDomains", "GetMyOAuth2ClientCredential", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetMyOAuth2ClientCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyOAuth2ClientCredential/GetMyOAuth2ClientCredential")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMyOAuth2ClientCredentialRequest::builder)
                 .basePath("")
@@ -3473,7 +3677,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetMyPendingApprovalResponse::builder)
                 .logger(LOG, "getMyPendingApproval")
-                .serviceDetails("IdentityDomains", "GetMyPendingApproval", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetMyPendingApproval",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyPendingApproval/GetMyPendingApproval")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMyPendingApprovalRequest::builder)
                 .basePath("")
@@ -3501,7 +3708,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetMyRequestResponse::builder)
                 .logger(LOG, "getMyRequest")
-                .serviceDetails("IdentityDomains", "GetMyRequest", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetMyRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyRequest/GetMyRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMyRequestRequest::builder)
                 .basePath("")
@@ -3534,7 +3744,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetMySmtpCredentialResponse::builder)
                 .logger(LOG, "getMySmtpCredential")
-                .serviceDetails("IdentityDomains", "GetMySmtpCredential", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetMySmtpCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MySmtpCredential/GetMySmtpCredential")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMySmtpCredentialRequest::builder)
                 .basePath("")
@@ -3562,7 +3775,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetMySupportAccountResponse::builder)
                 .logger(LOG, "getMySupportAccount")
-                .serviceDetails("IdentityDomains", "GetMySupportAccount", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetMySupportAccount",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MySupportAccount/GetMySupportAccount")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMySupportAccountRequest::builder)
                 .basePath("")
@@ -3592,7 +3808,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetMyTrustedUserAgentResponse::builder)
                 .logger(LOG, "getMyTrustedUserAgent")
-                .serviceDetails("IdentityDomains", "GetMyTrustedUserAgent", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetMyTrustedUserAgent",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyTrustedUserAgent/GetMyTrustedUserAgent")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMyTrustedUserAgentRequest::builder)
                 .basePath("")
@@ -3627,7 +3846,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetMyUserDbCredentialResponse::builder)
                 .logger(LOG, "getMyUserDbCredential")
-                .serviceDetails("IdentityDomains", "GetMyUserDbCredential", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetMyUserDbCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyUserDbCredential/GetMyUserDbCredential")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMyUserDbCredentialRequest::builder)
                 .basePath("")
@@ -3655,7 +3877,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetNetworkPerimeterResponse::builder)
                 .logger(LOG, "getNetworkPerimeter")
-                .serviceDetails("IdentityDomains", "GetNetworkPerimeter", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetNetworkPerimeter",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/NetworkPerimeter/GetNetworkPerimeter")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetNetworkPerimeterRequest::builder)
                 .basePath("")
@@ -3690,7 +3915,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetNotificationSettingResponse::builder)
                 .logger(LOG, "getNotificationSetting")
-                .serviceDetails("IdentityDomains", "GetNotificationSetting", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetNotificationSetting",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/NotificationSetting/GetNotificationSetting")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetNotificationSettingRequest::builder)
                 .basePath("")
@@ -3726,7 +3954,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetOAuth2ClientCredentialResponse::builder)
                 .logger(LOG, "getOAuth2ClientCredential")
-                .serviceDetails("IdentityDomains", "GetOAuth2ClientCredential", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetOAuth2ClientCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OAuth2ClientCredential/GetOAuth2ClientCredential")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOAuth2ClientCredentialRequest::builder)
                 .basePath("")
@@ -3762,7 +3993,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetOAuthClientCertificateResponse::builder)
                 .logger(LOG, "getOAuthClientCertificate")
-                .serviceDetails("IdentityDomains", "GetOAuthClientCertificate", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetOAuthClientCertificate",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OAuthClientCertificate/GetOAuthClientCertificate")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOAuthClientCertificateRequest::builder)
                 .basePath("")
@@ -3793,7 +4027,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetOAuthPartnerCertificateResponse::builder)
                 .logger(LOG, "getOAuthPartnerCertificate")
-                .serviceDetails("IdentityDomains", "GetOAuthPartnerCertificate", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetOAuthPartnerCertificate",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OAuthPartnerCertificate/GetOAuthPartnerCertificate")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOAuthPartnerCertificateRequest::builder)
                 .basePath("")
@@ -3821,7 +4058,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetPasswordPolicyResponse::builder)
                 .logger(LOG, "getPasswordPolicy")
-                .serviceDetails("IdentityDomains", "GetPasswordPolicy", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetPasswordPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/PasswordPolicy/GetPasswordPolicy")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetPasswordPolicyRequest::builder)
                 .basePath("")
@@ -3854,7 +4094,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetPolicyResponse::builder)
                 .logger(LOG, "getPolicy")
-                .serviceDetails("IdentityDomains", "GetPolicy", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Policy/GetPolicy")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetPolicyRequest::builder)
                 .basePath("")
@@ -3887,7 +4130,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetRuleResponse::builder)
                 .logger(LOG, "getRule")
-                .serviceDetails("IdentityDomains", "GetRule", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetRule",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Rule/GetRule")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetRuleRequest::builder)
                 .basePath("")
@@ -3919,7 +4165,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetSchemaResponse::builder)
                 .logger(LOG, "getSchema")
-                .serviceDetails("IdentityDomains", "GetSchema", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetSchema",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Schema/GetSchema")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSchemaRequest::builder)
                 .basePath("")
@@ -3947,7 +4196,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetSecurityQuestionResponse::builder)
                 .logger(LOG, "getSecurityQuestion")
-                .serviceDetails("IdentityDomains", "GetSecurityQuestion", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetSecurityQuestion",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SecurityQuestion/GetSecurityQuestion")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSecurityQuestionRequest::builder)
                 .basePath("")
@@ -3983,7 +4235,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetSecurityQuestionSettingResponse::builder)
                 .logger(LOG, "getSecurityQuestionSetting")
-                .serviceDetails("IdentityDomains", "GetSecurityQuestionSetting", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetSecurityQuestionSetting",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SecurityQuestionSetting/GetSecurityQuestionSetting")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSecurityQuestionSettingRequest::builder)
                 .basePath("")
@@ -4019,7 +4274,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetSelfRegistrationProfileResponse::builder)
                 .logger(LOG, "getSelfRegistrationProfile")
-                .serviceDetails("IdentityDomains", "GetSelfRegistrationProfile", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetSelfRegistrationProfile",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SelfRegistrationProfile/GetSelfRegistrationProfile")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSelfRegistrationProfileRequest::builder)
                 .basePath("")
@@ -4052,7 +4310,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetSettingResponse::builder)
                 .logger(LOG, "getSetting")
-                .serviceDetails("IdentityDomains", "GetSetting", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetSetting",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Setting/GetSetting")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSettingRequest::builder)
                 .basePath("")
@@ -4085,7 +4346,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetSmtpCredentialResponse::builder)
                 .logger(LOG, "getSmtpCredential")
-                .serviceDetails("IdentityDomains", "GetSmtpCredential", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetSmtpCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SmtpCredential/GetSmtpCredential")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSmtpCredentialRequest::builder)
                 .basePath("")
@@ -4118,7 +4382,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetUserResponse::builder)
                 .logger(LOG, "getUser")
-                .serviceDetails("IdentityDomains", "GetUser", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetUser",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/User/GetUser")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetUserRequest::builder)
                 .basePath("")
@@ -4152,7 +4419,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetUserAttributesSettingResponse::builder)
                 .logger(LOG, "getUserAttributesSetting")
-                .serviceDetails("IdentityDomains", "GetUserAttributesSetting", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetUserAttributesSetting",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserAttributesSetting/GetUserAttributesSetting")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetUserAttributesSettingRequest::builder)
                 .basePath("")
@@ -4185,7 +4455,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetUserDbCredentialResponse::builder)
                 .logger(LOG, "getUserDbCredential")
-                .serviceDetails("IdentityDomains", "GetUserDbCredential", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetUserDbCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserDbCredential/GetUserDbCredential")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetUserDbCredentialRequest::builder)
                 .basePath("")
@@ -4216,7 +4489,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListAccountMgmtInfosResponse::builder)
                 .logger(LOG, "listAccountMgmtInfos")
-                .serviceDetails("IdentityDomains", "ListAccountMgmtInfos", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListAccountMgmtInfos",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AccountMgmtInfos/ListAccountMgmtInfos")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAccountMgmtInfosRequest::builder)
                 .basePath("")
@@ -4256,7 +4532,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListAccountRecoverySettingsResponse::builder)
                 .logger(LOG, "listAccountRecoverySettings")
-                .serviceDetails("IdentityDomains", "ListAccountRecoverySettings", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListAccountRecoverySettings",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AccountRecoverySettings/ListAccountRecoverySettings")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAccountRecoverySettingsRequest::builder)
                 .basePath("")
@@ -4290,7 +4569,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListApiKeysResponse::builder)
                 .logger(LOG, "listApiKeys")
-                .serviceDetails("IdentityDomains", "ListApiKeys", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListApiKeys",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApiKeys/ListApiKeys")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListApiKeysRequest::builder)
                 .basePath("")
@@ -4329,7 +4611,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListAppRolesResponse::builder)
                 .logger(LOG, "listAppRoles")
-                .serviceDetails("IdentityDomains", "ListAppRoles", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListAppRoles",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AppRoles/ListAppRoles")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAppRolesRequest::builder)
                 .basePath("")
@@ -4369,7 +4654,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListApprovalWorkflowAssignmentsResponse::builder)
                 .logger(LOG, "listApprovalWorkflowAssignments")
-                .serviceDetails("IdentityDomains", "ListApprovalWorkflowAssignments", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListApprovalWorkflowAssignments",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApprovalWorkflowAssignments/ListApprovalWorkflowAssignments")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListApprovalWorkflowAssignmentsRequest::builder)
                 .basePath("")
@@ -4412,7 +4700,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListApprovalWorkflowStepsResponse::builder)
                 .logger(LOG, "listApprovalWorkflowSteps")
-                .serviceDetails("IdentityDomains", "ListApprovalWorkflowSteps", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListApprovalWorkflowSteps",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApprovalWorkflowSteps/ListApprovalWorkflowSteps")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListApprovalWorkflowStepsRequest::builder)
                 .basePath("")
@@ -4452,7 +4743,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListApprovalWorkflowsResponse::builder)
                 .logger(LOG, "listApprovalWorkflows")
-                .serviceDetails("IdentityDomains", "ListApprovalWorkflows", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListApprovalWorkflows",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApprovalWorkflows/ListApprovalWorkflows")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListApprovalWorkflowsRequest::builder)
                 .basePath("")
@@ -4491,7 +4785,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListAppsResponse::builder)
                 .logger(LOG, "listApps")
-                .serviceDetails("IdentityDomains", "ListApps", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListApps",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Apps/ListApps")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAppsRequest::builder)
                 .basePath("")
@@ -4529,7 +4826,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListAuthTokensResponse::builder)
                 .logger(LOG, "listAuthTokens")
-                .serviceDetails("IdentityDomains", "ListAuthTokens", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListAuthTokens",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AuthTokens/ListAuthTokens")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAuthTokensRequest::builder)
                 .basePath("")
@@ -4569,7 +4869,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListAuthenticationFactorSettingsResponse::builder)
                 .logger(LOG, "listAuthenticationFactorSettings")
-                .serviceDetails("IdentityDomains", "ListAuthenticationFactorSettings", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListAuthenticationFactorSettings",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AuthenticationFactorSettings/ListAuthenticationFactorSettings")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAuthenticationFactorSettingsRequest::builder)
                 .basePath("")
@@ -4606,7 +4909,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListBrandingSettingsResponse::builder)
                 .logger(LOG, "listBrandingSettings")
-                .serviceDetails("IdentityDomains", "ListBrandingSettings", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListBrandingSettings",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/BrandingSettings/ListBrandingSettings")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListBrandingSettingsRequest::builder)
                 .basePath("")
@@ -4641,7 +4947,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListCloudGateMappingsResponse::builder)
                 .logger(LOG, "listCloudGateMappings")
-                .serviceDetails("IdentityDomains", "ListCloudGateMappings", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListCloudGateMappings",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGateMappings/ListCloudGateMappings")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListCloudGateMappingsRequest::builder)
                 .basePath("")
@@ -4680,7 +4989,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListCloudGateServersResponse::builder)
                 .logger(LOG, "listCloudGateServers")
-                .serviceDetails("IdentityDomains", "ListCloudGateServers", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListCloudGateServers",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGateServers/ListCloudGateServers")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListCloudGateServersRequest::builder)
                 .basePath("")
@@ -4719,7 +5031,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListCloudGatesResponse::builder)
                 .logger(LOG, "listCloudGates")
-                .serviceDetails("IdentityDomains", "ListCloudGates", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListCloudGates",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGates/ListCloudGates")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListCloudGatesRequest::builder)
                 .basePath("")
@@ -4758,7 +5073,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListConditionsResponse::builder)
                 .logger(LOG, "listConditions")
-                .serviceDetails("IdentityDomains", "ListConditions", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListConditions",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Conditions/ListConditions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListConditionsRequest::builder)
                 .basePath("")
@@ -4798,7 +5116,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListCustomerSecretKeysResponse::builder)
                 .logger(LOG, "listCustomerSecretKeys")
-                .serviceDetails("IdentityDomains", "ListCustomerSecretKeys", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListCustomerSecretKeys",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CustomerSecretKeys/ListCustomerSecretKeys")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListCustomerSecretKeysRequest::builder)
                 .basePath("")
@@ -4838,7 +5159,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListDynamicResourceGroupsResponse::builder)
                 .logger(LOG, "listDynamicResourceGroups")
-                .serviceDetails("IdentityDomains", "ListDynamicResourceGroups", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListDynamicResourceGroups",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/DynamicResourceGroups/ListDynamicResourceGroups")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDynamicResourceGroupsRequest::builder)
                 .basePath("")
@@ -4877,7 +5201,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListGrantsResponse::builder)
                 .logger(LOG, "listGrants")
-                .serviceDetails("IdentityDomains", "ListGrants", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListGrants",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Grants/ListGrants")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListGrantsRequest::builder)
                 .basePath("")
@@ -4916,7 +5243,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListGroupsResponse::builder)
                 .logger(LOG, "listGroups")
-                .serviceDetails("IdentityDomains", "ListGroups", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListGroups",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Groups/ListGroups")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListGroupsRequest::builder)
                 .basePath("")
@@ -4956,7 +5286,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListIdentityPropagationTrustsResponse::builder)
                 .logger(LOG, "listIdentityPropagationTrusts")
-                .serviceDetails("IdentityDomains", "ListIdentityPropagationTrusts", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListIdentityPropagationTrusts",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityPropagationTrusts/ListIdentityPropagationTrusts")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListIdentityPropagationTrustsRequest::builder)
                 .basePath("")
@@ -4997,7 +5330,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListIdentityProvidersResponse::builder)
                 .logger(LOG, "listIdentityProviders")
-                .serviceDetails("IdentityDomains", "ListIdentityProviders", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListIdentityProviders",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProviders/ListIdentityProviders")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListIdentityProvidersRequest::builder)
                 .basePath("")
@@ -5036,7 +5372,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListIdentitySettingsResponse::builder)
                 .logger(LOG, "listIdentitySettings")
-                .serviceDetails("IdentityDomains", "ListIdentitySettings", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListIdentitySettings",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentitySettings/ListIdentitySettings")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListIdentitySettingsRequest::builder)
                 .basePath("")
@@ -5070,7 +5409,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListKmsiSettingsResponse::builder)
                 .logger(LOG, "listKmsiSettings")
-                .serviceDetails("IdentityDomains", "ListKmsiSettings", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListKmsiSettings",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/KmsiSettings/ListKmsiSettings")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListKmsiSettingsRequest::builder)
                 .basePath("")
@@ -5104,7 +5446,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListMyApiKeysResponse::builder)
                 .logger(LOG, "listMyApiKeys")
-                .serviceDetails("IdentityDomains", "ListMyApiKeys", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListMyApiKeys",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyApiKeys/ListMyApiKeys")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMyApiKeysRequest::builder)
                 .basePath("")
@@ -5138,7 +5483,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListMyAppsResponse::builder)
                 .logger(LOG, "listMyApps")
-                .serviceDetails("IdentityDomains", "ListMyApps", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListMyApps",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyApps/ListMyApps")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMyAppsRequest::builder)
                 .basePath("")
@@ -5172,7 +5520,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListMyAuthTokensResponse::builder)
                 .logger(LOG, "listMyAuthTokens")
-                .serviceDetails("IdentityDomains", "ListMyAuthTokens", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListMyAuthTokens",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyAuthTokens/ListMyAuthTokens")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMyAuthTokensRequest::builder)
                 .basePath("")
@@ -5207,7 +5558,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListMyCompletedApprovalsResponse::builder)
                 .logger(LOG, "listMyCompletedApprovals")
-                .serviceDetails("IdentityDomains", "ListMyCompletedApprovals", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListMyCompletedApprovals",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyCompletedApprovals/ListMyCompletedApprovals")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMyCompletedApprovalsRequest::builder)
                 .basePath("")
@@ -5242,7 +5596,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListMyCustomerSecretKeysResponse::builder)
                 .logger(LOG, "listMyCustomerSecretKeys")
-                .serviceDetails("IdentityDomains", "ListMyCustomerSecretKeys", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListMyCustomerSecretKeys",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyCustomerSecretKeys/ListMyCustomerSecretKeys")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMyCustomerSecretKeysRequest::builder)
                 .basePath("")
@@ -5276,7 +5633,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListMyDevicesResponse::builder)
                 .logger(LOG, "listMyDevices")
-                .serviceDetails("IdentityDomains", "ListMyDevices", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListMyDevices",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyDevices/ListMyDevices")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMyDevicesRequest::builder)
                 .basePath("")
@@ -5315,7 +5675,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListMyGroupsResponse::builder)
                 .logger(LOG, "listMyGroups")
-                .serviceDetails("IdentityDomains", "ListMyGroups", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListMyGroups",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyGroups/ListMyGroups")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMyGroupsRequest::builder)
                 .basePath("")
@@ -5355,7 +5718,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListMyOAuth2ClientCredentialsResponse::builder)
                 .logger(LOG, "listMyOAuth2ClientCredentials")
-                .serviceDetails("IdentityDomains", "ListMyOAuth2ClientCredentials", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListMyOAuth2ClientCredentials",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyOAuth2ClientCredentials/ListMyOAuth2ClientCredentials")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMyOAuth2ClientCredentialsRequest::builder)
                 .basePath("")
@@ -5391,7 +5757,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListMyPendingApprovalsResponse::builder)
                 .logger(LOG, "listMyPendingApprovals")
-                .serviceDetails("IdentityDomains", "ListMyPendingApprovals", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListMyPendingApprovals",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyPendingApprovals/ListMyPendingApprovals")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMyPendingApprovalsRequest::builder)
                 .basePath("")
@@ -5426,7 +5795,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListMyRequestableGroupsResponse::builder)
                 .logger(LOG, "listMyRequestableGroups")
-                .serviceDetails("IdentityDomains", "ListMyRequestableGroups", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListMyRequestableGroups",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyRequestableGroups/ListMyRequestableGroups")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMyRequestableGroupsRequest::builder)
                 .basePath("")
@@ -5460,7 +5832,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListMyRequestsResponse::builder)
                 .logger(LOG, "listMyRequests")
-                .serviceDetails("IdentityDomains", "ListMyRequests", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListMyRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyRequests/ListMyRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMyRequestsRequest::builder)
                 .basePath("")
@@ -5500,7 +5875,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListMySmtpCredentialsResponse::builder)
                 .logger(LOG, "listMySmtpCredentials")
-                .serviceDetails("IdentityDomains", "ListMySmtpCredentials", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListMySmtpCredentials",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MySmtpCredentials/ListMySmtpCredentials")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMySmtpCredentialsRequest::builder)
                 .basePath("")
@@ -5535,7 +5913,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListMySupportAccountsResponse::builder)
                 .logger(LOG, "listMySupportAccounts")
-                .serviceDetails("IdentityDomains", "ListMySupportAccounts", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListMySupportAccounts",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MySupportAccounts/ListMySupportAccounts")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMySupportAccountsRequest::builder)
                 .basePath("")
@@ -5570,7 +5951,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListMyTrustedUserAgentsResponse::builder)
                 .logger(LOG, "listMyTrustedUserAgents")
-                .serviceDetails("IdentityDomains", "ListMyTrustedUserAgents", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListMyTrustedUserAgents",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyTrustedUserAgents/ListMyTrustedUserAgents")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMyTrustedUserAgentsRequest::builder)
                 .basePath("")
@@ -5610,7 +5994,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListMyUserDbCredentialsResponse::builder)
                 .logger(LOG, "listMyUserDbCredentials")
-                .serviceDetails("IdentityDomains", "ListMyUserDbCredentials", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListMyUserDbCredentials",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyUserDbCredentials/ListMyUserDbCredentials")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMyUserDbCredentialsRequest::builder)
                 .basePath("")
@@ -5645,7 +6032,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListNetworkPerimetersResponse::builder)
                 .logger(LOG, "listNetworkPerimeters")
-                .serviceDetails("IdentityDomains", "ListNetworkPerimeters", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListNetworkPerimeters",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/NetworkPerimeters/ListNetworkPerimeters")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListNetworkPerimetersRequest::builder)
                 .basePath("")
@@ -5685,7 +6075,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListNotificationSettingsResponse::builder)
                 .logger(LOG, "listNotificationSettings")
-                .serviceDetails("IdentityDomains", "ListNotificationSettings", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListNotificationSettings",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/NotificationSettings/ListNotificationSettings")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListNotificationSettingsRequest::builder)
                 .basePath("")
@@ -5720,7 +6113,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListOAuth2ClientCredentialsResponse::builder)
                 .logger(LOG, "listOAuth2ClientCredentials")
-                .serviceDetails("IdentityDomains", "ListOAuth2ClientCredentials", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListOAuth2ClientCredentials",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OAuth2ClientCredentials/ListOAuth2ClientCredentials")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOAuth2ClientCredentialsRequest::builder)
                 .basePath("")
@@ -5760,7 +6156,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListOAuthClientCertificatesResponse::builder)
                 .logger(LOG, "listOAuthClientCertificates")
-                .serviceDetails("IdentityDomains", "ListOAuthClientCertificates", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListOAuthClientCertificates",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OAuthClientCertificates/ListOAuthClientCertificates")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOAuthClientCertificatesRequest::builder)
                 .basePath("")
@@ -5795,7 +6194,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListOAuthPartnerCertificatesResponse::builder)
                 .logger(LOG, "listOAuthPartnerCertificates")
-                .serviceDetails("IdentityDomains", "ListOAuthPartnerCertificates", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListOAuthPartnerCertificates",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OAuthPartnerCertificates/ListOAuthPartnerCertificates")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOAuthPartnerCertificatesRequest::builder)
                 .basePath("")
@@ -5830,7 +6232,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListPasswordPoliciesResponse::builder)
                 .logger(LOG, "listPasswordPolicies")
-                .serviceDetails("IdentityDomains", "ListPasswordPolicies", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListPasswordPolicies",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/PasswordPolicies/ListPasswordPolicies")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListPasswordPoliciesRequest::builder)
                 .basePath("")
@@ -5869,7 +6274,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListPoliciesResponse::builder)
                 .logger(LOG, "listPolicies")
-                .serviceDetails("IdentityDomains", "ListPolicies", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListPolicies",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Policies/ListPolicies")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListPoliciesRequest::builder)
                 .basePath("")
@@ -5909,7 +6317,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListResourceTypeSchemaAttributesResponse::builder)
                 .logger(LOG, "listResourceTypeSchemaAttributes")
-                .serviceDetails("IdentityDomains", "ListResourceTypeSchemaAttributes", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListResourceTypeSchemaAttributes",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ResourceTypeSchemaAttributes/ListResourceTypeSchemaAttributes")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListResourceTypeSchemaAttributesRequest::builder)
                 .basePath("")
@@ -5951,7 +6362,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListRulesResponse::builder)
                 .logger(LOG, "listRules")
-                .serviceDetails("IdentityDomains", "ListRules", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListRules",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Rules/ListRules")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListRulesRequest::builder)
                 .basePath("")
@@ -5989,7 +6403,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListSchemasResponse::builder)
                 .logger(LOG, "listSchemas")
-                .serviceDetails("IdentityDomains", "ListSchemas", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListSchemas",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Schemas/ListSchemas")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSchemasRequest::builder)
                 .basePath("")
@@ -6023,7 +6440,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListSecurityQuestionSettingsResponse::builder)
                 .logger(LOG, "listSecurityQuestionSettings")
-                .serviceDetails("IdentityDomains", "ListSecurityQuestionSettings", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListSecurityQuestionSettings",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SecurityQuestionSettings/ListSecurityQuestionSettings")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSecurityQuestionSettingsRequest::builder)
                 .basePath("")
@@ -6059,7 +6479,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListSecurityQuestionsResponse::builder)
                 .logger(LOG, "listSecurityQuestions")
-                .serviceDetails("IdentityDomains", "ListSecurityQuestions", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListSecurityQuestions",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SecurityQuestions/ListSecurityQuestions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSecurityQuestionsRequest::builder)
                 .basePath("")
@@ -6099,7 +6522,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListSelfRegistrationProfilesResponse::builder)
                 .logger(LOG, "listSelfRegistrationProfiles")
-                .serviceDetails("IdentityDomains", "ListSelfRegistrationProfiles", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListSelfRegistrationProfiles",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SelfRegistrationProfiles/ListSelfRegistrationProfiles")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSelfRegistrationProfilesRequest::builder)
                 .basePath("")
@@ -6139,7 +6565,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListSettingsResponse::builder)
                 .logger(LOG, "listSettings")
-                .serviceDetails("IdentityDomains", "ListSettings", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListSettings",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Settings/ListSettings")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSettingsRequest::builder)
                 .basePath("")
@@ -6173,7 +6602,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListSmtpCredentialsResponse::builder)
                 .logger(LOG, "listSmtpCredentials")
-                .serviceDetails("IdentityDomains", "ListSmtpCredentials", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListSmtpCredentials",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SmtpCredentials/ListSmtpCredentials")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSmtpCredentialsRequest::builder)
                 .basePath("")
@@ -6213,7 +6645,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListUserAttributesSettingsResponse::builder)
                 .logger(LOG, "listUserAttributesSettings")
-                .serviceDetails("IdentityDomains", "ListUserAttributesSettings", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListUserAttributesSettings",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserAttributesSettings/ListUserAttributesSettings")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListUserAttributesSettingsRequest::builder)
                 .basePath("")
@@ -6248,7 +6683,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListUserDbCredentialsResponse::builder)
                 .logger(LOG, "listUserDbCredentials")
-                .serviceDetails("IdentityDomains", "ListUserDbCredentials", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListUserDbCredentials",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserDbCredentials/ListUserDbCredentials")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListUserDbCredentialsRequest::builder)
                 .basePath("")
@@ -6287,7 +6725,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListUsersResponse::builder)
                 .logger(LOG, "listUsers")
-                .serviceDetails("IdentityDomains", "ListUsers", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListUsers",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Users/ListUsers")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListUsersRequest::builder)
                 .basePath("")
@@ -6330,7 +6771,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchAccountRecoverySettingResponse::builder)
                 .logger(LOG, "patchAccountRecoverySetting")
-                .serviceDetails("IdentityDomains", "PatchAccountRecoverySetting", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchAccountRecoverySetting",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AccountRecoverySetting/PatchAccountRecoverySetting")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchAccountRecoverySettingRequest::builder)
                 .basePath("")
@@ -6367,7 +6811,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchApiKeyResponse::builder)
                 .logger(LOG, "patchApiKey")
-                .serviceDetails("IdentityDomains", "PatchApiKey", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchApiKey",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApiKey/PatchApiKey")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchApiKeyRequest::builder)
                 .basePath("")
@@ -6403,7 +6850,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchAppResponse::builder)
                 .logger(LOG, "patchApp")
-                .serviceDetails("IdentityDomains", "PatchApp", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchApp",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/App/PatchApp")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchAppRequest::builder)
                 .basePath("")
@@ -6439,7 +6889,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchAppRoleResponse::builder)
                 .logger(LOG, "patchAppRole")
-                .serviceDetails("IdentityDomains", "PatchAppRole", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchAppRole",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AppRole/PatchAppRole")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchAppRoleRequest::builder)
                 .basePath("")
@@ -6476,7 +6929,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchApprovalWorkflowResponse::builder)
                 .logger(LOG, "patchApprovalWorkflow")
-                .serviceDetails("IdentityDomains", "PatchApprovalWorkflow", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchApprovalWorkflow",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApprovalWorkflow/PatchApprovalWorkflow")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchApprovalWorkflowRequest::builder)
                 .basePath("")
@@ -6514,7 +6970,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchApprovalWorkflowStepResponse::builder)
                 .logger(LOG, "patchApprovalWorkflowStep")
-                .serviceDetails("IdentityDomains", "PatchApprovalWorkflowStep", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchApprovalWorkflowStep",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApprovalWorkflowStep/PatchApprovalWorkflowStep")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchApprovalWorkflowStepRequest::builder)
                 .basePath("")
@@ -6550,7 +7009,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchAuthTokenResponse::builder)
                 .logger(LOG, "patchAuthToken")
-                .serviceDetails("IdentityDomains", "PatchAuthToken", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchAuthToken",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AuthToken/PatchAuthToken")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchAuthTokenRequest::builder)
                 .basePath("")
@@ -6586,7 +7048,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchCloudGateResponse::builder)
                 .logger(LOG, "patchCloudGate")
-                .serviceDetails("IdentityDomains", "PatchCloudGate", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchCloudGate",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGate/PatchCloudGate")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchCloudGateRequest::builder)
                 .basePath("")
@@ -6623,7 +7088,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchCloudGateMappingResponse::builder)
                 .logger(LOG, "patchCloudGateMapping")
-                .serviceDetails("IdentityDomains", "PatchCloudGateMapping", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchCloudGateMapping",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGateMapping/PatchCloudGateMapping")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchCloudGateMappingRequest::builder)
                 .basePath("")
@@ -6659,7 +7127,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchCloudGateServerResponse::builder)
                 .logger(LOG, "patchCloudGateServer")
-                .serviceDetails("IdentityDomains", "PatchCloudGateServer", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchCloudGateServer",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGateServer/PatchCloudGateServer")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchCloudGateServerRequest::builder)
                 .basePath("")
@@ -6695,7 +7166,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchConditionResponse::builder)
                 .logger(LOG, "patchCondition")
-                .serviceDetails("IdentityDomains", "PatchCondition", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchCondition",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Condition/PatchCondition")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchConditionRequest::builder)
                 .basePath("")
@@ -6733,7 +7207,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchCustomerSecretKeyResponse::builder)
                 .logger(LOG, "patchCustomerSecretKey")
-                .serviceDetails("IdentityDomains", "PatchCustomerSecretKey", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchCustomerSecretKey",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CustomerSecretKey/PatchCustomerSecretKey")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchCustomerSecretKeyRequest::builder)
                 .basePath("")
@@ -6771,7 +7248,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchDynamicResourceGroupResponse::builder)
                 .logger(LOG, "patchDynamicResourceGroup")
-                .serviceDetails("IdentityDomains", "PatchDynamicResourceGroup", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchDynamicResourceGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/DynamicResourceGroup/PatchDynamicResourceGroup")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchDynamicResourceGroupRequest::builder)
                 .basePath("")
@@ -6807,7 +7287,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchGrantResponse::builder)
                 .logger(LOG, "patchGrant")
-                .serviceDetails("IdentityDomains", "PatchGrant", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchGrant",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Grant/PatchGrant")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchGrantRequest::builder)
                 .basePath("")
@@ -6843,7 +7326,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchGroupResponse::builder)
                 .logger(LOG, "patchGroup")
-                .serviceDetails("IdentityDomains", "PatchGroup", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Group/PatchGroup")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchGroupRequest::builder)
                 .basePath("")
@@ -6882,7 +7368,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchIdentityPropagationTrustResponse::builder)
                 .logger(LOG, "patchIdentityPropagationTrust")
-                .serviceDetails("IdentityDomains", "PatchIdentityPropagationTrust", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchIdentityPropagationTrust",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityPropagationTrust/PatchIdentityPropagationTrust")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchIdentityPropagationTrustRequest::builder)
                 .basePath("")
@@ -6921,7 +7410,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchIdentityProviderResponse::builder)
                 .logger(LOG, "patchIdentityProvider")
-                .serviceDetails("IdentityDomains", "PatchIdentityProvider", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchIdentityProvider",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProvider/PatchIdentityProvider")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchIdentityProviderRequest::builder)
                 .basePath("")
@@ -6957,7 +7449,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchIdentitySettingResponse::builder)
                 .logger(LOG, "patchIdentitySetting")
-                .serviceDetails("IdentityDomains", "PatchIdentitySetting", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchIdentitySetting",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentitySetting/PatchIdentitySetting")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchIdentitySettingRequest::builder)
                 .basePath("")
@@ -6993,7 +7488,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchKmsiSettingResponse::builder)
                 .logger(LOG, "patchKmsiSetting")
-                .serviceDetails("IdentityDomains", "PatchKmsiSetting", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchKmsiSetting",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/KmsiSetting/PatchKmsiSetting")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchKmsiSettingRequest::builder)
                 .basePath("")
@@ -7027,7 +7525,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchMeResponse::builder)
                 .logger(LOG, "patchMe")
-                .serviceDetails("IdentityDomains", "PatchMe", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchMe",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Me/PatchMe")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchMeRequest::builder)
                 .basePath("")
@@ -7060,7 +7561,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchMyApiKeyResponse::builder)
                 .logger(LOG, "patchMyApiKey")
-                .serviceDetails("IdentityDomains", "PatchMyApiKey", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchMyApiKey",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyApiKey/PatchMyApiKey")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchMyApiKeyRequest::builder)
                 .basePath("")
@@ -7091,7 +7595,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchMyAuthTokenResponse::builder)
                 .logger(LOG, "patchMyAuthToken")
-                .serviceDetails("IdentityDomains", "PatchMyAuthToken", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchMyAuthToken",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyAuthToken/PatchMyAuthToken")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchMyAuthTokenRequest::builder)
                 .basePath("")
@@ -7124,7 +7631,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchMyCustomerSecretKeyResponse::builder)
                 .logger(LOG, "patchMyCustomerSecretKey")
-                .serviceDetails("IdentityDomains", "PatchMyCustomerSecretKey", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchMyCustomerSecretKey",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyCustomerSecretKey/PatchMyCustomerSecretKey")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchMyCustomerSecretKeyRequest::builder)
                 .basePath("")
@@ -7155,7 +7665,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchMyDeviceResponse::builder)
                 .logger(LOG, "patchMyDevice")
-                .serviceDetails("IdentityDomains", "PatchMyDevice", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchMyDevice",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyDevice/PatchMyDevice")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchMyDeviceRequest::builder)
                 .basePath("")
@@ -7194,7 +7707,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchMyOAuth2ClientCredentialResponse::builder)
                 .logger(LOG, "patchMyOAuth2ClientCredential")
-                .serviceDetails("IdentityDomains", "PatchMyOAuth2ClientCredential", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchMyOAuth2ClientCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyOAuth2ClientCredential/PatchMyOAuth2ClientCredential")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchMyOAuth2ClientCredentialRequest::builder)
                 .basePath("")
@@ -7229,7 +7745,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchMyPendingApprovalResponse::builder)
                 .logger(LOG, "patchMyPendingApproval")
-                .serviceDetails("IdentityDomains", "PatchMyPendingApproval", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchMyPendingApproval",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyPendingApproval/PatchMyPendingApproval")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchMyPendingApprovalRequest::builder)
                 .basePath("")
@@ -7260,7 +7779,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchMyRequestResponse::builder)
                 .logger(LOG, "patchMyRequest")
-                .serviceDetails("IdentityDomains", "PatchMyRequest", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchMyRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyRequest/PatchMyRequest")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchMyRequestRequest::builder)
                 .basePath("")
@@ -7297,7 +7819,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchMySmtpCredentialResponse::builder)
                 .logger(LOG, "patchMySmtpCredential")
-                .serviceDetails("IdentityDomains", "PatchMySmtpCredential", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchMySmtpCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MySmtpCredential/PatchMySmtpCredential")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchMySmtpCredentialRequest::builder)
                 .basePath("")
@@ -7329,7 +7854,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchNetworkPerimeterResponse::builder)
                 .logger(LOG, "patchNetworkPerimeter")
-                .serviceDetails("IdentityDomains", "PatchNetworkPerimeter", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchNetworkPerimeter",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/NetworkPerimeter/PatchNetworkPerimeter")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchNetworkPerimeterRequest::builder)
                 .basePath("")
@@ -7368,7 +7896,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchOAuth2ClientCredentialResponse::builder)
                 .logger(LOG, "patchOAuth2ClientCredential")
-                .serviceDetails("IdentityDomains", "PatchOAuth2ClientCredential", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchOAuth2ClientCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OAuth2ClientCredential/PatchOAuth2ClientCredential")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchOAuth2ClientCredentialRequest::builder)
                 .basePath("")
@@ -7405,7 +7936,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchPasswordPolicyResponse::builder)
                 .logger(LOG, "patchPasswordPolicy")
-                .serviceDetails("IdentityDomains", "PatchPasswordPolicy", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchPasswordPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/PasswordPolicy/PatchPasswordPolicy")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchPasswordPolicyRequest::builder)
                 .basePath("")
@@ -7441,7 +7975,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchPolicyResponse::builder)
                 .logger(LOG, "patchPolicy")
-                .serviceDetails("IdentityDomains", "PatchPolicy", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Policy/PatchPolicy")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchPolicyRequest::builder)
                 .basePath("")
@@ -7477,7 +8014,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchRuleResponse::builder)
                 .logger(LOG, "patchRule")
-                .serviceDetails("IdentityDomains", "PatchRule", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchRule",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Rule/PatchRule")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchRuleRequest::builder)
                 .basePath("")
@@ -7513,7 +8053,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchSchemaResponse::builder)
                 .logger(LOG, "patchSchema")
-                .serviceDetails("IdentityDomains", "PatchSchema", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchSchema",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Schema/PatchSchema")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchSchemaRequest::builder)
                 .basePath("")
@@ -7545,7 +8088,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchSecurityQuestionResponse::builder)
                 .logger(LOG, "patchSecurityQuestion")
-                .serviceDetails("IdentityDomains", "PatchSecurityQuestion", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchSecurityQuestion",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SecurityQuestion/PatchSecurityQuestion")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchSecurityQuestionRequest::builder)
                 .basePath("")
@@ -7584,7 +8130,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchSecurityQuestionSettingResponse::builder)
                 .logger(LOG, "patchSecurityQuestionSetting")
-                .serviceDetails("IdentityDomains", "PatchSecurityQuestionSetting", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchSecurityQuestionSetting",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SecurityQuestionSetting/PatchSecurityQuestionSetting")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchSecurityQuestionSettingRequest::builder)
                 .basePath("")
@@ -7625,7 +8174,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchSelfRegistrationProfileResponse::builder)
                 .logger(LOG, "patchSelfRegistrationProfile")
-                .serviceDetails("IdentityDomains", "PatchSelfRegistrationProfile", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchSelfRegistrationProfile",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SelfRegistrationProfile/PatchSelfRegistrationProfile")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchSelfRegistrationProfileRequest::builder)
                 .basePath("")
@@ -7663,7 +8215,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchSettingResponse::builder)
                 .logger(LOG, "patchSetting")
-                .serviceDetails("IdentityDomains", "PatchSetting", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchSetting",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Setting/PatchSetting")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchSettingRequest::builder)
                 .basePath("")
@@ -7699,7 +8254,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchSmtpCredentialResponse::builder)
                 .logger(LOG, "patchSmtpCredential")
-                .serviceDetails("IdentityDomains", "PatchSmtpCredential", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchSmtpCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SmtpCredential/PatchSmtpCredential")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchSmtpCredentialRequest::builder)
                 .basePath("")
@@ -7735,7 +8293,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchUserResponse::builder)
                 .logger(LOG, "patchUser")
-                .serviceDetails("IdentityDomains", "PatchUser", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchUser",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/User/PatchUser")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchUserRequest::builder)
                 .basePath("")
@@ -7773,7 +8334,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PatchUserAttributesSettingResponse::builder)
                 .logger(LOG, "patchUserAttributesSetting")
-                .serviceDetails("IdentityDomains", "PatchUserAttributesSetting", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchUserAttributesSetting",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserAttributesSetting/PatchUserAttributesSetting")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchUserAttributesSettingRequest::builder)
                 .basePath("")
@@ -7813,7 +8377,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutAccountRecoverySettingResponse::builder)
                 .logger(LOG, "putAccountRecoverySetting")
-                .serviceDetails("IdentityDomains", "PutAccountRecoverySetting", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutAccountRecoverySetting",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AccountRecoverySetting/PutAccountRecoverySetting")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutAccountRecoverySettingRequest::builder)
                 .basePath("")
@@ -7849,7 +8416,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutAppResponse::builder)
                 .logger(LOG, "putApp")
-                .serviceDetails("IdentityDomains", "PutApp", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutApp",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/App/PutApp")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutAppRequest::builder)
                 .basePath("")
@@ -7883,7 +8453,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutAppStatusChangerResponse::builder)
                 .logger(LOG, "putAppStatusChanger")
-                .serviceDetails("IdentityDomains", "PutAppStatusChanger", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutAppStatusChanger",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AppStatusChanger/PutAppStatusChanger")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutAppStatusChangerRequest::builder)
                 .basePath("")
@@ -7919,7 +8492,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutApprovalWorkflowResponse::builder)
                 .logger(LOG, "putApprovalWorkflow")
-                .serviceDetails("IdentityDomains", "PutApprovalWorkflow", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutApprovalWorkflow",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApprovalWorkflow/PutApprovalWorkflow")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutApprovalWorkflowRequest::builder)
                 .basePath("")
@@ -7958,7 +8534,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutAuthenticationFactorSettingResponse::builder)
                 .logger(LOG, "putAuthenticationFactorSetting")
-                .serviceDetails("IdentityDomains", "PutAuthenticationFactorSetting", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutAuthenticationFactorSetting",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AuthenticationFactorSetting/PutAuthenticationFactorSetting")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutAuthenticationFactorSettingRequest::builder)
                 .basePath("")
@@ -7996,7 +8575,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutCloudGateResponse::builder)
                 .logger(LOG, "putCloudGate")
-                .serviceDetails("IdentityDomains", "PutCloudGate", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutCloudGate",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGate/PutCloudGate")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutCloudGateRequest::builder)
                 .basePath("")
@@ -8032,7 +8614,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutCloudGateMappingResponse::builder)
                 .logger(LOG, "putCloudGateMapping")
-                .serviceDetails("IdentityDomains", "PutCloudGateMapping", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutCloudGateMapping",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGateMapping/PutCloudGateMapping")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutCloudGateMappingRequest::builder)
                 .basePath("")
@@ -8068,7 +8653,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutCloudGateServerResponse::builder)
                 .logger(LOG, "putCloudGateServer")
-                .serviceDetails("IdentityDomains", "PutCloudGateServer", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutCloudGateServer",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGateServer/PutCloudGateServer")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutCloudGateServerRequest::builder)
                 .basePath("")
@@ -8104,7 +8692,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutConditionResponse::builder)
                 .logger(LOG, "putCondition")
-                .serviceDetails("IdentityDomains", "PutCondition", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutCondition",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Condition/PutCondition")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutConditionRequest::builder)
                 .basePath("")
@@ -8142,7 +8733,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutDynamicResourceGroupResponse::builder)
                 .logger(LOG, "putDynamicResourceGroup")
-                .serviceDetails("IdentityDomains", "PutDynamicResourceGroup", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutDynamicResourceGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/DynamicResourceGroup/PutDynamicResourceGroup")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutDynamicResourceGroupRequest::builder)
                 .basePath("")
@@ -8178,7 +8772,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutGroupResponse::builder)
                 .logger(LOG, "putGroup")
-                .serviceDetails("IdentityDomains", "PutGroup", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Group/PutGroup")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutGroupRequest::builder)
                 .basePath("")
@@ -8217,7 +8814,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutIdentityPropagationTrustResponse::builder)
                 .logger(LOG, "putIdentityPropagationTrust")
-                .serviceDetails("IdentityDomains", "PutIdentityPropagationTrust", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutIdentityPropagationTrust",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityPropagationTrust/PutIdentityPropagationTrust")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutIdentityPropagationTrustRequest::builder)
                 .basePath("")
@@ -8254,7 +8854,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutIdentityProviderResponse::builder)
                 .logger(LOG, "putIdentityProvider")
-                .serviceDetails("IdentityDomains", "PutIdentityProvider", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutIdentityProvider",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProvider/PutIdentityProvider")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutIdentityProviderRequest::builder)
                 .basePath("")
@@ -8290,7 +8893,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutIdentitySettingResponse::builder)
                 .logger(LOG, "putIdentitySetting")
-                .serviceDetails("IdentityDomains", "PutIdentitySetting", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutIdentitySetting",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentitySetting/PutIdentitySetting")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutIdentitySettingRequest::builder)
                 .basePath("")
@@ -8326,7 +8932,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutKmsiSettingResponse::builder)
                 .logger(LOG, "putKmsiSetting")
-                .serviceDetails("IdentityDomains", "PutKmsiSetting", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutKmsiSetting",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/KmsiSetting/PutKmsiSetting")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutKmsiSettingRequest::builder)
                 .basePath("")
@@ -8360,7 +8969,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutMeResponse::builder)
                 .logger(LOG, "putMe")
-                .serviceDetails("IdentityDomains", "PutMe", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutMe",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Me/PutMe")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutMeRequest::builder)
                 .basePath("")
@@ -8391,7 +9003,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutMePasswordChangerResponse::builder)
                 .logger(LOG, "putMePasswordChanger")
-                .serviceDetails("IdentityDomains", "PutMePasswordChanger", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutMePasswordChanger",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MePasswordChanger/PutMePasswordChanger")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutMePasswordChangerRequest::builder)
                 .basePath("")
@@ -8421,7 +9036,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutNetworkPerimeterResponse::builder)
                 .logger(LOG, "putNetworkPerimeter")
-                .serviceDetails("IdentityDomains", "PutNetworkPerimeter", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutNetworkPerimeter",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/NetworkPerimeter/PutNetworkPerimeter")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutNetworkPerimeterRequest::builder)
                 .basePath("")
@@ -8459,7 +9077,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutNotificationSettingResponse::builder)
                 .logger(LOG, "putNotificationSetting")
-                .serviceDetails("IdentityDomains", "PutNotificationSetting", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutNotificationSetting",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/NotificationSetting/PutNotificationSetting")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutNotificationSettingRequest::builder)
                 .basePath("")
@@ -8495,7 +9116,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutPasswordPolicyResponse::builder)
                 .logger(LOG, "putPasswordPolicy")
-                .serviceDetails("IdentityDomains", "PutPasswordPolicy", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutPasswordPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/PasswordPolicy/PutPasswordPolicy")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutPasswordPolicyRequest::builder)
                 .basePath("")
@@ -8531,7 +9155,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutPolicyResponse::builder)
                 .logger(LOG, "putPolicy")
-                .serviceDetails("IdentityDomains", "PutPolicy", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Policy/PutPolicy")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutPolicyRequest::builder)
                 .basePath("")
@@ -8567,7 +9194,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutRuleResponse::builder)
                 .logger(LOG, "putRule")
-                .serviceDetails("IdentityDomains", "PutRule", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutRule",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Rule/PutRule")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutRuleRequest::builder)
                 .basePath("")
@@ -8602,7 +9232,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutSchemaResponse::builder)
                 .logger(LOG, "putSchema")
-                .serviceDetails("IdentityDomains", "PutSchema", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutSchema",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Schema/PutSchema")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutSchemaRequest::builder)
                 .basePath("")
@@ -8636,7 +9269,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutSecurityQuestionSettingResponse::builder)
                 .logger(LOG, "putSecurityQuestionSetting")
-                .serviceDetails("IdentityDomains", "PutSecurityQuestionSetting", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutSecurityQuestionSetting",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SecurityQuestionSetting/PutSecurityQuestionSetting")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutSecurityQuestionSettingRequest::builder)
                 .basePath("")
@@ -8676,7 +9312,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutSelfRegistrationProfileResponse::builder)
                 .logger(LOG, "putSelfRegistrationProfile")
-                .serviceDetails("IdentityDomains", "PutSelfRegistrationProfile", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutSelfRegistrationProfile",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SelfRegistrationProfile/PutSelfRegistrationProfile")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutSelfRegistrationProfileRequest::builder)
                 .basePath("")
@@ -8713,7 +9352,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutSettingResponse::builder)
                 .logger(LOG, "putSetting")
-                .serviceDetails("IdentityDomains", "PutSetting", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutSetting",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Setting/PutSetting")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutSettingRequest::builder)
                 .basePath("")
@@ -8749,7 +9391,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutUserResponse::builder)
                 .logger(LOG, "putUser")
-                .serviceDetails("IdentityDomains", "PutUser", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutUser",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/User/PutUser")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutUserRequest::builder)
                 .basePath("")
@@ -8787,7 +9432,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutUserCapabilitiesChangerResponse::builder)
                 .logger(LOG, "putUserCapabilitiesChanger")
-                .serviceDetails("IdentityDomains", "PutUserCapabilitiesChanger", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutUserCapabilitiesChanger",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserCapabilitiesChanger/PutUserCapabilitiesChanger")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutUserCapabilitiesChangerRequest::builder)
                 .basePath("")
@@ -8821,7 +9469,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutUserPasswordChangerResponse::builder)
                 .logger(LOG, "putUserPasswordChanger")
-                .serviceDetails("IdentityDomains", "PutUserPasswordChanger", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutUserPasswordChanger",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserPasswordChanger/PutUserPasswordChanger")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutUserPasswordChangerRequest::builder)
                 .basePath("")
@@ -8854,7 +9505,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutUserPasswordResetterResponse::builder)
                 .logger(LOG, "putUserPasswordResetter")
-                .serviceDetails("IdentityDomains", "PutUserPasswordResetter", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutUserPasswordResetter",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserPasswordResetter/PutUserPasswordResetter")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutUserPasswordResetterRequest::builder)
                 .basePath("")
@@ -8886,7 +9540,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, PutUserStatusChangerResponse::builder)
                 .logger(LOG, "putUserStatusChanger")
-                .serviceDetails("IdentityDomains", "PutUserStatusChanger", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutUserStatusChanger",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserStatusChanger/PutUserStatusChanger")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutUserStatusChangerRequest::builder)
                 .basePath("")
@@ -8921,7 +9578,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchAccountMgmtInfosResponse::builder)
                 .logger(LOG, "searchAccountMgmtInfos")
-                .serviceDetails("IdentityDomains", "SearchAccountMgmtInfos", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchAccountMgmtInfos",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AccountMgmtInfos/SearchAccountMgmtInfos")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchAccountMgmtInfosRequest::builder)
                 .basePath("")
@@ -8952,7 +9612,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchApiKeysResponse::builder)
                 .logger(LOG, "searchApiKeys")
-                .serviceDetails("IdentityDomains", "SearchApiKeys", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchApiKeys",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApiKeys/SearchApiKeys")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchApiKeysRequest::builder)
                 .basePath("")
@@ -8983,7 +9646,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchAppRolesResponse::builder)
                 .logger(LOG, "searchAppRoles")
-                .serviceDetails("IdentityDomains", "SearchAppRoles", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchAppRoles",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AppRoles/SearchAppRoles")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchAppRolesRequest::builder)
                 .basePath("")
@@ -9014,7 +9680,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchAppsResponse::builder)
                 .logger(LOG, "searchApps")
-                .serviceDetails("IdentityDomains", "SearchApps", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchApps",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Apps/SearchApps")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchAppsRequest::builder)
                 .basePath("")
@@ -9045,7 +9714,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchAuthTokensResponse::builder)
                 .logger(LOG, "searchAuthTokens")
-                .serviceDetails("IdentityDomains", "SearchAuthTokens", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchAuthTokens",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AuthTokens/SearchAuthTokens")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchAuthTokensRequest::builder)
                 .basePath("")
@@ -9077,7 +9749,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchAuthenticationFactorSettingsResponse::builder)
                 .logger(LOG, "searchAuthenticationFactorSettings")
-                .serviceDetails("IdentityDomains", "SearchAuthenticationFactorSettings", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchAuthenticationFactorSettings",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AuthenticationFactorSettings/SearchAuthenticationFactorSettings")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchAuthenticationFactorSettingsRequest::builder)
                 .basePath("")
@@ -9112,7 +9787,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchCloudGateMappingsResponse::builder)
                 .logger(LOG, "searchCloudGateMappings")
-                .serviceDetails("IdentityDomains", "SearchCloudGateMappings", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchCloudGateMappings",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGateMappings/SearchCloudGateMappings")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchCloudGateMappingsRequest::builder)
                 .basePath("")
@@ -9144,7 +9822,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchCloudGateServersResponse::builder)
                 .logger(LOG, "searchCloudGateServers")
-                .serviceDetails("IdentityDomains", "SearchCloudGateServers", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchCloudGateServers",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGateServers/SearchCloudGateServers")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchCloudGateServersRequest::builder)
                 .basePath("")
@@ -9175,7 +9856,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchCloudGatesResponse::builder)
                 .logger(LOG, "searchCloudGates")
-                .serviceDetails("IdentityDomains", "SearchCloudGates", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchCloudGates",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGates/SearchCloudGates")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchCloudGatesRequest::builder)
                 .basePath("")
@@ -9206,7 +9890,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchConditionsResponse::builder)
                 .logger(LOG, "searchConditions")
-                .serviceDetails("IdentityDomains", "SearchConditions", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchConditions",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Conditions/SearchConditions")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchConditionsRequest::builder)
                 .basePath("")
@@ -9238,7 +9925,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchCustomerSecretKeysResponse::builder)
                 .logger(LOG, "searchCustomerSecretKeys")
-                .serviceDetails("IdentityDomains", "SearchCustomerSecretKeys", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchCustomerSecretKeys",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CustomerSecretKeys/SearchCustomerSecretKeys")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchCustomerSecretKeysRequest::builder)
                 .basePath("")
@@ -9270,7 +9960,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchDynamicResourceGroupsResponse::builder)
                 .logger(LOG, "searchDynamicResourceGroups")
-                .serviceDetails("IdentityDomains", "SearchDynamicResourceGroups", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchDynamicResourceGroups",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/DynamicResourceGroups/SearchDynamicResourceGroups")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchDynamicResourceGroupsRequest::builder)
                 .basePath("")
@@ -9301,7 +9994,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchGrantsResponse::builder)
                 .logger(LOG, "searchGrants")
-                .serviceDetails("IdentityDomains", "SearchGrants", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchGrants",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Grants/SearchGrants")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchGrantsRequest::builder)
                 .basePath("")
@@ -9332,7 +10028,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchGroupsResponse::builder)
                 .logger(LOG, "searchGroups")
-                .serviceDetails("IdentityDomains", "SearchGroups", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchGroups",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Groups/SearchGroups")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchGroupsRequest::builder)
                 .basePath("")
@@ -9364,7 +10063,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchIdentityProvidersResponse::builder)
                 .logger(LOG, "searchIdentityProviders")
-                .serviceDetails("IdentityDomains", "SearchIdentityProviders", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchIdentityProviders",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProviders/SearchIdentityProviders")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchIdentityProvidersRequest::builder)
                 .basePath("")
@@ -9396,7 +10098,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchIdentitySettingsResponse::builder)
                 .logger(LOG, "searchIdentitySettings")
-                .serviceDetails("IdentityDomains", "SearchIdentitySettings", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchIdentitySettings",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentitySettings/SearchIdentitySettings")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchIdentitySettingsRequest::builder)
                 .basePath("")
@@ -9427,7 +10132,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchKmsiSettingsResponse::builder)
                 .logger(LOG, "searchKmsiSettings")
-                .serviceDetails("IdentityDomains", "SearchKmsiSettings", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchKmsiSettings",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/KmsiSettings/SearchKmsiSettings")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchKmsiSettingsRequest::builder)
                 .basePath("")
@@ -9458,7 +10166,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchMyAppsResponse::builder)
                 .logger(LOG, "searchMyApps")
-                .serviceDetails("IdentityDomains", "SearchMyApps", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchMyApps",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyApps/SearchMyApps")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchMyAppsRequest::builder)
                 .basePath("")
@@ -9489,7 +10200,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchMyGroupsResponse::builder)
                 .logger(LOG, "searchMyGroups")
-                .serviceDetails("IdentityDomains", "SearchMyGroups", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchMyGroups",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyGroups/SearchMyGroups")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchMyGroupsRequest::builder)
                 .basePath("")
@@ -9521,7 +10235,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchMyRequestableGroupsResponse::builder)
                 .logger(LOG, "searchMyRequestableGroups")
-                .serviceDetails("IdentityDomains", "SearchMyRequestableGroups", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchMyRequestableGroups",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyRequestableGroups/SearchMyRequestableGroups")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchMyRequestableGroupsRequest::builder)
                 .basePath("")
@@ -9552,7 +10269,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchMyRequestsResponse::builder)
                 .logger(LOG, "searchMyRequests")
-                .serviceDetails("IdentityDomains", "SearchMyRequests", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchMyRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyRequests/SearchMyRequests")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchMyRequestsRequest::builder)
                 .basePath("")
@@ -9584,7 +10304,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchNetworkPerimetersResponse::builder)
                 .logger(LOG, "searchNetworkPerimeters")
-                .serviceDetails("IdentityDomains", "SearchNetworkPerimeters", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchNetworkPerimeters",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/NetworkPerimeters/SearchNetworkPerimeters")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchNetworkPerimetersRequest::builder)
                 .basePath("")
@@ -9616,7 +10339,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchNotificationSettingsResponse::builder)
                 .logger(LOG, "searchNotificationSettings")
-                .serviceDetails("IdentityDomains", "SearchNotificationSettings", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchNotificationSettings",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/NotificationSettings/SearchNotificationSettings")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchNotificationSettingsRequest::builder)
                 .basePath("")
@@ -9648,7 +10374,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchOAuth2ClientCredentialsResponse::builder)
                 .logger(LOG, "searchOAuth2ClientCredentials")
-                .serviceDetails("IdentityDomains", "SearchOAuth2ClientCredentials", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchOAuth2ClientCredentials",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OAuth2ClientCredentials/SearchOAuth2ClientCredentials")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchOAuth2ClientCredentialsRequest::builder)
                 .basePath("")
@@ -9681,7 +10410,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchOAuthClientCertificatesResponse::builder)
                 .logger(LOG, "searchOAuthClientCertificates")
-                .serviceDetails("IdentityDomains", "SearchOAuthClientCertificates", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchOAuthClientCertificates",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OAuthClientCertificates/SearchOAuthClientCertificates")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchOAuthClientCertificatesRequest::builder)
                 .basePath("")
@@ -9714,7 +10446,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchOAuthPartnerCertificatesResponse::builder)
                 .logger(LOG, "searchOAuthPartnerCertificates")
-                .serviceDetails("IdentityDomains", "SearchOAuthPartnerCertificates", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchOAuthPartnerCertificates",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OAuthPartnerCertificates/SearchOAuthPartnerCertificates")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchOAuthPartnerCertificatesRequest::builder)
                 .basePath("")
@@ -9748,7 +10483,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchPasswordPoliciesResponse::builder)
                 .logger(LOG, "searchPasswordPolicies")
-                .serviceDetails("IdentityDomains", "SearchPasswordPolicies", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchPasswordPolicies",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/PasswordPolicies/SearchPasswordPolicies")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchPasswordPoliciesRequest::builder)
                 .basePath("")
@@ -9779,7 +10517,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchPoliciesResponse::builder)
                 .logger(LOG, "searchPolicies")
-                .serviceDetails("IdentityDomains", "SearchPolicies", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchPolicies",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Policies/SearchPolicies")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchPoliciesRequest::builder)
                 .basePath("")
@@ -9811,7 +10552,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchResourceTypeSchemaAttributesResponse::builder)
                 .logger(LOG, "searchResourceTypeSchemaAttributes")
-                .serviceDetails("IdentityDomains", "SearchResourceTypeSchemaAttributes", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchResourceTypeSchemaAttributes",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ResourceTypeSchemaAttributes/SearchResourceTypeSchemaAttributes")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchResourceTypeSchemaAttributesRequest::builder)
                 .basePath("")
@@ -9845,7 +10589,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchRulesResponse::builder)
                 .logger(LOG, "searchRules")
-                .serviceDetails("IdentityDomains", "SearchRules", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchRules",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Rules/SearchRules")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchRulesRequest::builder)
                 .basePath("")
@@ -9876,7 +10623,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchSchemasResponse::builder)
                 .logger(LOG, "searchSchemas")
-                .serviceDetails("IdentityDomains", "SearchSchemas", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchSchemas",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Schemas/SearchSchemas")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchSchemasRequest::builder)
                 .basePath("")
@@ -9908,7 +10658,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchSecurityQuestionSettingsResponse::builder)
                 .logger(LOG, "searchSecurityQuestionSettings")
-                .serviceDetails("IdentityDomains", "SearchSecurityQuestionSettings", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchSecurityQuestionSettings",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SecurityQuestionSettings/SearchSecurityQuestionSettings")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchSecurityQuestionSettingsRequest::builder)
                 .basePath("")
@@ -9942,7 +10695,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchSecurityQuestionsResponse::builder)
                 .logger(LOG, "searchSecurityQuestions")
-                .serviceDetails("IdentityDomains", "SearchSecurityQuestions", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchSecurityQuestions",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SecurityQuestions/SearchSecurityQuestions")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchSecurityQuestionsRequest::builder)
                 .basePath("")
@@ -9974,7 +10730,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchSelfRegistrationProfilesResponse::builder)
                 .logger(LOG, "searchSelfRegistrationProfiles")
-                .serviceDetails("IdentityDomains", "SearchSelfRegistrationProfiles", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchSelfRegistrationProfiles",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SelfRegistrationProfiles/SearchSelfRegistrationProfiles")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchSelfRegistrationProfilesRequest::builder)
                 .basePath("")
@@ -10007,7 +10766,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchSettingsResponse::builder)
                 .logger(LOG, "searchSettings")
-                .serviceDetails("IdentityDomains", "SearchSettings", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchSettings",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Settings/SearchSettings")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchSettingsRequest::builder)
                 .basePath("")
@@ -10039,7 +10801,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchSmtpCredentialsResponse::builder)
                 .logger(LOG, "searchSmtpCredentials")
-                .serviceDetails("IdentityDomains", "SearchSmtpCredentials", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchSmtpCredentials",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SmtpCredentials/SearchSmtpCredentials")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchSmtpCredentialsRequest::builder)
                 .basePath("")
@@ -10071,7 +10836,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchUserAttributesSettingsResponse::builder)
                 .logger(LOG, "searchUserAttributesSettings")
-                .serviceDetails("IdentityDomains", "SearchUserAttributesSettings", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchUserAttributesSettings",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserAttributesSettings/SearchUserAttributesSettings")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchUserAttributesSettingsRequest::builder)
                 .basePath("")
@@ -10104,7 +10872,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchUserDbCredentialsResponse::builder)
                 .logger(LOG, "searchUserDbCredentials")
-                .serviceDetails("IdentityDomains", "SearchUserDbCredentials", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchUserDbCredentials",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserDbCredentials/SearchUserDbCredentials")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchUserDbCredentialsRequest::builder)
                 .basePath("")
@@ -10135,7 +10906,10 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SearchUsersResponse::builder)
                 .logger(LOG, "searchUsers")
-                .serviceDetails("IdentityDomains", "SearchUsers", "")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchUsers",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Users/SearchUsers")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchUsersRequest::builder)
                 .basePath("")

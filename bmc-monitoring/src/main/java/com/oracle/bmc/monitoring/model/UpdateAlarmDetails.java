@@ -479,7 +479,7 @@ public final class UpdateAlarmDetails
          * A list of destinations for alarm notifications. Each destination is represented by the
          * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * related resource, such as a {@link NotificationTopic}. Supported destination services:
-         * Notifications , Streaming. Limit: One destination per supported destination service.
+         * Notifications, Streaming. Limit: One destination per supported destination service.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("destinations")
         private java.util.List<String> destinations;
@@ -488,7 +488,7 @@ public final class UpdateAlarmDetails
          * A list of destinations for alarm notifications. Each destination is represented by the
          * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * related resource, such as a {@link NotificationTopic}. Supported destination services:
-         * Notifications , Streaming. Limit: One destination per supported destination service.
+         * Notifications, Streaming. Limit: One destination per supported destination service.
          *
          * @param destinations the value to set
          * @return this builder
@@ -1104,7 +1104,7 @@ public final class UpdateAlarmDetails
      * A list of destinations for alarm notifications. Each destination is represented by the
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
      * related resource, such as a {@link NotificationTopic}. Supported destination services:
-     * Notifications , Streaming. Limit: One destination per supported destination service.
+     * Notifications, Streaming. Limit: One destination per supported destination service.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("destinations")
     private final java.util.List<String> destinations;
@@ -1113,7 +1113,7 @@ public final class UpdateAlarmDetails
      * A list of destinations for alarm notifications. Each destination is represented by the
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
      * related resource, such as a {@link NotificationTopic}. Supported destination services:
-     * Notifications , Streaming. Limit: One destination per supported destination service.
+     * Notifications, Streaming. Limit: One destination per supported destination service.
      *
      * @return the value
      */

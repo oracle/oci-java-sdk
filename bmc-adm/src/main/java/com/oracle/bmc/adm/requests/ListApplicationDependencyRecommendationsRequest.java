@@ -70,6 +70,19 @@ public class ListApplicationDependencyRecommendationsRequest
         return gav;
     }
     /**
+     * A filter to return only resources that match the entire PURL given
+     * (https://github.com/package-url/purl-spec/).
+     */
+    private String purl;
+
+    /**
+     * A filter to return only resources that match the entire PURL given
+     * (https://github.com/package-url/purl-spec/).
+     */
+    public String getPurl() {
+        return purl;
+    }
+    /**
      * The field to sort by. Only one sort order may be provided. If sort order is dfs, the nodes
      * are returned by going through the application dependency tree in a depth-first manner.
      * Children are sorted based on their GAV property alphabetically (either ascending or
@@ -78,9 +91,10 @@ public class ListApplicationDependencyRecommendationsRequest
      * breadth-first manner. Children are sorted based on their GAV property alphabetically (either
      * ascending or descending, depending on the order parameter). Default order is ascending.
      * Default order for gav is ascending where ascending corresponds to alphanumerical order.
-     * Default order for nodeId is ascending where ascending corresponds to alphanumerical order.
-     * Sorting by DFS or BFS cannot be used in conjunction with the following query parameters:
-     * "gav", "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual" and "vulnerabilityId".
+     * Default order for purl is ascending where ascending corresponds to alphabetical order Default
+     * order for nodeId is ascending where ascending corresponds to alphanumerical order. Sorting by
+     * DFS or BFS cannot be used in conjunction with the following query parameters: "gav",
+     * "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual" and "vulnerabilityId".
      */
     private SortBy sortBy;
 
@@ -93,12 +107,14 @@ public class ListApplicationDependencyRecommendationsRequest
      * breadth-first manner. Children are sorted based on their GAV property alphabetically (either
      * ascending or descending, depending on the order parameter). Default order is ascending.
      * Default order for gav is ascending where ascending corresponds to alphanumerical order.
-     * Default order for nodeId is ascending where ascending corresponds to alphanumerical order.
-     * Sorting by DFS or BFS cannot be used in conjunction with the following query parameters:
-     * "gav", "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual" and "vulnerabilityId".
+     * Default order for purl is ascending where ascending corresponds to alphabetical order Default
+     * order for nodeId is ascending where ascending corresponds to alphanumerical order. Sorting by
+     * DFS or BFS cannot be used in conjunction with the following query parameters: "gav",
+     * "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual" and "vulnerabilityId".
      */
     public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Gav("gav"),
+        Purl("purl"),
         NodeId("nodeId"),
         Dfs("dfs"),
         Bfs("bfs"),
@@ -141,9 +157,10 @@ public class ListApplicationDependencyRecommendationsRequest
      * breadth-first manner. Children are sorted based on their GAV property alphabetically (either
      * ascending or descending, depending on the order parameter). Default order is ascending.
      * Default order for gav is ascending where ascending corresponds to alphanumerical order.
-     * Default order for nodeId is ascending where ascending corresponds to alphanumerical order.
-     * Sorting by DFS or BFS cannot be used in conjunction with the following query parameters:
-     * "gav", "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual" and "vulnerabilityId".
+     * Default order for purl is ascending where ascending corresponds to alphabetical order Default
+     * order for nodeId is ascending where ascending corresponds to alphanumerical order. Sorting by
+     * DFS or BFS cannot be used in conjunction with the following query parameters: "gav",
+     * "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual" and "vulnerabilityId".
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -248,6 +265,24 @@ public class ListApplicationDependencyRecommendationsRequest
         }
 
         /**
+         * A filter to return only resources that match the entire PURL given
+         * (https://github.com/package-url/purl-spec/).
+         */
+        private String purl = null;
+
+        /**
+         * A filter to return only resources that match the entire PURL given
+         * (https://github.com/package-url/purl-spec/).
+         *
+         * @param purl the value to set
+         * @return this builder instance
+         */
+        public Builder purl(String purl) {
+            this.purl = purl;
+            return this;
+        }
+
+        /**
          * The field to sort by. Only one sort order may be provided. If sort order is dfs, the
          * nodes are returned by going through the application dependency tree in a depth-first
          * manner. Children are sorted based on their GAV property alphabetically (either ascending
@@ -256,8 +291,9 @@ public class ListApplicationDependencyRecommendationsRequest
          * a breadth-first manner. Children are sorted based on their GAV property alphabetically
          * (either ascending or descending, depending on the order parameter). Default order is
          * ascending. Default order for gav is ascending where ascending corresponds to
-         * alphanumerical order. Default order for nodeId is ascending where ascending corresponds
-         * to alphanumerical order. Sorting by DFS or BFS cannot be used in conjunction with the
+         * alphanumerical order. Default order for purl is ascending where ascending corresponds to
+         * alphabetical order Default order for nodeId is ascending where ascending corresponds to
+         * alphanumerical order. Sorting by DFS or BFS cannot be used in conjunction with the
          * following query parameters: "gav", "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual"
          * and "vulnerabilityId".
          */
@@ -272,8 +308,9 @@ public class ListApplicationDependencyRecommendationsRequest
          * a breadth-first manner. Children are sorted based on their GAV property alphabetically
          * (either ascending or descending, depending on the order parameter). Default order is
          * ascending. Default order for gav is ascending where ascending corresponds to
-         * alphanumerical order. Default order for nodeId is ascending where ascending corresponds
-         * to alphanumerical order. Sorting by DFS or BFS cannot be used in conjunction with the
+         * alphanumerical order. Default order for purl is ascending where ascending corresponds to
+         * alphabetical order Default order for nodeId is ascending where ascending corresponds to
+         * alphanumerical order. Sorting by DFS or BFS cannot be used in conjunction with the
          * following query parameters: "gav", "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual"
          * and "vulnerabilityId".
          *
@@ -321,6 +358,7 @@ public class ListApplicationDependencyRecommendationsRequest
             page(o.getPage());
             sortOrder(o.getSortOrder());
             gav(o.getGav());
+            purl(o.getPurl());
             sortBy(o.getSortBy());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -366,10 +404,11 @@ public class ListApplicationDependencyRecommendationsRequest
             request.page = page;
             request.sortOrder = sortOrder;
             request.gav = gav;
+            request.purl = purl;
             request.sortBy = sortBy;
             return request;
             // new ListApplicationDependencyRecommendationsRequest(remediationRunId, opcRequestId,
-            // limit, page, sortOrder, gav, sortBy);
+            // limit, page, sortOrder, gav, purl, sortBy);
         }
     }
 
@@ -386,6 +425,7 @@ public class ListApplicationDependencyRecommendationsRequest
                 .page(page)
                 .sortOrder(sortOrder)
                 .gav(gav)
+                .purl(purl)
                 .sortBy(sortBy);
     }
 
@@ -409,6 +449,7 @@ public class ListApplicationDependencyRecommendationsRequest
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",gav=").append(String.valueOf(this.gav));
+        sb.append(",purl=").append(String.valueOf(this.purl));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(")");
         return sb.toString();
@@ -432,6 +473,7 @@ public class ListApplicationDependencyRecommendationsRequest
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.gav, other.gav)
+                && java.util.Objects.equals(this.purl, other.purl)
                 && java.util.Objects.equals(this.sortBy, other.sortBy);
     }
 
@@ -447,6 +489,7 @@ public class ListApplicationDependencyRecommendationsRequest
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.gav == null ? 43 : this.gav.hashCode());
+        result = (result * PRIME) + (this.purl == null ? 43 : this.purl.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         return result;
     }

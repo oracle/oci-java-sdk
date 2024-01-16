@@ -27,20 +27,26 @@ public final class ApplicationDependencyRecommendationSummary
     @Deprecated
     @java.beans.ConstructorProperties({
         "gav",
+        "purl",
         "nodeId",
         "applicationDependencyNodeIds",
-        "recommendedGav"
+        "recommendedGav",
+        "recommendedPurl"
     })
     public ApplicationDependencyRecommendationSummary(
             String gav,
+            String purl,
             String nodeId,
             java.util.List<String> applicationDependencyNodeIds,
-            String recommendedGav) {
+            String recommendedGav,
+            String recommendedPurl) {
         super();
         this.gav = gav;
+        this.purl = purl;
         this.nodeId = nodeId;
         this.applicationDependencyNodeIds = applicationDependencyNodeIds;
         this.recommendedGav = recommendedGav;
+        this.recommendedPurl = recommendedPurl;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -62,6 +68,25 @@ public final class ApplicationDependencyRecommendationSummary
         public Builder gav(String gav) {
             this.gav = gav;
             this.__explicitlySet__.add("gav");
+            return this;
+        }
+        /**
+         * Package URL defined in https://github.com/package-url/purl-spec, e.g.
+         * pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("purl")
+        private String purl;
+
+        /**
+         * Package URL defined in https://github.com/package-url/purl-spec, e.g.
+         * pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+         *
+         * @param purl the value to set
+         * @return this builder
+         */
+        public Builder purl(String purl) {
+            this.purl = purl;
+            this.__explicitlySet__.add("purl");
             return this;
         }
         /**
@@ -118,6 +143,25 @@ public final class ApplicationDependencyRecommendationSummary
             this.__explicitlySet__.add("recommendedGav");
             return this;
         }
+        /**
+         * Recommended application dependency in PURL format, e.g.
+         * pkg:maven/org.graalvm.nativeimage/svm@21.2.0
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("recommendedPurl")
+        private String recommendedPurl;
+
+        /**
+         * Recommended application dependency in PURL format, e.g.
+         * pkg:maven/org.graalvm.nativeimage/svm@21.2.0
+         *
+         * @param recommendedPurl the value to set
+         * @return this builder
+         */
+        public Builder recommendedPurl(String recommendedPurl) {
+            this.recommendedPurl = recommendedPurl;
+            this.__explicitlySet__.add("recommendedPurl");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -126,9 +170,11 @@ public final class ApplicationDependencyRecommendationSummary
             ApplicationDependencyRecommendationSummary model =
                     new ApplicationDependencyRecommendationSummary(
                             this.gav,
+                            this.purl,
                             this.nodeId,
                             this.applicationDependencyNodeIds,
-                            this.recommendedGav);
+                            this.recommendedGav,
+                            this.recommendedPurl);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -140,6 +186,9 @@ public final class ApplicationDependencyRecommendationSummary
             if (model.wasPropertyExplicitlySet("gav")) {
                 this.gav(model.getGav());
             }
+            if (model.wasPropertyExplicitlySet("purl")) {
+                this.purl(model.getPurl());
+            }
             if (model.wasPropertyExplicitlySet("nodeId")) {
                 this.nodeId(model.getNodeId());
             }
@@ -148,6 +197,9 @@ public final class ApplicationDependencyRecommendationSummary
             }
             if (model.wasPropertyExplicitlySet("recommendedGav")) {
                 this.recommendedGav(model.getRecommendedGav());
+            }
+            if (model.wasPropertyExplicitlySet("recommendedPurl")) {
+                this.recommendedPurl(model.getRecommendedPurl());
             }
             return this;
         }
@@ -177,6 +229,23 @@ public final class ApplicationDependencyRecommendationSummary
      */
     public String getGav() {
         return gav;
+    }
+
+    /**
+     * Package URL defined in https://github.com/package-url/purl-spec, e.g.
+     * pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("purl")
+    private final String purl;
+
+    /**
+     * Package URL defined in https://github.com/package-url/purl-spec, e.g.
+     * pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+     *
+     * @return the value
+     */
+    public String getPurl() {
+        return purl;
     }
 
     /**
@@ -226,6 +295,23 @@ public final class ApplicationDependencyRecommendationSummary
         return recommendedGav;
     }
 
+    /**
+     * Recommended application dependency in PURL format, e.g.
+     * pkg:maven/org.graalvm.nativeimage/svm@21.2.0
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("recommendedPurl")
+    private final String recommendedPurl;
+
+    /**
+     * Recommended application dependency in PURL format, e.g.
+     * pkg:maven/org.graalvm.nativeimage/svm@21.2.0
+     *
+     * @return the value
+     */
+    public String getRecommendedPurl() {
+        return recommendedPurl;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -242,10 +328,12 @@ public final class ApplicationDependencyRecommendationSummary
         sb.append("ApplicationDependencyRecommendationSummary(");
         sb.append("super=").append(super.toString());
         sb.append("gav=").append(String.valueOf(this.gav));
+        sb.append(", purl=").append(String.valueOf(this.purl));
         sb.append(", nodeId=").append(String.valueOf(this.nodeId));
         sb.append(", applicationDependencyNodeIds=")
                 .append(String.valueOf(this.applicationDependencyNodeIds));
         sb.append(", recommendedGav=").append(String.valueOf(this.recommendedGav));
+        sb.append(", recommendedPurl=").append(String.valueOf(this.recommendedPurl));
         sb.append(")");
         return sb.toString();
     }
@@ -262,10 +350,12 @@ public final class ApplicationDependencyRecommendationSummary
         ApplicationDependencyRecommendationSummary other =
                 (ApplicationDependencyRecommendationSummary) o;
         return java.util.Objects.equals(this.gav, other.gav)
+                && java.util.Objects.equals(this.purl, other.purl)
                 && java.util.Objects.equals(this.nodeId, other.nodeId)
                 && java.util.Objects.equals(
                         this.applicationDependencyNodeIds, other.applicationDependencyNodeIds)
                 && java.util.Objects.equals(this.recommendedGav, other.recommendedGav)
+                && java.util.Objects.equals(this.recommendedPurl, other.recommendedPurl)
                 && super.equals(other);
     }
 
@@ -274,6 +364,7 @@ public final class ApplicationDependencyRecommendationSummary
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.gav == null ? 43 : this.gav.hashCode());
+        result = (result * PRIME) + (this.purl == null ? 43 : this.purl.hashCode());
         result = (result * PRIME) + (this.nodeId == null ? 43 : this.nodeId.hashCode());
         result =
                 (result * PRIME)
@@ -283,6 +374,9 @@ public final class ApplicationDependencyRecommendationSummary
         result =
                 (result * PRIME)
                         + (this.recommendedGav == null ? 43 : this.recommendedGav.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recommendedPurl == null ? 43 : this.recommendedPurl.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

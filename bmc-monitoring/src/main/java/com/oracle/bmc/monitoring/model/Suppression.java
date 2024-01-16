@@ -5,7 +5,8 @@
 package com.oracle.bmc.monitoring.model;
 
 /**
- * The configuration details for suppressing an alarm. For information about alarms, see [Alarms
+ * The configuration details for an alarm-wide suppression. For dimension-specific suppressions, see
+ * {@link AlarmSuppression}. For information about alarms, see [Alarms
  * Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#AlarmsOverview).
  * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
@@ -67,7 +68,7 @@ public final class Suppression extends com.oracle.bmc.http.client.internal.Expli
          * The start date and time for the suppression to take place, inclusive. Format defined by
          * RFC3339.
          *
-         * <p>Example: {@code 2019-02-01T01:02:29.600Z}
+         * <p>Example: {@code 2023-02-01T01:02:29.600Z}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeSuppressFrom")
         private java.util.Date timeSuppressFrom;
@@ -76,7 +77,7 @@ public final class Suppression extends com.oracle.bmc.http.client.internal.Expli
          * The start date and time for the suppression to take place, inclusive. Format defined by
          * RFC3339.
          *
-         * <p>Example: {@code 2019-02-01T01:02:29.600Z}
+         * <p>Example: {@code 2023-02-01T01:02:29.600Z}
          *
          * @param timeSuppressFrom the value to set
          * @return this builder
@@ -90,7 +91,7 @@ public final class Suppression extends com.oracle.bmc.http.client.internal.Expli
          * The end date and time for the suppression to take place, inclusive. Format defined by
          * RFC3339.
          *
-         * <p>Example: {@code 2019-02-01T02:02:29.600Z}
+         * <p>Example: {@code 2023-02-01T02:02:29.600Z}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeSuppressUntil")
         private java.util.Date timeSuppressUntil;
@@ -99,7 +100,7 @@ public final class Suppression extends com.oracle.bmc.http.client.internal.Expli
          * The end date and time for the suppression to take place, inclusive. Format defined by
          * RFC3339.
          *
-         * <p>Example: {@code 2019-02-01T02:02:29.600Z}
+         * <p>Example: {@code 2023-02-01T02:02:29.600Z}
          *
          * @param timeSuppressUntil the value to set
          * @return this builder
@@ -178,7 +179,7 @@ public final class Suppression extends com.oracle.bmc.http.client.internal.Expli
      * The start date and time for the suppression to take place, inclusive. Format defined by
      * RFC3339.
      *
-     * <p>Example: {@code 2019-02-01T01:02:29.600Z}
+     * <p>Example: {@code 2023-02-01T01:02:29.600Z}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeSuppressFrom")
     private final java.util.Date timeSuppressFrom;
@@ -187,7 +188,7 @@ public final class Suppression extends com.oracle.bmc.http.client.internal.Expli
      * The start date and time for the suppression to take place, inclusive. Format defined by
      * RFC3339.
      *
-     * <p>Example: {@code 2019-02-01T01:02:29.600Z}
+     * <p>Example: {@code 2023-02-01T01:02:29.600Z}
      *
      * @return the value
      */
@@ -199,7 +200,7 @@ public final class Suppression extends com.oracle.bmc.http.client.internal.Expli
      * The end date and time for the suppression to take place, inclusive. Format defined by
      * RFC3339.
      *
-     * <p>Example: {@code 2019-02-01T02:02:29.600Z}
+     * <p>Example: {@code 2023-02-01T02:02:29.600Z}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeSuppressUntil")
     private final java.util.Date timeSuppressUntil;
@@ -208,7 +209,7 @@ public final class Suppression extends com.oracle.bmc.http.client.internal.Expli
      * The end date and time for the suppression to take place, inclusive. Format defined by
      * RFC3339.
      *
-     * <p>Example: {@code 2019-02-01T02:02:29.600Z}
+     * <p>Example: {@code 2023-02-01T02:02:29.600Z}
      *
      * @return the value
      */

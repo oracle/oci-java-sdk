@@ -9,7 +9,7 @@ import com.oracle.bmc.monitoring.responses.*;
 
 /**
  * Use the Monitoring API to manage metric queries and alarms for assessing the health, capacity,
- * and performance of your cloud resources. Endpoints vary by operation. For PostMetric, use the
+ * and performance of your cloud resources. Endpoints vary by operation. For PostMetricData, use the
  * {@code telemetry-ingestion} endpoints; for all other operations, use the {@code telemetry}
  * endpoints. For more information, see [the Monitoring
  * documentation](https://docs.cloud.oracle.com/iaas/Content/Monitoring/home.htm).
@@ -110,6 +110,30 @@ public interface Monitoring extends AutoCloseable {
     CreateAlarmResponse createAlarm(CreateAlarmRequest request);
 
     /**
+     * Creates a dimension-specific suppression for an alarm.
+     *
+     * <p>For important limits information, see [Limits on
+     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     *
+     * <p>This call is subject to a Monitoring limit that applies to the total number of requests
+     * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
+     * request when the total rate of alarm operations exceeds 10 requests, or transactions, per
+     * second (TPS) for a given tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/CreateAlarmSuppressionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateAlarmSuppression API.
+     */
+    CreateAlarmSuppressionResponse createAlarmSuppression(CreateAlarmSuppressionRequest request);
+
+    /**
      * Deletes the specified alarm. For more information, see [Deleting an
      * Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/delete-alarm.htm). For
      * important limits information, see [Limits on
@@ -131,6 +155,30 @@ public interface Monitoring extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAlarm API.
      */
     DeleteAlarmResponse deleteAlarm(DeleteAlarmRequest request);
+
+    /**
+     * Deletes the specified alarm suppression.
+     *
+     * <p>For important limits information, see [Limits on
+     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     *
+     * <p>This call is subject to a Monitoring limit that applies to the total number of requests
+     * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
+     * request when the total rate of alarm operations exceeds 10 requests, or transactions, per
+     * second (TPS) for a given tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/DeleteAlarmSuppressionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteAlarmSuppression API.
+     */
+    DeleteAlarmSuppressionResponse deleteAlarmSuppression(DeleteAlarmSuppressionRequest request);
 
     /**
      * Gets the specified alarm. For more information, see [Getting an
@@ -180,6 +228,55 @@ public interface Monitoring extends AutoCloseable {
     GetAlarmHistoryResponse getAlarmHistory(GetAlarmHistoryRequest request);
 
     /**
+     * Gets the specified alarm suppression.
+     *
+     * <p>For important limits information, see [Limits on
+     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     *
+     * <p>This call is subject to a Monitoring limit that applies to the total number of requests
+     * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
+     * request when the total rate of alarm operations exceeds 10 requests, or transactions, per
+     * second (TPS) for a given tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/GetAlarmSuppressionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAlarmSuppression
+     *     API.
+     */
+    GetAlarmSuppressionResponse getAlarmSuppression(GetAlarmSuppressionRequest request);
+
+    /**
+     * Lists alarm suppressions for the specified alarm. Only dimension-level suppressions are
+     * listed. Alarm-level suppressions are not listed.
+     *
+     * <p>For important limits information, see [Limits on
+     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     *
+     * <p>This call is subject to a Monitoring limit that applies to the total number of requests
+     * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
+     * request when the total rate of alarm operations exceeds 10 requests, or transactions, per
+     * second (TPS) for a given tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/ListAlarmSuppressionsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListAlarmSuppressions API.
+     */
+    ListAlarmSuppressionsResponse listAlarmSuppressions(ListAlarmSuppressionsRequest request);
+
+    /**
      * Lists the alarms for the specified compartment. For more information, see [Listing
      * Alarms](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm.htm). For
      * important limits information, see [Limits on
@@ -205,8 +302,8 @@ public interface Monitoring extends AutoCloseable {
     /**
      * List the status of each alarm in the specified compartment. Status is collective, across all
      * metric streams in the alarm. To list alarm status for each metric stream, use {@link
-     * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}. For more
-     * information, see [Listing Alarm
+     * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}. Optionally
+     * filter by resource or status value. For more information, see [Listing Alarm
      * Statuses](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
      * For important limits information, see [Limits on
      * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
@@ -348,6 +445,32 @@ public interface Monitoring extends AutoCloseable {
      *     RetrieveDimensionStates API.
      */
     RetrieveDimensionStatesResponse retrieveDimensionStates(RetrieveDimensionStatesRequest request);
+
+    /**
+     * Returns history of suppressions for the specified alarm, including both dimension-specific
+     * and and alarm-wide suppressions.
+     *
+     * <p>For important limits information, see [Limits on
+     * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     *
+     * <p>This call is subject to a Monitoring limit that applies to the total number of requests
+     * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
+     * request when the total rate of alarm operations exceeds 10 requests, or transactions, per
+     * second (TPS) for a given tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/SummarizeAlarmSuppressionHistoryExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SummarizeAlarmSuppressionHistory API.
+     */
+    SummarizeAlarmSuppressionHistoryResponse summarizeAlarmSuppressionHistory(
+            SummarizeAlarmSuppressionHistoryRequest request);
 
     /**
      * Returns aggregated data that match the criteria specified in the request. Compartment OCID

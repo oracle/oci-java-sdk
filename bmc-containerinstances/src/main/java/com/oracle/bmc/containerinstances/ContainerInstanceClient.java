@@ -533,6 +533,7 @@ public class ContainerInstanceClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendEnumQueryParam("status", request.getStatus())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("resourceId", request.getResourceId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()

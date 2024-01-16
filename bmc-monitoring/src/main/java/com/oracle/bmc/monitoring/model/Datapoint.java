@@ -36,7 +36,7 @@ public final class Datapoint extends com.oracle.bmc.http.client.internal.Explici
          * posted, its timestamp must be near current time (less than two hours in the past and less
          * than 10 minutes in the future).
          *
-         * <p>Example: {@code 2019-02-01T01:02:29.600Z}
+         * <p>Example: {@code 2023-02-01T01:02:29.600Z}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
@@ -46,7 +46,7 @@ public final class Datapoint extends com.oracle.bmc.http.client.internal.Explici
          * posted, its timestamp must be near current time (less than two hours in the past and less
          * than 10 minutes in the future).
          *
-         * <p>Example: {@code 2019-02-01T01:02:29.600Z}
+         * <p>Example: {@code 2023-02-01T01:02:29.600Z}
          *
          * @param timestamp the value to set
          * @return this builder
@@ -139,7 +139,7 @@ public final class Datapoint extends com.oracle.bmc.http.client.internal.Explici
      * its timestamp must be near current time (less than two hours in the past and less than 10
      * minutes in the future).
      *
-     * <p>Example: {@code 2019-02-01T01:02:29.600Z}
+     * <p>Example: {@code 2023-02-01T01:02:29.600Z}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
@@ -149,7 +149,7 @@ public final class Datapoint extends com.oracle.bmc.http.client.internal.Explici
      * its timestamp must be near current time (less than two hours in the past and less than 10
      * minutes in the future).
      *
-     * <p>Example: {@code 2019-02-01T01:02:29.600Z}
+     * <p>Example: {@code 2023-02-01T01:02:29.600Z}
      *
      * @return the value
      */

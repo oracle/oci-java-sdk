@@ -43,6 +43,7 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
         "destinations",
         "suppression",
         "isEnabled",
+        "isNotificationsPerMetricDimensionEnabled",
         "freeformTags",
         "definedTags",
         "lifecycleState"
@@ -58,6 +59,7 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
             java.util.List<String> destinations,
             Suppression suppression,
             Boolean isEnabled,
+            Boolean isNotificationsPerMetricDimensionEnabled,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             Alarm.LifecycleState lifecycleState) {
@@ -72,6 +74,7 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
         this.destinations = destinations;
         this.suppression = suppression;
         this.isEnabled = isEnabled;
+        this.isNotificationsPerMetricDimensionEnabled = isNotificationsPerMetricDimensionEnabled;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.lifecycleState = lifecycleState;
@@ -260,7 +263,7 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * The perceived severity of the alarm with regard to the affected system.
+         * The perceived type of response required when the alarm is in the "FIRING" state.
          *
          * <p>Example: {@code CRITICAL}
          */
@@ -268,7 +271,7 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
         private Severity severity;
 
         /**
-         * The perceived severity of the alarm with regard to the affected system.
+         * The perceived type of response required when the alarm is in the "FIRING" state.
          *
          * <p>Example: {@code CRITICAL}
          *
@@ -284,7 +287,7 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
          * A list of destinations for alarm notifications. Each destination is represented by the
          * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * related resource, such as a {@link NotificationTopic}. Supported destination services:
-         * Notifications , Streaming. Limit: One destination per supported destination service.
+         * Notifications, Streaming. Limit: One destination per supported destination service.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("destinations")
         private java.util.List<String> destinations;
@@ -293,7 +296,7 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
          * A list of destinations for alarm notifications. Each destination is represented by the
          * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * related resource, such as a {@link NotificationTopic}. Supported destination services:
-         * Notifications , Streaming. Limit: One destination per supported destination service.
+         * Notifications, Streaming. Limit: One destination per supported destination service.
          *
          * @param destinations the value to set
          * @return this builder
@@ -337,6 +340,31 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
+            return this;
+        }
+        /**
+         * Whether the alarm sends a separate message for each metric stream. See [Creating an Alarm
+         * That Splits Messages by Metric
+         * Stream](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-split.htm).
+         * Example: {@code true}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isNotificationsPerMetricDimensionEnabled")
+        private Boolean isNotificationsPerMetricDimensionEnabled;
+
+        /**
+         * Whether the alarm sends a separate message for each metric stream. See [Creating an Alarm
+         * That Splits Messages by Metric
+         * Stream](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-split.htm).
+         * Example: {@code true}
+         *
+         * @param isNotificationsPerMetricDimensionEnabled the value to set
+         * @return this builder
+         */
+        public Builder isNotificationsPerMetricDimensionEnabled(
+                Boolean isNotificationsPerMetricDimensionEnabled) {
+            this.isNotificationsPerMetricDimensionEnabled =
+                    isNotificationsPerMetricDimensionEnabled;
+            this.__explicitlySet__.add("isNotificationsPerMetricDimensionEnabled");
             return this;
         }
         /**
@@ -416,6 +444,7 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
                             this.destinations,
                             this.suppression,
                             this.isEnabled,
+                            this.isNotificationsPerMetricDimensionEnabled,
                             this.freeformTags,
                             this.definedTags,
                             this.lifecycleState);
@@ -456,6 +485,10 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("isEnabled")) {
                 this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isNotificationsPerMetricDimensionEnabled")) {
+                this.isNotificationsPerMetricDimensionEnabled(
+                        model.getIsNotificationsPerMetricDimensionEnabled());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -646,7 +679,7 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The perceived severity of the alarm with regard to the affected system.
+     * The perceived type of response required when the alarm is in the "FIRING" state.
      *
      * <p>Example: {@code CRITICAL}
      */
@@ -698,7 +731,7 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
         }
     };
     /**
-     * The perceived severity of the alarm with regard to the affected system.
+     * The perceived type of response required when the alarm is in the "FIRING" state.
      *
      * <p>Example: {@code CRITICAL}
      */
@@ -706,7 +739,7 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
     private final Severity severity;
 
     /**
-     * The perceived severity of the alarm with regard to the affected system.
+     * The perceived type of response required when the alarm is in the "FIRING" state.
      *
      * <p>Example: {@code CRITICAL}
      *
@@ -720,7 +753,7 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
      * A list of destinations for alarm notifications. Each destination is represented by the
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
      * related resource, such as a {@link NotificationTopic}. Supported destination services:
-     * Notifications , Streaming. Limit: One destination per supported destination service.
+     * Notifications, Streaming. Limit: One destination per supported destination service.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("destinations")
     private final java.util.List<String> destinations;
@@ -729,7 +762,7 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
      * A list of destinations for alarm notifications. Each destination is represented by the
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
      * related resource, such as a {@link NotificationTopic}. Supported destination services:
-     * Notifications , Streaming. Limit: One destination per supported destination service.
+     * Notifications, Streaming. Limit: One destination per supported destination service.
      *
      * @return the value
      */
@@ -767,6 +800,27 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
      */
     public Boolean getIsEnabled() {
         return isEnabled;
+    }
+
+    /**
+     * Whether the alarm sends a separate message for each metric stream. See [Creating an Alarm
+     * That Splits Messages by Metric
+     * Stream](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-split.htm).
+     * Example: {@code true}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isNotificationsPerMetricDimensionEnabled")
+    private final Boolean isNotificationsPerMetricDimensionEnabled;
+
+    /**
+     * Whether the alarm sends a separate message for each metric stream. See [Creating an Alarm
+     * That Splits Messages by Metric
+     * Stream](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-split.htm).
+     * Example: {@code true}
+     *
+     * @return the value
+     */
+    public Boolean getIsNotificationsPerMetricDimensionEnabled() {
+        return isNotificationsPerMetricDimensionEnabled;
     }
 
     /**
@@ -847,6 +901,8 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", destinations=").append(String.valueOf(this.destinations));
         sb.append(", suppression=").append(String.valueOf(this.suppression));
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", isNotificationsPerMetricDimensionEnabled=")
+                .append(String.valueOf(this.isNotificationsPerMetricDimensionEnabled));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -874,6 +930,9 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.destinations, other.destinations)
                 && java.util.Objects.equals(this.suppression, other.suppression)
                 && java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(
+                        this.isNotificationsPerMetricDimensionEnabled,
+                        other.isNotificationsPerMetricDimensionEnabled)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -900,6 +959,11 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
         result = (result * PRIME) + (this.destinations == null ? 43 : this.destinations.hashCode());
         result = (result * PRIME) + (this.suppression == null ? 43 : this.suppression.hashCode());
         result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isNotificationsPerMetricDimensionEnabled == null
+                                ? 43
+                                : this.isNotificationsPerMetricDimensionEnabled.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result =
