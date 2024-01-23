@@ -322,6 +322,39 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public ChangeProcessSetCompartmentResponse changeProcessSetCompartment(
+            ChangeProcessSetCompartmentRequest request) {
+
+        Validate.notBlank(request.getProcessSetId(), "processSetId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeProcessSetCompartmentDetails(),
+                "changeProcessSetCompartmentDetails is required");
+
+        return clientCall(request, ChangeProcessSetCompartmentResponse::builder)
+                .logger(LOG, "changeProcessSetCompartment")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "ChangeProcessSetCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/ProcessSet/ChangeProcessSetCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeProcessSetCompartmentRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("processSets")
+                .appendPathParam(request.getProcessSetId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeProcessSetCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateBaselineableMetricResponse createBaselineableMetric(
             CreateBaselineableMetricRequest request) {
         Objects.requireNonNull(
@@ -552,6 +585,35 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public CreateProcessSetResponse createProcessSet(CreateProcessSetRequest request) {
+        Objects.requireNonNull(
+                request.getCreateProcessSetDetails(), "createProcessSetDetails is required");
+
+        return clientCall(request, CreateProcessSetResponse::builder)
+                .logger(LOG, "createProcessSet")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "CreateProcessSet",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/ProcessSet/CreateProcessSet")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateProcessSetRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("processSets")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.ProcessSet.class,
+                        CreateProcessSetResponse.Builder::processSet)
+                .handleResponseHeaderString("etag", CreateProcessSetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateProcessSetResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteBaselineableMetricResponse deleteBaselineableMetric(
             DeleteBaselineableMetricRequest request) {
 
@@ -708,6 +770,31 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteMonitoredResourceTypeResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteProcessSetResponse deleteProcessSet(DeleteProcessSetRequest request) {
+
+        Validate.notBlank(request.getProcessSetId(), "processSetId must not be blank");
+
+        return clientCall(request, DeleteProcessSetResponse::builder)
+                .logger(LOG, "deleteProcessSet")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "DeleteProcessSet",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/ProcessSet/DeleteProcessSet")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteProcessSetRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("processSets")
+                .appendPathParam(request.getProcessSetId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteProcessSetResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1122,6 +1209,34 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public GetProcessSetResponse getProcessSet(GetProcessSetRequest request) {
+
+        Validate.notBlank(request.getProcessSetId(), "processSetId must not be blank");
+
+        return clientCall(request, GetProcessSetResponse::builder)
+                .logger(LOG, "getProcessSet")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "GetProcessSet",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/ProcessSet/GetProcessSet")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetProcessSetRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("processSets")
+                .appendPathParam(request.getProcessSetId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.ProcessSet.class,
+                        GetProcessSetResponse.Builder::processSet)
+                .handleResponseHeaderString("etag", GetProcessSetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetProcessSetResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
@@ -1451,6 +1566,39 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-next-page", ListMonitoredResourcesResponse.Builder::opcNextPage)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListMonitoredResourcesResponse.Builder::opcTotalItems)
+                .callSync();
+    }
+
+    @Override
+    public ListProcessSetsResponse listProcessSets(ListProcessSetsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListProcessSetsResponse::builder)
+                .logger(LOG, "listProcessSets")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "ListProcessSets",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/ProcessSetCollection/ListProcessSets")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListProcessSetsRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("processSets")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.ProcessSetCollection.class,
+                        ListProcessSetsResponse.Builder::processSetCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListProcessSetsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListProcessSetsResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2135,6 +2283,38 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                         "etag", UpdateMonitoredResourceTypeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateMonitoredResourceTypeResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateProcessSetResponse updateProcessSet(UpdateProcessSetRequest request) {
+
+        Validate.notBlank(request.getProcessSetId(), "processSetId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateProcessSetDetails(), "updateProcessSetDetails is required");
+
+        return clientCall(request, UpdateProcessSetResponse::builder)
+                .logger(LOG, "updateProcessSet")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "UpdateProcessSet",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/ProcessSet/UpdateProcessSet")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateProcessSetRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("processSets")
+                .appendPathParam(request.getProcessSetId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.ProcessSet.class,
+                        UpdateProcessSetResponse.Builder::processSet)
+                .handleResponseHeaderString("etag", UpdateProcessSetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateProcessSetResponse.Builder::opcRequestId)
                 .callSync();
     }
 

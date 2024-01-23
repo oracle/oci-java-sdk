@@ -1021,6 +1021,120 @@ public class StackMonitoringPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listProcessSets operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListProcessSetsResponse> listProcessSetsResponseIterator(
+            final ListProcessSetsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListProcessSetsRequest.Builder, ListProcessSetsRequest, ListProcessSetsResponse>(
+                new java.util.function.Supplier<ListProcessSetsRequest.Builder>() {
+                    @Override
+                    public ListProcessSetsRequest.Builder get() {
+                        return ListProcessSetsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListProcessSetsResponse, String>() {
+                    @Override
+                    public String apply(ListProcessSetsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListProcessSetsRequest.Builder>,
+                        ListProcessSetsRequest>() {
+                    @Override
+                    public ListProcessSetsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListProcessSetsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListProcessSetsRequest, ListProcessSetsResponse>() {
+                    @Override
+                    public ListProcessSetsResponse apply(ListProcessSetsRequest request) {
+                        return client.listProcessSets(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.stackmonitoring.model.ProcessSetSummary} objects contained in responses from
+     * the listProcessSets operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.stackmonitoring.model.ProcessSetSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.stackmonitoring.model.ProcessSetSummary>
+            listProcessSetsRecordIterator(final ListProcessSetsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListProcessSetsRequest.Builder,
+                ListProcessSetsRequest,
+                ListProcessSetsResponse,
+                com.oracle.bmc.stackmonitoring.model.ProcessSetSummary>(
+                new java.util.function.Supplier<ListProcessSetsRequest.Builder>() {
+                    @Override
+                    public ListProcessSetsRequest.Builder get() {
+                        return ListProcessSetsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListProcessSetsResponse, String>() {
+                    @Override
+                    public String apply(ListProcessSetsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListProcessSetsRequest.Builder>,
+                        ListProcessSetsRequest>() {
+                    @Override
+                    public ListProcessSetsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListProcessSetsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListProcessSetsRequest, ListProcessSetsResponse>() {
+                    @Override
+                    public ListProcessSetsResponse apply(ListProcessSetsRequest request) {
+                        return client.listProcessSets(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListProcessSetsResponse,
+                        java.util.List<com.oracle.bmc.stackmonitoring.model.ProcessSetSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.stackmonitoring.model.ProcessSetSummary>
+                            apply(ListProcessSetsResponse response) {
+                        return response.getProcessSetCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listWorkRequestErrors operation. This iterable will fetch more data from the server as
      * needed.
      *

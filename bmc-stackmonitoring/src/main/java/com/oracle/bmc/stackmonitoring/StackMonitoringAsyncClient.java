@@ -317,6 +317,43 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeProcessSetCompartmentResponse>
+            changeProcessSetCompartment(
+                    ChangeProcessSetCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeProcessSetCompartmentRequest,
+                                    ChangeProcessSetCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(request.getProcessSetId(), "processSetId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeProcessSetCompartmentDetails(),
+                "changeProcessSetCompartmentDetails is required");
+
+        return clientCall(request, ChangeProcessSetCompartmentResponse::builder)
+                .logger(LOG, "changeProcessSetCompartment")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "ChangeProcessSetCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/ProcessSet/ChangeProcessSetCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeProcessSetCompartmentRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("processSets")
+                .appendPathParam(request.getProcessSetId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeProcessSetCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateBaselineableMetricResponse> createBaselineableMetric(
             CreateBaselineableMetricRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -569,6 +606,38 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<CreateProcessSetResponse> createProcessSet(
+            CreateProcessSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateProcessSetRequest, CreateProcessSetResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateProcessSetDetails(), "createProcessSetDetails is required");
+
+        return clientCall(request, CreateProcessSetResponse::builder)
+                .logger(LOG, "createProcessSet")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "CreateProcessSet",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/ProcessSet/CreateProcessSet")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateProcessSetRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("processSets")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.ProcessSet.class,
+                        CreateProcessSetResponse.Builder::processSet)
+                .handleResponseHeaderString("etag", CreateProcessSetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateProcessSetResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteBaselineableMetricResponse> deleteBaselineableMetric(
             DeleteBaselineableMetricRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -743,6 +812,34 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteMonitoredResourceTypeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteProcessSetResponse> deleteProcessSet(
+            DeleteProcessSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteProcessSetRequest, DeleteProcessSetResponse>
+                    handler) {
+
+        Validate.notBlank(request.getProcessSetId(), "processSetId must not be blank");
+
+        return clientCall(request, DeleteProcessSetResponse::builder)
+                .logger(LOG, "deleteProcessSet")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "DeleteProcessSet",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/ProcessSet/DeleteProcessSet")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteProcessSetRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("processSets")
+                .appendPathParam(request.getProcessSetId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteProcessSetResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1194,6 +1291,36 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<GetProcessSetResponse> getProcessSet(
+            GetProcessSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetProcessSetRequest, GetProcessSetResponse>
+                    handler) {
+
+        Validate.notBlank(request.getProcessSetId(), "processSetId must not be blank");
+
+        return clientCall(request, GetProcessSetResponse::builder)
+                .logger(LOG, "getProcessSet")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "GetProcessSet",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/ProcessSet/GetProcessSet")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetProcessSetRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("processSets")
+                .appendPathParam(request.getProcessSetId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.ProcessSet.class,
+                        GetProcessSetResponse.Builder::processSet)
+                .handleResponseHeaderString("etag", GetProcessSetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetProcessSetResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1549,6 +1676,42 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
                         "opc-next-page", ListMonitoredResourcesResponse.Builder::opcNextPage)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListMonitoredResourcesResponse.Builder::opcTotalItems)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProcessSetsResponse> listProcessSets(
+            ListProcessSetsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListProcessSetsRequest, ListProcessSetsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListProcessSetsResponse::builder)
+                .logger(LOG, "listProcessSets")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "ListProcessSets",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/ProcessSetCollection/ListProcessSets")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListProcessSetsRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("processSets")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.ProcessSetCollection.class,
+                        ListProcessSetsResponse.Builder::processSetCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListProcessSetsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListProcessSetsResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -2287,6 +2450,41 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
                         "etag", UpdateMonitoredResourceTypeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateMonitoredResourceTypeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProcessSetResponse> updateProcessSet(
+            UpdateProcessSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateProcessSetRequest, UpdateProcessSetResponse>
+                    handler) {
+
+        Validate.notBlank(request.getProcessSetId(), "processSetId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateProcessSetDetails(), "updateProcessSetDetails is required");
+
+        return clientCall(request, UpdateProcessSetResponse::builder)
+                .logger(LOG, "updateProcessSet")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "UpdateProcessSet",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/ProcessSet/UpdateProcessSet")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateProcessSetRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("processSets")
+                .appendPathParam(request.getProcessSetId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.ProcessSet.class,
+                        UpdateProcessSetResponse.Builder::processSet)
+                .handleResponseHeaderString("etag", UpdateProcessSetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateProcessSetResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
