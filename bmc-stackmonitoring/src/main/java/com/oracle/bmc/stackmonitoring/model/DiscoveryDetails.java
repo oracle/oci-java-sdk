@@ -222,6 +222,7 @@ public final class DiscoveryDetails
         OracleMft("ORACLE_MFT"),
         ApacheHttpServer("APACHE_HTTP_SERVER"),
         OracleGoldengate("ORACLE_GOLDENGATE"),
+        CustomResource("CUSTOM_RESOURCE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

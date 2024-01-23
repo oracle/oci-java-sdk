@@ -162,6 +162,24 @@ public interface StackMonitoring extends AutoCloseable {
             ChangeMonitoredResourceTaskCompartmentRequest request);
 
     /**
+     * Moves a ProcessSet resource from one compartment identifier to another. When provided,
+     * If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/ChangeProcessSetCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeProcessSetCompartment API.
+     */
+    ChangeProcessSetCompartmentResponse changeProcessSetCompartment(
+            ChangeProcessSetCompartmentRequest request);
+
+    /**
      * Creates the specified Baseline-able metric
      *
      * @param request The request object containing the details to send
@@ -283,6 +301,22 @@ public interface StackMonitoring extends AutoCloseable {
             CreateMonitoredResourceTypeRequest request);
 
     /**
+     * API to create Process Set.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/CreateProcessSetExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateProcessSet
+     *     API.
+     */
+    CreateProcessSetResponse createProcessSet(CreateProcessSetRequest request);
+
+    /**
      * Deletes the Baseline-able metric for the given id
      *
      * @param request The request object containing the details to send
@@ -383,6 +417,22 @@ public interface StackMonitoring extends AutoCloseable {
      */
     DeleteMonitoredResourceTypeResponse deleteMonitoredResourceType(
             DeleteMonitoredResourceTypeRequest request);
+
+    /**
+     * Deletes a Process Set
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/DeleteProcessSetExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProcessSet
+     *     API.
+     */
+    DeleteProcessSetResponse deleteProcessSet(DeleteProcessSetRequest request);
 
     /**
      * Disable external database resource monitoring. All the references in DBaaS, DBM and resource
@@ -602,6 +652,21 @@ public interface StackMonitoring extends AutoCloseable {
             GetMonitoredResourceTypeRequest request);
 
     /**
+     * API to get the details of a Process Set by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/GetProcessSetExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProcessSet API.
+     */
+    GetProcessSetResponse getProcessSet(GetProcessSetRequest request);
+
+    /**
      * Gets the status of the work request with the given ID.
      *
      * @param request The request object containing the details to send
@@ -748,6 +813,22 @@ public interface StackMonitoring extends AutoCloseable {
      *     ListMonitoredResources API.
      */
     ListMonitoredResourcesResponse listMonitoredResources(ListMonitoredResourcesRequest request);
+
+    /**
+     * API to get the details of all Process Sets.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/ListProcessSetsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProcessSets
+     *     API.
+     */
+    ListProcessSetsResponse listProcessSets(ListProcessSetsRequest request);
 
     /**
      * Return a (paginated) list of errors for a given work request.
@@ -1056,6 +1137,22 @@ public interface StackMonitoring extends AutoCloseable {
      */
     UpdateMonitoredResourceTypeResponse updateMonitoredResourceType(
             UpdateMonitoredResourceTypeRequest request);
+
+    /**
+     * API to update a Process Set identified by a given ocid.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/UpdateProcessSetExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProcessSet
+     *     API.
+     */
+    UpdateProcessSetResponse updateProcessSet(UpdateProcessSetRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

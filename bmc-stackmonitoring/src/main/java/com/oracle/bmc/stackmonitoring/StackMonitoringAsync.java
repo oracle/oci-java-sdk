@@ -161,6 +161,23 @@ public interface StackMonitoringAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves a ProcessSet resource from one compartment identifier to another. When provided,
+     * If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeProcessSetCompartmentResponse> changeProcessSetCompartment(
+            ChangeProcessSetCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeProcessSetCompartmentRequest, ChangeProcessSetCompartmentResponse>
+                    handler);
+
+    /**
      * Creates the specified Baseline-able metric
      *
      * @param request The request object containing the details to send
@@ -279,6 +296,21 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
+     * API to create Process Set.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateProcessSetResponse> createProcessSet(
+            CreateProcessSetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateProcessSetRequest, CreateProcessSetResponse>
+                    handler);
+
+    /**
      * Deletes the Baseline-able metric for the given id
      *
      * @param request The request object containing the details to send
@@ -376,6 +408,21 @@ public interface StackMonitoringAsync extends AutoCloseable {
             DeleteMonitoredResourceTypeRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteMonitoredResourceTypeRequest, DeleteMonitoredResourceTypeResponse>
+                    handler);
+
+    /**
+     * Deletes a Process Set
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteProcessSetResponse> deleteProcessSet(
+            DeleteProcessSetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteProcessSetRequest, DeleteProcessSetResponse>
                     handler);
 
     /**
@@ -592,6 +639,21 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
+     * API to get the details of a Process Set by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetProcessSetResponse> getProcessSet(
+            GetProcessSetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetProcessSetRequest, GetProcessSetResponse>
+                    handler);
+
+    /**
      * Gets the status of the work request with the given ID.
      *
      * @param request The request object containing the details to send
@@ -734,6 +796,21 @@ public interface StackMonitoringAsync extends AutoCloseable {
             ListMonitoredResourcesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListMonitoredResourcesRequest, ListMonitoredResourcesResponse>
+                    handler);
+
+    /**
+     * API to get the details of all Process Sets.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListProcessSetsResponse> listProcessSets(
+            ListProcessSetsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListProcessSetsRequest, ListProcessSetsResponse>
                     handler);
 
     /**
@@ -1039,5 +1116,20 @@ public interface StackMonitoringAsync extends AutoCloseable {
             UpdateMonitoredResourceTypeRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateMonitoredResourceTypeRequest, UpdateMonitoredResourceTypeResponse>
+                    handler);
+
+    /**
+     * API to update a Process Set identified by a given ocid.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateProcessSetResponse> updateProcessSet(
+            UpdateProcessSetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateProcessSetRequest, UpdateProcessSetResponse>
                     handler);
 }
