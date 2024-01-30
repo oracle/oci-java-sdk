@@ -317,6 +317,7 @@ public class SqlTuningClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("executionId", request.getExecutionId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExecutionPlanStatsComparision.class,
                         GetExecutionPlanStatsComparisionResponse.Builder
@@ -354,6 +355,7 @@ public class SqlTuningClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("attribute", request.getAttribute())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskSqlExecutionPlan
                                 .class,
@@ -393,6 +395,7 @@ public class SqlTuningClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "endExecIdLessThanOrEqualTo", request.getEndExecIdLessThanOrEqualTo())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskSummaryReport
                                 .class,
@@ -436,6 +439,7 @@ public class SqlTuningClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
                                 .SqlTuningAdvisorTaskFindingCollection.class,
@@ -482,6 +486,7 @@ public class SqlTuningClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
                                 .SqlTuningAdvisorTaskRecommendationCollection.class,
@@ -524,6 +529,7 @@ public class SqlTuningClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskCollection
                                 .class,
@@ -560,6 +566,7 @@ public class SqlTuningClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlTuningSetCollection.class,
                         ListSqlTuningSetsResponse.Builder::sqlTuningSetCollection)

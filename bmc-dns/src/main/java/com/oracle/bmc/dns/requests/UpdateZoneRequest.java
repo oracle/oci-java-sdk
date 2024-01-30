@@ -82,10 +82,16 @@ public class UpdateZoneRequest
     public com.oracle.bmc.dns.model.Scope getScope() {
         return scope;
     }
-    /** The OCID of the view the resource is associated with. */
+    /**
+     * The OCID of the view the zone is associated with. Required when accessing a private zone by
+     * name.
+     */
     private String viewId;
 
-    /** The OCID of the view the resource is associated with. */
+    /**
+     * The OCID of the view the zone is associated with. Required when accessing a private zone by
+     * name.
+     */
     public String getViewId() {
         return viewId;
     }
@@ -227,11 +233,15 @@ public class UpdateZoneRequest
             return this;
         }
 
-        /** The OCID of the view the resource is associated with. */
+        /**
+         * The OCID of the view the zone is associated with. Required when accessing a private zone
+         * by name.
+         */
         private String viewId = null;
 
         /**
-         * The OCID of the view the resource is associated with.
+         * The OCID of the view the zone is associated with. Required when accessing a private zone
+         * by name.
          *
          * @param viewId the value to set
          * @return this builder instance

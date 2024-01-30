@@ -121,6 +121,7 @@ public class PerfhubAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 .appendPathParam("modifySnapshotSettings")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ModifySnapshotSettingsResponse.Builder::opcRequestId)

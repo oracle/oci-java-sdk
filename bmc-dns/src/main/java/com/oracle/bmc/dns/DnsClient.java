@@ -644,7 +644,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-Match", request.getIfMatch())
                 .appendHeader("If-Unmodified-Since", request.getIfUnmodifiedSince())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteResolverEndpointResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
@@ -671,7 +670,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-Match", request.getIfMatch())
                 .appendHeader("If-Unmodified-Since", request.getIfUnmodifiedSince())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteSteeringPolicyResponse.Builder::opcRequestId)
                 .callSync();
@@ -698,7 +696,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-Match", request.getIfMatch())
                 .appendHeader("If-Unmodified-Since", request.getIfUnmodifiedSince())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteSteeringPolicyAttachmentResponse.Builder::opcRequestId)
@@ -723,7 +720,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-Match", request.getIfMatch())
                 .appendHeader("If-Unmodified-Since", request.getIfUnmodifiedSince())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteTsigKeyResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
@@ -752,7 +748,6 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendHeader("If-Match", request.getIfMatch())
                 .appendHeader("If-Unmodified-Since", request.getIfUnmodifiedSince())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteViewResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(

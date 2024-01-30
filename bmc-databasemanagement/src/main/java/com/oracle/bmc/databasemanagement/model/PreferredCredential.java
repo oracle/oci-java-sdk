@@ -23,6 +23,9 @@ package com.oracle.bmc.databasemanagement.model;
         defaultImpl = PreferredCredential.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = NamedPreferredCredential.class,
+            name = "NAMED_CREDENTIAL"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = BasicPreferredCredential.class,
             name = "BASIC")
 })

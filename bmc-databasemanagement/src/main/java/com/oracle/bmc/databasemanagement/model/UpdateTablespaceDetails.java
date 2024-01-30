@@ -5,7 +5,8 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details required to update a tablespace. <br>
+ * The details required to update a tablespace. It takes either credentialDetails or
+ * databaseCredential. It's recommended to provide databaseCredential <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -25,6 +26,7 @@ public final class UpdateTablespaceDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "credentialDetails",
+        "databaseCredential",
         "name",
         "type",
         "fileSize",
@@ -37,6 +39,7 @@ public final class UpdateTablespaceDetails
     })
     public UpdateTablespaceDetails(
             TablespaceAdminCredentialDetails credentialDetails,
+            DatabaseCredentialDetails databaseCredential,
             String name,
             Type type,
             TablespaceStorageSize fileSize,
@@ -48,6 +51,7 @@ public final class UpdateTablespaceDetails
             Boolean isDefault) {
         super();
         this.credentialDetails = credentialDetails;
+        this.databaseCredential = databaseCredential;
         this.name = name;
         this.type = type;
         this.fileSize = fileSize;
@@ -68,6 +72,15 @@ public final class UpdateTablespaceDetails
         public Builder credentialDetails(TablespaceAdminCredentialDetails credentialDetails) {
             this.credentialDetails = credentialDetails;
             this.__explicitlySet__.add("credentialDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+        private DatabaseCredentialDetails databaseCredential;
+
+        public Builder databaseCredential(DatabaseCredentialDetails databaseCredential) {
+            this.databaseCredential = databaseCredential;
+            this.__explicitlySet__.add("databaseCredential");
             return this;
         }
         /** The name of the tablespace. It must be unique within a database. */
@@ -219,6 +232,7 @@ public final class UpdateTablespaceDetails
             UpdateTablespaceDetails model =
                     new UpdateTablespaceDetails(
                             this.credentialDetails,
+                            this.databaseCredential,
                             this.name,
                             this.type,
                             this.fileSize,
@@ -238,6 +252,9 @@ public final class UpdateTablespaceDetails
         public Builder copy(UpdateTablespaceDetails model) {
             if (model.wasPropertyExplicitlySet("credentialDetails")) {
                 this.credentialDetails(model.getCredentialDetails());
+            }
+            if (model.wasPropertyExplicitlySet("databaseCredential")) {
+                this.databaseCredential(model.getDatabaseCredential());
             }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
@@ -284,6 +301,13 @@ public final class UpdateTablespaceDetails
 
     public TablespaceAdminCredentialDetails getCredentialDetails() {
         return credentialDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+    private final DatabaseCredentialDetails databaseCredential;
+
+    public DatabaseCredentialDetails getDatabaseCredential() {
+        return databaseCredential;
     }
 
     /** The name of the tablespace. It must be unique within a database. */
@@ -489,6 +513,7 @@ public final class UpdateTablespaceDetails
         sb.append("UpdateTablespaceDetails(");
         sb.append("super=").append(super.toString());
         sb.append("credentialDetails=").append(String.valueOf(this.credentialDetails));
+        sb.append(", databaseCredential=").append(String.valueOf(this.databaseCredential));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", fileSize=").append(String.valueOf(this.fileSize));
@@ -513,6 +538,7 @@ public final class UpdateTablespaceDetails
 
         UpdateTablespaceDetails other = (UpdateTablespaceDetails) o;
         return java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
+                && java.util.Objects.equals(this.databaseCredential, other.databaseCredential)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.fileSize, other.fileSize)
@@ -532,6 +558,11 @@ public final class UpdateTablespaceDetails
         result =
                 (result * PRIME)
                         + (this.credentialDetails == null ? 43 : this.credentialDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseCredential == null
+                                ? 43
+                                : this.databaseCredential.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.fileSize == null ? 43 : this.fileSize.hashCode());

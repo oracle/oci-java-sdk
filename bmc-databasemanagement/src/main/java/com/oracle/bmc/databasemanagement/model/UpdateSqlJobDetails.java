@@ -160,6 +160,25 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
             return this;
         }
         /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Named Credentials containing password secret.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("namedCredentialId")
+        private String namedCredentialId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Named Credentials containing password secret.
+         *
+         * @param namedCredentialId the value to set
+         * @return this builder
+         */
+        public Builder namedCredentialId(String namedCredentialId) {
+            this.namedCredentialId = namedCredentialId;
+            this.__explicitlySet__.add("namedCredentialId");
+            return this;
+        }
+        /**
          * The role of the database user. Indicates whether the database user is a normal user or
          * sysdba.
          */
@@ -196,6 +215,7 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
                             this.userName,
                             this.password,
                             this.secretId,
+                            this.namedCredentialId,
                             this.role);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -238,6 +258,9 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
             if (model.wasPropertyExplicitlySet("secretId")) {
                 this.secretId(model.getSecretId());
             }
+            if (model.wasPropertyExplicitlySet("namedCredentialId")) {
+                this.namedCredentialId(model.getNamedCredentialId());
+            }
             if (model.wasPropertyExplicitlySet("role")) {
                 this.role(model.getRole());
             }
@@ -267,6 +290,7 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
             String userName,
             String password,
             String secretId,
+            String namedCredentialId,
             SqlJob.Role role) {
         super(description, timeout, resultLocation, scheduleDetails);
         this.sqlText = sqlText;
@@ -276,6 +300,7 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
         this.userName = userName;
         this.password = password;
         this.secretId = secretId;
+        this.namedCredentialId = namedCredentialId;
         this.role = role;
     }
 
@@ -363,6 +388,23 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Named Credentials containing password secret.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("namedCredentialId")
+    private final String namedCredentialId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Named Credentials containing password secret.
+     *
+     * @return the value
+     */
+    public String getNamedCredentialId() {
+        return namedCredentialId;
+    }
+
+    /**
      * The role of the database user. Indicates whether the database user is a normal user or
      * sysdba.
      */
@@ -401,6 +443,7 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
         sb.append(", userName=").append(String.valueOf(this.userName));
         sb.append(", password=").append(String.valueOf(this.password));
         sb.append(", secretId=").append(String.valueOf(this.secretId));
+        sb.append(", namedCredentialId=").append(String.valueOf(this.namedCredentialId));
         sb.append(", role=").append(String.valueOf(this.role));
         sb.append(")");
         return sb.toString();
@@ -423,6 +466,7 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
                 && java.util.Objects.equals(this.userName, other.userName)
                 && java.util.Objects.equals(this.password, other.password)
                 && java.util.Objects.equals(this.secretId, other.secretId)
+                && java.util.Objects.equals(this.namedCredentialId, other.namedCredentialId)
                 && java.util.Objects.equals(this.role, other.role)
                 && super.equals(other);
     }
@@ -438,6 +482,9 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
         result = (result * PRIME) + (this.userName == null ? 43 : this.userName.hashCode());
         result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
         result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.namedCredentialId == null ? 43 : this.namedCredentialId.hashCode());
         result = (result * PRIME) + (this.role == null ? 43 : this.role.hashCode());
         return result;
     }

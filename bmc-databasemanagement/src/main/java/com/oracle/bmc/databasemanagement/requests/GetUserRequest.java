@@ -40,6 +40,13 @@ public class GetUserRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** The OCID of the Named Credential. */
+    private String opcNamedCredentialId;
+
+    /** The OCID of the Named Credential. */
+    public String getOpcNamedCredentialId() {
+        return opcNamedCredentialId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<GetUserRequest, java.lang.Void> {
@@ -92,6 +99,20 @@ public class GetUserRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             return this;
         }
 
+        /** The OCID of the Named Credential. */
+        private String opcNamedCredentialId = null;
+
+        /**
+         * The OCID of the Named Credential.
+         *
+         * @param opcNamedCredentialId the value to set
+         * @return this builder instance
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -125,6 +146,7 @@ public class GetUserRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             managedDatabaseId(o.getManagedDatabaseId());
             userName(o.getUserName());
             opcRequestId(o.getOpcRequestId());
+            opcNamedCredentialId(o.getOpcNamedCredentialId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -162,8 +184,9 @@ public class GetUserRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             request.managedDatabaseId = managedDatabaseId;
             request.userName = userName;
             request.opcRequestId = opcRequestId;
+            request.opcNamedCredentialId = opcNamedCredentialId;
             return request;
-            // new GetUserRequest(managedDatabaseId, userName, opcRequestId);
+            // new GetUserRequest(managedDatabaseId, userName, opcRequestId, opcNamedCredentialId);
         }
     }
 
@@ -176,7 +199,8 @@ public class GetUserRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
         return new Builder()
                 .managedDatabaseId(managedDatabaseId)
                 .userName(userName)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .opcNamedCredentialId(opcNamedCredentialId);
     }
 
     /**
@@ -196,6 +220,7 @@ public class GetUserRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
         sb.append(",managedDatabaseId=").append(String.valueOf(this.managedDatabaseId));
         sb.append(",userName=").append(String.valueOf(this.userName));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcNamedCredentialId=").append(String.valueOf(this.opcNamedCredentialId));
         sb.append(")");
         return sb.toString();
     }
@@ -213,7 +238,8 @@ public class GetUserRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
         return super.equals(o)
                 && java.util.Objects.equals(this.managedDatabaseId, other.managedDatabaseId)
                 && java.util.Objects.equals(this.userName, other.userName)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNamedCredentialId, other.opcNamedCredentialId);
     }
 
     @Override
@@ -225,6 +251,11 @@ public class GetUserRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
                         + (this.managedDatabaseId == null ? 43 : this.managedDatabaseId.hashCode());
         result = (result * PRIME) + (this.userName == null ? 43 : this.userName.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcNamedCredentialId == null
+                                ? 43
+                                : this.opcNamedCredentialId.hashCode());
         return result;
     }
 }

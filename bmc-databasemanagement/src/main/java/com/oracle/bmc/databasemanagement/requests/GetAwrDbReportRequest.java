@@ -199,6 +199,13 @@ public class GetAwrDbReportRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
+    /** The OCID of the Named Credential. */
+    private String opcNamedCredentialId;
+
+    /** The OCID of the Named Credential. */
+    public String getOpcNamedCredentialId() {
+        return opcNamedCredentialId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -411,6 +418,20 @@ public class GetAwrDbReportRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /** The OCID of the Named Credential. */
+        private String opcNamedCredentialId = null;
+
+        /**
+         * The OCID of the Named Credential.
+         *
+         * @param opcNamedCredentialId the value to set
+         * @return this builder instance
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -453,6 +474,7 @@ public class GetAwrDbReportRequest extends com.oracle.bmc.requests.BmcRequest<ja
             reportFormat(o.getReportFormat());
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
+            opcNamedCredentialId(o.getOpcNamedCredentialId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -499,11 +521,12 @@ public class GetAwrDbReportRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.reportFormat = reportFormat;
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
+            request.opcNamedCredentialId = opcNamedCredentialId;
             return request;
             // new GetAwrDbReportRequest(managedDatabaseId, awrDbId, instNums,
             // beginSnIdGreaterThanOrEqualTo, endSnIdLessThanOrEqualTo, timeGreaterThanOrEqualTo,
             // timeLessThanOrEqualTo, reportType, containerId, reportFormat, opcRequestId,
-            // opcRetryToken);
+            // opcRetryToken, opcNamedCredentialId);
         }
     }
 
@@ -525,7 +548,8 @@ public class GetAwrDbReportRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .containerId(containerId)
                 .reportFormat(reportFormat)
                 .opcRequestId(opcRequestId)
-                .opcRetryToken(opcRetryToken);
+                .opcRetryToken(opcRetryToken)
+                .opcNamedCredentialId(opcNamedCredentialId);
     }
 
     /**
@@ -557,6 +581,7 @@ public class GetAwrDbReportRequest extends com.oracle.bmc.requests.BmcRequest<ja
         sb.append(",reportFormat=").append(String.valueOf(this.reportFormat));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",opcNamedCredentialId=").append(String.valueOf(this.opcNamedCredentialId));
         sb.append(")");
         return sb.toString();
     }
@@ -586,7 +611,8 @@ public class GetAwrDbReportRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 && java.util.Objects.equals(this.containerId, other.containerId)
                 && java.util.Objects.equals(this.reportFormat, other.reportFormat)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.opcNamedCredentialId, other.opcNamedCredentialId);
     }
 
     @Override
@@ -625,6 +651,11 @@ public class GetAwrDbReportRequest extends com.oracle.bmc.requests.BmcRequest<ja
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcNamedCredentialId == null
+                                ? 43
+                                : this.opcNamedCredentialId.hashCode());
         return result;
     }
 }

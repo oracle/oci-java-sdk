@@ -48,6 +48,13 @@ public class SummarizeSqlPlanBaselinesByLastExecutionRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** The OCID of the Named Credential. */
+    private String opcNamedCredentialId;
+
+    /** The OCID of the Named Credential. */
+    public String getOpcNamedCredentialId() {
+        return opcNamedCredentialId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -105,6 +112,20 @@ public class SummarizeSqlPlanBaselinesByLastExecutionRequest
             return this;
         }
 
+        /** The OCID of the Named Credential. */
+        private String opcNamedCredentialId = null;
+
+        /**
+         * The OCID of the Named Credential.
+         *
+         * @param opcNamedCredentialId the value to set
+         * @return this builder instance
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -138,6 +159,7 @@ public class SummarizeSqlPlanBaselinesByLastExecutionRequest
             managedDatabaseId(o.getManagedDatabaseId());
             page(o.getPage());
             opcRequestId(o.getOpcRequestId());
+            opcNamedCredentialId(o.getOpcNamedCredentialId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -179,9 +201,10 @@ public class SummarizeSqlPlanBaselinesByLastExecutionRequest
             request.managedDatabaseId = managedDatabaseId;
             request.page = page;
             request.opcRequestId = opcRequestId;
+            request.opcNamedCredentialId = opcNamedCredentialId;
             return request;
             // new SummarizeSqlPlanBaselinesByLastExecutionRequest(managedDatabaseId, page,
-            // opcRequestId);
+            // opcRequestId, opcNamedCredentialId);
         }
     }
 
@@ -194,7 +217,8 @@ public class SummarizeSqlPlanBaselinesByLastExecutionRequest
         return new Builder()
                 .managedDatabaseId(managedDatabaseId)
                 .page(page)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .opcNamedCredentialId(opcNamedCredentialId);
     }
 
     /**
@@ -214,6 +238,7 @@ public class SummarizeSqlPlanBaselinesByLastExecutionRequest
         sb.append(",managedDatabaseId=").append(String.valueOf(this.managedDatabaseId));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcNamedCredentialId=").append(String.valueOf(this.opcNamedCredentialId));
         sb.append(")");
         return sb.toString();
     }
@@ -232,7 +257,8 @@ public class SummarizeSqlPlanBaselinesByLastExecutionRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.managedDatabaseId, other.managedDatabaseId)
                 && java.util.Objects.equals(this.page, other.page)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNamedCredentialId, other.opcNamedCredentialId);
     }
 
     @Override
@@ -244,6 +270,11 @@ public class SummarizeSqlPlanBaselinesByLastExecutionRequest
                         + (this.managedDatabaseId == null ? 43 : this.managedDatabaseId.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcNamedCredentialId == null
+                                ? 43
+                                : this.opcNamedCredentialId.hashCode());
         return result;
     }
 }

@@ -153,6 +153,13 @@ public class GetSqlTuningAdvisorTaskSummaryReportRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** The OCID of the Named Credential. */
+    private String opcNamedCredentialId;
+
+    /** The OCID of the Named Credential. */
+    public String getOpcNamedCredentialId() {
+        return opcNamedCredentialId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -302,6 +309,20 @@ public class GetSqlTuningAdvisorTaskSummaryReportRequest
             return this;
         }
 
+        /** The OCID of the Named Credential. */
+        private String opcNamedCredentialId = null;
+
+        /**
+         * The OCID of the Named Credential.
+         *
+         * @param opcNamedCredentialId the value to set
+         * @return this builder instance
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -340,6 +361,7 @@ public class GetSqlTuningAdvisorTaskSummaryReportRequest
             beginExecIdGreaterThanOrEqualTo(o.getBeginExecIdGreaterThanOrEqualTo());
             endExecIdLessThanOrEqualTo(o.getEndExecIdLessThanOrEqualTo());
             opcRequestId(o.getOpcRequestId());
+            opcNamedCredentialId(o.getOpcNamedCredentialId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -385,11 +407,12 @@ public class GetSqlTuningAdvisorTaskSummaryReportRequest
             request.beginExecIdGreaterThanOrEqualTo = beginExecIdGreaterThanOrEqualTo;
             request.endExecIdLessThanOrEqualTo = endExecIdLessThanOrEqualTo;
             request.opcRequestId = opcRequestId;
+            request.opcNamedCredentialId = opcNamedCredentialId;
             return request;
             // new GetSqlTuningAdvisorTaskSummaryReportRequest(managedDatabaseId,
             // sqlTuningAdvisorTaskId, searchPeriod, timeGreaterThanOrEqualTo,
             // timeLessThanOrEqualTo, beginExecIdGreaterThanOrEqualTo, endExecIdLessThanOrEqualTo,
-            // opcRequestId);
+            // opcRequestId, opcNamedCredentialId);
         }
     }
 
@@ -407,7 +430,8 @@ public class GetSqlTuningAdvisorTaskSummaryReportRequest
                 .timeLessThanOrEqualTo(timeLessThanOrEqualTo)
                 .beginExecIdGreaterThanOrEqualTo(beginExecIdGreaterThanOrEqualTo)
                 .endExecIdLessThanOrEqualTo(endExecIdLessThanOrEqualTo)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .opcNamedCredentialId(opcNamedCredentialId);
     }
 
     /**
@@ -435,6 +459,7 @@ public class GetSqlTuningAdvisorTaskSummaryReportRequest
         sb.append(",endExecIdLessThanOrEqualTo=")
                 .append(String.valueOf(this.endExecIdLessThanOrEqualTo));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcNamedCredentialId=").append(String.valueOf(this.opcNamedCredentialId));
         sb.append(")");
         return sb.toString();
     }
@@ -462,7 +487,8 @@ public class GetSqlTuningAdvisorTaskSummaryReportRequest
                         this.beginExecIdGreaterThanOrEqualTo, other.beginExecIdGreaterThanOrEqualTo)
                 && java.util.Objects.equals(
                         this.endExecIdLessThanOrEqualTo, other.endExecIdLessThanOrEqualTo)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNamedCredentialId, other.opcNamedCredentialId);
     }
 
     @Override
@@ -499,6 +525,11 @@ public class GetSqlTuningAdvisorTaskSummaryReportRequest
                                 ? 43
                                 : this.endExecIdLessThanOrEqualTo.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcNamedCredentialId == null
+                                ? 43
+                                : this.opcNamedCredentialId.hashCode());
         return result;
     }
 }

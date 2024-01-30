@@ -5,7 +5,8 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details required to enable automatic initial plan capture. <br>
+ * The details required to enable automatic initial plan capture. It takes either credentials or
+ * databaseCredential. It's recommended to provide databaseCredential <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -23,10 +24,12 @@ package com.oracle.bmc.databasemanagement.model;
 public final class EnableAutomaticInitialPlanCaptureDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"credentials"})
-    public EnableAutomaticInitialPlanCaptureDetails(ManagedDatabaseCredential credentials) {
+    @java.beans.ConstructorProperties({"credentials", "databaseCredential"})
+    public EnableAutomaticInitialPlanCaptureDetails(
+            ManagedDatabaseCredential credentials, DatabaseCredentialDetails databaseCredential) {
         super();
         this.credentials = credentials;
+        this.databaseCredential = databaseCredential;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -41,12 +44,22 @@ public final class EnableAutomaticInitialPlanCaptureDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+        private DatabaseCredentialDetails databaseCredential;
+
+        public Builder databaseCredential(DatabaseCredentialDetails databaseCredential) {
+            this.databaseCredential = databaseCredential;
+            this.__explicitlySet__.add("databaseCredential");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EnableAutomaticInitialPlanCaptureDetails build() {
             EnableAutomaticInitialPlanCaptureDetails model =
-                    new EnableAutomaticInitialPlanCaptureDetails(this.credentials);
+                    new EnableAutomaticInitialPlanCaptureDetails(
+                            this.credentials, this.databaseCredential);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -57,6 +70,9 @@ public final class EnableAutomaticInitialPlanCaptureDetails
         public Builder copy(EnableAutomaticInitialPlanCaptureDetails model) {
             if (model.wasPropertyExplicitlySet("credentials")) {
                 this.credentials(model.getCredentials());
+            }
+            if (model.wasPropertyExplicitlySet("databaseCredential")) {
+                this.databaseCredential(model.getDatabaseCredential());
             }
             return this;
         }
@@ -78,6 +94,13 @@ public final class EnableAutomaticInitialPlanCaptureDetails
         return credentials;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+    private final DatabaseCredentialDetails databaseCredential;
+
+    public DatabaseCredentialDetails getDatabaseCredential() {
+        return databaseCredential;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -94,6 +117,7 @@ public final class EnableAutomaticInitialPlanCaptureDetails
         sb.append("EnableAutomaticInitialPlanCaptureDetails(");
         sb.append("super=").append(super.toString());
         sb.append("credentials=").append(String.valueOf(this.credentials));
+        sb.append(", databaseCredential=").append(String.valueOf(this.databaseCredential));
         sb.append(")");
         return sb.toString();
     }
@@ -109,7 +133,9 @@ public final class EnableAutomaticInitialPlanCaptureDetails
 
         EnableAutomaticInitialPlanCaptureDetails other =
                 (EnableAutomaticInitialPlanCaptureDetails) o;
-        return java.util.Objects.equals(this.credentials, other.credentials) && super.equals(other);
+        return java.util.Objects.equals(this.credentials, other.credentials)
+                && java.util.Objects.equals(this.databaseCredential, other.databaseCredential)
+                && super.equals(other);
     }
 
     @Override
@@ -117,6 +143,11 @@ public final class EnableAutomaticInitialPlanCaptureDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.credentials == null ? 43 : this.credentials.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseCredential == null
+                                ? 43
+                                : this.databaseCredential.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

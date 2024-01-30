@@ -26,20 +26,23 @@ public final class TaxInfo extends com.oracle.bmc.http.client.internal.Explicitl
         "taxRegNumber",
         "noTaxReasonCode",
         "noTaxReasonCodeDetails",
-        "taxCnpj"
+        "taxCnpj",
+        "giro"
     })
     public TaxInfo(
             String taxPayerId,
             String taxRegNumber,
             String noTaxReasonCode,
             String noTaxReasonCodeDetails,
-            String taxCnpj) {
+            String taxCnpj,
+            String giro) {
         super();
         this.taxPayerId = taxPayerId;
         this.taxRegNumber = taxRegNumber;
         this.noTaxReasonCode = noTaxReasonCode;
         this.noTaxReasonCodeDetails = noTaxReasonCodeDetails;
         this.taxCnpj = taxCnpj;
+        this.giro = giro;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -119,6 +122,21 @@ public final class TaxInfo extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("taxCnpj");
             return this;
         }
+        /** Companies' GIRO code */
+        @com.fasterxml.jackson.annotation.JsonProperty("giro")
+        private String giro;
+
+        /**
+         * Companies' GIRO code
+         *
+         * @param giro the value to set
+         * @return this builder
+         */
+        public Builder giro(String giro) {
+            this.giro = giro;
+            this.__explicitlySet__.add("giro");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -130,7 +148,8 @@ public final class TaxInfo extends com.oracle.bmc.http.client.internal.Explicitl
                             this.taxRegNumber,
                             this.noTaxReasonCode,
                             this.noTaxReasonCodeDetails,
-                            this.taxCnpj);
+                            this.taxCnpj,
+                            this.giro);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -153,6 +172,9 @@ public final class TaxInfo extends com.oracle.bmc.http.client.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("taxCnpj")) {
                 this.taxCnpj(model.getTaxCnpj());
+            }
+            if (model.wasPropertyExplicitlySet("giro")) {
+                this.giro(model.getGiro());
             }
             return this;
         }
@@ -232,6 +254,19 @@ public final class TaxInfo extends com.oracle.bmc.http.client.internal.Explicitl
         return taxCnpj;
     }
 
+    /** Companies' GIRO code */
+    @com.fasterxml.jackson.annotation.JsonProperty("giro")
+    private final String giro;
+
+    /**
+     * Companies' GIRO code
+     *
+     * @return the value
+     */
+    public String getGiro() {
+        return giro;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -252,6 +287,7 @@ public final class TaxInfo extends com.oracle.bmc.http.client.internal.Explicitl
         sb.append(", noTaxReasonCode=").append(String.valueOf(this.noTaxReasonCode));
         sb.append(", noTaxReasonCodeDetails=").append(String.valueOf(this.noTaxReasonCodeDetails));
         sb.append(", taxCnpj=").append(String.valueOf(this.taxCnpj));
+        sb.append(", giro=").append(String.valueOf(this.giro));
         sb.append(")");
         return sb.toString();
     }
@@ -272,6 +308,7 @@ public final class TaxInfo extends com.oracle.bmc.http.client.internal.Explicitl
                 && java.util.Objects.equals(
                         this.noTaxReasonCodeDetails, other.noTaxReasonCodeDetails)
                 && java.util.Objects.equals(this.taxCnpj, other.taxCnpj)
+                && java.util.Objects.equals(this.giro, other.giro)
                 && super.equals(other);
     }
 
@@ -290,6 +327,7 @@ public final class TaxInfo extends com.oracle.bmc.http.client.internal.Explicitl
                                 ? 43
                                 : this.noTaxReasonCodeDetails.hashCode());
         result = (result * PRIME) + (this.taxCnpj == null ? 43 : this.taxCnpj.hashCode());
+        result = (result * PRIME) + (this.giro == null ? 43 : this.giro.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

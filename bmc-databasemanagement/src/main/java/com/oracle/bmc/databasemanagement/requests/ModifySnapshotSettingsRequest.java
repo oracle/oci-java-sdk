@@ -45,6 +45,13 @@ public class ModifySnapshotSettingsRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** The OCID of the Named Credential. */
+    private String opcNamedCredentialId;
+
+    /** The OCID of the Named Credential. */
+    public String getOpcNamedCredentialId() {
+        return opcNamedCredentialId;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -113,6 +120,20 @@ public class ModifySnapshotSettingsRequest
             return this;
         }
 
+        /** The OCID of the Named Credential. */
+        private String opcNamedCredentialId = null;
+
+        /**
+         * The OCID of the Named Credential.
+         *
+         * @param opcNamedCredentialId the value to set
+         * @return this builder instance
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -146,6 +167,7 @@ public class ModifySnapshotSettingsRequest
             managedDatabaseId(o.getManagedDatabaseId());
             modifySnapshotSettingsDetails(o.getModifySnapshotSettingsDetails());
             opcRequestId(o.getOpcRequestId());
+            opcNamedCredentialId(o.getOpcNamedCredentialId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -196,9 +218,10 @@ public class ModifySnapshotSettingsRequest
             request.managedDatabaseId = managedDatabaseId;
             request.modifySnapshotSettingsDetails = modifySnapshotSettingsDetails;
             request.opcRequestId = opcRequestId;
+            request.opcNamedCredentialId = opcNamedCredentialId;
             return request;
             // new ModifySnapshotSettingsRequest(managedDatabaseId, modifySnapshotSettingsDetails,
-            // opcRequestId);
+            // opcRequestId, opcNamedCredentialId);
         }
     }
 
@@ -211,7 +234,8 @@ public class ModifySnapshotSettingsRequest
         return new Builder()
                 .managedDatabaseId(managedDatabaseId)
                 .modifySnapshotSettingsDetails(modifySnapshotSettingsDetails)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .opcNamedCredentialId(opcNamedCredentialId);
     }
 
     /**
@@ -232,6 +256,7 @@ public class ModifySnapshotSettingsRequest
         sb.append(",modifySnapshotSettingsDetails=")
                 .append(String.valueOf(this.modifySnapshotSettingsDetails));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcNamedCredentialId=").append(String.valueOf(this.opcNamedCredentialId));
         sb.append(")");
         return sb.toString();
     }
@@ -250,7 +275,8 @@ public class ModifySnapshotSettingsRequest
                 && java.util.Objects.equals(this.managedDatabaseId, other.managedDatabaseId)
                 && java.util.Objects.equals(
                         this.modifySnapshotSettingsDetails, other.modifySnapshotSettingsDetails)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNamedCredentialId, other.opcNamedCredentialId);
     }
 
     @Override
@@ -266,6 +292,11 @@ public class ModifySnapshotSettingsRequest
                                 ? 43
                                 : this.modifySnapshotSettingsDetails.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcNamedCredentialId == null
+                                ? 43
+                                : this.opcNamedCredentialId.hashCode());
         return result;
     }
 }

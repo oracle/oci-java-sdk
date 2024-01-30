@@ -137,6 +137,13 @@ public class AddmTasksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     public com.oracle.bmc.databasemanagement.model.SortOrders getSortOrder() {
         return sortOrder;
     }
+    /** The OCID of the Named Credential. */
+    private String opcNamedCredentialId;
+
+    /** The OCID of the Named Credential. */
+    public String getOpcNamedCredentialId() {
+        return opcNamedCredentialId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -276,6 +283,20 @@ public class AddmTasksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /** The OCID of the Named Credential. */
+        private String opcNamedCredentialId = null;
+
+        /**
+         * The OCID of the Named Credential.
+         *
+         * @param opcNamedCredentialId the value to set
+         * @return this builder instance
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -314,6 +335,7 @@ public class AddmTasksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             limit(o.getLimit());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
+            opcNamedCredentialId(o.getOpcNamedCredentialId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -356,9 +378,10 @@ public class AddmTasksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             request.limit = limit;
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
+            request.opcNamedCredentialId = opcNamedCredentialId;
             return request;
             // new AddmTasksRequest(managedDatabaseId, timeStart, timeEnd, opcRequestId, page,
-            // limit, sortBy, sortOrder);
+            // limit, sortBy, sortOrder, opcNamedCredentialId);
         }
     }
 
@@ -376,7 +399,8 @@ public class AddmTasksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 .page(page)
                 .limit(limit)
                 .sortBy(sortBy)
-                .sortOrder(sortOrder);
+                .sortOrder(sortOrder)
+                .opcNamedCredentialId(opcNamedCredentialId);
     }
 
     /**
@@ -401,6 +425,7 @@ public class AddmTasksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",opcNamedCredentialId=").append(String.valueOf(this.opcNamedCredentialId));
         sb.append(")");
         return sb.toString();
     }
@@ -423,7 +448,8 @@ public class AddmTasksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
-                && java.util.Objects.equals(this.sortOrder, other.sortOrder);
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.opcNamedCredentialId, other.opcNamedCredentialId);
     }
 
     @Override
@@ -440,6 +466,11 @@ public class AddmTasksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcNamedCredentialId == null
+                                ? 43
+                                : this.opcNamedCredentialId.hashCode());
         return result;
     }
 }

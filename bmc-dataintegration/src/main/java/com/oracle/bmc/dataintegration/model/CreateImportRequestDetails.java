@@ -29,6 +29,7 @@ public final class CreateImportRequestDetails
         "objectStorageTenancyId",
         "objectStorageRegion",
         "objectKeyForImport",
+        "areDataAssetReferencesIncluded",
         "importConflictResolution"
     })
     public CreateImportRequestDetails(
@@ -37,6 +38,7 @@ public final class CreateImportRequestDetails
             String objectStorageTenancyId,
             String objectStorageRegion,
             String objectKeyForImport,
+            Boolean areDataAssetReferencesIncluded,
             ImportConflictResolution importConflictResolution) {
         super();
         this.bucketName = bucketName;
@@ -44,6 +46,7 @@ public final class CreateImportRequestDetails
         this.objectStorageTenancyId = objectStorageTenancyId;
         this.objectStorageRegion = objectStorageRegion;
         this.objectKeyForImport = objectKeyForImport;
+        this.areDataAssetReferencesIncluded = areDataAssetReferencesIncluded;
         this.importConflictResolution = importConflictResolution;
     }
 
@@ -128,6 +131,21 @@ public final class CreateImportRequestDetails
             this.__explicitlySet__.add("objectKeyForImport");
             return this;
         }
+        /** This field controls if the data asset references will be included during import. */
+        @com.fasterxml.jackson.annotation.JsonProperty("areDataAssetReferencesIncluded")
+        private Boolean areDataAssetReferencesIncluded;
+
+        /**
+         * This field controls if the data asset references will be included during import.
+         *
+         * @param areDataAssetReferencesIncluded the value to set
+         * @return this builder
+         */
+        public Builder areDataAssetReferencesIncluded(Boolean areDataAssetReferencesIncluded) {
+            this.areDataAssetReferencesIncluded = areDataAssetReferencesIncluded;
+            this.__explicitlySet__.add("areDataAssetReferencesIncluded");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("importConflictResolution")
         private ImportConflictResolution importConflictResolution;
@@ -149,6 +167,7 @@ public final class CreateImportRequestDetails
                             this.objectStorageTenancyId,
                             this.objectStorageRegion,
                             this.objectKeyForImport,
+                            this.areDataAssetReferencesIncluded,
                             this.importConflictResolution);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -172,6 +191,9 @@ public final class CreateImportRequestDetails
             }
             if (model.wasPropertyExplicitlySet("objectKeyForImport")) {
                 this.objectKeyForImport(model.getObjectKeyForImport());
+            }
+            if (model.wasPropertyExplicitlySet("areDataAssetReferencesIncluded")) {
+                this.areDataAssetReferencesIncluded(model.getAreDataAssetReferencesIncluded());
             }
             if (model.wasPropertyExplicitlySet("importConflictResolution")) {
                 this.importConflictResolution(model.getImportConflictResolution());
@@ -258,6 +280,19 @@ public final class CreateImportRequestDetails
         return objectKeyForImport;
     }
 
+    /** This field controls if the data asset references will be included during import. */
+    @com.fasterxml.jackson.annotation.JsonProperty("areDataAssetReferencesIncluded")
+    private final Boolean areDataAssetReferencesIncluded;
+
+    /**
+     * This field controls if the data asset references will be included during import.
+     *
+     * @return the value
+     */
+    public Boolean getAreDataAssetReferencesIncluded() {
+        return areDataAssetReferencesIncluded;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("importConflictResolution")
     private final ImportConflictResolution importConflictResolution;
 
@@ -285,6 +320,8 @@ public final class CreateImportRequestDetails
         sb.append(", objectStorageTenancyId=").append(String.valueOf(this.objectStorageTenancyId));
         sb.append(", objectStorageRegion=").append(String.valueOf(this.objectStorageRegion));
         sb.append(", objectKeyForImport=").append(String.valueOf(this.objectKeyForImport));
+        sb.append(", areDataAssetReferencesIncluded=")
+                .append(String.valueOf(this.areDataAssetReferencesIncluded));
         sb.append(", importConflictResolution=")
                 .append(String.valueOf(this.importConflictResolution));
         sb.append(")");
@@ -307,6 +344,8 @@ public final class CreateImportRequestDetails
                         this.objectStorageTenancyId, other.objectStorageTenancyId)
                 && java.util.Objects.equals(this.objectStorageRegion, other.objectStorageRegion)
                 && java.util.Objects.equals(this.objectKeyForImport, other.objectKeyForImport)
+                && java.util.Objects.equals(
+                        this.areDataAssetReferencesIncluded, other.areDataAssetReferencesIncluded)
                 && java.util.Objects.equals(
                         this.importConflictResolution, other.importConflictResolution)
                 && super.equals(other);
@@ -333,6 +372,11 @@ public final class CreateImportRequestDetails
                         + (this.objectKeyForImport == null
                                 ? 43
                                 : this.objectKeyForImport.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.areDataAssetReferencesIncluded == null
+                                ? 43
+                                : this.areDataAssetReferencesIncluded.hashCode());
         result =
                 (result * PRIME)
                         + (this.importConflictResolution == null

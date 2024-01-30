@@ -62,6 +62,9 @@ package com.oracle.bmc.dataintegration.model;
             value = CreateConnectionFromBIP.class,
             name = "BIP_CONNECTION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateConnectionFromOAuth2.class,
+            name = "OAUTH2_CONNECTION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateConnectionFromAdwc.class,
             name = "ORACLE_ADWC_CONNECTION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -325,6 +328,7 @@ public class CreateConnectionDetails
         MysqlHeatwaveConnection("MYSQL_HEATWAVE_CONNECTION"),
         RestNoAuthConnection("REST_NO_AUTH_CONNECTION"),
         RestBasicAuthConnection("REST_BASIC_AUTH_CONNECTION"),
+        Oauth2Connection("OAUTH2_CONNECTION"),
         ;
 
         private final String value;
