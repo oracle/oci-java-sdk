@@ -49,6 +49,13 @@ public class GetOptimizerStatisticsAdvisorExecutionRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** The OCID of the Named Credential. */
+    private String opcNamedCredentialId;
+
+    /** The OCID of the Named Credential. */
+    public String getOpcNamedCredentialId() {
+        return opcNamedCredentialId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -116,6 +123,20 @@ public class GetOptimizerStatisticsAdvisorExecutionRequest
             return this;
         }
 
+        /** The OCID of the Named Credential. */
+        private String opcNamedCredentialId = null;
+
+        /**
+         * The OCID of the Named Credential.
+         *
+         * @param opcNamedCredentialId the value to set
+         * @return this builder instance
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -150,6 +171,7 @@ public class GetOptimizerStatisticsAdvisorExecutionRequest
             executionName(o.getExecutionName());
             taskName(o.getTaskName());
             opcRequestId(o.getOpcRequestId());
+            opcNamedCredentialId(o.getOpcNamedCredentialId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -192,9 +214,10 @@ public class GetOptimizerStatisticsAdvisorExecutionRequest
             request.executionName = executionName;
             request.taskName = taskName;
             request.opcRequestId = opcRequestId;
+            request.opcNamedCredentialId = opcNamedCredentialId;
             return request;
             // new GetOptimizerStatisticsAdvisorExecutionRequest(managedDatabaseId, executionName,
-            // taskName, opcRequestId);
+            // taskName, opcRequestId, opcNamedCredentialId);
         }
     }
 
@@ -208,7 +231,8 @@ public class GetOptimizerStatisticsAdvisorExecutionRequest
                 .managedDatabaseId(managedDatabaseId)
                 .executionName(executionName)
                 .taskName(taskName)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .opcNamedCredentialId(opcNamedCredentialId);
     }
 
     /**
@@ -229,6 +253,7 @@ public class GetOptimizerStatisticsAdvisorExecutionRequest
         sb.append(",executionName=").append(String.valueOf(this.executionName));
         sb.append(",taskName=").append(String.valueOf(this.taskName));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcNamedCredentialId=").append(String.valueOf(this.opcNamedCredentialId));
         sb.append(")");
         return sb.toString();
     }
@@ -248,7 +273,8 @@ public class GetOptimizerStatisticsAdvisorExecutionRequest
                 && java.util.Objects.equals(this.managedDatabaseId, other.managedDatabaseId)
                 && java.util.Objects.equals(this.executionName, other.executionName)
                 && java.util.Objects.equals(this.taskName, other.taskName)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNamedCredentialId, other.opcNamedCredentialId);
     }
 
     @Override
@@ -263,6 +289,11 @@ public class GetOptimizerStatisticsAdvisorExecutionRequest
                         + (this.executionName == null ? 43 : this.executionName.hashCode());
         result = (result * PRIME) + (this.taskName == null ? 43 : this.taskName.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcNamedCredentialId == null
+                                ? 43
+                                : this.opcNamedCredentialId.hashCode());
         return result;
     }
 }

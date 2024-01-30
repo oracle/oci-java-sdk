@@ -8,6 +8,7 @@ package com.oracle.bmc.databasemanagement.model;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public enum PreferredCredentialType implements com.oracle.bmc.http.internal.BmcEnum {
     Basic("BASIC"),
+    NamedCredential("NAMED_CREDENTIAL"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

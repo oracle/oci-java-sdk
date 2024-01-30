@@ -214,6 +214,13 @@ public class SummarizeAlertLogCountsRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** The OCID of the Named Credential. */
+    private String opcNamedCredentialId;
+
+    /** The OCID of the Named Credential. */
+    public String getOpcNamedCredentialId() {
+        return opcNamedCredentialId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -383,6 +390,20 @@ public class SummarizeAlertLogCountsRequest
             return this;
         }
 
+        /** The OCID of the Named Credential. */
+        private String opcNamedCredentialId = null;
+
+        /**
+         * The OCID of the Named Credential.
+         *
+         * @param opcNamedCredentialId the value to set
+         * @return this builder instance
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -424,6 +445,7 @@ public class SummarizeAlertLogCountsRequest
             page(o.getPage());
             limit(o.getLimit());
             opcRequestId(o.getOpcRequestId());
+            opcNamedCredentialId(o.getOpcNamedCredentialId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -469,10 +491,11 @@ public class SummarizeAlertLogCountsRequest
             request.page = page;
             request.limit = limit;
             request.opcRequestId = opcRequestId;
+            request.opcNamedCredentialId = opcNamedCredentialId;
             return request;
             // new SummarizeAlertLogCountsRequest(managedDatabaseId, timeGreaterThanOrEqualTo,
             // timeLessThanOrEqualTo, levelFilter, groupBy, typeFilter, logSearchText,
-            // isRegularExpression, page, limit, opcRequestId);
+            // isRegularExpression, page, limit, opcRequestId, opcNamedCredentialId);
         }
     }
 
@@ -493,7 +516,8 @@ public class SummarizeAlertLogCountsRequest
                 .isRegularExpression(isRegularExpression)
                 .page(page)
                 .limit(limit)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .opcNamedCredentialId(opcNamedCredentialId);
     }
 
     /**
@@ -522,6 +546,7 @@ public class SummarizeAlertLogCountsRequest
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcNamedCredentialId=").append(String.valueOf(this.opcNamedCredentialId));
         sb.append(")");
         return sb.toString();
     }
@@ -548,7 +573,8 @@ public class SummarizeAlertLogCountsRequest
                 && java.util.Objects.equals(this.isRegularExpression, other.isRegularExpression)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.limit, other.limit)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNamedCredentialId, other.opcNamedCredentialId);
     }
 
     @Override
@@ -582,6 +608,11 @@ public class SummarizeAlertLogCountsRequest
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcNamedCredentialId == null
+                                ? 43
+                                : this.opcNamedCredentialId.hashCode());
         return result;
     }
 }

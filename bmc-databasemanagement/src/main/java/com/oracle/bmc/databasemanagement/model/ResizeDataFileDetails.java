@@ -5,7 +5,8 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details required to resize a data file or temp file within the tablespace. <br>
+ * The details required to resize a data file or temp file within the tablespace. It takes either
+ * credentialDetails or databaseCredential. It's recommended to provide databaseCredential <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -25,6 +26,7 @@ public final class ResizeDataFileDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "credentialDetails",
+        "databaseCredential",
         "fileType",
         "dataFile",
         "fileSize",
@@ -35,6 +37,7 @@ public final class ResizeDataFileDetails
     })
     public ResizeDataFileDetails(
             TablespaceAdminCredentialDetails credentialDetails,
+            DatabaseCredentialDetails databaseCredential,
             FileType fileType,
             String dataFile,
             TablespaceStorageSize fileSize,
@@ -44,6 +47,7 @@ public final class ResizeDataFileDetails
             Boolean isMaxSizeUnlimited) {
         super();
         this.credentialDetails = credentialDetails;
+        this.databaseCredential = databaseCredential;
         this.fileType = fileType;
         this.dataFile = dataFile;
         this.fileSize = fileSize;
@@ -62,6 +66,15 @@ public final class ResizeDataFileDetails
         public Builder credentialDetails(TablespaceAdminCredentialDetails credentialDetails) {
             this.credentialDetails = credentialDetails;
             this.__explicitlySet__.add("credentialDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+        private DatabaseCredentialDetails databaseCredential;
+
+        public Builder databaseCredential(DatabaseCredentialDetails databaseCredential) {
+            this.databaseCredential = databaseCredential;
+            this.__explicitlySet__.add("databaseCredential");
             return this;
         }
         /** Specifies whether the file is a data file or temp file. */
@@ -183,6 +196,7 @@ public final class ResizeDataFileDetails
             ResizeDataFileDetails model =
                     new ResizeDataFileDetails(
                             this.credentialDetails,
+                            this.databaseCredential,
                             this.fileType,
                             this.dataFile,
                             this.fileSize,
@@ -200,6 +214,9 @@ public final class ResizeDataFileDetails
         public Builder copy(ResizeDataFileDetails model) {
             if (model.wasPropertyExplicitlySet("credentialDetails")) {
                 this.credentialDetails(model.getCredentialDetails());
+            }
+            if (model.wasPropertyExplicitlySet("databaseCredential")) {
+                this.databaseCredential(model.getDatabaseCredential());
             }
             if (model.wasPropertyExplicitlySet("fileType")) {
                 this.fileType(model.getFileType());
@@ -240,6 +257,13 @@ public final class ResizeDataFileDetails
 
     public TablespaceAdminCredentialDetails getCredentialDetails() {
         return credentialDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+    private final DatabaseCredentialDetails databaseCredential;
+
+    public DatabaseCredentialDetails getDatabaseCredential() {
+        return databaseCredential;
     }
 
     /** Specifies whether the file is a data file or temp file. */
@@ -386,6 +410,7 @@ public final class ResizeDataFileDetails
         sb.append("ResizeDataFileDetails(");
         sb.append("super=").append(super.toString());
         sb.append("credentialDetails=").append(String.valueOf(this.credentialDetails));
+        sb.append(", databaseCredential=").append(String.valueOf(this.databaseCredential));
         sb.append(", fileType=").append(String.valueOf(this.fileType));
         sb.append(", dataFile=").append(String.valueOf(this.dataFile));
         sb.append(", fileSize=").append(String.valueOf(this.fileSize));
@@ -408,6 +433,7 @@ public final class ResizeDataFileDetails
 
         ResizeDataFileDetails other = (ResizeDataFileDetails) o;
         return java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
+                && java.util.Objects.equals(this.databaseCredential, other.databaseCredential)
                 && java.util.Objects.equals(this.fileType, other.fileType)
                 && java.util.Objects.equals(this.dataFile, other.dataFile)
                 && java.util.Objects.equals(this.fileSize, other.fileSize)
@@ -425,6 +451,11 @@ public final class ResizeDataFileDetails
         result =
                 (result * PRIME)
                         + (this.credentialDetails == null ? 43 : this.credentialDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseCredential == null
+                                ? 43
+                                : this.databaseCredential.hashCode());
         result = (result * PRIME) + (this.fileType == null ? 43 : this.fileType.hashCode());
         result = (result * PRIME) + (this.dataFile == null ? 43 : this.dataFile.hashCode());
         result = (result * PRIME) + (this.fileSize == null ? 43 : this.fileSize.hashCode());

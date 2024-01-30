@@ -32,6 +32,9 @@ package com.oracle.bmc.dataintegration.model;
             value = ConnectionFromMySQL.class,
             name = "MYSQL_CONNECTION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ConnectionFromOAuth2.class,
+            name = "OAUTH2_CONNECTION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ConnectionFromJdbc.class,
             name = "GENERIC_JDBC_CONNECTION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -400,6 +403,7 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
         MysqlHeatwaveConnection("MYSQL_HEATWAVE_CONNECTION"),
         RestNoAuthConnection("REST_NO_AUTH_CONNECTION"),
         RestBasicAuthConnection("REST_BASIC_AUTH_CONNECTION"),
+        Oauth2Connection("OAUTH2_CONNECTION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

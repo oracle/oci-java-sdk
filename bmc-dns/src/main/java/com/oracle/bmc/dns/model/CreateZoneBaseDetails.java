@@ -52,12 +52,26 @@ public class CreateZoneBaseDetails
         this.definedTags = definedTags;
     }
 
-    /** The name of the zone. */
+    /**
+     * The name of the zone.
+     *
+     * <p>Global zone names must be unique across all other zones within the realm. Private zone
+     * names must be unique within their view.
+     *
+     * <p>Unicode characters will be converted into punycode, see [RFC
+     * 3492](https://tools.ietf.org/html/rfc3492).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the zone.
+     *
+     * <p>Global zone names must be unique across all other zones within the realm. Private zone
+     * names must be unique within their view.
+     *
+     * <p>Unicode characters will be converted into punycode, see [RFC
+     * 3492](https://tools.ietf.org/html/rfc3492).
      *
      * @return the value
      */

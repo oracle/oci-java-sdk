@@ -5,7 +5,8 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details required to fetch the Sql tuning set details. <br>
+ * The details required to fetch the Sql tuning set details. It takes either credentialDetails or
+ * databaseCredential. It's recommended to provide databaseCredential <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -25,6 +26,7 @@ public final class FetchSqlTuningSetDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "credentialDetails",
+        "databaseCredential",
         "owner",
         "name",
         "basicFilter",
@@ -37,6 +39,7 @@ public final class FetchSqlTuningSetDetails
     })
     public FetchSqlTuningSetDetails(
             SqlTuningSetAdminCredentialDetails credentialDetails,
+            DatabaseCredentialDetails databaseCredential,
             String owner,
             String name,
             String basicFilter,
@@ -48,6 +51,7 @@ public final class FetchSqlTuningSetDetails
             RankingMeasure rankingMeasure3) {
         super();
         this.credentialDetails = credentialDetails;
+        this.databaseCredential = databaseCredential;
         this.owner = owner;
         this.name = name;
         this.basicFilter = basicFilter;
@@ -68,6 +72,15 @@ public final class FetchSqlTuningSetDetails
         public Builder credentialDetails(SqlTuningSetAdminCredentialDetails credentialDetails) {
             this.credentialDetails = credentialDetails;
             this.__explicitlySet__.add("credentialDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+        private DatabaseCredentialDetails databaseCredential;
+
+        public Builder databaseCredential(DatabaseCredentialDetails databaseCredential) {
+            this.databaseCredential = databaseCredential;
+            this.__explicitlySet__.add("databaseCredential");
             return this;
         }
         /** The owner of the Sql tuning set. */
@@ -237,6 +250,7 @@ public final class FetchSqlTuningSetDetails
             FetchSqlTuningSetDetails model =
                     new FetchSqlTuningSetDetails(
                             this.credentialDetails,
+                            this.databaseCredential,
                             this.owner,
                             this.name,
                             this.basicFilter,
@@ -256,6 +270,9 @@ public final class FetchSqlTuningSetDetails
         public Builder copy(FetchSqlTuningSetDetails model) {
             if (model.wasPropertyExplicitlySet("credentialDetails")) {
                 this.credentialDetails(model.getCredentialDetails());
+            }
+            if (model.wasPropertyExplicitlySet("databaseCredential")) {
+                this.databaseCredential(model.getDatabaseCredential());
             }
             if (model.wasPropertyExplicitlySet("owner")) {
                 this.owner(model.getOwner());
@@ -302,6 +319,13 @@ public final class FetchSqlTuningSetDetails
 
     public SqlTuningSetAdminCredentialDetails getCredentialDetails() {
         return credentialDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+    private final DatabaseCredentialDetails databaseCredential;
+
+    public DatabaseCredentialDetails getDatabaseCredential() {
+        return databaseCredential;
     }
 
     /** The owner of the Sql tuning set. */
@@ -494,6 +518,7 @@ public final class FetchSqlTuningSetDetails
         sb.append("FetchSqlTuningSetDetails(");
         sb.append("super=").append(super.toString());
         sb.append("credentialDetails=").append(String.valueOf(this.credentialDetails));
+        sb.append(", databaseCredential=").append(String.valueOf(this.databaseCredential));
         sb.append(", owner=").append(String.valueOf(this.owner));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", basicFilter=").append(String.valueOf(this.basicFilter));
@@ -518,6 +543,7 @@ public final class FetchSqlTuningSetDetails
 
         FetchSqlTuningSetDetails other = (FetchSqlTuningSetDetails) o;
         return java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
+                && java.util.Objects.equals(this.databaseCredential, other.databaseCredential)
                 && java.util.Objects.equals(this.owner, other.owner)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.basicFilter, other.basicFilter)
@@ -537,6 +563,11 @@ public final class FetchSqlTuningSetDetails
         result =
                 (result * PRIME)
                         + (this.credentialDetails == null ? 43 : this.credentialDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseCredential == null
+                                ? 43
+                                : this.databaseCredential.hashCode());
         result = (result * PRIME) + (this.owner == null ? 43 : this.owner.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.basicFilter == null ? 43 : this.basicFilter.hashCode());

@@ -5,7 +5,8 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details required to change the disk space limit for the SQL Management Base. <br>
+ * The details required to change the disk space limit for the SQL Management Base. It takes either
+ * credentials or databaseCredential. It's recommended to provide databaseCredential <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -23,12 +24,15 @@ package com.oracle.bmc.databasemanagement.model;
 public final class ChangeSpaceBudgetDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"spaceBudgetPercent", "credentials"})
+    @java.beans.ConstructorProperties({"spaceBudgetPercent", "credentials", "databaseCredential"})
     public ChangeSpaceBudgetDetails(
-            Double spaceBudgetPercent, ManagedDatabaseCredential credentials) {
+            Double spaceBudgetPercent,
+            ManagedDatabaseCredential credentials,
+            DatabaseCredentialDetails databaseCredential) {
         super();
         this.spaceBudgetPercent = spaceBudgetPercent;
         this.credentials = credentials;
+        this.databaseCredential = databaseCredential;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -58,12 +62,22 @@ public final class ChangeSpaceBudgetDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+        private DatabaseCredentialDetails databaseCredential;
+
+        public Builder databaseCredential(DatabaseCredentialDetails databaseCredential) {
+            this.databaseCredential = databaseCredential;
+            this.__explicitlySet__.add("databaseCredential");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ChangeSpaceBudgetDetails build() {
             ChangeSpaceBudgetDetails model =
-                    new ChangeSpaceBudgetDetails(this.spaceBudgetPercent, this.credentials);
+                    new ChangeSpaceBudgetDetails(
+                            this.spaceBudgetPercent, this.credentials, this.databaseCredential);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -77,6 +91,9 @@ public final class ChangeSpaceBudgetDetails
             }
             if (model.wasPropertyExplicitlySet("credentials")) {
                 this.credentials(model.getCredentials());
+            }
+            if (model.wasPropertyExplicitlySet("databaseCredential")) {
+                this.databaseCredential(model.getDatabaseCredential());
             }
             return this;
         }
@@ -111,6 +128,13 @@ public final class ChangeSpaceBudgetDetails
         return credentials;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+    private final DatabaseCredentialDetails databaseCredential;
+
+    public DatabaseCredentialDetails getDatabaseCredential() {
+        return databaseCredential;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -128,6 +152,7 @@ public final class ChangeSpaceBudgetDetails
         sb.append("super=").append(super.toString());
         sb.append("spaceBudgetPercent=").append(String.valueOf(this.spaceBudgetPercent));
         sb.append(", credentials=").append(String.valueOf(this.credentials));
+        sb.append(", databaseCredential=").append(String.valueOf(this.databaseCredential));
         sb.append(")");
         return sb.toString();
     }
@@ -144,6 +169,7 @@ public final class ChangeSpaceBudgetDetails
         ChangeSpaceBudgetDetails other = (ChangeSpaceBudgetDetails) o;
         return java.util.Objects.equals(this.spaceBudgetPercent, other.spaceBudgetPercent)
                 && java.util.Objects.equals(this.credentials, other.credentials)
+                && java.util.Objects.equals(this.databaseCredential, other.databaseCredential)
                 && super.equals(other);
     }
 
@@ -157,6 +183,11 @@ public final class ChangeSpaceBudgetDetails
                                 ? 43
                                 : this.spaceBudgetPercent.hashCode());
         result = (result * PRIME) + (this.credentials == null ? 43 : this.credentials.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseCredential == null
+                                ? 43
+                                : this.databaseCredential.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

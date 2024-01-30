@@ -107,6 +107,7 @@ public class PerfhubClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendPathParam("modifySnapshotSettings")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ModifySnapshotSettingsResponse.Builder::opcRequestId)

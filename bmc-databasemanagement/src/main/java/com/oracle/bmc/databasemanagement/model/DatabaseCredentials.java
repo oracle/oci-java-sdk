@@ -5,7 +5,9 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The database credentials used to perform management activity. <br>
+ * The database credentials used to perform management activity. Provide one of the following
+ * attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
+ * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

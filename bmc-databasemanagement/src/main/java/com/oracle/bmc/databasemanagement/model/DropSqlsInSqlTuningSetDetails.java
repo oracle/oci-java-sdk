@@ -9,7 +9,9 @@ package com.oracle.bmc.databasemanagement.model;
  * parameter specifies the Sql predicate to filter the Sql from the Sql tuning set defined on
  * attributes of the SQLSET_ROW. If a valid filter criteria is specified, then, Sql statements
  * matching this filter criteria will be deleted from the current Sql tuning set. If filter criteria
- * is not specified, then, all Sql statements will be deleted from the current Sql tuning set. <br>
+ * is not specified, then, all Sql statements will be deleted from the current Sql tuning set. It
+ * takes either credentialDetails or databaseCredential. It's recommended to provide
+ * databaseCredential <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -29,6 +31,7 @@ public final class DropSqlsInSqlTuningSetDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "credentialDetails",
+        "databaseCredential",
         "showSqlOnly",
         "owner",
         "name",
@@ -36,12 +39,14 @@ public final class DropSqlsInSqlTuningSetDetails
     })
     public DropSqlsInSqlTuningSetDetails(
             SqlTuningSetAdminCredentialDetails credentialDetails,
+            DatabaseCredentialDetails databaseCredential,
             Integer showSqlOnly,
             String owner,
             String name,
             String basicFilter) {
         super();
         this.credentialDetails = credentialDetails;
+        this.databaseCredential = databaseCredential;
         this.showSqlOnly = showSqlOnly;
         this.owner = owner;
         this.name = name;
@@ -57,6 +62,15 @@ public final class DropSqlsInSqlTuningSetDetails
         public Builder credentialDetails(SqlTuningSetAdminCredentialDetails credentialDetails) {
             this.credentialDetails = credentialDetails;
             this.__explicitlySet__.add("credentialDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+        private DatabaseCredentialDetails databaseCredential;
+
+        public Builder databaseCredential(DatabaseCredentialDetails databaseCredential) {
+            this.databaseCredential = databaseCredential;
+            this.__explicitlySet__.add("databaseCredential");
             return this;
         }
         /**
@@ -139,6 +153,7 @@ public final class DropSqlsInSqlTuningSetDetails
             DropSqlsInSqlTuningSetDetails model =
                     new DropSqlsInSqlTuningSetDetails(
                             this.credentialDetails,
+                            this.databaseCredential,
                             this.showSqlOnly,
                             this.owner,
                             this.name,
@@ -153,6 +168,9 @@ public final class DropSqlsInSqlTuningSetDetails
         public Builder copy(DropSqlsInSqlTuningSetDetails model) {
             if (model.wasPropertyExplicitlySet("credentialDetails")) {
                 this.credentialDetails(model.getCredentialDetails());
+            }
+            if (model.wasPropertyExplicitlySet("databaseCredential")) {
+                this.databaseCredential(model.getDatabaseCredential());
             }
             if (model.wasPropertyExplicitlySet("showSqlOnly")) {
                 this.showSqlOnly(model.getShowSqlOnly());
@@ -184,6 +202,13 @@ public final class DropSqlsInSqlTuningSetDetails
 
     public SqlTuningSetAdminCredentialDetails getCredentialDetails() {
         return credentialDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+    private final DatabaseCredentialDetails databaseCredential;
+
+    public DatabaseCredentialDetails getDatabaseCredential() {
+        return databaseCredential;
     }
 
     /**
@@ -266,6 +291,7 @@ public final class DropSqlsInSqlTuningSetDetails
         sb.append("DropSqlsInSqlTuningSetDetails(");
         sb.append("super=").append(super.toString());
         sb.append("credentialDetails=").append(String.valueOf(this.credentialDetails));
+        sb.append(", databaseCredential=").append(String.valueOf(this.databaseCredential));
         sb.append(", showSqlOnly=").append(String.valueOf(this.showSqlOnly));
         sb.append(", owner=").append(String.valueOf(this.owner));
         sb.append(", name=").append(String.valueOf(this.name));
@@ -285,6 +311,7 @@ public final class DropSqlsInSqlTuningSetDetails
 
         DropSqlsInSqlTuningSetDetails other = (DropSqlsInSqlTuningSetDetails) o;
         return java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
+                && java.util.Objects.equals(this.databaseCredential, other.databaseCredential)
                 && java.util.Objects.equals(this.showSqlOnly, other.showSqlOnly)
                 && java.util.Objects.equals(this.owner, other.owner)
                 && java.util.Objects.equals(this.name, other.name)
@@ -299,6 +326,11 @@ public final class DropSqlsInSqlTuningSetDetails
         result =
                 (result * PRIME)
                         + (this.credentialDetails == null ? 43 : this.credentialDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseCredential == null
+                                ? 43
+                                : this.databaseCredential.hashCode());
         result = (result * PRIME) + (this.showSqlOnly == null ? 43 : this.showSqlOnly.hashCode());
         result = (result * PRIME) + (this.owner == null ? 43 : this.owner.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());

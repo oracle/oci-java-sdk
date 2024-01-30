@@ -131,6 +131,13 @@ public class ListDataAccessContainersRequest
     public String getPage() {
         return page;
     }
+    /** The OCID of the Named Credential. */
+    private String opcNamedCredentialId;
+
+    /** The OCID of the Named Credential. */
+    public String getOpcNamedCredentialId() {
+        return opcNamedCredentialId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -266,6 +273,20 @@ public class ListDataAccessContainersRequest
             return this;
         }
 
+        /** The OCID of the Named Credential. */
+        private String opcNamedCredentialId = null;
+
+        /**
+         * The OCID of the Named Credential.
+         *
+         * @param opcNamedCredentialId the value to set
+         * @return this builder instance
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -304,6 +325,7 @@ public class ListDataAccessContainersRequest
             sortOrder(o.getSortOrder());
             limit(o.getLimit());
             page(o.getPage());
+            opcNamedCredentialId(o.getOpcNamedCredentialId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -346,9 +368,10 @@ public class ListDataAccessContainersRequest
             request.sortOrder = sortOrder;
             request.limit = limit;
             request.page = page;
+            request.opcNamedCredentialId = opcNamedCredentialId;
             return request;
             // new ListDataAccessContainersRequest(managedDatabaseId, userName, opcRequestId, name,
-            // sortBy, sortOrder, limit, page);
+            // sortBy, sortOrder, limit, page, opcNamedCredentialId);
         }
     }
 
@@ -366,7 +389,8 @@ public class ListDataAccessContainersRequest
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
                 .limit(limit)
-                .page(page);
+                .page(page)
+                .opcNamedCredentialId(opcNamedCredentialId);
     }
 
     /**
@@ -391,6 +415,7 @@ public class ListDataAccessContainersRequest
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",opcNamedCredentialId=").append(String.valueOf(this.opcNamedCredentialId));
         sb.append(")");
         return sb.toString();
     }
@@ -413,7 +438,8 @@ public class ListDataAccessContainersRequest
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.limit, other.limit)
-                && java.util.Objects.equals(this.page, other.page);
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.opcNamedCredentialId, other.opcNamedCredentialId);
     }
 
     @Override
@@ -430,6 +456,11 @@ public class ListDataAccessContainersRequest
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcNamedCredentialId == null
+                                ? 43
+                                : this.opcNamedCredentialId.hashCode());
         return result;
     }
 }

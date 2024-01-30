@@ -5,7 +5,8 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The configuration details of the Automatic SPM Evolve Advisor task. <br>
+ * The configuration details of the Automatic SPM Evolve Advisor task. It takes either credentials
+ * or databaseCredential. It's recommended to provide databaseCredential <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -23,12 +24,15 @@ package com.oracle.bmc.databasemanagement.model;
 public final class ConfigureAutomaticSpmEvolveAdvisorTaskDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"taskParameters", "credentials"})
+    @java.beans.ConstructorProperties({"taskParameters", "credentials", "databaseCredential"})
     public ConfigureAutomaticSpmEvolveAdvisorTaskDetails(
-            SpmEvolveTaskParameters taskParameters, ManagedDatabaseCredential credentials) {
+            SpmEvolveTaskParameters taskParameters,
+            ManagedDatabaseCredential credentials,
+            DatabaseCredentialDetails databaseCredential) {
         super();
         this.taskParameters = taskParameters;
         this.credentials = credentials;
+        this.databaseCredential = databaseCredential;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -52,13 +56,22 @@ public final class ConfigureAutomaticSpmEvolveAdvisorTaskDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+        private DatabaseCredentialDetails databaseCredential;
+
+        public Builder databaseCredential(DatabaseCredentialDetails databaseCredential) {
+            this.databaseCredential = databaseCredential;
+            this.__explicitlySet__.add("databaseCredential");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ConfigureAutomaticSpmEvolveAdvisorTaskDetails build() {
             ConfigureAutomaticSpmEvolveAdvisorTaskDetails model =
                     new ConfigureAutomaticSpmEvolveAdvisorTaskDetails(
-                            this.taskParameters, this.credentials);
+                            this.taskParameters, this.credentials, this.databaseCredential);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -72,6 +85,9 @@ public final class ConfigureAutomaticSpmEvolveAdvisorTaskDetails
             }
             if (model.wasPropertyExplicitlySet("credentials")) {
                 this.credentials(model.getCredentials());
+            }
+            if (model.wasPropertyExplicitlySet("databaseCredential")) {
+                this.databaseCredential(model.getDatabaseCredential());
             }
             return this;
         }
@@ -100,6 +116,13 @@ public final class ConfigureAutomaticSpmEvolveAdvisorTaskDetails
         return credentials;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+    private final DatabaseCredentialDetails databaseCredential;
+
+    public DatabaseCredentialDetails getDatabaseCredential() {
+        return databaseCredential;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -117,6 +140,7 @@ public final class ConfigureAutomaticSpmEvolveAdvisorTaskDetails
         sb.append("super=").append(super.toString());
         sb.append("taskParameters=").append(String.valueOf(this.taskParameters));
         sb.append(", credentials=").append(String.valueOf(this.credentials));
+        sb.append(", databaseCredential=").append(String.valueOf(this.databaseCredential));
         sb.append(")");
         return sb.toString();
     }
@@ -134,6 +158,7 @@ public final class ConfigureAutomaticSpmEvolveAdvisorTaskDetails
                 (ConfigureAutomaticSpmEvolveAdvisorTaskDetails) o;
         return java.util.Objects.equals(this.taskParameters, other.taskParameters)
                 && java.util.Objects.equals(this.credentials, other.credentials)
+                && java.util.Objects.equals(this.databaseCredential, other.databaseCredential)
                 && super.equals(other);
     }
 
@@ -145,6 +170,11 @@ public final class ConfigureAutomaticSpmEvolveAdvisorTaskDetails
                 (result * PRIME)
                         + (this.taskParameters == null ? 43 : this.taskParameters.hashCode());
         result = (result * PRIME) + (this.credentials == null ? 43 : this.credentials.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseCredential == null
+                                ? 43
+                                : this.databaseCredential.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

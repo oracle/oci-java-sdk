@@ -21,10 +21,11 @@ package com.oracle.bmc.ospgateway.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class TaxTypeRule extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"fields"})
-    public TaxTypeRule(java.util.List<Field> fields) {
+    @java.beans.ConstructorProperties({"fields", "valueSet"})
+    public TaxTypeRule(java.util.List<Field> fields, java.util.List<ValueSetEntity> valueSet) {
         super();
         this.fields = fields;
+        this.valueSet = valueSet;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -44,12 +45,27 @@ public final class TaxTypeRule extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("fields");
             return this;
         }
+        /** Label value pair for allowed values. Used for GIRO */
+        @com.fasterxml.jackson.annotation.JsonProperty("valueSet")
+        private java.util.List<ValueSetEntity> valueSet;
+
+        /**
+         * Label value pair for allowed values. Used for GIRO
+         *
+         * @param valueSet the value to set
+         * @return this builder
+         */
+        public Builder valueSet(java.util.List<ValueSetEntity> valueSet) {
+            this.valueSet = valueSet;
+            this.__explicitlySet__.add("valueSet");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TaxTypeRule build() {
-            TaxTypeRule model = new TaxTypeRule(this.fields);
+            TaxTypeRule model = new TaxTypeRule(this.fields, this.valueSet);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -60,6 +76,9 @@ public final class TaxTypeRule extends com.oracle.bmc.http.client.internal.Expli
         public Builder copy(TaxTypeRule model) {
             if (model.wasPropertyExplicitlySet("fields")) {
                 this.fields(model.getFields());
+            }
+            if (model.wasPropertyExplicitlySet("valueSet")) {
+                this.valueSet(model.getValueSet());
             }
             return this;
         }
@@ -87,6 +106,19 @@ public final class TaxTypeRule extends com.oracle.bmc.http.client.internal.Expli
         return fields;
     }
 
+    /** Label value pair for allowed values. Used for GIRO */
+    @com.fasterxml.jackson.annotation.JsonProperty("valueSet")
+    private final java.util.List<ValueSetEntity> valueSet;
+
+    /**
+     * Label value pair for allowed values. Used for GIRO
+     *
+     * @return the value
+     */
+    public java.util.List<ValueSetEntity> getValueSet() {
+        return valueSet;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -103,6 +135,7 @@ public final class TaxTypeRule extends com.oracle.bmc.http.client.internal.Expli
         sb.append("TaxTypeRule(");
         sb.append("super=").append(super.toString());
         sb.append("fields=").append(String.valueOf(this.fields));
+        sb.append(", valueSet=").append(String.valueOf(this.valueSet));
         sb.append(")");
         return sb.toString();
     }
@@ -117,7 +150,9 @@ public final class TaxTypeRule extends com.oracle.bmc.http.client.internal.Expli
         }
 
         TaxTypeRule other = (TaxTypeRule) o;
-        return java.util.Objects.equals(this.fields, other.fields) && super.equals(other);
+        return java.util.Objects.equals(this.fields, other.fields)
+                && java.util.Objects.equals(this.valueSet, other.valueSet)
+                && super.equals(other);
     }
 
     @Override
@@ -125,6 +160,7 @@ public final class TaxTypeRule extends com.oracle.bmc.http.client.internal.Expli
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.fields == null ? 43 : this.fields.hashCode());
+        result = (result * PRIME) + (this.valueSet == null ? 43 : this.valueSet.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

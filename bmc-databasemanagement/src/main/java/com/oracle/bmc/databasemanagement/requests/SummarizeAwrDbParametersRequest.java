@@ -349,6 +349,13 @@ public class SummarizeAwrDbParametersRequest
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
+    /** The OCID of the Named Credential. */
+    private String opcNamedCredentialId;
+
+    /** The OCID of the Named Credential. */
+    public String getOpcNamedCredentialId() {
+        return opcNamedCredentialId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -676,6 +683,20 @@ public class SummarizeAwrDbParametersRequest
             return this;
         }
 
+        /** The OCID of the Named Credential. */
+        private String opcNamedCredentialId = null;
+
+        /**
+         * The OCID of the Named Credential.
+         *
+         * @param opcNamedCredentialId the value to set
+         * @return this builder instance
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -725,6 +746,7 @@ public class SummarizeAwrDbParametersRequest
             sortOrder(o.getSortOrder());
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
+            opcNamedCredentialId(o.getOpcNamedCredentialId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -778,11 +800,13 @@ public class SummarizeAwrDbParametersRequest
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
+            request.opcNamedCredentialId = opcNamedCredentialId;
             return request;
             // new SummarizeAwrDbParametersRequest(managedDatabaseId, awrDbId, instNum,
             // beginSnIdGreaterThanOrEqualTo, endSnIdLessThanOrEqualTo, timeGreaterThanOrEqualTo,
             // timeLessThanOrEqualTo, containerId, name, nameContains, valueChanged, valueDefault,
-            // valueModified, page, limit, sortBy, sortOrder, opcRequestId, opcRetryToken);
+            // valueModified, page, limit, sortBy, sortOrder, opcRequestId, opcRetryToken,
+            // opcNamedCredentialId);
         }
     }
 
@@ -811,7 +835,8 @@ public class SummarizeAwrDbParametersRequest
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
                 .opcRequestId(opcRequestId)
-                .opcRetryToken(opcRetryToken);
+                .opcRetryToken(opcRetryToken)
+                .opcNamedCredentialId(opcNamedCredentialId);
     }
 
     /**
@@ -850,6 +875,7 @@ public class SummarizeAwrDbParametersRequest
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",opcNamedCredentialId=").append(String.valueOf(this.opcNamedCredentialId));
         sb.append(")");
         return sb.toString();
     }
@@ -886,7 +912,8 @@ public class SummarizeAwrDbParametersRequest
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.opcNamedCredentialId, other.opcNamedCredentialId);
     }
 
     @Override
@@ -934,6 +961,11 @@ public class SummarizeAwrDbParametersRequest
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcNamedCredentialId == null
+                                ? 43
+                                : this.opcNamedCredentialId.hashCode());
         return result;
     }
 }

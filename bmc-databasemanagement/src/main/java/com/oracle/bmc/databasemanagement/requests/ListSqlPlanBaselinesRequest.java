@@ -155,6 +155,7 @@ public class ListSqlPlanBaselinesRequest
     public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         TimeCreated("timeCreated"),
         TimeLastModified("timeLastModified"),
+        TimeLastExecuted("timeLastExecuted"),
         ;
 
         private final String value;
@@ -202,12 +203,71 @@ public class ListSqlPlanBaselinesRequest
     public com.oracle.bmc.databasemanagement.model.SortOrders getSortOrder() {
         return sortOrder;
     }
+    /**
+     * A filter to return only SQL plan baselines that are either auto-purged or not auto-purged. By
+     * default, all SQL plan baselines are returned.
+     */
+    private Boolean isAutoPurged;
+
+    /**
+     * A filter to return only SQL plan baselines that are either auto-purged or not auto-purged. By
+     * default, all SQL plan baselines are returned.
+     */
+    public Boolean getIsAutoPurged() {
+        return isAutoPurged;
+    }
+    /**
+     * A filter to return only SQL plan baselines whose last execution time is after the specified
+     * value. By default, all SQL plan baselines are returned.
+     */
+    private java.util.Date timeLastExecutedGreaterThan;
+
+    /**
+     * A filter to return only SQL plan baselines whose last execution time is after the specified
+     * value. By default, all SQL plan baselines are returned.
+     */
+    public java.util.Date getTimeLastExecutedGreaterThan() {
+        return timeLastExecutedGreaterThan;
+    }
+    /**
+     * A filter to return only SQL plan baselines whose last execution time is before the specified
+     * value. By default, all SQL plan baselines are returned.
+     */
+    private java.util.Date timeLastExecutedLessThan;
+
+    /**
+     * A filter to return only SQL plan baselines whose last execution time is before the specified
+     * value. By default, all SQL plan baselines are returned.
+     */
+    public java.util.Date getTimeLastExecutedLessThan() {
+        return timeLastExecutedLessThan;
+    }
+    /**
+     * A filter to return only SQL plan baselines that are not executed till now. By default, all
+     * SQL plan baselines are returned.
+     */
+    private Boolean isNeverExecuted;
+
+    /**
+     * A filter to return only SQL plan baselines that are not executed till now. By default, all
+     * SQL plan baselines are returned.
+     */
+    public Boolean getIsNeverExecuted() {
+        return isNeverExecuted;
+    }
     /** The client request ID for tracing. */
     private String opcRequestId;
 
     /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /** The OCID of the Named Credential. */
+    private String opcNamedCredentialId;
+
+    /** The OCID of the Named Credential. */
+    public String getOpcNamedCredentialId() {
+        return opcNamedCredentialId;
     }
 
     public static class Builder
@@ -451,6 +511,78 @@ public class ListSqlPlanBaselinesRequest
             return this;
         }
 
+        /**
+         * A filter to return only SQL plan baselines that are either auto-purged or not
+         * auto-purged. By default, all SQL plan baselines are returned.
+         */
+        private Boolean isAutoPurged = null;
+
+        /**
+         * A filter to return only SQL plan baselines that are either auto-purged or not
+         * auto-purged. By default, all SQL plan baselines are returned.
+         *
+         * @param isAutoPurged the value to set
+         * @return this builder instance
+         */
+        public Builder isAutoPurged(Boolean isAutoPurged) {
+            this.isAutoPurged = isAutoPurged;
+            return this;
+        }
+
+        /**
+         * A filter to return only SQL plan baselines whose last execution time is after the
+         * specified value. By default, all SQL plan baselines are returned.
+         */
+        private java.util.Date timeLastExecutedGreaterThan = null;
+
+        /**
+         * A filter to return only SQL plan baselines whose last execution time is after the
+         * specified value. By default, all SQL plan baselines are returned.
+         *
+         * @param timeLastExecutedGreaterThan the value to set
+         * @return this builder instance
+         */
+        public Builder timeLastExecutedGreaterThan(java.util.Date timeLastExecutedGreaterThan) {
+            this.timeLastExecutedGreaterThan = timeLastExecutedGreaterThan;
+            return this;
+        }
+
+        /**
+         * A filter to return only SQL plan baselines whose last execution time is before the
+         * specified value. By default, all SQL plan baselines are returned.
+         */
+        private java.util.Date timeLastExecutedLessThan = null;
+
+        /**
+         * A filter to return only SQL plan baselines whose last execution time is before the
+         * specified value. By default, all SQL plan baselines are returned.
+         *
+         * @param timeLastExecutedLessThan the value to set
+         * @return this builder instance
+         */
+        public Builder timeLastExecutedLessThan(java.util.Date timeLastExecutedLessThan) {
+            this.timeLastExecutedLessThan = timeLastExecutedLessThan;
+            return this;
+        }
+
+        /**
+         * A filter to return only SQL plan baselines that are not executed till now. By default,
+         * all SQL plan baselines are returned.
+         */
+        private Boolean isNeverExecuted = null;
+
+        /**
+         * A filter to return only SQL plan baselines that are not executed till now. By default,
+         * all SQL plan baselines are returned.
+         *
+         * @param isNeverExecuted the value to set
+         * @return this builder instance
+         */
+        public Builder isNeverExecuted(Boolean isNeverExecuted) {
+            this.isNeverExecuted = isNeverExecuted;
+            return this;
+        }
+
         /** The client request ID for tracing. */
         private String opcRequestId = null;
 
@@ -462,6 +594,20 @@ public class ListSqlPlanBaselinesRequest
          */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        /** The OCID of the Named Credential. */
+        private String opcNamedCredentialId = null;
+
+        /**
+         * The OCID of the Named Credential.
+         *
+         * @param opcNamedCredentialId the value to set
+         * @return this builder instance
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            this.opcNamedCredentialId = opcNamedCredentialId;
             return this;
         }
 
@@ -509,7 +655,12 @@ public class ListSqlPlanBaselinesRequest
             limit(o.getLimit());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
+            isAutoPurged(o.getIsAutoPurged());
+            timeLastExecutedGreaterThan(o.getTimeLastExecutedGreaterThan());
+            timeLastExecutedLessThan(o.getTimeLastExecutedLessThan());
+            isNeverExecuted(o.getIsNeverExecuted());
             opcRequestId(o.getOpcRequestId());
+            opcNamedCredentialId(o.getOpcNamedCredentialId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -558,11 +709,17 @@ public class ListSqlPlanBaselinesRequest
             request.limit = limit;
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
+            request.isAutoPurged = isAutoPurged;
+            request.timeLastExecutedGreaterThan = timeLastExecutedGreaterThan;
+            request.timeLastExecutedLessThan = timeLastExecutedLessThan;
+            request.isNeverExecuted = isNeverExecuted;
             request.opcRequestId = opcRequestId;
+            request.opcNamedCredentialId = opcNamedCredentialId;
             return request;
             // new ListSqlPlanBaselinesRequest(managedDatabaseId, planName, sqlHandle, sqlText,
             // isEnabled, isAccepted, isReproduced, isFixed, isAdaptive, origin, page, limit,
-            // sortBy, sortOrder, opcRequestId);
+            // sortBy, sortOrder, isAutoPurged, timeLastExecutedGreaterThan,
+            // timeLastExecutedLessThan, isNeverExecuted, opcRequestId, opcNamedCredentialId);
         }
     }
 
@@ -587,7 +744,12 @@ public class ListSqlPlanBaselinesRequest
                 .limit(limit)
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
-                .opcRequestId(opcRequestId);
+                .isAutoPurged(isAutoPurged)
+                .timeLastExecutedGreaterThan(timeLastExecutedGreaterThan)
+                .timeLastExecutedLessThan(timeLastExecutedLessThan)
+                .isNeverExecuted(isNeverExecuted)
+                .opcRequestId(opcRequestId)
+                .opcNamedCredentialId(opcNamedCredentialId);
     }
 
     /**
@@ -618,7 +780,14 @@ public class ListSqlPlanBaselinesRequest
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",isAutoPurged=").append(String.valueOf(this.isAutoPurged));
+        sb.append(",timeLastExecutedGreaterThan=")
+                .append(String.valueOf(this.timeLastExecutedGreaterThan));
+        sb.append(",timeLastExecutedLessThan=")
+                .append(String.valueOf(this.timeLastExecutedLessThan));
+        sb.append(",isNeverExecuted=").append(String.valueOf(this.isNeverExecuted));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcNamedCredentialId=").append(String.valueOf(this.opcNamedCredentialId));
         sb.append(")");
         return sb.toString();
     }
@@ -648,7 +817,14 @@ public class ListSqlPlanBaselinesRequest
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.isAutoPurged, other.isAutoPurged)
+                && java.util.Objects.equals(
+                        this.timeLastExecutedGreaterThan, other.timeLastExecutedGreaterThan)
+                && java.util.Objects.equals(
+                        this.timeLastExecutedLessThan, other.timeLastExecutedLessThan)
+                && java.util.Objects.equals(this.isNeverExecuted, other.isNeverExecuted)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNamedCredentialId, other.opcNamedCredentialId);
     }
 
     @Override
@@ -671,7 +847,26 @@ public class ListSqlPlanBaselinesRequest
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.isAutoPurged == null ? 43 : this.isAutoPurged.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastExecutedGreaterThan == null
+                                ? 43
+                                : this.timeLastExecutedGreaterThan.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastExecutedLessThan == null
+                                ? 43
+                                : this.timeLastExecutedLessThan.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isNeverExecuted == null ? 43 : this.isNeverExecuted.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcNamedCredentialId == null
+                                ? 43
+                                : this.opcNamedCredentialId.hashCode());
         return result;
     }
 }

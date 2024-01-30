@@ -219,6 +219,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AddmTasksCollection.class,
                         AddmTasksResponse.Builder::addmTasksCollection)
@@ -440,6 +441,39 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeManagedDatabaseGroupCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeNamedCredentialCompartmentResponse changeNamedCredentialCompartment(
+            ChangeNamedCredentialCompartmentRequest request) {
+
+        Validate.notBlank(request.getNamedCredentialId(), "namedCredentialId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeNamedCredentialCompartmentDetails(),
+                "changeNamedCredentialCompartmentDetails is required");
+
+        return clientCall(request, ChangeNamedCredentialCompartmentResponse::builder)
+                .logger(LOG, "changeNamedCredentialCompartment")
+                .serviceDetails(
+                        "DbManagement",
+                        "ChangeNamedCredentialCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/NamedCredential/ChangeNamedCredentialCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeNamedCredentialCompartmentRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("namedCredentials")
+                .appendPathParam(request.getNamedCredentialId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeNamedCredentialCompartmentResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -959,6 +993,38 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public CreateNamedCredentialResponse createNamedCredential(
+            CreateNamedCredentialRequest request) {
+        Objects.requireNonNull(
+                request.getCreateNamedCredentialDetails(),
+                "createNamedCredentialDetails is required");
+
+        return clientCall(request, CreateNamedCredentialResponse::builder)
+                .logger(LOG, "createNamedCredential")
+                .serviceDetails(
+                        "DbManagement",
+                        "CreateNamedCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/NamedCredential/CreateNamedCredential")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateNamedCredentialRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("namedCredentials")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.NamedCredential.class,
+                        CreateNamedCredentialResponse.Builder::namedCredential)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateNamedCredentialResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateNamedCredentialResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "location", CreateNamedCredentialResponse.Builder::location)
+                .callSync();
+    }
+
+    @Override
     public CreateTablespaceResponse createTablespace(CreateTablespaceRequest request) {
 
         Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
@@ -1210,6 +1276,31 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteManagedDatabaseGroupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteNamedCredentialResponse deleteNamedCredential(
+            DeleteNamedCredentialRequest request) {
+
+        Validate.notBlank(request.getNamedCredentialId(), "namedCredentialId must not be blank");
+
+        return clientCall(request, DeleteNamedCredentialResponse::builder)
+                .logger(LOG, "deleteNamedCredential")
+                .serviceDetails(
+                        "DbManagement",
+                        "DeleteNamedCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/NamedCredential/DeleteNamedCredential")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteNamedCredentialRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("namedCredentials")
+                .appendPathParam(request.getNamedCredentialId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteNamedCredentialResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1848,6 +1939,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SnapshotDetails.class,
                         GenerateAwrSnapshotResponse.Builder::snapshotDetails)
@@ -1892,6 +1984,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbReport.class,
                         GetAwrDbReportResponse.Builder::awrDbReport)
@@ -1934,6 +2027,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbSqlReport.class,
                         GetAwrDbSqlReportResponse.Builder::awrDbSqlReport)
@@ -2127,6 +2221,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("configuration")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalAsmConfiguration.class,
@@ -2703,6 +2798,33 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public GetNamedCredentialResponse getNamedCredential(GetNamedCredentialRequest request) {
+
+        Validate.notBlank(request.getNamedCredentialId(), "namedCredentialId must not be blank");
+
+        return clientCall(request, GetNamedCredentialResponse::builder)
+                .logger(LOG, "getNamedCredential")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetNamedCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/NamedCredential/GetNamedCredential")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetNamedCredentialRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("namedCredentials")
+                .appendPathParam(request.getNamedCredentialId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.NamedCredential.class,
+                        GetNamedCredentialResponse.Builder::namedCredential)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetNamedCredentialResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetNamedCredentialResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public GetOpenAlertHistoryResponse getOpenAlertHistory(GetOpenAlertHistoryRequest request) {
 
         Validate.notBlank(
@@ -2757,6 +2879,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("taskName", request.getTaskName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.OptimizerStatisticsAdvisorExecution
                                 .class,
@@ -2795,6 +2918,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("taskName", request.getTaskName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
                                 .OptimizerStatisticsAdvisorExecutionScript.class,
@@ -2828,6 +2952,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getOptimizerStatisticsCollectionOperationId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
                                 .OptimizerStatisticsCollectionOperation.class,
@@ -2928,6 +3053,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getPlanName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlPlanBaseline.class,
@@ -2957,6 +3083,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("sqlPlanBaselineConfiguration")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlPlanBaselineConfiguration.class,
@@ -2990,6 +3117,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getTablespaceName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.Tablespace.class,
                         GetTablespaceResponse.Builder::tablespace)
@@ -3050,6 +3178,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam(request.getUserName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.User.class,
                         GetUserResponse.Builder::user)
@@ -3234,6 +3363,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbSnapshotCollection.class,
                         ListAwrDbSnapshotsResponse.Builder::awrDbSnapshotCollection)
@@ -3271,6 +3401,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbCollection.class,
                         ListAwrDbsResponse.Builder::awrDbCollection)
@@ -3310,6 +3441,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ConsumerGroupPrivilegeCollection
                                 .class,
@@ -3347,6 +3479,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.CursorCacheStatementCollection
@@ -3388,6 +3521,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.DataAccessContainerCollection.class,
                         ListDataAccessContainersResponse.Builder::dataAccessContainerCollection)
@@ -3423,6 +3557,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.DatabaseParametersCollection.class,
                         ListDatabaseParametersResponse.Builder::databaseParametersCollection)
@@ -3495,6 +3630,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalAsmDiskGroupCollection
@@ -3564,6 +3700,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalAsmUserCollection.class,
@@ -4042,6 +4179,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalListenerServiceCollection
@@ -4275,6 +4413,41 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public ListNamedCredentialsResponse listNamedCredentials(ListNamedCredentialsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListNamedCredentialsResponse::builder)
+                .logger(LOG, "listNamedCredentials")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListNamedCredentials",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/NamedCredential/ListNamedCredentials")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListNamedCredentialsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("namedCredentials")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("associatedResource", request.getAssociatedResource())
+                .appendEnumQueryParam("type", request.getType())
+                .appendEnumQueryParam("scope", request.getScope())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.NamedCredentialCollection.class,
+                        ListNamedCredentialsResponse.Builder::namedCredentialCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListNamedCredentialsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListNamedCredentialsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListObjectPrivilegesResponse listObjectPrivileges(ListObjectPrivilegesRequest request) {
 
         Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
@@ -4302,6 +4475,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ObjectPrivilegeCollection.class,
                         ListObjectPrivilegesResponse.Builder::objectPrivilegeCollection)
@@ -4336,6 +4510,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("endTimeLessThanOrEqualTo", request.getEndTimeLessThanOrEqualTo())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
                                 .OptimizerStatisticsAdvisorExecutionsCollection.class,
@@ -4376,6 +4551,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
                                 .OptimizerStatisticsCollectionAggregationsCollection.class,
@@ -4420,6 +4596,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model
                                 .OptimizerStatisticsCollectionOperationsCollection.class,
@@ -4492,6 +4669,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ProxiedForUserCollection.class,
                         ListProxiedForUsersResponse.Builder::proxiedForUserCollection)
@@ -4530,6 +4708,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ProxyUserCollection.class,
                         ListProxyUsersResponse.Builder::proxyUserCollection)
@@ -4568,6 +4747,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.RoleCollection.class,
                         ListRolesResponse.Builder::roleCollection)
@@ -4602,6 +4782,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlPlanBaselineJobCollection.class,
@@ -4643,8 +4824,14 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("limit", request.getLimit())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("isAutoPurged", request.getIsAutoPurged())
+                .appendQueryParam(
+                        "timeLastExecutedGreaterThan", request.getTimeLastExecutedGreaterThan())
+                .appendQueryParam("timeLastExecutedLessThan", request.getTimeLastExecutedLessThan())
+                .appendQueryParam("isNeverExecuted", request.getIsNeverExecuted())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlPlanBaselineCollection.class,
@@ -4684,6 +4871,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SystemPrivilegeCollection.class,
                         ListSystemPrivilegesResponse.Builder::systemPrivilegeCollection)
@@ -4713,6 +4901,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("tableStatistics")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.TableStatisticsCollection.class,
                         ListTableStatisticsResponse.Builder::tableStatisticsCollection)
@@ -4745,6 +4934,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.TablespaceCollection.class,
                         ListTablespacesResponse.Builder::tablespaceCollection)
@@ -4779,6 +4969,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.UserCollection.class,
                         ListUsersResponse.Builder::userCollection)
@@ -5159,6 +5350,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.HistoricAddmResult.class,
@@ -5205,6 +5397,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbCpuUsageCollection.class,
                         SummarizeAwrDbCpuUsagesResponse.Builder::awrDbCpuUsageCollection)
@@ -5256,6 +5449,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbMetricCollection.class,
                         SummarizeAwrDbMetricsResponse.Builder::awrDbMetricCollection)
@@ -5304,6 +5498,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbParameterChangeCollection
                                 .class,
@@ -5362,6 +5557,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbParameterCollection.class,
                         SummarizeAwrDbParametersResponse.Builder::awrDbParameterCollection)
@@ -5400,6 +5596,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbSnapshotRangeCollection.class,
                         SummarizeAwrDbSnapshotRangesResponse.Builder::awrDbSnapshotRangeCollection)
@@ -5452,6 +5649,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbSysstatCollection.class,
                         SummarizeAwrDbSysstatsResponse.Builder::awrDbSysstatCollection)
@@ -5498,6 +5696,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbTopWaitEventCollection.class,
                         SummarizeAwrDbTopWaitEventsResponse.Builder::awrDbTopWaitEventCollection)
@@ -5549,6 +5748,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbWaitEventBucketCollection
                                 .class,
@@ -5604,6 +5804,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AwrDbWaitEventCollection.class,
                         SummarizeAwrDbWaitEventsResponse.Builder::awrDbWaitEventCollection)
@@ -5933,6 +6134,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlPlanBaselineAggregationCollection
@@ -5968,6 +6170,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.SqlPlanBaselineAggregationCollection
@@ -5980,6 +6183,37 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeSqlPlanBaselinesByLastExecutionResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public TestNamedCredentialResponse testNamedCredential(TestNamedCredentialRequest request) {
+
+        Validate.notBlank(request.getNamedCredentialId(), "namedCredentialId must not be blank");
+        Objects.requireNonNull(
+                request.getTestNamedCredentialDetails(), "testNamedCredentialDetails is required");
+
+        return clientCall(request, TestNamedCredentialResponse::builder)
+                .logger(LOG, "testNamedCredential")
+                .serviceDetails(
+                        "DbManagement",
+                        "TestNamedCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/NamedCredential/TestNamedCredential")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(TestNamedCredentialRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("namedCredentials")
+                .appendPathParam(request.getNamedCredentialId())
+                .appendPathParam("actions")
+                .appendPathParam("test")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.TestNamedCredentialStatus.class,
+                        TestNamedCredentialResponse.Builder::testNamedCredentialStatus)
+                .handleResponseHeaderString(
+                        "opc-request-id", TestNamedCredentialResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -6460,6 +6694,39 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", UpdateManagedDatabaseGroupResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", UpdateManagedDatabaseGroupResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public UpdateNamedCredentialResponse updateNamedCredential(
+            UpdateNamedCredentialRequest request) {
+
+        Validate.notBlank(request.getNamedCredentialId(), "namedCredentialId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateNamedCredentialDetails(),
+                "updateNamedCredentialDetails is required");
+
+        return clientCall(request, UpdateNamedCredentialResponse::builder)
+                .logger(LOG, "updateNamedCredential")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateNamedCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/NamedCredential/UpdateNamedCredential")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateNamedCredentialRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("namedCredentials")
+                .appendPathParam(request.getNamedCredentialId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.NamedCredential.class,
+                        UpdateNamedCredentialResponse.Builder::namedCredential)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateNamedCredentialResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateNamedCredentialResponse.Builder::etag)
                 .callSync();
     }
 

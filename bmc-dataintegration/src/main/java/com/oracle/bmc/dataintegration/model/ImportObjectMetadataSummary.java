@@ -402,6 +402,7 @@ public final class ImportObjectMetadataSummary
         Retained("RETAINED"),
         Duplicated("DUPLICATED"),
         Replaced("REPLACED"),
+        Excluded("EXCLUDED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

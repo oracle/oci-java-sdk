@@ -231,6 +231,25 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves a named credential to a different compartment. The destination compartment must not
+     * have a named credential with the same name.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeNamedCredentialCompartmentResponse>
+            changeNamedCredentialCompartment(
+                    ChangeNamedCredentialCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeNamedCredentialCompartmentRequest,
+                                    ChangeNamedCredentialCompartmentResponse>
+                            handler);
+
+    /**
      * Changes the retention period of unused plans. The period can range between 5 and 523 weeks.
      *
      * <p>The database purges plans that have not been used for longer than the plan retention
@@ -502,6 +521,22 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a named credential.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateNamedCredentialResponse> createNamedCredential(
+            CreateNamedCredentialRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateNamedCredentialRequest, CreateNamedCredentialResponse>
+                    handler);
+
+    /**
      * Creates a tablespace within the Managed Database specified by managedDatabaseId.
      *
      * @param request The request object containing the details to send
@@ -651,6 +686,22 @@ public interface DbManagementAsync extends AutoCloseable {
             DeleteManagedDatabaseGroupRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteManagedDatabaseGroupRequest, DeleteManagedDatabaseGroupResponse>
+                    handler);
+
+    /**
+     * Deletes the named credential specified by namedCredentialId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteNamedCredentialResponse> deleteNamedCredential(
+            DeleteNamedCredentialRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteNamedCredentialRequest, DeleteNamedCredentialResponse>
                     handler);
 
     /**
@@ -1498,6 +1549,22 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the details for the named credential specified by namedCredentialId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetNamedCredentialResponse> getNamedCredential(
+            GetNamedCredentialRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetNamedCredentialRequest, GetNamedCredentialResponse>
+                    handler);
+
+    /**
      * Gets the open alerts from the specified Exadata storage server.
      *
      * @param request The request object containing the details to send
@@ -2246,6 +2313,23 @@ public interface DbManagementAsync extends AutoCloseable {
             ListManagedDatabasesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListManagedDatabasesRequest, ListManagedDatabasesResponse>
+                    handler);
+
+    /**
+     * Gets a single named credential specified by the name or all the named credentials in a
+     * specific compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListNamedCredentialsResponse> listNamedCredentials(
+            ListNamedCredentialsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListNamedCredentialsRequest, ListNamedCredentialsResponse>
                     handler);
 
     /**
@@ -3019,6 +3103,22 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Tests the named credential.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<TestNamedCredentialResponse> testNamedCredential(
+            TestNamedCredentialRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            TestNamedCredentialRequest, TestNamedCredentialResponse>
+                    handler);
+
+    /**
      * Tests the preferred credential.
      *
      * @param request The request object containing the details to send
@@ -3252,6 +3352,22 @@ public interface DbManagementAsync extends AutoCloseable {
             UpdateManagedDatabaseGroupRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateManagedDatabaseGroupRequest, UpdateManagedDatabaseGroupResponse>
+                    handler);
+
+    /**
+     * Updates the named credential specified by namedCredentialId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateNamedCredentialResponse> updateNamedCredential(
+            UpdateNamedCredentialRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateNamedCredentialRequest, UpdateNamedCredentialResponse>
                     handler);
 
     /**

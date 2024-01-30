@@ -277,6 +277,25 @@ public final class SqlJob extends Job {
             this.__explicitlySet__.add("role");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Named Credentials containing password secret.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("namedCredentialId")
+        private String namedCredentialId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Named Credentials containing password secret.
+         *
+         * @param namedCredentialId the value to set
+         * @return this builder
+         */
+        public Builder namedCredentialId(String namedCredentialId) {
+            this.namedCredentialId = namedCredentialId;
+            this.__explicitlySet__.add("namedCredentialId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -306,7 +325,8 @@ public final class SqlJob extends Job {
                             this.outBinds,
                             this.operationType,
                             this.userName,
-                            this.role);
+                            this.role,
+                            this.namedCredentialId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -384,6 +404,9 @@ public final class SqlJob extends Job {
             if (model.wasPropertyExplicitlySet("role")) {
                 this.role(model.getRole());
             }
+            if (model.wasPropertyExplicitlySet("namedCredentialId")) {
+                this.namedCredentialId(model.getNamedCredentialId());
+            }
             return this;
         }
     }
@@ -421,7 +444,8 @@ public final class SqlJob extends Job {
             JobOutBindsDetails outBinds,
             OperationType operationType,
             String userName,
-            Role role) {
+            Role role,
+            String namedCredentialId) {
         super(
                 id,
                 compartmentId,
@@ -446,6 +470,7 @@ public final class SqlJob extends Job {
         this.operationType = operationType;
         this.userName = userName;
         this.role = role;
+        this.namedCredentialId = namedCredentialId;
     }
 
     /** The type of SQL. This is a mandatory field for the EXECUTE_SQL operationType. */
@@ -681,6 +706,23 @@ public final class SqlJob extends Job {
         return role;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Named Credentials containing password secret.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("namedCredentialId")
+    private final String namedCredentialId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Named Credentials containing password secret.
+     *
+     * @return the value
+     */
+    public String getNamedCredentialId() {
+        return namedCredentialId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -703,6 +745,7 @@ public final class SqlJob extends Job {
         sb.append(", operationType=").append(String.valueOf(this.operationType));
         sb.append(", userName=").append(String.valueOf(this.userName));
         sb.append(", role=").append(String.valueOf(this.role));
+        sb.append(", namedCredentialId=").append(String.valueOf(this.namedCredentialId));
         sb.append(")");
         return sb.toString();
     }
@@ -724,6 +767,7 @@ public final class SqlJob extends Job {
                 && java.util.Objects.equals(this.operationType, other.operationType)
                 && java.util.Objects.equals(this.userName, other.userName)
                 && java.util.Objects.equals(this.role, other.role)
+                && java.util.Objects.equals(this.namedCredentialId, other.namedCredentialId)
                 && super.equals(other);
     }
 
@@ -740,6 +784,9 @@ public final class SqlJob extends Job {
                         + (this.operationType == null ? 43 : this.operationType.hashCode());
         result = (result * PRIME) + (this.userName == null ? 43 : this.userName.hashCode());
         result = (result * PRIME) + (this.role == null ? 43 : this.role.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.namedCredentialId == null ? 43 : this.namedCredentialId.hashCode());
         return result;
     }
 }

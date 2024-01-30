@@ -61,6 +61,13 @@ public class ListOptimizerStatisticsAdvisorExecutionsRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** The OCID of the Named Credential. */
+    private String opcNamedCredentialId;
+
+    /** The OCID of the Named Credential. */
+    public String getOpcNamedCredentialId() {
+        return opcNamedCredentialId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -136,6 +143,20 @@ public class ListOptimizerStatisticsAdvisorExecutionsRequest
             return this;
         }
 
+        /** The OCID of the Named Credential. */
+        private String opcNamedCredentialId = null;
+
+        /**
+         * The OCID of the Named Credential.
+         *
+         * @param opcNamedCredentialId the value to set
+         * @return this builder instance
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -170,6 +191,7 @@ public class ListOptimizerStatisticsAdvisorExecutionsRequest
             startTimeGreaterThanOrEqualTo(o.getStartTimeGreaterThanOrEqualTo());
             endTimeLessThanOrEqualTo(o.getEndTimeLessThanOrEqualTo());
             opcRequestId(o.getOpcRequestId());
+            opcNamedCredentialId(o.getOpcNamedCredentialId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -212,9 +234,11 @@ public class ListOptimizerStatisticsAdvisorExecutionsRequest
             request.startTimeGreaterThanOrEqualTo = startTimeGreaterThanOrEqualTo;
             request.endTimeLessThanOrEqualTo = endTimeLessThanOrEqualTo;
             request.opcRequestId = opcRequestId;
+            request.opcNamedCredentialId = opcNamedCredentialId;
             return request;
             // new ListOptimizerStatisticsAdvisorExecutionsRequest(managedDatabaseId,
-            // startTimeGreaterThanOrEqualTo, endTimeLessThanOrEqualTo, opcRequestId);
+            // startTimeGreaterThanOrEqualTo, endTimeLessThanOrEqualTo, opcRequestId,
+            // opcNamedCredentialId);
         }
     }
 
@@ -228,7 +252,8 @@ public class ListOptimizerStatisticsAdvisorExecutionsRequest
                 .managedDatabaseId(managedDatabaseId)
                 .startTimeGreaterThanOrEqualTo(startTimeGreaterThanOrEqualTo)
                 .endTimeLessThanOrEqualTo(endTimeLessThanOrEqualTo)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .opcNamedCredentialId(opcNamedCredentialId);
     }
 
     /**
@@ -251,6 +276,7 @@ public class ListOptimizerStatisticsAdvisorExecutionsRequest
         sb.append(",endTimeLessThanOrEqualTo=")
                 .append(String.valueOf(this.endTimeLessThanOrEqualTo));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcNamedCredentialId=").append(String.valueOf(this.opcNamedCredentialId));
         sb.append(")");
         return sb.toString();
     }
@@ -272,7 +298,8 @@ public class ListOptimizerStatisticsAdvisorExecutionsRequest
                         this.startTimeGreaterThanOrEqualTo, other.startTimeGreaterThanOrEqualTo)
                 && java.util.Objects.equals(
                         this.endTimeLessThanOrEqualTo, other.endTimeLessThanOrEqualTo)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNamedCredentialId, other.opcNamedCredentialId);
     }
 
     @Override
@@ -293,6 +320,11 @@ public class ListOptimizerStatisticsAdvisorExecutionsRequest
                                 ? 43
                                 : this.endTimeLessThanOrEqualTo.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcNamedCredentialId == null
+                                ? 43
+                                : this.opcNamedCredentialId.hashCode());
         return result;
     }
 }

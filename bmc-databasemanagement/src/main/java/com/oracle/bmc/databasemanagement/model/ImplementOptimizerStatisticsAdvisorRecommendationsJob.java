@@ -28,20 +28,23 @@ public final class ImplementOptimizerStatisticsAdvisorRecommendationsJob
         "description",
         "compartmentId",
         "resultLocation",
-        "credentials"
+        "credentials",
+        "databaseCredential"
     })
     public ImplementOptimizerStatisticsAdvisorRecommendationsJob(
             String name,
             String description,
             String compartmentId,
             JobExecutionResultLocation resultLocation,
-            ManagedDatabaseCredential credentials) {
+            ManagedDatabaseCredential credentials,
+            DatabaseCredentialDetails databaseCredential) {
         super();
         this.name = name;
         this.description = description;
         this.compartmentId = compartmentId;
         this.resultLocation = resultLocation;
         this.credentials = credentials;
+        this.databaseCredential = databaseCredential;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -120,6 +123,15 @@ public final class ImplementOptimizerStatisticsAdvisorRecommendationsJob
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+        private DatabaseCredentialDetails databaseCredential;
+
+        public Builder databaseCredential(DatabaseCredentialDetails databaseCredential) {
+            this.databaseCredential = databaseCredential;
+            this.__explicitlySet__.add("databaseCredential");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -130,7 +142,8 @@ public final class ImplementOptimizerStatisticsAdvisorRecommendationsJob
                             this.description,
                             this.compartmentId,
                             this.resultLocation,
-                            this.credentials);
+                            this.credentials,
+                            this.databaseCredential);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -153,6 +166,9 @@ public final class ImplementOptimizerStatisticsAdvisorRecommendationsJob
             }
             if (model.wasPropertyExplicitlySet("credentials")) {
                 this.credentials(model.getCredentials());
+            }
+            if (model.wasPropertyExplicitlySet("databaseCredential")) {
+                this.databaseCredential(model.getDatabaseCredential());
             }
             return this;
         }
@@ -230,6 +246,13 @@ public final class ImplementOptimizerStatisticsAdvisorRecommendationsJob
         return credentials;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+    private final DatabaseCredentialDetails databaseCredential;
+
+    public DatabaseCredentialDetails getDatabaseCredential() {
+        return databaseCredential;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -250,6 +273,7 @@ public final class ImplementOptimizerStatisticsAdvisorRecommendationsJob
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", resultLocation=").append(String.valueOf(this.resultLocation));
         sb.append(", credentials=").append(String.valueOf(this.credentials));
+        sb.append(", databaseCredential=").append(String.valueOf(this.databaseCredential));
         sb.append(")");
         return sb.toString();
     }
@@ -270,6 +294,7 @@ public final class ImplementOptimizerStatisticsAdvisorRecommendationsJob
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.resultLocation, other.resultLocation)
                 && java.util.Objects.equals(this.credentials, other.credentials)
+                && java.util.Objects.equals(this.databaseCredential, other.databaseCredential)
                 && super.equals(other);
     }
 
@@ -286,6 +311,11 @@ public final class ImplementOptimizerStatisticsAdvisorRecommendationsJob
                 (result * PRIME)
                         + (this.resultLocation == null ? 43 : this.resultLocation.hashCode());
         result = (result * PRIME) + (this.credentials == null ? 43 : this.credentials.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseCredential == null
+                                ? 43
+                                : this.databaseCredential.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

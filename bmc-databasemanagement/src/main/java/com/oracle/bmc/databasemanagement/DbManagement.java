@@ -233,6 +233,24 @@ public interface DbManagement extends AutoCloseable {
             ChangeManagedDatabaseGroupCompartmentRequest request);
 
     /**
+     * Moves a named credential to a different compartment. The destination compartment must not
+     * have a named credential with the same name.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ChangeNamedCredentialCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeNamedCredentialCompartment API.
+     */
+    ChangeNamedCredentialCompartmentResponse changeNamedCredentialCompartment(
+            ChangeNamedCredentialCompartmentRequest request);
+
+    /**
      * Changes the retention period of unused plans. The period can range between 5 and 523 weeks.
      *
      * <p>The database purges plans that have not been used for longer than the plan retention
@@ -497,6 +515,22 @@ public interface DbManagement extends AutoCloseable {
             CreateManagedDatabaseGroupRequest request);
 
     /**
+     * Creates a named credential.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/CreateNamedCredentialExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateNamedCredential API.
+     */
+    CreateNamedCredentialResponse createNamedCredential(CreateNamedCredentialRequest request);
+
+    /**
      * Creates a tablespace within the Managed Database specified by managedDatabaseId.
      *
      * @param request The request object containing the details to send
@@ -645,6 +679,22 @@ public interface DbManagement extends AutoCloseable {
      */
     DeleteManagedDatabaseGroupResponse deleteManagedDatabaseGroup(
             DeleteManagedDatabaseGroupRequest request);
+
+    /**
+     * Deletes the named credential specified by namedCredentialId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DeleteNamedCredentialExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteNamedCredential API.
+     */
+    DeleteNamedCredentialResponse deleteNamedCredential(DeleteNamedCredentialRequest request);
 
     /**
      * Deletes the preferred credential based on the credentialName.
@@ -1484,6 +1534,22 @@ public interface DbManagement extends AutoCloseable {
     GetManagedDatabaseGroupResponse getManagedDatabaseGroup(GetManagedDatabaseGroupRequest request);
 
     /**
+     * Gets the details for the named credential specified by namedCredentialId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetNamedCredentialExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNamedCredential
+     *     API.
+     */
+    GetNamedCredentialResponse getNamedCredential(GetNamedCredentialRequest request);
+
+    /**
      * Gets the open alerts from the specified Exadata storage server.
      *
      * @param request The request object containing the details to send
@@ -2235,6 +2301,23 @@ public interface DbManagement extends AutoCloseable {
      *     ListManagedDatabases API.
      */
     ListManagedDatabasesResponse listManagedDatabases(ListManagedDatabasesRequest request);
+
+    /**
+     * Gets a single named credential specified by the name or all the named credentials in a
+     * specific compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListNamedCredentialsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListNamedCredentials API.
+     */
+    ListNamedCredentialsResponse listNamedCredentials(ListNamedCredentialsRequest request);
 
     /**
      * Gets the list of object privileges granted to a specific user.
@@ -3007,6 +3090,22 @@ public interface DbManagement extends AutoCloseable {
             SummarizeSqlPlanBaselinesByLastExecutionRequest request);
 
     /**
+     * Tests the named credential.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/TestNamedCredentialExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use TestNamedCredential
+     *     API.
+     */
+    TestNamedCredentialResponse testNamedCredential(TestNamedCredentialRequest request);
+
+    /**
      * Tests the preferred credential.
      *
      * @param request The request object containing the details to send
@@ -3237,6 +3336,22 @@ public interface DbManagement extends AutoCloseable {
      */
     UpdateManagedDatabaseGroupResponse updateManagedDatabaseGroup(
             UpdateManagedDatabaseGroupRequest request);
+
+    /**
+     * Updates the named credential specified by namedCredentialId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateNamedCredentialExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateNamedCredential API.
+     */
+    UpdateNamedCredentialResponse updateNamedCredential(UpdateNamedCredentialRequest request);
 
     /**
      * Updates the preferred credential based on the credentialName.

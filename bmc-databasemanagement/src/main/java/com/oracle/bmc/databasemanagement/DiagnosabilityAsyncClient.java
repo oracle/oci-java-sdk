@@ -127,6 +127,7 @@ public class DiagnosabilityAsyncClient extends com.oracle.bmc.http.internal.Base
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AlertLogCollection.class,
                         ListAlertLogsResponse.Builder::alertLogCollection)
@@ -170,6 +171,7 @@ public class DiagnosabilityAsyncClient extends com.oracle.bmc.http.internal.Base
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AttentionLogCollection.class,
                         ListAttentionLogsResponse.Builder::attentionLogCollection)
@@ -212,6 +214,7 @@ public class DiagnosabilityAsyncClient extends com.oracle.bmc.http.internal.Base
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AlertLogCountsCollection.class,
                         SummarizeAlertLogCountsResponse.Builder::alertLogCountsCollection)
@@ -256,6 +259,7 @@ public class DiagnosabilityAsyncClient extends com.oracle.bmc.http.internal.Base
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.AttentionLogCountsCollection.class,
                         SummarizeAttentionLogCountsResponse.Builder::attentionLogCountsCollection)

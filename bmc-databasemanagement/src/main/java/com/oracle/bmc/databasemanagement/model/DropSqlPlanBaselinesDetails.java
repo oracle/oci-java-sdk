@@ -5,7 +5,8 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details required to drop SQL plan baselines. <br>
+ * The details required to drop SQL plan baselines. It takes either credentials or
+ * databaseCredential. It's recommended to provide databaseCredential <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -23,13 +24,22 @@ package com.oracle.bmc.databasemanagement.model;
 public final class DropSqlPlanBaselinesDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"sqlHandle", "planName", "credentials"})
+    @java.beans.ConstructorProperties({
+        "sqlHandle",
+        "planName",
+        "credentials",
+        "databaseCredential"
+    })
     public DropSqlPlanBaselinesDetails(
-            String sqlHandle, String planName, ManagedDatabaseCredential credentials) {
+            String sqlHandle,
+            String planName,
+            ManagedDatabaseCredential credentials,
+            DatabaseCredentialDetails databaseCredential) {
         super();
         this.sqlHandle = sqlHandle;
         this.planName = planName;
         this.credentials = credentials;
+        this.databaseCredential = databaseCredential;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -82,13 +92,25 @@ public final class DropSqlPlanBaselinesDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+        private DatabaseCredentialDetails databaseCredential;
+
+        public Builder databaseCredential(DatabaseCredentialDetails databaseCredential) {
+            this.databaseCredential = databaseCredential;
+            this.__explicitlySet__.add("databaseCredential");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DropSqlPlanBaselinesDetails build() {
             DropSqlPlanBaselinesDetails model =
                     new DropSqlPlanBaselinesDetails(
-                            this.sqlHandle, this.planName, this.credentials);
+                            this.sqlHandle,
+                            this.planName,
+                            this.credentials,
+                            this.databaseCredential);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -105,6 +127,9 @@ public final class DropSqlPlanBaselinesDetails
             }
             if (model.wasPropertyExplicitlySet("credentials")) {
                 this.credentials(model.getCredentials());
+            }
+            if (model.wasPropertyExplicitlySet("databaseCredential")) {
+                this.databaseCredential(model.getDatabaseCredential());
             }
             return this;
         }
@@ -160,6 +185,13 @@ public final class DropSqlPlanBaselinesDetails
         return credentials;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+    private final DatabaseCredentialDetails databaseCredential;
+
+    public DatabaseCredentialDetails getDatabaseCredential() {
+        return databaseCredential;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -178,6 +210,7 @@ public final class DropSqlPlanBaselinesDetails
         sb.append("sqlHandle=").append(String.valueOf(this.sqlHandle));
         sb.append(", planName=").append(String.valueOf(this.planName));
         sb.append(", credentials=").append(String.valueOf(this.credentials));
+        sb.append(", databaseCredential=").append(String.valueOf(this.databaseCredential));
         sb.append(")");
         return sb.toString();
     }
@@ -195,6 +228,7 @@ public final class DropSqlPlanBaselinesDetails
         return java.util.Objects.equals(this.sqlHandle, other.sqlHandle)
                 && java.util.Objects.equals(this.planName, other.planName)
                 && java.util.Objects.equals(this.credentials, other.credentials)
+                && java.util.Objects.equals(this.databaseCredential, other.databaseCredential)
                 && super.equals(other);
     }
 
@@ -205,6 +239,11 @@ public final class DropSqlPlanBaselinesDetails
         result = (result * PRIME) + (this.sqlHandle == null ? 43 : this.sqlHandle.hashCode());
         result = (result * PRIME) + (this.planName == null ? 43 : this.planName.hashCode());
         result = (result * PRIME) + (this.credentials == null ? 43 : this.credentials.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseCredential == null
+                                ? 43
+                                : this.databaseCredential.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -5,7 +5,8 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details required to configure automatic capture filters. <br>
+ * The details required to configure automatic capture filters. It takes either credentials or
+ * databaseCredential. It's recommended to provide databaseCredential <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -23,13 +24,15 @@ package com.oracle.bmc.databasemanagement.model;
 public final class ConfigureAutomaticCaptureFiltersDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"autoCaptureFilters", "credentials"})
+    @java.beans.ConstructorProperties({"autoCaptureFilters", "credentials", "databaseCredential"})
     public ConfigureAutomaticCaptureFiltersDetails(
             java.util.List<AutomaticCaptureFilterDetails> autoCaptureFilters,
-            ManagedDatabaseCredential credentials) {
+            ManagedDatabaseCredential credentials,
+            DatabaseCredentialDetails databaseCredential) {
         super();
         this.autoCaptureFilters = autoCaptureFilters;
         this.credentials = credentials;
+        this.databaseCredential = databaseCredential;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -60,13 +63,22 @@ public final class ConfigureAutomaticCaptureFiltersDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+        private DatabaseCredentialDetails databaseCredential;
+
+        public Builder databaseCredential(DatabaseCredentialDetails databaseCredential) {
+            this.databaseCredential = databaseCredential;
+            this.__explicitlySet__.add("databaseCredential");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ConfigureAutomaticCaptureFiltersDetails build() {
             ConfigureAutomaticCaptureFiltersDetails model =
                     new ConfigureAutomaticCaptureFiltersDetails(
-                            this.autoCaptureFilters, this.credentials);
+                            this.autoCaptureFilters, this.credentials, this.databaseCredential);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -80,6 +92,9 @@ public final class ConfigureAutomaticCaptureFiltersDetails
             }
             if (model.wasPropertyExplicitlySet("credentials")) {
                 this.credentials(model.getCredentials());
+            }
+            if (model.wasPropertyExplicitlySet("databaseCredential")) {
+                this.databaseCredential(model.getDatabaseCredential());
             }
             return this;
         }
@@ -114,6 +129,13 @@ public final class ConfigureAutomaticCaptureFiltersDetails
         return credentials;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+    private final DatabaseCredentialDetails databaseCredential;
+
+    public DatabaseCredentialDetails getDatabaseCredential() {
+        return databaseCredential;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -131,6 +153,7 @@ public final class ConfigureAutomaticCaptureFiltersDetails
         sb.append("super=").append(super.toString());
         sb.append("autoCaptureFilters=").append(String.valueOf(this.autoCaptureFilters));
         sb.append(", credentials=").append(String.valueOf(this.credentials));
+        sb.append(", databaseCredential=").append(String.valueOf(this.databaseCredential));
         sb.append(")");
         return sb.toString();
     }
@@ -147,6 +170,7 @@ public final class ConfigureAutomaticCaptureFiltersDetails
         ConfigureAutomaticCaptureFiltersDetails other = (ConfigureAutomaticCaptureFiltersDetails) o;
         return java.util.Objects.equals(this.autoCaptureFilters, other.autoCaptureFilters)
                 && java.util.Objects.equals(this.credentials, other.credentials)
+                && java.util.Objects.equals(this.databaseCredential, other.databaseCredential)
                 && super.equals(other);
     }
 
@@ -160,6 +184,11 @@ public final class ConfigureAutomaticCaptureFiltersDetails
                                 ? 43
                                 : this.autoCaptureFilters.hashCode());
         result = (result * PRIME) + (this.credentials == null ? 43 : this.credentials.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseCredential == null
+                                ? 43
+                                : this.databaseCredential.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

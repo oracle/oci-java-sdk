@@ -41,6 +41,9 @@ package com.oracle.bmc.dataintegration.model;
             value = UpdateConnectionFromHdfs.class,
             name = "HDFS_CONNECTION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateConnectionFromOAuth2.class,
+            name = "OAUTH2_CONNECTION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateConnectionFromRestBasicAuth.class,
             name = "REST_BASIC_AUTH_CONNECTION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -346,6 +349,7 @@ public class UpdateConnectionDetails
         MysqlHeatwaveConnection("MYSQL_HEATWAVE_CONNECTION"),
         RestNoAuthConnection("REST_NO_AUTH_CONNECTION"),
         RestBasicAuthConnection("REST_BASIC_AUTH_CONNECTION"),
+        Oauth2Connection("OAUTH2_CONNECTION"),
         ;
 
         private final String value;
