@@ -70,7 +70,10 @@ public interface MediaStreamAsync extends AutoCloseable {
 
     /**
      * Gets the playlist content for the specified Packaging Configuration and Media Asset
-     * combination.
+     * combination. This API call is made using the MediaStreamsClient, which requires the endpoint
+     * to be set with the value of the distribution channel domain name (for example,
+     * https://example_channel.dc.mediaservices.example_region.oci.oraclecloud.com) to generate a
+     * session token or playlist for a media asset registered in this distribution channel.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -85,7 +88,11 @@ public interface MediaStreamAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Generate a new streaming session token.
+     * Generate a new streaming session token. This API call is made using the MediaStreamsClient,
+     * which requires the endpoint to be set with the value of the distribution channel domain name
+     * (for example, https://example_channel.dc.mediaservices.example_region.oci.oraclecloud.com) to
+     * generate a session token or playlist for a media asset registered in this distribution
+     * channel.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

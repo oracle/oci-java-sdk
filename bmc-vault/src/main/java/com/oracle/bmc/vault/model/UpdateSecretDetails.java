@@ -30,6 +30,7 @@ public final class UpdateSecretDetails
         "freeformTags",
         "metadata",
         "secretContent",
+        "rotationConfig",
         "secretRules"
     })
     public UpdateSecretDetails(
@@ -39,6 +40,7 @@ public final class UpdateSecretDetails
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, Object> metadata,
             SecretContentDetails secretContent,
+            RotationConfig rotationConfig,
             java.util.List<SecretRule> secretRules) {
         super();
         this.currentVersionNumber = currentVersionNumber;
@@ -47,6 +49,7 @@ public final class UpdateSecretDetails
         this.freeformTags = freeformTags;
         this.metadata = metadata;
         this.secretContent = secretContent;
+        this.rotationConfig = rotationConfig;
         this.secretRules = secretRules;
     }
 
@@ -167,6 +170,15 @@ public final class UpdateSecretDetails
             this.__explicitlySet__.add("secretContent");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("rotationConfig")
+        private RotationConfig rotationConfig;
+
+        public Builder rotationConfig(RotationConfig rotationConfig) {
+            this.rotationConfig = rotationConfig;
+            this.__explicitlySet__.add("rotationConfig");
+            return this;
+        }
         /** A list of rules to control how the secret is used and managed. */
         @com.fasterxml.jackson.annotation.JsonProperty("secretRules")
         private java.util.List<SecretRule> secretRules;
@@ -195,6 +207,7 @@ public final class UpdateSecretDetails
                             this.freeformTags,
                             this.metadata,
                             this.secretContent,
+                            this.rotationConfig,
                             this.secretRules);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -221,6 +234,9 @@ public final class UpdateSecretDetails
             }
             if (model.wasPropertyExplicitlySet("secretContent")) {
                 this.secretContent(model.getSecretContent());
+            }
+            if (model.wasPropertyExplicitlySet("rotationConfig")) {
+                this.rotationConfig(model.getRotationConfig());
             }
             if (model.wasPropertyExplicitlySet("secretRules")) {
                 this.secretRules(model.getSecretRules());
@@ -340,6 +356,13 @@ public final class UpdateSecretDetails
         return secretContent;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("rotationConfig")
+    private final RotationConfig rotationConfig;
+
+    public RotationConfig getRotationConfig() {
+        return rotationConfig;
+    }
+
     /** A list of rules to control how the secret is used and managed. */
     @com.fasterxml.jackson.annotation.JsonProperty("secretRules")
     private final java.util.List<SecretRule> secretRules;
@@ -374,6 +397,7 @@ public final class UpdateSecretDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(", secretContent=").append(String.valueOf(this.secretContent));
+        sb.append(", rotationConfig=").append(String.valueOf(this.rotationConfig));
         sb.append(", secretRules=").append(String.valueOf(this.secretRules));
         sb.append(")");
         return sb.toString();
@@ -395,6 +419,7 @@ public final class UpdateSecretDetails
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.metadata, other.metadata)
                 && java.util.Objects.equals(this.secretContent, other.secretContent)
+                && java.util.Objects.equals(this.rotationConfig, other.rotationConfig)
                 && java.util.Objects.equals(this.secretRules, other.secretRules)
                 && super.equals(other);
     }
@@ -415,6 +440,9 @@ public final class UpdateSecretDetails
         result =
                 (result * PRIME)
                         + (this.secretContent == null ? 43 : this.secretContent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rotationConfig == null ? 43 : this.rotationConfig.hashCode());
         result = (result * PRIME) + (this.secretRules == null ? 43 : this.secretRules.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

@@ -32,6 +32,10 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
         "lifecycleDetails",
         "lifecycleState",
         "metadata",
+        "rotationConfig",
+        "rotationStatus",
+        "lastRotationTime",
+        "nextRotationTime",
         "secretName",
         "secretRules",
         "timeCreated",
@@ -50,6 +54,10 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
             String lifecycleDetails,
             LifecycleState lifecycleState,
             java.util.Map<String, Object> metadata,
+            RotationConfig rotationConfig,
+            RotationStatus rotationStatus,
+            java.util.Date lastRotationTime,
+            java.util.Date nextRotationTime,
             String secretName,
             java.util.List<SecretRule> secretRules,
             java.util.Date timeCreated,
@@ -67,6 +75,10 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
         this.lifecycleDetails = lifecycleDetails;
         this.lifecycleState = lifecycleState;
         this.metadata = metadata;
+        this.rotationConfig = rotationConfig;
+        this.rotationStatus = rotationStatus;
+        this.lastRotationTime = lastRotationTime;
+        this.nextRotationTime = nextRotationTime;
         this.secretName = secretName;
         this.secretRules = secretRules;
         this.timeCreated = timeCreated;
@@ -260,6 +272,72 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
             this.__explicitlySet__.add("metadata");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("rotationConfig")
+        private RotationConfig rotationConfig;
+
+        public Builder rotationConfig(RotationConfig rotationConfig) {
+            this.rotationConfig = rotationConfig;
+            this.__explicitlySet__.add("rotationConfig");
+            return this;
+        }
+        /** Additional information about the status of the secret rotation */
+        @com.fasterxml.jackson.annotation.JsonProperty("rotationStatus")
+        private RotationStatus rotationStatus;
+
+        /**
+         * Additional information about the status of the secret rotation
+         *
+         * @param rotationStatus the value to set
+         * @return this builder
+         */
+        public Builder rotationStatus(RotationStatus rotationStatus) {
+            this.rotationStatus = rotationStatus;
+            this.__explicitlySet__.add("rotationStatus");
+            return this;
+        }
+        /**
+         * A property indicating when the secret was last rotated successfully, expressed in [RFC
+         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+         * 2019-04-03T21:10:29.600Z}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("lastRotationTime")
+        private java.util.Date lastRotationTime;
+
+        /**
+         * A property indicating when the secret was last rotated successfully, expressed in [RFC
+         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+         * 2019-04-03T21:10:29.600Z}
+         *
+         * @param lastRotationTime the value to set
+         * @return this builder
+         */
+        public Builder lastRotationTime(java.util.Date lastRotationTime) {
+            this.lastRotationTime = lastRotationTime;
+            this.__explicitlySet__.add("lastRotationTime");
+            return this;
+        }
+        /**
+         * A property indicating when the secret is scheduled to be rotated, expressed in [RFC
+         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+         * 2019-04-03T21:10:29.600Z}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("nextRotationTime")
+        private java.util.Date nextRotationTime;
+
+        /**
+         * A property indicating when the secret is scheduled to be rotated, expressed in [RFC
+         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+         * 2019-04-03T21:10:29.600Z}
+         *
+         * @param nextRotationTime the value to set
+         * @return this builder
+         */
+        public Builder nextRotationTime(java.util.Date nextRotationTime) {
+            this.nextRotationTime = nextRotationTime;
+            this.__explicitlySet__.add("nextRotationTime");
+            return this;
+        }
         /** The user-friendly name of the secret. Avoid entering confidential information. */
         @com.fasterxml.jackson.annotation.JsonProperty("secretName")
         private String secretName;
@@ -385,6 +463,10 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
                             this.lifecycleDetails,
                             this.lifecycleState,
                             this.metadata,
+                            this.rotationConfig,
+                            this.rotationStatus,
+                            this.lastRotationTime,
+                            this.nextRotationTime,
                             this.secretName,
                             this.secretRules,
                             this.timeCreated,
@@ -428,6 +510,18 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("metadata")) {
                 this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("rotationConfig")) {
+                this.rotationConfig(model.getRotationConfig());
+            }
+            if (model.wasPropertyExplicitlySet("rotationStatus")) {
+                this.rotationStatus(model.getRotationStatus());
+            }
+            if (model.wasPropertyExplicitlySet("lastRotationTime")) {
+                this.lastRotationTime(model.getLastRotationTime());
+            }
+            if (model.wasPropertyExplicitlySet("nextRotationTime")) {
+                this.nextRotationTime(model.getNextRotationTime());
             }
             if (model.wasPropertyExplicitlySet("secretName")) {
                 this.secretName(model.getSecretName());
@@ -673,6 +767,112 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
         return metadata;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("rotationConfig")
+    private final RotationConfig rotationConfig;
+
+    public RotationConfig getRotationConfig() {
+        return rotationConfig;
+    }
+
+    /** Additional information about the status of the secret rotation */
+    public enum RotationStatus implements com.oracle.bmc.http.internal.BmcEnum {
+        InProgress("IN_PROGRESS"),
+        Scheduled("SCHEDULED"),
+        NotEnabled("NOT_ENABLED"),
+        Cancelling("CANCELLING"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(RotationStatus.class);
+
+        private final String value;
+        private static java.util.Map<String, RotationStatus> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (RotationStatus v : RotationStatus.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        RotationStatus(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static RotationStatus create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'RotationStatus', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Additional information about the status of the secret rotation */
+    @com.fasterxml.jackson.annotation.JsonProperty("rotationStatus")
+    private final RotationStatus rotationStatus;
+
+    /**
+     * Additional information about the status of the secret rotation
+     *
+     * @return the value
+     */
+    public RotationStatus getRotationStatus() {
+        return rotationStatus;
+    }
+
+    /**
+     * A property indicating when the secret was last rotated successfully, expressed in [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+     * 2019-04-03T21:10:29.600Z}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("lastRotationTime")
+    private final java.util.Date lastRotationTime;
+
+    /**
+     * A property indicating when the secret was last rotated successfully, expressed in [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+     * 2019-04-03T21:10:29.600Z}
+     *
+     * @return the value
+     */
+    public java.util.Date getLastRotationTime() {
+        return lastRotationTime;
+    }
+
+    /**
+     * A property indicating when the secret is scheduled to be rotated, expressed in [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+     * 2019-04-03T21:10:29.600Z}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("nextRotationTime")
+    private final java.util.Date nextRotationTime;
+
+    /**
+     * A property indicating when the secret is scheduled to be rotated, expressed in [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+     * 2019-04-03T21:10:29.600Z}
+     *
+     * @return the value
+     */
+    public java.util.Date getNextRotationTime() {
+        return nextRotationTime;
+    }
+
     /** The user-friendly name of the secret. Avoid entering confidential information. */
     @com.fasterxml.jackson.annotation.JsonProperty("secretName")
     private final String secretName;
@@ -794,6 +994,10 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
+        sb.append(", rotationConfig=").append(String.valueOf(this.rotationConfig));
+        sb.append(", rotationStatus=").append(String.valueOf(this.rotationStatus));
+        sb.append(", lastRotationTime=").append(String.valueOf(this.lastRotationTime));
+        sb.append(", nextRotationTime=").append(String.valueOf(this.nextRotationTime));
         sb.append(", secretName=").append(String.valueOf(this.secretName));
         sb.append(", secretRules=").append(String.valueOf(this.secretRules));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -825,6 +1029,10 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.metadata, other.metadata)
+                && java.util.Objects.equals(this.rotationConfig, other.rotationConfig)
+                && java.util.Objects.equals(this.rotationStatus, other.rotationStatus)
+                && java.util.Objects.equals(this.lastRotationTime, other.lastRotationTime)
+                && java.util.Objects.equals(this.nextRotationTime, other.nextRotationTime)
                 && java.util.Objects.equals(this.secretName, other.secretName)
                 && java.util.Objects.equals(this.secretRules, other.secretRules)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -859,6 +1067,18 @@ public final class Secret extends com.oracle.bmc.http.client.internal.Explicitly
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rotationConfig == null ? 43 : this.rotationConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rotationStatus == null ? 43 : this.rotationStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lastRotationTime == null ? 43 : this.lastRotationTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nextRotationTime == null ? 43 : this.nextRotationTime.hashCode());
         result = (result * PRIME) + (this.secretName == null ? 43 : this.secretName.hashCode());
         result = (result * PRIME) + (this.secretRules == null ? 43 : this.secretRules.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());

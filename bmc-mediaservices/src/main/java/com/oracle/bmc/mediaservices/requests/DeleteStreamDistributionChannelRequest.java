@@ -22,6 +22,13 @@ public class DeleteStreamDistributionChannelRequest
     public String getStreamDistributionChannelId() {
         return streamDistributionChannelId;
     }
+    /** Whether to override locks (if any exist). */
+    private Boolean isLockOverride;
+
+    /** Whether to override locks (if any exist). */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
+    }
     /** The client request ID for tracing. */
     private String opcRequestId;
 
@@ -64,6 +71,20 @@ public class DeleteStreamDistributionChannelRequest
          */
         public Builder streamDistributionChannelId(String streamDistributionChannelId) {
             this.streamDistributionChannelId = streamDistributionChannelId;
+            return this;
+        }
+
+        /** Whether to override locks (if any exist). */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         *
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
             return this;
         }
 
@@ -134,6 +155,7 @@ public class DeleteStreamDistributionChannelRequest
          */
         public Builder copy(DeleteStreamDistributionChannelRequest o) {
             streamDistributionChannelId(o.getStreamDistributionChannelId());
+            isLockOverride(o.getIsLockOverride());
             opcRequestId(o.getOpcRequestId());
             ifMatch(o.getIfMatch());
             invocationCallback(o.getInvocationCallback());
@@ -174,11 +196,12 @@ public class DeleteStreamDistributionChannelRequest
             DeleteStreamDistributionChannelRequest request =
                     new DeleteStreamDistributionChannelRequest();
             request.streamDistributionChannelId = streamDistributionChannelId;
+            request.isLockOverride = isLockOverride;
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             return request;
-            // new DeleteStreamDistributionChannelRequest(streamDistributionChannelId, opcRequestId,
-            // ifMatch);
+            // new DeleteStreamDistributionChannelRequest(streamDistributionChannelId,
+            // isLockOverride, opcRequestId, ifMatch);
         }
     }
 
@@ -190,6 +213,7 @@ public class DeleteStreamDistributionChannelRequest
     public Builder toBuilder() {
         return new Builder()
                 .streamDistributionChannelId(streamDistributionChannelId)
+                .isLockOverride(isLockOverride)
                 .opcRequestId(opcRequestId)
                 .ifMatch(ifMatch);
     }
@@ -210,6 +234,7 @@ public class DeleteStreamDistributionChannelRequest
         sb.append("super=").append(super.toString());
         sb.append(",streamDistributionChannelId=")
                 .append(String.valueOf(this.streamDistributionChannelId));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(")");
@@ -229,6 +254,7 @@ public class DeleteStreamDistributionChannelRequest
         return super.equals(o)
                 && java.util.Objects.equals(
                         this.streamDistributionChannelId, other.streamDistributionChannelId)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch);
     }
@@ -242,6 +268,9 @@ public class DeleteStreamDistributionChannelRequest
                         + (this.streamDistributionChannelId == null
                                 ? 43
                                 : this.streamDistributionChannelId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         return result;

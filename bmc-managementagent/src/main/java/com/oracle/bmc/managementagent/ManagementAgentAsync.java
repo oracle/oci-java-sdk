@@ -64,6 +64,21 @@ public interface ManagementAgentAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Datasource creation request to given Management Agent.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateDataSourceResponse> createDataSource(
+            CreateDataSourceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateDataSourceRequest, CreateDataSourceResponse>
+                    handler);
+
+    /**
      * User creates a new install key as part of this API.
      *
      * @param request The request object containing the details to send
@@ -80,6 +95,21 @@ public interface ManagementAgentAsync extends AutoCloseable {
                                     CreateManagementAgentInstallKeyRequest,
                                     CreateManagementAgentInstallKeyResponse>
                             handler);
+
+    /**
+     * Datasource delete request to given Management Agent.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDataSourceResponse> deleteDataSource(
+            DeleteDataSourceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteDataSourceRequest, DeleteDataSourceResponse>
+                    handler);
 
     /**
      * Deletes a Management Agent resource by identifier
@@ -164,6 +194,21 @@ public interface ManagementAgentAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Get Datasource details for given Id and given Management Agent.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDataSourceResponse> getDataSource(
+            GetDataSourceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetDataSourceRequest, GetDataSourceResponse>
+                    handler);
+
+    /**
      * Gets complete details of the inventory of a given agent id
      *
      * @param request The request object containing the details to send
@@ -243,6 +288,21 @@ public interface ManagementAgentAsync extends AutoCloseable {
             ListAvailabilityHistoriesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListAvailabilityHistoriesRequest, ListAvailabilityHistoriesResponse>
+                    handler);
+
+    /**
+     * A list of Management Agent Data Sources for the given Management Agent Id.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDataSourcesResponse> listDataSources(
+            ListDataSourcesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListDataSourcesRequest, ListDataSourcesResponse>
                     handler);
 
     /**
@@ -415,6 +475,21 @@ public interface ManagementAgentAsync extends AutoCloseable {
                                     SummarizeManagementAgentPluginCountsRequest,
                                     SummarizeManagementAgentPluginCountsResponse>
                             handler);
+
+    /**
+     * Datasource update request to given Management Agent.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDataSourceResponse> updateDataSource(
+            UpdateDataSourceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateDataSourceRequest, UpdateDataSourceResponse>
+                    handler);
 
     /**
      * API to update the console managed properties of the Management Agent.

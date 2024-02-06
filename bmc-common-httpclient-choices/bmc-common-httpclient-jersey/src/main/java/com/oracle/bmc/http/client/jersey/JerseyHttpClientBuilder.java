@@ -116,6 +116,7 @@ final class JerseyHttpClientBuilder implements HttpClientBuilder {
     private boolean apacheIdleConnectionMonitorThreadEnabled = false;
     private int apacheIdleConnectionMonitorThreadWaitTimeInSeconds;
     private int apacheIdleConnectionMonitorThreadIdleTimeoutInSeconds;
+    private IdleConnectionMonitor idleConnectionMonitor;
 
     JerseyHttpClientBuilder() {
         // buffer by default, for signing and better error messages.
@@ -298,7 +299,7 @@ final class JerseyHttpClientBuilder implements HttpClientBuilder {
             HttpClientConnectionManager connectionManager =
                     (HttpClientConnectionManager) connectionManagerObject;
             try {
-                final IdleConnectionMonitor idleConnectionMonitor =
+                idleConnectionMonitor =
                         new IdleConnectionMonitor(
                                 connectionManager,
                                 apacheIdleConnectionMonitorThreadWaitTimeInSeconds,
@@ -426,7 +427,8 @@ final class JerseyHttpClientBuilder implements HttpClientBuilder {
                         .sorted(Comparator.comparingInt(p -> p.priority))
                         .map(p -> p.value)
                         .collect(Collectors.toList()),
-                isApacheNonBufferingClient);
+                isApacheNonBufferingClient,
+                idleConnectionMonitor);
     }
 
     private boolean shouldUseApacheConnector() {

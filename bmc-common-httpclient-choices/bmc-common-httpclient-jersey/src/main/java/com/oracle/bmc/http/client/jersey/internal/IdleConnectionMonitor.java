@@ -56,4 +56,8 @@ public class IdleConnectionMonitor implements Runnable {
             notifyAll();
         }
     }
+
+    public boolean isIdleMonitorThreadShutdown() {
+        return shutdown;
+    }
 }

@@ -3,6 +3,34 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.34.0 - 2024-02-06
+### Added
+- Support for the Globally Distributed Database service
+- Support for secret auto-rotation in the Secret Management service
+- Support for dedicated key management in the Key Management service
+- Support for resource locking operations in the Digital Media service
+- Support for data sources, including prometheus emitter, in the Management Agent service
+- Support for Bring Your Own Certificates (BYOC) in the MySQL HeatWave Database service
+  
+### Breaking Changes
+- Method `public com.oracle.bmc.mediaservices.responses.GetMediaWorkflowJobFactResponse getMediaWorkflowJobFact(com.oracle.bmc.mediaservices.requests.GetMediaWorkflowJobFactRequest)` has been removed from `com.oracle.bmc.mediaservices.MediaServices` in the Digital Media service
+- Method `public com.oracle.bmc.mediaservices.responses.ListMediaWorkflowJobFactsResponse listMediaWorkflowJobFacts(com.oracle.bmc.mediaservices.requests.ListMediaWorkflowJobFactsRequest)` has been removed from `com.oracle.bmc.mediaservices.MediaServices` in the Digital Media service
+- Method `public java.lang.Iterable listMediaWorkflowJobFactsRecordIterator(com.oracle.bmc.mediaservices.requests.ListMediaWorkflowJobFactsRequest)` has been removed from `com.oracle.bmc.mediaservices.MediaServicesPaginators` in the Digital Media service
+- Method `public java.lang.Iterable listMediaWorkflowJobFactsResponseIterator(com.oracle.bmc.mediaservices.requests.ListMediaWorkflowJobFactsRequest)` has been removed from `com.oracle.bmc.mediaservices.MediaServicesPaginators` in the Digital Media service
+- Class `com.oracle.bmc.mediaservices.model.MediaWorkflowJobFact` has been removed from the Digital Media service
+- Class `com.oracle.bmc.mediaservices.model.MediaWorkflowJobFactCollection` has been removed from the Digital Media service
+- Class `com.oracle.bmc.mediaservices.model.MediaWorkflowJobFactSortBy` has been removed from the Digital Media service
+- Class `com.oracle.bmc.mediaservices.model.MediaWorkflowJobFactSummary` has been removed from the Digital Media service
+- Class `com.oracle.bmc.mediaservices.requests.GetMediaWorkflowJobFactRequest` has been removed from the Digital Media service
+- Class `com.oracle.bmc.mediaservices.requests.ListMediaWorkflowJobFactsRequest` has been removed from the Digital Media service
+- Class `com.oracle.bmc.mediaservices.requests.ListMediaWorkflowJobFactsRequest$Type` has been removed from the Digital Media service
+- Method `public java.lang.String getOpcWorkRequestId()` has been removed from the response model `com.oracle.bmc.mediaservices.responses.ChangeMediaWorkflowCompartmentResponse`, `com.oracle.bmc.mediaservices.responses.ChangeMediaWorkflowConfigurationCompartmentResponse`, `com.oracle.bmc.mediaservices.responses.ChangeMediaWorkflowJobCompartmentResponse`, `com.oracle.bmc.mediaservices.responses.ChangeStreamDistributionChannelCompartmentResponse`, `com.oracle.bmc.mediaservices.responses.DeleteMediaWorkflowConfigurationResponse`, `com.oracle.bmc.mediaservices.responses.DeleteMediaWorkflowJobResponse` and `com.oracle.bmc.mediaservices.responses.UpdateStreamPackagingConfigResponse` in the Digital Media service
+- Class `com.oracle.bmc.mediaservices.responses.GetMediaWorkflowJobFactResponse` has been removed from the Digital Media service
+- Class `com.oracle.bmc.mediaservices.responses.ListMediaWorkflowJobFactsResponse` has been removed from the Digital Media service
+- Class `com.oracle.bmc.managementagent.model.Datatypes` has been removed from the Management Agent service
+- Class `com.oracle.bmc.managementagent.model.EditModes` has been removed from the Management Agent service
+- Return type of method `public com.oracle.bmc.managementagent.model.OperationTypes getType()` has been changed to `java.util.List` in `com.oracle.bmc.managementagent.requests.ListWorkRequestsRequest` in the Management Agent service
+
 ## 3.33.0 - 2024-01-30
 ### Added
 - Support for OCI Control Center service

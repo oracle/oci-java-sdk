@@ -47,7 +47,8 @@ public final class DbSystemSnapshot
         "freeformTags",
         "definedTags",
         "crashRecovery",
-        "databaseManagement"
+        "databaseManagement",
+        "secureConnections"
     })
     public DbSystemSnapshot(
             String id,
@@ -74,7 +75,8 @@ public final class DbSystemSnapshot
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             CrashRecoveryStatus crashRecovery,
-            DatabaseManagementStatus databaseManagement) {
+            DatabaseManagementStatus databaseManagement,
+            SecureConnectionDetails secureConnections) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -101,6 +103,7 @@ public final class DbSystemSnapshot
         this.definedTags = definedTags;
         this.crashRecovery = crashRecovery;
         this.databaseManagement = databaseManagement;
+        this.secureConnections = secureConnections;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -502,6 +505,15 @@ public final class DbSystemSnapshot
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("secureConnections")
+        private SecureConnectionDetails secureConnections;
+
+        public Builder secureConnections(SecureConnectionDetails secureConnections) {
+            this.secureConnections = secureConnections;
+            this.__explicitlySet__.add("secureConnections");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -532,7 +544,8 @@ public final class DbSystemSnapshot
                             this.freeformTags,
                             this.definedTags,
                             this.crashRecovery,
-                            this.databaseManagement);
+                            this.databaseManagement,
+                            this.secureConnections);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -615,6 +628,9 @@ public final class DbSystemSnapshot
             }
             if (model.wasPropertyExplicitlySet("databaseManagement")) {
                 this.databaseManagement(model.getDatabaseManagement());
+            }
+            if (model.wasPropertyExplicitlySet("secureConnections")) {
+                this.secureConnections(model.getSecureConnections());
             }
             return this;
         }
@@ -974,6 +990,13 @@ public final class DbSystemSnapshot
         return databaseManagement;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("secureConnections")
+    private final SecureConnectionDetails secureConnections;
+
+    public SecureConnectionDetails getSecureConnections() {
+        return secureConnections;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1014,6 +1037,7 @@ public final class DbSystemSnapshot
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", crashRecovery=").append(String.valueOf(this.crashRecovery));
         sb.append(", databaseManagement=").append(String.valueOf(this.databaseManagement));
+        sb.append(", secureConnections=").append(String.valueOf(this.secureConnections));
         sb.append(")");
         return sb.toString();
     }
@@ -1053,6 +1077,7 @@ public final class DbSystemSnapshot
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.crashRecovery, other.crashRecovery)
                 && java.util.Objects.equals(this.databaseManagement, other.databaseManagement)
+                && java.util.Objects.equals(this.secureConnections, other.secureConnections)
                 && super.equals(other);
     }
 
@@ -1111,6 +1136,9 @@ public final class DbSystemSnapshot
                         + (this.databaseManagement == null
                                 ? 43
                                 : this.databaseManagement.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.secureConnections == null ? 43 : this.secureConnections.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

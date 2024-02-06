@@ -62,10 +62,10 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         return status;
     }
     /** The OperationType of the workRequest */
-    private com.oracle.bmc.managementagent.model.OperationTypes type;
+    private java.util.List<com.oracle.bmc.managementagent.model.OperationTypes> type;
 
     /** The OperationType of the workRequest */
-    public com.oracle.bmc.managementagent.model.OperationTypes getType() {
+    public java.util.List<com.oracle.bmc.managementagent.model.OperationTypes> getType() {
         return type;
     }
     /**
@@ -269,7 +269,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /** The OperationType of the workRequest */
-        private com.oracle.bmc.managementagent.model.OperationTypes type = null;
+        private java.util.List<com.oracle.bmc.managementagent.model.OperationTypes> type = null;
 
         /**
          * The OperationType of the workRequest
@@ -277,9 +277,20 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
          * @param type the value to set
          * @return this builder instance
          */
-        public Builder type(com.oracle.bmc.managementagent.model.OperationTypes type) {
+        public Builder type(
+                java.util.List<com.oracle.bmc.managementagent.model.OperationTypes> type) {
             this.type = type;
             return this;
+        }
+
+        /**
+         * Singular setter. The OperationType of the workRequest
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder type(OperationTypes singularValue) {
+            return this.type(java.util.Arrays.asList(singularValue));
         }
 
         /**

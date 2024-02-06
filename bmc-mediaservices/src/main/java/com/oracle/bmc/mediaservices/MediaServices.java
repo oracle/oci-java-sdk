@@ -72,6 +72,121 @@ public interface MediaServices extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Add a lock to an MediaAsset.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/AddMediaAssetLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddMediaAssetLock
+     *     API.
+     */
+    AddMediaAssetLockResponse addMediaAssetLock(AddMediaAssetLockRequest request);
+
+    /**
+     * Add a lock to a MediaWorkflowConfiguration.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/AddMediaWorkflowConfigurationLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     AddMediaWorkflowConfigurationLock API.
+     */
+    AddMediaWorkflowConfigurationLockResponse addMediaWorkflowConfigurationLock(
+            AddMediaWorkflowConfigurationLockRequest request);
+
+    /**
+     * Add a lock to a MediaWorkflowJob.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/AddMediaWorkflowJobLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     AddMediaWorkflowJobLock API.
+     */
+    AddMediaWorkflowJobLockResponse addMediaWorkflowJobLock(AddMediaWorkflowJobLockRequest request);
+
+    /**
+     * Add a lock to a MediaWorkflow.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/AddMediaWorkflowLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     AddMediaWorkflowLock API.
+     */
+    AddMediaWorkflowLockResponse addMediaWorkflowLock(AddMediaWorkflowLockRequest request);
+
+    /**
+     * Add a lock to a StreamCdnConfig.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/AddStreamCdnConfigLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     AddStreamCdnConfigLock API.
+     */
+    AddStreamCdnConfigLockResponse addStreamCdnConfigLock(AddStreamCdnConfigLockRequest request);
+
+    /**
+     * Add a lock to a StreamDistributionChannel.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/AddStreamDistributionChannelLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     AddStreamDistributionChannelLock API.
+     */
+    AddStreamDistributionChannelLockResponse addStreamDistributionChannelLock(
+            AddStreamDistributionChannelLockRequest request);
+
+    /**
+     * Add a lock to a StreamPackagingConfig.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/AddStreamPackagingConfigLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     AddStreamPackagingConfigLock API.
+     */
+    AddStreamPackagingConfigLockResponse addStreamPackagingConfigLock(
+            AddStreamPackagingConfigLockRequest request);
+
+    /**
      * Moves a MediaAsset resource from one compartment identifier to another.
      *
      * @param request The request object containing the details to send
@@ -491,22 +606,6 @@ public interface MediaServices extends AutoCloseable {
     GetMediaWorkflowJobResponse getMediaWorkflowJob(GetMediaWorkflowJobRequest request);
 
     /**
-     * Get the MediaWorkflowJobFact identified by the mediaWorkflowJobId and Fact ID.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GetMediaWorkflowJobFactExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
-     *     GetMediaWorkflowJobFact API.
-     */
-    GetMediaWorkflowJobFactResponse getMediaWorkflowJobFact(GetMediaWorkflowJobFactRequest request);
-
-    /**
      * Gets a StreamCdnConfig by identifier.
      *
      * @param request The request object containing the details to send
@@ -625,23 +724,6 @@ public interface MediaServices extends AutoCloseable {
             ListMediaWorkflowConfigurationsRequest request);
 
     /**
-     * Internal API to get a point-in-time snapshot of a MediaWorkflowJob.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListMediaWorkflowJobFactsExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
-     *     ListMediaWorkflowJobFacts API.
-     */
-    ListMediaWorkflowJobFactsResponse listMediaWorkflowJobFacts(
-            ListMediaWorkflowJobFactsRequest request);
-
-    /**
      * Lists the MediaWorkflowJobs.
      *
      * @param request The request object containing the details to send
@@ -757,6 +839,123 @@ public interface MediaServices extends AutoCloseable {
      */
     ListSystemMediaWorkflowsResponse listSystemMediaWorkflows(
             ListSystemMediaWorkflowsRequest request);
+
+    /**
+     * Remove a lock to an MediaAsset.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/RemoveMediaAssetLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RemoveMediaAssetLock API.
+     */
+    RemoveMediaAssetLockResponse removeMediaAssetLock(RemoveMediaAssetLockRequest request);
+
+    /**
+     * Remove a lock from a MediaWorkflowConfiguration.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/RemoveMediaWorkflowConfigurationLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RemoveMediaWorkflowConfigurationLock API.
+     */
+    RemoveMediaWorkflowConfigurationLockResponse removeMediaWorkflowConfigurationLock(
+            RemoveMediaWorkflowConfigurationLockRequest request);
+
+    /**
+     * Remove a lock from a MediaWorkflowJob.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/RemoveMediaWorkflowJobLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RemoveMediaWorkflowJobLock API.
+     */
+    RemoveMediaWorkflowJobLockResponse removeMediaWorkflowJobLock(
+            RemoveMediaWorkflowJobLockRequest request);
+
+    /**
+     * Remove a lock from a MediaWorkflow.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/RemoveMediaWorkflowLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RemoveMediaWorkflowLock API.
+     */
+    RemoveMediaWorkflowLockResponse removeMediaWorkflowLock(RemoveMediaWorkflowLockRequest request);
+
+    /**
+     * Remove a lock from a StreamCdnConfig.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/RemoveStreamCdnConfigLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RemoveStreamCdnConfigLock API.
+     */
+    RemoveStreamCdnConfigLockResponse removeStreamCdnConfigLock(
+            RemoveStreamCdnConfigLockRequest request);
+
+    /**
+     * Remove a lock to a StreamDistributionChannel.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/RemoveStreamDistributionChannelLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RemoveStreamDistributionChannelLock API.
+     */
+    RemoveStreamDistributionChannelLockResponse removeStreamDistributionChannelLock(
+            RemoveStreamDistributionChannelLockRequest request);
+
+    /**
+     * Remove a lock from a StreamPackagingConfig.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/RemoveStreamPackagingConfigLockExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RemoveStreamPackagingConfigLock API.
+     */
+    RemoveStreamPackagingConfigLockResponse removeStreamPackagingConfigLock(
+            RemoveStreamPackagingConfigLockRequest request);
 
     /**
      * Updates the MediaAsset.

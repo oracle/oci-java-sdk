@@ -29,6 +29,13 @@ public class UpdateMediaAssetRequest
     public com.oracle.bmc.mediaservices.model.UpdateMediaAssetDetails getUpdateMediaAssetDetails() {
         return updateMediaAssetDetails;
     }
+    /** Whether to override locks (if any exist). */
+    private Boolean isLockOverride;
+
+    /** Whether to override locks (if any exist). */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
      * if-match} parameter to the value of the etag from a previous GET or POST response for that
@@ -103,6 +110,20 @@ public class UpdateMediaAssetRequest
             return this;
         }
 
+        /** Whether to override locks (if any exist). */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         *
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+
         /**
          * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
          * {@code if-match} parameter to the value of the etag from a previous GET or POST response
@@ -171,6 +192,7 @@ public class UpdateMediaAssetRequest
         public Builder copy(UpdateMediaAssetRequest o) {
             mediaAssetId(o.getMediaAssetId());
             updateMediaAssetDetails(o.getUpdateMediaAssetDetails());
+            isLockOverride(o.getIsLockOverride());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
@@ -221,11 +243,12 @@ public class UpdateMediaAssetRequest
             UpdateMediaAssetRequest request = new UpdateMediaAssetRequest();
             request.mediaAssetId = mediaAssetId;
             request.updateMediaAssetDetails = updateMediaAssetDetails;
+            request.isLockOverride = isLockOverride;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateMediaAssetRequest(mediaAssetId, updateMediaAssetDetails, ifMatch,
-            // opcRequestId);
+            // new UpdateMediaAssetRequest(mediaAssetId, updateMediaAssetDetails, isLockOverride,
+            // ifMatch, opcRequestId);
         }
     }
 
@@ -238,6 +261,7 @@ public class UpdateMediaAssetRequest
         return new Builder()
                 .mediaAssetId(mediaAssetId)
                 .updateMediaAssetDetails(updateMediaAssetDetails)
+                .isLockOverride(isLockOverride)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId);
     }
@@ -258,6 +282,7 @@ public class UpdateMediaAssetRequest
         sb.append("super=").append(super.toString());
         sb.append(",mediaAssetId=").append(String.valueOf(this.mediaAssetId));
         sb.append(",updateMediaAssetDetails=").append(String.valueOf(this.updateMediaAssetDetails));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
@@ -278,6 +303,7 @@ public class UpdateMediaAssetRequest
                 && java.util.Objects.equals(this.mediaAssetId, other.mediaAssetId)
                 && java.util.Objects.equals(
                         this.updateMediaAssetDetails, other.updateMediaAssetDetails)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
@@ -292,6 +318,9 @@ public class UpdateMediaAssetRequest
                         + (this.updateMediaAssetDetails == null
                                 ? 43
                                 : this.updateMediaAssetDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;

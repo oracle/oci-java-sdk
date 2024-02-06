@@ -31,7 +31,8 @@ public final class SecretVersionSummary
         "timeCreated",
         "timeOfDeletion",
         "timeOfExpiry",
-        "versionNumber"
+        "versionNumber",
+        "systemTags"
     })
     public SecretVersionSummary(
             ContentType contentType,
@@ -41,7 +42,8 @@ public final class SecretVersionSummary
             java.util.Date timeCreated,
             java.util.Date timeOfDeletion,
             java.util.Date timeOfExpiry,
-            Long versionNumber) {
+            Long versionNumber,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.contentType = contentType;
         this.name = name;
@@ -51,6 +53,7 @@ public final class SecretVersionSummary
         this.timeOfDeletion = timeOfDeletion;
         this.timeOfExpiry = timeOfExpiry;
         this.versionNumber = versionNumber;
+        this.systemTags = systemTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -213,6 +216,27 @@ public final class SecretVersionSummary
             this.__explicitlySet__.add("versionNumber");
             return this;
         }
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         *
+         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         *
+         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -227,7 +251,8 @@ public final class SecretVersionSummary
                             this.timeCreated,
                             this.timeOfDeletion,
                             this.timeOfExpiry,
-                            this.versionNumber);
+                            this.versionNumber,
+                            this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -259,6 +284,9 @@ public final class SecretVersionSummary
             }
             if (model.wasPropertyExplicitlySet("versionNumber")) {
                 this.versionNumber(model.getVersionNumber());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             return this;
         }
@@ -506,6 +534,25 @@ public final class SecretVersionSummary
         return versionNumber;
     }
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     *
+     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     *
+     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -529,6 +576,7 @@ public final class SecretVersionSummary
         sb.append(", timeOfDeletion=").append(String.valueOf(this.timeOfDeletion));
         sb.append(", timeOfExpiry=").append(String.valueOf(this.timeOfExpiry));
         sb.append(", versionNumber=").append(String.valueOf(this.versionNumber));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
     }
@@ -551,6 +599,7 @@ public final class SecretVersionSummary
                 && java.util.Objects.equals(this.timeOfDeletion, other.timeOfDeletion)
                 && java.util.Objects.equals(this.timeOfExpiry, other.timeOfExpiry)
                 && java.util.Objects.equals(this.versionNumber, other.versionNumber)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
 
@@ -570,6 +619,7 @@ public final class SecretVersionSummary
         result =
                 (result * PRIME)
                         + (this.versionNumber == null ? 43 : this.versionNumber.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

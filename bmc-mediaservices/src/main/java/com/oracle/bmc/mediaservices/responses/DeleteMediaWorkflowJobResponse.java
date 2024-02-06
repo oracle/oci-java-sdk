@@ -9,22 +9,6 @@ import com.oracle.bmc.mediaservices.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 public class DeleteMediaWorkflowJobResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-     * status of the asynchronous operation.
-     */
-    private String opcWorkRequestId;
-
-    /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-     * status of the asynchronous operation.
-     *
-     * @return the value
-     */
-    public String getOpcWorkRequestId() {
-        return opcWorkRequestId;
-    }
-
-    /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
      */
@@ -40,19 +24,12 @@ public class DeleteMediaWorkflowJobResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    @java.beans.ConstructorProperties({
-        "__httpStatusCode__",
-        "headers",
-        "opcWorkRequestId",
-        "opcRequestId"
-    })
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId"})
     private DeleteMediaWorkflowJobResponse(
             int __httpStatusCode__,
             java.util.Map<String, java.util.List<String>> headers,
-            String opcWorkRequestId,
             String opcRequestId) {
         super(__httpStatusCode__, headers);
-        this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
     }
 
@@ -72,24 +49,6 @@ public class DeleteMediaWorkflowJobResponse extends com.oracle.bmc.responses.Bmc
         @Override
         public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
-            return this;
-        }
-
-        /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-         * status of the asynchronous operation.
-         */
-        private String opcWorkRequestId;
-
-        /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-         * status of the asynchronous operation.
-         *
-         * @param opcWorkRequestId the value to set
-         * @return this builder
-         */
-        public Builder opcWorkRequestId(String opcWorkRequestId) {
-            this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
@@ -120,7 +79,6 @@ public class DeleteMediaWorkflowJobResponse extends com.oracle.bmc.responses.Bmc
         public Builder copy(DeleteMediaWorkflowJobResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
-            opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
 
             return this;
@@ -133,8 +91,7 @@ public class DeleteMediaWorkflowJobResponse extends com.oracle.bmc.responses.Bmc
          */
         @Override
         public DeleteMediaWorkflowJobResponse build() {
-            return new DeleteMediaWorkflowJobResponse(
-                    __httpStatusCode__, headers, opcWorkRequestId, opcRequestId);
+            return new DeleteMediaWorkflowJobResponse(__httpStatusCode__, headers, opcRequestId);
         }
     }
 
@@ -152,7 +109,6 @@ public class DeleteMediaWorkflowJobResponse extends com.oracle.bmc.responses.Bmc
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
-        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -168,18 +124,13 @@ public class DeleteMediaWorkflowJobResponse extends com.oracle.bmc.responses.Bmc
         }
 
         DeleteMediaWorkflowJobResponse other = (DeleteMediaWorkflowJobResponse) o;
-        return super.equals(o)
-                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+        return super.equals(o) && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
-        result =
-                (result * PRIME)
-                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

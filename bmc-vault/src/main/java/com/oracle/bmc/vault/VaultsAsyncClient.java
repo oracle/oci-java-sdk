@@ -126,6 +126,36 @@ public class VaultsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
     }
 
     @Override
+    public java.util.concurrent.Future<CancelSecretRotationResponse> cancelSecretRotation(
+            CancelSecretRotationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CancelSecretRotationRequest, CancelSecretRotationResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSecretId(), "secretId must not be blank");
+
+        return clientCall(request, CancelSecretRotationResponse::builder)
+                .logger(LOG, "cancelSecretRotation")
+                .serviceDetails(
+                        "Vaults",
+                        "CancelSecretRotation",
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/CancelSecretRotation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CancelSecretRotationRequest::builder)
+                .basePath("/20180608")
+                .appendPathParam("secrets")
+                .appendPathParam(request.getSecretId())
+                .appendPathParam("actions")
+                .appendPathParam("cancelRotation")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", CancelSecretRotationResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelSecretVersionDeletionResponse>
             cancelSecretVersionDeletion(
                     CancelSecretVersionDeletionRequest request,
@@ -360,6 +390,38 @@ public class VaultsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
                         "opc-next-page", ListSecretsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListSecretsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RotateSecretResponse> rotateSecret(
+            RotateSecretRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<RotateSecretRequest, RotateSecretResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSecretId(), "secretId must not be blank");
+
+        return clientCall(request, RotateSecretResponse::builder)
+                .logger(LOG, "rotateSecret")
+                .serviceDetails(
+                        "Vaults",
+                        "RotateSecret",
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/RotateSecret")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RotateSecretRequest::builder)
+                .basePath("/20180608")
+                .appendPathParam("secrets")
+                .appendPathParam(request.getSecretId())
+                .appendPathParam("actions")
+                .appendPathParam("rotate")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", RotateSecretResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", RotateSecretResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
