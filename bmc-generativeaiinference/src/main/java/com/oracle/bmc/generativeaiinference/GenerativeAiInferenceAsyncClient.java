@@ -105,7 +105,10 @@ public class GenerativeAiInferenceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, EmbedTextResponse::builder)
                 .logger(LOG, "embedText")
-                .serviceDetails("GenerativeAiInference", "EmbedText", "")
+                .serviceDetails(
+                        "GenerativeAiInference",
+                        "EmbedText",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-inference/20231130/EmbedTextResult/EmbedText")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(EmbedTextRequest::builder)
                 .basePath("/20231130")
@@ -133,7 +136,10 @@ public class GenerativeAiInferenceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, GenerateTextResponse::builder)
                 .logger(LOG, "generateText")
-                .serviceDetails("GenerativeAiInference", "GenerateText", "")
+                .serviceDetails(
+                        "GenerativeAiInference",
+                        "GenerateText",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-inference/20231130/GenerateTextResult/GenerateText")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(GenerateTextRequest::builder)
                 .basePath("/20231130")
@@ -162,7 +168,10 @@ public class GenerativeAiInferenceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, SummarizeTextResponse::builder)
                 .logger(LOG, "summarizeText")
-                .serviceDetails("GenerativeAiInference", "SummarizeText", "")
+                .serviceDetails(
+                        "GenerativeAiInference",
+                        "SummarizeText",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-inference/20231130/SummarizeTextResult/SummarizeText")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SummarizeTextRequest::builder)
                 .basePath("/20231130")

@@ -30,7 +30,7 @@ public class ConfigureApacheIdleConnectionMonitorExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        ObjectStorageClient objectStorageClient = ObjectStorageClient
+        try (ObjectStorageClient objectStorageClient = ObjectStorageClient
                 .builder()
                 .clientConfigurator(builder -> {
                     builder.property(JerseyClientProperties.APACHE_IDLE_CONNECTION_MONITOR_THREAD_ENABLED, true);
@@ -41,19 +41,21 @@ public class ConfigureApacheIdleConnectionMonitorExample {
                     // configure idle timeout for idle connection monitor thread
                 })
                 .region(Region.US_PHOENIX_1)
-                .build(provider);
+                .build(provider)) {
 
-        // Construct GetNamespaceRequest with the given compartmentId.
-        String compartmentId = provider.getTenantId();
-        GetNamespaceRequest getNamespaceRequest =
-                GetNamespaceRequest.builder().compartmentId(compartmentId).build();
-        String namespace = objectStorageClient.getNamespace(getNamespaceRequest).getValue();
+            // Construct GetNamespaceRequest with the given compartmentId.
+            String compartmentId = provider.getTenantId();
+            GetNamespaceRequest getNamespaceRequest =
+                    GetNamespaceRequest.builder().compartmentId(compartmentId).build();
+            String namespace = objectStorageClient.getNamespace(getNamespaceRequest).getValue();
 
-        System.out.println(
-                String.format(
-                        "Object Storage namespace for compartment [%s] is [%s]",
-                        compartmentId,
-                        namespace));
+            System.out.println(
+                    String.format(
+                            "Object Storage namespace for compartment [%s] is [%s]",
+                            compartmentId,
+                            namespace));
 
+            // Client will be closed along with IdleConnectionMonitorThread when the try-with-resources block is exited
+        }
     }
 }

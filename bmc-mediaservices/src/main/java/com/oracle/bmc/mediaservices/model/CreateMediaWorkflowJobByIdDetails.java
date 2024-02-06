@@ -82,6 +82,15 @@ public final class CreateMediaWorkflowJobByIdDetails extends CreateMediaWorkflow
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
         /** OCID of the MediaWorkflow that should be run. */
         @com.fasterxml.jackson.annotation.JsonProperty("mediaWorkflowId")
         private String mediaWorkflowId;
@@ -110,6 +119,7 @@ public final class CreateMediaWorkflowJobByIdDetails extends CreateMediaWorkflow
                             this.parameters,
                             this.freeformTags,
                             this.definedTags,
+                            this.locks,
                             this.mediaWorkflowId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -137,6 +147,9 @@ public final class CreateMediaWorkflowJobByIdDetails extends CreateMediaWorkflow
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             if (model.wasPropertyExplicitlySet("mediaWorkflowId")) {
                 this.mediaWorkflowId(model.getMediaWorkflowId());
             }
@@ -161,6 +174,7 @@ public final class CreateMediaWorkflowJobByIdDetails extends CreateMediaWorkflow
             java.util.Map<String, Object> parameters,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<ResourceLock> locks,
             String mediaWorkflowId) {
         super(
                 mediaWorkflowConfigurationIds,
@@ -168,7 +182,8 @@ public final class CreateMediaWorkflowJobByIdDetails extends CreateMediaWorkflow
                 displayName,
                 parameters,
                 freeformTags,
-                definedTags);
+                definedTags,
+                locks);
         this.mediaWorkflowId = mediaWorkflowId;
     }
 

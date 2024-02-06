@@ -135,7 +135,10 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ChangeDedicatedAiClusterCompartmentResponse::builder)
                 .logger(LOG, "changeDedicatedAiClusterCompartment")
-                .serviceDetails("GenerativeAi", "ChangeDedicatedAiClusterCompartment", "")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ChangeDedicatedAiClusterCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/DedicatedAiCluster/ChangeDedicatedAiClusterCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeDedicatedAiClusterCompartmentRequest::builder)
                 .basePath("/20231130")
@@ -166,7 +169,10 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ChangeEndpointCompartmentResponse::builder)
                 .logger(LOG, "changeEndpointCompartment")
-                .serviceDetails("GenerativeAi", "ChangeEndpointCompartment", "")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ChangeEndpointCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Endpoint/ChangeEndpointCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeEndpointCompartmentRequest::builder)
                 .basePath("/20231130")
@@ -196,7 +202,10 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ChangeModelCompartmentResponse::builder)
                 .logger(LOG, "changeModelCompartment")
-                .serviceDetails("GenerativeAi", "ChangeModelCompartment", "")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ChangeModelCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Model/ChangeModelCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeModelCompartmentRequest::builder)
                 .basePath("/20231130")
@@ -224,7 +233,10 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, CreateDedicatedAiClusterResponse::builder)
                 .logger(LOG, "createDedicatedAiCluster")
-                .serviceDetails("GenerativeAi", "CreateDedicatedAiCluster", "")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "CreateDedicatedAiCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/DedicatedAiCluster/CreateDedicatedAiCluster")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDedicatedAiClusterRequest::builder)
                 .basePath("/20231130")
@@ -253,7 +265,10 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, CreateEndpointResponse::builder)
                 .logger(LOG, "createEndpoint")
-                .serviceDetails("GenerativeAi", "CreateEndpoint", "")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "CreateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Endpoint/CreateEndpoint")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateEndpointRequest::builder)
                 .basePath("/20231130")
@@ -280,7 +295,10 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, CreateModelResponse::builder)
                 .logger(LOG, "createModel")
-                .serviceDetails("GenerativeAi", "CreateModel", "")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "CreateModel",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Model/CreateModel")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateModelRequest::builder)
                 .basePath("/20231130")
@@ -310,7 +328,10 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, DeleteDedicatedAiClusterResponse::builder)
                 .logger(LOG, "deleteDedicatedAiCluster")
-                .serviceDetails("GenerativeAi", "DeleteDedicatedAiCluster", "")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "DeleteDedicatedAiCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/DedicatedAiCluster/DeleteDedicatedAiCluster")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDedicatedAiClusterRequest::builder)
                 .basePath("/20231130")
@@ -335,7 +356,10 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, DeleteEndpointResponse::builder)
                 .logger(LOG, "deleteEndpoint")
-                .serviceDetails("GenerativeAi", "DeleteEndpoint", "")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "DeleteEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Endpoint/DeleteEndpoint")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteEndpointRequest::builder)
                 .basePath("/20231130")
@@ -359,7 +383,10 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, DeleteModelResponse::builder)
                 .logger(LOG, "deleteModel")
-                .serviceDetails("GenerativeAi", "DeleteModel", "")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "DeleteModel",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Model/DeleteModel")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteModelRequest::builder)
                 .basePath("/20231130")
@@ -385,7 +412,10 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GetDedicatedAiClusterResponse::builder)
                 .logger(LOG, "getDedicatedAiCluster")
-                .serviceDetails("GenerativeAi", "GetDedicatedAiCluster", "")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "GetDedicatedAiCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/DedicatedAiCluster/GetDedicatedAiCluster")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDedicatedAiClusterRequest::builder)
                 .basePath("/20231130")
@@ -410,7 +440,10 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GetEndpointResponse::builder)
                 .logger(LOG, "getEndpoint")
-                .serviceDetails("GenerativeAi", "GetEndpoint", "")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "GetEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Endpoint/GetEndpoint")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetEndpointRequest::builder)
                 .basePath("/20231130")
@@ -435,7 +468,10 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GetModelResponse::builder)
                 .logger(LOG, "getModel")
-                .serviceDetails("GenerativeAi", "GetModel", "")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "GetModel",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Model/GetModel")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetModelRequest::builder)
                 .basePath("/20231130")
@@ -460,7 +496,10 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("GenerativeAi", "GetWorkRequest", "")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20231130")
@@ -487,7 +526,10 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListDedicatedAiClustersResponse::builder)
                 .logger(LOG, "listDedicatedAiClusters")
-                .serviceDetails("GenerativeAi", "ListDedicatedAiClusters", "")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ListDedicatedAiClusters",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/DedicatedAiClusterCollection/ListDedicatedAiClusters")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDedicatedAiClustersRequest::builder)
                 .basePath("/20231130")
@@ -519,7 +561,10 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListEndpointsResponse::builder)
                 .logger(LOG, "listEndpoints")
-                .serviceDetails("GenerativeAi", "ListEndpoints", "")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ListEndpoints",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/EndpointCollection/ListEndpoints")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListEndpointsRequest::builder)
                 .basePath("/20231130")
@@ -551,7 +596,10 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListModelsResponse::builder)
                 .logger(LOG, "listModels")
-                .serviceDetails("GenerativeAi", "ListModels", "")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ListModels",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ModelCollection/ListModels")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListModelsRequest::builder)
                 .basePath("/20231130")
@@ -590,7 +638,10 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("GenerativeAi", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20231130")
@@ -621,7 +672,10 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("GenerativeAi", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20231130")
@@ -651,7 +705,10 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("GenerativeAi", "ListWorkRequests", "")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20231130")
@@ -689,7 +746,10 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, UpdateDedicatedAiClusterResponse::builder)
                 .logger(LOG, "updateDedicatedAiCluster")
-                .serviceDetails("GenerativeAi", "UpdateDedicatedAiCluster", "")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "UpdateDedicatedAiCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/DedicatedAiCluster/UpdateDedicatedAiCluster")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDedicatedAiClusterRequest::builder)
                 .basePath("/20231130")
@@ -721,7 +781,10 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, UpdateEndpointResponse::builder)
                 .logger(LOG, "updateEndpoint")
-                .serviceDetails("GenerativeAi", "UpdateEndpoint", "")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "UpdateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Endpoint/UpdateEndpoint")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateEndpointRequest::builder)
                 .basePath("/20231130")
@@ -751,7 +814,10 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, UpdateModelResponse::builder)
                 .logger(LOG, "updateModel")
-                .serviceDetails("GenerativeAi", "UpdateModel", "")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "UpdateModel",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Model/UpdateModel")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateModelRequest::builder)
                 .basePath("/20231130")

@@ -32,6 +32,13 @@ public class UpdateStreamDistributionChannelRequest
             getUpdateStreamDistributionChannelDetails() {
         return updateStreamDistributionChannelDetails;
     }
+    /** Whether to override locks (if any exist). */
+    private Boolean isLockOverride;
+
+    /** Whether to override locks (if any exist). */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
      * if-match} parameter to the value of the etag from a previous GET or POST response for that
@@ -106,6 +113,20 @@ public class UpdateStreamDistributionChannelRequest
             return this;
         }
 
+        /** Whether to override locks (if any exist). */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         *
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+
         /**
          * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
          * {@code if-match} parameter to the value of the etag from a previous GET or POST response
@@ -174,6 +195,7 @@ public class UpdateStreamDistributionChannelRequest
         public Builder copy(UpdateStreamDistributionChannelRequest o) {
             streamDistributionChannelId(o.getStreamDistributionChannelId());
             updateStreamDistributionChannelDetails(o.getUpdateStreamDistributionChannelDetails());
+            isLockOverride(o.getIsLockOverride());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
@@ -228,11 +250,12 @@ public class UpdateStreamDistributionChannelRequest
                     new UpdateStreamDistributionChannelRequest();
             request.streamDistributionChannelId = streamDistributionChannelId;
             request.updateStreamDistributionChannelDetails = updateStreamDistributionChannelDetails;
+            request.isLockOverride = isLockOverride;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
             // new UpdateStreamDistributionChannelRequest(streamDistributionChannelId,
-            // updateStreamDistributionChannelDetails, ifMatch, opcRequestId);
+            // updateStreamDistributionChannelDetails, isLockOverride, ifMatch, opcRequestId);
         }
     }
 
@@ -245,6 +268,7 @@ public class UpdateStreamDistributionChannelRequest
         return new Builder()
                 .streamDistributionChannelId(streamDistributionChannelId)
                 .updateStreamDistributionChannelDetails(updateStreamDistributionChannelDetails)
+                .isLockOverride(isLockOverride)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId);
     }
@@ -267,6 +291,7 @@ public class UpdateStreamDistributionChannelRequest
                 .append(String.valueOf(this.streamDistributionChannelId));
         sb.append(",updateStreamDistributionChannelDetails=")
                 .append(String.valueOf(this.updateStreamDistributionChannelDetails));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
@@ -289,6 +314,7 @@ public class UpdateStreamDistributionChannelRequest
                 && java.util.Objects.equals(
                         this.updateStreamDistributionChannelDetails,
                         other.updateStreamDistributionChannelDetails)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
@@ -307,6 +333,9 @@ public class UpdateStreamDistributionChannelRequest
                         + (this.updateStreamDistributionChannelDetails == null
                                 ? 43
                                 : this.updateStreamDistributionChannelDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;

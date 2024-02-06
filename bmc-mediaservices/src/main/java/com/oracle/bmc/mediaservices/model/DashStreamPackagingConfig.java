@@ -136,6 +136,15 @@ public final class DashStreamPackagingConfig extends StreamPackagingConfig {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -153,7 +162,8 @@ public final class DashStreamPackagingConfig extends StreamPackagingConfig {
                             this.lifecycleState,
                             this.freeformTags,
                             this.definedTags,
-                            this.systemTags);
+                            this.systemTags,
+                            this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -198,6 +208,9 @@ public final class DashStreamPackagingConfig extends StreamPackagingConfig {
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             return this;
         }
     }
@@ -224,7 +237,8 @@ public final class DashStreamPackagingConfig extends StreamPackagingConfig {
             LifecycleState lifecycleState,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            java.util.List<ResourceLock> locks) {
         super(
                 id,
                 compartmentId,
@@ -237,7 +251,8 @@ public final class DashStreamPackagingConfig extends StreamPackagingConfig {
                 lifecycleState,
                 freeformTags,
                 definedTags,
-                systemTags);
+                systemTags,
+                locks);
     }
 
     @Override

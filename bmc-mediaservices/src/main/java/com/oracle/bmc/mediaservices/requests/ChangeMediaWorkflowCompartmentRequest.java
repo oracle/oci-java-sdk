@@ -32,6 +32,13 @@ public class ChangeMediaWorkflowCompartmentRequest
             getChangeMediaWorkflowCompartmentDetails() {
         return changeMediaWorkflowCompartmentDetails;
     }
+    /** Whether to override locks (if any exist). */
+    private Boolean isLockOverride;
+
+    /** Whether to override locks (if any exist). */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
+    }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without the risk of executing that same action again. Retry tokens expire after
@@ -122,6 +129,20 @@ public class ChangeMediaWorkflowCompartmentRequest
                 com.oracle.bmc.mediaservices.model.ChangeMediaWorkflowCompartmentDetails
                         changeMediaWorkflowCompartmentDetails) {
             this.changeMediaWorkflowCompartmentDetails = changeMediaWorkflowCompartmentDetails;
+            return this;
+        }
+
+        /** Whether to override locks (if any exist). */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         *
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
             return this;
         }
 
@@ -217,6 +238,7 @@ public class ChangeMediaWorkflowCompartmentRequest
         public Builder copy(ChangeMediaWorkflowCompartmentRequest o) {
             mediaWorkflowId(o.getMediaWorkflowId());
             changeMediaWorkflowCompartmentDetails(o.getChangeMediaWorkflowCompartmentDetails());
+            isLockOverride(o.getIsLockOverride());
             opcRetryToken(o.getOpcRetryToken());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
@@ -270,12 +292,14 @@ public class ChangeMediaWorkflowCompartmentRequest
                     new ChangeMediaWorkflowCompartmentRequest();
             request.mediaWorkflowId = mediaWorkflowId;
             request.changeMediaWorkflowCompartmentDetails = changeMediaWorkflowCompartmentDetails;
+            request.isLockOverride = isLockOverride;
             request.opcRetryToken = opcRetryToken;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
             // new ChangeMediaWorkflowCompartmentRequest(mediaWorkflowId,
-            // changeMediaWorkflowCompartmentDetails, opcRetryToken, ifMatch, opcRequestId);
+            // changeMediaWorkflowCompartmentDetails, isLockOverride, opcRetryToken, ifMatch,
+            // opcRequestId);
         }
     }
 
@@ -288,6 +312,7 @@ public class ChangeMediaWorkflowCompartmentRequest
         return new Builder()
                 .mediaWorkflowId(mediaWorkflowId)
                 .changeMediaWorkflowCompartmentDetails(changeMediaWorkflowCompartmentDetails)
+                .isLockOverride(isLockOverride)
                 .opcRetryToken(opcRetryToken)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId);
@@ -310,6 +335,7 @@ public class ChangeMediaWorkflowCompartmentRequest
         sb.append(",mediaWorkflowId=").append(String.valueOf(this.mediaWorkflowId));
         sb.append(",changeMediaWorkflowCompartmentDetails=")
                 .append(String.valueOf(this.changeMediaWorkflowCompartmentDetails));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
@@ -332,6 +358,7 @@ public class ChangeMediaWorkflowCompartmentRequest
                 && java.util.Objects.equals(
                         this.changeMediaWorkflowCompartmentDetails,
                         other.changeMediaWorkflowCompartmentDetails)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
@@ -349,6 +376,9 @@ public class ChangeMediaWorkflowCompartmentRequest
                         + (this.changeMediaWorkflowCompartmentDetails == null
                                 ? 43
                                 : this.changeMediaWorkflowCompartmentDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());

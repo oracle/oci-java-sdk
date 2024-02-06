@@ -22,6 +22,13 @@ public class DeleteStreamCdnConfigRequest
     public String getStreamCdnConfigId() {
         return streamCdnConfigId;
     }
+    /** Whether to override locks (if any exist). */
+    private Boolean isLockOverride;
+
+    /** Whether to override locks (if any exist). */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
+    }
     /** The client request ID for tracing. */
     private String opcRequestId;
 
@@ -64,6 +71,20 @@ public class DeleteStreamCdnConfigRequest
          */
         public Builder streamCdnConfigId(String streamCdnConfigId) {
             this.streamCdnConfigId = streamCdnConfigId;
+            return this;
+        }
+
+        /** Whether to override locks (if any exist). */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         *
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
             return this;
         }
 
@@ -134,6 +155,7 @@ public class DeleteStreamCdnConfigRequest
          */
         public Builder copy(DeleteStreamCdnConfigRequest o) {
             streamCdnConfigId(o.getStreamCdnConfigId());
+            isLockOverride(o.getIsLockOverride());
             opcRequestId(o.getOpcRequestId());
             ifMatch(o.getIfMatch());
             invocationCallback(o.getInvocationCallback());
@@ -171,10 +193,12 @@ public class DeleteStreamCdnConfigRequest
         public DeleteStreamCdnConfigRequest buildWithoutInvocationCallback() {
             DeleteStreamCdnConfigRequest request = new DeleteStreamCdnConfigRequest();
             request.streamCdnConfigId = streamCdnConfigId;
+            request.isLockOverride = isLockOverride;
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             return request;
-            // new DeleteStreamCdnConfigRequest(streamCdnConfigId, opcRequestId, ifMatch);
+            // new DeleteStreamCdnConfigRequest(streamCdnConfigId, isLockOverride, opcRequestId,
+            // ifMatch);
         }
     }
 
@@ -186,6 +210,7 @@ public class DeleteStreamCdnConfigRequest
     public Builder toBuilder() {
         return new Builder()
                 .streamCdnConfigId(streamCdnConfigId)
+                .isLockOverride(isLockOverride)
                 .opcRequestId(opcRequestId)
                 .ifMatch(ifMatch);
     }
@@ -205,6 +230,7 @@ public class DeleteStreamCdnConfigRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",streamCdnConfigId=").append(String.valueOf(this.streamCdnConfigId));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(")");
@@ -223,6 +249,7 @@ public class DeleteStreamCdnConfigRequest
         DeleteStreamCdnConfigRequest other = (DeleteStreamCdnConfigRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.streamCdnConfigId, other.streamCdnConfigId)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch);
     }
@@ -234,6 +261,9 @@ public class DeleteStreamCdnConfigRequest
         result =
                 (result * PRIME)
                         + (this.streamCdnConfigId == null ? 43 : this.streamCdnConfigId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         return result;

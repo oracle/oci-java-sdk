@@ -16,12 +16,30 @@ import com.oracle.bmc.vault.responses.*;
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
 public class VaultsWaiters {
-    private final java.util.concurrent.ExecutorService executorService;
-    private final Vaults client;
+    @jakarta.annotation.Nonnull private final java.util.concurrent.ExecutorService executorService;
+    @jakarta.annotation.Nonnull private final Vaults client;
+    private final com.oracle.bmc.workrequests.WorkRequest workRequestClient;
 
-    public VaultsWaiters(java.util.concurrent.ExecutorService executorService, Vaults client) {
+    @Deprecated
+    public VaultsWaiters(
+            @jakarta.annotation.Nonnull java.util.concurrent.ExecutorService executorService,
+            @jakarta.annotation.Nonnull Vaults client) {
+        this(executorService, client, null);
+    }
+
+    public VaultsWaiters(
+            @jakarta.annotation.Nonnull java.util.concurrent.ExecutorService executorService,
+            @jakarta.annotation.Nonnull Vaults client,
+            com.oracle.bmc.workrequests.WorkRequest workRequestClient) {
+        if (executorService == null) {
+            throw new NullPointerException("executorService is marked non-null but is null");
+        }
+        if (client == null) {
+            throw new NullPointerException("client is marked non-null but is null");
+        }
         this.executorService = executorService;
         this.client = client;
+        this.workRequestClient = workRequestClient;
     }
 
     /**
@@ -120,6 +138,61 @@ public class VaultsWaiters {
                         },
                         targetStatesSet.contains(
                                 com.oracle.bmc.vault.model.Secret.LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<RotateSecretRequest, RotateSecretResponse> forRotateSecret(
+            RotateSecretRequest request) {
+        return forRotateSecret(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<RotateSecretRequest, RotateSecretResponse> forRotateSecret(
+            RotateSecretRequest request,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<RotateSecretResponse>() {
+                    @Override
+                    public RotateSecretResponse call() throws Exception {
+                        final RotateSecretResponse response = client.rotateSecret(request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
                 request);
     }
 }

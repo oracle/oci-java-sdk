@@ -177,6 +177,7 @@ public final class JobOutput extends com.oracle.bmc.http.client.internal.Explici
         TranscriptionJob("TRANSCRIPTION_JOB"),
         VisionJob("VISION_JOB"),
         TextAnalysis("TEXT_ANALYSIS"),
+        InputFile("INPUT_FILE"),
         Other("OTHER"),
 
         /**

@@ -46,6 +46,7 @@ public final class ManagementAgent
         "isCustomerDeployed",
         "installType",
         "managementAgentProperties",
+        "dataSourceList",
         "freeformTags",
         "definedTags"
     })
@@ -73,6 +74,7 @@ public final class ManagementAgent
             Boolean isCustomerDeployed,
             InstallTypes installType,
             java.util.List<ManagementAgentProperty> managementAgentProperties,
+            java.util.List<DataSource> dataSourceList,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -99,6 +101,7 @@ public final class ManagementAgent
         this.isCustomerDeployed = isCustomerDeployed;
         this.installType = installType;
         this.managementAgentProperties = managementAgentProperties;
+        this.dataSourceList = dataSourceList;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -477,6 +480,21 @@ public final class ManagementAgent
             this.__explicitlySet__.add("managementAgentProperties");
             return this;
         }
+        /** list of dataSources associated with the agent */
+        @com.fasterxml.jackson.annotation.JsonProperty("dataSourceList")
+        private java.util.List<DataSource> dataSourceList;
+
+        /**
+         * list of dataSources associated with the agent
+         *
+         * @param dataSourceList the value to set
+         * @return this builder
+         */
+        public Builder dataSourceList(java.util.List<DataSource> dataSourceList) {
+            this.dataSourceList = dataSourceList;
+            this.__explicitlySet__.add("dataSourceList");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -546,6 +564,7 @@ public final class ManagementAgent
                             this.isCustomerDeployed,
                             this.installType,
                             this.managementAgentProperties,
+                            this.dataSourceList,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -624,6 +643,9 @@ public final class ManagementAgent
             }
             if (model.wasPropertyExplicitlySet("managementAgentProperties")) {
                 this.managementAgentProperties(model.getManagementAgentProperties());
+            }
+            if (model.wasPropertyExplicitlySet("dataSourceList")) {
+                this.dataSourceList(model.getDataSourceList());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -969,6 +991,19 @@ public final class ManagementAgent
         return managementAgentProperties;
     }
 
+    /** list of dataSources associated with the agent */
+    @com.fasterxml.jackson.annotation.JsonProperty("dataSourceList")
+    private final java.util.List<DataSource> dataSourceList;
+
+    /**
+     * list of dataSources associated with the agent
+     *
+     * @return the value
+     */
+    public java.util.List<DataSource> getDataSourceList() {
+        return dataSourceList;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -1043,6 +1078,7 @@ public final class ManagementAgent
         sb.append(", installType=").append(String.valueOf(this.installType));
         sb.append(", managementAgentProperties=")
                 .append(String.valueOf(this.managementAgentProperties));
+        sb.append(", dataSourceList=").append(String.valueOf(this.dataSourceList));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -1084,6 +1120,7 @@ public final class ManagementAgent
                 && java.util.Objects.equals(this.installType, other.installType)
                 && java.util.Objects.equals(
                         this.managementAgentProperties, other.managementAgentProperties)
+                && java.util.Objects.equals(this.dataSourceList, other.dataSourceList)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -1146,6 +1183,9 @@ public final class ManagementAgent
                         + (this.managementAgentProperties == null
                                 ? 43
                                 : this.managementAgentProperties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataSourceList == null ? 43 : this.dataSourceList.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

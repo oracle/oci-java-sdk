@@ -25,6 +25,7 @@ public class VaultsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(VaultsClient.class);
 
+    protected final java.util.concurrent.ExecutorService executorService;
     private final VaultsWaiters waiters;
 
     private final VaultsPaginators paginators;
@@ -55,6 +56,7 @@ public class VaultsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
 
             executorService = threadPoolExecutor;
         }
+        this.executorService = executorService;
         this.waiters = new VaultsWaiters(executorService, this);
 
         this.paginators = new VaultsPaginators(this);
@@ -145,6 +147,33 @@ public class VaultsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString("etag", CancelSecretDeletionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CancelSecretDeletionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CancelSecretRotationResponse cancelSecretRotation(CancelSecretRotationRequest request) {
+
+        Validate.notBlank(request.getSecretId(), "secretId must not be blank");
+
+        return clientCall(request, CancelSecretRotationResponse::builder)
+                .logger(LOG, "cancelSecretRotation")
+                .serviceDetails(
+                        "Vaults",
+                        "CancelSecretRotation",
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/CancelSecretRotation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CancelSecretRotationRequest::builder)
+                .basePath("/20180608")
+                .appendPathParam("secrets")
+                .appendPathParam(request.getSecretId())
+                .appendPathParam("actions")
+                .appendPathParam("cancelRotation")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", CancelSecretRotationResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -367,6 +396,36 @@ public class VaultsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
     }
 
     @Override
+    public RotateSecretResponse rotateSecret(RotateSecretRequest request) {
+
+        Validate.notBlank(request.getSecretId(), "secretId must not be blank");
+
+        return clientCall(request, RotateSecretResponse::builder)
+                .logger(LOG, "rotateSecret")
+                .serviceDetails(
+                        "Vaults",
+                        "RotateSecret",
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/RotateSecret")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RotateSecretRequest::builder)
+                .basePath("/20180608")
+                .appendPathParam("secrets")
+                .appendPathParam(request.getSecretId())
+                .appendPathParam("actions")
+                .appendPathParam("rotate")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", RotateSecretResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", RotateSecretResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public ScheduleSecretDeletionResponse scheduleSecretDeletion(
             ScheduleSecretDeletionRequest request) {
 
@@ -468,6 +527,11 @@ public class VaultsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
     @Override
     public VaultsWaiters getWaiters() {
         return waiters;
+    }
+
+    @Override
+    public VaultsWaiters newWaiters(com.oracle.bmc.workrequests.WorkRequest workRequestClient) {
+        return new VaultsWaiters(executorService, this, workRequestClient);
     }
 
     @Override

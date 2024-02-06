@@ -30,7 +30,8 @@ public final class CreateStreamPackagingConfigDetails
         "segmentTimeInSeconds",
         "encryption",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "locks"
     })
     public CreateStreamPackagingConfigDetails(
             String distributionChannelId,
@@ -39,7 +40,8 @@ public final class CreateStreamPackagingConfigDetails
             Integer segmentTimeInSeconds,
             StreamPackagingConfigEncryption encryption,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<ResourceLock> locks) {
         super();
         this.distributionChannelId = distributionChannelId;
         this.displayName = displayName;
@@ -48,6 +50,7 @@ public final class CreateStreamPackagingConfigDetails
         this.encryption = encryption;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -166,6 +169,21 @@ public final class CreateStreamPackagingConfigDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -179,7 +197,8 @@ public final class CreateStreamPackagingConfigDetails
                             this.segmentTimeInSeconds,
                             this.encryption,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -208,6 +227,9 @@ public final class CreateStreamPackagingConfigDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             return this;
         }
@@ -352,6 +374,19 @@ public final class CreateStreamPackagingConfigDetails
         return definedTags;
     }
 
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -374,6 +409,7 @@ public final class CreateStreamPackagingConfigDetails
         sb.append(", encryption=").append(String.valueOf(this.encryption));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -395,6 +431,7 @@ public final class CreateStreamPackagingConfigDetails
                 && java.util.Objects.equals(this.encryption, other.encryption)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -421,6 +458,7 @@ public final class CreateStreamPackagingConfigDetails
         result = (result * PRIME) + (this.encryption == null ? 43 : this.encryption.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

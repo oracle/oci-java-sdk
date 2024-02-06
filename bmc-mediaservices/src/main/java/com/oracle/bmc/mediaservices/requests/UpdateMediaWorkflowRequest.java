@@ -31,6 +31,13 @@ public class UpdateMediaWorkflowRequest
             getUpdateMediaWorkflowDetails() {
         return updateMediaWorkflowDetails;
     }
+    /** Whether to override locks (if any exist). */
+    private Boolean isLockOverride;
+
+    /** Whether to override locks (if any exist). */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
+    }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
      * if-match} parameter to the value of the etag from a previous GET or POST response for that
@@ -105,6 +112,20 @@ public class UpdateMediaWorkflowRequest
             return this;
         }
 
+        /** Whether to override locks (if any exist). */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         *
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+
         /**
          * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
          * {@code if-match} parameter to the value of the etag from a previous GET or POST response
@@ -173,6 +194,7 @@ public class UpdateMediaWorkflowRequest
         public Builder copy(UpdateMediaWorkflowRequest o) {
             mediaWorkflowId(o.getMediaWorkflowId());
             updateMediaWorkflowDetails(o.getUpdateMediaWorkflowDetails());
+            isLockOverride(o.getIsLockOverride());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
@@ -223,11 +245,12 @@ public class UpdateMediaWorkflowRequest
             UpdateMediaWorkflowRequest request = new UpdateMediaWorkflowRequest();
             request.mediaWorkflowId = mediaWorkflowId;
             request.updateMediaWorkflowDetails = updateMediaWorkflowDetails;
+            request.isLockOverride = isLockOverride;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateMediaWorkflowRequest(mediaWorkflowId, updateMediaWorkflowDetails, ifMatch,
-            // opcRequestId);
+            // new UpdateMediaWorkflowRequest(mediaWorkflowId, updateMediaWorkflowDetails,
+            // isLockOverride, ifMatch, opcRequestId);
         }
     }
 
@@ -240,6 +263,7 @@ public class UpdateMediaWorkflowRequest
         return new Builder()
                 .mediaWorkflowId(mediaWorkflowId)
                 .updateMediaWorkflowDetails(updateMediaWorkflowDetails)
+                .isLockOverride(isLockOverride)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId);
     }
@@ -261,6 +285,7 @@ public class UpdateMediaWorkflowRequest
         sb.append(",mediaWorkflowId=").append(String.valueOf(this.mediaWorkflowId));
         sb.append(",updateMediaWorkflowDetails=")
                 .append(String.valueOf(this.updateMediaWorkflowDetails));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
@@ -281,6 +306,7 @@ public class UpdateMediaWorkflowRequest
                 && java.util.Objects.equals(this.mediaWorkflowId, other.mediaWorkflowId)
                 && java.util.Objects.equals(
                         this.updateMediaWorkflowDetails, other.updateMediaWorkflowDetails)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
@@ -297,6 +323,9 @@ public class UpdateMediaWorkflowRequest
                         + (this.updateMediaWorkflowDetails == null
                                 ? 43
                                 : this.updateMediaWorkflowDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;

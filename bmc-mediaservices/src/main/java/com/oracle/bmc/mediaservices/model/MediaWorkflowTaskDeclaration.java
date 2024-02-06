@@ -27,18 +27,21 @@ public final class MediaWorkflowTaskDeclaration
         "name",
         "version",
         "parametersSchema",
-        "parametersSchemaAllowingReferences"
+        "parametersSchemaAllowingReferences",
+        "locks"
     })
     public MediaWorkflowTaskDeclaration(
             String name,
             Integer version,
             java.util.Map<String, Object> parametersSchema,
-            java.util.Map<String, Object> parametersSchemaAllowingReferences) {
+            java.util.Map<String, Object> parametersSchemaAllowingReferences,
+            java.util.List<ResourceLock> locks) {
         super();
         this.name = name;
         this.version = version;
         this.parametersSchema = parametersSchema;
         this.parametersSchemaAllowingReferences = parametersSchemaAllowingReferences;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -124,6 +127,21 @@ public final class MediaWorkflowTaskDeclaration
             this.__explicitlySet__.add("parametersSchemaAllowingReferences");
             return this;
         }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -134,7 +152,8 @@ public final class MediaWorkflowTaskDeclaration
                             this.name,
                             this.version,
                             this.parametersSchema,
-                            this.parametersSchemaAllowingReferences);
+                            this.parametersSchemaAllowingReferences,
+                            this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -155,6 +174,9 @@ public final class MediaWorkflowTaskDeclaration
             if (model.wasPropertyExplicitlySet("parametersSchemaAllowingReferences")) {
                 this.parametersSchemaAllowingReferences(
                         model.getParametersSchemaAllowingReferences());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             return this;
         }
@@ -241,6 +263,19 @@ public final class MediaWorkflowTaskDeclaration
         return parametersSchemaAllowingReferences;
     }
 
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -261,6 +296,7 @@ public final class MediaWorkflowTaskDeclaration
         sb.append(", parametersSchema=").append(String.valueOf(this.parametersSchema));
         sb.append(", parametersSchemaAllowingReferences=")
                 .append(String.valueOf(this.parametersSchemaAllowingReferences));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -281,6 +317,7 @@ public final class MediaWorkflowTaskDeclaration
                 && java.util.Objects.equals(
                         this.parametersSchemaAllowingReferences,
                         other.parametersSchemaAllowingReferences)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -298,6 +335,7 @@ public final class MediaWorkflowTaskDeclaration
                         + (this.parametersSchemaAllowingReferences == null
                                 ? 43
                                 : this.parametersSchemaAllowingReferences.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
