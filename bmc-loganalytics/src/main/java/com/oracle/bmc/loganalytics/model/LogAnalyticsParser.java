@@ -56,7 +56,10 @@ public final class LogAnalyticsParser
         "type",
         "isUserDeleted",
         "isNamespaceAware",
-        "categories"
+        "categories",
+        "isPositionAware",
+        "dependentSources",
+        "dependentParsers"
     })
     public LogAnalyticsParser(
             String content,
@@ -91,7 +94,10 @@ public final class LogAnalyticsParser
             Type type,
             Boolean isUserDeleted,
             Boolean isNamespaceAware,
-            java.util.List<LogAnalyticsCategory> categories) {
+            java.util.List<LogAnalyticsCategory> categories,
+            Boolean isPositionAware,
+            java.util.List<DependentSource> dependentSources,
+            java.util.List<DependentParser> dependentParsers) {
         super();
         this.content = content;
         this.description = description;
@@ -126,6 +132,9 @@ public final class LogAnalyticsParser
         this.isUserDeleted = isUserDeleted;
         this.isNamespaceAware = isNamespaceAware;
         this.categories = categories;
+        this.isPositionAware = isPositionAware;
+        this.dependentSources = dependentSources;
+        this.dependentParsers = dependentParsers;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -631,6 +640,51 @@ public final class LogAnalyticsParser
             this.__explicitlySet__.add("categories");
             return this;
         }
+        /** A flag indicating whether the parser is positionally aware. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isPositionAware")
+        private Boolean isPositionAware;
+
+        /**
+         * A flag indicating whether the parser is positionally aware.
+         *
+         * @param isPositionAware the value to set
+         * @return this builder
+         */
+        public Builder isPositionAware(Boolean isPositionAware) {
+            this.isPositionAware = isPositionAware;
+            this.__explicitlySet__.add("isPositionAware");
+            return this;
+        }
+        /** A list of sources that depend on the parser, either directly or indirectly. */
+        @com.fasterxml.jackson.annotation.JsonProperty("dependentSources")
+        private java.util.List<DependentSource> dependentSources;
+
+        /**
+         * A list of sources that depend on the parser, either directly or indirectly.
+         *
+         * @param dependentSources the value to set
+         * @return this builder
+         */
+        public Builder dependentSources(java.util.List<DependentSource> dependentSources) {
+            this.dependentSources = dependentSources;
+            this.__explicitlySet__.add("dependentSources");
+            return this;
+        }
+        /** A list of sub parsers used by this parser. */
+        @com.fasterxml.jackson.annotation.JsonProperty("dependentParsers")
+        private java.util.List<DependentParser> dependentParsers;
+
+        /**
+         * A list of sub parsers used by this parser.
+         *
+         * @param dependentParsers the value to set
+         * @return this builder
+         */
+        public Builder dependentParsers(java.util.List<DependentParser> dependentParsers) {
+            this.dependentParsers = dependentParsers;
+            this.__explicitlySet__.add("dependentParsers");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -670,7 +724,10 @@ public final class LogAnalyticsParser
                             this.type,
                             this.isUserDeleted,
                             this.isNamespaceAware,
-                            this.categories);
+                            this.categories,
+                            this.isPositionAware,
+                            this.dependentSources,
+                            this.dependentParsers);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -777,6 +834,15 @@ public final class LogAnalyticsParser
             }
             if (model.wasPropertyExplicitlySet("categories")) {
                 this.categories(model.getCategories());
+            }
+            if (model.wasPropertyExplicitlySet("isPositionAware")) {
+                this.isPositionAware(model.getIsPositionAware());
+            }
+            if (model.wasPropertyExplicitlySet("dependentSources")) {
+                this.dependentSources(model.getDependentSources());
+            }
+            if (model.wasPropertyExplicitlySet("dependentParsers")) {
+                this.dependentParsers(model.getDependentParsers());
             }
             return this;
         }
@@ -1273,6 +1339,45 @@ public final class LogAnalyticsParser
         return categories;
     }
 
+    /** A flag indicating whether the parser is positionally aware. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isPositionAware")
+    private final Boolean isPositionAware;
+
+    /**
+     * A flag indicating whether the parser is positionally aware.
+     *
+     * @return the value
+     */
+    public Boolean getIsPositionAware() {
+        return isPositionAware;
+    }
+
+    /** A list of sources that depend on the parser, either directly or indirectly. */
+    @com.fasterxml.jackson.annotation.JsonProperty("dependentSources")
+    private final java.util.List<DependentSource> dependentSources;
+
+    /**
+     * A list of sources that depend on the parser, either directly or indirectly.
+     *
+     * @return the value
+     */
+    public java.util.List<DependentSource> getDependentSources() {
+        return dependentSources;
+    }
+
+    /** A list of sub parsers used by this parser. */
+    @com.fasterxml.jackson.annotation.JsonProperty("dependentParsers")
+    private final java.util.List<DependentParser> dependentParsers;
+
+    /**
+     * A list of sub parsers used by this parser.
+     *
+     * @return the value
+     */
+    public java.util.List<DependentParser> getDependentParsers() {
+        return dependentParsers;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1324,6 +1429,9 @@ public final class LogAnalyticsParser
         sb.append(", isUserDeleted=").append(String.valueOf(this.isUserDeleted));
         sb.append(", isNamespaceAware=").append(String.valueOf(this.isNamespaceAware));
         sb.append(", categories=").append(String.valueOf(this.categories));
+        sb.append(", isPositionAware=").append(String.valueOf(this.isPositionAware));
+        sb.append(", dependentSources=").append(String.valueOf(this.dependentSources));
+        sb.append(", dependentParsers=").append(String.valueOf(this.dependentParsers));
         sb.append(")");
         return sb.toString();
     }
@@ -1374,6 +1482,9 @@ public final class LogAnalyticsParser
                 && java.util.Objects.equals(this.isUserDeleted, other.isUserDeleted)
                 && java.util.Objects.equals(this.isNamespaceAware, other.isNamespaceAware)
                 && java.util.Objects.equals(this.categories, other.categories)
+                && java.util.Objects.equals(this.isPositionAware, other.isPositionAware)
+                && java.util.Objects.equals(this.dependentSources, other.dependentSources)
+                && java.util.Objects.equals(this.dependentParsers, other.dependentParsers)
                 && super.equals(other);
     }
 
@@ -1456,6 +1567,15 @@ public final class LogAnalyticsParser
                 (result * PRIME)
                         + (this.isNamespaceAware == null ? 43 : this.isNamespaceAware.hashCode());
         result = (result * PRIME) + (this.categories == null ? 43 : this.categories.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPositionAware == null ? 43 : this.isPositionAware.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dependentSources == null ? 43 : this.dependentSources.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dependentParsers == null ? 43 : this.dependentParsers.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

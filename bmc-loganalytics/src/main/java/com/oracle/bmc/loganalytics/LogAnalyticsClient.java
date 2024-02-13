@@ -3867,6 +3867,10 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "metadataEquals",
+                        request.getMetadataEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -3907,6 +3911,10 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "metadataEquals",
+                        request.getMetadataEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -4537,6 +4545,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendEnumQueryParam("kind", request.getKind())
+                .appendQueryParam("targetService", request.getTargetService())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
@@ -4584,6 +4593,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendQueryParam("savedSearchId", request.getSavedSearchId())
                 .appendQueryParam("displayNameContains", request.getDisplayNameContains())
+                .appendQueryParam("targetService", request.getTargetService())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
@@ -4876,6 +4886,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("name", request.getName())
+                .appendQueryParam("sourceType", request.getSourceType())
                 .appendQueryParam("categories", request.getCategories())
                 .appendQueryParam("isSimplified", request.getIsSimplified())
                 .appendQueryParam("compartmentId", request.getCompartmentId())
@@ -6510,6 +6521,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendPathParam("actions")
                 .appendPathParam("uploadDiscoveryData")
                 .appendEnumQueryParam("discoveryDataType", request.getDiscoveryDataType())
+                .appendQueryParam("logGroupId", request.getLogGroupId())
                 .appendEnumQueryParam("payloadType", request.getPayloadType())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -6559,6 +6571,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("content-type", request.getContentType())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-meta-properties", request.getOpcMetaProperties())
                 .appendHeader("expect", request.getExpect())
                 .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()

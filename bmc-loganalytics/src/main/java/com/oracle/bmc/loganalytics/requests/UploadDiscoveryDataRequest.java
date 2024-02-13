@@ -83,6 +83,13 @@ public class UploadDiscoveryDataRequest
     public DiscoveryDataType getDiscoveryDataType() {
         return discoveryDataType;
     }
+    /** The log group OCID that gets mapped to the logs in the discovery data. */
+    private String logGroupId;
+
+    /** The log group OCID that gets mapped to the logs in the discovery data. */
+    public String getLogGroupId() {
+        return logGroupId;
+    }
     /** Identifies the type of request payload. */
     private com.oracle.bmc.loganalytics.model.PayloadType payloadType;
 
@@ -228,6 +235,20 @@ public class UploadDiscoveryDataRequest
             return this;
         }
 
+        /** The log group OCID that gets mapped to the logs in the discovery data. */
+        private String logGroupId = null;
+
+        /**
+         * The log group OCID that gets mapped to the logs in the discovery data.
+         *
+         * @param logGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder logGroupId(String logGroupId) {
+            this.logGroupId = logGroupId;
+            return this;
+        }
+
         /** Identifies the type of request payload. */
         private com.oracle.bmc.loganalytics.model.PayloadType payloadType = null;
 
@@ -339,6 +360,7 @@ public class UploadDiscoveryDataRequest
             opcRequestId(o.getOpcRequestId());
             opcMetaProperties(o.getOpcMetaProperties());
             discoveryDataType(o.getDiscoveryDataType());
+            logGroupId(o.getLogGroupId());
             payloadType(o.getPayloadType());
             contentType(o.getContentType());
             opcRetryToken(o.getOpcRetryToken());
@@ -394,14 +416,15 @@ public class UploadDiscoveryDataRequest
             request.opcRequestId = opcRequestId;
             request.opcMetaProperties = opcMetaProperties;
             request.discoveryDataType = discoveryDataType;
+            request.logGroupId = logGroupId;
             request.payloadType = payloadType;
             request.contentType = contentType;
             request.opcRetryToken = opcRetryToken;
             request.expect = expect;
             return request;
             // new UploadDiscoveryDataRequest(namespaceName, uploadDiscoveryDataDetails,
-            // opcRequestId, opcMetaProperties, discoveryDataType, payloadType, contentType,
-            // opcRetryToken, expect);
+            // opcRequestId, opcMetaProperties, discoveryDataType, logGroupId, payloadType,
+            // contentType, opcRetryToken, expect);
         }
     }
 
@@ -417,6 +440,7 @@ public class UploadDiscoveryDataRequest
                 .opcRequestId(opcRequestId)
                 .opcMetaProperties(opcMetaProperties)
                 .discoveryDataType(discoveryDataType)
+                .logGroupId(logGroupId)
                 .payloadType(payloadType)
                 .contentType(contentType)
                 .opcRetryToken(opcRetryToken)
@@ -443,6 +467,7 @@ public class UploadDiscoveryDataRequest
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",opcMetaProperties=").append(String.valueOf(this.opcMetaProperties));
         sb.append(",discoveryDataType=").append(String.valueOf(this.discoveryDataType));
+        sb.append(",logGroupId=").append(String.valueOf(this.logGroupId));
         sb.append(",payloadType=").append(String.valueOf(this.payloadType));
         sb.append(",contentType=").append(String.valueOf(this.contentType));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
@@ -468,6 +493,7 @@ public class UploadDiscoveryDataRequest
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.opcMetaProperties, other.opcMetaProperties)
                 && java.util.Objects.equals(this.discoveryDataType, other.discoveryDataType)
+                && java.util.Objects.equals(this.logGroupId, other.logGroupId)
                 && java.util.Objects.equals(this.payloadType, other.payloadType)
                 && java.util.Objects.equals(this.contentType, other.contentType)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
@@ -493,6 +519,7 @@ public class UploadDiscoveryDataRequest
         result =
                 (result * PRIME)
                         + (this.discoveryDataType == null ? 43 : this.discoveryDataType.hashCode());
+        result = (result * PRIME) + (this.logGroupId == null ? 43 : this.logGroupId.hashCode());
         result = (result * PRIME) + (this.payloadType == null ? 43 : this.payloadType.hashCode());
         result = (result * PRIME) + (this.contentType == null ? 43 : this.contentType.hashCode());
         result =

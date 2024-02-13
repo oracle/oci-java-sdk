@@ -14,6 +14,7 @@ public enum CreationSourceType implements com.oracle.bmc.http.internal.BmcEnum {
     BulkDiscovery("BULK_DISCOVERY"),
     ServiceConnectorHub("SERVICE_CONNECTOR_HUB"),
     Discovery("DISCOVERY"),
+    LoggingAnalytics("LOGGING_ANALYTICS"),
     None("NONE"),
 
     /**

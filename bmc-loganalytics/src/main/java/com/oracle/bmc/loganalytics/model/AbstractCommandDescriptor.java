@@ -36,6 +36,9 @@ package com.oracle.bmc.loganalytics.model;
             value = TailCommandDescriptor.class,
             name = "TAIL"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = SequenceCommandDescriptor.class,
+            name = "SEQUENCE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = OutlierCommandDescriptor.class,
             name = "OUTLIER"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -101,6 +104,9 @@ package com.oracle.bmc.loganalytics.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = MultiSearchCommandDescriptor.class,
             name = "MULTI_SEARCH"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateTableCommandDescriptor.class,
+            name = "CREATETABLE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CompareCommandDescriptor.class,
             name = "COMPARE"),
@@ -397,6 +403,8 @@ public class AbstractCommandDescriptor
         Where("WHERE"),
         ClusterCompare("CLUSTER_COMPARE"),
         Delete("DELETE"),
+        Createtable("CREATETABLE"),
+        Sequence("SEQUENCE"),
         Delta("DELTA"),
         Distinct("DISTINCT"),
         SearchLookup("SEARCH_LOOKUP"),

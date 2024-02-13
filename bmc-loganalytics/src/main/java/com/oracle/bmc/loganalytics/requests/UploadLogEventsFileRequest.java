@@ -98,6 +98,13 @@ public class UploadLogEventsFileRequest
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
+    /** Metadata key and value pairs separated by a semicolon. Example k1:v1;k2:v2;k3:v3 */
+    private String opcMetaProperties;
+
+    /** Metadata key and value pairs separated by a semicolon. Example k1:v1;k2:v2;k3:v3 */
+    public String getOpcMetaProperties() {
+        return opcMetaProperties;
+    }
     /**
      * A value of {@code 100-continue} requests preliminary verification of the request method,
      * path, and headers before the request body is sent. If no error results from such
@@ -276,6 +283,20 @@ public class UploadLogEventsFileRequest
             return this;
         }
 
+        /** Metadata key and value pairs separated by a semicolon. Example k1:v1;k2:v2;k3:v3 */
+        private String opcMetaProperties = null;
+
+        /**
+         * Metadata key and value pairs separated by a semicolon. Example k1:v1;k2:v2;k3:v3
+         *
+         * @param opcMetaProperties the value to set
+         * @return this builder instance
+         */
+        public Builder opcMetaProperties(String opcMetaProperties) {
+            this.opcMetaProperties = opcMetaProperties;
+            return this;
+        }
+
         /**
          * A value of {@code 100-continue} requests preliminary verification of the request method,
          * path, and headers before the request body is sent. If no error results from such
@@ -338,6 +359,7 @@ public class UploadLogEventsFileRequest
             payloadType(o.getPayloadType());
             contentType(o.getContentType());
             opcRetryToken(o.getOpcRetryToken());
+            opcMetaProperties(o.getOpcMetaProperties());
             expect(o.getExpect());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -393,10 +415,12 @@ public class UploadLogEventsFileRequest
             request.payloadType = payloadType;
             request.contentType = contentType;
             request.opcRetryToken = opcRetryToken;
+            request.opcMetaProperties = opcMetaProperties;
             request.expect = expect;
             return request;
             // new UploadLogEventsFileRequest(namespaceName, logGroupId, uploadLogEventsFileDetails,
-            // opcRequestId, logSet, payloadType, contentType, opcRetryToken, expect);
+            // opcRequestId, logSet, payloadType, contentType, opcRetryToken, opcMetaProperties,
+            // expect);
         }
     }
 
@@ -415,6 +439,7 @@ public class UploadLogEventsFileRequest
                 .payloadType(payloadType)
                 .contentType(contentType)
                 .opcRetryToken(opcRetryToken)
+                .opcMetaProperties(opcMetaProperties)
                 .expect(expect);
     }
 
@@ -441,6 +466,7 @@ public class UploadLogEventsFileRequest
         sb.append(",payloadType=").append(String.valueOf(this.payloadType));
         sb.append(",contentType=").append(String.valueOf(this.contentType));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",opcMetaProperties=").append(String.valueOf(this.opcMetaProperties));
         sb.append(",expect=").append(String.valueOf(this.expect));
         sb.append(")");
         return sb.toString();
@@ -466,6 +492,7 @@ public class UploadLogEventsFileRequest
                 && java.util.Objects.equals(this.payloadType, other.payloadType)
                 && java.util.Objects.equals(this.contentType, other.contentType)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.opcMetaProperties, other.opcMetaProperties)
                 && java.util.Objects.equals(this.expect, other.expect);
     }
 
@@ -489,6 +516,9 @@ public class UploadLogEventsFileRequest
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcMetaProperties == null ? 43 : this.opcMetaProperties.hashCode());
         result = (result * PRIME) + (this.expect == null ? 43 : this.expect.hashCode());
         return result;
     }

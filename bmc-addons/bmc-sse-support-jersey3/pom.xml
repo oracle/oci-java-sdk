@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>oci-java-sdk-addons</artifactId>
+        <groupId>com.oracle.oci.sdk</groupId>
+        <version>3.34.1</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>oci-java-sdk-addons-sse-support-jersey3</artifactId>
+    <name>Oracle Cloud Infrastructure SDK - SSE Support</name>
+    <description>This project support for Sever-Sent Events for Oracle Cloud Infrastructure</description>
+    <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+
+    <profiles>
+        <profile>
+            <id>sign</id>
+            <properties>
+                <source.jar.for.zip>${project.build.directory}/${project.artifactId}-${project.version}-signed.jar</source.jar.for.zip>
+            </properties>
+            <build>
+                <plugins>
+                    <!-- Explicitly generate the sources jar in the package phase so that it will be included in the bundle -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <executions>
+                            <!-- Copy jar for signing -->
+                            <execution>
+                                <id>copy-jar</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <target name="copy-jar">
+                                        <copy file="${project.build.directory}/${project.artifactId}-${project.version}.jar" tofile="${source.jar.for.zip}"/>
+                                    </target>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <!-- https://ocss.oci.oraclecorp.com/webcodesign/ -->
+                        <groupId>com.oracle.ccss</groupId>
+                        <artifactId>codesign-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <!-- Run in pre-integration-test phase, which comes after the package phase. -->
+                                <!-- That way, all jar files have been built already. -->
+                                <phase>pre-integration-test</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <user>dexsdk_grp</user>
+                            <globalUID>joshunte</globalUID>
+                            <fileToSign>${source.jar.for.zip}</fileToSign>
+                            <signLocation>${project.build.directory}</signLocation>
+                            <signMethod>java2</signMethod>
+                        </configuration>
+                    </plugin>
+                    <!-- Assemble only during the 'sign' profile as we need to assemble the signed jar -->
+                    <!-- Assemble the single jar, dependencies, docs, examples into a zip archive -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <configuration>
+                            <appendAssemblyId>true</appendAssemblyId>
+                            <attach>true</attach>
+                            <descriptors>
+                                <descriptor>src/main/assembly/assembly.xml</descriptor>
+                            </descriptors>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>pre-integration-test</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- Just do assembly, no signing -->
+        <profile>
+            <id>ziponly</id>
+            <properties>
+                <source.jar.for.zip>${project.build.directory}/${project.artifactId}-${project.version}.jar</source.jar.for.zip>
+            </properties>
+            <build>
+                <plugins>
+                    <!-- Explicitly generate the sources jar in the package phase so that it will be included in the bundle -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <configuration>
+                            <appendAssemblyId>true</appendAssemblyId>
+                            <attach>true</attach>
+                            <descriptors>
+                                <descriptor>src/main/assembly/assembly.xml</descriptor>
+                            </descriptors>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+    <dependencies>
+        <dependency>
+            <groupId>com.oracle.oci.sdk</groupId>
+            <artifactId>oci-java-sdk-common</artifactId>
+            <version>3.34.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.oracle.oci.sdk</groupId>
+            <artifactId>oci-java-sdk-generativeaiinference</artifactId>
+            <version>3.34.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <!-- Not sure if this should be here, since it's a library,
+                 and the transport layer should be chosen at the very outside,
+                 but the code in it needs it. -->
+            <groupId>com.oracle.oci.sdk</groupId>
+            <artifactId>oci-java-sdk-common-httpclient-jersey3</artifactId>
+            <version>3.34.1</version>
+        </dependency>
+    </dependencies>
+
+
+</project>

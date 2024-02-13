@@ -26,6 +26,7 @@ public final class ScheduledTaskSummary
     @java.beans.ConstructorProperties({
         "id",
         "taskType",
+        "targetService",
         "compartmentId",
         "timeCreated",
         "timeUpdated",
@@ -42,6 +43,7 @@ public final class ScheduledTaskSummary
     public ScheduledTaskSummary(
             String id,
             TaskType taskType,
+            String targetService,
             String compartmentId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
@@ -57,6 +59,7 @@ public final class ScheduledTaskSummary
         super();
         this.id = id;
         this.taskType = taskType;
+        this.targetService = targetService;
         this.compartmentId = compartmentId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -105,6 +108,21 @@ public final class ScheduledTaskSummary
         public Builder taskType(TaskType taskType) {
             this.taskType = taskType;
             this.__explicitlySet__.add("taskType");
+            return this;
+        }
+        /** Target Service */
+        @com.fasterxml.jackson.annotation.JsonProperty("targetService")
+        private String targetService;
+
+        /**
+         * Target Service
+         *
+         * @param targetService the value to set
+         * @return this builder
+         */
+        public Builder targetService(String targetService) {
+            this.targetService = targetService;
+            this.__explicitlySet__.add("targetService");
             return this;
         }
         /**
@@ -323,6 +341,7 @@ public final class ScheduledTaskSummary
                     new ScheduledTaskSummary(
                             this.id,
                             this.taskType,
+                            this.targetService,
                             this.compartmentId,
                             this.timeCreated,
                             this.timeUpdated,
@@ -348,6 +367,9 @@ public final class ScheduledTaskSummary
             }
             if (model.wasPropertyExplicitlySet("taskType")) {
                 this.taskType(model.getTaskType());
+            }
+            if (model.wasPropertyExplicitlySet("targetService")) {
+                this.targetService(model.getTargetService());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
@@ -426,6 +448,19 @@ public final class ScheduledTaskSummary
      */
     public TaskType getTaskType() {
         return taskType;
+    }
+
+    /** Target Service */
+    @com.fasterxml.jackson.annotation.JsonProperty("targetService")
+    private final String targetService;
+
+    /**
+     * Target Service
+     *
+     * @return the value
+     */
+    public String getTargetService() {
+        return targetService;
     }
 
     /**
@@ -719,6 +754,7 @@ public final class ScheduledTaskSummary
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", taskType=").append(String.valueOf(this.taskType));
+        sb.append(", targetService=").append(String.valueOf(this.targetService));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
@@ -747,6 +783,7 @@ public final class ScheduledTaskSummary
         ScheduledTaskSummary other = (ScheduledTaskSummary) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.taskType, other.taskType)
+                && java.util.Objects.equals(this.targetService, other.targetService)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
@@ -768,6 +805,9 @@ public final class ScheduledTaskSummary
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.taskType == null ? 43 : this.taskType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetService == null ? 43 : this.targetService.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

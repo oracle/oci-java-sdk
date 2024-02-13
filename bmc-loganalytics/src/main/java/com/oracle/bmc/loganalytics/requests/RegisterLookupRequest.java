@@ -20,13 +20,14 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public String getNamespaceName() {
         return namespaceName;
     }
-    /** The lookup type. Valid values are Lookup or Dictionary. */
+    /** The lookup type. Valid values are Lookup, Dictionary or Module. */
     private Type type;
 
-    /** The lookup type. Valid values are Lookup or Dictionary. */
+    /** The lookup type. Valid values are Lookup, Dictionary or Module. */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Lookup("Lookup"),
         Dictionary("Dictionary"),
+        Module("Module"),
         ;
 
         private final String value;
@@ -57,7 +58,7 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
     };
 
-    /** The lookup type. Valid values are Lookup or Dictionary. */
+    /** The lookup type. Valid values are Lookup, Dictionary or Module. */
     public Type getType() {
         return type;
     }
@@ -184,11 +185,11 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The lookup type. Valid values are Lookup or Dictionary. */
+        /** The lookup type. Valid values are Lookup, Dictionary or Module. */
         private Type type = null;
 
         /**
-         * The lookup type. Valid values are Lookup or Dictionary.
+         * The lookup type. Valid values are Lookup, Dictionary or Module.
          *
          * @param type the value to set
          * @return this builder instance
