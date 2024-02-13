@@ -237,6 +237,13 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public String getName() {
         return name;
     }
+    /** The source type. */
+    private String sourceType;
+
+    /** The source type. */
+    public String getSourceType() {
+        return sourceType;
+    }
     /** A comma-separated list of categories used for filtering */
     private String categories;
 
@@ -455,6 +462,20 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /** The source type. */
+        private String sourceType = null;
+
+        /**
+         * The source type.
+         *
+         * @param sourceType the value to set
+         * @return this builder instance
+         */
+        public Builder sourceType(String sourceType) {
+            this.sourceType = sourceType;
+            return this;
+        }
+
         /** A comma-separated list of categories used for filtering */
         private String categories = null;
 
@@ -546,6 +567,7 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             limit(o.getLimit());
             page(o.getPage());
             name(o.getName());
+            sourceType(o.getSourceType());
             categories(o.getCategories());
             isSimplified(o.getIsSimplified());
             opcRequestId(o.getOpcRequestId());
@@ -594,13 +616,14 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.limit = limit;
             request.page = page;
             request.name = name;
+            request.sourceType = sourceType;
             request.categories = categories;
             request.isSimplified = isSimplified;
             request.opcRequestId = opcRequestId;
             return request;
             // new ListSourcesRequest(namespaceName, compartmentId, entityType, sourceDisplayText,
-            // isSystem, isAutoAssociated, sortOrder, sortBy, limit, page, name, categories,
-            // isSimplified, opcRequestId);
+            // isSystem, isAutoAssociated, sortOrder, sortBy, limit, page, name, sourceType,
+            // categories, isSimplified, opcRequestId);
         }
     }
 
@@ -622,6 +645,7 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .limit(limit)
                 .page(page)
                 .name(name)
+                .sourceType(sourceType)
                 .categories(categories)
                 .isSimplified(isSimplified)
                 .opcRequestId(opcRequestId);
@@ -652,6 +676,7 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",name=").append(String.valueOf(this.name));
+        sb.append(",sourceType=").append(String.valueOf(this.sourceType));
         sb.append(",categories=").append(String.valueOf(this.categories));
         sb.append(",isSimplified=").append(String.valueOf(this.isSimplified));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
@@ -681,6 +706,7 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.sourceType, other.sourceType)
                 && java.util.Objects.equals(this.categories, other.categories)
                 && java.util.Objects.equals(this.isSimplified, other.isSimplified)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
@@ -709,6 +735,7 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
         result = (result * PRIME) + (this.categories == null ? 43 : this.categories.hashCode());
         result = (result * PRIME) + (this.isSimplified == null ? 43 : this.isSimplified.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());

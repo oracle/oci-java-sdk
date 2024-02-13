@@ -36,6 +36,8 @@ public final class LogAnalyticsEntitySummary
         "timezoneRegion",
         "timeCreated",
         "timeUpdated",
+        "timeLastDiscovered",
+        "metadata",
         "areLogsCollected",
         "sourceId",
         "creationSource",
@@ -55,6 +57,8 @@ public final class LogAnalyticsEntitySummary
             String timezoneRegion,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            java.util.Date timeLastDiscovered,
+            LogAnalyticsMetadataCollection metadata,
             Boolean areLogsCollected,
             String sourceId,
             CreationSource creationSource,
@@ -73,6 +77,8 @@ public final class LogAnalyticsEntitySummary
         this.timezoneRegion = timezoneRegion;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.timeLastDiscovered = timeLastDiscovered;
+        this.metadata = metadata;
         this.areLogsCollected = areLogsCollected;
         this.sourceId = sourceId;
         this.creationSource = creationSource;
@@ -282,6 +288,30 @@ public final class LogAnalyticsEntitySummary
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
+        /** The date and time the resource was last discovered, in the format defined by RFC3339. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastDiscovered")
+        private java.util.Date timeLastDiscovered;
+
+        /**
+         * The date and time the resource was last discovered, in the format defined by RFC3339.
+         *
+         * @param timeLastDiscovered the value to set
+         * @return this builder
+         */
+        public Builder timeLastDiscovered(java.util.Date timeLastDiscovered) {
+            this.timeLastDiscovered = timeLastDiscovered;
+            this.__explicitlySet__.add("timeLastDiscovered");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+        private LogAnalyticsMetadataCollection metadata;
+
+        public Builder metadata(LogAnalyticsMetadataCollection metadata) {
+            this.metadata = metadata;
+            this.__explicitlySet__.add("metadata");
+            return this;
+        }
         /**
          * The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
          */
@@ -383,6 +413,8 @@ public final class LogAnalyticsEntitySummary
                             this.timezoneRegion,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.timeLastDiscovered,
+                            this.metadata,
                             this.areLogsCollected,
                             this.sourceId,
                             this.creationSource,
@@ -431,6 +463,12 @@ public final class LogAnalyticsEntitySummary
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastDiscovered")) {
+                this.timeLastDiscovered(model.getTimeLastDiscovered());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
             }
             if (model.wasPropertyExplicitlySet("areLogsCollected")) {
                 this.areLogsCollected(model.getAreLogsCollected());
@@ -634,6 +672,26 @@ public final class LogAnalyticsEntitySummary
         return timeUpdated;
     }
 
+    /** The date and time the resource was last discovered, in the format defined by RFC3339. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastDiscovered")
+    private final java.util.Date timeLastDiscovered;
+
+    /**
+     * The date and time the resource was last discovered, in the format defined by RFC3339.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeLastDiscovered() {
+        return timeLastDiscovered;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+    private final LogAnalyticsMetadataCollection metadata;
+
+    public LogAnalyticsMetadataCollection getMetadata() {
+        return metadata;
+    }
+
     /** The Boolean flag to indicate if logs are collected for an entity for log analytics usage. */
     @com.fasterxml.jackson.annotation.JsonProperty("areLogsCollected")
     private final Boolean areLogsCollected;
@@ -728,6 +786,8 @@ public final class LogAnalyticsEntitySummary
         sb.append(", timezoneRegion=").append(String.valueOf(this.timezoneRegion));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", timeLastDiscovered=").append(String.valueOf(this.timeLastDiscovered));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(", areLogsCollected=").append(String.valueOf(this.areLogsCollected));
         sb.append(", sourceId=").append(String.valueOf(this.sourceId));
         sb.append(", creationSource=").append(String.valueOf(this.creationSource));
@@ -760,6 +820,8 @@ public final class LogAnalyticsEntitySummary
                 && java.util.Objects.equals(this.timezoneRegion, other.timezoneRegion)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.timeLastDiscovered, other.timeLastDiscovered)
+                && java.util.Objects.equals(this.metadata, other.metadata)
                 && java.util.Objects.equals(this.areLogsCollected, other.areLogsCollected)
                 && java.util.Objects.equals(this.sourceId, other.sourceId)
                 && java.util.Objects.equals(this.creationSource, other.creationSource)
@@ -802,6 +864,12 @@ public final class LogAnalyticsEntitySummary
                         + (this.timezoneRegion == null ? 43 : this.timezoneRegion.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastDiscovered == null
+                                ? 43
+                                : this.timeLastDiscovered.hashCode());
+        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
         result =
                 (result * PRIME)
                         + (this.areLogsCollected == null ? 43 : this.areLogsCollected.hashCode());

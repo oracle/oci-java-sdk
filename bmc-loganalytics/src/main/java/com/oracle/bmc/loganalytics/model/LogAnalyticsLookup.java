@@ -184,12 +184,12 @@ public final class LogAnalyticsLookup
             this.__explicitlySet__.add("lookupReferenceString");
             return this;
         }
-        /** The lookup type. Valid values are LOOKUP or DICTIONARY. */
+        /** The lookup type. Valid values are Lookup, Dictionary or Module. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
-         * The lookup type. Valid values are LOOKUP or DICTIONARY.
+         * The lookup type. Valid values are Lookup, Dictionary or Module.
          *
          * @param type the value to set
          * @return this builder
@@ -498,10 +498,11 @@ public final class LogAnalyticsLookup
         return lookupReferenceString;
     }
 
-    /** The lookup type. Valid values are LOOKUP or DICTIONARY. */
+    /** The lookup type. Valid values are Lookup, Dictionary or Module. */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Lookup("Lookup"),
         Dictionary("Dictionary"),
+        Module("Module"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -542,12 +543,12 @@ public final class LogAnalyticsLookup
             return UnknownEnumValue;
         }
     };
-    /** The lookup type. Valid values are LOOKUP or DICTIONARY. */
+    /** The lookup type. Valid values are Lookup, Dictionary or Module. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
-     * The lookup type. Valid values are LOOKUP or DICTIONARY.
+     * The lookup type. Valid values are Lookup, Dictionary or Module.
      *
      * @return the value
      */

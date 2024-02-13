@@ -161,7 +161,10 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, ChangePrivateEndpointCompartmentResponse::builder)
                 .logger(LOG, "changePrivateEndpointCompartment")
-                .serviceDetails("ShardedDatabaseService", "ChangePrivateEndpointCompartment", "")
+                .serviceDetails(
+                        "ShardedDatabaseService",
+                        "ChangePrivateEndpointCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/PrivateEndpoint/ChangePrivateEndpointCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangePrivateEndpointCompartmentRequest::builder)
                 .basePath("/20230301")
@@ -195,7 +198,10 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, ChangeShardedDatabaseCompartmentResponse::builder)
                 .logger(LOG, "changeShardedDatabaseCompartment")
-                .serviceDetails("ShardedDatabaseService", "ChangeShardedDatabaseCompartment", "")
+                .serviceDetails(
+                        "ShardedDatabaseService",
+                        "ChangeShardedDatabaseCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/ChangeShardedDatabaseCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeShardedDatabaseCompartmentRequest::builder)
                 .basePath("/20230301")
@@ -229,7 +235,10 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, ConfigureShardedDatabaseGsmsResponse::builder)
                 .logger(LOG, "configureShardedDatabaseGsms")
-                .serviceDetails("ShardedDatabaseService", "ConfigureShardedDatabaseGsms", "")
+                .serviceDetails(
+                        "ShardedDatabaseService",
+                        "ConfigureShardedDatabaseGsms",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/ConfigureShardedDatabaseGsms")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ConfigureShardedDatabaseGsmsRequest::builder)
                 .basePath("/20230301")
@@ -259,7 +268,10 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, ConfigureShardingResponse::builder)
                 .logger(LOG, "configureSharding")
-                .serviceDetails("ShardedDatabaseService", "ConfigureSharding", "")
+                .serviceDetails(
+                        "ShardedDatabaseService",
+                        "ConfigureSharding",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/ConfigureSharding")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ConfigureShardingRequest::builder)
                 .basePath("/20230301")
@@ -350,7 +362,10 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, DeletePrivateEndpointResponse::builder)
                 .logger(LOG, "deletePrivateEndpoint")
-                .serviceDetails("ShardedDatabaseService", "DeletePrivateEndpoint", "")
+                .serviceDetails(
+                        "ShardedDatabaseService",
+                        "DeletePrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/PrivateEndpoint/DeletePrivateEndpoint")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeletePrivateEndpointRequest::builder)
                 .basePath("/20230301")
@@ -377,7 +392,10 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, DeleteShardedDatabaseResponse::builder)
                 .logger(LOG, "deleteShardedDatabase")
-                .serviceDetails("ShardedDatabaseService", "DeleteShardedDatabase", "")
+                .serviceDetails(
+                        "ShardedDatabaseService",
+                        "DeleteShardedDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/DeleteShardedDatabase")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteShardedDatabaseRequest::builder)
                 .basePath("/20230301")
@@ -405,7 +423,9 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
         return clientCall(request, DownloadGsmCertificateSigningRequestResponse::builder)
                 .logger(LOG, "downloadGsmCertificateSigningRequest")
                 .serviceDetails(
-                        "ShardedDatabaseService", "DownloadGsmCertificateSigningRequest", "")
+                        "ShardedDatabaseService",
+                        "DownloadGsmCertificateSigningRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/DownloadGsmCertificateSigningRequest")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DownloadGsmCertificateSigningRequestRequest::builder)
                 .basePath("/20230301")
@@ -443,7 +463,10 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, FetchConnectionStringResponse::builder)
                 .logger(LOG, "fetchConnectionString")
-                .serviceDetails("ShardedDatabaseService", "FetchConnectionString", "")
+                .serviceDetails(
+                        "ShardedDatabaseService",
+                        "FetchConnectionString",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/FetchConnectionString")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(FetchConnectionStringRequest::builder)
                 .basePath("/20230301")
@@ -475,7 +498,9 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
         return clientCall(request, FetchShardableCloudAutonomousVmClustersResponse::builder)
                 .logger(LOG, "fetchShardableCloudAutonomousVmClusters")
                 .serviceDetails(
-                        "ShardedDatabaseService", "FetchShardableCloudAutonomousVmClusters", "")
+                        "ShardedDatabaseService",
+                        "FetchShardableCloudAutonomousVmClusters",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/FetchShardableCloudAutonomousVmClusters")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(FetchShardableCloudAutonomousVmClustersRequest::builder)
                 .basePath("/20230301")
@@ -507,7 +532,9 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
         return clientCall(request, GenerateGsmCertificateSigningRequestResponse::builder)
                 .logger(LOG, "generateGsmCertificateSigningRequest")
                 .serviceDetails(
-                        "ShardedDatabaseService", "GenerateGsmCertificateSigningRequest", "")
+                        "ShardedDatabaseService",
+                        "GenerateGsmCertificateSigningRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/GenerateGsmCertificateSigningRequest")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(GenerateGsmCertificateSigningRequestRequest::builder)
                 .basePath("/20230301")
@@ -538,7 +565,10 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, GenerateWalletResponse::builder)
                 .logger(LOG, "generateWallet")
-                .serviceDetails("ShardedDatabaseService", "GenerateWallet", "")
+                .serviceDetails(
+                        "ShardedDatabaseService",
+                        "GenerateWallet",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/GenerateWallet")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(GenerateWalletRequest::builder)
                 .basePath("/20230301")
@@ -570,7 +600,10 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, GetPrivateEndpointResponse::builder)
                 .logger(LOG, "getPrivateEndpoint")
-                .serviceDetails("ShardedDatabaseService", "GetPrivateEndpoint", "")
+                .serviceDetails(
+                        "ShardedDatabaseService",
+                        "GetPrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/PrivateEndpoint/GetPrivateEndpoint")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetPrivateEndpointRequest::builder)
                 .basePath("/20230301")
@@ -595,7 +628,10 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, GetShardedDatabaseResponse::builder)
                 .logger(LOG, "getShardedDatabase")
-                .serviceDetails("ShardedDatabaseService", "GetShardedDatabase", "")
+                .serviceDetails(
+                        "ShardedDatabaseService",
+                        "GetShardedDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/GetShardedDatabase")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetShardedDatabaseRequest::builder)
                 .basePath("/20230301")
@@ -621,7 +657,10 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("ShardedDatabaseService", "GetWorkRequest", "")
+                .serviceDetails(
+                        "ShardedDatabaseService",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20230301")
@@ -646,7 +685,10 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, ListPrivateEndpointsResponse::builder)
                 .logger(LOG, "listPrivateEndpoints")
-                .serviceDetails("ShardedDatabaseService", "ListPrivateEndpoints", "")
+                .serviceDetails(
+                        "ShardedDatabaseService",
+                        "ListPrivateEndpoints",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/PrivateEndpointCollection/ListPrivateEndpoints")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListPrivateEndpointsRequest::builder)
                 .basePath("/20230301")
@@ -678,7 +720,10 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, ListShardedDatabasesResponse::builder)
                 .logger(LOG, "listShardedDatabases")
-                .serviceDetails("ShardedDatabaseService", "ListShardedDatabases", "")
+                .serviceDetails(
+                        "ShardedDatabaseService",
+                        "ListShardedDatabases",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabaseCollection/ListShardedDatabases")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListShardedDatabasesRequest::builder)
                 .basePath("/20230301")
@@ -712,7 +757,10 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("ShardedDatabaseService", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "ShardedDatabaseService",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20230301")
@@ -744,7 +792,10 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("ShardedDatabaseService", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "ShardedDatabaseService",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20230301")
@@ -775,7 +826,10 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("ShardedDatabaseService", "ListWorkRequests", "")
+                .serviceDetails(
+                        "ShardedDatabaseService",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20230301")
@@ -812,7 +866,10 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, PatchShardedDatabaseResponse::builder)
                 .logger(LOG, "patchShardedDatabase")
-                .serviceDetails("ShardedDatabaseService", "PatchShardedDatabase", "")
+                .serviceDetails(
+                        "ShardedDatabaseService",
+                        "PatchShardedDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/PatchShardedDatabase")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchShardedDatabaseRequest::builder)
                 .basePath("/20230301")
@@ -842,7 +899,10 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, PrevalidateShardedDatabaseResponse::builder)
                 .logger(LOG, "prevalidateShardedDatabase")
-                .serviceDetails("ShardedDatabaseService", "PrevalidateShardedDatabase", "")
+                .serviceDetails(
+                        "ShardedDatabaseService",
+                        "PrevalidateShardedDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/PrevalidateShardedDatabase")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(PrevalidateShardedDatabaseRequest::builder)
                 .basePath("/20230301")
@@ -872,7 +932,10 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, StartShardedDatabaseResponse::builder)
                 .logger(LOG, "startShardedDatabase")
-                .serviceDetails("ShardedDatabaseService", "StartShardedDatabase", "")
+                .serviceDetails(
+                        "ShardedDatabaseService",
+                        "StartShardedDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/StartShardedDatabase")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(StartShardedDatabaseRequest::builder)
                 .basePath("/20230301")
@@ -900,7 +963,10 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, StopShardedDatabaseResponse::builder)
                 .logger(LOG, "stopShardedDatabase")
-                .serviceDetails("ShardedDatabaseService", "StopShardedDatabase", "")
+                .serviceDetails(
+                        "ShardedDatabaseService",
+                        "StopShardedDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/StopShardedDatabase")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(StopShardedDatabaseRequest::builder)
                 .basePath("/20230301")
@@ -932,7 +998,10 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, UpdatePrivateEndpointResponse::builder)
                 .logger(LOG, "updatePrivateEndpoint")
-                .serviceDetails("ShardedDatabaseService", "UpdatePrivateEndpoint", "")
+                .serviceDetails(
+                        "ShardedDatabaseService",
+                        "UpdatePrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/PrivateEndpoint/UpdatePrivateEndpoint")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdatePrivateEndpointRequest::builder)
                 .basePath("/20230301")
@@ -964,7 +1033,10 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, UpdateShardedDatabaseResponse::builder)
                 .logger(LOG, "updateShardedDatabase")
-                .serviceDetails("ShardedDatabaseService", "UpdateShardedDatabase", "")
+                .serviceDetails(
+                        "ShardedDatabaseService",
+                        "UpdateShardedDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/UpdateShardedDatabase")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateShardedDatabaseRequest::builder)
                 .basePath("/20230301")
@@ -997,7 +1069,9 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
         return clientCall(request, UploadSignedCertificateAndGenerateWalletResponse::builder)
                 .logger(LOG, "uploadSignedCertificateAndGenerateWallet")
                 .serviceDetails(
-                        "ShardedDatabaseService", "UploadSignedCertificateAndGenerateWallet", "")
+                        "ShardedDatabaseService",
+                        "UploadSignedCertificateAndGenerateWallet",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/UploadSignedCertificateAndGenerateWallet")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(UploadSignedCertificateAndGenerateWalletRequest::builder)
                 .basePath("/20230301")
@@ -1027,7 +1101,10 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, ValidateNetworkResponse::builder)
                 .logger(LOG, "validateNetwork")
-                .serviceDetails("ShardedDatabaseService", "ValidateNetwork", "")
+                .serviceDetails(
+                        "ShardedDatabaseService",
+                        "ValidateNetwork",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/ValidateNetwork")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ValidateNetworkRequest::builder)
                 .basePath("/20230301")

@@ -30,7 +30,9 @@ public final class UpdateLogAnalyticsEntityDetails
         "hostname",
         "properties",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "timeLastDiscovered",
+        "metadata"
     })
     public UpdateLogAnalyticsEntityDetails(
             String name,
@@ -39,7 +41,9 @@ public final class UpdateLogAnalyticsEntityDetails
             String hostname,
             java.util.Map<String, String> properties,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Date timeLastDiscovered,
+            LogAnalyticsMetadataDetails metadata) {
         super();
         this.name = name;
         this.managementAgentId = managementAgentId;
@@ -48,6 +52,8 @@ public final class UpdateLogAnalyticsEntityDetails
         this.properties = properties;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.timeLastDiscovered = timeLastDiscovered;
+        this.metadata = metadata;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -178,6 +184,30 @@ public final class UpdateLogAnalyticsEntityDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /** The date and time the resource was last discovered, in the format defined by RFC3339. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastDiscovered")
+        private java.util.Date timeLastDiscovered;
+
+        /**
+         * The date and time the resource was last discovered, in the format defined by RFC3339.
+         *
+         * @param timeLastDiscovered the value to set
+         * @return this builder
+         */
+        public Builder timeLastDiscovered(java.util.Date timeLastDiscovered) {
+            this.timeLastDiscovered = timeLastDiscovered;
+            this.__explicitlySet__.add("timeLastDiscovered");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+        private LogAnalyticsMetadataDetails metadata;
+
+        public Builder metadata(LogAnalyticsMetadataDetails metadata) {
+            this.metadata = metadata;
+            this.__explicitlySet__.add("metadata");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -191,7 +221,9 @@ public final class UpdateLogAnalyticsEntityDetails
                             this.hostname,
                             this.properties,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.timeLastDiscovered,
+                            this.metadata);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -220,6 +252,12 @@ public final class UpdateLogAnalyticsEntityDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastDiscovered")) {
+                this.timeLastDiscovered(model.getTimeLastDiscovered());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
             }
             return this;
         }
@@ -343,6 +381,26 @@ public final class UpdateLogAnalyticsEntityDetails
         return definedTags;
     }
 
+    /** The date and time the resource was last discovered, in the format defined by RFC3339. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastDiscovered")
+    private final java.util.Date timeLastDiscovered;
+
+    /**
+     * The date and time the resource was last discovered, in the format defined by RFC3339.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeLastDiscovered() {
+        return timeLastDiscovered;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+    private final LogAnalyticsMetadataDetails metadata;
+
+    public LogAnalyticsMetadataDetails getMetadata() {
+        return metadata;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -365,6 +423,8 @@ public final class UpdateLogAnalyticsEntityDetails
         sb.append(", properties=").append(String.valueOf(this.properties));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", timeLastDiscovered=").append(String.valueOf(this.timeLastDiscovered));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(")");
         return sb.toString();
     }
@@ -386,6 +446,8 @@ public final class UpdateLogAnalyticsEntityDetails
                 && java.util.Objects.equals(this.properties, other.properties)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.timeLastDiscovered, other.timeLastDiscovered)
+                && java.util.Objects.equals(this.metadata, other.metadata)
                 && super.equals(other);
     }
 
@@ -404,6 +466,12 @@ public final class UpdateLogAnalyticsEntityDetails
         result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastDiscovered == null
+                                ? 43
+                                : this.timeLastDiscovered.hashCode());
+        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -32,7 +32,10 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
         "purpose",
         "queryString",
         "logSets",
-        "createdBy"
+        "createdBy",
+        "collectionId",
+        "timeRecalledDataStarted",
+        "timeRecalledDataEnded"
     })
     public RecalledData(
             java.util.Date timeDataEnded,
@@ -45,7 +48,10 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
             String purpose,
             String queryString,
             String logSets,
-            String createdBy) {
+            String createdBy,
+            Long collectionId,
+            java.util.Date timeRecalledDataStarted,
+            java.util.Date timeRecalledDataEnded) {
         super();
         this.timeDataEnded = timeDataEnded;
         this.timeDataStarted = timeDataStarted;
@@ -58,6 +64,9 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
         this.queryString = queryString;
         this.logSets = logSets;
         this.createdBy = createdBy;
+        this.collectionId = collectionId;
+        this.timeRecalledDataStarted = timeRecalledDataStarted;
+        this.timeRecalledDataEnded = timeRecalledDataEnded;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -235,6 +244,51 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("createdBy");
             return this;
         }
+        /** This is the id for the recalled data collection */
+        @com.fasterxml.jackson.annotation.JsonProperty("collectionId")
+        private Long collectionId;
+
+        /**
+         * This is the id for the recalled data collection
+         *
+         * @param collectionId the value to set
+         * @return this builder
+         */
+        public Builder collectionId(Long collectionId) {
+            this.collectionId = collectionId;
+            this.__explicitlySet__.add("collectionId");
+            return this;
+        }
+        /** This is the recalled date start time */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeRecalledDataStarted")
+        private java.util.Date timeRecalledDataStarted;
+
+        /**
+         * This is the recalled date start time
+         *
+         * @param timeRecalledDataStarted the value to set
+         * @return this builder
+         */
+        public Builder timeRecalledDataStarted(java.util.Date timeRecalledDataStarted) {
+            this.timeRecalledDataStarted = timeRecalledDataStarted;
+            this.__explicitlySet__.add("timeRecalledDataStarted");
+            return this;
+        }
+        /** This is the recalled data end time */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeRecalledDataEnded")
+        private java.util.Date timeRecalledDataEnded;
+
+        /**
+         * This is the recalled data end time
+         *
+         * @param timeRecalledDataEnded the value to set
+         * @return this builder
+         */
+        public Builder timeRecalledDataEnded(java.util.Date timeRecalledDataEnded) {
+            this.timeRecalledDataEnded = timeRecalledDataEnded;
+            this.__explicitlySet__.add("timeRecalledDataEnded");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -252,7 +306,10 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
                             this.purpose,
                             this.queryString,
                             this.logSets,
-                            this.createdBy);
+                            this.createdBy,
+                            this.collectionId,
+                            this.timeRecalledDataStarted,
+                            this.timeRecalledDataEnded);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -293,6 +350,15 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("createdBy")) {
                 this.createdBy(model.getCreatedBy());
+            }
+            if (model.wasPropertyExplicitlySet("collectionId")) {
+                this.collectionId(model.getCollectionId());
+            }
+            if (model.wasPropertyExplicitlySet("timeRecalledDataStarted")) {
+                this.timeRecalledDataStarted(model.getTimeRecalledDataStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeRecalledDataEnded")) {
+                this.timeRecalledDataEnded(model.getTimeRecalledDataEnded());
             }
             return this;
         }
@@ -502,6 +568,45 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
         return createdBy;
     }
 
+    /** This is the id for the recalled data collection */
+    @com.fasterxml.jackson.annotation.JsonProperty("collectionId")
+    private final Long collectionId;
+
+    /**
+     * This is the id for the recalled data collection
+     *
+     * @return the value
+     */
+    public Long getCollectionId() {
+        return collectionId;
+    }
+
+    /** This is the recalled date start time */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeRecalledDataStarted")
+    private final java.util.Date timeRecalledDataStarted;
+
+    /**
+     * This is the recalled date start time
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeRecalledDataStarted() {
+        return timeRecalledDataStarted;
+    }
+
+    /** This is the recalled data end time */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeRecalledDataEnded")
+    private final java.util.Date timeRecalledDataEnded;
+
+    /**
+     * This is the recalled data end time
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeRecalledDataEnded() {
+        return timeRecalledDataEnded;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -528,6 +633,10 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", queryString=").append(String.valueOf(this.queryString));
         sb.append(", logSets=").append(String.valueOf(this.logSets));
         sb.append(", createdBy=").append(String.valueOf(this.createdBy));
+        sb.append(", collectionId=").append(String.valueOf(this.collectionId));
+        sb.append(", timeRecalledDataStarted=")
+                .append(String.valueOf(this.timeRecalledDataStarted));
+        sb.append(", timeRecalledDataEnded=").append(String.valueOf(this.timeRecalledDataEnded));
         sb.append(")");
         return sb.toString();
     }
@@ -554,6 +663,10 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.queryString, other.queryString)
                 && java.util.Objects.equals(this.logSets, other.logSets)
                 && java.util.Objects.equals(this.createdBy, other.createdBy)
+                && java.util.Objects.equals(this.collectionId, other.collectionId)
+                && java.util.Objects.equals(
+                        this.timeRecalledDataStarted, other.timeRecalledDataStarted)
+                && java.util.Objects.equals(this.timeRecalledDataEnded, other.timeRecalledDataEnded)
                 && super.equals(other);
     }
 
@@ -584,6 +697,17 @@ public final class RecalledData extends com.oracle.bmc.http.client.internal.Expl
         result = (result * PRIME) + (this.queryString == null ? 43 : this.queryString.hashCode());
         result = (result * PRIME) + (this.logSets == null ? 43 : this.logSets.hashCode());
         result = (result * PRIME) + (this.createdBy == null ? 43 : this.createdBy.hashCode());
+        result = (result * PRIME) + (this.collectionId == null ? 43 : this.collectionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeRecalledDataStarted == null
+                                ? 43
+                                : this.timeRecalledDataStarted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeRecalledDataEnded == null
+                                ? 43
+                                : this.timeRecalledDataEnded.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

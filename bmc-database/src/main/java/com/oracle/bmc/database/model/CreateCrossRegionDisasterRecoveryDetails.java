@@ -532,6 +532,27 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             this.__explicitlySet__.add("remoteDisasterRecoveryType");
             return this;
         }
+        /**
+         * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or
+         * Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary
+         * are not replicated to the Standby database.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isReplicateAutomaticBackups")
+        private Boolean isReplicateAutomaticBackups;
+
+        /**
+         * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or
+         * Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary
+         * are not replicated to the Standby database.
+         *
+         * @param isReplicateAutomaticBackups the value to set
+         * @return this builder
+         */
+        public Builder isReplicateAutomaticBackups(Boolean isReplicateAutomaticBackups) {
+            this.isReplicateAutomaticBackups = isReplicateAutomaticBackups;
+            this.__explicitlySet__.add("isReplicateAutomaticBackups");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -588,7 +609,8 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
                             this.secretId,
                             this.secretVersionNumber,
                             this.sourceId,
-                            this.remoteDisasterRecoveryType);
+                            this.remoteDisasterRecoveryType,
+                            this.isReplicateAutomaticBackups);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -749,6 +771,9 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             if (model.wasPropertyExplicitlySet("remoteDisasterRecoveryType")) {
                 this.remoteDisasterRecoveryType(model.getRemoteDisasterRecoveryType());
             }
+            if (model.wasPropertyExplicitlySet("isReplicateAutomaticBackups")) {
+                this.isReplicateAutomaticBackups(model.getIsReplicateAutomaticBackups());
+            }
             return this;
         }
     }
@@ -813,7 +838,8 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             String secretId,
             Integer secretVersionNumber,
             String sourceId,
-            DisasterRecoveryConfiguration.DisasterRecoveryType remoteDisasterRecoveryType) {
+            DisasterRecoveryConfiguration.DisasterRecoveryType remoteDisasterRecoveryType,
+            Boolean isReplicateAutomaticBackups) {
         super(
                 compartmentId,
                 characterSet,
@@ -865,6 +891,7 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
                 secretVersionNumber);
         this.sourceId = sourceId;
         this.remoteDisasterRecoveryType = remoteDisasterRecoveryType;
+        this.isReplicateAutomaticBackups = isReplicateAutomaticBackups;
     }
 
     /**
@@ -907,6 +934,25 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
         return remoteDisasterRecoveryType;
     }
 
+    /**
+     * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or
+     * Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are
+     * not replicated to the Standby database.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isReplicateAutomaticBackups")
+    private final Boolean isReplicateAutomaticBackups;
+
+    /**
+     * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or
+     * Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are
+     * not replicated to the Standby database.
+     *
+     * @return the value
+     */
+    public Boolean getIsReplicateAutomaticBackups() {
+        return isReplicateAutomaticBackups;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -925,6 +971,8 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
         sb.append(", sourceId=").append(String.valueOf(this.sourceId));
         sb.append(", remoteDisasterRecoveryType=")
                 .append(String.valueOf(this.remoteDisasterRecoveryType));
+        sb.append(", isReplicateAutomaticBackups=")
+                .append(String.valueOf(this.isReplicateAutomaticBackups));
         sb.append(")");
         return sb.toString();
     }
@@ -943,6 +991,8 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
         return java.util.Objects.equals(this.sourceId, other.sourceId)
                 && java.util.Objects.equals(
                         this.remoteDisasterRecoveryType, other.remoteDisasterRecoveryType)
+                && java.util.Objects.equals(
+                        this.isReplicateAutomaticBackups, other.isReplicateAutomaticBackups)
                 && super.equals(other);
     }
 
@@ -956,6 +1006,11 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
                         + (this.remoteDisasterRecoveryType == null
                                 ? 43
                                 : this.remoteDisasterRecoveryType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isReplicateAutomaticBackups == null
+                                ? 43
+                                : this.isReplicateAutomaticBackups.hashCode());
         return result;
     }
 }

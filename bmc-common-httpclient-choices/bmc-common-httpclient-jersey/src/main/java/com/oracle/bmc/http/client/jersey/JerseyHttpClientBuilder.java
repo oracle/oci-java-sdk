@@ -317,7 +317,8 @@ final class JerseyHttpClientBuilder implements HttpClientBuilder {
                                         .build());
 
                 executorService.execute(idleConnectionMonitor);
-
+                // Gracefully close the ExecutorService once IdleConnectionMonitor is shutdown
+                executorService.shutdown();
             } catch (Exception ex) {
                 LOG.info("Error creating/executing idle connection monitor thread", ex);
             }

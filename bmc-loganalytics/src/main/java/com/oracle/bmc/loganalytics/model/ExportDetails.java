@@ -157,8 +157,8 @@ public final class ExportDetails extends com.oracle.bmc.http.client.internal.Exp
          * Maximum number of results retrieved from data source is determined by the specific query
          * used and the maxTotalCount input field. If the export results can be streamed, the
          * maximum will be 1,000,000. If the results cannot be streamed, the maximum limit is 500
-         * for queries that include the link command and 10,000 for the queries that does not
-         * include the link command.
+         * for queries that include the link command and 10,000 for the queries that do not include
+         * the link command.
          *
          * <p>Queries that include certain commands such as head, tail or stats cannot be streamed
          * and are subject to a maximum of 10,000 results. Queries that include the sort command
@@ -173,8 +173,8 @@ public final class ExportDetails extends com.oracle.bmc.http.client.internal.Exp
          * Maximum number of results retrieved from data source is determined by the specific query
          * used and the maxTotalCount input field. If the export results can be streamed, the
          * maximum will be 1,000,000. If the results cannot be streamed, the maximum limit is 500
-         * for queries that include the link command and 10,000 for the queries that does not
-         * include the link command.
+         * for queries that include the link command and 10,000 for the queries that do not include
+         * the link command.
          *
          * <p>Queries that include certain commands such as head, tail or stats cannot be streamed
          * and are subject to a maximum of 10,000 results. Queries that include the sort command
@@ -439,7 +439,7 @@ public final class ExportDetails extends com.oracle.bmc.http.client.internal.Exp
      * Maximum number of results retrieved from data source is determined by the specific query used
      * and the maxTotalCount input field. If the export results can be streamed, the maximum will be
      * 1,000,000. If the results cannot be streamed, the maximum limit is 500 for queries that
-     * include the link command and 10,000 for the queries that does not include the link command.
+     * include the link command and 10,000 for the queries that do not include the link command.
      *
      * <p>Queries that include certain commands such as head, tail or stats cannot be streamed and
      * are subject to a maximum of 10,000 results. Queries that include the sort command cannot be
@@ -454,7 +454,7 @@ public final class ExportDetails extends com.oracle.bmc.http.client.internal.Exp
      * Maximum number of results retrieved from data source is determined by the specific query used
      * and the maxTotalCount input field. If the export results can be streamed, the maximum will be
      * 1,000,000. If the results cannot be streamed, the maximum limit is 500 for queries that
-     * include the link command and 10,000 for the queries that does not include the link command.
+     * include the link command and 10,000 for the queries that do not include the link command.
      *
      * <p>Queries that include certain commands such as head, tail or stats cannot be streamed and
      * are subject to a maximum of 10,000 results. Queries that include the sort command cannot be

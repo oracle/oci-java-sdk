@@ -31,7 +31,8 @@ public final class RecallArchivedDataDetails
         "logSets",
         "query",
         "purpose",
-        "isRecallNewDataOnly"
+        "isRecallNewDataOnly",
+        "isUseRecommendedDataSet"
     })
     public RecallArchivedDataDetails(
             String compartmentId,
@@ -41,7 +42,8 @@ public final class RecallArchivedDataDetails
             String logSets,
             String query,
             String purpose,
-            Boolean isRecallNewDataOnly) {
+            Boolean isRecallNewDataOnly,
+            Boolean isUseRecommendedDataSet) {
         super();
         this.compartmentId = compartmentId;
         this.timeDataEnded = timeDataEnded;
@@ -51,6 +53,7 @@ public final class RecallArchivedDataDetails
         this.query = query;
         this.purpose = purpose;
         this.isRecallNewDataOnly = isRecallNewDataOnly;
+        this.isUseRecommendedDataSet = isUseRecommendedDataSet;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -175,6 +178,21 @@ public final class RecallArchivedDataDetails
             this.__explicitlySet__.add("isRecallNewDataOnly");
             return this;
         }
+        /** This indicates if user checked system recommended time range */
+        @com.fasterxml.jackson.annotation.JsonProperty("isUseRecommendedDataSet")
+        private Boolean isUseRecommendedDataSet;
+
+        /**
+         * This indicates if user checked system recommended time range
+         *
+         * @param isUseRecommendedDataSet the value to set
+         * @return this builder
+         */
+        public Builder isUseRecommendedDataSet(Boolean isUseRecommendedDataSet) {
+            this.isUseRecommendedDataSet = isUseRecommendedDataSet;
+            this.__explicitlySet__.add("isUseRecommendedDataSet");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -189,7 +207,8 @@ public final class RecallArchivedDataDetails
                             this.logSets,
                             this.query,
                             this.purpose,
-                            this.isRecallNewDataOnly);
+                            this.isRecallNewDataOnly,
+                            this.isUseRecommendedDataSet);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -221,6 +240,9 @@ public final class RecallArchivedDataDetails
             }
             if (model.wasPropertyExplicitlySet("isRecallNewDataOnly")) {
                 this.isRecallNewDataOnly(model.getIsRecallNewDataOnly());
+            }
+            if (model.wasPropertyExplicitlySet("isUseRecommendedDataSet")) {
+                this.isUseRecommendedDataSet(model.getIsUseRecommendedDataSet());
             }
             return this;
         }
@@ -339,6 +361,19 @@ public final class RecallArchivedDataDetails
         return isRecallNewDataOnly;
     }
 
+    /** This indicates if user checked system recommended time range */
+    @com.fasterxml.jackson.annotation.JsonProperty("isUseRecommendedDataSet")
+    private final Boolean isUseRecommendedDataSet;
+
+    /**
+     * This indicates if user checked system recommended time range
+     *
+     * @return the value
+     */
+    public Boolean getIsUseRecommendedDataSet() {
+        return isUseRecommendedDataSet;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -362,6 +397,8 @@ public final class RecallArchivedDataDetails
         sb.append(", query=").append(String.valueOf(this.query));
         sb.append(", purpose=").append(String.valueOf(this.purpose));
         sb.append(", isRecallNewDataOnly=").append(String.valueOf(this.isRecallNewDataOnly));
+        sb.append(", isUseRecommendedDataSet=")
+                .append(String.valueOf(this.isUseRecommendedDataSet));
         sb.append(")");
         return sb.toString();
     }
@@ -384,6 +421,8 @@ public final class RecallArchivedDataDetails
                 && java.util.Objects.equals(this.query, other.query)
                 && java.util.Objects.equals(this.purpose, other.purpose)
                 && java.util.Objects.equals(this.isRecallNewDataOnly, other.isRecallNewDataOnly)
+                && java.util.Objects.equals(
+                        this.isUseRecommendedDataSet, other.isUseRecommendedDataSet)
                 && super.equals(other);
     }
 
@@ -409,6 +448,11 @@ public final class RecallArchivedDataDetails
                         + (this.isRecallNewDataOnly == null
                                 ? 43
                                 : this.isRecallNewDataOnly.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isUseRecommendedDataSet == null
+                                ? 43
+                                : this.isUseRecommendedDataSet.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

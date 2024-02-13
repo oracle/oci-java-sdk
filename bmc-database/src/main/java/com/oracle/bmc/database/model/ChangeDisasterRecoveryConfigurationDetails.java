@@ -27,16 +27,19 @@ public final class ChangeDisasterRecoveryConfigurationDetails
     @java.beans.ConstructorProperties({
         "disasterRecoveryType",
         "timeSnapshotStandbyEnabledTill",
-        "isSnapshotStandby"
+        "isSnapshotStandby",
+        "isReplicateAutomaticBackups"
     })
     public ChangeDisasterRecoveryConfigurationDetails(
             DisasterRecoveryType disasterRecoveryType,
             java.util.Date timeSnapshotStandbyEnabledTill,
-            Boolean isSnapshotStandby) {
+            Boolean isSnapshotStandby,
+            Boolean isReplicateAutomaticBackups) {
         super();
         this.disasterRecoveryType = disasterRecoveryType;
         this.timeSnapshotStandbyEnabledTill = timeSnapshotStandbyEnabledTill;
         this.isSnapshotStandby = isSnapshotStandby;
+        this.isReplicateAutomaticBackups = isReplicateAutomaticBackups;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -107,6 +110,27 @@ public final class ChangeDisasterRecoveryConfigurationDetails
             this.__explicitlySet__.add("isSnapshotStandby");
             return this;
         }
+        /**
+         * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or
+         * Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary
+         * are not replicated to the Standby database.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isReplicateAutomaticBackups")
+        private Boolean isReplicateAutomaticBackups;
+
+        /**
+         * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or
+         * Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary
+         * are not replicated to the Standby database.
+         *
+         * @param isReplicateAutomaticBackups the value to set
+         * @return this builder
+         */
+        public Builder isReplicateAutomaticBackups(Boolean isReplicateAutomaticBackups) {
+            this.isReplicateAutomaticBackups = isReplicateAutomaticBackups;
+            this.__explicitlySet__.add("isReplicateAutomaticBackups");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -116,7 +140,8 @@ public final class ChangeDisasterRecoveryConfigurationDetails
                     new ChangeDisasterRecoveryConfigurationDetails(
                             this.disasterRecoveryType,
                             this.timeSnapshotStandbyEnabledTill,
-                            this.isSnapshotStandby);
+                            this.isSnapshotStandby,
+                            this.isReplicateAutomaticBackups);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -133,6 +158,9 @@ public final class ChangeDisasterRecoveryConfigurationDetails
             }
             if (model.wasPropertyExplicitlySet("isSnapshotStandby")) {
                 this.isSnapshotStandby(model.getIsSnapshotStandby());
+            }
+            if (model.wasPropertyExplicitlySet("isReplicateAutomaticBackups")) {
+                this.isReplicateAutomaticBackups(model.getIsReplicateAutomaticBackups());
             }
             return this;
         }
@@ -244,6 +272,25 @@ public final class ChangeDisasterRecoveryConfigurationDetails
         return isSnapshotStandby;
     }
 
+    /**
+     * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or
+     * Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are
+     * not replicated to the Standby database.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isReplicateAutomaticBackups")
+    private final Boolean isReplicateAutomaticBackups;
+
+    /**
+     * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or
+     * Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are
+     * not replicated to the Standby database.
+     *
+     * @return the value
+     */
+    public Boolean getIsReplicateAutomaticBackups() {
+        return isReplicateAutomaticBackups;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -263,6 +310,8 @@ public final class ChangeDisasterRecoveryConfigurationDetails
         sb.append(", timeSnapshotStandbyEnabledTill=")
                 .append(String.valueOf(this.timeSnapshotStandbyEnabledTill));
         sb.append(", isSnapshotStandby=").append(String.valueOf(this.isSnapshotStandby));
+        sb.append(", isReplicateAutomaticBackups=")
+                .append(String.valueOf(this.isReplicateAutomaticBackups));
         sb.append(")");
         return sb.toString();
     }
@@ -282,6 +331,8 @@ public final class ChangeDisasterRecoveryConfigurationDetails
                 && java.util.Objects.equals(
                         this.timeSnapshotStandbyEnabledTill, other.timeSnapshotStandbyEnabledTill)
                 && java.util.Objects.equals(this.isSnapshotStandby, other.isSnapshotStandby)
+                && java.util.Objects.equals(
+                        this.isReplicateAutomaticBackups, other.isReplicateAutomaticBackups)
                 && super.equals(other);
     }
 
@@ -302,6 +353,11 @@ public final class ChangeDisasterRecoveryConfigurationDetails
         result =
                 (result * PRIME)
                         + (this.isSnapshotStandby == null ? 43 : this.isSnapshotStandby.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isReplicateAutomaticBackups == null
+                                ? 43
+                                : this.isReplicateAutomaticBackups.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

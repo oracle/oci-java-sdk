@@ -48,6 +48,8 @@ public final class LogAnalyticsObjectCollectionRule
         "timeUpdated",
         "isEnabled",
         "objectNameFilters",
+        "logType",
+        "isForceHistoricCollection",
         "definedTags",
         "freeformTags"
     })
@@ -76,6 +78,8 @@ public final class LogAnalyticsObjectCollectionRule
             java.util.Date timeUpdated,
             Boolean isEnabled,
             java.util.List<String> objectNameFilters,
+            LogTypes logType,
+            Boolean isForceHistoricCollection,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags) {
         super();
@@ -103,6 +107,8 @@ public final class LogAnalyticsObjectCollectionRule
         this.timeUpdated = timeUpdated;
         this.isEnabled = isEnabled;
         this.objectNameFilters = objectNameFilters;
+        this.logType = logType;
+        this.isForceHistoricCollection = isForceHistoricCollection;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
     }
@@ -552,6 +558,40 @@ public final class LogAnalyticsObjectCollectionRule
             this.__explicitlySet__.add("objectNameFilters");
             return this;
         }
+        /** Type of files/objects in this object collection rule. */
+        @com.fasterxml.jackson.annotation.JsonProperty("logType")
+        private LogTypes logType;
+
+        /**
+         * Type of files/objects in this object collection rule.
+         *
+         * @param logType the value to set
+         * @return this builder
+         */
+        public Builder logType(LogTypes logType) {
+            this.logType = logType;
+            this.__explicitlySet__.add("logType");
+            return this;
+        }
+        /**
+         * Flag to allow historic collection if poll period overlaps with existing ACTIVE collection
+         * rule
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isForceHistoricCollection")
+        private Boolean isForceHistoricCollection;
+
+        /**
+         * Flag to allow historic collection if poll period overlaps with existing ACTIVE collection
+         * rule
+         *
+         * @param isForceHistoricCollection the value to set
+         * @return this builder
+         */
+        public Builder isForceHistoricCollection(Boolean isForceHistoricCollection) {
+            this.isForceHistoricCollection = isForceHistoricCollection;
+            this.__explicitlySet__.add("isForceHistoricCollection");
+            return this;
+        }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
@@ -622,6 +662,8 @@ public final class LogAnalyticsObjectCollectionRule
                             this.timeUpdated,
                             this.isEnabled,
                             this.objectNameFilters,
+                            this.logType,
+                            this.isForceHistoricCollection,
                             this.definedTags,
                             this.freeformTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -703,6 +745,12 @@ public final class LogAnalyticsObjectCollectionRule
             }
             if (model.wasPropertyExplicitlySet("objectNameFilters")) {
                 this.objectNameFilters(model.getObjectNameFilters());
+            }
+            if (model.wasPropertyExplicitlySet("logType")) {
+                this.logType(model.getLogType());
+            }
+            if (model.wasPropertyExplicitlySet("isForceHistoricCollection")) {
+                this.isForceHistoricCollection(model.getIsForceHistoricCollection());
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
@@ -1107,6 +1155,36 @@ public final class LogAnalyticsObjectCollectionRule
         return objectNameFilters;
     }
 
+    /** Type of files/objects in this object collection rule. */
+    @com.fasterxml.jackson.annotation.JsonProperty("logType")
+    private final LogTypes logType;
+
+    /**
+     * Type of files/objects in this object collection rule.
+     *
+     * @return the value
+     */
+    public LogTypes getLogType() {
+        return logType;
+    }
+
+    /**
+     * Flag to allow historic collection if poll period overlaps with existing ACTIVE collection
+     * rule
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isForceHistoricCollection")
+    private final Boolean isForceHistoricCollection;
+
+    /**
+     * Flag to allow historic collection if poll period overlaps with existing ACTIVE collection
+     * rule
+     *
+     * @return the value
+     */
+    public Boolean getIsForceHistoricCollection() {
+        return isForceHistoricCollection;
+    }
+
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
      * {@code {"foo-namespace": {"bar-key": "value"}}}
@@ -1180,6 +1258,9 @@ public final class LogAnalyticsObjectCollectionRule
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", objectNameFilters=").append(String.valueOf(this.objectNameFilters));
+        sb.append(", logType=").append(String.valueOf(this.logType));
+        sb.append(", isForceHistoricCollection=")
+                .append(String.valueOf(this.isForceHistoricCollection));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(")");
@@ -1220,6 +1301,9 @@ public final class LogAnalyticsObjectCollectionRule
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.isEnabled, other.isEnabled)
                 && java.util.Objects.equals(this.objectNameFilters, other.objectNameFilters)
+                && java.util.Objects.equals(this.logType, other.logType)
+                && java.util.Objects.equals(
+                        this.isForceHistoricCollection, other.isForceHistoricCollection)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && super.equals(other);
@@ -1267,6 +1351,12 @@ public final class LogAnalyticsObjectCollectionRule
         result =
                 (result * PRIME)
                         + (this.objectNameFilters == null ? 43 : this.objectNameFilters.hashCode());
+        result = (result * PRIME) + (this.logType == null ? 43 : this.logType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isForceHistoricCollection == null
+                                ? 43
+                                : this.isForceHistoricCollection.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + super.hashCode();

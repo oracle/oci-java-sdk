@@ -27,18 +27,21 @@ public final class ReleaseRecalledDataDetails
         "compartmentId",
         "timeDataEnded",
         "timeDataStarted",
-        "dataType"
+        "dataType",
+        "collectionId"
     })
     public ReleaseRecalledDataDetails(
             String compartmentId,
             java.util.Date timeDataEnded,
             java.util.Date timeDataStarted,
-            StorageDataType dataType) {
+            StorageDataType dataType,
+            Long collectionId) {
         super();
         this.compartmentId = compartmentId;
         this.timeDataEnded = timeDataEnded;
         this.timeDataStarted = timeDataStarted;
         this.dataType = dataType;
+        this.collectionId = collectionId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -103,6 +106,25 @@ public final class ReleaseRecalledDataDetails
             this.__explicitlySet__.add("dataType");
             return this;
         }
+        /**
+         * This is the id for the recalled data collection to be released. If specified, only this
+         * collection will be released
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("collectionId")
+        private Long collectionId;
+
+        /**
+         * This is the id for the recalled data collection to be released. If specified, only this
+         * collection will be released
+         *
+         * @param collectionId the value to set
+         * @return this builder
+         */
+        public Builder collectionId(Long collectionId) {
+            this.collectionId = collectionId;
+            this.__explicitlySet__.add("collectionId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -113,7 +135,8 @@ public final class ReleaseRecalledDataDetails
                             this.compartmentId,
                             this.timeDataEnded,
                             this.timeDataStarted,
-                            this.dataType);
+                            this.dataType,
+                            this.collectionId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -133,6 +156,9 @@ public final class ReleaseRecalledDataDetails
             }
             if (model.wasPropertyExplicitlySet("dataType")) {
                 this.dataType(model.getDataType());
+            }
+            if (model.wasPropertyExplicitlySet("collectionId")) {
+                this.collectionId(model.getCollectionId());
             }
             return this;
         }
@@ -199,6 +225,23 @@ public final class ReleaseRecalledDataDetails
         return dataType;
     }
 
+    /**
+     * This is the id for the recalled data collection to be released. If specified, only this
+     * collection will be released
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("collectionId")
+    private final Long collectionId;
+
+    /**
+     * This is the id for the recalled data collection to be released. If specified, only this
+     * collection will be released
+     *
+     * @return the value
+     */
+    public Long getCollectionId() {
+        return collectionId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -218,6 +261,7 @@ public final class ReleaseRecalledDataDetails
         sb.append(", timeDataEnded=").append(String.valueOf(this.timeDataEnded));
         sb.append(", timeDataStarted=").append(String.valueOf(this.timeDataStarted));
         sb.append(", dataType=").append(String.valueOf(this.dataType));
+        sb.append(", collectionId=").append(String.valueOf(this.collectionId));
         sb.append(")");
         return sb.toString();
     }
@@ -236,6 +280,7 @@ public final class ReleaseRecalledDataDetails
                 && java.util.Objects.equals(this.timeDataEnded, other.timeDataEnded)
                 && java.util.Objects.equals(this.timeDataStarted, other.timeDataStarted)
                 && java.util.Objects.equals(this.dataType, other.dataType)
+                && java.util.Objects.equals(this.collectionId, other.collectionId)
                 && super.equals(other);
     }
 
@@ -253,6 +298,7 @@ public final class ReleaseRecalledDataDetails
                 (result * PRIME)
                         + (this.timeDataStarted == null ? 43 : this.timeDataStarted.hashCode());
         result = (result * PRIME) + (this.dataType == null ? 43 : this.dataType.hashCode());
+        result = (result * PRIME) + (this.collectionId == null ? 43 : this.collectionId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

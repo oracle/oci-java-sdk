@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.34.0</version>
+    <version>3.34.1</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -23,6 +23,8 @@
     <module>bmc-apache-configurator-jersey3-addon</module>
     <module>bmc-oke-workload-identity</module>
     <module>bmc-sasl-oke-workload-identity</module>
+    <module>bmc-sse-support</module>
+    <module>bmc-sse-support-jersey3</module>
   </modules>
 
 </project>
