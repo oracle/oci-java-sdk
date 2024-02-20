@@ -39,7 +39,8 @@ public final class UpdateInstanceDetails
         "launchOptions",
         "availabilityConfig",
         "timeMaintenanceRebootDue",
-        "dedicatedVmHostId"
+        "dedicatedVmHostId",
+        "platformConfig"
     })
     public UpdateInstanceDetails(
             String capacityReservationId,
@@ -57,7 +58,8 @@ public final class UpdateInstanceDetails
             UpdateLaunchOptions launchOptions,
             UpdateInstanceAvailabilityConfigDetails availabilityConfig,
             java.util.Date timeMaintenanceRebootDue,
-            String dedicatedVmHostId) {
+            String dedicatedVmHostId,
+            UpdateInstancePlatformConfig platformConfig) {
         super();
         this.capacityReservationId = capacityReservationId;
         this.definedTags = definedTags;
@@ -75,6 +77,7 @@ public final class UpdateInstanceDetails
         this.availabilityConfig = availabilityConfig;
         this.timeMaintenanceRebootDue = timeMaintenanceRebootDue;
         this.dedicatedVmHostId = dedicatedVmHostId;
+        this.platformConfig = platformConfig;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -497,6 +500,15 @@ public final class UpdateInstanceDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("platformConfig")
+        private UpdateInstancePlatformConfig platformConfig;
+
+        public Builder platformConfig(UpdateInstancePlatformConfig platformConfig) {
+            this.platformConfig = platformConfig;
+            this.__explicitlySet__.add("platformConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -518,7 +530,8 @@ public final class UpdateInstanceDetails
                             this.launchOptions,
                             this.availabilityConfig,
                             this.timeMaintenanceRebootDue,
-                            this.dedicatedVmHostId);
+                            this.dedicatedVmHostId,
+                            this.platformConfig);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -574,6 +587,9 @@ public final class UpdateInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("dedicatedVmHostId")) {
                 this.dedicatedVmHostId(model.getDedicatedVmHostId());
+            }
+            if (model.wasPropertyExplicitlySet("platformConfig")) {
+                this.platformConfig(model.getPlatformConfig());
             }
             return this;
         }
@@ -1006,6 +1022,13 @@ public final class UpdateInstanceDetails
         return dedicatedVmHostId;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("platformConfig")
+    private final UpdateInstancePlatformConfig platformConfig;
+
+    public UpdateInstancePlatformConfig getPlatformConfig() {
+        return platformConfig;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1039,6 +1062,7 @@ public final class UpdateInstanceDetails
         sb.append(", timeMaintenanceRebootDue=")
                 .append(String.valueOf(this.timeMaintenanceRebootDue));
         sb.append(", dedicatedVmHostId=").append(String.valueOf(this.dedicatedVmHostId));
+        sb.append(", platformConfig=").append(String.valueOf(this.platformConfig));
         sb.append(")");
         return sb.toString();
     }
@@ -1071,6 +1095,7 @@ public final class UpdateInstanceDetails
                 && java.util.Objects.equals(
                         this.timeMaintenanceRebootDue, other.timeMaintenanceRebootDue)
                 && java.util.Objects.equals(this.dedicatedVmHostId, other.dedicatedVmHostId)
+                && java.util.Objects.equals(this.platformConfig, other.platformConfig)
                 && super.equals(other);
     }
 
@@ -1118,6 +1143,9 @@ public final class UpdateInstanceDetails
         result =
                 (result * PRIME)
                         + (this.dedicatedVmHostId == null ? 43 : this.dedicatedVmHostId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.platformConfig == null ? 43 : this.platformConfig.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

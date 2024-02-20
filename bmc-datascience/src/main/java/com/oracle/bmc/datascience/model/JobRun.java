@@ -33,6 +33,7 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
         "displayName",
         "jobConfigurationOverrideDetails",
         "jobInfrastructureConfigurationDetails",
+        "jobEnvironmentConfigurationOverrideDetails",
         "jobLogConfigurationOverrideDetails",
         "jobStorageMountConfigurationDetailsList",
         "logDetails",
@@ -53,6 +54,7 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
             String displayName,
             JobConfigurationDetails jobConfigurationOverrideDetails,
             JobInfrastructureConfigurationDetails jobInfrastructureConfigurationDetails,
+            JobEnvironmentConfigurationDetails jobEnvironmentConfigurationOverrideDetails,
             JobLogConfigurationDetails jobLogConfigurationOverrideDetails,
             java.util.List<StorageMountConfigurationDetails>
                     jobStorageMountConfigurationDetailsList,
@@ -73,6 +75,8 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
         this.displayName = displayName;
         this.jobConfigurationOverrideDetails = jobConfigurationOverrideDetails;
         this.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
+        this.jobEnvironmentConfigurationOverrideDetails =
+                jobEnvironmentConfigurationOverrideDetails;
         this.jobLogConfigurationOverrideDetails = jobLogConfigurationOverrideDetails;
         this.jobStorageMountConfigurationDetailsList = jobStorageMountConfigurationDetailsList;
         this.logDetails = logDetails;
@@ -272,6 +276,17 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("jobEnvironmentConfigurationOverrideDetails")
+        private JobEnvironmentConfigurationDetails jobEnvironmentConfigurationOverrideDetails;
+
+        public Builder jobEnvironmentConfigurationOverrideDetails(
+                JobEnvironmentConfigurationDetails jobEnvironmentConfigurationOverrideDetails) {
+            this.jobEnvironmentConfigurationOverrideDetails =
+                    jobEnvironmentConfigurationOverrideDetails;
+            this.__explicitlySet__.add("jobEnvironmentConfigurationOverrideDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("jobLogConfigurationOverrideDetails")
         private JobLogConfigurationDetails jobLogConfigurationOverrideDetails;
 
@@ -401,6 +416,7 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
                             this.displayName,
                             this.jobConfigurationOverrideDetails,
                             this.jobInfrastructureConfigurationDetails,
+                            this.jobEnvironmentConfigurationOverrideDetails,
                             this.jobLogConfigurationOverrideDetails,
                             this.jobStorageMountConfigurationDetailsList,
                             this.logDetails,
@@ -449,6 +465,10 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
             if (model.wasPropertyExplicitlySet("jobInfrastructureConfigurationDetails")) {
                 this.jobInfrastructureConfigurationDetails(
                         model.getJobInfrastructureConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("jobEnvironmentConfigurationOverrideDetails")) {
+                this.jobEnvironmentConfigurationOverrideDetails(
+                        model.getJobEnvironmentConfigurationOverrideDetails());
             }
             if (model.wasPropertyExplicitlySet("jobLogConfigurationOverrideDetails")) {
                 this.jobLogConfigurationOverrideDetails(
@@ -649,6 +669,13 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
         return jobInfrastructureConfigurationDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("jobEnvironmentConfigurationOverrideDetails")
+    private final JobEnvironmentConfigurationDetails jobEnvironmentConfigurationOverrideDetails;
+
+    public JobEnvironmentConfigurationDetails getJobEnvironmentConfigurationOverrideDetails() {
+        return jobEnvironmentConfigurationOverrideDetails;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("jobLogConfigurationOverrideDetails")
     private final JobLogConfigurationDetails jobLogConfigurationOverrideDetails;
 
@@ -772,6 +799,8 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
                 .append(String.valueOf(this.jobConfigurationOverrideDetails));
         sb.append(", jobInfrastructureConfigurationDetails=")
                 .append(String.valueOf(this.jobInfrastructureConfigurationDetails));
+        sb.append(", jobEnvironmentConfigurationOverrideDetails=")
+                .append(String.valueOf(this.jobEnvironmentConfigurationOverrideDetails));
         sb.append(", jobLogConfigurationOverrideDetails=")
                 .append(String.valueOf(this.jobLogConfigurationOverrideDetails));
         sb.append(", jobStorageMountConfigurationDetailsList=")
@@ -809,6 +838,9 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(
                         this.jobInfrastructureConfigurationDetails,
                         other.jobInfrastructureConfigurationDetails)
+                && java.util.Objects.equals(
+                        this.jobEnvironmentConfigurationOverrideDetails,
+                        other.jobEnvironmentConfigurationOverrideDetails)
                 && java.util.Objects.equals(
                         this.jobLogConfigurationOverrideDetails,
                         other.jobLogConfigurationOverrideDetails)
@@ -848,6 +880,11 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
                         + (this.jobInfrastructureConfigurationDetails == null
                                 ? 43
                                 : this.jobInfrastructureConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jobEnvironmentConfigurationOverrideDetails == null
+                                ? 43
+                                : this.jobEnvironmentConfigurationOverrideDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.jobLogConfigurationOverrideDetails == null

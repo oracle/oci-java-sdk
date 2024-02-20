@@ -64,6 +64,37 @@ public final class InstanceConfigurationIntelVmLaunchInstancePlatformConfig
             this.__explicitlySet__.add("isMemoryEncryptionEnabled");
             return this;
         }
+        /**
+         * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is
+         * also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+         *
+         * <p>Intel and AMD processors have two hardware execution threads per core (OCPU). SMT
+         * permits multiple independent threads of execution, to better use the resources and
+         * increase the efficiency of the CPU. When multithreading is disabled, only one thread is
+         * permitted to run on each core, which can provide higher or more predictable performance
+         * for some workloads.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isSymmetricMultiThreadingEnabled")
+        private Boolean isSymmetricMultiThreadingEnabled;
+
+        /**
+         * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is
+         * also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+         *
+         * <p>Intel and AMD processors have two hardware execution threads per core (OCPU). SMT
+         * permits multiple independent threads of execution, to better use the resources and
+         * increase the efficiency of the CPU. When multithreading is disabled, only one thread is
+         * permitted to run on each core, which can provide higher or more predictable performance
+         * for some workloads.
+         *
+         * @param isSymmetricMultiThreadingEnabled the value to set
+         * @return this builder
+         */
+        public Builder isSymmetricMultiThreadingEnabled(Boolean isSymmetricMultiThreadingEnabled) {
+            this.isSymmetricMultiThreadingEnabled = isSymmetricMultiThreadingEnabled;
+            this.__explicitlySet__.add("isSymmetricMultiThreadingEnabled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -74,7 +105,8 @@ public final class InstanceConfigurationIntelVmLaunchInstancePlatformConfig
                             this.isSecureBootEnabled,
                             this.isTrustedPlatformModuleEnabled,
                             this.isMeasuredBootEnabled,
-                            this.isMemoryEncryptionEnabled);
+                            this.isMemoryEncryptionEnabled,
+                            this.isSymmetricMultiThreadingEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -95,6 +127,9 @@ public final class InstanceConfigurationIntelVmLaunchInstancePlatformConfig
             if (model.wasPropertyExplicitlySet("isMemoryEncryptionEnabled")) {
                 this.isMemoryEncryptionEnabled(model.getIsMemoryEncryptionEnabled());
             }
+            if (model.wasPropertyExplicitlySet("isSymmetricMultiThreadingEnabled")) {
+                this.isSymmetricMultiThreadingEnabled(model.getIsSymmetricMultiThreadingEnabled());
+            }
             return this;
         }
     }
@@ -113,12 +148,41 @@ public final class InstanceConfigurationIntelVmLaunchInstancePlatformConfig
             Boolean isSecureBootEnabled,
             Boolean isTrustedPlatformModuleEnabled,
             Boolean isMeasuredBootEnabled,
-            Boolean isMemoryEncryptionEnabled) {
+            Boolean isMemoryEncryptionEnabled,
+            Boolean isSymmetricMultiThreadingEnabled) {
         super(
                 isSecureBootEnabled,
                 isTrustedPlatformModuleEnabled,
                 isMeasuredBootEnabled,
                 isMemoryEncryptionEnabled);
+        this.isSymmetricMultiThreadingEnabled = isSymmetricMultiThreadingEnabled;
+    }
+
+    /**
+     * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also
+     * called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+     *
+     * <p>Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits
+     * multiple independent threads of execution, to better use the resources and increase the
+     * efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run
+     * on each core, which can provide higher or more predictable performance for some workloads.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isSymmetricMultiThreadingEnabled")
+    private final Boolean isSymmetricMultiThreadingEnabled;
+
+    /**
+     * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also
+     * called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+     *
+     * <p>Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits
+     * multiple independent threads of execution, to better use the resources and increase the
+     * efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run
+     * on each core, which can provide higher or more predictable performance for some workloads.
+     *
+     * @return the value
+     */
+    public Boolean getIsSymmetricMultiThreadingEnabled() {
+        return isSymmetricMultiThreadingEnabled;
     }
 
     @Override
@@ -136,6 +200,8 @@ public final class InstanceConfigurationIntelVmLaunchInstancePlatformConfig
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InstanceConfigurationIntelVmLaunchInstancePlatformConfig(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", isSymmetricMultiThreadingEnabled=")
+                .append(String.valueOf(this.isSymmetricMultiThreadingEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -151,13 +217,21 @@ public final class InstanceConfigurationIntelVmLaunchInstancePlatformConfig
 
         InstanceConfigurationIntelVmLaunchInstancePlatformConfig other =
                 (InstanceConfigurationIntelVmLaunchInstancePlatformConfig) o;
-        return super.equals(other);
+        return java.util.Objects.equals(
+                        this.isSymmetricMultiThreadingEnabled,
+                        other.isSymmetricMultiThreadingEnabled)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.isSymmetricMultiThreadingEnabled == null
+                                ? 43
+                                : this.isSymmetricMultiThreadingEnabled.hashCode());
         return result;
     }
 }
