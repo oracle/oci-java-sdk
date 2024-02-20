@@ -23,12 +23,14 @@ package com.oracle.bmc.ailanguage.model;
 public final class BatchDetectLanguagePiiEntitiesDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"compartmentId", "documents", "masking"})
+    @java.beans.ConstructorProperties({"endpointId", "compartmentId", "documents", "masking"})
     public BatchDetectLanguagePiiEntitiesDetails(
+            String endpointId,
             String compartmentId,
             java.util.List<TextDocument> documents,
             java.util.Map<String, PiiEntityMasking> masking) {
         super();
+        this.endpointId = endpointId;
         this.compartmentId = compartmentId;
         this.documents = documents;
         this.masking = masking;
@@ -36,6 +38,27 @@ public final class BatchDetectLanguagePiiEntitiesDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The endpoint which have to be used for inferencing. If endpointId and compartmentId is
+         * provided, then inference will be served from custom model which is mapped to this
+         * Endpoint.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
+        private String endpointId;
+
+        /**
+         * The endpoint which have to be used for inferencing. If endpointId and compartmentId is
+         * provided, then inference will be served from custom model which is mapped to this
+         * Endpoint.
+         *
+         * @param endpointId the value to set
+         * @return this builder
+         */
+        public Builder endpointId(String endpointId) {
+            this.endpointId = endpointId;
+            this.__explicitlySet__.add("endpointId");
+            return this;
+        }
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
          * compartment that calls the API, inference will be served from pre trained model
@@ -92,7 +115,7 @@ public final class BatchDetectLanguagePiiEntitiesDetails
         public BatchDetectLanguagePiiEntitiesDetails build() {
             BatchDetectLanguagePiiEntitiesDetails model =
                     new BatchDetectLanguagePiiEntitiesDetails(
-                            this.compartmentId, this.documents, this.masking);
+                            this.endpointId, this.compartmentId, this.documents, this.masking);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -101,6 +124,9 @@ public final class BatchDetectLanguagePiiEntitiesDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(BatchDetectLanguagePiiEntitiesDetails model) {
+            if (model.wasPropertyExplicitlySet("endpointId")) {
+                this.endpointId(model.getEndpointId());
+            }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
             }
@@ -121,6 +147,23 @@ public final class BatchDetectLanguagePiiEntitiesDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * The endpoint which have to be used for inferencing. If endpointId and compartmentId is
+     * provided, then inference will be served from custom model which is mapped to this Endpoint.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
+    private final String endpointId;
+
+    /**
+     * The endpoint which have to be used for inferencing. If endpointId and compartmentId is
+     * provided, then inference will be served from custom model which is mapped to this Endpoint.
+     *
+     * @return the value
+     */
+    public String getEndpointId() {
+        return endpointId;
     }
 
     /**
@@ -181,7 +224,8 @@ public final class BatchDetectLanguagePiiEntitiesDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BatchDetectLanguagePiiEntitiesDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append("endpointId=").append(String.valueOf(this.endpointId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", documents=").append(String.valueOf(this.documents));
         sb.append(", masking=").append(String.valueOf(this.masking));
         sb.append(")");
@@ -198,7 +242,8 @@ public final class BatchDetectLanguagePiiEntitiesDetails
         }
 
         BatchDetectLanguagePiiEntitiesDetails other = (BatchDetectLanguagePiiEntitiesDetails) o;
-        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+        return java.util.Objects.equals(this.endpointId, other.endpointId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.documents, other.documents)
                 && java.util.Objects.equals(this.masking, other.masking)
                 && super.equals(other);
@@ -208,6 +253,7 @@ public final class BatchDetectLanguagePiiEntitiesDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.endpointId == null ? 43 : this.endpointId.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

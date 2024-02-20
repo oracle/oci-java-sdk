@@ -99,7 +99,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
     protected String tenancyId;
 
     /** The configuration for the circuit breaker. */
-    private CircuitBreakerConfiguration circuitBreakerConfiguration;
+    protected CircuitBreakerConfiguration circuitBreakerConfiguration;
 
     private String purpose = null;
 

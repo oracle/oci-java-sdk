@@ -215,10 +215,9 @@ public interface AIServiceLanguage extends AutoCloseable {
             BatchDetectLanguageTextClassificationRequest request);
 
     /**
-     * Translate text to other language over pre-deployed model. Use state of the art neural machine
-     * translation to translate text between more than 15 languages. Limitations: - A batch may have
-     * up to 100 records. - A record may be up to 5000 characters long. - The total of characters to
-     * process in a request can be up to 20,000 characters.
+     * Translates a batch of text documents from source to target language. A batch can contain: -
+     * up to 100 records. - documents length less than 5000 characters. - 20,000 characters in total
+     * as a sum of all documents length.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -384,11 +383,15 @@ public interface AIServiceLanguage extends AutoCloseable {
     DeleteProjectResponse deleteProject(DeleteProjectRequest request);
 
     /**
-     * This API will be retired on Monday, 10 Oct 2023 00:00:00 GMT The API returns the detected
-     * language and a related confidence score (between 0 and 1).
+     * **Deprecated**: This API will be retired Tuesday, 10 Oct 2023 00:00:00 GMT. We recommend you
+     * replace this API with the batch API,
+     * [BatchDetectDominantLanguage](https://docs.cloud.oracle.com/iaas/api/#/en/language/20221001/BatchDetectDominantLanguage/BatchDetectDominantLanguage).
+     *
+     * <p>The DetectDominantLanguage API returns the detected language and a related confidence
+     * score (between 0 and 1).
      *
      * <p>[List of supported
-     * languages.](https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#lang-detect)
+     * languages](https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#lang-detect)
      *
      * <p>Limitations: - A record may be up to 1000 characters long.
      *
@@ -406,8 +409,12 @@ public interface AIServiceLanguage extends AutoCloseable {
     DetectDominantLanguageResponse detectDominantLanguage(DetectDominantLanguageRequest request);
 
     /**
-     * This API will be retired on Monday, 10 Oct 2023 00:00:00 GMT The API extracts entities in
-     * text records. For each entity, its type and confidence score (between 0 and 1) is returned.
+     * **Deprecated**: This API will be retired Tuesday, 10 Oct 2023 00:00:00 GMT. We recommend you
+     * replace this API with the batch API,
+     * [BatchDetectLanguageEntities](https://docs.cloud.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageEntities/BatchDetectLanguageEntities).
+     *
+     * <p>The DetectLanguageEntities API extracts entities in text records. For each entity, its
+     * type and confidence score (between 0 and 1) is returned.
      *
      * <p>Limitations: - A text may be up to 1000 characters long.
      *
@@ -425,11 +432,14 @@ public interface AIServiceLanguage extends AutoCloseable {
     DetectLanguageEntitiesResponse detectLanguageEntities(DetectLanguageEntitiesRequest request);
 
     /**
-     * This API will be retired on Monday, 10 Oct 2023 00:00:00 GMT The API extracts key-phrases in
-     * text records. For each key-phrase, a score (between 0 and 1) is returned that highlights the
-     * importance of the key-phrase in the context of the text.
+     * **Deprecated**: This API will be retired Tuesday, 10 Oct 2023 00:00:00 GMT. We recommend you
+     * replace this API with the batch API,
+     * [BatchDetectLanguageKeyPhrases](https://docs.cloud.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageKeyPhrases/BatchDetectLanguageKeyPhrases).
      *
-     * <p>Limitations: - A record may be up to 1000 characters long.
+     * <p>The DetectLanguageKeyPhrases API extracts key-phrases in text records. For each
+     * key-phrase, a score (between 0 and 1) is returned that highlights the importance of the
+     * key-phrase in the context of the text. Limitations: - A record may be up to 1000 characters
+     * long.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -446,8 +456,11 @@ public interface AIServiceLanguage extends AutoCloseable {
             DetectLanguageKeyPhrasesRequest request);
 
     /**
-     * This API will be retired on Monday, 10 Oct 2023 00:00:00 GMT The API extracts aspect-based in
-     * text records.
+     * **Deprecated**: This API will be retired Tuesday, 10 Oct 2023 00:00:00 GMT. We recommend you
+     * replace this API with the batch API,
+     * [BatchDetectLanguageSentiments](https://docs.cloud.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageSentiments/BatchDetectLanguageSentiments).
+     *
+     * <p>The DetectLanguageSentiments API extracts aspect-based in text records.
      *
      * <p>For aspect-based sentiment analysis, a set of aspects and their respective sentiment is
      * returned.
@@ -475,9 +488,13 @@ public interface AIServiceLanguage extends AutoCloseable {
             DetectLanguageSentimentsRequest request);
 
     /**
-     * This API will be retired on Monday, 10 Oct 2023 00:00:00 GMT The API automatically classifies
-     * text into a set of pre-determined classes and sub-classes. A single class/subclass is
-     * returned for each record classified.
+     * **Deprecated**: This API will be retired Tuesday, 10 Oct 2023 00:00:00 GMT. We recommend you
+     * replace this API with the batch API,
+     * [BatchDetectLanguageTextClassification](https://docs.cloud.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageTextClassification/BatchDetectLanguageTextClassification).
+     *
+     * <p>The DetectLanguageTextClassification API automatically classifies text into a set of
+     * pre-determined classes and sub-classes. A single class/subclass is returned for each record
+     * classified.
      *
      * <p>Learn more about text classification
      * [here](https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#text-class).

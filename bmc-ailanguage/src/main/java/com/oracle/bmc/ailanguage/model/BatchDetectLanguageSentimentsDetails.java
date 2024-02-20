@@ -23,16 +23,38 @@ package com.oracle.bmc.ailanguage.model;
 public final class BatchDetectLanguageSentimentsDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"compartmentId", "documents"})
+    @java.beans.ConstructorProperties({"endpointId", "compartmentId", "documents"})
     public BatchDetectLanguageSentimentsDetails(
-            String compartmentId, java.util.List<TextDocument> documents) {
+            String endpointId, String compartmentId, java.util.List<TextDocument> documents) {
         super();
+        this.endpointId = endpointId;
         this.compartmentId = compartmentId;
         this.documents = documents;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The endpoint which have to be used for inferencing. If endpointId and compartmentId is
+         * provided, then inference will be served from custom model which is mapped to this
+         * Endpoint.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
+        private String endpointId;
+
+        /**
+         * The endpoint which have to be used for inferencing. If endpointId and compartmentId is
+         * provided, then inference will be served from custom model which is mapped to this
+         * Endpoint.
+         *
+         * @param endpointId the value to set
+         * @return this builder
+         */
+        public Builder endpointId(String endpointId) {
+            this.endpointId = endpointId;
+            this.__explicitlySet__.add("endpointId");
+            return this;
+        }
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
          * compartment that calls the API, inference will be served from pre trained model
@@ -73,7 +95,8 @@ public final class BatchDetectLanguageSentimentsDetails
 
         public BatchDetectLanguageSentimentsDetails build() {
             BatchDetectLanguageSentimentsDetails model =
-                    new BatchDetectLanguageSentimentsDetails(this.compartmentId, this.documents);
+                    new BatchDetectLanguageSentimentsDetails(
+                            this.endpointId, this.compartmentId, this.documents);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -82,6 +105,9 @@ public final class BatchDetectLanguageSentimentsDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(BatchDetectLanguageSentimentsDetails model) {
+            if (model.wasPropertyExplicitlySet("endpointId")) {
+                this.endpointId(model.getEndpointId());
+            }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
             }
@@ -99,6 +125,23 @@ public final class BatchDetectLanguageSentimentsDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * The endpoint which have to be used for inferencing. If endpointId and compartmentId is
+     * provided, then inference will be served from custom model which is mapped to this Endpoint.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
+    private final String endpointId;
+
+    /**
+     * The endpoint which have to be used for inferencing. If endpointId and compartmentId is
+     * provided, then inference will be served from custom model which is mapped to this Endpoint.
+     *
+     * @return the value
+     */
+    public String getEndpointId() {
+        return endpointId;
     }
 
     /**
@@ -146,7 +189,8 @@ public final class BatchDetectLanguageSentimentsDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BatchDetectLanguageSentimentsDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append("endpointId=").append(String.valueOf(this.endpointId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", documents=").append(String.valueOf(this.documents));
         sb.append(")");
         return sb.toString();
@@ -162,7 +206,8 @@ public final class BatchDetectLanguageSentimentsDetails
         }
 
         BatchDetectLanguageSentimentsDetails other = (BatchDetectLanguageSentimentsDetails) o;
-        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+        return java.util.Objects.equals(this.endpointId, other.endpointId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.documents, other.documents)
                 && super.equals(other);
     }
@@ -171,6 +216,7 @@ public final class BatchDetectLanguageSentimentsDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.endpointId == null ? 43 : this.endpointId.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

@@ -29,6 +29,7 @@ public final class CreateJobDetails
         "description",
         "jobConfigurationDetails",
         "jobInfrastructureConfigurationDetails",
+        "jobEnvironmentConfigurationDetails",
         "jobLogConfigurationDetails",
         "jobStorageMountConfigurationDetailsList",
         "freeformTags",
@@ -41,6 +42,7 @@ public final class CreateJobDetails
             String description,
             JobConfigurationDetails jobConfigurationDetails,
             JobInfrastructureConfigurationDetails jobInfrastructureConfigurationDetails,
+            JobEnvironmentConfigurationDetails jobEnvironmentConfigurationDetails,
             JobLogConfigurationDetails jobLogConfigurationDetails,
             java.util.List<StorageMountConfigurationDetails>
                     jobStorageMountConfigurationDetailsList,
@@ -53,6 +55,7 @@ public final class CreateJobDetails
         this.description = description;
         this.jobConfigurationDetails = jobConfigurationDetails;
         this.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
+        this.jobEnvironmentConfigurationDetails = jobEnvironmentConfigurationDetails;
         this.jobLogConfigurationDetails = jobLogConfigurationDetails;
         this.jobStorageMountConfigurationDetailsList = jobStorageMountConfigurationDetailsList;
         this.freeformTags = freeformTags;
@@ -149,6 +152,16 @@ public final class CreateJobDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("jobEnvironmentConfigurationDetails")
+        private JobEnvironmentConfigurationDetails jobEnvironmentConfigurationDetails;
+
+        public Builder jobEnvironmentConfigurationDetails(
+                JobEnvironmentConfigurationDetails jobEnvironmentConfigurationDetails) {
+            this.jobEnvironmentConfigurationDetails = jobEnvironmentConfigurationDetails;
+            this.__explicitlySet__.add("jobEnvironmentConfigurationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("jobLogConfigurationDetails")
         private JobLogConfigurationDetails jobLogConfigurationDetails;
 
@@ -234,6 +247,7 @@ public final class CreateJobDetails
                             this.description,
                             this.jobConfigurationDetails,
                             this.jobInfrastructureConfigurationDetails,
+                            this.jobEnvironmentConfigurationDetails,
                             this.jobLogConfigurationDetails,
                             this.jobStorageMountConfigurationDetailsList,
                             this.freeformTags,
@@ -264,6 +278,10 @@ public final class CreateJobDetails
             if (model.wasPropertyExplicitlySet("jobInfrastructureConfigurationDetails")) {
                 this.jobInfrastructureConfigurationDetails(
                         model.getJobInfrastructureConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("jobEnvironmentConfigurationDetails")) {
+                this.jobEnvironmentConfigurationDetails(
+                        model.getJobEnvironmentConfigurationDetails());
             }
             if (model.wasPropertyExplicitlySet("jobLogConfigurationDetails")) {
                 this.jobLogConfigurationDetails(model.getJobLogConfigurationDetails());
@@ -365,6 +383,13 @@ public final class CreateJobDetails
         return jobInfrastructureConfigurationDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("jobEnvironmentConfigurationDetails")
+    private final JobEnvironmentConfigurationDetails jobEnvironmentConfigurationDetails;
+
+    public JobEnvironmentConfigurationDetails getJobEnvironmentConfigurationDetails() {
+        return jobEnvironmentConfigurationDetails;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("jobLogConfigurationDetails")
     private final JobLogConfigurationDetails jobLogConfigurationDetails;
 
@@ -450,6 +475,8 @@ public final class CreateJobDetails
                 .append(String.valueOf(this.jobConfigurationDetails));
         sb.append(", jobInfrastructureConfigurationDetails=")
                 .append(String.valueOf(this.jobInfrastructureConfigurationDetails));
+        sb.append(", jobEnvironmentConfigurationDetails=")
+                .append(String.valueOf(this.jobEnvironmentConfigurationDetails));
         sb.append(", jobLogConfigurationDetails=")
                 .append(String.valueOf(this.jobLogConfigurationDetails));
         sb.append(", jobStorageMountConfigurationDetailsList=")
@@ -480,6 +507,9 @@ public final class CreateJobDetails
                         this.jobInfrastructureConfigurationDetails,
                         other.jobInfrastructureConfigurationDetails)
                 && java.util.Objects.equals(
+                        this.jobEnvironmentConfigurationDetails,
+                        other.jobEnvironmentConfigurationDetails)
+                && java.util.Objects.equals(
                         this.jobLogConfigurationDetails, other.jobLogConfigurationDetails)
                 && java.util.Objects.equals(
                         this.jobStorageMountConfigurationDetailsList,
@@ -509,6 +539,11 @@ public final class CreateJobDetails
                         + (this.jobInfrastructureConfigurationDetails == null
                                 ? 43
                                 : this.jobInfrastructureConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jobEnvironmentConfigurationDetails == null
+                                ? 43
+                                : this.jobEnvironmentConfigurationDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.jobLogConfigurationDetails == null

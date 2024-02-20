@@ -44,9 +44,6 @@ package com.oracle.bmc.ailanguage.model;
             value = PreTrainedSentimentAnalysisModelDetails.class,
             name = "PRE_TRAINED_SENTIMENT_ANALYSIS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PreTrainedPhiModelDetails.class,
-            name = "PRE_TRAINED_PHI"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = PreTrainedTextClassificationModelDetails.class,
             name = "PRE_TRAINED_TEXT_CLASSIFICATION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

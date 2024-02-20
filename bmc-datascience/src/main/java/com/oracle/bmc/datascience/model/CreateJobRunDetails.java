@@ -30,6 +30,7 @@ public final class CreateJobRunDetails
         "jobId",
         "jobConfigurationOverrideDetails",
         "jobLogConfigurationOverrideDetails",
+        "jobEnvironmentConfigurationOverrideDetails",
         "freeformTags",
         "definedTags"
     })
@@ -40,6 +41,7 @@ public final class CreateJobRunDetails
             String jobId,
             JobConfigurationDetails jobConfigurationOverrideDetails,
             JobLogConfigurationDetails jobLogConfigurationOverrideDetails,
+            JobEnvironmentConfigurationDetails jobEnvironmentConfigurationOverrideDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -49,6 +51,8 @@ public final class CreateJobRunDetails
         this.jobId = jobId;
         this.jobConfigurationOverrideDetails = jobConfigurationOverrideDetails;
         this.jobLogConfigurationOverrideDetails = jobLogConfigurationOverrideDetails;
+        this.jobEnvironmentConfigurationOverrideDetails =
+                jobEnvironmentConfigurationOverrideDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -147,6 +151,17 @@ public final class CreateJobRunDetails
             this.__explicitlySet__.add("jobLogConfigurationOverrideDetails");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("jobEnvironmentConfigurationOverrideDetails")
+        private JobEnvironmentConfigurationDetails jobEnvironmentConfigurationOverrideDetails;
+
+        public Builder jobEnvironmentConfigurationOverrideDetails(
+                JobEnvironmentConfigurationDetails jobEnvironmentConfigurationOverrideDetails) {
+            this.jobEnvironmentConfigurationOverrideDetails =
+                    jobEnvironmentConfigurationOverrideDetails;
+            this.__explicitlySet__.add("jobEnvironmentConfigurationOverrideDetails");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. See [Resource
@@ -205,6 +220,7 @@ public final class CreateJobRunDetails
                             this.jobId,
                             this.jobConfigurationOverrideDetails,
                             this.jobLogConfigurationOverrideDetails,
+                            this.jobEnvironmentConfigurationOverrideDetails,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -233,6 +249,10 @@ public final class CreateJobRunDetails
             if (model.wasPropertyExplicitlySet("jobLogConfigurationOverrideDetails")) {
                 this.jobLogConfigurationOverrideDetails(
                         model.getJobLogConfigurationOverrideDetails());
+            }
+            if (model.wasPropertyExplicitlySet("jobEnvironmentConfigurationOverrideDetails")) {
+                this.jobEnvironmentConfigurationOverrideDetails(
+                        model.getJobEnvironmentConfigurationOverrideDetails());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -331,6 +351,13 @@ public final class CreateJobRunDetails
         return jobLogConfigurationOverrideDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("jobEnvironmentConfigurationOverrideDetails")
+    private final JobEnvironmentConfigurationDetails jobEnvironmentConfigurationOverrideDetails;
+
+    public JobEnvironmentConfigurationDetails getJobEnvironmentConfigurationOverrideDetails() {
+        return jobEnvironmentConfigurationOverrideDetails;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. See [Resource
@@ -394,6 +421,8 @@ public final class CreateJobRunDetails
                 .append(String.valueOf(this.jobConfigurationOverrideDetails));
         sb.append(", jobLogConfigurationOverrideDetails=")
                 .append(String.valueOf(this.jobLogConfigurationOverrideDetails));
+        sb.append(", jobEnvironmentConfigurationOverrideDetails=")
+                .append(String.valueOf(this.jobEnvironmentConfigurationOverrideDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -419,6 +448,9 @@ public final class CreateJobRunDetails
                 && java.util.Objects.equals(
                         this.jobLogConfigurationOverrideDetails,
                         other.jobLogConfigurationOverrideDetails)
+                && java.util.Objects.equals(
+                        this.jobEnvironmentConfigurationOverrideDetails,
+                        other.jobEnvironmentConfigurationOverrideDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -444,6 +476,11 @@ public final class CreateJobRunDetails
                         + (this.jobLogConfigurationOverrideDetails == null
                                 ? 43
                                 : this.jobLogConfigurationOverrideDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jobEnvironmentConfigurationOverrideDetails == null
+                                ? 43
+                                : this.jobEnvironmentConfigurationOverrideDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

@@ -4,7 +4,7 @@
     <parent>
         <artifactId>oci-java-sdk-addons</artifactId>
         <groupId>com.oracle.oci.sdk</groupId>
-        <version>3.34.1</version>
+        <version>3.35.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -39,13 +39,13 @@
         <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-addons-sasl</artifactId>
-            <version>3.34.1</version>
+            <version>3.35.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-addons-oke-workload-identity</artifactId>
-            <version>3.34.1</version>
+            <version>3.35.0</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
