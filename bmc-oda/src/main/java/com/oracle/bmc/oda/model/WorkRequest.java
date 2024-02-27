@@ -431,6 +431,9 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         DeleteOdaPrivateEndpointScanProxy("DELETE_ODA_PRIVATE_ENDPOINT_SCAN_PROXY"),
         CreateOdaPrivateEndpointAttachment("CREATE_ODA_PRIVATE_ENDPOINT_ATTACHMENT"),
         DeleteOdaPrivateEndpointAttachment("DELETE_ODA_PRIVATE_ENDPOINT_ATTACHMENT"),
+        TrainSkill("TRAIN_SKILL"),
+        DeleteSkillEntities("DELETE_SKILL_ENTITIES"),
+        ImportSkillEntities("IMPORT_SKILL_ENTITIES"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

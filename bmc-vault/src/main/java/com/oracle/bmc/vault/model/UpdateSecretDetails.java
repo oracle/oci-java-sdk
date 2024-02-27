@@ -31,7 +31,9 @@ public final class UpdateSecretDetails
         "metadata",
         "secretContent",
         "rotationConfig",
-        "secretRules"
+        "secretRules",
+        "secretGenerationContext",
+        "enableAutoGeneration"
     })
     public UpdateSecretDetails(
             Long currentVersionNumber,
@@ -41,7 +43,9 @@ public final class UpdateSecretDetails
             java.util.Map<String, Object> metadata,
             SecretContentDetails secretContent,
             RotationConfig rotationConfig,
-            java.util.List<SecretRule> secretRules) {
+            java.util.List<SecretRule> secretRules,
+            SecretGenerationContext secretGenerationContext,
+            Boolean enableAutoGeneration) {
         super();
         this.currentVersionNumber = currentVersionNumber;
         this.definedTags = definedTags;
@@ -51,6 +55,8 @@ public final class UpdateSecretDetails
         this.secretContent = secretContent;
         this.rotationConfig = rotationConfig;
         this.secretRules = secretRules;
+        this.secretGenerationContext = secretGenerationContext;
+        this.enableAutoGeneration = enableAutoGeneration;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -195,6 +201,34 @@ public final class UpdateSecretDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("secretGenerationContext")
+        private SecretGenerationContext secretGenerationContext;
+
+        public Builder secretGenerationContext(SecretGenerationContext secretGenerationContext) {
+            this.secretGenerationContext = secretGenerationContext;
+            this.__explicitlySet__.add("secretGenerationContext");
+            return this;
+        }
+        /**
+         * The value of this flag determines whether or not secret content will be generated
+         * automatically.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("enableAutoGeneration")
+        private Boolean enableAutoGeneration;
+
+        /**
+         * The value of this flag determines whether or not secret content will be generated
+         * automatically.
+         *
+         * @param enableAutoGeneration the value to set
+         * @return this builder
+         */
+        public Builder enableAutoGeneration(Boolean enableAutoGeneration) {
+            this.enableAutoGeneration = enableAutoGeneration;
+            this.__explicitlySet__.add("enableAutoGeneration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -208,7 +242,9 @@ public final class UpdateSecretDetails
                             this.metadata,
                             this.secretContent,
                             this.rotationConfig,
-                            this.secretRules);
+                            this.secretRules,
+                            this.secretGenerationContext,
+                            this.enableAutoGeneration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -240,6 +276,12 @@ public final class UpdateSecretDetails
             }
             if (model.wasPropertyExplicitlySet("secretRules")) {
                 this.secretRules(model.getSecretRules());
+            }
+            if (model.wasPropertyExplicitlySet("secretGenerationContext")) {
+                this.secretGenerationContext(model.getSecretGenerationContext());
+            }
+            if (model.wasPropertyExplicitlySet("enableAutoGeneration")) {
+                this.enableAutoGeneration(model.getEnableAutoGeneration());
             }
             return this;
         }
@@ -376,6 +418,30 @@ public final class UpdateSecretDetails
         return secretRules;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("secretGenerationContext")
+    private final SecretGenerationContext secretGenerationContext;
+
+    public SecretGenerationContext getSecretGenerationContext() {
+        return secretGenerationContext;
+    }
+
+    /**
+     * The value of this flag determines whether or not secret content will be generated
+     * automatically.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("enableAutoGeneration")
+    private final Boolean enableAutoGeneration;
+
+    /**
+     * The value of this flag determines whether or not secret content will be generated
+     * automatically.
+     *
+     * @return the value
+     */
+    public Boolean getEnableAutoGeneration() {
+        return enableAutoGeneration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -399,6 +465,9 @@ public final class UpdateSecretDetails
         sb.append(", secretContent=").append(String.valueOf(this.secretContent));
         sb.append(", rotationConfig=").append(String.valueOf(this.rotationConfig));
         sb.append(", secretRules=").append(String.valueOf(this.secretRules));
+        sb.append(", secretGenerationContext=")
+                .append(String.valueOf(this.secretGenerationContext));
+        sb.append(", enableAutoGeneration=").append(String.valueOf(this.enableAutoGeneration));
         sb.append(")");
         return sb.toString();
     }
@@ -421,6 +490,9 @@ public final class UpdateSecretDetails
                 && java.util.Objects.equals(this.secretContent, other.secretContent)
                 && java.util.Objects.equals(this.rotationConfig, other.rotationConfig)
                 && java.util.Objects.equals(this.secretRules, other.secretRules)
+                && java.util.Objects.equals(
+                        this.secretGenerationContext, other.secretGenerationContext)
+                && java.util.Objects.equals(this.enableAutoGeneration, other.enableAutoGeneration)
                 && super.equals(other);
     }
 
@@ -444,6 +516,16 @@ public final class UpdateSecretDetails
                 (result * PRIME)
                         + (this.rotationConfig == null ? 43 : this.rotationConfig.hashCode());
         result = (result * PRIME) + (this.secretRules == null ? 43 : this.secretRules.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.secretGenerationContext == null
+                                ? 43
+                                : this.secretGenerationContext.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.enableAutoGeneration == null
+                                ? 43
+                                : this.enableAutoGeneration.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

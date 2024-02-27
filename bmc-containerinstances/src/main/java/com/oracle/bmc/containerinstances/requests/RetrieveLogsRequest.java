@@ -39,6 +39,21 @@ public class RetrieveLogsRequest extends com.oracle.bmc.requests.BmcRequest<java
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * Returns the logs for the previous run of the container in a pod if the pod exists. If the
+     * container fails for some reason, this parameter is useful to determine the root cause of the
+     * failure.
+     */
+    private Boolean isPrevious;
+
+    /**
+     * Returns the logs for the previous run of the container in a pod if the pod exists. If the
+     * container fails for some reason, this parameter is useful to determine the root cause of the
+     * failure.
+     */
+    public Boolean getIsPrevious() {
+        return isPrevious;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -83,6 +98,26 @@ public class RetrieveLogsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
+         * Returns the logs for the previous run of the container in a pod if the pod exists. If the
+         * container fails for some reason, this parameter is useful to determine the root cause of
+         * the failure.
+         */
+        private Boolean isPrevious = null;
+
+        /**
+         * Returns the logs for the previous run of the container in a pod if the pod exists. If the
+         * container fails for some reason, this parameter is useful to determine the root cause of
+         * the failure.
+         *
+         * @param isPrevious the value to set
+         * @return this builder instance
+         */
+        public Builder isPrevious(Boolean isPrevious) {
+            this.isPrevious = isPrevious;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -114,6 +149,7 @@ public class RetrieveLogsRequest extends com.oracle.bmc.requests.BmcRequest<java
         public Builder copy(RetrieveLogsRequest o) {
             containerId(o.getContainerId());
             opcRequestId(o.getOpcRequestId());
+            isPrevious(o.getIsPrevious());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -150,8 +186,9 @@ public class RetrieveLogsRequest extends com.oracle.bmc.requests.BmcRequest<java
             RetrieveLogsRequest request = new RetrieveLogsRequest();
             request.containerId = containerId;
             request.opcRequestId = opcRequestId;
+            request.isPrevious = isPrevious;
             return request;
-            // new RetrieveLogsRequest(containerId, opcRequestId);
+            // new RetrieveLogsRequest(containerId, opcRequestId, isPrevious);
         }
     }
 
@@ -161,7 +198,10 @@ public class RetrieveLogsRequest extends com.oracle.bmc.requests.BmcRequest<java
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().containerId(containerId).opcRequestId(opcRequestId);
+        return new Builder()
+                .containerId(containerId)
+                .opcRequestId(opcRequestId)
+                .isPrevious(isPrevious);
     }
 
     /**
@@ -180,6 +220,7 @@ public class RetrieveLogsRequest extends com.oracle.bmc.requests.BmcRequest<java
         sb.append("super=").append(super.toString());
         sb.append(",containerId=").append(String.valueOf(this.containerId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isPrevious=").append(String.valueOf(this.isPrevious));
         sb.append(")");
         return sb.toString();
     }
@@ -196,7 +237,8 @@ public class RetrieveLogsRequest extends com.oracle.bmc.requests.BmcRequest<java
         RetrieveLogsRequest other = (RetrieveLogsRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.containerId, other.containerId)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.isPrevious, other.isPrevious);
     }
 
     @Override
@@ -205,6 +247,7 @@ public class RetrieveLogsRequest extends com.oracle.bmc.requests.BmcRequest<java
         int result = super.hashCode();
         result = (result * PRIME) + (this.containerId == null ? 43 : this.containerId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.isPrevious == null ? 43 : this.isPrevious.hashCode());
         return result;
     }
 }

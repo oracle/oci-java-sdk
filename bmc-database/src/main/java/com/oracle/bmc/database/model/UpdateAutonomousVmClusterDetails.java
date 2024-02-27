@@ -127,16 +127,12 @@ public final class UpdateAutonomousVmClusterDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /**
-         * The new scaled up/down value for autonomous data storage in TBs for Autonomous VM
-         * cluster.
-         */
+        /** The new value of autonomous data storage (in TBs) for the Autonomous VM cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStorageSizeInTBs")
         private Double autonomousDataStorageSizeInTBs;
 
         /**
-         * The new scaled up/down value for autonomous data storage in TBs for Autonomous VM
-         * cluster.
+         * The new value of autonomous data storage (in TBs) for the Autonomous VM cluster.
          *
          * @param autonomousDataStorageSizeInTBs the value to set
          * @return this builder
@@ -146,12 +142,14 @@ public final class UpdateAutonomousVmClusterDetails
             this.__explicitlySet__.add("autonomousDataStorageSizeInTBs");
             return this;
         }
-        /** The new scaled up/down value for cpus per Autonomous VM cluster per node. */
+        /**
+         * The new value of cpus per Autonomous VM cluster per node for the Autonomous VM cluster.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
         private Integer cpuCoreCountPerNode;
 
         /**
-         * The new scaled up/down value for cpus per Autonomous VM cluster per node.
+         * The new value of cpus per Autonomous VM cluster per node for the Autonomous VM cluster.
          *
          * @param cpuCoreCountPerNode the value to set
          * @return this builder
@@ -161,12 +159,12 @@ public final class UpdateAutonomousVmClusterDetails
             this.__explicitlySet__.add("cpuCoreCountPerNode");
             return this;
         }
-        /** The new scaled up/down value for maxACD count for Autonomous VM cluster. */
+        /** The new value of maximum number of ACDs for the Autonomous VM cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalContainerDatabases")
         private Integer totalContainerDatabases;
 
         /**
-         * The new scaled up/down value for maxACD count for Autonomous VM cluster.
+         * The new value of maximum number of ACDs for the Autonomous VM cluster.
          *
          * @param totalContainerDatabases the value to set
          * @return this builder
@@ -334,14 +332,12 @@ public final class UpdateAutonomousVmClusterDetails
         return definedTags;
     }
 
-    /**
-     * The new scaled up/down value for autonomous data storage in TBs for Autonomous VM cluster.
-     */
+    /** The new value of autonomous data storage (in TBs) for the Autonomous VM cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStorageSizeInTBs")
     private final Double autonomousDataStorageSizeInTBs;
 
     /**
-     * The new scaled up/down value for autonomous data storage in TBs for Autonomous VM cluster.
+     * The new value of autonomous data storage (in TBs) for the Autonomous VM cluster.
      *
      * @return the value
      */
@@ -349,12 +345,12 @@ public final class UpdateAutonomousVmClusterDetails
         return autonomousDataStorageSizeInTBs;
     }
 
-    /** The new scaled up/down value for cpus per Autonomous VM cluster per node. */
+    /** The new value of cpus per Autonomous VM cluster per node for the Autonomous VM cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
     private final Integer cpuCoreCountPerNode;
 
     /**
-     * The new scaled up/down value for cpus per Autonomous VM cluster per node.
+     * The new value of cpus per Autonomous VM cluster per node for the Autonomous VM cluster.
      *
      * @return the value
      */
@@ -362,12 +358,12 @@ public final class UpdateAutonomousVmClusterDetails
         return cpuCoreCountPerNode;
     }
 
-    /** The new scaled up/down value for maxACD count for Autonomous VM cluster. */
+    /** The new value of maximum number of ACDs for the Autonomous VM cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalContainerDatabases")
     private final Integer totalContainerDatabases;
 
     /**
-     * The new scaled up/down value for maxACD count for Autonomous VM cluster.
+     * The new value of maximum number of ACDs for the Autonomous VM cluster.
      *
      * @return the value
      */

@@ -104,14 +104,12 @@ public final class UpdateCloudAutonomousVmClusterDetails
             this.__explicitlySet__.add("maintenanceWindowDetails");
             return this;
         }
-        /**
-         * The new scaled up/down value for exadata storage in TBs for cloud autonomous VM cluster.
-         */
+        /** The new value of autonomous data storage (in TBs) for the Autonomous VM cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStorageSizeInTBs")
         private Double autonomousDataStorageSizeInTBs;
 
         /**
-         * The new scaled up/down value for exadata storage in TBs for cloud autonomous VM cluster.
+         * The new value of autonomous data storage (in TBs) for the Autonomous VM cluster.
          *
          * @param autonomousDataStorageSizeInTBs the value to set
          * @return this builder
@@ -121,12 +119,14 @@ public final class UpdateCloudAutonomousVmClusterDetails
             this.__explicitlySet__.add("autonomousDataStorageSizeInTBs");
             return this;
         }
-        /** The new scaled up/down value for ocpus for cloud autonomous VM cluster per node. */
+        /**
+         * The new value of cpus per Autonomous VM cluster per node for the Autonomous VM cluster.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
         private Integer cpuCoreCountPerNode;
 
         /**
-         * The new scaled up/down value for ocpus for cloud autonomous VM cluster per node.
+         * The new value of cpus per Autonomous VM cluster per node for the Autonomous VM cluster.
          *
          * @param cpuCoreCountPerNode the value to set
          * @return this builder
@@ -136,12 +136,12 @@ public final class UpdateCloudAutonomousVmClusterDetails
             this.__explicitlySet__.add("cpuCoreCountPerNode");
             return this;
         }
-        /** The new scaled up/down value for maxACD count for cloud autonomous VM cluster. */
+        /** The new value of maximum number of ACDs for the Autonomous VM cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalContainerDatabases")
         private Integer totalContainerDatabases;
 
         /**
-         * The new scaled up/down value for maxACD count for cloud autonomous VM cluster.
+         * The new value of maximum number of ACDs for the Autonomous VM cluster.
          *
          * @param totalContainerDatabases the value to set
          * @return this builder
@@ -162,11 +162,13 @@ public final class UpdateCloudAutonomousVmClusterDetails
          * level. When provisioning an [Autonomous Database Serverless]
          * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a
          * value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
+         * Bring your own license (BYOL) also allows you to select the DB edition using the optional
+         * parameter.
          *
          * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
-         * computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword,
-         * isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName,
-         * scheduledOperations, dbToolsDetails, or isFreeTier.
+         * computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
+         * privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or
+         * isFreeTier.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
@@ -182,11 +184,13 @@ public final class UpdateCloudAutonomousVmClusterDetails
          * level. When provisioning an [Autonomous Database Serverless]
          * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a
          * value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
+         * Bring your own license (BYOL) also allows you to select the DB edition using the optional
+         * parameter.
          *
          * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
-         * computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword,
-         * isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName,
-         * scheduledOperations, dbToolsDetails, or isFreeTier.
+         * computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
+         * privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or
+         * isFreeTier.
          *
          * @param licenseModel the value to set
          * @return this builder
@@ -377,12 +381,12 @@ public final class UpdateCloudAutonomousVmClusterDetails
         return maintenanceWindowDetails;
     }
 
-    /** The new scaled up/down value for exadata storage in TBs for cloud autonomous VM cluster. */
+    /** The new value of autonomous data storage (in TBs) for the Autonomous VM cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStorageSizeInTBs")
     private final Double autonomousDataStorageSizeInTBs;
 
     /**
-     * The new scaled up/down value for exadata storage in TBs for cloud autonomous VM cluster.
+     * The new value of autonomous data storage (in TBs) for the Autonomous VM cluster.
      *
      * @return the value
      */
@@ -390,12 +394,12 @@ public final class UpdateCloudAutonomousVmClusterDetails
         return autonomousDataStorageSizeInTBs;
     }
 
-    /** The new scaled up/down value for ocpus for cloud autonomous VM cluster per node. */
+    /** The new value of cpus per Autonomous VM cluster per node for the Autonomous VM cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
     private final Integer cpuCoreCountPerNode;
 
     /**
-     * The new scaled up/down value for ocpus for cloud autonomous VM cluster per node.
+     * The new value of cpus per Autonomous VM cluster per node for the Autonomous VM cluster.
      *
      * @return the value
      */
@@ -403,12 +407,12 @@ public final class UpdateCloudAutonomousVmClusterDetails
         return cpuCoreCountPerNode;
     }
 
-    /** The new scaled up/down value for maxACD count for cloud autonomous VM cluster. */
+    /** The new value of maximum number of ACDs for the Autonomous VM cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalContainerDatabases")
     private final Integer totalContainerDatabases;
 
     /**
-     * The new scaled up/down value for maxACD count for cloud autonomous VM cluster.
+     * The new value of maximum number of ACDs for the Autonomous VM cluster.
      *
      * @return the value
      */
@@ -426,10 +430,11 @@ public final class UpdateCloudAutonomousVmClusterDetails
      * attribute must be null. It is already set at the Autonomous Exadata Infrastructure level.
      * When provisioning an [Autonomous Database Serverless]
      * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value
-     * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
+     * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your
+     * own license (BYOL) also allows you to select the DB edition using the optional parameter.
      *
      * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
-     * maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
+     * dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
      * privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or
      * isFreeTier.
      */
@@ -475,10 +480,11 @@ public final class UpdateCloudAutonomousVmClusterDetails
      * attribute must be null. It is already set at the Autonomous Exadata Infrastructure level.
      * When provisioning an [Autonomous Database Serverless]
      * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value
-     * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
+     * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your
+     * own license (BYOL) also allows you to select the DB edition using the optional parameter.
      *
      * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
-     * maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
+     * dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
      * privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or
      * isFreeTier.
      */
@@ -495,10 +501,11 @@ public final class UpdateCloudAutonomousVmClusterDetails
      * attribute must be null. It is already set at the Autonomous Exadata Infrastructure level.
      * When provisioning an [Autonomous Database Serverless]
      * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value
-     * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
+     * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your
+     * own license (BYOL) also allows you to select the DB edition using the optional parameter.
      *
      * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
-     * maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
+     * dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
      * privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or
      * isFreeTier.
      *

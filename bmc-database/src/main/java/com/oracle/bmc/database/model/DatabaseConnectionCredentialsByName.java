@@ -17,14 +17,14 @@ package com.oracle.bmc.database.model;
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DatabaseConnectionCredentailsByName.Builder.class)
+        builder = DatabaseConnectionCredentialsByName.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
         use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
         include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
         property = "credentialType")
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DatabaseConnectionCredentailsByName extends DatabaseConnectionCredentials {
+public final class DatabaseConnectionCredentialsByName extends DatabaseConnectionCredentials {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
@@ -66,9 +66,9 @@ public final class DatabaseConnectionCredentailsByName extends DatabaseConnectio
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public DatabaseConnectionCredentailsByName build() {
-            DatabaseConnectionCredentailsByName model =
-                    new DatabaseConnectionCredentailsByName(this.credentialName);
+        public DatabaseConnectionCredentialsByName build() {
+            DatabaseConnectionCredentialsByName model =
+                    new DatabaseConnectionCredentialsByName(this.credentialName);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -76,7 +76,7 @@ public final class DatabaseConnectionCredentailsByName extends DatabaseConnectio
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DatabaseConnectionCredentailsByName model) {
+        public Builder copy(DatabaseConnectionCredentialsByName model) {
             if (model.wasPropertyExplicitlySet("credentialName")) {
                 this.credentialName(model.getCredentialName());
             }
@@ -94,7 +94,7 @@ public final class DatabaseConnectionCredentailsByName extends DatabaseConnectio
     }
 
     @Deprecated
-    public DatabaseConnectionCredentailsByName(String credentialName) {
+    public DatabaseConnectionCredentialsByName(String credentialName) {
         super();
         this.credentialName = credentialName;
     }
@@ -145,7 +145,7 @@ public final class DatabaseConnectionCredentailsByName extends DatabaseConnectio
      */
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
-        sb.append("DatabaseConnectionCredentailsByName(");
+        sb.append("DatabaseConnectionCredentialsByName(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", credentialName=").append(String.valueOf(this.credentialName));
         sb.append(")");
@@ -157,11 +157,11 @@ public final class DatabaseConnectionCredentailsByName extends DatabaseConnectio
         if (this == o) {
             return true;
         }
-        if (!(o instanceof DatabaseConnectionCredentailsByName)) {
+        if (!(o instanceof DatabaseConnectionCredentialsByName)) {
             return false;
         }
 
-        DatabaseConnectionCredentailsByName other = (DatabaseConnectionCredentailsByName) o;
+        DatabaseConnectionCredentialsByName other = (DatabaseConnectionCredentialsByName) o;
         return java.util.Objects.equals(this.credentialName, other.credentialName)
                 && super.equals(other);
     }

@@ -34,7 +34,8 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
         "restoredFromKeyVersionId",
         "replicaDetails",
         "isPrimary",
-        "externalKeyReferenceDetails"
+        "externalKeyReferenceDetails",
+        "isAutoRotated"
     })
     public KeyVersion(
             String compartmentId,
@@ -49,7 +50,8 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
             String restoredFromKeyVersionId,
             KeyVersionReplicaDetails replicaDetails,
             Boolean isPrimary,
-            ExternalKeyReferenceDetails externalKeyReferenceDetails) {
+            ExternalKeyReferenceDetails externalKeyReferenceDetails,
+            Boolean isAutoRotated) {
         super();
         this.compartmentId = compartmentId;
         this.id = id;
@@ -64,6 +66,7 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
         this.replicaDetails = replicaDetails;
         this.isPrimary = isPrimary;
         this.externalKeyReferenceDetails = externalKeyReferenceDetails;
+        this.isAutoRotated = isAutoRotated;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -282,6 +285,23 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("externalKeyReferenceDetails");
             return this;
         }
+        /**
+         * A Boolean Value indicating whether this keyversion is generated from auto rotation of key
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoRotated")
+        private Boolean isAutoRotated;
+
+        /**
+         * A Boolean Value indicating whether this keyversion is generated from auto rotation of key
+         *
+         * @param isAutoRotated the value to set
+         * @return this builder
+         */
+        public Builder isAutoRotated(Boolean isAutoRotated) {
+            this.isAutoRotated = isAutoRotated;
+            this.__explicitlySet__.add("isAutoRotated");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -301,7 +321,8 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
                             this.restoredFromKeyVersionId,
                             this.replicaDetails,
                             this.isPrimary,
-                            this.externalKeyReferenceDetails);
+                            this.externalKeyReferenceDetails,
+                            this.isAutoRotated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -348,6 +369,9 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("externalKeyReferenceDetails")) {
                 this.externalKeyReferenceDetails(model.getExternalKeyReferenceDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoRotated")) {
+                this.isAutoRotated(model.getIsAutoRotated());
             }
             return this;
         }
@@ -656,6 +680,19 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
         return externalKeyReferenceDetails;
     }
 
+    /** A Boolean Value indicating whether this keyversion is generated from auto rotation of key */
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoRotated")
+    private final Boolean isAutoRotated;
+
+    /**
+     * A Boolean Value indicating whether this keyversion is generated from auto rotation of key
+     *
+     * @return the value
+     */
+    public Boolean getIsAutoRotated() {
+        return isAutoRotated;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -686,6 +723,7 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", isPrimary=").append(String.valueOf(this.isPrimary));
         sb.append(", externalKeyReferenceDetails=")
                 .append(String.valueOf(this.externalKeyReferenceDetails));
+        sb.append(", isAutoRotated=").append(String.valueOf(this.isAutoRotated));
         sb.append(")");
         return sb.toString();
     }
@@ -715,6 +753,7 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.isPrimary, other.isPrimary)
                 && java.util.Objects.equals(
                         this.externalKeyReferenceDetails, other.externalKeyReferenceDetails)
+                && java.util.Objects.equals(this.isAutoRotated, other.isAutoRotated)
                 && super.equals(other);
     }
 
@@ -751,6 +790,9 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
                         + (this.externalKeyReferenceDetails == null
                                 ? 43
                                 : this.externalKeyReferenceDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoRotated == null ? 43 : this.isAutoRotated.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

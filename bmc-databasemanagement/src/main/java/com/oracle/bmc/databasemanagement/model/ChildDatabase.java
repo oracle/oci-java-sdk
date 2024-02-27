@@ -29,7 +29,9 @@ public final class ChildDatabase extends com.oracle.bmc.http.client.internal.Exp
         "workloadType",
         "databaseType",
         "databaseSubType",
-        "timeAdded"
+        "timeAdded",
+        "freeformTags",
+        "definedTags"
     })
     public ChildDatabase(
             String id,
@@ -39,7 +41,9 @@ public final class ChildDatabase extends com.oracle.bmc.http.client.internal.Exp
             WorkloadType workloadType,
             DatabaseType databaseType,
             DatabaseSubType databaseSubType,
-            java.util.Date timeAdded) {
+            java.util.Date timeAdded,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.id = id;
         this.name = name;
@@ -49,6 +53,8 @@ public final class ChildDatabase extends com.oracle.bmc.http.client.internal.Exp
         this.databaseType = databaseType;
         this.databaseSubType = databaseSubType;
         this.timeAdded = timeAdded;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -187,6 +193,53 @@ public final class ChildDatabase extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("timeAdded");
             return this;
         }
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         */
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         */
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -201,7 +254,9 @@ public final class ChildDatabase extends com.oracle.bmc.http.client.internal.Exp
                             this.workloadType,
                             this.databaseType,
                             this.databaseSubType,
-                            this.timeAdded);
+                            this.timeAdded,
+                            this.freeformTags,
+                            this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -233,6 +288,12 @@ public final class ChildDatabase extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("timeAdded")) {
                 this.timeAdded(model.getTimeAdded());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
             }
             return this;
         }
@@ -365,6 +426,48 @@ public final class ChildDatabase extends com.oracle.bmc.http.client.internal.Exp
         return timeAdded;
     }
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    private final java.util.Map<String, String> freeformTags;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -388,6 +491,8 @@ public final class ChildDatabase extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", databaseType=").append(String.valueOf(this.databaseType));
         sb.append(", databaseSubType=").append(String.valueOf(this.databaseSubType));
         sb.append(", timeAdded=").append(String.valueOf(this.timeAdded));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
         return sb.toString();
     }
@@ -410,6 +515,8 @@ public final class ChildDatabase extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.databaseType, other.databaseType)
                 && java.util.Objects.equals(this.databaseSubType, other.databaseSubType)
                 && java.util.Objects.equals(this.timeAdded, other.timeAdded)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
     }
 
@@ -431,6 +538,8 @@ public final class ChildDatabase extends com.oracle.bmc.http.client.internal.Exp
                 (result * PRIME)
                         + (this.databaseSubType == null ? 43 : this.databaseSubType.hashCode());
         result = (result * PRIME) + (this.timeAdded == null ? 43 : this.timeAdded.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

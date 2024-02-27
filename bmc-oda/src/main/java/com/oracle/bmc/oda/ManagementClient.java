@@ -124,6 +124,82 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public BulkCreateSkillEntitiesResponse bulkCreateSkillEntities(
+            BulkCreateSkillEntitiesRequest request) {
+
+        Validate.notBlank(request.getOdaInstanceId(), "odaInstanceId must not be blank");
+
+        Validate.notBlank(request.getSkillId(), "skillId must not be blank");
+        Objects.requireNonNull(
+                request.getBulkCreateSkillEntitiesDetails(),
+                "bulkCreateSkillEntitiesDetails is required");
+
+        return clientCall(request, BulkCreateSkillEntitiesResponse::builder)
+                .logger(LOG, "bulkCreateSkillEntities")
+                .serviceDetails(
+                        "Management",
+                        "BulkCreateSkillEntities",
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/BulkCreateSkillEntities")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BulkCreateSkillEntitiesRequest::builder)
+                .basePath("/20190506")
+                .appendPathParam("odaInstances")
+                .appendPathParam(request.getOdaInstanceId())
+                .appendPathParam("skills")
+                .appendPathParam(request.getSkillId())
+                .appendPathParam("actions")
+                .appendPathParam("bulkCreateEntities")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        BulkCreateSkillEntitiesResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", BulkCreateSkillEntitiesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CascadingDeleteSkillCustomEntitiesResponse cascadingDeleteSkillCustomEntities(
+            CascadingDeleteSkillCustomEntitiesRequest request) {
+
+        Validate.notBlank(request.getOdaInstanceId(), "odaInstanceId must not be blank");
+
+        Validate.notBlank(request.getSkillId(), "skillId must not be blank");
+
+        return clientCall(request, CascadingDeleteSkillCustomEntitiesResponse::builder)
+                .logger(LOG, "cascadingDeleteSkillCustomEntities")
+                .serviceDetails(
+                        "Management",
+                        "CascadingDeleteSkillCustomEntities",
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/CascadingDeleteSkillCustomEntities")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CascadingDeleteSkillCustomEntitiesRequest::builder)
+                .basePath("/20190506")
+                .appendPathParam("odaInstances")
+                .appendPathParam(request.getOdaInstanceId())
+                .appendPathParam("skills")
+                .appendPathParam(request.getSkillId())
+                .appendPathParam("actions")
+                .appendPathParam("cascadingDeleteCustomEntities")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CascadingDeleteSkillCustomEntitiesResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CascadingDeleteSkillCustomEntitiesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeOdaPrivateEndpointCompartmentResponse changeOdaPrivateEndpointCompartment(
             ChangeOdaPrivateEndpointCompartmentRequest request) {
 
@@ -1841,6 +1917,42 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString("etag", StopChannelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", StopChannelResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public TrainSkillResponse trainSkill(TrainSkillRequest request) {
+
+        Validate.notBlank(request.getOdaInstanceId(), "odaInstanceId must not be blank");
+
+        Validate.notBlank(request.getSkillId(), "skillId must not be blank");
+        Objects.requireNonNull(request.getTrainSkillDetails(), "trainSkillDetails is required");
+
+        return clientCall(request, TrainSkillResponse::builder)
+                .logger(LOG, "trainSkill")
+                .serviceDetails(
+                        "Management",
+                        "TrainSkill",
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/TrainSkill")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(TrainSkillRequest::builder)
+                .basePath("/20190506")
+                .appendPathParam("odaInstances")
+                .appendPathParam(request.getOdaInstanceId())
+                .appendPathParam("skills")
+                .appendPathParam(request.getSkillId())
+                .appendPathParam("actions")
+                .appendPathParam("train")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", TrainSkillResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", TrainSkillResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 

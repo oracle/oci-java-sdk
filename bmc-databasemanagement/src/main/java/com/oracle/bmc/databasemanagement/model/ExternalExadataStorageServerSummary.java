@@ -255,6 +255,53 @@ public final class ExternalExadataStorageServerSummary extends DbmResource {
             this.__explicitlySet__.add("connectorId");
             return this;
         }
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         */
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         */
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -280,7 +327,9 @@ public final class ExternalExadataStorageServerSummary extends DbmResource {
                             this.maxHardDiskThroughput,
                             this.maxFlashDiskIOPS,
                             this.maxFlashDiskThroughput,
-                            this.connectorId);
+                            this.connectorId,
+                            this.freeformTags,
+                            this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -346,6 +395,12 @@ public final class ExternalExadataStorageServerSummary extends DbmResource {
             if (model.wasPropertyExplicitlySet("connectorId")) {
                 this.connectorId(model.getConnectorId());
             }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
             return this;
         }
     }
@@ -379,7 +434,9 @@ public final class ExternalExadataStorageServerSummary extends DbmResource {
             Integer maxHardDiskThroughput,
             Integer maxFlashDiskIOPS,
             Integer maxFlashDiskThroughput,
-            String connectorId) {
+            String connectorId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super(
                 id,
                 displayName,
@@ -400,6 +457,8 @@ public final class ExternalExadataStorageServerSummary extends DbmResource {
         this.maxFlashDiskIOPS = maxFlashDiskIOPS;
         this.maxFlashDiskThroughput = maxFlashDiskThroughput;
         this.connectorId = connectorId;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
     }
 
     /** The make model of the Exadata storage server. */
@@ -523,6 +582,48 @@ public final class ExternalExadataStorageServerSummary extends DbmResource {
         return connectorId;
     }
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    private final java.util.Map<String, String> freeformTags;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -547,6 +648,8 @@ public final class ExternalExadataStorageServerSummary extends DbmResource {
         sb.append(", maxFlashDiskIOPS=").append(String.valueOf(this.maxFlashDiskIOPS));
         sb.append(", maxFlashDiskThroughput=").append(String.valueOf(this.maxFlashDiskThroughput));
         sb.append(", connectorId=").append(String.valueOf(this.connectorId));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
         return sb.toString();
     }
@@ -571,6 +674,8 @@ public final class ExternalExadataStorageServerSummary extends DbmResource {
                 && java.util.Objects.equals(
                         this.maxFlashDiskThroughput, other.maxFlashDiskThroughput)
                 && java.util.Objects.equals(this.connectorId, other.connectorId)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
     }
 
@@ -599,6 +704,8 @@ public final class ExternalExadataStorageServerSummary extends DbmResource {
                                 ? 43
                                 : this.maxFlashDiskThroughput.hashCode());
         result = (result * PRIME) + (this.connectorId == null ? 43 : this.connectorId.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         return result;
     }
 }

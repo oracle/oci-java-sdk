@@ -5,9 +5,12 @@
 package com.oracle.bmc.sch.model;
 
 /**
- * The type of
- * [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors),
- * which determines the starting point from which the stream will be consumed. <br>
+ * The [read
+ * setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm),
+ * which determines where in the stream to start moving data. For configuration instructions, see
+ * [Creating a Connector with a Streaming
+ * Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
+ * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -81,7 +84,7 @@ public class StreamingCursorDetails
         return result;
     }
 
-    /** The type descriminator. */
+    /** The type discriminator. */
     public enum Kind implements com.oracle.bmc.http.internal.BmcEnum {
         Latest("LATEST"),
         TrimHorizon("TRIM_HORIZON"),

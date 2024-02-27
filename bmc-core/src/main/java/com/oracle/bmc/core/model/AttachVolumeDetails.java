@@ -97,12 +97,16 @@ public class AttachVolumeDetails extends com.oracle.bmc.http.client.internal.Exp
         return displayName;
     }
 
-    /** The OCID of the instance. */
+    /**
+     * The OCID of the instance. For AttachVolume operation, this is a required field for the
+     * request, see {@link #attachVolume(AttachVolumeRequest) attachVolume}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
     /**
-     * The OCID of the instance.
+     * The OCID of the instance. For AttachVolume operation, this is a required field for the
+     * request, see {@link #attachVolume(AttachVolumeRequest) attachVolume}.
      *
      * @return the value
      */
@@ -144,12 +148,16 @@ public class AttachVolumeDetails extends com.oracle.bmc.http.client.internal.Exp
         return isShareable;
     }
 
-    /** The OCID of the volume. */
+    /**
+     * The OCID of the volume. If CreateVolumeDetails is specified, this field must be omitted from
+     * the request.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
     private final String volumeId;
 
     /**
-     * The OCID of the volume.
+     * The OCID of the volume. If CreateVolumeDetails is specified, this field must be omitted from
+     * the request.
      *
      * @return the value
      */

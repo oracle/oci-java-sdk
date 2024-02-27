@@ -164,12 +164,12 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             this.__explicitlySet__.add("shape");
             return this;
         }
-        /** The number of OCPU cores available for AMD-based virtual machine DB systems. */
+        /** The number of CPU cores available for AMD-based virtual machine DB systems. */
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
         private Integer cpuCoreCount;
 
         /**
-         * The number of OCPU cores available for AMD-based virtual machine DB systems.
+         * The number of CPU cores available for AMD-based virtual machine DB systems.
          *
          * @param cpuCoreCount the value to set
          * @return this builder
@@ -415,14 +415,16 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         }
         /**
          * The Oracle license model that applies to all the databases on the dataguard standby DB
-         * system. The default is LICENSE_INCLUDED.
+         * system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to
+         * select the DB edition using the optional parameter, for Autonomous Database Serverless.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
         /**
          * The Oracle license model that applies to all the databases on the dataguard standby DB
-         * system. The default is LICENSE_INCLUDED.
+         * system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to
+         * select the DB edition using the optional parameter, for Autonomous Database Serverless.
          *
          * @param licenseModel the value to set
          * @return this builder
@@ -785,12 +787,12 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         return shape;
     }
 
-    /** The number of OCPU cores available for AMD-based virtual machine DB systems. */
+    /** The number of CPU cores available for AMD-based virtual machine DB systems. */
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     private final Integer cpuCoreCount;
 
     /**
-     * The number of OCPU cores available for AMD-based virtual machine DB systems.
+     * The number of CPU cores available for AMD-based virtual machine DB systems.
      *
      * @return the value
      */
@@ -1047,7 +1049,8 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
 
     /**
      * The Oracle license model that applies to all the databases on the dataguard standby DB
-     * system. The default is LICENSE_INCLUDED.
+     * system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select
+     * the DB edition using the optional parameter, for Autonomous Database Serverless.
      */
     public enum LicenseModel implements com.oracle.bmc.http.internal.BmcEnum {
         LicenseIncluded("LICENSE_INCLUDED"),
@@ -1083,14 +1086,16 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     };
     /**
      * The Oracle license model that applies to all the databases on the dataguard standby DB
-     * system. The default is LICENSE_INCLUDED.
+     * system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select
+     * the DB edition using the optional parameter, for Autonomous Database Serverless.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
 
     /**
      * The Oracle license model that applies to all the databases on the dataguard standby DB
-     * system. The default is LICENSE_INCLUDED.
+     * system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select
+     * the DB edition using the optional parameter, for Autonomous Database Serverless.
      *
      * @return the value
      */

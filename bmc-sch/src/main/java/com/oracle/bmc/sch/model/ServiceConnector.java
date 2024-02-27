@@ -5,9 +5,9 @@
 package com.oracle.bmc.sch.model;
 
 /**
- * The configuration details of the flow defined by the service connector. For more information
- * about flows defined by service connectors, see [Service Connector Hub
- * Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). <br>
+ * The configuration details of the flow defined by the connector. For more information about flows
+ * defined by connectors, see [Overview of Connector
+ * Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -76,14 +76,14 @@ public final class ServiceConnector
     public static class Builder {
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the service connector.
+         * of the connector.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the service connector.
+         * of the connector.
          *
          * @param id the value to set
          * @return this builder
@@ -129,14 +129,14 @@ public final class ServiceConnector
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the service connector.
+         * of the compartment containing the connector.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the service connector.
+         * of the compartment containing the connector.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -147,14 +147,14 @@ public final class ServiceConnector
             return this;
         }
         /**
-         * The date and time when the service connector was created. Format is defined by
+         * The date and time when the connector was created. Format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time when the service connector was created. Format is defined by
+         * The date and time when the connector was created. Format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
@@ -166,14 +166,14 @@ public final class ServiceConnector
             return this;
         }
         /**
-         * The date and time when the service connector was updated. Format is defined by
+         * The date and time when the connector was updated. Format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time when the service connector was updated. Format is defined by
+         * The date and time when the connector was updated. Format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
          *
          * @param timeUpdated the value to set
@@ -184,12 +184,12 @@ public final class ServiceConnector
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the service connector. */
+        /** The current state of the connector. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the service connector.
+         * The current state of the connector.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -401,14 +401,14 @@ public final class ServiceConnector
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the service connector.
+     * the connector.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the service connector.
+     * the connector.
      *
      * @return the value
      */
@@ -448,14 +448,14 @@ public final class ServiceConnector
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the service connector.
+     * the compartment containing the connector.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the service connector.
+     * the compartment containing the connector.
      *
      * @return the value
      */
@@ -464,14 +464,14 @@ public final class ServiceConnector
     }
 
     /**
-     * The date and time when the service connector was created. Format is defined by
+     * The date and time when the connector was created. Format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time when the service connector was created. Format is defined by
+     * The date and time when the connector was created. Format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
      *
      * @return the value
@@ -481,14 +481,14 @@ public final class ServiceConnector
     }
 
     /**
-     * The date and time when the service connector was updated. Format is defined by
+     * The date and time when the connector was updated. Format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time when the service connector was updated. Format is defined by
+     * The date and time when the connector was updated. Format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
      *
      * @return the value
@@ -497,12 +497,12 @@ public final class ServiceConnector
         return timeUpdated;
     }
 
-    /** The current state of the service connector. */
+    /** The current state of the connector. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the service connector.
+     * The current state of the connector.
      *
      * @return the value
      */

@@ -3155,6 +3155,23 @@ public interface DbManagement extends AutoCloseable {
     UpdateExternalAsmResponse updateExternalAsm(UpdateExternalAsmRequest request);
 
     /**
+     * Updates the external ASM instance specified by `externalAsmInstanceId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateExternalAsmInstanceExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateExternalAsmInstance API.
+     */
+    UpdateExternalAsmInstanceResponse updateExternalAsmInstance(
+            UpdateExternalAsmInstanceRequest request);
+
+    /**
      * Updates the external cluster specified by `externalClusterId`.
      *
      * @param request The request object containing the details to send
@@ -3186,6 +3203,22 @@ public interface DbManagement extends AutoCloseable {
      */
     UpdateExternalClusterInstanceResponse updateExternalClusterInstance(
             UpdateExternalClusterInstanceRequest request);
+
+    /**
+     * Updates the external DB home specified by `externalDbHomeId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateExternalDbHomeExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateExternalDbHome API.
+     */
+    UpdateExternalDbHomeResponse updateExternalDbHome(UpdateExternalDbHomeRequest request);
 
     /**
      * Updates the external DB node specified by `externalDbNodeId`.
@@ -3289,6 +3322,40 @@ public interface DbManagement extends AutoCloseable {
             UpdateExternalExadataStorageConnectorRequest request);
 
     /**
+     * Updates the Exadata storage server grid specified by exadataStorageGridId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateExternalExadataStorageGridExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateExternalExadataStorageGrid API.
+     */
+    UpdateExternalExadataStorageGridResponse updateExternalExadataStorageGrid(
+            UpdateExternalExadataStorageGridRequest request);
+
+    /**
+     * Updates the Exadata storage server specified by exadataStorageServerId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateExternalExadataStorageServerExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateExternalExadataStorageServer API.
+     */
+    UpdateExternalExadataStorageServerResponse updateExternalExadataStorageServer(
+            UpdateExternalExadataStorageServerRequest request);
+
+    /**
      * Updates the external listener specified by `externalListenerId`.
      *
      * @param request The request object containing the details to send
@@ -3319,6 +3386,22 @@ public interface DbManagement extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateJob API.
      */
     UpdateJobResponse updateJob(UpdateJobRequest request);
+
+    /**
+     * Updates the Managed Database specified by managedDatabaseId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateManagedDatabaseExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateManagedDatabase API.
+     */
+    UpdateManagedDatabaseResponse updateManagedDatabase(UpdateManagedDatabaseRequest request);
 
     /**
      * Updates the Managed Database Group specified by managedDatabaseGroupId.

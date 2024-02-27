@@ -37,6 +37,7 @@ public final class ManagedDatabase
         "dbSystemId",
         "storageSystemId",
         "timeCreated",
+        "databaseVersion",
         "databaseStatus",
         "parentContainerName",
         "parentContainerCompartmentId",
@@ -44,7 +45,9 @@ public final class ManagedDatabase
         "instanceDetails",
         "pdbCount",
         "pdbStatus",
-        "additionalDetails"
+        "additionalDetails",
+        "freeformTags",
+        "definedTags"
     })
     public ManagedDatabase(
             String id,
@@ -61,6 +64,7 @@ public final class ManagedDatabase
             String dbSystemId,
             String storageSystemId,
             java.util.Date timeCreated,
+            String databaseVersion,
             DatabaseStatus databaseStatus,
             String parentContainerName,
             String parentContainerCompartmentId,
@@ -68,7 +72,9 @@ public final class ManagedDatabase
             java.util.List<InstanceDetails> instanceDetails,
             Integer pdbCount,
             java.util.List<PdbStatusDetails> pdbStatus,
-            java.util.Map<String, String> additionalDetails) {
+            java.util.Map<String, String> additionalDetails,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -84,6 +90,7 @@ public final class ManagedDatabase
         this.dbSystemId = dbSystemId;
         this.storageSystemId = storageSystemId;
         this.timeCreated = timeCreated;
+        this.databaseVersion = databaseVersion;
         this.databaseStatus = databaseStatus;
         this.parentContainerName = parentContainerName;
         this.parentContainerCompartmentId = parentContainerCompartmentId;
@@ -92,6 +99,8 @@ public final class ManagedDatabase
         this.pdbCount = pdbCount;
         this.pdbStatus = pdbStatus;
         this.additionalDetails = additionalDetails;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -332,6 +341,21 @@ public final class ManagedDatabase
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
+        /** The Oracle Database version. */
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
+        private String databaseVersion;
+
+        /**
+         * The Oracle Database version.
+         *
+         * @param databaseVersion the value to set
+         * @return this builder
+         */
+        public Builder databaseVersion(String databaseVersion) {
+            this.databaseVersion = databaseVersion;
+            this.__explicitlySet__.add("databaseVersion");
+            return this;
+        }
         /**
          * The status of the Oracle Database. Indicates whether the status of the database is UP,
          * DOWN, or UNKNOWN at the current time.
@@ -466,6 +490,53 @@ public final class ManagedDatabase
             this.__explicitlySet__.add("additionalDetails");
             return this;
         }
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         */
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         */
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -487,6 +558,7 @@ public final class ManagedDatabase
                             this.dbSystemId,
                             this.storageSystemId,
                             this.timeCreated,
+                            this.databaseVersion,
                             this.databaseStatus,
                             this.parentContainerName,
                             this.parentContainerCompartmentId,
@@ -494,7 +566,9 @@ public final class ManagedDatabase
                             this.instanceDetails,
                             this.pdbCount,
                             this.pdbStatus,
-                            this.additionalDetails);
+                            this.additionalDetails,
+                            this.freeformTags,
+                            this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -545,6 +619,9 @@ public final class ManagedDatabase
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
             }
+            if (model.wasPropertyExplicitlySet("databaseVersion")) {
+                this.databaseVersion(model.getDatabaseVersion());
+            }
             if (model.wasPropertyExplicitlySet("databaseStatus")) {
                 this.databaseStatus(model.getDatabaseStatus());
             }
@@ -568,6 +645,12 @@ public final class ManagedDatabase
             }
             if (model.wasPropertyExplicitlySet("additionalDetails")) {
                 this.additionalDetails(model.getAdditionalDetails());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
             }
             return this;
         }
@@ -790,6 +873,19 @@ public final class ManagedDatabase
         return timeCreated;
     }
 
+    /** The Oracle Database version. */
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
+    private final String databaseVersion;
+
+    /**
+     * The Oracle Database version.
+     *
+     * @return the value
+     */
+    public String getDatabaseVersion() {
+        return databaseVersion;
+    }
+
     /**
      * The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN,
      * or UNKNOWN at the current time.
@@ -908,6 +1004,48 @@ public final class ManagedDatabase
         return additionalDetails;
     }
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    private final java.util.Map<String, String> freeformTags;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -937,6 +1075,7 @@ public final class ManagedDatabase
         sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(", storageSystemId=").append(String.valueOf(this.storageSystemId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", databaseVersion=").append(String.valueOf(this.databaseVersion));
         sb.append(", databaseStatus=").append(String.valueOf(this.databaseStatus));
         sb.append(", parentContainerName=").append(String.valueOf(this.parentContainerName));
         sb.append(", parentContainerCompartmentId=")
@@ -946,6 +1085,8 @@ public final class ManagedDatabase
         sb.append(", pdbCount=").append(String.valueOf(this.pdbCount));
         sb.append(", pdbStatus=").append(String.valueOf(this.pdbStatus));
         sb.append(", additionalDetails=").append(String.valueOf(this.additionalDetails));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
         return sb.toString();
     }
@@ -974,6 +1115,7 @@ public final class ManagedDatabase
                 && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
                 && java.util.Objects.equals(this.storageSystemId, other.storageSystemId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.databaseVersion, other.databaseVersion)
                 && java.util.Objects.equals(this.databaseStatus, other.databaseStatus)
                 && java.util.Objects.equals(this.parentContainerName, other.parentContainerName)
                 && java.util.Objects.equals(
@@ -983,6 +1125,8 @@ public final class ManagedDatabase
                 && java.util.Objects.equals(this.pdbCount, other.pdbCount)
                 && java.util.Objects.equals(this.pdbStatus, other.pdbStatus)
                 && java.util.Objects.equals(this.additionalDetails, other.additionalDetails)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
     }
 
@@ -1022,6 +1166,9 @@ public final class ManagedDatabase
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result =
                 (result * PRIME)
+                        + (this.databaseVersion == null ? 43 : this.databaseVersion.hashCode());
+        result =
+                (result * PRIME)
                         + (this.databaseStatus == null ? 43 : this.databaseStatus.hashCode());
         result =
                 (result * PRIME)
@@ -1044,6 +1191,8 @@ public final class ManagedDatabase
         result =
                 (result * PRIME)
                         + (this.additionalDetails == null ? 43 : this.additionalDetails.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

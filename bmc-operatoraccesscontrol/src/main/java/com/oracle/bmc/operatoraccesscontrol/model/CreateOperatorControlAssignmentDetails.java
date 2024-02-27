@@ -41,6 +41,7 @@ public final class CreateOperatorControlAssignmentDetails
         "remoteSyslogServerAddress",
         "remoteSyslogServerPort",
         "remoteSyslogServerCACert",
+        "isHypervisorLogForwarded",
         "isAutoApproveDuringMaintenance",
         "freeformTags",
         "definedTags"
@@ -60,6 +61,7 @@ public final class CreateOperatorControlAssignmentDetails
             String remoteSyslogServerAddress,
             Integer remoteSyslogServerPort,
             String remoteSyslogServerCACert,
+            Boolean isHypervisorLogForwarded,
             Boolean isAutoApproveDuringMaintenance,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -78,6 +80,7 @@ public final class CreateOperatorControlAssignmentDetails
         this.remoteSyslogServerAddress = remoteSyslogServerAddress;
         this.remoteSyslogServerPort = remoteSyslogServerPort;
         this.remoteSyslogServerCACert = remoteSyslogServerCACert;
+        this.isHypervisorLogForwarded = isHypervisorLogForwarded;
         this.isAutoApproveDuringMaintenance = isAutoApproveDuringMaintenance;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -323,6 +326,25 @@ public final class CreateOperatorControlAssignmentDetails
             this.__explicitlySet__.add("remoteSyslogServerCACert");
             return this;
         }
+        /**
+         * If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog
+         * server
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isHypervisorLogForwarded")
+        private Boolean isHypervisorLogForwarded;
+
+        /**
+         * If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog
+         * server
+         *
+         * @param isHypervisorLogForwarded the value to set
+         * @return this builder
+         */
+        public Builder isHypervisorLogForwarded(Boolean isHypervisorLogForwarded) {
+            this.isHypervisorLogForwarded = isHypervisorLogForwarded;
+            this.__explicitlySet__.add("isHypervisorLogForwarded");
+            return this;
+        }
         /** The boolean if true would autoApprove during maintenance. */
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoApproveDuringMaintenance")
         private Boolean isAutoApproveDuringMaintenance;
@@ -394,6 +416,7 @@ public final class CreateOperatorControlAssignmentDetails
                             this.remoteSyslogServerAddress,
                             this.remoteSyslogServerPort,
                             this.remoteSyslogServerCACert,
+                            this.isHypervisorLogForwarded,
                             this.isAutoApproveDuringMaintenance,
                             this.freeformTags,
                             this.definedTags);
@@ -446,6 +469,9 @@ public final class CreateOperatorControlAssignmentDetails
             }
             if (model.wasPropertyExplicitlySet("remoteSyslogServerCACert")) {
                 this.remoteSyslogServerCACert(model.getRemoteSyslogServerCACert());
+            }
+            if (model.wasPropertyExplicitlySet("isHypervisorLogForwarded")) {
+                this.isHypervisorLogForwarded(model.getIsHypervisorLogForwarded());
             }
             if (model.wasPropertyExplicitlySet("isAutoApproveDuringMaintenance")) {
                 this.isAutoApproveDuringMaintenance(model.getIsAutoApproveDuringMaintenance());
@@ -677,6 +703,21 @@ public final class CreateOperatorControlAssignmentDetails
         return remoteSyslogServerCACert;
     }
 
+    /**
+     * If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isHypervisorLogForwarded")
+    private final Boolean isHypervisorLogForwarded;
+
+    /**
+     * If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+     *
+     * @return the value
+     */
+    public Boolean getIsHypervisorLogForwarded() {
+        return isHypervisorLogForwarded;
+    }
+
     /** The boolean if true would autoApprove during maintenance. */
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoApproveDuringMaintenance")
     private final Boolean isAutoApproveDuringMaintenance;
@@ -751,6 +792,8 @@ public final class CreateOperatorControlAssignmentDetails
         sb.append(", remoteSyslogServerPort=").append(String.valueOf(this.remoteSyslogServerPort));
         sb.append(", remoteSyslogServerCACert=")
                 .append(String.valueOf(this.remoteSyslogServerCACert));
+        sb.append(", isHypervisorLogForwarded=")
+                .append(String.valueOf(this.isHypervisorLogForwarded));
         sb.append(", isAutoApproveDuringMaintenance=")
                 .append(String.valueOf(this.isAutoApproveDuringMaintenance));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -786,6 +829,8 @@ public final class CreateOperatorControlAssignmentDetails
                         this.remoteSyslogServerPort, other.remoteSyslogServerPort)
                 && java.util.Objects.equals(
                         this.remoteSyslogServerCACert, other.remoteSyslogServerCACert)
+                && java.util.Objects.equals(
+                        this.isHypervisorLogForwarded, other.isHypervisorLogForwarded)
                 && java.util.Objects.equals(
                         this.isAutoApproveDuringMaintenance, other.isAutoApproveDuringMaintenance)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -841,6 +886,11 @@ public final class CreateOperatorControlAssignmentDetails
                         + (this.remoteSyslogServerCACert == null
                                 ? 43
                                 : this.remoteSyslogServerCACert.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isHypervisorLogForwarded == null
+                                ? 43
+                                : this.isHypervisorLogForwarded.hashCode());
         result =
                 (result * PRIME)
                         + (this.isAutoApproveDuringMaintenance == null

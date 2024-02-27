@@ -7,7 +7,7 @@ package com.oracle.bmc.database.model;
 /**
  * The Autonomous Database preview version. Note that preview version software is only available for
  * [Autonomous Database Serverless
- * instances](https://docs.oracle.com/en/cloud/paas/autonomous-database/shared/index.html). <br>
+ * instances](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

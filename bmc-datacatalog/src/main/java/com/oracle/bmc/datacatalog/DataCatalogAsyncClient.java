@@ -324,6 +324,56 @@ public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     }
 
     @Override
+    public java.util.concurrent.Future<AsynchronousExportDataAssetResponse>
+            asynchronousExportDataAsset(
+                    AsynchronousExportDataAssetRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AsynchronousExportDataAssetRequest,
+                                    AsynchronousExportDataAssetResponse>
+                            handler) {
+
+        Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
+
+        Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
+        Objects.requireNonNull(
+                request.getAsynchronousExportDataAssetDetails(),
+                "asynchronousExportDataAssetDetails is required");
+
+        Objects.requireNonNull(request.getExportType(), "exportType is required");
+
+        return clientCall(request, AsynchronousExportDataAssetResponse::builder)
+                .logger(LOG, "asynchronousExportDataAsset")
+                .serviceDetails(
+                        "DataCatalog",
+                        "AsynchronousExportDataAsset",
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/AsynchronousExportDataAsset")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AsynchronousExportDataAssetRequest::builder)
+                .basePath("/20190325")
+                .appendPathParam("catalogs")
+                .appendPathParam(request.getCatalogId())
+                .appendPathParam("dataAssets")
+                .appendPathParam(request.getDataAssetKey())
+                .appendPathParam("actions")
+                .appendPathParam("asynchronousExport")
+                .appendListQueryParam(
+                        "exportType",
+                        request.getExportType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datacatalog.model.AsynchronousExportDataAssetResult.class,
+                        AsynchronousExportDataAssetResponse.Builder
+                                ::asynchronousExportDataAssetResult)
+                .handleResponseHeaderString(
+                        "opc-request-id", AsynchronousExportDataAssetResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<AsynchronousExportGlossaryResponse>
             asynchronousExportGlossary(
                     AsynchronousExportGlossaryRequest request,

@@ -361,6 +361,7 @@ public final class AutonomousContainerDatabase
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
          * Oracle Cloud Infrastructure
          * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * This parameter and {@code secretId} are required for Customer Managed Keys.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
@@ -369,6 +370,7 @@ public final class AutonomousContainerDatabase
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
          * Oracle Cloud Infrastructure
          * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * This parameter and {@code secretId} are required for Customer Managed Keys.
          *
          * @param vaultId the value to set
          * @return this builder
@@ -381,7 +383,9 @@ public final class AutonomousContainerDatabase
         /**
          * The OCID of the key container version that is used in database transparent data
          * encryption (TDE) operations KMS Key can have multiple key versions. If none is specified,
-         * the current key version (latest) of the Key Id is used for the operation.
+         * the current key version (latest) of the Key Id is used for the operation. Autonomous
+         * Database Serverless does not use key versions, hence is not applicable for Autonomous
+         * Database Serverless instances.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
         private String kmsKeyVersionId;
@@ -389,7 +393,9 @@ public final class AutonomousContainerDatabase
         /**
          * The OCID of the key container version that is used in database transparent data
          * encryption (TDE) operations KMS Key can have multiple key versions. If none is specified,
-         * the current key version (latest) of the Key Id is used for the operation.
+         * the current key version (latest) of the Key Id is used for the operation. Autonomous
+         * Database Serverless does not use key versions, hence is not applicable for Autonomous
+         * Database Serverless instances.
          *
          * @param kmsKeyVersionId the value to set
          * @return this builder
@@ -617,12 +623,12 @@ public final class AutonomousContainerDatabase
             this.__explicitlySet__.add("isDstFileUpdateEnabled");
             return this;
         }
-        /** DST Time Zone File version of the Autonomous Container Database. */
+        /** DST Time-zone File version of the Autonomous Container Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("dstFileVersion")
         private String dstFileVersion;
 
         /**
-         * DST Time Zone File version of the Autonomous Container Database.
+         * DST Time-zone File version of the Autonomous Container Database.
          *
          * @param dstFileVersion the value to set
          * @return this builder
@@ -739,14 +745,14 @@ public final class AutonomousContainerDatabase
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * key store.
+         * key store of Oracle Vault.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
         private String keyStoreId;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * key store.
+         * key store of Oracle Vault.
          *
          * @param keyStoreId the value to set
          * @return this builder
@@ -771,12 +777,12 @@ public final class AutonomousContainerDatabase
             this.__explicitlySet__.add("keyStoreWalletName");
             return this;
         }
-        /** The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster. */
+        /** The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
         private Integer memoryPerOracleComputeUnitInGBs;
 
         /**
-         * The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
+         * The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
          *
          * @param memoryPerOracleComputeUnitInGBs the value to set
          * @return this builder
@@ -788,18 +794,14 @@ public final class AutonomousContainerDatabase
         }
         /**
          * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in
-         * the Autonomous Container Database.<br>
-         * For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or
-         * ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+         * the Autonomous Container Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
         private Float availableCpus;
 
         /**
          * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in
-         * the Autonomous Container Database.<br>
-         * For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or
-         * ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+         * the Autonomous Container Database.
          *
          * @param availableCpus the value to set
          * @return this builder
@@ -809,18 +811,12 @@ public final class AutonomousContainerDatabase
             this.__explicitlySet__.add("availableCpus");
             return this;
         }
-        /**
-         * The number of CPUs allocated to the Autonomous VM cluster.<br>
-         * For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or
-         * ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-         */
+        /** The number of CPUs allocated to the Autonomous VM cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalCpus")
         private Integer totalCpus;
 
         /**
-         * The number of CPUs allocated to the Autonomous VM cluster.<br>
-         * For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or
-         * ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+         * The number of CPUs allocated to the Autonomous VM cluster.
          *
          * @param totalCpus the value to set
          * @return this builder
@@ -831,23 +827,19 @@ public final class AutonomousContainerDatabase
             return this;
         }
         /**
-         * For Autonomous Databases on Dedicated Exadata Infrastructure: - These are the CPUs that
-         * continue to be included in the count of CPUs available to the Autonomous Container
-         * Database even after one of its Autonomous Database is terminated or scaled down. You can
-         * release them to the available CPUs at its parent Autonomous VM Cluster level by
-         * restarting the Autonomous Container Database. - The CPU type (OCPUs or ECPUs) is
-         * determined by the parent Autonomous Exadata VM Cluster's compute model.
+         * CPUs that continue to be included in the count of CPUs available to the Autonomous
+         * Container Database even after one of its Autonomous Database is terminated or scaled
+         * down. You can release them to the available CPUs at its parent Autonomous VM Cluster
+         * level by restarting the Autonomous Container Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
         private Float reclaimableCpus;
 
         /**
-         * For Autonomous Databases on Dedicated Exadata Infrastructure: - These are the CPUs that
-         * continue to be included in the count of CPUs available to the Autonomous Container
-         * Database even after one of its Autonomous Database is terminated or scaled down. You can
-         * release them to the available CPUs at its parent Autonomous VM Cluster level by
-         * restarting the Autonomous Container Database. - The CPU type (OCPUs or ECPUs) is
-         * determined by the parent Autonomous Exadata VM Cluster's compute model.
+         * CPUs that continue to be included in the count of CPUs available to the Autonomous
+         * Container Database even after one of its Autonomous Database is terminated or scaled
+         * down. You can release them to the available CPUs at its parent Autonomous VM Cluster
+         * level by restarting the Autonomous Container Database.
          *
          * @param reclaimableCpus the value to set
          * @return this builder
@@ -859,18 +851,14 @@ public final class AutonomousContainerDatabase
         }
         /**
          * An array of CPU values that can be used to successfully provision a single Autonomous
-         * Database.\\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type
-         * (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute
-         * model.
+         * Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("provisionableCpus")
         private java.util.List<Float> provisionableCpus;
 
         /**
          * An array of CPU values that can be used to successfully provision a single Autonomous
-         * Database.\\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type
-         * (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute
-         * model.
+         * Database.
          *
          * @param provisionableCpus the value to set
          * @return this builder
@@ -880,12 +868,26 @@ public final class AutonomousContainerDatabase
             this.__explicitlySet__.add("provisionableCpus");
             return this;
         }
-        /** The compute model of the Autonomous VM Cluster. */
+        /**
+         * The compute model of the Autonomous Container Database. For Autonomous Database on
+         * Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the
+         * parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the
+         * recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous
+         * Database on Dedicated Exadata
+         * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+         * for more details.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
         private ComputeModel computeModel;
 
         /**
-         * The compute model of the Autonomous VM Cluster.
+         * The compute model of the Autonomous Container Database. For Autonomous Database on
+         * Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the
+         * parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the
+         * recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous
+         * Database on Dedicated Exadata
+         * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+         * for more details.
          *
          * @param computeModel the value to set
          * @return this builder
@@ -1440,6 +1442,7 @@ public final class AutonomousContainerDatabase
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
      * Oracle Cloud Infrastructure
      * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * This parameter and {@code secretId} are required for Customer Managed Keys.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
@@ -1448,6 +1451,7 @@ public final class AutonomousContainerDatabase
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
      * Oracle Cloud Infrastructure
      * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * This parameter and {@code secretId} are required for Customer Managed Keys.
      *
      * @return the value
      */
@@ -1458,7 +1462,9 @@ public final class AutonomousContainerDatabase
     /**
      * The OCID of the key container version that is used in database transparent data encryption
      * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
-     * key version (latest) of the Key Id is used for the operation.
+     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
+     * does not use key versions, hence is not applicable for Autonomous Database Serverless
+     * instances.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
@@ -1466,7 +1472,9 @@ public final class AutonomousContainerDatabase
     /**
      * The OCID of the key container version that is used in database transparent data encryption
      * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
-     * key version (latest) of the Key Id is used for the operation.
+     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
+     * does not use key versions, hence is not applicable for Autonomous Database Serverless
+     * instances.
      *
      * @return the value
      */
@@ -1815,12 +1823,12 @@ public final class AutonomousContainerDatabase
         return isDstFileUpdateEnabled;
     }
 
-    /** DST Time Zone File version of the Autonomous Container Database. */
+    /** DST Time-zone File version of the Autonomous Container Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("dstFileVersion")
     private final String dstFileVersion;
 
     /**
-     * DST Time Zone File version of the Autonomous Container Database.
+     * DST Time-zone File version of the Autonomous Container Database.
      *
      * @return the value
      */
@@ -1972,14 +1980,14 @@ public final class AutonomousContainerDatabase
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key
-     * store.
+     * store of Oracle Vault.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
     private final String keyStoreId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key
-     * store.
+     * store of Oracle Vault.
      *
      * @return the value
      */
@@ -2000,12 +2008,12 @@ public final class AutonomousContainerDatabase
         return keyStoreWalletName;
     }
 
-    /** The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster. */
+    /** The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
     private final Integer memoryPerOracleComputeUnitInGBs;
 
     /**
-     * The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
+     * The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
      *
      * @return the value
      */
@@ -2015,18 +2023,14 @@ public final class AutonomousContainerDatabase
 
     /**
      * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the
-     * Autonomous Container Database.<br>
-     * For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs)
-     * is determined by the parent Autonomous Exadata VM Cluster's compute model.
+     * Autonomous Container Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
     private final Float availableCpus;
 
     /**
      * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the
-     * Autonomous Container Database.<br>
-     * For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs)
-     * is determined by the parent Autonomous Exadata VM Cluster's compute model.
+     * Autonomous Container Database.
      *
      * @return the value
      */
@@ -2034,18 +2038,12 @@ public final class AutonomousContainerDatabase
         return availableCpus;
     }
 
-    /**
-     * The number of CPUs allocated to the Autonomous VM cluster.<br>
-     * For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs)
-     * is determined by the parent Autonomous Exadata VM Cluster's compute model.
-     */
+    /** The number of CPUs allocated to the Autonomous VM cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalCpus")
     private final Integer totalCpus;
 
     /**
-     * The number of CPUs allocated to the Autonomous VM cluster.<br>
-     * For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs)
-     * is determined by the parent Autonomous Exadata VM Cluster's compute model.
+     * The number of CPUs allocated to the Autonomous VM cluster.
      *
      * @return the value
      */
@@ -2054,23 +2052,19 @@ public final class AutonomousContainerDatabase
     }
 
     /**
-     * For Autonomous Databases on Dedicated Exadata Infrastructure: - These are the CPUs that
-     * continue to be included in the count of CPUs available to the Autonomous Container Database
-     * even after one of its Autonomous Database is terminated or scaled down. You can release them
-     * to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous
-     * Container Database. - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous
-     * Exadata VM Cluster's compute model.
+     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container
+     * Database even after one of its Autonomous Database is terminated or scaled down. You can
+     * release them to the available CPUs at its parent Autonomous VM Cluster level by restarting
+     * the Autonomous Container Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
     private final Float reclaimableCpus;
 
     /**
-     * For Autonomous Databases on Dedicated Exadata Infrastructure: - These are the CPUs that
-     * continue to be included in the count of CPUs available to the Autonomous Container Database
-     * even after one of its Autonomous Database is terminated or scaled down. You can release them
-     * to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous
-     * Container Database. - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous
-     * Exadata VM Cluster's compute model.
+     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container
+     * Database even after one of its Autonomous Database is terminated or scaled down. You can
+     * release them to the available CPUs at its parent Autonomous VM Cluster level by restarting
+     * the Autonomous Container Database.
      *
      * @return the value
      */
@@ -2080,16 +2074,14 @@ public final class AutonomousContainerDatabase
 
     /**
      * An array of CPU values that can be used to successfully provision a single Autonomous
-     * Database.\\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs
-     * or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+     * Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("provisionableCpus")
     private final java.util.List<Float> provisionableCpus;
 
     /**
      * An array of CPU values that can be used to successfully provision a single Autonomous
-     * Database.\\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs
-     * or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+     * Database.
      *
      * @return the value
      */
@@ -2097,7 +2089,14 @@ public final class AutonomousContainerDatabase
         return provisionableCpus;
     }
 
-    /** The compute model of the Autonomous VM Cluster. */
+    /**
+     * The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated
+     * Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous
+     * Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU
+     * compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata
+     * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+     * for more details.
+     */
     public enum ComputeModel implements com.oracle.bmc.http.internal.BmcEnum {
         Ecpu("ECPU"),
         Ocpu("OCPU"),
@@ -2143,12 +2142,24 @@ public final class AutonomousContainerDatabase
             return UnknownEnumValue;
         }
     };
-    /** The compute model of the Autonomous VM Cluster. */
+    /**
+     * The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated
+     * Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous
+     * Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU
+     * compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata
+     * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+     * for more details.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
     private final ComputeModel computeModel;
 
     /**
-     * The compute model of the Autonomous VM Cluster.
+     * The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated
+     * Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous
+     * Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU
+     * compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata
+     * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+     * for more details.
      *
      * @return the value
      */

@@ -229,6 +229,41 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
     }
 
     @Override
+    public GetAssignmentValidationStatusResponse getAssignmentValidationStatus(
+            GetAssignmentValidationStatusRequest request) {
+
+        Validate.notBlank(
+                request.getOperatorControlAssignmentId(),
+                "operatorControlAssignmentId must not be blank");
+
+        return clientCall(request, GetAssignmentValidationStatusResponse::builder)
+                .logger(LOG, "getAssignmentValidationStatus")
+                .serviceDetails(
+                        "OperatorControlAssignment",
+                        "GetAssignmentValidationStatus",
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/GetAssignmentValidationStatus")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAssignmentValidationStatusRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("operatorControlAssignments")
+                .appendPathParam(request.getOperatorControlAssignmentId())
+                .appendPathParam("actions")
+                .appendPathParam("getAssignmentValidationStatus")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.operatoraccesscontrol.model.AssignmentValidationStatus.class,
+                        GetAssignmentValidationStatusResponse.Builder::assignmentValidationStatus)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetAssignmentValidationStatusResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", GetAssignmentValidationStatusResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public GetOperatorControlAssignmentResponse getOperatorControlAssignment(
             GetOperatorControlAssignmentRequest request) {
 
@@ -337,6 +372,44 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateOperatorControlAssignmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ValidateOperatorAssignmentResponse validateOperatorAssignment(
+            ValidateOperatorAssignmentRequest request) {
+
+        Validate.notBlank(
+                request.getOperatorControlAssignmentId(),
+                "operatorControlAssignmentId must not be blank");
+        Objects.requireNonNull(
+                request.getValidateOperatorAssignmentDetails(),
+                "validateOperatorAssignmentDetails is required");
+
+        return clientCall(request, ValidateOperatorAssignmentResponse::builder)
+                .logger(LOG, "validateOperatorAssignment")
+                .serviceDetails(
+                        "OperatorControlAssignment",
+                        "ValidateOperatorAssignment",
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/ValidateOperatorAssignment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ValidateOperatorAssignmentRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("operatorControlAssignments")
+                .appendPathParam(request.getOperatorControlAssignmentId())
+                .appendPathParam("actions")
+                .appendPathParam("validateAssignment")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ValidateOperatorAssignmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ValidateOperatorAssignmentResponse.Builder::opcRequestId)
                 .callSync();
     }
 

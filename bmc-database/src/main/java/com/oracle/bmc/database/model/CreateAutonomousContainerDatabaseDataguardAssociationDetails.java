@@ -27,6 +27,8 @@ public final class CreateAutonomousContainerDatabaseDataguardAssociationDetails
         "peerAutonomousContainerDatabaseDisplayName",
         "peerAutonomousContainerDatabaseCompartmentId",
         "peerCloudAutonomousVmClusterId",
+        "peerAutonomousVmClusterId",
+        "peerDbUniqueName",
         "peerAutonomousContainerDatabaseBackupConfig",
         "isAutomaticFailoverEnabled",
         "protectionMode",
@@ -37,6 +39,8 @@ public final class CreateAutonomousContainerDatabaseDataguardAssociationDetails
             String peerAutonomousContainerDatabaseDisplayName,
             String peerAutonomousContainerDatabaseCompartmentId,
             String peerCloudAutonomousVmClusterId,
+            String peerAutonomousVmClusterId,
+            String peerDbUniqueName,
             PeerAutonomousContainerDatabaseBackupConfig peerAutonomousContainerDatabaseBackupConfig,
             Boolean isAutomaticFailoverEnabled,
             ProtectionMode protectionMode,
@@ -48,6 +52,8 @@ public final class CreateAutonomousContainerDatabaseDataguardAssociationDetails
         this.peerAutonomousContainerDatabaseCompartmentId =
                 peerAutonomousContainerDatabaseCompartmentId;
         this.peerCloudAutonomousVmClusterId = peerCloudAutonomousVmClusterId;
+        this.peerAutonomousVmClusterId = peerAutonomousVmClusterId;
+        this.peerDbUniqueName = peerDbUniqueName;
         this.peerAutonomousContainerDatabaseBackupConfig =
                 peerAutonomousContainerDatabaseBackupConfig;
         this.isAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
@@ -114,6 +120,40 @@ public final class CreateAutonomousContainerDatabaseDataguardAssociationDetails
         public Builder peerCloudAutonomousVmClusterId(String peerCloudAutonomousVmClusterId) {
             this.peerCloudAutonomousVmClusterId = peerCloudAutonomousVmClusterId;
             this.__explicitlySet__.add("peerCloudAutonomousVmClusterId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * peer Autonomous Exadata VM Cluster.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousVmClusterId")
+        private String peerAutonomousVmClusterId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * peer Autonomous Exadata VM Cluster.
+         *
+         * @param peerAutonomousVmClusterId the value to set
+         * @return this builder
+         */
+        public Builder peerAutonomousVmClusterId(String peerAutonomousVmClusterId) {
+            this.peerAutonomousVmClusterId = peerAutonomousVmClusterId;
+            this.__explicitlySet__.add("peerAutonomousVmClusterId");
+            return this;
+        }
+        /** Specifies the {@code DB_UNIQUE_NAME} of the peer database to be created. */
+        @com.fasterxml.jackson.annotation.JsonProperty("peerDbUniqueName")
+        private String peerDbUniqueName;
+
+        /**
+         * Specifies the {@code DB_UNIQUE_NAME} of the peer database to be created.
+         *
+         * @param peerDbUniqueName the value to set
+         * @return this builder
+         */
+        public Builder peerDbUniqueName(String peerDbUniqueName) {
+            this.peerDbUniqueName = peerDbUniqueName;
+            this.__explicitlySet__.add("peerDbUniqueName");
             return this;
         }
 
@@ -219,6 +259,8 @@ public final class CreateAutonomousContainerDatabaseDataguardAssociationDetails
                             this.peerAutonomousContainerDatabaseDisplayName,
                             this.peerAutonomousContainerDatabaseCompartmentId,
                             this.peerCloudAutonomousVmClusterId,
+                            this.peerAutonomousVmClusterId,
+                            this.peerDbUniqueName,
                             this.peerAutonomousContainerDatabaseBackupConfig,
                             this.isAutomaticFailoverEnabled,
                             this.protectionMode,
@@ -242,6 +284,12 @@ public final class CreateAutonomousContainerDatabaseDataguardAssociationDetails
             }
             if (model.wasPropertyExplicitlySet("peerCloudAutonomousVmClusterId")) {
                 this.peerCloudAutonomousVmClusterId(model.getPeerCloudAutonomousVmClusterId());
+            }
+            if (model.wasPropertyExplicitlySet("peerAutonomousVmClusterId")) {
+                this.peerAutonomousVmClusterId(model.getPeerAutonomousVmClusterId());
+            }
+            if (model.wasPropertyExplicitlySet("peerDbUniqueName")) {
+                this.peerDbUniqueName(model.getPeerDbUniqueName());
             }
             if (model.wasPropertyExplicitlySet("peerAutonomousContainerDatabaseBackupConfig")) {
                 this.peerAutonomousContainerDatabaseBackupConfig(
@@ -318,6 +366,36 @@ public final class CreateAutonomousContainerDatabaseDataguardAssociationDetails
      */
     public String getPeerCloudAutonomousVmClusterId() {
         return peerCloudAutonomousVmClusterId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * peer Autonomous Exadata VM Cluster.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousVmClusterId")
+    private final String peerAutonomousVmClusterId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * peer Autonomous Exadata VM Cluster.
+     *
+     * @return the value
+     */
+    public String getPeerAutonomousVmClusterId() {
+        return peerAutonomousVmClusterId;
+    }
+
+    /** Specifies the {@code DB_UNIQUE_NAME} of the peer database to be created. */
+    @com.fasterxml.jackson.annotation.JsonProperty("peerDbUniqueName")
+    private final String peerDbUniqueName;
+
+    /**
+     * Specifies the {@code DB_UNIQUE_NAME} of the peer database to be created.
+     *
+     * @return the value
+     */
+    public String getPeerDbUniqueName() {
+        return peerDbUniqueName;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousContainerDatabaseBackupConfig")
@@ -458,6 +536,9 @@ public final class CreateAutonomousContainerDatabaseDataguardAssociationDetails
                 .append(String.valueOf(this.peerAutonomousContainerDatabaseCompartmentId));
         sb.append(", peerCloudAutonomousVmClusterId=")
                 .append(String.valueOf(this.peerCloudAutonomousVmClusterId));
+        sb.append(", peerAutonomousVmClusterId=")
+                .append(String.valueOf(this.peerAutonomousVmClusterId));
+        sb.append(", peerDbUniqueName=").append(String.valueOf(this.peerDbUniqueName));
         sb.append(", peerAutonomousContainerDatabaseBackupConfig=")
                 .append(String.valueOf(this.peerAutonomousContainerDatabaseBackupConfig));
         sb.append(", isAutomaticFailoverEnabled=")
@@ -491,6 +572,9 @@ public final class CreateAutonomousContainerDatabaseDataguardAssociationDetails
                 && java.util.Objects.equals(
                         this.peerCloudAutonomousVmClusterId, other.peerCloudAutonomousVmClusterId)
                 && java.util.Objects.equals(
+                        this.peerAutonomousVmClusterId, other.peerAutonomousVmClusterId)
+                && java.util.Objects.equals(this.peerDbUniqueName, other.peerDbUniqueName)
+                && java.util.Objects.equals(
                         this.peerAutonomousContainerDatabaseBackupConfig,
                         other.peerAutonomousContainerDatabaseBackupConfig)
                 && java.util.Objects.equals(
@@ -523,6 +607,14 @@ public final class CreateAutonomousContainerDatabaseDataguardAssociationDetails
                         + (this.peerCloudAutonomousVmClusterId == null
                                 ? 43
                                 : this.peerCloudAutonomousVmClusterId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerAutonomousVmClusterId == null
+                                ? 43
+                                : this.peerAutonomousVmClusterId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerDbUniqueName == null ? 43 : this.peerDbUniqueName.hashCode());
         result =
                 (result * PRIME)
                         + (this.peerAutonomousContainerDatabaseBackupConfig == null

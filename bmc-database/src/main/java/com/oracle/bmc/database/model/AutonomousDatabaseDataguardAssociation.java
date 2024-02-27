@@ -207,12 +207,12 @@ public final class AutonomousDatabaseDataguardAssociation
             this.__explicitlySet__.add("peerAutonomousDatabaseId");
             return this;
         }
-        /** The current state of Autonomous Data Guard. */
+        /** The current state of the Autonomous Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousDatabaseLifeCycleState")
         private PeerAutonomousDatabaseLifeCycleState peerAutonomousDatabaseLifeCycleState;
 
         /**
-         * The current state of Autonomous Data Guard.
+         * The current state of the Autonomous Database.
          *
          * @param peerAutonomousDatabaseLifeCycleState the value to set
          * @return this builder
@@ -739,17 +739,30 @@ public final class AutonomousDatabaseDataguardAssociation
         return peerAutonomousDatabaseId;
     }
 
-    /** The current state of Autonomous Data Guard. */
+    /** The current state of the Autonomous Database. */
     public enum PeerAutonomousDatabaseLifeCycleState
             implements com.oracle.bmc.http.internal.BmcEnum {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
-        RoleChangeInProgress("ROLE_CHANGE_IN_PROGRESS"),
+        Stopping("STOPPING"),
+        Stopped("STOPPED"),
+        Starting("STARTING"),
         Terminating("TERMINATING"),
         Terminated("TERMINATED"),
-        Failed("FAILED"),
         Unavailable("UNAVAILABLE"),
+        RestoreInProgress("RESTORE_IN_PROGRESS"),
+        RestoreFailed("RESTORE_FAILED"),
+        BackupInProgress("BACKUP_IN_PROGRESS"),
+        ScaleInProgress("SCALE_IN_PROGRESS"),
+        AvailableNeedsAttention("AVAILABLE_NEEDS_ATTENTION"),
         Updating("UPDATING"),
+        MaintenanceInProgress("MAINTENANCE_IN_PROGRESS"),
+        Restarting("RESTARTING"),
+        Recreating("RECREATING"),
+        RoleChangeInProgress("ROLE_CHANGE_IN_PROGRESS"),
+        Upgrading("UPGRADING"),
+        Inaccessible("INACCESSIBLE"),
+        Standby("STANDBY"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -793,12 +806,12 @@ public final class AutonomousDatabaseDataguardAssociation
             return UnknownEnumValue;
         }
     };
-    /** The current state of Autonomous Data Guard. */
+    /** The current state of the Autonomous Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousDatabaseLifeCycleState")
     private final PeerAutonomousDatabaseLifeCycleState peerAutonomousDatabaseLifeCycleState;
 
     /**
-     * The current state of Autonomous Data Guard.
+     * The current state of the Autonomous Database.
      *
      * @return the value
      */

@@ -41,6 +41,7 @@ public final class AccessRequestSummary
         "extendDuration",
         "severity",
         "isAutoApproved",
+        "timeRequestedForFutureAccess",
         "freeformTags",
         "definedTags"
     })
@@ -62,6 +63,7 @@ public final class AccessRequestSummary
             Integer extendDuration,
             AccessRequestSeverities severity,
             Boolean isAutoApproved,
+            java.util.Date timeRequestedForFutureAccess,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -82,6 +84,7 @@ public final class AccessRequestSummary
         this.extendDuration = extendDuration;
         this.severity = severity;
         this.isAutoApproved = isAutoApproved;
+        this.timeRequestedForFutureAccess = timeRequestedForFutureAccess;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -366,6 +369,27 @@ public final class AccessRequestSummary
             return this;
         }
         /**
+         * Time in future when the user for the access request needs to be created in [RFC
+         * 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example:
+         * '2020-05-22T21:10:29.600Z'
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeRequestedForFutureAccess")
+        private java.util.Date timeRequestedForFutureAccess;
+
+        /**
+         * Time in future when the user for the access request needs to be created in [RFC
+         * 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example:
+         * '2020-05-22T21:10:29.600Z'
+         *
+         * @param timeRequestedForFutureAccess the value to set
+         * @return this builder
+         */
+        public Builder timeRequestedForFutureAccess(java.util.Date timeRequestedForFutureAccess) {
+            this.timeRequestedForFutureAccess = timeRequestedForFutureAccess;
+            this.__explicitlySet__.add("timeRequestedForFutureAccess");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only.
          */
@@ -424,6 +448,7 @@ public final class AccessRequestSummary
                             this.extendDuration,
                             this.severity,
                             this.isAutoApproved,
+                            this.timeRequestedForFutureAccess,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -484,6 +509,9 @@ public final class AccessRequestSummary
             }
             if (model.wasPropertyExplicitlySet("isAutoApproved")) {
                 this.isAutoApproved(model.getIsAutoApproved());
+            }
+            if (model.wasPropertyExplicitlySet("timeRequestedForFutureAccess")) {
+                this.timeRequestedForFutureAccess(model.getTimeRequestedForFutureAccess());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -748,6 +776,25 @@ public final class AccessRequestSummary
     }
 
     /**
+     * Time in future when the user for the access request needs to be created in [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example:
+     * '2020-05-22T21:10:29.600Z'
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeRequestedForFutureAccess")
+    private final java.util.Date timeRequestedForFutureAccess;
+
+    /**
+     * Time in future when the user for the access request needs to be created in [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example:
+     * '2020-05-22T21:10:29.600Z'
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeRequestedForFutureAccess() {
+        return timeRequestedForFutureAccess;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only.
      */
@@ -809,6 +856,8 @@ public final class AccessRequestSummary
         sb.append(", extendDuration=").append(String.valueOf(this.extendDuration));
         sb.append(", severity=").append(String.valueOf(this.severity));
         sb.append(", isAutoApproved=").append(String.valueOf(this.isAutoApproved));
+        sb.append(", timeRequestedForFutureAccess=")
+                .append(String.valueOf(this.timeRequestedForFutureAccess));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -842,6 +891,8 @@ public final class AccessRequestSummary
                 && java.util.Objects.equals(this.extendDuration, other.extendDuration)
                 && java.util.Objects.equals(this.severity, other.severity)
                 && java.util.Objects.equals(this.isAutoApproved, other.isAutoApproved)
+                && java.util.Objects.equals(
+                        this.timeRequestedForFutureAccess, other.timeRequestedForFutureAccess)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -894,6 +945,11 @@ public final class AccessRequestSummary
         result =
                 (result * PRIME)
                         + (this.isAutoApproved == null ? 43 : this.isAutoApproved.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeRequestedForFutureAccess == null
+                                ? 43
+                                : this.timeRequestedForFutureAccess.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

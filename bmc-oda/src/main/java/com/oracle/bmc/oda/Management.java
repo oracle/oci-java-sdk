@@ -64,6 +64,39 @@ public interface Management extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Bulk create composite and value list entities into a skill.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/BulkCreateSkillEntitiesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     BulkCreateSkillEntities API.
+     */
+    BulkCreateSkillEntitiesResponse bulkCreateSkillEntities(BulkCreateSkillEntitiesRequest request);
+
+    /**
+     * Cascading delete of the custom entities in a skill.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/CascadingDeleteSkillCustomEntitiesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CascadingDeleteSkillCustomEntities API.
+     */
+    CascadingDeleteSkillCustomEntitiesResponse cascadingDeleteSkillCustomEntities(
+            CascadingDeleteSkillCustomEntitiesRequest request);
+
+    /**
      * Starts an asynchronous job to move the specified ODA Private Endpoint into a different
      * compartment.
      *
@@ -899,6 +932,21 @@ public interface Management extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopChannel API.
      */
     StopChannelResponse stopChannel(StopChannelRequest request);
+
+    /**
+     * Train a skill.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/TrainSkillExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use TrainSkill API.
+     */
+    TrainSkillResponse trainSkill(TrainSkillRequest request);
 
     /**
      * Updates the specified Authentication Provider with the information in the request body.

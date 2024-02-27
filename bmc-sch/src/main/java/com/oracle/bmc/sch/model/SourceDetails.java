@@ -5,12 +5,12 @@
 package com.oracle.bmc.sch.model;
 
 /**
- * An object that represents the source of the flow defined by the service connector. An example
- * source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined
- * by service connectors, see [Service Connector Hub
- * Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For
- * configuration instructions, see [To create a service
- * connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+ * An object that represents the source of the flow defined by the connector. An example source is
+ * the VCNFlow logs within the NetworkLogs group. For more information about flows defined by
+ * connectors, see [Overview of Connector
+ * Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration
+ * instructions, see [Creating a
+ * Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
  * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -36,7 +36,10 @@ package com.oracle.bmc.sch.model;
             name = "monitoring"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = StreamingSourceDetails.class,
-            name = "streaming")
+            name = "streaming"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PluginSourceDetails.class,
+            name = "plugin")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -87,11 +90,12 @@ public class SourceDetails extends com.oracle.bmc.http.client.internal.Explicitl
         return result;
     }
 
-    /** The type descriminator. */
+    /** The type discriminator. */
     public enum Kind implements com.oracle.bmc.http.internal.BmcEnum {
         Logging("logging"),
         Monitoring("monitoring"),
         Streaming("streaming"),
+        Plugin("plugin"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

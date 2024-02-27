@@ -3169,6 +3169,22 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Updates the external ASM instance specified by `externalAsmInstanceId`.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExternalAsmInstanceResponse> updateExternalAsmInstance(
+            UpdateExternalAsmInstanceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExternalAsmInstanceRequest, UpdateExternalAsmInstanceResponse>
+                    handler);
+
+    /**
      * Updates the external cluster specified by `externalClusterId`.
      *
      * @param request The request object containing the details to send
@@ -3201,6 +3217,22 @@ public interface DbManagementAsync extends AutoCloseable {
                                     UpdateExternalClusterInstanceRequest,
                                     UpdateExternalClusterInstanceResponse>
                             handler);
+
+    /**
+     * Updates the external DB home specified by `externalDbHomeId`.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExternalDbHomeResponse> updateExternalDbHome(
+            UpdateExternalDbHomeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExternalDbHomeRequest, UpdateExternalDbHomeResponse>
+                    handler);
 
     /**
      * Updates the external DB node specified by `externalDbNodeId`.
@@ -3308,6 +3340,42 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Updates the Exadata storage server grid specified by exadataStorageGridId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExternalExadataStorageGridResponse>
+            updateExternalExadataStorageGrid(
+                    UpdateExternalExadataStorageGridRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateExternalExadataStorageGridRequest,
+                                    UpdateExternalExadataStorageGridResponse>
+                            handler);
+
+    /**
+     * Updates the Exadata storage server specified by exadataStorageServerId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExternalExadataStorageServerResponse>
+            updateExternalExadataStorageServer(
+                    UpdateExternalExadataStorageServerRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateExternalExadataStorageServerRequest,
+                                    UpdateExternalExadataStorageServerResponse>
+                            handler);
+
+    /**
      * Updates the external listener specified by `externalListenerId`.
      *
      * @param request The request object containing the details to send
@@ -3337,6 +3405,22 @@ public interface DbManagementAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateJobResponse> updateJob(
             UpdateJobRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateJobRequest, UpdateJobResponse> handler);
+
+    /**
+     * Updates the Managed Database specified by managedDatabaseId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateManagedDatabaseResponse> updateManagedDatabase(
+            UpdateManagedDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateManagedDatabaseRequest, UpdateManagedDatabaseResponse>
+                    handler);
 
     /**
      * Updates the Managed Database Group specified by managedDatabaseGroupId.

@@ -39,7 +39,9 @@ public final class SecretSummary extends com.oracle.bmc.http.client.internal.Exp
         "timeCreated",
         "timeOfCurrentVersionExpiry",
         "timeOfDeletion",
-        "vaultId"
+        "vaultId",
+        "secretGenerationContext",
+        "isAutoGenerationEnabled"
     })
     public SecretSummary(
             String compartmentId,
@@ -59,7 +61,9 @@ public final class SecretSummary extends com.oracle.bmc.http.client.internal.Exp
             java.util.Date timeCreated,
             java.util.Date timeOfCurrentVersionExpiry,
             java.util.Date timeOfDeletion,
-            String vaultId) {
+            String vaultId,
+            SecretGenerationContext secretGenerationContext,
+            Boolean isAutoGenerationEnabled) {
         super();
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
@@ -79,6 +83,8 @@ public final class SecretSummary extends com.oracle.bmc.http.client.internal.Exp
         this.timeOfCurrentVersionExpiry = timeOfCurrentVersionExpiry;
         this.timeOfDeletion = timeOfDeletion;
         this.vaultId = vaultId;
+        this.secretGenerationContext = secretGenerationContext;
+        this.isAutoGenerationEnabled = isAutoGenerationEnabled;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -409,6 +415,34 @@ public final class SecretSummary extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("secretGenerationContext")
+        private SecretGenerationContext secretGenerationContext;
+
+        public Builder secretGenerationContext(SecretGenerationContext secretGenerationContext) {
+            this.secretGenerationContext = secretGenerationContext;
+            this.__explicitlySet__.add("secretGenerationContext");
+            return this;
+        }
+        /**
+         * The value of this flag determines whether or not secret content will be generated
+         * automatically.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoGenerationEnabled")
+        private Boolean isAutoGenerationEnabled;
+
+        /**
+         * The value of this flag determines whether or not secret content will be generated
+         * automatically.
+         *
+         * @param isAutoGenerationEnabled the value to set
+         * @return this builder
+         */
+        public Builder isAutoGenerationEnabled(Boolean isAutoGenerationEnabled) {
+            this.isAutoGenerationEnabled = isAutoGenerationEnabled;
+            this.__explicitlySet__.add("isAutoGenerationEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -432,7 +466,9 @@ public final class SecretSummary extends com.oracle.bmc.http.client.internal.Exp
                             this.timeCreated,
                             this.timeOfCurrentVersionExpiry,
                             this.timeOfDeletion,
-                            this.vaultId);
+                            this.vaultId,
+                            this.secretGenerationContext,
+                            this.isAutoGenerationEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -494,6 +530,12 @@ public final class SecretSummary extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("vaultId")) {
                 this.vaultId(model.getVaultId());
+            }
+            if (model.wasPropertyExplicitlySet("secretGenerationContext")) {
+                this.secretGenerationContext(model.getSecretGenerationContext());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoGenerationEnabled")) {
+                this.isAutoGenerationEnabled(model.getIsAutoGenerationEnabled());
             }
             return this;
         }
@@ -847,6 +889,30 @@ public final class SecretSummary extends com.oracle.bmc.http.client.internal.Exp
         return vaultId;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("secretGenerationContext")
+    private final SecretGenerationContext secretGenerationContext;
+
+    public SecretGenerationContext getSecretGenerationContext() {
+        return secretGenerationContext;
+    }
+
+    /**
+     * The value of this flag determines whether or not secret content will be generated
+     * automatically.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoGenerationEnabled")
+    private final Boolean isAutoGenerationEnabled;
+
+    /**
+     * The value of this flag determines whether or not secret content will be generated
+     * automatically.
+     *
+     * @return the value
+     */
+    public Boolean getIsAutoGenerationEnabled() {
+        return isAutoGenerationEnabled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -881,6 +947,10 @@ public final class SecretSummary extends com.oracle.bmc.http.client.internal.Exp
                 .append(String.valueOf(this.timeOfCurrentVersionExpiry));
         sb.append(", timeOfDeletion=").append(String.valueOf(this.timeOfDeletion));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
+        sb.append(", secretGenerationContext=")
+                .append(String.valueOf(this.secretGenerationContext));
+        sb.append(", isAutoGenerationEnabled=")
+                .append(String.valueOf(this.isAutoGenerationEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -914,6 +984,10 @@ public final class SecretSummary extends com.oracle.bmc.http.client.internal.Exp
                         this.timeOfCurrentVersionExpiry, other.timeOfCurrentVersionExpiry)
                 && java.util.Objects.equals(this.timeOfDeletion, other.timeOfDeletion)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
+                && java.util.Objects.equals(
+                        this.secretGenerationContext, other.secretGenerationContext)
+                && java.util.Objects.equals(
+                        this.isAutoGenerationEnabled, other.isAutoGenerationEnabled)
                 && super.equals(other);
     }
 
@@ -959,6 +1033,16 @@ public final class SecretSummary extends com.oracle.bmc.http.client.internal.Exp
                 (result * PRIME)
                         + (this.timeOfDeletion == null ? 43 : this.timeOfDeletion.hashCode());
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.secretGenerationContext == null
+                                ? 43
+                                : this.secretGenerationContext.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoGenerationEnabled == null
+                                ? 43
+                                : this.isAutoGenerationEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

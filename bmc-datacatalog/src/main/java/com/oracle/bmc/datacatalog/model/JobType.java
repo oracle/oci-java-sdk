@@ -17,7 +17,8 @@ package com.oracle.bmc.datacatalog.model;
  * entities. PURGE - Job type for cleaning up schedules, executions and logs of a Job.
  * IMPORT_DATA_ASSET - Job type to import technical objects to a data asset. CREATE_SCAN_PROXY - Job
  * type to create scan proxy resource for RAC enabled data asset. ASYNC_EXPORT_GLOSSARY - Job type
- * to export glossary metadata to a file asynchronously.
+ * to export glossary metadata to a file asynchronously. ASYNC_EXPORT_DATA_ASSET - Job type to
+ * export data assets metadata to a file asynchronously.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public enum JobType implements com.oracle.bmc.http.internal.BmcEnum {
@@ -40,6 +41,7 @@ public enum JobType implements com.oracle.bmc.http.internal.BmcEnum {
     ImportDataAsset("IMPORT_DATA_ASSET"),
     CreateScanProxy("CREATE_SCAN_PROXY"),
     AsyncExportGlossary("ASYNC_EXPORT_GLOSSARY"),
+    AsyncExportDataAsset("ASYNC_EXPORT_DATA_ASSET"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

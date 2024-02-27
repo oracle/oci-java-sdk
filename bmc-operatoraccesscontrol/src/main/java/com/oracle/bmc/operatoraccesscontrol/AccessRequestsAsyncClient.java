@@ -165,6 +165,38 @@ public class AccessRequestsAsyncClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public java.util.concurrent.Future<GetAuditLogReportResponse> getAuditLogReport(
+            GetAuditLogReportRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetAuditLogReportRequest, GetAuditLogReportResponse>
+                    handler) {
+
+        Validate.notBlank(request.getAccessRequestId(), "accessRequestId must not be blank");
+
+        return clientCall(request, GetAuditLogReportResponse::builder)
+                .logger(LOG, "getAuditLogReport")
+                .serviceDetails(
+                        "AccessRequests",
+                        "GetAuditLogReport",
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AuditLogReport/GetAuditLogReport")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAuditLogReportRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("accessRequests")
+                .appendPathParam(request.getAccessRequestId())
+                .appendPathParam("auditLogReport")
+                .appendQueryParam("enableProcessTree", request.getEnableProcessTree())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.operatoraccesscontrol.model.AuditLogReport.class,
+                        GetAuditLogReportResponse.Builder::auditLogReport)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAuditLogReportResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<InteractionRequestResponse> interactionRequest(
             InteractionRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

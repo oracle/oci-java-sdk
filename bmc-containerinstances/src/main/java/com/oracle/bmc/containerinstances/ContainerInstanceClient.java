@@ -597,6 +597,7 @@ public class ContainerInstanceClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendPathParam(request.getContainerId())
                 .appendPathParam("actions")
                 .appendPathParam("retrieveLogs")
+                .appendQueryParam("isPrevious", request.getIsPrevious())
                 .accept("application/json", "text/plain")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()

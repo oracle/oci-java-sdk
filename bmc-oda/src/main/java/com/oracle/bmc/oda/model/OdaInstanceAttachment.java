@@ -382,6 +382,7 @@ public final class OdaInstanceAttachment
     /** The type of attachment defined as an enum. */
     public enum AttachmentType implements com.oracle.bmc.http.internal.BmcEnum {
         Fusion("FUSION"),
+        Max("MAX"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

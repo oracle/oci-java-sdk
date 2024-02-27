@@ -591,12 +591,22 @@ public final class CloudAutonomousVmClusterSummary
             this.__explicitlySet__.add("ocpuCount");
             return this;
         }
-        /** The compute model of the Cloud Autonomous VM Cluster. */
+        /**
+         * The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the
+         * recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous
+         * Database on Dedicated Exadata
+         * #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+         * for more details.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
         private ComputeModel computeModel;
 
         /**
-         * The compute model of the Cloud Autonomous VM Cluster.
+         * The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the
+         * recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous
+         * Database on Dedicated Exadata
+         * #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+         * for more details.
          *
          * @param computeModel the value to set
          * @return this builder
@@ -666,11 +676,13 @@ public final class CloudAutonomousVmClusterSummary
          * level. When provisioning an [Autonomous Database Serverless]
          * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a
          * value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
+         * Bring your own license (BYOL) also allows you to select the DB edition using the optional
+         * parameter.
          *
          * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
-         * computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword,
-         * isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName,
-         * scheduledOperations, dbToolsDetails, or isFreeTier.
+         * computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
+         * privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or
+         * isFreeTier.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
@@ -686,11 +698,13 @@ public final class CloudAutonomousVmClusterSummary
          * level. When provisioning an [Autonomous Database Serverless]
          * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a
          * value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
+         * Bring your own license (BYOL) also allows you to select the DB edition using the optional
+         * parameter.
          *
          * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
-         * computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword,
-         * isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName,
-         * scheduledOperations, dbToolsDetails, or isFreeTier.
+         * computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
+         * privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or
+         * isFreeTier.
          *
          * @param licenseModel the value to set
          * @return this builder
@@ -871,23 +885,19 @@ public final class CloudAutonomousVmClusterSummary
             return this;
         }
         /**
-         * For Autonomous Databases on Dedicated Exadata Infrastructure: - These are the CPUs that
-         * continue to be included in the count of CPUs available to the Autonomous Container
-         * Database even after one of its Autonomous Database is terminated or scaled down. You can
-         * release them to the available CPUs at its parent Autonomous VM Cluster level by
-         * restarting the Autonomous Container Database. - The CPU type (OCPUs or ECPUs) is
-         * determined by the parent Autonomous Exadata VM Cluster's compute model.
+         * CPUs that continue to be included in the count of CPUs available to the Autonomous
+         * Container Database even after one of its Autonomous Database is terminated or scaled
+         * down. You can release them to the available CPUs at its parent Autonomous VM Cluster
+         * level by restarting the Autonomous Container Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
         private Float reclaimableCpus;
 
         /**
-         * For Autonomous Databases on Dedicated Exadata Infrastructure: - These are the CPUs that
-         * continue to be included in the count of CPUs available to the Autonomous Container
-         * Database even after one of its Autonomous Database is terminated or scaled down. You can
-         * release them to the available CPUs at its parent Autonomous VM Cluster level by
-         * restarting the Autonomous Container Database. - The CPU type (OCPUs or ECPUs) is
-         * determined by the parent Autonomous Exadata VM Cluster's compute model.
+         * CPUs that continue to be included in the count of CPUs available to the Autonomous
+         * Container Database even after one of its Autonomous Database is terminated or scaled
+         * down. You can release them to the available CPUs at its parent Autonomous VM Cluster
+         * level by restarting the Autonomous Container Database.
          *
          * @param reclaimableCpus the value to set
          * @return this builder
@@ -1168,12 +1178,12 @@ public final class CloudAutonomousVmClusterSummary
             this.__explicitlySet__.add("nonProvisionableAutonomousContainerDatabases");
             return this;
         }
-        /** The lowest value to which exadataStorage in TBs can be scaled down. */
+        /** The lowest value to which exadataStorage (in TBs) can be scaled down. */
         @com.fasterxml.jackson.annotation.JsonProperty("exadataStorageInTBsLowestScaledValue")
         private Double exadataStorageInTBsLowestScaledValue;
 
         /**
-         * The lowest value to which exadataStorage in TBs can be scaled down.
+         * The lowest value to which exadataStorage (in TBs) can be scaled down.
          *
          * @param exadataStorageInTBsLowestScaledValue the value to set
          * @return this builder
@@ -1199,12 +1209,12 @@ public final class CloudAutonomousVmClusterSummary
             this.__explicitlySet__.add("ocpusLowestScaledValue");
             return this;
         }
-        /** The lowest value to which ACDs can be scaled down. */
+        /** The lowest value to which maximum number of ACDs can be scaled down. */
         @com.fasterxml.jackson.annotation.JsonProperty("maxAcdsLowestScaledValue")
         private Integer maxAcdsLowestScaledValue;
 
         /**
-         * The lowest value to which ACDs can be scaled down.
+         * The lowest value to which maximum number of ACDs can be scaled down.
          *
          * @param maxAcdsLowestScaledValue the value to set
          * @return this builder
@@ -1867,7 +1877,13 @@ public final class CloudAutonomousVmClusterSummary
         return ocpuCount;
     }
 
-    /** The compute model of the Cloud Autonomous VM Cluster. */
+    /**
+     * The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended
+     * model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on
+     * Dedicated Exadata
+     * #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+     * for more details.
+     */
     public enum ComputeModel implements com.oracle.bmc.http.internal.BmcEnum {
         Ecpu("ECPU"),
         Ocpu("OCPU"),
@@ -1913,12 +1929,22 @@ public final class CloudAutonomousVmClusterSummary
             return UnknownEnumValue;
         }
     };
-    /** The compute model of the Cloud Autonomous VM Cluster. */
+    /**
+     * The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended
+     * model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on
+     * Dedicated Exadata
+     * #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+     * for more details.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
     private final ComputeModel computeModel;
 
     /**
-     * The compute model of the Cloud Autonomous VM Cluster.
+     * The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended
+     * model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on
+     * Dedicated Exadata
+     * #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+     * for more details.
      *
      * @return the value
      */
@@ -1979,10 +2005,11 @@ public final class CloudAutonomousVmClusterSummary
      * attribute must be null. It is already set at the Autonomous Exadata Infrastructure level.
      * When provisioning an [Autonomous Database Serverless]
      * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value
-     * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
+     * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your
+     * own license (BYOL) also allows you to select the DB edition using the optional parameter.
      *
      * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
-     * maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
+     * dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
      * privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or
      * isFreeTier.
      */
@@ -2041,10 +2068,11 @@ public final class CloudAutonomousVmClusterSummary
      * attribute must be null. It is already set at the Autonomous Exadata Infrastructure level.
      * When provisioning an [Autonomous Database Serverless]
      * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value
-     * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
+     * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your
+     * own license (BYOL) also allows you to select the DB edition using the optional parameter.
      *
      * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
-     * maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
+     * dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
      * privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or
      * isFreeTier.
      */
@@ -2061,10 +2089,11 @@ public final class CloudAutonomousVmClusterSummary
      * attribute must be null. It is already set at the Autonomous Exadata Infrastructure level.
      * When provisioning an [Autonomous Database Serverless]
      * (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value
-     * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}.
+     * is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your
+     * own license (BYOL) also allows you to select the DB edition using the optional parameter.
      *
      * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
-     * maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
+     * dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
      * privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or
      * isFreeTier.
      *
@@ -2223,23 +2252,19 @@ public final class CloudAutonomousVmClusterSummary
     }
 
     /**
-     * For Autonomous Databases on Dedicated Exadata Infrastructure: - These are the CPUs that
-     * continue to be included in the count of CPUs available to the Autonomous Container Database
-     * even after one of its Autonomous Database is terminated or scaled down. You can release them
-     * to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous
-     * Container Database. - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous
-     * Exadata VM Cluster's compute model.
+     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container
+     * Database even after one of its Autonomous Database is terminated or scaled down. You can
+     * release them to the available CPUs at its parent Autonomous VM Cluster level by restarting
+     * the Autonomous Container Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
     private final Float reclaimableCpus;
 
     /**
-     * For Autonomous Databases on Dedicated Exadata Infrastructure: - These are the CPUs that
-     * continue to be included in the count of CPUs available to the Autonomous Container Database
-     * even after one of its Autonomous Database is terminated or scaled down. You can release them
-     * to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous
-     * Container Database. - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous
-     * Exadata VM Cluster's compute model.
+     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container
+     * Database even after one of its Autonomous Database is terminated or scaled down. You can
+     * release them to the available CPUs at its parent Autonomous VM Cluster level by restarting
+     * the Autonomous Container Database.
      *
      * @return the value
      */
@@ -2473,12 +2498,12 @@ public final class CloudAutonomousVmClusterSummary
         return nonProvisionableAutonomousContainerDatabases;
     }
 
-    /** The lowest value to which exadataStorage in TBs can be scaled down. */
+    /** The lowest value to which exadataStorage (in TBs) can be scaled down. */
     @com.fasterxml.jackson.annotation.JsonProperty("exadataStorageInTBsLowestScaledValue")
     private final Double exadataStorageInTBsLowestScaledValue;
 
     /**
-     * The lowest value to which exadataStorage in TBs can be scaled down.
+     * The lowest value to which exadataStorage (in TBs) can be scaled down.
      *
      * @return the value
      */
@@ -2499,12 +2524,12 @@ public final class CloudAutonomousVmClusterSummary
         return ocpusLowestScaledValue;
     }
 
-    /** The lowest value to which ACDs can be scaled down. */
+    /** The lowest value to which maximum number of ACDs can be scaled down. */
     @com.fasterxml.jackson.annotation.JsonProperty("maxAcdsLowestScaledValue")
     private final Integer maxAcdsLowestScaledValue;
 
     /**
-     * The lowest value to which ACDs can be scaled down.
+     * The lowest value to which maximum number of ACDs can be scaled down.
      *
      * @return the value
      */

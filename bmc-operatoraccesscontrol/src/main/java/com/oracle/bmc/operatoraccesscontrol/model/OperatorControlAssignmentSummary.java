@@ -29,6 +29,8 @@ public final class OperatorControlAssignmentSummary
         "resourceId",
         "compartmentId",
         "resourceType",
+        "resourceName",
+        "opControlName",
         "timeAssignmentFrom",
         "timeAssignmentTo",
         "isEnforcedAlways",
@@ -38,6 +40,7 @@ public final class OperatorControlAssignmentSummary
         "isLogForwarded",
         "remoteSyslogServerAddress",
         "remoteSyslogServerPort",
+        "isHypervisorLogForwarded",
         "lifecycleState",
         "lifecycleDetails",
         "freeformTags",
@@ -49,6 +52,8 @@ public final class OperatorControlAssignmentSummary
             String resourceId,
             String compartmentId,
             ResourceTypes resourceType,
+            String resourceName,
+            String opControlName,
             java.util.Date timeAssignmentFrom,
             java.util.Date timeAssignmentTo,
             Boolean isEnforcedAlways,
@@ -58,6 +63,7 @@ public final class OperatorControlAssignmentSummary
             Boolean isLogForwarded,
             String remoteSyslogServerAddress,
             Integer remoteSyslogServerPort,
+            Boolean isHypervisorLogForwarded,
             OperatorControlAssignmentLifecycleStates lifecycleState,
             String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
@@ -68,6 +74,8 @@ public final class OperatorControlAssignmentSummary
         this.resourceId = resourceId;
         this.compartmentId = compartmentId;
         this.resourceType = resourceType;
+        this.resourceName = resourceName;
+        this.opControlName = opControlName;
         this.timeAssignmentFrom = timeAssignmentFrom;
         this.timeAssignmentTo = timeAssignmentTo;
         this.isEnforcedAlways = isEnforcedAlways;
@@ -77,6 +85,7 @@ public final class OperatorControlAssignmentSummary
         this.isLogForwarded = isLogForwarded;
         this.remoteSyslogServerAddress = remoteSyslogServerAddress;
         this.remoteSyslogServerPort = remoteSyslogServerPort;
+        this.isHypervisorLogForwarded = isHypervisorLogForwarded;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.freeformTags = freeformTags;
@@ -158,6 +167,36 @@ public final class OperatorControlAssignmentSummary
         public Builder resourceType(ResourceTypes resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
+            return this;
+        }
+        /** Name of the target resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
+        private String resourceName;
+
+        /**
+         * Name of the target resource.
+         *
+         * @param resourceName the value to set
+         * @return this builder
+         */
+        public Builder resourceName(String resourceName) {
+            this.resourceName = resourceName;
+            this.__explicitlySet__.add("resourceName");
+            return this;
+        }
+        /** Name of the operator control name associated. */
+        @com.fasterxml.jackson.annotation.JsonProperty("opControlName")
+        private String opControlName;
+
+        /**
+         * Name of the operator control name associated.
+         *
+         * @param opControlName the value to set
+         * @return this builder
+         */
+        public Builder opControlName(String opControlName) {
+            this.opControlName = opControlName;
+            this.__explicitlySet__.add("opControlName");
             return this;
         }
         /**
@@ -321,6 +360,25 @@ public final class OperatorControlAssignmentSummary
             this.__explicitlySet__.add("remoteSyslogServerPort");
             return this;
         }
+        /**
+         * If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog
+         * server
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isHypervisorLogForwarded")
+        private Boolean isHypervisorLogForwarded;
+
+        /**
+         * If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog
+         * server
+         *
+         * @param isHypervisorLogForwarded the value to set
+         * @return this builder
+         */
+        public Builder isHypervisorLogForwarded(Boolean isHypervisorLogForwarded) {
+            this.isHypervisorLogForwarded = isHypervisorLogForwarded;
+            this.__explicitlySet__.add("isHypervisorLogForwarded");
+            return this;
+        }
         /** The current lifcycle state of the OperatorControl. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private OperatorControlAssignmentLifecycleStates lifecycleState;
@@ -398,6 +456,8 @@ public final class OperatorControlAssignmentSummary
                             this.resourceId,
                             this.compartmentId,
                             this.resourceType,
+                            this.resourceName,
+                            this.opControlName,
                             this.timeAssignmentFrom,
                             this.timeAssignmentTo,
                             this.isEnforcedAlways,
@@ -407,6 +467,7 @@ public final class OperatorControlAssignmentSummary
                             this.isLogForwarded,
                             this.remoteSyslogServerAddress,
                             this.remoteSyslogServerPort,
+                            this.isHypervisorLogForwarded,
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.freeformTags,
@@ -434,6 +495,12 @@ public final class OperatorControlAssignmentSummary
             if (model.wasPropertyExplicitlySet("resourceType")) {
                 this.resourceType(model.getResourceType());
             }
+            if (model.wasPropertyExplicitlySet("resourceName")) {
+                this.resourceName(model.getResourceName());
+            }
+            if (model.wasPropertyExplicitlySet("opControlName")) {
+                this.opControlName(model.getOpControlName());
+            }
             if (model.wasPropertyExplicitlySet("timeAssignmentFrom")) {
                 this.timeAssignmentFrom(model.getTimeAssignmentFrom());
             }
@@ -460,6 +527,9 @@ public final class OperatorControlAssignmentSummary
             }
             if (model.wasPropertyExplicitlySet("remoteSyslogServerPort")) {
                 this.remoteSyslogServerPort(model.getRemoteSyslogServerPort());
+            }
+            if (model.wasPropertyExplicitlySet("isHypervisorLogForwarded")) {
+                this.isHypervisorLogForwarded(model.getIsHypervisorLogForwarded());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -549,6 +619,32 @@ public final class OperatorControlAssignmentSummary
      */
     public ResourceTypes getResourceType() {
         return resourceType;
+    }
+
+    /** Name of the target resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
+    private final String resourceName;
+
+    /**
+     * Name of the target resource.
+     *
+     * @return the value
+     */
+    public String getResourceName() {
+        return resourceName;
+    }
+
+    /** Name of the operator control name associated. */
+    @com.fasterxml.jackson.annotation.JsonProperty("opControlName")
+    private final String opControlName;
+
+    /**
+     * Name of the operator control name associated.
+     *
+     * @return the value
+     */
+    public String getOpControlName() {
+        return opControlName;
     }
 
     /**
@@ -694,6 +790,21 @@ public final class OperatorControlAssignmentSummary
         return remoteSyslogServerPort;
     }
 
+    /**
+     * If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isHypervisorLogForwarded")
+    private final Boolean isHypervisorLogForwarded;
+
+    /**
+     * If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+     *
+     * @return the value
+     */
+    public Boolean getIsHypervisorLogForwarded() {
+        return isHypervisorLogForwarded;
+    }
+
     /** The current lifcycle state of the OperatorControl. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final OperatorControlAssignmentLifecycleStates lifecycleState;
@@ -770,6 +881,8 @@ public final class OperatorControlAssignmentSummary
         sb.append(", resourceId=").append(String.valueOf(this.resourceId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(", resourceName=").append(String.valueOf(this.resourceName));
+        sb.append(", opControlName=").append(String.valueOf(this.opControlName));
         sb.append(", timeAssignmentFrom=").append(String.valueOf(this.timeAssignmentFrom));
         sb.append(", timeAssignmentTo=").append(String.valueOf(this.timeAssignmentTo));
         sb.append(", isEnforcedAlways=").append(String.valueOf(this.isEnforcedAlways));
@@ -780,6 +893,8 @@ public final class OperatorControlAssignmentSummary
         sb.append(", remoteSyslogServerAddress=")
                 .append(String.valueOf(this.remoteSyslogServerAddress));
         sb.append(", remoteSyslogServerPort=").append(String.valueOf(this.remoteSyslogServerPort));
+        sb.append(", isHypervisorLogForwarded=")
+                .append(String.valueOf(this.isHypervisorLogForwarded));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -803,6 +918,8 @@ public final class OperatorControlAssignmentSummary
                 && java.util.Objects.equals(this.resourceId, other.resourceId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.resourceName, other.resourceName)
+                && java.util.Objects.equals(this.opControlName, other.opControlName)
                 && java.util.Objects.equals(this.timeAssignmentFrom, other.timeAssignmentFrom)
                 && java.util.Objects.equals(this.timeAssignmentTo, other.timeAssignmentTo)
                 && java.util.Objects.equals(this.isEnforcedAlways, other.isEnforcedAlways)
@@ -814,6 +931,8 @@ public final class OperatorControlAssignmentSummary
                         this.remoteSyslogServerAddress, other.remoteSyslogServerAddress)
                 && java.util.Objects.equals(
                         this.remoteSyslogServerPort, other.remoteSyslogServerPort)
+                && java.util.Objects.equals(
+                        this.isHypervisorLogForwarded, other.isHypervisorLogForwarded)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -834,6 +953,10 @@ public final class OperatorControlAssignmentSummary
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result = (result * PRIME) + (this.resourceName == null ? 43 : this.resourceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opControlName == null ? 43 : this.opControlName.hashCode());
         result =
                 (result * PRIME)
                         + (this.timeAssignmentFrom == null
@@ -863,6 +986,11 @@ public final class OperatorControlAssignmentSummary
                         + (this.remoteSyslogServerPort == null
                                 ? 43
                                 : this.remoteSyslogServerPort.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isHypervisorLogForwarded == null
+                                ? 43
+                                : this.isHypervisorLogForwarded.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

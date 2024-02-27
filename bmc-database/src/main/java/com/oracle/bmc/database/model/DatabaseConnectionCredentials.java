@@ -24,11 +24,11 @@ package com.oracle.bmc.database.model;
         defaultImpl = DatabaseConnectionCredentials.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DatabaseConnectionCredentailsByName.class,
-            name = "NAME_REFERENCE"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DatabaseSslConnectionCredentials.class,
             name = "SSL_DETAILS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DatabaseConnectionCredentialsByName.class,
+            name = "NAME_REFERENCE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DatabaseConnectionCredentialsByDetails.class,
             name = "DETAILS")

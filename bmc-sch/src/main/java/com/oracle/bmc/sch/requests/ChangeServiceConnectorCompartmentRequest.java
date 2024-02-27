@@ -18,22 +18,22 @@ public class ChangeServiceConnectorCompartmentRequest
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the service connector.
+     * the connector.
      */
     private String serviceConnectorId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the service connector.
+     * the connector.
      */
     public String getServiceConnectorId() {
         return serviceConnectorId;
     }
-    /** The configuration details for moving a service connector to a different compartment. */
+    /** The configuration details for moving a connector to a different compartment. */
     private com.oracle.bmc.sch.model.ChangeServiceConnectorCompartmentDetails
             changeServiceConnectorCompartmentDetails;
 
-    /** The configuration details for moving a service connector to a different compartment. */
+    /** The configuration details for moving a connector to a different compartment. */
     public com.oracle.bmc.sch.model.ChangeServiceConnectorCompartmentDetails
             getChangeServiceConnectorCompartmentDetails() {
         return changeServiceConnectorCompartmentDetails;
@@ -89,13 +89,13 @@ public class ChangeServiceConnectorCompartmentRequest
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the service connector.
+         * of the connector.
          */
         private String serviceConnectorId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the service connector.
+         * of the connector.
          *
          * @param serviceConnectorId the value to set
          * @return this builder instance
@@ -105,12 +105,12 @@ public class ChangeServiceConnectorCompartmentRequest
             return this;
         }
 
-        /** The configuration details for moving a service connector to a different compartment. */
+        /** The configuration details for moving a connector to a different compartment. */
         private com.oracle.bmc.sch.model.ChangeServiceConnectorCompartmentDetails
                 changeServiceConnectorCompartmentDetails = null;
 
         /**
-         * The configuration details for moving a service connector to a different compartment.
+         * The configuration details for moving a connector to a different compartment.
          *
          * @param changeServiceConnectorCompartmentDetails the value to set
          * @return this builder instance
